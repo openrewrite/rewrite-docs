@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Overview](README.md)
-* [Quickstart](quickstart.md)
+* [Rewrite: What is it and how to use it](quickstart.md)
 * [Transforming Java source code](refactoring-java-source-code.md)
 * [Modules](modules.md)
 * [Abstract Syntax Trees](abstract-syntax-trees.md)
