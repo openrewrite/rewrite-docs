@@ -2,7 +2,7 @@
 description: A tutorial showing how to use Rewrite
 ---
 
-# Rewrite: What is it and how to use it
+# Getting Started
 
 ## What does Rewrite do?
 
@@ -69,7 +69,7 @@ include:
 
 You now have a YAML file containing two YAML documents: a declarative Rewrite visitor and a recipe that includes that visitor. 
 
-The first document, the visitor, is defined with type `specs.openrewrite.org/v1beta/visitor` and given the name `com.yourorg.junit.StaticJUnitAsserts`.  Visitors may be composed of other visitors. For example, the custom visitor you've just created delegates to a building block visitor`org.openrewrite.java.UseStaticImport` that Rewrite provides out of the box. This sub-visitor has been told that any call to the receiver type `org.junit.Assert` whose method name begins with `assert` should be modified to use a static import.
+The first document, the visitor, is defined with type `specs.openrewrite.org/v1beta/visitor` and given the name `com.yourorg.junit.StaticJUnitAsserts`.  Visitors may be composed of other visitors. For example, the custom visitor you've just created delegates to a building block visitor `org.openrewrite.java.UseStaticImport` that Rewrite provides out of the box. This sub-visitor has been told that any call to the receiver type `org.junit.Assert` whose method name begins with `assert` should be modified to use a static import.
 
 The recipe is defined in another YAML document with type `specs.openrewrite.org/v1beta/recipe`. It's given a name `com.yourorg.junit` that we will use to activate this recipe in our pom.xml. The recipe explicitly includes our new custom visitor.
 

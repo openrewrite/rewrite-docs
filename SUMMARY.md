@@ -1,10 +1,15 @@
 # Table of contents
 
 * [Overview](README.md)
-* [Rewrite: What is it and how to use it](quickstart.md)
-* [Transforming Java source code](refactoring-java-source-code.md)
+* [Getting Started](quickstart.md)
 * [Modules](modules.md)
 * [Abstract Syntax Trees](abstract-syntax-trees.md)
+
+## Java
+
+* [Rewrite Maven Plugin](java/rewrite-maven-plugin.md)
+* [Rewrite Gradle Plugin](java/rewrite-gradle-plugin.md)
+* [Parsing Java code](java/parsing-java-code.md)
 
 ## Specifications <a id="v1beta"></a>
 
@@ -12,5 +17,6 @@
 
 ## Reference
 
-* [java.ChangeType](reference/changetype.md)
+* [Java Refactoring](reference/refactoring-java-source-code/README.md)
+  * [java.ChangeType](reference/refactoring-java-source-code/changetype.md)
 
