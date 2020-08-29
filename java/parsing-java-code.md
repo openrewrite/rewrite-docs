@@ -1,8 +1,8 @@
-# Parsing Java code
+# Parsing Java Code
 
-This guide covers how to use Rewrite to parse Java code. This is useful when you want to build your own Java main method, microservice, or data pipeline to process Java source code and perform structured search or transformation on that source code. To apply Rewrite recipes for common Java framework migrations and other fixes, refer instead to the guides on
+This guide covers how to use Rewrite to parse Java code. This is useful when you want to build your own Java main method, microservice, or data pipeline to process Java source code and perform structured search or transformation on that source code. To apply Rewrite recipes for common Java framework migrations and other fixes, refer instead to the guides on the [Maven](rewrite-maven-plugin.md) or [Gradle ](rewrite-gradle-plugin.md)plugins.
 
-### Required dependencies
+### Required Dependencies
 
 For Maven, define a compile scoped dependency on `rewrite-java` and a runtime scoped dependency on `rewrite-java-11` \(or `rewrite-java-8` if your code is at that language level\).
 
@@ -27,16 +27,19 @@ implementation("org.openrewrite:rewrite-java:4.3.0")
 runtimeOnly("org.openrewrite:rewrite-java-11:4.3.0")
 ```
 
+### Constructing a Java Parser
 
-
-To build a Rewrite AST for Java source code, construct a `JavaParser`:
+To build a Rewrite AST for Java source code, construct a `JavaParser` as shown below. We will discuss each of the options in detail.
 
 ```java
 JavaParser parser = JavaParser.fromJavaVersion()
     .classpath(classpathAsListOfPaths) // optional
     .logCompilationWarningsAndErrors(false) // optional, for quiet parsing
     .styles(listOfStyles) // optional
+    .build();
 ```
+
+#### Classpath
 
 Providing a classpath is optional, because type-attribution is a _best effort_ for each element. Examples of different-levels of type-attribution:
 
@@ -47,10 +50,18 @@ Providing a classpath is optional, because type-attribution is a _best effort_ f
 `JavaParser` contains a convenience method for building a `JavaParser` from the runtime classpath of the Java process that is constructing the parser:
 
 ```java
-new JavaParser(JavaParser.dependenciesFromClasspath("guava"));
+JavaParser parser = JavaParser.fromJavaVersion()
+    .classpath(JavaParser.dependenciesFromClasspath("guava"))
+    .build();
 ```
 
 This utility takes the "artifact name" of the dependency to look for. The artifact name is the artifact portion of `group:artifact:version` coordinates. For example, for Google's Guava \(`com.google.guava:guava:VERSION`\), the artifact name is `guava`.
+
+#### Styles
+
+Styles store with 
+
+### Parsing Source Files
 
 Once you have a `JavaParser` instance, you can parse all the source files in a project with the `parse` method, which takes a `List<Path>`:
 

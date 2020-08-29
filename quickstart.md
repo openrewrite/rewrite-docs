@@ -1,38 +1,16 @@
 ---
-description: A tutorial showing how to use Rewrite
+description: >-
+  A tutorial showing how to use Rewrite to consistently statically import JUnit
+  asserts and improve Spring framework usage.
 ---
 
 # Getting Started
 
-## What does Rewrite do?
+⏲ This tutorial will take you about 10 minutes to complete.
 
-Rewrite works by making changes to [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)s \(AST\) representing your source code and printing the modified trees back into source code. You can then review the changes in your code and commit. Modifications to the AST are performed in _visitors_ and visitors are aggregated into _recipes_. Rewrite recipes make minimally invasive changes to your source code that honor the original formatting.
+### Step 1: Clone the Sample Repository
 
-For example, if you want to consistently use static imports across all of your test files, rather than doing this manually, you could use the UseStaticImport visitor provided by Rewrite. Applied to the file below, you can see the changes UseStaticImport applies. 
-
-```java
-// Before Rewrite
-import org.junit.Assert;
-...
-
-Assert.assertTrue(condition);
-```
-
-```java
-// After Rewrite
-import static org.junit.Assert.assertTrue;
-...
-
-assertTrue(condition);
-```
-
-Complete the following tutorial to learn how to implement this example by crafting a custom JUnit recipe with a single visitor that will refactor any JUnit `assertXXX(..)` calls to use static imports.
-
-## Getting Started Tutorial
-
-### Step 1: Clone Sample Repository
-
-This tutorial shows how to use Rewrite to automatically perform a Spring framework migration. To get started, clone the [Spring Petclinic Migration](https://github.com/openrewrite/spring-petclinic-migration) project.
+This tutorial shows how to use Rewrite to consistently statically import JUnit asserts and improve Spring framework usage. To get started, clone the [Spring Petclinic Migration](https://github.com/openrewrite/spring-petclinic-migration) project.
 
 {% hint style="success" %}
 If you'd like to skip ahead to [Running the Fixes](https://github.com/openrewrite/spring-petclinic-migration#running-the-fixes), checkout the [tutorial](https://github.com/openrewrite/spring-petclinic-migration/tree/tutorial) branch, which is pre-configured and ready to run. 
@@ -50,31 +28,35 @@ For this tutorial we will be using the default branch, 1.5.x, which contains a s
 This is an older repository that requires an older JDK version, JDK 8. If you don't have a version 8 JDK, you can get it [here](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot).
 {% endhint %}
 
-### Step 2: Add Custom JUnit Recipe
+### Step 2: Add a Custom JUnit Recipe
 
 Once you have cloned the Spring Petclinic Migration project, you first want to create a new YAML file in the root of the repository. The file will be named`rewrite.yml` and contain the following:
 
 ```text
 type: specs.openrewrite.org/v1beta/visitor
-name: com.yourorg.junit.StaticJUnitAsserts
+name: io.moderne.junit.StaticJUnitAsserts
 visitors:
   - org.openrewrite.java.UseStaticImport:
       method: org.junit.Assert assert*(..)
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.junit
+name: io.moderne.junit
 include:
-  - com.yourorg.junit.StaticJUnitAsserts
+  - io.moderne.junit.StaticJUnitAsserts
 ```
 
-You now have a YAML file containing two YAML documents: a declarative Rewrite visitor and a recipe that includes that visitor. 
+You now have a YAML file containing two YAML documents \(the `---` in YAML separates documents inside a single YAML file\): a declarative Rewrite visitor and a recipe that includes that visitor.
 
-The first document, the visitor, is defined with type `specs.openrewrite.org/v1beta/visitor` and given the name `com.yourorg.junit.StaticJUnitAsserts`.  Visitors may be composed of other visitors. For example, the custom visitor you've just created delegates to a building block visitor `org.openrewrite.java.UseStaticImport` that Rewrite provides out of the box. This sub-visitor has been told that any call to the receiver type `org.junit.Assert` whose method name begins with `assert` should be modified to use a static import.
+{% hint style="info" %}
+By _declarative_, we mean that this visitor and recipe are defined using only configuration markup \(YAML\). We didn't need to write code.
+{% endhint %}
+
+The first document, the visitor, is defined with type `specs.openrewrite.org/v1beta/visitor` and given the name `io.modernejunit.StaticJUnitAsserts`. Visitors may be composed of other visitors. For example, the custom visitor you've just created delegates to a building block visitor `org.openrewrite.java.UseStaticImport` that Rewrite provides out of the box. This sub-visitor has been told that any call to the receiver type `org.junit.Assert` whose method name begins with `assert` should be modified to use a static import.
 
 The recipe is defined in another YAML document with type `specs.openrewrite.org/v1beta/recipe`. It's given a name `com.yourorg.junit` that we will use to activate this recipe in our pom.xml. The recipe explicitly includes our new custom visitor.
 
 {% hint style="info" %}
-It is generally recommended to group the visitors for a recipe under a common package prefix \(in this case `com.yourorg.junit`\).
+It is generally recommended to group the visitors for a recipe under a common package prefix \(in this case `io.moderne.junit`\) so that they are uniquely identifiable. This also allows you to wildcard several visitors at the same time in a recipe definition. For example, the `include` block in the recipe could be writtten `io.moderne.junit.*` to include more than one visitor with the same package prefix.
 {% endhint %}
 
 ### Step 3: Add the Rewrite Maven Plugin
@@ -87,8 +69,12 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
     <artifactId>rewrite-maven-plugin</artifactId>
     <version>2.0.0</version>
     <configuration>
-        <activeRecipes>com.yourorg.junit, org.openrewrite.spring, org.openrewrite.mockito</activeRecipes>
-        <configLocation>rewrite.yml</configLocation>
+        <activeRecipes>
+            <recipe>io.moderne.junit</recipe>
+            <recipe>org.openrewrite.spring</recipe>
+            <recipe>org.openrewrite.mockito</recipe>
+        </activeRecipes>
+        <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
     </configuration>
 </plugin>
 ```
@@ -130,4 +116,8 @@ The building-block visitor `UseStaticImport` is smart enough to know how to remo
 The last step is to run `git diff` to see the changes Rewrite has made. For this example, running `git diff` shows how, among other changes, Rewrite has removed unnecessary `@Autowired` annotations from injectable constructors \(which is now implicit in Spring Boot\) and swapped the `@RequestMapping` annotation for `@GetMapping`, closing a [CSRF security vulnerability](https://find-sec-bugs.github.io/bugs.htm#SPRING_ENDPOINT) \(!!\).
 
 ![Git diff showing removal of unnecessary @Autowired and migration of @RequestMapping](.gitbook/assets/image%20%281%29.png)
+
+### Next Steps
+
+In [Abstract Syntax Trees](abstract-syntax-trees.md), we'll provide a high-level overview of the data structure Rewrite uses to perform these kinds of transformations.
 

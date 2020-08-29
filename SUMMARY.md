@@ -2,21 +2,20 @@
 
 * [Overview](README.md)
 * [Getting Started](quickstart.md)
-* [Modules](modules.md)
 * [Abstract Syntax Trees](abstract-syntax-trees.md)
 
 ## Java
 
 * [Rewrite Maven Plugin](java/rewrite-maven-plugin.md)
 * [Rewrite Gradle Plugin](java/rewrite-gradle-plugin.md)
-* [Parsing Java code](java/parsing-java-code.md)
+* [Parsing Java Code](java/parsing-java-code.md)
+* [Transforming Java Code](java/refactoring-java-source-code/README.md)
+  * [ChangeType](java/refactoring-java-source-code/changetype.md)
+  * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
 
 ## Specifications <a id="v1beta"></a>
 
 * [Visitors](v1beta/visitor.md)
-
-## Reference
-
-* [Java Refactoring](reference/refactoring-java-source-code/README.md)
-  * [java.ChangeType](reference/refactoring-java-source-code/changetype.md)
+* [Recipes](v1beta/recipes.md)
+* [Styles](v1beta/styles.md)
 
