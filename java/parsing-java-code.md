@@ -201,5 +201,5 @@ val cu: J.CompilationUnit = jp.parse("""
 
 ### Next Steps
 
-Now that we have a series of ASTs to work with we can start building [semantic searches](semantic-search-for-java.md) across a set of Java source files.
+Now that we have a series of ASTs to work with we can start building [semantic searches](semantic-search-for-java/) across a set of Java source files.
 

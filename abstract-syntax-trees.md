@@ -4,7 +4,7 @@ description: The "semantic" behind "semantic code search and transformation."
 
 # Abstract Syntax Trees
 
-Rewrite's Abstract Syntax Tree \(AST\) has a unique set of characteristics that make it suitable for both single-repository and mass transformation operations:
+Rewrite's [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree) \(AST\) has a unique set of characteristics that make it suitable for both single-repository and mass transformation operations:
 
 * **Type-attributed**. Each AST element is imbued with type information. For a field reference, for example, the source code may just refer to `myField`. The Rewrite AST element for `myField` would also contain information about what the type of `myField` is, even if it isn't defined in the same source file or even the same project.
 * **Format-preserving**. Whitespace before and after AST elements is preserved in the tree so the tree can be printed out to reconstitute the original source code without clobbering formatting. Additionally, refactoring operations that insert code are sensitive to the local style of the code around them, and match the local style.
