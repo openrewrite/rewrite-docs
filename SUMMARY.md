@@ -14,7 +14,7 @@
   * [ChangeType](java/refactoring-java-source-code/changetype.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
 
-## Specifications <a id="v1beta"></a>
+## Concepts <a id="v1beta"></a>
 
 * [Visitors](v1beta/visitor.md)
 * [Recipes](v1beta/recipes.md)

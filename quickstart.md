@@ -74,7 +74,6 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
             <recipe>org.openrewrite.spring</recipe>
             <recipe>org.openrewrite.mockito</recipe>
         </activeRecipes>
-        <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
     </configuration>
 </plugin>
 ```
