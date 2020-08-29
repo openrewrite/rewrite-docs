@@ -101,7 +101,7 @@ Import layouts consist of three properties.
 
 The `blocks` configuration is designed to look exactly like IntelliJ IDEA's GUI configuration for import layouts. You can type out in YAML exactly what you see in IDEA's configuration in File &gt; Settings &gt; Editor &gt; Code Style &gt; Java.
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%286%29.png)
 
 Styles are defined declaratively in YML and added to an [Environment](../v1beta/environment.md). Use the `specs.openrewrite.org/v1beta/style` resource type to define an import layout as shown below.
 
@@ -141,7 +141,7 @@ JavaParser parser = JavaParser.fromJavaVersion()
 
 Tabs and indents cover many of the options in the tabs and indents configuration of IDE's like IntelliJ IDEA.
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%288%29.png)
 
 This style is defined declaratively in YML and can be retrieved from the `Environment` to apply to a `JavaParser` as we just saw with import layout styles. The configuration shown below also documents what the defaults are for each option, which match the default tab and indent styles of IntelliJ IDEA.
 
