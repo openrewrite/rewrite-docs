@@ -1,12 +1,10 @@
 # Overview
 
-### Semantic code search and transformation.
-
-[![Build Status](https://circleci.com/gh/openrewrite/rewrite.svg?style=shield)](https://circleci.com/gh/openrewrite/rewrite) [![Apache 2.0](https://img.shields.io/github/license/openrewrite/rewrite.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Maven Central](https://img.shields.io/maven-central/v/org.openrewrite/rewrite-java.svg)](https://mvnrepository.com/artifact/org.openrewrite/rewrite-java)
+### Semantic Code Search and Transformation
 
 The Rewrite project is a semantic code search and transformation ecosystem for Java and other source code. It consists of a platform of prepackaged refactoring recipes for common framework migration and stylistic consistency tasks. It also allows you to define custom recipes to achieve a wide range of source code transformations.
 
-### What does Rewrite do?
+### What Does Rewrite Do?
 
 Rewrite works by making changes to [abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)s \(AST\) representing your source code and printing the modified trees back into source code. You can then review the changes in your code and commit. Modifications to the AST are performed in _visitors_ and visitors are aggregated into _recipes_. Rewrite recipes make minimally invasive changes to your source code that honor the original formatting.
 

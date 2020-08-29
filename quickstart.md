@@ -111,7 +111,7 @@ assertTrue(condition);
 The building-block visitor `UseStaticImport` is smart enough to know how to remove the old import if it is no longer used, add a new static import, and collapse several static imports of `org.junit.Assert` into a single static star import \(`import static org.junit.Assert.*`\) if the right number of imports is reached and vice versa.
 {% endhint %}
 
-### Step 5: Run `git diff` to see the changes
+### Step 5: Run `git diff` To See the Changes
 
 The last step is to run `git diff` to see the changes Rewrite has made. For this example, running `git diff` shows how, among other changes, Rewrite has removed unnecessary `@Autowired` annotations from injectable constructors \(which is now implicit in Spring Boot\) and swapped the `@RequestMapping` annotation for `@GetMapping`, closing a [CSRF security vulnerability](https://find-sec-bugs.github.io/bugs.htm#SPRING_ENDPOINT) \(!!\).
 
