@@ -19,4 +19,5 @@
 * [Visitors](v1beta/visitor.md)
 * [Recipes](v1beta/recipes.md)
 * [Styles](v1beta/styles.md)
+* [Environment](v1beta/environment.md)
 

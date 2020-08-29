@@ -53,7 +53,7 @@ By _declarative_, we mean that this visitor and recipe are defined using only co
 
 The first document, the visitor, is defined with type `specs.openrewrite.org/v1beta/visitor` and given the name `io.modernejunit.StaticJUnitAsserts`. Visitors may be composed of other visitors. For example, the custom visitor you've just created delegates to a building block visitor `org.openrewrite.java.UseStaticImport` that Rewrite provides out of the box. This sub-visitor has been told that any call to the receiver type `org.junit.Assert` whose method name begins with `assert` should be modified to use a static import.
 
-The recipe is defined in another YAML document with type `specs.openrewrite.org/v1beta/recipe`. It's given a name `com.yourorg.junit` that we will use to activate this recipe in our pom.xml. The recipe explicitly includes our new custom visitor.
+The recipe is defined in another YAML document with type `specs.openrewrite.org/v1beta/recipe`. It's given a name `io.moderne.junit` that we will use to activate this recipe in our pom.xml. The recipe explicitly includes our new custom visitor.
 
 {% hint style="info" %}
 It is generally recommended to group the visitors for a recipe under a common package prefix \(in this case `io.moderne.junit`\) so that they are uniquely identifiable. This also allows you to wildcard several visitors at the same time in a recipe definition. For example, the `include` block in the recipe could be writtten `io.moderne.junit.*` to include more than one visitor with the same package prefix.
@@ -79,11 +79,15 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
 </plugin>
 ```
 
-This maven plugin comes with a default set of recipes that can be activated at will. In this case, we're activating the `org.openrewrite.spring` and `org.openrewrite.mockito` recipes along with our custom `com.yourorg.junit` recipes.
+This maven plugin comes with a default set of recipes that can be activated at will. In this case, we're activating the `org.openrewrite.spring` and `org.openrewrite.mockito` recipes along with our custom `io.moderne.junit` recipes.
 
 ### Step 4: Run the Rewrite Plugin
 
 Now that everything is set up, we can run the Rewrite plugin by using`./mvnw rewrite:fix` to apply the recipes, which will make changes to the source code of the repository. In a real-world scenario, you'd review these changes and perform whatever checks you'd like and then commit them when you are comfortable that they are accurate. The set of recipes that are provided for you by Rewrite are intended to always produce 100% accurate fixes that don't require any manual intervention.
+
+{% hint style="info" %}
+Similar build tasks exist for Gradle as well. See [Rewrite Gradle Plugin](java/rewrite-gradle-plugin.md) for more about how to do  the same in a Gradle project.
+{% endhint %}
 
 #### What is happening when we run this?
 
