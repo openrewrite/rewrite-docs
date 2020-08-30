@@ -36,6 +36,7 @@
   * [ChangeLiteral](java/refactoring-java-source-code/changeliteral.md)
   * [ChangeMethodName](java/refactoring-java-source-code/changemethodname.md)
   * [ChangeType](java/refactoring-java-source-code/changetype.md)
+  * [DeleteMethodArgument](java/refactoring-java-source-code/deletemethodargument.md)
   * [RemoveImport](java/refactoring-java-source-code/removeimport.md)
   * [UnwrapParentheses](java/refactoring-java-source-code/unwrapparentheses.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
