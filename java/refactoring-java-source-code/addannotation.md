@@ -6,7 +6,7 @@ description: 'Add an annotation to a class, method, or variable.'
 
 ### Definition
 
-`AddAnnotation` builds and adds an annotation to a class, method declarations, or variable. This transformation visitor is meant to be used on specific classes, methods, or variables and so it doesn't have a declarative form. It's used in transformation pipelines inside other transformation visitors. 
+`AddAnnotation` builds and adds an annotation to a class, method declarations, or variable. This transformation visitor is meant to be used on specific classes, methods, or variables and so it doesn't have a declarative form. 
 
 ### Example
 

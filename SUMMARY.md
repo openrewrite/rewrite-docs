@@ -20,6 +20,7 @@
   * [HasType](java/semantic-search-for-java/hastype.md)
 * [Transforming Java Code](java/refactoring-java-source-code/README.md)
   * [AddAnnotation](java/refactoring-java-source-code/addannotation.md)
+  * [AddField](java/refactoring-java-source-code/addfield.md)
   * [ChangeType](java/refactoring-java-source-code/changetype.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
 
