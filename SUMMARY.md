@@ -21,6 +21,7 @@
 * [Transforming Java Code](java/refactoring-java-source-code/README.md)
   * [AddAnnotation](java/refactoring-java-source-code/addannotation.md)
   * [AddField](java/refactoring-java-source-code/addfield.md)
+  * [AddImport](java/refactoring-java-source-code/addimport.md)
   * [ChangeType](java/refactoring-java-source-code/changetype.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
 
