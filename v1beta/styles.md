@@ -1,6 +1,6 @@
 ---
 description: >-
-  Preserving the stylistic expectations of each project on ASTs generated from
+  Preserves the stylistic expectations of each project on ASTs generated from
   source files in that project.
 ---
 

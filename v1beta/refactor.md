@@ -1,7 +1,7 @@
 ---
 description: >-
-  Applying a series of visitors to a set of source files and either overwriting
-  the sources or generating a diff.
+  Applies a series of visitors to a set of source files and either overwrites
+  the sources or generates a diff.
 ---
 
 # Refactor

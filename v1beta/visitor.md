@@ -185,6 +185,12 @@ Not all required configuration for a visitor must be defined in a declarative vi
 
 Visitors can optionally provide validation logic using a fluent validation API built into Rewrite. This is useful to check that a visitor is pre-configured with any inputs that it needs to perform its work and perhaps skip it or eagerly fail if the required configuration is not present.
 
+### `@AutoConfigure` Visitors
+
+Marking a visitor class with the annotation `@AutoConfigure` signals that [Environment](environment.md) classpath-scanning should try to include the visitor in any [Recipe ](recipes.md)whose inclusion criteria matches the visitor's package name. When an `@AutoConfigure`-enabled visitor is included in a recipe and passes validation, it becomes part of the active set of visitors that are executed by a refactoring operation.
+
+Not every visitor is going to be auto-configurable. For example, [AddAnnotation](../java/refactoring-java-source-code/addannotation.md) is a building-block visitor designed to be applied to specific AST elements that meet some criteria, and isn't something we apply generally to a whole set of source files.
+
 ### Next Steps
 
 In [Recipes](recipes.md) we'll talk about how refactoring visitors can be grouped together to form recipes which encapsulate individual operations into a suite of transformations to accomplish a complete migration or fix.
