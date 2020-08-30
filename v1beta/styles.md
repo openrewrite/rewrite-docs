@@ -67,3 +67,7 @@ configure:
   </tbody>
 </table>
 
+### Next Steps
+
+In [Environment](environment.md), we'll see how these styles are activated and applied to the parsers that consume code. It will also show how to discover and activate recipes of visitors.
+

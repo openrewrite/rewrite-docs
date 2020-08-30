@@ -54,3 +54,7 @@ For example, suppose we add a whitespace-formatting Checkstyle and a code-genera
 
 In this way, individual visitors can support one another without requiring any explicit dependencies between them!
 
+### Next Steps
+
+In [Styles](styles.md), we'll show how to configure styles that are stored with the AST that make these refactoring operations produce changes that look idiomatically consistent with the surrounding project.
+

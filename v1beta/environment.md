@@ -37,8 +37,10 @@ description: >-
     </tr>
     <tr>
       <td style="text-align:left">Mass-refactoring microservice</td>
-      <td style="text-align:left">Adds visitors, recipes, and styles to an environment based on post body
-        inputs to the service.</td>
+      <td style="text-align:left">Adds visitors and recipes to an environment based on post body inputs
+        to the service. If the service is operating off of a data store of pre-published
+        ASTs, there is no need for any style configuration because the styles should
+        already be stored with the ASTs this service is designed to operate on.</td>
     </tr>
   </tbody>
 </table>
