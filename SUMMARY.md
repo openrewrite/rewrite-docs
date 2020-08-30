@@ -4,6 +4,14 @@
 * [Getting Started](quickstart.md)
 * [Abstract Syntax Trees](abstract-syntax-trees.md)
 
+## Concepts <a id="v1beta"></a>
+
+* [Visitors](v1beta/visitor.md)
+* [Recipes](v1beta/recipes.md)
+* [Refactor](v1beta/refactor.md)
+* [Styles](v1beta/styles.md)
+* [Environment](v1beta/environment.md)
+
 ## Java
 
 * [Rewrite Maven Plugin](java/rewrite-maven-plugin.md)
@@ -29,12 +37,6 @@
   * [ChangeMethodName](java/refactoring-java-source-code/changemethodname.md)
   * [ChangeType](java/refactoring-java-source-code/changetype.md)
   * [RemoveImport](java/refactoring-java-source-code/removeimport.md)
+  * [UnwrapParentheses](java/refactoring-java-source-code/unwrapparentheses.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
-
-## Concepts <a id="v1beta"></a>
-
-* [Visitors](v1beta/visitor.md)
-* [Recipes](v1beta/recipes.md)
-* [Styles](v1beta/styles.md)
-* [Environment](v1beta/environment.md)
 
