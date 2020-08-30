@@ -128,6 +128,35 @@ public class RemoveModifiers extends JavaRefactorVisitor {
 Rewrite AST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
 {% endhint %}
 
+### Refactor Visitor Pipelines
+
+Refactoring visitors can be chained together by calling `andThen(anotherVisitor)`. This is useful for building up pipelines of refactoring operations built up of lower-level components. For example, when [ChangeFieldType](../java/refactoring-java-source-code/changefieldtype.md) finds a matching field that it is going to transform, it chains together an [AddImport](../java/refactoring-java-source-code/addimport.md) visitor to add the new import if necessary, and a [RemoveImport](../java/refactoring-java-source-code/removeimport.md) to remove the old import if there are no longer any references to it.
+
+### Cursoring
+
+Visitors can be cursored or not. Cursored visitors maintain a stack of AST elements that have been traversed in the tree thus far. In exchange for the extra memory footprint, such visitors can operate based on the location of AST elements in the tree. Many refactoring operations don't require this state. Below is an example of a Java refactoring operation that makes each top-level class final. Since class declarations can be nested \(e.g. inner classes\), we use the cursor to determine if the class is top-level or not. Refactoring operations should also be given a fully-qualified name with a package representing the group of operations and a name signifying what it does.
+
+```java
+public class MakeClassesFinal extends JavaRefactorVisitor {
+    public MakeClassesFinal {
+        super("my.MakeClassesFinal");
+        setCursoringOn();
+    }
+
+    @Override
+    public J visitClassDecl(J.ClassDecl classDecl) {
+        J.ClassDecl c = refactor(classDecl, super::visitClassDecl);
+
+        // only make top-level classes final
+        if(getCursor().firstEnclosing(J.ClassDecl.class) == null) {
+            c = c.withModifiers("final");
+        }
+
+        return c;
+    }
+}
+```
+
 ### Declarative Refactoring Visitors
 
 The examples we have provided so far in this document have all involved writing Java code. Some refactoring visitors can be defined declaratively in a YML file. For example:
