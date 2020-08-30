@@ -9,7 +9,7 @@ description: Find class fields and variable declarations down scope.
 ```java
 J.CompilationUnit cu;
 
-FindField ff = new FindField("java.util.logging.Logger");
+FindFields ff = new FindFields("java.util.logging.Logger");
 List<J.VariableDecls> fields = ff.visit(cu);
 ```
 

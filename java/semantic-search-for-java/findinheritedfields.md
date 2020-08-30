@@ -1,5 +1,5 @@
 ---
-description: Find fields defined up the type hierarchy
+description: Find fields defined up the type hierarchy.
 ---
 
 # FindInheritedFields
@@ -9,7 +9,7 @@ description: Find fields defined up the type hierarchy
 ```java
 J.CompilationUnit cu;
 
-FindInheritedField fif = new FindInheritedField("java.util.logging.Logger");
+FindInheritedFields fif = new FindInheritedFields("java.util.logging.Logger");
 List<JavaType.Var> fields = fif.visit(cu);
 ```
 
