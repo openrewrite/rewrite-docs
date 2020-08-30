@@ -40,6 +40,7 @@
   * [DeleteStatement](java/refactoring-java-source-code/deletestatement.md)
   * [GenerateConstructorUsingFields](java/refactoring-java-source-code/generateconstructorusingfields.md)
   * [ImplementInterface](java/refactoring-java-source-code/implementinterface.md)
+  * [InsertMethodArgument](java/refactoring-java-source-code/insertmethodargument.md)
   * [RemoveImport](java/refactoring-java-source-code/removeimport.md)
   * [UnwrapParentheses](java/refactoring-java-source-code/unwrapparentheses.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)

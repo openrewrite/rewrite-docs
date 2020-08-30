@@ -12,8 +12,7 @@ description: Locate method invocations by their signature and delete an argument
 Iterable<J.CompilationUnit> cus;
 
 DeleteMethodArgument dma = new DeleteMethodArgument();
-dma.setMethod("ch.qos.logback.classic.Logger debug(org.slf4j.Marker," + 
- + "String,Object)");
+dma.setMethod("ch.qos.logback.classic.Logger debug(org.slf4j.Marker,..)");
 dma.setIndex(0);
 
 Collection<Change> changes = new Refactor().visit(dma).fix(cus);
