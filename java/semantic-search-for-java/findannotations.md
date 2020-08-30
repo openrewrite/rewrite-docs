@@ -13,7 +13,7 @@ FindAnnotations fa = new FindAnnotations("@java.lang.SuppressWarnings");
 List<J.Annotation> annotations = fa.visit(cu);
 ```
 
-`FindAnnotations` takes a single parameter, `signature`, which expresses using the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/adk15notebook/annotations-pointcuts-and-advice.html) to find matching annotations. The example above matches on the `@SuppressWarnings` annotation with no parameters. Suppose we have a `@Get` annotation:
+`FindAnnotations` takes a single parameter, `signature`, which is expressed using the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/adk15notebook/annotations-pointcuts-and-advice.html) to find matching annotations. The example above matches on the `@SuppressWarnings` annotation with no parameters. Suppose we have a `@Get` annotation:
 
 ```java
 package myhttp;

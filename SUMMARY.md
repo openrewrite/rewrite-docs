@@ -26,6 +26,7 @@
   * [ChangeFieldName](java/refactoring-java-source-code/changefieldname.md)
   * [ChangeFieldType](java/refactoring-java-source-code/changefieldtype.md)
   * [ChangeLiteral](java/refactoring-java-source-code/changeliteral.md)
+  * [ChangeMethodName](java/refactoring-java-source-code/changemethodname.md)
   * [ChangeType](java/refactoring-java-source-code/changetype.md)
   * [RemoveImport](java/refactoring-java-source-code/removeimport.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)

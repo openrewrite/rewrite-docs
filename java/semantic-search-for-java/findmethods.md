@@ -13,7 +13,7 @@ FindMethods fm = new FindMethods("java.util.Collections emptyList()");
 List<J.MethodInvocation> methods = fm.visit(cu);
 ```
 
-`FindMethods` takes a single parameter, `signature`, which expresses using the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/progguide/language-joinPoints.html) to find matching method invocations.
+`FindMethods` takes a single parameter, `signature`, which is expressed using the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/progguide/language-joinPoints.html) to find matching method invocations.
 
 {% hint style="info" %}
 Method invocations, represented by the AST element `J.MethodInvocation` are calls to a method. Method declarations are a distinct type `J.MethodDecl`. This search visitor only locates invocations.
