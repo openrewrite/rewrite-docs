@@ -24,6 +24,7 @@
   * [AddImport](java/refactoring-java-source-code/addimport.md)
   * [AutoFormat](java/refactoring-java-source-code/autoformat.md)
   * [ChangeFieldName](java/refactoring-java-source-code/changefieldname.md)
+  * [ChangeFieldType](java/refactoring-java-source-code/changefieldtype.md)
   * [ChangeType](java/refactoring-java-source-code/changetype.md)
   * [RemoveImport](java/refactoring-java-source-code/removeimport.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
