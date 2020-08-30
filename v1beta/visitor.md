@@ -128,6 +128,59 @@ public class RemoveModifiers extends JavaRefactorVisitor {
 Rewrite AST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
 {% endhint %}
 
+### Declarative Refactoring Visitors
+
+The examples we have provided so far in this document have all involved writing Java code. Some refactoring visitors can be defined declaratively in a YML file. For example:
+
+```text
+---
+type: specs.openrewrite.org/v1beta/visitor
+name: org.openrewrite.mockito.MockAsOuterClass
+visitors:
+  - org.openrewrite.java.ChangeType:
+      type: org.mockito.MockitoAnnotations.Mock
+      targetType: org.mockito.Mock
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Property</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">type</td>
+      <td style="text-align:left">specs.openrewrite.org.v1beta/visitor</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">name</td>
+      <td style="text-align:left">A namespaced unique visitor name you are giving to the visitor</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">visitors</td>
+      <td style="text-align:left">
+        <p>A list of visitors.</p>
+        <p></p>
+        <p>When an individual visitor has configuration properties, it is defined
+          as a map. The map has a single key which is the fully-qualified name of
+          another visitor (either the fully qualified class name of a visitor defined
+          in Java code or the fully qualified <code>name</code> of another declaratively
+          defined visitor). The map has a value that is itself a map of key-value
+          pairs that invoke setters on the visitor.</p>
+        <p></p>
+        <p>When an individual visitor has no configuration options, it&apos;s representation
+          in the <code>visitors</code> list is just a string value.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+{% hint style="success" %}
+Not all required configuration for a visitor must be defined in a declarative visitor. It is eventually ran by virtue of being included in a [Recipe](recipes.md), and the Recipe may define configuration for visitors that it includes.
+{% endhint %}
+
 ### Validation
 
 Visitors can optionally provide validation logic using a fluent validation API built into Rewrite. This is useful to check that a visitor is pre-configured with any inputs that it needs to perform its work and perhaps skip it or eagerly fail if the required configuration is not present.
