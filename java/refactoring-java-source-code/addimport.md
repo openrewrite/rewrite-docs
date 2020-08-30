@@ -20,7 +20,7 @@ This visitor is always used in other transformation visitors rather than being u
 * `maybeAddImport(JavaType)` - Makes it easy to get a type off of an AST element and suggest that an import may need to be added for it.
 
 {% hint style="info" %}
-The "maybe" refers to the fact that `AddImport` will check to ensure that there is actually an explicit type name reference to the import somewhere in the source file before adding an import \(so you aren't left with an unused import\). In this way, you don't need to keep track of this yourself.
+The "maybe" refers to the fact that `AddImport` will check to ensure that there is actually an explicit type name reference somewhere in the source file before adding an import \(so you aren't left with an unused import\). In this way, you don't need to keep track of this yourself.
 {% endhint %}
 
 
