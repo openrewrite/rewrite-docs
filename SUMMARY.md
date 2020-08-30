@@ -22,6 +22,7 @@
   * [AddAnnotation](java/refactoring-java-source-code/addannotation.md)
   * [AddField](java/refactoring-java-source-code/addfield.md)
   * [AddImport](java/refactoring-java-source-code/addimport.md)
+  * [AutoFormat](java/refactoring-java-source-code/autoformat.md)
   * [RemoveImport](java/refactoring-java-source-code/removeimport.md)
   * [ChangeType](java/refactoring-java-source-code/changetype.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
