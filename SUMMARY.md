@@ -41,7 +41,9 @@
   * [GenerateConstructorUsingFields](java/refactoring-java-source-code/generateconstructorusingfields.md)
   * [ImplementInterface](java/refactoring-java-source-code/implementinterface.md)
   * [InsertMethodArgument](java/refactoring-java-source-code/insertmethodargument.md)
+  * [OrderImports](java/refactoring-java-source-code/orderimports.md)
   * [RemoveImport](java/refactoring-java-source-code/removeimport.md)
+  * [ReorderMethodArguments](java/refactoring-java-source-code/reordermethodarguments.md)
   * [UnwrapParentheses](java/refactoring-java-source-code/unwrapparentheses.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
 

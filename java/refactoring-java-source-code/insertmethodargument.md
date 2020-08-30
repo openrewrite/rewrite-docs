@@ -14,7 +14,7 @@ description: >-
 Iterable<J.CompilationUnit> cus;
 
 InsertMethodArgument ima = new InsertMethodArgument();
-ima.setMethod("ch.qos.logback.classic.Logger debug(String,...)");
+ima.setMethod("ch.qos.logback.classic.Logger debug(String,..)");
 ima.setIndex(0);
 ima.setSource("new BasicMarker(\"marker\")");
 
@@ -29,7 +29,7 @@ type: specs.org.openrewrite.org/v1beta/visitor
 name: io.moderne.AlwaysUseMarker
 visitors:
   - org.openrewrite.java.InsertMethodArgument:
-    method: ch.qos.logback.classic.Logger debug(String,...)
+    method: ch.qos.logback.classic.Logger debug(String,..)
     index: 0
     source: 'new BasicMarker("marker")'
   - org.openrewrite.java.AddImport:
