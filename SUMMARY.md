@@ -15,6 +15,8 @@
   * [FindInheritedFields](java/semantic-search-for-java/findinheritedfields.md)
   * [FindMethods](java/semantic-search-for-java/findmethods.md)
   * [FindReferencedTypes](java/semantic-search-for-java/findreferencedtypes.md)
+  * [FindReferencesToVariable](java/semantic-search-for-java/findreferencestovariable.md)
+  * [FindType](java/semantic-search-for-java/findtype.md)
   * [HasType](java/semantic-search-for-java/hastype.md)
 * [Transforming Java Code](java/refactoring-java-source-code/README.md)
   * [ChangeType](java/refactoring-java-source-code/changetype.md)

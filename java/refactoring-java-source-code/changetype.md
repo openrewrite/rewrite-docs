@@ -1,15 +1,22 @@
+---
+description: 'Change all references to a type, adjusting imports as necessary.'
+---
+
 # ChangeType
 
 ### Definition
 
-* Fully qualified name: `org.openrewrite.java.ChangeType`
-* Included in module: `org.openrewrite:rewrite-java`
+`ChangeType` changes type references anywhere they occur \(variable declarations, generic parameters, return types, class extension/implementation, etc. It also corrects any import statements as necessary.
 
-### Description
+```java
+Iterable<J.CompilationUnit> cus;
 
-Change type changes type references anywhere they occur \(variable declarations, generic parameters, return types, class extension/implementation, etc. Also corrects any import statements as necessary.
+ChangeType ct = new ChangeType();
+ct.setType("java.util.List");
+ct.setTargetType("java.util.Collection");
 
-### Parameters
+Collection<Change> changes = new Refactor().visit(ct).fix(cus);
+```
 
 * `type` - The fully qualified type name that should be changed.
 * `targetType` - The fully qualified type name to change to.
@@ -21,7 +28,7 @@ The type name doesn't have to be fully qualified in the source code to match. Re
 ```text
 ---
 type: specs.org.openrewrite.org/v1beta/visitor
-name: NAMEME
+name: io.moderne.ListToCollection
 visitors:
   - org.openrewrite.java.ChangeType:
     type: java.util.List
@@ -35,7 +42,7 @@ Before:
 ```java
 import java.util.List;
 
-class A {
+class Sample {
   List<String> list;
 }
 ```
@@ -45,7 +52,7 @@ After:
 ```java
 import java.util.Collection;
 
-class A {
+class Sample {
   Collection<String> list;
 }
 ```
