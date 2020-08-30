@@ -17,7 +17,7 @@ Each of these items would be defined as a separate visitor. Together they accomp
 
 ### Declarative Recipes
 
-Recipes are defined declaratively in YML and read into an [Environment](environment.md).
+Recipes are defined declaratively in YML and read into an [Environment](environment.md). There isn't a direct corollary to declarative recipes in code. They are mainly a packaging convenience used to add sets of visitors to a [Refactor ](refactor.md)operation.
 
 ```text
 ---
@@ -29,19 +29,6 @@ include:
 exclude:
   - org.openrewrite.spring.ConstructorInjection
   - org.openrewrite.spring.ComponentToBeanConfiguration
-```
-
-### The Alternative to Recipes in Code
-
-You can also instantiate recipes directly in code if you are building a main method or other process to process code.
-
-```java
-// parsed from one or more language-specific Parsers.
-Iterable<SourceFile> sources = ...
-
-Iterable<RefactorVisitor<?>> visitors = ...
-
-
 ```
 
 ### Next Steps
