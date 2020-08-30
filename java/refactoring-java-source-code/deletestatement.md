@@ -28,7 +28,7 @@ description: Deletes a statement.
 * Synchronized blocks
 * Switch blocks and cases
 
-This transformation visitor is meant to be used on specific classes, methods, or variables and so it doesn't have a declarative form.
+This transformation visitor is meant to be used on specific statements and so it doesn't have a declarative form.
 
 ### Example
 
