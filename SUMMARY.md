@@ -52,5 +52,6 @@
 * [Parsing Maven POMs](maven/parsing-maven-poms.md)
 * [Semantic Search for Maven](maven/semantic-search-for-maven.md)
 * [Transforming Maven POMs](maven/transforming-maven-poms/README.md)
+  * [ChangePropertyValue](maven/transforming-maven-poms/changepropertyvalue.md)
   * [UpgradeDependencyVersion](maven/transforming-maven-poms/upgradedependencyversion.md)
 

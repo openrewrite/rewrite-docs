@@ -35,7 +35,7 @@ type: specs.org.openrewrite.org/v1beta/visitor
 name: io.moderne.UpgradeGuava
 visitors:
   - org.openrewrite.maven.UpgradeDependencyVersion:
-    groupId: com.google.guava:
+    groupId: com.google.guava
     artifactId: guava
     toVersion: 25-29
     metadataPattern: '-jre'
