@@ -56,4 +56,5 @@
   * [ChangeParentVersion](maven/transforming-maven-poms/changeparentversion.md)
   * [ChangePropertyValue](maven/transforming-maven-poms/changepropertyvalue.md)
   * [UpgradeDependencyVersion](maven/transforming-maven-poms/upgradedependencyversion.md)
+  * [UpgradeParentVersion](maven/transforming-maven-poms/upgradeparentversion.md)
 
