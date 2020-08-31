@@ -47,3 +47,8 @@
   * [UnwrapParentheses](java/refactoring-java-source-code/unwrapparentheses.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
 
+## Maven
+
+* [Parsing Maven POMs](maven/parsing-maven-poms.md)
+* [Semantic Search for Maven](maven/semantic-search-for-maven.md)
+

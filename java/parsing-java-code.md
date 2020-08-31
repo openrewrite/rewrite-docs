@@ -16,12 +16,12 @@ For Maven, define a compile scoped dependency on `rewrite-java` and a runtime sc
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-java</artifactId>
-  <version>4.3.0</version>
+  <version>5.0.0</version>
 </dependency>
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-java-11</artifactId>
-  <version>4.3.0</version>
+  <version>5.0.0</version>
   <scope>runtime</scope>
 </dependency>
 ```
@@ -29,8 +29,8 @@ For Maven, define a compile scoped dependency on `rewrite-java` and a runtime sc
 For Gradle, define an implementation dependency on `rewrite-java` and a runtime dependency on the appropriate language level parser for your code.
 
 ```groovy
-implementation("org.openrewrite:rewrite-java:4.3.0")
-runtimeOnly("org.openrewrite:rewrite-java-11:4.3.0")
+implementation("org.openrewrite:rewrite-java:5.0.0")
+runtimeOnly("org.openrewrite:rewrite-java-11:5.0.0")
 ```
 
 ### Constructing a Java Parser
@@ -178,7 +178,7 @@ val cu: J.CompilationUnit = jp.parse("""
     public class A {
         Object o = Collections.emptyList();
     }
-""")
+""")[0]
 ```
 
 Notice how this returns a single `J.CompilationUnit`, which can be immediately acted upon. At some point, [JEP-355](https://openjdk.java.net/jeps/355) will bring multi-line strings to Java as well, so beautiful unit tests for Rewrite operations will be possible to write in plain Java code.
