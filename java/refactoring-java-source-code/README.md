@@ -1,12 +1,12 @@
 ---
 description: >-
-  High-level abstractions are provided to perform common refactoring tasks on
-  Java source code.
+  High-level abstractions to perform common refactoring tasks on Java source
+  code.
 ---
 
 # Transforming Java Code
 
-The basic building blocks are included in the [refactor](https://github.com/openrewrite/rewrite/tree/master/rewrite-java/src/main/java/org/openrewrite/java/refactor) package, which are detailed in the subsequent pages, include:
+Rewrite provides a set of basic building blocks to transform Java code which can be composed into higher-level transformations. These are detailed in the subsequent pages and include:
 
 * Add annotation to a class, method, or variable.
 * Add a field to a class.
