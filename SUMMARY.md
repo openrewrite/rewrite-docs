@@ -58,3 +58,9 @@
   * [UpgradeDependencyVersion](maven/transforming-maven-poms/upgradedependencyversion.md)
   * [UpgradeParentVersion](maven/transforming-maven-poms/upgradeparentversion.md)
 
+## YAML
+
+* [Parsing YAML Documents](yaml/parsing-yaml-documents.md)
+* [Semantic Search for YAML](yaml/semantic-search-for-yaml.md)
+* [Transforming YAML Documents](yaml/transforming-yaml-documents.md)
+
