@@ -62,5 +62,6 @@
 
 * [Parsing YAML Documents](yaml/parsing-yaml-documents.md)
 * [Semantic Search for YAML](yaml/semantic-search-for-yaml.md)
-* [Transforming YAML Documents](yaml/transforming-yaml-documents.md)
+* [Transforming YAML Documents](yaml/transforming-yaml-documents/README.md)
+  * [CoalesceProperties](yaml/transforming-yaml-documents/coalesceproperties.md)
 
