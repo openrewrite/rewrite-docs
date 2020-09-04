@@ -32,7 +32,7 @@ The `Change` collection that is returned will only have results for source files
 | :--- | :--- |
 | `getOriginal()` | The original `SourceFile`, or null if the change represents a new file. |
 | `getFixed()` | The fixed `SourceFile`, or null if the change represents a file deletion. |
-| `getRulesThatMadeChanges()` | The visitor names changing this source. |
+| `getVisitorsThatMadeChanges()` | The visitor names changing this source. |
 | `diff()`/`diff(Path)` | A git-style diff \(with an optional path to relativize file paths in the output\) |
 
 Below is a snippet demonstrating how you can overwrite source files on disk with the changes made by a refactoring operation by using the `print()` method on the fixed AST.
