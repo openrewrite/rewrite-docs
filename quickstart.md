@@ -122,5 +122,5 @@ The last step is to run `git diff` to see the changes Rewrite has made. For this
 
 ### Next Steps
 
-In [Abstract Syntax Trees](abstract-syntax-trees.md), we'll provide a high-level overview of the data structure Rewrite uses to perform these kinds of transformations.
+In [Abstract Syntax Trees](v1beta/abstract-syntax-trees.md), we'll provide a high-level overview of the data structure Rewrite uses to perform these kinds of transformations.
 
