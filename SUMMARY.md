@@ -96,3 +96,8 @@
 * [Transforming YAML Documents](yaml/transforming-yaml-documents/README.md)
   * [CoalesceProperties](yaml/transforming-yaml-documents/coalesceproperties.md)
 
+## XML
+
+* [Parsing XML](xml/parsing-xml.md)
+* [Semantic Search for XML](xml/semantic-search-for-xml.md)
+
