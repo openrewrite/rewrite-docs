@@ -35,8 +35,7 @@ visitors:
   - org.openrewrite.maven.UpgradeParentVersion:
     groupId: org.springframework.boot
     artifactId: spring-boot-starter-parent
-    toVersion: 25-29
-    metadataPattern: '-jre'
+    toVersion: ~1.5
 ```
 
 ### Example
