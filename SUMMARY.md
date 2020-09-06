@@ -12,10 +12,13 @@
 * [Styles](v1beta/styles.md)
 * [Environment](v1beta/environment.md)
 
+## Configuring <a id="workflows"></a>
+
+* [Rewrite Maven Plugin](workflows/rewrite-maven-plugin.md)
+* [Rewrite Gradle Plugin](workflows/rewrite-gradle-plugin.md)
+
 ## Java
 
-* [Rewrite Maven Plugin](java/rewrite-maven-plugin.md)
-* [Rewrite Gradle Plugin](java/rewrite-gradle-plugin.md)
 * [Parsing Java Code](java/parsing-java-code.md)
 * [Semantic Search for Java](java/semantic-search-for-java/README.md)
   * [FindAnnotations](java/semantic-search-for-java/findannotations.md)
