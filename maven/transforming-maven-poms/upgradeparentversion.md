@@ -30,7 +30,7 @@ Collection<Change> changes = new Refactor().visit(upv).fix(poms);
 ```text
 ---
 type: specs.org.openrewrite.org/v1beta/visitor
-name: io.moderne.UpgradeGuava
+name: io.moderne.UpgradeSpringBoot
 visitors:
   - org.openrewrite.maven.UpgradeParentVersion:
     groupId: org.springframework.boot
