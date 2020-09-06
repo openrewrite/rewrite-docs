@@ -28,7 +28,7 @@ Collection<Change> changes = new Refactor().visit(cdv).fix(poms);
 ```text
 ---
 type: specs.org.openrewrite.org/v1beta/visitor
-name: io.moderne.UpdateJavaVersion
+name: io.moderne.ChangeJacksonVersion
 visitors:
   - org.openrewrite.maven.ChangeDependencyVersion:
     groupId: com.fasterxml.jackson.core

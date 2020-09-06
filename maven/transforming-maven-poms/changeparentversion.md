@@ -28,7 +28,7 @@ Collection<Change> changes = new Refactor().visit(cpv).fix(poms);
 ```text
 ---
 type: specs.org.openrewrite.org/v1beta/visitor
-name: io.moderne.UpdateJavaVersion
+name: io.moderne.ChangeSpringBootVersion
 visitors:
   - org.openrewrite.maven.ChangeParentVersion:
     groupId: org.springframework.boot
