@@ -40,7 +40,7 @@ visitors:
       method: org.junit.Assert assert*(..)
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: io.moderne.junit
+name: io.moderne.JUnit
 include:
   - io.moderne.junit.StaticJUnitAsserts
 ```
@@ -53,7 +53,7 @@ By _declarative_, we mean that this visitor and recipe are defined using only co
 
 The first document, the visitor, is defined with type `specs.openrewrite.org/v1beta/visitor` and given the name `io.modernejunit.StaticJUnitAsserts`. Visitors may be composed of other visitors. For example, the custom visitor you've just created delegates to a building block visitor `org.openrewrite.java.UseStaticImport` that Rewrite provides out of the box. This sub-visitor has been told that any call to the receiver type `org.junit.Assert` whose method name begins with `assert` should be modified to use a static import.
 
-The recipe is defined in another YAML document with type `specs.openrewrite.org/v1beta/recipe`. It's given a name `io.moderne.junit` that we will use to activate this recipe in our pom.xml. The recipe explicitly includes our new custom visitor.
+The recipe is defined in another YAML document with type `specs.openrewrite.org/v1beta/recipe`. It's given a name `io.moderne.JUnit` that we will use to activate this recipe in our pom.xml. The recipe explicitly includes our new custom visitor.
 
 {% hint style="info" %}
 It is generally recommended to group the visitors for a recipe under a common package prefix \(in this case `io.moderne.junit`\) so that they are uniquely identifiable. This also allows you to wildcard several visitors at the same time in a recipe definition. For example, the `include` block in the recipe could be writtten `io.moderne.junit.*` to include more than one visitor with the same package prefix.
@@ -70,15 +70,15 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
     <version>2.0.0</version>
     <configuration>
         <activeRecipes>
-            <recipe>io.moderne.junit</recipe>
-            <recipe>org.openrewrite.spring</recipe>
-            <recipe>org.openrewrite.mockito</recipe>
+            <recipe>io.moderne.JUnit</recipe>
+            <recipe>org.openrewrite.java.Spring</recipe>
+            <recipe>org.openrewrite.java.Mockito</recipe>
         </activeRecipes>
     </configuration>
 </plugin>
 ```
 
-This maven plugin comes with a default set of recipes that can be activated at will. In this case, we're activating the `org.openrewrite.spring` and `org.openrewrite.mockito` recipes along with our custom `io.moderne.junit` recipes.
+This maven plugin comes with a default set of recipes that can be activated at will. In this case, we're activating the `org.openrewrite.java.Spring` and `org.openrewrite.java.Mockito` recipes along with our custom `io.moderne.JUnit` recipes.
 
 ### Step 4: Run the Rewrite Plugin
 

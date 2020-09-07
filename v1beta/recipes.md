@@ -22,7 +22,7 @@ Recipes are defined declaratively in YML and read into an [Environment](environm
 ```text
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.spring
+name: org.openrewrite.Spring
 include:
   - 'org.openrewrite.spring.*'
 
