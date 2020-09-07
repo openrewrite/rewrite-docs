@@ -21,7 +21,11 @@ The Rewrite Maven plugin offers four goals:
 
 The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles. These aren't automatically enabled, but they become available to activate through [plugin configuration](rewrite-maven-plugin.md#plugin-configuration).
 
-To make pre-packaged Rewrite recipes available to the Maven plugin, add them as provided dependencies. For example:
+{% hint style="success" %}
+Because the plugin uses classpath scanning, dependencies of the project can include Rewrite recipes in their releases to help migrate users of their library from one version to another.
+{% endhint %}
+
+To make pre-packaged Rewrite recipes available to the Maven plugin, add them as `provided` dependencies. For example:
 
 ```markup
 <dependencies>
