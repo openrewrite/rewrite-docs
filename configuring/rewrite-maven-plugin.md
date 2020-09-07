@@ -17,6 +17,29 @@ The Rewrite Maven plugin offers four goals:
 * `mvn rewrite:diff` - Generates a git-style patch file that you can review independently and then apply with `git apply target/site/rewrite/rewrite.patch`.
 * `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite is finding on your classpath.
 
+### Classpath Scanning for Resources
+
+The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles. These aren't automatically enabled, but they become available to activate through [plugin configuration](rewrite-maven-plugin.md#plugin-configuration).
+
+To make pre-packaged Rewrite recipes available to the Maven plugin, add them as provided dependencies. For example:
+
+```markup
+<dependencies>
+  <dependency>
+    <groupId>org.openrewrite.plan</groupId>
+    <artifactId>rewrite-spring</artifactId>
+    <version>2.1.0</version>
+    <scope>provided</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.openrewrite.plan</groupId>
+    <artifactId>rewrite-checkstyle</artifactId>
+    <version>1.1.0</version>
+    <scope>provided</scope>
+  </dependency>
+</dependencies>
+```
+
 ### The "Fix" Goal
 
 Execute`mvn rewrite:fix` to run the configured recipes and apply the changes locally. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortalbe with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
