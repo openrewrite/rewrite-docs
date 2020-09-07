@@ -6,6 +6,10 @@ description: Applying Rewrite recipes to your code via a build tool plugin for M
 
 The quickest way to see value from pre-packaged Rewrite recipes is to incorporate the Rewrite Maven \(or [Gradle](rewrite-gradle-plugin.md)\) plugin to your build and run a Maven goal that transforms your code locally.
 
+{% hint style="success" %}
+The Rewrite Maven plugin automatically supplies any recipes you configure to run with all source files in the project that are transformable. It will supply Java visitors with Java files, XML visitors with XML files, etc.
+{% endhint %}
+
 The Rewrite Maven plugin offers four goals:
 
 * `mvn rewrite:fix` - Runs the configured recipes and applies the changes locally.
@@ -62,7 +66,6 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 
 * `activeRecipes` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
 * `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
-* `sourceTypes` - The Maven plugin will instantiate parsers for the source types defined in this list, and then run any matching source files in the project through these parsers with the set of visitors specified by active recipes. By default, the plugin will attempt to operate on all source types. You can speed up the execution of the plugin a bit by limiting this to just one or more source types you care about \(e.g. just Java and YML\).
 * `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
 
 ```markup

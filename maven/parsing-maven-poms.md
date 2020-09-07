@@ -2,7 +2,7 @@
 
 This guide covers how to use Rewrite to parse Maven POMs into a Rewrite Maven AST. This is useful when you want to build your own Java main method, microservice, or data pipeline to process Maven POM files to update dependencies, plugins, or anything else related to build files.
 
-You can then perform structured search or transformation on those build files. To apply Rewrite recipes affecting Maven POM files, refer instead to the guides on the [Maven](../workflows/rewrite-maven-plugin.md) or [Gradle ](../workflows/rewrite-gradle-plugin.md)plugins.
+You can then perform structured search or transformation on those build files. To apply Rewrite recipes affecting Maven POM files, refer instead to the guides on the [Maven](../configuring/rewrite-maven-plugin.md) or [Gradle ](../configuring/rewrite-gradle-plugin.md)plugins.
 
 ### Required Dependencies
 

@@ -12,10 +12,10 @@
 * [Styles](v1beta/styles.md)
 * [Environment](v1beta/environment.md)
 
-## Configuring <a id="workflows"></a>
+## Configuring
 
-* [Rewrite Maven Plugin](workflows/rewrite-maven-plugin.md)
-* [Rewrite Gradle Plugin](workflows/rewrite-gradle-plugin.md)
+* [Rewrite Maven Plugin](configuring/rewrite-maven-plugin.md)
+* [Rewrite Gradle Plugin](configuring/rewrite-gradle-plugin.md)
 
 ## Java
 
