@@ -57,12 +57,14 @@ try(InputStream rewriteInputStream = new FileInputStream(rewriteYml)) {
     System.getProperties()
   );
 
+  Iterable<Path> classpath = ...
+
   // any manually built visitors
   Iterable<? extends RefactorVisitor<?>> visitors = ...
 
   Environment env = Environment.builder()
     .load(rewriteYmlLoader) // can be called more than once for multiple files
-    .scanResources() // classpath scans for META-INF/rewrite/*.yml
+    .scanClasspath(classpath) // classpath scans for META-INF/rewrite/*.yml
     .scanUserHome() // looks for `~/.rewrite/rewrite.yml
     // classpath scans for all @AutoConfigure visitors in this package
     .scanVisitors("io.moderne")
