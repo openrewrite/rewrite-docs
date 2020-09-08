@@ -4,7 +4,7 @@ description: Sets a matching dependency to a fixed version.
 
 # ChangeDependencyVersion
 
-### Definition
+### Java Definition
 
 `ChangeDependencyVersion` changes a matching dependency to a fixed version that you specify.
 

@@ -1,25 +1,28 @@
+---
+description: How to use the CovariantEquals visitor
+---
+
 # CovariantEquals
 
-### Definition
+[CovariantEquals](https://checkstyle.sourceforge.io/config_coding.html#CovariantEquals) checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`.
 
- [CovariantEquals](https://checkstyle.sourceforge.io/config_coding.html#CovariantEquals) checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`.
+### Java Definition 
 
 ```java
+File checkstyleConfig = new File("checkstyle.xml");
 Iterable<J.CompilationUnit> cus;
 
-CovariantEquals ce = new CovariantEquals();
-ce.setType("java.util.logging.Logger");
-ce.setTargetType("org.slf4j.Logger");
+CovariantEquals check = new CovariantEquals();
+check.setConfigFile(checkstyleConfig);
 
-Collection<Change> changes = new Refactor().visit(ce).fix(cus);
+Collection<Change> changes = new Refactor().visit(check).fix(cus);
 ```
 
-* `type` - The fully qualified type name that should be changed.
-* `targetType` - The fully qualified type name to change to.
+{% hint style="success" %}
+The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
+{% endhint %}
 
-The type name doesn't have to be fully qualified in the source code to match. Rewrite looks at the type attributed to a particular identifier in the source code to see whether it represents the type that should change.
-
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---
@@ -27,13 +30,14 @@ type: specs.org.openrewrite.org/v1beta/visitor
 name: io.moderne.JultoSlf4j
 visitors:
   - org.openrewrite.checkstyles.CovariantEquals:
-    type: java.util.logging.Logger
-    targetType: org.slf4j.Logger
+    configFile: 'checkstyle.xml'
 ```
 
 ### Example
 
-Before:
+TODO: Jonathan. Test name =  replaceWithNonCovariantEquals
+
+#### Before:
 
 ```java
 class Test {
@@ -45,7 +49,7 @@ class Test {
 }
 ```
 
-After:
+#### After:
 
 ```java
 class Test {

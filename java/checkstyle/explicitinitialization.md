@@ -1,77 +1,89 @@
+---
+description: How to use the ExplicitInitialization visitor
+---
+
 # ExplicitInitialization
 
-### Definition
+[ExplicitInitialization](https://checkstyle.sourceforge.io/config_coding.html#ExplicitInitialization) checks if any class or object member is explicitly initialized to default for its type value \(`null` for object references, zero for numeric types and `char` and `false` for `boolean`\).
 
- [DefaultComesLast ](https://checkstyle.sourceforge.io/config_coding.html#DefaultComesLast)checks that the `default` is after all the cases in a `switch` statement.
+### Java Definition 
 
 ```java
+File checkstyleConfig = new File("checkstyle.xml");
 Iterable<J.CompilationUnit> cus;
 
-DefaultComesLast dcl = new DefaultComesLast();
-dcl.setType("java.util.logging.Logger");
-dcl.setTargetType("org.slf4j.Logger");
+ExplicitInitialization check = new ExplicitInitialization();
+check.setConfigFile(checkstyleConfig);
 
-Collection<Change> changes = new Refactor().visit(dcl).fix(cus);
+Collection<Change> changes = new Refactor().visit(check).fix(cus);
 ```
 
-* `type` - The fully qualified type name that should be changed.
-* `targetType` - The fully qualified type name to change to.
+{% hint style="success" %}
+The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
+{% endhint %}
 
-The type name doesn't have to be fully qualified in the source code to match. Rewrite looks at the type attributed to a particular identifier in the source code to see whether it represents the type that should change.
-
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---
 type: specs.org.openrewrite.org/v1beta/visitor
 name: io.moderne.JultoSlf4j
 visitors:
-  - org.openrewrite.checkstyles.CovariantEquals:
-    type: java.util.logging.Logger
-    targetType: org.slf4j.Logger
+  - org.openrewrite.checkstyles.ExplicitInitialization:
+    configFile: 'checkstyle.xml'
 ```
 
 ### Example
 
-Before:
+Rewrite simplifies those variable initializations that set the variable value equal to what is already the default value.
+
+#### Before:
 
 ```java
 class Test {
-    int n;
-    {
-        switch (n) {
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                System.out.println("default");
-                break;
-            case 3:
-                System.out.println("case3");
-        }
-    }
+    private int a = 0;
+    private long b = 0L;
+    private short c = 0;
+    private int d = 1;
+    private long e = 2L;
+    private int f;
+    private char g = '\0';
+
+    private boolean g = false;
+    private boolean h = true;
+
+    private Object i = new Object();
+    private Object j = null;
+
+    int k[] = null;
+    int l[] = new int[0];
+    
+    private final Long l = null;
 }
 ```
 
-After:
+#### After:
 
 ```java
 class Test {
-    int n;
-    {
-        switch (n) {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                System.out.println("case3");
-                break;
-            default:
-                System.out.println("default");
-        }
-    }
+    private int a;
+    private long b;
+    private short c;
+    private int d = 1;
+    private long e = 2L;
+    private int f;
+    private char g;
+
+    private boolean g;
+    private boolean h = true;
+
+    private Object i = new Object();
+    private Object j;
+
+    int k[];
+    int l[] = new int[0];
+    
+    private final Long l = null;
 }
 ```
 

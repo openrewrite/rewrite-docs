@@ -1,39 +1,43 @@
+---
+description: How to use the EmptyForInitializerPad visitor
+---
+
 # EmptyForInitializerPad
 
-### Definition
+[EmptyForInitializerPad ](https://checkstyle.sourceforge.io/config_whitespace.html#EmptyForInitializerPad)checks the padding of an empty for initializer; that is whether a white space is required at an empty for initializer, or such white space is forbidden.
 
-[EmptyForInitializerPad](https://checkstyle.sourceforge.io/config_whitespace.html#EmptyForInitializerPad) checks the padding of an empty for initializer; that is whether a white space is required at an empty for initializer, or such white space is forbidden.
+### Java Definition 
 
 ```java
+File checkstyleConfig = new File("checkstyle.xml");
 Iterable<J.CompilationUnit> cus;
 
-EmptyForInitializerPad efip = new EmptyForInitializerPad();
-efip.setType("java.util.logging.Logger");
-efip.setTargetType("org.slf4j.Logger");
+EmptyForInitializerPad check = new EmptyForInitializerPad();
+check.setConfigFile(checkstyleConfig);
 
-Collection<Change> changes = new Refactor().visit(efip).fix(cus);
+Collection<Change> changes = new Refactor().visit(check).fix(cus);
 ```
 
-* `type` - The fully qualified type name that should be changed.
-* `targetType` - The fully qualified type name to change to.
+{% hint style="success" %}
+The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
+{% endhint %}
 
-The type name doesn't have to be fully qualified in the source code to match. Rewrite looks at the type attributed to a particular identifier in the source code to see whether it represents the type that should change.
-
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---
 type: specs.org.openrewrite.org/v1beta/visitor
 name: io.moderne.JultoSlf4j
 visitors:
-  - org.openrewrite.checkstyles.CovariantEquals:
-    type: java.util.logging.Logger
-    targetType: org.slf4j.Logger
+  - org.openrewrite.checkstyles.EmptyForInitializerPad:
+    configFile: 'checkstyle.xml'
 ```
 
 ### Example
 
-Before:
+If there is an empty initializer within a for loop, Rewrite will make sure to insert or remove padding where the initializer would typically be found according to styling specifications. In this case, Rewrite inserts padding.
+
+#### Before:
 
 ```java
 public class A {
@@ -43,7 +47,7 @@ public class A {
 }
 ```
 
-After:
+#### After:
 
 ```java
 public class A {

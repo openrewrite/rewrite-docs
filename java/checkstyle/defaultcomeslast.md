@@ -1,8 +1,12 @@
+---
+description: How to use the DefaultComesLast visitor
+---
+
 # DefaultComesLast
 
-### Definition
+ [DefaultComesLast](https://checkstyle.sourceforge.io/config_coding.html#DefaultComesLast) checks that the `default` is after all the cases in a `switch` statement.
 
- [DefaultComesLast ](https://checkstyle.sourceforge.io/config_coding.html#DefaultComesLast)checks that the `default` is after all the cases in a `switch` statement.
+### Java Definition 
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -14,26 +18,26 @@ check.setConfigFile(checkstyleConfig);
 Collection<Change> changes = new Refactor().visit(check).fix(cus);
 ```
 
-* `type` - The fully qualified type name that should be changed.
-* `targetType` - The fully qualified type name to change to.
+{% hint style="success" %}
+The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
+{% endhint %}
 
-The type name doesn't have to be fully qualified in the source code to match. Rewrite looks at the type attributed to a particular identifier in the source code to see whether it represents the type that should change.
-
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---
 type: specs.org.openrewrite.org/v1beta/visitor
 name: io.moderne.JultoSlf4j
 visitors:
-  - org.openrewrite.checkstyles.CovariantEquals:
-    type: java.util.logging.Logger
-    targetType: org.slf4j.Logger
+  - org.openrewrite.checkstyles.DefaultComesLast:
+    configFile: 'checkstyle.xml'
 ```
 
 ### Example
 
-Before:
+If a switch statement contains a misplaced default case, Rewrite will move it to the end of that switch statement and insert or remove any break statements as necessary.
+
+#### Before:
 
 ```java
 class Test {
@@ -54,7 +58,7 @@ class Test {
 }
 ```
 
-After:
+#### After:
 
 ```java
 class Test {

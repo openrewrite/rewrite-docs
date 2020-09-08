@@ -1,76 +1,62 @@
+---
+description: How to use the FinalClass visitor
+---
+
 # FinalClass
 
-### Definition
+[FinalClass](https://checkstyle.sourceforge.io/config_design.html#FinalClass) checks that a class which has only private constructors is declared as final.
 
- [DefaultComesLast ](https://checkstyle.sourceforge.io/config_coding.html#DefaultComesLast)checks that the `default` is after all the cases in a `switch` statement.
+### Java Definition 
 
 ```java
+File checkstyleConfig = new File("checkstyle.xml");
 Iterable<J.CompilationUnit> cus;
 
-DefaultComesLast dcl = new DefaultComesLast();
-dcl.setType("java.util.logging.Logger");
-dcl.setTargetType("org.slf4j.Logger");
+FinalClass check = new FinalClass();
+check.setConfigFile(checkstyleConfig);
 
-Collection<Change> changes = new Refactor().visit(dcl).fix(cus);
+Collection<Change> changes = new Refactor().visit(check).fix(cus);
 ```
 
-* `type` - The fully qualified type name that should be changed.
-* `targetType` - The fully qualified type name to change to.
+{% hint style="success" %}
+The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
+{% endhint %}
 
-The type name doesn't have to be fully qualified in the source code to match. Rewrite looks at the type attributed to a particular identifier in the source code to see whether it represents the type that should change.
-
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---
 type: specs.org.openrewrite.org/v1beta/visitor
 name: io.moderne.JultoSlf4j
 visitors:
-  - org.openrewrite.checkstyles.CovariantEquals:
-    type: java.util.logging.Logger
-    targetType: org.slf4j.Logger
+  - org.openrewrite.checkstyles.FinalClass:
+    configFile: 'checkstyle.xml'
 ```
 
 ### Example
 
-Before:
+Rewrite ensures that when a class contains only private constructors that class is declared as a final class.
+
+#### Before:
 
 ```java
-class Test {
-    int n;
-    {
-        switch (n) {
-            case 1:
-                break;
-            case 2:
-                break;
-            default:
-                System.out.println("default");
-                break;
-            case 3:
-                System.out.println("case3");
-        }
+public class A {
+    private A(String s) {
+    }
+
+    private A() {
     }
 }
 ```
 
-After:
+#### After:
 
 ```java
-class Test {
-    int n;
-    {
-        switch (n) {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                System.out.println("case3");
-                break;
-            default:
-                System.out.println("default");
-        }
+public final class A {
+    private A(String s) {
+    }
+
+    private A() {
     }
 }
 ```

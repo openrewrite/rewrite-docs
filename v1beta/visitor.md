@@ -159,7 +159,7 @@ public class MakeClassesFinal extends JavaRefactorVisitor {
 
 ### Declarative Refactoring Visitors
 
-The examples we have provided so far in this document have all involved writing Java code. Some refactoring visitors can be defined declaratively in a YML file. For example:
+The examples we have provided so far in this document have all involved writing Java code. Some refactoring visitors can be defined declaratively in a YAML file. For example:
 
 ```text
 ---
