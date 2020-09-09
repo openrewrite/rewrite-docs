@@ -15,12 +15,13 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 
 ### Applying to Maven Projects
 
-Place the following configuration in the root pom.xml of a repository.
+Place the following configuration in the root `pom.xml` of a repository.
 
 ```markup
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
   <dependencies>
     <dependency>
       <groupId>org.openrewrite.plan</groupId>
@@ -58,4 +59,15 @@ Place the following configuration in the root pom.xml of a repository.
 ```
 
 
+
+```text
+---
+type: specs.org.openrewrite.org/v1beta/recipe
+name: java.Checkstyle 
+visitors:
+  - 'org.openrewrite.checkstyle.*'
+configure:
+  org.openrewrite.checkstyle.*
+    congFile: ${maven.multiModuleProjectDirectory}/checkstyle.xml
+```
 
