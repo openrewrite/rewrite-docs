@@ -4,7 +4,7 @@ This guide covers how to use Rewrite to parse YAML documents into a Rewrite YAML
 
 You can then perform structured search or transformation on those documents.
 
-### Required Dependencies
+## Required Dependencies
 
 For Maven, define a compile scoped dependency on `rewrite-yaml`.
 
@@ -22,7 +22,7 @@ For Gradle, define an implementation dependency on `rewrite-yaml`.
 implementation("org.openrewrite:rewrite-yaml:5.1.0")
 ```
 
-### Constructing a YAML Parser
+## Constructing a YAML Parser
 
 To build a Rewrite AST for YAML documents, construct a `YamlParser` as shown below. We will discuss each of the options in detail. The YAML parser does not have any options at this time.
 
@@ -30,7 +30,7 @@ To build a Rewrite AST for YAML documents, construct a `YamlParser` as shown bel
 YamlParser parser = new YamlParser();
 ```
 
-### Parsing Source Files
+## Parsing Source Files
 
 Now that we have a `YamlParser` instance, we can parse all YAML files in a project with one of the `parse` methods which return one or more `Yaml.Documents` instances. `Yaml.Documents` is the top-level AST element and is the basic building block upon which we'll build refactoring and search operations.
 
@@ -43,7 +43,7 @@ Now that we have a `YamlParser` instance, we can parse all YAML files in a proje
 * `YamlParser#parse(String...)` - This is commonly used in unit testing YAML searches and transformations, allowing us to inline test YAML directly in our test.
 * `YamlParser#parseInputs(Iterable<org.openrewrite.Input> inputs, Path)`. Construct an `Input` with a `Path` \(which needn't exist on disk\) and a `Supplier<InputStream>` that can be repeatedly called to read YAML files. The second argument again relativizes the paths of each input. This method is really useful when you are retrieving YAML from a database, streaming over an API call, or any other mechanism where the source doesn't reside on disk. It allows you to avoid having to write the YAML to disk at all.
 
-#### Parsing in unit tests
+### Parsing in unit tests
 
 For JVM languages like Kotlin that support multi-line strings, the varargs string method can be especially convenient:
 
@@ -61,7 +61,7 @@ val yaml: Yaml.Documents = yp.parse("""
 
 Notice how this returns a single `Yaml.Documents`, which can be immediately acted upon. At some point, [JEP-355](https://openjdk.java.net/jeps/355) will bring multi-line strings to Java as well, so beautiful unit tests for Rewrite operations will be possible to write in plain Java code.
 
-### Next Steps
+## Next Steps
 
 Now that we have a series of ASTs to work with we can start building [semantic searches](semantic-search-for-yaml.md) across a set of YAML documents.
 

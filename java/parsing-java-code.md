@@ -8,7 +8,7 @@ description: >-
 
 This guide covers how to use Rewrite to parse Java code. This is useful when you want to build your own Java main method, microservice, or data pipeline to process Java source code and perform structured search or transformation on that source code. To apply Rewrite recipes for common Java framework migrations and other fixes, refer instead to the guides on the [Maven](../configuring/rewrite-maven-plugin.md) or [Gradle ](../configuring/rewrite-gradle-plugin.md)plugins.
 
-### Required Dependencies
+## Required Dependencies
 
 For Maven, define a compile scoped dependency on `rewrite-java` and a runtime scoped dependency on `rewrite-java-11` \(or `rewrite-java-8` if your code is at that language level\).
 
@@ -33,7 +33,7 @@ implementation("org.openrewrite:rewrite-java:5.1.0")
 runtimeOnly("org.openrewrite:rewrite-java-11:5.1.0")
 ```
 
-### Constructing a Java Parser
+## Constructing a Java Parser
 
 To build a Rewrite AST for Java source code, construct a `JavaParser` as shown below. We will discuss each of the options in detail.
 
@@ -45,7 +45,7 @@ JavaParser parser = JavaParser.fromJavaVersion()
     .build();
 ```
 
-#### Classpath
+### Classpath
 
 Providing a classpath is optional, because type-attribution is a _best effort_ for each element. Examples of different-levels of type-attribution:
 
@@ -63,11 +63,11 @@ JavaParser parser = JavaParser.fromJavaVersion()
 
 This utility takes the "artifact name" of the dependency to look for. The artifact name is the artifact portion of `group:artifact:version` coordinates. For example, for Google's Guava \(`com.google.guava:guava:VERSION`\), the artifact name is `guava`.
 
-#### Styles
+### Styles
 
 [Styles](../v1beta/styles.md) are how Rewrite keeps track of the stylistic expectations of a source repository, things like whitespace and indentation, in order to generate transformations that look consistent with surrounding code. All Java styles implement the `org.openrewrite.java.JavaStyle` interface. Currently, Rewrite supports import layout and tab/indent styles for Java source.
 
-#### Import layout \(style\)
+### Import layout \(style\)
 
 Import layouts define the order of imports as well as how to do star folding of multiple imports from the same package. Many Java transformations rely on this style to correctly add and remove imports. For example, suppose we have the following code for a class and that the project it lives has a convention to fold three or more imports into a star import.
 
@@ -137,7 +137,7 @@ JavaParser parser = JavaParser.fromJavaVersion()
     .build();
 ```
 
-#### Tabs and indents \(style\)
+### Tabs and indents \(style\)
 
 Tabs and indents cover many of the options in the tabs and indents configuration of IDE's like IntelliJ IDEA.
 
@@ -158,7 +158,7 @@ configure:
     continuationIndent: 8
 ```
 
-### Parsing Source Files
+## Parsing Source Files
 
 Now that we have a `JavaParser` instance, we can parse all the source files in a project with one of the `parse` methods which return one or more `J.Compilation` unit instances. `J.CompilationUnit` is the top-level AST element for Java source files which contains information about the package, imports, and any class/enum/interface definitions contained in the source file. `J.CompilationUnit` is the basic building block upon which we'll build refactoring and search operations for Java source code.
 
@@ -167,7 +167,7 @@ Now that we have a `JavaParser` instance, we can parse all the source files in a
 * `JavaParser#parse(String...)` - This is commonly used in unit testing Java searches and transformations, allowing us to inline the source code directly in our test.
 * `JavaParser#parseInputs(Iterable<org.openrewrite.Input> inputs, Path)`. Construct an `Input` with a `Path` \(which needn't exist on disk\) and a `Supplier<InputStream>` that can be repeatedly called to read the source file contents. The second argument again relativizes the paths of each input. This method is really useful when you are retrieving Java sources from a database, streaming over an API call, or any other mechanism where the source doesn't reside on disk. It allows you to avoid having to write the sources to disk at all.
 
-#### Parsing in unit tests
+### Parsing in unit tests
 
 For JVM languages like Kotlin that support multi-line strings, the varargs string method can be especially convenient:
 
@@ -190,7 +190,7 @@ val jp = JavaParser
     .fromJavaVersion()
     .classpath(JavaParser.dependenciesFromClasspath("guava"))
     .build()
-    
+
 val cu: J.CompilationUnit = jp.parse("""
         import com.google.common.io.Files;
         public class A {
@@ -199,7 +199,7 @@ val cu: J.CompilationUnit = jp.parse("""
     """)
 ```
 
-### Next Steps
+## Next Steps
 
 Now that we have a series of ASTs to work with we can start building [semantic searches](semantic-search-for-java/) across a set of Java source files.
 
