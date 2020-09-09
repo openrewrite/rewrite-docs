@@ -12,3 +12,5 @@ The [rewrite-spring](https://github.com/openrewrite/rewrite-spring/) module prov
 
 Mockito migration may look out of place in this list as Mockito isn't related to Spring. Spring boot packages Mockito for testing, and between Spring 1 and 2 it went from using Mockito 1 to Mockito 3. Most Spring boot 1 to 2 migrations will involve upgrading Mockito. It is possible to apply the mockito recipes to non-Spring projects to facilitate Mockito migrations unrelated to Spring Boot. 
 
+This functionality is being actively developed.
+If you are aware of something we've missed or find a bug, [file an issue](https://github.com/openrewrite/rewrite-spring/issues) and let us know.

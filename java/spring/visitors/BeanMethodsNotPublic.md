@@ -7,7 +7,7 @@ There is no required or optional configuration for this visitor.
 ### Java Definition
 
 ```java
-String javaSourceCodeToBeRefactored = ...; // Assume this is filled in with a pertinent Java source
+String javaSourceCodeToBeRefactored = ...; // Assume this is filled with Java source code
 
 JavaParser jp = JavaParser.fromJavaVersion()
     .classpath("spring-beans") // So that the definition of @Bean is known
@@ -16,16 +16,19 @@ JavaParser jp = JavaParser.fromJavaVersion()
 Collection<Change> changes = new Refactor()
     .visit(new BeanMethodsNotPublic())
     .fix(jp.parse(javaSourceCodeToBeRefactored))
+
+String refactoredJavaSource = changes.get(0).getFixed().print();
 ```
 
 ### YAML Definition
 
-This visitor is included in the recipe `org.openrewrite.java.Spring`. If you'd prefer to include it in a custom recipe you define called `com.yourorg.MyCustomSpringRecipe`, here's how:
+The `org.openrewrite.java.Spring` recipe includes this visitor. 
+Here is how to include this visitor in a custom recipe you define called `com.yourorg.MyCustomRecipe`:
 
 ```yaml
 ---
 type: specs.org.openrewrite.org/v1beta/recipe
-name: com.yourorg.MyCustomSpringRecipe 
+name: com.yourorg.MyCustomRecipe 
 visitors:
   - org.openrewrite.spring.BeanMethodsNotPublic
 ```
