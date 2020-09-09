@@ -9,6 +9,57 @@ Every Checkstyle visitor has the same set of configuration options. Either `conf
 * `properties` - A map of string keys and object values that can be evaluated in the Checkstyle configuration file with syntax like `${my.prop}`.
 * `suppressions` - A `com.puppycrawl.tools.checkstyle.api.FilterSet` instance that can be used to suppress one or more checks \(including this one\).
 
+### Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin.md)
+
+To apply these recipes and visitors in the Maven plugin, add a `provided` scope dependency on `rewrite-checkstyle`, define a recipe pointing at your `checkstyle.xml`, and activate it.
+
+#### Adding a dependency and activating a custom recipe
+
+```markup
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <dependencies>
+    <dependency>
+      <groupId>org.openrewrite.plan</groupId>
+      <artifactId>rewrite-checkstyle</artifactId>
+      <version>1.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.openrewrite.maven</groupId>
+          <artifactId>rewrite-maven-plugin</artifactId>
+          <version>2.0.0-SNAPSHOT</version>
+          <configuration>
+            <activeRecipes>
+              <recipe>java.Checkstyle</recipe>
+            </activeRecipes>
+            <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+  </dependencies>
+```
+
+#### Creating a Checkstyle recipe pointing at your checkstyle.xml
+
+The above configuration assumes you create a recipe at the project root directory in `rewrite.yml` and that your `checkstyle.xml` is defined in the project root directory.
+
+```text
+---
+type: specs.org.openrewrite.org/v1beta/recipe
+name: java.Checkstyle 
+visitors:
+  - 'org.openrewrite.checkstyle.*'
+configure:
+  org.openrewrite.checkstyle.*
+    congFile: ${maven.multiModuleProjectDirectory}/checkstyle.xml
+```
+
 ### Example Checkstyle Configuration File
 
 Below is a complete example of a Checkstyle configuration file that configures only this recipe.
