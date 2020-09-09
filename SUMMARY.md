@@ -93,6 +93,7 @@
   * [TypecastParenPad](java/checkstyle/typecastparenpad.md)
   * [UnnecessaryParentheses](java/checkstyle/unnecessaryparentheses.md)
 * [Mockito](java/mockito/README.md)
+  * [InvocationOnMockGetArgument](java/mockito/invocationonmockgetargument.md)
   * [MockAsOuterClass](java/mockito/mockasouterclass.md)
   * [MockUtilsToStatic](java/mockito/mockutilstostatic.md)
 
