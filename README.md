@@ -1,7 +1,3 @@
----
-description: What is this project?
----
-
 # Overview
 
 ### Semantic Code Search and Transformation
