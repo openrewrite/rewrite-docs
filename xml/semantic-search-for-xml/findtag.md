@@ -1,3 +1,7 @@
+---
+description: Find the first matching tag on an XML document by XPath
+---
+
 # FindTag
 
 ### Definition
