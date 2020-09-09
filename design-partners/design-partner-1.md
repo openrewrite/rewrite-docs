@@ -13,10 +13,13 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 |         [Mockito 1.x-3.x](../java/mockito/) | ⬤ |
 |         `@Value` to `@ConfigurationProperties` | ◑ |
 |         Spring Data migration to `Optional` | ◯ |
-| Spring Best Practices | ⬤ |
+| Spring Best Practices | ◑ |
 |         [Remove implicit web annotations](../java/spring/best-practices/implicitwebannotationnames.md) | ⬤ |
 |         [`@RequestMapping` Cross-Site Request Forgery Vulnerability](../java/spring/best-practices/norequestmappingannotation.md) | ⬤ |
 |         [Remove @Autowired on constructors](../java/spring/best-practices/noautowired.md) | ⬤ |
+|         [Bean methods don't need to be public](../java/spring/best-practices/beanmethodsnotpublic.md) | ⬤ |
+|         [Constructor injection](../java/spring/best-practices/constructorinjection.md) \(still needs updating of call sites\) | ◑ |
+|         `@Component` to `@Bean` | ◑ |
 | Maven Dependency Management | ⬤ |
 |         [UpgradeDependencyVersion](../maven/transforming-maven-poms/upgradedependencyversion.md) | ⬤ |
 |         [UpgradeParentVersion](../maven/transforming-maven-poms/upgradeparentversion.md) | ⬤ |
