@@ -51,6 +51,7 @@
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
 * [Spring](java/spring/README.md)
   * [Spring Boot 2 Migration](java/spring/spring-boot-2-migration/README.md)
+    * [SpringBootConfiguration\*](java/spring/spring-boot-2-migration/springbootconfiguration.md)
     * [ConditionalOnBeanAnyNestedCondition](java/spring/spring-boot-2-migration/conditionalonbeananynestedcondition.md)
     * [RestTemplateBuilderRequestFactory](java/spring/spring-boot-2-migration/resttemplatebuilderrequestfactory.md)
   * [Best Practices](java/spring/best-practices/README.md)
