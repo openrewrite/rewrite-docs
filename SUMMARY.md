@@ -50,6 +50,7 @@
   * [UnwrapParentheses](java/refactoring-java-source-code/unwrapparentheses.md)
   * [UseStaticImport](java/refactoring-java-source-code/usestaticimport.md)
 * [Spring](java/spring.md)
+* [BeanMethodsNotPublic](java/beanmethodsnotpublic.md)
 * [Checkstyle](java/checkstyle/README.md)
   * [CovariantEquals](java/checkstyle/covariantequals.md)
   * [DefaultComesLast](java/checkstyle/defaultcomeslast.md)
