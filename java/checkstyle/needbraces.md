@@ -35,16 +35,20 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite ensures that there are curly braces around code blocks.
 
 #### Before:
 
 ```java
 public class A {
-    {
-        int i = 0;
-        switch(i) {
-        }
+    int n;
+    void foo() {
+        while (true);
+        if (n == 1) return;
+        else return;
+        while (true) return;
+        do this.notify(); while (true);
+        for (int i = 0; ; ) this.notify();
     }
 }
 ```
@@ -53,8 +57,25 @@ public class A {
 
 ```java
 public class A {
-    {
-        int i = 0;
+    int n;
+    void foo() {
+        while (true) {
+        }
+        if (n == 1) {
+            return;
+        }
+        else {
+            return;
+        }
+        while (true) {
+            return;
+        }
+        do {
+            this.notify();
+        } while (true);
+        for (int i = 0; ; ) {
+            this.notify();
+        }
     }
 }
 ```

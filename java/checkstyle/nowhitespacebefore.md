@@ -35,27 +35,76 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite inserts or removes whitespace before a token according to styling specifications.
 
 #### Before:
 
 ```java
-public class A {
+package a ;
+import java.util.* ;
+import java.util.function.*;
+
+public class C {
+    int m;
+}
+
+abstract class A {
     {
-        int i = 0;
-        switch(i) {
-        }
+        int b = 0 ;
+        int n , o = 0 ;
+        n ++ ;
+        n -- ;
+        new C() 
+            .m = 2 ;
+        foo(1 , 2) .foo(3 , 4);
+        List <String > generic = new ArrayList < >() ;
+        Supplier<Function<String, String > > a = Function ::identity ;
+        for(int i = 0 , j = 0 ; i < 2 ; i++ , j++) ;
+        while(true) ;
+        do { } while(true) ;
+        for(String s : generic) ;
     }
+    
+    abstract A foo(int n , int m, int ... others) ;
+}
+
+interface B {
+    void foo() ;
 }
 ```
 
 #### After:
 
 ```java
-public class A {
+package a;
+import java.util.*;
+import java.util.function.*;
+
+public class C {
+    int m;
+}
+
+abstract class A {
     {
-        int i = 0;
+        int b = 0;
+        int n, o = 0;
+        n++;
+        n--;
+        new C().m = 2;
+        foo(1, 2).foo(3, 4);
+        List<String> generic = new ArrayList<>();
+        Supplier<Function<String, String>> a = Function::identity;
+        for(int i = 0, j = 0; i < 2; i++, j++);
+        while(true);
+        do { } while(true);
+        for(String s : generic);
     }
+    
+    abstract A foo(int n, int m, int... others);
+}
+
+interface B {
+    void foo();
 }
 ```
 

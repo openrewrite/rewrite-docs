@@ -35,27 +35,47 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Following styling specifications, Rewrite removes the padding found between the parameter list and a method or constructor definition, or between the parameter list and a constructor invocation or method call.
 
 #### Before:
 
 ```java
-public class A {
-    {
-        int i = 0;
-        switch(i) {
-        }
+public class A extends B {
+    A () {
+        super ();
     }
+
+    void foo (int n) {
+        A a = new A ();
+        foo (0);
+    }
+}
+
+class B {}
+
+enum E {
+    E1 ()
 }
 ```
 
 #### After:
 
 ```java
-public class A {
-    {
-        int i = 0;
+public class A extends B {
+    A() {
+        super();
     }
+
+    void foo(int n) {
+        A a = new A();
+        foo(0);
+    }
+}
+
+class B {}
+
+enum E {
+    E1()
 }
 ```
 

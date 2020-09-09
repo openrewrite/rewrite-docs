@@ -35,16 +35,15 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite inserts or removes padding within typecasting parentheses according to the styling specifications.
 
 #### Before:
 
 ```java
 public class A {
-    {
-        int i = 0;
-        switch(i) {
-        }
+    { 
+        long m = 0L;
+        int n = ( int ) m;
     }
 }
 ```
@@ -53,8 +52,9 @@ public class A {
 
 ```java
 public class A {
-    {
-        int i = 0;
+    { 
+        long m = 0L;
+        int n = (int) m;
     }
 }
 ```

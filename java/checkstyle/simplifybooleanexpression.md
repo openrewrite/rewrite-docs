@@ -35,16 +35,22 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite simplifies boolean expressions where possible.
 
 #### Before:
 
 ```java
 public class A {
     {
-        int i = 0;
-        switch(i) {
-        }
+        boolean a = !false;
+        boolean b = (a == true);
+        boolean c = b || true;
+        boolean d = c || c;
+        boolean e = d && d;
+        boolean f = (e == true) || e;
+        boolean g = f && false;
+        boolean h = !!g;
+        boolean i = (a != false);
     }
 }
 ```
@@ -54,7 +60,15 @@ public class A {
 ```java
 public class A {
     {
-        int i = 0;
+        boolean a = true;
+        boolean b = a;
+        boolean c = true;
+        boolean d = c;
+        boolean e = d;
+        boolean f = e;
+        boolean g = false;
+        boolean h = g;
+        boolean i = a;
     }
 }
 ```

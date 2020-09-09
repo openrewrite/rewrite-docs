@@ -35,16 +35,15 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite removes the`finalize()` method because it has zero parameters.
 
 #### Before:
 
 ```java
 public class A {
-    {
-        int i = 0;
-        switch(i) {
-        }
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
     }
 }
 ```
@@ -53,9 +52,6 @@ public class A {
 
 ```java
 public class A {
-    {
-        int i = 0;
-    }
 }
 ```
 

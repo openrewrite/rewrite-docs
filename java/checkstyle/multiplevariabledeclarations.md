@@ -35,16 +35,18 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite places each variable declaration on its own line.
 
 #### Before:
 
 ```java
-public class A {
+class Test {
+    int n = 0, m = 0;
+    int o = 0, p;
+    
     {
-        int i = 0;
-        switch(i) {
-        }
+        Integer[] q = { 0 }, r[] = { { 0 } };
+        for(int i = 0, j = 0;;);
     }
 }
 ```
@@ -52,9 +54,16 @@ public class A {
 #### After:
 
 ```java
-public class A {
+class Test {
+    int n = 0;
+    int m = 0;
+    int o = 0;
+    int p;
+    
     {
-        int i = 0;
+        Integer[] q = { 0 };
+        Integer r[][] = { { 0 } };
+        for(int i = 0, j = 0;;);
     }
 }
 ```

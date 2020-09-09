@@ -35,27 +35,31 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite converts variable names from snake case to camel case following styling specifications.
 
 #### Before:
 
 ```java
+import java.util.*;
 public class A {
-    {
-        int i = 0;
-        switch(i) {
-        }
-    }
+   static List<String> MY_LIST;
+   
+   static {
+       MY_LIST = new ArrayList<>();
+   }
 }
 ```
 
 #### After:
 
 ```java
+import java.util.*;
 public class A {
-    {
-        int i = 0;
+    static List<String> myList;
+    
+    static {
+        myList = new ArrayList<>();
     }
-}
+ }
 ```
 

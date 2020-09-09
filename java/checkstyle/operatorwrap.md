@@ -35,16 +35,36 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite wraps lines on operators according to styling specifications.
 
 #### Before:
 
 ```java
-public class A {
+import java.io.*;
+class A {
     {
-        int i = 0;
-        switch(i) {
-        }
+        String s = "aaa" +
+            "b" + "c";
+        if(s instanceof
+            String);
+        boolean b = s.contains("a") ?
+            false :
+            true;
+        s +=
+            "b";
+        var a = Function::
+            identity;
+        int n =
+            1;
+        int n[] =
+            new int[0];
+        n =
+            2;
+    }
+    
+    <T extends Serializable &
+            Comparable> T foo() {
+        return null;
     }
 }
 ```
@@ -52,9 +72,31 @@ public class A {
 #### After:
 
 ```java
-public class A {
+import java.io.*;
+class A {
     {
-        int i = 0;
+        String s = "aaa"
+            + "b" + "c";
+        if(s
+            instanceof String);
+        boolean b = s.contains("a")
+            ? false
+            : true;
+        s
+            += "b";
+        var a = Function
+            ::identity;
+        int n
+            = 1;
+        int n[]
+            = new int[0];
+        n
+            = 2;
+    }
+    
+    <T extends Serializable
+            & Comparable> T foo() {
+        return null;
     }
 }
 ```

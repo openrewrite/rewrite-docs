@@ -35,17 +35,40 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite inserts or removes whitespace after a token according to styling specifications.
 
 #### Before:
 
 ```java
 public class A {
+    int m;
+
     {
-        int i = 0;
-        switch(i) {
-        }
+        int [] [] a;
+        int [] n = { 1, 2};
+        int [] p = {1, 2 };
+        m = n [0];
+        ++ m;
+        -- m;
+        long o = - m;
+        o = + m;
+        o = ~ m;
+        boolean b;
+        b = ! b;
+        m = (int) o;
+        new A().
+            m = 2;
+        a().
+            a();
+        var a = Function:: identity;
     }
+    
+    @ Override
+    public boolean equals(Object o) {}
+    
+    int [] [] foo() { return null; }
+    
+    A a() { return this; }
 }
 ```
 
@@ -53,9 +76,34 @@ public class A {
 
 ```java
 public class A {
+    int m;
+
     {
-        int i = 0;
+        int[][] a;
+        int[] n = {1, 2};
+        int[] p = {1, 2};
+        m = n[0];
+        ++m;
+        --m;
+        long o = -m;
+        o = +m;
+        o = ~m;
+        boolean b;
+        b = !b;
+        m = (int)o;
+        new A().
+            m = 2;
+        a().
+            a();
+        var a = Function::identity;
     }
+    
+    @Override
+    public boolean equals(Object o) {}
+    
+    int[][] foo() { return null; }
+    
+    A a() { return this; }
 }
 ```
 

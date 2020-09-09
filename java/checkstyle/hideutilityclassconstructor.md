@@ -35,16 +35,16 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Because class A contains only static methods, Rewrite knows that the constructor should be private.
 
 #### Before:
 
 ```java
 public class A {
-    {
-        int i = 0;
-        switch(i) {
-        }
+    public A() {
+    }
+    
+    public static void utility() {
     }
 }
 ```
@@ -53,8 +53,10 @@ public class A {
 
 ```java
 public class A {
-    {
-        int i = 0;
+    private A() {
+    }
+    
+    public static void utility() {
     }
 }
 ```

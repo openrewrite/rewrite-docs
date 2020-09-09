@@ -4,7 +4,7 @@ description: How to use the CovariantEquals visitor
 
 # CovariantEquals
 
-[CovariantEquals](https://checkstyle.sourceforge.io/config_coding.html#CovariantEquals) checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`.
+[CovariantEquals](https://checkstyle.sourceforge.io/config_coding.html#CovariantEquals) checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. This visitor replaces covariant `equals()` implementations with correct overrides of `Object.equals()`.
 
 ### Java Definition 
 
@@ -34,8 +34,6 @@ visitors:
 ```
 
 ### Example
-
-TODO: Jonathan. Test name =  replaceWithNonCovariantEquals
 
 #### Before:
 

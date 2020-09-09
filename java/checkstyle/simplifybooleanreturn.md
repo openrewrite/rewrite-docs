@@ -35,15 +35,26 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite simplifies boolean return statements where possible.
 
 #### Before:
 
 ```java
 public class A {
-    {
-        int i = 0;
-        switch(i) {
+    boolean ifNoElse() {
+        if (isOddMillis()) {
+            return true;
+        }
+        return false;
+    }
+    
+    static boolean isOddMillis() {
+        boolean even = System.currentTimeMillis() % 2 == 0;
+        if (even == true) {
+            return false;
+        }
+        else {
+            return true;
         }
     }
 }
@@ -53,8 +64,13 @@ public class A {
 
 ```java
 public class A {
-    {
-        int i = 0;
+    boolean ifNoElse() {
+        return isOddMillis();
+    }
+    
+    static boolean isOddMillis() {
+        boolean even = System.currentTimeMillis() % 2 == 0;
+        return !(even == true);
     }
 }
 ```

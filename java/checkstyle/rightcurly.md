@@ -35,26 +35,50 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite places the right curly braces according to styling specifications.
 
 #### Before:
 
 ```java
-public class A {
+class A {
     {
-        int i = 0;
-        switch(i) {
-        }
+        if(1 == 2) {} else if(2 == 3) {} else {}
+        
+        try {} catch(Throwable t) {} finally {}
+        
+        { int n = 1; }
     }
+    
+    public int foo() { return 1; }
 }
 ```
 
 #### After:
 
 ```java
-public class A {
+class A {
     {
-        int i = 0;
+        if(1 == 2) {
+        }
+        else if(2 == 3) {
+        }
+        else {
+        }
+        
+        try {
+        }
+        catch(Throwable t) {
+        }
+        finally {
+        }
+        
+        {
+            int n = 1;
+        }
+    }
+    
+    public int foo() {
+        return 1;
     }
 }
 ```

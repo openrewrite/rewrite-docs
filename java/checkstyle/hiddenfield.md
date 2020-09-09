@@ -4,7 +4,7 @@ description: How to use the HiddenField visitor
 
 # HiddenField
 
-[HiddenField](https://checkstyle.sourceforge.io/config_coding.html#HiddenField) checks that a local variable or a parameter does not shadow a field that is defined in the same class.
+[HiddenField](https://checkstyle.sourceforge.io/config_coding.html#HiddenField) renames local variables or parameters so that they do not shadow any fields defined in the same class.
 
 ### Java Definition 
 
@@ -35,7 +35,7 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+In this example `A.C.foo(n)` shadows `A.n` because as a non-static inner class, `A.C`has access to the fields in `A`. `A.D.foo(n)` does not shadow `A.n` because as a static inner class it has no access to the fields of its enclosing class. 
 
 #### Before:
 
@@ -65,8 +65,8 @@ public class A extends B {
     int n1;
 
     class C {
-        public void foo(int n4) {
-            int n5 = 2;
+        public void foo(int n2) {
+            int n3 = 2;
         }
     }
     

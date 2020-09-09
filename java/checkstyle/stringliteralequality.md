@@ -35,16 +35,17 @@ visitors:
 
 ### Example
 
-In the situation where there is a switch statement which contains no cases, Rewrite recognizes that this code does nothing and removes it.
+Rewrite ensures that String literals are compared using the `equals()` method rather than `==`.
 
 #### Before:
 
 ```java
-public class A {
+class Test {
+    String a;
     {
-        int i = 0;
-        switch(i) {
-        }
+        if(a == "test");
+        if("test" == a);
+        if("test" == "test");
     }
 }
 ```
@@ -52,9 +53,12 @@ public class A {
 #### After:
 
 ```java
-public class A {
+class Test {
+    String a;
     {
-        int i = 0;
+        if("test".equals(a));
+        if("test".equals(a));
+        if("test".equals("test"));
     }
 }
 ```

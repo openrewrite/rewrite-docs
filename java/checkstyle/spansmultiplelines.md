@@ -4,7 +4,7 @@ description: How to use the SpansMultipleLines visitor
 
 # SpansMultipleLines
 
-TODO: Jonathan - SpansMultipleLines doesn't have a corresponding entry in [Checkstyle](https://checkstyle.sourceforge.io/checks.html)
+This is a utility
 
 ### Java Definition 
 
@@ -40,22 +40,12 @@ In the situation where there is a switch statement which contains no cases, Rewr
 #### Before:
 
 ```java
-public class A {
-    {
-        int i = 0;
-        switch(i) {
-        }
-    }
-}
+?
 ```
 
 #### After:
 
 ```java
-public class A {
-    {
-        int i = 0;
-    }
-}
+?
 ```
 

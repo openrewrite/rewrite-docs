@@ -35,7 +35,7 @@ visitors:
 
 ### Example
 
-Rewrite simplifies those variable initializations that set the variable value equal to what is already the default value.
+If a field is explicitly initialized with the default value for that type, then this visitor will remove the redundant initialization. 
 
 #### Before:
 
