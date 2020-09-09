@@ -17,6 +17,10 @@
 * [Rewrite Maven Plugin](configuring/rewrite-maven-plugin.md)
 * [Rewrite Gradle Plugin](configuring/rewrite-gradle-plugin.md)
 
+## Tutorials
+
+* [Running as a Google Cloud Function](tutorials/running-as-a-google-cloud-function.md)
+
 ## Java
 
 * [Parsing Java Code](java/parsing-java-code.md)
