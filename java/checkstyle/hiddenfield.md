@@ -40,10 +40,18 @@ In the situation where there is a switch statement which contains no cases, Rewr
 #### Before:
 
 ```java
-public class A {
-    {
-        int i = 0;
-        switch(i) {
+public class A extends B {
+    int n;
+    int n1;
+
+    class C {
+        public void foo(int n) {
+            int n1 = 2;
+        }
+    }
+    
+    static class D {
+        public void foo(int n) {
         }
     }
 }
@@ -52,9 +60,19 @@ public class A {
 #### After:
 
 ```java
-public class A {
-    {
-        int i = 0;
+public class A extends B {
+    int n;
+    int n1;
+
+    class C {
+        public void foo(int n4) {
+            int n5 = 2;
+        }
+    }
+    
+    static class D {
+        public void foo(int n) {
+        }
     }
 }
 ```
