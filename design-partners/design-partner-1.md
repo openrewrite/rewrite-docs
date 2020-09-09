@@ -7,11 +7,19 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 | Goal | Progress |
 | :--- | :--- |
 | Spring Boot 1-2 Migration | ◑ |
-|          Configuration Properties | ⬤ |
-|          SpringBootServletInitializer relocation | ⬤ |
-|          Removal of unused spring starter modules | ◯ |
-|          Mockito 1.x-3.x | ⬤ |
-|          `@Value` to `@ConfigurationProperties` | ◑ |
+|         [Configuration Properties](../java/spring/spring-boot-2-migration/springbootconfiguration.md) | ⬤ |
+|         [`SpringBootServletInitializer` relocation](../java/spring/spring-boot-2-migration/springbootservletinitializerpackage.md) | ⬤ |
+|         Removal of unused spring starter modules | ◯ |
+|         [Mockito 1.x-3.x](../java/mockito/) | ⬤ |
+|         `@Value` to `@ConfigurationProperties` | ◑ |
+|         Spring Data migration to `Optional` | ◯ |
+| Spring Best Practices |  |
+|         [Remove implicit web annotations](../java/spring/best-practices/implicitwebannotationnames.md) | ⬤ |
+|         [`@RequestMapping` Cross-Site Request Forgery Vulnerability](../java/spring/best-practices/norequestmappingannotation.md) | ⬤ |
+|         [Remove @Autowired on constructors](../java/spring/best-practices/noautowired.md) |  |
+| Maven Dependency Management | ⬤ |
+|         [UpgradeDependencyVersion](../maven/transforming-maven-poms/upgradedependencyversion.md) | ⬤ |
+|         [UpgradeParentVersion](../maven/transforming-maven-poms/upgradeparentversion.md) | ⬤ |
 
 ### Applying to Maven Projects
 
