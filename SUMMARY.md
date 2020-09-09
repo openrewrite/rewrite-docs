@@ -126,6 +126,8 @@
 * [Semantic Search for XML](xml/semantic-search-for-xml/README.md)
   * [FindTag](xml/semantic-search-for-xml/findtag.md)
   * [FindTags](xml/semantic-search-for-xml/findtags.md)
+* [Transforming XML](xml/transforming-xml/README.md)
+  * [AddToTag](xml/transforming-xml/addtotag.md)
 
 ## Design Partners
 
