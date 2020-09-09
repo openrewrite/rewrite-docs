@@ -12,14 +12,14 @@ For Maven, define a compile scoped dependency on `rewrite-maven`.
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-maven</artifactId>
-  <version>5.0.0</version>
+  <version>5.1.0</version>
 </dependency>
 ```
 
 For Gradle, define an implementation dependency on `rewrite-maven`.
 
 ```groovy
-implementation("org.openrewrite:rewrite-maven:5.0.0")
+implementation("org.openrewrite:rewrite-maven:5.1.0")
 ```
 
 ### Constructing a Maven Parser
