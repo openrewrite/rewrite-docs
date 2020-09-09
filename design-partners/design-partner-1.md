@@ -60,7 +60,6 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
             <recipe>org.openrewrite.java.Spring</recipe>
             <recipe>org.openrewrite.java.Mockito</recipe>
           </activeRecipes>
-          <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
         </configuration>
         <executions>
           <execution>
