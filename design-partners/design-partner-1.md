@@ -69,16 +69,3 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
 </project>
 ```
 
-
-
-```text
----
-type: specs.org.openrewrite.org/v1beta/recipe
-name: java.Checkstyle 
-visitors:
-  - 'org.openrewrite.checkstyle.*'
-configure:
-  org.openrewrite.checkstyle.*
-    congFile: ${maven.multiModuleProjectDirectory}/checkstyle.xml
-```
-
