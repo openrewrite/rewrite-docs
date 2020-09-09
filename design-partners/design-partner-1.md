@@ -36,6 +36,12 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
   <dependencies>
     <dependency>
       <groupId>org.openrewrite.plan</groupId>
+      <artifactId>rewrite-spring</artifactId>
+      <version>2.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openrewrite.plan</groupId>
       <artifactId>rewrite-checkstyle</artifactId>
       <version>1.1.0</version>
       <scope>provided</scope>
