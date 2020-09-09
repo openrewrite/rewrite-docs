@@ -134,3 +134,12 @@
 
 * [Design Partner 1](design-partners/design-partner-1.md)
 
+## Properties
+
+* [Parsing Properties](properties/parsing-properties.md)
+* [Semantic Search for Properties](properties/semantic-search-for-properties/README.md)
+  * [FindProperty](properties/semantic-search-for-properties/findproperty.md)
+* [Transforming Properties](properties/transforming-properties/README.md)
+  * [ChangePropertyKey](properties/transforming-properties/changepropertykey.md)
+  * [ChangePropertyValue](properties/transforming-properties/changepropertyvalue.md)
+

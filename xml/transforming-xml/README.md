@@ -7,7 +7,7 @@ Rewrite provides a set of basic building blocks to transform XML documents which
 * Change tag value
 
 {% hint style="info" %}
-For transforming Maven POMs \(a particular type of XML document\), see [Transforming Maven POMs](../../maven/transforming-maven-poms/).
+For transforming Maven POMs, see [Transforming Maven POMs](../../maven/transforming-maven-poms/).
 {% endhint %}
 
 Each one of these operations is defined as a `XmlRefactorVisitor`designed for mutating the AST, ultimately leading to a `Change` object at the end of the refactoring operation.
