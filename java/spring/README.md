@@ -25,27 +25,28 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
   <dependencies>
     <dependency>
       <groupId>org.openrewrite.plan</groupId>
-      <artifactId>rewrite-spring</artifactId>
+      <artifactId>rewrite-checkstyle</artifactId>
       <version>2.1.0</version>
       <scope>provided</scope>
     </dependency>
-    
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>org.openrewrite.maven</groupId>
-          <artifactId>rewrite-maven-plugin</artifactId>
-          <version>2.0.0-SNAPSHOT</version>
-          <configuration>
-            <activeRecipes>
-              <recipe>org.openrewrite.java.SpringBoot2Migration</recipe>
-              <recipe>org.openrewrite.java.Spring</recipe>
-            </activeRecipes>
-          </configuration>
-        </plugin>
-      </plugins>
-    </build>
   </dependencies>
+    
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>2.0.0</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.SpringBoot2Migration</recipe>
+            <recipe>org.openrewrite.java.Spring</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 ```
 
 

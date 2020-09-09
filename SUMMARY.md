@@ -121,3 +121,7 @@
 * [Parsing XML](xml/parsing-xml.md)
 * [Semantic Search for XML](xml/semantic-search-for-xml.md)
 
+## Design Partners
+
+* [Design Partner 1](design-partners/design-partner-1.md)
+

@@ -26,23 +26,24 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
       <version>1.1.0</version>
       <scope>provided</scope>
     </dependency>
-    
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>org.openrewrite.maven</groupId>
-          <artifactId>rewrite-maven-plugin</artifactId>
-          <version>2.0.0-SNAPSHOT</version>
-          <configuration>
-            <activeRecipes>
-              <recipe>java.Checkstyle</recipe>
-            </activeRecipes>
-            <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
-          </configuration>
-        </plugin>
-      </plugins>
-    </build>
   </dependencies>
+    
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>2.0.0</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>java.Checkstyle</recipe>
+          </activeRecipes>
+          <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 ```
 
 #### Creating a Checkstyle recipe pointing at your checkstyle.xml
