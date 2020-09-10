@@ -30,8 +30,7 @@ PropertiesParser parser = new PropertiesParser();
 
 ## Parsing Properties Files
 
-Now we have a `PropertiesParser` instance, so we can parse Properties files with its `parse` methods. 
-These return return one or more `Properties.File` instances. `Properties.File` is the top-level AST element and is the basic building block we'll use in refactoring and search operations.
+Now we have a `PropertiesParser` instance, so we can parse Properties files with its `parse` methods. These return return one or more `Properties.File` instances. `Properties.File` is the top-level AST element and is the basic building block we'll use in refactoring and search operations.
 
 * `PropertiesParser#parse(Iterable<java.nio.file.Path>, Path)` - This is the most common form, where the first argument is a collection of Properties files and this returns a list of `Properties.File`, the top-level AST element for Properties. The second argument should be the path of the repository root which helps the parser relativize the source file paths so the serialized representation of the ASTs is independent of where you had the files on disk when you parsed them initially.
 * `PropertiesParser#parse(Path, Path)` - This is a shortcut for the above, where we only provide one file and receive one `Properties.File` in return. It is largely used for testing.
@@ -50,12 +49,9 @@ val props: Properties.File = pp.parse("""
     """.trimIndent()).first()
 ```
 
-Notice how this returns a single `Properties.File`, which can be immediately acted upon. 
+Notice how this returns a single `Properties.File`, which can be immediately acted upon.
 
 ## Next Steps
 
 Now that we have a series of ASTs to work with we can start building [semantic searches](semantic-search-for-properties/) across a set of Properties files.
-
-
-
 

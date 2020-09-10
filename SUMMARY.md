@@ -130,10 +130,6 @@
   * [AddToTag](xml/transforming-xml/addtotag.md)
   * [ChangeTagValue](xml/transforming-xml/changetagvalue.md)
 
-## Design Partners
-
-* [Design Partner 1](design-partners/design-partner-1.md)
-
 ## Properties
 
 * [Parsing Properties](properties/parsing-properties.md)
@@ -142,4 +138,8 @@
 * [Transforming Properties](properties/transforming-properties/README.md)
   * [ChangePropertyKey](properties/transforming-properties/changepropertykey.md)
   * [ChangePropertyValue](properties/transforming-properties/changepropertyvalue.md)
+
+## Design Partners
+
+* [Design Partner 1](design-partners/design-partner-1.md)
 
