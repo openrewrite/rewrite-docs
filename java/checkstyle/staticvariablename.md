@@ -35,7 +35,7 @@ visitors:
 
 ### Example
 
-Rewrite converts variable names from snake case to camel case following styling specifications.
+Rewrite converts static variable names from snake case to camel case following styling specifications.
 
 #### Before:
 
