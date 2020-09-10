@@ -28,7 +28,7 @@ implementation("org.openrewrite:rewrite-xml:5.1.0")
 
 ## Constructing an XML Parser
 
-To build a Rewrite AST for XML documents, construct a `XmlParser` as shown below. We will discuss each of the options in detail. The XML parser does not have any options at this time.
+To build a Rewrite AST for XML documents, construct a `XmlParser` as shown below. 
 
 ```java
 XmlParser parser = new XmlParser();
