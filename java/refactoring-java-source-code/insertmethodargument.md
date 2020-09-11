@@ -6,7 +6,7 @@ description: >-
 
 # InsertMethodArgument
 
-### Definition
+### Java Definition
 
 `InsertMethodArgument` is used to insert arguments into existing method invocations. It is generally used when an API changes to have a new required argument and where that argument's value either has a generally applicable default value or a value that can be determined from each existing method invocation's context.
 
@@ -21,7 +21,7 @@ ima.setSource("new BasicMarker(\"marker\")");
 Collection<Change> changes = new Refactor().visit(ima).fix(cus);
 ```
 
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---

@@ -6,7 +6,7 @@ description: >-
 
 # UseStaticImport
 
-### Definition
+### Java Definition
 
 `UseStaticImport` changes any matching static method invocations to use a statically imported form of the method, adjusting any imports as necessary. The method parameter uses the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/progguide/language-joinPoints.html) to find matching method invocations.
 
@@ -19,7 +19,7 @@ si.setMethod("org.junit.jupiter.api.Assertions assert*(..)");
 Collection<Change> changes = new Refactor().visit(si).fix(cus);
 ```
 
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---

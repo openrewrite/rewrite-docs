@@ -4,7 +4,7 @@ description: Updates a Maven property value.
 
 # ChangePropertyValue
 
-### Definition
+### Java Definition
 
 `ChangePropertyValue` replaces a property value.
 
@@ -21,7 +21,7 @@ Collection<Change> changes = new Refactor().visit(cpv).fix(poms);
 * `key` - The property key to update.
 * `toValue`- The desired value. 
 
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---
