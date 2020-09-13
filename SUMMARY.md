@@ -14,7 +14,8 @@
 
 ## Configuring
 
-* [Rewrite Maven Plugin](configuring/rewrite-maven-plugin.md)
+* [Rewrite Maven Plugin](configuring/rewrite-maven-plugin/README.md)
+  * [Publishing ASTs](configuring/rewrite-maven-plugin/publishing-asts.md)
 * [Rewrite Gradle Plugin](configuring/rewrite-gradle-plugin.md)
 
 ## Tutorials

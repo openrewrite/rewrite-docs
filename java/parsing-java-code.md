@@ -6,7 +6,7 @@ description: >-
 
 # Parsing Java Code
 
-This guide covers how to use Rewrite to parse Java code. This is useful when you want to build your own Java main method, microservice, or data pipeline to process Java source code and perform structured search or transformation on that source code. To apply Rewrite recipes for common Java framework migrations and other fixes, refer instead to the guides on the [Maven](../configuring/rewrite-maven-plugin.md) or [Gradle ](../configuring/rewrite-gradle-plugin.md)plugins.
+This guide covers how to use Rewrite to parse Java code. This is useful when you want to build your own Java main method, microservice, or data pipeline to process Java source code and perform structured search or transformation on that source code. To apply Rewrite recipes for common Java framework migrations and other fixes, refer instead to the guides on the [Maven](../configuring/rewrite-maven-plugin/) or [Gradle ](../configuring/rewrite-gradle-plugin.md)plugins.
 
 ## Required Dependencies
 
