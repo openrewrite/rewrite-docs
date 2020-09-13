@@ -20,6 +20,7 @@
 ## Tutorials
 
 * [Running as a Google Cloud Function](tutorials/running-as-a-google-cloud-function.md)
+* [Writing a Custom Declarative Visitor](tutorials/writing-a-custom-declarative-visitor.md)
 
 ## Java
 

@@ -1,10 +1,8 @@
 # ChangePropertyKey
 
+## Java Definition
 
-### Java Definition
-
-`ChangePropertyKey` changes the key part of a key-value pair. 
-This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
+`ChangePropertyKey` changes the key part of a key-value pair. This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
 
 ```java
 PropertiesParser pp = new PropertiesParser();
@@ -22,14 +20,17 @@ Collection<Change> changes = new Refactor()
 String refactoredProps = changes.iterator().next().getFixed().print();
 ```
 
-### Example
+## Example
+
 Before:
-```properties 
+
+```text
 management.metrics.binders.files.enabled=true
 ```
 
- After:
-```properties 
+After:
+
+```text
 management.metrics.enable.process.files=true
 ```
 

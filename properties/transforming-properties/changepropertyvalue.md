@@ -1,10 +1,8 @@
 # ChangePropertyValue
 
+## Java Definition
 
-### Java Definition
-
-`ChangePropertyValue` changes the value part of a key-value pair. 
-This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
+`ChangePropertyValue` changes the value part of a key-value pair. This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
 
 ```java
 PropertiesParser pp = new PropertiesParser();
@@ -22,13 +20,17 @@ Collection<Change> changes = new Refactor()
 String refactoredProps = changes.get(0).getFixed().print();
 ```
 
-### Example
+## Example
+
 Before:
-```properties 
+
+```text
 management.metrics.binders.files.enabled=true
 ```
 
- After:
-```properties 
+After:
+
+```text
 management.metrics.binders.files.enabled=false
 ```
+

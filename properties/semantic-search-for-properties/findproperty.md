@@ -17,7 +17,7 @@ Properties.Entry entry = fp.visit(props);
 
 `FindProperties` takes a single parameter, `key`, with the key to search for. Applied to the following example, it locates the `distributionDir=USER_HOME` entry.
 
-```properties
+```text
 distributionDir=USER_HOME
 distributionUrl=https\://services.example.org/distributions/example-bin.zip
 ```

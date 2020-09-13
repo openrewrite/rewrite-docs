@@ -1,11 +1,10 @@
 # AddToTag
 
-### Definition
+## Definition
 
-`AddToTag` adds a new tag to the specified node within the xml document.
-This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
+`AddToTag` adds a new tag to the specified node within the xml document. This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
 
-### Example
+## Example
 
 ```java
 String xmlDocumentContents = ...; // Filled in with the contents of an xml document
