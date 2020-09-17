@@ -9,7 +9,7 @@ Every Checkstyle visitor has the same set of configuration options. Either `conf
 * `properties` - A map of string keys and object values that can be evaluated in the Checkstyle configuration file with syntax like `${my.prop}`.
 * `suppressions` - A `com.puppycrawl.tools.checkstyle.api.FilterSet` instance that can be used to suppress one or more checks \(including this one\).
 
-### Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin.md)
+### Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin/)
 
 To apply these recipes and visitors in the Maven plugin, add a `provided` scope dependency on `rewrite-checkstyle`, define a recipe pointing at your `checkstyle.xml`, and activate it.
 

@@ -14,12 +14,14 @@
 
 ## Configuring
 
-* [Rewrite Maven Plugin](configuring/rewrite-maven-plugin.md)
+* [Rewrite Maven Plugin](configuring/rewrite-maven-plugin/README.md)
+  * [Publishing ASTs](configuring/rewrite-maven-plugin/publishing-asts.md)
 * [Rewrite Gradle Plugin](configuring/rewrite-gradle-plugin.md)
 
 ## Tutorials
 
 * [Running as a Google Cloud Function](tutorials/running-as-a-google-cloud-function.md)
+* [Writing a Custom Declarative Visitor](tutorials/writing-a-custom-declarative-visitor.md)
 
 ## Java
 
@@ -50,6 +52,7 @@
   * [GenerateConstructorUsingFields](java/refactoring-java-source-code/generateconstructorusingfields.md)
   * [ImplementInterface](java/refactoring-java-source-code/implementinterface.md)
   * [InsertMethodArgument](java/refactoring-java-source-code/insertmethodargument.md)
+  * [OrderDeclarations](java/refactoring-java-source-code/orderdeclarations.md)
   * [OrderImports](java/refactoring-java-source-code/orderimports.md)
   * [RemoveImport](java/refactoring-java-source-code/removeimport.md)
   * [ReorderMethodArguments](java/refactoring-java-source-code/reordermethodarguments.md)

@@ -25,6 +25,8 @@ Rewrite provides a set of basic building blocks to transform Java code which can
 * Reorder method arguments.
 * Unwrap parentheses.
 * Implement an interface.
+* Order declarations.
+* Order imports.
 
 Each one of these operations is defined as a `JavaRefactorVisitor`designed for mutating the AST, ultimately leading to a `Change` object at the end of the refactoring operation.
 
