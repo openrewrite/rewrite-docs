@@ -4,7 +4,7 @@
 
 `ChangeTagValue` alters the contents of a tag. This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
 
-## Example
+### Example
 
 ```java
 String xmlDocumentContents = ...; // Filled in with the contents of an xml document
