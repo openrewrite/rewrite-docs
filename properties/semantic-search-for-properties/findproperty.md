@@ -1,15 +1,15 @@
 ---
-description: Find the first matching property key in a Properties.File by name
+description: Find the first matching property key in a Properties file by name
 ---
 
 # FindProperty
 
-## Definition
+## Java Definition
 
 ```java
-String propertyFilesContents = "distributionDir=USER_HOME\n" + 
-    "distributionUrl=https\://example.org/files/example-bin.zip";
-Properties.File props = new PropertiesParser().parse("").get(0);
+String propertyFileContents = "distributionDir=USER_HOME\n" + 
+    "distributionUrl=https\\\\://example.org/files/example-bin.zip";
+Properties.File props = new PropertiesParser().parse(propertyFileContents).get(0);
 
 FindProperty fp = new FindProperty("distributionDir");
 Properties.Entry entry = fp.visit(props);

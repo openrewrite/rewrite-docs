@@ -4,7 +4,7 @@ description: Applying Rewrite recipes to your code via a build tool plugin for M
 
 # Rewrite Maven Plugin
 
-The quickest way to see value from pre-packaged Rewrite recipes is to incorporate the Rewrite Maven \(or [Gradle](rewrite-gradle-plugin.md)\) plugin to your build and run a Maven goal that transforms your code locally.
+The quickest way to see value from pre-packaged Rewrite recipes is to incorporate the Rewrite Maven \(or [Gradle](../rewrite-gradle-plugin.md)\) plugin to your build and run a Maven goal that transforms your code locally.
 
 {% hint style="success" %}
 The Rewrite Maven plugin automatically supplies any recipes you configure to run with all source files in the project that are transformable. It will supply Java visitors with Java files, XML visitors with XML files, etc.
@@ -19,7 +19,7 @@ The Rewrite Maven plugin offers four goals:
 
 ### Classpath Scanning for Resources
 
-The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles. These aren't automatically enabled, but they become available to activate through [plugin configuration](rewrite-maven-plugin.md#plugin-configuration).
+The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles. These aren't automatically enabled, but they become available to activate through [plugin configuration](./#plugin-configuration).
 
 {% hint style="success" %}
 Because the plugin uses classpath scanning, dependencies of the project can include Rewrite recipes in their releases to help migrate users of their library from one version to another.
@@ -48,11 +48,11 @@ To make pre-packaged Rewrite recipes available to the Maven plugin, add them as 
 
 Execute`mvn rewrite:fix` to run the configured recipes and apply the changes locally. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortalbe with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
 
-![Warnings showing which files were changed and by what recipes](../.gitbook/assets/image%20%285%29.png)
+![Warnings showing which files were changed and by what recipes](../../.gitbook/assets/image%20%285%29.png)
 
 After the goal finishes executing, run `git diff` to see what changes were made, review, and commit them.
 
-![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:fix goal](../.gitbook/assets/image%20%287%29.png)
+![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:fix goal](../../.gitbook/assets/image%20%287%29.png)
 
 ### The "Warn" Goal
 
@@ -66,7 +66,7 @@ Execute`mvn rewrite:diff` to run the configured recipes and generate a git-style
 
 The diff goal also generates warnings in the build log wherever it proposes changes. The warning will also contain the command to run to apply the changes for a particular Maven module. Notice how a separate patch file is generated for each module in a multi-module project.
 
-![Log output showing what changed and how to apply the patch](../.gitbook/assets/image%20%284%29.png)
+![Log output showing what changed and how to apply the patch](../../.gitbook/assets/image%20%284%29.png)
 
 The output directory of the `rewrite.patch` file can be controlled by setting the `reportOutputDirectory` property. Again, this value would be relativized for each module of a multi-module project and a patch generated into each directory individually.
 
@@ -85,7 +85,7 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 
 Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated. It lists the available recipes, the inclusion and exclusion configurations for those recipes, and the visitors that are effective for that each recipe based on what was found on the classpath. So in the below example, the `org.openrewrite.mockito` recipe has been defined to include all visitors prefixed in the `org.openrewrite.mockito` package. Then it lists all the visitors that have been found in that package and will be ran if that recipe is activated. 
 
-![Discovering the available recipes and visitors via the Maven plugin](../.gitbook/assets/image%20%283%29.png)
+![Discovering the available recipes and visitors via the Maven plugin](../../.gitbook/assets/image%20%283%29.png)
 
 ### Plugin configuration
 
@@ -125,30 +125,5 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 </project>
 ```
 
-### Publishing ASTs to a Remote Maven Repository
-
-The plugin defines a `rewrite:jar` goal that serializes abstract syntax trees for both the main and test source sets to a compact JSON Smile format and places them in a special JAR file with paths relative to the root of the project.
-
-This AST JAR can be used for batch processing of ASTs across a large number of repositories without having to clone the original project, resolve dependencies, and parse the code again.
-
-To enable the `rewrite:jar` goal, add an `<executions>` block to your plugin configuration as shown below. Note that you may choose to _only_ do this and not configure any recipes at all, relying solely on a batch offline process to transform your organization's source code.
-
-```markup
-<plugin>
-    <groupId>org.openrewrite.maven</groupId>
-    <artifactId>rewrite-maven-plugin</artifactId>
-    <version>2.0.0</version>
-    <executions>
-      <execution>
-        <goals>
-          <goal>jar</goal>
-        </goals>
-      </execution>
-    </executions>
-</plugin>
-```
-
-Notice how the file listing in the resulting JAR is relativized to the project directory. In spite of the file extension, the contents of these files are JSON Smile.
-
-![](../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
