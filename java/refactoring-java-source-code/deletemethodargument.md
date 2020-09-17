@@ -4,7 +4,7 @@ description: Locate method invocations by their signature and delete an argument
 
 # DeleteMethodArgument
 
-### Definition
+### Java Definition
 
 `DeleteMethodArgument` uses the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/progguide/language-joinPoints.html) to find matching method invocations and delete an argument at a particular index. It also removes imports referred to by any type name reference in the deleted argument if there are no remaining type name references to it in the source file after deletion.
 
@@ -18,7 +18,7 @@ dma.setIndex(0);
 Collection<Change> changes = new Refactor().visit(dma).fix(cus);
 ```
 
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---

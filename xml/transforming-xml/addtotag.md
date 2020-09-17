@@ -1,10 +1,12 @@
 # AddToTag
 
-## Definition
+### Java Definition
 
 `AddToTag` adds a new tag to the specified node within the xml document. This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
 
-## Example
+### Example
+
+The following transforming visitor adds a SLF4J `Logger` field to a class.
 
 ```java
 String xmlDocumentContents = ...; // Filled in with the contents of an xml document

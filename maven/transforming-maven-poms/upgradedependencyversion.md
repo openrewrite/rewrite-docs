@@ -4,7 +4,7 @@ description: Upgrade a dependency version using advanced range selectors.
 
 # UpgradeDependencyVersion
 
-### Definition
+### Java Definition
 
 `UpgradeDependencyVersion` upgrades a first-order Maven dependency using an [advanced range selector](./#advanced-range-selectors).
 
@@ -27,7 +27,7 @@ Collection<Change> changes = new Refactor().visit(udv).fix(poms);
 
 `UpgradeDependencyVersion` backtracks version specifications to their source. So if the version is a property reference, the transformation updates the property value. If the version is defined in a `dependencyManagement` section, the transforms updates the `dependencyManagement` section. 
 
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---

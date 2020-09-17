@@ -23,7 +23,7 @@ Collection<Change> changes = new Refactor().visit(cdv).fix(poms);
 * `artifactId`- Update dependency versions when they match this Maven artifact ID. This is optional. If it is not specified, update every dependency matching the group. This is useful to update a family of dependencies all at once, such as those in the `com.fasterxml.jackson` group.
 * `toVersion` - The version to set.
 
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---

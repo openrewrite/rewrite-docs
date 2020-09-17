@@ -1,6 +1,6 @@
 # CoalesceProperties
 
-### Definition
+### Java Definition
 
 `CoalesceProperties` simplifies nested map hierarchies into their simplest form.
 

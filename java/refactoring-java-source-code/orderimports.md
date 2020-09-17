@@ -4,7 +4,7 @@ description: Sorts imports according to the source file's layout style
 
 # OrderImports
 
-### Definition
+### Java Definition
 
 `OrderImports` performs the familiar action from IDEs. It sorts imports according to the source file's layout style, optionally removing unused imports.
 
@@ -24,7 +24,7 @@ o.setLayout(layout); // optional
 Collection<Change> changes = new Refactor().visit(o).fix(cus);
 ```
 
-### Declarative Definition
+### YAML Definition
 
 ```text
 ---
