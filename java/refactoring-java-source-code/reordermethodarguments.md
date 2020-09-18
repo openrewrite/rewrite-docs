@@ -4,9 +4,9 @@ description: Reorders method arguments by argument name on matching methods.
 
 # ReorderMethodArguments
 
-### Java Definition
+## Java Definition
 
-`ReorderMethodArguments` is used to reorder arguments in existing method invocations. It is generally used when moving from one API to another. 
+`ReorderMethodArguments` is used to reorder arguments in existing method invocations. It is generally used when moving from one API to another.
 
 For example, authors of different logging frameworks may choose to place a `Throwable` argument either before or after any parameterization arguments, with neither being more obviously correct. Migrating from one to the other requires shifting an argument from either the beginning of the argument list to the end or vice versa.
 
@@ -27,7 +27,7 @@ Collection<Change> changes = new Refactor().visit(rma).fix(cus);
 `originalOrder` is required when the parameter names cannot be inferred from the original method signature. If the library you are transforming _from_ was compiled with the `-parameters` compiler option as described [here](https://docs.oracle.com/javase/tutorial/reflect/member/methodparameterreflection.html), this can be omitted.
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 Here we show a contrived example for simplicity, but that shows how a `ReorderMethodArguments` can work together with a `ChangeType` in a single composite declarative visitor.
 
@@ -44,6 +44,4 @@ visitors:
     type: org.some.Logger
     targetType: org.yetanother.Logger
 ```
-
-
 

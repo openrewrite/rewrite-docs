@@ -4,7 +4,7 @@ description: 'Add an import to a type or a static import to a static method, if 
 
 # AddImport
 
-### Java Definition
+## Java Definition
 
 `AddImport` adds a new import to a class \(or a static import to a static method\) if it isn't already present. It responds to the `ImportLayout` style stored on `J.CompilationUnit`. See [import layout](../parsing-java-code.md#import-layout-style) for how to define this style.
 
@@ -23,7 +23,7 @@ Because this operation is so common, there are two methods provided on `JavaRefa
 The "maybe" refers to the fact that `AddImport` will check to ensure that there is actually an explicit type name reference somewhere in the source file before adding an import \(so you aren't left with an unused import\). In this way, you don't need to keep track of this yourself.
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 This is generally not done alone, but may be used in concert with some other visitor that potentially causes an import to be needed.
 
@@ -36,6 +36,4 @@ visitors:
     type: org.slf4j.helpers.BasicMarker
   - ...
 ```
-
-
 

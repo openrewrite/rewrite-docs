@@ -4,7 +4,7 @@ description: Sets the parent POM to a fixed version.
 
 # ChangeParentVersion
 
-### Java Definition
+## Java Definition
 
 `ChangeParentVersion` changes the parent version to a fixed version that you specify.
 
@@ -23,7 +23,7 @@ Collection<Change> changes = new Refactor().visit(cpv).fix(poms);
 * `artifactId`- Update parent versions when they match this Maven artifact ID.
 * `toVersion` - The version to set.
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -36,7 +36,7 @@ visitors:
     toVersion: 1.5.22.RELEASE
 ```
 
-### Example
+## Example
 
 Before:
 

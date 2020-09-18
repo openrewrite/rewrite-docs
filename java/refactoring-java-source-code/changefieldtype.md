@@ -4,7 +4,7 @@ description: 'Like ChangeType, but only applies to field definitions.'
 
 # ChangeFieldType
 
-### Java Definition
+## Java Definition
 
 `ChangeFieldType` changes fields from one type to another. It also corrects any import statements as necessary.
 
@@ -23,7 +23,7 @@ Collection<Change> changes = new Refactor().visit(cft).fix(cus);
 
 The type name doesn't have to be fully qualified in the source code to match. Rewrite looks at the type attributed to a particular identifier in the source code to see whether it represents the type that should change.
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -35,7 +35,7 @@ visitors:
     targetType: org.slf4j.Logger
 ```
 
-### Example
+## Example
 
 Before:
 

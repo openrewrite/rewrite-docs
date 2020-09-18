@@ -105,6 +105,8 @@
   * [InvocationOnMockGetArgument](java/mockito/invocationonmockgetargument.md)
   * [MockAsOuterClass](java/mockito/mockasouterclass.md)
   * [MockUtilsToStatic](java/mockito/mockutilstostatic.md)
+* [Testing](java/testing/README.md)
+  * [ReplaceAnnotations](java/testing/replaceannotations.md)
 
 ## Maven
 

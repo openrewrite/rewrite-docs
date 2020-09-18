@@ -4,7 +4,7 @@ description: Sets a matching dependency to a fixed version.
 
 # ChangeDependencyVersion
 
-### Java Definition
+## Java Definition
 
 `ChangeDependencyVersion` changes a matching dependency to a fixed version that you specify.
 
@@ -23,7 +23,7 @@ Collection<Change> changes = new Refactor().visit(cdv).fix(poms);
 * `artifactId`- Update dependency versions when they match this Maven artifact ID. This is optional. If it is not specified, update every dependency matching the group. This is useful to update a family of dependencies all at once, such as those in the `com.fasterxml.jackson` group.
 * `toVersion` - The version to set.
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -36,7 +36,7 @@ visitors:
     toVersion: 2.11.2
 ```
 
-### Example
+## Example
 
 Before:
 

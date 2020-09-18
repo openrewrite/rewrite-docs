@@ -4,7 +4,7 @@ description: Upgrade a dependency version using advanced range selectors.
 
 # UpgradeDependencyVersion
 
-### Java Definition
+## Java Definition
 
 `UpgradeDependencyVersion` upgrades a first-order Maven dependency using an [advanced range selector](./#advanced-range-selectors).
 
@@ -25,9 +25,9 @@ Collection<Change> changes = new Refactor().visit(udv).fix(poms);
 * `toVersion` - An advanced range selector used to upgrade the dependency.
 * `metadataPattern` - An optional regular expression patten to use to match "pre-release" or "metadata" suffixes. In some cases, like we see with Guava, the library author doesn't necessarily follow the intent of semver \(uses `-jre` and `-android` instead of `+jre` and `+android`\), and that's OK. This metadata pattern helps compensate for this.
 
-`UpgradeDependencyVersion` backtracks version specifications to their source. So if the version is a property reference, the transformation updates the property value. If the version is defined in a `dependencyManagement` section, the transforms updates the `dependencyManagement` section. 
+`UpgradeDependencyVersion` backtracks version specifications to their source. So if the version is a property reference, the transformation updates the property value. If the version is defined in a `dependencyManagement` section, the transforms updates the `dependencyManagement` section.
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -41,7 +41,7 @@ visitors:
     metadataPattern: '-jre'
 ```
 
-### Example of an Inlined Dependency Version
+## Example of an Inlined Dependency Version
 
 Before:
 
@@ -73,7 +73,7 @@ After:
 </project>
 ```
 
-### Example of a Property-Based Dependency Version 
+## Example of a Property-Based Dependency Version
 
 If the property is instead defined in a parent POM, the version is updated there.
 
@@ -85,7 +85,7 @@ Before:
    <properties>
      <guava.version>25.0-jre</guava.version>
    </properties>
-   
+
    <dependencies>
      <dependency>
        <groupId>com.google.guava</groupId>
@@ -104,7 +104,7 @@ After:
    <properties>
      <guava.version>29.0-jre</guava.version>
    </properties>
-   
+
    <dependencies>
      <dependency>
        <groupId>com.google.guava</groupId>
@@ -115,7 +115,7 @@ After:
 </project>
 ```
 
-### Example of a Dependency-Managed Version 
+## Example of a Dependency-Managed Version
 
 If the `dependencyManagement` section is instead defined in a parent POM, the version is updated there.
 
@@ -131,7 +131,7 @@ Before:
        <version>25.0-jre</version>
      </dependency>
    </dependencyManagement>
-   
+
    <dependencies>
      <dependency>
        <groupId>com.google.guava</groupId>
@@ -153,7 +153,7 @@ After:
        <version>29.0-jre</version>
      </dependency>
    </dependencyManagement>
-   
+
    <dependencies>
      <dependency>
        <groupId>com.google.guava</groupId>

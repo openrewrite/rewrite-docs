@@ -19,7 +19,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 ```
 
 {% hint style="success" %}
-The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
+The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](../checkstyle/#configuration-options).
 {% endhint %}
 
 ### YAML Definition

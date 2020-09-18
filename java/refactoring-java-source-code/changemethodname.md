@@ -4,7 +4,7 @@ description: Change method invocations matching a certain signature to another n
 
 # ChangeMethodName
 
-### Java Definition
+## Java Definition
 
 `ChangeMethodName` changes method invocations matching a certain signature to another name. This is one of the most common refactoring operations, used when a library renames a method.
 
@@ -21,7 +21,7 @@ Collection<Change> changes = new Refactor().visit(cmn).fix(cus);
 * `method` - A method matcher  which is expressed using the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/progguide/language-joinPoints.html) to find matching method invocations.
 * `name` - The name to change to.
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,7 +33,7 @@ visitors:
     name: java.util.Collection
 ```
 
-### Example
+## Example
 
 Before:
 
@@ -43,7 +43,7 @@ import static org.mockito.Mockito.*;
 abstract class FlowerService {
     public abstract boolean anyBlooming(String... flowers);
 }
- 
+
 ...
 
 FlowerService mock = mock(FlowerService.class); 
@@ -58,7 +58,7 @@ import static org.mockito.Mockito.*;
 abstract class FlowerService {
     public abstract boolean anyBlooming(String... flowers);
 }
- 
+
 ...
 
 FlowerService mock = mock(FlowerService.class); 

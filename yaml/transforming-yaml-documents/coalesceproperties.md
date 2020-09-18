@@ -1,6 +1,6 @@
 # CoalesceProperties
 
-### Java Definition
+## Java Definition
 
 `CoalesceProperties` simplifies nested map hierarchies into their simplest form.
 
@@ -12,7 +12,7 @@ CoalesceProperties cp = new CoalesceProperties();
 Collection<Change> changes = new Refactor().visit(cp).fix(yamls);
 ```
 
-### Example
+## Example
 
 Before:
 
