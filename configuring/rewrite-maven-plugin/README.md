@@ -74,7 +74,7 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <configuration>
         <reportOutputDirectory>.rewrite</reportOutputDirector>
     </configuration>
