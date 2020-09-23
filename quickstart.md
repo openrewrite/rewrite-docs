@@ -36,7 +36,7 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <configuration>
         <activeRecipes>
             <recipe>org.openrewrite.java.Spring</recipe>

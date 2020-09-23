@@ -53,7 +53,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.0.0</version>
+        <version>2.1.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.SpringBoot2Migration</recipe>
@@ -64,7 +64,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
         <executions>
           <execution>
             <goals>
-              <goal>jar</goal>
+              <goal>publish</goal>
             </goals>
           </execution>
         </executions>
