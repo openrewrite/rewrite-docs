@@ -26,7 +26,7 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 
 ### Applying to Maven Projects
 
-Place the following configuration in the root `pom.xml` of a repository. The `execute` block in the plugin configuration causes an AST JAR to be published to Artifactory whenever the project publishes a new version.
+Place the following configuration in the root `pom.xml` of a repository. The `execute` block in the plugin configuration causes an AST JAR and a CycloneDX BOM to be published to Artifactory whenever the project publishes a new version.
 
 ```markup
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
