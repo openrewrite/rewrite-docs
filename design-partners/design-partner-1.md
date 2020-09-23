@@ -23,6 +23,11 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 | Maven Dependency Management | ⬤ |
 |         [UpgradeDependencyVersion](../maven/transforming-maven-poms/upgradedependencyversion.md) | ⬤ |
 |         [UpgradeParentVersion](../maven/transforming-maven-poms/upgradeparentversion.md) | ⬤ |
+| `javax` package migration to `jakarta` dependency migration | ◯ |
+|          Servlet | ◯ |
+|          XML RPC | ◯ |
+|          Persistence | ◯ |
+|          XML SOAP | ◯ |
 
 ### Applying to Maven Projects
 
