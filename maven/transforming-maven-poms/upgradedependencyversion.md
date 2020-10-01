@@ -31,7 +31,7 @@ Collection<Change> changes = new Refactor().visit(udv).fix(poms);
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.UpgradeGuava
 visitors:
   - org.openrewrite.maven.UpgradeDependencyVersion:

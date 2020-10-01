@@ -28,7 +28,7 @@ The `org.openrewrite.java.Spring` recipe includes this visitor. Here is how to i
 
 ```yaml
 ---
-type: specs.org.openrewrite.org/v1beta/recipe
+type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MyCustomRecipe 
 visitors:
   - org.openrewrite.spring.ImplicitWebAnnotationNames

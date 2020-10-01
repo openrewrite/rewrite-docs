@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(dma).fix(cus);
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.DeleteMarkerArgument
 visitors:
   - org.openrewrite.java.DeleteMethodArgument:

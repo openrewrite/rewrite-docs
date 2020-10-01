@@ -25,7 +25,7 @@ Collection<Change> changes = new Refactor().visit(cmn).fix(cus);
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.MockitoSample
 visitors:
   - org.openrewrite.java.ChangeMethodName:

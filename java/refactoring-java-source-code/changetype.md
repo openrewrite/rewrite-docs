@@ -27,7 +27,7 @@ The type name doesn't have to be fully qualified in the source code to match. Re
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.ListToCollection
 visitors:
   - org.openrewrite.java.ChangeType:

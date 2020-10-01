@@ -29,7 +29,7 @@ This is generally not done alone, but may be used in concert with some other vis
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.AddBasicMarker
 visitors:
   - org.openrewrite.java.AddImport:

@@ -23,7 +23,7 @@ Collection<Change> changes = new Refactor().visit(si).fix(cus);
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.UseStaticJUnitAsserts
 visitors:
   - org.openrewrite.java.UseStaticImport:

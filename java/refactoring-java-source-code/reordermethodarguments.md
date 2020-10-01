@@ -33,7 +33,7 @@ Here we show a contrived example for simplicity, but that shows how a `ReorderMe
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.AlwaysUseMarker
 visitors:
   - org.openrewrite.java.InsertMethodArgument:

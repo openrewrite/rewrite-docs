@@ -26,7 +26,7 @@ The other configuration options \(other than`setConfigFile`\) are described in [
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.JultoSlf4j
 visitors:
   - org.openrewrite.checkstyles.NoWhitespaceBefore:
