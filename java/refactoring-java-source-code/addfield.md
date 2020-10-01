@@ -10,7 +10,7 @@ description: Add a new field to a class declaration.
 
 ### Example
 
-The following transforming visitor adds a SLF4J `Logger` field to a class.
+The following refactoring visitor adds a SLF4J `Logger` field to a class.
 
 ```java
 public class AddLogger extends JavaRefactorVisitor {

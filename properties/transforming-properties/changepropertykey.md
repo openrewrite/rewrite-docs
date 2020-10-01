@@ -2,7 +2,7 @@
 
 ## Java Definition
 
-`ChangePropertyKey` changes the key part of a key-value pair. This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
+`ChangePropertyKey` changes the key part of a key-value pair. This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
 
 ```java
 PropertiesParser pp = new PropertiesParser();

@@ -1,14 +1,14 @@
 ---
 description: >-
   Assembling high-level refactoring constructs in a YAML file to perform a
-  custom transformation.
+  custom refactor.
 ---
 
 # Writing a Custom Declarative Visitor
 
 ⏲ This tutorial will take you about 10 minutes to complete.
 
-This tutorial shows how to use Rewrite to consistently statically import JUnit asserts, an example of a transformation that can assembled from Rewrite's high-level building blocks without having to write code.
+This tutorial shows how to use Rewrite to consistently statically import JUnit asserts, an example of a refactoring that can assembled from Rewrite's high-level building blocks without having to write code.
 
 ### Step 1: Clone the Sample Repository
 

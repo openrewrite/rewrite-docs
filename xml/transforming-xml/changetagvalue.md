@@ -2,7 +2,7 @@
 
 ## Java Definition
 
-`ChangeTagValue` alters the contents of a tag. This transforming visitor is a building block for more complex visitors, so it does not have a declarative form.
+`ChangeTagValue` alters the contents of a tag. This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
 
 ## Example
 

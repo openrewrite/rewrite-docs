@@ -10,7 +10,7 @@ description: Generate a constructor using fields.
 
 ### Example
 
-The following transforming visitor builds a new constructor using all the fields found in a class.
+The following refactoring visitor builds a new constructor using all the fields found in a class.
 
 ```java
 public class AllArgsConstructor extends JavaRefactorVisitor {

@@ -10,7 +10,7 @@ description: Change the name of a field with a particular name and type.
 
 ### Example
 
-The following transforming visitor changes fields of SLF4J `Logger` to have a consistent name.
+The following refactoring visitor changes fields of SLF4J `Logger` to have a consistent name.
 
 ```java
 import static org.openrewrite.java.tree.TypeUtils.isOfClassType;

@@ -32,7 +32,7 @@ This transformation visitor is meant to be used on specific statements and so it
 
 ### Example
 
-The following transforming visitor deletes `assert` statements anywhere they are found in code.
+The following refactoring visitor deletes `assert` statements anywhere they are found in code.
 
 ```java
 public class DeleteAsserts extends JavaRefactorVisitor {

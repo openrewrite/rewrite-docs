@@ -12,7 +12,7 @@ description: Transform a literal argument by applying a mapping function.
 
 ### Example
 
-The following transforming visitor updates a string templating mechanism.
+The following refactoring visitor updates a string templating mechanism.
 
 ```java
 public class BracketStringTemplates extends JavaRefactorVisitor {
