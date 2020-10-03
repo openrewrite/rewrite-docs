@@ -23,19 +23,3 @@ Because this operation is so common, there are two methods provided on `JavaRefa
 The "maybe" refers to the fact that `AddImport` will check to ensure that there is actually an explicit type name reference somewhere in the source file before adding an import \(so you aren't left with an unused import\). In this way, you don't need to keep track of this yourself.
 {% endhint %}
 
-### YAML Definition
-
-This is generally not done alone, but may be used in concert with some other visitor that potentially causes an import to be needed.
-
-```text
----
-type: specs.org.openrewrite.org/v1beta/visitor
-name: io.moderne.AddBasicMarker
-visitors:
-  - org.openrewrite.java.AddImport:
-    type: org.slf4j.helpers.BasicMarker
-  - ...
-```
-
-
-

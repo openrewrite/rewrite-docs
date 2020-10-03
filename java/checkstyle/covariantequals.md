@@ -4,13 +4,19 @@ description: How to use the CovariantEquals visitor
 
 # CovariantEquals
 
-[CovariantEquals](https://checkstyle.sourceforge.io/config_coding.html#CovariantEquals) checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. This visitor replaces covariant `equals()` implementations with correct overrides of `Object.equals()`.
+The [CovariantEquals](https://checkstyle.sourceforge.io/config_coding.html#CovariantEquals) checkstyle rule checks that 
+classes which define a covariant `equals()` method also override method `equals(Object)`. 
+This CovariantEquals visitor replaces covariant `equals()` implementations with correct overrides of `Object.equals()`.
 
 ### Java Definition 
-
 ```java
-File checkstyleConfig = new File("checkstyle.xml");
-Iterable<J.CompilationUnit> cus;
+JavaParser jp = JavaParser.fromJavaVersion().build();
+
+// Fill in arguments with Java sources to be refactored
+List<J.CompilationUnit> cus = jp.parse(...); 
+
+// Fill in with your checkstyle.xml location
+File checkstyleConfig = new File("checkstyle.xml"); 
 
 CovariantEquals check = new CovariantEquals();
 check.setConfigFile(checkstyleConfig);
@@ -23,14 +29,21 @@ The other configuration options \(other than`setConfigFile`\) are described in [
 {% endhint %}
 
 ### YAML Definition
-
-```text
+Adding the following to your rewrite.yml and setting the `com.yourorg.CheckstyleRecipe` recipe as active in 
+your build plugin will apply the `CovariantEquals` visitor.
+```yaml
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
-name: io.moderne.JultoSlf4j
+type: specs.openrewrite.org/v1beta/visitor
+name: com.yourorg.CovariantEquals
 visitors:
   - org.openrewrite.checkstyles.CovariantEquals:
     configFile: 'checkstyle.xml'
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.CheckstyleRecipe
+include:
+  - 'com.yourorg.*'
+
 ```
 
 ### Example
