@@ -10,7 +10,7 @@ description: 'Add an annotation to a class, method, or variable.'
 
 ### Example
 
-The following transforming visitor adds the [API guardian](https://github.com/apiguardian-team/apiguardian) annotation to public API signatures.
+The following refactoring visitor adds the [API guardian](https://github.com/apiguardian-team/apiguardian) annotation to public API signatures.
 
 ```java
 public class MarkPublicApiMethods extends JavaRefactorVisitor {

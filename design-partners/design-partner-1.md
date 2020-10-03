@@ -23,10 +23,15 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 | Maven Dependency Management | ⬤ |
 |         [UpgradeDependencyVersion](../maven/transforming-maven-poms/upgradedependencyversion.md) | ⬤ |
 |         [UpgradeParentVersion](../maven/transforming-maven-poms/upgradeparentversion.md) | ⬤ |
+| `javax` package migration to `jakarta` dependency migration | ◯ |
+|          Servlet | ◯ |
+|          XML RPC | ◯ |
+|          Persistence | ◯ |
+|          XML SOAP | ◯ |
 
 ### Applying to Maven Projects
 
-Place the following configuration in the root `pom.xml` of a repository. The `execute` block in the plugin configuration causes an AST JAR to be published to Artifactory whenever the project publishes a new version.
+Place the following configuration in the root `pom.xml` of a repository. The `execute` block in the plugin configuration causes an AST JAR and a CycloneDX BOM to be published to Artifactory whenever the project publishes a new version.
 
 ```markup
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -53,7 +58,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.0.0</version>
+        <version>2.1.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.SpringBoot2Migration</recipe>
@@ -64,7 +69,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
         <executions>
           <execution>
             <goals>
-              <goal>jar</goal>
+              <goal>publish</goal>
             </goals>
           </execution>
         </executions>

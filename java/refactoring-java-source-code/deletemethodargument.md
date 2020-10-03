@@ -4,7 +4,7 @@ description: Locate method invocations by their signature and delete an argument
 
 # DeleteMethodArgument
 
-### Java Definition
+## Java Definition
 
 `DeleteMethodArgument` uses the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/progguide/language-joinPoints.html) to find matching method invocations and delete an argument at a particular index. It also removes imports referred to by any type name reference in the deleted argument if there are no remaining type name references to it in the source file after deletion.
 
@@ -18,11 +18,11 @@ dma.setIndex(0);
 Collection<Change> changes = new Refactor().visit(dma).fix(cus);
 ```
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.DeleteMarkerArgument
 visitors:
   - org.openrewrite.java.DeleteMethodArgument:
@@ -30,14 +30,14 @@ visitors:
     index: 0
 ```
 
-### Example
+## Example
 
 Before:
 
 ```java
 import ch.qos.logback.classic.Logger;
 import org.slf4j.helpers.BasicMarker;
- 
+
 ...
 Logger logger = ...;
 
@@ -48,7 +48,7 @@ After:
 
 ```java
 import ch.qos.logback.classic.Logger;
- 
+
 ...
 Logger logger = ...;
 

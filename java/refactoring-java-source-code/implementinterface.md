@@ -10,7 +10,7 @@ description: Add an interface implementation to a class declaration.
 
 ### Example
 
-The following transforming visitor adds a `Serializable` interface to a data class.
+The following refactoring visitor adds a `Serializable` interface to a data class.
 
 ```java
 public class AddSerializable extends JavaRefactorVisitor {

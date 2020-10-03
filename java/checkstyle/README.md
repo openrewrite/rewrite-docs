@@ -52,7 +52,7 @@ The above configuration assumes you create a recipe at the project root director
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/recipe
+type: specs.openrewrite.org/v1beta/recipe
 name: java.Checkstyle 
 visitors:
   - 'org.openrewrite.checkstyle.*'

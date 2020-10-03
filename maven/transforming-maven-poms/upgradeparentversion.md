@@ -4,7 +4,7 @@ description: Upgrade a parent version using advanced range selectors.
 
 # UpgradeParentVersion
 
-### Java Definition
+## Java Definition
 
 `UpgradeParentVersion` upgrades a matching parent version using an [advanced range selector](./#advanced-range-selectors).
 
@@ -25,11 +25,11 @@ Collection<Change> changes = new Refactor().visit(upv).fix(poms);
 * `toVersion` - An advanced range selector used to upgrade the dependency.
 * `metadataPattern` - An optional regular expression patten to use to match "pre-release" or "metadata" suffixes. In some cases, like we see with Guava, the library author doesn't necessarily follow the intent of semver \(uses `-jre` and `-android` instead of `+jre` and `+android`\), and that's OK. This metadata pattern helps compensate for this. 
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
-type: specs.org.openrewrite.org/v1beta/visitor
+type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.UpgradeSpringBoot
 visitors:
   - org.openrewrite.maven.UpgradeParentVersion:
@@ -38,7 +38,7 @@ visitors:
     toVersion: ~1.5
 ```
 
-### Example
+## Example
 
 Before:
 

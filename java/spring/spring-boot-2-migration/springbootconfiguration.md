@@ -25,7 +25,7 @@ The `org.openrewrite.java.SpringBoot2Migration` recipe includes this visitor. He
 
 ```yaml
 ---
-type: specs.org.openrewrite.org/v1beta/recipe
+type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.MyCustomRecipe 
 visitors:
   - org.openrewrite.java.spring.boot.config.SpringBootConfigurationProperties.2_0
