@@ -4,15 +4,12 @@ description: Transform a literal argument by applying a mapping function.
 
 # ChangeLiteral
 
+`ChangeLiteral` transforms Java literals according to a supplied `Function<Object, Object>`.
+This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
 
+## Java Definition
 
-### Definition
-
-`ChangeLiteral` transforms Java literals with . This transformation visitor is meant to be used on specific classes so it doesn't have a declarative form. `ChangeLiteral` automatically performs normalization and escaping of values returned by the mapping function for writing back to the source file.
-
-### Example
-
-The following refactoring visitor updates a string templating mechanism.
+The following refactoring visitor uses `ChangeLiteral` to replace instances of "%s" inside of string literals with "{}".
 
 ```java
 public class BracketStringTemplates extends JavaRefactorVisitor {
@@ -30,3 +27,19 @@ public class BracketStringTemplates extends JavaRefactorVisitor {
 }
 ```
 
+## Example 
+Using the `BracketStringTemplates` defined above.
+
+Before:
+```java
+class A {
+    String curlies = "%s";
+}
+``` 
+
+After:
+```java
+class A {
+    String curlies = "{}";
+}
+```
