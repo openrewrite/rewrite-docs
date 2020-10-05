@@ -6,7 +6,7 @@ description: How to use the OperatorWrap visitor
 
 [OperatorWrap](https://checkstyle.sourceforge.io/config_whitespace.html#OperatorWrap) checks the policy on how to wrap lines on operators.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite wraps lines on operators according to styling specifications.
 
-#### Before:
+### Before:
 
 ```java
 import java.io.*;
@@ -61,7 +61,7 @@ class A {
         n =
             2;
     }
-    
+
     <T extends Serializable &
             Comparable> T foo() {
         return null;
@@ -69,7 +69,7 @@ class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 import java.io.*;
@@ -93,7 +93,7 @@ class A {
         n
             = 2;
     }
-    
+
     <T extends Serializable
             & Comparable> T foo() {
         return null;

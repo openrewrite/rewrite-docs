@@ -6,7 +6,7 @@ description: >-
 
 # OrderDeclarations
 
-### Definition
+## Definition
 
 `OrderDeclarations` performs the familiar action from IDEs. It sorts imports according to the source file's layout style, optionally removing unused imports.
 
@@ -25,13 +25,13 @@ o.setLayout(layout); // optional
 Collection<Change> changes = new Refactor().visit(o).fix(cus);
 ```
 
-### Declarative Definition
+## Declarative Definition
 
 ```text
 ---
 type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.OrderDeclarations
 visitors:
-  - org.openrewrite.java.OrderDeclarations 
+  - org.openrewrite.java.OrderDeclarations
 ```
 

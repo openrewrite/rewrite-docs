@@ -4,9 +4,9 @@ description: How to use the SimplifyBooleanExpression visitor
 
 # SimplifyBooleanExpression
 
- [SimplifyBooleanExpression](https://checkstyle.sourceforge.io/config_coding.html#SimplifyBooleanExpression) checks for over-complicated boolean expressions.
+[SimplifyBooleanExpression](https://checkstyle.sourceforge.io/config_coding.html#SimplifyBooleanExpression) checks for over-complicated boolean expressions.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite simplifies boolean expressions where possible.
 
-#### Before:
+### Before:
 
 ```java
 public class A {
@@ -55,7 +55,7 @@ public class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A {

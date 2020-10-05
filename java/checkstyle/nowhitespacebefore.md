@@ -6,7 +6,7 @@ description: How to use the NoWhitespaceBefore visitor
 
 [NoWhitespaceBefore](https://checkstyle.sourceforge.io/config_whitespace.html#NoWhitespaceBefore) checks that there is no whitespace before a token.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite inserts or removes whitespace before a token according to styling specifications.
 
-#### Before:
+### Before:
 
 ```java
 package a ;
@@ -64,7 +64,7 @@ abstract class A {
         do { } while(true) ;
         for(String s : generic) ;
     }
-    
+
     abstract A foo(int n , int m, int ... others) ;
 }
 
@@ -73,7 +73,7 @@ interface B {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 package a;
@@ -99,7 +99,7 @@ abstract class A {
         do { } while(true);
         for(String s : generic);
     }
-    
+
     abstract A foo(int n, int m, int... others);
 }
 

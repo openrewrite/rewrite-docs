@@ -4,9 +4,7 @@ description: Change the name of a field with a particular name and type.
 
 # ChangeFieldName
 
-`ChangeFieldName` changes the name of a field with the specified name and type. 
-It also updates any references to that field with the new name. 
-This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
+`ChangeFieldName` changes the name of a field with the specified name and type. It also updates any references to that field with the new name. This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
 
 ## Java Definition
 
@@ -32,10 +30,12 @@ public class ConsistentLoggerName extends JavaRefactorVisitor {
 }
 ```
 
-## Example 
+## Example
+
 Using the `ConsistentLoggerName` defined above.
 
 Before:
+
 ```java
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,6 +46,7 @@ class A {
 ```
 
 After:
+
 ```java
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,3 +55,4 @@ class A {
     private static Logger logger = LoggerFactory.getLogger(A.class); 
 }
 ```
+

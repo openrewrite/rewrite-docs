@@ -6,7 +6,7 @@ description: How to use the FinalClass visitor
 
 [FinalClass](https://checkstyle.sourceforge.io/config_design.html#FinalClass) checks that a class which has only private constructors is declared as final.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite ensures that when a class contains only private constructors that class is declared as a final class.
 
-#### Before:
+### Before:
 
 ```java
 public class A {
@@ -49,7 +49,7 @@ public class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public final class A {

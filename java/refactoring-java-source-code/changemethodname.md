@@ -3,8 +3,8 @@ description: Change method invocations matching a certain signature to another n
 ---
 
 # ChangeMethodName
-`ChangeMethodName` renames method invocations matching the specified signature.
-This is a common refactoring operation, particularly helpful when a library renames a method.
+
+`ChangeMethodName` renames method invocations matching the specified signature. This is a common refactoring operation, particularly helpful when a library renames a method.
 
 `ChangeMethodName` is configured with these arguments:
 
@@ -31,8 +31,8 @@ Collection<Change> changes = new Refactor().visit(cmn).fix(cus);
 * `name` - The name to change to.
 
 ## YAML Definition
-Adding the following to your rewrite.yml and setting the `com.yourorg.RenameFooToBarRecipe` recipe as active in 
-your build plugin will apply the `ChangeMethodName` visitor configured to rename the method `foo()` to `bar()` on the class `com.yourorg.A`. 
+
+Adding the following to your rewrite.yml and setting the `com.yourorg.RenameFooToBarRecipe` recipe as active in your build plugin will apply the `ChangeMethodName` visitor configured to rename the method `foo()` to `bar()` on the class `com.yourorg.A`.
 
 ```yaml
 ---

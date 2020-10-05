@@ -6,7 +6,7 @@ description: How to use the FinalLocalVariable visitor
 
 [FinalLocalVariable](https://checkstyle.sourceforge.io/config_coding.html#FinalLocalVariable) checks that local variables that never have their values changed are declared final.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 If a variable's value never changes, as in the case of `n` in the following example, Rewrite will make that variable final.
 
-#### Before:
+### Before:
 
 ```java
 public class A {
@@ -49,7 +49,7 @@ public class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A {

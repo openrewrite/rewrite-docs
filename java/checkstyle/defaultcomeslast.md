@@ -4,9 +4,9 @@ description: How to use the DefaultComesLast visitor
 
 # DefaultComesLast
 
- [DefaultComesLast](https://checkstyle.sourceforge.io/config_coding.html#DefaultComesLast) checks that the `default` is after all the cases in a `switch` statement.
+[DefaultComesLast](https://checkstyle.sourceforge.io/config_coding.html#DefaultComesLast) checks that the `default` is after all the cases in a `switch` statement.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 If a switch statement contains a misplaced default case, Rewrite will move it to the end of that switch statement and insert or remove any break statements as necessary.
 
-#### Before:
+### Before:
 
 ```java
 class Test {
@@ -58,7 +58,7 @@ class Test {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 class Test {

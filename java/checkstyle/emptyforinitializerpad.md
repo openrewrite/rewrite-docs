@@ -6,7 +6,7 @@ description: How to use the EmptyForInitializerPad visitor
 
 [EmptyForInitializerPad ](https://checkstyle.sourceforge.io/config_whitespace.html#EmptyForInitializerPad)checks the padding of an empty for initializer; that is whether a white space is required at an empty for initializer, or such white space is forbidden.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 If there is an empty initializer within a for loop, Rewrite will make sure to insert or remove padding where the initializer would typically be found according to styling specifications. In this case, Rewrite inserts padding.
 
-#### Before:
+### Before:
 
 ```java
 public class A {
@@ -47,7 +47,7 @@ public class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A {

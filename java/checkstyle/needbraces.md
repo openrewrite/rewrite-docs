@@ -6,7 +6,7 @@ description: How to use the NeedBraces visitor
 
 [NeedBraces](https://checkstyle.sourceforge.io/config_blocks.html#NeedBraces) checks for braces around code blocks.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite ensures that there are curly braces around code blocks.
 
-#### Before:
+### Before:
 
 ```java
 public class A {
@@ -53,7 +53,7 @@ public class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A {

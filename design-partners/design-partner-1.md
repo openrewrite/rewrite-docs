@@ -11,7 +11,7 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 |         [`SpringBootServletInitializer` relocation](../java/spring/spring-boot-2-migration/springbootservletinitializerpackage.md) | ⬤ |
 |         Removal of unused spring starter modules | ◯ |
 |         [Mockito 1.x-3.x](../java/mockito/) | ⬤ |
-|         `@Value` to `@ConfigurationProperties` | ◑ |
+|         `@Value` to `@ConfigurationProperties` | ⬤ |
 |         Spring Data migration to `Optional` | ◯ |
 | Spring Best Practices | ◑ |
 |         [Remove implicit web annotations](../java/spring/best-practices/implicitwebannotationnames.md) | ⬤ |
@@ -28,6 +28,8 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 |          XML RPC | ◯ |
 |          Persistence | ◯ |
 |          XML SOAP | ◯ |
+| JUnit 4 to 5 | ◯ |
+|          `@Category` to `@Tag` | ◯ |
 
 ### Applying to Maven Projects
 

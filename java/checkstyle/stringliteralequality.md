@@ -4,9 +4,9 @@ description: How to use the StringLiteralEquality visitor
 
 # StringLiteralEquality
 
- [StringLiteralEquality](https://checkstyle.sourceforge.io/config_coding.html#StringLiteralEquality) checks that string literals are not used with `==` or `!=`.
+[StringLiteralEquality](https://checkstyle.sourceforge.io/config_coding.html#StringLiteralEquality) checks that string literals are not used with `==` or `!=`.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite ensures that String literals are compared using the `equals()` method rather than `==`.
 
-#### Before:
+### Before:
 
 ```java
 class Test {
@@ -50,7 +50,7 @@ class Test {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 class Test {

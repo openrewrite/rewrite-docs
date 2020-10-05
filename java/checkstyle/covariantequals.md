@@ -4,11 +4,10 @@ description: How to use the CovariantEquals visitor
 
 # CovariantEquals
 
-The [CovariantEquals](https://checkstyle.sourceforge.io/config_coding.html#CovariantEquals) checkstyle rule checks that 
-classes which define a covariant `equals()` method also override method `equals(Object)`. 
-This CovariantEquals visitor replaces covariant `equals()` implementations with correct overrides of `Object.equals()`.
+The [CovariantEquals](https://checkstyle.sourceforge.io/config_coding.html#CovariantEquals) checkstyle rule checks that classes which define a covariant `equals()` method also override method `equals(Object)`. This CovariantEquals visitor replaces covariant `equals()` implementations with correct overrides of `Object.equals()`.
 
-### Java Definition 
+## Java Definition
+
 ```java
 JavaParser jp = JavaParser.fromJavaVersion().build();
 
@@ -28,9 +27,10 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
-Adding the following to your rewrite.yml and setting the `com.yourorg.CheckstyleRecipe` recipe as active in 
-your build plugin will apply the `CovariantEquals` visitor.
+## YAML Definition
+
+Adding the following to your rewrite.yml and setting the `com.yourorg.CheckstyleRecipe` recipe as active in your build plugin will apply the `CovariantEquals` visitor.
+
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/visitor
@@ -43,12 +43,11 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.CheckstyleRecipe
 include:
   - 'com.yourorg.*'
-
 ```
 
-### Example
+## Example
 
-#### Before:
+### Before:
 
 ```java
 class Test {
@@ -60,7 +59,7 @@ class Test {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 class Test {

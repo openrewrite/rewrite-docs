@@ -6,7 +6,7 @@ description: How to use the MethodParamPad visitor
 
 [MethodParamPad](https://checkstyle.sourceforge.io/config_whitespace.html#MethodParamPad) checks the padding between the identifier of a method definition, constructor definition, method call, or constructor invocation; and the left parenthesis of the parameter list.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Following styling specifications, Rewrite removes the padding found between the parameter list and a method or constructor definition, or between the parameter list and a constructor invocation or method call.
 
-#### Before:
+### Before:
 
 ```java
 public class A extends B {
@@ -58,7 +58,7 @@ enum E {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A extends B {

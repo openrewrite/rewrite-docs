@@ -6,7 +6,7 @@ description: How to use the EqualsAvoidsNull visitor
 
 [EqualsAvoidsNull](https://checkstyle.sourceforge.io/config_coding.html#EqualsAvoidNull) checks that any combination of String literals is on the left side of an `equals()` comparison.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 In order to avoid a Null Pointer Exception, Rewrite inverts the order of the `equals()` comparison, to ensure the String literal is on the left side.
 
-#### Before:
+### Before:
 
 ```java
 public class A {
@@ -49,7 +49,7 @@ public class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A {

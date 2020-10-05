@@ -4,8 +4,7 @@ description: 'Add an import to a type or a static import to a static method, if 
 
 # AddImport
 
-`AddImport` adds a new import to a class \(or a static import to a static method\) if it isn't already present. It responds to the `ImportLayout` style stored on `J.CompilationUnit`. See [import layout](../parsing-java-code.md#import-layout-style) for how to define this style.
-This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
+`AddImport` adds a new import to a class \(or a static import to a static method\) if it isn't already present. It responds to the `ImportLayout` style stored on `J.CompilationUnit`. See [import layout](../parsing-java-code.md#import-layout-style) for how to define this style. This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
 
 {% hint style="success" %}
 If you don't define an import layout style explicitly, Rewrite uses the IntelliJ IDEA default layout.
@@ -36,12 +35,16 @@ class ImportSet extends JavaRefactorVisitor {
 ```
 
 Before:
+
 ```java
 class A {}
 ```
+
 After:
+
 ```java
 import java.util.Set;
 
 class A {}
 ```
+

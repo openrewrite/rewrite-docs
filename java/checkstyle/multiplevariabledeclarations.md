@@ -6,7 +6,7 @@ description: How to use the MultipleVariableDeclarations visitor
 
 [MultipleVariableDeclarations](https://checkstyle.sourceforge.io/config_coding.html#MultipleVariableDeclarations) checks that each variable declaration is in its own statement and on its own line.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,17 +33,17 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite places each variable declaration on its own line.
 
-#### Before:
+### Before:
 
 ```java
 class Test {
     int n = 0, m = 0;
     int o = 0, p;
-    
+
     {
         Integer[] q = { 0 }, r[] = { { 0 } };
         for(int i = 0, j = 0;;);
@@ -51,7 +51,7 @@ class Test {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 class Test {
@@ -59,7 +59,7 @@ class Test {
     int m = 0;
     int o = 0;
     int p;
-    
+
     {
         Integer[] q = { 0 };
         Integer r[][] = { { 0 } };

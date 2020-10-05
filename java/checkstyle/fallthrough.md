@@ -6,7 +6,7 @@ description: How to use the FallThrough visitor
 
 The [FallThrough](https://checkstyle.sourceforge.io/config_coding.html#FallThrough) checkstyle rule checks for fall-through in switch statements and objects unless there is an adjacent comment with the words "fall through", or similar. This visitor adds `break` statements where there is fall-through without such a comment.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Cases 0, 1, 5, 6 and 8 have a comment that Checkstyle recognizes as permitting fall-through, so no `break` is inserted. Note that both the inline comment on line 17 and the multi-line comment on line 20 apply to case 5. Case 4 is in a block so there is no fall-through.
 
-#### Before:
+### Before:
 
 ```java
 public class A {
@@ -75,7 +75,7 @@ public class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A {

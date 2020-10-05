@@ -3,8 +3,8 @@ description: 'Change all references to a type, adjusting imports as necessary.'
 ---
 
 # ChangeType
-`ChangeType` changes type references anywhere they occur (variable declarations, generic parameters, return types, class extension/implementation, etc.)
-It updates import statements as necessary.
+
+`ChangeType` changes type references anywhere they occur \(variable declarations, generic parameters, return types, class extension/implementation, etc.\) It updates import statements as necessary.
 
 `ChangeType` is configured with these arguments:
 
@@ -28,8 +28,7 @@ Collection<Change> changes = new Refactor().visit(ct).fix(cus);
 
 ## YAML Definition
 
-Adding the following to your rewrite.yml and setting the `com.yourorg.ListToCollectionRecipe` recipe as active in 
-your build plugin will apply the `ChangeType` visitor configured to replace `List` with `Collection`. 
+Adding the following to your rewrite.yml and setting the `com.yourorg.ListToCollectionRecipe` recipe as active in your build plugin will apply the `ChangeType` visitor configured to replace `List` with `Collection`.
 
 ```yaml
 ---

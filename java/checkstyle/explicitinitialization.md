@@ -6,7 +6,7 @@ description: How to use the ExplicitInitialization visitor
 
 [ExplicitInitialization](https://checkstyle.sourceforge.io/config_coding.html#ExplicitInitialization) checks if any class or object member is explicitly initialized to default for its type value \(`null` for object references, zero for numeric types and `char` and `false` for `boolean`\).
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
-If a field is explicitly initialized with the default value for that type, then this visitor will remove the redundant initialization. 
+If a field is explicitly initialized with the default value for that type, then this visitor will remove the redundant initialization.
 
-#### Before:
+### Before:
 
 ```java
 class Test {
@@ -57,12 +57,12 @@ class Test {
 
     int k[] = null;
     int l[] = new int[0];
-    
+
     private final Long l = null;
 }
 ```
 
-#### After:
+### After:
 
 ```java
 class Test {
@@ -82,7 +82,7 @@ class Test {
 
     int k[];
     int l[] = new int[0];
-    
+
     private final Long l = null;
 }
 ```

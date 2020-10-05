@@ -6,7 +6,7 @@ description: How to use the LeftCurly visitor
 
 [LeftCurly](https://checkstyle.sourceforge.io/config_blocks.html#LeftCurly) checks for the placement of left curly braces \(`'{'`\) for code blocks.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite places the left curly braces according to styling specifications.
 
-#### Before:
+### Before:
 
 ```java
 class A
@@ -55,7 +55,7 @@ class A
 }
 ```
 
-#### After:
+### After:
 
 ```java
 class A {

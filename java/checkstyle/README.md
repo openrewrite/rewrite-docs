@@ -1,6 +1,6 @@
 # Checkstyle
 
-### Configuration Options
+## Configuration Options
 
 Every Checkstyle visitor has the same set of configuration options. Either `config` or `configFile` must be provided.
 
@@ -9,11 +9,11 @@ Every Checkstyle visitor has the same set of configuration options. Either `conf
 * `properties` - A map of string keys and object values that can be evaluated in the Checkstyle configuration file with syntax like `${my.prop}`.
 * `suppressions` - A `com.puppycrawl.tools.checkstyle.api.FilterSet` instance that can be used to suppress one or more checks \(including this one\).
 
-### Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin/)
+## Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin/)
 
 To apply these recipes and visitors in the Maven plugin, add a `provided` scope dependency on `rewrite-checkstyle`, define a recipe pointing at your `checkstyle.xml`, and activate it.
 
-#### Adding a dependency and activating a custom recipe
+### Adding a dependency and activating a custom recipe
 
 ```markup
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -27,7 +27,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
       <scope>provided</scope>
     </dependency>
   </dependencies>
-    
+
   <build>
     <plugins>
       <plugin>
@@ -46,7 +46,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
 </project>
 ```
 
-#### Creating a Checkstyle recipe pointing at your checkstyle.xml
+### Creating a Checkstyle recipe pointing at your checkstyle.xml
 
 The above configuration assumes you create a recipe at the project root directory in `rewrite.yml` and that your `checkstyle.xml` is defined in the project root directory.
 
@@ -61,7 +61,7 @@ configure:
     congFile: ${maven.multiModuleProjectDirectory}/checkstyle.xml
 ```
 
-### Example Checkstyle Configuration File
+## Example Checkstyle Configuration File
 
 Below is a complete example of a Checkstyle configuration file that configures only this recipe.
 
@@ -77,6 +77,6 @@ Below is a complete example of a Checkstyle configuration file that configures o
       <property name="tokens" value="LITERAL_TRY"/>
     </module>
   </module>
-</module> 
+</module>
 ```
 

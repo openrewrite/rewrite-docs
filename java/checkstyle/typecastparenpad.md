@@ -4,9 +4,9 @@ description: How to use the TypecastParenPad visitor
 
 # TypecastParenPad
 
- [TypecastParenPad](https://checkstyle.sourceforge.io/config_whitespace.html#TypecastParenPad) checks the policy on the padding of parentheses for typecasts.
+[TypecastParenPad](https://checkstyle.sourceforge.io/config_whitespace.html#TypecastParenPad) checks the policy on the padding of parentheses for typecasts.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite inserts or removes padding within typecasting parentheses according to the styling specifications.
 
-#### Before:
+### Before:
 
 ```java
 public class A {
@@ -48,7 +48,7 @@ public class A {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A {

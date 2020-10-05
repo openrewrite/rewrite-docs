@@ -4,18 +4,18 @@ description: Generate a constructor using fields.
 
 # GenerateConstructorUsingFields
 
-### Definition
+## Definition
 
 `GenerateConstructorUsingFields` builds a new constructor if necessary. This transformation visitor is meant to be used on specific classes and so it doesn't have a declarative form. This visitor is also generative, so requires a `JavaParser`, which can be built from the styles preserved on the top-level `J.CompilationUnit`.
 
-### Example
+## Example
 
 The following refactoring visitor builds a new constructor using all the fields found in a class.
 
 ```java
 public class AllArgsConstructor extends JavaRefactorVisitor {
   private JavaParser jp;
-  
+
   public boolean isIdempotent() {
     // so we don't generate multiple identical constructors.
     // this simplifies the example by not having to check if a

@@ -4,7 +4,7 @@ description: Deletes a statement.
 
 # DeleteStatement
 
-### Definition
+## Definition
 
 `DeleteStatement` deletes a statement. In Java, statements include:
 
@@ -30,7 +30,7 @@ description: Deletes a statement.
 
 This transformation visitor is meant to be used on specific statements and so it doesn't have a declarative form.
 
-### Example
+## Example
 
 The following refactoring visitor deletes `assert` statements anywhere they are found in code.
 

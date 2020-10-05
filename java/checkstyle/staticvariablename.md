@@ -4,9 +4,9 @@ description: How to use the StaticVariableName visitor
 
 # StaticVariableName
 
- [StaticVariableName](https://checkstyle.sourceforge.io/config_naming.html#StaticVariableName) checks that `static`, non-`final` variable names conform to a specified pattern.
+[StaticVariableName](https://checkstyle.sourceforge.io/config_naming.html#StaticVariableName) checks that `static`, non-`final` variable names conform to a specified pattern.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,30 +33,30 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
 Rewrite converts static variable names from snake case to camel case following styling specifications.
 
-#### Before:
+### Before:
 
 ```java
 import java.util.*;
 public class A {
    static List<String> MY_LIST;
-   
+
    static {
        MY_LIST = new ArrayList<>();
    }
 }
 ```
 
-#### After:
+### After:
 
 ```java
 import java.util.*;
 public class A {
     static List<String> myList;
-    
+
     static {
         myList = new ArrayList<>();
     }

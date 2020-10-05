@@ -1,6 +1,6 @@
 # ArgumentMatchersAny
 
-Between Mockito 1.x and Mockito 2.x, the method `org.mockito.Matchers.anyVararg` moved   to the type `org.mockito.ArgumentMatchers` and changed names to `any`. 
+Between Mockito 1.x and Mockito 2.x, the method `org.mockito.Matchers.anyVararg` moved to the type `org.mockito.ArgumentMatchers` and changed names to `any`.
 
 This visitor changes method references to reflect this refactoring.
 

@@ -6,7 +6,7 @@ description: How to use the HiddenField visitor
 
 [HiddenField](https://checkstyle.sourceforge.io/config_coding.html#HiddenField) renames local variables or parameters so that they do not shadow any fields defined in the same class.
 
-### Java Definition 
+## Java Definition
 
 ```java
 File checkstyleConfig = new File("checkstyle.xml");
@@ -22,7 +22,7 @@ Collection<Change> changes = new Refactor().visit(check).fix(cus);
 The other configuration options \(other than`setConfigFile`\) are described in [Checkstyle](./#configuration-options).
 {% endhint %}
 
-### YAML Definition
+## YAML Definition
 
 ```text
 ---
@@ -33,11 +33,11 @@ visitors:
     configFile: 'checkstyle.xml'
 ```
 
-### Example
+## Example
 
-In this example `A.C.foo(n)` shadows `A.n` because as a non-static inner class, `A.C`has access to the fields in `A`. `A.D.foo(n)` does not shadow `A.n` because as a static inner class it has no access to the fields of its enclosing class. 
+In this example `A.C.foo(n)` shadows `A.n` because as a non-static inner class, `A.C`has access to the fields in `A`. `A.D.foo(n)` does not shadow `A.n` because as a static inner class it has no access to the fields of its enclosing class.
 
-#### Before:
+### Before:
 
 ```java
 public class A extends B {
@@ -49,7 +49,7 @@ public class A extends B {
             int n1 = 2;
         }
     }
-    
+
     static class D {
         public void foo(int n) {
         }
@@ -57,7 +57,7 @@ public class A extends B {
 }
 ```
 
-#### After:
+### After:
 
 ```java
 public class A extends B {
@@ -69,7 +69,7 @@ public class A extends B {
             int n3 = 2;
         }
     }
-    
+
     static class D {
         public void foo(int n) {
         }

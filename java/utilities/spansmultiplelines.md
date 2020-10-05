@@ -4,11 +4,9 @@ description: How to use the SpansMultipleLines visitor
 
 # SpansMultipleLines
 
-SpansMultipleLines is a non-refactoring utility visitor which can be used to determine whether a given Java AST element spans multiple lines.
-This is useful for making determinations related to formatting.
-There is no declarative form for this visitor.
+SpansMultipleLines is a non-refactoring utility visitor which can be used to determine whether a given Java AST element spans multiple lines. This is useful for making determinations related to formatting. There is no declarative form for this visitor.
 
-### Java Example
+## Java Example
 
 ```java
 JavaParser jp = JavaParser.fromJavaVersion().build();
@@ -31,3 +29,4 @@ new SpansMultipleLines(nEqualsOne, null).visit(nEqualsOne); // returns "false"
 J nEqualsTwo = block.getStatements().get(1);
 new SpansMultipleLines(nEqualsTwo, null).visit(nEqualsTwo); // returns "true"
 ```
+
