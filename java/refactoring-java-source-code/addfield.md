@@ -8,7 +8,12 @@ description: Add a new field to a class declaration.
 
 ## Java Definition
 
-The following refactoring visitor uses `AddLogger` adds a SLF4J `Logger` field to a class.
+The following refactoring visitor uses `AddField` to add a SLF4J `Logger` field to a class.
+Note that the initializing expression `"LoggerFactory.getLogger(" + clazz.getSimpleName() + ".class)"` is provided as plain text, rather than as an AST element.
+This is for convenience but does have some consequences which must be accounted for.
+`AddField` doesn't know that the symbol "LoggerFactory" refers to `org.slf4j.LoggerFactory` so it can't automatically type-attribute the corresponding AST element.
+To compensate for this limitation, the example uses `AddImport` to add the appropriate import.
+
 
 ```java
 public class AddLogger extends JavaRefactorVisitor {
@@ -16,27 +21,28 @@ public class AddLogger extends JavaRefactorVisitor {
     if(needsLogger(clazz) && clazz
       .findFields("org.slf4j.Logger")
       .isEmpty()) {
-
+      
       andThen(new AddField.Scoped(
-        clazz,
+        classDecl,
         emptyList(), // modifiers
         "org.slf4j.Logger",
         "logger", // field name
-        "LoggerFactory.getLogger(" + clazz.getSimpleName() + ".class);" // Assignment expression
+        "LoggerFactory.getLogger(" + clazz.getSimpleName() + ".class)"
       ));
-
-      // since this is used in the initializer above
-      maybeAddImport("org.slf4j.LoggerFactory");
+      // Add import for "LoggerFactory" since that symbol is referenced in the initializing expression
+      AddImport addImport = new AddImport();
+      addImport.setType("org.slf4j.LoggerFactory");
+      addImport.setOnlyIfReferenced(false); 
+      andThen(addImport);
     }
     return super.visitClassDecl(clazz);
   }
-
+  
   private boolean needsLogger(J.ClassDecl clazz) {
-    // however this is determined for your project
+    // however this is determined...
   }
 }
 ```
-
 ## Example
 
 Using the `AddLogger` class above, assuming its `needsLogger()` returns true for this example class.
