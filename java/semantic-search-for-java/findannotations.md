@@ -40,7 +40,7 @@ J.ClassDecl clazz = ...
 clazz.findAnnotations("@java.lang.SuppressWarnings");
 
 // finds annotations ONLY on this class, but does not look further down the tree.
-clazz.findAnnotationsOnClsas("@java.lang.SuppressWanrings");
+clazz.findAnnotationsOnClsas("@java.lang.SuppressWarnings");
 
 ```
 
