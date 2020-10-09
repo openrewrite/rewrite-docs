@@ -8,7 +8,7 @@ description: Change method invocations matching a certain signature to another n
 
 `ChangeMethodName` is configured with these arguments:
 
-* `method` - A `MethodMatcher` string that identifies the method to rename. 
+* `method` - A method matcher  which is expressed using the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/progguide/language-joinPoints.html) to find matching method invocations. 
 * `name` - The name to change to.
 
 ## Java Definition
@@ -26,9 +26,6 @@ cmn.setName("bar");
 
 Collection<Change> changes = new Refactor().visit(cmn).fix(cus);
 ```
-
-* `method` - A method matcher  which is expressed using the AspectJ [pointcut syntax](https://www.eclipse.org/aspectj/doc/next/progguide/language-joinPoints.html) to find matching method invocations.
-* `name` - The name to change to.
 
 ## YAML Definition
 
