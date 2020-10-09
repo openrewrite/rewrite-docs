@@ -4,7 +4,7 @@ description: Find annotations by type and parameters using the AspectJ pointcut 
 
 # FindAnnotations
 
-### Definition
+## Definition
 
 ```java
 J.CompilationUnit cu;
@@ -28,7 +28,7 @@ public @interface Get {
 * `@myhttp.Get(path="recentPayments", serviceName="payments")` matches on the same \(i.e. order or parameters doesn't matter\).
 * `@java.lang.SuppressWarnings("deprecation")` matches on single parameter annotations.
 
-### Shortcuts
+## Shortcuts
 
 `findAnnotations` methods are also available on `J.ClassDecl`, `J.MethodDecl`, and `J.VariableDecls`.
 
@@ -41,7 +41,6 @@ clazz.findAnnotations("@java.lang.SuppressWarnings");
 
 // finds annotations ONLY on this class, but does not look further down the tree.
 clazz.findAnnotationsOnClsas("@java.lang.SuppressWarnings");
-
 ```
 
 ```java
