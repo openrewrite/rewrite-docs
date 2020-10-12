@@ -159,9 +159,14 @@ public class MakeClassesFinal extends JavaRefactorVisitor {
 
 ### Declarative Refactoring Visitors
 
-The examples we have provided so far in this document have all involved writing Java code. Some refactoring visitors can be defined declaratively in a YAML file. For example:
+The examples we have provided so far in this document have all involved writing Java code.
+Some refactoring visitors can be defined declaratively in a YAML file.
+Declaratively addressable visitors that expose configuration options must do so via `public void set<name>(String)` methods.
+So if a visitor must be configured with a parameter named `type` it must expose a `public void setType(String type)` method.
+For example ChangeType ([docs](../java/refactoring-java-source-code/changetype.md), [source](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java)) 
+must be configured with parameters `type` and `targetType`:
 
-```text
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/visitor
 name: org.openrewrite.mockito.MockAsOuterClass
@@ -207,7 +212,8 @@ visitors:
 </table>
 
 {% hint style="success" %}
-Not all required configuration for a visitor must be defined in a declarative visitor. It is eventually ran by virtue of being included in a [Recipe](recipes.md), and the Recipe may define configuration for visitors that it includes.
+[Recipes](recipes.md) may define configuration for visitors that they include. 
+Different recipes may configure the same visitors very differently.
 {% endhint %}
 
 ### Validation
@@ -216,7 +222,9 @@ Visitors can optionally provide validation logic using a fluent validation API b
 
 ### `@AutoConfigure` Visitors
 
-Marking a visitor class with the annotation `@AutoConfigure` signals that [Environment](environment.md) classpath-scanning should try to include the visitor in any [Recipe ](recipes.md)whose inclusion criteria matches the visitor's package name. When an `@AutoConfigure`-enabled visitor is included in a recipe and passes validation, it becomes part of the active set of visitors that are executed by a refactoring operation.
+Marking a visitor class with the annotation `@AutoConfigure` signals that [Environment](environment.md) classpath-scanning should try to include the visitor in any [Recipe ](recipes.md)whose inclusion criteria matches the visitor's package name. When an `@AutoConfigure`-enabled visitor is included in a recipe and passes validation, it becomes part of the active set of visitors that are executed by a refactoring operation. 
+
+Only visitors which have no required configuration parameters can be marked as `@AutoConfigure`.
 
 Not every visitor is going to be auto-configurable. For example, [AddAnnotation](../java/refactoring-java-source-code/addannotation.md) is a building-block visitor designed to be applied to specific AST elements that meet some criteria, and isn't something we apply generally to a whole set of source files.
 
