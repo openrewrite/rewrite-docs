@@ -44,7 +44,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
     <dependency>
       <groupId>org.openrewrite.plan</groupId>
       <artifactId>rewrite-spring</artifactId>
-      <version>2.1.0</version>
+      <version>2.2.0</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -60,7 +60,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.1.1</version>
+        <version>2.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.SpringBoot2Migration</recipe>

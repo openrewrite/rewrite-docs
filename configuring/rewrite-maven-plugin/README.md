@@ -32,7 +32,7 @@ To make pre-packaged Rewrite recipes available to the Maven plugin, add them as 
   <dependency>
     <groupId>org.openrewrite.plan</groupId>
     <artifactId>rewrite-spring</artifactId>
-    <version>2.1.0</version>
+    <version>2.2.0</version>
     <scope>provided</scope>
   </dependency>
   <dependency>
@@ -74,7 +74,7 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>2.1.0</version>
+    <version>2.2.1</version>
     <configuration>
         <reportOutputDirectory>.rewrite</reportOutputDirector>
     </configuration>
@@ -103,7 +103,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.1.0</version>
+        <version>2.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.spring</recipe>

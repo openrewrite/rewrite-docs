@@ -16,12 +16,12 @@ For Maven, define a compile scoped dependency on `rewrite-java` and a runtime sc
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-java</artifactId>
-  <version>5.1.0</version>
+  <version>5.4.4</version>
 </dependency>
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-java-11</artifactId>
-  <version>5.1.0</version>
+  <version>5.4.4</version>
   <scope>runtime</scope>
 </dependency>
 ```
@@ -29,8 +29,8 @@ For Maven, define a compile scoped dependency on `rewrite-java` and a runtime sc
 For Gradle, define an implementation dependency on `rewrite-java` and a runtime dependency on the appropriate language level parser for your code.
 
 ```groovy
-implementation("org.openrewrite:rewrite-java:5.1.0")
-runtimeOnly("org.openrewrite:rewrite-java-11:5.1.0")
+implementation("org.openrewrite:rewrite-java:5.4.4")
+runtimeOnly("org.openrewrite:rewrite-java-11:5.4.4")
 ```
 
 ## Constructing a Java Parser
@@ -105,7 +105,7 @@ The `blocks` configuration is designed to look exactly like IntelliJ IDEA's GUI 
 
 Styles are defined declaratively in YML and added to an [Environment](../v1beta/environment.md). Use the `specs.openrewrite.org/v1beta/style` resource type to define an import layout as shown below.
 
-```text
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/style
 name: io.moderne.spring.style
@@ -145,7 +145,7 @@ Tabs and indents cover many of the options in the tabs and indents configuration
 
 This style is defined declaratively in YML and can be retrieved from the `Environment` to apply to a `JavaParser` as we just saw with import layout styles. The configuration shown below also documents what the defaults are for each option, which match the default tab and indent styles of IntelliJ IDEA.
 
-```text
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/style
 name: io.moderne.spring.style
@@ -166,7 +166,7 @@ In the example below \(which shows most of the available options\), a field `pri
 
 `static` matches over `final`, because in Java code static fields and methods tend to be grouped together. Precedence then goes to the highest number of matching modifiers, then the highest number of modifiers, then alphabetically by field or method name.
 
-```text
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/style
 name: io.moderne.CustomDeclarationOrder

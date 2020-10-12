@@ -12,14 +12,14 @@ For Maven, define a compile scoped dependency on `rewrite-maven`.
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-maven</artifactId>
-  <version>5.1.0</version>
+  <version>5.4.4</version>
 </dependency>
 ```
 
 For Gradle, define an implementation dependency on `rewrite-maven`.
 
 ```groovy
-implementation("org.openrewrite:rewrite-maven:5.1.0")
+implementation("org.openrewrite:rewrite-maven:5.4.4")
 ```
 
 ## Constructing a Maven Parser
@@ -94,7 +94,7 @@ val pom: Maven.Pom = mp.parse("""
 """)[0]
 ```
 
-Notice how this returns a single `J.CompilationUnit`, which can be immediately acted upon. At some point, [JEP-355](https://openjdk.java.net/jeps/355) will bring multi-line strings to Java as well, so beautiful unit tests for Rewrite operations will be possible to write in plain Java code.
+Notice how this returns a single `Maven.Pom`, which can be immediately acted upon. At some point, [JEP-355](https://openjdk.java.net/jeps/355) will bring multi-line strings to Java as well, so beautiful unit tests for Rewrite operations will be possible to write in plain Java code.
 
 ## Next Steps
 
