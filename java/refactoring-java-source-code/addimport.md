@@ -21,14 +21,22 @@ Because this operation is so common, there are two methods provided on `JavaRefa
 The "maybe" refers to the fact that `AddImport` will check to ensure that there is actually an explicit type name reference somewhere in the source file before adding an import \(so you aren't left with an unused import\). In this way, you don't need to keep track of this yourself.
 {% endhint %}
 
-## Example
+`AddImport` is configured with these arguments:
 
-Since it is virtually never ideal to use `AddImport` directly, this example will demonstrate a visitor which uses `JavaRefactorVisitor.maybeAddImport()`.
+* `type` - The fully qualified name of the type to add an import for.
+* `onlyIfReferenced` - When `true` only adds the import if the type appears within the source. When `false` add the import regardless of usage or non-usage of the type. Defaults to `true`. 
+
+## Example
 
 ```java
 class ImportSet extends JavaRefactorVisitor {
     public J visitClassDecl(J.ClassDecl clazz) {
-        maybeAddImport("java.util.Set");
+        AddImport addImport = new AddImport();
+        addImport.setType("java.util.Set");
+        // Add an import even if java.util.Set is not used, which it isn't in the example
+        addImport.setOnlyIfReferenced(false);
+        andThen(addImport);
+
         return super.visitClassDecl(clazz);
     }
 }
@@ -47,4 +55,3 @@ import java.util.Set;
 
 class A {}
 ```
-

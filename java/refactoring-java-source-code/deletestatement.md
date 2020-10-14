@@ -4,8 +4,6 @@ description: Deletes a statement.
 
 # DeleteStatement
 
-## Definition
-
 `DeleteStatement` deletes a statement. In Java, statements include:
 
 * Assignments
@@ -28,18 +26,37 @@ description: Deletes a statement.
 * Synchronized blocks
 * Switch blocks and cases
 
-This transformation visitor is meant to be used on specific statements and so it doesn't have a declarative form.
+This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
 
-## Example
-
+## Java Definition
 The following refactoring visitor deletes `assert` statements anywhere they are found in code.
 
 ```java
 public class DeleteAsserts extends JavaRefactorVisitor {
   public J visitAssert(J.Assert azzert) {
-    andThen(new DeleteStatement(azzert);
+    andThen(new DeleteStatement(azzert));
     return super.visitAssert(azzert);
   }
 }
 ```
 
+## Example
+
+Applying the `DeleteAsserts` visitor defined above: 
+
+Before:
+```java
+class A {
+    void foo() {
+        assert false;
+    }
+}
+```
+
+After:
+```java
+class A {
+    void foo() {
+    }
+}
+```

@@ -3,12 +3,10 @@ description: Generate a constructor using fields.
 ---
 
 # GenerateConstructorUsingFields
+`GenerateConstructorUsingFields` adds a new constructor to the specified class based on one or more fields on that class. 
+This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
 
-## Definition
-
-`GenerateConstructorUsingFields` builds a new constructor if necessary. This transformation visitor is meant to be used on specific classes and so it doesn't have a declarative form. This visitor is also generative, so requires a `JavaParser`, which can be built from the styles preserved on the top-level `J.CompilationUnit`.
-
-## Example
+## Java Definition
 
 The following refactoring visitor builds a new constructor using all the fields found in a class.
 
@@ -40,4 +38,32 @@ public class AllArgsConstructor extends JavaRefactorVisitor {
   }
 }
 ```
+## Example
+Applying the `AllArgsConstructor` visitor defined above.
 
+Before:
+```java
+public class UsersController {
+    private final UsersService usersService;
+    private final UsernameService usernameService;
+    
+    public User findUser(String name) {
+    }
+}
+```
+
+After:
+```java
+public class UsersController {
+    private final UsersService usersService;
+    private final UsernameService usernameService;
+
+    public UsersController(UsersService usersService, UsernameService usernameService) {
+        this.usersService = usersService;
+        this.usernameService = usernameService;
+    }
+    
+    public User findUser(String name) {
+    }
+}
+```
