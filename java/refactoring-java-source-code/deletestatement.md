@@ -32,8 +32,8 @@ This refactoring visitor is a building block for more complex visitors, so it do
 The following refactoring visitor deletes `assert` statements anywhere they are found in code.
 
 ```java
-public class DeleteAsserts extends JavaRefactorVisitor {
-  public J visitAssert(J.Assert azzert) {
+public class DeleteAsserts extends JavaIsoRefactorVisitor {
+  public J.Assert visitAssert(J.Assert azzert) {
     andThen(new DeleteStatement(azzert));
     return super.visitAssert(azzert);
   }

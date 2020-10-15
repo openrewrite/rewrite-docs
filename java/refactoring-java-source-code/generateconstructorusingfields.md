@@ -11,7 +11,7 @@ This refactoring visitor is a building block for more complex visitors, so it do
 The following refactoring visitor builds a new constructor using all the fields found in a class.
 
 ```java
-public class AllArgsConstructor extends JavaRefactorVisitor {
+public class AllArgsConstructor extends JavaIsoRefactorVisitor {
   private JavaParser jp;
 
   public boolean isIdempotent() {
@@ -21,14 +21,14 @@ public class AllArgsConstructor extends JavaRefactorVisitor {
     return false;
   }
 
-  public J visitCompilationUnit(J.CompilationUnit cu) {
+  public J.CompilationUnit visitCompilationUnit(J.CompilationUnit cu) {
     jp = JavaParser.fromJavaVersion()
       .styles(cu.getStyles())
       .build();
     return super.visitCompilationUnit(cu);
   }
 
-  public J visitClassDecl(J.ClassDecl classDecl) {
+  public J.ClassDecl visitClassDecl(J.ClassDecl classDecl) {
     andThen(new GenerateConstructorUsingFields.Scoped(
       jp,
       classDecl,

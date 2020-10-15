@@ -29,8 +29,8 @@ The "maybe" refers to the fact that `AddImport` will check to ensure that there 
 ## Example
 
 ```java
-class ImportSet extends JavaRefactorVisitor {
-    public J visitClassDecl(J.ClassDecl clazz) {
+class ImportSet extends JavaIsoRefactorVisitor {
+    public J.ClassDecl visitClassDecl(J.ClassDecl clazz) {
         AddImport addImport = new AddImport();
         addImport.setType("java.util.Set");
         // Add an import even if java.util.Set is not used, which it isn't in the example

@@ -15,8 +15,8 @@ description: >-
 Rather than worrying about all the details of how a piece of code we are transforming is going to look \(especially when the transformation is complex\), you can just generate any sort of code, forget about formatting, and chain `AutoFormat` after your fixes to clean the result up.
 
 ```java
-public class ComplexMethodTransformation extends JavaRefactorVisitor {
-    public J visitMethod(J.MethodDecl method) {
+public class ComplexMethodTransformation extends JavaIsoRefactorVisitor {
+    public J.ClassDecl visitMethod(J.MethodDecl method) {
         // do some things to modify the method declaration
         // or body in some significant way and don't worry about formatting...
         
@@ -26,7 +26,7 @@ public class ComplexMethodTransformation extends JavaRefactorVisitor {
         return super.visitMethod(method);
     }
 
-    public J visitMultiVariable(J.VariableDecls variable) {
+    public J.VariableDecls visitMultiVariable(J.VariableDecls variable) {
         // do some things to modify the variable declaration
     
         // this will fix the indentation of the variable declaration to be consistent with its surroundings

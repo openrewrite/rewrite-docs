@@ -11,8 +11,8 @@ description: 'Add an annotation to a class, method, or variable.'
 The following refactoring visitor uses `AddAnnotation` to add the [API guardian](https://github.com/apiguardian-team/apiguardian) annotation to public API signatures.
 
 ```java
-public class MarkPublicApiMethods extends JavaRefactorVisitor {
-  public J visitMethod(J.MethodDecl method) {
+public class MarkPublicApiMethods extends JavaIsoRefactorVisitor {
+  public J.MethodDecl visitMethod(J.MethodDecl method) {
     if(isPublicApi(method) && method
         .findAnnotations("@org.apiguardian.api.API")
         .isEmpty()) {

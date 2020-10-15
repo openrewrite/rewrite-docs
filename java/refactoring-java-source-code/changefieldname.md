@@ -13,8 +13,8 @@ The following refactoring visitor changes fields of SLF4J `Logger` to have a con
 ```java
 import static org.openrewrite.java.tree.TypeUtils.isOfClassType;
 
-public class ConsistentLoggerName extends JavaRefactorVisitor {
-  public J visitVariableDecls(J.VariableDecls v) {
+public class ConsistentLoggerName extends JavaIsoRefactorVisitor {
+  public J.VariableDecls visitVariableDecls(J.VariableDecls v) {
     if(isOfClassType(v.getTypeAsClass(), "org.slf4j.Logger")) {      
       v.getVars().stream()
         .map(J.VariableDecls.NamedVar::getSimpleName)

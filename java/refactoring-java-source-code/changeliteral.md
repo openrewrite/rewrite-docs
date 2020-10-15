@@ -11,8 +11,8 @@ description: Transform a literal argument by applying a mapping function.
 The following refactoring visitor uses `ChangeLiteral` to replace instances of "%s" inside of string literals with "{}".
 
 ```java
-public class BracketStringTemplates extends JavaRefactorVisitor {
-  public J visitLiteral(J.Literal lit) {
+public class BracketStringTemplates extends JavaIsoRefactorVisitor {
+  public J.Literal visitLiteral(J.Literal lit) {
     if(lit.getType().equals(JavaType.Primitive.String) &&
       lit.getValue().toString().contains("%s")) {
 

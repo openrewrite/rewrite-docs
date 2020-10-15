@@ -13,8 +13,8 @@ This refactoring visitor is a building block for more complex visitors, so it do
 The following refactoring visitor adds a `Serializable` interface to a data class.
 
 ```java
-public class AddSerializable extends JavaRefactorVisitor {
-  public J visitClassDecl(J.ClassDecl classDecl) {
+public class AddSerializable extends JavaIsoRefactorVisitor {
+  public J.ClassDecl visitClassDecl(J.ClassDecl classDecl) {
     andThen(new ImplementInterface.Scoped(
       classDecl,
       "java.io.Serializable"
