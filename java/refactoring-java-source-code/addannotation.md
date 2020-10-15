@@ -12,7 +12,7 @@ The following refactoring visitor uses `AddAnnotation` to add the [API guardian]
 
 ```java
 public class MarkPublicApiMethods extends JavaRefactorVisitor {
-  public J visitMethodDecl(J.MethodDecl method) {
+  public J visitMethod(J.MethodDecl method) {
     if(isPublicApi(method) && method
         .findAnnotations("@org.apiguardian.api.API")
         .isEmpty()) {
@@ -23,7 +23,7 @@ public class MarkPublicApiMethods extends JavaRefactorVisitor {
         emptyList() // annotation arguments
       ));
     }
-    return super.visitMethodDecl(method);
+    return super.visitMethod(method);
   }
 
   private boolean isPublicApi(J.MethodDecl method) {

@@ -16,15 +16,25 @@ Rather than worrying about all the details of how a piece of code we are transfo
 
 ```java
 public class ComplexMethodTransformation extends JavaRefactorVisitor {
-  public J visitMethodDecl(J.MethodDecl method) {
-    // do some things to modify the method declaration
-    // or body in some significant way and don't worry about formatting...
+    public J visitMethod(J.MethodDecl method) {
+        // do some things to modify the method declaration
+        // or body in some significant way and don't worry about formatting...
+        
+        // this will fix the indentation of the method declaration to be consistent with its surroundings
+        andThen(new AutoFormat(method));
+        
+        return super.visitMethod(method);
+    }
 
-    // this will fix the indentation of the method declaration to be consistent with its surroundings
-    andThen(new AutoFormat(method));
+    public J visitMultiVariable(J.VariableDecls variable) {
+        // do some things to modify the variable declaration
+    
+        // this will fix the indentation of the variable declaration to be consistent with its surroundings
+        andThen(new AutoFormat(variable));
+    
+        return super.visitMultiVariable(variable);
+    }
 
-    return super.visitMethodDecl(method);
-  }
 }
 ```
 

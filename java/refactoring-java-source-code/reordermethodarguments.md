@@ -18,7 +18,7 @@ JavaParser jp = JavaParser.fromJavaVersion().build();
 // Fill in arguments with Java sources to be refactored
 List<J.CompilationUnit> cus = jp.parse(...);
 
-ReorderMethodArguments rma = new InsertMethodArgument();
+ReorderMethodArguments rma = new ReorderMethodArguments();
 rma.setMethod("org.some.Logger info(String,Throwable,Object[])");
 rma.setOrder("format", "arguments", "ex");
 rma.setOriginalOrder("format", "ex", "arguments"); // optional
