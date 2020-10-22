@@ -24,9 +24,9 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <dependencies>
     <dependency>
-      <groupId>org.openrewrite.plan</groupId>
-      <artifactId>rewrite-checkstyle</artifactId>
-      <version>2.1.0</version>
+      <groupId>org.openrewrite.recipe</groupId>
+      <artifactId>rewrite-spring</artifactId>
+      <version>2.3.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -36,7 +36,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.0.0</version>
+        <version>2.1.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.SpringBoot2Migration</recipe>

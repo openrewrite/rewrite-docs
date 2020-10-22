@@ -49,9 +49,9 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
 Now add a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring), a rewrite module containing recipes which automate spring best practices and spring boot 1 -> 2 migration.
 ```xml
 <dependency>
-    <groupId>org.openrewrite.plan</groupId>
+    <groupId>org.openrewrite.recipe</groupId>
     <artifactId>rewrite-spring</artifactId>
-    <version>2.2.0</version>
+    <version>2.3.0</version>
     <scope>provided</scope>
 </dependency>
 ```
