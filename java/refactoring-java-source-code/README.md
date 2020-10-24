@@ -4,7 +4,7 @@ description: >-
   code.
 ---
 
-# Transforming Java Code
+# Refactoring Java Code
 
 Rewrite provides a set of basic building blocks to transform Java code which can be composed into higher-level transformations. These are detailed in the subsequent pages and include:
 

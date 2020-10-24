@@ -16,12 +16,12 @@ For Maven, define a compile scoped dependency on `rewrite-java` and a runtime sc
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-java</artifactId>
-  <version>5.4.4</version>
+  <version>5.5.0</version>
 </dependency>
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-java-11</artifactId>
-  <version>5.4.4</version>
+  <version>5.5.0</version>
   <scope>runtime</scope>
 </dependency>
 ```
@@ -29,8 +29,8 @@ For Maven, define a compile scoped dependency on `rewrite-java` and a runtime sc
 For Gradle, define an implementation dependency on `rewrite-java` and a runtime dependency on the appropriate language level parser for your code.
 
 ```groovy
-implementation("org.openrewrite:rewrite-java:5.4.4")
-runtimeOnly("org.openrewrite:rewrite-java-11:5.4.4")
+implementation("org.openrewrite:rewrite-java:5.5.0")
+runtimeOnly("org.openrewrite:rewrite-java-11:5.5.0")
 ```
 
 ## Constructing a Java Parser

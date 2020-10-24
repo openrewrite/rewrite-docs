@@ -3,13 +3,18 @@ description: Sets the parent POM to a fixed version.
 ---
 
 # ChangeParentVersion
+`ChangeParentVersion` changes the parent version to a fixed version that you specify.
+
+`ChangeParentVersion` is configured with these parameters:
+* `groupId` - Update parent versions when they match this Maven group ID.
+* `artifactId`- Update parent versions when they match this Maven artifact ID.
+* `toVersion` - The version to set.
 
 ## Java Definition
 
-`ChangeParentVersion` changes the parent version to a fixed version that you specify.
-
 ```java
-Iterable<Maven.Pom> poms;
+MavenParser parser = MavenParser.builder().build();
+Iterable<Maven.Pom> poms = parser.parse(...);
 
 ChangeParentVersion cpv = new ChangeParentVersion();
 cpv.setGroupId("org.springframework.boot");
@@ -19,28 +24,31 @@ cpv.setToVersion("1.5.22.RELEASE");
 Collection<Change> changes = new Refactor().visit(cpv).fix(poms);
 ```
 
-* `groupId` - Update parent versions when they match this Maven group ID.
-* `artifactId`- Update parent versions when they match this Maven artifact ID.
-* `toVersion` - The version to set.
-
 ## YAML Definition
 
-```text
+Adding the following to your rewrite.yml and setting the `com.yourorg.ChangeParentVersionRecipe` recipe as active in your build plugin will apply the visitor as shown in the example.
+
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/visitor
-name: io.moderne.ChangeSpringBootVersion
+name: com.yourorg.ChangeSpringBootVersion
 visitors:
   - org.openrewrite.maven.ChangeParentVersion:
-    groupId: org.springframework.boot
-    artifactId: spring-boot-starter-parent
-    toVersion: 1.5.22.RELEASE
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-parent
+      toVersion: 1.5.22.RELEASE
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.ChangeParentVersionRecipe
+include:
+  - 'com.yourorg.ChangeParentVersion'
 ```
 
 ## Example
 
 Before:
 
-```markup
+```xml
 <project>
    <parent>
      <groupId>org.springframework.boot</groupId>
@@ -53,7 +61,7 @@ Before:
 
 After:
 
-```markup
+```xml
 <project>
    <parent>
      <groupId>org.springframework.boot</groupId>
@@ -63,4 +71,3 @@ After:
    </parent>
 </project>
 ```
-
