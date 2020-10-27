@@ -3,6 +3,7 @@ description: Upgrade a parent version using advanced range selectors.
 ---
 
 # UpgradeParentVersion
+
 `UpgradeParentVersion` upgrades a matching parent version using an [advanced range selector](./#advanced-range-selectors).
 
 * `groupId` - The Maven group ID to match.
@@ -26,6 +27,7 @@ Collection<Change> changes = new Refactor().visit(upv).fix(poms);
 ```
 
 ## YAML Definition
+
 Adding the following to your rewrite.yml and setting the `com.yourorg.UpgradeSpringBootRecipe` recipe as active in your build plugin will apply the visitor as shown in the example.
 
 ```yaml
@@ -48,7 +50,7 @@ include:
 
 Before:
 
-```xml
+```markup
 <project>
    <parent>
      <groupId>org.springframework.boot</groupId>
@@ -61,7 +63,7 @@ Before:
 
 After:
 
-```xml
+```markup
 <project>
    <parent>
      <groupId>org.springframework.boot</groupId>

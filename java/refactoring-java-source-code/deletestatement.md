@@ -29,6 +29,7 @@ description: Deletes a statement.
 This refactoring visitor is a building block for more complex visitors, so it does not have a declarative form.
 
 ## Java Definition
+
 The following refactoring visitor deletes `assert` statements anywhere they are found in code.
 
 ```java
@@ -42,9 +43,10 @@ public class DeleteAsserts extends JavaIsoRefactorVisitor {
 
 ## Example
 
-Applying the `DeleteAsserts` visitor defined above: 
+Applying the `DeleteAsserts` visitor defined above:
 
 Before:
+
 ```java
 class A {
     void foo() {
@@ -54,9 +56,11 @@ class A {
 ```
 
 After:
+
 ```java
 class A {
     void foo() {
     }
 }
 ```
+

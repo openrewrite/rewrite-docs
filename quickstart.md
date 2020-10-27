@@ -13,7 +13,7 @@ description: >-
 This tutorial shows how to use Rewrite to improve Spring framework usage. To get started, clone the [Spring Petclinic Migration](https://github.com/openrewrite/spring-petclinic-migration) project.
 
 {% hint style="success" %}
-If you'd like to skip ahead to [Running the Fixes](https://github.com/openrewrite/spring-petclinic-migration#running-the-fixes), checkout the [tutorial](https://github.com/openrewrite/spring-petclinic-migration/tree/tutorial) branch, which is pre-configured and ready to run. 
+If you'd like to skip ahead to [Running the Fixes](https://github.com/openrewrite/spring-petclinic-migration#running-the-fixes), checkout the [tutorial](https://github.com/openrewrite/spring-petclinic-migration/tree/tutorial) branch, which is pre-configured and ready to run.
 
 You can also use the [tutorial ](https://github.com/openrewrite/spring-petclinic-migration/tree/tutorial)branch as a reference while you follow this tutorial.
 {% endhint %}
@@ -32,7 +32,7 @@ This is an older repository that requires an older JDK version, JDK 8. If you do
 
 Next, you need to make sure Maven knows what the Rewrite maven plugin is by adding the following to your [pom.xml](https://github.com/openrewrite/spring-petclinic-migration/blob/1.5.x/pom.xml) file.
 
-```xml
+```markup
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
@@ -46,8 +46,9 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
 </plugin>
 ```
 
-Now add a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring), a rewrite module containing recipes which automate spring best practices and spring boot 1 -> 2 migration.
-```xml
+Now add a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring), a rewrite module containing recipes which automate spring best practices and spring boot 1 -&gt; 2 migration.
+
+```markup
 <dependency>
     <groupId>org.openrewrite.recipe</groupId>
     <artifactId>rewrite-spring</artifactId>
@@ -55,21 +56,21 @@ Now add a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-
     <scope>provided</scope>
 </dependency>
 ```
+
 Note that we put this dependency into Maven's "provided" scope, which means it is available only at compile time.
 
 Also create a rewrite.yml file, which can be blank for now.
 
-```
+```text
 > touch rewrite.yml
 ```
-
 
 ## Step 3: Run the Rewrite Plugin
 
 Now that everything is set up, we can run the Rewrite plugin by using`./mvnw rewrite:fix` to apply the recipes, which will make changes to the source code of the repository. In a real-world scenario, you'd review these changes and perform whatever checks you'd like and then commit them when you are comfortable that they are accurate. The set of recipes that are provided for you by Rewrite are intended to always produce 100% accurate fixes that don't require any manual intervention.
 
 {% hint style="info" %}
-Similar build tasks exist for Gradle as well. See [Rewrite Gradle Plugin](configuring/rewrite-gradle-plugin.md) for more about how to do  the same in a Gradle project.
+Similar build tasks exist for Gradle as well. See [Rewrite Gradle Plugin](configuring/rewrite-gradle-plugin.md) for more about how to do the same in a Gradle project.
 {% endhint %}
 
 ### What is happening when we run this?

@@ -54,8 +54,11 @@ name: com.yourorg.AlwaysUseMarkerRecipe
 include:
   - 'com.yourorg.AlwaysUseMarker'
 ```
+
 ## Example
-Before: 
+
+Before:
+
 ```java
 import org.some.Logger;
 
@@ -66,7 +69,9 @@ class A {
     }
 }
 ```
+
 After:
+
 ```java
 import org.some.Logger;
 
@@ -77,3 +82,4 @@ class A {
     }
 }
 ```
+

@@ -14,7 +14,7 @@ Mockito migration may look out of place in this list as Mockito isn't related to
 
 This functionality is being actively developed. If you are aware of something we've missed or find a bug, [file an issue](https://github.com/openrewrite/rewrite-spring/issues) and let us know.
 
-### Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin/)
+## Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin/)
 
 To apply these recipes and visitors in the Maven plugin, add a `provided` scope dependency on `rewrite-spring` and activate pre-packaged recipes or define your own.
 
@@ -30,7 +30,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
       <scope>provided</scope>
     </dependency>
   </dependencies>
-    
+
   <build>
     <plugins>
       <plugin>
@@ -48,8 +48,4 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
   </build>
 </project>
 ```
-
-
-
-
 

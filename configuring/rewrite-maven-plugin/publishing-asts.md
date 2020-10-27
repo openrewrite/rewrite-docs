@@ -4,7 +4,7 @@ description: Publishing a serialized AST jar to a remote Maven Repository
 
 # Publishing ASTs
 
-### Publishing ASTs to a Remote Maven Repository
+## Publishing ASTs to a Remote Maven Repository
 
 The Rewrite Maven plugin defines a `rewrite:publish` goal that serializes abstract syntax trees for both the main and test source sets to a compact JSON Smile format and places them in a special JAR file with paths relative to the root of the project.
 

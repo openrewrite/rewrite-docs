@@ -3,9 +3,11 @@ description: Sets the parent POM to a fixed version.
 ---
 
 # ChangeParentVersion
+
 `ChangeParentVersion` changes the parent version to a fixed version that you specify.
 
 `ChangeParentVersion` is configured with these parameters:
+
 * `groupId` - Update parent versions when they match this Maven group ID.
 * `artifactId`- Update parent versions when they match this Maven artifact ID.
 * `toVersion` - The version to set.
@@ -48,7 +50,7 @@ include:
 
 Before:
 
-```xml
+```markup
 <project>
    <parent>
      <groupId>org.springframework.boot</groupId>
@@ -61,7 +63,7 @@ Before:
 
 After:
 
-```xml
+```markup
 <project>
    <parent>
      <groupId>org.springframework.boot</groupId>
@@ -71,3 +73,4 @@ After:
    </parent>
 </project>
 ```
+

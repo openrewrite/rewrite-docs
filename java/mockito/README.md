@@ -4,7 +4,7 @@ description: Migrating from Mockito 1.x to Mockito 2.x.
 
 # Mockito
 
-### Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin/)
+## Use in the [Rewrite Maven Plugin](../../configuring/rewrite-maven-plugin/)
 
 To apply these recipes and visitors in the Maven plugin, add a `provided` scope dependency on `rewrite-spring` \(included with the spring package because this migration often occurs as part of the upgrade from Spring Boot 1.x to 2.x\) and activate pre-packaged recipes or define your own.
 
@@ -19,7 +19,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
       <version>2.3.0</version>
       <scope>provided</scope>
     </dependency>
-    
+
     <build>
       <plugins>
         <plugin>

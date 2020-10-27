@@ -30,7 +30,6 @@ Collection<Change> changes = new Refactor().visit(o).fix(cus);
 
 ## Declarative Definition
 
-
 Adding the following to your rewrite.yml and setting the `com.yourorg.OrderDeclarationsRecipe` recipe as active in your build plugin will apply the `OrderDeclarations` visitor.
 
 ```yaml
@@ -49,6 +48,7 @@ include:
 ## Example
 
 Before:
+
 ```java
 class A {
     private final int unsettable = 1;
@@ -85,6 +85,7 @@ class A {
 ```
 
 After:
+
 ```java
 class A {
     public static final A a = new A();
@@ -131,3 +132,4 @@ class A {
     }
 }
 ```
+

@@ -3,9 +3,11 @@ description: Sets a matching dependency to a fixed version.
 ---
 
 # ChangeDependencyVersion
+
 `ChangeDependencyVersion` changes a matching dependency to a fixed version that you specify.
 
 `ChangeDependencyVersion` is configured with these parameters:
+
 * `groupId` - Update parent versions when they match this Maven group ID.
 * `artifactId`- Update dependency versions when they match this Maven artifact ID. This is optional. If it is not specified, update every dependency matching the group. This is useful to update a family of dependencies all at once, such as those in the `com.fasterxml.jackson` group.
 * `toVersion` - The version to set.
@@ -48,7 +50,7 @@ include:
 
 Before:
 
-```xml
+```markup
 <project>
    <dependencies>
      <dependency>
@@ -67,7 +69,7 @@ Before:
 
 After:
 
-```xml
+```markup
 <project>
    <dependencies>
      <dependency>
@@ -83,3 +85,4 @@ After:
    </dependencies>
 </project>
 ```
+

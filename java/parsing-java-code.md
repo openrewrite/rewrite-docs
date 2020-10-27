@@ -160,9 +160,9 @@ configure:
 
 ### Declaration Order \(style\)
 
-The declaration order style controls the order in which fields, constructors, and methods appear in class declarations. Declarations in a class are grouped into "blocks" of declarations, matching the most specific block defined in the style. 
+The declaration order style controls the order in which fields, constructors, and methods appear in class declarations. Declarations in a class are grouped into "blocks" of declarations, matching the most specific block defined in the style.
 
-In the example below \(which shows most of the available options\), a field `private static final Logger logger;` would match the `private static fields` block, because it best matches the modifiers in that block. 
+In the example below \(which shows most of the available options\), a field `private static final Logger logger;` would match the `private static fields` block, because it best matches the modifiers in that block.
 
 `static` matches over `final`, because in Java code static fields and methods tend to be grouped together. Precedence then goes to the highest number of matching modifiers, then the highest number of modifiers, then alphabetically by field or method name.
 

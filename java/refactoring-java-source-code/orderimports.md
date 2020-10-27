@@ -44,9 +44,10 @@ include:
   - 'com.yourorg.OrderImports'
 ```
 
+## Example
 
-## Example 
 Before:
+
 ```java
 import static java.util.stream.Collectors.joining;
 import java.util.ArrayList;
@@ -58,7 +59,9 @@ import org.openrewrite.java.tree.TypeUtils;
 
 class A {}
 ```
+
 After:
+
 ```java
 import org.openrewrite.java.tree.JavaType;
 import org.openrewrite.java.tree.TypeUtils;
@@ -72,3 +75,4 @@ import static java.util.stream.Collectors.joining;
 
 class A {}
 ```
+

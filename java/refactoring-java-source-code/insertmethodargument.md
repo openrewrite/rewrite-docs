@@ -5,6 +5,7 @@ description: >-
 ---
 
 # InsertMethodArgument
+
 `InsertMethodArgument` is used to insert arguments into existing method invocations. It is generally used when an API changes to have a new required argument and where that argument's value either has a generally applicable default value or a value that can be determined from each existing method invocation's context.
 
 ## Java Definition
@@ -43,7 +44,6 @@ visitors:
   - org.openrewrite.java.AddImport:
     type: org.slf4j.helpers.BasicMarker
     onlyIfReferenced: false
-
 ```
 
 ## Example

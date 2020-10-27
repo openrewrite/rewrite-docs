@@ -3,6 +3,7 @@ description: Upgrade a dependency version using advanced range selectors.
 ---
 
 # UpgradeDependencyVersion
+
 `UpgradeDependencyVersion` upgrades a first-order Maven dependency using an [advanced range selector](./#advanced-range-selectors).
 
 * `groupId` - The Maven group ID to match.
@@ -26,7 +27,9 @@ udv.setMetadataPattern("-jre");
 
 Collection<Change> changes = new Refactor().visit(udv).fix(poms);
 ```
+
 ## YAML Definition
+
 Adding the following to your rewrite.yml and setting the `com.yourorg.UpgradeGuavaRecipe` recipe as active in your build plugin will apply the visitor as shown in the example.
 
 ```yaml
@@ -50,7 +53,7 @@ include:
 
 Before:
 
-```xml
+```markup
 <project>
    ...
    <dependencies>
@@ -65,7 +68,7 @@ Before:
 
 After:
 
-```xml
+```markup
 <project>
    ...
    <dependencies>
@@ -84,7 +87,7 @@ If the property is instead defined in a parent POM, the version is updated there
 
 Before:
 
-```xml
+```markup
 <project>
    ...
    <properties>
@@ -103,7 +106,7 @@ Before:
 
 After:
 
-```xml
+```markup
 <project>
    ...
    <properties>
@@ -126,7 +129,7 @@ If the `dependencyManagement` section is instead defined in a parent POM, the ve
 
 Before:
 
-```xml
+```markup
 <project>
    ...
    <dependencyManagement>
@@ -148,7 +151,7 @@ Before:
 
 After:
 
-```xml
+```markup
 <project>
    ...
    <dependencyManagement>
@@ -167,3 +170,4 @@ After:
    </dependencies>
 </project>
 ```
+
