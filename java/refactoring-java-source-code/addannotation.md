@@ -19,8 +19,7 @@ public class MarkPublicApiMethods extends JavaIsoRefactorVisitor {
 
       andThen(new AddAnnotation.Scoped(
         method,
-        JavaType.Class.build("org.apiguardian.api.API"),
-        emptyList() // annotation arguments
+        JavaType.Class.build("org.apiguardian.api.API")
       ));
     }
     return super.visitMethod(method);
@@ -40,6 +39,7 @@ Before:
 
 ```java
 public class A {
+
     public void partOfThePublicApi() {
     }
 }
@@ -51,6 +51,7 @@ After:
 import org.apiguardian.api.API;
 
 public class A {
+
     @API
     public void partOfThePublicApi() {
     }
