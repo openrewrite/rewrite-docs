@@ -5,7 +5,8 @@ description: >-
 ---
 
 # UseStaticImport
-`UseStaticImport` changes any matching static method invocations to use a statically imported form of the method, adjusting any imports as necessary. 
+
+`UseStaticImport` changes any matching static method invocations to use a statically imported form of the method, adjusting any imports as necessary.
 
 `UseStaticImport` is configured with these options:
 
@@ -26,6 +27,7 @@ Collection<Change> changes = new Refactor().visit(si).fix(cus);
 ```
 
 ## YAML Definition
+
 Adding the following to your rewrite.yml and setting the `com.yourorg.UseStaticJUnitAssertsRecipe` recipe as active in your build plugin will apply the `UseStaticImport` visitor.
 
 ```yaml

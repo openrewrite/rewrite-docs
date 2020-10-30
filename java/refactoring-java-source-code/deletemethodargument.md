@@ -3,6 +3,7 @@ description: Locate method invocations by their signature and delete an argument
 ---
 
 # DeleteMethodArgument
+
 `DeleteMethodArgument` deletes an argument at a particular index from matching methods. It also removes imports referred to by any type name reference in the deleted argument if there are no remaining type name references to it in the source file after deletion.
 
 `DeleteMethodArgument` is configured with these arguments:
@@ -61,3 +62,4 @@ Logger logger = ...;
 
 logger.debug("message");
 ```
+

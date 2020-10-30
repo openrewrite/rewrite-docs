@@ -17,7 +17,7 @@ The Rewrite Maven plugin offers four goals:
 * `mvn rewrite:diff` - Generates a git-style patch file that you can review independently and then apply with `git apply target/site/rewrite/rewrite.patch`.
 * `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite is finding on your classpath.
 
-### Classpath Scanning for Resources
+## Classpath Scanning for Resources
 
 The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles. These aren't automatically enabled, but they become available to activate through [plugin configuration](./#plugin-configuration).
 
@@ -44,7 +44,7 @@ To make pre-packaged Rewrite recipes available to the Maven plugin, add them as 
 </dependencies>
 ```
 
-### The "Fix" Goal
+## The "Fix" Goal
 
 Execute`mvn rewrite:fix` to run the configured recipes and apply the changes locally. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortalbe with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
 
@@ -54,15 +54,15 @@ After the goal finishes executing, run `git diff` to see what changes were made,
 
 ![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:fix goal](../../.gitbook/assets/image%20%287%29.png)
 
-### The "Warn" Goal
+## The "Warn" Goal
 
 Execute`mvn rewrite:warn` runs configured recipes in the same way that the fix goal does, but only writes the warnings to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by a recipe.
 
 It could also be manually called in a continuous integration environment, and if you so choose, fail the continuous integration build if the build log contains any such warnings.
 
-### The "Diff" Goal
+## The "Diff" Goal
 
-Execute`mvn rewrite:diff` to run the configured recipes and generate a git-style patch file. This is a little less disruptive than directly writing the changes to disk. Afterwards, you can review the changes with `git diff target/site/rewrite/rewrite.patch`, and when you are comfortable with the changes, use `git apply` to apply them to your source files on disk. Then commit the changes. 
+Execute`mvn rewrite:diff` to run the configured recipes and generate a git-style patch file. This is a little less disruptive than directly writing the changes to disk. Afterwards, you can review the changes with `git diff target/site/rewrite/rewrite.patch`, and when you are comfortable with the changes, use `git apply` to apply them to your source files on disk. Then commit the changes.
 
 The diff goal also generates warnings in the build log wherever it proposes changes. The warning will also contain the command to run to apply the changes for a particular Maven module. Notice how a separate patch file is generated for each module in a multi-module project.
 
@@ -81,13 +81,13 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 </plugin>
 ```
 
-### The "Discover" Goal
+## The "Discover" Goal
 
-Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated. It lists the available recipes, the inclusion and exclusion configurations for those recipes, and the visitors that are effective for that each recipe based on what was found on the classpath. So in the below example, the `org.openrewrite.mockito` recipe has been defined to include all visitors prefixed in the `org.openrewrite.mockito` package. Then it lists all the visitors that have been found in that package and will be ran if that recipe is activated. 
+Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated. It lists the available recipes, the inclusion and exclusion configurations for those recipes, and the visitors that are effective for that each recipe based on what was found on the classpath. So in the below example, the `org.openrewrite.mockito` recipe has been defined to include all visitors prefixed in the `org.openrewrite.mockito` package. Then it lists all the visitors that have been found in that package and will be ran if that recipe is activated.
 
 ![Discovering the available recipes and visitors via the Maven plugin](../../.gitbook/assets/image%20%283%29.png)
 
-### Plugin configuration
+## Plugin configuration
 
 It generally makes sense to apply the plugin to the root pom.xml in a repository so that the configuration applies to each project in a multi-module project. The configuration block below contains an example of every configuration option.
 

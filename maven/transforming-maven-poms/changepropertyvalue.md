@@ -3,6 +3,7 @@ description: Updates a Maven property value.
 ---
 
 # ChangePropertyValue
+
 `ChangePropertyValue` replaces the value of the specified property.
 
 * `key` - The property key to update.
@@ -22,6 +23,7 @@ Collection<Change> changes = new Refactor().visit(cpv).fix(poms);
 ```
 
 ## YAML Definition
+
 Adding the following to your rewrite.yml and setting the `com.yourorg.ChangePropertyVersionRecipe` recipe as active in your build plugin will apply the visitor as shown in the example.
 
 ```yaml
@@ -43,7 +45,7 @@ include:
 
 Before:
 
-```xml
+```markup
 <project>
    ...
    <properties>
@@ -54,7 +56,7 @@ Before:
 
 After:
 
-```xml
+```markup
 <project>
    ...
    <properties>
@@ -62,3 +64,4 @@ After:
    </properties>
 </project>
 ```
+

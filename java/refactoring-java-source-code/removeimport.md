@@ -24,7 +24,9 @@ The "maybe" refers to the fact that `RemoveImport` will check to ensure that the
 {% endhint %}
 
 ## Java Definition
+
 This defines a visitor which removes import statements for `java.util.Set`
+
 ```java
 public class RemoveSetImport extends JavaIsoRefactorVisitor {
     @Override
@@ -38,7 +40,9 @@ public class RemoveSetImport extends JavaIsoRefactorVisitor {
 ```
 
 ## Example
+
 Before:
+
 ```java
 import java.util.Set;
 
@@ -46,6 +50,8 @@ class A {}
 ```
 
 After:
+
 ```java
 class A {}
 ```
+
