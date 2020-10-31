@@ -58,7 +58,7 @@ visitors:
   - 'org.openrewrite.checkstyle.*'
 configure:
   org.openrewrite.checkstyle.*
-    congFile: ${maven.multiModuleProjectDirectory}/checkstyle.xml
+    configFile: ${maven.multiModuleProjectDirectory}/checkstyle.xml
 ```
 
 ## Example Checkstyle Configuration File
