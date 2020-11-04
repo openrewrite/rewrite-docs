@@ -4,7 +4,7 @@ description: >-
   practices
 ---
 
-# Testing
+# Test Framework Migrations
 
 The [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) module provides recipes and visitors which automates:
 
@@ -35,7 +35,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.1.1</version>
+        <version>2.3.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.JUnit5Migration</recipe>

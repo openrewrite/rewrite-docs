@@ -82,19 +82,18 @@ Invoke a visitor by instantiating it and calling `visit` on any AST node \(usual
 ```java
 JavaParser jp = JavaParser.fromJavaVersion().build();
 
-// uses JEP-355 Text Blocks (a Java 13 preview feature)
-J.CompilationUnit cu = jp.parse("""
-    import org.slf4j.Logger;
-    public class Sample {
-        Logger logger;
-
-        {
-            logger.info("1");
-            logger.warn("2");
-            logger.error("3");
-        }
-    }
-""");
+J.CompilationUnit cu = jp.parse(
+        "    import org.slf4j.Logger;\n" +
+        "    public class Sample {\n" +
+        "        Logger logger;\n" +
+        "\n" +
+        "        {\n" +
+        "            logger.info(\"1\");\n" +
+        "            logger.warn(\"2\");\n" +
+        "            logger.error(\"3\");\n" +
+        "        }\n" +
+        "    }"
+).get(0);
 
 int methodCount = new JavaMethodCount().visit(cu);
 assertThat(methodCount).isEqualTo(3);
