@@ -10,7 +10,7 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 | [Configuration Properties](../java/spring/spring-boot-2-migration/springbootconfiguration.md) | ⬤ |
 | [`SpringBootServletInitializer` relocation](../java/spring/spring-boot-2-migration/springbootservletinitializerpackage.md) | ⬤ |
 | Removal of unused spring starter modules | ◯ |
-| [Mockito 1.x-3.x]() | ⬤ |
+| [Mockito 1.x-3.x](design-partner-1.md) | ⬤ |
 | `@Value` to `@ConfigurationProperties` | ⬤ |
 | Spring Data migration to `Optional` | ◯ |
 | Spring Best Practices | ◑ |

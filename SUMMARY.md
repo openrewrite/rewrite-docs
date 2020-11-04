@@ -37,7 +37,7 @@
   * [HasType](java/semantic-search-for-java/hastype.md)
 * [Utilities](java/utilities/README.md)
   * [SpansMultipleLines](java/utilities/spansmultiplelines.md)
-* [Transforming Java Code](java/refactoring-java-source-code/README.md)
+* [Refactoring Java Code](java/refactoring-java-source-code/README.md)
   * [AddAnnotation](java/refactoring-java-source-code/addannotation.md)
   * [AddField](java/refactoring-java-source-code/addfield.md)
   * [AddImport](java/refactoring-java-source-code/addimport.md)

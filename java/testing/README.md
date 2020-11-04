@@ -4,7 +4,7 @@ description: >-
   practices
 ---
 
-# Test Framework Migrations
+# Testing
 
 The [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) module provides recipes and visitors which automates:
 
