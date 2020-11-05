@@ -25,7 +25,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>0.2.1</version>
+      <version>0.3.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
