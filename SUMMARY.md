@@ -35,6 +35,7 @@
   * [FindReferencesToVariable](java/semantic-search-for-java/findreferencestovariable.md)
   * [FindType](java/semantic-search-for-java/findtype.md)
   * [HasType](java/semantic-search-for-java/hastype.md)
+  * [SemanticallyEqual](java/semantic-search-for-java/semanticallyequal.md)
 * [Utilities](java/utilities/README.md)
   * [SpansMultipleLines](java/utilities/spansmultiplelines.md)
 * [Refactoring Java Code](java/refactoring-java-source-code/README.md)
