@@ -21,7 +21,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
 
 ### Adding a dependency and activating a custom recipe
 
-```markup
+```xml
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -56,7 +56,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
 
 The above configuration assumes you create a recipe at the project root directory in `rewrite.yml` and that your `checkstyle.xml` is defined in the project root directory.
 
-```text
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: java.Checkstyle 
@@ -71,7 +71,7 @@ configure:
 
 Below is a complete example of a [Checkstyle configuration file](https://checkstyle.sourceforge.io/config.html) that configures only this recipe.
 
-```markup
+```xml
 <?xml version="1.0"?>
 <!DOCTYPE module PUBLIC
   "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"

@@ -16,7 +16,7 @@ Styles are persisted with a top-level `SourceFile` AST element when that AST is 
 
 Styles are typically defined declaratively in a YML file an included in an [Environment](environment.md). For example, the style below configures an [import layout style](../java/parsing-java-code.md#import-layout-style) for Java:
 
-```text
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/style
 name: io.moderne.spring.style

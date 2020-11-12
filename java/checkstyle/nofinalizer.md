@@ -24,7 +24,7 @@ The other configuration options \(other than`setConfigFile`\) are described in [
 
 ## YAML Definition
 
-```text
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.JultoSlf4j

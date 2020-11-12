@@ -12,7 +12,7 @@ You can then perform structured search or transformation on those files.
 
 For Maven, define a compile scoped dependency on `rewrite-xml`.
 
-```markup
+```xml
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-xml</artifactId>

@@ -12,7 +12,7 @@ This AST JAR can be used for batch processing of ASTs across a large number of r
 
 To enable the `rewrite:publish` goal, add an `<executions>` block to your plugin configuration as shown below. Note that you may choose to _only_ do this and not configure any recipes at all, relying solely on a batch offline process to transform your organization's source code.
 
-```markup
+```xml
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>

@@ -8,7 +8,7 @@ You can then perform structured search or transformation on those documents.
 
 For Maven, define a compile scoped dependency on `rewrite-yaml`.
 
-```markup
+```xml
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-yaml</artifactId>

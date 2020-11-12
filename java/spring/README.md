@@ -15,7 +15,7 @@ This functionality is being actively developed. If you are aware of something we
 
 To apply these recipes and visitors in the Maven plugin, add a `provided` scope dependency on `rewrite-spring` and activate pre-packaged recipes or define your own.
 
-```markup
+```xml
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">

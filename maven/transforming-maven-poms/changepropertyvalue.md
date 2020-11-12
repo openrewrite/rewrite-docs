@@ -45,7 +45,7 @@ include:
 
 Before:
 
-```markup
+```xml
 <project>
    ...
    <properties>
@@ -56,7 +56,7 @@ Before:
 
 After:
 
-```markup
+```xml
 <project>
    ...
    <properties>

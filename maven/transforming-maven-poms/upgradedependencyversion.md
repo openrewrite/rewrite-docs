@@ -53,7 +53,7 @@ include:
 
 Before:
 
-```markup
+```xml
 <project>
    ...
    <dependencies>
@@ -68,7 +68,7 @@ Before:
 
 After:
 
-```markup
+```xml
 <project>
    ...
    <dependencies>
@@ -87,7 +87,7 @@ If the property is instead defined in a parent POM, the version is updated there
 
 Before:
 
-```markup
+```xml
 <project>
    ...
    <properties>
@@ -106,7 +106,7 @@ Before:
 
 After:
 
-```markup
+```xml
 <project>
    ...
    <properties>
@@ -129,7 +129,7 @@ If the `dependencyManagement` section is instead defined in a parent POM, the ve
 
 Before:
 
-```markup
+```xml
 <project>
    ...
    <dependencyManagement>
@@ -151,7 +151,7 @@ Before:
 
 After:
 
-```markup
+```xml
 <project>
    ...
    <dependencyManagement>

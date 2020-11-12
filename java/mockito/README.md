@@ -8,7 +8,7 @@ description: Migrating from Mockito 1.x to Mockito 2.x.
 
 To apply these recipes and visitors in the Maven plugin, add a `provided` scope dependency on `rewrite-spring` \(included with the spring package because this migration often occurs as part of the upgrade from Spring Boot 1.x to 2.x\) and activate pre-packaged recipes or define your own.
 
-```markup
+```xml
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">

@@ -22,7 +22,7 @@ Change fixed = new Refactor()
 
 Before:
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <dependency>
     <version/>
@@ -31,7 +31,7 @@ Before:
 
 After:
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <dependency>
     <version>2.0</version>

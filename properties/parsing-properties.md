@@ -6,7 +6,7 @@ This guide covers how to use Rewrite to parse [java.util.Properties](https://doc
 
 For Maven, define a compile scoped dependency on `rewrite-properties`.
 
-```markup
+```xml
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-properties</artifactId>

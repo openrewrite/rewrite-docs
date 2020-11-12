@@ -47,7 +47,7 @@ include:
 
 Before:
 
-```markup
+```xml
 <project>
    <dependencies>
      <dependency>
@@ -61,7 +61,7 @@ Before:
 
 After:
 
-```markup
+```xml
 <project>
    <dependencies>
      <dependency>

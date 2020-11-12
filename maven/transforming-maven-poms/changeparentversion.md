@@ -50,7 +50,7 @@ include:
 
 Before:
 
-```markup
+```xml
 <project>
    <parent>
      <groupId>org.springframework.boot</groupId>
@@ -63,7 +63,7 @@ Before:
 
 After:
 
-```markup
+```xml
 <project>
    <parent>
      <groupId>org.springframework.boot</groupId>

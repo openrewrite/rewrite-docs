@@ -15,7 +15,7 @@ List<Xml.Tag> tags = ft.visit(xml);
 
 `FindTag` takes a single parameter, `xpath`, with the tag to search for. Applied to the following example, it locates both `<dependency>` tags.
 
-```markup
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies>
   <dependency>

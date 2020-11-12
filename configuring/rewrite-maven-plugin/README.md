@@ -27,7 +27,7 @@ Because the plugin uses classpath scanning, dependencies of the project can incl
 
 To make pre-packaged Rewrite recipes available to the Maven plugin, add them as `provided` dependencies. For example:
 
-```markup
+```xml
 <dependencies>
   <dependency>
     <groupId>org.openrewrite.recipe</groupId>
@@ -70,7 +70,7 @@ The diff goal also generates warnings in the build log wherever it proposes chan
 
 The output directory of the `rewrite.patch` file can be controlled by setting the `reportOutputDirectory` property. Again, this value would be relativized for each module of a multi-module project and a patch generated into each directory individually.
 
-```markup
+```xml
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
@@ -95,7 +95,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
 * `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
 
-```markup
+```xml
 <project>
 ...
   <build>

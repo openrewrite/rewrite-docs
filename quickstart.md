@@ -32,7 +32,7 @@ This is an older repository that requires an older JDK version, JDK 8. If you do
 
 Next, you need to make sure Maven knows what the Rewrite maven plugin is by adding the following to your [pom.xml](https://github.com/openrewrite/spring-petclinic-migration/blob/1.5.x/pom.xml) file.
 
-```markup
+```xml
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
@@ -48,7 +48,7 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
 
 Now add a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring), a rewrite module containing recipes which automate spring best practices and spring boot 1 -&gt; 2 migration.
 
-```markup
+```xml
 <dependency>
     <groupId>org.openrewrite.recipe</groupId>
     <artifactId>rewrite-spring</artifactId>

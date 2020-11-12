@@ -19,7 +19,7 @@ Each of these items would be defined as a separate visitor. Together they accomp
 
 Recipes are defined declaratively in YML and read into an [Environment](environment.md). There isn't a direct corollary to declarative recipes in code. They are mainly a packaging convenience used to add sets of visitors to a [Refactor ](refactor.md)operation.
 
-```text
+```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.Spring

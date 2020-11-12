@@ -16,7 +16,7 @@ Collection<Change> changes = new Refactor().visit(cp).fix(yamls);
 
 Before:
 
-```text
+```yaml
 management:
   metrics:
     enable.process.files: true
@@ -28,7 +28,7 @@ management:
 
 After:
 
-```text
+```yaml
 management:
   metrics.enable.process.files: true
   endpoint.health:

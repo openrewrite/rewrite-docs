@@ -18,7 +18,7 @@ In our `pom.xml` add the API for Google Cloud and, if we are refactoring Java so
 
 You can also include prepackaged recipes like `org.openrewrite.recipe:rewrite-spring` as dependencies in the `provided` scope.
 
-```markup
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">

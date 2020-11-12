@@ -22,7 +22,7 @@ git clone https://github.com/openrewrite/spring-petclinic-migration.git
 
 Once you have cloned the Spring Petclinic Migration project, you first want to create a new YAML file in the root of the repository. The file will be named`rewrite.yml` and contain the following:
 
-```text
+```yaml
 type: specs.openrewrite.org/v1beta/visitor
 name: io.moderne.junit.StaticJUnitAsserts
 visitors:
@@ -53,7 +53,7 @@ It is generally recommended to group the visitors for a recipe under a common pa
 
 Next, you need to make sure Maven knows what the Rewrite maven plugin is by adding the following to your [pom.xml](https://github.com/openrewrite/spring-petclinic-migration/blob/1.5.x/pom.xml) file.
 
-```markup
+```xml
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>

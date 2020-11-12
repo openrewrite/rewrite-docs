@@ -12,7 +12,7 @@ This guide covers how to use Rewrite to parse Java code. This is useful when you
 
 For Maven, define a compile scoped dependency on `rewrite-java` and a runtime scoped dependency on `rewrite-java-11` \(or `rewrite-java-8` if your code is at that language level\).
 
-```markup
+```xml
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-java</artifactId>

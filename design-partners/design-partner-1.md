@@ -35,7 +35,7 @@ This guide is meant as an evolving document for engineers at Design Partner 1 to
 
 Place the following configuration in the root `pom.xml` of a repository. The `execute` block in the plugin configuration causes an AST JAR and a CycloneDX BOM to be published to Artifactory whenever the project publishes a new version.
 
-```markup
+```xml
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">

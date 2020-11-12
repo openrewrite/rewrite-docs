@@ -8,7 +8,7 @@ You can then perform structured search or transformation on those build files. T
 
 For Maven, define a compile scoped dependency on `rewrite-maven`.
 
-```markup
+```xml
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-maven</artifactId>
