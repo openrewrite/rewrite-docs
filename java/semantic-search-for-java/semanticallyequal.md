@@ -4,7 +4,17 @@ description: Determine semantic equality between two abstract syntax trees.
 
 # SemanticallyEqual
 
-## Definition
+{% hint style="info" %}
+**Semantic Equality:** Two pieces of code are semantically equal if they produce the same behavior.
+{% endhint %}
+
+`SemanticallyEqual` recursively checks the equality of each element of two abstract syntax trees \(ASTs\) to determine if the two trees are semantically equal. This is necessary because ASTs are so frequently recreated that merely comparing the IDs of two ASTs is ineffective.
+
+## Java Definition
+
+{% hint style="warning" %}
+`SemanticallyEqual` has only been implemented for annotations for now. If you would like to see more functionality, join the [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-i2ouq1qd-KdkTZKr5jmNtooqfc4ITAQ) and tell us more about it! We are also accepting pull requests at the [OpenRewrite Github](https://github.com/openrewrite/rewrite). 
+{% endhint %}
 
 ```java
 J.Annotation annot;
@@ -14,17 +24,17 @@ SemanticallyEqual semEq = new SemanticallyEqual(annot);
 Boolean isEqual = semEq.visit(otherAnnot);
 ```
 
-`SemanticallyEqual` recursively checks the equality of each element of two abstract syntax trees (ASTs) to determine if the two trees are semantically equal. This is necessary because ASTs are so frequently recreated that merely comparing the IDs of two ASTs is ineffective.
+## Example
 
-{% hint style="info" %}
-`SemanticallyEqual` has only been implemented for annotations for now.
-{% endhint %}
+This example is in Kotlin. It demonstrates how both the annotation type and arguments must be checked for equality
+
+`@Tag(FastTests.class)` and `@Tag(value = FastTests.class)` would be semantically equal because the latter is a syntactic sugaring of the former. `@Tag(SlowTests.class)` is not semantically equal to either because its argument is different.
 
 ```kotlin
 val cu = jp.parse(
     """
         @Tag(FastTests.class)
-        @Tag(FastTests.class)
+        @Tag(value = FastTests.class)
         @Tag(SlowTests.class)
         class A {}
     """,
@@ -50,3 +60,4 @@ val slowTest = cu[0].classes[0].annotations[2]
 assertThat(SemanticallyEqual(fastTest).visit(fastTest2)).isTrue()
 assertThat(SemanticallyEqual(fastTest).visit(slowTest)).isFalse()
 ```
+
