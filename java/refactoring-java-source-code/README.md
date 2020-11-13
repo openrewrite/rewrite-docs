@@ -26,7 +26,12 @@ public J.ClassDecl visitClassDecl(J.ClassDecl cd)
 public J visitClassDecl(J.ClassDecl cd)
 ```
 
-The "iso" in "JavaIsoRefactorVisitor" is short for "isomorphic" or "same shape". This reflects the constraint that visit methods must return an AST element of the same type as the element being visited. In most cases this constraint is a non-issue and saves you from having to frequently cast the results of calls methods on the `super` class. Rarely do you do things like visit a method declaration and replace it with a class declaration. So the majority of visitors will be more comfortable to write if they subclass `JavaIsoRefactorVisitor`. If your refactoring does call for replacing AST elements of one type with AST elements of a different type, then subclass `JavaRefactorVisitor`.
+The "iso" in "JavaIsoRefactorVisitor" is short for "isomorphic" or "same shape".
+This reflects the constraint that visit methods must return an AST element of the same type as the element being visited.
+In most cases this constraint is a non-issue and saves you from having to frequently cast the results of calls methods on the `super` class.
+Rarely do you do things like visit a method declaration and replace it with a class declaration.
+So the majority of visitors will be more comfortable to write if they subclass `JavaIsoRefactorVisitor`.
+If your refactoring does call for replacing AST elements of one type with AST elements of a different type, then subclass `JavaRefactorVisitor`.
 
 ### Composing visitors with AbstractRefactorVisitor.andThen\(\)
 
@@ -110,8 +115,133 @@ public class CursoringExampleVisitor extends JavaIsoRefactorVisitor {
         }
         return super.visitClassDecl(classDecl);
     }
+
+    @Override
+    public J.MethodDecl visitMethod(J.MethodDecl methodDecl) {
+        // Retrieve the class declaration within which this method is declared
+        J.ClassDecl enclosingClass = getCursor().firstEnlosing(J.ClassDecl.class);
+        return super.visitMethod(methodDecl);
+    }
 }
 ```
+### Matching Method signatures with MethodMatcher
+Frequently visitors will need to identify methods with particular attributes.
+[MethodMatcher](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/MethodMatcher.java) is the standardized mechanism for determining if a `J.MethodDecl` is the one you're looking for.
+MethodMatchers uses AspectJ pointcut expressions to identify methods by their declaring class, name, and arguments.
+
+The basic syntax for these expressions is `<declaring class> <method name>(<argument list>)`. The declaring class must be fully qualified. 
+ 
+`*` is a wildcard symbol meaning "one of anything" and can appear in the declaring class, method name, or argument list.
+
+`..` is a wildcard symbol meaning "any number of anything" and can appear in the argument list.
+
+{% hint style="info" %}
+Return type and modifiers, such as `public` or `static`, are _not_ part of this expression.
+If you need to identify methods based on these attributes a MethodMatcher alone is insufficient.   
+{% endhint %}
+
+Consider these example matchers:
+```java
+import org.openrewrite.java.MethodMatcher;
+
+class ExampleMatchers {
+    // Will match methods that: 
+    // Are declared on the class com.yourorg.A
+    // Are named "foo" 
+    // Accept a single argument of type String
+    MethodMatcher fooMatcher = new MethodMatcher("com.yourorg.A foo(String)");
+
+    // Will match methods that:
+    // Are declared on classes within packages beginning with "com.yourorg"
+    // Have names beginning with "set"
+    // Accepts exactly one argument of any type
+    MethodMatcher setterMatcher = new MethodMatcher("com.yourorg.* set*(*)");
+    
+    // Will match methods that:
+    // Are declared on any class in any package
+    // Have any name
+    // Accepts zero or more arguments of any types
+    MethodMatcher anythingMatcher = new MethodMatcher("* *(..)");
+    
+    // Will match methods that:
+    // Are declared on any class in any package
+    // Are named "query"
+    // Accepts an int, a List<String>, followed by zero or more arguments of any types
+    MethodMatcher queryMatcher = new MethodMatcher("* query(int, List<String>, ..)");
+}
+```
+
+### Identifying AST elements with Tree.isScope()
+
+The `Tree.isScope()` method returns `true` if the AST elements share the same id.
+This mechanism allows for identifying an AST element even if it has gone through a series of drastic transformations.  
+Any visitor which wishes to identify applicable AST elements then act upon them in a subsequent step will find use for `Tree.isScope()`.
+
+To see how this is used in practice, consider the example of [UseStaticImport](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/UseStaticImport.java).
+In its first phase it identifies static methods invocations matching a particular signature.
+In its second phase it adds `import static ...;` statements and updates the static method invocations to use their receiver-less form.
+
+```java
+package org.openrewrite.java;
+
+import org.openrewrite.java.tree.J;
+import org.openrewrite.java.tree.JavaType;
+
+public class UseStaticImport extends JavaIsoRefactorVisitor {
+    private MethodMatcher methodMatcher;
+
+    public void setMethod(String method) {
+        this.methodMatcher = new MethodMatcher(method);
+    }
+
+    @Override
+    public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method) {
+        if (methodMatcher.matches(method) && method.getSelect() != null) {
+            andThen(new Scoped(method));
+        }
+        return super.visitMethodInvocation(method);
+    }
+
+    public static class Scoped extends JavaIsoRefactorVisitor {
+        private final J.MethodInvocation scope;
+
+        public Scoped(J.MethodInvocation scope) {
+            this.scope = scope;
+        }
+
+        @Override
+        public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method) {
+            if (scope.isScope(method) && method.getSelect() != null) {
+                if (method.getType() != null) {
+                    JavaType.FullyQualified receiverType = method.getType().getDeclaringType();
+                    maybeRemoveImport(receiverType);
+
+                    AddImport addStatic = new AddImport();
+                    addStatic.setType(receiverType.getFullyQualifiedName());
+                    addStatic.setStaticMethod(method.getSimpleName());
+                    addStatic.setOnlyIfReferenced(false);
+                    if (!andThen().contains(addStatic)) {
+                        andThen(addStatic);
+                    }
+                }
+
+                return method
+                        .withSelect(null)
+                        .withName(method.getName().withFormatting(method.getSelect().getFormatting()));
+            }
+            return super.visitMethodInvocation(method);
+        }
+    }
+}
+
+```
+This class follows a convention common to visitors provided by OpenRewrite.
+The outer class, `UseStaticImport` is configured only with `set` methods that accept `Strings` and its `visit` methods serve primarily to identify the specific AST element in need of transformation.
+Having identified the relevant elements, `UseStaticImport` uses `andThen()` to schedule instances of its inner class, called `Scoped` by convention.
+The inner class `Scoped` then uses the `isScope()` method to tell when it is visiting a method invocation that should be refactored. 
+The purpose of this convention is to make visitors amenable to usage from either Java or YAML, and to simplify the management of state.
+When run with the typical configuration, every visitor will see every file at least twice, so having mutable state on your visitor class can easily lead to bugs.
+Nothing _requires_ that visitors you author follow this convention, but we do recommend it.
 
 ### Creating Code with TreeBuilder
 
@@ -135,10 +265,8 @@ import java.util.List;
  * Adds a "String getName()" method which returns the name of the class as a String.
  */
 public class AddGetNameMethod extends JavaIsoRefactorVisitor {
-    /**
-     * MethodMatchers uses the AspectJ point-cut syntax to identify methods by their declaring class, name, and arguments
-     * This matches methods declared on any class named getName() that accepts no arguments
-     */
+    
+    // This matches methods declared on any class named getName() that accepts no arguments
     private static final MethodMatcher GetNameMethodMatcher = new MethodMatcher("* getName()");
 
     @Override
