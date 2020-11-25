@@ -29,7 +29,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-checkstyle</artifactId>
-      <version>1.2.0</version>
+      <version>2.0.1</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

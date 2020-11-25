@@ -52,7 +52,7 @@ Now add a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-
 <dependency>
     <groupId>org.openrewrite.recipe</groupId>
     <artifactId>rewrite-spring</artifactId>
-    <version>2.3.1</version>
+    <version>3.0.1</version>
     <scope>provided</scope>
 </dependency>
 ```

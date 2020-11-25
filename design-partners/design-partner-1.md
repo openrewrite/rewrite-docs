@@ -44,13 +44,13 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-spring</artifactId>
-      <version>2.3.1</version>
+      <version>3.0.1</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-checkstyle</artifactId>
-      <version>1.2.0</version>
+      <version>2.0.1</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
