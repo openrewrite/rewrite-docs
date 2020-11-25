@@ -30,7 +30,6 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 | :--- | :--- |
 | [Configuration Properties](../java/spring/spring-boot-2-migration/springbootconfiguration.md) | ⬤ |
 | [`SpringBootServletInitializer` relocation](../java/spring/spring-boot-2-migration/springbootservletinitializerpackage.md) | ⬤ |
-| Publishes CycloneDX BOM | ⬤ |
 | [Remove implicit web annotations](../java/spring/best-practices/implicitwebannotationnames.md) | ⬤ |
 | [`@RequestMapping` Cross-Site Request Forgery Vulnerability](../java/spring/best-practices/norequestmappingannotation.md) | ⬤ |
 | [Remove @Autowired on constructors](../java/spring/best-practices/noautowired.md) | ⬤ |
@@ -50,6 +49,10 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 | Persistence | ◯ |
 | XML SOAP | ◯ |
 | Updates dependencies in pom.xml | ◑ |
+
+| Software Composition Analysis | Progress |
+| :--- | :---: |
+| Publishes CycloneDX BOM | ⬤ |
 
 ## Applying to Maven Projects
 
