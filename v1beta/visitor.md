@@ -10,7 +10,7 @@ description: >-
 
 The [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern#Java_example) is a well-known technique for reasoning about complex object structures. Abstract syntax trees for a language like Java consist of many types, and generally when we are performing some sort of semantic analysis or transformation on a piece of code, we only care about certain types. For example, we only care about method invocations when we are seeking to write a rule transforming a method name.
 
-A visitor is provides an event-driven model where we only need to implement visit methods for object types that we care about. This leaves Rewrite with the responsibility of traversing a tree completely.
+A visitor is analogous to an event-handler, describing "what" to do and "when" to do it as part of Rewrite traversing elements in the tree. Rewrite provides an event-driven model where we only need to implement visit methods for object types that we care about. This leaves Rewrite with the responsibility of traversing a tree completely.
 
 Rewrite visitors implement the interface `SourceVisitor<R>`.
 
