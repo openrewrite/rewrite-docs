@@ -63,7 +63,7 @@ name: java.Checkstyle
 visitors:
   - 'org.openrewrite.checkstyle.*'
 configure:
-  org.openrewrite.checkstyle.*
+  org.openrewrite.checkstyle.*:
     configFile: ${maven.multiModuleProjectDirectory}/checkstyle.xml
 ```
 
