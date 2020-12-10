@@ -10,14 +10,14 @@ For Maven, define a compile scoped dependency on `rewrite-properties`.
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-properties</artifactId>
-  <version>6.1.3</version>
+  <version>6.1.5</version>
 </dependency>
 ```
 
 For Gradle, define an implementation dependency on `rewrite-properties`.
 
 ```groovy
-implementation("org.openrewrite:rewrite-properties:6.1.3")
+implementation("org.openrewrite:rewrite-properties:6.1.5")
 ```
 
 ## Constructing a Parser

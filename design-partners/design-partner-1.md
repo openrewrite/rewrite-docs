@@ -79,7 +79,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>0.6.1</version>
+      <version>0.7.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -89,7 +89,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.4.0</version>
+        <version>2.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.SpringBoot2Migration</recipe>
