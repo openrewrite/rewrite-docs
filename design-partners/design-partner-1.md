@@ -12,10 +12,10 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 | `org.junit.Test` to `org.junit.jupiter.api.Test` | ⬤ |
 | `@RunWith(SpringRunner.class)` to `@ExtendsWith(SpringExtension.class)` | ⬤ |
 | `Assertions` to AssertJ | ◑ |
-| [Hamcrest to AssertJ](https://github.com/openrewrite/rewrite-testing-frameworks/issues/8) | ◑ |
-| [Handle ExpectedExceptions rule](https://github.com/openrewrite/rewrite-testing-frameworks/issues/9) | ◯ |
-| Handle `@RunWith(MockitoJUnitRunner.class)` | ◯ |
-| Updates dependencies in pom.xml | ◯ |
+| [Hamcrest to AssertJ](https://github.com/openrewrite/rewrite-testing-frameworks/issues/8) | ◯ |
+| [Handle ExpectedExceptions rule](https://github.com/openrewrite/rewrite-testing-frameworks/issues/9) | ⬤ |
+| Handle `@RunWith(MockitoJUnitRunner.class)` | ⬤ |
+| Updates dependencies in pom.xml | ⬤ |
 
 | Mockito 1-3 Migration | Progress |
 | :--- | :--- |
@@ -24,7 +24,7 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 | `org.mockito.Matchers` -> `org.mockito.ArgumentMatchers` | ⬤ |
 | `InvocationOnMock.getArgumentAt()` -> `InvocationOnMock.getArgument()` | ⬤ |
 | `org.mockito.runners.MockitoJUnitRunner` -> `org.mockito.junit.MockitoJUnitRunner` | ⬤ |
-| Updates dependencies in pom.xml | ◯ |
+| Updates dependencies in pom.xml | ⬤ |
 
 | Spring Boot 1-2 Migration | Progress |
 | :--- | :--- |
