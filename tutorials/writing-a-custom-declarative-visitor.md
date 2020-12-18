@@ -57,7 +57,7 @@ Next, you need to make sure Maven knows what the Rewrite maven plugin is by addi
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>2.4.1</version>
+    <version>2.4.2</version>
     <configuration>
         <activeRecipes>
             <recipe>io.moderne.JUnit</recipe>

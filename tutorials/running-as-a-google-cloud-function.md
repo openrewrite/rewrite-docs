@@ -42,7 +42,7 @@ You can also include prepackaged recipes like `org.openrewrite.recipe:rewrite-sp
     <dependency>
       <groupId>org.openrewrite</groupId>
       <artifactId>rewrite-java-11</groupId>
-      <version>6.1.5</version>
+      <version>6.1.10</version>
     </dependency>
   </dependencies>
 
