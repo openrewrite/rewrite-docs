@@ -35,7 +35,7 @@ To apply these recipes and visitors in the Maven plugin, add a `provided` scope 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.4.2</version>
+        <version>2.4.3</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.JUnit5Migration</recipe>
