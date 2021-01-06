@@ -6,7 +6,7 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 
 | JUnit 4-5 Migration | Progress |
 | :--- | :--- |
-| Update lifecycle annotations (e.g.: Before -> BeforeEach)| ⬤ |
+| Update lifecycle annotations \(e.g.: Before -&gt; BeforeEach\) | ⬤ |
 | `@Category` to `@Tag` | ⬤ |
 | `Assert` to `Assertions` | ⬤ |
 | `org.junit.Test` to `org.junit.jupiter.api.Test` | ⬤ |
@@ -20,26 +20,26 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 | Mockito 1-3 Migration | Progress |
 | :--- | :--- |
 | `org.mockito.MockitoAnnotations.Mock` to `org.mockito.Mock` | ⬤ |
-| `org.mockito.Matchers` -> `org.mockito.ArgumentMatchers` | ⬤ |
-| `org.mockito.Matchers` -> `org.mockito.ArgumentMatchers` | ⬤ |
-| `InvocationOnMock.getArgumentAt()` -> `InvocationOnMock.getArgument()` | ⬤ |
-| `org.mockito.runners.MockitoJUnitRunner` -> `org.mockito.junit.MockitoJUnitRunner` | ⬤ |
+| `org.mockito.Matchers` -&gt; `org.mockito.ArgumentMatchers` | ⬤ |
+| `org.mockito.Matchers` -&gt; `org.mockito.ArgumentMatchers` | ⬤ |
+| `InvocationOnMock.getArgumentAt()` -&gt; `InvocationOnMock.getArgument()` | ⬤ |
+| `org.mockito.runners.MockitoJUnitRunner` -&gt; `org.mockito.junit.MockitoJUnitRunner` | ⬤ |
 | Updates dependencies in pom.xml | ⬤ |
 
 | Spring Boot 1-2 Migration | Progress |
 | :--- | :--- |
-| [Configuration Properties](../java/spring/spring-boot-2-migration/springbootconfiguration.md) | ⬤ |
-| [`SpringBootServletInitializer` relocation](../java/spring/spring-boot-2-migration/springbootservletinitializerpackage.md) | ⬤ |
-| [Remove implicit web annotations](../java/spring/best-practices/implicitwebannotationnames.md) | ⬤ |
-| [`@RequestMapping` Cross-Site Request Forgery Vulnerability](../java/spring/best-practices/norequestmappingannotation.md) | ⬤ |
-| [Remove @Autowired on constructors](../java/spring/best-practices/noautowired.md) | ⬤ |
-| [Bean methods don't need to be public](../java/spring/best-practices/beanmethodsnotpublic.md) | ⬤ |
+| [Configuration Properties](../reference/java/spring/spring-boot-2-migration/springbootconfiguration.md) | ⬤ |
+| [`SpringBootServletInitializer` relocation](../reference/java/spring/spring-boot-2-migration/springbootservletinitializerpackage.md) | ⬤ |
+| [Remove implicit web annotations](../reference/java/spring/best-practices/implicitwebannotationnames.md) | ⬤ |
+| [`@RequestMapping` Cross-Site Request Forgery Vulnerability](../reference/java/spring/best-practices/norequestmappingannotation.md) | ⬤ |
+| [Remove @Autowired on constructors](../reference/java/spring/best-practices/noautowired.md) | ⬤ |
+| [Bean methods don't need to be public](../reference/java/spring/best-practices/beanmethodsnotpublic.md) | ⬤ |
 | Maven Dependency Management | ⬤ |
-| [UpgradeDependencyVersion](../maven/transforming-maven-poms/upgradedependencyversion.md) | ⬤ |
-| [UpgradeParentVersion](../maven/transforming-maven-poms/upgradeparentversion.md) | ⬤ |
+| [UpgradeDependencyVersion](../reference/maven-1/transforming-maven-poms/upgradedependencyversion.md) | ⬤ |
+| [UpgradeParentVersion](../reference/maven-1/transforming-maven-poms/upgradeparentversion.md) | ⬤ |
 | `@Value` to `@ConfigurationProperties` | ◑ |
 | Spring Best Practices | ◑ |
-| [Constructor injection](../java/spring/best-practices/constructorinjection.md) \(still needs updating of call sites\) | ◑ |
+| [Constructor injection](../reference/java/spring/best-practices/constructorinjection.md) \(still needs updating of call sites\) | ◑ |
 | `@Component` to `@Bean` | ◑ |
 | Removal of unused spring starter modules | ◯ |
 | Spring Data migration to `Optional` | ◯ |
@@ -58,7 +58,7 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 
 Place the following configuration in the root `pom.xml` of a repository. The `execute` block in the plugin configuration causes an AST JAR and a CycloneDX BOM to be published to Artifactory whenever the project publishes a new version.
 
-```xml
+```markup
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">

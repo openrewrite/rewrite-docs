@@ -12,9 +12,9 @@ Styles are given to a `org.openrewrite.Parser` at construction. These styles flo
 
 Styles are persisted with a top-level `SourceFile` AST element when that AST is serialized. Then when batch processing ASTs from a variety of projects _en masse_, the transformation can be contextualized to the style of the individual projects that source files originated from.
 
-### Declarative Styles
+## Declarative Styles
 
-Styles are typically defined declaratively in a YML file an included in an [Environment](environment.md). For example, the style below configures an [import layout style](../java/parsing-java-code.md#import-layout-style) for Java:
+Styles are typically defined declaratively in a YML file an included in an [Environment](environment.md). For example, the style below configures an [import layout style](../tutorials/parsing-java-code.md#import-layout-style) for Java:
 
 ```yaml
 ---
@@ -58,7 +58,6 @@ configure:
       <td style="text-align:left">configure</td>
       <td style="text-align:left">
         <p>A map of configurations.</p>
-        <p></p>
         <p>Each first-level map key represents is the fully-qualified class name
           of a <code>Style</code> implementation. The value is itself a map of key-value
           pairs that invoke setters on the style.</p>
@@ -67,7 +66,7 @@ configure:
   </tbody>
 </table>
 
-### Next Steps
+## Next Steps
 
 In [Environment](environment.md), we'll see how these styles are activated and applied to the parsers that consume code. It will also show how to discover and activate recipes of visitors.
 

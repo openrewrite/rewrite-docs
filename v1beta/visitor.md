@@ -103,7 +103,7 @@ assertThat(methodCount).isEqualTo(3);
 
 Each language binding provides a further specialization of `SourceVisitor` that is used for transforming source code, e.g. `JavaRefactorVisitor`. The return type of this visitor is set to the base interface of that language's AST tree. `JavaRefactorVisitor` always reduces to a `org.openrewrite.java.J`.
 
-The vast majority of the time, visitor methods should return the type of their input parameter. So `visitMethodInvocation` should return a `J.MethodInvocation`, `visitCompilationUnit` should return a `J.CompilationUnit`, and so on. There are a narrow set of circumstances when this is not true. For example, [UnwrapParentheses](../java/refactoring-java-source-code/unwrapparentheses.md) visits `J.Parentheses<?>` and can return whatever type of expression is inside the parentheses it is unwrapping.
+The vast majority of the time, visitor methods should return the type of their input parameter. So `visitMethodInvocation` should return a `J.MethodInvocation`, `visitCompilationUnit` should return a `J.CompilationUnit`, and so on. There are a narrow set of circumstances when this is not true. For example, [UnwrapParentheses](../reference/java/refactoring-java-source-code/unwrapparentheses.md) visits `J.Parentheses<?>` and can return whatever type of expression is inside the parentheses it is unwrapping.
 
 {% hint style="warning" %}
 Generally refactoring visitors must be called on the root AST element to function correctly. Otherwise, internal state like cursors are not accurate. More general purpose visitors can be invoked on any element in the tree.
@@ -129,7 +129,7 @@ Rewrite AST types are immutable. So remember to always assign the result of a `w
 
 ## Refactor Visitor Pipelines
 
-Refactoring visitors can be chained together by calling `andThen(anotherVisitor)`. This is useful for building up pipelines of refactoring operations built up of lower-level components. For example, when [ChangeFieldType](../java/refactoring-java-source-code/changefieldtype.md) finds a matching field that it is going to transform, it chains together an [AddImport](../java/refactoring-java-source-code/addimport.md) visitor to add the new import if necessary, and a [RemoveImport](../java/refactoring-java-source-code/removeimport.md) to remove the old import if there are no longer any references to it.
+Refactoring visitors can be chained together by calling `andThen(anotherVisitor)`. This is useful for building up pipelines of refactoring operations built up of lower-level components. For example, when [ChangeFieldType](../reference/java/refactoring-java-source-code/changefieldtype.md) finds a matching field that it is going to transform, it chains together an [AddImport](../reference/java/refactoring-java-source-code/addimport.md) visitor to add the new import if necessary, and a [RemoveImport](../reference/java/refactoring-java-source-code/removeimport.md) to remove the old import if there are no longer any references to it.
 
 ## Cursoring
 
@@ -158,7 +158,7 @@ public class MakeClassesFinal extends JavaRefactorVisitor {
 
 ## Declarative Refactoring Visitors
 
-The examples we have provided so far in this document have all involved writing Java code. Some refactoring visitors can be defined declaratively in a YAML file. Declaratively addressable visitors that expose configuration options must do so via `public void set<name>(String)` methods. So if a visitor must be configured with a parameter named `type` it must expose a `public void setType(String type)` method. For example ChangeType \([docs](../java/refactoring-java-source-code/changetype.md), [source](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java)\) must be configured with parameters `type` and `targetType`:
+The examples we have provided so far in this document have all involved writing Java code. Some refactoring visitors can be defined declaratively in a YAML file. Declaratively addressable visitors that expose configuration options must do so via `public void set<name>(String)` methods. So if a visitor must be configured with a parameter named `type` it must expose a `public void setType(String type)` method. For example ChangeType \([docs](../reference/java/refactoring-java-source-code/changetype.md), [source](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java)\) must be configured with parameters `type` and `targetType`:
 
 ```yaml
 ---
@@ -217,7 +217,7 @@ Marking a visitor class with the annotation `@AutoConfigure` signals that [Envir
 
 Only visitors which have no required configuration parameters can be marked as `@AutoConfigure`.
 
-Not every visitor is going to be auto-configurable. For example, [AddAnnotation](../java/refactoring-java-source-code/addannotation.md) is a building-block visitor designed to be applied to specific AST elements that meet some criteria, and isn't something we apply generally to a whole set of source files.
+Not every visitor is going to be auto-configurable. For example, [AddAnnotation](../reference/java/refactoring-java-source-code/addannotation.md) is a building-block visitor designed to be applied to specific AST elements that meet some criteria, and isn't something we apply generally to a whole set of source files.
 
 ## Next Steps
 

@@ -53,7 +53,7 @@ It is generally recommended to group the visitors for a recipe under a common pa
 
 Next, you need to make sure Maven knows what the Rewrite maven plugin is by adding the following to your [pom.xml](https://github.com/openrewrite/spring-petclinic-migration/blob/1.5.x/pom.xml) file.
 
-```xml
+```markup
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
@@ -73,6 +73,6 @@ This maven plugin comes with a default set of recipes that can be activated at w
 Now that everything is set up, we can run the Rewrite plugin by using`./mvnw rewrite:fix` to apply the recipes, which will make changes to the source code of the repository. In a real-world scenario, you'd review these changes and perform whatever checks you'd like and then commit them when you are comfortable that they are accurate. The set of recipes that are provided for you by Rewrite are intended to always produce 100% accurate fixes that don't require any manual intervention.
 
 {% hint style="info" %}
-Similar build tasks exist for Gradle as well. See [Rewrite Gradle Plugin](../configuring/rewrite-gradle-plugin.md) for more about how to do the same in a Gradle project.
+Similar build tasks exist for Gradle as well. See [Rewrite Gradle Plugin](../getting-started/rewrite-gradle-plugin.md) for more about how to do the same in a Gradle project.
 {% endhint %}
 
