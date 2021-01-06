@@ -9,6 +9,13 @@
   * [Publishing ASTs](getting-started/rewrite-maven-plugin/publishing-asts.md)
 * [Rewrite Gradle Plugin](getting-started/rewrite-gradle-plugin.md)
 
+## Tutorials & Guides <a id="tutorials"></a>
+
+* [Running as a Google Cloud Function](tutorials/running-as-a-google-cloud-function.md)
+* [Writing a Custom Declarative Visitor](tutorials/writing-a-custom-declarative-visitor.md)
+* [Parsing Java Code](tutorials/parsing-java-code.md)
+* [Authoring Java Refactoring Visitors](tutorials/authoring-java-refactoring-visitors.md)
+
 ## Concepts & Explanations <a id="v1beta"></a>
 
 * [Abstract Syntax Trees](v1beta/abstract-syntax-trees.md)
@@ -17,13 +24,6 @@
 * [Refactor](v1beta/refactor.md)
 * [Styles](v1beta/styles.md)
 * [Environment](v1beta/environment.md)
-
-## Tutorials & Guides <a id="tutorials"></a>
-
-* [Running as a Google Cloud Function](tutorials/running-as-a-google-cloud-function.md)
-* [Writing a Custom Declarative Visitor](tutorials/writing-a-custom-declarative-visitor.md)
-* [Parsing Java Code](tutorials/parsing-java-code.md)
-* [Authoring Java Refactoring Visitors](tutorials/authoring-java-refactoring-visitors.md)
 
 ## Reference
 
@@ -152,4 +152,8 @@
 ## Design Partners
 
 * [Design Partner 1](design-partners/design-partner-1.md)
+
+---
+
+* [Automated Migration from JUnit 4 to 5](automated-migration-from-junit-4-to-5.md)
 
