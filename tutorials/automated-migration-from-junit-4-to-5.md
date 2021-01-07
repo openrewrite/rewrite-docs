@@ -270,7 +270,9 @@ With these steps taken, your pom.xml will look similar to this:
 You are now ready to run the migration.
 
 ### Gradle
-For Gradle projects the steps are:
+
+At a high level, the steps are:
+
 1. Take a `testCompileOnly` dependency on `rewrite-testing-frameworks`.
 1. Add the rewrite-gradle-plugin to your build and configure the `rewrite` extension to set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active.
 
@@ -279,8 +281,10 @@ All Rewrite libraries and modules are published to both Maven Central and JCente
 Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from one of these repositories, or one of their mirrors. 
 {% endhint %}
 
-How that ends up looking differs slightly between single and multi-module Gradle builds.
+How those steps are affected differs slightly between single and multi-module Gradle builds.
+
 #### Single-Module Gradle projects
+
 1. In your build.gradle, in the `dependencies` block add a `testCompileOnly` dependency on `rewrite-testing-frameworks`:
     ```groovy
     dependencies {
@@ -296,9 +300,7 @@ How that ends up looking differs slightly between single and multi-module Gradle
         id("org.openrewrite.rewrite").version("2.3.0")
     }
     ```
-    {% hint style="warning" %}
     The Rewrite Gradle plugin depends on information from the Java plugin, so it must be applied _after_ the Java plugin.
-    {% endhint %}
 
 3. Configure the `rewrite` DSL to set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active:
     ```groovy 
@@ -342,7 +344,7 @@ If that isn't the case for your build, and you cannot easily copy and paste thes
         }
     }
     ```
-1. In the root project's build.gradle, in the `plugins` block, add _but do not apply_ the rewrite plugin to your build:
+1. In the root project's build.gradle, in the `plugins` block, add the rewrite plugin to your build with `apply` set to `false`:
     ```groovy
     plugins {
         id("org.openrewrite.rewrite").version("2.3.0").apply(false)
@@ -422,15 +424,20 @@ If you're using Maven, your pom.xml should have been updated to remove the JUnit
     </dependency>
 </dependencies>
 ```
-{% hint style="info" %}
-Rewrite does not yet support parsing & refactoring of build.gradle or build.gradle.kts files.
-Gradle users have to manually update project's dependencies to remove JUnit 4 and add JUnit 5.
-See JUnit's [user guide](https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle) for more information.
-{% endhint %}
 
 With JUnit 5 configured to execute tests, you should now be able to run your newly updated JUnit 5 test suite. Congratulations!
 
 ## Known Limitations
+
+{% hint style="info" %}
+If your Maven build configures its test dependencies in a separate module you will have to manually update your test dependencies.
+{% endhint %}
+
+{% hint style="info" %}
+Rewrite does not yet support parsing & refactoring of build.gradle or build.gradle.kts files.
+See JUnit's [user guide](https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle) for more information on how to manually configure JUnit 5 with Gradle.
+{% endhint %}
+
 There are parts of JUnit 4 which we have not yet added support for automatic migration.
 See the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues) for the most up to date information about bugs and known issues. 
 Reach out to us there if you run into a bug.
