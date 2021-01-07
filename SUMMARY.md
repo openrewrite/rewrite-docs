@@ -15,6 +15,7 @@
 * [Writing a Custom Declarative Visitor](tutorials/writing-a-custom-declarative-visitor.md)
 * [Parsing Java Code](tutorials/parsing-java-code.md)
 * [Authoring Java Refactoring Visitors](tutorials/authoring-java-refactoring-visitors.md)
+* [Automated Migration from JUnit 4 to 5](tutorials/automated-migration-from-junit-4-to-5.md)
 
 ## Concepts & Explanations <a id="v1beta"></a>
 
@@ -154,6 +155,4 @@
 * [Design Partner 1](design-partners/design-partner-1.md)
 
 ---
-
-* [Automated Migration from JUnit 4 to 5](automated-migration-from-junit-4-to-5.md)
 
