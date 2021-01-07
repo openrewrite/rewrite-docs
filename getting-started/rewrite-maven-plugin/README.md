@@ -17,7 +17,41 @@ The Rewrite Maven plugin offers four goals:
 * `mvn rewrite:diff` - Generates a git-style patch file that you can review independently and then apply with `git apply target/site/rewrite/rewrite.patch`.
 * `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite is finding on your classpath.
 
-## Classpath Scanning for Resources
+## Plugin configuration
+
+It generally makes sense to apply the plugin to the root pom.xml in a repository so that the configuration applies to each project in a multi-module project. The configuration block below contains an example of every configuration option.
+
+* `activeRecipes` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
+* `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
+* `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
+
+```xml
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>2.4.3</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.spring</recipe>
+          </activeRecipes>
+          <activeStyles>
+            <!-- This style is made up for sake of example. It isn't packaged with Rewrite -->
+            <style>io.moderne.spring</style>
+          </activeStyles>
+          <reportOutputDirectory>.rewrite</reportOutputDirector>
+          <!-- This is the default value of configLocation, not necessary to supply this manually --> 
+          <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+## Classpath Scanning for Recipes
 
 The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles. These aren't automatically enabled, but they become available to activate through [plugin configuration](./#plugin-configuration).
 
@@ -86,44 +120,4 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated. It lists the available recipes, the inclusion and exclusion configurations for those recipes, and the visitors that are effective for that each recipe based on what was found on the classpath. So in the below example, the `org.openrewrite.mockito` recipe has been defined to include all visitors prefixed in the `org.openrewrite.mockito` package. Then it lists all the visitors that have been found in that package and will be ran if that recipe is activated.
 
 ![Discovering the available recipes and visitors via the Maven plugin](../../.gitbook/assets/image%20%283%29.png)
-
-## Plugin configuration
-
-It generally makes sense to apply the plugin to the root pom.xml in a repository so that the configuration applies to each project in a multi-module project. The configuration block below contains an example of every configuration option.
-
-* `activeRecipes` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
-* `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
-* `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
-
-```markup
-<project>
-...
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.4.3</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.spring</recipe>
-          </activeRecipes>
-          <activeStyles>
-            <!-- this style is made up. it isn't packaged with Rewrite -->
-            <style>io.moderne.spring</style>
-          </activeStyles>
-          <sourceTypes>
-            <type>Java</type>
-            <type>YML</type>
-          </sourceTypes>
-          <reportOutputDirectory>.rewrite</reportOutputDirector>
-          <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-![](../../.gitbook/assets/image%20%2811%29.png)
 
