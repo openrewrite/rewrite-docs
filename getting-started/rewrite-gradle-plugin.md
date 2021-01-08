@@ -132,14 +132,14 @@ Execute`gradle rewriteFix` to run the active recipes and apply the changes. This
 
 After the goal finishes executing, run `git diff` (or your VCS system's equivalent) to see what changes were made, review, and commit them.
 
-![An example of changes made to netflix conductor by the rewriteFix task](../.gitbook/assets/rewrite-fix-git-diff-output.png)
+![Example of changes made to netflix conductor by the rewriteFix task](../.gitbook/assets/rewrite-fix-git-diff-output.png)
 
 
 ## The "Warn" Task
 
 Execute`gradle rewriteWarn` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by a recipe.
 
-![Warnings showing which files were changed and by what visitors](../.gitbook/assets/rewrite-warn-gradle-output.png)
+![Listing of source files that would be changed if rewriteFix were run](../.gitbook/assets/rewrite-warn-gradle-output.png)
 
 It could also be manually called in a continuous integration environment, and if you so choose, fail the continuous integration build if the build log contains any such warnings.
 

@@ -330,16 +330,16 @@ If you're using Maven run `maven rewrite:fix`.
 
 If you're using Gradle run `gradle rewriteFix`.
 
-![Example rewriteFix output for applying this migration to Netflix Conductor](../.gitbook/assets/rewrite-fix-gradle-output.png)
+![Example rewriteFix output for applying this recipe to Netflix Conductor](../.gitbook/assets/rewrite-fix-gradle-output.png)
 
 Expect the process to take a roughly similar amount of time as regular Java compilation.
 Upon completion the migration will print a list of sources that were refactored. 
 You can then inspect those sources for accuracy & correctness, manually fix any problems, and then commit the results.
 
 ## Inspecting the Results
-Using `git diff`, or your VCS system's equivalent, you can see exactly what alterations have been made to your sources.
+Using `git diff`, or your VCS's equivalent, you can see exactly what alterations have been made to your sources.
 
-![An example of changes made to Netflix Conductor by the rewriteFix task](../.gitbook/assets/rewrite-fix-git-diff-output.png)
+![Example git diff output for changes made to Netflix Conductor by this recipe](../.gitbook/assets/rewrite-fix-git-diff-output.png)
 
 
 If you're using Maven, your pom.xml should have been updated to remove the JUnit 4 dependency entry and add entries for junit-jupiter-engine and junit-jupiter-api.
@@ -370,7 +370,8 @@ If your Maven build configures its test dependencies in a separate module you wi
 
 {% hint style="info" %}
 Rewrite does not yet support parsing & refactoring of build.gradle or build.gradle.kts files.
-See JUnit's [user guide](https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle) for more information on how to manually configure JUnit 5 with Gradle.
+Gradle users will have to manually update their dependencies to use JUnit 5 instead of JUnit 4. 
+See JUnit's [user guide](https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle) for more information on how to configure JUnit 5 with Gradle.
 {% endhint %}
 
 There are parts of JUnit 4 which we have not yet added support for automatic migration.
