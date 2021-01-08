@@ -17,8 +17,8 @@ In broad terms, the steps are:
 
 For most builds this whole process should take only a few minutes.
 
-## Before and After
-Here's an example of what a JUnit 4 test might look like before applying this migration:
+## Example Before and After
+Here's a JUnit 4 test:
 ```java 
 package org.openrewrite.java.testing.junit5;
 
@@ -91,7 +91,7 @@ public class ExampleJunitTestClass {
 }
 
 ```
-Here's roughly what you can expect it to look like afterwards as a JUnit 5 test:
+Here's the same test class, automatically migrated to JUnit 5 after following this guide:
 ```Java 
 package org.openrewrite.java.testing.junit5;
 
@@ -271,49 +271,16 @@ You are now ready to run the migration.
 
 ### Gradle
 
-At a high level, the steps are:
-
+1. Add the Rewrite Gradle Plugin to your build by following [these instructions](../getting-started/rewrite-gradle-plugin.md)
 1. Take a `testCompileOnly` dependency on `rewrite-testing-frameworks`.
-1. Add the rewrite-gradle-plugin to your build and configure the `rewrite` extension to set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active.
-
-{% hint style="info" %}
-All Rewrite libraries and modules are published to both Maven Central and JCenter.
-Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from one of these repositories, or one of their mirrors. 
-{% endhint %}
-
-How those steps are affected differs slightly between single and multi-module Gradle builds.
+1. Set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active via the `rewrite` extension.
 
 #### Single-Module Gradle projects
-
-1. In your build.gradle, in the `dependencies` block add a `testCompileOnly` dependency on `rewrite-testing-frameworks`:
-    ```groovy
-    dependencies {
-        testImplementation("junit:junit:4.12")
-        testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.0")
-    }
-
-    ```
-2. Apply the org.openrewrite.rewrite plugin to your build:
-    ```groovy
-    plugins {
-        id("java")
-        id("org.openrewrite.rewrite").version("2.3.0")
-    }
-    ```
-    The Rewrite Gradle plugin depends on information from the Java plugin, so it must be applied _after_ the Java plugin.
-
-3. Configure the `rewrite` DSL to set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active:
-    ```groovy 
-    rewrite {
-        activeRecipe("org.openrewrite.java.testing.JUnit5Migration")
-    }
-   ```
-
-With these steps taken, your build.gradle will look similar to this one:
+With these steps taken, a single-project build.gradle should look similar to this one:
 ```groovy
  plugins {
      id("java")
-     id("org.openrewrite.rewrite").version("2.3.0")
+     id("org.openrewrite.rewrite").version("2.3.1")
  }
 
  repositories {
@@ -332,47 +299,10 @@ With these steps taken, your build.gradle will look similar to this one:
 You are now ready to run the migration.
 
 ### Multi-Module Gradle Projects
-There are innumerable different ways a multi-project Gradle build could potentially be configured.
-These instructions assume that the multi-project build in question is composed entirely of Java projects.
-If that isn't the case for your build, and you cannot easily copy and paste these snippets, the key point is to apply the Rewrite plugin just after wherever you apply the Java plugin and configure the rewrite plugin after that.
-
-1. In the root project's build.gradle, in a `subprojects` block, in a `dependencies` block add a `testCompileOnly` dependency on `rewrite-testing-frameworks`:
-    ```groovy
-    subprojects {
-        dependencies {
-            testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.0")
-        }
-    }
-    ```
-1. In the root project's build.gradle, in the `plugins` block, add the rewrite plugin to your build with `apply` set to `false`:
-    ```groovy
-    plugins {
-        id("org.openrewrite.rewrite").version("2.3.0").apply(false)
-    }
-    ```
-1. In the `subprojects` block, or wherever your Java plugin is applied, also apply the rewrite plugin. 
-    ```groovy
-     subprojects {
-        apply plugin: "java"
-        apply plugin: "org.openrewrite.rewrite"
-    }
-    ```
-1. In the same place you applied the Java and Rewrite plugins, configure the `rewrite` DSL to set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active:
-    ```groovy
-     subprojects {
-        apply plugin: "java"
-        apply plugin: "org.openrewrite.rewrite"
-   
-        rewrite {
-            activeRecipe("org.openrewrite.java.testing.JUnit5Migration")
-        }
-    }
-    ```
-
-With these steps taken, your root build.gradle should look similar to this:
+With these steps taken, the root project's build.gradle should look similar to this:
 ```groovy
  plugins {
-     id("org.openrewrite.rewrite").version("2.3.0").apply(false)
+     id("org.openrewrite.rewrite").version("2.3.1").apply(false)
  }
  
  subprojects {
@@ -385,7 +315,7 @@ With these steps taken, your root build.gradle should look similar to this:
  
      dependencies {
          testImplementation("junit:junit:4.12")
-         testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:+")
+         testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.0")
      }
      
      rewrite {
@@ -400,12 +330,17 @@ If you're using Maven run `maven rewrite:fix`.
 
 If you're using Gradle run `gradle rewriteFix`.
 
+![Example rewriteFix output for applying this migration to Netflix Conductor](../.gitbook/assets/rewrite-fix-gradle-output.png)
+
 Expect the process to take a roughly similar amount of time as regular Java compilation.
 Upon completion the migration will print a list of sources that were refactored. 
 You can then inspect those sources for accuracy & correctness, manually fix any problems, and then commit the results.
 
 ## Inspecting the Results
 Using `git diff`, or your VCS system's equivalent, you can see exactly what alterations have been made to your sources.
+
+![An example of changes made to Netflix Conductor by the rewriteFix task](../.gitbook/assets/rewrite-fix-git-diff-output.png)
+
 
 If you're using Maven, your pom.xml should have been updated to remove the JUnit 4 dependency entry and add entries for junit-jupiter-engine and junit-jupiter-api.
 ```xml

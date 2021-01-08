@@ -1,5 +1,5 @@
 ---
-description: Applying Rewrite recipes to your code via a build tool plugin for Maven.
+description: Applying Rewrite recipes to your code with the Rewrite plugin for Maven
 ---
 
 # Rewrite Maven Plugin
@@ -35,7 +35,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
         <version>2.4.3</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.spring</recipe>
+            <recipe>org.openrewrite.java.Spring</recipe>
           </activeRecipes>
           <activeStyles>
             <!-- This style is made up for sake of example. It isn't packaged with Rewrite -->
@@ -51,9 +51,10 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 </project>
 ```
 
-## Classpath Scanning for Recipes
+## Activating Rewrite Recipes
 
-The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles. These aren't automatically enabled, but they become available to activate through [plugin configuration](./#plugin-configuration).
+The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles.
+No recipe is ever run on your code base without being explicitly activated in the plugin's configuration. 
 
 {% hint style="success" %}
 Because the plugin uses classpath scanning, dependencies of the project can include Rewrite recipes in their releases to help migrate users of their library from one version to another.
@@ -61,7 +62,7 @@ Because the plugin uses classpath scanning, dependencies of the project can incl
 
 To make pre-packaged Rewrite recipes available to the Maven plugin, add them as `provided` dependencies. For example:
 
-```markup
+```xml
 <dependencies>
   <dependency>
     <groupId>org.openrewrite.recipe</groupId>
@@ -78,11 +79,34 @@ To make pre-packaged Rewrite recipes available to the Maven plugin, add them as 
 </dependencies>
 ```
 
+Once a pre-packaged recipe is on your classpath, you can tell the Maven plugin to activate it in the plugin's `<configuration>` block.
+For example, here is how you would activate the `org.openrewrite.java.Spring` Recipe that comes with `rewrite-spring`:
+```xml
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>2.4.3</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.Spring</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
+
 ## The "Fix" Goal
 
-Execute`mvn rewrite:fix` to run the configured recipes and apply the changes locally. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortalbe with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
+Execute`mvn rewrite:fix` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortalbe with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
 
-![Warnings showing which files were changed and by what recipes](../../.gitbook/assets/image%20%285%29.png)
+![Warnings showing which files were changed and by what visitors](../../.gitbook/assets/image%20%285%29.png)
 
 After the goal finishes executing, run `git diff` to see what changes were made, review, and commit them.
 
@@ -90,7 +114,7 @@ After the goal finishes executing, run `git diff` to see what changes were made,
 
 ## The "Warn" Goal
 
-Execute`mvn rewrite:warn` runs configured recipes in the same way that the fix goal does, but only writes the warnings to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by a recipe.
+Execute`mvn rewrite:warn` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by a recipe.
 
 It could also be manually called in a continuous integration environment, and if you so choose, fail the continuous integration build if the build log contains any such warnings.
 
@@ -121,3 +145,8 @@ Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin
 
 ![Discovering the available recipes and visitors via the Maven plugin](../../.gitbook/assets/image%20%283%29.png)
 
+
+## Links
+
+* [Github project](https://github.com/openrewrite/rewrite-maven-plugin)
+* [Issue Tracker](https://github.com/openrewrite/rewrite-maven-plugin/issues)
