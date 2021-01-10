@@ -29,5 +29,5 @@ To enable the `rewrite:publish` goal, add an `<executions>` block to your plugin
 
 Notice how the file listing in the resulting JAR is relativized to the project directory. In spite of the file extension, the contents of these files are JSON Smile.
 
-![](../../.gitbook/assets/image%20%2812%29.png)
+![](../../.gitbook/assets/image%20%2812%29%20%285%29.png)
 

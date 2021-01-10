@@ -25,7 +25,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
 * `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
 
-```xml
+```markup
 <project>
   <build>
     <plugins>
@@ -53,8 +53,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 
 ## Activating Rewrite Recipes
 
-The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles.
-No recipe is ever run on your code base without being explicitly activated in the plugin's configuration. 
+The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles. No recipe is ever run on your code base without being explicitly activated in the plugin's configuration.
 
 {% hint style="success" %}
 Because the plugin uses classpath scanning, dependencies of the project can include Rewrite recipes in their releases to help migrate users of their library from one version to another.
@@ -62,7 +61,7 @@ Because the plugin uses classpath scanning, dependencies of the project can incl
 
 To make pre-packaged Rewrite recipes available to the Maven plugin, add them as `provided` dependencies. For example:
 
-```xml
+```markup
 <dependencies>
   <dependency>
     <groupId>org.openrewrite.recipe</groupId>
@@ -79,9 +78,9 @@ To make pre-packaged Rewrite recipes available to the Maven plugin, add them as 
 </dependencies>
 ```
 
-Once a pre-packaged recipe is on your classpath, you can tell the Maven plugin to activate it in the plugin's `<configuration>` block.
-For example, here is how you would activate the `org.openrewrite.java.Spring` Recipe that comes with `rewrite-spring`:
-```xml
+Once a pre-packaged recipe is on your classpath, you can tell the Maven plugin to activate it in the plugin's `<configuration>` block. For example, here is how you would activate the `org.openrewrite.java.Spring` Recipe that comes with `rewrite-spring`:
+
+```markup
 <project>
   <build>
     <plugins>
@@ -145,8 +144,8 @@ Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin
 
 ![Discovering the available recipes and visitors via the Maven plugin](../../.gitbook/assets/image%20%283%29.png)
 
-
 ## Links
 
 * [Github project](https://github.com/openrewrite/rewrite-maven-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-maven-plugin/issues)
+
