@@ -1,2 +1,2 @@
-# Migrating from JUnit 4 to 5
+# Automated Migration from JUnit 4 to 5
 
