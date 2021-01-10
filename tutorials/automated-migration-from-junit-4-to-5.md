@@ -1,5 +1,5 @@
 ---
-description: Fully migrate your tests in minutes
+description: Migrate your tests in minutes
 ---
 
 # Migrating from JUnit 4 to 5
