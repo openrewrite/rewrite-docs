@@ -2,24 +2,26 @@
 description: Fully migrate your tests in minutes
 ---
 
-# Automated Migration from JUnit 4 to 5
+# Migrating from JUnit 4 to 5
 
 This tutorial will show you how to get your JUnit 4 tests migrated to being JUnit 5 tests, ready to be run by the JUnit Jupiter engine, in only a few minutes.
 
 In broad terms, the steps are:
 
 1. Apply the rewrite plugin to your build tool
-1. Take a compile-time-only dependency on rewrite-testing-frameworks
-1. Configure the rewrite plugin to apply the JUnit Migration Recipe
-1. Run the migration
-1. Inspect the results
-1. Commit to source control
+2. Take a compile-time-only dependency on rewrite-testing-frameworks
+3. Configure the rewrite plugin to apply the JUnit Migration Recipe
+4. Run the migration
+5. Inspect the results
+6. Commit to source control
 
 For most builds this whole process should take only a few minutes.
 
 ## Example Before and After
+
 Here's a JUnit 4 test:
-```java 
+
+```java
 package org.openrewrite.java.testing.junit5;
 
 import org.junit.AfterClass;
@@ -89,10 +91,11 @@ public class ExampleJunitTestClass {
     @Test(timeout = 500)
     public void bar() { }
 }
-
 ```
+
 Here's the same test class, automatically migrated to JUnit 5 after following this guide:
-```Java 
+
+```java
 package org.openrewrite.java.testing.junit5;
 
 import org.junit.jupiter.api.*;
@@ -182,13 +185,15 @@ public class ExampleJunitTestClass {
         return result;
     }
 }
-
 ```
 
 ## Build Tool Setup
+
 ### Maven
+
 1. Take a `provided` scope dependency on `rewrite-testing-frameworks`.  
-    ```xml 
+
+   ```markup
     <dependency>
         <groupId>org.openrewrite.recipe</groupId>
         <artifactId>rewrite-testing-frameworks</artifactId>
@@ -196,8 +201,10 @@ public class ExampleJunitTestClass {
         <scope>provided</scope>
     </dependency>
    ```
+
 2. Add the rewrite-maven-plugin to your build and configure it to set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active.
-    ```xml
+
+   ```markup
     <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
@@ -215,10 +222,11 @@ public class ExampleJunitTestClass {
             </execution>
         </executions>
     </plugin>
-    ```
+   ```
 
 With these steps taken, your pom.xml will look similar to this:
-```xml
+
+```markup
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -242,7 +250,7 @@ With these steps taken, your pom.xml will look similar to this:
             <scope>provided</scope>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -272,11 +280,13 @@ You are now ready to run the migration.
 ### Gradle
 
 1. Add the Rewrite Gradle Plugin to your build by following [these instructions](../getting-started/rewrite-gradle-plugin.md)
-1. Take a `testCompileOnly` dependency on `rewrite-testing-frameworks`.
-1. Set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active via the `rewrite` extension.
+2. Take a `testCompileOnly` dependency on `rewrite-testing-frameworks`.
+3. Set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active via the `rewrite` extension.
 
 #### Single-Module Gradle projects
+
 With these steps taken, a single-project build.gradle should look similar to this one:
+
 ```groovy
  plugins {
      id("java")
@@ -291,59 +301,63 @@ With these steps taken, a single-project build.gradle should look similar to thi
      testImplementation("junit:junit:4.12")
      testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.0")
  }
-  
+
  rewrite {
      activeRecipe("org.openrewrite.java.testing.JUnit5Migration")
  }
- ```
+```
+
 You are now ready to run the migration.
 
 ### Multi-Module Gradle Projects
+
 With these steps taken, the root project's build.gradle should look similar to this:
+
 ```groovy
  plugins {
      id("org.openrewrite.rewrite").version("2.3.1").apply(false)
  }
- 
+
  subprojects {
      apply plugin: "java"
      apply plugin: "org.openrewrite.rewrite"
- 
+
      repositories {
          jcenter()
      }
- 
+
      dependencies {
          testImplementation("junit:junit:4.12")
          testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.0")
      }
-     
+
      rewrite {
          activeRecipe("org.openrewrite.java.testing.JUnit5Migration")
      }
  }
 ```
+
 You are now ready to run the migration.
 
 ## Running the Migration
+
 If you're using Maven run `maven rewrite:fix`.
 
 If you're using Gradle run `gradle rewriteFix`.
 
 ![Example rewriteFix output for applying this recipe to Netflix Conductor](../.gitbook/assets/rewrite-fix-gradle-output.png)
 
-Expect the process to take a roughly similar amount of time as regular Java compilation.
-Upon completion the migration will print a list of sources that were refactored. 
-You can then inspect those sources for accuracy & correctness, manually fix any problems, and then commit the results.
+Expect the process to take a roughly similar amount of time as regular Java compilation. Upon completion the migration will print a list of sources that were refactored. You can then inspect those sources for accuracy & correctness, manually fix any problems, and then commit the results.
 
 ## Inspecting the Results
+
 Using `git diff`, or your VCS's equivalent, you can see exactly what alterations have been made to your sources.
 
 ![Example git diff output for changes made to Netflix Conductor by this recipe](../.gitbook/assets/rewrite-fix-git-diff-output.png)
 
-
 If you're using Maven, your pom.xml should have been updated to remove the JUnit 4 dependency entry and add entries for junit-jupiter-engine and junit-jupiter-api.
-```xml
+
+```markup
 <dependencies>
     <dependency>
         <groupId>org.junit.jupiter</groupId>
@@ -369,13 +383,8 @@ If your Maven build configures its test dependencies in a separate module you wi
 {% endhint %}
 
 {% hint style="info" %}
-Rewrite does not yet support parsing & refactoring of build.gradle or build.gradle.kts files.
-Gradle users will have to manually update their dependencies to use JUnit 5 instead of JUnit 4. 
-See JUnit's [user guide](https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle) for more information on how to configure JUnit 5 with Gradle.
+Rewrite does not yet support parsing & refactoring of build.gradle or build.gradle.kts files. Gradle users will have to manually update their dependencies to use JUnit 5 instead of JUnit 4. See JUnit's [user guide](https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle) for more information on how to configure JUnit 5 with Gradle.
 {% endhint %}
 
-There are parts of JUnit 4 which we have not yet added support for automatic migration.
-See the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues) for the most up to date information about bugs and known issues. 
-Reach out to us there if you run into a bug.
-Also reach out if your build uses JUnit 4 features not yet automatically migrated by the recipe. 
-We accept pull requests, questions, as well as any details of your JUnit 4 usage which would help us to prioritize any aspect of this migration.
+There are parts of JUnit 4 which we have not yet added support for automatic migration. See the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues) for the most up to date information about bugs and known issues. Reach out to us there if you run into a bug. Also reach out if your build uses JUnit 4 features not yet automatically migrated by the recipe. We accept pull requests, questions, as well as any details of your JUnit 4 usage which would help us to prioritize any aspect of this migration.
+
