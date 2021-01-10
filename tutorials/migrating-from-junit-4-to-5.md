@@ -2,7 +2,7 @@
 description: Fully migrate your tests in minutes
 ---
 
-# Automated Migration from JUnit 4 to 5
+# Migrating from JUnit 4 to 5
 
 This tutorial will show you how to get your JUnit 4 tests migrated to being JUnit 5 tests, ready to be run by the JUnit Jupiter engine, in only a few minutes.
 
