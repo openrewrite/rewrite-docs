@@ -197,7 +197,7 @@ public class ExampleJunitTestClass {
     <dependency>
         <groupId>org.openrewrite.recipe</groupId>
         <artifactId>rewrite-testing-frameworks</artifactId>
-        <version>0.8.0</version>
+        <version>0.8.1</version>
         <scope>provided</scope>
     </dependency>
    ```
@@ -246,7 +246,7 @@ With these steps taken, your pom.xml will look similar to this:
         <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>0.8.0</version>
+            <version>0.8.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -299,7 +299,7 @@ With these steps taken, a single-project build.gradle should look similar to thi
 
  dependencies {
      testImplementation("junit:junit:4.12")
-     testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.0")
+     testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.1")
  }
 
  rewrite {
@@ -328,7 +328,7 @@ With these steps taken, the root project's build.gradle should look similar to t
 
      dependencies {
          testImplementation("junit:junit:4.12")
-         testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.0")
+         testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.1")
      }
 
      rewrite {

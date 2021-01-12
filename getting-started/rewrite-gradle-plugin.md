@@ -99,7 +99,7 @@ To make pre-packaged Rewrite recipes available to apply to your test code, add t
 
 ```groovy
 dependencies {
-    testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.0")
+    testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:0.8.1")
 }
 ```
 

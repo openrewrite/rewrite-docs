@@ -79,7 +79,7 @@ Place the following configuration in the root `pom.xml` of a repository. The `ex
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>0.8.0</version>
+      <version>0.8.1</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
