@@ -191,7 +191,7 @@ public class ExampleJunitTestClass {
 
 ### Maven
 
-1. Take a `provided` scope dependency on `rewrite-testing-frameworks`.  
+1. Take a `provided` scope dependency on `rewrite-testing-frameworks`.
 
    ```markup
     <dependency>

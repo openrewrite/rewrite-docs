@@ -103,7 +103,7 @@ To find out what recipes a rewrite module provides, see its documentation and th
 
 ## The "Fix" Goal
 
-Execute`mvn rewrite:fix` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortalbe with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
+Execute`mvn rewrite:fix` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
 
 ![Warnings showing which files were changed and by what visitors](../../.gitbook/assets/image%20%285%29.png)
 

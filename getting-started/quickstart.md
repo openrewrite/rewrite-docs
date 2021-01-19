@@ -103,7 +103,7 @@ The building-block visitor `UseStaticImport` is smart enough to know how to remo
 
 The last step is to run `git diff` to see the changes Rewrite has made. For this example, running `git diff` shows how, among other changes, Rewrite has removed unnecessary `@Autowired` annotations from injectable constructors \(which is now implicit in Spring Boot\) and swapped the `@RequestMapping` annotation for `@GetMapping`, closing a [CSRF security vulnerability](https://find-sec-bugs.github.io/bugs.htm#SPRING_ENDPOINT) \(!!\).
 
-![Git diff showing removal of unnecessary @Autowired and migration of @RequestMapping](../.gitbook/assets/image%20%281%29%20%281%29%20%281%29.png)
+![Git diff showing removal of unnecessary @Autowired and migration of @RequestMapping](../.gitbook/assets/image%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 ## Next Steps
 
