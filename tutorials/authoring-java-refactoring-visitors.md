@@ -401,5 +401,5 @@ Don't get rewrite-test confused with [rewrite-testing-frameworks](). rewrite-tes
 
 ### Have questions?
 
-Join our [community slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-i2ouq1qd-KdkTZKr5jmNtooqfc4ITAQ) and ask us directly
+Join our [community slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-kpz9t4hw-oWFbOMy~Kxta28qr2uqSFg) and ask us directly
 
