@@ -13,7 +13,7 @@ description: Determine semantic equality between two abstract syntax trees.
 ## Java Definition
 
 {% hint style="warning" %}
-`SemanticallyEqual` has only been implemented for annotations for now. If you would like to see more functionality, join the [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-i2ouq1qd-KdkTZKr5jmNtooqfc4ITAQ) and tell us more about it! We are also accepting pull requests at the [OpenRewrite Github](https://github.com/openrewrite/rewrite). 
+`SemanticallyEqual` has only been implemented for annotations for now. If you would like to see more functionality, join the [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-kpz9t4hw-oWFbOMy~Kxta28qr2uqSFg) and tell us more about it! We are also accepting pull requests at the [OpenRewrite Github](https://github.com/openrewrite/rewrite). 
 {% endhint %}
 
 ```java
