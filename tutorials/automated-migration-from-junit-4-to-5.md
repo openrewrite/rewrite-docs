@@ -290,7 +290,7 @@ With these steps taken, a single-project build.gradle should look similar to thi
 ```groovy
  plugins {
      id("java")
-     id("org.openrewrite.rewrite").version("2.3.1")
+     id("org.openrewrite.rewrite").version("2.3.2")
  }
 
  repositories {
@@ -315,7 +315,7 @@ With these steps taken, the root project's build.gradle should look similar to t
 
 ```groovy
  plugins {
-     id("org.openrewrite.rewrite").version("2.3.1").apply(false)
+     id("org.openrewrite.rewrite").version("2.3.2").apply(false)
  }
 
  subprojects {
