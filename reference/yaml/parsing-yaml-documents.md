@@ -12,7 +12,7 @@ For Maven, define a compile scoped dependency on `rewrite-yaml`.
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-yaml</artifactId>
-  <version>6.1.12</version>
+  <version>6.1.21</version>
 </dependency>
 ```
 

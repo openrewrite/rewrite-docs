@@ -208,7 +208,7 @@ public class ExampleJunitTestClass {
     <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.4.3</version>
+        <version>2.4.13</version>
         <configuration>
             <activeRecipes>
                 <recipe>org.openrewrite.java.testing.JUnit5Migration</recipe>
@@ -256,7 +256,7 @@ With these steps taken, your pom.xml will look similar to this:
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>2.4.3</version>
+                <version>2.4.13</version>
                 <configuration>
                     <activeRecipes>
                         <recipe>org.openrewrite.java.testing.JUnit5Migration</recipe>

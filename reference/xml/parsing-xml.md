@@ -16,14 +16,14 @@ For Maven, define a compile scoped dependency on `rewrite-xml`.
 <dependency>
   <groupId>org.openrewrite</groupId>
   <artifactId>rewrite-xml</artifactId>
-  <version>6.1.12</version>
+  <version>6.1.21</version>
 </dependency>
 ```
 
 For Gradle, define an implementation dependency on `rewrite-xml`.
 
 ```groovy
-implementation("org.openrewrite:rewrite-xml:6.1.12")
+implementation("org.openrewrite:rewrite-xml:6.1.21")
 ```
 
 ## Constructing an XML Parser

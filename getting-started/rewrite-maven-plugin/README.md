@@ -32,7 +32,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.4.3</version>
+        <version>2.4.13</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.Spring</recipe>
@@ -87,7 +87,7 @@ Once a pre-packaged recipe is on your classpath, you can tell the Maven plugin t
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>2.4.3</version>
+        <version>2.4.13</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.Spring</recipe>
@@ -131,7 +131,7 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>2.4.3</version>
+    <version>2.4.13</version>
     <configuration>
         <reportOutputDirectory>.rewrite</reportOutputDirector>
     </configuration>
