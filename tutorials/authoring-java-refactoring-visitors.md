@@ -2,7 +2,7 @@
 
 his is an overview of the tools which exist to facilitate the authoring of refactoring visitors. This guide assumes you've read the overviews on [ASTs](../v1beta/abstract-syntax-trees.md), [visitors](../v1beta/visitor.md), [recipes](../v1beta/recipes.md), and [Refactor](../v1beta/refactor.md).
 
-### Choosing your base class: JavaIsoRefactorVisitor vs JavaRefactorVisitor
+## Choosing your base class: JavaIsoRefactorVisitor vs JavaRefactorVisitor
 
 The difference between these very similar base classes can be seen in the signatures of their `visit` methods. For example, `visitClassDecl`:
 
@@ -18,7 +18,7 @@ public J visitClassDecl(J.ClassDecl cd)
 
 The "iso" in "JavaIsoRefactorVisitor" is short for "isomorphic" or "same shape". This reflects the constraint that visit methods must return an AST element of the same type as the element being visited. In most cases this constraint is a non-issue and saves you from having to frequently cast the results of calls methods on the `super` class. Rarely do you do things like visit a method declaration and replace it with a class declaration. So the majority of visitors will be more comfortable to write if they subclass `JavaIsoRefactorVisitor`. If your refactoring does call for replacing AST elements of one type with AST elements of a different type, then subclass `JavaRefactorVisitor`.
 
-### Composing visitors with AbstractRefactorVisitor.andThen\(\)
+## Composing visitors with AbstractRefactorVisitor.andThen\(\)
 
 The easiest way to compose multiple visitors together is to use `AbstractRefactorVisitor.andThen()`.  
 The `andThen()` method accepts a visitor as its argument and schedules that visitor to be executed as soon as the current visitor has returned. So when you schedule a visitor It's important to understand that since `andThen()` schedules the execution for later calling it does not immediately result in any changes whatsoever to the AST. So what if you want to do something with the result of a visitor you've scheduled with `andThen()`? `andThen()` another visitor after that one. Visitors scheduled with `andThen()` are applied in the order they're scheduled in.
@@ -73,7 +73,7 @@ In the above example the order of application of the visitors is:
 
 If you're curious to look under the hood and see how this is implemented, see [Refactor.transformPipeline\(\)](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/Refactor.java).
 
-### Traversing the AST with Cursor
+## Traversing the AST with Cursor
 
 Some refactoring operations require locating the parent or sibling of a particular AST element. None of the Java AST elements in `J` retain a reference to their parents or siblings. To perform these traversals call `AbstractSourceVisitor.setCursoringOn()` inside your visitor's constructor, then in any `visit` method call `AbstractSourceVisitor.getCursor()` to retrieve a `Cursor`. Calling `getCursor()` without having called `setCursoringOn()` will produce a runtime error. Cursoring functionality is opt-in via `setCursoringOn()` for performance.
 
@@ -110,7 +110,7 @@ public class CursoringExampleVisitor extends JavaIsoRefactorVisitor {
 }
 ```
 
-### Matching Method signatures with MethodMatcher
+## Matching Method signatures with MethodMatcher
 
 Frequently visitors will need to identify methods with particular attributes. [MethodMatcher](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/MethodMatcher.java) is the standardized mechanism for determining if a `J.MethodDecl` is the one you're looking for. MethodMatchers uses AspectJ pointcut expressions to identify methods by their declaring class, name, and arguments.
 
@@ -156,7 +156,7 @@ class ExampleMatchers {
 }
 ```
 
-### Identifying AST elements with Tree.isScope\(\)
+## Identifying AST elements with Tree.isScope\(\)
 
 The `Tree.isScope()` method returns `true` if the AST elements share the same id. This mechanism allows for identifying an AST element even if it has gone through a series of drastic transformations.  
 Any visitor which wishes to identify applicable AST elements then act upon them in a subsequent step will find use for `Tree.isScope()`.
@@ -219,7 +219,7 @@ public class UseStaticImport extends JavaIsoRefactorVisitor {
 
 This class follows a convention common to visitors provided by OpenRewrite. The outer class, `UseStaticImport` is configured only with `set` methods that accept `Strings` and its `visit` methods serve primarily to identify the specific AST element in need of transformation. Having identified the relevant elements, `UseStaticImport` uses `andThen()` to schedule instances of its inner class, called `Scoped` by convention. The inner class `Scoped` then uses the `isScope()` method to tell when it is visiting a method invocation that should be refactored. The purpose of this convention is to make visitors amenable to usage from either Java or YAML, and to simplify the management of state. When run with the typical configuration, every visitor will see every file at least twice, so having mutable state on your visitor class can easily lead to bugs. Nothing _requires_ that visitors you author follow this convention, but we do recommend it.
 
-### Creating Code with TreeBuilder
+## Creating Code with TreeBuilder
 
 Even short code snippets can have complex AST representations. Manually constructing complex AST elements is tedious and foreign to developers used to authoring code as text. The `TreeBuilder` class exists to bridge this gap, allowing you to provide a code snippet and have it parsed into an AST.
 
@@ -290,7 +290,7 @@ public String getName() {
 
 Which is semantically correct but not properly indented.
 
-### Formatting and Indentation with AutoFormat
+## Formatting and Indentation with AutoFormat
 
 When you add new AST elements you typically want them to be formatted. This formatting should at the very least:
 
@@ -304,7 +304,7 @@ Doing this manually is extremely tedious and repetitive, so we created the [Auto
 AutoFormat is a work in progress and operates on a best-effort basis. Report any issues you may discover with AutoFormat [here](https://github.com/openrewrite/rewrite/issues).
 {% endhint %}
 
-### Making your visitor addressable from YAML
+## Making your visitor addressable from YAML
 
 For a visitor to be directly configurable and addressable from YAML your visitor must meet these requirements:
 
@@ -345,7 +345,7 @@ public class ChangeType extends JavaIsoRefactorVisitor {
 }
 ```
 
-### Testing
+## Testing
 
 The [rewrite-test](https://github.com/openrewrite/rewrite/tree/master/rewrite-test) module provides various utilities to make it easy to write tests for your visitors and recipes. At least until [JEP 355](https://openjdk.java.net/jeps/355) brings multi-line text blocks to Java, we recommend using [Kotlin](https://kotlinlang.org/) for authoring your tests.
 
@@ -396,10 +396,10 @@ To assert that your visitor _does not_ change code it shouldn't, use `assertUnch
 ```
 
 {% hint style="warning" %}
-Don't get rewrite-test confused with [rewrite-testing-frameworks](). rewrite-test has utilities and test fixtures for exercising visitors and recipes. rewrite-testing-frameworks has visitors and recipes which enact migrations and best practices for popular Java test frameworks like JUnit and Mockito.
+Don't get rewrite-test confused with [rewrite-testing-frameworks](authoring-java-refactoring-visitors.md). rewrite-test has utilities and test fixtures for exercising visitors and recipes. rewrite-testing-frameworks has visitors and recipes which enact migrations and best practices for popular Java test frameworks like JUnit and Mockito.
 {% endhint %}
 
-### Have questions?
+## Have questions?
 
-Join our [community slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-kpz9t4hw-oWFbOMy~Kxta28qr2uqSFg) and ask us directly
+Join our [community slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-lxaw3wap-6hzsYWyomw~Yrkx2hg~zZg) and ask us directly
 
