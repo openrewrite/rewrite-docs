@@ -14,7 +14,7 @@ public class Sample {
         n = 1; // 2
         (n) = 2; // 3
         n++; // 4
-        if((n = 4) > 1) {} // does not match!
+        if((n = 4) > 1) {}
         this.n = 1; // does not match!
     }
 }
