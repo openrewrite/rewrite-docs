@@ -11,6 +11,7 @@
 
 ## Tutorials & Guides <a id="tutorials"></a>
 
+* [What's new in Rewrite 7.0](tutorials/whats-new-in-rewrite-7.0.md)
 * [Running as a Google Cloud Function](tutorials/running-as-a-google-cloud-function.md)
 * [Writing a Custom Declarative Visitor](tutorials/writing-a-custom-declarative-visitor.md)
 * [Parsing Java Code](tutorials/parsing-java-code.md)
