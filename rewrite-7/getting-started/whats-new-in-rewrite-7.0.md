@@ -4,7 +4,7 @@
 
 The 7.x version of Rewrite is a substantial upgrade of the framework and tools that are leveraged to perform automated, semantic search and transformation. This release focuses on formalizing and refining the concepts, introduced in previous versions of the framework, to provide a better developer experience. 
 
-Rewrite works by parsing code into [Abstract Syntax Trees](../v1beta/abstract-syntax-trees.md), making changes to those trees, and reifying the modified trees back into source code.
+Rewrite works by parsing code into [Abstract Syntax Trees](../../v1beta/abstract-syntax-trees.md), making changes to those trees, and reifying the modified trees back into source code.
 
 {% hint style="info" %}
 The abbreviation, **AST**, is used throughout this document to represent "Abstract Syntax Tree".  

@@ -11,7 +11,6 @@
 
 ## Tutorials & Guides <a id="tutorials"></a>
 
-* [What's new in Rewrite 7.0](tutorials/whats-new-in-rewrite-7.0.md)
 * [Running as a Google Cloud Function](tutorials/running-as-a-google-cloud-function.md)
 * [Writing a Custom Declarative Visitor](tutorials/writing-a-custom-declarative-visitor.md)
 * [Parsing Java Code](tutorials/parsing-java-code.md)
@@ -154,4 +153,23 @@
 ## Design Partners
 
 * [Design Partner 1](design-partners/design-partner-1.md)
+
+## Rewrite 7
+
+* [Getting Started](rewrite-7/getting-started/README.md)
+  * [What's new in Rewrite 7.0](rewrite-7/getting-started/whats-new-in-rewrite-7.0.md)
+* [Tutorials & Guides](rewrite-7/tutorials-and-guides.md)
+* [Concepts & Explanations](rewrite-7/concepts-and-explanations/README.md)
+  * [Abstract Syntax Trees](rewrite-7/concepts-and-explanations/abstract-syntax-trees.md)
+  * [Recipes](rewrite-7/concepts-and-explanations/recipes.md)
+  * [Visitors](rewrite-7/concepts-and-explanations/visitors.md)
+  * [Environment](rewrite-7/concepts-and-explanations/environment.md)
+  * [Styles](rewrite-7/concepts-and-explanations/styles.md)
+  * [JavaTemplate](rewrite-7/concepts-and-explanations/javatemplate.md)
+* [Reference](rewrite-7/reference-1/README.md)
+  * [Java](rewrite-7/reference-1/java.md)
+  * [Maven](rewrite-7/reference-1/maven.md)
+  * [XML](rewrite-7/reference-1/xml.md)
+  * [YAML](rewrite-7/reference-1/yaml.md)
+  * [Properties](rewrite-7/reference-1/properties.md)
 
