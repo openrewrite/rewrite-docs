@@ -96,13 +96,29 @@ There are several refinements to Rewrite's Java AST model and the associated vis
 
 ### Comments & Whitespace
 
+Prior to 7.x, all whitespace and comments were co-mingled as a single string in prefix/suffix attributes of the AST  elements. This approach made formatting difficult because it required the comments to be extracted from the whitespace and formatting logic had to be applied to the whitespace between comments and before/after the AST elements. This approach limited the ability to apply auto-formatting visitors to the ASTs and, in many cases, required developers to manually place whitespace characters as part of a refactoring operation.
 
+In Rewrite 7.x, comments and whitespace characters are now first-class citizens within the AST and stored in a new`org.openrewrite.java.tree.Space`element. Additionally, there are new wrapper classes`org.openrewrite.java.tree.JRightPadded and org.openrewrite.java.tree.JLeftPadded.` 
+
+These structural changes to the AST model impact those migrating from previous versions of Rewrite, however, their introduction reduces the need to manually manipulate formatting in visitors. 
+
+{% hint style="info" %}
+When migrating visitors from previous versions of Rewrite, any code that is manually adding whitespace or adjusting formatting should be refactored/removed in favor of using Rewrite's much improved autoformatting capabilities  
+{% endhint %}
 
 ### AutoFormatting
 
+
+
 ### JavaTemplate
 
+In previous versions of Rewrite, developers were often required to manually create and manipulate AST representations.  The process was tedious and error-prone for developers used to authoring code as text and resulted in complex and verbose refactoring code. There was an initial attempt to solve this problem with the utility class`TreeBuilder`but it had limited functionality and, while it solved several immediate problems, there were many edge cases it simply did not handle. The TreeBuilder class could generate an AST representation from a snippet of code but it was still the responsibility of the developer to then correctly insert the generated AST fragment within an existing tree.
+
+Rewrite 7.x introduces a new class,`org.openrewrite.java.JavaTemplate,`as the successor to TreeBuilder. This new utility is paired with changes to the Java AST model to provides a natural, idiomatic API for both generating AST representations from snippets of code and inserting the resulting structure into an existing tree. 
+
 #### Deterministic Inline Code Generation
+
+
 
 #### Coordinates
 
