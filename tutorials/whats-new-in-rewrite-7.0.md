@@ -112,13 +112,21 @@ When migrating visitors from previous versions of Rewrite, any code that is manu
 
 ### JavaTemplate
 
-In previous versions of Rewrite, developers were often required to manually create and manipulate AST representations.  The process was tedious and error-prone for developers used to authoring code as text and resulted in complex and verbose refactoring code. There was an initial attempt to solve this problem with the utility class`TreeBuilder`but it had limited functionality and, while it solved several immediate problems, there were many edge cases it simply did not handle. The TreeBuilder class could generate an AST representation from a snippet of code but it was still the responsibility of the developer to then correctly insert the generated AST fragment within an existing tree.
+In previous versions of Rewrite, developers were often required to manually create and manipulate AST representations. The process was tedious and error-prone for developers used to authoring code as text and resulted in complex and verbose refactoring code. There was an initial attempt to solve this problem with the utility class`TreeBuilder`but it had limited functionality and, while it solved several immediate problems, there were many edge cases it simply did not handle. The TreeBuilder class could generate an AST representation from a snippet of code but it was still the responsibility of the developer to then correctly insert the generated AST fragment within an existing tree.
 
 Rewrite 7.x introduces a new class,`org.openrewrite.java.JavaTemplate,`as the successor to TreeBuilder. This new utility is paired with changes to the Java AST model to provides a natural, idiomatic API for both generating AST representations from snippets of code and inserting the resulting structure into an existing tree. 
 
 #### Deterministic Inline Code Generation
 
+One of the deficiencies of TreeBuilder was that it often lacked context around where a snippet of code was being generated with an existing AST. It provided methods to handle simple, well-known use cases but it was easy to "break" the code generation when attempting more complicated operations. In Rewrite 7.0, the AST model for whitespace also includes an enumeration of every location where that whitespace may exist in the Java language grammar. The JavaTemplate leverages this additional information to deterministically insert a generated snippet of code at exactly the location intended by the developer. The template is also contextually aware of which method and variables are in scope relative to where the snippet is inserted and compiled.
 
+Another very common pattern that emerged with TreeBuilder was that developers were often extracting elements of the existing AST and then inlining those elements within the generated snippet of code. JavaTemplate introduces the ability to define parameter markers into the template and then pass parameter instances when generating a snippet of code. If a parameter is itself a Tree element, the template will render that parameter in-line by printing the tree element as a string.
+
+ A source of confusion with previous iterations of Rewrite's code generation capabilities was that the generation of a snippet of code resulted in a list of generated tree elements and it was then the responsibility of the developer to insert those new elements into the existing AST structure. The JavaTemplate API will now insert the generated snippet at the correct location, compile that snippet within the context of the existing AST and then return a mutated version of the AST. This is best illustrated with an example. 
+
+
+
+ 
 
 #### Coordinates
 
