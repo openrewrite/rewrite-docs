@@ -22,7 +22,7 @@ The first significant change you may notice is that visitors now have a second p
 
 #### Chaining Visitors
 
-There are times when it is desirable to schedule additional visitors to operate, immediately after, the initial visitor has visited a source file. The visitor class provides a mechanism for doing this via the`doAfterVisit()`method and any such scheduled visitors will operate on the same source file exactly once.
+There are times when it is desirable to schedule additional visitors to operate immediately after the initial visitor has visited a source file. The visitor class provides a mechanism for doing this via the`doAfterVisit()`method and any such scheduled visitors will operate on the same source file exactly once.
 
 #### Cursor Messaging
 
@@ -88,9 +88,15 @@ Things to consider when a recipe wraps an underlying visitor:
 
 ## Java
 
-### Java AST & Visitor Model Changes
+There are several refinements to Rewrite's Java AST model and the associated visitor API with a focus on three key areas:
 
-### Comments
+* Improving the format/autoformat capabilities of the framework
+* Simplifying the developer experience when creating/mutating AST elements within the context of refactoring operations.
+* Normalizing the names of Java AST elements, visitor method signatures, and enumerations.
+
+### Comments & Whitespace
+
+
 
 ### AutoFormatting
 
