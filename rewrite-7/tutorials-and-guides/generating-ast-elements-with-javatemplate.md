@@ -27,10 +27,6 @@ public class ChangeMethodInvocation extends JavaVisitor<ExecutionContext> {
 
 A template is always constructed with a snippet of code as a string and the snippet must conform to Java's language grammar \(in the context of where it will be inserted\). A snippet may also include parameter markers to indicate that parameters will be inserted into the snippet of code each time the template is used. In the above example, the following snippet represents a chained method invocation with one parameter:
 
-```
-withString(#{}).length()
-```
-
 {% hint style="info" %}
  The default parameter marker is \#{}
 {% endhint %}
@@ -81,4 +77,26 @@ Please see the JavaTemplate Reference Guide for details on JavaCoordinates
 `m.withTemplate(template, m.getCoordinates().replace(),` **`m.getArguments.get(0)`**`)`
 
 Any parameters required by the template are passed to the template and the first parameter passed into the method will be substituted into the first parameter marker inside the code snippet. The framework will correctly detect with an argument is an existing AST element and will render the tree element via its print method.
+
+## JavaTemplate Examples
+
+### Class Declarations
+
+#### Adding an Annotation to a Class
+
+#### Adding a Method to a Class
+
+#### Adding a Static Block to a Class
+
+#### Modifying a Class's Type Parameters
+
+#### Modifying a Class's Implements Clause
+
+### Method Declarations
+
+#### Modifying a Method Declaration's parameters
+
+#### Adding a Body to an Abstract Method Declaration
+
+#### Inserting Statements into a Method Declaration's Body
 
