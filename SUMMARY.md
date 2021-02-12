@@ -157,6 +157,8 @@
 ## Rewrite 7
 
 * [Getting Started](rewrite-7/getting-started/README.md)
+  * [Rewrite 7 Early Access](rewrite-7/getting-started/rewrite-7-early-access.md)
+  * [Rewrite Maven Plugin](rewrite-7/getting-started/rewrite-maven-plugin.md)
   * [What's new in Rewrite 7.0](rewrite-7/getting-started/whats-new-in-rewrite-7.0.md)
 * [Tutorials & Guides](rewrite-7/tutorials-and-guides/README.md)
   * [Generating AST Elements With JavaTemplate](rewrite-7/tutorials-and-guides/generating-ast-elements-with-javatemplate.md)
