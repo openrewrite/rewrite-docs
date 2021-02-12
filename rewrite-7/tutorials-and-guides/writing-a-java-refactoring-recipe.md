@@ -1,10 +1,10 @@
 ---
-description: Adding a method that prints "Hello World" to a class
+description: Adding a method that returns a String to a class
 ---
 
 # Writing a Java Refactoring Recipe
 
-In this tutorial we'll create a basic refactoring recipe that adds a method returning a String to a user specified class. This `SayHelloRecipe` will take a class like this:
+In this tutorial we'll create a basic refactoring recipe that adds a method returning a `String` to a user specified class. This `SayHelloRecipe` will take a class like this:
 
 ```java
 package com.yourorg;
@@ -81,7 +81,7 @@ rewrite-java-8 and rewrite-java-11 can peacefully coexist on the same classpath.
 
 ## Defining SayHelloRecipe
 
-Begin by creating a class that extends `org.openrewrite.Recipe`. This recipe should accept as a configuration parameter the fully qualified name of the class to add a sayHello method to and it should validate that parameter is configured with a valid value. Altogether that looks like this:
+Begin by creating a class that extends `org.openrewrite.Recipe`. This recipe should accept as a configuration parameter the fully qualified name of the class to add a `hello()` method to and it should validate that parameter is configured with a valid value. 
 
 ```java
 package org.openrewrite.samples;
@@ -332,7 +332,6 @@ public class SayHelloRecipe extends Recipe {
         }
     }
 }
-
 ```
 
 ## Testing 
@@ -343,7 +342,7 @@ To create automated tests of this visitor we use the [kotlin](https://kotlinlang
 * That a class that already has a different `hello()` implementation will be left untouched
 * That a class not matching the configured `fullyQualifiedClassName` with no `hello()` method will be left untouched
 
-To assert that a Recipe does make a change, use `RecipeTest.assertChanged`. To assert that a Recipe does _not_ make a change it shouldn't, use `RecipeTest.assertUnchanged`. These methods will defeault to using the `parser` and `recipe` properties on the class.
+To assert that a Recipe does make a change, use `RecipeTest.assertChanged`. To assert that a Recipe does _not_ make a change it shouldn't, use `RecipeTest.assertUnchanged`. These methods will default to using the `parser` and `recipe` properties on the class.
 
 ```kotlin
 package org.openrewrite.samples
@@ -401,7 +400,7 @@ class SayHelloRecipeTest(): RecipeTest {
 
 ## Declarative YAML Usage
 
-SayHelloRecipe is now ready to be used in code or declaratively from YAML. This Java snippet and YAML snippet are equivalent in their behavior:
+`SayHelloRecipe` is now ready to be used in code or declaratively from YAML. This Java snippet and YAML snippet are equivalent in their behavior:
 
 ```text
 SayHelloRecipe sayHelloA = new SayHelloRecipe();
