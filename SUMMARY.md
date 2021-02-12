@@ -161,6 +161,7 @@
   * [Rewrite Maven Plugin](rewrite-7/getting-started/rewrite-maven-plugin.md)
   * [What's new in Rewrite 7.0](rewrite-7/getting-started/whats-new-in-rewrite-7.0.md)
 * [Tutorials & Guides](rewrite-7/tutorials-and-guides/README.md)
+  * [Writing a Java Refactoring Recipe](rewrite-7/tutorials-and-guides/writing-a-java-refactoring-recipe.md)
   * [Modifying Classes with JavaTemplate](rewrite-7/tutorials-and-guides/generating-ast-elements-with-javatemplate.md)
   * [Modifying Methods with JavaTemplate](rewrite-7/tutorials-and-guides/modifying-methods-with-javatemplate.md)
 * [Concepts & Explanations](rewrite-7/concepts-and-explanations/README.md)
