@@ -158,7 +158,8 @@
 
 * [Getting Started](rewrite-7/getting-started/README.md)
   * [What's new in Rewrite 7.0](rewrite-7/getting-started/whats-new-in-rewrite-7.0.md)
-* [Tutorials & Guides](rewrite-7/tutorials-and-guides.md)
+* [Tutorials & Guides](rewrite-7/tutorials-and-guides/README.md)
+  * [Generating AST Elements With JavaTemplate](rewrite-7/tutorials-and-guides/generating-ast-elements-with-javatemplate.md)
 * [Concepts & Explanations](rewrite-7/concepts-and-explanations/README.md)
   * [Abstract Syntax Trees](rewrite-7/concepts-and-explanations/abstract-syntax-trees.md)
   * [Recipes](rewrite-7/concepts-and-explanations/recipes.md)
