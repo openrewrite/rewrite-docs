@@ -168,6 +168,7 @@
   * [Visitors](rewrite-7/concepts-and-explanations/visitors.md)
   * [Environment](rewrite-7/concepts-and-explanations/environment.md)
   * [Styles](rewrite-7/concepts-and-explanations/styles.md)
+  * [Markers](rewrite-7/concepts-and-explanations/markers.md)
   * [JavaTemplate](rewrite-7/concepts-and-explanations/javatemplate.md)
 * [Reference](rewrite-7/reference-1/README.md)
   * [Java](rewrite-7/reference-1/java.md)
