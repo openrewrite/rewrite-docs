@@ -1,8 +1,8 @@
-# Rewrite Maven Plugin \(is this reference for maven plugin?\)
+# Maven Plugin Configuration
 
 
 
-The quickest way to see value from pre-packaged Rewrite recipes is to incorporate the Rewrite Maven \(or [Gradle](../getting-started/rewrite-gradle-plugin.md)\) plugin to your build and run a Maven goal that transforms your code locally.
+The quickest way to see value from pre-packaged Rewrite recipes is to incorporate the Rewrite Maven \(or [Gradle](../../../getting-started/rewrite-gradle-plugin.md)\) plugin to your build and run a Maven goal that transforms your code locally.
 
 {% hint style="success" %}
 The Rewrite Maven plugin automatically supplies any recipes you configure to run with all source files in the project that are transformable. It will supply Java visitors with Java files, XML visitors with XML files, etc.
@@ -107,11 +107,11 @@ To find out what recipes a rewrite module provides, see its documentation and th
 
 Execute`mvn rewrite:fix` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
 
-![Warnings showing which files were changed and by what visitors](../.gitbook/assets/image%20%285%29.png)
+![Warnings showing which files were changed and by what visitors](../../../.gitbook/assets/image%20%285%29.png)
 
 After the goal finishes executing, run `git diff` to see what changes were made, review, and commit them.
 
-![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:fix goal](../.gitbook/assets/image%20%287%29.png)
+![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:fix goal](../../../.gitbook/assets/image%20%287%29.png)
 
 ## The "Warn" Goal
 
@@ -125,7 +125,7 @@ Execute`mvn rewrite:diff` to run the configured recipes and generate a git-style
 
 The diff goal also generates warnings in the build log wherever it proposes changes. The warning will also contain the command to run to apply the changes for a particular Maven module. Notice how a separate patch file is generated for each module in a multi-module project.
 
-![Log output showing what changed and how to apply the patch](../.gitbook/assets/image%20%284%29.png)
+![Log output showing what changed and how to apply the patch](../../../.gitbook/assets/image%20%284%29.png)
 
 The output directory of the `rewrite.patch` file can be controlled by setting the `reportOutputDirectory` property. Again, this value would be relativized for each module of a multi-module project and a patch generated into each directory individually.
 
@@ -144,7 +144,7 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 
 Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated. It lists the available recipes, the inclusion and exclusion configurations for those recipes, and the visitors that are effective for that each recipe based on what was found on the classpath. So in the below example, the `org.openrewrite.mockito` recipe has been defined to include all visitors prefixed in the `org.openrewrite.mockito` package. Then it lists all the visitors that have been found in that package and will be ran if that recipe is activated.
 
-![Discovering the available recipes and visitors via the Maven plugin](../.gitbook/assets/image%20%283%29.png)
+![Discovering the available recipes and visitors via the Maven plugin](../../../.gitbook/assets/image%20%283%29.png)
 
 ## Links
 
