@@ -1,9 +1,5 @@
 # Introduction to Rewrite
 
-### Large-Scale Automated Source Code Refactoring
-
-Rewrite enables large-scale distributed source code refactoring for framework migrations, vulnerability patches, and API migrations with an early focus on the Java language. It is based on a technology originally developed at Netflix. Transformations are 100% accurate, style preserving transformations designed to speed software modernization. 
-
 ### Semantic Code Search and Transformation
 
 The Rewrite project is a semantic code search and transformation ecosystem for Java and other source code. It consists of a platform of prepackaged refactoring recipes for common framework migration and stylistic consistency tasks. It also allows you to define custom recipes to achieve a wide range of source code transformations.
