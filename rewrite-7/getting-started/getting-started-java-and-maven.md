@@ -25,7 +25,7 @@ description: >-
 
 Run maven warn, fix, diff.  See output
 
-## Next Steps: 
+## Next Steps \(links to a subset of tutorials, concepts, refs\): 
 
 * Declarative recipes
 * pre-packaged recipes \(Junit4-5, Spring, Style\)
