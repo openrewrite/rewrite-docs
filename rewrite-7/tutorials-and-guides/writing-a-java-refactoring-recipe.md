@@ -192,17 +192,13 @@ public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, Ex
 
 ### Using JavaTemplate to say hello\(\)
 
-JavaTemplate requires cursoring to be enabled on the visitor doing the templating. Cursoring must be enabled in the visitor's constructor or within an initialization block. Templates are created using the `JavaVisitor.template()` method and within a template `#{}` is the signifier for positional parameter substitution. So to produce the hello\(\) method add this to the visitor:
+Templates are created using the `JavaVisitor.template()` method. Within a template `#{}` is the signifier for positional parameter substitution. So to produce the hello\(\) method add this to the visitor:
 
 ```java
 public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
     private final JavaTemplate helloTemplate =
             template("public String hello() { return \"Hello from #{}!\"; }")
                     .build();
-    {
-        // Using templates requires enabling cursoring, which must be done in the constructor or initializer block
-        setCursoringOn();
-    }
     ...
 }
 ```
@@ -297,10 +293,7 @@ public class SayHelloRecipe extends Recipe {
         private final JavaTemplate helloTemplate =
                 template("public String hello() { return \"Hello from #{}!\"; }")
                         .build();
-        {
-            // Using templates requires enabling cursoring, which must be done in the constructor or initializer block
-            setCursoringOn();
-        }
+
         @Override
         public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext executionContext) {
             // In any visit() method the call to super() is what causes sub-elements of to be visited

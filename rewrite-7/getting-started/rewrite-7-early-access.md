@@ -2,9 +2,9 @@
 
 Rewrite 7.0.0 hasn't been released yet, but feature-complete release candidates are available to begin experimenting with the new APIs and provide early feedback. 
 
-[Core libraries](https://github.com/openrewrite/rewrite): 7.0.0-rc.3
+[Core libraries](https://github.com/openrewrite/rewrite): 7.0.0-rc.4
 
-[Maven plugin](https://github.com/openrewrite/rewrite-maven-plugin): 3.0.0-rc.1
+[Maven plugin](https://github.com/openrewrite/rewrite-maven-plugin): 3.0.0-rc.2
 
 [Gradle plugin](https://github.com/openrewrite/rewrite-gradle-plugin): Not yet updated
 
