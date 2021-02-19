@@ -45,7 +45,7 @@ public abstract class Customer {
 ## What You Need
 
 * JDK \(Java Developer Kit 1.8+\)
-* Gradle \(version 6+ \) or Maven \(version 3.2+\)
+* Gradle \(version 4.7+ \) or Maven \(version 3.2+\)
 * A text editor or your favorite IDE \(preferably one that can import code from Gradle or Maven\)
 
 ## Project Setup
@@ -122,7 +122,7 @@ public class ExpandCustomerInfo extends Recipe {
 	//Rewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
 	//This recipe has no configuration and delegates to its visitor when it is run.
 	@Override
-	protected TreeVisitor<?, ExecutionContext> getVisitor() {
+	protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 		return new ExpandCustomerInfoVisitor();
 	}
 
@@ -163,7 +163,7 @@ Within the `ExpandCustomerInfoVisitor`, we will add logic to remove the abstract
 When using a template to replace a method's body, the template must include the open and closing curly braces.
 {% endhint %}
 
-The method is then mutated to remove the abstract modifier and the template is then used within the visitMethodDeclaration\(\) method to replace the method body:
+The method is then replaced with a copy that remove the abstract modifier and the template is then used within the visitMethodDeclaration\(\) method to replace the method body:
 
 ```java
 public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
@@ -196,7 +196,7 @@ private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext>
 NOTE: Because a new type, `java.util.Date`, is being introduced to the template, the type must be added when building the template. This ensures that any generated elements will have correct type attribution. 
 {% endhint %}
 
-The template is is used to mutate the method declaration using `withTemplate()`. Our code must also ensure that `java.util.Date` is added as an import to the compilation unit.
+The template is is used to replace the method declaration using `withTemplate()`. Our code must also ensure that `java.util.Date` is added as an import to the compilation unit.
 
 ```java
 public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
@@ -274,7 +274,6 @@ public class ExpandCustomerInfo extends Recipe {
 
         //Template used to add a method body to "setCustomerInfo()" method declaration.
         private JavaTemplate addMethodBodyTemplate = template("{this.lastName = lastName;}")
-                .doBeforeParseTemplate(System.out::println)
                 .build();
 
         //Template used to insert two additional parameters into the "setCustomerInfo()" method declaration.
