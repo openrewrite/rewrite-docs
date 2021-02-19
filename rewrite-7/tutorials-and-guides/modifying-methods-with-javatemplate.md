@@ -310,7 +310,7 @@ public class ExpandCustomerInfo extends Recipe {
 }
 ```
 
-Rewrite provides testing infrastructure for recipes in the rewrite-test module. To create automated tests of this recipe we use the [Kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line Strings, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/). To assert that the recipe makes the expected changes to our test class, we will use `RecipeTest.assertChanged`: 
+Rewrite provides testing infrastructure for recipes via the rewrite-test module. To create automated tests of this recipe we use the [Kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line Strings, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/). To assert that the recipe makes the expected changes to our test class, we will create a new test class that implements the RecipeTest interface and leverage`RecipeTest.assertChanged` ensure the recipe is making the expected changes to the test class.
 
 ```kotlin
 package org.openrewrite.samples;
