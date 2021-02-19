@@ -163,6 +163,7 @@
   * [Getting Started Java and Maven](rewrite-7/getting-started/getting-started-java-and-maven.md)
   * [Getting Started Java and Gradle](rewrite-7/getting-started/getting-started-java-and-gradle.md)
 * [Tutorials & Guides](rewrite-7/tutorials-and-guides/README.md)
+  * [Guide for recipe authoring setup](rewrite-7/tutorials-and-guides/guide-for-recipe-authoring-setup.md)
   * [Writing a Java Refactoring Recipe](rewrite-7/tutorials-and-guides/writing-a-java-refactoring-recipe.md)
   * [JUnit 4 to 5](rewrite-7/tutorials-and-guides/junit-4-to-5.md)
   * [Spring Boot 1 to 2](rewrite-7/tutorials-and-guides/spring-boot-1-to-2.md)
