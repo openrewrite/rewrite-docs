@@ -172,6 +172,7 @@
   * [Writing a Java Refactoring Recipe](rewrite-7/tutorials-and-guides/writing-a-java-refactoring-recipe.md)
   * [Modifying Classes with JavaTemplate](rewrite-7/tutorials-and-guides/generating-ast-elements-with-javatemplate.md)
   * [Modifying Methods with JavaTemplate](rewrite-7/tutorials-and-guides/modifying-methods-with-javatemplate.md)
+  * [Parsing Java Code](rewrite-7/tutorials-and-guides/parsing-java-code.md)
 * [Reference](rewrite-7/reference-1/README.md)
   * [Java](rewrite-7/reference-1/java.md)
   * [Maven](rewrite-7/reference-1/maven/README.md)
