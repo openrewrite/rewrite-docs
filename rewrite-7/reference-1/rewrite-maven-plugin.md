@@ -39,7 +39,10 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
             <!-- This style is made up for sake of example. It isn't packaged with Rewrite -->
             <style>io.moderne.spring</style>
           </activeStyles>
-          <reportOutputDirectory>.rewrite</reportOutputDirector>
+          
+          <!-- This is the default value of reportOutputDirectory, not necessary to supply this manually --> 
+          <reportOutputDirectory>${project.reporting.outputDirectory}/rewrite</reportOutputDirector>
+
           <!-- This is the default value of configLocation, not necessary to supply this manually --> 
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
         </configuration>
