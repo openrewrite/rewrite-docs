@@ -1,2 +1,2 @@
-# Mokito 1 to 3
+# Mockito 1 to 3
 
