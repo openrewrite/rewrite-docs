@@ -1,4 +1,4 @@
-# Dependency management
+# Dependency Management
 
 * Cyclone DX BOM
 * List dependencies

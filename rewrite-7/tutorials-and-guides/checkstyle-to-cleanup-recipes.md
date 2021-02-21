@@ -1,2 +1,2 @@
-# Checkstyle to cleanup recipes
+# Checkstyle to Cleanup Recipes
 

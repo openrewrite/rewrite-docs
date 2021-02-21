@@ -1,4 +1,4 @@
-# Guide for recipe authoring setup
+# Guide for Recipe Authoring Setup
 
 Configure all tools
 
