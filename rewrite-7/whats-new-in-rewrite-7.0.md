@@ -48,23 +48,41 @@ New In 7.0: Automatic Required/Optional Validation. You may now use common `@Nul
 
 ### Refactoring
 
-TODO
+In previous versions of Rewrite, visitors were added to a `Refactor` instance and a refactor operation would accept and managed a set of source files as they were processed by the visitors. In 7.0, the refactoring pipeline looks quite different and the `Refactor` class no longer exists.
 
-#### Refactor -&gt; Recipe.run
+#### `Recipe.run()`
 
-#### Polyglot Refactoring
+A set of source files is now passed into the refactoring pipeline by calling `run()` on a recipe instance and the method returns a list of Result instances that represent any changes made during the refactoring operation. A series of refactoring operations can be performed by chaining the top-level recipe with additional recipes via its `doNext()` method and additional recipes are represented as a linked list.
 
 #### Execution Context
 
+New in 7.0, is an the concept of an execution context which provides a mechanism for sharing state across recipes and their underlying visitors. The ExecutionContext interface provides the ability to add and poll messages \(in a thread-safe manner\).
+
+{% hint style="info" %}
+The ExecutionContext can be configured with an error handler allowing the developer to control  how error conditions are managed when they occur in the refactoring pipeline.
+{% endhint %}
+
+#### Polyglot Refactoring
+
+In previous versions of Rewrite, if a refactoring operation required making changes to different types of source files \(Such as Java and Maven\), a developer was required to use a `CompositeRefactorVisitor`. In Rewrite 7.0, recipes targeting different types of visitors, can be chained together to perform polyglot refactoring operations via the `doNext()` method.
+
 #### Execution Pipeline & Concurrency
+
+Rewrite 7.0 has a different execution pipeline when running Recipes and their underlying visitors. The refactoring/search pipeline is configured by chaining multiple recipes together in a deterministic order and each recipe represents a step in the execution pipeline. A recipe processes all source files that have been passed to it prior to passing control to the next recipe. An individual recipe delegates the processing of ASTs to its underlying visitor and this is a natural place to introduce concurrency to process multiple ASTs in parallel. The execution context, passed into the refactoring pipeline, is used to define the concurrency model used when a recipe delegates processing to it's visitor.
+
+{% hint style="info" %}
+A recipe may instantiate multiple instances of it's associated visitor and ASTs are processed in parallel.
+{% endhint %}
 
 ### Tree Markers
 
+7.0 has introduced the concept of  "markers" that act as additional meta-data that is associated with any, arbitrary tree element. 
+
 ### Search
 
-#### Search Result Markers
+In previous versions of Rewrite, there was a separate, specialized visitor pattern for performing semantic search. In Rewrite 7.0, semantic search has been reimaged to leverage tree markers to indicate matching results and a search recipe is now a specialized refactoring operation that mutates the meta-data for an existing AST.
 
-
+Those migrating to 7.0 may notice that "find" methods, previously available on J.CompilationUnit and J.ClassDecl, are no longer present. These have been moved to dedicated search recipes and there are static methods on each of the recipes that can be leveraged to perform similar searches.
 
 ## Java
 
@@ -88,7 +106,7 @@ When migrating visitors from previous versions of Rewrite, any code that is manu
 
 ### AutoFormatting
 
-TODO
+The separation of comments from other whitespace has allowed for significantly improved auto-formatting capabilities. In previous versions of Rewrite, a developer would often be required to account for small formatting differences when making changes to an AST's structure. In Rewrite 7.0, developers can rely on Rewrite's AutoFormat capabilities and focus on core, AST structural changes.
 
 ### JavaTemplate
 
