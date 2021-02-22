@@ -22,7 +22,11 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `activeRecipes` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
 * `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
 * `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
-* `dependencies` - To make pre-packaged Rewrite recipes available to the Maven plugin, add them as plugin dependencies
+* `dependencies` - To make pre-packaged Rewrite recipes available to the Maven plugin, add them as **plugin** dependencies.  
+
+{% hint style="info" %}
+Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles and will automatically discover recipes on the project classpath.
+{% endhint %}
 
 ```markup
 <project>
@@ -70,7 +74,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 ```
 
 {% hint style="info" %}
-Because [Maven plugin dependencies have there own Classloaders](ttps://maven.apache.org/guides/mini/guide-maven-classloading.html#3-plugin-classloaders) debugging a Recipe as it interacts with your project requires that it a project dependency.  The plugin automatically scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles.
+Because Maven plugins have their own [Classloaders](https://maven.apache.org/guides/mini/guide-maven-classloading.html#3-plugin-classloaders) debugging a Recipe as it interacts with your project requires that it be a dependency of the project with a`provided, compile or test` scope.    
 {% endhint %}
 
 {% hint style="info" %}
