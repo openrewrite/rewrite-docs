@@ -1,2 +1,2 @@
-# Getting Started Java and Gradle
+# Getting Started: Java and Gradle
 

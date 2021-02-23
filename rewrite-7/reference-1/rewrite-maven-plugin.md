@@ -35,37 +35,18 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>3.0.0-rc.1</version>
+        <version>3.0.0-rc.2</version>
         <configuration>
-          <!-- Recipes must be explicitly activated to run -->
           <activeRecipes>
-            <recipe>org.openrewrite.java.spring.boot2</recipe>
-            <recipe>org.openrewrite.java.testing.Mockito1to3Migration</recipe>
-            <recipe>org.openrewrite.java.testing.JUnit5Migration</recipe>
+            <recipe>org.openrewrite.java.Spring</recipe>
           </activeRecipes>
           <activeStyles>
             <!-- This style is made up for sake of example. It isn't packaged with Rewrite -->
             <style>io.moderne.spring</style>
           </activeStyles>
-          
-          <!-- This is the default value of reportOutputDirectory, not necessary to supply this manually --> 
-          <reportOutputDirectory>${project.reporting.outputDirectory}/rewrite</reportOutputDirector>
-
+          <reportOutputDirectory>.rewrite</reportOutputDirector>
           <!-- This is the default value of configLocation, not necessary to supply this manually --> 
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
-          <!-- pre-packaged Rewrite recipes available to the maven plugin -->
-          <dependencies>
-            <dependency>
-              <groupId>org.openrewrite.recipe</groupId>
-              <artifactId>rewrite-spring</artifactId>
-              <version>3.1.0<version>
-            </dependency>
-            <dependency>
-              <groupId>org.openrewrite.recipe</groupId>
-              <artifactId>rewrite-testing-frameworks</artifactId>
-              <version>0.9.0<version>
-            </dependency>
-          </dependencies>
         </configuration>
       </plugin>
     </plugins>
@@ -86,18 +67,34 @@ The recipe modules listed in this block are still in progress and have not yet b
 {% endhint %}
 
 ```markup
-<dependencies>
-  <dependency>
-    <groupId>org.openrewrite.recipe</groupId>
-    <artifactId>rewrite-spring</artifactId>
-    <version>3.1.0<version>
-  </dependency>
-  <dependency>
-    <groupId>org.openrewrite.recipe</groupId>
-    <artifactId>rewrite-testing-frameworks</artifactId>
-    <version>0.9.0<version>
-  </dependency>
-</dependencies>
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>3.0.0-rc.2</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.Spring</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-spring</artifactId>
+            <version>3.1.0<version>
+          </dependency>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-testing-frameworks</artifactId>
+            <version>0.9.0<version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 ```
 
 ## The "Fix" Goal
@@ -130,7 +127,7 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>3.0.0-rc.1</version>
+    <version>3.0.0-rc.2</version>
     <configuration>
         <reportOutputDirectory>.rewrite</reportOutputDirector>
     </configuration>
