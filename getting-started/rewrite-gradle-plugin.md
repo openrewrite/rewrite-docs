@@ -17,7 +17,7 @@ Apply the org.openrewrite.rewrite plugin to your build directly after the Java p
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("2.3.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.1")
 }
 rewrite {
     // Rewrite Extension Configuration
