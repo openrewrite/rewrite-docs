@@ -1,3 +1,7 @@
+---
+description: rewrite-maven-plugin configuration options and goal descriptions
+---
+
 # Maven Plugin Configuration
 
 
@@ -13,7 +17,7 @@ The Rewrite Maven plugin offers four goals:
 * `mvn rewrite:fix` - Runs the configured recipes and applies the changes locally.
 * `mvn rewrite:warn` - Generates warnings in the console for any recipes that would suggest changes, but doesn't make any changes.
 * `mvn rewrite:diff` - Generates a git-style patch file that you can review independently and then apply with `git apply target/site/rewrite/rewrite.patch`.
-* `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite is finding on your classpath.
+* `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite finds on your classpath.
 
 ## Plugin configuration
 
@@ -28,6 +32,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles and will automatically discover recipes on the project classpath.
 {% endhint %}
 
+{% code title="pom.xml" %}
 ```markup
 <project>
   <build>
@@ -42,53 +47,18 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
           </activeRecipes>
           <activeStyles>
             <!-- This style is made up for sake of example. It isn't packaged with Rewrite -->
-            <style>io.moderne.spring</style>
+            <style>com.yourorg.SpringStyle</style>
           </activeStyles>
+          <!-- These are the default values. It is not necessary to supply these value manually --> 
           <reportOutputDirectory>.rewrite</reportOutputDirector>
-          <!-- This is the default value of configLocation, not necessary to supply this manually --> 
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
         </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-{% hint style="info" %}
-Because Maven plugins have their own [Classloaders](https://maven.apache.org/guides/mini/guide-maven-classloading.html#3-plugin-classloaders) debugging a Recipe as it interacts with your project requires that it be a dependency of the project with a`provided, compile or test` scope.    
-{% endhint %}
-
-{% hint style="info" %}
-To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
-{% endhint %}
-
-{% hint style="danger" %}
-The recipe modules listed in this block are still in progress and have not yet been released for rewrite 7. They may crash or produce inaccurate results at this time. This note will be removed and these version numbers updated once rewrite 7 compatible versions have been published.
-{% endhint %}
-
-```markup
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>3.0.0-rc.2</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.Spring</recipe>
-          </activeRecipes>
-        </configuration>
         <dependencies>
+          <!-- This module is made up for sake of example. IT isn't packaged with Rewrite -->
           <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>3.1.0<version>
-          </dependency>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>0.9.0<version>
+            <groupId>com.yourorg.recipes</groupId>
+            <artifactId>your-recipes</artifactId>
+            <version>1.0.0<version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,6 +66,11 @@ The recipe modules listed in this block are still in progress and have not yet b
   </build>
 </project>
 ```
+{% endcode %}
+
+{% hint style="info" %}
+To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
+{% endhint %}
 
 ## The "Fix" Goal
 
@@ -121,8 +96,9 @@ The diff goal also generates warnings in the build log wherever it proposes chan
 
 ![Log output showing what changed and how to apply the patch](../../.gitbook/assets/image%20%284%29.png)
 
-The output directory of the `rewrite.patch` file can be controlled by setting the `reportOutputDirectory` property. Again, this value would be relativized for each module of a multi-module project and a patch generated into each directory individually.
+The output directory of the `rewrite.patch` file can be controlled by setting the `reportOutputDirectory` property. This value is relativized for each module of a multi-module project and a patch generated individually in each module.
 
+{% code title="pom.xml" %}
 ```markup
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
@@ -133,21 +109,13 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
     </configuration>
 </plugin>
 ```
+{% endcode %}
 
 ## The "Discover" Goal
 
 Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated. It lists the available recipes, the inclusion and exclusion configurations for those recipes, and the visitors that are effective for that each recipe based on what was found on the classpath. So in the below example, the `org.openrewrite.mockito` recipe has been defined to include all visitors prefixed in the `org.openrewrite.mockito` package. Then it lists all the visitors that have been found in that package and will be ran if that recipe is activated.
 
-{% hint style="danger" %}
-
-{% endhint %}
-
-![Discovering the available recipes and visitors via the Maven plugin](../../.gitbook/assets/image%20%283%29.png)
-
-{% hint style="danger" %}
-Core rewrite [Java Recipes](https://github.com/openrewrite/rewrite/tree/master/rewrite-java/src/main/java/org/openrewrite/java) are currently not presented in the discovery output.    
-This note will be removed once the associated issue has been resolved.
-{% endhint %}
+![](../../.gitbook/assets/image%20%281%29.png)
 
 ## Links
 

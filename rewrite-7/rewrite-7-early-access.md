@@ -6,7 +6,7 @@ Rewrite 7.0.0 hasn't been released yet, but feature-complete release candidates 
 
 [Maven plugin](https://github.com/openrewrite/rewrite-maven-plugin): 3.0.0-rc.2
 
-[Gradle plugin](https://github.com/openrewrite/rewrite-gradle-plugin): Not yet updated
+[Gradle plugin](https://github.com/openrewrite/rewrite-gradle-plugin): 3.0.0-rc.1
 
 [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks): Not yet updated
 

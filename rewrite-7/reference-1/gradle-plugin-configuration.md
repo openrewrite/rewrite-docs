@@ -1,3 +1,7 @@
+---
+description: rewrite-gradle-plugin configuration options and task descriptions
+---
+
 # Gradle Plugin Configuration
 
 
@@ -10,7 +14,7 @@ The recommended way of applying the plugin differs slightly between single and m
 
 ### Single-Module Gradle projects
 
-Apply the org.openrewrite.rewrite plugin to your build directly after the Java plugin:
+Apply the org.openrewrite.rewrite plugin to your build:
 
 ```groovy
 plugins {
@@ -69,6 +73,8 @@ plugins {
 rewrite {
     activeRecipe("org.openrewrite.ExampleRecipe")
     activeStyle("org.openrewrite.ExampleStyle")
+
+    // This is the default value of configFile. It is not necessary to specify this value
     configFile = project.getRootProject().file("rewrite.yml")
 }
 ```
@@ -108,7 +114,7 @@ Once a pre-packaged recipe is the appropriate classpath, you can tell the Gradle
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("2.3.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.1")
 }
 
 repositories {
@@ -116,7 +122,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("junit:junit:4.12")
+    testImplementation("junit:junit:4.13")
     testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:3.0.1")
 }
 
