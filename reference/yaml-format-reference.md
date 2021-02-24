@@ -37,7 +37,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RecipeA # A fully qualified, unique name for this recipe
 recipeList:               # the list of recipes which comprise this recipe
   - com.yourorg.RecipeB:  # A fully qualified name for a recipe defined elsewhere
-    exampleConfig: foo    # A configurable parameter of RecipeB
+      exampleConfig: foo  # A configurable parameter of RecipeB
 ```
 
 Consider this example declarative recipe which uses the built-in `ChangeMethodName` and `ChangePackage` recipes to rename a method and a package. 
@@ -72,6 +72,7 @@ Order of recipe declaration is not important. A declarative recipe may include a
 The basic format of a Style defined in yaml is:
 
 ```yaml
+---
 type: specs.openrewrite.org/v1beta/style
 name: com.yourorg.StyleA # A fully qualified, unique name for this style
 styleConfigs:            # The list of styles which comprise this style
@@ -86,6 +87,7 @@ While you can define whatever sort of styles you may want, the formatting recipe
 Consider this example declarative style, which specifies that tabs should be used for indentation and that at least 9999 imports from a given package should be required before collapsing them into a single star import:
 
 ```yaml
+---
 type: specs.openrewrite.org/v1beta/style
 name: com.yourorg.YesTabsNoStarImports
 styleConfigs:
