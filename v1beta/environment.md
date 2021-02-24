@@ -1,12 +1,12 @@
 ---
 description: >-
-  Discovers recipes, visitors, and styles from some context to apply to a set of
-  source files.
+  Discovers, configures, and instantiates  recipes from some context to apply to
+  a set of source files
 ---
 
 # Environment
 
-`Environment` provides classpath scanning and configuration facilities to discover and activate [Recipes](recipes.md), [Visitors](visitor.md), and [Styles](styles.md) from some context to apply to a set of source files. Below are some examples of different types of "context" and how they would interact with `Environment` to build a source transformation plan.
+`Environment` provides classpath scanning and configuration facilities to discover and activate [Recipes](recipes.md), [Visitors](visitors.md), and [Styles](styles.md) from some context to apply to a set of source files. Below are some examples of different types of "context" and how they would interact with `Environment` to build a source transformation plan.
 
 <table>
   <thead>

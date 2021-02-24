@@ -14,7 +14,7 @@ Styles are persisted with a top-level `SourceFile` AST element when that AST is 
 
 ## Declarative Styles
 
-Styles are typically defined declaratively in a YML file an included in an [Environment](environment.md). For example, the style below configures an [import layout style](../tutorials/parsing-java-code.md#import-layout-style) for Java:
+Styles are typically defined declaratively in a YML file an included in an [Environment](). For example, the style below configures an [import layout style]() for Java:
 
 ```yaml
 ---
@@ -68,5 +68,5 @@ configure:
 
 ## Next Steps
 
-In [Environment](environment.md), we'll see how these styles are activated and applied to the parsers that consume code. It will also show how to discover and activate recipes of visitors.
+In [Environment](), we'll see how these styles are activated and applied to the parsers that consume code. It will also show how to discover and activate recipes of visitors.
 

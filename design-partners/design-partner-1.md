@@ -28,18 +28,18 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 
 | Spring Boot 1-2 Migration | Progress |
 | :--- | :--- |
-| [Configuration Properties](../reference/java/spring/spring-boot-2-migration/springbootconfiguration.md) | ⬤ |
-| [`SpringBootServletInitializer` relocation](../reference/java/spring/spring-boot-2-migration/springbootservletinitializerpackage.md) | ⬤ |
-| [Remove implicit web annotations](../reference/java/spring/best-practices/implicitwebannotationnames.md) | ⬤ |
-| [`@RequestMapping` Cross-Site Request Forgery Vulnerability](../reference/java/spring/best-practices/norequestmappingannotation.md) | ⬤ |
-| [Remove @Autowired on constructors](../reference/java/spring/best-practices/noautowired.md) | ⬤ |
-| [Bean methods don't need to be public](../reference/java/spring/best-practices/beanmethodsnotpublic.md) | ⬤ |
+| [Configuration Properties]() | ⬤ |
+| [`SpringBootServletInitializer` relocation]() | ⬤ |
+| [Remove implicit web annotations]() | ⬤ |
+| [`@RequestMapping` Cross-Site Request Forgery Vulnerability]() | ⬤ |
+| [Remove @Autowired on constructors]() | ⬤ |
+| [Bean methods don't need to be public]() | ⬤ |
 | Maven Dependency Management | ⬤ |
-| [UpgradeDependencyVersion](../reference/maven-1/transforming-maven-poms/upgradedependencyversion.md) | ⬤ |
-| [UpgradeParentVersion](../reference/maven-1/transforming-maven-poms/upgradeparentversion.md) | ⬤ |
+| [UpgradeDependencyVersion]() | ⬤ |
+| [UpgradeParentVersion]() | ⬤ |
 | `@Value` to `@ConfigurationProperties` | ◑ |
 | Spring Best Practices | ◑ |
-| [Constructor injection](../reference/java/spring/best-practices/constructorinjection.md) \(still needs updating of call sites\) | ◑ |
+| [Constructor injection]() \(still needs updating of call sites\) | ◑ |
 | `@Component` to `@Bean` | ◑ |
 | Removal of unused spring starter modules | ◯ |
 | Spring Data migration to `Optional` | ◯ |
@@ -52,7 +52,7 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 
 | Software Composition Analysis | Progress |
 | :--- | :---: |
-| Publishes CycloneDX BOM | ⬤ |
+| Publishes CycloneDX BOM | ◑ |
 
 ## Applying to Maven Projects
 
