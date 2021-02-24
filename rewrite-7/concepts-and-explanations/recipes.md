@@ -16,7 +16,7 @@ There are three important characteristics about a recipe:
 
 ## Imperative Recipes
 
-An imperative recipe is built by extending the `Recipe` class and any configurable values are injected into the recipe via it's constructor.
+An imperative recipe is built by extending the `Recipe` class and injecting configuration properties via it's constructor.
 
 ### Stand-Alone Recipes
 
@@ -30,6 +30,7 @@ public class ChangeType extends Recipe {
     private final String oldFullyQualifiedTypeName;
     private final String newFullyQualifiedTypeName;
 
+    //Recipe configuration is injected via the constructor
     public ChangeType(String oldFullyQualifiedTypeName, String newFullQualifiedTypeName) {
         this.oldFullyQualifiedTypeName = oldFullyQualifiedTypeName;
         this.newFullQualifiedTypeName = newFullQualifiedTypeName;
@@ -37,9 +38,12 @@ public class ChangeType extends Recipe {
     
     @Override
     protected TreeVisitor<?, ExecutionContext> getVisitor() {
+        //Construct an instance of a visitor that will operate over the ASTs.
         return new ChangeTypeVisitor(oldFullyQualifiedTypeName, newFullyQualifiedTypeName);
     }
     
+    //In many cases, the visitor is implemented as a private, inner class. This
+    //ensures that the visitor is only used via its managed, configured recipe. 
     private class ChangeTypeVisitor extends JavaVisitor<ExecutionContext> {
         ...
     }
@@ -48,7 +52,7 @@ public class ChangeType extends Recipe {
 
 ```
 
-This recipe accepts two configuration parameters via its constructor and when the recipe is executed within the context of Rewrite's managed environment, the framework will instantiate and configure the recipe. The recipe overrides the getVisitor method and constructs its delegate visitor passing along any configuration that it requires to perform a transformation on the set of ASTs.
+This recipe accepts two configuration parameters via its constructor and when the recipe is executed, within the context of Rewrite's managed environment, the framework will instantiate and configure the recipe. The recipe overrides the getVisitor method and constructs its delegate, passing along any configuration that is requires to perform a transformation on the set of ASTs.
 
 ### Composite Recipes
 
@@ -73,7 +77,7 @@ import org.openrewrite.java.ChangeType;
 public class JUnit5Migration extends Recipe {
     
     public JUnit5Migration(boolean addJunit5Dependencies) {
-        
+        //Add nested recipes to the execution pipeline via doNext()
         doNext(new ChangeType("org.junit.Test", "org.junit.jupiter.api.Test"));
         doNext(new AssertToAssertions());
         doNext(new RemovePublicTestModifiers());
@@ -122,13 +126,42 @@ In the event that a recipe requires custom validation rules above and beyond the
 
 ## Recipe Execution Pipeline
 
+The execution pipeline dictates how a recipe is applied to a set of source files to perform a transformational task. A transformation is initiated by calling a recipe's run\(\) method and passing to it the set of source files that will be passed through the pipeline. The execution pipeline maintains and manages the intermediate state of the source files as they are passed to visitors and nested recipes.
 
+The top level recipe \(the one that initiates the execution pipeline\) and any subsequent recipes that have been chained together will all participate in the execution pipeline. Recipes are composable and therefore, nested steps may contribute additional nested recipes to the pipeline as well.
 
-![Execution Order For The JUnit Sample Recipe](../../.gitbook/assets/image%20%2813%29.png)
+Each recipe will, in turn, will be executed as a step within the pipeline and step execution consists of the following: 
+
+1. A recipe's validate\(\) method is called to ensure it has been configured properly. Rewrite is not opinionated about how validation errors are handled and by default it will skip a recipe that fails validation. This behavior can be changed by the introduction of an error handler into the pipeline via the execution context.
+2. If a recipe has an associated visitor, the recipe will delegate to its associated visitor to process all source files that have been fed to the pipeline. It is this specific stage that concurrency can be introduced to process the source ASTs in parallel.
+3. If a recipe has a linked/chained recipe, then execution pipeline initiates a step execution for that recipe and this process repeats until there are no more nested recipes.
+
+Using the same "Migrate JUnit 5" recipe as an example, the flow through the pipeline looks as follows:
+
+![Execution Pipeline for &quot;Migrate JUnit 5&quot;](../../.gitbook/assets/image%20%2813%29.png)
 
 ### Execution Context
 
-#### Error Handling
+The initiation of the execution pipeline requires the creation of an execution context and there are overloaded version of `Recipe.run()` that will implicitly create an execution context if one is not provided. The execution context is a mechanism for sharing state across recipes \(and their underlying visitors\) and the ExecutionContext provided the ability to add and poll messages in a thread-safe manner.
 
+### Recipe Execution Flow
 
+Each recipe that is added to the execution pipeline constitutes a execution step. It is important to understand the flow of 
+
+### Execution Cycles
+
+The recipes in a the execution pipeline may produce changes that in turn cause another recipe to do further work. As a result, the pipeline may performs multiple passes \(or cycles\) over all of the recipes in the pipeline until either no changes are made in a pass or some maximum number of passes is reached \(by default 3\). This allows a set of nested recipes to be added to the pipeline without requiring any explicit ordering or dependencies between them.
+
+As an example, lets assume that two recipes are added to the execution pipeline. The first recipe performs whitespace-formatting to an AST and the second recipe generates additional code that is added to the same AST. If those two recipes are executed in order, the formatting recipe is applied before the recipe adds its generated code. The execution pipeline detects that changes have been made and executes a second pass through the recipes. During the second pass, the formatting recipe will now properly format the generated code that was added as a result of the first cycle through the execution pipeline.
+
+###  Result Set
+
+The successful completion of a recipe's execution pipeline produces a collection of `Result` instances.   Each result represents the changes made to a specific source file and provides access to the following information:
+
+| Method | Description |
+| :--- | :--- |
+| `getBefore()` | The original `SourceFile`, or null if the change represents a new file. |
+| `getAfter()` | The modified `SourceFile`, or null if the change represents a file deletion. |
+| `getRecipesThatMadeChanges()` | The recipe names that made the changes to the source file. |
+| `diff()`/`diff(Path)` | A git-style diff \(with an optional path to relativize file paths in the output\) |
 
