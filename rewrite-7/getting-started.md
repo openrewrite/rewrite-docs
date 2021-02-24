@@ -39,7 +39,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.2</version>
+  <version>3.0.0-rc.4</version>
 </plugin>
 ```
 {% endcode %}
@@ -76,7 +76,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.3</version>
+  <version>3.0.0-rc.4</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -156,7 +156,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`.  Now add it to t
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.3</version>
+  <version>3.0.0-rc.4</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -208,7 +208,7 @@ After applying these steps, the relevant portions of your build file will look l
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.3</version>
+  <version>3.0.0-rc.4</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>

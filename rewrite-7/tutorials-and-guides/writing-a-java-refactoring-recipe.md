@@ -31,49 +31,51 @@ class A {
 
 Since this is a Java refactoring visitor, take a compile-scope dependency on rewrite-java. Add test-scoped dependencies on rewrite-test, rewrite-java-8, and rewrite-java-11.
 
-In a Gradle build.gradle or build.gradle.kts that looks like:
-
+{% tabs %}
+{% tab title="Gradle" %}
 ```kotlin
 dependencies {
-    implementation("org.openrewrite:rewrite-java:7.0.0-rc.3")
+    implementation("org.openrewrite:rewrite-java:7.0.0-rc.6")
     
-    testImplementation("org.openrewrite:rewrite-java-11:7.0.0-rc.3")
-    testImplementation("org.openrewrite:rewrite-java-8:7.0.0-rc.3")
-    testImplementation("org.openrewrite:rewrite-test:7.0.0-rc.3")
+    testImplementation("org.openrewrite:rewrite-test:7.0.0-rc.6")
+    
+    testRuntimeOnly("org.openrewrite:rewrite-java-11:7.0.0-rc.6")
+    testRuntimeOnly("org.openrewrite:rewrite-java-8:7.0.0-rc.6")
 }
 ```
+{% endtab %}
 
-In a Maven pom.xml that looks like:
-
+{% tab title="Maven" %}
 ```markup
 <dependencies>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
-        <version>7.0.0-rc.3</version>
+        <version>7.0.0-rc.6</version>
         <scope>compile</scope>
     </dependency>
-
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
-        <version>7.0.0-rc.3</version>
+        <version>7.0.0-rc.6</version>
         <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-11</artifactId>
-        <version>7.0.0-rc.3</version>
+        <version>7.0.0-rc.6</version>
         <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-test</artifactId>
-        <version>7.0.0-rc.3</version>
+        <version>7.0.0-rc.6</version>
         <scope>test</scope>
     </dependency>
 </dependencies>
 ```
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 rewrite-java-8 and rewrite-java-11 can peacefully coexist on the same classpath. At runtime one of them will be selected according to the version of the JVM Rewrite is executing on.

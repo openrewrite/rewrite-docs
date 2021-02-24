@@ -58,50 +58,54 @@ This example requires the following dependencies:
 * Test-scope dependency on **rewrite-test**
 
 {% hint style="info" %}
-**rewrite-java-8** and **rewrite-java-11** can peacefully coexist on the same classpath. At runtime one of them will be selected according to the version of the JVM Rewrite is executing on.
+**rewrite-java-8** and **rewrite-java-11** can peacefully coexist on the same classpath. At runtime one of them will be selected according to the version of the JVM Rewrite is executing on. 
 {% endhint %}
 
-In a Gradle build file, the dependencies will look similar to the following: 
-
+{% tabs %}
+{% tab title="Gradle" %}
 ```groovy
 dependencies {
-    implementation("org.openrewrite:rewrite-java:7.0.0-rc.4")
-    runtimeOnly("org.openrewrite:rewrite-java-11:7.0.0-rc.4")
-    runtimeOnly("org.openrewrite:rewrite-java-8:7.0.0-rc.4")
-    testImplementation("org.openrewrite:rewrite-test:7.0.0-rc.4")
+    implementation("org.openrewrite:rewrite-java:7.0.0-rc.6")
+    
+    runtimeOnly("org.openrewrite:rewrite-java-11:7.0.0-rc.6")
+    runtimeOnly("org.openrewrite:rewrite-java-8:7.0.0-rc.6")
+    
+    testImplementation("org.openrewrite:rewrite-test:7.0.0-rc.6")
 }
 ```
+{% endtab %}
 
-In a Maven build file, the dependencies will look similar to the following: 
-
+{% tab title="Maven" %}
 ```markup
 <dependencies>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
-        <version>7.0.0-rc.4</version>
+        <version>7.0.0-rc.6</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
-        <version>7.0.0-rc.4</version>
+        <version>7.0.0-rc.6</version>
         <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-11</artifactId>
-        <version>7.0.0-rc.4</version>
+        <version>7.0.0-rc.6</version>
         <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-test</artifactId>
-        <version>7.0.0-rc.4</version>
+        <version>7.0.0-rc.6</version>
         <scope>test</scope>
     </dependency>
 </dependencies>
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Define a Recipe & Visitor
 
