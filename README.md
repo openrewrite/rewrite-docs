@@ -32,5 +32,5 @@ assertTrue(condition);
 
 ### Next Steps
 
-In [Getting Started](getting-started/getting-started.md), we'll learn how to implement this example by crafting a custom JUnit recipe that will refactor any JUnit `assertXXX(..)` calls to use static imports.
+In [Getting Started](getting-started/getting-started.md), we'll learn how to configure Maven/Gradle to add Rewrite as a build step and then use the tools to perform from transformations. 
 
