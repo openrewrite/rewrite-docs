@@ -230,7 +230,7 @@ After applying these steps, the relevant portions of your build file will look l
 
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
-```
+```groovy
 plugins {
     id("java")
     id("org.openrewrite.rewrite").version("3.0.0-rc.1")
