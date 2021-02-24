@@ -1,2 +1,0 @@
-# Semantic Search for Properties
-
