@@ -4,12 +4,12 @@ description: Declaring and configuring Recipes and Styles in YAML
 
 # YAML format reference
 
-There are two places rewrite [yaml](https://yaml.org/) files may appear:
+There are two places Rewrite [yaml](https://yaml.org/) files may appear:
 
 * Within a project that applies rewrite recipes via the [rewrite-gradle-plugin](../../getting-started/rewrite-gradle-plugin.md) or [rewrite-maven-plugin](../../getting-started/rewrite-maven-plugin/). 
-* Inside the META-INF/rewrite folder of a Rewrite module such as [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite)
+* Inside the META-INF/rewrite folder of a jar such as [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite)
 
-In either case these yaml files share the same format and purpose: Making styles and recipes available to rewrite. A single rewrite yaml file may contain any number of recipes and styles, separated by `---`. 
+In either case these yaml files share the same format and purpose: making styles and recipes available to rewrite. A single Rewrite yaml file may contain any number of recipes and styles, separated by `---`. 
 
 {% hint style="info" %}
 Within a yaml document recipe and style names are always fully qualified. 
@@ -23,9 +23,9 @@ Don't place your custom recipes into the org.openrewrite namespace. We recommend
 
 When rewrite interprets a yaml file it sources recipes and styles from:
 
-* The building block recipes Included in rewrite itself
+* The building block recipes included in Rewrite itself
 * Elsewhere in the current yaml file
-* The classpath
+* Recipes defined in code or in yaml files elsewhere in the classpath
 
 ## Recipes
 
@@ -40,7 +40,7 @@ recipeList:               # the list of recipes which comprise this recipe
     exampleConfig: foo    # A configurable parameter of RecipeB
 ```
 
-Consider this example declarative recipe which uses the bulit-in `ChangeMethodName` and `ChangePackage` recipes to rename a method and a package. 
+Consider this example declarative recipe which uses the built-in `ChangeMethodName` and `ChangePackage` recipes to rename a method and a package. 
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -80,7 +80,7 @@ styleConfigs:            # The list of styles which comprise this style
 ```
 
 {% hint style="warning" %}
-While you can define whatever sort of styles you may want, the formatting recipes built into rewrite itself know how to act upon styles built in to rewrite. A full reference for such styles will be added to this documentation soon. 
+While you can define whatever sort of styles you may want, the formatting recipes built into Rewrite itself know how to act upon styles built in to Rewrite. A full reference for such styles will be added to this documentation soon.
 {% endhint %}
 
 Consider this example declarative style, which specifies that tabs should be used for indentation and that at least 9999 imports from a given package should be required before collapsing them into a single star import:
@@ -95,10 +95,10 @@ styleConfigs:
       classCountToUseStarImport: 9999
 ```
 
-To put this style in effect for any formatting performed by rewrite within the current project:
+To put this style in effect for any formatting performed by Rewrite within the current project:
 
 1. Put the above into a rewrite.yml file at the project root
 2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](rewrite-maven-plugin.md) with `com.yourorg.YesTabsNoStarImports` listed as the active style
 
-The next time any rewrite recipe is run any formatting it performs will take these styles into account.
+The next time any Rewrite recipe is run any formatting it performs will take these styles into account.
 
