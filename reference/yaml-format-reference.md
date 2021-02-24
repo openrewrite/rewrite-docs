@@ -6,7 +6,7 @@ description: Declaring and configuring Recipes and Styles in YAML
 
 There are two places Rewrite [yaml](https://yaml.org/) files may appear:
 
-* Within a project that applies rewrite recipes via the [rewrite-gradle-plugin]() or [rewrite-maven-plugin](). 
+* Within a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](rewrite-maven-plugin.md). 
 * Inside the META-INF/rewrite folder of a jar such as [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite)
 
 In either case these yaml files share the same format and purpose: making styles and recipes available to rewrite. A single Rewrite yaml file may contain any number of recipes and styles, separated by `---`. 
