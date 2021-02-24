@@ -4,8 +4,6 @@ description: rewrite-maven-plugin configuration options and goal descriptions
 
 # Maven Plugin Configuration
 
-
-
 The quickest way to see value from pre-packaged Rewrite recipes is to incorporate the Rewrite Maven \(or [Gradle](../../getting-started/rewrite-gradle-plugin.md)\) plugin to your build and run a Maven goal that transforms your code locally.
 
 {% hint style="success" %}

@@ -4,8 +4,6 @@ description: rewrite-gradle-plugin configuration options and task descriptions
 
 # Gradle Plugin Configuration
 
-
-
 The Rewrite Gradle Plugin is the fastest way to apply Rewrite recipes to your code as part of your Gradle build. The Rewrite Gradle Plugin is compatible with all versions of Gradle since 4.7.
 
 ## Plugin Configuration
