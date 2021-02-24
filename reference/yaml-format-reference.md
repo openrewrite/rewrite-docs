@@ -9,14 +9,14 @@ There are two places Rewrite [yaml](https://yaml.org/) files may appear:
 * Within a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](rewrite-maven-plugin.md). 
 * Inside the META-INF/rewrite folder of a jar such as [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite)
 
-In either case these yaml files share the same format and purpose: making styles and recipes available to rewrite. A single Rewrite yaml file may contain any number of recipes and styles, separated by `---`. 
+In either case these yaml files share the same format and purpose: making styles and recipes available to rewrite. A single Rewrite yaml file may contain any number of recipes and styles, separated by `---`.
 
 {% hint style="info" %}
-Within a yaml document recipe and style names are always fully qualified. 
+Within a yaml document recipe and style names are always fully qualified.
 {% endhint %}
 
 {% hint style="warning" %}
-Don't place your custom recipes into the org.openrewrite namespace. We recommend using the same "reverse domain name" naming scheme used in Java packages. 
+Don't place your custom recipes into the org.openrewrite namespace. We recommend using the same "reverse domain name" naming scheme used in Java packages.
 {% endhint %}
 
 ## Sources of Recipes and Styles
@@ -40,7 +40,7 @@ recipeList:               # the list of recipes which comprise this recipe
       exampleConfig: foo  # A configurable parameter of RecipeB
 ```
 
-Consider this example declarative recipe which uses the built-in `ChangeMethodName` and `ChangePackage` recipes to rename a method and a package. 
+Consider this example declarative recipe which uses the built-in `ChangeMethodName` and `ChangePackage` recipes to rename a method and a package.
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -64,7 +64,7 @@ To run this recipe:
 3. Run the "fix" maven goal or "rewriteFix" gradle task
 
 {% hint style="success" %}
-Order of recipe declaration is not important. A declarative recipe may include another declarative recipe declared later in the same file in its recipeList. 
+Order of recipe declaration is not important. A declarative recipe may include another declarative recipe declared later in the same file in its recipeList.
 {% endhint %}
 
 ## Styles
