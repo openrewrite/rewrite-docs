@@ -86,25 +86,23 @@ Begin by creating a class that extends `org.openrewrite.Recipe`. This recipe sho
 ```java
 package org.openrewrite.samples;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.openrewrite.Recipe;
-import org.openrewrite.Validated;
+import org.openrewrite.internal.lang.NonNull;
 
 import static org.openrewrite.Validated.notBlank;
 
 public class SayHelloRecipe extends Recipe {
+    // Making your recipe immutable helps make them idempotent and eliminates some categories of possible bugs
+    // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite
+    @NonNull
+    private final String fullyQualifiedClassName;
 
-    private String fullyQualifiedClassName;
-
-    // Provide set methods accepting String parameters for any configuration options exposed by the recipe
-    // This allows the recipe to be configured declaratively from a YAML file
-    public void setFullyQualifiedClassName(String fullyQualifiedClassName) {
+    // Recipes must be serializable. This is verified by RecipeTest.assertChanged() and RecipeTest.assertUnchanged()
+    @JsonCreator
+    public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
-    }
-    
-    // Ensure that the Recipe wont run unless fullyQualifiedClassName is filled in with a non-null, non-whitespace value
-    @Override
-    public Validated validate() {
-        return notBlank("fullyQualifiedClassName", fullyQualifiedClassName);
     }
     
     // TODO: Override getVisitor() to return a JavaIsoVisitor to perform the refactoring
@@ -120,38 +118,38 @@ To actually refactor the code in question we override `Recipe.getVisitor()` to r
 ```java
 package org.openrewrite.samples;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.openrewrite.ExecutionContext;
 import org.openrewrite.Recipe;
-import org.openrewrite.TreeVisitor;
-import org.openrewrite.Validated;
+import org.openrewrite.internal.lang.NonNull;
 import org.openrewrite.java.JavaIsoVisitor;
+import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
 
-import static org.openrewrite.Validated.notBlank;
-
 public class SayHelloRecipe extends Recipe {
+    // Making your recipe immutable helps make them idempotent and eliminates some categories of possible bugs
+    // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite
+    @NonNull
+    private final String fullyQualifiedClassName;
 
-    private String fullyQualifiedClassName;
-
-    // Provide set methods accepting String parameters for any configuration options exposed by the recipe
-    // This allows the recipe to be configured declaratively from a YAML file
-    public void setFullyQualifiedClassName(String fullyQualifiedClassName) {
+    // Recipes must be serializable. This is verified by RecipeTest.assertChanged() and RecipeTest.assertUnchanged()
+    @JsonCreator
+    public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
     }
 
-    // Ensure that the Recipe wont run unless fullyQualifiedClassName is filled in with a non-null, non-whitespace value
     @Override
-    public Validated validate() {
-        return notBlank("fullyQualifiedClassName", fullyQualifiedClassName);
-    }
-
-    @Override
-    protected TreeVisitor<J, ExecutionContext> getVisitor() {
+    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
         // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
         return new SayHelloVisitor();
     }
 
     public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
+        private final JavaTemplate helloTemplate =
+                template("public String hello() { return \"Hello from #{}!\"; }")
+                        .build();
+
         @Override
         public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext executionContext) {
             // TODO: Filter out classes that don't need refactoring, refactor those that do
@@ -255,36 +253,29 @@ So the complete `SayHelloRecipe` looks like this:
 ```java
 package org.openrewrite.samples;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.openrewrite.ExecutionContext;
 import org.openrewrite.Recipe;
-import org.openrewrite.TreeVisitor;
-import org.openrewrite.Validated;
+import org.openrewrite.internal.lang.NonNull;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.JavaTemplate;
-import org.openrewrite.java.format.AutoFormat;
-import org.openrewrite.java.format.AutoFormatVisitor;
 import org.openrewrite.java.tree.J;
 
-import static org.openrewrite.Validated.notBlank;
-
 public class SayHelloRecipe extends Recipe {
+    // Making your recipe immutable helps make them idempotent and eliminates some categories of possible bugs
+    // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite
+    @NonNull
+    private final String fullyQualifiedClassName;
 
-    private String fullyQualifiedClassName;
-
-    // Provide set methods accepting String parameters for any configuration options exposed by the recipe
-    // This allows the recipe to be configured declaratively from a YAML file
-    public void setFullyQualifiedClassName(String fullyQualifiedClassName) {
+    // Recipes must be serializable. This is verified by RecipeTest.assertChanged() and RecipeTest.assertUnchanged()
+    @JsonCreator
+    public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
     }
 
-    // Ensure that the Recipe wont run unless fullyQualifiedClassName is filled in with a non-null, non-whitespace value
     @Override
-    public Validated validate() {
-        return notBlank("fullyQualifiedClassName", fullyQualifiedClassName);
-    }
-
-    @Override
-    protected TreeVisitor<J, ExecutionContext> getVisitor() {
+    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
         // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
         return new SayHelloVisitor();
     }
@@ -299,7 +290,7 @@ public class SayHelloRecipe extends Recipe {
             // In any visit() method the call to super() is what causes sub-elements of to be visited
             J.ClassDeclaration cd = super.visitClassDeclaration(classDecl, executionContext);
 
-            if (!classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
+            if (classDecl.getType() == null || !classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
                 // We aren't looking at the specified class so return without making any modifications
                 return cd;
             }
@@ -325,6 +316,7 @@ public class SayHelloRecipe extends Recipe {
         }
     }
 }
+
 ```
 
 ## Testing 
@@ -396,8 +388,7 @@ class SayHelloRecipeTest(): RecipeTest {
 `SayHelloRecipe` is now ready to be used in code or declaratively from YAML. This Java snippet and YAML snippet are equivalent in their behavior:
 
 ```text
-SayHelloRecipe sayHelloA = new SayHelloRecipe();
-sayHelloA.setFullyQualifiedClassName("com.yourorg.A");
+SayHelloRecipe sayHelloA = new SayHelloRecipe("com.yourorg.A");
 ```
 
 ```yaml

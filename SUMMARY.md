@@ -157,9 +157,9 @@
 ## Rewrite 7
 
 * [Introduction to Rewrite](rewrite-7/introduction-to-rewrite.md)
+* [Getting Started](rewrite-7/getting-started.md)
 * [What's new in Rewrite 7.0](rewrite-7/whats-new-in-rewrite-7.0.md)
 * [Rewrite 7 Early Access](rewrite-7/rewrite-7-early-access.md)
-* [Getting Started](rewrite-7/getting-started.md)
 * [Tutorials & Guides](rewrite-7/tutorials-and-guides/README.md)
   * [Dependency Management](rewrite-7/tutorials-and-guides/dependency-management.md)
   * [Declarative Recipes](rewrite-7/tutorials-and-guides/declarative-recipes.md)
