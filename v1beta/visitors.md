@@ -63,17 +63,17 @@ public class MakeTopeLevelClassFinal extends JavaVisitor<P> {
 Each language binding contains a visitor implementation extending from `TreeVisitor`. As an example, the Rewrite language binding for Java is `JavaVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined along with the language-specific traversal logic.
 
 ```java
-interface JavaSourceVisitor<P> extends TreeVisitor<J, P> {
-  J visitStatement(Statement statement);
-  J visitTypeName(NameTree name);
-  J visitAnnotatedType(J.AnnotatedType annotatedType);
-  J visitAnnotation(J.Annotation annotation);
-  J visitArrayAccess(J.ArrayAccess arrayAccess);
-  J visitArrayType(J.ArrayType arrayType);
-  J visitAssert(J.Assert azzert);
-  J visitAssign(J.Assign assign);
-  J visitAssignOp(J.AssignOp assignOp);
-  J visitBinary(J.Binary binary);
+class JavaVisitor<P> extends TreeVisitor<J, P> {
+  J visitStatement(Statement statement) {...}
+  J visitTypeName(NameTree name) {...}
+  J visitAnnotatedType(J.AnnotatedType annotatedType)  {...}
+  J visitAnnotation(J.Annotation annotation) {...}
+  J visitArrayAccess(J.ArrayAccess arrayAccess) {...}
+  J visitArrayType(J.ArrayType arrayType) {...}
+  J visitAssert(J.Assert azzert) {...}
+  J visitAssignment(J.Assignment assign) {...}
+  J visitAssignmentOperation(J.AssignmentOperation assignOp) {...}
+  J visitBinary(J.Binary binary) {...}
   ...
 }
 ```
@@ -94,7 +94,7 @@ A client may have a reference to the language-specific visitor and it may be tem
 
 ## Example: Counting the number of Java method invocations
 
-Let's implement a simple Java visitor that will count the number of total method invocations to demonstrate the concepts we've covered so far. This example will use the second typed parameter of the visitor as our shared counter.
+Let's implement a simple Java visitor that will count the number of method invocations in a Java AST. This example will use the second typed parameter of the visitor as our shared counter.
 
 ```java
 class JavaMethodCount extends AbstractSourceVisitor<AtomicInteger> {
@@ -108,9 +108,9 @@ class JavaMethodCount extends AbstractSourceVisitor<AtomicInteger> {
 }
 ```
 
-The visitor's shared context is a simple, mutable AtomicInteger and in our example the `visitMethodInvocation` is overridden to increment the counter. The JavaVisitor will traverse the AST can call this method each time a method invocation is encountered in the tree.
+The visitor's shared context is a simple, mutable AtomicInteger and in our example the `visitMethodInvocation` is overridden to increment the counter. The JavaVisitor will traverse the AST and call this method each time a method invocation is encountered in the tree.
 
-It is straightforward to leverage the the newly created visitor. A caller will first initialize the shared counter, it will instantiate the visitor and call the visitor's visit method:
+It is straightforward to leverage the the newly created visitor. A caller will first initialize the shared counter,   it will instantiate the visitor, and call the visitor's visit method passing both the compilation unit and the counter.
 
 ```java
 JavaParser jp = JavaParser.fromJavaVersion().build();
@@ -135,17 +135,32 @@ assertThat(counter.get()).isEqualTo(3);
 
 ## Refactoring Visitors
 
-Each language binding provides a further specialization of `SourceVisitor` that is used for transforming source code, e.g. `JavaRefactorVisitor`. The return type of this visitor is set to the base interface of that language's AST tree. `JavaRefactorVisitor` always reduces to a `org.openrewrite.java.J`.
+A language-specific visitor is always scoped to return the base interface of that language's AST tree. Examining the JavaVisitor a bit closer, the first typed parameters is defined as  `org.openrewrite.java.tree.J`and all of it's language-specific visit methods also return `J`.
 
-The vast majority of the time, visitor methods should return the type of their input parameter. So `visitMethodInvocation` should return a `J.MethodInvocation`, `visitCompilationUnit` should return a `J.CompilationUnit`, and so on. There are a narrow set of circumstances when this is not true. For example, [UnwrapParentheses]() visits `J.Parentheses<?>` and can return whatever type of expression is inside the parentheses it is unwrapping.
+```java
+class JavaVisitor<P> extends TreeVisitor<J, P> {
+...
+  J visitClassDeclaration(J.ClassDeclaration classDeclaration, P p) {...}
+  J visitCompilationUnit(J.CompilationUnit cu, P p) {...]
+...
+}
+```
+
+A transforming visitor can accept an existing AST element and return either a modified version of that element or, in some cases, a different element entirely.
+
+The vast majority of the time, visitor methods will return the same type as that of their input parameter. As examples, `visitMethodInvocation` will typically return `J.MethodInvocation`, `visitCompilationUnit` will typically return a `J.CompilationUnit`, and so on. There are a narrow set of circumstances when this is not true. For example, an UnwrapParentheses visitor might override the `J.Parentheses<?>` and can return whatever type of expression is inside the parentheses it is unwrapping.
 
 {% hint style="warning" %}
 Generally refactoring visitors must be called on the root AST element to function correctly. Otherwise, internal state like cursors are not accurate. More general purpose visitors can be invoked on any element in the tree.
 {% endhint %}
 
-Since refactor visitors are invoked on their root AST element, the net effect of this pattern is that the visitor receives a top-level AST element and produces a potentially changed top-level AST element. [Refactor]() describes in greater detail how this changed top-level AST element is used to produce fixed code or Git-style diffs.
+Since refactor visitors are invoked on their root AST element, the net effect of this pattern is that the visitor receives a top-level AST element and produces a potentially changed top-level AST element. All language-specific, top-level AST elements implement the SourceFile interface, which allows an AST tree to be correlated to the source file path. See the next section on [Recipes](recipes.md) that describes in greater detail how Rewrite manages changes to a collection of top-level AST elements to produce source code or Git-style diffs.
 
-Like with other visitors, most of the time it is important to call super on visit methods in a refactoring visitor to allow the operation to dig deeper in the tree looking for further code to change. Only if you are certain that nothing further down the tree will require changes should you not call super on a visit method. Every language-specific refactor visitor shares a utility method called `refactor` that helps you call super and cast the result in one call:
+{% hint style="warning" %}
+In almost all circumstances, it is important to call the visit method on the super to ensure the refactoring operation navigates deeper down the tree to find all places where the operation should be applied.
+{% endhint %}
+
+Every language-specific refactor visitor shares a utility method called `refactor` that helps you call super and cast the result in one call:
 
 ```java
 public class RemoveModifiers extends JavaRefactorVisitor {
