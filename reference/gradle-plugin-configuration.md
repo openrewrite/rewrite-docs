@@ -66,7 +66,7 @@ The `rewrite` DSL exposes a few configuration options:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.1")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
 }
 rewrite {
     activeRecipe("com.yourorg.ExampleRecipe", "com.yourorg.ExampleRecipe2")
