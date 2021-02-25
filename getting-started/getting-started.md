@@ -14,18 +14,22 @@ Following this guide you will learn:
 
 ## Step 1: Clone sample project
 
+{% hint style="warning" %}
+This is based on an older project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you don't already have one.
+{% endhint %}
+
 This guide uses a fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration). Clone it by running:
 
 ```text
 git clone https://github.com/openrewrite/spring-petclinic-migration.git
 ```
 
-{% hint style="warning" %}
-This is based on an older project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you don't already have one.
+{% hint style="info" %}
+The steps in this guide are applicable to any Java project built with Maven or Gradle. Feel free to use your own project instead.
 {% endhint %}
 
 {% hint style="info" %}
-The steps in this guide are applicable to any Java project built with Maven or Gradle. Feel free to use your own project instead.
+The steps in this guide reference the Gradle Wrapper, `./gradlew`, and Maven Wrapper, `./mvnw`. Usage of either is up to you.
 {% endhint %}
 
 ## Step 2:  Apply rewrite-maven-plugin or rewrite-gradle-plugin
@@ -61,9 +65,9 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-At this point you're able to run any of the Maven goals or Gradle tasks provided by the plugins. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) and [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options. Try running `mvn rewrite:discover` or `gradlew rewriteDiscover` to see a listing of all the recipes available for execution. Until we add dependencies on recipe-providing modules this will list only the recipes built-in to openrewrite.
+At this point you're able to run any of the Maven goals or Gradle tasks provided by the plugins. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) and [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options. Try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a listing of all the recipes available for execution. Until we add dependencies on recipe-providing modules this will list only the recipes built-in to openrewrite.
 
-## Step 3: Execut**e** a Refactoring Recipe
+## Step 3: Execute a Refactoring Recipe
 
 Before any recipe will be executed it must be listed as "active" in the plugin configuration. For the sake of example, in this step we will activate the included `org.openrewrite.java.format.AutoFormat` recipe. This recipe will format the source code in the project according to the styles specified in the rewrite.yml file, or according to Jetbrains IntelliJ's default Java style if no other style is specified. 
 
@@ -108,18 +112,18 @@ With `AutoFormat` activated we can now apply it to the project. Run:
 {% tabs %}
 {% tab title="Maven" %}
 ```markup
-mvn rewrite:fix
+./mvnw rewrite:fix
 ```
 {% endtab %}
 
 {% tab title="Gradle" %}
 ```
-gradlew rewriteFix
+./gradlew rewriteFix
 ```
 {% endtab %}
 {% endtabs %}
 
-![Console output from running mvn rewrite:fix with AutoFormat set as an active recipe on spring-petclinic-migration](../.gitbook/assets/image%20%2811%29.png)
+![Console output from running ./mvnw rewrite:fix with AutoFormat set as an active recipe on spring-petclinic-migration](../.gitbook/assets/image%20%2811%29.png)
 
 Run `git diff`, or use your preferred IDE's diff viewer, to inspect the changes.
 
@@ -186,11 +190,11 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-Run `mvn rewrite:fix`/ `gradlew rewriteFix` to perform the package relocation. Afterwards you'll see both that the sources in the vet package have been moved to the new directory, and references such as import statements have been updated accordingly.
+Run `./mvnw rewrite:fix` or `./gradlew rewriteFix` to perform the package relocation. Afterwards you'll see both that the sources in the vet package have been moved to the new directory, and references such as import statements have been updated accordingly.
 
 ![Git diff showing updated import statements](../.gitbook/assets/image%20%2810%29.png)
 
-You can test that spring-petclinic-migrations still builds & passes its tests by running `mvn clean install`/`gradlew build`. At this point you know how to configure and run any recipe included in rewrite itself.
+You can test that spring-petclinic-migrations still builds & passes its tests by running `./mvnw clean install` or `./gradlew build`. At this point you know how to configure and run any recipe included in rewrite itself.
 
 ## Step 5: Running Recipes from External Modules
 
@@ -253,7 +257,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Run `mvn rewrite:fix`/`gradlew rewriteFix` and observe that the test classes are all updated to be JUnit 5 tests. If you're using Maven, the pom.xml will also have had had the Junit 4 dependency removed and Junit 5 dependencies added. Rewrite does not yet support automatic update of Gradle dependencies. Gradle users will have to manually make the corresponding changes. 
+Run `./mvnw rewrite:fix` or `./gradlew rewriteFix` and observe that the test classes are all updated to be JUnit 5 tests. If you're using Maven, the pom.xml will also have had had the Junit 4 dependency removed and Junit 5 dependencies added. Rewrite does not yet support automatic update of Gradle dependencies. Gradle users will have to manually make the corresponding changes. 
 
 {% hint style="info" %}
 If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap. 
