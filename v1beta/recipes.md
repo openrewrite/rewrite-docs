@@ -6,21 +6,13 @@ description: >-
 
 # Recipes
 
-A recipe, in the context of Rewrite, represents a group of search and refactoring operations that can be applied to an abstract syntax tree. A recipe can represent a single, stand-alone operation or, in a more typical setting, can be chained together with additional recipes to accomplish a higher level task such as a framework migration.
+A recipe represents a group of search and refactoring operations that can be applied to an [abstract syntax tree](abstract-syntax-trees.md). A recipe can represent a single, stand-alone operation or be linked together with other recipes to accomplish a larger goal such as a framework migration.
 
-There are three important characteristics about a recipe:
-
-* OpenRewrite provides a managed environment for discovering, instantiating and configuring a recipe.
-* A recipe has an optional, peer relationship with a single visitor and when a recipe is executed with a set of source files, it delegates to its peer to manipulate the ASTs. 
-* A recipe can imperatively or declaratively be linked to additional recipes to perform a series of operations to accomplish a higher level task.
+Rewrite provides a managed environment for discovering, instantiating and configuring recipes. To implement a search or refactoring operation, a recipe delegates to a [visitor](visitors.md) which handles the AST traversal and manipulation.
 
 ## Imperative Recipes
 
-An imperative recipe is built by extending the `Recipe` class and injecting configuration properties via it's constructor.
-
-### Stand-Alone Recipes
-
-A stand-alone recipe acts as a managed, configurable wrapper to its associated visitor and delegates to that visitor to perform the actual work on the set of abstract syntax trees.  
+An imperative recipe is built by extending the `org.openrewrite.Recipe` class and injecting configuration properties via it's constructor.
 
 Let's look at a simple example where a Java recipe performs an operation to change all references of an original type to a new type.
 
@@ -31,13 +23,17 @@ public class ChangeType extends Recipe {
     private final String newFullyQualifiedTypeName;
 
     //Recipe configuration is injected via the constructor
-    public ChangeType(String oldFullyQualifiedTypeName, String newFullQualifiedTypeName) {
+    @JsonCreator
+    public ChangeType(
+        @JsonProperty("oldFullyQualifiedTypeName") String oldFullyQualifiedTypeName, 
+        @JsonProperty("newFullQualifiedTypeName") String newFullQualifiedTypeName
+    ) {
         this.oldFullyQualifiedTypeName = oldFullyQualifiedTypeName;
         this.newFullQualifiedTypeName = newFullQualifiedTypeName;
     }
     
     @Override
-    protected TreeVisitor<?, ExecutionContext> getVisitor() {
+    protected JavaVisitor<ExecutionContext> getVisitor() {
         //Construct an instance of a visitor that will operate over the ASTs.
         return new ChangeTypeVisitor(oldFullyQualifiedTypeName, newFullyQualifiedTypeName);
     }
@@ -52,22 +48,20 @@ public class ChangeType extends Recipe {
 
 ```
 
-This recipe accepts two configuration parameters via its constructor and when the recipe is executed, within the context of Rewrite's managed environment, the framework will instantiate and configure the recipe. The recipe overrides the getVisitor method and constructs its delegate, passing along any configuration that is requires to perform a transformation on the set of ASTs.
+This recipe accepts two configuration parameters via its constructor. Recipes may be linked together with many other recipes and run in a variety of orders, contexts, and number of cycles. Making your recipes immutable, as this one is, is a strongly recommended best practice. The recipe overrides the `getVisitor()` method and constructs its visitor, passing along any configuration that visitor requires to perform its function.
 
-### Composite Recipes
+### Linking Recipes Together
 
-A composite recipe encapsulates a set of nested recipes that are chained together to perform some higher level operation over the set of abstract syntax trees.
+Consider this non-exhaustive list of steps required to migrate a project from JUnit 4 to JUnit 5:
 
-As an example, let's examine how one would build a recipe to migrate a project from JUnit 4 to JUnit 5 using the follow steps \(by no means an exhaustive list\):
-
-* Changing the type `org.junit.Test` to `org.junit.jupiter.api.Test`.
-* Changing assertion types.
-* Removing public visibility from test classes and methods that no longer need to be `public` in JUnit 5 
+* Replace the annotation`org.junit.Test` with `org.junit.jupiter.api.Test`.
+* Changing assertions from `org.junit.Assert` to `org.junit.jupiter.api.Assertions`, including updating the order of arguments within the method invocations.
+* Removing public visibility from test classes and methods that no longer need to be `public` in JUnit 5
 * Modifying the Maven pom.xml to include dependencies on JUnit 5, and remove dependencies on JUnit 4
 
-An imperative recipe is built by extending the `Recipe` class and any configurable values are injected into the recipe via it's constructor. A recipe can chain additional recipes to the execution pipeline by adding those recipes with the `doNext()` method.
+No one recipe should implement all of these disparate responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes add recipes to the execution pipeline via the `doNext()` method.
 
-In our above example, the "Migrate to JUnit 5" recipe might look similar to the following:
+In our above example, the "Migrate to JUnit 5" recipe could look similar to the following:
 
 ```java
 package org.example.testing;
@@ -90,7 +84,7 @@ public class JUnit5Migration extends Recipe {
 }
 ```
 
-This recipe does not have an associated peer visitor and instead groups a set of nested recipes that will be added to the execution pipeline when the recipe is executed. Again, Rewrite's managed environment provides facilities to activate, configure and instantiate the composite recipe.
+Note that this recipe does not have an associated visitor of its own, instead relying on a group of other recipes to acheive the desired result.
 
 ## Declarative Recipes
 
