@@ -12,28 +12,34 @@ The [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern#Java_example
 
 A visitor is analogous to an event-handler, describing "what" to do and "when" to do it as part of Rewrite traversing elements in the tree. Rewrite provides an event-driven model where a developer only needs to implement "visit" methods for object types that they are interested in. This leaves Rewrite with the responsibility of traversing a tree completely.
 
-All Rewrite visitors extend the base class `TreeVisitor<T extends Tree, R>`.
+## Rewrite's Visitor Concepts
 
-## Returning Values from Visitors
+All of Rewrite's visitors share a common structure and life cycle that centers on the traversal and transformation of ASTs. It is important to understand the core concepts and the life-cycles provided by the framework.
 
-The `R` is the return type of the visitor. You can think of a visitor as a miniature map-reduce operation where visiting each element in the tree returns an `R` and we reduce all of those `R` values into one aggregated `R` value in the end. The visit methods for any object types we don't implement ourselves return a default value and we must define a reduction step for our visitor.
+### `Tree` Interface 
 
-* `R defaultTo(@Nullable Tree tree)`
-* `R reduce(R r1, R r2)`
+**The commodities upon which all of Rewrite's visitors operate are the AST elements and all of those elements implement the `Tree` interface.**  
+  
+The first thing that a developer will notice about Rewrite's visitors is that they always accept and return a parameterized type that extends `Tree`. This interface is the foundational contract for all types defined within any abstract syntax tree. A Tree type has the following characteristics: 
 
-Some reduction operations are so common that `SourceVisitor` provides a default implementation of `reduce` that, when `R` is of a certain type, use a pre-defined aggregation.
+* It has a unique ID that can be used to identify it as a specific AST instance, even after transformations have taken place on that element.
+* It has an `accept()` method that acts as a callback into a language-specific Visitor.  This allows a type that represents a hierarchy to implement the visitor navigation in its accept method.
+* It has facilities to convert itself back into a source-readable form via several `print()` methods.
+* It implements Markable such that all AST elements can have [Markers](markers.md) applied to express additional meta-data about the element.
 
-| R type | Aggregation |
-| :--- | :--- |
-| Boolean | Logical or |
-| String | Concatenation |
-| Set | Set union |
-| Collection | Collection union |
-| Anything else | If `r1` is null then `r2`. Otherwise `r1`. |
+### `TreeVisitor`
+
+The framework provides the base class `TreeVisitor<T extends Tree, P>` from which all of Rewrite's visitors extend. The base class provides a generic `visit()` method and defines the core lifecycle methods upon which all concrete visitors rely.
+
+It is this class that provides the generic, parameterized **`T visit(T, P)`** method that drives a visitor's polymorphic navigation, cursoring, and life-cycle. The parameterized type `T` represents the type of tree elements upon which the visitor will navigate and transform. The second parameterized type `P` is an additional, shared context that is passed to all visit methods as a visitor navigates a given AST. 
+
+### Cursoring
+
+The  Cursored visitors maintain a stack of AST elements that have been traversed in the tree thus far. In exchange for the extra memory footprint, such visitors can operate based on the location of AST elements in the tree. Many refactoring operations don't require this state. Below is an example of a Java refactoring operation that makes each top-level class final. Since class declarations can be nested \(e.g. inner classes\), we use the cursor to determine if the class is top-level or not. Refactoring operations should also be given a fully-qualified name with a package representing the group of operations and a name signifying what it does.
 
 ## Language-specific Visitors
 
-Each language binding contains a visitor interface extending from `SourceVisitor`. For example, the Rewrite language binding for Java contains a `JavaSourceVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined:
+Each language binding contains a visitor implementation extending from `TreeVisitor`. For example, the Rewrite language binding for Java contains a `JavaSourceVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined:
 
 ```java
 interface JavaSourceVisitor<R> extends SourceVisitor<R> {
