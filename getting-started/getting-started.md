@@ -15,7 +15,7 @@ Following this guide you will learn:
 ## Step 1: Clone sample project
 
 {% hint style="warning" %}
-This is based on an older project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you don't already have one.
+The sample project is based on an older project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
 {% endhint %}
 
 This guide uses a fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration). Clone it by running:
@@ -26,10 +26,6 @@ git clone https://github.com/openrewrite/spring-petclinic-migration.git
 
 {% hint style="info" %}
 The steps in this guide are applicable to any Java project built with Maven or Gradle. Feel free to use your own project instead.
-{% endhint %}
-
-{% hint style="info" %}
-The steps in this guide reference the Gradle Wrapper, `./gradlew`, and Maven Wrapper, `./mvnw`. Usage of either is up to you.
 {% endhint %}
 
 ## Step 2:  Apply rewrite-maven-plugin or rewrite-gradle-plugin
@@ -69,7 +65,7 @@ At this point you're able to run any of the Maven goals or Gradle tasks provided
 
 ## Step 3: Execute a Refactoring Recipe
 
-Before any recipe will be executed it must be listed as "active" in the plugin configuration. For the sake of example, in this step we will activate the included `org.openrewrite.java.format.AutoFormat` recipe. This recipe will format the source code in the project according to the styles specified in the rewrite.yml file, or according to Jetbrains IntelliJ's default Java style if no other style is specified. 
+Before any recipe will be executed it must be listed as "active" in the plugin configuration. For the sake of example, in this step we will activate the included `org.openrewrite.java.format.AutoFormat` recipe. This recipe will format the source code in the project according to the styles specified in the rewrite.yml file, or according to Jetbrains IntelliJ's default Java style if no other style is specified.
 
 To configure this recipe to be active add this configuration to the plugin in the pom.xml or build.gradle:
 
@@ -117,7 +113,7 @@ With `AutoFormat` activated we can now apply it to the project. Run:
 {% endtab %}
 
 {% tab title="Gradle" %}
-```
+```text
 ./gradlew rewriteFix
 ```
 {% endtab %}
@@ -129,7 +125,7 @@ Run `git diff`, or use your preferred IDE's diff viewer, to inspect the changes.
 
 ![Sample of formatting changes made to spring-petclinic-migration by AutoFormat](../.gitbook/assets/image.png)
 
-That's all you need to do to run zero-configuration recipes like AutoFormat. But some recipes require you to tell them what you want them to do. 
+That's all you need to do to run zero-configuration recipes like AutoFormat. But some recipes require you to tell them what you want them to do.
 
 ## Step 4: Execute a Recipe with Yaml Configuration
 
@@ -151,7 +147,7 @@ recipeList:
 Yaml files are very sensitive to indentation. If you find a recipe you've configured in yaml not producing the expected result, double-check that its arguments are indented as shown here.
 {% endhint %}
 
-This creates a new recipe called `com.yourorg.VetToVeterinary`.  Now add it to the active recipe list:
+This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to the active recipe list:
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -249,7 +245,7 @@ rewrite {
 
 dependencies {
     compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0-rc.1")
-    
+
     // Other project dependencies
 }
 ```
@@ -257,10 +253,10 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Run `./mvnw rewrite:fix` or `./gradlew rewriteFix` and observe that the test classes are all updated to be JUnit 5 tests. If you're using Maven, the pom.xml will also have had had the Junit 4 dependency removed and Junit 5 dependencies added. Rewrite does not yet support automatic update of Gradle dependencies. Gradle users will have to manually make the corresponding changes. 
+Run `./mvnw rewrite:fix` or `./gradlew rewriteFix` and observe that the test classes are all updated to be JUnit 5 tests. If you're using Maven, the pom.xml will also have had had the Junit 4 dependency removed and Junit 5 dependencies added. Rewrite does not yet support automatic update of Gradle dependencies. Gradle users will have to manually make the corresponding changes.
 
 {% hint style="info" %}
-If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap. 
+If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
 {% endhint %}
 
 ## Next Steps
@@ -271,20 +267,4 @@ Now that you're up and running with the rewrite-maven-plugin, you may be interes
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](../reference/yaml-format-reference.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
