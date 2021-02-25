@@ -31,24 +31,23 @@ The first thing that a developer will notice about Rewrite's visitors is that th
 
 The framework provides the base class `TreeVisitor<T extends Tree, P>` from which all of Rewrite's visitors extend. It is this class that provides the generic, parameterized **`T visit(T, P)`** method that drives a visitor's polymorphic navigation, cursoring, and life-cycle. The parameterized type `T` represents the type of tree elements upon which the visitor will navigate and transform. The second parameterized type `P` is an additional, shared context that is passed to all visit methods as a visitor navigates a given AST.
 
-Let's visualize how a call to generic TreeVisitor.visit\(T, P\) is mapped into a language specific visit method:
-
-![Example of Visitor Navigation](../.gitbook/assets/image%20%2816%29.png)
-
 ### Cursoring
 
 All visitors have a cursoring mechanism that maintain a stack of AST elements as they traverse the tree.  The cursor allows visitors to be contextually aware of the location, within the AST, of an element as it is visited.
 
-As an example of how cursoring can be helpful image a visitor that is tasked with marking only the top-level class as "final". The compilation unit, represented as an AST may include a class that itself has several nested classes. The cursor can be used to determine if the class is the top-level class or if it is an inner class:
+As an example of how cursoring can be helpful, image a visitor that is tasked with traversing a Java AST and marking only the top-level class as "final". The compilation unit, expressed as an AST, may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times. The cursor can be used to determine which class declaration represents the top-level class:
 
 ```java
-public class MakeClassesFinal extends JavaVisitor<P> {
+public class MakeTopeLevelClassFinal extends JavaVisitor<P> {
 
     @Override
-    public J visitClassDecl(J.ClassDecl classDecl) {
-        J.ClassDecl c = refactor(classDecl, super::visitClassDecl);
+    public J visitClassDeclaration(J.ClassDeclaration classDeclaration, P context) {
+        //The base class provides the proper, language-specific navigation of
+        //a J.ClassDeclaration. It is very important to call the super to enure the
+        //visitor navigates the class declaration's sub-tree.
+        J.ClassDeclaration c = visitAndCast(classDeclaration, super::visitClassDeclaration);
 
-        // If the current class is not enclosed by another class declaration,
+        // If the current class declaration is not enclosed by another class declaration,
         // it must be the top-level class.
         if(getCursor().firstEnclosing(J.ClassDecl.class) == null) {
             c = c.withModifiers("final");
@@ -61,7 +60,7 @@ public class MakeClassesFinal extends JavaVisitor<P> {
 
 ## Language-specific Visitors
 
-Each language binding contains a visitor implementation extending from `TreeVisitor`. For example, the Rewrite language binding for Java is `JavaVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined along with the language-specific traversal logic.
+Each language binding contains a visitor implementation extending from `TreeVisitor`. As an example, the Rewrite language binding for Java is `JavaVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined along with the language-specific traversal logic.
 
 ```java
 interface JavaSourceVisitor<P> extends TreeVisitor<J, P> {
@@ -79,33 +78,39 @@ interface JavaSourceVisitor<P> extends TreeVisitor<J, P> {
 }
 ```
 
-s.
+An important concept to understand is what happens when the generic`TreeBuilder.visit(T, P)` method is called and how that is mapped into it's language-specific counterpart. Let's visualize how a Java CompilationUnit is passed from a client to the visitor:
+
+![Example of Visitor Navigation](../.gitbook/assets/image%20%2816%29.png)
+
+The most obvious observation is that calling the generic form of `visit()` will result in having the compilation unit's `accept()` method executed.  The `accept()` method will then cast the visitor to the language-specific variant and then call the appropriate, language-specific `visitCompilationUnit()` method.
+
+Less obvious, in the above visualization, is that the base implementation also maintains the cursor position and manages the visitor life-cycle.
+
+{% hint style="danger" %}
+STRONG WARNING!  
+  
+A client may have a reference to the language-specific visitor and it may be tempting to call the language-specific visit methods directly, Circumventing the generic `TreeBuilder.visit()` method also means the developer is circumventing proper cursor management and critical visitor life-cycle management.
+{% endhint %}
 
 ## Example: Counting the number of Java method invocations
 
-Let's implement a simple Java source visitor that just counts the number of total method invocations to demonstrate the concepts we've covered so far.
+Let's implement a simple Java visitor that will count the number of total method invocations to demonstrate the concepts we've covered so far. This example will use the second typed parameter of the visitor as our shared counter.
 
 ```java
-class JavaMethodCount extends AbstractSourceVisitor<Integer> {
-  public Integer defaultTo(@Nullable Tree t) {
-    return 0;
-  }
+class JavaMethodCount extends AbstractSourceVisitor<AtomicInteger> {
 
-  public Integer reduce(Integer c1, Integer c2) {
-    return c1 + c2;
-  }
-
-  public Integer visitMethodInvocation() {
-    return 1 + super.visitMethodInvocation();
+  @Override
+  public J visitMethodInvocation(J.MethodInvocation method, AtomicInteger p) {
+    //increment the shared counter when visiting a method invocation.
+    p.incrementAndGet();
+    return super.visitMethodInvocation(method, p);
   }
 }
 ```
 
-Much of this is relatively straightforward. Unless you know nothing is relevant down-tree, it is crucial to always call super in a visit method and incorporate its response somehow. In this case, if we just returned the constant value `1` from `visitMethodInvocation` the individual invocations involved in a chained method invocation would only add 1 to the total.
+The visitor's shared context is a simple, mutable AtomicInteger and in our example the `visitMethodInvocation` is overridden to increment the counter. The JavaVisitor will traverse the AST can call this method each time a method invocation is encountered in the tree.
 
-## Calling Visitors
-
-Invoke a visitor by instantiating it and calling `visit` on any AST node \(usually the root\). A visitor can return any type.
+It is straightforward to leverage the the newly created visitor. A caller will first initialize the shared counter, it will instantiate the visitor and call the visitor's visit method:
 
 ```java
 JavaParser jp = JavaParser.fromJavaVersion().build();
@@ -123,8 +128,9 @@ J.CompilationUnit cu = jp.parse(
         "    }"
 ).get(0);
 
-int methodCount = new JavaMethodCount().visit(cu);
-assertThat(methodCount).isEqualTo(3);
+AtomicInteger counter = new AtomicInteger(0);
+new JavaMethodCount().visit(cu, counter);
+assertThat(counter.get()).isEqualTo(3);
 ```
 
 ## Refactoring Visitors
@@ -158,14 +164,6 @@ Rewrite AST types are immutable. So remember to always assign the result of a `w
 ## Refactor Visitor Pipelines
 
 Refactoring visitors can be chained together by calling `andThen(anotherVisitor)`. This is useful for building up pipelines of refactoring operations built up of lower-level components. For example, when [ChangeFieldType]() finds a matching field that it is going to transform, it chains together an [AddImport]() visitor to add the new import if necessary, and a [RemoveImport]() to remove the old import if there are no longer any references to it.
-
-## Cursoring
-
-Visitors can be cursored or not. Cursored visitors maintain a stack of AST elements that have been traversed in the tree thus far. In exchange for the extra memory footprint, such visitors can operate based on the location of AST elements in the tree. Many refactoring operations don't require this state. Below is an example of a Java refactoring operation that makes each top-level class final. Since class declarations can be nested \(e.g. inner classes\), we use the cursor to determine if the class is top-level or not. Refactoring operations should also be given a fully-qualified name with a package representing the group of operations and a name signifying what it does.
-
-```java
-
-```
 
 ## 
 
