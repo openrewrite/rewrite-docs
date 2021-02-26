@@ -18,9 +18,9 @@ All of Rewrite's visitors share a common structure and life cycle that centers o
 
 ### `Tree`
 
-**The commodities upon which all of Rewrite's visitors operate are the AST elements and all of those elements implement the `Tree` interface.**  
-  
-The first thing that a developer will notice about Rewrite's visitors is that they always accept and return a parameterized type that extends `Tree`. This interface is the foundational contract for all types defined within any abstract syntax tree. A Tree type has the following characteristics: 
+**The commodities upon which all of Rewrite's visitors operate are the AST elements and all of those elements implement the `Tree` interface.**
+
+The first thing that a developer will notice about Rewrite's visitors is that they always accept and return a parameterized type that extends `Tree`. This interface is the foundational contract for all types defined within any abstract syntax tree. A Tree type has the following characteristics:
 
 * It has a unique ID that can be used to identify it as a specific AST instance, even after transformations have taken place on that element.
 * It has an `accept()` method that acts as a callback into a language-specific Visitor.
@@ -33,7 +33,7 @@ The framework provides the base class `TreeVisitor<T extends Tree, P>` from whic
 
 ### Cursoring
 
-All visitors have a cursoring mechanism that maintain a stack of AST elements as they traverse the tree.  The cursor allows visitors to be contextually aware of the location, within the AST, of an element as it is visited.
+All visitors have a cursoring mechanism that maintain a stack of AST elements as they traverse the tree. The cursor allows visitors to be contextually aware of the location, within the AST, of an element as it is visited.
 
 As an example of how cursoring can be helpful, image a visitor that is tasked with traversing a Java AST and marking only the top-level class as "final". The compilation unit, expressed as an AST, may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times. The cursor can be used to determine which class declaration represents the top-level class:
 
@@ -82,13 +82,13 @@ An important concept to understand is what happens when the generic`TreeBuilder.
 
 ![Example of Visitor Navigation](../.gitbook/assets/image%20%2816%29.png)
 
-The most obvious observation is that calling the generic form of `visit()` will result in having the compilation unit's `accept()` method executed.  The `accept()` method will then cast the visitor to the language-specific variant and then call the appropriate, language-specific `visitCompilationUnit()` method.
+The most obvious observation is that calling the generic form of `visit()` will result in having the compilation unit's `accept()` method executed. The `accept()` method will then cast the visitor to the language-specific variant and then call the appropriate, language-specific `visitCompilationUnit()` method.
 
 Less obvious, in the above visualization, is that the base implementation also maintains the cursor position and manages the visitor life-cycle.
 
 {% hint style="danger" %}
-STRONG WARNING!  
-  
+STRONG WARNING!
+
 A client may have a reference to the language-specific visitor and it may be tempting to call the language-specific visit methods directly, Circumventing the generic `TreeBuilder.visit()` method also means the developer is circumventing proper cursor management and critical visitor life-cycle management.
 {% endhint %}
 
@@ -110,7 +110,7 @@ class JavaMethodCount extends AbstractSourceVisitor<AtomicInteger> {
 
 The visitor's shared context is a simple, mutable AtomicInteger and in our example the `visitMethodInvocation` is overridden to increment the counter. The JavaVisitor will traverse the AST and call this method each time a method invocation is encountered in the tree.
 
-It is straightforward to leverage the the newly created visitor. A caller will first initialize the shared counter,   it will instantiate the visitor, and call the visitor's visit method passing both the compilation unit and the counter.
+It is straightforward to leverage the the newly created visitor. A caller will first initialize the shared counter, it will instantiate the visitor, and call the visitor's visit method passing both the compilation unit and the counter.
 
 ```java
 JavaParser jp = JavaParser.fromJavaVersion().build();
@@ -135,7 +135,7 @@ assertThat(counter.get()).isEqualTo(3);
 
 ## Refactoring Visitors
 
-A language-specific visitor is always scoped to return the base interface of that language's AST tree. Examining the JavaVisitor a bit closer, the first typed parameters is defined as  `org.openrewrite.java.tree.J`and all of it's language-specific visit methods also return `J`.
+A language-specific visitor is always scoped to return the base interface of that language's AST tree. Examining the JavaVisitor a bit closer, the first typed parameters is defined as `org.openrewrite.java.tree.J`and all of it's language-specific visit methods also return `J`.
 
 ```java
 class JavaVisitor<P> extends TreeVisitor<J, P> {
@@ -178,7 +178,5 @@ Rewrite AST types are immutable. So remember to always assign the result of a `w
 
 ## Refactor Visitor Pipelines
 
-Refactoring visitors can be chained together by calling `andThen(anotherVisitor)`. This is useful for building up pipelines of refactoring operations built up of lower-level components. For example, when [ChangeFieldType]() finds a matching field that it is going to transform, it chains together an [AddImport]() visitor to add the new import if necessary, and a [RemoveImport]() to remove the old import if there are no longer any references to it.
-
-## 
+Refactoring visitors can be chained together by calling `andThen(anotherVisitor)`. This is useful for building up pipelines of refactoring operations built up of lower-level components. For example, when [ChangeFieldType](visitors.md) finds a matching field that it is going to transform, it chains together an [AddImport](visitors.md) visitor to add the new import if necessary, and a [RemoveImport](visitors.md) to remove the old import if there are no longer any references to it.
 

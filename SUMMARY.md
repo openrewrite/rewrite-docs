@@ -16,8 +16,8 @@
 * [Abstract Syntax Trees](v1beta/abstract-syntax-trees.md)
 * [Recipes](v1beta/recipes.md)
 * [Visitors](v1beta/visitors.md)
-* [Environment](v1beta/environment.md)
 * [Styles](v1beta/styles.md)
+* [Environment](v1beta/environment.md)
 * [Markers](v1beta/markers.md)
 * [JavaTemplate](v1beta/javatemplate.md)
 

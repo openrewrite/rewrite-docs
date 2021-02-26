@@ -14,7 +14,7 @@ Styles are persisted with a top-level `SourceFile` AST element when that AST is 
 
 ## Declarative Styles
 
-Styles are typically defined declaratively in a YML file an included in an [Environment](). For example, the style below configures an [import layout style]() for Java:
+Styles are typically defined declaratively in a YML file an included in an [Environment](environment.md). For example, the style below configures an import layout style for Java:
 
 ```yaml
 ---
@@ -48,11 +48,12 @@ configure:
   <tbody>
     <tr>
       <td style="text-align:left">type</td>
-      <td style="text-align:left">specs.openrewrite.org.v1beta/style</td>
+      <td style="text-align:left"><code>specs.openrewrite.org./v1beta/style</code>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">name</td>
-      <td style="text-align:left">A namespaced unique name you are giving to the style</td>
+      <td style="text-align:left">A name-spaced unique name you are giving to the style</td>
     </tr>
     <tr>
       <td style="text-align:left">configure</td>
@@ -68,5 +69,5 @@ configure:
 
 ## Next Steps
 
-In [Environment](), we'll see how these styles are activated and applied to the parsers that consume code. It will also show how to discover and activate recipes of visitors.
+In [Environment](environment.md), we'll see how these styles are activated and applied to the parsers that consume code. It will also show how to discover and activate recipes of visitors.
 
