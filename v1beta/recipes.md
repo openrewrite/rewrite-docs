@@ -59,7 +59,7 @@ Consider this non-exhaustive list of steps required to migrate a project from JU
 * Removing public visibility from test classes and methods that no longer need to be `public` in JUnit 5
 * Modifying the Maven pom.xml to include dependencies on JUnit 5, and remove dependencies on JUnit 4
 
-No one recipe should implement all of these disparate responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes add recipes to the execution pipeline via the `doNext()` method.
+No one recipe should be responsible for implementing all of these different responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes add recipes to the execution pipeline via the `doNext()` method.
 
 In our above example, the "Migrate to JUnit 5" recipe could look similar to the following:
 
@@ -84,7 +84,7 @@ public class JUnit5Migration extends Recipe {
 }
 ```
 
-Note that this recipe does not have an associated visitor of its own, instead relying on a group of other recipes to acheive the desired result.
+Note that this recipe does not have an associated visitor of its own, instead relying on a group of other recipes to achieve the desired result.
 
 ## Declarative Recipes
 
@@ -106,17 +106,13 @@ recipeList:
 
 ## Recipe Configuration & Validation
 
-OpenRewrite provides a managed environment in which a set of recipes are executed. It will instantiate recipe instances and often inject configuration properties that have been defined within configuration files. Due to the declarative nature of the settings, the Recipe class has a validate\(\) method that is called by the framework prior to executing the recipe. This is useful place where a recipe can ensure it is  pre-configured with any inputs that it needs to perform its work.
-
-### Default Validation
-
-The `Recipe` class provides a default implementation of the `validate()` method that will provide basic required/optional validation checks on a recipe if a recipe's fields are annotated with `@NonNull`. 
+OpenRewrite provides a managed environment in which a set of recipes are executed. It will instantiate recipe instances and often inject configuration properties that have been defined within configuration files. The Recipe class exposes a `validate()` method that is called by the framework to determine whether all required configuration to a recipe has been supplied. The default implementation of`validate()` provides basic required/optional validation checks if a recipe's fields are annotated with `@NonNull`. 
 
 {% hint style="success" %}
-The default logic will look for both package level annotations \(NonNullFields\) and field level annotations \(NonNull, Nullable, etc\).
+The default logic will look for both package level annotations \(NonNullFields\) and field level annotations \(NonNull, Nullable\).
 {% endhint %}
 
-In the event that a recipe requires custom validation rules above and beyond the default behavior, a subclass can simply override the validate method.
+In the event that a recipe requires custom validation rules different from the default behavior, a subclass can override `validate()` with an appropriate implementation.
 
 ## Recipe Execution Pipeline
 
@@ -126,7 +122,7 @@ The top level recipe \(the one that initiates the execution pipeline\) and any s
 
 Each recipe will, in turn, will be executed as a step within the pipeline and step execution consists of the following: 
 
-1. A recipe's validate\(\) method is called to ensure it has been configured properly. Rewrite is not opinionated about how validation errors are handled and by default it will skip a recipe that fails validation. This behavior can be changed by the introduction of an error handler into the pipeline via the execution context.
+1. A recipe's `validate()` method is called to ensure it has been configured properly. Rewrite is not opinionated about how validation errors are handled and by default it will skip a recipe that fails validation. This behavior can be changed by the introduction of an error handler into the pipeline via the execution context.
 2. If a recipe has an associated visitor, the recipe will delegate to its associated visitor to process all source files that have been fed to the pipeline. It is this specific stage that concurrency can be introduced to process the source ASTs in parallel.
 3. If a recipe has a linked/chained recipe, then execution pipeline initiates a step execution for that recipe and this process repeats until there are no more nested recipes.
 

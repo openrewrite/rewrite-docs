@@ -4,7 +4,7 @@ description: rewrite-maven-plugin configuration options and goal descriptions
 
 # Maven Plugin Configuration
 
-The quickest way to see value from pre-packaged Rewrite recipes is to incorporate the Rewrite Maven \(or [Gradle]()\) plugin to your build and run a Maven goal that transforms your code locally.
+The Rewrite Maven Plugin is the fastest way to apply Rewrite recipes to your code as part of your Maven build. The Rewrite Maven Plugin is compatible with all versions of Maven since 3.6.
 
 {% hint style="success" %}
 The Rewrite Maven plugin automatically supplies any recipes you configure to run with all source files in the project that are transformable. It will supply Java visitors with Java files, XML visitors with XML files, etc.
