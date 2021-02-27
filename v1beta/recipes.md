@@ -114,6 +114,39 @@ The default logic will look for both package level annotations \(NonNullFields\)
 
 In the event that a recipe requires custom validation rules different from the default behavior, a subclass can override `validate()` with an appropriate implementation.
 
+### Recipe Descriptors
+
+Rewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name \(via `Recipe.getDisplayName`\) and it's description \(via `Recipe.getDescription`\) to provide basic information about the recipe.  Additionally, Rewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields.Collectively, this meta-data is used to build a recipe descriptor and Rewrite's managed environment provides a mechanism for listing/discovering these descriptors. The descriptors are leverages to generate automated help with the context of the build plugins and they are also useful when building out reference documentation. The following is an example of how to properly define the meta-data on the recipe so that it is available during discovery and automated help:
+
+```java
+public class ChangeType extends Recipe {
+
+    @Option(displayName = "Old fully-qualified type name", description = "Fully-qualified class name of the original type.")
+    String oldFullyQualifiedTypeName;
+
+    @Option(displayName = "New fully-qualified type name", description = "Fully-qualified class name of the replacement type, the replacement type can also defined as a primitive.")
+    String newFullyQualifiedTypeName;
+
+    @Override
+    public String getDisplayName() {
+        return "Change type";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Change a given type to another.";
+    }
+    
+    ...
+}
+```
+
+There are a few recommended best practices when defining the help meta-data and following this guidelines will ensure all recipes have similar formatting:
+
+* Initial capitalized names \(only the first word\)
+* It is OK to use back ticks \(\`\`\) around terms, think how these might be rendered in Markdown.
+* The description should be a complete sentence with a period. 
+
 ## Recipe Execution Pipeline
 
 The execution pipeline dictates how a recipe is applied to a set of source files to perform a transformational task. A transformation is initiated by calling a recipe's run\(\) method and passing to it the set of source files that will be passed through the pipeline. The execution pipeline maintains and manages the intermediate state of the source files as they are passed to visitors and nested recipes.
