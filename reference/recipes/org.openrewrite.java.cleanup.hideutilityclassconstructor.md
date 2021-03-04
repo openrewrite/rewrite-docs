@@ -1,5 +1,5 @@
 # Hide utility class constructor
 
 **org.openrewrite.java.cleanup.HideUtilityClassConstructor**  
-__
+\_\_
 

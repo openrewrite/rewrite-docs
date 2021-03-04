@@ -1,5 +1,5 @@
 # Simplify boolean expression
 
 **org.openrewrite.java.cleanup.SimplifyBooleanExpression**  
-__
+\_\_
 
