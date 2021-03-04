@@ -1,10 +1,10 @@
-# Remove Maven project property
+# Remove a Maven project property
 
 **org.openrewrite.maven.RemoveProperty**  
-\*\*
+__
 
-## Options
+### Options
 
 * propertyName: String!
-  * Name of property to remove.\*
+	* Name of property to remove.
 

@@ -3,14 +3,14 @@
 **org.openrewrite.maven.UpgradeDependencyVersion**  
 _Upgrade the version a group or group and artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases._
 
-## Options
+### Options
 
 * groupId: String!
-  * Group ID of dependency to upgrade.\*
-* artifactId: String
-  * Artifact ID of dependency to upgrade.\*
+	* The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.
+* artifactId: String!
+	* The second part of a dependency coordinate 'com.google.guava:guava:VERSION'.
 * newVersion: String!
-  * Version to upgrade dependency to. Supports Node Semver range syntax.\*
+	* An exact version number, or node-style semver selector used to select the version number.
 * versionPattern: String
-  * A regular expression used to validate the metadata of a version number. e.g.: "-jre" ensures that version "1.0.0-jre" would be selected instead of "1.0.0-android" \*
+	* Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre
 

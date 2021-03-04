@@ -1,16 +1,16 @@
 # Upgrade Maven parent project version
 
 **org.openrewrite.maven.UpgradeParentVersion**  
-_Set the parent pom version number according to a node-style semver selector or to a specific version number_
+_Set the parent pom version number according to a node-style semver selector or to a specific version number._
 
-## Options
+### Options
 
 * groupId: String!
-  * Group ID of parent to upgrade.\*
+	* The first part of a dependency coordinate 'org.springframework.boot:spring-boot-parent:VERSION'.
 * artifactId: String!
-  * Artifact ID of parent to upgrade.\*
+	* The second part of a dependency coordinate 'org.springframework.boot:spring-boot-parent:VERSION'.
 * newVersion: String!
-  * An exact version number, or node-style semver selector used to select the version number\*
+	* An exact version number, or node-style semver selector used to select the version number.
 * versionPattern: String
-  * A regular expression used to validate the metadata of a version number. e.g.: "-jre" ensures that version "1.0.0-jre" would be selected instead of "1.0.0-android" \*
+	* Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre
 

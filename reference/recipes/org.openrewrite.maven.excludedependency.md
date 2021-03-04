@@ -3,10 +3,10 @@
 **org.openrewrite.maven.ExcludeDependency**  
 _Exclude specified dependency from any dependency that transitively includes it._
 
-## Options
+### Options
 
 * groupId: String!
-  * Group ID of dependency to exclude.\*
+	* The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.
 * artifactId: String!
-  * Artifact ID of dependency to exclude.\*
+	* The second part of a dependency coordinate 'com.google.guava:guava:VERSION'.
 

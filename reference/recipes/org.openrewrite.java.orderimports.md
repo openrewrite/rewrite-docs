@@ -3,8 +3,8 @@
 **org.openrewrite.java.OrderImports**  
 _Group and order imports._
 
-## Options
+### Options
 
 * removeUnused: boolean
-  * Remove unnecessary imports.\*
+	* Remove unnecessary imports.
 

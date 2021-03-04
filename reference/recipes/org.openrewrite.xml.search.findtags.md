@@ -1,10 +1,10 @@
 # Find XML tags
 
 **org.openrewrite.xml.search.FindTags**  
-_Find tags by XPath expression._
+_Find XML tags by XPath expression._
 
-## Options
+### Options
 
 * xPath: String!
-  * XPath expression used to find matching tags.\*
+	* XPath expression used to find matching tags.
 

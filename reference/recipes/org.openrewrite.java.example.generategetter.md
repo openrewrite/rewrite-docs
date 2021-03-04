@@ -3,8 +3,8 @@
 **org.openrewrite.java.example.GenerateGetter**  
 _Generate a `get` accessor method._
 
-## Options
+### Options
 
 * fieldName: String!
-  * Name of field to generate getter for.\*
+	* Name of field to generate getter for.
 
