@@ -220,7 +220,7 @@ After applying these steps, the relevant portions of your build file will look l
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-spring</artifactId>
-      <version>3.0.1-rc.1</version>
+      <version>4.0.0-rc.2</version>
     </dependency>
   </dependencies>
 </plugin>
