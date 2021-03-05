@@ -101,7 +101,7 @@ To make pre-packaged Rewrite recipes available to apply to your test code, add t
 
 ```groovy
 dependencies {
-    testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0-rc.2")
+    testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0-rc.3")
 }
 ```
 
@@ -158,4 +158,3 @@ Execute `gradle rewriteDiscover` to list the recipes available on your classpath
 * [Github project](https://github.com/openrewrite/rewrite-gradle-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-gradle-plugin/issues)
 * [Gradle Plugin Portal Listing](https://plugins.gradle.org/plugin/org.openrewrite.rewrite)
-
