@@ -244,7 +244,7 @@ rewrite {
 }
 
 dependencies {
-    compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0-rc.2")
+    compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0-rc.3")
 
     // Other project dependencies
 }
@@ -267,4 +267,3 @@ Now that you're up and running with the rewrite-maven-plugin, you may be interes
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](../reference/yaml-format-reference.md)
-
