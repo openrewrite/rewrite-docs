@@ -3,12 +3,10 @@
 **org.openrewrite.properties.ChangePropertyValue**  
 _Change a property value leaving the key intact._
 
-## Options
+### Options
 
 * propertyKey: String!
-
-    \* 
-
+	* 
 * newValue: String!
-  * 
+	* 
 
