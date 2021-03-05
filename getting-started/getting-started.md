@@ -15,7 +15,7 @@ Following this guide you will learn:
 ## Step 1: Clone sample project
 
 {% hint style="warning" %}
-The sample project is based on an older project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
+The sample spring-petclinic project is based on an older version of project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
 {% endhint %}
 
 This guide uses a fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration). Clone it by running:
@@ -39,7 +39,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.4</version>
+  <version>3.0.0-rc.6</version>
 </plugin>
 ```
 {% endcode %}
@@ -50,7 +50,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.4")
 }
 
 rewrite {
@@ -76,7 +76,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.4</version>
+  <version>3.0.0-rc.6</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -92,7 +92,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.4")
 }
 
 rewrite {
@@ -156,7 +156,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.4</version>
+  <version>3.0.0-rc.6</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -173,7 +173,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.4")
 }
 
 rewrite {
@@ -194,10 +194,10 @@ You can test that spring-petclinic-migrations still builds & passes its tests by
 
 ## Step 5: Running Recipes from External Modules
 
-To run recipes from a rewrite module that isn't part of the core rewrite libraries, add a plugin dependency on the module to your pom.xml. In this example we'll use rewrite-testing-frameworks, a rewrite-provided module which contains mockito, junit, and assertJ related refactoring recipes.
+To run recipes from a rewrite module that isn't part of the core rewrite libraries, add a plugin dependency on the module to your pom.xml. In this example we'll use rewrite-spring, a rewrite-provided module which contains spring, mockito, junit, and assertJ related refactoring recipes.
 
 1. Add an appropriately scoped dependency on rewrite-testing-frameworks
-2. Set the `org.openrewrite.java.testing.JUnit5Migration` recipe as active.
+2. Set the `org.openrewrite.java.spring.boot2` recipe as active.
 
 After applying these steps, the relevant portions of your build file will look like this:
 
@@ -208,19 +208,19 @@ After applying these steps, the relevant portions of your build file will look l
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.4</version>
+  <version>3.0.0-rc.6</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
       <recipe>com.yourorg.VetToVeterinary</recipe>
-      <recipe>org.openrewrite.java.testing.JUnit5Migration</recipe>
+      <recipe>org.openrewrite.java.spring.boot2</recipe>
     </activeRecipes>
   </configuration>
   <dependencies>
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
-      <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>1.0.0-rc.1</version>
+      <artifactId>rewrite-spring</artifactId>
+      <version>3.0.1-rc.1</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -233,18 +233,18 @@ After applying these steps, the relevant portions of your build file will look l
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.4")
 }
 
 rewrite {
     activeRecipe(
         "org.openrewrite.java.format.AutoFormat",
         "com.yourorg.VetToVeterinary",
-        "org.openrewrite.java.testing.JUnit5Migration")
+        "org.openrewrite.java.spring.boot2")
 }
 
 dependencies {
-    compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0-rc.1")
+    compileOnly("org.openrewrite.recipe:rewrite-spring:3.0.1-rc.1")
 
     // Other project dependencies
 }
@@ -253,7 +253,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Run `./mvnw rewrite:fix` or `./gradlew rewriteFix` and observe that the test classes are all updated to be JUnit 5 tests. If you're using Maven, the pom.xml will also have had had the Junit 4 dependency removed and Junit 5 dependencies added. Rewrite does not yet support automatic update of Gradle dependencies. Gradle users will have to manually make the corresponding changes.
+Run `./mvnw rewrite:fix` or `./gradlew rewriteFix` and observe that the project has been upgraded to Spring Boot 2 and the test classes are all updated to be JUnit 5 tests. If you're using Maven, the pom.xml will also have had the Spring dependencies updated, the Junit 4 dependency removed and Junit 5 dependencies added. Rewrite does not yet support automatic update of Gradle dependencies. Gradle users will have to manually make the corresponding changes.
 
 {% hint style="info" %}
 If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
