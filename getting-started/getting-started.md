@@ -39,7 +39,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.4</version>
+  <version>3.0.0-rc.6</version>
 </plugin>
 ```
 {% endcode %}
@@ -50,7 +50,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.4")
 }
 
 rewrite {
@@ -76,7 +76,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.4</version>
+  <version>3.0.0-rc.6</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -92,7 +92,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.4")
 }
 
 rewrite {
@@ -156,7 +156,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.4</version>
+  <version>3.0.0-rc.6</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -173,7 +173,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.4")
 }
 
 rewrite {
@@ -208,7 +208,7 @@ After applying these steps, the relevant portions of your build file will look l
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.0.0-rc.4</version>
+  <version>3.0.0-rc.6</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -220,7 +220,7 @@ After applying these steps, the relevant portions of your build file will look l
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>1.0.0-rc.1</version>
+      <version>1.0.0-rc.2</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -233,18 +233,18 @@ After applying these steps, the relevant portions of your build file will look l
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.0.0-rc.2")
+    id("org.openrewrite.rewrite").version("3.0.0-rc.4")
 }
 
 rewrite {
     activeRecipe(
         "org.openrewrite.java.format.AutoFormat",
         "com.yourorg.VetToVeterinary",
-        "org.openrewrite.java.testing.JUnit5Migration")
+        "org.openrewrite.java.testing.JUnit4to5Migration")
 }
 
 dependencies {
-    compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0-rc.1")
+    compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0-rc.2")
 
     // Other project dependencies
 }
