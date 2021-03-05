@@ -35,12 +35,12 @@ Since this is a Java refactoring visitor, take a compile-scope dependency on rew
 {% tab title="Gradle" %}
 ```kotlin
 dependencies {
-    implementation("org.openrewrite:rewrite-java:7.0.0-rc.6")
+    implementation("org.openrewrite:rewrite-java:7.0.0-rc.8")
     
-    testImplementation("org.openrewrite:rewrite-test:7.0.0-rc.6")
+    testImplementation("org.openrewrite:rewrite-test:7.0.0-rc.8")
     
-    testRuntimeOnly("org.openrewrite:rewrite-java-11:7.0.0-rc.6")
-    testRuntimeOnly("org.openrewrite:rewrite-java-8:7.0.0-rc.6")
+    testRuntimeOnly("org.openrewrite:rewrite-java-11:7.0.0-rc.8")
+    testRuntimeOnly("org.openrewrite:rewrite-java-8:7.0.0-rc.8")
 }
 ```
 {% endtab %}
@@ -51,25 +51,25 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
-        <version>7.0.0-rc.6</version>
+        <version>7.0.0-rc.8</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
-        <version>7.0.0-rc.6</version>
+        <version>7.0.0-rc.8</version>
         <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-11</artifactId>
-        <version>7.0.0-rc.6</version>
+        <version>7.0.0-rc.8</version>
         <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-test</artifactId>
-        <version>7.0.0-rc.6</version>
+        <version>7.0.0-rc.8</version>
         <scope>test</scope>
     </dependency>
 </dependencies>
