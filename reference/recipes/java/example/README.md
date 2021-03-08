@@ -1,3 +1,6 @@
-## Example
-### Recipes
-  * [Generate getter](generategetter.md)
+# Example
+
+## Recipes
+
+* [Generate getter](generategetter.md)
+

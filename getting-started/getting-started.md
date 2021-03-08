@@ -267,3 +267,4 @@ Now that you're up and running with the rewrite-maven-plugin, you may be interes
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](../reference/yaml-format-reference.md)
+

@@ -1,3 +1,6 @@
-## Search
-### Recipes
-  * [Find XML tags](findtags.md)
+# Search
+
+## Recipes
+
+* [Find XML tags](findtags.md)
+

@@ -2,7 +2,7 @@
 
 ## What You Will Build
 
-This tutorial will demonstrate how the JavaTemplate can be used to manipulate and change a method declaration using rewrite's refactoring capabilities. You will build a recipe that modifies the `setCustomerInfo()` method in the following class: 
+This tutorial will demonstrate how the JavaTemplate can be used to manipulate and change a method declaration using rewrite's refactoring capabilities. You will build a recipe that modifies the `setCustomerInfo()` method in the following class:
 
 ```java
 package com.yourorg;
@@ -11,7 +11,7 @@ public abstract class Customer {
     private Date dateOfBirth;
     private String firstName;
     private String lastName;
-    
+
     public abtract void setCustomerInfo(String lastName);
 }
 ```
@@ -58,7 +58,7 @@ This example requires the following dependencies:
 * Test-scope dependency on **rewrite-test**
 
 {% hint style="info" %}
-**rewrite-java-8** and **rewrite-java-11** can peacefully coexist on the same classpath. At runtime one of them will be selected according to the version of the JVM Rewrite is executing on. 
+**rewrite-java-8** and **rewrite-java-11** can peacefully coexist on the same classpath. At runtime one of them will be selected according to the version of the JVM Rewrite is executing on.
 {% endhint %}
 
 {% tabs %}
@@ -66,10 +66,10 @@ This example requires the following dependencies:
 ```groovy
 dependencies {
     implementation("org.openrewrite:rewrite-java:7.0.0-rc.8")
-    
+
     runtimeOnly("org.openrewrite:rewrite-java-11:7.0.0-rc.8")
     runtimeOnly("org.openrewrite:rewrite-java-8:7.0.0-rc.8")
-    
+
     testImplementation("org.openrewrite:rewrite-test:7.0.0-rc.8")
 }
 ```
@@ -123,31 +123,30 @@ import org.openrewrite.java.tree.J;
 import org.openrewrite.java.tree.J.MethodDeclaration;
 
 public class ExpandCustomerInfo extends Recipe {
-	//Rewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
-	//This recipe has no configuration and delegates to its visitor when it is run.
-	@Override
-	protected JavaIsoVisitor<ExecutionContext> getVisitor() {
-		return new ExpandCustomerInfoVisitor();
-	}
+    //Rewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
+    //This recipe has no configuration and delegates to its visitor when it is run.
+    @Override
+    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+        return new ExpandCustomerInfoVisitor();
+    }
 
-	private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
+    private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
 
-		//This visitor uses a method matcher, and it's point-cut syntax, to target the method declaration that will be refactored
-		private MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
+        //This visitor uses a method matcher, and it's point-cut syntax, to target the method declaration that will be refactored
+        private MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
 
-		@Override
-		public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
-			J.MethodDeclaration m = super.visitMethodDeclaration(method, p);
-			if (!methodMatcher.matches(method.getType())) {
-				return m;
-			}
-			//TODO - Implement Refactoring operations on the matching "setCustomerInfo()" method declaration.
-			
-			return m;
-		}
-	}
+        @Override
+        public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
+            J.MethodDeclaration m = super.visitMethodDeclaration(method, p);
+            if (!methodMatcher.matches(method.getType())) {
+                return m;
+            }
+            //TODO - Implement Refactoring operations on the matching "setCustomerInfo()" method declaration.
+
+            return m;
+        }
+    }
 }
-
 ```
 
 ## Add a Method Body to `setCustomerInfo()`
@@ -155,12 +154,12 @@ public class ExpandCustomerInfo extends Recipe {
 Within the `ExpandCustomerInfoVisitor`, we will add logic to remove the abstract modifier from the method and use the JavaTemplate to add a method body to declaration. This is accomplished by defining a JavaTemplate that represents the method body as an instance variable within the ExpandCustomerInfoVisitor:
 
 ```java
-	private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-		...
-		//Template used to add a method body to "setCustomerInfo()" method declaration.
- 		private JavaTemplate addMethodBodyTemplate = template("{this.lastName = lastName;}").build();
- 		...
-	}
+    private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
+        ...
+        //Template used to add a method body to "setCustomerInfo()" method declaration.
+         private JavaTemplate addMethodBodyTemplate = template("{this.lastName = lastName;}").build();
+         ...
+    }
 ```
 
 {% hint style="info" %}
@@ -171,13 +170,13 @@ The method is then replaced with a copy that remove the abstract modifier and th
 
 ```java
 public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
-	...
-	//Remove the abstract modifier from the method.
-	m = m.withModifiers(m.getModifiers().stream().filter(mod -> mod.getType() != Type.Abstract).collect(Collectors.toList()));
-	//Add a method body use the JavaTemplate by using the "replaceBody" coordinates.
-	m = m.withTemplate(addMethodBodyTemplate, m.getCoordinates().replaceBody());
-	
-	return m;
+    ...
+    //Remove the abstract modifier from the method.
+    m = m.withModifiers(m.getModifiers().stream().filter(mod -> mod.getType() != Type.Abstract).collect(Collectors.toList()));
+    //Add a method body use the JavaTemplate by using the "replaceBody" coordinates.
+    m = m.withTemplate(addMethodBodyTemplate, m.getCoordinates().replaceBody());
+
+    return m;
 }
 ```
 
@@ -187,34 +186,32 @@ Next we will use the JavaTemplate to add two additional parameters to the method
 
 ```java
 private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-	...
-	//Template used to insert two additional parameters into the "setCustomerInfo()" method declaration.
-	private JavaTemplate addMethodParametersTemplate = template("Date dateOfBirth, String firstName,")
-			.imports("java.util.Date")
-			.build();
-	...
+    ...
+    //Template used to insert two additional parameters into the "setCustomerInfo()" method declaration.
+    private JavaTemplate addMethodParametersTemplate = template("Date dateOfBirth, String firstName,")
+            .imports("java.util.Date")
+            .build();
+    ...
 }
 ```
 
 {% hint style="info" %}
-NOTE: Because a new type, `java.util.Date`, is being introduced to the template, the type must be added when building the template. This ensures that any generated elements will have correct type attribution. 
+NOTE: Because a new type, `java.util.Date`, is being introduced to the template, the type must be added when building the template. This ensures that any generated elements will have correct type attribution.
 {% endhint %}
 
 The template is is used to replace the method declaration using `withTemplate()`. Our code must also ensure that `java.util.Date` is added as an import to the compilation unit.
 
 ```java
 public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
-	...
-	//Add two parameters to the method declaration by inserting them in front of the first argument.
-	m = m.withTemplate(addMethodParametersTemplate, m.getParameters().get(0).getCoordinates().before());
+    ...
+    //Add two parameters to the method declaration by inserting them in front of the first argument.
+    m = m.withTemplate(addMethodParametersTemplate, m.getParameters().get(0).getCoordinates().before());
 
-	//Need to make sure that the Date type is added to this compilation unit's list of imports.
-	maybeAddImport("java.util.Date");
+    //Need to make sure that the Date type is added to this compilation unit's list of imports.
+    maybeAddImport("java.util.Date");
 
-	return m;
+    return m;
 }
-
-
 ```
 
 ## Add Additional Statements to `setCustomerInfo()`
@@ -222,25 +219,25 @@ public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
 A third template will be used to add two additional statements \(as the last two statements in the method body\):
 
 ```java
-	private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-		...
- 		//Template used to add statements to the method body
- 		private JavaTemplate addStatementsTemplate = template("this.dateOfBirth=dateOfBirht;\nthis.firstName = firstName;")
- 				.imports("java.util.Date")
- 				.build();
- 		...
-	}
+    private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
+        ...
+         //Template used to add statements to the method body
+         private JavaTemplate addStatementsTemplate = template("this.dateOfBirth=dateOfBirht;\nthis.firstName = firstName;")
+                 .imports("java.util.Date")
+                 .build();
+         ...
+    }
 ```
 
 And this template is used to insert those statements into the method declaration's body:
 
 ```java
 public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
-	...
-	////Add two additional statements to method's body by inserting them in front of the first statement
-	m = m.withTemplate(addStatementsTemplate, m.getBody().getStatements().get(0).getCoordinates().before());
+    ...
+    ////Add two additional statements to method's body by inserting them in front of the first statement
+    m = m.withTemplate(addStatementsTemplate, m.getBody().getStatements().get(0).getCoordinates().before());
 
-	return m;
+    return m;
 }
 ```
 
@@ -332,12 +329,12 @@ public class ExpandCustomerInfoTest : RecipeTest {
     fun testExapandCustomerInfo() = assertChanged(
         before = """
             package com.yourorg;
-            
+
             public abstract class Customer {
                 private Date dateOfBirth;
                 private String firstName;
                 private String lastName;
-                
+
                 public abstract void setCustomerInfo(String lastName);
             }
         """,
@@ -345,7 +342,7 @@ public class ExpandCustomerInfoTest : RecipeTest {
             package com.yourorg;
 
             import java.util.Date;
-            
+
             public abstract class Customer {
                 private String lastName;
                 private String firstName;

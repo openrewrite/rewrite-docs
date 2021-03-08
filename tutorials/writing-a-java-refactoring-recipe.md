@@ -36,9 +36,9 @@ Since this is a Java refactoring visitor, take a compile-scope dependency on rew
 ```kotlin
 dependencies {
     implementation("org.openrewrite:rewrite-java:7.0.0-rc.8")
-    
+
     testImplementation("org.openrewrite:rewrite-test:7.0.0-rc.8")
-    
+
     testRuntimeOnly("org.openrewrite:rewrite-java-11:7.0.0-rc.8")
     testRuntimeOnly("org.openrewrite:rewrite-java-8:7.0.0-rc.8")
 }
@@ -83,7 +83,7 @@ rewrite-java-8 and rewrite-java-11 can peacefully coexist on the same classpath.
 
 ## Defining SayHelloRecipe
 
-Begin by creating a class that extends `org.openrewrite.Recipe`. This recipe should accept as a configuration parameter the fully qualified name of the class to add a `hello()` method to and it should validate that parameter is configured with a valid value. 
+Begin by creating a class that extends `org.openrewrite.Recipe`. This recipe should accept as a configuration parameter the fully qualified name of the class to add a `hello()` method to and it should validate that parameter is configured with a valid value.
 
 ```java
 package org.openrewrite.samples;
@@ -106,7 +106,7 @@ public class SayHelloRecipe extends Recipe {
     public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
     }
-    
+
     // TODO: Override getVisitor() to return a JavaIsoVisitor to perform the refactoring
 }
 ```
@@ -159,7 +159,6 @@ public class SayHelloRecipe extends Recipe {
         }
     }
 }
-
 ```
 
 Here we override `JavaIsoVisitor.visitClassDeclaration` in preparation for returning a modified class declaration that includes our new `hello()` method. The first step in any refactoring visit method is to _avoid refactoring_ any class which the visitor should not change. In this case that means any class that isn't the one specified in the recipe, or any class that already has a `hello()` method. Adding this filtering to `SayHelloRecipe.SayHelloVisitor.visitClassDeclaration()` looks like this:
@@ -318,10 +317,9 @@ public class SayHelloRecipe extends Recipe {
         }
     }
 }
-
 ```
 
-## Testing 
+## Testing
 
 To create automated tests of this visitor we use the [kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line Strings, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/) and `RecipeTest` class provided by rewrite-test. For `SayHelloRecipe` it is sensible to test:
 
@@ -352,7 +350,7 @@ class SayHelloRecipeTest(): RecipeTest {
         """,
         after = """
             package com.yourorg;
-            
+
             class A {
                 public String hello() {
                     return "Hello from com.yourorg.A!";
@@ -365,7 +363,7 @@ class SayHelloRecipeTest(): RecipeTest {
     fun doesNotChangeExistingHello() = assertUnchanged(
         before = """
             package com.yourorg;
-            
+
             class A {
                 public String hello() { return ""; }
             }
@@ -376,13 +374,12 @@ class SayHelloRecipeTest(): RecipeTest {
     fun doesNotChangeOtherClass() = assertUnchanged(
         before = """
             package com.yourorg;
-            
+
             class B {
             }
         """
     )
 }
-
 ```
 
 ## Declarative YAML Usage
@@ -401,6 +398,4 @@ recipeList:
   - org.openrewrite.samples.SayHelloRecipe:
       fullyQualifiedClassName: com.yourorg.A
 ```
-
-
 
