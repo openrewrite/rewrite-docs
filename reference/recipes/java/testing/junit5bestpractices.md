@@ -1,6 +1,6 @@
 # JUnit Jupiter best practices
 
-**org.openrewrite.java.testing.JUnit5**  
+**org.openrewrite.java.testing.JUnit5BestPractices**  
 _Migrates JUnit 4.x tests to JUnit Jupiter and applies best practices to tests._
 
 ### Tags
@@ -10,6 +10,5 @@ _Migrates JUnit 4.x tests to JUnit Jupiter and applies best practices to tests._
 
 ### Recipe list
 
-* [Use static import](org.openrewrite.java.UseStaticImport.md)
+* [Use static import](https://docs.openrewrite.org/reference/recipes/java/usestaticimport.md)
 	* methodPattern: org.junit.jupiter.api.Assertions *(..)
-* [JUnit Jupiter migration from JUnit 4.x](org.openrewrite.java.testing.JUnit5Migration.md)
