@@ -5,11 +5,11 @@ _AssertJ provides a rich set of assertions, truly helpful error messages, improv
 
 ### Recipe list
 
-* [JUnitAssertArrayEquals To AssertThat](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertarrayequalstoassertthat.md)
-* [JUnitAssertEquals To AssertThat](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertequalstoassertthat.md)
-* [JUnit AssertFalse to AssertThat](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertfalsetoassertthat.md)
-* [JUnit AssertNotEquals to AssertThat](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertnotequalstoassertthat.md)
-* [JUnit AssertNotNull to AssertThat](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertnotnulltoassertthat.md)
-* [JUnit AssertNull to AssertThat](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertnulltoassertthat.md)
-* [JUnit AssertSame to AssertThat](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertsametoassertthat.md)
-* [JUnit AssertTrue to AssertThat](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitasserttruetoassertthat.md)
+* [JUnitAssertArrayEquals To AssertThat](../../../java/testing/assertj/junitassertarrayequalstoassertthat.md)
+* [JUnitAssertEquals To AssertThat](../../../java/testing/assertj/junitassertequalstoassertthat.md)
+* [JUnit AssertFalse to AssertThat](../../../java/testing/assertj/junitassertfalsetoassertthat.md)
+* [JUnit AssertNotEquals to AssertThat](../../../java/testing/assertj/junitassertnotequalstoassertthat.md)
+* [JUnit AssertNotNull to AssertThat](../../../java/testing/assertj/junitassertnotnulltoassertthat.md)
+* [JUnit AssertNull to AssertThat](../../../java/testing/assertj/junitassertnulltoassertthat.md)
+* [JUnit AssertSame to AssertThat](../../../java/testing/assertj/junitassertsametoassertthat.md)
+* [JUnit AssertTrue to AssertThat](../../../java/testing/assertj/junitasserttruetoassertthat.md)

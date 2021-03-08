@@ -10,5 +10,5 @@ _Migrates JUnit 4.x tests to JUnit Jupiter and applies best practices to tests._
 
 ### Recipe list
 
-* [Use static import](https://docs.openrewrite.org/reference/recipes/java/usestaticimport.md)
+* [Use static import](../../java/usestaticimport.md)
 	* methodPattern: org.junit.jupiter.api.Assertions *(..)

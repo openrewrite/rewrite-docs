@@ -5,11 +5,11 @@ _Consistently use a static import rather than inlining the `Assertions` class na
 
 ### Recipe list
 
-* [Change method target to static](https://docs.openrewrite.org/reference/recipes/java/changemethodtargettostatic.md)
+* [Change method target to static](../../../java/changemethodtargettostatic.md)
 	* methodPattern: org.assertj.core.api.AssertionsForClassTypes assertThat(..)
 	* fullyQualifiedTargetTypeName: org.assertj.core.api.Assertions
-* [Change method target to static](https://docs.openrewrite.org/reference/recipes/java/changemethodtargettostatic.md)
+* [Change method target to static](../../../java/changemethodtargettostatic.md)
 	* methodPattern: org.assertj.core.api.AssertionsForInterfaceTypes assertThat(..)
 	* fullyQualifiedTargetTypeName: org.assertj.core.api.Assertions
-* [Use static import](https://docs.openrewrite.org/reference/recipes/java/usestaticimport.md)
+* [Use static import](../../../java/usestaticimport.md)
 	* methodPattern: org.assertj.core.api.Assertions *(..)
