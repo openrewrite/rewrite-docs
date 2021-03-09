@@ -11,8 +11,8 @@
 * [Remove unused imports](removeunusedimports.md)
 * [Reorder method arguments](reordermethodarguments.md)
 * [Use static import](usestaticimport.md)
-### Subcategories
 
+### Subcategories
 * [Spring](spring/README.md)
 * [Search](search/README.md)
 * [Cleanup](cleanup/README.md)

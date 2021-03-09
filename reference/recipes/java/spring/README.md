@@ -8,6 +8,6 @@
 * [Add the javax validation-api and spring-boot-starter-validation if necessary](maybeaddjavaxvalidationdependencies.md)
 * [Remove Autowired Annotation from MethodDeclarations](noautowired.md)
 * [No Method Declaration Request Mapping Annotations](norequestmappingannotation.md)
-### Subcategories
 
+### Subcategories
 * [Boot2](boot2/README.md)
