@@ -1,9 +1,8 @@
 # Add Maven dependency
 
 **org.openrewrite.maven.AddDependency**  
-\_\_
 
-## Options
+### Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.
@@ -18,13 +17,7 @@
 * classifier: String
   * A Maven classifier to add. Most commonly used to select shaded or test variants of a library
 * scope: String
-
-    \* 
-
 * type: String
-
-    \* 
-
 * familyPattern: String
-  * A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '\*' as a wildcard character.
+  * A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character.
 

@@ -1,8 +1,6 @@
 # Spring
 
-## Recipes
+### Recipes
+### Subcategories
 
-## Subcategories
-
-* [Boot](boot/)
-
+* [Boot](boot/README.md)

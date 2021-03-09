@@ -1,9 +1,7 @@
 # Config
 
-## Recipes
+### Recipes
+### Subcategories
 
-## Subcategories
-
-* [Springbootconfigurationproperties](springbootconfigurationproperties/)
-* [Springbootconfigurationyaml](springbootconfigurationyaml/)
-
+* [Springbootconfigurationproperties](springbootconfigurationproperties/README.md)
+* [Springbootconfigurationyaml](springbootconfigurationyaml/README.md)

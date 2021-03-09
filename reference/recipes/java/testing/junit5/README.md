@@ -1,7 +1,6 @@
 # Junit5
 
-## Recipes
-
+### Recipes
 * [Add JUnit Dependencies](addjunitdependencies.md)
 * [Add Mockito Dependency](addmockitodependency.md)
 * [Assert To Assertions](asserttoassertions.md)
@@ -13,4 +12,3 @@
 * [TemporaryFolder to TempDir](temporaryfoldertotempdir.md)
 * [Update Before After Annotations](updatebeforeafterannotations.md)
 * [Update Test Annotation](updatetestannotation.md)
-

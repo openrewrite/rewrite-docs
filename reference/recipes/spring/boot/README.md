@@ -1,8 +1,6 @@
 # Boot
 
-## Recipes
+### Recipes
+### Subcategories
 
-## Subcategories
-
-* [Config](config/)
-
+* [Config](config/README.md)

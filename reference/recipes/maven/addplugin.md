@@ -1,9 +1,8 @@
 # Add Maven plugin
 
 **org.openrewrite.maven.AddPlugin**  
-\_\_
 
-## Options
+### Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'.

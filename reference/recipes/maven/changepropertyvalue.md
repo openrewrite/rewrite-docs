@@ -1,9 +1,8 @@
 # Change a Maven project property value.
 
 **org.openrewrite.maven.ChangePropertyValue**  
-\_\_
 
-## Options
+### Options
 
 * key: String!
   * Property key to change.

@@ -1,6 +1,4 @@
 # Search
 
-## Recipes
-
+### Recipes
 * [Find property](findproperties.md)
-
