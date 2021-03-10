@@ -3,6 +3,11 @@
 **org.openrewrite.java.testing.assertj.JUnitToAssertj**  
 _AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
 
+### Tags
+
+* testing
+* assertj
+
 ## Recipe list
 
 * [JUnitAssertArrayEquals To AssertThat](../../../java/testing/assertj/junitassertarrayequalstoassertthat.md)

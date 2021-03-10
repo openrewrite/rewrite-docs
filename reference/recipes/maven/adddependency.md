@@ -20,4 +20,6 @@
 * type: String
 * familyPattern: String
   * A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character.
+* onlyIfUsing: List
+  * Add the dependency only if using one of the supplied types. Types should be identified by fully qualified class name or a glob expression
 

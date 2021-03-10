@@ -1,6 +1,7 @@
 # Spring
 
 ### Recipes
+* [JUnit 4 to 5 migration for Spring Boot 2.x projects](boot2junit4to5migration.md)
 * [Spring Boot 2](boot2.md)
 * [Bean Methods Not Public](beanmethodsnotpublic.md)
 * [Change Deprecated Hibernate validation constraints to their associated javax variant](changedeprecatedhibernatevalidationtojavax.md)
