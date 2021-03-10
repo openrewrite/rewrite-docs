@@ -222,7 +222,7 @@ A third template will be used to add two additional statements \(as the last two
     private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
         ...
          //Template used to add statements to the method body
-         private JavaTemplate addStatementsTemplate = template("this.dateOfBirth=dateOfBirht;\nthis.firstName = firstName;")
+         private JavaTemplate addStatementsTemplate = template("this.dateOfBirth=dateOfBirth;\nthis.firstName = firstName;")
                  .imports("java.util.Date")
                  .build();
          ...
