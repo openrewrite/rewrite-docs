@@ -90,14 +90,20 @@ package org.openrewrite.samples;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.openrewrite.ExecutionContext;
+import org.openrewrite.Option;
 import org.openrewrite.Recipe;
 import org.openrewrite.internal.lang.NonNull;
-
-import static org.openrewrite.Validated.notBlank;
+import org.openrewrite.java.JavaIsoVisitor;
+import org.openrewrite.java.JavaTemplate;
+import org.openrewrite.java.tree.J;
 
 public class SayHelloRecipe extends Recipe {
-    // Making your recipe immutable helps make them idempotent and eliminates some categories of possible bugs
+    // Making your recipe immutable helps make them idempotent and eliminates categories of possible bugs
     // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite
+    @Option(displayName = "Fully Qualified Class Name",
+            description = "A fully-qualified class name indicating which class to add a hello() method.",
+            example = "com.yourorg.FooBar")
     @NonNull
     private final String fullyQualifiedClassName;
 
@@ -107,10 +113,22 @@ public class SayHelloRecipe extends Recipe {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
     }
 
+    @Override
+    public String getDisplayName() {
+        return "Say Hello";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Adds a \"hello\" method to the specified class";
+    }
+
     // TODO: Override getVisitor() to return a JavaIsoVisitor to perform the refactoring
 }
 ```
-
+{% hint style="info" %}
+The "discover" feature of the Gradle and Maven plugins will display information from the `@Option` annotation to users of your Recipe.
+{% endhint %}
 So now we have a Recipe implementation that validates that a single parameter is filled in with a non-blank value. It doesn't have any actual refactoring behavior yet, so that's what we'll add next.
 
 ### Implementing the Visitor
@@ -123,6 +141,7 @@ package org.openrewrite.samples;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.openrewrite.ExecutionContext;
+import org.openrewrite.Option;
 import org.openrewrite.Recipe;
 import org.openrewrite.internal.lang.NonNull;
 import org.openrewrite.java.JavaIsoVisitor;
@@ -130,8 +149,11 @@ import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
 
 public class SayHelloRecipe extends Recipe {
-    // Making your recipe immutable helps make them idempotent and eliminates some categories of possible bugs
+    // Making your recipe immutable helps make them idempotent and eliminates categories of possible bugs
     // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite
+    @Option(displayName = "Fully Qualified Class Name",
+            description = "A fully-qualified class name indicating which class to add a hello() method.",
+            example = "com.yourorg.FooBar")
     @NonNull
     private final String fullyQualifiedClassName;
 
@@ -139,6 +161,16 @@ public class SayHelloRecipe extends Recipe {
     @JsonCreator
     public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
+    }
+
+    @Override
+    public String getDisplayName() {
+        return "Say Hello";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Adds a \"hello\" method to the specified class";
     }
 
     @Override
@@ -169,7 +201,7 @@ public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, Ex
     // In any visit() method the call to super() is what causes sub-elements of to be visited
     J.ClassDeclaration cd = super.visitClassDeclaration(classDecl, executionContext);
 
-    if(!classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
+    if (classDecl.getType() == null || !classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
         // We aren't looking at the specified class so return without making any modifications
         return cd;
     }
@@ -179,12 +211,11 @@ public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, Ex
             .filter(statement -> statement instanceof J.MethodDeclaration)
             .map(J.MethodDeclaration.class::cast)
             .anyMatch(methodDeclaration -> methodDeclaration.getName().getSimpleName().equals("hello"));
-    if(helloMethodExists) {
+    if (helloMethodExists) {
         return cd;
     }
 
     // TODO: Use JavaTemplate to say hello()
-
     return cd;
 }
 ```
@@ -210,7 +241,7 @@ public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, Ex
     // In any visit() method the call to super() is what causes sub-elements of to be visited
     J.ClassDeclaration cd = super.visitClassDeclaration(classDecl, executionContext);
 
-    if (!classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
+    if (classDecl.getType() == null || !classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
         // We aren't looking at the specified class so return without making any modifications
         return cd;
     }
@@ -257,6 +288,7 @@ package org.openrewrite.samples;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.openrewrite.ExecutionContext;
+import org.openrewrite.Option;
 import org.openrewrite.Recipe;
 import org.openrewrite.internal.lang.NonNull;
 import org.openrewrite.java.JavaIsoVisitor;
@@ -264,8 +296,11 @@ import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
 
 public class SayHelloRecipe extends Recipe {
-    // Making your recipe immutable helps make them idempotent and eliminates some categories of possible bugs
+    // Making your recipe immutable helps make them idempotent and eliminates categories of possible bugs
     // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite
+    @Option(displayName = "Fully Qualified Class Name",
+            description = "A fully-qualified class name indicating which class to add a hello() method.",
+            example = "com.yourorg.FooBar")
     @NonNull
     private final String fullyQualifiedClassName;
 
@@ -273,6 +308,16 @@ public class SayHelloRecipe extends Recipe {
     @JsonCreator
     public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
         this.fullyQualifiedClassName = fullyQualifiedClassName;
+    }
+
+    @Override
+    public String getDisplayName() {
+        return "Say Hello";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Adds a \"hello\" method to the specified class";
     }
 
     @Override
