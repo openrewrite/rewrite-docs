@@ -1,4 +1,6 @@
 # Boot
 
-### Subcategories
-* [Config](config/README.md)
+## Subcategories
+
+* [Config](config/)
+

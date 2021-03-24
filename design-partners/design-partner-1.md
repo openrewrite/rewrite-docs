@@ -28,18 +28,18 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 
 | Spring Boot 1-2 Migration | Progress |
 | :--- | :--- |
-| [Configuration Properties]() | ⬤ |
-| [`SpringBootServletInitializer` relocation]() | ⬤ |
-| [Remove implicit web annotations]() | ⬤ |
-| [`@RequestMapping` Cross-Site Request Forgery Vulnerability]() | ⬤ |
-| [Remove @Autowired on constructors]() | ⬤ |
-| [Bean methods don't need to be public]() | ⬤ |
+| [Configuration Properties](design-partner-1.md) | ⬤ |
+| [`SpringBootServletInitializer` relocation](design-partner-1.md) | ⬤ |
+| [Remove implicit web annotations](design-partner-1.md) | ⬤ |
+| [`@RequestMapping` Cross-Site Request Forgery Vulnerability](design-partner-1.md) | ⬤ |
+| [Remove @Autowired on constructors](design-partner-1.md) | ⬤ |
+| [Bean methods don't need to be public](design-partner-1.md) | ⬤ |
 | Maven Dependency Management | ⬤ |
-| [UpgradeDependencyVersion]() | ⬤ |
-| [UpgradeParentVersion]() | ⬤ |
+| [UpgradeDependencyVersion](design-partner-1.md) | ⬤ |
+| [UpgradeParentVersion](design-partner-1.md) | ⬤ |
 | `@Value` to `@ConfigurationProperties` | ◑ |
 | Spring Best Practices | ◑ |
-| [Constructor injection]() \(still needs updating of call sites\) | ◑ |
+| [Constructor injection](design-partner-1.md) \(still needs updating of call sites\) | ◑ |
 | `@Component` to `@Bean` | ◑ |
 | Removal of unused spring starter modules | ◯ |
 | Spring Data migration to `Optional` | ◯ |

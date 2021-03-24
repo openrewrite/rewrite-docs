@@ -1,6 +1,7 @@
 # Spring
 
-### Recipes
+## Recipes
+
 * [JUnit 4 to 5 migration for Spring Boot 2.x projects](boot2junit4to5migration.md)
 * [Spring Boot 2](boot2.md)
 * [Bean Methods Not Public](beanmethodsnotpublic.md)
@@ -10,5 +11,7 @@
 * [Remove Autowired Annotation from MethodDeclarations](noautowired.md)
 * [No Method Declaration Request Mapping Annotations](norequestmappingannotation.md)
 
-### Subcategories
-* [Boot2](boot2/README.md)
+## Subcategories
+
+* [Boot2](boot2-1/)
+

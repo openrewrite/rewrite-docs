@@ -1,4 +1,6 @@
 # Spring
 
-### Subcategories
-* [Boot](boot/README.md)
+## Subcategories
+
+* [Boot](boot/)
+

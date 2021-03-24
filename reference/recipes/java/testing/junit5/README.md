@@ -1,6 +1,7 @@
 # Junit5
 
-### Recipes
+## Recipes
+
 * [JUnit Jupiter best practices](junit5bestpractices.md)
 * [JUnit Jupiter migration from JUnit 4.x](junit4to5migration.md)
 * [Use Mockito JUnit Jupiter extension](usemockitoextension.md)
@@ -12,3 +13,4 @@
 * [TemporaryFolder to TempDir](temporaryfoldertotempdir.md)
 * [Update Before After Annotations](updatebeforeafterannotations.md)
 * [Update Test Annotation](updatetestannotation.md)
+

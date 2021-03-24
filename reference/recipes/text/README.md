@@ -1,4 +1,6 @@
 # Text
 
-### Recipes
+## Recipes
+
 * [Change Text](changetext.md)
+

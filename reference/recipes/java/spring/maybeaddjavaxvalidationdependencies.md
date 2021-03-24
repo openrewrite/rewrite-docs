@@ -1,8 +1,8 @@
 # Add the javax validation-api and spring-boot-starter-validation if necessary
 
-**org.openrewrite.java.spring.MaybeAddJavaxValidationDependencies**  
+**org.openrewrite.java.spring.MaybeAddJavaxValidationDependencies**
 
-### Options
+## Options
 
 * springBootVersion: String!
   * spring-boot-starter-validation version

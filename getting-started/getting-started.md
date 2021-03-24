@@ -197,7 +197,7 @@ You can test that spring-petclinic-migrations still builds & passes its tests by
 To run recipes from a rewrite module that isn't part of the core rewrite libraries, add a plugin dependency on the module to your pom.xml. In this example we'll use rewrite-spring, a rewrite-provided module which contains spring, mockito, junit, and assertJ related refactoring recipes.
 
 1. Add an appropriately scoped dependency on rewrite-testing-frameworks
-2. Set the `org.openrewrite.java.spring.boot2` recipe as active.
+2. Set the `org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration` recipe as active.
 
 After applying these steps, the relevant portions of your build file will look like this:
 
@@ -213,7 +213,7 @@ After applying these steps, the relevant portions of your build file will look l
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
       <recipe>com.yourorg.VetToVeterinary</recipe>
-      <recipe>org.openrewrite.java.spring.boot2</recipe>
+      <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
     </activeRecipes>
   </configuration>
   <dependencies>
@@ -240,7 +240,7 @@ rewrite {
     activeRecipe(
         "org.openrewrite.java.format.AutoFormat",
         "com.yourorg.VetToVeterinary",
-        "org.openrewrite.java.spring.boot2")
+        "org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration")
 }
 
 dependencies {

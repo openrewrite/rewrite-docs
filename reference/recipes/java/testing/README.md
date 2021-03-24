@@ -1,6 +1,8 @@
 # Testing
 
-### Subcategories
-* [Junit5](junit5/README.md)
-* [Assertj](assertj/README.md)
-* [Mockito](mockito/README.md)
+## Subcategories
+
+* [Junit5](junit5/)
+* [Assertj](assertj/)
+* [Mockito](mockito/)
+

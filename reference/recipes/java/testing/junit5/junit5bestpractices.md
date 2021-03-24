@@ -10,6 +10,7 @@ _Migrates JUnit 4.x tests to JUnit Jupiter and applies best practices to tests._
 
 ## Recipe list
 
-* [Use static import](../../../java/usestaticimport.md)
-  * methodPattern: org.junit.jupiter.api.Assertions *(..)
-* [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
+* [Use static import](../../usestaticimport.md)
+  * methodPattern: org.junit.jupiter.api.Assertions \*\(..\)
+* [JUnit Jupiter migration from JUnit 4.x](junit4to5migration.md)
+

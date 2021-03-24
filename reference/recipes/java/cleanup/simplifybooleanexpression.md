@@ -1,4 +1,4 @@
 # Simplify boolean expression
 
-**org.openrewrite.java.cleanup.SimplifyBooleanExpression**  
+**org.openrewrite.java.cleanup.SimplifyBooleanExpression**
 

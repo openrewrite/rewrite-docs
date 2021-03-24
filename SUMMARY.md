@@ -26,7 +26,7 @@
 * [Maven Plugin Configuration](reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](reference/yaml-format-reference.md)
-* Recipes
+* [Recipes](reference/recipes/README.md)
   * [Java](reference/recipes/java/README.md)
     * [Change method name](reference/recipes/java/changemethodname.md)
     * [Change method target to static](reference/recipes/java/changemethodtargettostatic.md)
@@ -71,14 +71,14 @@
       * [Add the javax validation-api and spring-boot-starter-validation if necessary](reference/recipes/java/spring/maybeaddjavaxvalidationdependencies.md)
       * [Remove Autowired Annotation from MethodDeclarations](reference/recipes/java/spring/noautowired.md)
       * [No Method Declaration Request Mapping Annotations](reference/recipes/java/spring/norequestmappingannotation.md)
-      * [Boot2](reference/recipes/java/spring/boot2/README.md)
-        * [Convert multi condition ConditionalOnBean Annotations to AnyNestedCondition](reference/recipes/java/spring/boot2/conditionalonbeananynestedcondition.md)
-        * [RestTemplateBuilderRequestFactory](reference/recipes/java/spring/boot2/resttemplatebuilderrequestfactory.md)
-        * [Replace @RunWith(SpringRunner.class) with @ExtendsWith(SpringExtension.class)](reference/recipes/java/spring/boot2/springrunnertospringextension.md)
+      * [Boot2](reference/recipes/java/spring/boot2-1/README.md)
+        * [Convert multi condition ConditionalOnBean Annotations to AnyNestedCondition](reference/recipes/java/spring/boot2-1/conditionalonbeananynestedcondition.md)
+        * [RestTemplateBuilderRequestFactory](reference/recipes/java/spring/boot2-1/resttemplatebuilderrequestfactory.md)
+        * [Replace @RunWith\(SpringRunner.class\) with @ExtendsWith\(SpringExtension.class\)](reference/recipes/java/spring/boot2-1/springrunnertospringextension.md)
     * [Testing](reference/recipes/java/testing/README.md)
       * [Assertj](reference/recipes/java/testing/assertj/README.md)
         * [AssertJ best practices](reference/recipes/java/testing/assertj/assertj.md)
-        * [Statically import AssertJ's `assertThat`](reference/recipes/java/testing/assertj/staticimports.md)
+        * [Statically import AssertJ's assertThat](reference/recipes/java/testing/assertj/staticimports.md)
         * [Migration JUnit asserts to AssertJ](reference/recipes/java/testing/assertj/junittoassertj.md)
         * [JUnitAssertArrayEquals To AssertThat](reference/recipes/java/testing/assertj/junitassertarrayequalstoassertthat.md)
         * [JUnitAssertEquals To AssertThat](reference/recipes/java/testing/assertj/junitassertequalstoassertthat.md)
@@ -147,7 +147,7 @@
   * [Yaml](reference/recipes/yaml/README.md)
     * [Change property key](reference/recipes/yaml/changepropertykey.md)
     * [Coalesce YAML properties](reference/recipes/yaml/coalesceproperties.md)
-  
+
 ## Design Partners
 
 * [Design Partner 1](design-partners/design-partner-1.md)

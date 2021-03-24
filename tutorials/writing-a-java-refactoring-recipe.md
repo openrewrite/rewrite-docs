@@ -126,9 +126,11 @@ public class SayHelloRecipe extends Recipe {
     // TODO: Override getVisitor() to return a JavaIsoVisitor to perform the refactoring
 }
 ```
+
 {% hint style="info" %}
 The "discover" feature of the Gradle and Maven plugins will display information from the `@Option` annotation to users of your Recipe.
 {% endhint %}
+
 So now we have a Recipe implementation that validates that a single parameter is filled in with a non-blank value. It doesn't have any actual refactoring behavior yet, so that's what we'll add next.
 
 ### Implementing the Visitor

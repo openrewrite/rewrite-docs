@@ -5,4 +5,5 @@ _JUnit 4 to 5 with SpringRunner to SpringExtension_
 
 ## Recipe list
 
-* [Replace @RunWith(SpringRunner.class) with @ExtendsWith(SpringExtension.class)](../../java/spring/boot2/springrunnertospringextension.md)
+* [Replace @RunWith\(SpringRunner.class\) with @ExtendsWith\(SpringExtension.class\)](boot2-1/springrunnertospringextension.md)
+
