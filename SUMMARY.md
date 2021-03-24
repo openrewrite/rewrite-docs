@@ -148,6 +148,10 @@
     * [Change property key](reference/recipes/yaml/changepropertykey.md)
     * [Coalesce YAML properties](reference/recipes/yaml/coalesceproperties.md)
 
+## Release Notes
+
+* [Rewrite 7.0.x](release-notes/rewrite-7.0.x.md)
+
 ## Design Partners
 
 * [Design Partner 1](design-partners/design-partner-1.md)
