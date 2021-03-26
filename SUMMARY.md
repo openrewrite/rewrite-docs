@@ -5,6 +5,7 @@
 ## Getting Started
 
 * [Quickstart: Maven and Gradle](getting-started/getting-started.md)
+* [Recipe Development Environment](getting-started/recipe-development-environment.md)
 
 ## Tutorials & Guides <a id="tutorials"></a>
 
