@@ -17,6 +17,22 @@ This getting started guide covers setting up your development environment for cr
 
 ## Project Setup
 
+Gradle and Maven both provide helpful commands for initializing a new project. Either of these commands will lay out an appropriate directory structure and a basic build.gradle or pom.xml.
+
+{% tabs %}
+{% tab title="Gradle" %}
+```text
+gradle init
+```
+{% endtab %}
+
+{% tab title="Maven" %}
+```
+mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+```
+{% endtab %}
+{% endtabs %}
+
 ### Dependencies
 
 Which rewrite libraries you take dependencies on is determined by which languages/data formats you want to write Recipes for. 
