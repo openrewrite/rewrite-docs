@@ -10,12 +10,13 @@ The Rewrite Maven Plugin is the fastest way to apply Rewrite recipes to your cod
 The Rewrite Maven plugin automatically supplies any recipes you configure to run with all source files in the project that are transformable. It will supply Java visitors with Java files, XML visitors with XML files, etc.
 {% endhint %}
 
-The Rewrite Maven plugin offers four goals:
+The Rewrite Maven plugin offers these goals:
 
 * `mvn rewrite:fix` - Runs the configured recipes and applies the changes locally.
 * `mvn rewrite:warn` - Generates warnings in the console for any recipes that would suggest changes, but doesn't make any changes.
 * `mvn rewrite:diff` - Generates a git-style patch file that you can review independently and then apply with `git apply target/site/rewrite/rewrite.patch`.
 * `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite finds on your classpath.
+* `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org/) bill of materials outlining all of the project's dependencies, including transitive dependecies
 
 ## Plugin configuration
 
@@ -111,9 +112,19 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 
 ## The "Discover" Goal
 
-Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated. It lists the available recipes, the inclusion and exclusion configurations for those recipes, and the visitors that are effective for that each recipe based on what was found on the classpath. So in the below example, the `org.openrewrite.mockito` recipe has been defined to include all visitors prefixed in the `org.openrewrite.mockito` package. Then it lists all the visitors that have been found in that package and will be ran if that recipe is activated.
+Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated in your plugin configuration.
 
-![](../.gitbook/assets/image%20%281%29.png)
+![The beginning of rewrite:discover output, showing activated and available Recipes](../.gitbook/assets/image%20%2818%29.png)
+
+This same goal also lists all of the parameters that recipes can be or are already configured with.
+
+![Recipes showing their configurable parameters. &quot;!&quot; means a parameter is required.](../.gitbook/assets/image%20%2817%29.png)
+
+## The "CycloneDx" Goal
+
+Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org/) bill of materials \(BOM\) outlining all of the project's dependencies, including transitive dependencies. The BOM will be written to target/&lt;module name&gt;-&lt;version&gt;-cyclonedx.xml. 
+
+![Excerpt from Rewrite-generated CycloneDx BOM](../.gitbook/assets/image%20%2819%29.png)
 
 ## Links
 
