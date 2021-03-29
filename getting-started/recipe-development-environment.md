@@ -177,7 +177,7 @@ For a good test authoring experience we recommend also applying the Kotlin plugi
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
-// https://kotlinlang.org/docs/gradle.html#targeting-multiple-platforms
+// https://kotlinlang.org/docs/gradle.html#targeting-the-jvm
 plugins {
     id("org.jetbrains.kotlin.jvm") version("1.4.31")
 }
@@ -278,13 +278,21 @@ Throughout Rewrite's documentation Java is used for Recipe authoring and Kotlin 
 
 Having configured the project per these recommendations, you're now able to begin Recipe development. With Gradle and Maven's default project layout, here is where to put the various kinds of sources that go into a Rewrite Module:
 
-* src/main/java - Recipe implementations
+* src/main/java - Recipe implementations in Java
+* src/main/kotlin - Recipe implementations in Kotlin
 * src/main/resources/META-INF/rewrite - Yaml files defining declarative Rewrite Recipes
-* src/test/kotlin - Recipe tests
+* src/test/java - Recipe tests in Java
+* src/test/kotlin - Recipe tests in Kotlin
 
 With this project setup is complete and you are ready to move on to authoring a Recipe!
+
+## Recipe Distribution
+
+With your project set up as instructed by this guide the jar produced by your build is ready to be consumed as a rewrite module. Once published to an artifact repository like Maven Central, other projects can take a dependency on your Rewrite module and activate the recipes contained therein. 
 
 ## Next Steps
 
 * [Writing a Java Refactoring Recipe](../tutorials/writing-a-java-refactoring-recipe.md)
+* [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
+* [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
 
