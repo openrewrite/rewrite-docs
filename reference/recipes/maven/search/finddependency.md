@@ -3,7 +3,7 @@
 **org.openrewrite.maven.search.FindDependency**  
 _Finds first-order dependency uses, i.e. dependencies that are defined directly in a project._
 
-## Options
+### Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.

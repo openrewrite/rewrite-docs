@@ -1,9 +1,6 @@
 # Spring
 
-## Recipes
-
-* [JUnit 4 to 5 migration for Spring Boot 2.x projects](boot2junit4to5migration.md)
-* [Spring Boot 2](boot2.md)
+### Recipes
 * [Bean Methods Not Public](beanmethodsnotpublic.md)
 * [Change Deprecated Hibernate validation constraints to their associated javax variant](changedeprecatedhibernatevalidationtojavax.md)
 * [Remove Implicit Web Annotation Names](implicitwebannotationnames.md)
@@ -11,7 +8,5 @@
 * [Remove Autowired Annotation from MethodDeclarations](noautowired.md)
 * [No Method Declaration Request Mapping Annotations](norequestmappingannotation.md)
 
-## Subcategories
-
-* [Boot2](boot2-1/)
-
+### Subcategories
+* [Boot2](boot2/README.md)

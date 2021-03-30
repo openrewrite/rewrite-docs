@@ -1,8 +1,8 @@
 # Find Maven project properties
 
-**org.openrewrite.maven.search.FindProperties**
+**org.openrewrite.maven.search.FindProperties**  
 
-## Options
+### Options
 
 * propertyPattern: String!
   * Regular expression pattern used to match property tag names.

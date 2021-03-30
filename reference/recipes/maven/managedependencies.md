@@ -3,7 +3,7 @@
 **org.openrewrite.maven.ManageDependencies**  
 _Make existing dependencies managed by moving their version to be specified in the dependencyManagement section of the POM._
 
-## Options
+### Options
 
 * groupPattern: String!
   * Group glob expression pattern used to match dependencies that should be managed.Group is the the first part of a dependency coordinate 'com.google.guava:guava:VERSION'.
