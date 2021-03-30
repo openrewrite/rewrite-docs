@@ -11,6 +11,7 @@
 
 * [Writing a Java Refactoring Recipe](tutorials/writing-a-java-refactoring-recipe.md)
 * [Modifying Methods with JavaTemplate](tutorials/modifying-methods-with-javatemplate.md)
+* [Refactoring with Declarative YAML Recipes](tutorials/authoring-declarative-yaml-recipes.md)
 
 ## Concepts & Explanations <a id="v1beta"></a>
 

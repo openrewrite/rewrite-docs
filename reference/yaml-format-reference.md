@@ -6,8 +6,12 @@ description: Declaring and configuring Recipes and Styles in YAML
 
 There are two places Rewrite [yaml](https://yaml.org/) files may appear:
 
-* Within a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](rewrite-maven-plugin.md). 
-* Inside the META-INF/rewrite folder of a jar such as [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite)
+* Within the rewrite.yml file of a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](rewrite-maven-plugin.md)
+  * Will not be included in jars published from your project
+* Inside the META-INF/rewrite folder of a jar
+  * Put your recipes here if you want to redistribute and apply them to other repositories
+  * See [Recipe Development Environment](../getting-started/recipe-development-environment.md) for instructions on setting up your project for recipe development
+  * e.g.: [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite)
 
 In either case these yaml files share the same format and purpose: making styles and recipes available to rewrite. A single Rewrite yaml file may contain any number of recipes and styles, separated by `---`.
 
@@ -19,14 +23,6 @@ Within a yaml document recipe and style names are always fully qualified.
 Don't place your custom recipes into the org.openrewrite namespace. We recommend using the same "reverse domain name" naming scheme used in Java packages.
 {% endhint %}
 
-## Sources of Recipes and Styles
-
-When rewrite interprets a yaml file it sources recipes and styles from:
-
-* The building block recipes included in Rewrite itself
-* Elsewhere in the current yaml file
-* Recipes defined in code or in yaml files elsewhere in the classpath
-
 ## Recipes
 
 The basic format of a recipe defined in yaml is:
@@ -34,10 +30,12 @@ The basic format of a recipe defined in yaml is:
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.RecipeA # A fully qualified, unique name for this recipe
-recipeList:               # the list of recipes which comprise this recipe
-  - com.yourorg.RecipeB:  # A fully qualified name for a recipe defined elsewhere
-      exampleConfig: foo  # A configurable parameter of RecipeB
+name: com.yourorg.RecipeA     # A fully qualified, unique name for this recipe
+displayName: Recipe A         # A human-readable name for this recipe
+description: Applies Recipe B # A human-readable description for this recipe
+recipeList:                   # the list of recipes which comprise this recipe
+  - com.yourorg.RecipeB:      # A fully qualified name for a recipe defined elsewhere
+      exampleConfig: foo      # A configurable parameter of RecipeB
 ```
 
 Consider this example declarative recipe which uses the built-in `ChangeMethodName` and `ChangePackage` recipes to rename a method and a package.
@@ -61,7 +59,7 @@ To run this recipe:
 
 1. Put the above into a rewrite.yml file at the project root
 2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](rewrite-maven-plugin.md) with `com.yourorg.SayHello` listed as an active recipe
-3. Run the "fix" maven goal or "rewriteFix" gradle task
+3. Run the "rewrite:fix" maven goal or "rewriteFix" gradle task
 
 {% hint style="success" %}
 Order of recipe declaration is not important. A declarative recipe may include another declarative recipe declared later in the same file in its recipeList.
@@ -75,6 +73,8 @@ The basic format of a Style defined in yaml is:
 ---
 type: specs.openrewrite.org/v1beta/style
 name: com.yourorg.StyleA # A fully qualified, unique name for this style
+displayName: Style A     # A human-readable name for this style
+description: Applies B   # A human-readable description for this style
 styleConfigs:            # The list of styles which comprise this style
   - com.yourorg.StyleB:  # The fully qualified name for a style defined elsewhere
       exampleConfig: foo # A configurable parameter of StyleB

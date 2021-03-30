@@ -379,12 +379,10 @@ class SayHelloRecipeTest(): RecipeTest {
 
 ## Declarative YAML Usage
 
-`SayHelloRecipe` is now ready to be used in code or declaratively from YAML. This Java snippet and YAML snippet are equivalent in their behavior:
+`SayHelloRecipe` is now ready to be used in code or declaratively from YAML. 
 
-```text
-SayHelloRecipe sayHelloA = new SayHelloRecipe("com.yourorg.A");
-```
-
+{% tabs %}
+{% tab title="YAML" %}
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
@@ -393,4 +391,6 @@ recipeList:
   - org.openrewrite.samples.SayHelloRecipe:
       fullyQualifiedClassName: com.yourorg.A
 ```
+{% endtab %}
+{% endtabs %}
 
