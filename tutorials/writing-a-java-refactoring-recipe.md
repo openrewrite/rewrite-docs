@@ -1,5 +1,5 @@
 ---
-description: Adding a method that returns a String to a class
+description: Adding a method to a class that returns a String
 ---
 
 # Writing a Java Refactoring Recipe

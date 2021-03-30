@@ -1,7 +1,5 @@
 # Modifying Methods with JavaTemplate
 
-## What You Will Build
-
 This tutorial will demonstrate how the JavaTemplate can be used to manipulate and change a method declaration using rewrite's refactoring capabilities. You will build a recipe that modifies the `setCustomerInfo()` method in the following class:
 
 ```java
@@ -44,12 +42,6 @@ public abstract class Customer {
 
 This guide assumes you've already set up your [Recipe Development Environment](../getting-started/recipe-development-environment.md).
 
-## What You Need
-
-* JDK \(Java Developer Kit 1.8+\)
-* Gradle \(version 4.7+ \) or Maven \(version 3.2+\)
-* A text editor or your favorite IDE \(preferably one that can import code from Gradle or Maven\)
-
 ## Project Setup
 
 This example requires the following dependencies:
@@ -58,10 +50,6 @@ This example requires the following dependencies:
 * Runtime-scope dependency on **rewrite-java-8**
 * Runtime-scope dependency on **rewrite-java-11**
 * Test-scope dependency on **rewrite-test**
-
-{% hint style="info" %}
-**rewrite-java-8** and **rewrite-java-11** can peacefully coexist on the same classpath. At runtime one of them will be selected according to the version of the JVM Rewrite is executing on.
-{% endhint %}
 
 {% tabs %}
 {% tab title="Gradle" %}
