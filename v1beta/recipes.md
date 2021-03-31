@@ -173,9 +173,9 @@ Each recipe that is added to the execution pipeline constitutes a execution step
 
 ### Execution Cycles
 
-The recipes in a the execution pipeline may produce changes that in turn cause another recipe to do further work. As a result, the pipeline may performs multiple passes \(or cycles\) over all of the recipes in the pipeline until either no changes are made in a pass or some maximum number of passes is reached \(by default 3\). This allows a set of nested recipes to be added to the pipeline without requiring any explicit ordering or dependencies between them.
+The recipes in the execution pipeline may produce changes that in turn cause another recipe to do further work. As a result, the pipeline may perform multiple passes \(or cycles\) over all the recipes in the pipeline again until either no changes are made in a pass or some maximum number of passes is reached \(by default 3\). This allows a set of nested recipes to be added to the pipeline without requiring explicit ordering or dependencies between them.
 
-As an example, lets assume that two recipes are added to the execution pipeline. The first recipe performs whitespace-formatting to an AST and the second recipe generates additional code that is added to the same AST. If those two recipes are executed in order, the formatting recipe is applied before the recipe adds its generated code. The execution pipeline detects that changes have been made and executes a second pass through the recipes. During the second pass, the formatting recipe will now properly format the generated code that was added as a result of the first cycle through the execution pipeline.
+As an example, let's assume that two recipes are added to the execution pipeline. The first recipe performs whitespace-formatting to an AST and the second recipe generates additional code that is added to the same AST. If those two recipes are executed in order, the formatting recipe is applied before the second recipe adds its generated code. The execution pipeline detects that changes have been made and executes a second pass through the recipes. During the second pass, the formatting recipe will now properly format the generated code that was added as a result of the first cycle through the execution pipeline.
 
 ###  Result Set
 
