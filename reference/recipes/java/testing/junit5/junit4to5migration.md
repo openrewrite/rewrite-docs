@@ -10,11 +10,11 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Recipe list
 
-* [Reorder method arguments](../../../java/reordermethodarguments.md)
-  * methodPattern: org.junit.Assume assume*(String, boolean)
-  * newParameterNames: [Ljava.lang.String;@4d20616a
-  * oldParameterNames: [Ljava.lang.String;@6ad6ae45
-* [Change type](../../../java/changetype.md)
+* [Reorder method arguments](../../reordermethodarguments.md)
+  * methodPattern: org.junit.Assume assume\*\(String, boolean\)
+  * newParameterNames: \[Ljava.lang.String;@4d20616a
+  * oldParameterNames: \[Ljava.lang.String;@6ad6ae45
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: org.junit.Assume
   * newFullyQualifiedTypeName: org.junit.jupiter.api.Assumptions
 * [Remove Maven dependency](../../../maven/removedependency.md)
@@ -32,25 +32,26 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
   * version: 5.x
   * releasesOnly: false
   * scope: test
-  * onlyIfUsing: [org.junit.jupiter.api.Test]
+  * onlyIfUsing: \[org.junit.jupiter.api.Test\]
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: org.junit.jupiter
   * artifactId: junit-jupiter-engine
   * version: 5.x
   * releasesOnly: false
   * scope: test
-  * onlyIfUsing: [org.junit.jupiter.api.Test]
-* [Remove JUnit4 @RunWith annotations that do not require an @ExtendsWith replacement.](../../../java/testing/junit5/removeobsoleterunners.md)
-  * obsoleteRunners: [org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]
-* [Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`](../../../java/testing/junit5/usetestmethodorder.md)
-* [Assert To Assertions](../../../java/testing/junit5/asserttoassertions.md)
-* [Category To Tag](../../../java/testing/junit5/categorytotag.md)
-* [Cleanup JUnit Imports](../../../java/testing/junit5/cleanupjunitimports.md)
-* [ExpectedException To AssertThrows](../../../java/testing/junit5/expectedexceptiontoassertthrows.md)
-* [TemporaryFolder to TempDir](../../../java/testing/junit5/temporaryfoldertotempdir.md)
-* [Update Before After Annotations](../../../java/testing/junit5/updatebeforeafterannotations.md)
-* [Migrate JUnit4 `@Test` annotations to JUnit5](../../../java/testing/junit5/updatetestannotation.md)
-* [JUnit4 @RunWith(Parameterized.class) to JUnit Jupiter Parameterized Tests](../../../java/testing/junit5/parameterizedrunnertoparameterized.md)
-* [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled.md)
-* [Use `MatcherAssert#assertThat(..)`](../../../java/testing/junit5/usehamcrestassertthat.md)
-* [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension.md)
+  * onlyIfUsing: \[org.junit.jupiter.api.Test\]
+* [Remove JUnit4 @RunWith annotations that do not require an @ExtendsWith replacement.](removeobsoleterunners.md)
+  * obsoleteRunners: \[org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner\]
+* [Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`](usetestmethodorder.md)
+* [Assert To Assertions](asserttoassertions.md)
+* [Category To Tag](categorytotag.md)
+* [Cleanup JUnit Imports](cleanupjunitimports.md)
+* [ExpectedException To AssertThrows](expectedexceptiontoassertthrows.md)
+* [TemporaryFolder to TempDir](temporaryfoldertotempdir.md)
+* [Update Before After Annotations](updatebeforeafterannotations.md)
+* [Migrate JUnit4 `@Test` annotations to JUnit5](updatetestannotation.md)
+* [JUnit4 @RunWith\(Parameterized.class\) to JUnit Jupiter Parameterized Tests](parameterizedrunnertoparameterized.md)
+* [Use JUnit Jupiter `@Disabled`](ignoretodisabled.md)
+* [Use `MatcherAssert#assertThat(..)`](usehamcrestassertthat.md)
+* [Use Mockito JUnit Jupiter extension](usemockitoextension.md)
+

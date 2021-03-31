@@ -3,7 +3,7 @@
 **org.openrewrite.java.ChangeMethodName**  
 _Rename a method._
 
-### Options
+## Options
 
 * methodPattern: String!
   * A method pattern, expressed as a pointcut expression, that is used to find matching method declarations/invocations.

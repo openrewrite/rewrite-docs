@@ -3,7 +3,7 @@
 **org.openrewrite.java.ChangeType**  
 _Change a given type to another._
 
-### Options
+## Options
 
 * oldFullyQualifiedTypeName: String!
   * Fully-qualified class name of the original type.

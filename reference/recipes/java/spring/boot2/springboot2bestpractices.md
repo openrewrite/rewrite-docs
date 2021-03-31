@@ -10,6 +10,7 @@ _Applies best practices to Spring Boot 2 applications._
 
 ## Recipe list
 
-* [No Method Declaration Request Mapping Annotations](../../../java/spring/norequestmappingannotation.md)
-* [Remove Implicit Web Annotation Names](../../../java/spring/implicitwebannotationnames.md)
-* [Bean Methods Not Public](../../../java/spring/beanmethodsnotpublic.md)
+* [No Method Declaration Request Mapping Annotations](../norequestmappingannotation.md)
+* [Remove Implicit Web Annotation Names](../implicitwebannotationnames.md)
+* [Bean Methods Not Public](../beanmethodsnotpublic.md)
+

@@ -3,11 +3,11 @@
 **org.openrewrite.text.ChangeText**  
 _Changes Text, test recipe._
 
-### Tags
+## Tags
 
 * plain text
 
-### Options
+## Options
 
 * toText: String!
   * Text to change tree value to

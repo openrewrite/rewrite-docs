@@ -1,6 +1,6 @@
-# org.openrewrite.spring.boot.config.SpringBootConfigurationProperties_2_3
+# org.openrewrite.spring.boot.config.SpringBootConfigurationProperties\_2\_3
 
-**org.openrewrite.spring.boot.config.SpringBootConfigurationProperties\_2\_3**  
+**org.openrewrite.spring.boot.config.SpringBootConfigurationProperties\_2\_3**
 
 ## Recipe list
 
@@ -67,3 +67,4 @@
 * [Change property key](../../../properties/changepropertykey.md)
   * oldPropertyKey: management.metrics.web.server.requests-metric-name
   * newPropertyKey: management.metrics.web.server.request.metric-name
+
