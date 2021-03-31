@@ -39,7 +39,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.Spring</recipe>
@@ -102,7 +102,7 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <configuration>
         <reportOutputDirectory>.rewrite</reportOutputDirector>
     </configuration>
