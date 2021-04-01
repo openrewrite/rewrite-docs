@@ -57,7 +57,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
           <dependency>
             <groupId>com.yourorg.recipes</groupId>
             <artifactId>your-recipes</artifactId>
-            <version>1.0.0<version>
+            <version>1.0.0</version>
           </dependency>
         </dependencies>
       </plugin>
