@@ -49,7 +49,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
             <style>com.yourorg.SpringStyle</style>
           </activeStyles>
           <!-- These are the default values. It is not necessary to supply these value manually --> 
-          <reportOutputDirectory>${project.reporting.outputDirectory}/rewrite</reportOutputDirector>
+          <reportOutputDirectory>${project.reporting.outputDirectory}/rewrite</reportOutputDirectory>
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
         </configuration>
         <dependencies>
@@ -104,7 +104,7 @@ The output directory of the `rewrite.patch` file can be controlled by setting th
     <artifactId>rewrite-maven-plugin</artifactId>
     <version>3.1.0</version>
     <configuration>
-        <reportOutputDirectory>.rewrite</reportOutputDirector>
+        <reportOutputDirectory>.rewrite</reportOutputDirectory>
     </configuration>
 </plugin>
 ```
