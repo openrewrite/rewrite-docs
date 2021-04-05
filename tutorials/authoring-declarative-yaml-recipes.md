@@ -4,16 +4,16 @@ description: Compose powerful refactoring operations out of building blocks
 
 # Refactoring with Declarative YAML Recipes
 
-Not every refactoring operation requires a brand new imperative [Recipe](../v1beta/recipes.md) to be authored in code. With declarative YAML Recipes many powerful transformations can be achieved without writing any code. In this tutorial we'll use declarative YAML recipes to rename a package relocation and update downstream projects to reflect the updated package names. 
+Not every refactoring operation requires a brand new imperative [Recipe](../v1beta/recipes.md) to be authored in code. With declarative YAML Recipes many powerful transformations can be achieved without writing any code. In this tutorial we'll use declarative YAML recipes to rename a package relocation and update downstream projects to reflect the updated package names.
 
-In this tutorial we'll assume the existence of two projects, A and B, in different repositories: 
+In this tutorial we'll assume the existence of two projects, A and B, in different repositories:
 
 * Project A will contain the package we will rename from `com.yourorg.foo` to `com.yourorg.bar`
 * Project B will depend on A and use classes from the `com.yourorg.foo` package.
 
 ## Renaming in Project A
 
-First, apply a Rewrite build plugin per the [Quickstart: Maven and Gradle](../getting-started/getting-started.md). 
+First, apply a Rewrite build plugin per the [Quickstart: Maven and Gradle](../getting-started/getting-started.md).
 
 With a Rewrite build plugin applied, create a rewrite.yml at the project root with these contents:
 
@@ -71,11 +71,11 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-Run `mvn rewrite:fix` or `gradlew rewriteFix` to apply the transformation to project A. Source files referencing the old package will be updated. Sources that were part of the com.yourorg.foo package will also be moved to directories corresponding to the new package name. 
+Run `mvn rewrite:fix` or `gradlew rewriteFix` to apply the transformation to project A. Source files referencing the old package will be updated. Sources that were part of the com.yourorg.foo package will also be moved to directories corresponding to the new package name.
 
 ## Updating Downstream Projects
 
-A has been updated, but this is a breaking change to any projects that depend on A, such as project B. To help those projects adapt to this package relocation painlessly we can redistribute this recipe to them inside of the next release of A. 
+A has been updated, but this is a breaking change to any projects that depend on A, such as project B. To help those projects adapt to this package relocation painlessly we can redistribute this recipe to them inside of the next release of A.
 
 Begin by creating a yaml file inside of A/src/main/resources/META-INF/rewrite. The name of this file does not matter so long as its extension is "yml". We'll call it rewrite.yml for simplicity. It has the exact same contents as the rewrite.yml at the project root:
 

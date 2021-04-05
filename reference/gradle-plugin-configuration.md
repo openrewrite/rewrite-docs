@@ -107,7 +107,7 @@ dependencies {
 
 To make pre-packaged Rewrite recipes available to any other `SourceSet`, add them as `<sourceSetName>CompileOnly` dependencies.
 
-Once a pre-packaged recipe is the appropriate classpath, you can tell the Gradle plugin to activate it the `rewrite` DSL. For example, here is how you would activate the `org.openrewrite.java.testing.JUnit5Migration` Recipe that comes with `rewrite-testing-frameworks` in a single-project Gradle build:
+Once a pre-packaged recipe is the appropriate classpath, you can tell the Gradle plugin to activate it the `rewrite` DSL. For example, here is how you would activate the `org.openrewrite.java.testing.junit5.JUnit5BestPractices` Recipe that comes with `rewrite-testing-frameworks` in a single-project Gradle build:
 
 ```groovy
 plugins {
@@ -125,13 +125,13 @@ dependencies {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.testing.JUnit5Migration")
+    activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
 }
 ```
 
 ## The "Fix" Task
 
-Execute`gradle rewriteFix` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortalbe with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
+Execute`gradle rewriteFix` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
 
 ![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output.png)
 

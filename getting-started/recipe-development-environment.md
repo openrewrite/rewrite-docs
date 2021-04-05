@@ -27,7 +27,7 @@ gradle init
 {% endtab %}
 
 {% tab title="Maven" %}
-```
+```text
 mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
 ```
 {% endtab %}
@@ -35,7 +35,7 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 
 ### Dependencies
 
-Which rewrite libraries you take dependencies on is determined by which languages/data formats you want to write Recipes for. 
+Which rewrite libraries you take dependencies on is determined by which languages/data formats you want to write Recipes for.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -45,13 +45,13 @@ dependencies {
     implementation("org.openrewrite:rewrite-java:7.1.0")
     runtimeOnly("org.openrewrite:rewrite-java-11:7.1.0")
     runtimeOnly("org.openrewrite:rewrite-java-8:7.1.0")
-    
+
     // rewrite-maven dependency only necessary for Maven Recipe development
     implementation("org.openrewrite:rewrite-maven:7.1.0")
 
     // rewrite-yaml dependency only necessary for Yaml Recipe development
     implementation("org.openrewrite:rewrite-yaml:7.1.0")
-    
+
     // rewrite-properties dependency only necessary for Properties Recipe development
     implementation("org.openrewrite:rewrite-properties:7.1.0")
 
@@ -86,7 +86,7 @@ dependencies {
         <version>7.1.0</version>
         <scope>runtime</scope>
     </dependency>
-    
+
     <!-- rewrite-maven dependency only necessary for Maven Recipe development -->
     <dependency>
         <groupId>org.openrewrite</groupId>
@@ -102,7 +102,7 @@ dependencies {
         <version>7.1.0</version>
         <scope>compile</scope>
     </dependency>
-    
+
     <!-- rewrite-properties dependency only necessary for Properties Recipe development -->
     <dependency>
         <groupId>org.openrewrite</groupId>
@@ -110,7 +110,7 @@ dependencies {
         <version>7.1.0</version>
         <scope>compile</scope>
     </dependency>
-    
+
     <!-- rewrite-xml dependency only necessary for XML Recipe development -->
     <dependency>
         <groupId>org.openrewrite</groupId>
@@ -118,7 +118,7 @@ dependencies {
         <version>7.1.0</version>
         <scope>compile</scope>
     </dependency>    
-            
+
     <!-- For authoring tests for any kind of Recipe -->
     <dependency>
         <groupId>org.openrewrite</groupId>
@@ -132,7 +132,7 @@ dependencies {
 {% endtabs %}
 
 {% hint style="info" %}
-rewrite-test uses [JUnit 5](https://junit.org/junit5/). 
+rewrite-test uses [JUnit 5](https://junit.org/junit5/).
 {% endhint %}
 
 {% hint style="success" %}
@@ -271,7 +271,7 @@ plugins {
 {% endtabs %}
 
 {% hint style="info" %}
-Throughout Rewrite's documentation Java is used for Recipe authoring and Kotlin is used for test authoring. You do not have to be constrained by this recommendation: Recipes and tests can be authored in any language that runs on the JVM. 
+Throughout Rewrite's documentation Java is used for Recipe authoring and Kotlin is used for test authoring. You do not have to be constrained by this recommendation: Recipes and tests can be authored in any language that runs on the JVM.
 {% endhint %}
 
 ## Project Layout
@@ -288,7 +288,7 @@ With this project setup is complete and you are ready to move on to authoring a 
 
 ## Recipe Distribution
 
-With your project set up as instructed by this guide the jar produced by your build is ready to be consumed as a rewrite module. Once published to an artifact repository like Maven Central, other projects can take a dependency on your Rewrite module and activate the recipes contained therein. 
+With your project set up as instructed by this guide the jar produced by your build is ready to be consumed as a rewrite module. Once published to an artifact repository like Maven Central, other projects can take a dependency on your Rewrite module and activate the recipes contained therein.
 
 ## Next Steps
 

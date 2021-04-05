@@ -122,7 +122,7 @@ This same goal also lists all of the parameters that recipes can be or are alrea
 
 ## The "CycloneDx" Goal
 
-Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org/) bill of materials \(BOM\) outlining all of the project's dependencies, including transitive dependencies. The BOM will be written to target/&lt;module name&gt;-&lt;version&gt;-cyclonedx.xml. 
+Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org/) bill of materials \(BOM\) outlining all of the project's dependencies, including transitive dependencies. The BOM will be written to target/&lt;module name&gt;-&lt;version&gt;-cyclonedx.xml.
 
 ![Excerpt from Rewrite-generated CycloneDx BOM](../.gitbook/assets/image%20%2819%29.png)
 

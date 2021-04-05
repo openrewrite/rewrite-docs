@@ -31,21 +31,20 @@ public class ChangeType extends Recipe {
         this.oldFullyQualifiedTypeName = oldFullyQualifiedTypeName;
         this.newFullQualifiedTypeName = newFullQualifiedTypeName;
     }
-    
+
     @Override
     protected JavaVisitor<ExecutionContext> getVisitor() {
         //Construct an instance of a visitor that will operate over the ASTs.
         return new ChangeTypeVisitor(oldFullyQualifiedTypeName, newFullyQualifiedTypeName);
     }
-    
+
     //In many cases, the visitor is implemented as a private, inner class. This
     //ensures that the visitor is only used via its managed, configured recipe. 
     private class ChangeTypeVisitor extends JavaVisitor<ExecutionContext> {
         ...
     }
-    
-}
 
+}
 ```
 
 This recipe accepts two configuration parameters via its constructor. Recipes may be linked together with many other recipes and run in a variety of orders, contexts, and number of cycles. Making your recipes immutable, as this one is, is a strongly recommended best practice. The recipe overrides the `getVisitor()` method and constructs its visitor, passing along any configuration that visitor requires to perform its function.
@@ -69,7 +68,7 @@ package org.example.testing;
 import org.openrewrite.java.ChangeType;
 
 public class JUnit5Migration extends Recipe {
-    
+
     public JUnit5Migration(boolean addJunit5Dependencies) {
         //Add nested recipes to the execution pipeline via doNext()
         doNext(new ChangeType("org.junit.Test", "org.junit.jupiter.api.Test"));
@@ -101,12 +100,11 @@ recipeList:
   - org.example.testing.AssertToAssertions
   - org.example.testing.RemovePublicTestModifiers
   - org.example.testing.AddJUnitDependencies
-  
 ```
 
 ## Recipe Configuration & Validation
 
-OpenRewrite provides a managed environment in which a set of recipes are executed. It will instantiate recipe instances and often inject configuration properties that have been defined within configuration files. The Recipe class exposes a `validate()` method that is called by the framework to determine whether all required configuration to a recipe has been supplied. The default implementation of`validate()` provides basic required/optional validation checks if a recipe's fields are annotated with `@NonNull`. 
+OpenRewrite provides a managed environment in which a set of recipes are executed. It will instantiate recipe instances and often inject configuration properties that have been defined within configuration files. The Recipe class exposes a `validate()` method that is called by the framework to determine whether all required configuration to a recipe has been supplied. The default implementation of`validate()` provides basic required/optional validation checks if a recipe's fields are annotated with `@NonNull`.
 
 {% hint style="success" %}
 The default logic will look for both package level annotations \(NonNullFields\) and field level annotations \(NonNull, Nullable\).
@@ -116,7 +114,7 @@ In the event that a recipe requires custom validation rules different from the d
 
 ### Recipe Descriptors
 
-Rewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name \(via `Recipe.getDisplayName`\) and it's description \(via `Recipe.getDescription`\) to provide basic information about the recipe.  Additionally, Rewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields.Collectively, this meta-data is used to build a recipe descriptor and Rewrite's managed environment provides a mechanism for listing/discovering these descriptors. The descriptors are leverages to generate automated help with the context of the build plugins and they are also useful when building out reference documentation. The following is an example of how to properly define the meta-data on the recipe so that it is available during discovery and automated help:
+Rewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name \(via `Recipe.getDisplayName`\) and it's description \(via `Recipe.getDescription`\) to provide basic information about the recipe. Additionally, Rewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields.Collectively, this meta-data is used to build a recipe descriptor and Rewrite's managed environment provides a mechanism for listing/discovering these descriptors. The descriptors are leverages to generate automated help with the context of the build plugins and they are also useful when building out reference documentation. The following is an example of how to properly define the meta-data on the recipe so that it is available during discovery and automated help:
 
 ```java
 public class ChangeType extends Recipe {
@@ -136,7 +134,7 @@ public class ChangeType extends Recipe {
     public String getDescription() {
         return "Change a given type to another.";
     }
-    
+
     ...
 }
 ```
@@ -153,7 +151,7 @@ The execution pipeline dictates how a recipe is applied to a set of source files
 
 The top level recipe \(the one that initiates the execution pipeline\) and any subsequent recipes that have been chained together will all participate in the execution pipeline. Recipes are composable and therefore, nested steps may contribute additional nested recipes to the pipeline as well.
 
-Each recipe will, in turn, will be executed as a step within the pipeline and step execution consists of the following: 
+Each recipe will, in turn, will be executed as a step within the pipeline and step execution consists of the following:
 
 1. A recipe's `validate()` method is called to ensure it has been configured properly. Rewrite is not opinionated about how validation errors are handled and by default it will skip a recipe that fails validation. This behavior can be changed by the introduction of an error handler into the pipeline via the execution context.
 2. If a recipe has an associated visitor, the recipe will delegate to its associated visitor to process all source files that have been fed to the pipeline. It is this specific stage that concurrency can be introduced to process the source ASTs in parallel.
@@ -169,7 +167,7 @@ The initiation of the execution pipeline requires the creation of an execution c
 
 ### Recipe Execution Flow
 
-Each recipe that is added to the execution pipeline constitutes a execution step. It is important to understand the flow of 
+Each recipe that is added to the execution pipeline constitutes a execution step. It is important to understand the flow of
 
 ### Execution Cycles
 
@@ -177,9 +175,9 @@ The recipes in the execution pipeline may produce changes that in turn cause ano
 
 As an example, let's assume that two recipes are added to the execution pipeline. The first recipe performs whitespace-formatting to an AST and the second recipe generates additional code that is added to the same AST. If those two recipes are executed in order, the formatting recipe is applied before the second recipe adds its generated code. The execution pipeline detects that changes have been made and executes a second pass through the recipes. During the second pass, the formatting recipe will now properly format the generated code that was added as a result of the first cycle through the execution pipeline.
 
-###  Result Set
+### Result Set
 
-The successful completion of a recipe's execution pipeline produces a collection of `Result` instances.   Each result represents the changes made to a specific source file and provides access to the following information:
+The successful completion of a recipe's execution pipeline produces a collection of `Result` instances. Each result represents the changes made to a specific source file and provides access to the following information:
 
 | Method | Description |
 | :--- | :--- |
