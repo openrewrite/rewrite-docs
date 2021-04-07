@@ -299,7 +299,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.1.0</version>
+  <version>4.0.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -322,7 +322,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.1.0")
+    id("org.openrewrite.rewrite").version("4.0.0")
 }
 
 rewrite {
@@ -352,7 +352,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>3.1.0</version>
+  <version>4.0.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -375,7 +375,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("3.1.0")
+    id("org.openrewrite.rewrite").version("4.0.0")
 }
 
 rewrite {
@@ -392,5 +392,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-At this point you're ready to execute the migration by running `mvn rewrite:fix` or `gradlew rewriteFix`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+At this point you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 

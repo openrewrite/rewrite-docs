@@ -59,7 +59,7 @@ To run this recipe:
 
 1. Put the above into a rewrite.yml file at the project root
 2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](rewrite-maven-plugin.md) with `com.yourorg.SayHello` listed as an active recipe
-3. Run the "rewrite:fix" maven goal or "rewriteFix" gradle task
+3. Run the "rewrite:run" maven goal or "rewriteRun" gradle task
 
 {% hint style="success" %}
 Order of recipe declaration is not important. A declarative recipe may include another declarative recipe declared later in the same file in its recipeList.

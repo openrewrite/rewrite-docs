@@ -67,7 +67,7 @@ recipeList:
 ```
 {% endcode %}
 
-With that rewrite.yml, adding `com.yourorg.VetToVeterinary` to the list of activeRecipes in your build plugin configuration will affect the package relocation, including moving the files on disk, when you run `mvn rewrite:fix` or `gradlew rewriteFix`.
+With that rewrite.yml, adding `com.yourorg.VetToVeterinary` to the list of activeRecipes in your build plugin configuration will affect the package relocation, including moving the files on disk, when you run `mvn rewrite:run` or `gradlew rewriteRun`.
 
 
 

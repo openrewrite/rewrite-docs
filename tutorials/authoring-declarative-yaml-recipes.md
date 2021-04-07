@@ -37,7 +37,7 @@ Now that a recipe named "com.yourorg.FooToBar" has been created set that recipe 
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("3.1.0")
+    id("org.openrewrite.rewrite") version("4.0.0")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ rewrite {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>4.0.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FooToBar</recipe>
@@ -71,7 +71,7 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-Run `mvn rewrite:fix` or `gradlew rewriteFix` to apply the transformation to project A. Source files referencing the old package will be updated. Sources that were part of the com.yourorg.foo package will also be moved to directories corresponding to the new package name.
+Run `mvn rewrite:run` or `gradlew rewriteRun` to apply the transformation to project A. Source files referencing the old package will be updated. Sources that were part of the com.yourorg.foo package will also be moved to directories corresponding to the new package name.
 
 ## Updating Downstream Projects
 
@@ -99,7 +99,7 @@ Now when the next version of A is published its jar will include this recipe. As
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("3.1.0")
+    id("org.openrewrite.rewrite") version("4.0.0")
 }
 
 dependencies {
@@ -129,7 +129,7 @@ rewrite {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>4.0.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FooToBar</recipe>
@@ -144,7 +144,7 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-Run `mvn rewrite:fix` or `gradlew rewriteFix` to apply the transformation to project B. Note that we didn't have to create a rewrite.yml in project B because it found the recipe directly from its dependency on A version 2.0. So In only a few minutes we've applied a refactoring operation to a project and its consumer and development on both can continue, effectively minimizing the pain and disruption brought by the breaking change.
+Run `mvn rewrite:run` or `gradlew rewriteRun` to apply the transformation to project B. Note that we didn't have to create a rewrite.yml in project B because it found the recipe directly from its dependency on A version 2.0. So In only a few minutes we've applied a refactoring operation to a project and its consumer and development on both can continue, effectively minimizing the pain and disruption brought by the breaking change.
 
 {% hint style="success" %}
 Recipes will never be applied just because they exist on the classpath. A Recipe must be explicitly activated in the build plugin's configuration to be applied. This helps to avoid being surprised by unexpected changes to your source code.

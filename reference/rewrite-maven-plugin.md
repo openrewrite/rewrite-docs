@@ -12,9 +12,8 @@ The Rewrite Maven plugin automatically supplies any recipes you configure to run
 
 The Rewrite Maven plugin offers these goals:
 
-* `mvn rewrite:fix` - Runs the configured recipes and applies the changes locally.
-* `mvn rewrite:warn` - Generates warnings in the console for any recipes that would suggest changes, but doesn't make any changes.
-* `mvn rewrite:diff` - Generates a git-style patch file that you can review independently and then apply with `git apply target/site/rewrite/rewrite.patch`.
+* `mvn rewrite:run` - Runs the configured recipes and applies the changes locally.
+* `mvn rewrite:dryRun` - Generates warnings in the console for any recipes that would suggest changes, but doesn't make any changes.
 * `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite finds on your classpath.
 * `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org/) bill of materials outlining all of the project's dependencies, including transitive dependecies
 
@@ -39,7 +38,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>4.0.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.Spring</recipe>
@@ -49,11 +48,10 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
             <style>com.yourorg.SpringStyle</style>
           </activeStyles>
           <!-- These are the default values. It is not necessary to supply these value manually --> 
-          <reportOutputDirectory>${project.reporting.outputDirectory}/rewrite</reportOutputDirectory>
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
         </configuration>
         <dependencies>
-          <!-- This module is made up for sake of example. IT isn't packaged with Rewrite -->
+          <!-- This module is made up for sake of example. It isn't packaged with Rewrite -->
           <dependency>
             <groupId>com.yourorg.recipes</groupId>
             <artifactId>your-recipes</artifactId>
@@ -71,44 +69,21 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
 To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
 {% endhint %}
 
-## The "Fix" Goal
+## The "Run" Goal
 
-Execute`mvn rewrite:fix` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
+Execute`mvn rewrite:run` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
 ![Warnings showing which files were changed and by what visitors](../.gitbook/assets/image%20%285%29.png)
 
 After the goal finishes executing, run `git diff` to see what changes were made, review, and commit them.
 
-![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:fix goal](../.gitbook/assets/image%20%287%29.png)
+![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:run goal](../.gitbook/assets/image%20%287%29.png)
 
-## The "Warn" Goal
+## The "DryRun" Goal
 
-Execute`mvn rewrite:warn` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by a recipe.
+Execute`mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by a recipe.
 
 It could also be manually called in a continuous integration environment, and if you so choose, fail the continuous integration build if the build log contains any such warnings.
-
-## The "Diff" Goal
-
-Execute`mvn rewrite:diff` to run the configured recipes and generate a git-style patch file. This is a little less disruptive than directly writing the changes to disk. Afterwards, you can review the changes with `git diff target/site/rewrite/rewrite.patch`, and when you are comfortable with the changes, use `git apply` to apply them to your source files on disk. Then commit the changes.
-
-The diff goal also generates warnings in the build log wherever it proposes changes. The warning will also contain the command to run to apply the changes for a particular Maven module. Notice how a separate patch file is generated for each module in a multi-module project.
-
-![Log output showing what changed and how to apply the patch](../.gitbook/assets/image%20%284%29.png)
-
-The output directory of the `rewrite.patch` file can be controlled by setting the `reportOutputDirectory` property. This value is relativized for each module of a multi-module project and a patch generated individually in each module.
-
-{% code title="pom.xml" %}
-```markup
-<plugin>
-    <groupId>org.openrewrite.maven</groupId>
-    <artifactId>rewrite-maven-plugin</artifactId>
-    <version>3.1.0</version>
-    <configuration>
-        <reportOutputDirectory>.rewrite</reportOutputDirectory>
-    </configuration>
-</plugin>
-```
-{% endcode %}
 
 ## The "Discover" Goal
 
