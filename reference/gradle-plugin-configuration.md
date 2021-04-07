@@ -17,7 +17,7 @@ Apply the org.openrewrite.rewrite plugin to your build:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("3.1.0")
+    id("org.openrewrite.rewrite") version("4.0.0")
 }
 rewrite {
     // Rewrite Extension Configuration
@@ -40,7 +40,7 @@ With these steps taken, your root build.gradle may look similar to this:
 
 ```groovy
  plugins {
-     id("org.openrewrite.rewrite") version("3.1.0") apply(false)
+     id("org.openrewrite.rewrite") version("4.0.0") apply(false)
  }
 
  subprojects {
@@ -66,7 +66,7 @@ The `rewrite` DSL exposes a few configuration options:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("3.1.0")
+    id("org.openrewrite.rewrite") version("4.0.0")
 }
 rewrite {
     activeRecipe("com.yourorg.ExampleRecipe", "com.yourorg.ExampleRecipe2")
@@ -112,7 +112,7 @@ Once a pre-packaged recipe is the appropriate classpath, you can tell the Gradle
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("3.1.0")
+    id("org.openrewrite.rewrite") version("4.0.0")
 }
 
 repositories {
@@ -129,21 +129,21 @@ rewrite {
 }
 ```
 
-## The "Fix" Task
+## The "Run" Task
 
-Execute`gradle rewriteFix` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The fix goal generates warnings in the build log wherever it makes changes to source files.
+Execute`gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
-![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output.png)
+![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-run-gradle-output.png)
 
 After the goal finishes executing, run `git diff` \(or your VCS system's equivalent\) to see what changes were made, review, and commit them.
 
-![Example of changes made to netflix conductor by the rewriteFix task](../.gitbook/assets/rewrite-fix-git-diff-output.png)
+![Example of changes made to netflix conductor by the rewriteRun task](../.gitbook/assets/rewrite-run-git-diff-output.png)
 
-## The "Warn" Task
+## The "DryRun" Task
 
-Execute`gradle rewriteWarn` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
+Execute`gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
 
-![Listing of source files that would be changed if rewriteFix were run](../.gitbook/assets/rewrite-warn-gradle-output.png)
+![Listing of source files that would be changed if rewriteRun were run](../.gitbook/assets/rewrite-dryrun-gradle-output.png)
 
 It could also be manually called in a continuous integration environment, and if you so choose, fail the continuous integration build if the build log contains any such warnings.
 
