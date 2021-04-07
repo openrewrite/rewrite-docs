@@ -30,7 +30,7 @@ With the plugin applied, the `rewrite` DSL is available for configuration.
 
 There are innumerable different ways a multi-project Gradle build could potentially be configured. These instructions assume that the multi-project build in question is composed entirely of Java projects. If that isn't the case for your build, and you cannot easily copy and paste these snippets, the key point is to apply and configure the Rewrite plugin after wherever you apply the Java plugin.
 
-1. In the root project's build.gradle, in the `plugins` block, add the rewrite plugin to your build's classpath with `apply` set to \`false.
+1. In the root project's build.gradle, in the `plugins` block, add the rewrite plugin to your build's classpath with `apply` set to `false`.
 
    This tells Gradle to download the plugin but not to activate it for the current project.
 

@@ -48,8 +48,7 @@ See more information about what recipes are available and how to configure them,
 
 #### CycloneDx BOM Generation
 
-To generate a [CycloneDx](https://cyclonedx.org/) bom with the maven plugin run `mvn rewrite:cyclonedx`.  The gradle plugin does not yet generate cyclonedx boms.  
-
+To generate a [CycloneDx](https://cyclonedx.org/) bom with the maven plugin run `mvn rewrite:cyclonedx`. The gradle plugin does not yet generate cyclonedx boms.
 
 ### **Simplified YAML File Format**
 
@@ -68,6 +67,4 @@ recipeList:
 {% endcode %}
 
 With that rewrite.yml, adding `com.yourorg.VetToVeterinary` to the list of activeRecipes in your build plugin configuration will affect the package relocation, including moving the files on disk, when you run `mvn rewrite:run` or `gradlew rewriteRun`.
-
-
 
