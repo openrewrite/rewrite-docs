@@ -15,7 +15,7 @@ The Rewrite Maven plugin offers these goals:
 * `mvn rewrite:run` - Runs the configured recipes and applies the changes locally.
 * `mvn rewrite:dryRun` - Generates warnings in the console for any recipes that would suggest changes, but doesn't make any changes.
 * `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite finds on your classpath.
-* `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org/) bill of materials outlining all of the project's dependencies, including transitive dependecies
+* `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org/) bill of materials outlining all of the project's dependencies, including transitive dependencies.
 
 {% hint style="info" %}
 In some circumstances, depending on how your project pom.xml is configured, you may get a [`NoPluginFoundForPrefixException`](https://cwiki.apache.org/confluence/display/MAVEN/NoPluginFoundForPrefixException). The root cause for this varies from pom.xml to pom.xml. In any case, as a quick fix to get unstuck, try referencing the fully-qualified rewrite-maven-plugin coordinates instead of the shorthand prefix. That is, try using `mvn org.openrewrite.maven:rewrite-maven-plugin:GOAL` (such as `mvn org.openrewrite.maven:rewrite-maven-plugin:run`, etc.) rather than `mvn rewrite:GOAL`.
