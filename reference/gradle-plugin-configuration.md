@@ -133,7 +133,7 @@ rewrite {
 
 Execute`gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
-![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output%20%281%29.png)
+![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output%20%282%29%20%281%29.png)
 
 After the goal finishes executing, run `git diff` \(or your VCS system's equivalent\) to see what changes were made, review, and commit them.
 
