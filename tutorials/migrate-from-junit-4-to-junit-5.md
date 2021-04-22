@@ -362,7 +362,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.1</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -383,7 +383,7 @@ rewrite {
 }
 
 dependencies {
-    compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.1.0")
+    compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
 
     // Other project dependencies
 }
