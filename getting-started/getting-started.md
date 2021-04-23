@@ -220,7 +220,7 @@ After applying these steps, the relevant portions of your build file will look l
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-spring</artifactId>
-      <version>4.0.2</version>
+      <version>4.1.0</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -244,7 +244,7 @@ rewrite {
 }
 
 dependencies {
-    compileOnly("org.openrewrite.recipe:rewrite-spring:4.0.2")
+    compileOnly("org.openrewrite.recipe:rewrite-spring:4.1.0")
 
     // Other project dependencies
 }
