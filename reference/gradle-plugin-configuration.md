@@ -89,25 +89,15 @@ The plugin automatically scans the compilation time classpath of each [SourceSet
 Because the plugin uses classpath scanning, dependencies of the project can include Rewrite recipes in their releases to help migrate users of their library from one version to another.
 {% endhint %}
 
-To make pre-packaged Rewrite recipes available to apply to your product code in the "main" SourceSet, add them as `compileOnly` dependencies:
+To make pre-packaged Rewrite recipes available for activation, add them as `rewrite` dependencies:
 
 ```groovy
 dependencies {
-    compileOnly("org.openrewrite.recipe:rewrite-spring:4.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.1.1")
 }
 ```
 
-To make pre-packaged Rewrite recipes available to apply to your test code, add them as `testCompileOnly` dependencies:
-
-```groovy
-dependencies {
-    testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
-}
-```
-
-To make pre-packaged Rewrite recipes available to any other `SourceSet`, add them as `<sourceSetName>CompileOnly` dependencies.
-
-Once a pre-packaged recipe is the appropriate classpath, you can tell the Gradle plugin to activate it the `rewrite` DSL. For example, here is how you would activate the `org.openrewrite.java.testing.junit5.JUnit5BestPractices` Recipe that comes with `rewrite-testing-frameworks` in a single-project Gradle build:
+Once a pre-packaged recipe has been added to the `rewrite` dependency configuration, you can tell the Gradle plugin to activate it the `rewrite` DSL. For example, here is how you would activate the `org.openrewrite.java.testing.junit5.JUnit5BestPractices` Recipe that comes with `rewrite-testing-frameworks` in a single-project Gradle build:
 
 ```groovy
 plugins {
@@ -121,7 +111,7 @@ repositories {
 
 dependencies {
     testImplementation("junit:junit:4.13")
-    testCompileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
 }
 
 rewrite {

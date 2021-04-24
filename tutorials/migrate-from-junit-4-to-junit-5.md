@@ -330,7 +330,7 @@ rewrite {
 }
 
 dependencies {
-    compileOnly("org.openrewrite.recipe:rewrite-spring:4.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.0.2")
 
     // Other project dependencies
 }
@@ -383,7 +383,7 @@ rewrite {
 }
 
 dependencies {
-    compileOnly("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
 
     // Other project dependencies
 }
