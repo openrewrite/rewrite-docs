@@ -1,4 +1,4 @@
-# Remove unnecessary parentheses
+# Unnecessary parentheses
 
-**org.openrewrite.java.cleanup.UnnecessaryParentheses**  
+**org.openrewrite.java.cleanup.UnnecessaryParentheses**
 
