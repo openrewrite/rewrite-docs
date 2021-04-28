@@ -66,7 +66,7 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 | :--- | :---: |
 | Publishes CycloneDX BOM | ⬤ |
 
-| Code Cleanup & Hygiene |  |
+| Code Cleanup & Hygiene | Progress |
 | :--- | :--- |
 | JUnit tests should include assertions | ⬤ |
 | Fix covariant equals\(\) implementations | ⬤ |
@@ -86,5 +86,9 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 | Replace primitive wrapper class constructor usage with valueOf\(\) | ⬤ |
 | Convert `BigDecimal` counding constants to the equivalent `RoundingMode` enum | ⬤ |
 
-
+| Security | Progress |
+| :--- | :--- |
+| Find plaintext secrets, such as RSA keys | ⬤ |
+| Fix XmlParser XXEVulnerability | ⬤ |
+| Find result of File.mkdirs\(\) ignored | ⬤ |
 
