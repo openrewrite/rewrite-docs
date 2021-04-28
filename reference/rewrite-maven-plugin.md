@@ -13,7 +13,7 @@ The Rewrite Maven plugin automatically supplies any recipes you configure to run
 The Rewrite Maven plugin offers these goals:
 
 * `mvn rewrite:run` - Runs the configured recipes and applies the changes locally.
-* `mvn rewrite:dryRun` - Generates warnings in the console for any recipes that would suggest changes, but doesn't make any changes.
+* `mvn rewrite:dryRun` - Generates warnings in the console for any recipes that would make changes, but doesn't make any changes.
 * `mvn rewrite:discover` - Generate a report showing the available and applied recipes based on what Rewrite finds on your classpath.
 * `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org/) bill of materials outlining all of the project's dependencies, including transitive dependencies.
 
@@ -85,9 +85,13 @@ After the goal finishes executing, run `git diff` to see what changes were made,
 
 ## The "DryRun" Goal
 
-Execute`mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by a recipe.
+Execute`mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files at all. This goal can be used to preview the changes that would be made by a recipe.
 
-It could also be manually called in a continuous integration environment, and if you so choose, fail the continuous integration build if the build log contains any such warnings.
+This goal also produces a report, in the form of a patch file, in which you can see the exact changes that would be made were you to run `mvn rewrite:run`.
+
+![Example rewrite.patch file produced by dryRun](../.gitbook/assets/image%20%2822%29.png)
+
+`dryRun` can be called in a continuous integration environment, and if you so choose, fail the build if the build log contains any such warnings.
 
 ## The "Discover" Goal
 
