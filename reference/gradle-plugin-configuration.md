@@ -93,7 +93,7 @@ To make pre-packaged Rewrite recipes available for activation, add them as `rewr
 
 ```groovy
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.1.2")
 }
 ```
 
