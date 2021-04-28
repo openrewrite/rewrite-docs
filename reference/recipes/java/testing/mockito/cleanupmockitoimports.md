@@ -1,5 +1,5 @@
 # Cleanup Mockito Imports
 
 **org.openrewrite.java.testing.mockito.CleanupMockitoImports**  
-_Orders imports and removes unused imports org.mockito import symbols_
+_Orders imports and removes unused imports org.mockito import symbols._
 

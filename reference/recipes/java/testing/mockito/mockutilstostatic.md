@@ -1,5 +1,5 @@
 # MockUtils To Static
 
 **org.openrewrite.java.testing.mockito.MockUtilsToStatic**  
-_best-effort attempt to remove MockUtil instances_
+_Best-effort attempt to remove MockUtil instances._
 

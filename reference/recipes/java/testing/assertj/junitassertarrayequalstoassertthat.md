@@ -1,5 +1,5 @@
 # JUnitAssertArrayEquals To AssertThat
 
 **org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat**  
-_convert JUnit-style assertArrayEquals\(\) to assertJ's assertThat\(\).contains..._
+_Convert JUnit-style assertArrayEquals() to assertJ's assertThat().contains() equivalents._
 

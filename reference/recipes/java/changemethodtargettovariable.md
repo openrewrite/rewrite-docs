@@ -3,7 +3,7 @@
 **org.openrewrite.java.ChangeMethodTargetToVariable**  
 _Change method invocations to method calls on a variable._
 
-## Options
+### Options
 
 * methodPattern: String!
   * A method pattern, expressed as a pointcut expression, that is used to find matching method invocations.

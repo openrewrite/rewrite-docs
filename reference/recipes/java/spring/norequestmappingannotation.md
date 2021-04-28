@@ -1,5 +1,5 @@
-# No Method Declaration Request Mapping Annotations
+# No `@RequestMapping` annotations
 
 **org.openrewrite.java.spring.NoRequestMappingAnnotation**  
-_Replace method declaration @RequestMapping annotations with the associated variant as defined by the request method type \(GET, POST, PUT, PATCH, DELETE\)_
+_Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@PostMapping`, etc. when possible._
 

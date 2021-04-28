@@ -1,7 +1,6 @@
 # Assertj
 
-## Recipes
-
+### Recipes
 * [AssertJ best practices](assertj.md)
 * [Statically import AssertJ's `assertThat`](staticimports.md)
 * [Migrate JUnit asserts to AssertJ](junittoassertj.md)
@@ -14,4 +13,3 @@
 * [JUnit AssertSame to AssertThat](junitassertsametoassertthat.md)
 * [JUnit AssertTrue to AssertThat](junitasserttruetoassertthat.md)
 * [JUnitFailToAssert to AssertJFail](junitfailtoassertjfail.md)
-

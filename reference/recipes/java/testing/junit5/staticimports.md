@@ -10,6 +10,5 @@ _Always use a static import for assertion methods._
 
 ## Recipe list
 
-* [Use static import](../../usestaticimport.md)
-  * methodPattern: org.junit.jupiter.api.Assertions \*\(..\)
-
+* [Use static import](../../../java/usestaticimport.md)
+  * methodPattern: org.junit.jupiter.api.Assertions *(..)

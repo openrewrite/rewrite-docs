@@ -1,6 +1,0 @@
-# Boot
-
-## Subcategories
-
-* [Config](config/)
-

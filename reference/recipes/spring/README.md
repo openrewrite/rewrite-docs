@@ -1,6 +1,0 @@
-# Spring
-
-## Subcategories
-
-* [Boot](boot/)
-
