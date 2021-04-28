@@ -4,7 +4,7 @@ description: 'Search, Organize, and Refactor your Maven poms'
 
 # Automating Maven Dependency Management
 
-Dependency management is a complex and often frustrating part of software development. Sometimes a transitive dependency you'd never expect makes it onto your runtime classpath. Sometimes your build tool resolves a conflict between requested dependency versions in an unexpected way. Despite the headaches for most projects it wouldn't make sense to forgo dependencies.
+Dependency management is a complex and often frustrating part of software development. Sometimes a transitive dependency you'd never expect makes it onto your runtime classpath. Sometimes your build tool resolves a conflict between requested dependency versions in an unexpected way. Despite the headaches, it wouldn't make sense for most projects to forgo dependencies.
 
 Rewrite can help. In this tutorial we'll learn how to automate common dependency management tasks by migrating a project from one [slf4j](http://www.slf4j.org/) implementation to another.
 
@@ -14,7 +14,7 @@ Currently Rewrite's dependency management capabilities are only implemented for 
 
 ## Setup
 
-1. Clone our fork of [spring-petlinic](https://github.com/openrewrite/spring-petclinic-migration), or select your own project
+1. Clone our fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration), or select your own project
 2. Familiarize yourself with the basics of applying the rewrite-maven-plugin as described in our [quickstart guide](../getting-started/getting-started.md).
 
 {% hint style="warning" %}
