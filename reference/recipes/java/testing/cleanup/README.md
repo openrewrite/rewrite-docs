@@ -1,5 +1,5 @@
 # Cleanup
 
 ### Recipes
-* [Testing Frameworks best practices](bestpractices.md)
-* [Tests should include assertions](testsshouldincludeassertions.md)
+* [Testing best practices](bestpractices.md)
+* [Include an assertion in tests](testsshouldincludeassertions.md)

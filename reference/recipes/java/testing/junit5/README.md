@@ -1,7 +1,6 @@
 # Junit5
 
-## Recipes
-
+### Recipes
 * [JUnit Jupiter best practices](junit5bestpractices.md)
 * [Statically import JUnit Jupiter assertions](staticimports.md)
 * [JUnit Jupiter migration from JUnit 4.x](junit4to5migration.md)
@@ -12,14 +11,13 @@
 * [Category To Tag](categorytotag.md)
 * [Cleanup JUnit Imports](cleanupjunitimports.md)
 * [ExpectedException To AssertThrows](expectedexceptiontoassertthrows.md)
-* [Pragmatists @RunWith\(JUnitParamsRunner.class\) to JUnit Jupiter Parameterized Tests](https://github.com/openrewrite/rewrite-docs/tree/8187261db411da601c9fab1ad6a941fadeeed81b/reference/recipes/java/testing/junit5/junitparamsrunnertoparameterized.md)
-* [MockitoJUnit to MockitoExtension](https://github.com/openrewrite/rewrite-docs/tree/8187261db411da601c9fab1ad6a941fadeeed81b/reference/recipes/java/testing/junit5/mockitojunittomockitoextension.md)
-* [JUnit4 @RunWith\(Parameterized.class\) to JUnit Jupiter Parameterized Tests](parameterizedrunnertoparameterized.md)
+* [Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests](junitparamsrunnertoparameterized.md)
+* [MockitoJUnit to MockitoExtension](mockitojunittomockitoextension.md)
+* [JUnit4 @RunWith(Parameterized.class) to JUnit Jupiter Parameterized Tests](parameterizedrunnertoparameterized.md)
 * [Remove JUnit4 @RunWith annotations that do not require an @ExtendsWith replacement.](removeobsoleterunners.md)
 * [JUnit4 @RunWith to JUnit Jupiter @ExtendWith](runnertoextension.md)
 * [TemporaryFolder to TempDir](temporaryfoldertotempdir.md)
 * [Update Before After Annotations](updatebeforeafterannotations.md)
-* [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](https://github.com/openrewrite/rewrite-docs/tree/8187261db411da601c9fab1ad6a941fadeeed81b/reference/recipes/java/testing/junit5/updatemockwebserver.md)
+* [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](updatemockwebserver.md)
 * [Migrate JUnit4 `@Test` annotations to JUnit5](updatetestannotation.md)
 * [Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`](usetestmethodorder.md)
-

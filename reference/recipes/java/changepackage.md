@@ -3,12 +3,12 @@
 **org.openrewrite.java.ChangePackage**  
 _Change package names._
 
-## Options
+### Options
 
 * oldFullyQualifiedPackageName: String!
   * Fully-qualified package name of the old package.
 * newFullyQualifiedPackageName: String!
   * Fully-qualified package name of the replacement package.
-* recursive: boolean
+* recursive: Boolean
   * Recursively change subpackage names
 

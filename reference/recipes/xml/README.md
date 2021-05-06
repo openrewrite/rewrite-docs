@@ -1,10 +1,7 @@
 # Xml
 
-## Recipes
-
+### Recipes
 * [Format XML](autoformat.md)
 
-## Subcategories
-
-* [Search](search/)
-
+### Subcategories
+* [Search](search/README.md)

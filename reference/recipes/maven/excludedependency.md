@@ -3,7 +3,7 @@
 **org.openrewrite.maven.ExcludeDependency**  
 _Exclude specified dependency from any dependency that transitively includes it._
 
-## Options
+### Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.

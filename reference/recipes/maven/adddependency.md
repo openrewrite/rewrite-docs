@@ -1,8 +1,8 @@
 # Add Maven dependency
 
-**org.openrewrite.maven.AddDependency**
+**org.openrewrite.maven.AddDependency**  
 
-## Options
+### Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.
@@ -19,7 +19,7 @@
 * scope: String
 * type: String
 * familyPattern: String
-  * A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '\*' as a wildcard character.
+  * A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character.
 * onlyIfUsing: List
   * Add the dependency only if using one of the supplied types. Types should be identified by fully qualified class name or a glob expression
 

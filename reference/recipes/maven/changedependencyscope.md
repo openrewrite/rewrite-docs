@@ -3,7 +3,7 @@
 **org.openrewrite.maven.ChangeDependencyScope**  
 _Add or alter the scope of the specified dependency_
 
-## Options
+### Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.

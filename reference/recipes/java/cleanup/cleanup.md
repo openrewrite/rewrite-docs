@@ -21,3 +21,4 @@ _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expre
 * [Unnecessary throws](../../java/cleanup/unnecessarythrows.md)
 * [Use diamond operator](../../java/cleanup/usediamondoperator.md)
 * [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
+* [`BigDecimal` rounding constants to `RoundingMode` enums](../../java/cleanup/bigdecimalroundingconstantstoenums.md)

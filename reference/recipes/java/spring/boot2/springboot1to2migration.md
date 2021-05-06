@@ -27,19 +27,19 @@ _Migrates Spring Boot 1.x to 2.x including best practices._
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: org.webjars
   * artifactId: webjars-locator
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: org.springframework.boot.web.support.SpringBootServletInitializer
   * newFullyQualifiedTypeName: org.springframework.boot.web.servlet.support.SpringBootServletInitializer
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.HttpMessageConverters
   * newFullyQualifiedTypeName: org.springframework.boot.autoconfigure.http.HttpMessageConverters
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.ErrorController
   * newFullyQualifiedTypeName: org.springframework.boot.web.servlet.error.ErrorController
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: org.hibernate.validator.constraints.NotEmpty
   * newFullyQualifiedTypeName: javax.validation.constraints.NotEmpty
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: org.hibernate.validator.constraints.NotBlank
   * newFullyQualifiedTypeName: javax.validation.constraints.NotBlank
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -47,17 +47,16 @@ _Migrates Spring Boot 1.x to 2.x including best practices._
   * artifactId: validation-api
   * version: 2.x
   * releasesOnly: false
-  * onlyIfUsing: \[javax.validation.constraints.NotBlank, javax.validation.constraints.NotEmpty\]
+  * onlyIfUsing: [javax.validation.constraints.NotBlank, javax.validation.constraints.NotEmpty]
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: org.springframework.boot
   * artifactId: spring-boot-starter-validation
   * version: 2.x
   * releasesOnly: false
-  * onlyIfUsing: \[javax.validation.constraints.NotBlank, javax.validation.constraints.NotEmpty\]
-* [Remove Autowired Annotation from MethodDeclarations](../noautowired.md)
-* [Convert multi condition ConditionalOnBean Annotations to AnyNestedCondition](conditionalonbeananynestedcondition.md)
-* [RestTemplateBuilderRequestFactory](resttemplatebuilderrequestfactory.md)
-* [Replace EnvironmentUtils with TestPropertyValues](replacedeprecatedenvironmenttestutils.md)
-* [JUnit Jupiter migration from JUnit 4.x for Spring Boot 2.x projects](springboot2junit4to5migration.md)
-* [Spring Boot 2.x best practices](springboot2bestpractices.md)
-
+  * onlyIfUsing: [javax.validation.constraints.NotBlank, javax.validation.constraints.NotEmpty]
+* [Remove Autowired Annotation from MethodDeclarations](../../../java/spring/noautowired.md)
+* [Convert multi condition ConditionalOnBean Annotations to AnyNestedCondition](../../../java/spring/boot2/conditionalonbeananynestedcondition.md)
+* [RestTemplateBuilderRequestFactory](../../../java/spring/boot2/resttemplatebuilderrequestfactory.md)
+* [Replace EnvironmentUtils with TestPropertyValues](../../../java/spring/boot2/replacedeprecatedenvironmenttestutils.md)
+* [JUnit Jupiter migration from JUnit 4.x for Spring Boot 2.x projects](../../../java/spring/boot2/springboot2junit4to5migration.md)
+* [Spring Boot 2.x best practices](../../../java/spring/boot2/springboot2bestpractices.md)

@@ -1,7 +1,7 @@
-# Tests should include assertions
+# Include an assertion in tests
 
 **org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions**  
-_For Tests not having any assertions, wrap the statements with JUnit 5's Assertions.assertThrowDoesNotThrow (Sonar RSPEC-2699)._
+_For tests not having any assertions, wrap the statements with JUnit Jupiter's `Assertions#assertThrowDoesNotThrow(..)`._
 
 ### Options
 

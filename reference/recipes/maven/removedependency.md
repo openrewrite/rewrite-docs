@@ -1,9 +1,9 @@
 # Remove Maven dependency
 
 **org.openrewrite.maven.RemoveDependency**  
-_Removes a single dependency from the  section of the pom.xml._
+_Removes a single dependency from the <dependencies> section of the pom.xml._
 
-## Options
+### Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.
