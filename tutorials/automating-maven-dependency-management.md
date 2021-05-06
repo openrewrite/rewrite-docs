@@ -33,7 +33,7 @@ First add the rewrite-maven-plugin to the pom.xml:
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>4.2.0</version>
+    <version>4.2.2</version>
     <configuration>
         <activeRecipes>
             <recipe>com.yourorg.LogbackInsight</recipe>
@@ -59,7 +59,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now run `mvn rewrite:dryRun` . This wont make any changes to the project's files. It will produce a rewrite.patch file in the reports directory, with a link in the console log:
+Now run `mvn rewrite:dryRun` . This won't make changes to the project's files. It will produce a rewrite.patch file in the reports directory, with a link in the console log:
 
 {% code title="Console Log" %}
 ```text
@@ -79,7 +79,7 @@ At this point you have all of the information you need to manually exclude logba
 
 ## Switching SLF4J Implementations
 
-Use the rewrite recipes [ExcludeDependency ](../reference/recipes/maven/excludedependency.md)and [AddDependency](../reference/recipes/maven/adddependency.md) to ensure that only your preferred slf4j dependency is used. If a new transitive dependency on logback-classic appears in the future, ExcludeDependency will detect and exclude it. 
+Use the rewrite recipes [ExcludeDependency](../reference/recipes/maven/excludedependency.md)and [AddDependency](../reference/recipes/maven/adddependency.md) to ensure that only your preferred slf4j dependency is used. If a new transitive dependency on logback-classic appears in the future, ExcludeDependency will detect and exclude it. 
 
 Add this to your rewrite.yml:
 
@@ -108,7 +108,7 @@ And set the `com.yourorg.UseSlf4jSimple` recipe as active in your pom.xml:
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>4.2.0</version>
+    <version>4.2.2</version>
     <configuration>
         <activeRecipes>
             <recipe>com.yourorg.UseSlf4jSimple</recipe>
@@ -136,5 +136,5 @@ Of course, CI failures are always at least a little bit frustrating for develope
 
 ## Next Steps
 
-The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven ](../reference/recipes/maven/)recipe reference for the full listing of dependency management recipes. 
+The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven](../reference/recipes/maven/)recipe reference for the full listing of dependency management recipes. 
 

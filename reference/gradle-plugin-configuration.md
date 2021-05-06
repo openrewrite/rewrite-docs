@@ -17,7 +17,7 @@ Apply the org.openrewrite.rewrite plugin to your build:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("4.2.0")
+    id("org.openrewrite.rewrite") version("4.2.1")
 }
 rewrite {
     // Rewrite Extension Configuration
@@ -40,7 +40,7 @@ With these steps taken, your root build.gradle may look similar to this:
 
 ```groovy
  plugins {
-     id("org.openrewrite.rewrite") version("4.2.0") apply(false)
+     id("org.openrewrite.rewrite") version("4.2.1") apply(false)
  }
 
  subprojects {
@@ -62,18 +62,20 @@ The `rewrite` DSL exposes a few configuration options:
 * `activeRecipe` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
 * `activeStyle` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
 * `configFile` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). This file is not required to exist. If not specified otherwise, the default value is `<root project directory>/rewrite.yml`.
+* `failOnDryRunResults` - Boolean flag toggling whether `rewriteDryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`. This is convenient for integrating `rewriteDryRun` as a continuous integration gate.
 
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("4.2.0")
+    id("org.openrewrite.rewrite") version("4.2.1")
 }
 rewrite {
     activeRecipe("com.yourorg.ExampleRecipe", "com.yourorg.ExampleRecipe2")
     activeStyle("com.yourorg.ExampleStyle", "com.yourorg.ExampleStyle2")
 
-    // This is the default value of configFile. It is not necessary to specify this value
+    // These are default values. It is not necessary to supply these values manually.
     configFile = project.getRootProject().file("rewrite.yml")
+    failOnDryRunResults = false
 }
 ```
 
@@ -102,7 +104,7 @@ Once a pre-packaged recipe has been added to the `rewrite` dependency configurat
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("4.2.0")
+    id("org.openrewrite.rewrite") version("4.2.1")
 }
 
 repositories {
@@ -121,7 +123,7 @@ rewrite {
 
 ## The "Run" Task
 
-Execute`gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
+Execute `gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
 ![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output%20%282%29%20%282%29%20%284%29%20%284%29%20%285%29%20%286%29.png)
 
@@ -131,11 +133,18 @@ After the goal finishes executing, run `git diff` \(or your VCS system's equival
 
 ## The "DryRun" Task
 
-Execute`gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
+Execute `gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
 
 ![Listing of source files that would be changed if rewriteRun were run](../.gitbook/assets/rewrite-warn-gradle-output%20%283%29%20%283%29%20%283%29%20%281%29.png)
 
-It could also be manually called in a continuous integration environment, and if you so choose, fail the continuous integration build if the build log contains any such warnings.
+`rewriteDryRun` can be used as a "gate" in a continuous integration environment by failing the build if `rewriteDryRun` detects changes to be made and `failOnDryRunResults` is set:
+
+```groovy
+rewrite {
+    activeRecipe("...")
+    failOnDryRunResults = true
+}
+```
 
 ## The "Discover" Task
 
@@ -148,4 +157,3 @@ Execute `gradle rewriteDiscover` to list the recipes available on your classpath
 * [Github project](https://github.com/openrewrite/rewrite-gradle-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-gradle-plugin/issues)
 * [Gradle Plugin Portal Listing](https://plugins.gradle.org/plugin/org.openrewrite.rewrite)
-

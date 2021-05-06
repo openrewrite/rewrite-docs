@@ -299,7 +299,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.2.0</version>
+  <version>4.2.2</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -322,7 +322,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("4.2.0")
+    id("org.openrewrite.rewrite").version("4.2.1")
 }
 
 rewrite {
@@ -330,7 +330,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.2.0")
 
     // Other project dependencies
 }
@@ -340,7 +340,7 @@ dependencies {
 {% endtabs %}
 
 {% hint style="info" %}
-`SpringBoot2JUnit4to5Migration`is a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
+`SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
 {% endhint %}
 
 If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the recipe `org.openrewrite.java.testing.junit5.JUnit5BestPractices`
@@ -352,7 +352,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.2.0</version>
+  <version>4.2.2</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -375,7 +375,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("4.2.0")
+    id("org.openrewrite.rewrite").version("4.2.1")
 }
 
 rewrite {
@@ -383,7 +383,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.3.0")
 
     // Other project dependencies
 }
@@ -393,4 +393,3 @@ dependencies {
 {% endtabs %}
 
 At this point you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
-

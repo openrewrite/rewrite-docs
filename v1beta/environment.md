@@ -45,7 +45,7 @@ Rewrite's `Environment` abstraction provides discovery, activation, and configur
   </tbody>
 </table>
 
-The code below demonstrates how to manually construct an `Environment` and seed it with a variety of different resource loaders. 
+The code below demonstrates how to manually construct an `Environment` and seed it with a variety of different resource loaders.
 
 ```java
 File rewriteYml = ...;
@@ -70,5 +70,4 @@ try(InputStream rewriteInputStream = new FileInputStream(rewriteYml)) {
 }
 ```
 
-Once an instance of the `Environment` has been created, it can be interrogated to list all available recipes and styes. There are also facilities for retrieving the recipe descriptions which provides a description of the recipe and its available options. 
-
+Once an instance of the `Environment` has been created, it can be interrogated to list all available recipes and styes. There are also facilities for retrieving the recipe descriptions which provides a description of the recipe and its available options.

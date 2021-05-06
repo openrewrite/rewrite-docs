@@ -117,7 +117,7 @@ dependencies {
         <artifactId>rewrite-xml</artifactId>
         <version>7.3.0</version>
         <scope>compile</scope>
-    </dependency>    
+    </dependency>
 
     <!-- For authoring tests for any kind of Recipe -->
     <dependency>
@@ -148,7 +148,7 @@ In order to be able to use Rewrite to modernize old projects it's important to b
 {% code title="build.gradle" %}
 ```groovy
 // See https://docs.gradle.org/current/userguide/building_java_projects.html#sec:java_cross_compilation
-tasks.withType(JavaCompile) {        
+tasks.withType(JavaCompile) {
     sourceCompatibility = JavaVersion.VERSION_1_8.toString()
     targetCompatibility = JavaVersion.VERSION_1_8.toString()
 }
@@ -159,11 +159,11 @@ tasks.withType(JavaCompile) {
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-  <!-- see https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html -->
-  <properties>
+<!-- see https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html -->
+<properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
+</properties>
 ```
 {% endcode %}
 {% endtab %}
@@ -295,4 +295,3 @@ With your project set up as instructed by this guide the jar produced by your bu
 * [Writing a Java Refactoring Recipe](../tutorials/writing-a-java-refactoring-recipe.md)
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
-
