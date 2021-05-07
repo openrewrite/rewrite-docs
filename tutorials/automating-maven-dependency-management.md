@@ -21,7 +21,7 @@ Currently Rewrite's dependency management capabilities are only implemented for 
 The sample spring-petclinic project is based on an older version of project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
 {% endhint %}
 
-## Getting Insight into your Dependencies 
+## Getting Insight into your Dependencies
 
 The first step in changing your dependencies is knowing what they are. First let's find out which of the existing dependencies are using logback-classic. There's no mention of logback in the pom.xml itself, but any of the dependencies that are there could be bringing it in transitively.
 
@@ -59,7 +59,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now run `mvn rewrite:dryRun` . This wont make any changes to the project's files. It will produce a rewrite.patch file in the reports directory, with a link in the console log:
+Now run `mvn rewrite:dryRun`. This won't make changes to the project's files. It will produce a rewrite.patch file in the reports directory, with a link in the console log:
 
 {% code title="Console Log" %}
 ```text
@@ -79,7 +79,7 @@ At this point you have all of the information you need to manually exclude logba
 
 ## Switching SLF4J Implementations
 
-Use the rewrite recipes [ExcludeDependency ](../reference/recipes/maven/excludedependency.md)and [AddDependency](../reference/recipes/maven/adddependency.md) to ensure that only your preferred slf4j dependency is used. If a new transitive dependency on logback-classic appears in the future, ExcludeDependency will detect and exclude it. 
+Use the rewrite recipes [ExcludeDependency](../reference/recipes/maven/excludedependency.md)and [AddDependency](../reference/recipes/maven/adddependency.md) to ensure that only your preferred slf4j dependency is used. If a new transitive dependency on logback-classic appears in the future, ExcludeDependency will detect and exclude it.
 
 Add this to your rewrite.yml:
 
@@ -130,11 +130,10 @@ No explicit version number is added for slf4j-simple because an appropriate vers
 
 ## CI Integration
 
-`mvn rewrite:dryRun` only produces warnings in the console output and a rewrite.patch file if there are active recipes that would make changes. This means `dryRun` can be used in your CI pipeline to prevent new logback-classic dependencies being added in an ongoing way. Configure the CI step to fail if `dryRun` emits any warnings to the console log, or if a rewrite.patch file is produced, and you have an effective guard against regression. 
+`mvn rewrite:dryRun` only produces warnings in the console output and a rewrite.patch file if there are active recipes that would make changes. This means `dryRun` can be used in your CI pipeline to prevent new logback-classic dependencies being added in an ongoing way. Configure the CI step to fail if `dryRun` emits any warnings to the console log, or if a rewrite.patch file is produced, and you have an effective guard against regression.
 
 Of course, CI failures are always at least a little bit frustrating for developers. Another option, at least in organizations where the commit is made by CI, is to run `mvn rewrite:run` before the build & test step. Then the build wont need to fail because rewrite will automatically fix the dependency problem.
 
 ## Next Steps
 
-The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven ](../reference/recipes/maven/)recipe reference for the full listing of dependency management recipes. 
-
+The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven](../reference/recipes/maven/)recipe reference for the full listing of dependency management recipes.
