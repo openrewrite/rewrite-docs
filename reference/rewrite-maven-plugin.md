@@ -28,6 +28,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `activeRecipes` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
 * `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
 * `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
+* `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `dependencies` - To make pre-packaged Rewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
 
 {% hint style="info" %}
@@ -53,6 +54,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
           </activeStyles>
           <!-- These are default values, shown for example. It isn't necessary to supply these values manually: -->
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
+          <failOnDryRunResults>false</failOnDryRunResults>
         </configuration>
         <dependencies>
           <!-- This module is made up for sake of example. It isn't packaged with Rewrite -->
@@ -91,7 +93,13 @@ This goal also produces a report, in the form of a patch file, in which you can 
 
 ![Example rewrite.patch file produced by dryRun](../.gitbook/assets/image%20%2822%29.png)
 
-`dryRun` can be called in a continuous integration environment, and if you so choose, fail the build if the build log contains any such warnings.
+`dryRun` can be used as a "gate" in a continuous integration environment by failing the build if `dryRun` detects changes to be made and `failOnDryRunResults` is set to `true`:
+
+```xml
+<configuration>
+  <failOnDryRunResults>true</failOnDryRunResults>
+</configuration>
+```
 
 ## The "Discover" Goal
 

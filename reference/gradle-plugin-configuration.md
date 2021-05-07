@@ -62,6 +62,7 @@ The `rewrite` DSL exposes a few configuration options:
 * `activeRecipe` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
 * `activeStyle` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
 * `configFile` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). This file is not required to exist. If not specified otherwise, the default value is `<root project directory>/rewrite.yml`.
+* `failOnDryRunResults` - Boolean flag toggling whether `rewriteDryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 
 ```groovy
 plugins {
@@ -74,6 +75,7 @@ rewrite {
 
     // These are default values, shown for example. It isn't necessary to supply these values manually:
     configFile = project.getRootProject().file("rewrite.yml")
+    failOnDryRunResults = false
 }
 ```
 
@@ -135,7 +137,14 @@ Execute `gradle rewriteDryRun` to dry-run the active recipes and print which vis
 
 ![Listing of source files that would be changed if rewriteRun were run](../.gitbook/assets/rewrite-warn-gradle-output%20%283%29%20%283%29%20%283%29%20%281%29.png)
 
-It could also be manually called in a continuous integration environment, and if you so choose, fail the continuous integration build if the build log contains any such warnings.
+`rewriteDryRun` can be used as a "gate" in a continuous integration environment by failing the build if `rewriteDryRun` detects changes to be made and `failOnDryRunResults` is set to `true`:
+
+```groovy
+rewrite {
+    // ...
+    failOnDryRunResults = true
+}
+```
 
 ## The "Discover" Task
 
