@@ -28,7 +28,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `activeRecipes` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
 * `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
 * `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
-* `dependencies` - To make pre-packaged Rewrite recipes available to the Maven plugin, add them as **plugin** dependencies.  
+* `dependencies` - To make pre-packaged Rewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
 
 {% hint style="info" %}
 Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles and will automatically discover recipes on the project classpath.
@@ -75,7 +75,7 @@ To find out what recipes a rewrite module provides, see its documentation and th
 
 ## The "Run" Goal
 
-Execute`mvn rewrite:run` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
+Execute `mvn rewrite:run` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
 ![Warnings showing which files were changed and by what visitors](../.gitbook/assets/image%20%285%29.png)
 
@@ -85,7 +85,7 @@ After the goal finishes executing, run `git diff` to see what changes were made,
 
 ## The "DryRun" Goal
 
-Execute`mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files at all. This goal can be used to preview the changes that would be made by a recipe.
+Execute `mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files at all. This goal can be used to preview the changes that would be made by a recipe.
 
 This goal also produces a report, in the form of a patch file, in which you can see the exact changes that would be made were you to run `mvn rewrite:run`.
 
@@ -113,4 +113,3 @@ Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org/) bi
 
 * [Github project](https://github.com/openrewrite/rewrite-maven-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-maven-plugin/issues)
-

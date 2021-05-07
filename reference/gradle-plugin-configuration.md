@@ -121,7 +121,7 @@ rewrite {
 
 ## The "Run" Task
 
-Execute`gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
+Execute `gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
 ![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output%20%282%29%20%282%29%20%284%29%20%284%29%20%285%29%20%286%29.png)
 
@@ -131,7 +131,7 @@ After the goal finishes executing, run `git diff` \(or your VCS system's equival
 
 ## The "DryRun" Task
 
-Execute`gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
+Execute `gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
 
 ![Listing of source files that would be changed if rewriteRun were run](../.gitbook/assets/rewrite-warn-gradle-output%20%283%29%20%283%29%20%283%29%20%281%29.png)
 
@@ -148,4 +148,3 @@ Execute `gradle rewriteDiscover` to list the recipes available on your classpath
 * [Github project](https://github.com/openrewrite/rewrite-gradle-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-gradle-plugin/issues)
 * [Gradle Plugin Portal Listing](https://plugins.gradle.org/plugin/org.openrewrite.rewrite)
-
