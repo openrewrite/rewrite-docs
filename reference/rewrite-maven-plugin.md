@@ -14,7 +14,7 @@ The Rewrite Maven plugin offers these goals:
 
 * `mvn rewrite:run` - Run the configured recipes and apply the changes locally.
 * `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes, but do not make changes.
-* `mvn rewrite:discover` - Generate a report showing the available and active recipes based on what Rewrite finds on the classpath.
+* `mvn rewrite:discover` - Generate a report of available recipes found on the classpath.
 * `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org/) bill of materials outlining the project's dependencies, including transitive dependencies.
 
 {% hint style="info" %}
