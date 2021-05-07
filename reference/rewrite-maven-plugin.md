@@ -105,11 +105,102 @@ This goal also produces a report, in the form of a patch file, in which you can 
 
 Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated in your plugin configuration.
 
-![The beginning of rewrite:discover output, showing activated and available Recipes](../.gitbook/assets/image%20%2818%29.png)
+```log
+[INFO] --- rewrite-maven-plugin:4.2.3:discover (default-cli) @ example ---
+[INFO] Available Recipes:
+[INFO]     org.openrewrite.java.testing.assertj.JUnitToAssertj
+[INFO]     org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
+[INFO]     org.openrewrite.java.testing.mockito.Mockito1to3Migration
+[INFO]     org.openrewrite.java.testing.cleanup.BestPractices
+[INFO]     org.openrewrite.java.testing.junit5.JUnit5BestPractices
+[INFO]     org.openrewrite.java.testing.junit5.StaticImports
+[INFO]     org.openrewrite.java.testing.junit5.JUnit4to5Migration
+[INFO]     org.openrewrite.java.testing.junit5.UseHamcrestAssertThat
+[INFO]     org.openrewrite.java.testing.junit5.UseMockitoExtension
+[INFO]     org.openrewrite.java.AddLicenseHeader
+[INFO]     org.openrewrite.java.ChangeMethodName
+[INFO]     org.openrewrite.java.ChangeMethodTargetToStatic
+... # truncated
+[INFO]
+[INFO] Available Styles:
+[INFO]     org.openrewrite.java.GoogleJavaFormat
+[INFO]     org.openrewrite.java.SpringFormat
+[INFO]
+[INFO] Active Styles:
+[INFO]
+[INFO] Active Recipes:
+[INFO]     org.openrewrite.java.testing.junit5.JUnit5BestPractices
+[INFO]     org.openrewrite.java.format.AutoFormat
+[INFO] ------------------------------------------------------------------------
+[INFO] Found 120 available recipes and 2 available styles.
+[INFO] Configured with 2 active recipes and 0 active styles.
+...
+```
 
-This same goal also lists all of the parameters that recipes can be or are already configured with.
+Furthermore, you can browse the hierarchical categories of available recipes by entering "interactive" mode.
 
-![Recipes showing their configurable parameters. &quot;!&quot; means a parameter is required.](../.gitbook/assets/image%20%2817%29.png)
+```sh
+./mvnw rewrite:discover -Dinteractive
+```
+
+which outputs:
+
+```log
+[INFO] Entering interactive mode, Ctrl-C to exit...
+Available options:
+[1]: org
+Choose a number (hint: enter to return to initial list): 1
+Available options:
+[1]: openrewrite
+Choose a number (hint: enter to return to initial list): 1
+Available options:
+[1]: text
+[2]: xml
+[3]: properties
+[4]: yaml
+[5]: maven
+[6]: java
+Choose a number (hint: enter to return to initial list): 5
+Available options:
+[1]: Add Maven dependency
+[2]: Add Maven plugin
+[3]: Change Maven dependency scope
+[4]: Change a Maven project property value.
+[5]: Exclude Maven dependency
+[6]: Manage dependencies
+[7]: Remove Maven dependency
+[8]: Remove a Maven project property
+[9]: Remove redundant explicit dependency versions
+[10]: Upgrade Maven dependency version
+[11]: Upgrade Maven parent project version
+[12]: search
+Choose a number (hint: enter to return to initial list): 1
+[INFO] Add Maven dependency
+[INFO]     org.openrewrite.maven.AddDependency
+[INFO] options:
+[INFO]     groupId: String!
+[INFO]         The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.
+[INFO]     artifactId: String!
+[INFO]         The second part of a dependency coordinate 'com.google.guava:guava:VERSION'.
+[INFO]     version: String!
+[INFO]         An exact version number, or node-style semver selector used to select the version number.
+[INFO]     versionPattern: String
+[INFO]         Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre
+[INFO]     releasesOnly: boolean
+[INFO]         Whether to exclude snapshots from consideration.
+[INFO]     classifier: String
+[INFO]         A Maven classifier to add. Most commonly used to select shaded or test variants of a library
+[INFO]     scope: String
+[INFO]     type: String
+[INFO]     familyPattern: String
+[INFO]         A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character.
+[INFO]     onlyIfUsing: List
+[INFO]         Add the dependency only if using one of the supplied types. Types should be identified by fully qualified class name or a glob expression
+```
+
+{% hint style="info" %}
+`!` next to an `option` parameter type means the parameter is required.
+{% endhint %}
 
 ## The "CycloneDx" Goal
 

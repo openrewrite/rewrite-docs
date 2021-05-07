@@ -150,7 +150,115 @@ rewrite {
 
 Execute `gradle rewriteDiscover` to list the recipes available on your classpath.
 
-![](../.gitbook/assets/image%20%281%29.png)
+```sh
+./gradlew rewriteDiscover
+```
+
+which outputs:
+
+```log
+Available Recipes:
+    org.openrewrite.java.testing.assertj.JUnitToAssertj
+    org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
+    org.openrewrite.java.testing.mockito.Mockito1to3Migration
+    org.openrewrite.java.testing.cleanup.BestPractices
+    org.openrewrite.java.testing.junit5.JUnit5BestPractices
+    org.openrewrite.java.testing.junit5.StaticImports
+    org.openrewrite.java.testing.junit5.JUnit4to5Migration
+    org.openrewrite.java.testing.junit5.UseHamcrestAssertThat
+    org.openrewrite.java.testing.junit5.UseMockitoExtension
+    org.openrewrite.java.AddLicenseHeader
+    org.openrewrite.java.ChangeMethodName
+    org.openrewrite.java.ChangeMethodTargetToStatic
+... # truncated
+
+Available Styles:
+    org.openrewrite.java.GoogleJavaFormat
+    org.openrewrite.java.SpringFormat
+
+Active Styles:
+
+Active Recipes:
+    org.openrewrite.java.testing.junit5.JUnit5BestPractices
+    org.openrewrite.java.format.AutoFormat
+
+Found 120 available recipes and 2 available styles.
+Configured with 2 active recipes and 0 active styles.
+```
+
+Furthermore, you can browse the hierarchical categories of available recipes by entering "interactive" mode.
+
+{% hint style="info" %}
+`--interactive` must be ran against a specific `SourceSet`, such as `Main` or `Test`. As in `rewriteDiscoverMain --interactive`.
+{% endhint %}
+
+```sh
+./gradlew rewriteDiscoverMain --interactive
+```
+
+which outputs:
+
+```log
+Entering interactive mode, Ctrl-C to exit...
+
+Available options:
+[1]: org
+Choose a number (hint: enter to return to initial list) (default: ): 1
+
+Available options:
+[1]: openrewrite
+Choose a number (hint: enter to return to initial list) (default: ): 1
+
+Available options:
+[1]: text
+[2]: xml
+[3]: properties
+[4]: yaml
+[5]: maven
+[6]: java
+Choose a number (hint: enter to return to initial list) (default: ): 5
+
+Available options:
+[1]: Add Maven dependency
+[2]: Add Maven plugin
+[3]: Change Maven dependency scope
+[4]: Change a Maven project property value.
+[5]: Exclude Maven dependency
+[6]: Manage dependencies
+[7]: Remove Maven dependency
+[8]: Remove a Maven project property
+[9]: Remove redundant explicit dependency versions
+[10]: Upgrade Maven dependency version
+[11]: Upgrade Maven parent project version
+[12]: search
+Choose a number (hint: enter to return to initial list) (default: ): 1
+
+Add Maven dependency
+    org.openrewrite.maven.AddDependency
+options:
+    groupId: String!
+        The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.
+    artifactId: String!
+        The second part of a dependency coordinate 'com.google.guava:guava:VERSION'.
+    version: String!
+        An exact version number, or node-style semver selector used to select the version number.
+    versionPattern: String
+        Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre
+    releasesOnly: boolean
+        Whether to exclude snapshots from consideration.
+    classifier: String
+        A Maven classifier to add. Most commonly used to select shaded or test variants of a library
+    scope: String
+    type: String
+    familyPattern: String
+        A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character.
+    onlyIfUsing: List
+        Add the dependency only if using one of the supplied types. Types should be identified by fully qualified class name or a glob expression
+```
+
+{% hint style="info" %}
+`!` next to an `option` parameter type means the parameter is required.
+{% endhint %}
 
 ## Links
 
