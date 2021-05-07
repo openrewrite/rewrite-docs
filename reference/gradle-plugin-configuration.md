@@ -72,7 +72,7 @@ rewrite {
     activeRecipe("com.yourorg.ExampleRecipe", "com.yourorg.ExampleRecipe2")
     activeStyle("com.yourorg.ExampleStyle", "com.yourorg.ExampleStyle2")
 
-    // This is the default value of configFile. It is not necessary to specify this value
+    // These are default values, shown for example. It isn't necessary to supply these values manually:
     configFile = project.getRootProject().file("rewrite.yml")
 }
 ```

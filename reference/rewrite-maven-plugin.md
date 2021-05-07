@@ -51,7 +51,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
             <!-- This style is made up for sake of example. It isn't packaged with Rewrite -->
             <style>com.yourorg.SpringStyle</style>
           </activeStyles>
-          <!-- These are the default values. It is not necessary to supply these value manually --> 
+          <!-- These are default values, shown for example. It isn't necessary to supply these values manually: -->
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
         </configuration>
         <dependencies>
