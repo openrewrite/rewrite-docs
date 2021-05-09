@@ -9,7 +9,8 @@ _Sharing the host process ID namespace breaks the isolation between container im
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/hostPID
   * value: hostPID: false
+

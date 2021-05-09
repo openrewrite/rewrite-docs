@@ -1,6 +1,6 @@
 # Allows attacker to create a directory with elevated permissions.
 
-**org.openrewrite.java.security.ResultOfFileMkdirsIgnored**  
+**org.openrewrite.java.security.ResultOfFileMkdirsIgnored**
 
 ### Tags
 
@@ -8,5 +8,6 @@
 
 ## Recipe list
 
-* [Result of method call ignored](../../java/search/resultofmethodcallignored.md)
-  * methodPattern: java.io.File mkdir*()
+* [Result of method call ignored](../search/resultofmethodcallignored.md)
+  * methodPattern: java.io.File mkdir\*\(\)
+

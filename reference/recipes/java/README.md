@@ -1,6 +1,7 @@
 # Java
 
-### Recipes
+## Recipes
+
 * [Add ASLv2 license header.](addapache2licenseheader.md)
 * [Add license header](addlicenseheader.md)
 * [Change method name](changemethodname.md)
@@ -15,12 +16,14 @@
 * [Reorder method arguments](reordermethodarguments.md)
 * [Use static import](usestaticimport.md)
 
-### Subcategories
-* [Spring](spring/README.md)
-* [Search](search/README.md)
-* [Security](security/README.md)
-* [Cleanup](cleanup/README.md)
-* [Testing](testing/README.md)
-* [Format](format/README.md)
-* [Example](example/README.md)
-* [Migrate](migrate/README.md)
+## Subcategories
+
+* [Spring](spring/)
+* [Search](search/)
+* [Security](security/)
+* [Cleanup](cleanup/)
+* [Testing](testing/)
+* [Format](format/)
+* [Example](example/)
+* [Migrate](migrate/)
+

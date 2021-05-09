@@ -1,6 +1,7 @@
 # Maven
 
-### Recipes
+## Recipes
+
 * [Add Maven dependency](adddependency.md)
 * [Add Maven plugin](addplugin.md)
 * [Change Maven dependency scope](changedependencyscope.md)
@@ -13,5 +14,7 @@
 * [Upgrade Maven dependency version](upgradedependencyversion.md)
 * [Upgrade Maven parent project version](upgradeparentversion.md)
 
-### Subcategories
-* [Search](search/README.md)
+## Subcategories
+
+* [Search](search/)
+

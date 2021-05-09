@@ -9,7 +9,8 @@ _Does not allow a process to gain more privileges than its parent process._
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/securityContext/allowPrivilegeEscalation
   * value: allowPrivilegeEscalation: false
+

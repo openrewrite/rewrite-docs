@@ -1,9 +1,9 @@
 # Delete property
 
 **org.openrewrite.yaml.DeleteProperty**  
-_Delete a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e.  as Spring Boot interprets application.yml files._
+_Delete a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e. as Spring Boot interprets application.yml files._
 
-### Options
+## Options
 
 * propertyKey: String!
 * coalesce: Boolean!

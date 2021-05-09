@@ -1,4 +1,6 @@
 # Search
 
-### Recipes
+## Recipes
+
 * [Missing configuration](findresourcemissingconfiguration.md)
+

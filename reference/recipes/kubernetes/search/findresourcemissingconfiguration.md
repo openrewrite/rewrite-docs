@@ -3,7 +3,7 @@
 **org.openrewrite.kubernetes.search.FindResourceMissingConfiguration**  
 _Find Kubernetes resources with missing configuration._
 
-### Options
+## Options
 
 * resourceKind: String!
   * The Kubernetes resource type to search on.

@@ -9,7 +9,8 @@ _When using the host network mode for a container, that container’s network st
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/hostNetwork
   * value: hostNetwork: false
+

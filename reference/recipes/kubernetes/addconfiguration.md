@@ -3,7 +3,7 @@
 **org.openrewrite.kubernetes.AddConfiguration**  
 _Add default required configuration when it is missing._
 
-### Options
+## Options
 
 * apiVersion: String
 * resourceKind: String!

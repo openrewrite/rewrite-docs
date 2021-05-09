@@ -3,7 +3,7 @@
 **org.openrewrite.java.DeleteMethodArgument**  
 _Delete an argument from method invocations._
 
-### Options
+## Options
 
 * methodPattern: String!
   * A method pattern, expressed as a pointcut expression, that is used to find matching method invocations.

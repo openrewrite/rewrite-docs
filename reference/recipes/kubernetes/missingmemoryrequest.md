@@ -9,6 +9,7 @@ _A container is guaranteed to have as much memory as it requests, but is not all
 
 ## Recipe list
 
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/resources/requests/memory
+

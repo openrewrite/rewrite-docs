@@ -1,6 +1,6 @@
-# org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties_2_2
+# org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_2
 
-**org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_2**  
+**org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_2**
 
 ## Recipe list
 
@@ -49,3 +49,4 @@
 * [Change property key](../../../../properties/changepropertykey.md)
   * oldPropertyKey: management.endpoints.jmx.unique-names
   * newPropertyKey: spring.jmx.unique-names
+

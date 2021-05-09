@@ -3,7 +3,7 @@
 **org.openrewrite.yaml.DeleteKey**  
 _Delete a YAML mapping entry key._
 
-### Options
+## Options
 
 * keyPath: String!
   * An XPath expression to locate a YAML entry.

@@ -9,6 +9,7 @@ _Using the Readiness Probe ensures teams define what actions need to be taken to
 
 ## Recipe list
 
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/readinessProbe
+

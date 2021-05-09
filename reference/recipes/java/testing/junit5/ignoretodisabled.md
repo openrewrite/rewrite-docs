@@ -1,4 +1,4 @@
-# Use JUnit Jupiter `@Disabled`
+# Use JUnit Jupiter @Disabled
 
 **org.openrewrite.java.testing.junit5.IgnoreToDisabled**  
 _Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`._
@@ -10,6 +10,7 @@ _Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`._
 
 ## Recipe list
 
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: org.junit.Ignore
   * newFullyQualifiedTypeName: org.junit.jupiter.api.Disabled
+

@@ -9,6 +9,7 @@ _The kubelet uses liveness probes to know when to schedule restarts for containe
 
 ## Recipe list
 
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/livenessProbe
+

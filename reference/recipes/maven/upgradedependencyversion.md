@@ -3,7 +3,7 @@
 **org.openrewrite.maven.UpgradeDependencyVersion**  
 _Upgrade the version a group or group and artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases._
 
-### Options
+## Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.

@@ -3,7 +3,7 @@
 **org.openrewrite.java.ChangePackage**  
 _Change package names._
 
-### Options
+## Options
 
 * oldFullyQualifiedPackageName: String!
   * Fully-qualified package name of the old package.

@@ -1,4 +1,4 @@
 # Remove empty blocks
 
-**org.openrewrite.java.cleanup.EmptyBlock**  
+**org.openrewrite.java.cleanup.EmptyBlock**
 

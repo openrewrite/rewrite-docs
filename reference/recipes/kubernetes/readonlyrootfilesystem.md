@@ -9,7 +9,8 @@ _Using an immutable root filesystem and a verified boot mechanism prevents again
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/securityContext/readOnlyRootFilesystem
   * value: readOnlyRootFilesystem: false
+

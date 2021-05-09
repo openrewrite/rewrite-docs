@@ -1,4 +1,4 @@
-# Ensure image pull policy is `Always`
+# Ensure image pull policy is Always
 
 **org.openrewrite.kubernetes.ImagePullPolicyAlways**  
 _Ensures the latest version of a tag is deployed each time._
@@ -9,7 +9,8 @@ _Ensures the latest version of a tag is deployed each time._
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/imagePullPolicy
   * value: imagePullPolicy: Always
+

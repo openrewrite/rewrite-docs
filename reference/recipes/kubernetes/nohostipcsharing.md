@@ -9,7 +9,8 @@ _Preventing sharing of host PID/IPC namespace, networking, and ports ensures pro
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/hostIPC
   * value: hostIPC: false
+

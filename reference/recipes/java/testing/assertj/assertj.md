@@ -10,5 +10,6 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ## Recipe list
 
-* [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports.md)
-* [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj.md)
+* [Statically import AssertJ's `assertThat`](staticimports.md)
+* [Migrate JUnit asserts to AssertJ](junittoassertj.md)
+

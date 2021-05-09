@@ -1,6 +1,7 @@
 # Cleanup
 
-### Recipes
+## Recipes
+
 * [Code cleanup](cleanup.md)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](bigdecimalroundingconstantstoenums.md)
 * [Covariant equals](covariantequals.md)
@@ -20,3 +21,4 @@
 * [Remove unnecessary parentheses](unnecessaryparentheses.md)
 * [Unnecessary throws](unnecessarythrows.md)
 * [Use diamond operator](usediamondoperator.md)
+

@@ -3,7 +3,7 @@
 **org.openrewrite.yaml.ChangeValue**  
 _Change a YAML mapping entry value leaving the key intact._
 
-### Options
+## Options
 
 * oldKeyPath: String!
   * An XPath expression to locate a YAML entry.

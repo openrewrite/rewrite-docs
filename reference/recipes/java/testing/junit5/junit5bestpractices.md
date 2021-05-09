@@ -10,5 +10,6 @@ _Applies best practices to tests._
 
 ## Recipe list
 
-* [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports.md)
-* [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
+* [Statically import JUnit Jupiter assertions](staticimports.md)
+* [JUnit Jupiter migration from JUnit 4.x](junit4to5migration.md)
+

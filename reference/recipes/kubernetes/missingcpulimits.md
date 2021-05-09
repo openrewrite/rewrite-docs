@@ -9,6 +9,7 @@ _A system without managed quotas could eventually collapse due to inadequate res
 
 ## Recipe list
 
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/resources/limits/cpu
+

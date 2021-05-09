@@ -3,7 +3,7 @@
 **org.openrewrite.maven.UpgradeParentVersion**  
 _Set the parent pom version number according to a node-style semver selector or to a specific version number._
 
-### Options
+## Options
 
 * groupId: String!
   * The first part of a dependency coordinate 'org.springframework.boot:spring-boot-parent:VERSION'.

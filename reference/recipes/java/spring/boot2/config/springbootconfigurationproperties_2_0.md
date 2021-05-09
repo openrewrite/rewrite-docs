@@ -1,6 +1,6 @@
-# org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties_2_0
+# org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_0
 
-**org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_0**  
+**org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_0**
 
 ## Recipe list
 
@@ -508,3 +508,4 @@
 * [Change property key](../../../../properties/changepropertykey.md)
   * oldPropertyKey: spring.metrics.export.statsd.port
   * newPropertyKey: management.metrics.export.statsd.port
+

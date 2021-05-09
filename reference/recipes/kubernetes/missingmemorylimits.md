@@ -9,6 +9,7 @@ _With no limit set, kubectl allocates more and more memory to the container unti
 
 ## Recipe list
 
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/resources/limits/memory
+

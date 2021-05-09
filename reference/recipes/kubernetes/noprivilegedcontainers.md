@@ -9,7 +9,8 @@ _Privileged containers are containers that have all of the root capabilities of 
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: PodSecurityPolicy
   * configurationPath: /spec/privileged
   * value: privileged: false
+

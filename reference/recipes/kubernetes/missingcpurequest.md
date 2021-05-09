@@ -9,6 +9,7 @@ _If a container is created in a namespace that has a default CPU limit, and the 
 
 ## Recipe list
 
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/resources/requests/cpu
+

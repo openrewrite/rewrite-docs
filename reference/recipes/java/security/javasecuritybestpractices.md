@@ -9,5 +9,6 @@ _Applies security best practices to Java code._
 
 ## Recipe list
 
-* [XML parser XXE vulnerability](../../java/security/xmlparserxxevulnerability.md)
-* [Allows attacker to create a directory with elevated permissions.](../../java/security/resultoffilemkdirsignored.md)
+* [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
+* [Allows attacker to create a directory with elevated permissions.](resultoffilemkdirsignored.md)
+

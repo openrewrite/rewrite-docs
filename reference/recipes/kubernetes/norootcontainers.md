@@ -9,7 +9,8 @@ _Containers that run as root frequently have more permissions than their workloa
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: PodSecurityPolicy
   * configurationPath: /spec/runAsUser/rule
   * value: rule: MustRunAsNonRoot
+

@@ -1,6 +1,6 @@
-# org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties_2_1
+# org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_1
 
-**org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_1**  
+**org.openrewrite.java.spring.boot2.config.SpringBootConfigurationProperties\_2\_1**
 
 ## Recipe list
 
@@ -76,3 +76,4 @@
 * [Change property key](../../../../properties/changepropertykey.md)
   * oldPropertyKey: spring.resources.chain.gzipped
   * newPropertyKey: spring.resources.chain.compressed
+

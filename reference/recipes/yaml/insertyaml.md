@@ -3,7 +3,7 @@
 **org.openrewrite.yaml.InsertYaml**  
 _Insert a YAML snippet at a given key_
 
-### Options
+## Options
 
 * key: String!
   * XPath expression used to find matching keys.

@@ -1,6 +1,6 @@
-# Ensure lifecycle rule on `StorageBucket`
+# Ensure lifecycle rule on StorageBucket
 
-**org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket**  
+**org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket**
 
 ### Tags
 
@@ -8,12 +8,16 @@
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * apiVersion: storage.cnrm.cloud.google.com/v1beta1
   * resourceKind: StorageBucket
   * configurationPath: /spec/lifecycleRule
   * value: lifecycleRule:
-  - action:
+  * action:
+
       type: Delete
+
     condition:
+
       age: 7
+

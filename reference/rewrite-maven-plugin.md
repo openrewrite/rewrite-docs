@@ -95,7 +95,7 @@ This goal also produces a report, in the form of a patch file, in which you can 
 
 `dryRun` can be used as a "gate" in a continuous integration environment by failing the build if `dryRun` detects changes to be made and `failOnDryRunResults` is set to `true`:
 
-```xml
+```markup
 <configuration>
   <failOnDryRunResults>true</failOnDryRunResults>
 </configuration>
@@ -121,3 +121,4 @@ Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org/) bi
 
 * [Github project](https://github.com/openrewrite/rewrite-maven-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-maven-plugin/issues)
+

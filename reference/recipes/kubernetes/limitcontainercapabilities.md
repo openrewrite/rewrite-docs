@@ -9,7 +9,8 @@ _Limiting the admission of containers with capabilities ensures that only a smal
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: Pod
   * configurationPath: /spec/containers/securityContext/capabilities/drop
   * value: ALL
+
