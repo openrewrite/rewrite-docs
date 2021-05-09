@@ -299,7 +299,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.2.2</version>
+  <version>4.2.3</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -352,7 +352,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.2.2</version>
+  <version>4.2.3</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
