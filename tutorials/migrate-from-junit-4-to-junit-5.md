@@ -7,7 +7,7 @@ In this tutorial we'll use Rewrite to perform an automated migration from the ve
 This automated migration focuses on making 1 to 1 replacements of JUnit 4 classes, annotations and patterns with behaviorally equivalent JUnit 5 replacements. This includes:
 
 * Replacing `org.junit.Test` with `org.junit.jupiter.api.Test`
-  * Includes removing "expacted" and "timeout" arguments and adding JUnit 5 equivalents
+  * Includes removing "expected" and "timeout" arguments and adding JUnit 5 equivalents
 * Replacing `org.junit.Assert` with `org.junit.jupiter.api.Assertions`
   * Includes changing the order of the method arguments to match the new methods
 * Replacing `@Rule TemporaryFolder` fields with `@TempDir File` fields
@@ -16,7 +16,7 @@ This automated migration focuses on making 1 to 1 replacements of JUnit 4 classe
   * Remove JUnit 4 dependency from the pom.xml
   * Exclude JUnit 4 from any dependencies that may be bringing it in transitively
   * Add JUnit 5 dependencies
-* Many more
+* [Many more](https://docs.openrewrite.org/reference/recipes/java/testing/junit5)
 
 ### Before and After
 
