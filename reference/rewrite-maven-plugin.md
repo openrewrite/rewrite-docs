@@ -104,15 +104,28 @@ This goal also produces a report, in the form of a patch file, in which you can 
 If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases. For example, the following configuration is sufficient to have `mvn verify` also run `rewrite:dryRun`:
 
 ```markup
-...
-<executions>
-  <execution>
-    <goals>
-      <goal>dryRun</goal>
-    </goals>
-    <phase>verify</phase>
-  </execution>
-</executions>
+<!-- truncating for brevity -->
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <configuration>...</configuration>
+
+        <!-- this 'executions' block is the important part of binding the dryRun goal to the verify phase -->
+        <executions>
+          <execution>
+            <goals>
+              <goal>dryRun</goal>
+            </goals>
+            <phase>verify</phase>
+          </execution>
+        </executions>
+
+      </plugin>
+    </plugins>
+  </build>
+</project>
 ```
 
 ## The "Discover" Goal
