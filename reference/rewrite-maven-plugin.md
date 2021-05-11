@@ -104,7 +104,7 @@ This goal also produces a report, in the form of a patch file, in which you can 
 If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases. For example, the following configuration is sufficient to have `mvn verify` also run `rewrite:dryRun`:
 
 ```markup
-<!-- truncating for brevity -->
+<!-- truncating the pom.xml for brevity -->
 <project>
   <build>
     <plugins>
