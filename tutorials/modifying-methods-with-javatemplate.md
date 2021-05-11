@@ -55,12 +55,12 @@ This example requires the following dependencies:
 {% tab title="Gradle" %}
 ```groovy
 dependencies {
-    implementation("org.openrewrite:rewrite-java:7.3.0")
+    implementation("org.openrewrite:rewrite-java:7.4.0")
 
-    runtimeOnly("org.openrewrite:rewrite-java-11:7.3.0")
-    runtimeOnly("org.openrewrite:rewrite-java-8:7.3.0")
+    runtimeOnly("org.openrewrite:rewrite-java-11:7.4.0")
+    runtimeOnly("org.openrewrite:rewrite-java-8:7.4.0")
 
-    testImplementation("org.openrewrite:rewrite-test:7.3.0")
+    testImplementation("org.openrewrite:rewrite-test:7.4.0")
 }
 ```
 {% endtab %}
@@ -71,25 +71,25 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
-        <version>7.3.0</version>
+        <version>7.4.0</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
-        <version>7.3.0</version>
+        <version>7.4.0</version>
         <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-11</artifactId>
-        <version>7.3.0</version>
+        <version>7.4.0</version>
         <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-test</artifactId>
-        <version>7.3.0</version>
+        <version>7.4.0</version>
         <scope>test</scope>
     </dependency>
 </dependencies>

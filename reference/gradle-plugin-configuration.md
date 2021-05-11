@@ -95,7 +95,7 @@ To make pre-packaged Rewrite recipes available for activation, add them as `rewr
 
 ```groovy
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.3.0")
 }
 ```
 
@@ -113,7 +113,7 @@ repositories {
 
 dependencies {
     testImplementation("junit:junit:4.13")
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.4.0")
 }
 
 rewrite {

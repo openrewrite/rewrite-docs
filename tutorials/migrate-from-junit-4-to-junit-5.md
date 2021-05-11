@@ -299,7 +299,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.2.3</version>
+  <version>4.3.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -352,7 +352,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.2.3</version>
+  <version>4.3.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -362,7 +362,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>1.2.1</version>
+      <version>1.4.0</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -383,7 +383,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.4.0")
 
     // Other project dependencies
 }
