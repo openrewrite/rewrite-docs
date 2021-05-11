@@ -111,7 +111,6 @@ If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases.
       <plugin>
         <artifactId>rewrite-maven-plugin</artifactId>
         <configuration>...</configuration>
-
         <!-- this 'executions' block is the important part of binding the dryRun goal to the verify phase -->
         <executions>
           <execution>
@@ -121,7 +120,6 @@ If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases.
             <phase>verify</phase>
           </execution>
         </executions>
-
       </plugin>
     </plugins>
   </build>
