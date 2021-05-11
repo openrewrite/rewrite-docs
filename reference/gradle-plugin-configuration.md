@@ -148,7 +148,7 @@ rewrite {
 
 If desired, `rewriteDryRun` can be configured so that when `check` runs, `rewriteDryRun` does too:
 
-```gradle
+```groovy
 tasks.named("check").configure {
     dependsOn(tasks.named("rewriteDryRun"))
 }
