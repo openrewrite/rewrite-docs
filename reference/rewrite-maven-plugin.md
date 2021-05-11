@@ -101,6 +101,20 @@ This goal also produces a report, in the form of a patch file, in which you can 
 </configuration>
 ```
 
+If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases. For example, the following configuration is sufficient to have `mvn verify` also run `rewrite:dryRun`:
+
+```markup
+...
+<executions>
+  <execution>
+    <goals>
+      <goal>dryRun</goal>
+    </goals>
+    <phase>verify</phase>
+  </execution>
+</executions>
+```
+
 ## The "Discover" Goal
 
 Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated in your plugin configuration.
