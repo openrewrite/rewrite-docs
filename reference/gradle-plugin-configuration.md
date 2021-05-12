@@ -146,6 +146,14 @@ rewrite {
 }
 ```
 
+If desired, `rewriteDryRun` can be configured so that when `check` runs, `rewriteDryRun` does too:
+
+```groovy
+tasks.named("check").configure {
+    dependsOn(tasks.named("rewriteDryRun"))
+}
+```
+
 ## The "Discover" Task
 
 Execute `gradle rewriteDiscover` to list the recipes available on your classpath.
@@ -157,4 +165,3 @@ Execute `gradle rewriteDiscover` to list the recipes available on your classpath
 * [Github project](https://github.com/openrewrite/rewrite-gradle-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-gradle-plugin/issues)
 * [Gradle Plugin Portal Listing](https://plugins.gradle.org/plugin/org.openrewrite.rewrite)
-
