@@ -20,13 +20,11 @@ Styles are typically defined declaratively in a YML file an included in an [Envi
 ---
 type: specs.openrewrite.org/v1beta/style
 name: io.moderne.spring.style
-
-configure:
-  org.openrewrite.java.style.ImportLayoutStyle:
-    layout:
+styleConfigs:
+  - org.openrewrite.java.style.ImportLayoutStyle:
       classCountToUseStarImport: 999
       nameCountToUseStarImport: 999
-      blocks:
+      layout:
         - import java.*
         - <blank line>
         - import javax.*
@@ -36,6 +34,12 @@ configure:
         - import org.springframework.*
         - <blank line>
         - import static all other imports
+  - org.openrewrite.java.style.TabsAndIndentsStyle:
+      useTabCharacter: true
+      tabSize: 1
+      indentSize: 1
+      continuationIndent: 2
+      indentsRelativeToExpressionStart: false
 ```
 
 <table>
@@ -56,10 +60,10 @@ configure:
       <td style="text-align:left">A name-spaced unique name you are giving to the style</td>
     </tr>
     <tr>
-      <td style="text-align:left">configure</td>
+      <td style="text-align:left">styleConfigs</td>
       <td style="text-align:left">
-        <p>A map of configurations.</p>
-        <p>Each first-level map key represents is the fully-qualified class name
+        <p>A list of configurations.</p>
+        <p>Each list entry is the fully-qualified class name
           of a <code>Style</code> implementation. The value is itself a map of key-value
           pairs that invoke setters on the style.</p>
       </td>
