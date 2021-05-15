@@ -17,7 +17,7 @@ Apply the org.openrewrite.rewrite plugin to your build:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("4.3.1")
+    id("org.openrewrite.rewrite") version("4.3.2")
 }
 rewrite {
     // Rewrite Extension Configuration
@@ -40,7 +40,7 @@ With these steps taken, your root build.gradle may look similar to this:
 
 ```groovy
  plugins {
-     id("org.openrewrite.rewrite") version("4.3.1") apply(false)
+     id("org.openrewrite.rewrite") version("4.3.2") apply(false)
  }
 
  subprojects {
@@ -67,7 +67,7 @@ The `rewrite` DSL exposes a few configuration options:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("4.3.1")
+    id("org.openrewrite.rewrite") version("4.3.2")
 }
 rewrite {
     activeRecipe("com.yourorg.ExampleRecipe", "com.yourorg.ExampleRecipe2")
@@ -104,7 +104,7 @@ Once a pre-packaged recipe has been added to the `rewrite` dependency configurat
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("4.3.1")
+    id("org.openrewrite.rewrite") version("4.3.2")
 }
 
 repositories {
