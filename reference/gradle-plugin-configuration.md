@@ -8,19 +8,21 @@ The Rewrite Gradle Plugin is the fastest way to apply Rewrite recipes to your co
 
 ## Plugin Configuration
 
-The recommended way of applying the plugin differs slightly between single and multi-module Gradle builds.
-
-### Single-Module Gradle projects
-
-Apply the org.openrewrite.rewrite plugin to your build:
+Apply the org.openrewrite.rewrite plugin to your build.
 
 ```groovy
 plugins {
     id("java")
     id("org.openrewrite.rewrite") version("5.0.0")
 }
+
 rewrite {
     // Rewrite Extension Configuration
+}
+
+// Ensure a repository is declared that the rewrite core libraries can be resolved from
+repositories {
+    mavenCentral() 
 }
 ```
 
@@ -28,32 +30,11 @@ With the plugin applied, the `rewrite` DSL is available for configuration.
 
 ### Multi-Module Gradle Projects
 
-There are innumerable different ways a multi-project Gradle build could potentially be configured. These instructions assume that the multi-project build in question is composed entirely of Java projects. If that isn't the case for your build, and you cannot easily copy and paste these snippets, the key point is to apply and configure the Rewrite plugin after wherever you apply the Java plugin.
+The rewrite gradle plugin should only be applied to the root project. Refactoring operations will affect all projects that apply Gradle's java plugin. 
 
-1. In the root project's build.gradle, in the `plugins` block, add the rewrite plugin to your build's classpath with `apply` set to `false`.
-
-   This tells Gradle to download the plugin but not to activate it for the current project.
-
-2. In the `subprojects` block, or wherever your Java plugin is applied, also apply the rewrite plugin.
-
-With these steps taken, your root build.gradle may look similar to this:
-
-```groovy
- plugins {
-     id("org.openrewrite.rewrite") version("5.0.0") apply(false)
- }
-
- subprojects {
-     apply plugin: "java"
-     apply plugin: "org.openrewrite.rewrite"
-
-     rewrite {
-         // Rewrite Extension Configuration
-     }
- }
-```
-
-With the plugin applied, the `rewrite` DSL is available for configuration.
+{% hint style="warning" %}
+The rewrite gradle plugin resolves the rewrite core libraries at runtime. It will attempt to resolve them from whatever repositories are available to the root project. This can be accomplished by adding Maven Central, or a mirror of it, to your root project.
+{% endhint %}
 
 ### Configuring the 'rewrite' DSL
 
@@ -69,6 +50,11 @@ plugins {
     id("java")
     id("org.openrewrite.rewrite") version("5.0.0")
 }
+
+repositories {
+    mavenCentral()
+}
+
 rewrite {
     activeRecipe("com.yourorg.ExampleRecipe", "com.yourorg.ExampleRecipe2")
     activeStyle("com.yourorg.ExampleStyle", "com.yourorg.ExampleStyle2")
@@ -85,13 +71,7 @@ rewrite {
 All OpenRewrite libraries and modules are published to MavenCentral. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there or one of its mirrors.
 {% endhint %}
 
-The plugin automatically scans the compilation time classpath of each [SourceSet](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceSet.html) for visitors, recipes, and styles. No recipe is ever run on your code base without being explicitly activated in the plugin's configuration.
-
-{% hint style="success" %}
-Because the plugin uses classpath scanning, dependencies of the project can include Rewrite recipes in their releases to help migrate users of their library from one version to another.
-{% endhint %}
-
-To make pre-packaged Rewrite recipes available for activation, add them as `rewrite` dependencies:
+No recipe is ever run on your code base without being explicitly activated in the plugin's configuration. To make pre-packaged Rewrite recipes available for activation, add them as `rewrite` dependencies:
 
 ```groovy
 dependencies {
@@ -108,7 +88,7 @@ plugins {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -165,3 +145,4 @@ Execute `gradle rewriteDiscover` to list the recipes available on your classpath
 * [Github project](https://github.com/openrewrite/rewrite-gradle-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-gradle-plugin/issues)
 * [Gradle Plugin Portal Listing](https://plugins.gradle.org/plugin/org.openrewrite.rewrite)
+

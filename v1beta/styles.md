@@ -63,9 +63,9 @@ styleConfigs:
       <td style="text-align:left">styleConfigs</td>
       <td style="text-align:left">
         <p>A list of configurations.</p>
-        <p>Each list entry is the fully-qualified class name
-          of a <code>Style</code> implementation. The value is itself a map of key-value
-          pairs that invoke setters on the style.</p>
+        <p>Each list entry is the fully-qualified class name of a <code>Style</code> implementation.
+          The value is itself a map of key-value pairs that invoke setters on the
+          style.</p>
       </td>
     </tr>
   </tbody>
