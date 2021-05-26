@@ -316,7 +316,7 @@ public class SayHelloRecipe extends Recipe {
 
 ## Testing
 
-To create automated tests of this visitor we use the [kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line Strings, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/) and `RecipeTest` class provided by rewrite-test. For `SayHelloRecipe` it is sensible to test:
+To create automated tests of this visitor we use the [kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line Strings, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/) and `JavaRecipeTest` class provided by rewrite-test. For `SayHelloRecipe` it is sensible to test:
 
 * That a class matching the configured `fullyQualifiedClassName` with no `hello()` method will have a `hello()` method added
 * That a class that already has a different `hello()` implementation will be left untouched
@@ -328,12 +328,12 @@ To assert that a Recipe does make a change, use `RecipeTest.assertChanged`. To a
 package org.openrewrite.samples
 
 import org.junit.jupiter.api.Test
-import org.openrewrite.RecipeTest
 import org.openrewrite.java.JavaParser
+import org.openrewrite.java.JavaRecipeTest
 
-class SayHelloRecipeTest(): RecipeTest {
+class SayHelloRecipeTest: JavaRecipeTest {
     override val parser = JavaParser.fromJavaVersion().build()
-    override val recipe = SayHelloRecipe().apply { setFullyQualifiedClassName("com.yourorg.A") }
+    override val recipe = SayHelloRecipe("com.yourorg.A")
 
     @Test
     fun addsHelloToA() = assertChanged(
@@ -376,6 +376,10 @@ class SayHelloRecipeTest(): RecipeTest {
     )
 }
 ```
+
+{% hint style="success" %}
+Users of [IntelliJ Idea](https://www.jetbrains.com/idea/) benefit from Java syntax highlighting when authoring these tests.
+{% endhint %}
 
 ## Declarative YAML Usage
 
