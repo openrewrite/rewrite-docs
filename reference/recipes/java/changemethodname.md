@@ -13,10 +13,33 @@ All rewrite libraries are published to [Maven Central](https://search.maven.org/
 
 ## Options
 
-* methodPattern: `String!`
-  * A method pattern, expressed as a pointcut expression, that is used to find matching method declarations/invocations.
-* newMethodName: `String!`
-  * The method name that will replace the existing name.
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Name</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"><code>String</code>
+      </td>
+      <td style="text-align:left">methodPattern</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>A method pattern, expressed as a pointcut expression, that is used to
+          find matching method declarations/invocations.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>String</code>
+      </td>
+      <td style="text-align:left">newMethodName</td>
+      <td style="text-align:left">The method name that will replace the existing name.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Example Usage
 
