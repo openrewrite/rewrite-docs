@@ -42,24 +42,24 @@ Which rewrite libraries you take dependencies on is determined by which language
 ```groovy
 dependencies {
     // rewrite-java dependencies only necessary for Java Recipe development
-    implementation("org.openrewrite:rewrite-java:7.6.0")
-    runtimeOnly("org.openrewrite:rewrite-java-11:7.6.0")
-    runtimeOnly("org.openrewrite:rewrite-java-8:7.6.0")
+    implementation("org.openrewrite:rewrite-java:7.7..0")
+    runtimeOnly("org.openrewrite:rewrite-java-11:7.7..0")
+    runtimeOnly("org.openrewrite:rewrite-java-8:7.7..0")
 
     // rewrite-maven dependency only necessary for Maven Recipe development
-    implementation("org.openrewrite:rewrite-maven:7.6.0")
+    implementation("org.openrewrite:rewrite-maven:7.7..0")
 
     // rewrite-yaml dependency only necessary for Yaml Recipe development
-    implementation("org.openrewrite:rewrite-yaml:7.6.0")
+    implementation("org.openrewrite:rewrite-yaml:7.7..0")
 
     // rewrite-properties dependency only necessary for Properties Recipe development
-    implementation("org.openrewrite:rewrite-properties:7.6.0")
+    implementation("org.openrewrite:rewrite-properties:7.7..0")
 
     // rewrite-xml dependency only necessary for XML Recipe development
-    implementation("org.openrewrite:rewrite-xml:7.6.0")
+    implementation("org.openrewrite:rewrite-xml:7.7..0")
 
     // For authoring tests for any kind of Recipe
-    testImplementation("org.openrewrite:rewrite-test:7.6.0")
+    testImplementation("org.openrewrite:rewrite-test:7.7..0")
 }
 ```
 {% endtab %}
@@ -71,19 +71,19 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
-        <version>7.6.0</version>
+        <version>7.7..0</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
-        <version>7.6.0</version>
+        <version>7.7..0</version>
         <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-11</artifactId>
-        <version>7.6.0</version>
+        <version>7.7..0</version>
         <scope>runtime</scope>
     </dependency>
 
@@ -91,7 +91,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-maven</artifactId>
-        <version>7.6.0</version>
+        <version>7.7..0</version>
         <scope>compile</scope>
     </dependency>
 
@@ -99,7 +99,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-yaml</artifactId>
-        <version>7.6.0</version>
+        <version>7.7..0</version>
         <scope>compile</scope>
     </dependency>
 
@@ -107,7 +107,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-properties</artifactId>
-        <version>7.6.0</version>
+        <version>7.7..0</version>
         <scope>compile</scope>
     </dependency>
 
@@ -115,7 +115,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-xml</artifactId>
-        <version>7.6.0</version>
+        <version>7.7..0</version>
         <scope>compile</scope>
     </dependency>    
 
@@ -123,7 +123,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-test</artifactId>
-        <version>7.6.0</version>
+        <version>7.7..0</version>
         <scope>test</scope>
     </dependency>
 </dependencies>

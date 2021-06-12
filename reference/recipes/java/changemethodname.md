@@ -5,11 +5,11 @@ _Rename a method._
 
 #### Source
 
-All rewrite libraries are published to [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.6.0/jar).
+All rewrite libraries are published to [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.7..0/jar).
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.6.0
+* version: 7.7..0
 
 ## Options
 
@@ -65,7 +65,7 @@ Now activate `com.yourorg.ChangeMethodNameCustomized` in your build file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.0.0")
+    id("org.openrewrite.rewrite") version("5.1.0")
 }
 
 rewrite {
@@ -77,7 +77,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-java:7.6.0")
+    rewrite("org.openrewrite:rewrite-java:7.7..0")
 }
 ```
 {% endcode %}
@@ -92,7 +92,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.4.0</version>
+        <version>4.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodNameCustomized</recipe>
@@ -102,7 +102,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-java</artifactId>
-            <version>7.6.0</version>
+            <version>7.7..0</version>
           </dependency>
         </dependencies>
       </plugin>
