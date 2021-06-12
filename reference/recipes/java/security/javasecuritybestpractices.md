@@ -58,5 +58,8 @@ repositories {
   </build>
 </project>
 ```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.security.JavaSecurityBestPractices`
