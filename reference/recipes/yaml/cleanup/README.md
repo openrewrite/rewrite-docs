@@ -1,6 +1,4 @@
 # Cleanup
 
-## Recipes
-
+### Recipes
 * [Remove unused YAML](removeunused.md)
-

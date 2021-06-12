@@ -1,25 +1,58 @@
 # Code cleanup
 
-**org.openrewrite.java.cleanup.Cleanup**  
+** org.openrewrite.java.cleanup.Cleanup**
 _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions._
 
-## Recipe list
+### Source
 
-* [Covariant equals](covariantequals.md)
-* [Remove empty blocks](emptyblock.md)
-* [Equals avoids null](equalsavoidsnull.md)
-* [Explicit initialization](explicitinitialization.md)
-* [Finalize local variables](finalizelocalvariables.md)
-* [Hide utility class constructor](hideutilityclassconstructor.md)
-* [Modifier order](modifierorder.md)
-* [Redundant file creation](redundantfilecreation.md)
-* [Simplify boolean expression](simplifybooleanexpression.md)
-* [Simplify boolean return](simplifybooleanreturn.md)
-* [Static methods not final](staticmethodnotfinal.md)
-* [Unnecessary explicit type arguments](unnecessaryexplicittypearguments.md)
-* [Remove unnecessary parentheses](unnecessaryparentheses.md)
-* [Unnecessary throws](unnecessarythrows.md)
-* [Use diamond operator](usediamondoperator.md)
-* [Use primitive wrapper `valueOf` method](primitivewrapperclassconstructortovalueof.md)
-* [`BigDecimal` rounding constants to `RoundingMode` enums](bigdecimalroundingconstantstoenums.md)
+Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.7.0/jar)
 
+* groupId: org.openrewrite
+* artifactId: rewrite-java
+* version: 7.7.0
+
+## Usage
+This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
+
+{% tabs %}
+{% tab title="Gradle" %}
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("5.1.0")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.cleanup.Cleanup")
+}
+
+repositories {
+    mavenCentral()
+}
+
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven" %}
+{% code title="pom.xml" %}
+```markup
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>4.5.0</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.Cleanup`

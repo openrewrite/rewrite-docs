@@ -1,8 +1,8 @@
 # Security
 
-## Recipes
+_Recipes that find and eliminate vulnerable patterns in Java code._
 
+### Recipes
 * [Java security best practices](javasecuritybestpractices.md)
-* [Allows attacker to create a directory with elevated permissions.](resultoffilemkdirsignored.md)
+* [Use secure temporary file creation](securetempfilecreation.md)
 * [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
-
