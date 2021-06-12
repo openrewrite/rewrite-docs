@@ -29,6 +29,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * [Migrate deprecated `java.util.logging` APIs](../../java/migrate/logging/javaloggingapis.md)
 * [Migrate deprecated `java.net` APIs](../../java/migrate/net/javanetapis.md)
 * [Migrate deprecated `java.sql` APIs](../../java/migrate/sql/javasqlapis.md)
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 

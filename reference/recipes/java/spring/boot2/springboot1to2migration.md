@@ -72,6 +72,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * [Migrate Spring Boot properties to 2.2](../../../java/spring/boot2/springbootproperties_2_2.md)
 * [Migrate Spring Boot properties to 2.3](../../../java/spring/boot2/springbootproperties_2_3.md)
 * [Spring Boot 2.x best practices](../../../java/spring/boot2/springboot2bestpractices.md)
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
 

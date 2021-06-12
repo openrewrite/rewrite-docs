@@ -16,6 +16,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | Type | Name | Description |
 | -- | -- | -- |
 | `boolean` | removeUnused | Remove unnecessary imports. |
+
 ## Usage
 This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
 

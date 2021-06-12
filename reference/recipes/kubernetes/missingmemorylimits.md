@@ -20,6 +20,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/resources/limits/memory`
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 

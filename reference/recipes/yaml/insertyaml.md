@@ -17,6 +17,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | -- | -- | -- |
 | `String` | key | XPath expression used to find matching keys. |
 | `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.InsertYamlExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

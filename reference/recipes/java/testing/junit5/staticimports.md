@@ -20,6 +20,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 * [Use static import](../../../java/usestaticimport.md)
   * methodPattern: `org.junit.jupiter.api.Assertions *(..)`
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 

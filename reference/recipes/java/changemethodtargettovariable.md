@@ -18,6 +18,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | `String` | methodPattern | A method pattern, expressed as a pointcut expression, that is used to find matching method invocations. |
 | `String` | variableName | Name of variable to use as target for the modified method invocation. |
 | `String` | variableType | Type attribution to use for the return type of the modified method invocation. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodTargetToVariableExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

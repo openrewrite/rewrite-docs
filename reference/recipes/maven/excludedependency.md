@@ -18,6 +18,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | scope | Match dependencies with the specified scope. If you specify `compile`, this will NOT match dependencies in `runtime`. The purpose of this is to be able to exclude dependencies that should be in a higher scope, e.g. a compile dependency that should be a test dependency. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ExcludeDependencyExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

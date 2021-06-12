@@ -23,6 +23,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * runners: `[org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]`
   * extension: `org.mockito.junit.jupiter.MockitoExtension`
 * [Mockito 3.x migration from 1.x](../../../java/testing/mockito/mockito1to3migration.md)
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 

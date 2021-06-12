@@ -17,6 +17,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 | -- | -- | -- |
 | `List` | runners | The fully qualified class names of the JUnit4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. |
 | `String` | extension | The fully qualified class names of the JUnit Jupiter extension. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RunnerToExtensionExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

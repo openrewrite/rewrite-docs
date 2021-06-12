@@ -18,6 +18,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 ## Recipe list
 
 * [Use `java.net.MulticastSocket#getTimeToLive()`](../../../java/migrate/net/migratemulticastsocketgetttltogettimetolive.md)
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 

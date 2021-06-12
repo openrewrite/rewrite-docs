@@ -22,6 +22,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * [Use `SimpleElementVisitor9`](../../../java/migrate/javax/migratesimpleelementvisitor6to9.md)
 * [Use `SimpleTypeVisitor9`](../../../java/migrate/javax/migratesimpletypevisitor6to9.md)
 * [Use `TypeKindVisitor9`](../../../java/migrate/javax/migratetypekindvisitor6to9.md)
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 

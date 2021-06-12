@@ -18,6 +18,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | `String` | groupPattern | Group glob expression pattern used to match dependencies that should be managed.Group is the the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | artifactPattern | Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | version | Version to use for the dependency in dependency management. Defaults to the existing version found on the matching dependency. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ManageDependenciesExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

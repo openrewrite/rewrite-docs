@@ -18,6 +18,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | `String` | methodPattern | A method pattern, expressed as a pointcut expression, that is used to find matching method invocations. |
 | `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. |
 | `String[]` | oldParameterNames | If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ReorderMethodArgumentsExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

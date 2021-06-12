@@ -45,6 +45,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `javax.xml.ws`
   * artifactId: `jaxws-api`
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 

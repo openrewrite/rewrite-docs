@@ -21,6 +21,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/securityContext/readOnlyRootFilesystem`
   * value: `readOnlyRootFilesystem: false`
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 

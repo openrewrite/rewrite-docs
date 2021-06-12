@@ -24,6 +24,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | `String` | type |  |
 | `String` | familyPattern | A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. |
 | `List` | onlyIfUsing | Add the dependency only if using one of the supplied types. Types should be identified by fully qualified class name or a glob expression |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddDependencyExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

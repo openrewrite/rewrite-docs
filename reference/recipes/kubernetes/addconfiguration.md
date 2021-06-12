@@ -19,6 +19,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 | `String` | resourceKind | The Kubernetes resource type the configured is required on. |
 | `String` | configurationPath | An XPath expression to locate Kubernetes configuration. Must be an absolute path. |
 | `String` | value | The configuration that is added when necessary, including the key. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddConfigurationExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

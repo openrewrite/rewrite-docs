@@ -16,6 +16,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * [Change method name](../../../java/changemethodname.md)
   * methodPattern: `java.lang.Character isJavaLetter(char)`
   * newMethodName: `isJavaIdentifierStart`
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 

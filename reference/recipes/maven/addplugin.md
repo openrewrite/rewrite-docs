@@ -19,6 +19,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | `String` | version | A fixed version of the plugin to add. |
 | `String` | configuration | Optional plugin configuration provided as raw XML |
 | `String` | dependencies | Optional plugin dependencies provided as raw XML. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddPluginExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

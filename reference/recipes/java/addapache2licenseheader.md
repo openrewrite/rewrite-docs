@@ -30,6 +30,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.`
+
 ## Usage
 This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
 

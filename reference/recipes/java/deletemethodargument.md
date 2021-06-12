@@ -17,6 +17,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | -- | -- | -- |
 | `String` | methodPattern | A method pattern, expressed as a pointcut expression, that is used to find matching method invocations. |
 | `int` | argumentIndex | A zero-based index that indicates which argument will be removed from the method invocation. |
+
 ## Usage
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.DeleteMethodArgumentExample`. 
 Here's how you can define and customize such a recipe within your rewrite.yml:

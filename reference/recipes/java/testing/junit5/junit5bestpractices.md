@@ -20,6 +20,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 * [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports.md)
 * [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 

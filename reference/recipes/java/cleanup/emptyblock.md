@@ -11,6 +11,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-java
 * version: 7.7.0
 
+
 ## Usage
 This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
 

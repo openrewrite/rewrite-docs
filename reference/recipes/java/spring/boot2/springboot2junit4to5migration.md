@@ -33,6 +33,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * scope: `test`
   * onlyIfUsing: `[org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension]`
 * [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
+
 ## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
 
