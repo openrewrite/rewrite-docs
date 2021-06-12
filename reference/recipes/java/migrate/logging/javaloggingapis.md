@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe":"rewrite-migrate-java":"0.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.2.0")
 }
 ```
 {% endcode %}
@@ -77,3 +77,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.logging.JavaLoggingAPIs`
+Is`

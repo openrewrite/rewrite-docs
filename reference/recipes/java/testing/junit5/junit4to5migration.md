@@ -82,7 +82,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe":"rewrite-testing-frameworks":"1.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0")
 }
 ```
 {% endcode %}
@@ -120,3 +120,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.JUnit4to5Migration`
+on`

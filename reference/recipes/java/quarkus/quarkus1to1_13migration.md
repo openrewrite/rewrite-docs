@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe":"rewrite-quarkus":"0.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:0.1.0")
 }
 ```
 {% endcode %}
@@ -104,3 +104,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.Quarkus1to1_13Migration`
+on`

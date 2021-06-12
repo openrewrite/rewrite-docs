@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe":"rewrite-kubernetes":"1.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.1.0")
 }
 ```
 {% endcode %}
@@ -80,3 +80,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.NoHostProcessIdSharing`
+ng`

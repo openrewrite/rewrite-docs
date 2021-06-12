@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe":"rewrite-spring":"4.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.5.0")
 }
 ```
 {% endcode %}
@@ -70,3 +70,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.ImplicitWebAnnotationNames`
+es`
