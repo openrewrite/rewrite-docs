@@ -2,7 +2,8 @@
 
 _Best practices for JUnit Jupiter tests._
 
-### Recipes
+## Recipes
+
 * [JUnit Jupiter best practices](junit5bestpractices.md)
 * [Statically import JUnit Jupiter assertions](staticimports.md)
 * [JUnit Jupiter migration from JUnit 4.x](junit4to5migration.md)
@@ -13,8 +14,8 @@ _Best practices for JUnit Jupiter tests._
 * [JUnit4 `@Category` to JUnit Jupiter `@Tag`](categorytotag.md)
 * [Cleanup JUnit imports](cleanupjunitimports.md)
 * [JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`](expectedexceptiontoassertthrows.md)
-* [Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests](junitparamsrunnertoparameterized.md)
-* [Migrate JUnit 4 `TestCase` to JUnit Jupiter](migratejunittestcase.md)
+* [Pragmatists @RunWith\(JUnitParamsRunner.class\) to JUnit Jupiter Parameterized Tests](junitparamsrunnertoparameterized.md)
+* [Migrate JUnit 4 `TestCase` to JUnit Jupiter](https://github.com/openrewrite/rewrite-docs/tree/25ef5339437c82b49c028bd5a8055cbc851ca0e2/reference/recipes/java/testing/junit5/migratejunittestcase.md)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](mockitojunittomockitoextension.md)
 * [JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests](parameterizedrunnertoparameterized.md)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement.](removeobsoleterunners.md)
@@ -24,3 +25,4 @@ _Best practices for JUnit Jupiter tests._
 * [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](updatemockwebserver.md)
 * [Migrate JUnit 4 `@Test` annotations to JUnit5](updatetestannotation.md)
 * [Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`](usetestmethodorder.md)
+

@@ -1,7 +1,6 @@
 # Find text
 
-** org.openrewrite.java.search.FindText**
-_Find occurrences of regular expression based patterns in comments and literals_
+ **org.openrewrite.java.search.FindText** _Find occurrences of regular expression based patterns in comments and literals_
 
 ### Source
 
@@ -14,12 +13,12 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 ### Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `List` | patterns | A list of regular expressions to search for. |
 
 ## Usage
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindTextExample`. 
-Here's how you can define and customize such a recipe within your rewrite.yml:
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindTextExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -32,7 +31,6 @@ recipeList:
       patterns: -----BEGIN RSA PRIVATE KEY-----
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.FindTextExample` has been defined activate it in your build file:
 
@@ -51,7 +49,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -81,3 +78,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindTextExample`
+

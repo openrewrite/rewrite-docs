@@ -2,8 +2,11 @@
 
 _Basic building blocks for transforming YAML._
 
-### Recipes
+## Recipes
+
 * [Format XML](autoformat.md)
 
-### Subcategories
-* [Search](search/README.md)
+## Subcategories
+
+* [Search](search/)
+

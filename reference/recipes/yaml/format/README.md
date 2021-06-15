@@ -1,4 +1,6 @@
 # Format
 
-### Recipes
+## Recipes
+
 * [YAML indent](indents.md)
+

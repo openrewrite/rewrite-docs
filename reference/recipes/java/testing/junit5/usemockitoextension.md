@@ -1,7 +1,6 @@
 # Use Mockito JUnit Jupiter extension
 
-** org.openrewrite.java.testing.junit5.UseMockitoExtension**
-_Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) to `@ExtendWith(MockitoExtension.class)`._
+ **org.openrewrite.java.testing.junit5.UseMockitoExtension** _Migrate uses of `@RunWith(MockitoJUnitRunner.class)` \(and similar annotations\) to `@ExtendWith(MockitoExtension.class)`._
 
 ### Tags
 
@@ -19,12 +18,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
+* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](runnertoextension.md)
   * runners: `[org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]`
   * extension: `org.mockito.junit.jupiter.MockitoExtension`
-* [Mockito 3.x migration from 1.x](../../../java/testing/mockito/mockito1to3migration.md)
+* [Mockito 3.x migration from 1.x](../mockito/mockito1to3migration.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -81,5 +81,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.UseMockitoExtension`
-on`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.UseMockitoExtension` on\`
+

@@ -2,7 +2,8 @@
 
 _null_
 
-### Recipes
+## Recipes
+
 * [Migrate deprecated `java.lang` APIs](javalangapis.md)
 * [Use `Character#isJavaIdentifierStart(char)`](migratecharacterisjavalettertoisjavaidentifierstart.md)
 * [Use `Character#isJavaIdentifierPart(char)`](migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
@@ -13,3 +14,4 @@ _null_
 * [Use `Runtime.Version#update()`](migrateruntimeversionsecuritytoupdate.md)
 * [Use `ClassLoader#defineClass(String, byte[], int, int)`](migrateclassloaderdefineclass.md)
 * [Use `SecurityManager#checkMulticast(InetAddress)`](migratesecuritymanagermulticast.md)
+

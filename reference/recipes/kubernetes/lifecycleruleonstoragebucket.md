@@ -1,6 +1,6 @@
-# Ensure lifecycle rule on `StorageBucket`
+# Ensure lifecycle rule on StorageBucket
 
-** org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket**
+ **org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket**
 
 ### Tags
 
@@ -16,17 +16,21 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * apiVersion: `storage.cnrm.cloud.google.com/v1beta1`
   * resourceKind: `StorageBucket`
   * configurationPath: `/spec/lifecycleRule`
-  * value: `lifecycleRule:
-  - action:
+  * value: \`lifecycleRule:
+  * action:
+
       type: Delete
+
     condition:
-      age: 7`
+
+      age: 7\`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -83,5 +87,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket`
-et`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket` et\`
+

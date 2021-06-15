@@ -1,6 +1,7 @@
 # Format
 
-### Recipes
+## Recipes
+
 * [Format Java code](autoformat.md)
 * [Blank lines](blanklines.md)
 * [Normalize format](normalizeformat.md)
@@ -8,3 +9,4 @@
 * [Spaces](spaces.md)
 * [Tabs and indents](tabsandindents.md)
 * [Wrapping and braces](wrappingandbraces.md)
+

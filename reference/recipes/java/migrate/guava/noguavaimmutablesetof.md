@@ -1,7 +1,6 @@
-# Use `Set#of(..)` not Guava
+# Use Set\#of\(..\) not Guava
 
-** org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf**
-_Java 9 introduced `Set#of(..)` which does the same thing as the Guava method._
+ **org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf** _Java 9 introduced `Set#of(..)` which does the same thing as the Guava method._
 
 ### Tags
 
@@ -17,12 +16,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `com.google.common.collect.ImmutableSet of(..)`
   * fullyQualifiedTargetTypeName: `java.util.Set`
   * returnType: `java.util.Set`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -79,5 +79,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf`
-Of`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf` Of\`
+

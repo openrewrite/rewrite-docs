@@ -1,7 +1,6 @@
-# Migrate `@ConfigProperties` To `@ConfigMapping`
+# Migrate @ConfigProperties To @ConfigMapping
 
-** org.openrewrite.java.quarkus.ConfigPropertiesToConfigMapping**
-_Migrate the Quarkus `@ConfigProperties` annotated configurations to the equivalent Smallrye `@ConfigMapping`._
+ **org.openrewrite.java.quarkus.ConfigPropertiesToConfigMapping** _Migrate the Quarkus `@ConfigProperties` annotated configurations to the equivalent Smallrye `@ConfigMapping`._
 
 ### Source
 
@@ -11,8 +10,8 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-quarkus
 * version: 0.1.0
 
-
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:0.1.0 in your build file:
 
 {% tabs %}
@@ -69,5 +68,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.ConfigPropertiesToConfigMapping`
-ng`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.ConfigPropertiesToConfigMapping` ng\`
+

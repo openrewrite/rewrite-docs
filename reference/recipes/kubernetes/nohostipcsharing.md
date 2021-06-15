@@ -1,7 +1,6 @@
 # No host IPC sharing
 
-** org.openrewrite.kubernetes.NoHostIPCSharing**
-_Preventing sharing of host PID/IPC namespace, networking, and ports ensures proper isolation between Docker containers and the underlying host._
+ **org.openrewrite.kubernetes.NoHostIPCSharing** _Preventing sharing of host PID/IPC namespace, networking, and ports ensures proper isolation between Docker containers and the underlying host._
 
 ### Tags
 
@@ -17,12 +16,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/hostIPC`
   * value: `hostIPC: false`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -79,5 +79,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.NoHostIPCSharing`
-ng`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.NoHostIPCSharing` ng\`
+

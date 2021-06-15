@@ -1,7 +1,6 @@
-# Migrate deprecated `java.util.concurrent` APIs
+# Migrate deprecated java.util.concurrent APIs
 
-** org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs**
-_Certain Java concurrent APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs** _Certain Java concurrent APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ### Source
 
@@ -13,15 +12,16 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`](../../../java/migrate/concurrent/migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicInteger#weakCompareAndSetPlain(int, int)`](../../../java/migrate/concurrent/migrateatomicintegerweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)`](../../../java/migrate/concurrent/migrateatomicintegerarrayweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicLong#weakCompareAndSetPlain(long, long)`](../../../java/migrate/concurrent/migrateatomiclongweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`](../../../java/migrate/concurrent/migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicReference#weakCompareAndSetPlain(T, T)`](../../../java/migrate/concurrent/migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`](../../../java/migrate/concurrent/migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`](migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicInteger#weakCompareAndSetPlain(int, int)`](migrateatomicintegerweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)`](migrateatomicintegerarrayweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicLong#weakCompareAndSetPlain(long, long)`](migrateatomiclongweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`](migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicReference#weakCompareAndSetPlain(T, T)`](migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`](migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -78,5 +78,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs`
-Is`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs` Is\`
+

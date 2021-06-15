@@ -1,6 +1,6 @@
 # Add Maven dependency
 
-** org.openrewrite.maven.AddDependency**
+ **org.openrewrite.maven.AddDependency**
 
 ### Source
 
@@ -13,7 +13,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 ### Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | version | An exact version number, or node-style semver selector used to select the version number. |
@@ -22,12 +22,12 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 | `String` | classifier | A Maven classifier to add. Most commonly used to select shaded or test variants of a library |
 | `String` | scope |  |
 | `String` | type |  |
-| `String` | familyPattern | A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. |
+| `String` | familyPattern | A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '\*' as a wildcard character. |
 | `List` | onlyIfUsing | Add the dependency only if using one of the supplied types. Types should be identified by fully qualified class name or a glob expression |
 
 ## Usage
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddDependencyExample`. 
-Here's how you can define and customize such a recipe within your rewrite.yml:
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddDependencyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -50,7 +50,6 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.AddDependencyExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -68,7 +67,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -98,3 +96,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.AddDependencyExample`
+

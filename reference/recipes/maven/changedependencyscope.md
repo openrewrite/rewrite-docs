@@ -1,7 +1,6 @@
 # Change Maven dependency scope
 
-** org.openrewrite.maven.ChangeDependencyScope**
-_Add or alter the scope of the specified dependency_
+ **org.openrewrite.maven.ChangeDependencyScope** _Add or alter the scope of the specified dependency_
 
 ### Source
 
@@ -14,14 +13,14 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 ### Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | newScope | Scope to apply to specified Maven dependency. May be omitted, which indicates that no scope should be added and any existing scope be removed from the dependency. |
 
 ## Usage
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyScopeExample`. 
-Here's how you can define and customize such a recipe within your rewrite.yml:
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyScopeExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +35,6 @@ recipeList:
       newScope: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeDependencyScopeExample` has been defined activate it in your build file:
 
@@ -55,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -85,3 +82,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ChangeDependencyScopeExample`
+

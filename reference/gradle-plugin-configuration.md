@@ -30,7 +30,7 @@ With the plugin applied, the `rewrite` DSL is available for configuration.
 
 ### Multi-Module Gradle Projects
 
-The rewrite gradle plugin should only be applied to the root project. Refactoring operations will affect all projects that apply Gradle's java plugin. 
+The rewrite gradle plugin should only be applied to the root project. Refactoring operations will affect all projects that apply Gradle's java plugin.
 
 {% hint style="warning" %}
 The rewrite gradle plugin resolves the rewrite core libraries at runtime. It will attempt to resolve them from whatever repositories are available to the root project. This can be accomplished by adding Maven Central, or a mirror of it, to your root project.
@@ -105,7 +105,7 @@ rewrite {
 
 Execute `gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
-![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output%20%282%29%20%282%29%20%284%29%20%284%29%20%285%29%20%286%29%20%286%29.png)
+![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output%20%282%29%20%282%29%20%284%29%20%284%29%20%285%29%20%286%29%20%286%29%20%289%29%20%282%29%20%2810%29.png)
 
 After the goal finishes executing, run `git diff` \(or your VCS system's equivalent\) to see what changes were made, review, and commit them.
 

@@ -2,7 +2,8 @@
 
 _null_
 
-### Recipes
+## Recipes
+
 * [Migrate deprecated `java.util.concurrent` APIs](javaconcurrentapis.md)
 * [Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`](migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
 * [Use `AtomicInteger#weakCompareAndSetPlain(int, int)`](migrateatomicintegerweakcompareandsettoweakcompareandsetplain.md)
@@ -11,3 +12,4 @@ _null_
 * [Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`](migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain.md)
 * [Use `AtomicReference#weakCompareAndSetPlain(T, T)`](migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
 * [Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`](migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain.md)
+

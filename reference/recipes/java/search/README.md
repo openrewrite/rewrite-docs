@@ -1,6 +1,7 @@
 # Search
 
-### Recipes
+## Recipes
+
 * [Find plain text secrets](findsecrets.md)
 * [Find annotations](findannotations.md)
 * [Find fields](findfields.md)
@@ -8,3 +9,4 @@
 * [Find text](findtext.md)
 * [Find types](findtypes.md)
 * [Result of method call ignored](resultofmethodcallignored.md)
+

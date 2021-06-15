@@ -1,8 +1,10 @@
 # Testing
 
-### Subcategories
-* [Junit5](junit5/README.md)
-* [Cleanup](cleanup/README.md)
-* [Assertj](assertj/README.md)
-* [Hamcrest](hamcrest/README.md)
-* [Mockito](mockito/README.md)
+## Subcategories
+
+* [Junit5](junit5/)
+* [Cleanup](cleanup/)
+* [Assertj](assertj/)
+* [Hamcrest](hamcrest/)
+* [Mockito](mockito/)
+

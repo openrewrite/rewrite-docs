@@ -1,7 +1,6 @@
 # Coalesce YAML properties
 
-** org.openrewrite.yaml.CoalesceProperties**
-_Simplify nested map hierarchies into their simplest dot separated property form, i.e. as Spring Boot interprets application.yml files._
+ **org.openrewrite.yaml.CoalesceProperties** _Simplify nested map hierarchies into their simplest dot separated property form, i.e. as Spring Boot interprets application.yml files._
 
 ### Source
 
@@ -11,9 +10,9 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-yaml
 * version: 7.7.0
 
-
 ## Usage
-This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
+
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -30,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -60,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.yaml.CoalesceProperties`
+

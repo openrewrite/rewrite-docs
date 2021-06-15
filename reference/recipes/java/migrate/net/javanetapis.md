@@ -1,7 +1,6 @@
-# Migrate deprecated `java.net` APIs
+# Migrate deprecated java.net APIs
 
-** org.openrewrite.java.migrate.net.JavaNetAPIs**
-_Certain Java networking APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.net.JavaNetAPIs** _Certain Java networking APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ### Tags
 
@@ -17,9 +16,10 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Use `java.net.MulticastSocket#getTimeToLive()`](../../../java/migrate/net/migratemulticastsocketgetttltogettimetolive.md)
+* [Use `java.net.MulticastSocket#getTimeToLive()`](migratemulticastsocketgetttltogettimetolive.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -76,5 +76,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.net.JavaNetAPIs`
-Is`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.net.JavaNetAPIs` Is\`
+

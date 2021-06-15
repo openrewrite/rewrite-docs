@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.lang.model.util` APIs in openjdk.
+# Migrate deprecated javax.lang.model.util APIs in openjdk.
 
-** org.openrewrite.java.migrate.javax.JavaxLangModelUtil**
-_Certain `javax.lang.model.util` APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.javax.JavaxLangModelUtil** _Certain `javax.lang.model.util` APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ### Source
 
@@ -13,17 +12,18 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Use `AbstractAnnotationValueVisitor9`](../../../java/migrate/javax/migrateabstractannotationvaluevisitor6to9.md)
-* [Use `AbstractElementVisitor9`](../../../java/migrate/javax/migrateabstractelementvisitor6to9.md)
-* [Use `AbstractTypeVisitor9`](../../../java/migrate/javax/migrateabstracttypevisitor6to9.md)
-* [Use `ElementKindVisitor9`](../../../java/migrate/javax/migrateelementkindvisitor6to9.md)
-* [Use `ElementScanner9`](../../../java/migrate/javax/migrateelementscanner6to9.md)
-* [Use `SimpleAnnotationValueVisitor9`](../../../java/migrate/javax/migratesimpleannotationvaluevisitor6to9.md)
-* [Use `SimpleElementVisitor9`](../../../java/migrate/javax/migratesimpleelementvisitor6to9.md)
-* [Use `SimpleTypeVisitor9`](../../../java/migrate/javax/migratesimpletypevisitor6to9.md)
-* [Use `TypeKindVisitor9`](../../../java/migrate/javax/migratetypekindvisitor6to9.md)
+* [Use `AbstractAnnotationValueVisitor9`](migrateabstractannotationvaluevisitor6to9.md)
+* [Use `AbstractElementVisitor9`](migrateabstractelementvisitor6to9.md)
+* [Use `AbstractTypeVisitor9`](migrateabstracttypevisitor6to9.md)
+* [Use `ElementKindVisitor9`](migrateelementkindvisitor6to9.md)
+* [Use `ElementScanner9`](migrateelementscanner6to9.md)
+* [Use `SimpleAnnotationValueVisitor9`](migratesimpleannotationvaluevisitor6to9.md)
+* [Use `SimpleElementVisitor9`](migratesimpleelementvisitor6to9.md)
+* [Use `SimpleTypeVisitor9`](migratesimpletypevisitor6to9.md)
+* [Use `TypeKindVisitor9`](migratetypekindvisitor6to9.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -80,5 +80,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.javax.JavaxLangModelUtil`
-il`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.javax.JavaxLangModelUtil` il\`
+

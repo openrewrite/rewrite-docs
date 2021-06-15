@@ -2,7 +2,8 @@
 
 _null_
 
-### Recipes
+## Recipes
+
 * [AssertJ best practices](assertj.md)
 * [Statically import AssertJ's `assertThat`](staticimports.md)
 * [Migrate JUnit asserts to AssertJ](junittoassertj.md)
@@ -15,3 +16,4 @@ _null_
 * [JUnit `assertSame` to AssertJ](junitassertsametoassertthat.md)
 * [JUnit `assertTrue` to AssertJ](junitasserttruetoassertthat.md)
 * [JUnit fail to AssertJ](junitfailtoassertjfail.md)
+

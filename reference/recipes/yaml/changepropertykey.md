@@ -1,7 +1,6 @@
 # Change property key
 
-** org.openrewrite.yaml.ChangePropertyKey**
-_Change a YAML property key leaving the value intact. Nested YAML mappings are interpreted as dot separated property names, i.e. as Spring Boot interprets application.yml files._
+ **org.openrewrite.yaml.ChangePropertyKey** _Change a YAML property key leaving the value intact. Nested YAML mappings are interpreted as dot separated property names, i.e. as Spring Boot interprets application.yml files._
 
 ### Source
 
@@ -14,13 +13,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 ### Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | oldPropertyKey |  |
 | `String` | newPropertyKey |  |
 
 ## Usage
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyKeyExample`. 
-Here's how you can define and customize such a recipe within your rewrite.yml:
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyKeyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,7 +33,6 @@ recipeList:
       newPropertyKey: management.metrics.enable.process.files
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in your build file:
 
@@ -53,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -83,3 +80,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ChangePropertyKeyExample`
+

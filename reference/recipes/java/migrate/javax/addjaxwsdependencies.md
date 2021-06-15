@@ -1,7 +1,6 @@
 # Add explicit JAX-WS dependencies
 
-** org.openrewrite.java.migrate.javax.AddJaxwsDependencies**
-_This recipe will add the necessary JAX-WS dependencies for those projects migrating to Java 11._
+ **org.openrewrite.java.migrate.javax.AddJaxwsDependencies** _This recipe will add the necessary JAX-WS dependencies for those projects migrating to Java 11._
 
 ### Tags
 
@@ -47,6 +46,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * artifactId: `jaxws-api`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -103,5 +103,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.javax.AddJaxwsDependencies`
-es`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.javax.AddJaxwsDependencies` es\`
+

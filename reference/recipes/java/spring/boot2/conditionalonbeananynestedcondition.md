@@ -1,7 +1,6 @@
-# Migrate multi-condition `@ConditionalOnBean` annotations
+# Migrate multi-condition @ConditionalOnBean annotations
 
-** org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition**
-_Migrate multi-condition `@ConditionalOnBean` annotations to `AnyNestedCondition`._
+ **org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition** _Migrate multi-condition `@ConditionalOnBean` annotations to `AnyNestedCondition`._
 
 ### Source
 
@@ -11,8 +10,8 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-spring
 * version: 4.5.0
 
-
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
 
 {% tabs %}
@@ -69,5 +68,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition`
-on`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition` on\`
+

@@ -1,7 +1,6 @@
 # Migrate Java 8 to Java 11
 
-** org.openrewrite.java.migrate.Java8toJava11**
-_This recipe will apply changes commonly needed when migrating from Java 8 to Java 11._
+ **org.openrewrite.java.migrate.Java8toJava11** _This recipe will apply changes commonly needed when migrating from Java 8 to Java 11._
 
 ### Tags
 
@@ -21,16 +20,17 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Migrate deprecated `java.util.concurrent` APIs](../../java/migrate/concurrent/javaconcurrentapis.md)
-* [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](../../java/migrate/javax/javaxlangmodelutil.md)
-* [Migrate deprecated `javax.management.monitor` APIs](../../java/migrate/javax/javaxmanagementmonitorapis.md)
-* [Migrate deprecated `javax.xml.stream` APIs](../../java/migrate/javax/javaxxmlstreamapis.md)
-* [Migrate deprecated `java.lang` APIs](../../java/migrate/lang/javalangapis.md)
-* [Migrate deprecated `java.util.logging` APIs](../../java/migrate/logging/javaloggingapis.md)
-* [Migrate deprecated `java.net` APIs](../../java/migrate/net/javanetapis.md)
-* [Migrate deprecated `java.sql` APIs](../../java/migrate/sql/javasqlapis.md)
+* [Migrate deprecated `java.util.concurrent` APIs](concurrent/javaconcurrentapis.md)
+* [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](javax/javaxlangmodelutil.md)
+* [Migrate deprecated `javax.management.monitor` APIs](javax/javaxmanagementmonitorapis.md)
+* [Migrate deprecated `javax.xml.stream` APIs](javax/javaxxmlstreamapis.md)
+* [Migrate deprecated `java.lang` APIs](lang/javalangapis.md)
+* [Migrate deprecated `java.util.logging` APIs](logging/javaloggingapis.md)
+* [Migrate deprecated `java.net` APIs](net/javanetapis.md)
+* [Migrate deprecated `java.sql` APIs](sql/javasqlapis.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -87,5 +87,5 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.Java8toJava11`
-11`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.Java8toJava11` 11\`
+

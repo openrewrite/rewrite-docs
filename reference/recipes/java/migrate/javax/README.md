@@ -2,7 +2,8 @@
 
 _null_
 
-### Recipes
+## Recipes
+
 * [Migrate deprecated `javax.xml.stream` APIs](javaxxmlstreamapis.md)
 * [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](migratexmleventfactorynewinstancetonewfactory.md)
 * [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](migratexmlinputfactorynewinstancetonewfactory.md)
@@ -21,3 +22,4 @@ _null_
 * [Migrate deprecated `javax.management.monitor` APIs](javaxmanagementmonitorapis.md)
 * [Use `CounterMonitor#setInitThreshold(java.lang.Number)`](migratecountermonitorsetthreshholdtosetinitthreshold.md)
 * [Add explicit JAX-WS dependencies](addjaxwsdependencies.md)
+

@@ -1,6 +1,7 @@
 # Kubernetes
 
-### Recipes
+## Recipes
+
 * [Kubernetes best practices](kubernetesbestpractices.md)
 * [Ensure liveness probe is configured](missingpodlivenessprobe.md)
 * [Ensure readiness probe is configured](missingpodreadinessprobe.md)
@@ -20,5 +21,7 @@
 * [Limit root capabilities in a container](limitcontainercapabilities.md)
 * [Add Kubernetes configuration](addconfiguration.md)
 
-### Subcategories
-* [Search](search/README.md)
+## Subcategories
+
+* [Search](search/)
+
