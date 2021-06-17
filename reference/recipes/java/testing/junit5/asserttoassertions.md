@@ -1,8 +1,9 @@
 # JUnit4 Assert To JUnit Jupiter Assertions
 
- **org.openrewrite.java.testing.junit5.AssertToAssertions** _Change JUnit 4's `org.junit.Assert` into JUnit Jupiter's `org.junit.jupiter.api.Assertions`._
+** org.openrewrite.java.testing.junit5.AssertToAssertions**
+_Change JUnit 4's `org.junit.Assert` into JUnit Jupiter's `org.junit.jupiter.api.Assertions`._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.6.0/jar)
 
@@ -10,8 +11,8 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-testing-frameworks
 * version: 1.6.0
 
-## Usage
 
+## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -68,5 +69,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.AssertToAssertions` ns\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.AssertToAssertions`

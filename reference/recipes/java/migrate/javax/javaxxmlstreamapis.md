@@ -1,8 +1,9 @@
-# Migrate deprecated javax.xml.stream APIs
+# Migrate deprecated `javax.xml.stream` APIs
 
- **org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs** _Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes._
+** org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs**
+_Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.2.0/jar)
 
@@ -12,12 +13,11 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](migratexmleventfactorynewinstancetonewfactory.md)
-* [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](migratexmlinputfactorynewinstancetonewfactory.md)
-* [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](migratexmloutputfactorynewinstancetonewfactory.md)
+* [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmleventfactorynewinstancetonewfactory.md)
+* [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory.md)
+* [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory.md)
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -74,5 +74,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs` Is\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs`

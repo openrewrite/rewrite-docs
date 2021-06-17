@@ -1,8 +1,9 @@
 # Remove unnecessary parentheses
 
- **org.openrewrite.java.cleanup.UnnecessaryParentheses**
+** org.openrewrite.java.cleanup.UnnecessaryParentheses**
+_Removes unnecessary parentheses from code where extra parentheses pairs are redundant._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.7.0/jar)
 
@@ -10,9 +11,9 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-java
 * version: 7.7.0
 
-## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
+## Usage
+This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -29,6 +30,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -57,5 +59,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.UnnecessaryParentheses`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.UnnecessaryParentheses`

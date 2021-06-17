@@ -1,13 +1,14 @@
-# Use JUnit Jupiter @Disabled
+# Use JUnit Jupiter `@Disabled`
 
- **org.openrewrite.java.testing.junit5.IgnoreToDisabled** _Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`._
+** org.openrewrite.java.testing.junit5.IgnoreToDisabled**
+_Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`._
 
 ### Tags
 
 * junit
 * testing
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.6.0/jar)
 
@@ -17,12 +18,11 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.junit.Ignore`
   * newFullyQualifiedTypeName: `org.junit.jupiter.api.Disabled`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -79,5 +79,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.IgnoreToDisabled` ed\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.IgnoreToDisabled`

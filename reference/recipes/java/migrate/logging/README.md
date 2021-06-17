@@ -1,13 +1,14 @@
-# Logging
+# `java.util.logging` APIs
 
 _null_
 
 ## Recipes
 
-* [Migrate deprecated `java.util.logging` APIs](javaloggingapis.md)
-* [Use `PlatformLoggingMXBean`](migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
-* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](migrategetloggingmxbeantogetplatformmxbean.md)
-* [Use `LogRecord#setInstant(Instant)`](migratelogrecordsetmillistosetinstant.md)
-* [Use `Logger#getGlobal()`](migrateloggerglobaltogetglobal.md)
-* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](migrateloggerlogrbtouseresourcebundle.md)
+* [Migrate deprecated `java.util.logging` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/javaloggingapis)
+* [Use `LogRecord#setInstant(Instant)`](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/migratelogrecordsetmillistosetinstant)
+* [Use `Logger#getGlobal()`](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/migrateloggerglobaltogetglobal)
+* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/migrateloggerlogrbtouseresourcebundle)
+* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/migrategetloggingmxbeantogetplatformmxbean)
+* [Use `PlatformLoggingMXBean`](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/migrateinterfaceloggingmxbeantoplatformloggingmxbean)
+
 

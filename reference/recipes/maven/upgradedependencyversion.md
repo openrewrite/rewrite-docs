@@ -1,8 +1,9 @@
 # Upgrade Maven dependency version
 
- **org.openrewrite.maven.UpgradeDependencyVersion** _Upgrade the version a group or group and artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases._
+** org.openrewrite.maven.UpgradeDependencyVersion**
+_Upgrade the version of a dependency by specifying a group or group and artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.7.0/jar)
 
@@ -10,19 +11,19 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-maven
 * version: 7.7.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | newVersion | An exact version number, or node-style semver selector used to select the version number. |
-| `String` | versionPattern | Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
-| `Boolean` | trustParent | Even if the parent suggests a version that is older than what we are trying to upgrade to, trust it anyway. Useful when you want to wait for the parent to catch up before upgrading. The parent is not trusted by default. |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
+| `Boolean` | trustParent | *Optional*. Even if the parent suggests a version that is older than what we are trying to upgrade to, trust it anyway. Useful when you want to wait for the parent to catch up before upgrading. The parent is not trusted by default. |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpgradeDependencyVersionExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpgradeDependencyVersionExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,9 +37,10 @@ recipeList:
       artifactId: guava
       newVersion: 29.X
       versionPattern: -jre
-      trustParent: null
+      trustParent: false
 ```
 {% endcode %}
+
 
 Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate it in your build file:
 
@@ -57,6 +59,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -86,4 +89,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.UpgradeDependencyVersionExample`
-

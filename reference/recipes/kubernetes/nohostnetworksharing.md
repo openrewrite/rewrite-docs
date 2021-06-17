@@ -1,12 +1,13 @@
 # No host network sharing
 
- **org.openrewrite.kubernetes.NoHostNetworkSharing** _When using the host network mode for a container, that container’s network stack is not isolated from the Docker host, so the container shares the host’s networking namespace and does not get its own IP-address allocation._
+** org.openrewrite.kubernetes.NoHostNetworkSharing**
+_When using the host network mode for a container, that container’s network stack is not isolated from the Docker host, so the container shares the host’s networking namespace and does not get its own IP-address allocation._
 
 ### Tags
 
 * kubernetes
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.1.0/jar)
 
@@ -16,13 +17,12 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Add Kubernetes configuration](addconfiguration.md)
+* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/hostNetwork`
   * value: `hostNetwork: false`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -79,5 +79,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.NoHostNetworkSharing` ng\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.NoHostNetworkSharing`

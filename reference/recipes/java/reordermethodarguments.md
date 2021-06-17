@@ -1,8 +1,9 @@
 # Reorder method arguments
 
- **org.openrewrite.java.ReorderMethodArguments** _Reorder method arguments into the specified order._
+** org.openrewrite.java.ReorderMethodArguments**
+_Reorder method arguments into the specified order._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.7.0/jar)
 
@@ -10,17 +11,17 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-java
 * version: 7.7.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `String` | methodPattern | A method pattern, expressed as a pointcut expression, that is used to find matching method invocations. |
 | `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. |
-| `String[]` | oldParameterNames | If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. |
+| `String[]` | oldParameterNames | *Optional*. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ReorderMethodArgumentsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ReorderMethodArgumentsExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -30,11 +31,12 @@ name: com.yourorg.ReorderMethodArgumentsExample
 displayName: Reorder method arguments example
 recipeList:
   - org.openrewrite.java.ReorderMethodArguments:
-      methodPattern: null
-      newParameterNames: null
-      oldParameterNames: null
+      methodPattern: com.yourorg.A foo(String, Integer, Integer)
+      newParameterNames: [foo, bar, baz]
+      oldParameterNames: [baz, bar, foo]
 ```
 {% endcode %}
+
 
 Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined activate it in your build file:
 
@@ -53,6 +55,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -82,4 +85,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ReorderMethodArgumentsExample`
-

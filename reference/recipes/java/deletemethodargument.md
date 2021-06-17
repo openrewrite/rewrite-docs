@@ -1,8 +1,9 @@
 # Delete method argument
 
- **org.openrewrite.java.DeleteMethodArgument** _Delete an argument from method invocations._
+** org.openrewrite.java.DeleteMethodArgument**
+_Delete an argument from method invocations._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.7.0/jar)
 
@@ -10,16 +11,16 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-java
 * version: 7.7.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `String` | methodPattern | A method pattern, expressed as a pointcut expression, that is used to find matching method invocations. |
 | `int` | argumentIndex | A zero-based index that indicates which argument will be removed from the method invocation. |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.DeleteMethodArgumentExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.DeleteMethodArgumentExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -29,10 +30,11 @@ name: com.yourorg.DeleteMethodArgumentExample
 displayName: Delete method argument example
 recipeList:
   - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: null
-      argumentIndex: null
+      methodPattern: com.yourorg.A foo(int, int)
+      argumentIndex: 0
 ```
 {% endcode %}
+
 
 Now that `com.yourorg.DeleteMethodArgumentExample` has been defined activate it in your build file:
 
@@ -51,6 +53,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -80,4 +83,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.DeleteMethodArgumentExample`
-

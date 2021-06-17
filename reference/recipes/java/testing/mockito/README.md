@@ -4,7 +4,8 @@ _null_
 
 ## Recipes
 
-* [Mockito 3.x migration from 1.x](mockito1to3migration.md)
-* [Cleanup Mockito imports](cleanupmockitoimports.md)
-* [Use static form of Mockito `MockUtil`](mockutilstostatic.md)
+* [Cleanup Mockito imports](https://docs.openrewrite.org/reference/recipes/java/testing/mockito/cleanupmockitoimports)
+* [Mockito 3.x migration from 1.x](https://docs.openrewrite.org/reference/recipes/java/testing/mockito/mockito1to3migration)
+* [Use static form of Mockito `MockUtil`](https://docs.openrewrite.org/reference/recipes/java/testing/mockito/mockutilstostatic)
+
 

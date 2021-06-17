@@ -1,25 +1,26 @@
-# Javax
+# `javax` APIs
 
 _null_
 
 ## Recipes
 
-* [Migrate deprecated `javax.xml.stream` APIs](javaxxmlstreamapis.md)
-* [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](migratexmleventfactorynewinstancetonewfactory.md)
-* [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](migratexmlinputfactorynewinstancetonewfactory.md)
-* [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](migratexmloutputfactorynewinstancetonewfactory.md)
-* [Add explicit JAXB dependencies](addjaxbdependencies.md)
-* [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](javaxlangmodelutil.md)
-* [Use `AbstractAnnotationValueVisitor9`](migrateabstractannotationvaluevisitor6to9.md)
-* [Use `AbstractElementVisitor9`](migrateabstractelementvisitor6to9.md)
-* [Use `AbstractTypeVisitor9`](migrateabstracttypevisitor6to9.md)
-* [Use `ElementKindVisitor9`](migrateelementkindvisitor6to9.md)
-* [Use `ElementScanner9`](migrateelementscanner6to9.md)
-* [Use `SimpleAnnotationValueVisitor9`](migratesimpleannotationvaluevisitor6to9.md)
-* [Use `SimpleElementVisitor9`](migratesimpleelementvisitor6to9.md)
-* [Use `SimpleTypeVisitor9`](migratesimpletypevisitor6to9.md)
-* [Use `TypeKindVisitor9`](migratetypekindvisitor6to9.md)
-* [Migrate deprecated `javax.management.monitor` APIs](javaxmanagementmonitorapis.md)
-* [Use `CounterMonitor#setInitThreshold(java.lang.Number)`](migratecountermonitorsetthreshholdtosetinitthreshold.md)
-* [Add explicit JAX-WS dependencies](addjaxwsdependencies.md)
+* [Add explicit JAX-WS dependencies](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/addjaxwsdependencies)
+* [Add explicit JAXB dependencies](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/addjaxbdependencies)
+* [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxlangmodelutil)
+* [Migrate deprecated `javax.management.monitor` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxmanagementmonitorapis)
+* [Migrate deprecated `javax.xml.stream` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxxmlstreamapis)
+* [Use `AbstractAnnotationValueVisitor9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migrateabstractannotationvaluevisitor6to9)
+* [Use `AbstractElementVisitor9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migrateabstractelementvisitor6to9)
+* [Use `AbstractTypeVisitor9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migrateabstracttypevisitor6to9)
+* [Use `CounterMonitor#setInitThreshold(java.lang.Number)`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratecountermonitorsetthreshholdtosetinitthreshold)
+* [Use `ElementKindVisitor9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migrateelementkindvisitor6to9)
+* [Use `ElementScanner9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migrateelementscanner6to9)
+* [Use `SimpleAnnotationValueVisitor9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratesimpleannotationvaluevisitor6to9)
+* [Use `SimpleElementVisitor9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratesimpleelementvisitor6to9)
+* [Use `SimpleTypeVisitor9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratesimpletypevisitor6to9)
+* [Use `TypeKindVisitor9`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratetypekindvisitor6to9)
+* [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratexmleventfactorynewinstancetonewfactory)
+* [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory)
+* [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory)
+
 

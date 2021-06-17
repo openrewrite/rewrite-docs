@@ -1,8 +1,9 @@
 # Quarkus 1.13 migration from Quarkus 1.11
 
- **org.openrewrite.java.quarkus.Quarkus1to1\_13Migration** _Migrates Quarkus 1.11 to 1.13._
+** org.openrewrite.java.quarkus.Quarkus1to1\_13Migration**
+_Migrates Quarkus 1.11 to 1.13._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/0.1.0/jar)
 
@@ -20,25 +21,25 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * groupId: `io.quarkus`
   * artifactId: `quarkus-maven-plugin`
   * newVersion: `1.13.x`
-* [Change method name](../changemethodname.md)
+* [Change method name](../../java/changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Multi collectItems()`
   * newMethodName: `collect`
-* [Change method name](../changemethodname.md)
+* [Change method name](../../java/changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Multi groupItems()`
   * newMethodName: `group`
-* [Change method name](../changemethodname.md)
+* [Change method name](../../java/changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Multi transform()`
   * newMethodName: `select`
-* [Change method name](../changemethodname.md)
+* [Change method name](../../java/changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.MultiTransform byTakingFirstItems(..)`
   * newMethodName: `first`
-* [Change method name](../changemethodname.md)
+* [Change method name](../../java/changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.MultiTransform byFilteringItemsWith(..)`
   * newMethodName: `where`
-* [Change method name](../changemethodname.md)
+* [Change method name](../../java/changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Multi subscribeOn(java.util.concurrent.Executor)`
   * newMethodName: `runSubscriptionOn`
-* [Change method name](../changemethodname.md)
+* [Change method name](../../java/changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Uni subscribeOn(java.util.concurrent.Executor)`
   * newMethodName: `runSubscriptionOn`
 * [Change property key](../../properties/changepropertykey.md)
@@ -46,7 +47,6 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * newPropertyKey: `quarkus.live-reload.instrumentation`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:0.1.0 in your build file:
 
 {% tabs %}
@@ -103,5 +103,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.Quarkus1to1_13Migration` on\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.Quarkus1to1_13Migration`

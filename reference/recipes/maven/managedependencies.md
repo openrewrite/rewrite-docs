@@ -1,8 +1,9 @@
 # Manage dependencies
 
- **org.openrewrite.maven.ManageDependencies** _Make existing dependencies managed by moving their version to be specified in the dependencyManagement section of the POM._
+** org.openrewrite.maven.ManageDependencies**
+_Make existing dependencies managed by moving their version to be specified in the dependencyManagement section of the POM._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.7.0/jar)
 
@@ -10,17 +11,17 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-maven
 * version: 7.7.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `String` | groupPattern | Group glob expression pattern used to match dependencies that should be managed.Group is the the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | artifactPattern | Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | version | Version to use for the dependency in dependency management. Defaults to the existing version found on the matching dependency. |
+| `String` | artifactPattern | *Optional*. Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | version | *Optional*. Version to use for the dependency in dependency management. Defaults to the existing version found on the matching dependency. |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ManageDependenciesExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ManageDependenciesExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -32,9 +33,10 @@ recipeList:
   - org.openrewrite.maven.ManageDependencies:
       groupPattern: com.google.*
       artifactPattern: guava*
-      version: null
+      version: 1.0.0
 ```
 {% endcode %}
+
 
 Now that `com.yourorg.ManageDependenciesExample` has been defined activate it in your build file:
 
@@ -53,6 +55,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -82,4 +85,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ManageDependenciesExample`
-

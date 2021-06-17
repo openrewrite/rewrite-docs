@@ -1,8 +1,9 @@
-# Change a Maven project property value.
+# Change Maven project property value
 
- **org.openrewrite.maven.ChangePropertyValue**
+** org.openrewrite.maven.ChangePropertyValue**
+_Changes the specified Maven project property value leaving the key intact._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.7.0/jar)
 
@@ -10,29 +11,30 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-maven
 * version: 7.7.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
-| `String` | key | Property key to change. |
+| -- | -- | -- |
+| `String` | key | The name of the property key whose value is to be changed. |
 | `String` | newValue | Value to apply to the matching property. |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyValueExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyValueExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyValueExample
-displayName: Change a Maven project property value. example
+displayName: Change Maven project property value example
 recipeList:
   - org.openrewrite.maven.ChangePropertyValue:
-      key: null
-      newValue: null
+      key: junit.version
+      newValue: 4.13
 ```
 {% endcode %}
+
 
 Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it in your build file:
 
@@ -51,6 +53,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -80,4 +83,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ChangePropertyValueExample`
-

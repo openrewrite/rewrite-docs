@@ -1,6 +1,7 @@
 # Spring Boot 2.x migration from Spring Boot 1.x
 
- **org.openrewrite.java.spring.boot2.SpringBoot1To2Migration** _Migrates Spring Boot 1.x to 2.x including best practices._
+** org.openrewrite.java.spring.boot2.SpringBoot1To2Migration**
+_Migrates Spring Boot 1.x to 2.x including best practices._
 
 ### Tags
 
@@ -10,7 +11,7 @@
 * spring-boot
 * mockito
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.5.0/jar)
 
@@ -32,24 +33,24 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * groupId: `org.mockito`
   * newVersion: `3.x`
   * trustParent: `true`
-* [Remove a Maven project property](../../../maven/removeproperty.md)
+* [Remove Maven project property](../../../maven/removeproperty.md)
   * propertyName: `thymeleaf.version`
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `org.webjars`
   * artifactId: `webjars-locator`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.support.SpringBootServletInitializer`
   * newFullyQualifiedTypeName: `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.HttpMessageConverters`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.http.HttpMessageConverters`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.ErrorController`
   * newFullyQualifiedTypeName: `org.springframework.boot.web.servlet.error.ErrorController`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.constraints.NotEmpty`
   * newFullyQualifiedTypeName: `javax.validation.constraints.NotEmpty`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.constraints.NotBlank`
   * newFullyQualifiedTypeName: `javax.validation.constraints.NotBlank`
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -64,16 +65,15 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * version: `2.x`
   * releasesOnly: `false`
   * onlyIfUsing: `[javax.validation.constraints.NotBlank, javax.validation.constraints.NotEmpty]`
-* [JUnit Jupiter for Spring Boot 2.x projects](springboot2junit4to5migration.md)
-* [JUnit Jupiter best practices](../../testing/junit5/junit5bestpractices.md)
-* [Migrate Spring Boot properties to 2.0](springbootproperties_2_0.md)
-* [Migrate Spring Boot properties to 2.1](springbootproperties_2_1.md)
-* [Migrate Spring Boot properties to 2.2](springbootproperties_2_2.md)
-* [Migrate Spring Boot properties to 2.3](springbootproperties_2_3.md)
-* [Spring Boot 2.x best practices](springboot2bestpractices.md)
+* [JUnit Jupiter for Spring Boot 2.x projects](../../../java/spring/boot2/springboot2junit4to5migration.md)
+* [JUnit Jupiter best practices](../../../java/testing/junit5/junit5bestpractices.md)
+* [Migrate Spring Boot properties to 2.0](../../../java/spring/boot2/springbootproperties_2_0.md)
+* [Migrate Spring Boot properties to 2.1](../../../java/spring/boot2/springbootproperties_2_1.md)
+* [Migrate Spring Boot properties to 2.2](../../../java/spring/boot2/springbootproperties_2_2.md)
+* [Migrate Spring Boot properties to 2.3](../../../java/spring/boot2/springbootproperties_2_3.md)
+* [Spring Boot 2.x best practices](../../../java/spring/boot2/springboot2bestpractices.md)
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
 
 {% tabs %}
@@ -130,5 +130,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.SpringBoot1To2Migration` on\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.SpringBoot1To2Migration`

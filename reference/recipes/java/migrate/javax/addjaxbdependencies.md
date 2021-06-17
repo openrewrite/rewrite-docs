@@ -1,6 +1,7 @@
 # Add explicit JAXB dependencies
 
- **org.openrewrite.java.migrate.javax.AddJaxbDependencies** _This recipe will add the necessary JAXB dependencies for those projects migrating to Java 11._
+** org.openrewrite.java.migrate.javax.AddJaxbDependencies**
+_This recipe will add the necessary JAXB dependencies for those projects migrating to Java 11._
 
 ### Tags
 
@@ -10,7 +11,7 @@
 * java11
 * jakarta
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.2.0/jar)
 
@@ -49,7 +50,6 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * artifactId: `jaxb-impl`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -106,5 +106,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.javax.AddJaxbDependencies` es\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.javax.AddJaxbDependencies`

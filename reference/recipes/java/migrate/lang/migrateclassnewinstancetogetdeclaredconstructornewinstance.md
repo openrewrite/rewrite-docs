@@ -1,8 +1,9 @@
-# Use Class\#getDeclaredConstructor\(\).newInstance\(\)
+# Use `Class#getDeclaredConstructor().newInstance()`
 
- **org.openrewrite.java.migrate.lang.MigrateClassNewInstanceToGetDeclaredConstructorNewInstance** _`Class#newInstance()` was deprecated in Java 9._
+** org.openrewrite.java.migrate.lang.MigrateClassNewInstanceToGetDeclaredConstructorNewInstance**
+_`Class#newInstance()` was deprecated in Java 9._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.2.0/jar)
 
@@ -12,12 +13,11 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `java.lang.Class newInstance()`
   * newMethodName: `getDeclaredConstructor().newInstance`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -74,5 +74,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.lang.MigrateClassNewInstanceToGetDeclaredConstructorNewInstance` ce\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.lang.MigrateClassNewInstanceToGetDeclaredConstructorNewInstance`

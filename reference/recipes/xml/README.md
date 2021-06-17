@@ -1,12 +1,13 @@
-# Xml
+# XML
 
-_Basic building blocks for transforming YAML._
+_Basic building blocks for transforming XML._
 
 ## Recipes
 
-* [Format XML](autoformat.md)
+* [Format XML](https://docs.openrewrite.org/reference/recipes/xml/autoformat)
 
 ## Subcategories
 
-* [Search](search/)
+* [Search](https://docs.openrewrite.org/reference/recipes/xml/search)
+
 

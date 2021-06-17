@@ -1,13 +1,14 @@
 # JUnit Jupiter best practices
 
- **org.openrewrite.java.testing.junit5.JUnit5BestPractices** _Applies best practices to tests._
+** org.openrewrite.java.testing.junit5.JUnit5BestPractices**
+_Applies best practices to tests._
 
 ### Tags
 
 * junit
 * testing
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.6.0/jar)
 
@@ -17,11 +18,10 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Statically import JUnit Jupiter assertions](staticimports.md)
-* [JUnit Jupiter migration from JUnit 4.x](junit4to5migration.md)
+* [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports.md)
+* [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -78,5 +78,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.JUnit5BestPractices` es\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.JUnit5BestPractices`

@@ -1,8 +1,9 @@
-# Remove a Maven project property
+# Remove Maven project property
 
- **org.openrewrite.maven.RemoveProperty**
+** org.openrewrite.maven.RemoveProperty**
+_Removes the specified Maven project property from the pom.xml._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.7.0/jar)
 
@@ -10,27 +11,28 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-maven
 * version: 7.7.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
-| `String` | propertyName | Name of property to remove. |
+| -- | -- | -- |
+| `String` | propertyName | Key name of the property to remove. |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RemovePropertyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RemovePropertyExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemovePropertyExample
-displayName: Remove a Maven project property example
+displayName: Remove Maven project property example
 recipeList:
   - org.openrewrite.maven.RemoveProperty:
-      propertyName: null
+      propertyName: junit.version
 ```
 {% endcode %}
+
 
 Now that `com.yourorg.RemovePropertyExample` has been defined activate it in your build file:
 
@@ -49,6 +51,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -78,4 +81,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.RemovePropertyExample`
-

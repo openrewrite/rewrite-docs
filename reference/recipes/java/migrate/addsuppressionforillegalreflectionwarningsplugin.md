@@ -1,8 +1,9 @@
 # Add Maven Jar Plugin to suppress Illegal Reflection Warnings
 
- **org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin** _Adds a maven jar plugin that's configured to suppress Illegal Reflection Warnings._
+** org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin**
+_Adds a maven jar plugin that's configured to suppress Illegal Reflection Warnings._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.2.0/jar)
 
@@ -10,15 +11,15 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-migrate-java
 * version: 0.2.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `String` | version | An exact version number, or node-style semver selector used to select the version number. |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddSuppressionForIllegalReflectionWarningsPluginExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddSuppressionForIllegalReflectionWarningsPluginExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -88,5 +89,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.AddSuppressionForIllegalReflectionWarningsPluginExample` le\`
-
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.AddSuppressionForIllegalReflectionWarningsPluginExample`

@@ -1,12 +1,13 @@
 # Ensure memory request is set
 
- **org.openrewrite.kubernetes.MissingMemoryRequest** _A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
+** org.openrewrite.kubernetes.MissingMemoryRequest**
+_A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
 
 ### Tags
 
 * kubernetes
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.1.0/jar)
 
@@ -16,12 +17,11 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Missing configuration](search/findresourcemissingconfiguration.md)
+* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/resources/requests/memory`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -78,5 +78,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.MissingMemoryRequest` st\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.MissingMemoryRequest`

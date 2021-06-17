@@ -1,8 +1,9 @@
 # Rename package name
 
- **org.openrewrite.java.ChangePackage** _A recipe that will rename a package name in package statements, imports, and fully-qualified types._
+** org.openrewrite.java.ChangePackage**
+_A recipe that will rename a package name in package statements, imports, and fully-qualified types._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.7.0/jar)
 
@@ -10,17 +11,17 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-java
 * version: 7.7.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `String` | oldPackageName | The package name to replace. |
 | `String` | newPackageName | New package name to replace the old package name with. |
-| `Boolean` | recursive | Recursively change subpackage names |
+| `Boolean` | recursive | *Optional*. Recursively change subpackage names |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePackageExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePackageExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -30,11 +31,12 @@ name: com.yourorg.ChangePackageExample
 displayName: Rename package name example
 recipeList:
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: null
-      newPackageName: null
-      recursive: null
+      oldPackageName: com.yourorg.foo
+      newPackageName: com.yourorg.bar
+      recursive: true
 ```
 {% endcode %}
+
 
 Now that `com.yourorg.ChangePackageExample` has been defined activate it in your build file:
 
@@ -53,6 +55,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -82,4 +85,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ChangePackageExample`
-

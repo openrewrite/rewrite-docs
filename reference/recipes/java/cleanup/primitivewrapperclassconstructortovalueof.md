@@ -1,8 +1,9 @@
-# Use primitive wrapper valueOf method
+# Use primitive wrapper `valueOf` method
 
- **org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf** _The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers._
+** org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf**
+_The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.7.0/jar)
 
@@ -10,9 +11,9 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-java
 * version: 7.7.0
 
-## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
+## Usage
+This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -29,6 +30,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -57,5 +59,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf`

@@ -1,13 +1,14 @@
 # Migrate JUnit asserts to AssertJ
 
- **org.openrewrite.java.testing.assertj.JUnitToAssertj** _AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
+** org.openrewrite.java.testing.assertj.JUnitToAssertj**
+_AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
 
 ### Tags
 
 * testing
 * assertj
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.6.0/jar)
 
@@ -26,7 +27,6 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * onlyIfUsing: `[org.assertj.core.api.Assertions]`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -83,5 +83,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.assertj.JUnitToAssertj` tj\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.assertj.JUnitToAssertj`

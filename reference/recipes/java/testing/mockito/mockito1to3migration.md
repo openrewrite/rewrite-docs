@@ -1,13 +1,14 @@
 # Mockito 3.x migration from 1.x
 
- **org.openrewrite.java.testing.mockito.Mockito1to3Migration** _Spring Boot 2.x requires upgrading from Mockito 1.x to 3.x._
+** org.openrewrite.java.testing.mockito.Mockito1to3Migration**
+_Spring Boot 2.x requires upgrading from Mockito 1.x to 3.x._
 
 ### Tags
 
 * testing
 * mockito
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.6.0/jar)
 
@@ -17,19 +18,19 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.MockitoAnnotations.Mock`
   * newFullyQualifiedTypeName: `org.mockito.Mock`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.mockito.Matchers anyVararg()`
   * newMethodName: `any`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.Matchers`
   * newFullyQualifiedTypeName: `org.mockito.ArgumentMatchers`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.mockito.invocation.InvocationOnMock getArgumentAt(int, java.lang.Class)`
   * newMethodName: `getArgument`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.runners.MockitoJUnitRunner`
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -37,10 +38,10 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * artifactId: `mockito-junit-jupiter`
   * version: `3.x`
   * releasesOnly: `false`
+  * scope: `test`
   * onlyIfUsing: `[org.mockito.junit.jupiter.MockitoExtension]`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -97,5 +98,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.mockito.Mockito1to3Migration` on\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.mockito.Mockito1to3Migration`

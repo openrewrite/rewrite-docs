@@ -1,6 +1,7 @@
 # JUnit Jupiter for Spring Boot 2.x projects
 
- **org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration** _Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
+** org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration**
+_Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
 
@@ -9,7 +10,7 @@
 * testing
 * spring-boot
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.5.0/jar)
 
@@ -19,10 +20,10 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../testing/junit5/runnertoextension.md)
+* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
   * runners: `[org.springframework.test.context.junit4.SpringRunner, org.springframework.test.context.junit4.SpringJUnit4ClassRunner]`
   * extension: `org.springframework.test.context.junit.jupiter.SpringExtension`
-* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement.](../../testing/junit5/removeobsoleterunners.md)
+* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners.md)
   * obsoleteRunners: `[org.springframework.boot.junit.runner.classpath.ModifiedClassPathRunner, org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathRunner]`
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.springframework.boot`
@@ -31,10 +32,9 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * releasesOnly: `false`
   * scope: `test`
   * onlyIfUsing: `[org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension]`
-* [JUnit Jupiter migration from JUnit 4.x](../../testing/junit5/junit4to5migration.md)
+* [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
 
 {% tabs %}
@@ -91,5 +91,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration` on\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration`

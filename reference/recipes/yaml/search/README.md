@@ -2,5 +2,6 @@
 
 ## Recipes
 
-* [Find YAML entries](findkey.md)
+* [Find YAML entries](https://docs.openrewrite.org/reference/recipes/yaml/search/findkey)
+
 

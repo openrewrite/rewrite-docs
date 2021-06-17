@@ -1,8 +1,9 @@
-# Migrate @OutputCaptureRule to @ExtendWith\(OutputCaptureExtension.class\)
+# Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`
 
- **org.openrewrite.java.spring.boot2.OutputCaptureExtension** _Use the JUnit Jupiter extension instead of JUnit 4 rule._
+** org.openrewrite.java.spring.boot2.OutputCaptureExtension**
+_Use the JUnit Jupiter extension instead of JUnit 4 rule._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.5.0/jar)
 
@@ -10,8 +11,8 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-spring
 * version: 4.5.0
 
-## Usage
 
+## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
 
 {% tabs %}
@@ -68,5 +69,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.OutputCaptureExtension` on\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.OutputCaptureExtension`

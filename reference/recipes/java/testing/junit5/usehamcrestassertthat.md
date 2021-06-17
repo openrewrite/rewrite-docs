@@ -1,6 +1,7 @@
-# Use MatcherAssert\#assertThat\(..\)
+# Use `MatcherAssert#assertThat(..)`
 
- **org.openrewrite.java.testing.junit5.UseHamcrestAssertThat** _JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter._
+** org.openrewrite.java.testing.junit5.UseHamcrestAssertThat**
+_JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter._
 
 ### Tags
 
@@ -8,7 +9,7 @@
 * testing
 * hamcrest
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.6.0/jar)
 
@@ -18,14 +19,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Change method target to static](../../changemethodtargettostatic.md)
+* [Change method target to static](../../../java/changemethodtargettostatic.md)
   * methodPattern: `org.junit.Assert assertThat(..)`
   * fullyQualifiedTargetTypeName: `org.hamcrest.MatcherAssert`
-* [Use static import](../../usestaticimport.md)
+* [Use static import](../../../java/usestaticimport.md)
   * methodPattern: `org.hamcrest.MatcherAssert assertThat(..)`
 
 ## Usage
-
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -82,5 +82,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.UseHamcrestAssertThat` at\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.UseHamcrestAssertThat`

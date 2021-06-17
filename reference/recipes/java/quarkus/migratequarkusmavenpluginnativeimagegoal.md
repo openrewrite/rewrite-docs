@@ -1,8 +1,9 @@
-# Migrate quarkus-maven-plugin native-image goal
+# Use `native` profile in `quarkus-maven-plugin`
 
- **org.openrewrite.java.quarkus.MigrateQuarkusMavenPluginNativeImageGoal** _Migrates the `quarkus-maven-plugin` deprecated `native-image` goal. If the `native-image` goal needs to be removed, this adds `<quarkus.package.type>native</quarkus.package.type>` to the `native` profile `properties` section, given the `native` profile exists in the `pom.xml`._
+** org.openrewrite.java.quarkus.MigrateQuarkusMavenPluginNativeImageGoal**
+_Migrates the `quarkus-maven-plugin` deprecated `native-image` goal. If the `native-image` goal needs to be removed, this adds `<quarkus.package.type>native</quarkus.package.type>` to the `native` profile `properties` section, given the `native` profile exists in the `pom.xml`._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/0.1.0/jar)
 
@@ -10,8 +11,8 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-quarkus
 * version: 0.1.0
 
-## Usage
 
+## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:0.1.0 in your build file:
 
 {% tabs %}
@@ -68,5 +69,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.MigrateQuarkusMavenPluginNativeImageGoal` al\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.MigrateQuarkusMavenPluginNativeImageGoal`

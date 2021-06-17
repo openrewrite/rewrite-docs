@@ -1,19 +1,20 @@
-# Assertj
+# AssertJ
 
 _null_
 
 ## Recipes
 
-* [AssertJ best practices](assertj.md)
-* [Statically import AssertJ's `assertThat`](staticimports.md)
-* [Migrate JUnit asserts to AssertJ](junittoassertj.md)
-* [JUnit `assertArrayEquals` To AssertJ](junitassertarrayequalstoassertthat.md)
-* [JUnit `assertEquals` to AssertJ](junitassertequalstoassertthat.md)
-* [JUnit `assertFalse` to AssertJ](junitassertfalsetoassertthat.md)
-* [JUnit `assertNotEquals` to AssertJ](junitassertnotequalstoassertthat.md)
-* [JUnit `assertNotNull` to AssertJ](junitassertnotnulltoassertthat.md)
-* [JUnit `assertNull` to AssertJ](junitassertnulltoassertthat.md)
-* [JUnit `assertSame` to AssertJ](junitassertsametoassertthat.md)
-* [JUnit `assertTrue` to AssertJ](junitasserttruetoassertthat.md)
-* [JUnit fail to AssertJ](junitfailtoassertjfail.md)
+* [AssertJ best practices](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/assertj)
+* [JUnit `assertArrayEquals` To AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertarrayequalstoassertthat)
+* [JUnit `assertEquals` to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertequalstoassertthat)
+* [JUnit `assertFalse` to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertfalsetoassertthat)
+* [JUnit `assertNotEquals` to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertnotequalstoassertthat)
+* [JUnit `assertNotNull` to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertnotnulltoassertthat)
+* [JUnit `assertNull` to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertnulltoassertthat)
+* [JUnit `assertSame` to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitassertsametoassertthat)
+* [JUnit `assertTrue` to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitasserttruetoassertthat)
+* [JUnit fail to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junitfailtoassertjfail)
+* [Migrate JUnit asserts to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junittoassertj)
+* [Statically import AssertJ's `assertThat`](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/staticimports)
+
 

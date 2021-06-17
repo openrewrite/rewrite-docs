@@ -2,5 +2,6 @@
 
 ## Recipes
 
-* [Find property](findproperties.md)
+* [Find property](https://docs.openrewrite.org/reference/recipes/properties/search/findproperties)
+
 

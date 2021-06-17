@@ -1,8 +1,9 @@
-# JUnit 4 @RunWith to JUnit Jupiter @ExtendWith
+# JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`
 
- **org.openrewrite.java.testing.junit5.RunnerToExtension** _Replace runners with the JUnit Jupiter extension equivalent._
+** org.openrewrite.java.testing.junit5.RunnerToExtension**
+_Replace runners with the JUnit Jupiter extension equivalent._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.6.0/jar)
 
@@ -10,16 +11,16 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-testing-frameworks
 * version: 1.6.0
 
-### Options
+## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `List` | runners | The fully qualified class names of the JUnit4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. |
 | `String` | extension | The fully qualified class names of the JUnit Jupiter extension. |
 
 ## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RunnerToExtensionExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RunnerToExtensionExample`. 
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -90,5 +91,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.RunnerToExtensionExample` le\`
-
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.RunnerToExtensionExample`

@@ -1,8 +1,9 @@
-# Use ClassLoader\#defineClass\(String, byte\[\], int, int\)
+# Use `ClassLoader#defineClass(String, byte[], int, int)`
 
- **org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass** _`ClassLoader#defineClass(byte[], int, int)` was deprecated in Java 1.1._
+** org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass**
+_`ClassLoader#defineClass(byte[], int, int)` was deprecated in Java 1.1._
 
-### Source
+## Source
 
 Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.2.0/jar)
 
@@ -10,8 +11,8 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-migrate-java
 * version: 0.2.0
 
-## Usage
 
+## Usage
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -68,5 +69,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass` ss\`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass`

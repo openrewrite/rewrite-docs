@@ -1,15 +1,18 @@
 # Quarkus
 
+_Recipes for upgrading and patching [Quarkus](https://quarkus.io/) applications._
+
 ## Recipes
 
-* [Quarkus 1.13 migration from Quarkus 1.11](quarkus1to1_13migration.md)
-* [Quarkus 2.x migration from Quarkus 1.x](quarkus1to2migration.md)
-* [Migrate `@ConfigProperties` To `@ConfigMapping`](configpropertiestoconfigmapping.md)
-* [Configure `quarkus-maven-plugin` with reasonable defaults](configurequarkusmavenpluginwithreasonabledefaults.md)
-* [Migrate `quarkus-maven-plugin` `native-image` goal](migratequarkusmavenpluginnativeimagegoal.md)
-* [Mutiny `multi.transform().hotStream()` to `multi.hotStream()`.](multitransformhotstreamtomultihotstream.md)
+* [Configure `quarkus-maven-plugin` with reasonable defaults](https://docs.openrewrite.org/reference/recipes/java/quarkus/configurequarkusmavenpluginwithreasonabledefaults)
+* [Quarkus 1.13 migration from Quarkus 1.11](https://docs.openrewrite.org/reference/recipes/java/quarkus/quarkus1to1_13migration)
+* [Quarkus 2.x migration from Quarkus 1.x](https://docs.openrewrite.org/reference/recipes/java/quarkus/quarkus1to2migration)
+* [Use `@ConfigMapping`](https://docs.openrewrite.org/reference/recipes/java/quarkus/configpropertiestoconfigmapping)
+* [Use Mutiny `multi.toHotStream()`.](https://docs.openrewrite.org/reference/recipes/java/quarkus/multitransformhotstreamtomultihotstream)
+* [Use `native` profile in `quarkus-maven-plugin`](https://docs.openrewrite.org/reference/recipes/java/quarkus/migratequarkusmavenpluginnativeimagegoal)
 
 ## Subcategories
 
-* [Quarkus2](quarkus2/)
+* [Quarkus 2.x](https://docs.openrewrite.org/reference/recipes/java/quarkus/quarkus2)
+
 

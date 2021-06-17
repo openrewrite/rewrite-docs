@@ -2,5 +2,6 @@
 
 ## Recipes
 
-* [Find XML tags](findtags.md)
+* [Find XML tags](https://docs.openrewrite.org/reference/recipes/xml/search/findtags)
+
 

@@ -2,12 +2,13 @@
 
 ## Recipes
 
-* [Remove `public` from `@Bean` methods](beanmethodsnotpublic.md)
-* [Remove implicit web annotation names](implicitwebannotationnames.md)
-* [Remove `@Autowired`](noautowired.md)
-* [Remove `@RequestMapping` annotations](norequestmappingannotation.md)
+* [Remove `@Autowired`](https://docs.openrewrite.org/reference/recipes/java/spring/noautowired)
+* [Remove `@RequestMapping` annotations](https://docs.openrewrite.org/reference/recipes/java/spring/norequestmappingannotation)
+* [Remove implicit web annotation names](https://docs.openrewrite.org/reference/recipes/java/spring/implicitwebannotationnames)
+* [Remove `public` from `@Bean` methods](https://docs.openrewrite.org/reference/recipes/java/spring/beanmethodsnotpublic)
 
 ## Subcategories
 
-* [Boot2](boot2/)
+* [Spring Boot 2.x](https://docs.openrewrite.org/reference/recipes/java/spring/boot2)
+
 

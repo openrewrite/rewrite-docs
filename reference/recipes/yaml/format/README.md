@@ -2,5 +2,6 @@
 
 ## Recipes
 
-* [YAML indent](indents.md)
+* [YAML indent](https://docs.openrewrite.org/reference/recipes/yaml/format/indents)
+
 

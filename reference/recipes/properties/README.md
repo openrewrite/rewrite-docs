@@ -2,10 +2,11 @@
 
 ## Recipes
 
-* [Change property key](changepropertykey.md)
-* [Change properties file property value](changepropertyvalue.md)
+* [Change properties file property value](https://docs.openrewrite.org/reference/recipes/properties/changepropertyvalue)
+* [Change property key](https://docs.openrewrite.org/reference/recipes/properties/changepropertykey)
 
 ## Subcategories
 
-* [Search](search/)
+* [Search](https://docs.openrewrite.org/reference/recipes/properties/search)
+
 
