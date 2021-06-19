@@ -10,4 +10,3 @@
 * [Tabs and indents](https://docs.openrewrite.org/reference/recipes/java/format/tabsandindents)
 * [Wrapping and braces](https://docs.openrewrite.org/reference/recipes/java/format/wrappingandbraces)
 
-

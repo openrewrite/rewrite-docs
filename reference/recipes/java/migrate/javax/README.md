@@ -1,4 +1,4 @@
-# `javax` APIs
+# javax APIs
 
 _null_
 
@@ -22,5 +22,4 @@ _null_
 * [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratexmleventfactorynewinstancetonewfactory)
 * [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory)
 * [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory)
-
 

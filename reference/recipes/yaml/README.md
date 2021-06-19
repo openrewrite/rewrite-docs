@@ -19,4 +19,3 @@ _Basic building blocks for transforming YAML._
 * [Format](https://docs.openrewrite.org/reference/recipes/yaml/format)
 * [Search](https://docs.openrewrite.org/reference/recipes/yaml/search)
 
-

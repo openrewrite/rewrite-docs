@@ -1,4 +1,4 @@
-# `java.lang` APIs
+# java.lang APIs
 
 _null_
 
@@ -14,5 +14,4 @@ _null_
 * [Use `Runtime.Version#interim()`](https://docs.openrewrite.org/reference/recipes/java/migrate/lang/migrateruntimeversionminortointerim)
 * [Use `Runtime.Version#update()`](https://docs.openrewrite.org/reference/recipes/java/migrate/lang/migrateruntimeversionsecuritytoupdate)
 * [Use `SecurityManager#checkMulticast(InetAddress)`](https://docs.openrewrite.org/reference/recipes/java/migrate/lang/migratesecuritymanagermulticast)
-
 

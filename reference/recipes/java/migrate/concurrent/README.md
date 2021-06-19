@@ -1,4 +1,4 @@
-# `java.util.concurrent` APIs
+# java.util.concurrent APIs
 
 _null_
 
@@ -12,5 +12,4 @@ _null_
 * [Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`](https://docs.openrewrite.org/reference/recipes/java/migrate/concurrent/migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain)
 * [Use `AtomicReference#weakCompareAndSetPlain(T, T)`](https://docs.openrewrite.org/reference/recipes/java/migrate/concurrent/migrateatomicreferenceweakcompareandsettoweakcompareandsetplain)
 * [Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`](https://docs.openrewrite.org/reference/recipes/java/migrate/concurrent/migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain)
-
 

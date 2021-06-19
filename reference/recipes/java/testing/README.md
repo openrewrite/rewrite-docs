@@ -8,4 +8,3 @@
 * [JUnit Jupiter](https://docs.openrewrite.org/reference/recipes/java/testing/junit5)
 * [Mockito](https://docs.openrewrite.org/reference/recipes/java/testing/mockito)
 
-

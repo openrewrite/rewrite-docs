@@ -1,7 +1,6 @@
 # Read-only root filesystem
 
-** org.openrewrite.kubernetes.ReadOnlyRootFilesystem**
-_Using an immutable root filesystem and a verified boot mechanism prevents against attackers from "owning" the machine through permanent local changes._
+ **org.openrewrite.kubernetes.ReadOnlyRootFilesystem** _Using an immutable root filesystem and a verified boot mechanism prevents against attackers from "owning" the machine through permanent local changes._
 
 ### Tags
 
@@ -17,12 +16,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/securityContext/readOnlyRootFilesystem`
   * value: `readOnlyRootFilesystem: false`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -80,3 +80,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.ReadOnlyRootFilesystem`
+

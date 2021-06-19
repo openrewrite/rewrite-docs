@@ -1,7 +1,6 @@
 # Unnecessary explicit type arguments
 
-** org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments**
-_When explicit type arguments are inferrable by the compiler, they may be removed._
+ **org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments** _When explicit type arguments are inferrable by the compiler, they may be removed._
 
 ## Source
 
@@ -11,9 +10,9 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-java
 * version: 7.7.0
 
-
 ## Usage
-This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
+
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -30,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -60,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments`
+

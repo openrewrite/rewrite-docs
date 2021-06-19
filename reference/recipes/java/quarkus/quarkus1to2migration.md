@@ -1,7 +1,6 @@
 # Quarkus 2.x migration from Quarkus 1.x
 
-** org.openrewrite.java.quarkus.Quarkus1to2Migration**
-_Migrates Quarkus 1.x to 2.x._
+ **org.openrewrite.java.quarkus.Quarkus1to2Migration** _Migrates Quarkus 1.x to 2.x._
 
 ## Source
 
@@ -29,10 +28,10 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * propertyKey: `quarkus.quartz.store-type`
   * newValue: `jdbc-cmt`
   * oldValue: `db`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.qute.api.CheckedTemplate`
   * newFullyQualifiedTypeName: `io.quarkus.qute.CheckedTemplate`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.qute.api.ResourcePath`
   * newFullyQualifiedTypeName: `io.quarkus.qute.Location`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion.md)
@@ -41,6 +40,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * newVersion: `2.x`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:0.1.0 in your build file:
 
 {% tabs %}
@@ -98,3 +98,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.Quarkus1to2Migration`
+

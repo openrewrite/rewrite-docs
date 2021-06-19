@@ -17,7 +17,7 @@ _Best practices for JUnit Jupiter tests._
 * [Migrate JUnit 4 `TestCase` to JUnit Jupiter](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/migratejunittestcase)
 * [Migrate JUnit 4 lifecycle annotations to JUnit Jupiter](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/updatebeforeafterannotations)
 * [Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/usetestmethodorder)
-* [Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/junitparamsrunnertoparameterized)
+* [Pragmatists @RunWith\(JUnitParamsRunner.class\) to JUnit Jupiter Parameterized Tests](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/junitparamsrunnertoparameterized)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/removeobsoleterunners)
 * [Statically import JUnit Jupiter assertions](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/staticimports)
 * [Use JUnit Jupiter `@Disabled`](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/ignoretodisabled)
@@ -25,5 +25,4 @@ _Best practices for JUnit Jupiter tests._
 * [Use `MatcherAssert#assertThat(..)`](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/usehamcrestassertthat)
 * [Use Mockito JUnit Jupiter extension](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/usemockitoextension)
 * [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/updatemockwebserver)
-
 

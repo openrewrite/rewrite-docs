@@ -1,7 +1,6 @@
 # Ensure readiness probe is configured
 
-** org.openrewrite.kubernetes.MissingPodReadinessProbe**
-_Using the Readiness Probe ensures teams define what actions need to be taken to prevent failure and ensure recovery in case of unexpected errors._
+ **org.openrewrite.kubernetes.MissingPodReadinessProbe** _Using the Readiness Probe ensures teams define what actions need to be taken to prevent failure and ensure recovery in case of unexpected errors._
 
 ### Tags
 
@@ -17,11 +16,12 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/readinessProbe`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -79,3 +79,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.MissingPodReadinessProbe`
+

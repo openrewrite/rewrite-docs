@@ -32,4 +32,3 @@ _Basic building blocks for transforming Java code._
 * [Spring](https://docs.openrewrite.org/reference/recipes/java/spring)
 * [Testing](https://docs.openrewrite.org/reference/recipes/java/testing)
 
-

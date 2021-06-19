@@ -17,4 +17,3 @@ _null_
 * [Migrate JUnit asserts to AssertJ](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/junittoassertj)
 * [Statically import AssertJ's `assertThat`](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/staticimports)
 
-

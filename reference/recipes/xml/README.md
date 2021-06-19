@@ -10,4 +10,3 @@ _Basic building blocks for transforming XML._
 
 * [Search](https://docs.openrewrite.org/reference/recipes/xml/search)
 
-

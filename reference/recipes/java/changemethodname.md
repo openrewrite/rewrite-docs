@@ -1,7 +1,6 @@
 # Change method name
 
-** org.openrewrite.java.ChangeMethodName**
-_Rename a method._
+ **org.openrewrite.java.ChangeMethodName** _Rename a method._
 
 ## Source
 
@@ -14,13 +13,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | methodPattern | A method pattern, expressed as a pointcut expression, that is used to find matching method declarations/invocations. |
 | `String` | newMethodName | The method name that will replace the existing name. |
 
 ## Usage
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodNameExample`. 
-Here's how you can define and customize such a recipe within your rewrite.yml:
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodNameExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,7 +33,6 @@ recipeList:
       newMethodName: any
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it in your build file:
 
@@ -53,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -83,3 +80,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ChangeMethodNameExample`
+

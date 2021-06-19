@@ -8,4 +8,3 @@ _Recipes that find and eliminate vulnerable patterns in Java code._
 * [Use secure temporary file creation](https://docs.openrewrite.org/reference/recipes/java/security/securetempfilecreation)
 * [XML parser XXE vulnerability](https://docs.openrewrite.org/reference/recipes/java/security/xmlparserxxevulnerability)
 
-

@@ -7,4 +7,3 @@
 * [Find Maven project properties](https://docs.openrewrite.org/reference/recipes/maven/search/findproperties)
 * [Maven dependency insight](https://docs.openrewrite.org/reference/recipes/maven/search/dependencyinsight)
 
-

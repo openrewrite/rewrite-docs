@@ -1,7 +1,6 @@
-# Add `org.hamcrest:hamcrest` if it is used.
+# Add org.hamcrest:hamcrest if it is used.
 
-** org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed**
-_JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency._
+ **org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed** _JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency._
 
 ### Tags
 
@@ -28,6 +27,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * onlyIfUsing: `[org.hamcrest.Matchers]`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -85,3 +85,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed`
+

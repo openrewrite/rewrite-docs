@@ -20,4 +20,3 @@ _Modernize your code to a newer JDK version. Along the way, take advantage of ne
 * [`java.util.logging` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/logging)
 * [`javax` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/javax)
 
-

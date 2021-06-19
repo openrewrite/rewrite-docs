@@ -1,7 +1,6 @@
 # Limit root capabilities in a container
 
-** org.openrewrite.kubernetes.LimitContainerCapabilities**
-_Limiting the admission of containers with capabilities ensures that only a small number of containers have extended capabilities outside the default range._
+ **org.openrewrite.kubernetes.LimitContainerCapabilities** _Limiting the admission of containers with capabilities ensures that only a small number of containers have extended capabilities outside the default range._
 
 ### Tags
 
@@ -17,12 +16,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/securityContext/capabilities/drop`
   * value: `ALL`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -80,3 +80,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.LimitContainerCapabilities`
+

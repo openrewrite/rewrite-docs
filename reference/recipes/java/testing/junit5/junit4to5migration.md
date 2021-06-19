@@ -1,7 +1,6 @@
 # JUnit Jupiter migration from JUnit 4.x
 
-** org.openrewrite.java.testing.junit5.JUnit4to5Migration**
-_Migrates JUnit 4.x tests to JUnit Jupiter._
+ **org.openrewrite.java.testing.junit5.JUnit4to5Migration** _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
 
@@ -18,14 +17,14 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Reorder method arguments](../../../java/reordermethodarguments.md)
+* [Reorder method arguments](../../reordermethodarguments.md)
   * methodPattern: `org.junit.Assume assume*(String, boolean)`
   * newParameterNames: `[b, message]`
   * oldParameterNames: `[message, b]`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.junit.Assume`
   * newFullyQualifiedTypeName: `org.junit.jupiter.api.Assumptions`
-* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners.md)
+* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](removeobsoleterunners.md)
   * obsoleteRunners: `[org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]`
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `junit`
@@ -57,12 +56,13 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * releasesOnly: `false`
   * scope: `test`
   * onlyIfUsing: `[org.junit.jupiter.params.ParameterizedTest]`
-* [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled.md)
-* [Use `MatcherAssert#assertThat(..)`](../../../java/testing/junit5/usehamcrestassertthat.md)
-* [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension.md)
-* [Add `org.hamcrest:hamcrest` if it is used.](../../../java/testing/hamcrest/addhamcrestifused.md)
+* [Use JUnit Jupiter `@Disabled`](ignoretodisabled.md)
+* [Use `MatcherAssert#assertThat(..)`](usehamcrestassertthat.md)
+* [Use Mockito JUnit Jupiter extension](usemockitoextension.md)
+* [Add `org.hamcrest:hamcrest` if it is used.](../hamcrest/addhamcrestifused.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -120,3 +120,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.JUnit4to5Migration`
+

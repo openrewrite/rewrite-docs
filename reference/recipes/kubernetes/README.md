@@ -25,4 +25,3 @@
 
 * [Search](https://docs.openrewrite.org/reference/recipes/kubernetes/search)
 
-

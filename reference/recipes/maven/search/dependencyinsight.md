@@ -1,7 +1,6 @@
 # Maven dependency insight
 
-** org.openrewrite.maven.search.DependencyInsight**
-_Find direct and transitive dependencies matching a group, artifact, and scope. Results include dependencies that either directly match or transitively include a matching dependency._
+ **org.openrewrite.maven.search.DependencyInsight** _Find direct and transitive dependencies matching a group, artifact, and scope. Results include dependencies that either directly match or transitively include a matching dependency._
 
 ## Source
 
@@ -14,14 +13,14 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. |
 | `String` | scope | Match dependencies with the specified scope |
 
 ## Usage
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.DependencyInsightExample`. 
-Here's how you can define and customize such a recipe within your rewrite.yml:
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.DependencyInsightExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +35,6 @@ recipeList:
       scope: compile
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.DependencyInsightExample` has been defined activate it in your build file:
 
@@ -55,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -85,3 +82,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.DependencyInsightExample`
+

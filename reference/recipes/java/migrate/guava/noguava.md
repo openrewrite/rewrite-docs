@@ -1,7 +1,6 @@
 # Use Java standard library instead of Guava
 
-** org.openrewrite.java.migrate.guava.NoGuava**
-_Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+ **org.openrewrite.java.migrate.guava.NoGuava** _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
 
 ### Tags
 
@@ -17,9 +16,10 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Use `Set#of(..)` not Guava](../../../java/migrate/guava/noguavaimmutablesetof.md)
+* [Use `Set#of(..)` not Guava](noguavaimmutablesetof.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -77,3 +77,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuava`
+

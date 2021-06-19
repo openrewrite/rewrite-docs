@@ -1,7 +1,6 @@
 # Find Maven project properties
 
-** org.openrewrite.maven.search.FindProperties**
-_Finds the specified Maven project properties within a pom.xml._
+ **org.openrewrite.maven.search.FindProperties** _Finds the specified Maven project properties within a pom.xml._
 
 ## Source
 
@@ -14,12 +13,12 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | propertyPattern | Regular expression pattern used to match property tag names. |
 
 ## Usage
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindPropertiesExample`. 
-Here's how you can define and customize such a recipe within your rewrite.yml:
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindPropertiesExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -32,7 +31,6 @@ recipeList:
       propertyPattern: guava*
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.FindPropertiesExample` has been defined activate it in your build file:
 
@@ -51,7 +49,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -81,3 +78,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindPropertiesExample`
+

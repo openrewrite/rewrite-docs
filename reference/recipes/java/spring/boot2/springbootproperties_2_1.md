@@ -1,7 +1,6 @@
 # Migrate Spring Boot properties to 2.1
 
-** org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_1**
-_Migrate properties found in `application.properties` and `application.yml`._
+ **org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_1** _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
@@ -159,6 +158,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * newPropertyKey: `spring.resources.chain.compressed`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
 
 {% tabs %}
@@ -216,3 +216,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.SpringBootProperties_2_1`
+

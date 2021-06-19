@@ -1,7 +1,6 @@
-# Ensure lifecycle rule on `StorageBucket`
+# Ensure lifecycle rule on StorageBucket
 
-** org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket**
-_When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
+ **org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket** _When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
 
 ### Tags
 
@@ -17,17 +16,21 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * apiVersion: `storage.cnrm.cloud.google.com/v1beta1`
   * resourceKind: `StorageBucket`
   * configurationPath: `/spec/lifecycleRule`
-  * value: `lifecycleRule:
-  - action:
+  * value: \`lifecycleRule:
+  * action:
+
       type: Delete
+
     condition:
-      age: 7`
+
+      age: 7\`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -85,3 +88,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket`
+

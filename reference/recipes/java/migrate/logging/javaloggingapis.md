@@ -1,7 +1,6 @@
-# Migrate deprecated `java.util.logging` APIs
+# Migrate deprecated java.util.logging APIs
 
-** org.openrewrite.java.migrate.logging.JavaLoggingAPIs**
-_Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.logging.JavaLoggingAPIs** _Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ### Tags
 
@@ -17,9 +16,10 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Use `PlatformLoggingMXBean`](../../../java/migrate/logging/migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
+* [Use `PlatformLoggingMXBean`](migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -77,3 +77,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.logging.JavaLoggingAPIs`
+

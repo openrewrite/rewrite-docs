@@ -11,4 +11,3 @@
 
 * [Spring Boot 2.x](https://docs.openrewrite.org/reference/recipes/java/spring/boot2)
 
-

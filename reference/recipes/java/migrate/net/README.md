@@ -1,4 +1,4 @@
-# `java.net` APIs
+# java.net APIs
 
 _null_
 
@@ -10,5 +10,4 @@ _null_
 * [Use `java.net.MulticastSocket#setTimeToLive(int)`](https://docs.openrewrite.org/reference/recipes/java/migrate/net/migratemulticastsocketsetttltosettimetolive)
 * [Use `java.net.URLDecoder#decode(String, StandardCharsets.UTF_8)`](https://docs.openrewrite.org/reference/recipes/java/migrate/net/migrateurldecoderdecode)
 * [Use `java.net.URLEncoder#encode(String, StandardCharsets.UTF_8)`](https://docs.openrewrite.org/reference/recipes/java/migrate/net/migrateurlencoderencode)
-
 

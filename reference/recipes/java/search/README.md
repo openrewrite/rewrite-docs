@@ -10,4 +10,3 @@
 * [Find types](https://docs.openrewrite.org/reference/recipes/java/search/findtypes)
 * [Result of method call ignored](https://docs.openrewrite.org/reference/recipes/java/search/resultofmethodcallignored)
 
-

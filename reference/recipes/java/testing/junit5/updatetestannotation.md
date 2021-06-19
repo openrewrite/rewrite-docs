@@ -1,7 +1,6 @@
-# Migrate JUnit 4 `@Test` annotations to JUnit5
+# Migrate JUnit 4 @Test annotations to JUnit5
 
-** org.openrewrite.java.testing.junit5.UpdateTestAnnotation**
-_Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit5's `org.junit.jupiter.api.Test` annotation._
+ **org.openrewrite.java.testing.junit5.UpdateTestAnnotation** _Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit5's `org.junit.jupiter.api.Test` annotation._
 
 ## Source
 
@@ -11,8 +10,8 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-testing-frameworks
 * version: 1.6.0
 
-
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -70,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.UpdateTestAnnotation`
+

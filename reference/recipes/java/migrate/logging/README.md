@@ -1,4 +1,4 @@
-# `java.util.logging` APIs
+# java.util.logging APIs
 
 _null_
 
@@ -10,5 +10,4 @@ _null_
 * [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/migrateloggerlogrbtouseresourcebundle)
 * [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/migrategetloggingmxbeantogetplatformmxbean)
 * [Use `PlatformLoggingMXBean`](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/migrateinterfaceloggingmxbeantoplatformloggingmxbean)
-
 

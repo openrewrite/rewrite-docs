@@ -17,4 +17,3 @@ _null_
 * [Spring Boot 2.x best practices](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2bestpractices)
 * [Spring Boot 2.x migration from Spring Boot 1.x](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot1to2migration)
 
-

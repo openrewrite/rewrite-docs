@@ -12,4 +12,3 @@
 * [Use `new LinkedHashSet<>()` instead of Guava](https://docs.openrewrite.org/reference/recipes/java/migrate/guava/noguavasetsnewlinkedhashset)
 * [Use `new LinkedList<>()` instead of Guava](https://docs.openrewrite.org/reference/recipes/java/migrate/guava/noguavalistsnewlinkedlist)
 
-

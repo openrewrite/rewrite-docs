@@ -1,7 +1,6 @@
-# Migrate deprecated `javax` packages to `jakarta`
+# Migrate deprecated javax packages to jakarta
 
-** org.openrewrite.java.migrate.JavaxMigrationToJakarta**
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+ **org.openrewrite.java.migrate.JavaxMigrationToJakarta** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -63,24 +62,25 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
   * version: `2.x`
   * releasesOnly: `false`
   * onlyIfUsing: `[javax.activation.*]`
-* [Rename package name](../../java/changepackage.md)
+* [Rename package name](../changepackage.md)
   * oldPackageName: `javax.xml.bind`
   * newPackageName: `jakarta.xml.bind`
-* [Rename package name](../../java/changepackage.md)
+* [Rename package name](../changepackage.md)
   * oldPackageName: `javax.xml.ws`
   * newPackageName: `jakarta.xml.ws`
-* [Rename package name](../../java/changepackage.md)
+* [Rename package name](../changepackage.md)
   * oldPackageName: `javax.transaction`
   * newPackageName: `jakarta.transaction`
-* [Rename package name](../../java/changepackage.md)
+* [Rename package name](../changepackage.md)
   * oldPackageName: `javax.activation`
   * newPackageName: `jakarta.activation`
 * [Remove Maven dependency](../../maven/removedependency.md)
   * groupId: `javax.xml.ws`
   * artifactId: `jaxws-api`
-* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](../../java/migrate/javaxbatchmigrationtojakartabatch.md)
+* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](javaxbatchmigrationtojakartabatch.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
 
 {% tabs %}
@@ -138,3 +138,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.JavaxMigrationToJakarta`
+

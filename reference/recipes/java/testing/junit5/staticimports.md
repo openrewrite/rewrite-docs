@@ -1,7 +1,6 @@
 # Statically import JUnit Jupiter assertions
 
-** org.openrewrite.java.testing.junit5.StaticImports**
-_Always use a static import for assertion methods._
+ **org.openrewrite.java.testing.junit5.StaticImports** _Always use a static import for assertion methods._
 
 ### Tags
 
@@ -18,10 +17,11 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Use static import](../../../java/usestaticimport.md)
+* [Use static import](../../usestaticimport.md)
   * methodPattern: `org.junit.jupiter.api.Assertions *(..)`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -79,3 +79,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.StaticImports`
+

@@ -20,4 +20,3 @@
 
 * [Search](https://docs.openrewrite.org/reference/recipes/maven/search)
 
-

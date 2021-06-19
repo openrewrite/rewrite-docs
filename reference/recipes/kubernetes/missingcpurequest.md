@@ -1,7 +1,6 @@
 # Ensure CPU request is set
 
-** org.openrewrite.kubernetes.MissingCpuRequest**
-_If a container is created in a namespace that has a default CPU limit, and the container does not specify its own CPU limit, then the container is assigned the default CPU limit._
+ **org.openrewrite.kubernetes.MissingCpuRequest** _If a container is created in a namespace that has a default CPU limit, and the container does not specify its own CPU limit, then the container is assigned the default CPU limit._
 
 ### Tags
 
@@ -17,11 +16,12 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/resources/requests/cpu`
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
 
 {% tabs %}
@@ -79,3 +79,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.MissingCpuRequest`
+

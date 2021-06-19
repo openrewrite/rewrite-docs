@@ -28,4 +28,3 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Use diamond operator](https://docs.openrewrite.org/reference/recipes/java/cleanup/usediamondoperator)
 * [Use primitive wrapper `valueOf` method](https://docs.openrewrite.org/reference/recipes/java/cleanup/primitivewrapperclassconstructortovalueof)
 
-

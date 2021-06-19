@@ -1,7 +1,6 @@
 # AssertJ best practices
 
-** org.openrewrite.java.testing.assertj.Assertj**
-_Migrates JUnit asserts to AssertJ and applies best practices to assertions._
+ **org.openrewrite.java.testing.assertj.Assertj** _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ### Tags
 
@@ -18,10 +17,11 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 
 ## Recipe list
 
-* [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports.md)
-* [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj.md)
+* [Statically import AssertJ's `assertThat`](staticimports.md)
+* [Migrate JUnit asserts to AssertJ](junittoassertj.md)
 
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -79,3 +79,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.assertj.Assertj`
+

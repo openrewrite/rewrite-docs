@@ -1,7 +1,6 @@
 # okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer
 
-** org.openrewrite.java.testing.junit5.UpdateMockWebServer**
-_Replace usages of okhttp3 3.x @Rule MockWebServer with 4.x MockWebServer._
+ **org.openrewrite.java.testing.junit5.UpdateMockWebServer** _Replace usages of okhttp3 3.x @Rule MockWebServer with 4.x MockWebServer._
 
 ## Source
 
@@ -11,8 +10,8 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/r
 * artifactId: rewrite-testing-frameworks
 * version: 1.6.0
 
-
 ## Usage
+
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
 
 {% tabs %}
@@ -70,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.UpdateMockWebServer`
+

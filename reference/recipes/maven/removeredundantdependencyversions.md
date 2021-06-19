@@ -1,7 +1,6 @@
 # Remove redundant explicit dependency versions
 
-** org.openrewrite.maven.RemoveRedundantDependencyVersions**
-_Remove explicitly-specified dependency versions when a parent pom's dependencyManagement specifies the same explicit version._
+ **org.openrewrite.maven.RemoveRedundantDependencyVersions** _Remove explicitly-specified dependency versions when a parent pom's dependencyManagement specifies the same explicit version._
 
 ## Source
 
@@ -11,9 +10,9 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 * artifactId: rewrite-maven
 * version: 7.7.0
 
-
 ## Usage
-This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
+
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -30,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -60,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.maven.RemoveRedundantDependencyVersions`
+
