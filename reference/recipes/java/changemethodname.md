@@ -14,7 +14,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 
 | Type | Name | Description |
 | :--- | :--- | :--- |
-| `String` | methodPattern | A method pattern, expressed as a pointcut expression, that is used to find matching method declarations/invocations. |
+| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](../../../v1beta/pointcut-expressions.md), that is used to find matching method declarations/invocations. |
 | `String` | newMethodName | The method name that will replace the existing name. |
 
 ## Usage
