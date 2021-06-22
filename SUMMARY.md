@@ -7,6 +7,16 @@
 * [Quickstart: Maven and Gradle](getting-started/getting-started.md)
 * [Recipe Development Environment](getting-started/recipe-development-environment.md)
 
+## Tutorials & Guides <a id="tutorials"></a>
+
+* [Adopt Java 11 from Java 8](tutorials/migrate-from-java-8-to-java-11.md)
+* [Adopt JUnit 5 from JUnit 4](tutorials/migrate-from-junit-4-to-junit-5.md)
+* [Adopt Spring Boot 2 from Spring Boot 1](tutorials/spring-boot-2.x-migration-from-spring-boot-1.x.md)
+* [Writing a Java Refactoring Recipe](tutorials/writing-a-java-refactoring-recipe.md)
+* [Modifying Methods with JavaTemplate](tutorials/modifying-methods-with-javatemplate.md)
+* [Refactoring with Declarative YAML Recipes](tutorials/authoring-declarative-yaml-recipes.md)
+* [Automating Maven Dependency Management](tutorials/automating-maven-dependency-management.md)
+
 ## Reference
 
 * [Maven Plugin Configuration](reference/rewrite-maven-plugin.md)
@@ -284,16 +294,6 @@
       * [YAML indent](reference/recipes/yaml/format/indents.md)
     * [Search](reference/recipes/yaml/search/README.md)
       * [Find YAML entries](reference/recipes/yaml/search/findkey.md)
-
-## Tutorials & Guides <a id="tutorials"></a>
-
-* [Adopt Java 11 from Java 8](tutorials/migrate-from-java-8-to-java-11.md)
-* [Adopt JUnit 5 from JUnit 4](tutorials/migrate-from-junit-4-to-junit-5.md)
-* [Adopt Spring Boot 2 from Spring Boot 1](tutorials/spring-boot-2.x-migration-from-spring-boot-1.x.md)
-* [Writing a Java Refactoring Recipe](tutorials/writing-a-java-refactoring-recipe.md)
-* [Modifying Methods with JavaTemplate](tutorials/modifying-methods-with-javatemplate.md)
-* [Refactoring with Declarative YAML Recipes](tutorials/authoring-declarative-yaml-recipes.md)
-* [Automating Maven Dependency Management](tutorials/automating-maven-dependency-management.md)
 
 ## Concepts & Explanations <a id="v1beta"></a>
 
