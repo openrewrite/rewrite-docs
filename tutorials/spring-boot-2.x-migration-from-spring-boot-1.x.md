@@ -4,7 +4,7 @@ In this guide we'll look at using Rewrite to perform an automated migration from
 
 ## What to Expect
 
-This automated migration focuses on upgrading SpringBoot projects from 1.x to 2.x, it also includes a spring specific JUnit 4 to 5 migration along with several best practices such as replacing RequestMapping annotations with the request-method specific variant.
+This automated migration focuses on upgrading SpringBoot projects from 1.x to 2.x, it also includes a spring specific JUnit 4 to 5 migration along with several best practices such as replacing RequestMapping annotations with their request-method specific variant.
 
 * Update Maven Dependencies
 * Migrate Spring Boot Properties 2.0 -&gt; 2.X
