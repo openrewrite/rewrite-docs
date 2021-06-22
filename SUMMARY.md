@@ -291,6 +291,7 @@
 * [Modifying Methods with JavaTemplate](tutorials/modifying-methods-with-javatemplate.md)
 * [Refactoring with Declarative YAML Recipes](tutorials/authoring-declarative-yaml-recipes.md)
 * [Migrate from JUnit 4 to JUnit 5](tutorials/migrate-from-junit-4-to-junit-5.md)
+* [Migrate to Java 11](tutorials/migrate-from-java-8-to-java-11.md)
 * [Spring Boot 2.x migration from Spring Boot 1.x](tutorials/spring-boot-2.x-migration-from-spring-boot-1.x.md)
 * [Automating Maven Dependency Management](tutorials/automating-maven-dependency-management.md)
 
