@@ -1,4 +1,4 @@
-# Adopt Java 11 from Java 8
+# Migrate to Java 11 from Java 8
 
 Upgrading an older codebase to Java 11 can be a daunting and time-consuming task. Enterprises that use Java long enough inevitably faced the challenge of upgrading their applications to a newer version of Java. This guide will outline the features of the rewrite-migrate-java project which provides recipes to automate the migration to Java 11. As a developer, you can use rewrite to quickly tackle the most common issues you will encounter with your upgrade.
 

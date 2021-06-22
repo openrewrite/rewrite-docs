@@ -1,4 +1,4 @@
-# Adopt JUnit 5 from JUnit 4
+# Migrate to JUnit 5 from JUnit 4
 
 In this tutorial we'll use Rewrite to perform an automated migration from the venerable [JUnit 4](https://junit.org/junit4/) testing framework to its successor [JUnit 5](https://junit.org/junit5/).
 

@@ -1,4 +1,4 @@
-# Adopt Spring Boot 2 from Spring Boot 1
+# Migrate to Spring Boot 2 from Spring Boot 1
 
 In this guide we'll look at using Rewrite to perform an automated migration from SpringBoot 1.x to SpringBoot 2.x
 
