@@ -1,6 +1,6 @@
 # Change method name
 
- **org.openrewrite.java.ChangeMethodName** _Rename a method._
+**org.openrewrite.java.ChangeMethodName** _Rename a method._
 
 ## Source
 
@@ -14,7 +14,7 @@ Maven Central [entry](https://search.maven.org/artifact/org.openrewrite/rewrite-
 
 | Type | Name | Description |
 | :--- | :--- | :--- |
-| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](/v1beta/pointcut-expressions), that is used to find matching method declarations/invocations. |
+| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](https://github.com/openrewrite/rewrite-docs/tree/f3c7835646c8f5b22b050fb06a2986398011ac08/v1beta/pointcut-expressions/README.md), that is used to find matching method declarations/invocations. |
 | `String` | newMethodName | The method name that will replace the existing name. |
 
 ## Usage

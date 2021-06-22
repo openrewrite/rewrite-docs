@@ -33,11 +33,93 @@ So if you wanted to match invocations of `String.toString(int beginIndex)` then 
 
 | Pointcut Expression | Matches |
 | :--- | :--- |
-| `java.lang.String substring(int)` | String's Exactly the [single argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int%29) of `String.substring()` |
+| `java.lang.String substring(int)` | Exactly the [single argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int%29) of `String.substring()` |
 | `java.lang.String substring(int, int)` | Exactly the [two argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int,int%29) of `String.substring()` |
 | `java.lang.String substring(..)` | Any overload of `String.substring()` |
 | `java.lang.String *(int)` | Any method on `String` that accepts a single argument of type `int`  |
 | `com.yourorg.Foo bar(int, String, ..)` | Any method on `Foo` named `bar` accepting an `int`, a `String`, and zero or more other arguments of any type |
 | `*..String *(..)` | Any method accepting any arguments on classes named "String" in any package |
 | `*..* *(..)` | Any method accepting any arguments on any class |
+
+## Usage
+
+### Configuring Recipes
+
+Recipes which take pointcut expressions as arguments take them as strings. In yaml that looks like this:
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.ChangeMethodNameExample
+displayName: Change method name example
+recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.mockito.Matchers anyVararg()
+      newMethodName: any
+```
+
+Constructing a similarly configured instance of the same recipe in Java:
+
+```java
+ChangeMethodName cmn = new ChangeMethodName("org.mockito.Matchers anyVararg()", "any");
+```
+
+### Authoring Recipes with MethodMatcher
+
+`org.openrewrite.java.MethodMatcher` is the class that most recipes will use pointcut expressions with. Instances are created by providing the pointcut expression to its constructor:
+
+```java
+MethodMatcher mm = new MethodMatcher("org.mockito.Matchers anyVararg()");
+```
+
+`MethodMatcher.match()` has overloads that accept method declarations, method invocations, and constrcutor invocations and returns `true` if the argument matches the pointcut expression the matcher was initialized with. They are frequently used by visitors to avoid making changes to AST elements other than those indicated by the pointcut expression.
+
+```java
+// Adapted from org.openrewrite.java.ChangeMethodName for the sake of example
+// This is lacks the full functionality of the complete Recipe
+class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
+    private final MethodMatcher methodMatcher;
+
+    private ChangeMethodNameVisitor(String pointcutExpression) {
+        this.methodMatcher = new MethodMatcher(pointcutExpression);
+    }
+
+    @Override
+    public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration method, ExecutionContext ctx) {
+        J.MethodDeclaration m = super.visitMethodDeclaration(method, ctx);
+        J.ClassDeclaration classDecl = getCursor().firstEnclosingOrThrow(J.ClassDeclaration.class);
+        // The enclosing class of a J.MethodDeclaration must be known for a MethodMatcher to match it
+        if (methodMatcher.matches(method, classDecl)) {
+            JavaType.Method type = m.getType();
+            // Note that both the name and the type information on the declaration are updated together
+            // Maintaining this consistency is important for maintaining the correct operation of other recipes
+            if(type != null) {
+                type = type.withName(newMethodName);
+            }
+            m = m.withName(m.getName().withName(newMethodName))
+                    .withType(type);
+        }
+        return m;
+    }
+
+    @Override
+    public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
+        J.MethodInvocation m = super.visitMethodInvocation(method, ctx);
+        // Type information stored in the J.MethodInvocation indicates the class so no second argument is necessary
+        if (methodMatcher.matches(method)) {
+            JavaType.Method type = m.getType();
+            // Note that both the name and the type information on the invocation are updated together
+            // Maintaining this consistency is important for maintaining the correct operation of other recipes
+            if(type != null) {
+                type = type.withName(newMethodName);
+            }
+            m = m.withName(m.getName().withName(newMethodName))
+                    .withType(type);
+        }
+        return m;
+    }
+    
+    // Other implementation follows
+}
+```
 
