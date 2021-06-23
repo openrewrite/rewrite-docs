@@ -216,5 +216,5 @@ public class SchoolConfig {
 | ConditionalOnAnyBean should create new CompilationUnit when the condition is on the parent class | [\#34](https://github.com/openrewrite/rewrite-spring/issues/34) |
 | JAXRS to Spring WebMVC annotations | [\#69](https://github.com/openrewrite/rewrite-spring/issues/69) |
 | `@EmbeddedKafkaRule` to `@EmbeddedKafka` test conversion | [\#75](https://github.com/openrewrite/rewrite-spring/issues/75) |
-| `NoAutowiredAnnotations` should preserve `@Autowired` constructor annotations when multipl constructors exist |  [\#78](https://github.com/openrewrite/rewrite-spring/issues/78) |
+| `NoAutowiredAnnotations` should preserve `@Autowired` constructor annotations when multiple constructors exist |  [\#78](https://github.com/openrewrite/rewrite-spring/issues/78) |
 
