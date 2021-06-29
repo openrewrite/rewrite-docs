@@ -2,23 +2,11 @@
 
 In this tutorial we'll use Rewrite to perform an automated migration from the venerable [JUnit 4](https://junit.org/junit4/) testing framework to its successor [JUnit 5](https://junit.org/junit5/).
 
-## Quickstart
-
-1. Apply either the Gradle Plugin or the Maven Plugin as described in [Quickstart: Maven and Gradle](../getting-started/getting-started.md)
-2. If your project uses [Spring](https://spring.io):
-   1. Take a rewrite dependency on rewrite-spring
-   2. Activate [SpringBoot2JUnit4to5Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md)
-3. If your project does not use Spring:
-   1. Take a rewrite dependency on rewrite-testing-frameworks
-   2. Activate [JUnit5BestPractices](../reference/recipes/java/testing/junit5/junit5bestpractices.md)
-4. Run `mvn rewrite:fix` or `gradlew rewriteFix`
-5. Inspect the results with `git diff`, or your VCS tool's equivalent
-
 ## Example Configuration
 
 JUnit is a popular tool that many other libraries and frameworks interact with. Rewrite supports some of the popular integrations, such as Mockito and Spring-Boot, out of the box.
 
-If your project is a Spring or Spring-Boot project take a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the recipe [org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md).
+If your project is a Spring or Spring-Boot project take a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the [SpringBoot2JUnit4to5Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe:
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -75,7 +63,7 @@ dependencies {
 `SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
 {% endhint %}
 
-If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the recipe [org.openrewrite.java.testing.junit5.JUnit5BestPractices](../reference/recipes/java/testing/junit5/junit5bestpractices.md)
+If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the [JUnit5BestPractices](../reference/recipes/java/testing/junit5/junit5bestpractices.md) recipe:
 
 {% tabs %}
 {% tab title="Maven" %}

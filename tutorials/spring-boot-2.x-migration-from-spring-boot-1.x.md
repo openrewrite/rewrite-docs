@@ -2,17 +2,9 @@
 
 In this guide we'll look at using Rewrite to perform an automated migration from SpringBoot 1.x to SpringBoot 2.x
 
-## Quickstart 
-
-1. Apply either the Gradle Plugin or the Maven Plugin as described in [Quickstart: Maven and Gradle](../getting-started/getting-started.md)
-2. Take a dependency on rewrite-spring
-3. Activate [SpringBoot1To2Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md)
-4. Run `mvn rewrite:fix` or `gradlew rewriteFix`
-5. Inspect the results with `git diff`, or your VCS tool's equivalent
-
 ## Example Configuration
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
+The [SpringBoot1To2Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -67,6 +59,8 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+At this point you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ## What to Expect
 
