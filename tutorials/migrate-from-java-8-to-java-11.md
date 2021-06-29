@@ -1,10 +1,10 @@
 # Migrate to Java 11 from Java 8
 
-In this tutorial, we'll use Rewrite to perform an automated migration from Java 8 to Java 11.
+In this tutorial, we'll use Rewrite to perform an automated migration from Java 8 to Java 11. Upgrading an older codebase to Java 11 can be a daunting and time-consuming task. As a developer, you can use Rewrite to quickly tackle the most common issues you will encounter with your upgrade.
 
 ## Example Configuration
 
-Upgrading an older codebase to Java 11 can be a daunting and time-consuming task. As a developer, you can use Rewrite to quickly tackle the most common issues you will encounter with your upgrade. The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/java/migrate/java8tojava11) can be applied by including Rewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
+The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/java/migrate/java8tojava11) can be applied by including Rewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
 
 {% tabs %}
 {% tab title="Maven" %}

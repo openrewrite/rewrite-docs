@@ -1,10 +1,10 @@
 # Migrate to Spring Boot 2 from Spring Boot 1
 
-In this guide we'll look at using Rewrite to perform an automated migration from SpringBoot 1.x to SpringBoot 2.x
+In this guide we'll look at using Rewrite to perform an automated migration from SpringBoot 1 to SpringBoot 2.
 
 ## Example Configuration
 
-The [SpringBoot1To2Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
+The [SpringBoot1To2Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}

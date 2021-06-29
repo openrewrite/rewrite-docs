@@ -1,10 +1,8 @@
 # Migrate to JUnit 5 from JUnit 4
 
-In this tutorial, we'll use Rewrite to perform an automated migration from the venerable [JUnit 4](https://junit.org/junit4/) testing framework to its successor [JUnit 5](https://junit.org/junit5/).
+In this tutorial, we'll use Rewrite to perform an automated migration from the venerable [JUnit 4](https://junit.org/junit4/) testing framework to its successor [JUnit 5](https://junit.org/junit5/). JUnit is a popular tool that many other libraries and frameworks interact with. Rewrite supports some of the popular integrations, such as Mockito and Spring-Boot, out of the box.
 
 ## Example Configuration
-
-JUnit is a popular tool that many other libraries and frameworks interact with. Rewrite supports some of the popular integrations, such as Mockito and Spring-Boot, out of the box.
 
 If your project is a Spring or Spring-Boot project take a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the [SpringBoot2JUnit4to5Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe:
 
