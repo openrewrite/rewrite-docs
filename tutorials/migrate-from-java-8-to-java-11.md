@@ -1,23 +1,10 @@
 # Migrate to Java 11 from Java 8
 
-Upgrading an older codebase to Java 11 can be a daunting and time-consuming task. Enterprises that use Java long enough inevitably faced the challenge of upgrading their applications to a newer version of Java. This guide will outline the features of the rewrite-migrate-java project which provides recipes to automate the migration to Java 11. As a developer, you can use rewrite to quickly tackle the most common issues you will encounter with your upgrade.
+In this tutorial, we'll use Rewrite to perform an automated migration from Java 8 to Java 11.
 
-## Available Recipes
+## Example Configuration
 
-| Recipe Name | Description |
-| :--- | :--- |
-| Upgrade to Java 11 | This is a composite recipe that will handle the most common issues you may encounter when upgrading to Java 11. |
-| Add JAXB dependencies | This recipe will add the necessary JAXB dependencies for those projects using the [Java Architecture for XML Binding](https://javaee.github.io/jaxb-v2/). |
-| Add JAX-WS dependencies | This recipe will add the necessary JAX-WS dependencies for those projects using the [Java API for XML Web Services](https://javaee.github.io/metro-jax-ws/). |
-| Add `jdeprscan` | This recipe will add the `jdeprscan` build plugin to a maven-based build. |
-| Remediate deprecations | This recipe provides a best faith effort to remediate listed Java 11 deprecations where a safe, automated solution exists. |
-| Suppress illegal reflective access | This recipe will modify the maven jar plugin configuration to suppress the illegal reflective access error when running a Java application as a "fat jar", a war, or an ear. |
-| Use `jakarta.xml.bind` | This recipe will migrate a project from the `javax.xml.bind` package namespace to the `jakarta.xml.bind` namespace. |
-| Use `jakarta.jws` | This recipe will migrate a project from the `javax.jws` package namespace  to the `jakarta.jws` namespace. |
-
-## Upgrade to Java 11 Composite Recipe
-
-The easiest way explore the capabilites of Java migration module is to activate the composite Java 8 to Java 11 recipe. The recipe can be executed by including the rewrite build plugin and then activating the `org.openrewrite.java.migrate.Java8toJava11` recipe:
+Upgrading an older codebase to Java 11 can be a daunting and time-consuming task. As a developer, you can use Rewrite to quickly tackle the most common issues you will encounter with your upgrade. The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/java/migrate/java8tojava11) can be applied by including Rewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -56,6 +43,10 @@ rewrite {
     activeRecipe("org.openrewrite.java.migrate.Java8toJava11")
 }
 
+repositories {
+    mavenCentral() // rewrite-spring is published to Maven Central
+}
+
 dependencies {
     rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.2.0")
 
@@ -66,120 +57,241 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-## Java Architecture for XML Binding \(JAXB\)
+At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
-Java Architecture for XML Binding \(JAXB\) provides a framework for mapping XML documents to/from a Java representation of those documents. This framework was originally part of the Java Platform, Enterprise Edition \(J2EE\), and both the API and the reference implementation were governed as part of the J2EE specification. The library and the reference implementation were also included as part of the Java standard library \(JDK 6 through 8\). Starting with JDK 9, the JAXB  dependencies were removed to reduce the footprint of the Java standard library. Any projects that continue to use the JAXB framework \(on JDK 9+\) must now explicitly add the JAXB API and a runtime implementation to their builds. To muddy the waters further, the governance of the Java Platform, Enterprise Edition was transferred to the Eclipse foundation and was renamed to Jakarta EE. The Jakarta EE 8 release \(the first under the Jakarta name\) maintains the `javax.xml.bind` package namespace whereas Jakarta EE 9 is the first release where the package namespace was changed to `jakarta.xml.bind`:
+## What to Expect
 
-| Jakarta EE Version | XML Binding Artifact | Package Namespace | Description |
-| :--- | :--- | :--- | :--- |
-| Jakarta EE 8 | jakarta.xml.bind:jakarata.xml.bind-api:2.3.x | javax.xml.bind | JAXB API |
-| Jakarta EE 8 | org.glassfish.jaxb:jaxb-runtime:2.3.x | javax.xml.bind | JAXB Reference Implementation |
-| Jakarta EE 9 | jakarta.xml.bind:jakarata.xml.bind-api:3.x | jakarta.xml.bind | JAXB API |
-| Jakarta EE 9 | org.glassfish.jaxb:jaxb-runtime:3.x | jakarta.xml.bind | JAXB Reference Implementation |
+The above recipe is a composite and will perform the following tasks on your project:
 
-There are two JAXB-related recipes in [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java)  that help projects that are migrating to Java 11:
+* [BigDecimal rounding constants to RoundingMode enums](https://docs.openrewrite.org/reference/recipes/java/cleanup/bigdecimalroundingconstantstoenums)
+* [Use primitive wrapper `valueOf` method](https://docs.openrewrite.org/reference/recipes/java/cleanup/primitivewrapperclassconstructortovalueof)
+* [Migrate deprecated `java.util.concurrent` API](https://docs.openrewrite.org/reference/recipes/java/migrate/concurrent/javaconcurrentapis)s
+* [Migrate deprecated `javax.lang.model.util` API](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxlangmodelutil)s
+* [Migrate deprecated `javax.management.monitor` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxmanagementmonitorapis)
+* [Migrate deprecated `javax.xml.stream` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxxmlstreamapis)
+* [Migrate deprecated `java.lang` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/lang/javalangapis)
+* [Migrate deprecated `java.util.logging` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/javaloggingapis)
+* [Migrate deprecated `java.net` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/net/javanetapis)
+* [Migrate deprecated `java.sql` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/sql/javasqlapis)
 
-### Add JAXB dependencies
+For Maven-based projects, these additional modifications will be made:
 
-This recipe will add or update the latest 2.3.x versions of the Jakarta XML binding framework for an existing Maven project. This recipe will only add the dependencies if references to types within the `javax.xml.bind` package namespace is detected.  
+* [The necessary JAXB dependencies will be added to the pom.xml](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/addjaxbdependencies)
+* [The necessary JAX-WS dependencies will be added to the pom.xml](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/addjaxwsdependencies)
+* [The `jdeprscan` build plugin will be added to the pom.xml](https://docs.openrewrite.org/reference/recipes/java/migrate/addjdeprscanplugin)
 
+## Before and After
 
-```markup
-<dependencies>
-    <!-- JAXB API -->
-    <dependency>
-        <groupId>jakarta.xml.bind</groupId>
-        <artifactId>jakarta.xml.bind-api</artifactId>
-        <version>2.3.3</version>
-    </dependency>
-    <!-- JAXB runtime -->
-    <dependency>
-        <groupId>org.glassfish.jaxb</groupId>
-        <artifactId>jaxb-runtime</artifactId>
-        <version>2.3.4</version>
-        <scope>runtime</scope>
-    </dependency>
-</dependencies>
+{% tabs %}
+{% tab title="Example Class \(Before\)" %}
+```java
+package org.openrewrite.example;
+
+import java.math.BigDecimal;
+
+public class Example {
+    Boolean bool = new Boolean(true);
+    Byte b = new Byte("1");
+    Character c = new Character('c');
+    Double d = new Double(1.0);
+    Float f = new Float(1.1f);
+    Long l = new Long(1);
+    Short sh = new Short("12");
+    short s3 = 3;
+    Short sh3 = new Short(s3);
+    Integer i = new Integer(1);
+    
+    void divide() {
+        BigDecimal bd = BigDecimal.valueOf(10);
+        BigDecimal bd2 = BigDecimal.valueOf(2);
+        bd.divide(bd2, BigDecimal.ROUND_DOWN);
+        bd.divide(bd2, 1);
+        bd.divide(bd2, 1, BigDecimal.ROUND_CEILING);
+        bd.divide(bd2, 1, 1);
+        bd.setScale(2, 1);
+    }
+}
 ```
+{% endtab %}
 
-For those projects that use the `maven-jaxb2-plugin`, this recipe will also update the plugin to a version that is compatible with Java 11.
+{% tab title="Example Class \(After\)" %}
+```java
+package org.openrewrite.example;
 
-```markup
-<!-- Configuring the plugin for generating java model from xsds. -->
-<plugin>
-    <groupId>org.jvnet.jaxb2.maven2</groupId>
-    <artifactId>maven-jaxb2-plugin</artifactId>
-    <version>2.5.0</version>
-</plugin>
+import java.math.BigDecimal;
+
+public class Example {
+    Boolean bool = Boolean.valueOf(true);
+    Byte b = Byte.valueOf("1");
+    Character c = Character.valueOf('c');
+    Double d = Double.valueOf(1.0);
+    Float f = Float.valueOf(1.1f);
+    Long l = Long.valueOf(1);
+    Short sh = Short.valueOf("12");
+    short s3 = 3;
+    Short sh3 = Short.valueOf(s3);
+    Integer i = Integer.valueOf(1);
+
+    void divide() {
+        BigDecimal bd = BigDecimal.valueOf(10);
+        BigDecimal bd2 = BigDecimal.valueOf(2);
+        bd.divide(bd2, RoundingMode.DOWN);
+        bd.divide(bd2, RoundingMode.DOWN);
+        bd.divide(bd2, 1, RoundingMode.CEILING);
+        bd.divide(bd2, 1, RoundingMode.DOWN);
+        bd.setScale(2, RoundingMode.DOWN);
+    }    
+}
 ```
+{% endtab %}
+{% endtabs %}
 
-### `Migrate to` jakarta.xml.bind `package namespace`
-
-Rewrite also provides an optional recipe that will migrate a project from the `javax.xml.bind`  namespace to the `jakarta.xml.bind`namespace. This recipe will also add/update the dependencies of a Maven-based project to the latest Jakarta 3.x release.
-
-> **NOTE:** **The maven-jaxb2-plugin does not yet support the jakarta-xml.bind namespace.**
-
-## Java API for XML Web Services \(JAX-WS\)
-
-Java API for XML Web Services \(JAX-WS\) provides a framework for building SOAP-based XML web services in Java. This framework was originally part of the Java Platform, Enterprise Edition \(J2EE\) and both the API and the reference implementation were governed as part of the J2EE specification. The JAX-WS API and reference implementation were packaged with the Java standard library \(JDK 6 through 8\). Starting with JDK 9, the dependencies were removed from the core JDK to reduce the footprint of the Java standard library. Any projects that continue to use the JAX-WS framework \(on JDK 9+\) must now explicitly add the JAX-WS API and a runtime implementation to their builds. To muddy the waters further, the governance of the Java Platform, Enterprise Edition was transferred to the Eclipse foundation and was renamed to Jakarta EE. The Jakarta EE 8 release \(the first under the Jakarta name\) maintains the `javax.jws` package namespace whereas Jakarta EE 9 is the first release where the package namespace was changed to `jakarta.jws`:
-
-| Jakarta EE Version | XML Web Services Artifact | Package Namespace | Description |
-| :--- | :--- | :--- | :--- |
-| Jakarta EE 8 | jakarta.xml.ws:jakarta.xml.ws-api:2.3.x | javax.jws | JAX-WS API |
-| Jakarta EE 8 | com.sun.xml.ws:jaxws-rt:2.3.x | javax.jws | JAX-WS Reference Implementation |
-| Jakarta EE 9 | jakarta.xml.ws:jakarta.xml.ws-api:2.3.x | jakarta.jws | JAX-WS API |
-| Jakarta EE 9 | com.sun.xml.ws:jaxws-rt:2.3.x | jakarta.jws | JAX-WS Reference Implementation |
-
-There are two JAX-WS recipes in this project that help projects that are migrating to Java 11:
-
-### Add JAX-WS dependencies
-
-This recipe will add or update the latest 2.3.x versions of the Jakarta XML Web Service dependencies for an existing Maven project. This recipe will only add the dependencies if references to types within the `javax.jws` package namespace are detected.
-
-```text
-<dependencies>
-    <!-- JAX-WS API -->
-    <dependency>
-        <groupId>jakarta.xml.ws</groupId>
-        <artifactId>jakarta.xml.ws-api</artifactId>
-        <version>2.3.3</version>
-    </dependency>
-    <!-- JAX-WS reference implementation -->
-    <dependency>
-        <groupId>com.sun.xml.ws</groupId>
-        <artifactId>jaxws-rt</artifactId>
-        <version>2.3.4</version>
-        <scope>runtime</scope>
-    </dependency>
-</dependencies>
-```
-
-{% hint style="warning" %}
-There are several build tool plugins that are used to generate Java code from WSDL files. This recipe currently does not automate this process.
+{% hint style="info" %}
+The above example class demonstrates the two most common code migration tasks when moving to Java 11. There are many additional tasks covered by this recipe that are not represented in this example.
 {% endhint %}
 
-### `Migrate to` jakarta.jws `package namespace`
-
-This recipe will migrate java projects that are using the XML web services framework from the `javax.jws` package namespace to the new 'jakarta.jws' namespace. The recipe will also add/update the latest 3.x versions of the Jakarta XML Web Services framework for maven-based builds.
-
-## Jdeprscan
-
-Recent versions of Java are shipped with a command line tool called `jdeprscan` that will scan a codebase for uses of deprecated API elements. The tool is scoped to only find those deprecations that are party of the core Java runtime and it provides options to limits the search to those APIs deprecated for a specific major versions of Java.  
-  
-To list the deprecations that will be checked by the tool, a developer can use the following command to enumerate all of the deprecations as of Java 11:
-
-```text
-jdeprscan -l -- release 11
-```
-
-### Add `jdeprscan` plugin to Maven
-
-There is a build plugin for Maven that can be used to run jdeprscan within the build pipeline. The tool will fail the build if a reference to a deprecated API is detected. It is a good idea to introduce this plugin into your build process to prevent the use of deprecated APIs from "sneaking" into your codebase. Rewrite provides a recipe to add this plugin to an existing Maven project:
-
+{% tabs %}
+{% tab title="Maven pom \(Before\)" %}
 ```markup
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.openrewrite.example</groupId>
+    <artifactId>jaxb-project</artifactId>
+    <version>1.0</version>
+    <name>jaxb-project</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
+            <plugin>
+                 <groupId>org.jvnet.jaxb2.maven2</groupId>
+                 <artifactId>maven-jaxb2-plugin</artifactId>
+                 <version>${maven-jaxb2-plugin.version}</version>
+                 <executions>
+                     <execution>
+                         <goals>
+                             <goal>generate</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+                 <configuration>
+                     <args>
+                         <arg>-XautoNameResolution</arg>
+                     </args>
+                     <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+                     <schemaIncludes>
+                         <include>*.wsdl</include>
+                     </schemaIncludes>
+                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+                 </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+{% endtab %}
+
+{% tab title="Maven pom \(After\)" %}
+```markup
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.openrewrite.example</groupId>
+    <artifactId>jaxb-project</artifactId>
+    <version>1.0</version>
+    <name>jaxb-project</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
+        <maven-jaxb2-plugin.version>2.5.0</maven-jaxb2-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- JAXB API -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <!-- JAXB runtime -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.4</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                 <groupId>org.jvnet.jaxb2.maven2</groupId>
+                 <artifactId>maven-jaxb2-plugin</artifactId>
+                 <version>${maven-jaxb2-plugin.version}</version>
+                 <executions>
+                     <execution>
+                         <goals>
+                             <goal>generate</goal>
+                         </goals>
+                     </execution>
+                 </executions>
+                 <configuration>
+                     <args>
+                         <arg>-XautoNameResolution</arg>
+                     </args>
+                     <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+                     <schemaIncludes>
+                         <include>*.wsdl</include>
+                     </schemaIncludes>
+                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+                 </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jdeprscan-plugin</artifactId>
@@ -192,95 +304,27 @@ There is a build plugin for Maven that can be used to run jdeprscan within the b
     </build>
 </project>
 ```
+{% endtab %}
+{% endtabs %}
 
-### Remediate deprecations
+{% hint style="info" %}
+The JAXB and JAX-WS dependencies will only be added to the project if types from those projects are detected.  
+{% endhint %}
 
-This project does a best faith effort to remediate deprecations \(reported by `jdeprscan`\) where a safe, automated solution exists. This is in no way an exhaustive list of the supported deprecations and if you feel like we have missed something, please reach out to the team. The following are the most common deprecations you may run into as you move to Java 11.
+{% hint style="info" %}
+If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
+{% endhint %}
 
-#### Converting Primitive Wrapper Class Constructors to `valueOf` Method
-
-The constructor of all primitive wrapper types has been deprecated in favor of using the static factory method `valueOf`. This recipe will convert these constructors to their `valueOf` counterparts on the following classes:
-
-* Boolean
-* Byte
-* Character
-* Double
-* Float
-* Long
-* Short
-
-### Converting BigDecimal Rounding Constants to Enums
-
-There are a set of constants \(static public integers\) representing the various rounding strategies for the BigDecimal class. These have been deprecated in favor of an enum. Any use of these constants will result in a breaking change when using the `jdeprscan` tool. This recipe will migrate the use of these constants to their enum counterparts.
-
-Methods in the `BigDecimal` classes that will be migrated:
-
-* `divide(BigDecimal, int)` --&gt; `divide(BigDecimal, RoundingMode)`
-* `divide(BigDecimal, int, int)` --&gt; `divide(BigDecimal, int, RoundingMode)`
-* `setScale(int, int)` --&gt; `setScale(int, RoundingMode)`
-
-## Future Work
+### Known Limitations
 
 The rewrite-migrate-java project is in its infancy and we are always looking for feedback on which tasks should be prioritized. If you have a specific use case that is not yet covered by this project, please reach out to our team!
 
-### Suppress Illegal Reflective Access
+The following is a list of know limitations/issues:
 
-The Java module system was introduced in Java 9 and provides a higher-level abstraction for grouping a set of java packages and resources along with additional meta-data. The meta-data is used to identify what services the module offers, what dependencies the module requires, and provides a mechanism for explicitly defining which module classes are “visible” to Java classes that are external to the module.
-
-The module system provides strong encapsulation and the core Java libraries, starting with Java 9, have been designed to use the module specification. The rules of the module system, if strictly enforced, introduce breaking changes to downstream projects that have not yet adopted the module system. In fact, it is very common for a typical Java application to have a mix of module-compliant code along with code that is not aware of modules.
-
-Even as Java has reached Java 15, there are a large number of applications and libraries that are not compliant with the rules defined by the Java module system. Rather than breaking those libraries, the Java runtime has been configured to allow mixed-use applications. If an application makes an illegal, reflective call to a module’s unpublished resource, a warning will be logged.
-
-The default behavior of the Java runtime is to log a warning the first time an illegal access call is made. All subsequent calls will not be logged and the warning looks similar to the following:
-
-```text
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file.....)
-WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
-WARNING: Use --illage-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-```
-
-This warning, while valid, produces noise in an organization's logging infrastructure and can be suppressed when packaging an application into an executable JAR file by adding the following to the JAR's manifest:
-
-```text
-<Add-Opens>java.base/java.lang java.base/java.util java.base/java.lang.reflect java.base/java.text java.desktop/java.awt.font</Add-Opens>
-```
-
-This solution will suppress the warning in the deployed artifacts while still surfacing the warning when developers run the application from their development environments.
-
-This recipe can be used to add or modify the `maven-jar-plugin` to add manifest warnings. It will need to target pom files that build FAT application JARs or WAR files. The recipe can be configured with a list of packages for the `<Add-Opens>` manifest entries:
-
-```text
-<!-- This is to suppress Java 11 reflective access warnings when running the application from a jar file. -->
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-jar-plugin</artifactId>
-    <configuration>
-        <archive>
-            <manifestEntries>
-                <Add-Opens>java.base/java.lang java.base/java.util java.base/java.lang.reflect java.base/java.text java.desktop/java.awt.font</Add-Opens>
-            </manifestEntries>
-        </archive>
-    </configuration>
-</plugin>
-```
-
-### Add dependencies removed from the Java runtime
-
-There are several additional libraries that have been removed from the Java standard library that should be considered when migrating to Java 11:
-
-* java.corba
-* javax.transaction
-* javax.batch
-* JavaFX
-* Web Start
-
-### Migrate the use of `sun.misc.Unsafe`
-
-The `sun.misc.Unsafe` class provides direct access to CPU and other hardware features. Over the years this class, although meant for only internal use by the JDK core, has been used in many frameworks across the Java-eco system to access its features primarily for performance gains. [This is an excellent article that desribes how the `Unsafe` class has been used over the years and also details how alternatives are being added to the platform.](https://blogs.oracle.com/javamagazine/the-unsafe-class-unsafe-at-any-speed)
-
-It will be possible to create a set of recipes to aid in the migration of `Unsafe` to the new APIs starting in Java 11.
+* The current recipe adds the JAXB and JAX-WS artifacts available from the Jakarta project. If your organization uses an alternate runtime, this may not be desirable.
+* There are several build tool plugins that are used to generate Java code from WSDL files and this recipe currently does not automate this process. You will need to manually update the related build plugins.
+* There are several additional libraries that have been removed from the Java 11 standard library that are not included with this recipe: `java.corba`, `javax.transaction`, `javax.batch`, JavaFX, Web Start. If you require support for one of these libraries, please reach out to our team or create an issue.
+* This recipe does not cover all deprecations listed by the `jdeprscan` tool.  Please see the following these issue \([\#6](https://github.com/openrewrite/rewrite-migrate-java/issues/6), [\#7](https://github.com/openrewrite/rewrite-migrate-java/issues/7), [\#8](https://github.com/openrewrite/rewrite-migrate-java/issues/8), [\#9](https://github.com/openrewrite/rewrite-migrate-java/issues/9), [\#10](https://github.com/openrewrite/rewrite-migrate-java/issues/10), [\#11](https://github.com/openrewrite/rewrite-migrate-java/issues/11), [\#12](https://github.com/openrewrite/rewrite-migrate-java/issues/12), [\#13](https://github.com/openrewrite/rewrite-migrate-java/issues/13), [\#14](https://github.com/openrewrite/rewrite-migrate-java/issues/14), [\#15](https://github.com/openrewrite/rewrite-migrate-java/issues/15), [\#16](https://github.com/openrewrite/rewrite-migrate-java/issues/16)\) for a list of those deprecations covered/not covered and submit an issue if you are impacted by a deprecation that is not covered by this recipe. 
 
 
 
