@@ -2,6 +2,134 @@
 
 In this tutorial we'll use Rewrite to perform an automated migration from the venerable [JUnit 4](https://junit.org/junit4/) testing framework to its successor [JUnit 5](https://junit.org/junit5/).
 
+## Quickstart
+
+1. Apply either the Gradle Plugin or the Maven Plugin as described in [Quickstart: Maven and Gradle](../getting-started/getting-started.md)
+2. If your project uses [Spring](https://spring.io):
+   1. Take a rewrite dependency on rewrite-spring
+   2. Activate [SpringBoot2JUnit4to5Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md)
+3. If your project does not use Spring:
+   1. Take a rewrite dependency on rewrite-testing-frameworks
+   2. Activate [JUnit5BestPractices](../reference/recipes/java/testing/junit5/junit5bestpractices.md)
+4. Run `mvn rewrite:fix` or `gradlew rewriteFix`
+5. Inspect the results with `git diff`, or your VCS tool's equivalent
+
+## Example Configuration
+
+JUnit is a popular tool that many other libraries and frameworks interact with. Rewrite supports some of the popular integrations, such as Mockito and Spring-Boot, out of the box.
+
+If your project is a Spring or Spring-Boot project take a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the recipe [org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md).
+
+{% tabs %}
+{% tab title="Maven" %}
+{% code title="pom.xml" %}
+```markup
+<plugin>
+  <groupId>org.openrewrite.maven</groupId>
+  <artifactId>rewrite-maven-plugin</artifactId>
+  <version>4.5.0</version>
+  <configuration>
+    <activeRecipes>
+      <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
+    </activeRecipes>
+  </configuration>
+  <dependencies>
+    <dependency>
+      <groupId>org.openrewrite.recipe</groupId>
+      <artifactId>rewrite-spring</artifactId>
+      <version>4.5.0</version>
+    </dependency>
+  </dependencies>
+</plugin>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Gradle" %}
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("java")
+    id("org.openrewrite.rewrite").version("5.1.0")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration")
+}
+
+repositories {
+    mavenCentral() // rewrite-spring is published to Maven Central
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.5.0")
+
+    // Other project dependencies
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+`SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
+{% endhint %}
+
+If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the recipe [org.openrewrite.java.testing.junit5.JUnit5BestPractices](../reference/recipes/java/testing/junit5/junit5bestpractices.md)
+
+{% tabs %}
+{% tab title="Maven" %}
+{% code title="pom.xml" %}
+```markup
+<plugin>
+  <groupId>org.openrewrite.maven</groupId>
+  <artifactId>rewrite-maven-plugin</artifactId>
+  <version>4.5.0</version>
+  <configuration>
+    <activeRecipes>
+      <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
+    </activeRecipes>
+  </configuration>
+  <dependencies>
+    <dependency>
+      <groupId>org.openrewrite.recipe</groupId>
+      <artifactId>rewrite-testing-frameworks</artifactId>
+      <version>1.6.0</version>
+    </dependency>
+  </dependencies>
+</plugin>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Gradle" %}
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("java")
+    id("org.openrewrite.rewrite").version("5.1.0")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
+}
+
+repositories {
+    mavenCentral() // rewrite-testing-frameworks is published to Maven Central
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0")
+
+    // Other project dependencies
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+At this point you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+
 ## What to Expect
 
 This automated migration focuses on making 1 to 1 replacements of JUnit 4 classes, annotations and patterns with behaviorally equivalent JUnit 5 replacements. This includes:
@@ -271,126 +399,18 @@ If you want to know when dependency management for Gradle will be added to rewri
 
 ### Known Limitations
 
-Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these cases manual changes will be required after the automation has run. This list is not comprehensive. Also see the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues).
+Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these cases manual changes will be required after the automation has run. This list is not exhaustive. Also see the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues).
 
-| Unsupported Functionality | Issue |
-| :--- | :--- |
-| [Powermock](https://github.com/powermock/powermock) has no JUnit 5 equivalent | - |
-| [Wiremock](https://github.com/tomakehurst/wiremock) has no JUnit 5 equivalent | - |
-| The JUnit5 equivalent to JUnit4 ClassPathSuite is not yet released | [\#66](https://github.com/openrewrite/rewrite-testing-frameworks/issues/66) |
-| org.junit.ComparisonFailure | [\#84](https://github.com/openrewrite/rewrite-testing-frameworks/issues/84) |
-| org.junit.MethodRule | [\#83](https://github.com/openrewrite/rewrite-testing-frameworks/issues/83) |
-| TestRule, TestWatcher, and Description | [\#60](https://github.com/openrewrite/rewrite-testing-frameworks/issues/60) |
+| Unsupported Functionality |
+| :--- |
+| [Powermock](https://github.com/powermock/powermock) has no JUnit 5 equivalent |
+| [Wiremock](https://github.com/tomakehurst/wiremock) has no JUnit 5 equivalent |
+| The JUnit5 equivalent to JUnit4 ClassPathSuite is not yet released |
+| org.junit.ComparisonFailure |
+| org.junit.MethodRule |
+| TestRule, TestWatcher, and Description |
 
 Your code base may also have custom JUnit 4 Rules or Runners that will not be migrated automatically by our recipes. If your code base has a lot of customized JUnit 4 extensions, consider [writing your own recipe](writing-a-java-refactoring-recipe.md) to handle those and running it alongside this migration.
 
 If you discover a shortcoming of this migration that should be covered, file an issue or submit a pull request on the [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) github project.
-
-## Choosing the Right Recipe
-
-JUnit is a popular tool that many other libraries and frameworks interact with. Rewrite supports some of the popular integrations, such as Mockito and Spring-Boot, out of the box.
-
-If your project is a Spring or Spring-Boot project take a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the recipe `org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration`.
-
-{% tabs %}
-{% tab title="Maven" %}
-{% code title="pom.xml" %}
-```markup
-<plugin>
-  <groupId>org.openrewrite.maven</groupId>
-  <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
-  <configuration>
-    <activeRecipes>
-      <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
-    </activeRecipes>
-  </configuration>
-  <dependencies>
-    <dependency>
-      <groupId>org.openrewrite.recipe</groupId>
-      <artifactId>rewrite-spring</artifactId>
-      <version>4.0.2</version>
-    </dependency>
-  </dependencies>
-</plugin>
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Gradle" %}
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id("java")
-    id("org.openrewrite.rewrite").version("5.1.0")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration")
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.0.2")
-
-    // Other project dependencies
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% hint style="info" %}
-`SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
-{% endhint %}
-
-If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the recipe `org.openrewrite.java.testing.junit5.JUnit5BestPractices`
-
-{% tabs %}
-{% tab title="Maven" %}
-{% code title="pom.xml" %}
-```markup
-<plugin>
-  <groupId>org.openrewrite.maven</groupId>
-  <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
-  <configuration>
-    <activeRecipes>
-      <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
-    </activeRecipes>
-  </configuration>
-  <dependencies>
-    <dependency>
-      <groupId>org.openrewrite.recipe</groupId>
-      <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>1.6.0</version>
-    </dependency>
-  </dependencies>
-</plugin>
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Gradle" %}
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id("java")
-    id("org.openrewrite.rewrite").version("5.1.0")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0")
-
-    // Other project dependencies
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-At this point you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 

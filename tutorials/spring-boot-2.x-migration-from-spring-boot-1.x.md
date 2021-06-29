@@ -2,6 +2,72 @@
 
 In this guide we'll look at using Rewrite to perform an automated migration from SpringBoot 1.x to SpringBoot 2.x
 
+## Quickstart 
+
+1. Apply either the Gradle Plugin or the Maven Plugin as described in [Quickstart: Maven and Gradle](../getting-started/getting-started.md)
+2. Take a dependency on rewrite-spring
+3. Activate [SpringBoot1To2Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md)
+4. Run `mvn rewrite:fix` or `gradlew rewriteFix`
+5. Inspect the results with `git diff`, or your VCS tool's equivalent
+
+## Example Configuration
+
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.5.0 in your build file:
+
+{% tabs %}
+{% tab title="Gradle" %}
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("5.1.0")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.spring.boot2.SpringBoot1To2Migration")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.5.0")
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven" %}
+{% code title="pom.xml" %}
+```markup
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>4.5.0</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.spring.boot2.SpringBoot1To2Migration</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-spring</artifactId>
+            <version>4.5.0</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 ## What to Expect
 
 This automated migration focuses on upgrading SpringBoot projects from 1.x to 2.x, it also includes a spring specific JUnit 4 to 5 migration along with several best practices such as replacing RequestMapping annotations with their request-method specific variant.
