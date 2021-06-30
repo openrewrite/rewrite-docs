@@ -6,10 +6,10 @@ description: 'Search, Organize, and Refactor your Maven poms'
 
 Dependency management is a complex and often frustrating part of software development. Sometimes a transitive dependency you'd never expect makes it onto your runtime classpath. Sometimes your build tool resolves a conflict between requested dependency versions in an unexpected way. Despite the headaches, it wouldn't make sense for most projects to forgo dependencies.
 
-Rewrite can help. In this tutorial we'll learn how to automate common dependency management tasks by migrating a project from one [slf4j](http://www.slf4j.org/) implementation to another.
+Rewrite can help. In this tutorial, we'll learn how to automate common dependency management tasks by migrating a project from one [slf4j](http://www.slf4j.org/) implementation to another.
 
 {% hint style="info" %}
-Currently Rewrite's dependency management capabilities are only implemented for the Maven build tool. If you are interested in dependency management for Gradle keep an eye on [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
+Currently, Rewrite's dependency management capabilities are only implemented for the Maven build tool. If you are interested in dependency management for Gradle keep an eye on [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
 {% endhint %}
 
 ## Setup
@@ -18,14 +18,14 @@ Currently Rewrite's dependency management capabilities are only implemented for 
 2. Familiarize yourself with the basics of applying the rewrite-maven-plugin as described in our [quickstart guide](../getting-started/getting-started.md).
 
 {% hint style="warning" %}
-The sample spring-petclinic project is based on an older version of project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
+The sample spring-petclinic project is based on an older version of the project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
 {% endhint %}
 
 ## Getting Insight into your Dependencies
 
-The first step in changing your dependencies is knowing what they are. First let's find out which of the existing dependencies are using logback-classic. There's no mention of logback in the pom.xml itself, but any of the dependencies that are there could be bringing it in transitively.
+The first step in changing your dependencies is knowing what they are. Let's find out which of the existing dependencies are using logback-classic. There's no mention of logback in the pom.xml itself, but any of the dependencies that are there could be bringing it in transitively.
 
-First add the rewrite-maven-plugin to the pom.xml:
+Add the rewrite-maven-plugin to the pom.xml:
 
 {% code title="pom.xml" %}
 ```markup
@@ -33,7 +33,7 @@ First add the rewrite-maven-plugin to the pom.xml:
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>4.5.0</version>
+    <version>4.6.0</version>
     <configuration>
         <activeRecipes>
             <recipe>com.yourorg.LogbackInsight</recipe>
@@ -59,7 +59,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now run `mvn rewrite:dryRun`. This won't make changes to the project's files. It will produce a rewrite.patch file in the reports directory, with a link in the console log:
+Now run `mvn rewrite:dryRun`. This won't make changes to the project's files. It will produce a `rewrite.patch` file in the reports directory, with a link in the console log:
 
 {% code title="Console Log" %}
 ```text
@@ -71,11 +71,11 @@ Run 'mvn rewrite:run' to apply the recipes.
 ```
 {% endcode %}
 
-Use your preferred diff viewer to inspect the rewrite.patch file, which reveals all of the dependencies that transitively depend on logback.
+Use your preferred diff viewer to inspect the `rewrite.patch` file, which reveals all of the dependencies that transitively depend on logback.
 
 ![](../.gitbook/assets/image%20%2822%29.png)
 
-At this point you have all of the information you need to manually exclude logback-classic from those other dependencies and add a dependency on your preferred slf4j implementation. But that wouldn't prevent logback-classic from being added back in the future. There is an easier, future-proof way to do it.
+At this point, you have all of the information you need to manually exclude logback-classic from those other dependencies and add a dependency on your preferred slf4j implementation. But that wouldn't prevent logback-classic from being added back in the future. There is an easier, future-proof way to do it.
 
 ## Switching SLF4J Implementations
 
@@ -108,7 +108,7 @@ And set the `com.yourorg.UseSlf4jSimple` recipe as active in your pom.xml:
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>4.5.0</version>
+    <version>4.6.0</version>
     <configuration>
         <activeRecipes>
             <recipe>com.yourorg.UseSlf4jSimple</recipe>
@@ -130,9 +130,9 @@ No explicit version number is added for slf4j-simple because an appropriate vers
 
 ## CI Integration
 
-`mvn rewrite:dryRun` only produces warnings in the console output and a rewrite.patch file if there are active recipes that would make changes. This means `dryRun` can be used in your CI pipeline to prevent new logback-classic dependencies being added in an ongoing way. Configure the CI step to fail if `dryRun` emits any warnings to the console log, or if a rewrite.patch file is produced, and you have an effective guard against regression.
+`mvn rewrite:dryRun` only produces warnings in the console output and a `rewrite.patch` file if there are active recipes that would make changes. This means `dryRun` can be used in your CI pipeline to prevent new logback-classic dependencies from being added going forward. Configure the CI step to fail if `dryRun` emits any warnings to the console log, or if a `rewrite.patch` file is produced, and you have an effective guard against regression.
 
-Of course, CI failures are always at least a little bit frustrating for developers. Another option, at least in organizations where the commit is made by CI, is to run `mvn rewrite:run` before the build & test step. Then the build wont need to fail because rewrite will automatically fix the dependency problem.
+Of course, CI failures are always at least a little bit frustrating for developers. Another option, at least in organizations where the commit is made by CI, is to run `mvn rewrite:run` before the build & test step. Then the build won't need to fail because rewrite will automatically fix the dependency problem.
 
 ## Next Steps
 
