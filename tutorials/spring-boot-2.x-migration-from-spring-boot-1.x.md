@@ -11,7 +11,7 @@ The [SpringBoot1To2Migration](../reference/recipes/java/spring/boot2/springboot1
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 rewrite {
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.6.0")
 }
 ```
 {% endcode %}
@@ -38,7 +38,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot1To2Migration</recipe>
@@ -48,7 +48,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.5.0</version>
+            <version>4.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -60,11 +60,11 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-At this point you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ## What to Expect
 
-This automated migration focuses on upgrading SpringBoot projects from 1.x to 2.x, it also includes a spring specific JUnit 4 to 5 migration along with several best practices such as replacing RequestMapping annotations with their request-method specific variant.
+This automated migration focuses on upgrading SpringBoot projects from 1.x to 2.x, it also includes a spring-specific JUnit 4 to 5 migration along with several best practices such as replacing RequestMapping annotations with their request-method specific variant.
 
 * Update Maven Dependencies
 * Migrate Spring Boot Properties 2.0 -&gt; 2.X
