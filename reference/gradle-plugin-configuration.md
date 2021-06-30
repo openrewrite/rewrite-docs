@@ -13,7 +13,7 @@ Apply the org.openrewrite.rewrite plugin to your build.
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ The `rewrite` DSL exposes a few configuration options:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 repositories {
@@ -71,7 +71,7 @@ rewrite {
 All OpenRewrite libraries and modules are published to MavenCentral. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there or one of its mirrors.
 {% endhint %}
 
-No recipe is ever run on your code base without being explicitly activated in the plugin's configuration. To make pre-packaged Rewrite recipes available for activation, add them as `rewrite` dependencies:
+No recipe is ever run on your codebase without being explicitly activated in the plugin's configuration. To make pre-packaged Rewrite recipes available for activation, add them as `rewrite` dependencies:
 
 ```groovy
 dependencies {
@@ -79,12 +79,12 @@ dependencies {
 }
 ```
 
-Once a pre-packaged recipe has been added to the `rewrite` dependency configuration, you can tell the Gradle plugin to activate it the `rewrite` DSL. For example, here is how you would activate the `org.openrewrite.java.testing.junit5.JUnit5BestPractices` Recipe that comes with `rewrite-testing-frameworks` in a single-project Gradle build:
+Once a pre-packaged recipe has been added to the `rewrite` dependency configuration, you can tell the Gradle plugin to activate it the `rewrite` DSL. For example, here is how you would activate the `org.openrewrite.java.testing.junit5.JUnit5BestPractices` recipe that comes with `rewrite-testing-frameworks` in a single-project Gradle build:
 
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 repositories {
@@ -93,7 +93,7 @@ repositories {
 
 dependencies {
     testImplementation("junit:junit:4.13")
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.7.0")
 }
 
 rewrite {
@@ -103,7 +103,7 @@ rewrite {
 
 ## The "Run" Task
 
-Execute `gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
+Execute `gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterward, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
 ![Showing which files were changed and by what visitors](../.gitbook/assets/rewrite-fix-gradle-output%20%282%29%20%282%29%20%284%29%20%284%29%20%285%29%20%286%29%20%286%29%20%289%29%20%282%29%20%2810%29.png)
 
@@ -111,7 +111,7 @@ After the goal finishes executing, run `git diff` \(or your VCS system's equival
 
 ![Example of changes made to netflix conductor by the rewriteRun task](../.gitbook/assets/rewrite-fix-git-diff-output%20%281%29%20%281%29%20%283%29%20%283%29%20%283%29%20%281%29%20%284%29.png)
 
-## The "DryRun" Task
+## The "dryRun" Task
 
 Execute `gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
 

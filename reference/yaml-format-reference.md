@@ -4,7 +4,7 @@ description: Declaring and configuring Recipes and Styles in YAML
 
 # Declarative YAML Format
 
-There are two places Rewrite [yaml](https://yaml.org/) files may appear:
+There are two places Rewrite [YAML](https://yaml.org/) files may appear:
 
 * Within the rewrite.yml file of a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](rewrite-maven-plugin.md)
   * Will not be included in jars published from your project
@@ -13,10 +13,10 @@ There are two places Rewrite [yaml](https://yaml.org/) files may appear:
   * See [Recipe Development Environment](../getting-started/recipe-development-environment.md) for instructions on setting up your project for recipe development
   * e.g.: [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite)
 
-In either case these yaml files share the same format and purpose: making styles and recipes available to rewrite. A single Rewrite yaml file may contain any number of recipes and styles, separated by `---`.
+In either case, these YAML files share the same format and purpose: making styles and recipes available to rewrite. A single Rewrite YAML file may contain any number of recipes and styles, separated by `---`.
 
 {% hint style="info" %}
-Within a yaml document recipe and style names are always fully qualified.
+Within a YAML document recipe and style names are always fully qualified.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -25,7 +25,7 @@ Don't place your custom recipes into the org.openrewrite namespace. We recommend
 
 ## Recipes
 
-The basic format of a recipe defined in yaml is:
+The basic format of a recipe defined in YAML is:
 
 ```yaml
 ---
@@ -67,7 +67,7 @@ Order of recipe declaration is not important. A declarative recipe may include a
 
 ## Styles
 
-The basic format of a Style defined in yaml is:
+The basic format of a Style defined in YAML is:
 
 ```yaml
 ---
@@ -81,7 +81,7 @@ styleConfigs:            # The list of styles which comprise this style
 ```
 
 {% hint style="warning" %}
-While you can define whatever sort of styles you may want, the formatting recipes built into Rewrite itself know how to act upon styles built in to Rewrite. A full reference for such styles will be added to this documentation soon.
+While you can define whatever sort of styles you may want, the formatting recipes built into Rewrite itself know how to act upon styles built into Rewrite. A full reference for such styles will be added to this documentation soon.
 {% endhint %}
 
 Consider this example declarative style, which specifies that tabs should be used for indentation and that at least 9999 imports from a given package should be required before collapsing them into a single star import:

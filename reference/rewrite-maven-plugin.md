@@ -43,7 +43,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.Spring</recipe>
@@ -77,7 +77,7 @@ To find out what recipes a rewrite module provides, see its documentation and th
 
 ## The "Run" Goal
 
-Execute `mvn rewrite:run` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterwards, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
+Execute `mvn rewrite:run` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterward, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
 ![Warnings showing which files were changed and by what visitors](../.gitbook/assets/image%20%285%29.png)
 
@@ -85,7 +85,7 @@ After the goal finishes executing, run `git diff` to see what changes were made,
 
 ![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:run goal](../.gitbook/assets/image%20%287%29.png)
 
-## The "DryRun" Goal
+## The "dryRun" Goal
 
 Execute `mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files at all. This goal can be used to preview the changes that would be made by a recipe.
 
