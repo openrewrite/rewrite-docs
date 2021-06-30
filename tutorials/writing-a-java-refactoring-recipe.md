@@ -4,7 +4,7 @@ description: Adding a method to a class that returns a String
 
 # Writing a Java Refactoring Recipe
 
-In this tutorial we'll create a basic refactoring recipe that adds a method returning a `String` to a user specified class. This `SayHelloRecipe` will take a class like this:
+In this tutorial, we'll create a basic refactoring recipe that adds a method returning a`String` to a user-specified class. This `SayHelloRecipe` will take a class like this:
 
 ```java
 package com.yourorg;
@@ -143,7 +143,7 @@ public class SayHelloRecipe extends Recipe {
 }
 ```
 
-Here we override `JavaIsoVisitor.visitClassDeclaration` in preparation for returning a modified class declaration that includes our new `hello()` method. The first step in any refactoring visit method is to _avoid refactoring_ any class which the visitor should not change. In this case that means any class that isn't the one specified in the recipe, or any class that already has a `hello()` method. Adding this filtering to `SayHelloRecipe.SayHelloVisitor.visitClassDeclaration()` looks like this:
+Here we override `JavaIsoVisitor.visitClassDeclaration` in preparation for returning a modified class declaration that includes our new `hello()` method. The first step in any refactoring visit method is to _avoid refactoring_ any class which the visitor should not change. In this case, that means any class that isn't the one specified in the recipe, or any class that already has a `hello()` method. Adding this filtering to `SayHelloRecipe.SayHelloVisitor.visitClassDeclaration()` looks like this:
 
 ```java
 @Override

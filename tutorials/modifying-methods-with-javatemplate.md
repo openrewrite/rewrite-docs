@@ -112,7 +112,7 @@ Within the `ExpandCustomerInfoVisitor`, we will add logic to remove the abstract
 When using a template to replace a method's body, the template must include the open and closing curly braces.
 {% endhint %}
 
-The method is then replaced with a copy that remove the abstract modifier and the template is then used within the visitMethodDeclaration\(\) method to replace the method body:
+The method is then replaced with a copy that removes the abstract modifier and the template is then used within the visitMethodDeclaration\(\) method to replace the method body:
 
 ```java
 public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
@@ -131,7 +131,7 @@ public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
 
 ## Add Parameters to `setCustomerInfo()`
 
-Next we will use `JavaTemplate` to add two additional parameters to the method declaration. Here we use an interpolation signifier `#{}` to leave a space for the existing argument so that it is preserved when we replace the method's argument list. 
+Next, we will use `JavaTemplate` to add two additional parameters to the method declaration. Here we use an interpolation signifier `#{}` to leave a space for the existing argument so that it is preserved when we replace the method's argument list. 
 
 ```java
 private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
@@ -145,10 +145,10 @@ private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext>
 ```
 
 {% hint style="info" %}
-NOTE: Because a new type, `java.util.Date`, is being introduced to the template, the type must be added when building the template. This ensures that any generated elements will have correct type attribution.
+NOTE: Because a new type, `java.util.Date`, is being introduced to the template, the type must be added when building the template. This ensures that any generated elements will have the correct type attribution.
 {% endhint %}
 
-The template is is used to replace the method declaration using `withTemplate()`. Our code must also ensure that `java.util.Date` is added as an import to the compilation unit.
+The template is used to replace the method declaration using `withTemplate()`. Our code must also ensure that `java.util.Date` is added as an import to the compilation unit.
 
 ```java
 public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
