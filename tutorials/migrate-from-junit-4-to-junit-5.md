@@ -13,7 +13,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
+  <version>4.6.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -23,7 +23,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-spring</artifactId>
-      <version>4.5.0</version>
+      <version>4.6.0</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -36,7 +36,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("5.1.0")
+    id("org.openrewrite.rewrite").version("5.2.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.6.0")
 
     // Other project dependencies
 }
@@ -70,7 +70,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
+  <version>4.6.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -80,7 +80,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>1.6.0</version>
+      <version>1.7.0</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -93,7 +93,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("5.1.0")
+    id("org.openrewrite.rewrite").version("5.2.0")
 }
 
 rewrite {
@@ -105,7 +105,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.7.0")
 
     // Other project dependencies
 }
@@ -114,11 +114,11 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-At this point you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ## What to Expect
 
-This automated migration focuses on making 1 to 1 replacements of JUnit 4 classes, annotations and patterns with behaviorally equivalent JUnit 5 replacements. This includes:
+This automated migration focuses on making 1 to 1 replacements of JUnit 4 classes, annotations, and patterns with behaviorally equivalent JUnit 5 replacements. This includes:
 
 * Replacing `org.junit.Test` with `org.junit.jupiter.api.Test`
   * Includes removing "expected" and "timeout" arguments and adding JUnit 5 equivalents
@@ -128,7 +128,7 @@ This automated migration focuses on making 1 to 1 replacements of JUnit 4 classe
   * Includes generating methods to account for methods provided by `TemporaryFolder` but not by `File`
 * Dependency management \(Maven only\)
   * Remove JUnit 4 dependency from the pom.xml
-  * Exclude JUnit 4 from any dependencies that may be bringing it in transitively
+  * Exclude JUnit 4 from any dependencies where the library is linked transitively
   * Add JUnit 5 dependencies
 * [Many more](https://docs.openrewrite.org/reference/recipes/java/testing/junit5)
 
@@ -385,7 +385,7 @@ If you want to know when dependency management for Gradle will be added to rewri
 
 ### Known Limitations
 
-Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these cases manual changes will be required after the automation has run. This list is not exhaustive. Also see the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues).
+Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these cases, manual changes will be required after the automation has run. This list is not exhaustive. See the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues).
 
 | Unsupported Functionality |
 | :--- |
@@ -396,7 +396,7 @@ Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these c
 | org.junit.MethodRule |
 | TestRule, TestWatcher, and Description |
 
-Your code base may also have custom JUnit 4 Rules or Runners that will not be migrated automatically by our recipes. If your code base has a lot of customized JUnit 4 extensions, consider [writing your own recipe](writing-a-java-refactoring-recipe.md) to handle those and running it alongside this migration.
+Your codebase may also have custom JUnit 4 Rules or Runners that will not be migrated automatically by our recipes. If your codebase has a lot of customized JUnit 4 extensions, consider [writing your own recipe](writing-a-java-refactoring-recipe.md) to handle those and running it alongside this migration.
 
 If you discover a shortcoming of this migration that should be covered, file an issue or submit a pull request on the [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) github project.
 
