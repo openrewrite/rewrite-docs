@@ -39,7 +39,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
+  <version>4.6.0</version>
 </plugin>
 ```
 {% endcode %}
@@ -50,7 +50,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("5.1.0")
+    id("org.openrewrite.rewrite").version("5.2.0")
 }
 
 rewrite {
@@ -61,11 +61,11 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-At this point you're able to run any of the Maven goals or Gradle tasks provided by the plugins. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) and [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options. Try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a listing of all the recipes available for execution. Until we add dependencies on recipe-providing modules this will list only the recipes built-in to openrewrite.
+At this point, you're able to run any of the Maven goals or Gradle tasks provided by the plugins. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) and [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options. Try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a listing of all the recipes available for execution. Until we add dependencies on recipe-providing modules this will list only the recipes built-in to OpenRewrite.
 
 ## Step 3: Execute a Refactoring Recipe
 
-Before any recipe will be executed it must be listed as "active" in the plugin configuration. For the sake of example, in this step we will activate the included `org.openrewrite.java.format.AutoFormat` recipe. This recipe will format the source code in the project according to the styles specified in the rewrite.yml file, or according to Jetbrains IntelliJ's default Java style if no other style is specified.
+Before any recipe will be executed it must be listed as "active" in the plugin configuration. For the sake of example, we will activate the included `org.openrewrite.java.format.AutoFormat` recipe. This recipe will format the source code in the project according to the styles specified in the rewrite.yml file, or according to Jetbrains IntelliJ's default Java style if no other style is specified.
 
 To configure this recipe to be active add this configuration to the plugin in the pom.xml or build.gradle:
 
@@ -76,7 +76,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
+  <version>4.6.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -92,7 +92,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("5.1.0")
+    id("org.openrewrite.rewrite").version("5.2.0")
 }
 
 rewrite {
@@ -156,7 +156,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
+  <version>4.6.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -173,7 +173,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("5.1.0")
+    id("org.openrewrite.rewrite").version("5.2.0")
 }
 
 rewrite {
@@ -208,7 +208,7 @@ After applying these steps, the relevant portions of your build file will look l
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
+  <version>4.6.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -220,7 +220,7 @@ After applying these steps, the relevant portions of your build file will look l
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-spring</artifactId>
-      <version>4.5.0</version>
+      <version>4.6.0</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -233,7 +233,7 @@ After applying these steps, the relevant portions of your build file will look l
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("5.1.0")
+    id("org.openrewrite.rewrite").version("5.2.0")
 }
 
 rewrite {
@@ -244,7 +244,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.6.0")
 
     // Other project dependencies
 }
