@@ -13,7 +13,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.5.0</version>
+  <version>4.6.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
@@ -23,7 +23,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-migrate-java</artifactId>
-      <version>0.2.0</version>
+      <version>0.3.0</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -65,14 +65,7 @@ The above recipe is a composite and will perform the following tasks on your pro
 
 * [BigDecimal rounding constants to RoundingMode enums](https://docs.openrewrite.org/reference/recipes/java/cleanup/bigdecimalroundingconstantstoenums)
 * [Use primitive wrapper `valueOf` method](https://docs.openrewrite.org/reference/recipes/java/cleanup/primitivewrapperclassconstructortovalueof)
-* [Migrate deprecated `java.util.concurrent` API](https://docs.openrewrite.org/reference/recipes/java/migrate/concurrent/javaconcurrentapis)s
-* [Migrate deprecated `javax.lang.model.util` API](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxlangmodelutil)s
-* [Migrate deprecated `javax.management.monitor` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxmanagementmonitorapis)
-* [Migrate deprecated `javax.xml.stream` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/javaxxmlstreamapis)
-* [Migrate deprecated `java.lang` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/lang/javalangapis)
-* [Migrate deprecated `java.util.logging` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/logging/javaloggingapis)
-* [Migrate deprecated `java.net` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/net/javanetapis)
-* [Migrate deprecated `java.sql` APIs](https://docs.openrewrite.org/reference/recipes/java/migrate/sql/javasqlapis)
+* Remediation of deprecations reported by `jdeprscan` where a safe, automated solution is possible.
 
 For Maven-based projects, these additional modifications will be made:
 
