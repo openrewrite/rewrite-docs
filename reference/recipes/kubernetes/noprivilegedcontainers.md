@@ -1,6 +1,7 @@
 # No privileged containers
 
- **org.openrewrite.kubernetes.NoPrivilegedContainers** _Privileged containers are containers that have all of the root capabilities of a host machine, allowing access to resources that are not accessible in ordinary containers._
+** org.openrewrite.kubernetes.NoPrivilegedContainers**
+_Privileged containers are containers that have all of the root capabilities of a host machine, allowing access to resources that are not accessible in ordinary containers._
 
 ### Tags
 
@@ -8,29 +9,23 @@
 
 ## Source
 
-Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.1.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.1.0
+* version: 1.2.0
 
-## Recipe list
-
-* [Add Kubernetes configuration](addconfiguration.md)
-  * resourceKind: `PodSecurityPolicy`
-  * configurationPath: `/spec/privileged`
-  * value: `privileged: false`
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.2.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 rewrite {
@@ -42,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.2.0")
 }
 ```
 {% endcode %}
@@ -57,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.NoPrivilegedContainers</recipe>
@@ -67,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.1.0</version>
+            <version>1.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -81,3 +76,32 @@ dependencies {
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.NoPrivilegedContainers`
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+  * resourceKind: `PodSecurityPolicy`
+  * configurationPath: `/spec/privileged`
+  * value: `privileged: false`
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.kubernetes.NoPrivilegedContainers
+displayName: No privileged containers
+description: Privileged containers are containers that have all of the root capabilities of a host machine, allowing access to resources that are not accessible in ordinary containers.
+tags:
+  - kubernetes
+recipeList:
+  - org.openrewrite.kubernetes.AddConfiguration:
+      resourceKind: PodSecurityPolicy
+      configurationPath: /spec/privileged
+      value: privileged: false
+
+```
+{% endtab %}
+{% endtabs %}

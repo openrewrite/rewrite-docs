@@ -1,6 +1,7 @@
-# Ensure lifecycle rule on StorageBucket
+# Ensure lifecycle rule on `StorageBucket`
 
- **org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket** _When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
+** org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket**
+_When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
 
 ### Tags
 
@@ -8,37 +9,23 @@
 
 ## Source
 
-Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.1.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.1.0
+* version: 1.2.0
 
-## Recipe list
-
-* [Add Kubernetes configuration](addconfiguration.md)
-  * apiVersion: `storage.cnrm.cloud.google.com/v1beta1`
-  * resourceKind: `StorageBucket`
-  * configurationPath: `/spec/lifecycleRule`
-  * value: \`lifecycleRule:
-  * action:
-
-      type: Delete
-
-    condition:
-
-      age: 7\`
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.1.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.2.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 rewrite {
@@ -50,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.2.0")
 }
 ```
 {% endcode %}
@@ -65,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket</recipe>
@@ -75,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.1.0</version>
+            <version>1.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,3 +76,42 @@ dependencies {
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket`
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+  * apiVersion: `storage.cnrm.cloud.google.com/v1beta1`
+  * resourceKind: `StorageBucket`
+  * configurationPath: `/spec/lifecycleRule`
+  * value: `lifecycleRule:
+  - action:
+      type: Delete
+    condition:
+      age: 7`
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket
+displayName: Ensure lifecycle rule on `StorageBucket`
+description: When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket.
+tags:
+  - kubernetes
+recipeList:
+  - org.openrewrite.kubernetes.AddConfiguration:
+      apiVersion: storage.cnrm.cloud.google.com/v1beta1
+      resourceKind: StorageBucket
+      configurationPath: /spec/lifecycleRule
+      value: lifecycleRule:
+  - action:
+      type: Delete
+    condition:
+      age: 7
+
+```
+{% endtab %}
+{% endtabs %}

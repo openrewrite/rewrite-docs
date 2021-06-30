@@ -1,6 +1,7 @@
-# Migrate deprecated javax packages to jakarta
+# Migrate deprecated `javax` packages to `jakarta`
 
- **org.openrewrite.java.migrate.JavaxMigrationToJakarta** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+** org.openrewrite.java.migrate.JavaxMigrationToJakarta**
+_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -10,85 +11,23 @@
 
 ## Source
 
-Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.2.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 0.2.0
+* version: 0.3.0
 
-## Recipe list
-
-* [Add Maven dependency](../../maven/adddependency.md)
-  * groupId: `jakarta.xml.bind`
-  * artifactId: `jakarta.xml.bind-api`
-  * version: `3.x`
-  * releasesOnly: `false`
-  * onlyIfUsing: `[javax.xml.bind.*]`
-* [Add Maven dependency](../../maven/adddependency.md)
-  * groupId: `org.glassfish.jaxb`
-  * artifactId: `jaxb-runtime`
-  * version: `3.x`
-  * releasesOnly: `false`
-  * scope: `runtime`
-  * onlyIfUsing: `[javax.xml.bind.*]`
-* [Add Maven dependency](../../maven/adddependency.md)
-  * groupId: `jakarta.xml.ws`
-  * artifactId: `jakarta.xml.ws-api`
-  * version: `3.x`
-  * releasesOnly: `false`
-  * onlyIfUsing: `[javax.xml.ws.*]`
-* [Add Maven dependency](../../maven/adddependency.md)
-  * groupId: `com.sun.xml.ws`
-  * artifactId: `jaxws-rt`
-  * version: `3.x`
-  * releasesOnly: `false`
-  * scope: `runtime`
-  * onlyIfUsing: `[javax.xml.ws.*]`
-* [Add Maven dependency](../../maven/adddependency.md)
-  * groupId: `jakarta.transaction`
-  * artifactId: `jakarta.transaction-api`
-  * version: `2.x`
-  * releasesOnly: `false`
-  * onlyIfUsing: `[javax.transaction.*]`
-* [Add Maven dependency](../../maven/adddependency.md)
-  * groupId: `jakarta.annotation`
-  * artifactId: `jakarta.annotation-api`
-  * version: `2.x`
-  * releasesOnly: `false`
-  * onlyIfUsing: `[javax.annotation.*]`
-* [Add Maven dependency](../../maven/adddependency.md)
-  * groupId: `jakarta.activation`
-  * artifactId: `jakarta.activation-api`
-  * version: `2.x`
-  * releasesOnly: `false`
-  * onlyIfUsing: `[javax.activation.*]`
-* [Rename package name](../changepackage.md)
-  * oldPackageName: `javax.xml.bind`
-  * newPackageName: `jakarta.xml.bind`
-* [Rename package name](../changepackage.md)
-  * oldPackageName: `javax.xml.ws`
-  * newPackageName: `jakarta.xml.ws`
-* [Rename package name](../changepackage.md)
-  * oldPackageName: `javax.transaction`
-  * newPackageName: `jakarta.transaction`
-* [Rename package name](../changepackage.md)
-  * oldPackageName: `javax.activation`
-  * newPackageName: `jakarta.activation`
-* [Remove Maven dependency](../../maven/removedependency.md)
-  * groupId: `javax.xml.ws`
-  * artifactId: `jaxws-api`
-* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](javaxbatchmigrationtojakartabatch.md)
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.3.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 rewrite {
@@ -100,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.3.0")
 }
 ```
 {% endcode %}
@@ -115,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.JavaxMigrationToJakarta</recipe>
@@ -125,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>0.2.0</version>
+            <version>0.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,3 +78,40 @@ dependencies {
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.JavaxMigrationToJakarta`
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Migrate deprecated `javax.activation` packages to `jakarta.activation`](../../java/migrate/javaxactivationmigrationtojakartaactivation.md)
+* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](../../java/migrate/javaxannotationmigrationtojakartaannotation.md)
+* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](../../java/migrate/javaxbatchmigrationtojakartabatch.md)
+* [Migrate deprecated `javax.inject` packages to `jakarta.inject`](../../java/migrate/javaxinjectmigrationtojakartainject.md)
+* [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](../../java/migrate/javaxtransactionmigrationtojakartatransaction.md)
+* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](../../java/migrate/javaxxmlbindmigrationtojakartaxmlbind.md)
+* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](../../java/migrate/javaxxmlwsmigrationtojakartaxmlws.md)
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.JavaxMigrationToJakarta
+displayName: Migrate deprecated `javax` packages to `jakarta`
+description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+tags:
+  - jaxb
+  - jaxws
+  - jakarta
+recipeList:
+  - org.openrewrite.java.migrate.JavaxActivationMigrationToJakartaActivation
+  - org.openrewrite.java.migrate.JavaxAnnotationMigrationToJakartaAnnotation
+  - org.openrewrite.java.migrate.JavaxBatchMigrationToJakartaBatch
+  - org.openrewrite.java.migrate.JavaxInjectMigrationToJakartaInject
+  - org.openrewrite.java.migrate.JavaxTransactionMigrationToJakartaTransaction
+  - org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind
+  - org.openrewrite.java.migrate.JavaxXmlWsMigrationToJakartaXmlWs
+
+```
+{% endtab %}
+{% endtabs %}

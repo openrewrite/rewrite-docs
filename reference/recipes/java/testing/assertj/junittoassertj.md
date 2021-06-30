@@ -1,6 +1,7 @@
 # Migrate JUnit asserts to AssertJ
 
- **org.openrewrite.java.testing.assertj.JUnitToAssertj** _AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
+** org.openrewrite.java.testing.assertj.JUnitToAssertj**
+_AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
 
 ### Tags
 
@@ -9,32 +10,23 @@
 
 ## Source
 
-Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.6.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.7.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.6.0
+* version: 1.7.0
 
-## Recipe list
-
-* [Add Maven dependency](../../../maven/adddependency.md)
-  * groupId: `org.assertj`
-  * artifactId: `assertj-core`
-  * version: `3.x`
-  * releasesOnly: `false`
-  * scope: `test`
-  * onlyIfUsing: `[org.assertj.core.api.Assertions]`
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.7.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 rewrite {
@@ -46,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.7.0")
 }
 ```
 {% endcode %}
@@ -61,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.JUnitToAssertj</recipe>
@@ -71,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.6.0</version>
+            <version>1.7.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,3 +77,55 @@ dependencies {
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.assertj.JUnitToAssertj`
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Add Maven dependency](../../../maven/adddependency.md)
+  * groupId: `org.assertj`
+  * artifactId: `assertj-core`
+  * version: `3.x`
+  * releasesOnly: `false`
+  * scope: `test`
+  * onlyIfUsing: `[org.assertj.core.api.Assertions]`
+* [JUnit `assertArrayEquals` To AssertJ](../../../java/testing/assertj/junitassertarrayequalstoassertthat.md)
+* [JUnit `assertEquals` to AssertJ](../../../java/testing/assertj/junitassertequalstoassertthat.md)
+* [JUnit `assertFalse` to AssertJ](../../../java/testing/assertj/junitassertfalsetoassertthat.md)
+* [JUnit `assertNotEquals` to AssertJ](../../../java/testing/assertj/junitassertnotequalstoassertthat.md)
+* [JUnit `assertNotNull` to AssertJ](../../../java/testing/assertj/junitassertnotnulltoassertthat.md)
+* [JUnit `assertNull` to AssertJ](../../../java/testing/assertj/junitassertnulltoassertthat.md)
+* [JUnit `assertSame` to AssertJ](../../../java/testing/assertj/junitassertsametoassertthat.md)
+* [JUnit `assertTrue` to AssertJ](../../../java/testing/assertj/junitasserttruetoassertthat.md)
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.testing.assertj.JUnitToAssertj
+displayName: Migrate JUnit asserts to AssertJ
+description: AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability.
+tags:
+  - testing
+  - assertj
+recipeList:
+  - org.openrewrite.maven.AddDependency:
+      groupId: org.assertj
+      artifactId: assertj-core
+      version: 3.x
+      releasesOnly: false
+      scope: test
+      onlyIfUsing: [org.assertj.core.api.Assertions]
+  - org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat
+  - org.openrewrite.java.testing.assertj.JUnitAssertEqualsToAssertThat
+  - org.openrewrite.java.testing.assertj.JUnitAssertFalseToAssertThat
+  - org.openrewrite.java.testing.assertj.JUnitAssertNotEqualsToAssertThat
+  - org.openrewrite.java.testing.assertj.JUnitAssertNotNullToAssertThat
+  - org.openrewrite.java.testing.assertj.JUnitAssertNullToAssertThat
+  - org.openrewrite.java.testing.assertj.JUnitAssertSameToAssertThat
+  - org.openrewrite.java.testing.assertj.JUnitAssertTrueToAssertThat
+
+```
+{% endtab %}
+{% endtabs %}

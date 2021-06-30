@@ -4,18 +4,20 @@ _Basic building blocks for transforming YAML._
 
 ## Recipes
 
-* [Change key](https://docs.openrewrite.org/reference/recipes/yaml/changekey)
-* [Change property key](https://docs.openrewrite.org/reference/recipes/yaml/changepropertykey)
-* [Change value](https://docs.openrewrite.org/reference/recipes/yaml/changevalue)
-* [Coalesce YAML properties](https://docs.openrewrite.org/reference/recipes/yaml/coalesceproperties)
-* [Copy YAML value](https://docs.openrewrite.org/reference/recipes/yaml/copyvalue)
-* [Delete key](https://docs.openrewrite.org/reference/recipes/yaml/deletekey)
-* [Delete property](https://docs.openrewrite.org/reference/recipes/yaml/deleteproperty)
-* [Insert YAML snippet](https://docs.openrewrite.org/reference/recipes/yaml/insertyaml)
+* [Change key](/reference/recipes/yaml/changekey)
+* [Change property key](/reference/recipes/yaml/changepropertykey)
+* [Change value](/reference/recipes/yaml/changevalue)
+* [Coalesce YAML properties](/reference/recipes/yaml/coalesceproperties)
+* [Copy YAML value](/reference/recipes/yaml/copyvalue)
+* [Delete key](/reference/recipes/yaml/deletekey)
+* [Delete property](/reference/recipes/yaml/deleteproperty)
+* [Insert YAML snippet](/reference/recipes/yaml/insertyaml)
+* [Merge YAML snippet](/reference/recipes/yaml/mergeyaml)
 
 ## Subcategories
 
-* [Cleanup](https://docs.openrewrite.org/reference/recipes/yaml/cleanup)
-* [Format](https://docs.openrewrite.org/reference/recipes/yaml/format)
-* [Search](https://docs.openrewrite.org/reference/recipes/yaml/search)
+* [Cleanup](/reference/recipes/yaml/cleanup)
+* [Format](/reference/recipes/yaml/format)
+* [Search](/reference/recipes/yaml/search)
+
 

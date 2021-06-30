@@ -1,35 +1,27 @@
-# Migrate deprecated java.lang APIs
+# Migrate deprecated `java.lang` APIs
 
- **org.openrewrite.java.migrate.lang.JavaLangAPIs** _Certain Java lang APIs have become deprecated and their usages changed, necessitating usage changes._
+** org.openrewrite.java.migrate.lang.JavaLangAPIs**
+_Certain Java lang APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ## Source
 
-Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.2.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 0.2.0
+* version: 0.3.0
 
-## Recipe list
-
-* [Use `Character#isJavaIdentifierStart(char)`](migratecharacterisjavalettertoisjavaidentifierstart.md)
-* [Use `Character#isJavaIdentifierPart(char)`](migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
-* [Use `Character#isWhitespace(char)`](migratecharacterisspacetoiswhitespace.md)
-* [Use `Class#getDeclaredConstructor().newInstance()`](migrateclassnewinstancetogetdeclaredconstructornewinstance.md)
-* [Use `Runtime.Version#feature()`](migrateruntimeversionmajortofeature.md)
-* [Use `Runtime.Version#interim()`](migrateruntimeversionminortointerim.md)
-* [Use `Runtime.Version#update()`](migrateruntimeversionsecuritytoupdate.md)
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.3.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 rewrite {
@@ -41,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.3.0")
 }
 ```
 {% endcode %}
@@ -56,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.lang.JavaLangAPIs</recipe>
@@ -66,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>0.2.0</version>
+            <version>0.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,3 +72,40 @@ dependencies {
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.lang.JavaLangAPIs`
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Use `Character#isJavaIdentifierStart(char)`](../../../java/migrate/lang/migratecharacterisjavalettertoisjavaidentifierstart.md)
+* [Use `Character#isJavaIdentifierPart(char)`](../../../java/migrate/lang/migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
+* [Use `Character#isWhitespace(char)`](../../../java/migrate/lang/migratecharacterisspacetoiswhitespace.md)
+* [Use `Class#getDeclaredConstructor().newInstance()`](../../../java/migrate/lang/migrateclassnewinstancetogetdeclaredconstructornewinstance.md)
+* [Use `Runtime.Version#feature()`](../../../java/migrate/lang/migrateruntimeversionmajortofeature.md)
+* [Use `Runtime.Version#interim()`](../../../java/migrate/lang/migrateruntimeversionminortointerim.md)
+* [Use `Runtime.Version#update()`](../../../java/migrate/lang/migrateruntimeversionsecuritytoupdate.md)
+* [Use `SecurityManager#checkMulticast(InetAddress)`](../../../java/migrate/lang/migratesecuritymanagermulticast.md)
+* [Use `ClassLoader#defineClass(String, byte[], int, int)`](../../../java/migrate/lang/migrateclassloaderdefineclass.md)
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.lang.JavaLangAPIs
+displayName: Migrate deprecated `java.lang` APIs
+description: Certain Java lang APIs have become deprecated and their usages changed, necessitating usage changes.
+recipeList:
+  - org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterToIsJavaIdentifierStart
+  - org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterOrDigitToIsJavaIdentifierPart
+  - org.openrewrite.java.migrate.lang.MigrateCharacterIsSpaceToIsWhitespace
+  - org.openrewrite.java.migrate.lang.MigrateClassNewInstanceToGetDeclaredConstructorNewInstance
+  - org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMajorToFeature
+  - org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMinorToInterim
+  - org.openrewrite.java.migrate.lang.MigrateRuntimeVersionSecurityToUpdate
+  - org.openrewrite.java.migrate.lang.MigrateSecurityManagerMulticast
+  - org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass
+
+```
+{% endtab %}
+{% endtabs %}

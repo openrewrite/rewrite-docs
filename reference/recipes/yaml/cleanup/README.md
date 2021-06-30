@@ -2,5 +2,6 @@
 
 ## Recipes
 
-* [Remove unused YAML](https://docs.openrewrite.org/reference/recipes/yaml/cleanup/removeunused)
+* [Remove unused YAML](/reference/recipes/yaml/cleanup/removeunused)
+
 

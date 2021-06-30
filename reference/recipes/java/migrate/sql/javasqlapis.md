@@ -1,25 +1,27 @@
-# Migrate deprecated java.sql APIs
+# Migrate deprecated `java.sql` APIs
 
- **org.openrewrite.java.migrate.sql.JavaSqlAPIs** _Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes._
+** org.openrewrite.java.migrate.sql.JavaSqlAPIs**
+_Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ## Source
 
-Maven Central [entry](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.2.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 0.2.0
+* version: 0.3.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.2.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.3.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.1.0")
+    id("org.openrewrite.rewrite") version("5.2.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.3.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.sql.JavaSqlAPIs</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>0.2.0</version>
+            <version>0.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,3 +72,24 @@ dependencies {
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.sql.JavaSqlAPIs`
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Use `DriverManager#setLogWriter(java.io.PrintWriter)`](../../../java/migrate/sql/migratedrivermanagersetlogstream.md)
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.sql.JavaSqlAPIs
+displayName: Migrate deprecated `java.sql` APIs
+description: Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes.
+recipeList:
+  - org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream
+
+```
+{% endtab %}
+{% endtabs %}
