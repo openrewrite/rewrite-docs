@@ -4,21 +4,21 @@ _Basic building blocks for transforming Java code._
 
 ## Recipes
 
-* [Add ASLv2 license header](/reference/recipes/java/addapache2licenseheader)
-* [Add license header](/reference/recipes/java/addlicenseheader)
-* [Change method access level](/reference/recipes/java/changemethodaccesslevel)
-* [Change method name](/reference/recipes/java/changemethodname)
-* [Change method target to static](/reference/recipes/java/changemethodtargettostatic)
-* [Change method target to variable](/reference/recipes/java/changemethodtargettovariable)
-* [Change type](/reference/recipes/java/changetype)
-* [Delete method argument](/reference/recipes/java/deletemethodargument)
-* [Generate getter](/reference/recipes/java/generategetter)
-* [Order imports](/reference/recipes/java/orderimports)
-* [Remove annotation](/reference/recipes/java/removeannotation)
-* [Remove unused imports](/reference/recipes/java/removeunusedimports)
-* [Rename package name](/reference/recipes/java/changepackage)
-* [Reorder method arguments](/reference/recipes/java/reordermethodarguments)
-* [Use static import](/reference/recipes/java/usestaticimport)
+* [Add ASLv2 license header](/reference/recipes/java/addapache2licenseheader.md)
+* [Add license header](/reference/recipes/java/addlicenseheader.md)
+* [Change method access level](/reference/recipes/java/changemethodaccesslevel.md)
+* [Change method name](/reference/recipes/java/changemethodname.md)
+* [Change method target to static](/reference/recipes/java/changemethodtargettostatic.md)
+* [Change method target to variable](/reference/recipes/java/changemethodtargettovariable.md)
+* [Change type](/reference/recipes/java/changetype.md)
+* [Delete method argument](/reference/recipes/java/deletemethodargument.md)
+* [Generate getter](/reference/recipes/java/generategetter.md)
+* [Order imports](/reference/recipes/java/orderimports.md)
+* [Remove annotation](/reference/recipes/java/removeannotation.md)
+* [Remove unused imports](/reference/recipes/java/removeunusedimports.md)
+* [Rename package name](/reference/recipes/java/changepackage.md)
+* [Reorder method arguments](/reference/recipes/java/reordermethodarguments.md)
+* [Use static import](/reference/recipes/java/usestaticimport.md)
 
 ## Subcategories
 

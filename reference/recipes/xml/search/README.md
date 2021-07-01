@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Find XML tags](/reference/recipes/xml/search/findtags)
+* [Find XML tags](/reference/recipes/xml/search/findtags.md)
 
 
