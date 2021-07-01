@@ -1,6 +1,7 @@
-# Remove @SpringExtension
+# Remove `@SpringExtension`
 
- **org.openrewrite.java.spring.boot2.UnnecessarySpringExtension** _`@SpringBootTest` and all test slice annotations already applies `@SpringExtension` as of Spring Boot 2.1.0._
+** org.openrewrite.java.spring.boot2.UnnecessarySpringExtension**
+_`@SpringBootTest` and all test slice annotations already applies `@SpringExtension` as of Spring Boot 2.1.0._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.6.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.UnnecessarySpringExtension`
-

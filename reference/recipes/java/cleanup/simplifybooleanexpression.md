@@ -1,14 +1,16 @@
 # Simplify boolean expression
 
- **org.openrewrite.java.cleanup.SimplifyBooleanExpression** _Checks for over-complicated boolean expressions. Finds code like `if (b == true)`, `b || true`, `!false`, etc._
+** org.openrewrite.java.cleanup.SimplifyBooleanExpression**
+_Checks for over-complicated boolean expressions. Finds code like `if (b == true)`, `b || true`, `!false`, etc._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java), [Issue Tracker](https://github.com/openrewrite/rewrite-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.8.0
+
 
 ## Usage
 
@@ -29,6 +31,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -58,4 +61,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.SimplifyBooleanExpression`
-

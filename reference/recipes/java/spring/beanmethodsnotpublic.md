@@ -1,6 +1,7 @@
-# Remove public from @Bean methods
+# Remove `public` from `@Bean` methods
 
- **org.openrewrite.java.spring.BeanMethodsNotPublic** _Remove public modifier from `@Bean` methods. They no longer have to be public visibility to be usable by Spring._
+** org.openrewrite.java.spring.BeanMethodsNotPublic**
+_Remove public modifier from `@Bean` methods. They no longer have to be public visibility to be usable by Spring._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.6.0
+
 
 ## Usage
 
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.BeanMethodsNotPublic</recipe>
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.BeanMethodsNotPublic`
-

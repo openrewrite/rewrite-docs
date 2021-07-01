@@ -1,6 +1,7 @@
-# Use TypeKindVisitor9
+# Use `TypeKindVisitor9`
 
- **org.openrewrite.java.migrate.javax.MigrateTypeKindVisitor6To9** _`TypeKindVisitor6` was deprecated in Java 9._
+** org.openrewrite.java.migrate.javax.MigrateTypeKindVisitor6To9**
+_`TypeKindVisitor6` was deprecated in Java 9._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.javax.MigrateTypeKindVisitor6To9</recipe>
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `javax.lang.model.util.TypeKindVisitor6`
   * newFullyQualifiedTypeName: `javax.lang.model.util.TypeKindVisitor9`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.lang.model.util.TypeKindVisitor6
       newFullyQualifiedTypeName: javax.lang.model.util.TypeKindVisitor9
+
 ```
 {% endtab %}
 {% endtabs %}
-

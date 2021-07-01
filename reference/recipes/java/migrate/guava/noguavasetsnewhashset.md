@@ -1,6 +1,7 @@
-# Use new HashSet&lt;&gt;\(\) instead of Guava
+# Use `new HashSet<>()` instead of Guava
 
- **org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet** _Prefer the Java standard library over third-party usage of Guava in simple cases like this._
+** org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet**
+_Prefer the Java standard library over third-party usage of Guava in simple cases like this._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet</recipe>
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet`
-

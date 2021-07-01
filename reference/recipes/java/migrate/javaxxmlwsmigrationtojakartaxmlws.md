@@ -1,6 +1,7 @@
-# Migrate deprecated javax.xml.ws packages to jakarta.xml.ws
+# Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`
 
- **org.openrewrite.java.migrate.JavaxXmlWsMigrationToJakartaXmlWs** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+** org.openrewrite.java.migrate.JavaxXmlWsMigrationToJakartaXmlWs**
+_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -15,6 +16,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -101,12 +103,13 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
   * newVersion: `3.x`
-* [Rename package name](../changepackage.md)
+* [Rename package name](../../java/changepackage.md)
   * oldPackageName: `javax.xml.ws`
   * newPackageName: `jakarta.xml.ws`
 * [Remove Maven dependency](../../maven/removedependency.md)
   * groupId: `javax.xml.ws`
   * artifactId: `jaxws-api`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -148,7 +151,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.xml.ws
       artifactId: jaxws-api
+
 ```
 {% endtab %}
 {% endtabs %}
-

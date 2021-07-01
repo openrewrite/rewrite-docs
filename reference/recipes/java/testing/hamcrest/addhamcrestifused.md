@@ -1,6 +1,7 @@
-# Add org.hamcrest:hamcrest if it is used.
+# Add `org.hamcrest:hamcrest` if it is used.
 
- **org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed** _JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency._
+** org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed**
+_JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency._
 
 ### Tags
 
@@ -15,6 +16,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -87,6 +89,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * releasesOnly: `false`
   * scope: `test`
   * onlyIfUsing: `[org.hamcrest.Matchers]`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -108,7 +111,7 @@ recipeList:
       releasesOnly: false
       scope: test
       onlyIfUsing: [org.hamcrest.Matchers]
+
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -1,6 +1,7 @@
 # No privilege escalation
 
- **org.openrewrite.kubernetes.NoPrivilegeEscalation** _Does not allow a process to gain more privileges than its parent process._
+** org.openrewrite.kubernetes.NoPrivilegeEscalation**
+_Does not allow a process to gain more privileges than its parent process._
 
 ### Tags
 
@@ -13,6 +14,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.2.0
+
 
 ## Usage
 
@@ -50,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.NoPrivilegeEscalation</recipe>
@@ -78,10 +80,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Kubernetes configuration](addconfiguration.md)
+* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/securityContext/allowPrivilegeEscalation`
   * value: `allowPrivilegeEscalation: false`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -98,7 +101,7 @@ recipeList:
       resourceKind: Pod
       configurationPath: /spec/containers/securityContext/allowPrivilegeEscalation
       value: allowPrivilegeEscalation: false
+
 ```
 {% endtab %}
 {% endtabs %}
-

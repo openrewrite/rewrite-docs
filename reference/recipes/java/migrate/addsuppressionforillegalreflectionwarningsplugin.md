@@ -1,6 +1,7 @@
 # Add Maven Jar Plugin to suppress Illegal Reflection Warnings
 
- **org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin** _Adds a maven jar plugin that's configured to suppress Illegal Reflection Warnings._
+** org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin**
+_Adds a maven jar plugin that's configured to suppress Illegal Reflection Warnings._
 
 ## Source
 
@@ -13,8 +14,9 @@
 ## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
-| `String` | version | _Optional_. An exact version number, or node-style semver selector used to select the version number. |
+| -- | -- | -- |
+| `String` | version | *Optional*. An exact version number, or node-style semver selector used to select the version number. |
+
 
 ## Usage
 
@@ -75,4 +77,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin`
-

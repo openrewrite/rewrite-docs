@@ -1,14 +1,16 @@
 # Remove trailing whitespace
 
- **org.openrewrite.java.format.RemoveTrailingWhitespace** _Remove any extra trailing whitespace from the end of each line._
+** org.openrewrite.java.format.RemoveTrailingWhitespace**
+_Remove any extra trailing whitespace from the end of each line._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java), [Issue Tracker](https://github.com/openrewrite/rewrite-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.8.0
+
 
 ## Usage
 
@@ -29,6 +31,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -58,4 +61,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.format.RemoveTrailingWhitespace`
-

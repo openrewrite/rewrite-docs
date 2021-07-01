@@ -1,6 +1,7 @@
-# Migrate RestTemplateBuilder
+# Migrate `RestTemplateBuilder`
 
- **org.openrewrite.java.spring.boot2.RestTemplateBuilderRequestFactory** _Migrate `RestTemplateBuilder#requestFactory` calls to use a `Supplier`._
+** org.openrewrite.java.spring.boot2.RestTemplateBuilderRequestFactory**
+_Migrate `RestTemplateBuilder#requestFactory` calls to use a `Supplier`._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.6.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.RestTemplateBuilderRequestFactory`
-

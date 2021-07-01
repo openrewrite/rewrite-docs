@@ -1,6 +1,7 @@
-# Use JUnit Jupiter @Disabled
+# Use JUnit Jupiter `@Disabled`
 
- **org.openrewrite.java.testing.junit5.IgnoreToDisabled** _Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`._
+** org.openrewrite.java.testing.junit5.IgnoreToDisabled**
+_Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`._
 
 ### Tags
 
@@ -14,6 +15,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.IgnoreToDisabled</recipe>
@@ -79,9 +81,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.junit.Ignore`
   * newFullyQualifiedTypeName: `org.junit.jupiter.api.Disabled`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -98,7 +101,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.junit.Ignore
       newFullyQualifiedTypeName: org.junit.jupiter.api.Disabled
+
 ```
 {% endtab %}
 {% endtabs %}
-

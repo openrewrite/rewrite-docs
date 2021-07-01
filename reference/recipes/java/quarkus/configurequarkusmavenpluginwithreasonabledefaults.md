@@ -1,6 +1,7 @@
-# Configure quarkus-maven-plugin with reasonable defaults
+# Configure `quarkus-maven-plugin` with reasonable defaults
 
- **org.openrewrite.java.quarkus.ConfigureQuarkusMavenPluginWithReasonableDefaults** _Configures the `quarkus-maven-plugin` with reasonable defaults, such as default activated `goals` and `<extensions>` configuration._
+** org.openrewrite.java.quarkus.ConfigureQuarkusMavenPluginWithReasonableDefaults**
+_Configures the `quarkus-maven-plugin` with reasonable defaults, such as default activated `goals` and `<extensions>` configuration._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.2.1
+
 
 ## Usage
 
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.quarkus.ConfigureQuarkusMavenPluginWithReasonableDefaults</recipe>
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.ConfigureQuarkusMavenPluginWithReasonableDefaults`
-

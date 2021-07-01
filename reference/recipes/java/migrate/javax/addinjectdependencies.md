@@ -1,6 +1,7 @@
 # Add explicit Inject dependencies
 
- **org.openrewrite.java.migrate.javax.AddInjectDependencies** _This recipe will add the necessary Inject dependencies for those projects migrating to Java 11._
+** org.openrewrite.java.migrate.javax.AddInjectDependencies**
+_This recipe will add the necessary Inject dependencies for those projects migrating to Java 11._
 
 ### Tags
 
@@ -16,6 +17,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -91,6 +93,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.inject`
   * artifactId: `jakarta.inject-api`
   * newVersion: `1.0.3`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -116,7 +119,7 @@ recipeList:
       groupId: jakarta.inject
       artifactId: jakarta.inject-api
       newVersion: 1.0.3
+
 ```
 {% endtab %}
 {% endtabs %}
-

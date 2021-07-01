@@ -1,6 +1,7 @@
-# Migrate deprecated javax.transaction packages to jakarta.transaction
+# Migrate deprecated `javax.transaction` packages to `jakarta.transaction`
 
- **org.openrewrite.java.migrate.JavaxTransactionMigrationToJakartaTransaction** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+** org.openrewrite.java.migrate.JavaxTransactionMigrationToJakartaTransaction**
+_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -15,6 +16,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -90,12 +92,13 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.transaction`
   * artifactId: `jakarta.transaction-api`
   * newVersion: `2.x`
-* [Rename package name](../changepackage.md)
+* [Rename package name](../../java/changepackage.md)
   * oldPackageName: `javax.transaction`
   * newPackageName: `jakarta.transaction`
 * [Remove Maven dependency](../../maven/removedependency.md)
   * groupId: `javax.transaction`
   * artifactId: `javax.transaction-api`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -126,7 +129,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.transaction
       artifactId: javax.transaction-api
+
 ```
 {% endtab %}
 {% endtabs %}
-

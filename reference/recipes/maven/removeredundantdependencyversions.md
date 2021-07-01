@@ -1,14 +1,16 @@
 # Remove redundant explicit dependency versions
 
- **org.openrewrite.maven.RemoveRedundantDependencyVersions** _Remove explicitly-specified dependency versions when a parent pom's dependencyManagement specifies the same explicit version._
+** org.openrewrite.maven.RemoveRedundantDependencyVersions**
+_Remove explicitly-specified dependency versions when a parent pom's dependencyManagement specifies the same explicit version._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-maven), [Issue Tracker](https://github.com/openrewrite/rewrite-maven/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
 * version: 7.8.0
+
 
 ## Usage
 
@@ -29,6 +31,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -58,4 +61,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.maven.RemoveRedundantDependencyVersions`
-

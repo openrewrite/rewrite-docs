@@ -1,6 +1,7 @@
-# JUnit 4 ExpectedException To JUnit Jupiter's assertThrows\(\)
+# JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`
 
- **org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows** _Replace usages of JUnit 4's `@Rule ExpectedException` with JUnit 5's `Assertions.assertThrows()`._
+** org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows**
+_Replace usages of JUnit 4's `@Rule ExpectedException` with JUnit 5's `Assertions.assertThrows()`._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows`
-

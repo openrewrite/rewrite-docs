@@ -1,6 +1,7 @@
 # Java security best practices
 
- **org.openrewrite.java.security.JavaSecurityBestPractices** _Applies security best practices to Java code._
+** org.openrewrite.java.security.JavaSecurityBestPractices**
+_Applies security best practices to Java code._
 
 ### Tags
 
@@ -8,11 +9,12 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java), [Issue Tracker](https://github.com/openrewrite/rewrite-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.8.0
+
 
 ## Usage
 
@@ -33,6 +35,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -67,8 +70,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
-* [Use secure temporary file creation](securetempfilecreation.md)
+* [XML parser XXE vulnerability](../../java/security/xmlparserxxevulnerability.md)
+* [Use secure temporary file creation](../../java/security/securetempfilecreation.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -83,7 +87,7 @@ tags:
 recipeList:
   - org.openrewrite.java.security.XmlParserXXEVulnerability
   - org.openrewrite.java.security.SecureTempFileCreation
+
 ```
 {% endtab %}
 {% endtabs %}
-

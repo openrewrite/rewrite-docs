@@ -1,6 +1,7 @@
-# Use ManagementFactory\#getPlatformMXBean\(PlatformLoggingMXBean.class\)
+# Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`
 
- **org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean** _`LogManager#getLoggingMXBean()` was deprecated in Java 9._
+** org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean**
+_`LogManager#getLoggingMXBean()` was deprecated in Java 9._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean</recipe>
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean`
-

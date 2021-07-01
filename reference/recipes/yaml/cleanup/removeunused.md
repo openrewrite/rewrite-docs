@@ -1,14 +1,16 @@
 # Remove unused YAML
 
- **org.openrewrite.yaml.cleanup.RemoveUnused** _Remove YAML mapping and sequence keys that have no value._
+** org.openrewrite.yaml.cleanup.RemoveUnused**
+_Remove YAML mapping and sequence keys that have no value._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-yaml), [Issue Tracker](https://github.com/openrewrite/rewrite-yaml/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
 * version: 7.8.0
+
 
 ## Usage
 
@@ -29,6 +31,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -58,4 +61,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.yaml.cleanup.RemoveUnused`
-

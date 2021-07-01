@@ -1,6 +1,7 @@
-# Use Set\#of\(..\) not Guava
+# Use `Set#of(..)` not Guava
 
- **org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf** _Java 9 introduced `Set#of(..)` which does the same thing as the Guava method._
+** org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf**
+_Java 9 introduced `Set#of(..)` which does the same thing as the Guava method._
 
 ### Tags
 
@@ -13,6 +14,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -78,10 +80,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method target to static](../../changemethodtargettostatic.md)
+* [Change method target to static](../../../java/changemethodtargettostatic.md)
   * methodPattern: `com.google.common.collect.ImmutableSet of(..)`
   * fullyQualifiedTargetTypeName: `java.util.Set`
   * returnType: `java.util.Set`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -98,7 +101,7 @@ recipeList:
       methodPattern: com.google.common.collect.ImmutableSet of(..)
       fullyQualifiedTargetTypeName: java.util.Set
       returnType: java.util.Set
+
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -1,6 +1,7 @@
-# JUnit 4 @RunWith\(Parameterized.class\) to JUnit Jupiter parameterized tests
+# JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests
 
- **org.openrewrite.java.testing.junit5.ParameterizedRunnerToParameterized** _Convert JUnit4 parameterized runner the JUnit Jupiter parameterized test equivalent._
+** org.openrewrite.java.testing.junit5.ParameterizedRunnerToParameterized**
+_Convert JUnit4 parameterized runner the JUnit Jupiter parameterized test equivalent._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.ParameterizedRunnerToParameterized</recipe>
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.ParameterizedRunnerToParameterized`
-

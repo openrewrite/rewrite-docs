@@ -1,10 +1,11 @@
 # Delete property
 
- **org.openrewrite.yaml.DeleteProperty** _Delete a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e. as Spring Boot interprets application.yml files._
+** org.openrewrite.yaml.DeleteProperty**
+_Delete a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e.  as Spring Boot interprets application.yml files._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-yaml), [Issue Tracker](https://github.com/openrewrite/rewrite-yaml/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
@@ -13,14 +14,16 @@
 ## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `String` | propertyKey | The key to be deleted |
 | `Boolean` | coalesce | Simplify nested map hierarchies into their simplest dot separated property form. |
-| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
+| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.DeletePropertyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.DeletePropertyExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -35,6 +38,7 @@ recipeList:
       fileMatcher: **/application-*.yml
 ```
 {% endcode %}
+
 
 Now that `com.yourorg.DeletePropertyExample` has been defined activate it in your build file:
 
@@ -53,6 +57,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -82,4 +87,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.DeletePropertyExample`
-

@@ -1,6 +1,7 @@
 # Migrate JUnit 4 lifecycle annotations to JUnit Jupiter
 
- **org.openrewrite.java.testing.junit5.UpdateBeforeAfterAnnotations** _Replace JUnit 4's `@Before`, `@BeforeClass`, `@After`, and `@AfterClass` annotations with their JUnit Jupiter equivalents._
+** org.openrewrite.java.testing.junit5.UpdateBeforeAfterAnnotations**
+_Replace JUnit 4's `@Before`, `@BeforeClass`, `@After`, and `@AfterClass` annotations with their JUnit Jupiter equivalents._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.UpdateBeforeAfterAnnotations`
-

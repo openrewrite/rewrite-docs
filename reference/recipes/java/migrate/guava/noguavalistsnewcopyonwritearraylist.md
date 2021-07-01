@@ -1,6 +1,7 @@
-# Use new CopyOnWriteArrayList&lt;&gt;\(\) instead of Guava
+# Use `new CopyOnWriteArrayList<>()` instead of Guava
 
- **org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList** _Prefer the Java standard library over third-party usage of Guava in simple cases like this._
+** org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList**
+_Prefer the Java standard library over third-party usage of Guava in simple cases like this._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaListsNewCopyOnWriteArrayList`
-

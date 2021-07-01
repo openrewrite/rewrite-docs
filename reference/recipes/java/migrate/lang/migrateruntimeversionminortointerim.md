@@ -1,6 +1,7 @@
-# Use Runtime.Version\#interim\(\)
+# Use `Runtime.Version#interim()`
 
- **org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMinorToInterim** _`Runtime.Version#minor()` was deprecated in Java 10._
+** org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMinorToInterim**
+_`Runtime.Version#minor()` was deprecated in Java 10._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `java.lang.Runtime.Version minor()`
   * newMethodName: `interim`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Runtime.Version minor()
       newMethodName: interim
+
 ```
 {% endtab %}
 {% endtabs %}
-

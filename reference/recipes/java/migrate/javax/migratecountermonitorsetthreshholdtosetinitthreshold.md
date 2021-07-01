@@ -1,6 +1,7 @@
-# Use CounterMonitor\#setInitThreshold\(java.lang.Number\)
+# Use `CounterMonitor#setInitThreshold(java.lang.Number)`
 
- **org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThreshholdToSetInitThreshold** _`CounterMonitor#setThreshhold` has been deprecated in JMX 1.2._
+** org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThreshholdToSetInitThreshold**
+_`CounterMonitor#setThreshhold` has been deprecated in JMX 1.2._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThreshholdToSetInitThreshold</recipe>
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `javax.management.monitor.CounterMonitor setThreshold(java.lang.Number)`
   * newMethodName: `setInitThreshold`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: javax.management.monitor.CounterMonitor setThreshold(java.lang.Number)
       newMethodName: setInitThreshold
+
 ```
 {% endtab %}
 {% endtabs %}
-

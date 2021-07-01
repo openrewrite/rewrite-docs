@@ -1,6 +1,7 @@
-# Use Character\#isJavaIdentifierPart\(char\)
+# Use `Character#isJavaIdentifierPart(char)`
 
- **org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterOrDigitToIsJavaIdentifierPart** _`Character#isJavaLetterOrDigit(char)` was deprecated in Java 1.1._
+** org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterOrDigitToIsJavaIdentifierPart**
+_`Character#isJavaLetterOrDigit(char)` was deprecated in Java 1.1._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `java.lang.Character isJavaLetterOrDigit(char)`
   * newMethodName: `isJavaIdentifierPart`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Character isJavaLetterOrDigit(char)
       newMethodName: isJavaIdentifierPart
+
 ```
 {% endtab %}
 {% endtabs %}
-

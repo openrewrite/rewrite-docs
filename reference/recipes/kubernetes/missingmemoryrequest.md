@@ -1,6 +1,7 @@
 # Ensure memory request is set
 
- **org.openrewrite.kubernetes.MissingMemoryRequest** _A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
+** org.openrewrite.kubernetes.MissingMemoryRequest**
+_A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
 
 ### Tags
 
@@ -13,6 +14,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.2.0
+
 
 ## Usage
 
@@ -50,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.MissingMemoryRequest</recipe>
@@ -78,9 +80,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Missing configuration](search/findresourcemissingconfiguration.md)
+* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/resources/requests/memory`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -96,7 +99,7 @@ recipeList:
   - org.openrewrite.kubernetes.search.FindResourceMissingConfiguration:
       resourceKind: Pod
       configurationPath: /spec/containers/resources/requests/memory
+
 ```
 {% endtab %}
 {% endtabs %}
-

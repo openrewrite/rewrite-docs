@@ -1,6 +1,7 @@
 # Testing best practices
 
- **org.openrewrite.java.testing.cleanup.BestPractices** _Applies best practices to tests._
+** org.openrewrite.java.testing.cleanup.BestPractices**
+_Applies best practices to tests._
 
 ### Tags
 
@@ -13,6 +14,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -78,7 +80,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Include an assertion in tests](testsshouldincludeassertions.md)
+* [Include an assertion in tests](../../../java/testing/cleanup/testsshouldincludeassertions.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -92,7 +95,7 @@ tags:
   - testing
 recipeList:
   - org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions
+
 ```
 {% endtab %}
 {% endtabs %}
-

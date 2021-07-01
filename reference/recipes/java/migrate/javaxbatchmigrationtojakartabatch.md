@@ -1,6 +1,7 @@
-# Migrate deprecated javax.batch packages to jakarta.batch
+# Migrate deprecated `javax.batch` packages to `jakarta.batch`
 
- **org.openrewrite.java.migrate.JavaxBatchMigrationToJakartaBatch** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+** org.openrewrite.java.migrate.JavaxBatchMigrationToJakartaBatch**
+_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -15,6 +16,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -90,12 +92,13 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.batch`
   * artifactId: `jakarta.batch-api`
   * newVersion: `2.x`
-* [Rename package name](../changepackage.md)
+* [Rename package name](../../java/changepackage.md)
   * oldPackageName: `javax.batch`
   * newPackageName: `jakarta.batch`
 * [Remove Maven dependency](../../maven/removedependency.md)
   * groupId: `javax.batch`
   * artifactId: `javax.batch-api`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -126,7 +129,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.batch
       artifactId: javax.batch-api
+
 ```
 {% endtab %}
 {% endtabs %}
-

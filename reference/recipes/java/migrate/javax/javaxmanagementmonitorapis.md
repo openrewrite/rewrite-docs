@@ -1,6 +1,7 @@
-# Migrate deprecated javax.management.monitor APIs
+# Migrate deprecated `javax.management.monitor` APIs
 
- **org.openrewrite.java.migrate.javax.JavaxManagementMonitorAPIs** _Certain `javax.management.monitor` APIs have become deprecated and their usages changed, necessitating usage changes._
+** org.openrewrite.java.migrate.javax.JavaxManagementMonitorAPIs**
+_Certain `javax.management.monitor` APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -74,7 +76,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `CounterMonitor#setInitThreshold(java.lang.Number)`](migratecountermonitorsetthreshholdtosetinitthreshold.md)
+* [Use `CounterMonitor#setInitThreshold(java.lang.Number)`](../../../java/migrate/javax/migratecountermonitorsetthreshholdtosetinitthreshold.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -86,7 +89,7 @@ displayName: Migrate deprecated `javax.management.monitor` APIs
 description: Certain `javax.management.monitor` APIs have become deprecated and their usages changed, necessitating usage changes.
 recipeList:
   - org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThreshholdToSetInitThreshold
+
 ```
 {% endtab %}
 {% endtabs %}
-

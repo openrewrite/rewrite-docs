@@ -1,6 +1,7 @@
-# JUnit assertSame to AssertJ
+# JUnit `assertSame` to AssertJ
 
- **org.openrewrite.java.testing.assertj.JUnitAssertSameToAssertThat** _Convert JUnit-style `assertSame()` to AssertJ's `assertThat().isSameAs()`._
+** org.openrewrite.java.testing.assertj.JUnitAssertSameToAssertThat**
+_Convert JUnit-style `assertSame()` to AssertJ's `assertThat().isSameAs()`._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.assertj.JUnitAssertSameToAssertThat`
-

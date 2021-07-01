@@ -1,6 +1,7 @@
 # Ensure memory limits are set
 
- **org.openrewrite.kubernetes.MissingMemoryLimits** _With no limit set, kubectl allocates more and more memory to the container until it runs out._
+** org.openrewrite.kubernetes.MissingMemoryLimits**
+_With no limit set, kubectl allocates more and more memory to the container until it runs out._
 
 ### Tags
 
@@ -13,6 +14,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.2.0
+
 
 ## Usage
 
@@ -50,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.MissingMemoryLimits</recipe>
@@ -78,9 +80,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Missing configuration](search/findresourcemissingconfiguration.md)
+* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/resources/limits/memory`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -96,7 +99,7 @@ recipeList:
   - org.openrewrite.kubernetes.search.FindResourceMissingConfiguration:
       resourceKind: Pod
       configurationPath: /spec/containers/resources/limits/memory
+
 ```
 {% endtab %}
 {% endtabs %}
-

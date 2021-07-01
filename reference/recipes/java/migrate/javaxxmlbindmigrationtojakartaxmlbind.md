@@ -1,6 +1,7 @@
-# Migrate deprecated javax.xml.bind packages to jakarta.xml.bind
+# Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`
 
- **org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+** org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind**
+_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -15,6 +16,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -101,7 +103,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.glassfish.jaxb`
   * artifactId: `jaxb-runtime`
   * newVersion: `3.x`
-* [Rename package name](../changepackage.md)
+* [Rename package name](../../java/changepackage.md)
   * oldPackageName: `javax.xml.bind`
   * newPackageName: `jakarta.xml.bind`
 * [Remove Maven dependency](../../maven/removedependency.md)
@@ -110,6 +112,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven dependency](../../maven/removedependency.md)
   * groupId: `com.sun.xml.bind`
   * artifactId: `jaxb-impl`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -154,7 +157,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: com.sun.xml.bind
       artifactId: jaxb-impl
+
 ```
 {% endtab %}
 {% endtabs %}
-

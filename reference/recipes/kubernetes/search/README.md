@@ -2,5 +2,6 @@
 
 ## Recipes
 
-* [Missing configuration](findresourcemissingconfiguration.md)
+* [Missing configuration](/reference/recipes/kubernetes/search/findresourcemissingconfiguration.md)
+
 

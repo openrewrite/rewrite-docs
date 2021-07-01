@@ -1,6 +1,7 @@
 # Migrate from Log4j
 
- **org.openrewrite.java.logging.logback.Log4jToLogback** _Migrates Log4j logging framework to logback._
+** org.openrewrite.java.logging.logback.Log4jToLogback**
+_Migrates Log4j logging framework to logback._
 
 ### Tags
 
@@ -15,6 +16,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 0.2.0
+
 
 ## Usage
 
@@ -80,8 +82,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate from Log4j appender](log4jappendertologback.md)
-* [Migrate from Log4j layout](log4jlayouttologback.md)
+* [Migrate from Log4j appender](../../../java/logging/logback/log4jappendertologback.md)
+* [Migrate from Log4j layout](../../../java/logging/logback/log4jlayouttologback.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -98,7 +101,7 @@ tags:
 recipeList:
   - org.openrewrite.java.logging.logback.Log4jAppenderToLogback
   - org.openrewrite.java.logging.logback.Log4jLayoutToLogback
+
 ```
 {% endtab %}
 {% endtabs %}
-

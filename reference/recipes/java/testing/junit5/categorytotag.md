@@ -1,6 +1,7 @@
-# JUnit4 @Category to JUnit Jupiter @Tag
+# JUnit4 `@Category` to JUnit Jupiter `@Tag`
 
- **org.openrewrite.java.testing.junit5.CategoryToTag** _Transforms the JUnit 4 `@Category`, which can list multiple categories, into one `@Tag` annotation per category listed._
+** org.openrewrite.java.testing.junit5.CategoryToTag**
+_Transforms the JUnit 4 `@Category`, which can list multiple categories, into one `@Tag` annotation per category listed._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.CategoryToTag`
-

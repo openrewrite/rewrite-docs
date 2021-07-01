@@ -1,6 +1,7 @@
-# Use static form of Mockito MockUtil
+# Use static form of Mockito `MockUtil`
 
- **org.openrewrite.java.testing.mockito.MockUtilsToStatic** _Best-effort attempt to remove Mockito `MockUtil` instances._
+** org.openrewrite.java.testing.mockito.MockUtilsToStatic**
+_Best-effort attempt to remove Mockito `MockUtil` instances._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.mockito.MockUtilsToStatic`
-

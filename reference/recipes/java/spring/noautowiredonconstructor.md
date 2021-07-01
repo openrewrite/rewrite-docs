@@ -1,6 +1,7 @@
-# Remove the @Autowired annotation on inferred constructor
+# Remove the `@Autowired` annotation on inferred constructor
 
- **org.openrewrite.java.spring.NoAutowiredOnConstructor** _Spring can infer an autowired constructor when there is a single constructor on the bean._
+** org.openrewrite.java.spring.NoAutowiredOnConstructor**
+_Spring can infer an autowired constructor when there is a single constructor on the bean._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.6.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.NoAutowiredOnConstructor`
-

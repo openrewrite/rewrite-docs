@@ -1,6 +1,7 @@
-# Migrate deprecated java.sql APIs
+# Migrate deprecated `java.sql` APIs
 
- **org.openrewrite.java.migrate.sql.JavaSqlAPIs** _Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes._
+** org.openrewrite.java.migrate.sql.JavaSqlAPIs**
+_Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -74,7 +76,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `DriverManager#setLogWriter(java.io.PrintWriter)`](migratedrivermanagersetlogstream.md)
+* [Use `DriverManager#setLogWriter(java.io.PrintWriter)`](../../../java/migrate/sql/migratedrivermanagersetlogstream.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -86,7 +89,7 @@ displayName: Migrate deprecated `java.sql` APIs
 description: Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes.
 recipeList:
   - org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream
+
 ```
 {% endtab %}
 {% endtabs %}
-

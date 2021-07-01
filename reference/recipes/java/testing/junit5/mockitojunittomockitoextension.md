@@ -1,6 +1,7 @@
-# JUnit 4 MockitoJUnit to JUnit Jupiter MockitoExtension
+# JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`
 
- **org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension** _Replaces `MockitoJUnit` rules with `MockitoExtension`._
+** org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension**
+_Replaces `MockitoJUnit` rules with `MockitoExtension`._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension`
-

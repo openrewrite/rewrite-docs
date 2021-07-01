@@ -5,7 +5,7 @@ _Rename a file while keeping it in the same directory._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-core), [Issue Tracker](https://github.com/openrewrite/rewrite-core/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
@@ -21,7 +21,7 @@ _Rename a file while keeping it in the same directory._
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RenameFileExample`. 
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RenameFileExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RenameFileExample</recipe>

@@ -1,6 +1,7 @@
-# Ensure lifecycle rule on StorageBucket
+# Ensure lifecycle rule on `StorageBucket`
 
- **org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket** _When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
+** org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket**
+_When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
 
 ### Tags
 
@@ -13,6 +14,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.2.0
+
 
 ## Usage
 
@@ -50,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket</recipe>
@@ -78,18 +80,16 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Kubernetes configuration](addconfiguration.md)
+* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
   * apiVersion: `storage.cnrm.cloud.google.com/v1beta1`
   * resourceKind: `StorageBucket`
   * configurationPath: `/spec/lifecycleRule`
-  * value: \`lifecycleRule:
-  * action:
-
+  * value: `lifecycleRule:
+  - action:
       type: Delete
-
     condition:
+      age: 7`
 
-      age: 7\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +111,7 @@ recipeList:
       type: Delete
     condition:
       age: 7
+
 ```
 {% endtab %}
 {% endtabs %}
-

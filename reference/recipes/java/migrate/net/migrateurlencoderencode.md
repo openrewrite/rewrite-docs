@@ -1,6 +1,7 @@
-# Use java.net.URLEncoder\#encode\(String, StandardCharsets.UTF\_8\)
+# Use `java.net.URLEncoder#encode(String, StandardCharsets.UTF_8)`
 
- **org.openrewrite.java.migrate.net.MigrateURLEncoderEncode** _`java.net.URLEncoder#encode(String)` is platform-dependent. It's advised to specify an encoding._
+** org.openrewrite.java.migrate.net.MigrateURLEncoderEncode**
+_`java.net.URLEncoder#encode(String)` is platform-dependent. It's advised to specify an encoding._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.net.MigrateURLEncoderEncode`
-

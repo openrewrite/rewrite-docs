@@ -1,6 +1,7 @@
-# Use AbstractTypeVisitor9
+# Use `AbstractTypeVisitor9`
 
- **org.openrewrite.java.migrate.javax.MigrateAbstractTypeVisitor6To9** _`AbstractTypeVisitor6` was deprecated in Java 9._
+** org.openrewrite.java.migrate.javax.MigrateAbstractTypeVisitor6To9**
+_`AbstractTypeVisitor6` was deprecated in Java 9._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `javax.lang.model.util.AbstractTypeVisitor6`
   * newFullyQualifiedTypeName: `javax.lang.model.util.AbstractTypeVisitor9`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.lang.model.util.AbstractTypeVisitor6
       newFullyQualifiedTypeName: javax.lang.model.util.AbstractTypeVisitor9
+
 ```
 {% endtab %}
 {% endtabs %}
-

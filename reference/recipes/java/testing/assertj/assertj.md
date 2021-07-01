@@ -1,6 +1,7 @@
 # AssertJ best practices
 
- **org.openrewrite.java.testing.assertj.Assertj** _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
+** org.openrewrite.java.testing.assertj.Assertj**
+_Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ### Tags
 
@@ -14,6 +15,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
+
 
 ## Usage
 
@@ -79,8 +81,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Statically import AssertJ's `assertThat`](staticimports.md)
-* [Migrate JUnit asserts to AssertJ](junittoassertj.md)
+* [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports.md)
+* [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -96,7 +99,7 @@ tags:
 recipeList:
   - org.openrewrite.java.testing.assertj.StaticImports
   - org.openrewrite.java.testing.assertj.JUnitToAssertj
+
 ```
 {% endtab %}
 {% endtabs %}
-

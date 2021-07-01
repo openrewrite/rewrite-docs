@@ -1,6 +1,7 @@
-# Migrate deprecated javax.xml.stream APIs
+# Migrate deprecated `javax.xml.stream` APIs
 
- **org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs** _Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes._
+** org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs**
+_Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
+
 
 ## Usage
 
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.1</version>
+        <version>4.6.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs</recipe>
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](migratexmleventfactorynewinstancetonewfactory.md)
-* [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](migratexmlinputfactorynewinstancetonewfactory.md)
-* [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](migratexmloutputfactorynewinstancetonewfactory.md)
+* [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmleventfactorynewinstancetonewfactory.md)
+* [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory.md)
+* [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.migrate.javax.MigrateXMLEventFactoryNewInstanceToNewFactory
   - org.openrewrite.java.migrate.javax.MigrateXMLInputFactoryNewInstanceToNewFactory
   - org.openrewrite.java.migrate.javax.MigrateXMLOutputFactoryNewInstanceToNewFactory
+
 ```
 {% endtab %}
 {% endtabs %}
-
