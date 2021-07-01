@@ -13,7 +13,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.6.0</version>
+  <version>4.6.1</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>

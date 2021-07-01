@@ -38,7 +38,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.0</version>
+        <version>4.6.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration</recipe>
