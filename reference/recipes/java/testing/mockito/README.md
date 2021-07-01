@@ -1,7 +1,5 @@
 # Mockito
 
-_null_
-
 ## Recipes
 
 * [Cleanup Mockito imports](/reference/recipes/java/testing/mockito/cleanupmockitoimports.md)

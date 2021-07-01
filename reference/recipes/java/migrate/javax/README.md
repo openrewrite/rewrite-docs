@@ -1,7 +1,5 @@
 # `javax` APIs
 
-_null_
-
 ## Recipes
 
 * [Add explicit Inject dependencies](/reference/recipes/java/migrate/javax/addinjectdependencies.md)

@@ -1,7 +1,5 @@
 # Spring Boot 2.x
 
-_null_
-
 ## Recipes
 
 * [JUnit Jupiter for Spring Boot 2.x projects](/reference/recipes/java/spring/boot2/springboot2junit4to5migration.md)

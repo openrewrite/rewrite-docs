@@ -1,7 +1,5 @@
 # AssertJ
 
-_null_
-
 ## Recipes
 
 * [AssertJ best practices](/reference/recipes/java/testing/assertj/assertj.md)

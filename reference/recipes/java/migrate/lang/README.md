@@ -1,7 +1,5 @@
 # `java.lang` APIs
 
-_null_
-
 ## Recipes
 
 * [Migrate deprecated `java.lang` APIs](/reference/recipes/java/migrate/lang/javalangapis.md)

@@ -1,7 +1,5 @@
 # `java.sql` APIs
 
-_null_
-
 ## Recipes
 
 * [Migrate deprecated `java.sql` APIs](/reference/recipes/java/migrate/sql/javasqlapis.md)

@@ -1,7 +1,5 @@
 # `java.util.concurrent` APIs
 
-_null_
-
 ## Recipes
 
 * [Migrate deprecated `java.util.concurrent` APIs](/reference/recipes/java/migrate/concurrent/javaconcurrentapis.md)

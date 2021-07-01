@@ -1,7 +1,5 @@
 # `java.util.logging` APIs
 
-_null_
-
 ## Recipes
 
 * [Migrate deprecated `java.util.logging` APIs](/reference/recipes/java/migrate/logging/javaloggingapis.md)

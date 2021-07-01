@@ -1,7 +1,5 @@
 # `java.net` APIs
 
-_null_
-
 ## Recipes
 
 * [Migrate deprecated `java.net` APIs](/reference/recipes/java/migrate/net/javanetapis.md)
