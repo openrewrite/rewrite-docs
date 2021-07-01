@@ -1,7 +1,6 @@
-# `BigDecimal` rounding constants to `RoundingMode` enums
+# BigDecimal rounding constants to RoundingMode enums
 
-** org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums**
-_Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum._
+ **org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums** _Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum._
 
 ## Source
 
@@ -11,10 +10,9 @@ _Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum._
 * artifactId: rewrite-java
 * version: 7.8.0
 
-
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums`
+

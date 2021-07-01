@@ -1,7 +1,6 @@
-# Use `@GrpcClient`
+# Use @GrpcClient
 
-** org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient**
-_The `@GrpcService` annotation is replaced with `@GrpcClient` in Quarkus 2.x. Removes the optional `@GrpcClient.value()` unless the service name is different from the name of annotated element._
+ **org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient** _The `@GrpcService` annotation is replaced with `@GrpcClient` in Quarkus 2.x. Removes the optional `@GrpcClient.value()` unless the service name is different from the name of annotated element._
 
 ## Source
 
@@ -10,7 +9,6 @@ _The `@GrpcService` annotation is replaced with `@GrpcClient` in Quarkus 2.x. Re
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.2.1
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient`
+

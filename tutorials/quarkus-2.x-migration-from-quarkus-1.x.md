@@ -1,4 +1,4 @@
-# Migrate to Quarkus 2.x from Quarkus 1.x
+# Migrate to Quarkus 2 from Quarkus 1
 
 In this guide we'll look at using Rewrite to perform an automated migration from Quarkus 1.x to Quarkus 2.x.
 
@@ -62,19 +62,11 @@ dependencies {
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
-## What to Expect
-
-This automated migration focuses on upgrading Quarkus projects from 1.x to 2.x as according to the [Quarkus 2.0 Migration Guide](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0).
-
-* Update Maven Dependencies
-* Migrate `application.properties` from 1.x -&gt; 2.x, such as `SmallRye JWT` and `Quartz` properties, and more
-* Convert Quarkus `@ConfigProperties`-annotated interfaces to Smallrye `@ConfigMapping` configuration
-* Migrate `@io.quarkus.grpc.runtime.annotations.GrpcService` to `@io.quarkus.grpc.GrpcClient`
-* Migrate `Qute` APIs, such as `@io.quarkus.qute.api.CheckedTemplate` to `@io.quarkus.qute.CheckedTemplate` and `@io.quarkus.qute.api.ResourcePath` to `@io.quarkus.qute.Location`
-* [Many more](https://docs.openrewrite.org/reference/recipes/java/quarkus)
+For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md). 
 
 ### Known Limitations
 
 | Unsupported Functionality | Issue |
 | :--- | :--- |
 | `@ConfigProperties`-annotated interfaces migrate to using `@ConfigMapping`, but not yet `@ConfigProperties`-annotated classes | [\#24](https://github.com/openrewrite/rewrite-quarkus/issues/24) |
+

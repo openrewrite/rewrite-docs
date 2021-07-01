@@ -1,7 +1,6 @@
 # Java security best practices
 
-** org.openrewrite.java.security.JavaSecurityBestPractices**
-_Applies security best practices to Java code._
+ **org.openrewrite.java.security.JavaSecurityBestPractices** _Applies security best practices to Java code._
 
 ### Tags
 
@@ -15,10 +14,9 @@ _Applies security best practices to Java code._
 * artifactId: rewrite-java
 * version: 7.8.0
 
-
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -70,9 +67,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [XML parser XXE vulnerability](../../java/security/xmlparserxxevulnerability.md)
-* [Use secure temporary file creation](../../java/security/securetempfilecreation.md)
-
+* [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
+* [Use secure temporary file creation](securetempfilecreation.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -87,7 +83,7 @@ tags:
 recipeList:
   - org.openrewrite.java.security.XmlParserXXEVulnerability
   - org.openrewrite.java.security.SecureTempFileCreation
-
 ```
 {% endtab %}
 {% endtabs %}
+

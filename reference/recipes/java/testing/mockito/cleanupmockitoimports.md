@@ -1,7 +1,6 @@
 # Cleanup Mockito imports
 
-** org.openrewrite.java.testing.mockito.CleanupMockitoImports**
-_Removes unused imports `org.mockito` import symbols._
+ **org.openrewrite.java.testing.mockito.CleanupMockitoImports** _Removes unused imports `org.mockito` import symbols._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Removes unused imports `org.mockito` import symbols._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.mockito.CleanupMockitoImports`
+

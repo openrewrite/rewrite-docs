@@ -1,7 +1,6 @@
 # No root containers
 
-** org.openrewrite.kubernetes.NoRootContainers**
-_Containers that run as root frequently have more permissions than their workload requires which, in case of compromise, could help an attacker further their exploits._
+ **org.openrewrite.kubernetes.NoRootContainers** _Containers that run as root frequently have more permissions than their workload requires which, in case of compromise, could help an attacker further their exploits._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Containers that run as root frequently have more permissions than their workloa
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.2.0
-
 
 ## Usage
 
@@ -80,11 +78,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: `PodSecurityPolicy`
   * configurationPath: `/spec/runAsUser/rule`
   * value: `rule: MustRunAsNonRoot`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,7 @@ recipeList:
       resourceKind: PodSecurityPolicy
       configurationPath: /spec/runAsUser/rule
       value: rule: MustRunAsNonRoot
-
 ```
 {% endtab %}
 {% endtabs %}
+

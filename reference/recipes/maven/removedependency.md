@@ -1,7 +1,6 @@
 # Remove Maven dependency
 
-** org.openrewrite.maven.RemoveDependency**
-_Removes a single dependency from the <dependencies> section of the pom.xml._
+ **org.openrewrite.maven.RemoveDependency** _Removes a single dependency from the  section of the pom.xml._
 
 ## Source
 
@@ -14,16 +13,14 @@ _Removes a single dependency from the <dependencies> section of the pom.xml._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set |
-
+| `String` | scope | _Optional_. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RemoveDependencyExample`. 
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RemoveDependencyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       scope: compile
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.RemoveDependencyExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -87,3 +82,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.RemoveDependencyExample`
+

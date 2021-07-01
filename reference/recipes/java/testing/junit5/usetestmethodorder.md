@@ -1,7 +1,6 @@
-# Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`
+# Migrate from JUnit4 @FixedMethodOrder to JUnit5 @TestMethodOrder
 
-** org.openrewrite.java.testing.junit5.UseTestMethodOrder**
-_JUnit optionally allows test method execution order to be specified. This Recipe replaces JUnit4 test execution ordering annotations with JUnit5 replacements._
+ **org.openrewrite.java.testing.junit5.UseTestMethodOrder** _JUnit optionally allows test method execution order to be specified. This Recipe replaces JUnit4 test execution ordering annotations with JUnit5 replacements._
 
 ## Source
 
@@ -10,7 +9,6 @@ _JUnit optionally allows test method execution order to be specified. This Recip
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.7.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.UseTestMethodOrder`
+

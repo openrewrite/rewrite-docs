@@ -1,7 +1,6 @@
 # Migrate Java 8 to Java 11
 
-** org.openrewrite.java.migrate.Java8toJava11**
-_This recipe will apply changes commonly needed when migrating from Java 8 to Java 11._
+ **org.openrewrite.java.migrate.Java8toJava11** _This recipe will apply changes commonly needed when migrating from Java 8 to Java 11._
 
 ### Tags
 
@@ -18,7 +17,6 @@ _This recipe will apply changes commonly needed when migrating from Java 8 to Ja
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
-
 
 ## Usage
 
@@ -84,16 +82,15 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add JDeprScan Maven Plug-in](../../java/migrate/addjdeprscanplugin.md)
-* [Migrate deprecated `java.util.concurrent` APIs](../../java/migrate/concurrent/javaconcurrentapis.md)
-* [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](../../java/migrate/javax/javaxlangmodelutil.md)
-* [Migrate deprecated `javax.management.monitor` APIs](../../java/migrate/javax/javaxmanagementmonitorapis.md)
-* [Migrate deprecated `javax.xml.stream` APIs](../../java/migrate/javax/javaxxmlstreamapis.md)
-* [Migrate deprecated `java.lang` APIs](../../java/migrate/lang/javalangapis.md)
-* [Migrate deprecated `java.util.logging` APIs](../../java/migrate/logging/javaloggingapis.md)
-* [Migrate deprecated `java.net` APIs](../../java/migrate/net/javanetapis.md)
-* [Migrate deprecated `java.sql` APIs](../../java/migrate/sql/javasqlapis.md)
-
+* [Add JDeprScan Maven Plug-in](addjdeprscanplugin.md)
+* [Migrate deprecated `java.util.concurrent` APIs](concurrent/javaconcurrentapis.md)
+* [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](javax/javaxlangmodelutil.md)
+* [Migrate deprecated `javax.management.monitor` APIs](javax/javaxmanagementmonitorapis.md)
+* [Migrate deprecated `javax.xml.stream` APIs](javax/javaxxmlstreamapis.md)
+* [Migrate deprecated `java.lang` APIs](lang/javalangapis.md)
+* [Migrate deprecated `java.util.logging` APIs](logging/javaloggingapis.md)
+* [Migrate deprecated `java.net` APIs](net/javanetapis.md)
+* [Migrate deprecated `java.sql` APIs](sql/javasqlapis.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +116,7 @@ recipeList:
   - org.openrewrite.java.migrate.logging.JavaLoggingAPIs
   - org.openrewrite.java.migrate.net.JavaNetAPIs
   - org.openrewrite.java.migrate.sql.JavaSqlAPIs
-
 ```
 {% endtab %}
 {% endtabs %}
+

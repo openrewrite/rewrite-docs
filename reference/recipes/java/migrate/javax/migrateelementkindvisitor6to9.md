@@ -1,7 +1,6 @@
-# Use `ElementKindVisitor9`
+# Use ElementKindVisitor9
 
-** org.openrewrite.java.migrate.javax.MigrateElementKindVisitor6To9**
-_`ElementKindVisitor6` was deprecated in Java 9._
+ **org.openrewrite.java.migrate.javax.MigrateElementKindVisitor6To9** _`ElementKindVisitor6` was deprecated in Java 9._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`ElementKindVisitor6` was deprecated in Java 9._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.3.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.lang.model.util.ElementKindVisitor6`
   * newFullyQualifiedTypeName: `javax.lang.model.util.ElementKindVisitor9`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.lang.model.util.ElementKindVisitor6
       newFullyQualifiedTypeName: javax.lang.model.util.ElementKindVisitor9
-
 ```
 {% endtab %}
 {% endtabs %}
+

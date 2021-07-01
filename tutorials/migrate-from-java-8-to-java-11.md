@@ -59,21 +59,9 @@ dependencies {
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
-## What to Expect
-
-The above recipe is a composite and will perform the following tasks on your project:
-
-* [BigDecimal rounding constants to RoundingMode enums](https://docs.openrewrite.org/reference/recipes/java/cleanup/bigdecimalroundingconstantstoenums)
-* [Use primitive wrapper `valueOf` method](https://docs.openrewrite.org/reference/recipes/java/cleanup/primitivewrapperclassconstructortovalueof)
-* Remediation of deprecations reported by `jdeprscan` where a safe, automated solution is possible.
-
-For Maven-based projects, these additional modifications will be made:
-
-* [The necessary JAXB dependencies will be added to the pom.xml](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/addjaxbdependencies)
-* [The necessary JAX-WS dependencies will be added to the pom.xml](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/addjaxwsdependencies)
-* [The `jdeprscan` build plugin will be added to the pom.xml](https://docs.openrewrite.org/reference/recipes/java/migrate/addjdeprscanplugin)
-
 ## Before and After
+
+For the full list of changes this recipe will make, see its [reference page](../reference/recipes/java/migrate/java8tojava11.md).
 
 {% tabs %}
 {% tab title="Example Class \(Before\)" %}

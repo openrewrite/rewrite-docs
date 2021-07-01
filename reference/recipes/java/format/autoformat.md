@@ -1,7 +1,6 @@
 # Format Java code
 
-** org.openrewrite.java.format.AutoFormat**
-_Format Java code using a standard comprehensive set of Java formatting recipes._
+ **org.openrewrite.java.format.AutoFormat** _Format Java code using a standard comprehensive set of Java formatting recipes._
 
 ## Source
 
@@ -11,10 +10,9 @@ _Format Java code using a standard comprehensive set of Java formatting recipes.
 * artifactId: rewrite-java
 * version: 7.8.0
 
-
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.format.AutoFormat`
+

@@ -62,18 +62,9 @@ dependencies {
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
-## What to Expect
+## Before and After
 
-This automated migration focuses on upgrading SpringBoot projects from 1.x to 2.x, it also includes a spring-specific JUnit 4 to 5 migration along with several best practices such as replacing RequestMapping annotations with their request-method specific variant.
-
-* Update Maven Dependencies
-* Migrate Spring Boot Properties 2.0 -&gt; 2.X
-* [NoRequestMappingAnnotation](https://docs.openrewrite.org/reference/recipes/java/spring/norequestmappingannotation). `@RequestMapping` annotations are replaced with request-method specific annotations`@GetMapping, @PostMapping, @PutMapping, @DeleteMapping`
-* [ImplicitWebAnnotationNames](https://docs.openrewrite.org/reference/recipes/java/spring/implicitwebannotationnames). Removes implicit default parameter names and those matching their associated variable name.
-* [NoAutowiredAnnotation](https://docs.openrewrite.org/reference/recipes/java/spring/noautowired).  `@Autowired` annotations are only required when multiple constructors exist.
-* [ConditionalOnBeanAnyNestedCondition](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/conditionalonbeananynestedcondition). SpringBoot 2.x`@ConditionalOnBean` uses a logical AND rather than a logical OR when determining whether or not the condition has been met.  This recipe converts 1.x `@ContionalOnBean` to there `@ConditionalOnAnyBean` equivalent.
-* [JUnit 4 to 5 migration for Spring-Boot projects](https://docs.openrewrite.org/tutorials/migrate-from-junit-4-to-junit-5#choosing-the-right-recipe) a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality
-* [Many more](https://docs.openrewrite.org/reference/recipes/java/spring)
+For the full list of changes this recipe will make, see its [reference page](../reference/recipes/java/spring/boot2/springboot1to2migration.md).
 
 ### Request Mapping Annotations.
 
@@ -194,7 +185,7 @@ class OwnerController {
 {% endtab %}
 {% endtabs %}
 
-## Conditional Bean Configuration.
+### Conditional Bean Configuration.
 
 {% tabs %}
 {% tab title="Before: ConditionalOnBean" %}
@@ -276,5 +267,4 @@ public class SchoolConfig {
 | ConditionalOnAnyBean should create new CompilationUnit when the condition is on the parent class | [\#34](https://github.com/openrewrite/rewrite-spring/issues/34) |
 | JAXRS to Spring WebMVC annotations | [\#69](https://github.com/openrewrite/rewrite-spring/issues/69) |
 | `@EmbeddedKafkaRule` to `@EmbeddedKafka` test conversion | [\#75](https://github.com/openrewrite/rewrite-spring/issues/75) |
-| `NoAutowiredAnnotations` should preserve `@Autowired` constructor annotations when multiple constructors exist |  [\#78](https://github.com/openrewrite/rewrite-spring/issues/78) |
 

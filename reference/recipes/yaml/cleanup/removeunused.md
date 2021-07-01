@@ -1,7 +1,6 @@
 # Remove unused YAML
 
-** org.openrewrite.yaml.cleanup.RemoveUnused**
-_Remove YAML mapping and sequence keys that have no value._
+ **org.openrewrite.yaml.cleanup.RemoveUnused** _Remove YAML mapping and sequence keys that have no value._
 
 ## Source
 
@@ -11,10 +10,9 @@ _Remove YAML mapping and sequence keys that have no value._
 * artifactId: rewrite-yaml
 * version: 7.8.0
 
-
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library.  It can be activated directly without adding any dependencies.
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.yaml.cleanup.RemoveUnused`
+

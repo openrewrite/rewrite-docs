@@ -116,23 +116,9 @@ dependencies {
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
-## What to Expect
+## Before and After
 
-This automated migration focuses on making 1 to 1 replacements of JUnit 4 classes, annotations, and patterns with behaviorally equivalent JUnit 5 replacements. This includes:
-
-* Replacing `org.junit.Test` with `org.junit.jupiter.api.Test`
-  * Includes removing "expected" and "timeout" arguments and adding JUnit 5 equivalents
-* Replacing `org.junit.Assert` with `org.junit.jupiter.api.Assertions`
-  * Includes changing the order of the method arguments to match the new methods
-* Replacing `@Rule TemporaryFolder` fields with `@TempDir File` fields
-  * Includes generating methods to account for methods provided by `TemporaryFolder` but not by `File`
-* Dependency management \(Maven only\)
-  * Remove JUnit 4 dependency from the pom.xml
-  * Exclude JUnit 4 from any dependencies where the library is linked transitively
-  * Add JUnit 5 dependencies
-* [Many more](https://docs.openrewrite.org/reference/recipes/java/testing/junit5)
-
-### Before and After
+For the full list of changes this recipe will make, see its [reference page](../reference/recipes/java/testing/junit5/junit5bestpractices.md).
 
 {% tabs %}
 {% tab title="JUnit 4 Test Class \(Before\)" %}
