@@ -67,6 +67,130 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md).
 
 {% tabs %}
+{% tab title="Migrate Deprecated Mutiny APIs \(Before\)" %}
+```java
+package org.acme.demo.service;
+
+import io.smallrye.mutiny.Multi;
+import io.smallrye.mutiny.Uni;
+import io.smallrye.mutiny.groups.MultiCollect;
+
+import javax.enterprise.context.ApplicationScoped;
+import java.time.Duration;
+import java.util.List;
+import java.util.concurrent.Executor;
+
+@ApplicationScoped
+public class FactorService {
+
+    public static Uni<String> uniGreeting(String name) {
+        return Uni.createFrom().item(name)
+                .onItem()
+                .apply(n -> String.format("Factor this %s", n));
+    }
+
+    public static Multi<String> greetings(int count, String name) {
+        return Multi.createFrom().ticks().every(Duration.ofMillis(1))
+                .onItem()
+                .transform(n -> String.format("hello %s - %d", name, n))
+                .transform()
+                .byTakingFirstItems(count);
+    }
+
+    public static Uni<List<String>> collectItems(int count, String name) {
+        Multi<String> multi = greetings(count, name);
+        Uni<List<String>> uni = multi
+                .collectItems()
+                .asList();
+        Executor e = command -> {
+            System.out.print("something");
+        };
+        multi.subscribeOn(e);
+        uni.subscribeOn(e);
+        return uni;
+    }
+
+    public static Multi<String> test(int count, String name) {
+        return Multi.createFrom().ticks().every(Duration.ofMillis(1))
+                .onItem()
+                .transform(n -> String.format("hello %s - %d", name, n))
+                .transform()
+                .byFilteringItemsWith(u -> u.matches("bla"));
+    }
+
+    public static MultiCollect<Long> hotStreamGreetings(int count, String name) {
+        return Multi.createFrom().ticks().every(Duration.ofMillis(1))
+                .transform()
+                .toHotStream()
+                .collectItems();
+    }
+
+}
+```
+{% endtab %}
+
+{% tab title="Migrate Deprecated Mutiny APIs \(After\)" %}
+```java
+package org.acme.demo.service;
+
+import io.smallrye.mutiny.Multi;
+import io.smallrye.mutiny.Uni;
+import io.smallrye.mutiny.groups.MultiCollect;
+
+import javax.enterprise.context.ApplicationScoped;
+import java.time.Duration;
+import java.util.List;
+import java.util.concurrent.Executor;
+
+@ApplicationScoped
+public class FactorService {
+
+    public static Uni<String> uniGreeting(String name) {
+        return Uni.createFrom().item(name)
+                .onItem()
+                .transform(n -> String.format("Factor this %s", n));
+    }
+
+    public static Multi<String> greetings(int count, String name) {
+        return Multi.createFrom().ticks().every(Duration.ofMillis(1))
+                .onItem()
+                .transform(n -> String.format("hello %s - %d", name, n))
+                .select()
+                .first(count);
+    }
+
+    public static Uni<List<String>> collectItems(int count, String name) {
+        Multi<String> multi = greetings(count, name);
+        Uni<List<String>> uni = multi
+                .collect()
+                .asList();
+        Executor e = command -> {
+            System.out.print("something");
+        };
+        multi.runSubscriptionOn(e);
+        uni.runSubscriptionOn(e);
+        return uni;
+    }
+
+    public static Multi<String> test(int count, String name) {
+        return Multi.createFrom().ticks().every(Duration.ofMillis(1))
+                .onItem()
+                .transform(n -> String.format("hello %s - %d", name, n))
+                .select()
+                .where(u -> u.matches("bla"));
+    }
+
+    public static MultiCollect<Long> hotStreamGreetings(int count, String name) {
+        return Multi.createFrom().ticks().every(Duration.ofMillis(1))
+                .toHotStream()
+                .collect();
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
 {% tab title="application.properties \(Before\)" %}
 ```markup
 quarkus.dev.instrumentation=true
@@ -76,6 +200,7 @@ quarkus.quartz.force-start=true
 quarkus.quartz.store-type=db
 quarkus.neo4j.pool.metrics-enabled=true
 # ...
+# and other property keys/values as according to the Quarkus migration guide
 ```
 {% endtab %}
 
@@ -88,6 +213,7 @@ quarkus.quartz.start-mode=forced
 quarkus.quartz.store-type=jdbc-cmt
 quarkus.neo4j.pool.metrics.enabled=true
 # ...
+# and other property keys/values as according to the Quarkus migration guide
 ```
 {% endtab %}
 {% endtabs %}
