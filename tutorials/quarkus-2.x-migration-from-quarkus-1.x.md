@@ -64,7 +64,9 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md).
+Here we highlight a small number of the larger set of refactoring operations `Quarkus1to2Migration` automates. For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md).
+
+### Migrate Deprecated Mutiny APIs
 
 {% tabs %}
 {% tab title="Migrate Deprecated Mutiny APIs \(Before\)" %}
@@ -110,21 +112,12 @@ public class FactorService {
         return uni;
     }
 
-    public static Multi<String> test(int count, String name) {
-        return Multi.createFrom().ticks().every(Duration.ofMillis(1))
-                .onItem()
-                .transform(n -> String.format("hello %s - %d", name, n))
-                .transform()
-                .byFilteringItemsWith(u -> u.matches("bla"));
-    }
-
     public static MultiCollect<Long> hotStreamGreetings(int count, String name) {
         return Multi.createFrom().ticks().every(Duration.ofMillis(1))
                 .transform()
                 .toHotStream()
                 .collectItems();
     }
-
 }
 ```
 {% endtab %}
@@ -172,14 +165,6 @@ public class FactorService {
         return uni;
     }
 
-    public static Multi<String> test(int count, String name) {
-        return Multi.createFrom().ticks().every(Duration.ofMillis(1))
-                .onItem()
-                .transform(n -> String.format("hello %s - %d", name, n))
-                .select()
-                .where(u -> u.matches("bla"));
-    }
-
     public static MultiCollect<Long> hotStreamGreetings(int count, String name) {
         return Multi.createFrom().ticks().every(Duration.ofMillis(1))
                 .toHotStream()
@@ -189,6 +174,70 @@ public class FactorService {
 ```
 {% endtab %}
 {% endtabs %}
+
+### Migrate `io.quarkus.qute.api.*`
+
+{% tabs %}
+{% tab title="Migrate `io.quarkus.qute.api.*` \(Before\)" %}
+```java
+package org.acme.demo.misc;
+
+import io.quarkus.qute.Template;
+import io.quarkus.qute.TemplateInstance;
+import io.quarkus.qute.api.CheckedTemplate;
+import io.quarkus.qute.api.ResourcePath;
+import io.quarkus.scheduler.Scheduled;
+
+public class ReportGenerator {
+    @ResourcePath("reports/v1/report_01")
+    Template report;
+
+    @Scheduled(cron = "0 30 * * * ?")
+    void generate() {
+        String result = report
+                .data("samples", new Object())
+                .render();
+    }
+}
+
+@CheckedTemplate
+class HelloTemplate {
+    public static native TemplateInstance hello(String name);
+}
+```
+{% endtab %}
+
+{% tab title="Migrate `io.quarkus.qute.api.*` \(After\)" %}
+```java
+package org.acme.demo.misc;
+
+import io.quarkus.qute.CheckedTemplate;
+import io.quarkus.qute.Location;
+import io.quarkus.qute.Template;
+import io.quarkus.qute.TemplateInstance;
+import io.quarkus.scheduler.Scheduled;
+
+public class ReportGenerator {
+    @Location("reports/v1/report_01")
+    Template report;
+
+    @Scheduled(cron = "0 30 * * * ?")
+    void generate() {
+        String result = report
+                .data("samples", new Object())
+                .render();
+    }
+}
+
+@CheckedTemplate
+class HelloTemplate {
+    public static native TemplateInstance hello(String name);
+}
+```
+{% endtab %}
+{% endtabs %}
+
+### Migrate `application.properties` keys and values
 
 {% tabs %}
 {% tab title="application.properties \(Before\)" %}
