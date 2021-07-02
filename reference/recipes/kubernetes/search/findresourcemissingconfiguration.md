@@ -44,7 +44,7 @@ Now that `com.yourorg.FindResourceMissingConfigurationExample` has been defined 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.2.0")
+    id("org.openrewrite.rewrite") version("5.2.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.0</version>
+        <version>4.6.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindResourceMissingConfigurationExample</recipe>
