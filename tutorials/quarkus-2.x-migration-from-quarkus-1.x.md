@@ -69,7 +69,7 @@ Here we highlight a small number of the larger set of refactoring operations `Qu
 ### Migrate Deprecated Mutiny APIs
 
 {% tabs %}
-{% tab title="Migrate Deprecated Mutiny APIs \(Before\)" %}
+{% tab title="Deprecated Mutiny APIs \(Before\)" %}
 ```java
 package org.acme.demo.service;
 
@@ -122,7 +122,7 @@ public class FactorService {
 ```
 {% endtab %}
 
-{% tab title="Migrate Deprecated Mutiny APIs \(After\)" %}
+{% tab title="Deprecated Mutiny APIs \(After\)" %}
 ```java
 package org.acme.demo.service;
 
@@ -178,7 +178,7 @@ public class FactorService {
 ### Migrate `io.quarkus.qute.api.*`
 
 {% tabs %}
-{% tab title="Migrate `io.quarkus.qute.api.*` \(Before\)" %}
+{% tab title="io.quarkus.qute.api.* \(Before\)" %}
 ```java
 package org.acme.demo.misc;
 
@@ -207,7 +207,7 @@ class HelloTemplate {
 ```
 {% endtab %}
 
-{% tab title="Migrate `io.quarkus.qute.api.*` \(After\)" %}
+{% tab title="io.quarkus.qute.api.* \(After\)" %}
 ```java
 package org.acme.demo.misc;
 
