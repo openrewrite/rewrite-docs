@@ -13,7 +13,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.6.1</version>
+  <version>4.6.2</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -36,7 +36,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("5.2.0")
+    id("org.openrewrite.rewrite").version("5.2.1")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.6.1")
 
     // Other project dependencies
 }
@@ -70,7 +70,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.6.1</version>
+  <version>4.6.2</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -80,7 +80,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>1.7.0</version>
+      <version>1.7.1</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -93,7 +93,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite").version("5.2.0")
+    id("org.openrewrite.rewrite").version("5.2.1")
 }
 
 rewrite {
@@ -105,7 +105,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.7.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.7.1")
 
     // Other project dependencies
 }
