@@ -62,7 +62,35 @@ dependencies {
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
-For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md). 
+## Before and After
+
+For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md).
+
+{% tabs %}
+{% tab title="application.properties \(Before\)" %}
+```markup
+quarkus.dev.instrumentation=true
+smallrye.jwt.sign.key-location=/keys/signing
+smallrye.jwt.encrypt.key-location=/keys/encrypt
+quarkus.quartz.force-start=true
+quarkus.quartz.store-type=db
+quarkus.neo4j.pool.metrics-enabled=true
+# ...
+```
+{% endtab %}
+
+{% tab title="application.properties \(After\)" %}
+```markup
+quarkus.live-reload.instrumentation=true
+smallrye.jwt.sign.key.location=/keys/signing
+smallrye.jwt.encrypt.key.location=/keys/encrypt
+quarkus.quartz.start-mode=forced
+quarkus.quartz.store-type=jdbc-cmt
+quarkus.neo4j.pool.metrics.enabled=true
+# ...
+```
+{% endtab %}
+{% endtabs %}
 
 ### Known Limitations
 
