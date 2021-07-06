@@ -102,7 +102,7 @@ Within the `ExpandCustomerInfoVisitor`, we will add logic to remove the abstract
     private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
         ...
         // Template used to add a method body to "setCustomerInfo()" method declaration.
-        private final JavaTemplate addMethodBodyTemplate = template("")
+        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, "")
                 .build();
          ...
     }
