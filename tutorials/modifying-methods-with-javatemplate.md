@@ -137,7 +137,7 @@ Next, we will use `JavaTemplate` to add two additional parameters to the method 
 private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
     ...
     // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration.
-    private final JavaTemplate addMethodParametersTemplate = template("Date dateOfBirth, String firstName, #{}")
+    private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
             .imports("java.util.Date")
             .build();
     ...
@@ -173,7 +173,7 @@ We'll use another template to add the assignment statements to the method body.
     private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
         ...
         // Template used to add initializing statements to the method body
-        private final JavaTemplate addStatementsTemplate = template(
+        private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(this::getCursor, 
                 "this.dateOfBirth = dateOfBirth;\n" +
                         "this.firstName = firstName;\n" +
                         "this.lastName = lastName;\n")
@@ -239,16 +239,16 @@ public class ExpandCustomerInfo extends Recipe {
         private final MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
 
         // Template used to add a method body to "setCustomerInfo()" method declaration.
-        private final JavaTemplate addMethodBodyTemplate = template("")
+        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, "")
                 .build();
 
         // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration.
-        private final JavaTemplate addMethodParametersTemplate = template("Date dateOfBirth, String firstName, #{}")
+        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
                 .imports("java.util.Date")
                 .build();
 
         // Template used to add initializing statements to the method body
-        private final JavaTemplate addStatementsTemplate = template(
+        private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(this::getCursor, 
                 "this.dateOfBirth = dateOfBirth;\n" +
                         "this.firstName = firstName;\n" +
                         "this.lastName = lastName;\n")
