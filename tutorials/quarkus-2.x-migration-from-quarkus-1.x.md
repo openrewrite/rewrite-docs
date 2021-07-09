@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:0.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:0.3.0")
 }
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>0.2.1</version>
+            <version>0.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -243,8 +243,8 @@ class HelloTemplate {
 {% tab title="application.properties \(Before\)" %}
 ```markup
 quarkus.dev.instrumentation=true
-smallrye.jwt.sign.key-location=/keys/signing
-smallrye.jwt.encrypt.key-location=/keys/encrypt
+smallrye.jwt.sign.key-location=/keys/signing.pem
+smallrye.jwt.encrypt.key-location=/keys/encrypt.pem
 quarkus.quartz.force-start=true
 quarkus.quartz.store-type=db
 quarkus.neo4j.pool.metrics-enabled=true
@@ -256,8 +256,8 @@ quarkus.neo4j.pool.metrics-enabled=true
 {% tab title="application.properties \(After\)" %}
 ```markup
 quarkus.live-reload.instrumentation=true
-smallrye.jwt.sign.key.location=/keys/signing
-smallrye.jwt.encrypt.key.location=/keys/encrypt
+smallrye.jwt.sign.key.location=/keys/signing.pem
+smallrye.jwt.encrypt.key.location=/keys/encrypt.pem
 quarkus.quartz.start-mode=forced
 quarkus.quartz.store-type=jdbc-cmt
 quarkus.neo4j.pool.metrics.enabled=true
@@ -272,4 +272,5 @@ quarkus.neo4j.pool.metrics.enabled=true
 | Unsupported Functionality | Issue |
 | :--- | :--- |
 | `@ConfigProperties`-annotated interfaces migrate to using `@ConfigMapping`, but not yet `@ConfigProperties`-annotated classes | [\#24](https://github.com/openrewrite/rewrite-quarkus/issues/24) |
-
+| [Kubernetes Client 5.4](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#kubernetes-client) | - |
+| [Vert.x 4.0](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#vertx) | - |
