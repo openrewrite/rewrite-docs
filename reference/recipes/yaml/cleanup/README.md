@@ -2,6 +2,5 @@
 
 ## Recipes
 
-* [Remove unused YAML](/reference/recipes/yaml/cleanup/removeunused.md)
-
+* [Remove unused YAML](removeunused.md)
 

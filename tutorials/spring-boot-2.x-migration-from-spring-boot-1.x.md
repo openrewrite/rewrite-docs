@@ -180,7 +180,6 @@ class OwnerController {
     }
 
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -255,7 +254,6 @@ public class SchoolConfig {
   }
  }
 }
-
 ```
 {% endtab %}
 {% endtabs %}

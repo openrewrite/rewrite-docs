@@ -131,7 +131,7 @@ public class SayHelloRecipe extends Recipe {
 
     public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
         private final JavaTemplate helloTemplate =
-                template("public String hello() { return \"Hello from #{}!\"; }")
+                JavaTemplate.builder(this::getCursor, "public String hello() { return \"Hello from #{}!\"; }")
                         .build();
 
         @Override
@@ -177,7 +177,7 @@ Templates are created using the `JavaVisitor.template()` method. Within a templa
 ```java
 public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
     private final JavaTemplate helloTemplate =
-            template("public String hello() { return \"Hello from #{}!\"; }")
+            JavaTemplate.builder(this::getCursor, "public String hello() { return \"Hello from #{}!\"; }")
                     .build();
     ...
 }
@@ -278,7 +278,7 @@ public class SayHelloRecipe extends Recipe {
 
     public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
         private final JavaTemplate helloTemplate =
-                template("public String hello() { return \"Hello from #{}!\"; }")
+                JavaTemplate.builder(this::getCursor, "public String hello() { return \"Hello from #{}!\"; }")
                         .build();
 
         @Override

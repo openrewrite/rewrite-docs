@@ -1,7 +1,6 @@
 # Find methods
 
-** org.openrewrite.java.search.FindMethods**
-_Find methods by pattern._
+ **org.openrewrite.java.search.FindMethods** _Find methods by pattern._
 
 ## Source
 
@@ -14,14 +13,12 @@ _Find methods by pattern._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](/v1beta/pointcut-expressions), that is used to find matching method invocations. |
-
+| :--- | :--- | :--- |
+| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](https://github.com/openrewrite/rewrite-docs/tree/3d15ca3c66815ddedd96a3ca0d6f2f522be8669f/v1beta/pointcut-expressions/README.md), that is used to find matching method invocations. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindMethodsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindMethodsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,7 +31,6 @@ recipeList:
       methodPattern: java.util.List add(..)
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.FindMethodsExample` has been defined activate it in your build file:
 
@@ -53,7 +49,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -83,3 +78,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindMethodsExample`
+

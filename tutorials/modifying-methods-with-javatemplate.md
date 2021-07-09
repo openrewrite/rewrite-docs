@@ -68,7 +68,7 @@ public class ExpandCustomerInfo extends Recipe {
     public String getDescription() {
         return "Expand the `CustomerInfo` class with new fields.";
     }
-    
+
     // Rewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
     // This recipe has no configuration and delegates to its visitor when it is run.
     @Override
@@ -131,7 +131,7 @@ public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
 
 ## Add Parameters to `setCustomerInfo()`
 
-Next, we will use `JavaTemplate` to add two additional parameters to the method declaration. Here we use an interpolation signifier `#{}` to leave a space for the existing argument so that it is preserved when we replace the method's argument list. 
+Next, we will use `JavaTemplate` to add two additional parameters to the method declaration. Here we use an interpolation signifier `#{}` to leave a space for the existing argument so that it is preserved when we replace the method's argument list.
 
 ```java
 private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
@@ -285,7 +285,6 @@ public class ExpandCustomerInfo extends Recipe {
         }
     }
 }
-
 ```
 
 Rewrite provides testing infrastructure for recipes via the rewrite-test module. To create automated tests of this recipe we use the [Kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line `Strings`, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/). To assert that the recipe makes the expected changes to our test class, we will create a new test class that implements the `JavaRecipeTest` interface and use`assertChanged` ensure the recipe is making the expected changes to the test class.
@@ -316,14 +315,14 @@ class ExpandCustomerInfoTest : JavaRecipeTest {
         """,
         after = """
             package com.yourorg;
-            
+
             import java.util.Date;
-            
+
             public abstract class Customer {
                 private Date dateOfBirth;
                 private String firstName;
                 private String lastName;
-            
+
                 public void setCustomerInfo(Date dateOfBirth, String firstName, String lastName){
                     this.dateOfBirth = dateOfBirth;
                     this.firstName = firstName;
@@ -333,6 +332,5 @@ class ExpandCustomerInfoTest : JavaRecipeTest {
         """
     )
 }
-
 ```
 

@@ -178,7 +178,7 @@ public class FactorService {
 ### Migrate `io.quarkus.qute.api.*`
 
 {% tabs %}
-{% tab title="io.quarkus.qute.api.* \(Before\)" %}
+{% tab title="io.quarkus.qute.api.\* \(Before\)" %}
 ```java
 package org.acme.demo.misc;
 
@@ -207,7 +207,7 @@ class HelloTemplate {
 ```
 {% endtab %}
 
-{% tab title="io.quarkus.qute.api.* \(After\)" %}
+{% tab title="io.quarkus.qute.api.\* \(After\)" %}
 ```java
 package org.acme.demo.misc;
 

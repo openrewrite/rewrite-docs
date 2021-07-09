@@ -1,7 +1,6 @@
 # Quarkus 2.x migration from Quarkus 1.x
 
-** org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration**
-_Migrates Quarkus 1.x to 2.x._
+ **org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration** _Migrates Quarkus 1.x to 2.x._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrates Quarkus 1.x to 2.x._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.2.1
-
 
 ## Usage
 
@@ -92,10 +90,10 @@ Recipes can also be activated directly from the command line by adding the argum
   * propertyKey: `quarkus.quartz.store-type`
   * newValue: `jdbc-cmt`
   * oldValue: `db`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.qute.api.CheckedTemplate`
   * newFullyQualifiedTypeName: `io.quarkus.qute.CheckedTemplate`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.qute.api.ResourcePath`
   * newFullyQualifiedTypeName: `io.quarkus.qute.Location`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
@@ -106,9 +104,8 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `io.quarkus`
   * artifactId: `quarkus-maven-plugin`
   * newVersion: `2.x`
-* [Use `@GrpcClient`](../../../java/quarkus/quarkus2/grpcserviceannotationtogrpcclient.md)
-* [Remove `avro-maven-plugin`](../../../java/quarkus/quarkus2/removeavromavenplugin.md)
-
+* [Use `@GrpcClient`](grpcserviceannotationtogrpcclient.md)
+* [Remove `avro-maven-plugin`](removeavromavenplugin.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -151,7 +148,7 @@ recipeList:
       newVersion: 2.x
   - org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient
   - org.openrewrite.java.quarkus.quarkus2.RemoveAvroMavenPlugin
-
 ```
 {% endtab %}
 {% endtabs %}
+

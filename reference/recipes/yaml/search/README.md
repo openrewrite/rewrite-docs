@@ -2,6 +2,5 @@
 
 ## Recipes
 
-* [Find YAML entries](/reference/recipes/yaml/search/findkey.md)
-
+* [Find YAML entries](findkey.md)
 

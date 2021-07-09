@@ -2,8 +2,7 @@
 
 ## Recipes
 
-* [Cleanup Mockito imports](/reference/recipes/java/testing/mockito/cleanupmockitoimports.md)
-* [Mockito 3.x migration from 1.x](/reference/recipes/java/testing/mockito/mockito1to3migration.md)
-* [Use static form of Mockito `MockUtil`](/reference/recipes/java/testing/mockito/mockutilstostatic.md)
-
+* [Cleanup Mockito imports](cleanupmockitoimports.md)
+* [Mockito 3.x migration from 1.x](mockito1to3migration.md)
+* [Use static form of Mockito `MockUtil`](mockutilstostatic.md)
 

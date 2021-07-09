@@ -1,7 +1,6 @@
 # Finalize local variables
 
-** org.openrewrite.java.cleanup.FinalizeLocalVariables**
-_Adds the `final` modifier keyword to local variables which are not reassigned._
+ **org.openrewrite.java.cleanup.FinalizeLocalVariables** _Adds the `final` modifier keyword to local variables which are not reassigned._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Adds the `final` modifier keyword to local variables which are not reassigned._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.8.1
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.FinalizeLocalVariables`
+

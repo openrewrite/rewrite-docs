@@ -1,7 +1,6 @@
 # Format XML
 
-** org.openrewrite.xml.AutoFormat**
-_Indents XML using the most common indentation size and tabs or space choice in use in the file._
+ **org.openrewrite.xml.AutoFormat** _Indents XML using the most common indentation size and tabs or space choice in use in the file._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Indents XML using the most common indentation size and tabs or space choice in 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
 * version: 7.8.1
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.xml.AutoFormat`
+

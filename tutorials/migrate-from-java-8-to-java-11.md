@@ -81,7 +81,7 @@ public class Example {
     short s3 = 3;
     Short sh3 = new Short(s3);
     Integer i = new Integer(1);
-    
+
     void divide() {
         BigDecimal bd = BigDecimal.valueOf(10);
         BigDecimal bd2 = BigDecimal.valueOf(2);
@@ -289,7 +289,7 @@ The above example class demonstrates the two most common code migration tasks wh
 {% endtabs %}
 
 {% hint style="info" %}
-The JAXB and JAX-WS dependencies will only be added to the project if types from those projects are detected.  
+The JAXB and JAX-WS dependencies will only be added to the project if types from those projects are detected.
 {% endhint %}
 
 {% hint style="info" %}
@@ -306,6 +306,4 @@ The following is a list of know limitations/issues:
 * There are several build tool plugins that are used to generate Java code from WSDL files and this recipe currently does not automate this process. You will need to manually update the related build plugins.
 * There are several additional libraries that have been removed from the Java 11 standard library that are not included with this recipe: `java.corba`, `javax.transaction`, `javax.batch`, JavaFX, Web Start. If you require support for one of these libraries, please reach out to our team or create an issue.
 * This recipe does not cover all deprecations listed by the `jdeprscan` tool.  Please see the following these issue \([\#6](https://github.com/openrewrite/rewrite-migrate-java/issues/6), [\#7](https://github.com/openrewrite/rewrite-migrate-java/issues/7), [\#8](https://github.com/openrewrite/rewrite-migrate-java/issues/8), [\#9](https://github.com/openrewrite/rewrite-migrate-java/issues/9), [\#10](https://github.com/openrewrite/rewrite-migrate-java/issues/10), [\#11](https://github.com/openrewrite/rewrite-migrate-java/issues/11), [\#12](https://github.com/openrewrite/rewrite-migrate-java/issues/12), [\#13](https://github.com/openrewrite/rewrite-migrate-java/issues/13), [\#14](https://github.com/openrewrite/rewrite-migrate-java/issues/14), [\#15](https://github.com/openrewrite/rewrite-migrate-java/issues/15), [\#16](https://github.com/openrewrite/rewrite-migrate-java/issues/16)\) for a list of those deprecations covered/not covered and submit an issue if you are impacted by a deprecation that is not covered by this recipe. 
-
-
 
