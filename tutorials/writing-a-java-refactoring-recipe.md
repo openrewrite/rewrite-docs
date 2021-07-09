@@ -172,7 +172,7 @@ public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, Ex
 
 ### Using JavaTemplate to say hello\(\)
 
-Templates are created using the `JavaVisitor.template()` method. Within a template `#{}` is the signifier for positional parameter substitution. So to produce the hello\(\) method add this to the visitor:
+Templates are created using the `JavaTemplate.builder()` method. Within a template `#{}` is the signifier for positional parameter substitution. So to produce the hello\(\) method add this to the visitor:
 
 ```java
 public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
