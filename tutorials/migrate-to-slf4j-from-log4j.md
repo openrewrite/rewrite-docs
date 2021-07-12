@@ -214,11 +214,11 @@ class Example {
 {% endtab %}
 {% endtabs %}
 
-And more. For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/logging/slf4j/log4jtoslf4j.md).
+For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/logging/slf4j/log4jtoslf4j.md).
 
 ### Known Limitations
 
-The following is a list of know limitations/issues:
+The following is a list of known limitations/issues:
 
 - `Log4j` configuration customizations which do not have an `SLF4J` equivalent cannot be migrated.
 

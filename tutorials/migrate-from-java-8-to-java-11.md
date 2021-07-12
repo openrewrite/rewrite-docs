@@ -300,7 +300,7 @@ If you want to know when dependency management for Gradle will be added to rewri
 
 The rewrite-migrate-java project is in its infancy and we are always looking for feedback on which tasks should be prioritized. If you have a specific use case that is not yet covered by this project, please reach out to our team!
 
-The following is a list of know limitations/issues:
+The following is a list of known limitations/issues:
 
 * The current recipe adds the JAXB and JAX-WS artifacts available from the Jakarta project. If your organization uses an alternate runtime, this may not be desirable.
 * There are several build tool plugins that are used to generate Java code from WSDL files and this recipe currently does not automate this process. You will need to manually update the related build plugins.
