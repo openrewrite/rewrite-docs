@@ -13,6 +13,7 @@
 * [Migrate to JUnit 5 from JUnit 4](tutorials/migrate-from-junit-4-to-junit-5.md)
 * [Migrate to Spring Boot 2 from Spring Boot 1](tutorials/spring-boot-2.x-migration-from-spring-boot-1.x.md)
 * [Migrate to Quarkus 2 from Quarkus 1](tutorials/quarkus-2.x-migration-from-quarkus-1.x.md)
+* [Migrate to SLF4J from Log4j](tutorials/migrate-to-slf4j-from-log4j.md)
 * [Use SLF4J Parameterized Logging](tutorials/slf4j-parameterized-logging.md)
 * [Writing a Java Refactoring Recipe](tutorials/writing-a-java-refactoring-recipe.md)
 * [Modifying Methods with JavaTemplate](tutorials/modifying-methods-with-javatemplate.md)

@@ -1,0 +1,6 @@
+# https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint
+---
+default: true
+MD031: false
+MD013: false
+MD033: false
