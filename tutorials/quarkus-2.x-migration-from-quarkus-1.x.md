@@ -274,3 +274,4 @@ quarkus.neo4j.pool.metrics.enabled=true
 | `@ConfigProperties`-annotated interfaces migrate to using `@ConfigMapping`, but not yet `@ConfigProperties`-annotated classes | [\#24](https://github.com/openrewrite/rewrite-quarkus/issues/24) |
 | [Kubernetes Client 5.4](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#kubernetes-client) | - |
 | [Vert.x 4.0](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#vertx) | - |
+

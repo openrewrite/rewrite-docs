@@ -1,6 +1,6 @@
 # Migrate to SLF4J from Log4j
 
-In this guide, we'll use Rewrite to perform an automated migration from [Apache Log4j 2 (`Log4j`)](https://logging.apache.org/log4j/2.x/) to [the Simple Logging Facade for Java (`SLF4J`)](http://www.slf4j.org/).
+In this guide, we'll use Rewrite to perform an automated migration from [Apache Log4j 2 \(`Log4j`\)](https://logging.apache.org/log4j/2.x/) to [the Simple Logging Facade for Java \(`SLF4J`\)](http://www.slf4j.org/).
 
 ## Example Configuration
 
@@ -31,7 +31,7 @@ dependencies {
 
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```xml
+```markup
 <project>
   <build>
     <plugins>
@@ -70,7 +70,7 @@ Similar to the [`SLF4J Migrator`](http://www.slf4j.org/migrator.html), the goal 
 
 ### `.toString()`
 
-Because `Log4j` logging statements are automatically migrated to use the [`SLF4J Parameterized Logging` equivalent](http://www.slf4j.org/faq.html#logging_performance)(see ["Use SLF4J Parameterized Logging"](../reference/recipes/java/logging/slf4j/parameterizedlogging.md)), messages of type `String` are supported. Therefore, there is no need to add a `.toString()` method invocation on the object.
+Because `Log4j` logging statements are automatically migrated to use the [`SLF4J Parameterized Logging` equivalent](http://www.slf4j.org/faq.html#logging_performance)\(see ["Use SLF4J Parameterized Logging"](../reference/recipes/java/logging/slf4j/parameterizedlogging.md)\), messages of type `String` are supported. Therefore, there is no need to add a `.toString()` method invocation on the object.
 
 {% tabs %}
 {% tab title="Object Parameters \(Before\)" %}
@@ -220,6 +220,7 @@ For the full list of changes, see the recipe's [reference documentation](../refe
 
 The following is a list of known limitations/issues:
 
-- `Log4j` configuration customizations which do not have an `SLF4J` equivalent cannot be migrated.
+* `Log4j` configuration customizations which do not have an `SLF4J` equivalent cannot be migrated.
 
 We are always looking for feedback on which tasks should be prioritized. If you have a specific use case that is not yet covered by this project, please reach out to our team!
+

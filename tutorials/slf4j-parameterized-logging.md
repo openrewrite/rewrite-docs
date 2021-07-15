@@ -31,7 +31,7 @@ dependencies {
 
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```xml
+```markup
 <project>
   <build>
     <plugins>
@@ -111,3 +111,4 @@ class Example {
 ```
 {% endtab %}
 {% endtabs %}
+
