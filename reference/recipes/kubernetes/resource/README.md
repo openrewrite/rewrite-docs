@@ -2,7 +2,7 @@
 
 ## Recipes
 
-* [Cap exceeds resource value](capresourcevaluetomaximum)
-* [Find exceeds resource limit](findexceedsresourcevalue)
+* [Cap exceeds resource value](capresourcevaluetomaximum.md)
+* [Find exceeds resource limit](findexceedsresourcevalue.md)
 
 

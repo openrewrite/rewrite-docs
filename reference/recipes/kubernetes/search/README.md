@@ -2,12 +2,12 @@
 
 ## Recipes
 
-* [Disallowed tags](finddisallowedimagetags)
-* [Find annotation](findannotation)
-* [Find annotation](findmissingorinvalidannotation)
-* [Find label](findmissingorinvalidlabel)
-* [Find missing digest](findmissingdigest)
-* [Image name](findimage)
-* [Missing configuration](findresourcemissingconfiguration)
+* [Disallowed tags](finddisallowedimagetags.md)
+* [Find annotation](findannotation.md)
+* [Find annotation](findmissingorinvalidannotation.md)
+* [Find label](findmissingorinvalidlabel.md)
+* [Find missing digest](findmissingdigest.md)
+* [Image name](findimage.md)
+* [Missing configuration](findresourcemissingconfiguration.md)
 
 

@@ -2,19 +2,19 @@
 
 ## Recipes
 
-* [Add Maven dependency](adddependency)
-* [Add Maven plugin](addplugin)
-* [Change Maven dependency scope](changedependencyscope)
-* [Change Maven project property value](changepropertyvalue)
-* [Exclude Maven dependency](excludedependency)
-* [Manage dependencies](managedependencies)
-* [Remove Maven dependency](removedependency)
-* [Remove Maven plugin](removeplugin)
-* [Remove Maven project property](removeproperty)
-* [Remove redundant explicit dependency versions](removeredundantdependencyversions)
-* [Upgrade Maven dependency version](upgradedependencyversion)
-* [Upgrade Maven parent project version](upgradeparentversion)
-* [Upgrade Maven plugin version](upgradepluginversion)
+* [Add Maven dependency](adddependency.md)
+* [Add Maven plugin](addplugin.md)
+* [Change Maven dependency scope](changedependencyscope.md)
+* [Change Maven project property value](changepropertyvalue.md)
+* [Exclude Maven dependency](excludedependency.md)
+* [Manage dependencies](managedependencies.md)
+* [Remove Maven dependency](removedependency.md)
+* [Remove Maven plugin](removeplugin.md)
+* [Remove Maven project property](removeproperty.md)
+* [Remove redundant explicit dependency versions](removeredundantdependencyversions.md)
+* [Upgrade Maven dependency version](upgradedependencyversion.md)
+* [Upgrade Maven parent project version](upgradeparentversion.md)
+* [Upgrade Maven plugin version](upgradepluginversion.md)
 
 ## Subcategories
 

@@ -2,8 +2,8 @@
 
 ## Recipes
 
-* [Include an assertion in tests](testsshouldincludeassertions)
-* [Remove `public` visibility of JUnit5 tests](testsshouldnotbepublic)
-* [Testing best practices](bestpractices)
+* [Include an assertion in tests](testsshouldincludeassertions.md)
+* [Remove `public` visibility of JUnit5 tests](testsshouldnotbepublic.md)
+* [Testing best practices](bestpractices.md)
 
 

@@ -4,15 +4,15 @@ _Basic building blocks for transforming YAML._
 
 ## Recipes
 
-* [Change key](changekey)
-* [Change property key](changepropertykey)
-* [Change value](changevalue)
-* [Coalesce YAML properties](coalesceproperties)
-* [Copy YAML value](copyvalue)
-* [Delete key](deletekey)
-* [Delete property](deleteproperty)
-* [Insert YAML snippet](insertyaml)
-* [Merge YAML snippet](mergeyaml)
+* [Change key](changekey.md)
+* [Change property key](changepropertykey.md)
+* [Change value](changevalue.md)
+* [Coalesce YAML properties](coalesceproperties.md)
+* [Copy YAML value](copyvalue.md)
+* [Delete key](deletekey.md)
+* [Delete property](deleteproperty.md)
+* [Insert YAML snippet](insertyaml.md)
+* [Merge YAML snippet](mergeyaml.md)
 
 ## Subcategories
 

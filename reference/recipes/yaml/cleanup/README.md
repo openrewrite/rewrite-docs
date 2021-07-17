@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Remove unused YAML](removeunused)
+* [Remove unused YAML](removeunused.md)
 
 

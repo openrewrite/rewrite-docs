@@ -4,21 +4,21 @@ _Basic building blocks for transforming Java code._
 
 ## Recipes
 
-* [Add ASLv2 license header](addapache2licenseheader)
-* [Add license header](addlicenseheader)
-* [Change method access level](changemethodaccesslevel)
-* [Change method name](changemethodname)
-* [Change method target to static](changemethodtargettostatic)
-* [Change method target to variable](changemethodtargettovariable)
-* [Change type](changetype)
-* [Delete method argument](deletemethodargument)
-* [Generate getter](generategetter)
-* [Order imports](orderimports)
-* [Remove annotation](removeannotation)
-* [Remove unused imports](removeunusedimports)
-* [Rename package name](changepackage)
-* [Reorder method arguments](reordermethodarguments)
-* [Use static import](usestaticimport)
+* [Add ASLv2 license header](addapache2licenseheader.md)
+* [Add license header](addlicenseheader.md)
+* [Change method access level](changemethodaccesslevel.md)
+* [Change method name](changemethodname.md)
+* [Change method target to static](changemethodtargettostatic.md)
+* [Change method target to variable](changemethodtargettovariable.md)
+* [Change type](changetype.md)
+* [Delete method argument](deletemethodargument.md)
+* [Generate getter](generategetter.md)
+* [Order imports](orderimports.md)
+* [Remove annotation](removeannotation.md)
+* [Remove unused imports](removeunusedimports.md)
+* [Rename package name](changepackage.md)
+* [Reorder method arguments](reordermethodarguments.md)
+* [Use static import](usestaticimport.md)
 
 ## Subcategories
 
