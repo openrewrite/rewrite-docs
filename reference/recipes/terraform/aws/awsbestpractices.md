@@ -1,0 +1,137 @@
+# Best practices for AWS
+
+** org.openrewrite.terraform.aws.AWSBestPractices**
+_Securely operate on Amazon Web Services._
+
+### Tags
+
+* terraform
+* AWS
+
+## Source
+
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.1.0/jar)
+
+* groupId: org.openrewrite.recipe
+* artifactId: rewrite-terraform
+* version: 0.1.0
+
+
+## Usage
+
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.1.0 in your build file:
+
+{% tabs %}
+{% tab title="Gradle" %}
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("5.3.0")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.terraform.aws.AWSBestPractices")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-terraform:0.1.0")
+}
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven" %}
+{% code title="pom.xml" %}
+```markup
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>4.7.0</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.terraform.aws.AWSBestPractices</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-terraform</artifactId>
+            <version>0.1.0</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.terraform.aws.AWSBestPractices`
+
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Encrypt CodeBuild projects](../../terraform/aws/disableinstancemetadataservicev1.md)
+* [Enable API gateway caching](../../terraform/aws/enableapigatewaycaching.md)
+* [Encrypt Aurora clusters](../../terraform/aws/encryptauroraclusters.md)
+* [Encrypt CodeBuild projects](../../terraform/aws/encryptcodebuild.md)
+* [Encrypt DAX storage at rest](../../terraform/aws/encryptdaxstorage.md)
+* [Encrypt Neptune storage](../../terraform/aws/encryptdocumentdb.md)
+* [Scan images pushed to ECR](../../terraform/aws/enabledynamodbpitr.md)
+* [Encrypt EBS volume launch configurations](../../terraform/aws/encryptebsvolumelaunchconfiguration.md)
+* [Encrypt EBS volumes](../../terraform/aws/encryptebsvolumes.md)
+* [Encrypt EBS snapshots](../../terraform/aws/encryptebssnapshots.md)
+* [Enable point-in-time recovery for DynamoDB](../../terraform/aws/enableecrscanonpush.md)
+* [Encrypt ElastiCache Redis at rest](../../terraform/aws/encryptelasticacheredisatrest.md)
+* [Encrypt ElastiCache Redis in transit](../../terraform/aws/encryptelasticacheredisintransit.md)
+* [Encrypt Neptune storage](../../terraform/aws/encryptneptunestorage.md)
+* [Encrypt RDS clusters](../../terraform/aws/encryptrdsclusters.md)
+* [Encrypt DAX storage at rest](../../terraform/aws/encryptredshift.md)
+* [Make ECR tags immutable](../../terraform/aws/immutableecrtags.md)
+* [Use HTTPS for Cloudfront distribution](../../terraform/aws/usehttpsforcloudfrontdistribution.md)
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.terraform.aws.AWSBestPractices
+displayName: Best practices for AWS
+description: Securely operate on Amazon Web Services.
+tags:
+  - terraform
+  - AWS
+recipeList:
+  - org.openrewrite.terraform.aws.DisableInstanceMetadataServiceV1
+  - org.openrewrite.terraform.aws.EnableApiGatewayCaching
+  - org.openrewrite.terraform.aws.EncryptAuroraClusters
+  - org.openrewrite.terraform.aws.EncryptCodeBuild
+  - org.openrewrite.terraform.aws.EncryptDAXStorage
+  - org.openrewrite.terraform.aws.EncryptDocumentDB
+  - org.openrewrite.terraform.aws.EnableDynamoDbPITR
+  - org.openrewrite.terraform.aws.EncryptEBSVolumeLaunchConfiguration
+  - org.openrewrite.terraform.aws.EncryptEBSVolumes
+  - org.openrewrite.terraform.aws.EncryptEBSSnapshots
+  - org.openrewrite.terraform.aws.EnableECRScanOnPush
+  - org.openrewrite.terraform.aws.EncryptElastiCacheRedisAtRest
+  - org.openrewrite.terraform.aws.EncryptElastiCacheRedisInTransit
+  - org.openrewrite.terraform.aws.EncryptNeptuneStorage
+  - org.openrewrite.terraform.aws.EncryptRDSClusters
+  - org.openrewrite.terraform.aws.EncryptRedshift
+  - org.openrewrite.terraform.aws.ImmutableECRTags
+  - org.openrewrite.terraform.aws.UseHttpsForCloudfrontDistribution
+
+```
+{% endtab %}
+{% endtabs %}

@@ -1,14 +1,16 @@
 # Code cleanup
 
- **org.openrewrite.java.cleanup.Cleanup** _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions._
+** org.openrewrite.java.cleanup.Cleanup**
+_Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.8.1/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.9.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.8.1
+* version: 7.9.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.2.1")
+    id("org.openrewrite.rewrite") version("5.3.0")
 }
 
 rewrite {
@@ -29,6 +31,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -42,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.2</version>
+        <version>4.7.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
@@ -63,22 +66,24 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Covariant equals](covariantequals.md)
-* [Remove empty blocks](emptyblock.md)
-* [Equals avoids null](equalsavoidsnull.md)
-* [Explicit initialization](explicitinitialization.md)
-* [Hide utility class constructor](hideutilityclassconstructor.md)
-* [Modifier order](modifierorder.md)
-* [Redundant file creation](redundantfilecreation.md)
-* [Simplify boolean expression](simplifybooleanexpression.md)
-* [Simplify boolean return](simplifybooleanreturn.md)
-* [Static methods not final](staticmethodnotfinal.md)
-* [Unnecessary explicit type arguments](unnecessaryexplicittypearguments.md)
-* [Remove unnecessary parentheses](unnecessaryparentheses.md)
-* [Unnecessary throws](unnecessarythrows.md)
-* [Use diamond operator](usediamondoperator.md)
-* [Use primitive wrapper `valueOf` method](primitivewrapperclassconstructortovalueof.md)
-* [`BigDecimal` rounding constants to `RoundingMode` enums](bigdecimalroundingconstantstoenums.md)
+* [Covariant equals](../../java/cleanup/covariantequals.md)
+* [Remove empty blocks](../../java/cleanup/emptyblock.md)
+* [Equals avoids null](../../java/cleanup/equalsavoidsnull.md)
+* [Explicit initialization](../../java/cleanup/explicitinitialization.md)
+* [Hide utility class constructor](../../java/cleanup/hideutilityclassconstructor.md)
+* [Modifier order](../../java/cleanup/modifierorder.md)
+* [Redundant file creation](../../java/cleanup/redundantfilecreation.md)
+* [Simplify boolean expression](../../java/cleanup/simplifybooleanexpression.md)
+* [Simplify boolean return](../../java/cleanup/simplifybooleanreturn.md)
+* [Static methods not final](../../java/cleanup/staticmethodnotfinal.md)
+* [Unnecessary explicit type arguments](../../java/cleanup/unnecessaryexplicittypearguments.md)
+* [Remove unnecessary parentheses](../../java/cleanup/unnecessaryparentheses.md)
+* [Unnecessary throws](../../java/cleanup/unnecessarythrows.md)
+* [Use diamond operator](../../java/cleanup/usediamondoperator.md)
+* [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
+* [`BigDecimal` rounding constants to `RoundingMode` enums](../../java/cleanup/bigdecimalroundingconstantstoenums.md)
+* [Finalize classes with private constructors](../../java/cleanup/finalclass.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +110,8 @@ recipeList:
   - org.openrewrite.java.cleanup.UseDiamondOperator
   - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf
   - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
+  - org.openrewrite.java.cleanup.FinalClass
+
 ```
 {% endtab %}
 {% endtabs %}
-

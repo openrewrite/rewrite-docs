@@ -4,9 +4,10 @@ _Basic building blocks for transforming XML._
 
 ## Recipes
 
-* [Format XML](autoformat.md)
+* [Format XML](/reference/recipes/xml/autoformat.md)
 
 ## Subcategories
 
-* [Search](search/)
+* [Search](/reference/recipes/xml/search)
+
 

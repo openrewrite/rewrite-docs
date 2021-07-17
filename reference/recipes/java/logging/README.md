@@ -2,8 +2,13 @@
 
 _Enforce logging best practices and migrate between logging frameworks._
 
+## Recipes
+
+* [Use logger instead of `printStackTrace()`](/reference/recipes/java/logging/printstacktracetologerror.md)
+
 ## Subcategories
 
-* [Logback](logback/)
-* [SLF4J](slf4j/)
+* [Logback](/reference/recipes/java/logging/logback)
+* [SLF4J](/reference/recipes/java/logging/slf4j)
+
 

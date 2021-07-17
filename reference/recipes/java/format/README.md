@@ -2,11 +2,12 @@
 
 ## Recipes
 
-* [Blank lines](blanklines.md)
-* [Format Java code](autoformat.md)
-* [Normalize format](normalizeformat.md)
-* [Remove trailing whitespace](removetrailingwhitespace.md)
-* [Spaces](spaces.md)
-* [Tabs and indents](tabsandindents.md)
-* [Wrapping and braces](wrappingandbraces.md)
+* [Blank lines](/reference/recipes/java/format/blanklines.md)
+* [Format Java code](/reference/recipes/java/format/autoformat.md)
+* [Normalize format](/reference/recipes/java/format/normalizeformat.md)
+* [Remove trailing whitespace](/reference/recipes/java/format/removetrailingwhitespace.md)
+* [Spaces](/reference/recipes/java/format/spaces.md)
+* [Tabs and indents](/reference/recipes/java/format/tabsandindents.md)
+* [Wrapping and braces](/reference/recipes/java/format/wrappingandbraces.md)
+
 

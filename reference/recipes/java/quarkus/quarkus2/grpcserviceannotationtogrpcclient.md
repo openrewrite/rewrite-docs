@@ -1,25 +1,27 @@
-# Use @GrpcClient
+# Use `@GrpcClient`
 
- **org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient** _The `@GrpcService` annotation is replaced with `@GrpcClient` in Quarkus 2.x. Removes the optional `@GrpcClient.value()` unless the service name is different from the name of annotated element._
+** org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient**
+_The `@GrpcService` annotation is replaced with `@GrpcClient` in Quarkus 2.x. Removes the optional `@GrpcClient.value()` unless the service name is different from the name of annotated element._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/0.2.1/jar)
+[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/0.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 0.2.1
+* version: 0.4.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:0.2.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:0.4.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.2.1")
+    id("org.openrewrite.rewrite") version("5.3.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:0.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:0.4.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.2</version>
+        <version>4.7.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>0.2.1</version>
+            <version>0.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient`
-

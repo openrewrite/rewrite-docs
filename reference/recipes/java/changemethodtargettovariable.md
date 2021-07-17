@@ -1,26 +1,29 @@
 # Change method target to variable
 
- **org.openrewrite.java.ChangeMethodTargetToVariable** _Change method invocations to method calls on a variable._
+** org.openrewrite.java.ChangeMethodTargetToVariable**
+_Change method invocations to method calls on a variable._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.8.1/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.9.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.8.1
+* version: 7.9.0
 
 ## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
-| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](https://github.com/openrewrite/rewrite-docs/tree/3d15ca3c66815ddedd96a3ca0d6f2f522be8669f/v1beta/pointcut-expressions/README.md), that is used to find matching method invocations. |
+| -- | -- | -- |
+| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](/v1beta/pointcut-expressions), that is used to find matching method invocations. |
 | `String` | variableName | Name of variable to use as target for the modified method invocation. |
 | `String` | variableType | Type attribution to use for the return type of the modified method invocation. |
 
+
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodTargetToVariableExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodTargetToVariableExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,6 +39,7 @@ recipeList:
 ```
 {% endcode %}
 
+
 Now that `com.yourorg.ChangeMethodTargetToVariableExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -43,7 +47,7 @@ Now that `com.yourorg.ChangeMethodTargetToVariableExample` has been defined acti
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.2.1")
+    id("org.openrewrite.rewrite") version("5.3.0")
 }
 
 rewrite {
@@ -53,6 +57,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -66,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.6.2</version>
+        <version>4.7.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodTargetToVariableExample</recipe>
@@ -82,4 +87,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ChangeMethodTargetToVariableExample`
-
