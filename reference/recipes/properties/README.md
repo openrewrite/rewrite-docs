@@ -2,8 +2,8 @@
 
 ## Recipes
 
-* [Change properties file property value](/reference/recipes/properties/changepropertyvalue.md)
-* [Change property key](/reference/recipes/properties/changepropertykey.md)
+* [Change properties file property value](/reference/recipes/properties/changepropertyvalue)
+* [Change property key](/reference/recipes/properties/changepropertykey)
 
 ## Subcategories
 

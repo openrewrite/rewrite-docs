@@ -2,7 +2,7 @@
 
 ## Recipes
 
-* [Add Terraform configuration](/reference/recipes/terraform/addconfiguration.md)
+* [Add Terraform configuration](/reference/recipes/terraform/addconfiguration)
 
 ## Subcategories
 
