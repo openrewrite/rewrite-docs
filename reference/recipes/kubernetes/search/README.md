@@ -2,12 +2,12 @@
 
 ## Recipes
 
-* [Disallowed tags](/reference/recipes/kubernetes/search/finddisallowedimagetags)
-* [Find annotation](/reference/recipes/kubernetes/search/findannotation)
-* [Find annotation](/reference/recipes/kubernetes/search/findmissingorinvalidannotation)
-* [Find label](/reference/recipes/kubernetes/search/findmissingorinvalidlabel)
-* [Find missing digest](/reference/recipes/kubernetes/search/findmissingdigest)
-* [Image name](/reference/recipes/kubernetes/search/findimage)
-* [Missing configuration](/reference/recipes/kubernetes/search/findresourcemissingconfiguration)
+* [Disallowed tags](finddisallowedimagetags)
+* [Find annotation](findannotation)
+* [Find annotation](findmissingorinvalidannotation)
+* [Find label](findmissingorinvalidlabel)
+* [Find missing digest](findmissingdigest)
+* [Image name](findimage)
+* [Missing configuration](findresourcemissingconfiguration)
 
 

@@ -4,7 +4,7 @@ _Enforce logging best practices and migrate between logging frameworks._
 
 ## Recipes
 
-* [Use logger instead of `printStackTrace()`](/reference/recipes/java/logging/printstacktracetologerror)
+* [Use logger instead of `printStackTrace()`](printstacktracetologerror)
 
 ## Subcategories
 

@@ -2,11 +2,11 @@
 
 ## Recipes
 
-* [Migrate deprecated `java.util.logging` APIs](/reference/recipes/java/migrate/logging/javaloggingapis)
-* [Use `LogRecord#setInstant(Instant)`](/reference/recipes/java/migrate/logging/migratelogrecordsetmillistosetinstant)
-* [Use `Logger#getGlobal()`](/reference/recipes/java/migrate/logging/migrateloggerglobaltogetglobal)
-* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](/reference/recipes/java/migrate/logging/migrateloggerlogrbtouseresourcebundle)
-* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](/reference/recipes/java/migrate/logging/migrategetloggingmxbeantogetplatformmxbean)
-* [Use `PlatformLoggingMXBean`](/reference/recipes/java/migrate/logging/migrateinterfaceloggingmxbeantoplatformloggingmxbean)
+* [Migrate deprecated `java.util.logging` APIs](javaloggingapis)
+* [Use `LogRecord#setInstant(Instant)`](migratelogrecordsetmillistosetinstant)
+* [Use `Logger#getGlobal()`](migrateloggerglobaltogetglobal)
+* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](migrateloggerlogrbtouseresourcebundle)
+* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](migrategetloggingmxbeantogetplatformmxbean)
+* [Use `PlatformLoggingMXBean`](migrateinterfaceloggingmxbeantoplatformloggingmxbean)
 
 

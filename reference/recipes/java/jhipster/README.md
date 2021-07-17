@@ -4,6 +4,6 @@ _Recipes for upgrading and patching [JHipster](https://www.jhipster.tech/) appli
 
 ## Recipes
 
-* [Fix CWE-338 with `SecureRandom`](/reference/recipes/java/jhipster/fixcwe338)
+* [Fix CWE-338 with `SecureRandom`](fixcwe338)
 
 

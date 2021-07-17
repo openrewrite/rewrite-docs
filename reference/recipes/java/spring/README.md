@@ -2,10 +2,10 @@
 
 ## Recipes
 
-* [Remove `@RequestMapping` annotations](/reference/recipes/java/spring/norequestmappingannotation)
-* [Remove implicit web annotation names](/reference/recipes/java/spring/implicitwebannotationnames)
-* [Remove `public` from `@Bean` methods](/reference/recipes/java/spring/beanmethodsnotpublic)
-* [Remove the `@Autowired` annotation on inferred constructor](/reference/recipes/java/spring/noautowiredonconstructor)
+* [Remove `@RequestMapping` annotations](norequestmappingannotation)
+* [Remove implicit web annotation names](implicitwebannotationnames)
+* [Remove `public` from `@Bean` methods](beanmethodsnotpublic)
+* [Remove the `@Autowired` annotation on inferred constructor](noautowiredonconstructor)
 
 ## Subcategories
 
