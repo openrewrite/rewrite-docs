@@ -1,7 +1,3 @@
----
-description: Rewrite can inform itself based on your checkstyle configuration
----
-
 # Automatically Fix Checkstyle Violations
 
 Most programmers agree that having consistent formatting across a code base makes it easier to work with. Tools like [Checkstyle](https://checkstyle.sourceforge.io/) provide automated enforcement of these policies. But it's never fun to have your workflow interrupted by complaints about formatting. This guide will show you how to configure rewrite to automate the remediation of Checkstyle policy violations.
