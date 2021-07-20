@@ -1,7 +1,6 @@
 # Find missing digest
 
-** org.openrewrite.kubernetes.search.FindMissingDigest**
-_Find instances of a container name that fails to specify a digest._
+ **org.openrewrite.kubernetes.search.FindMissingDigest** _Find instances of a container name that fails to specify a digest._
 
 ## Source
 
@@ -14,14 +13,12 @@ _Find instances of a container name that fails to specify a digest._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `boolean` | includeInitContainers | Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindMissingDigestExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindMissingDigestExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -92,3 +89,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindMissingDigestExample`
+

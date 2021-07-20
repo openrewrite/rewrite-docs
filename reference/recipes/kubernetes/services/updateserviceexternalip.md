@@ -1,7 +1,6 @@
 # Update Service ExternalIPs
 
-** org.openrewrite.kubernetes.services.UpdateServiceExternalIP**
-_Swap out an IP address with another one in the Service externalIPs setting._
+ **org.openrewrite.kubernetes.services.UpdateServiceExternalIP** _Swap out an IP address with another one in the Service externalIPs setting._
 
 ## Source
 
@@ -14,15 +13,13 @@ _Swap out an IP address with another one in the Service externalIPs setting._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | ipToFind | An ExternalIP address to find in the service's external IPs. |
 | `String` | ipToUpdate | An ExternalIP address to update to in the service's external IPs. |
 
-
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateServiceExternalIPExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateServiceExternalIPExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -94,3 +91,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.UpdateServiceExternalIPExample`
+

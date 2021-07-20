@@ -4,7 +4,7 @@ In this tutorial, we'll use Rewrite to perform an automated migration from the v
 
 ## Example Configuration
 
-If your project is a Spring or Spring-Boot project take a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the [SpringBoot2JUnit4to5Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe:
+If your project is a Spring or Spring-Boot project take a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the [SpringBoot2JUnit4to5Migration](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe:
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -61,7 +61,7 @@ dependencies {
 `SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
 {% endhint %}
 
-If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the [JUnit5BestPractices](../reference/recipes/java/testing/junit5/junit5bestpractices.md) recipe:
+If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the [JUnit5BestPractices](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/testing/junit5/junit5bestpractices.md) recipe:
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -118,7 +118,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes this recipe will make, see its [reference page](../reference/recipes/java/testing/junit5/junit5bestpractices.md).
+For the full list of changes this recipe will make, see its [reference page](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/testing/junit5/junit5bestpractices.md).
 
 {% tabs %}
 {% tab title="JUnit 4 Test Class \(Before\)" %}

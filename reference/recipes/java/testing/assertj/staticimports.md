@@ -1,7 +1,6 @@
-# Statically import AssertJ's `assertThat`
+# Statically import AssertJ's assertThat
 
-** org.openrewrite.java.testing.assertj.StaticImports**
-_Consistently use a static import rather than inlining the `Assertions` class name in tests._
+ **org.openrewrite.java.testing.assertj.StaticImports** _Consistently use a static import rather than inlining the `Assertions` class name in tests._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Consistently use a static import rather than inlining the `Assertions` class na
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.8.0
-
 
 ## Usage
 
@@ -81,15 +79,14 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `org.assertj.core.api.AssertionsForClassTypes assertThat(..)`
   * fullyQualifiedTargetTypeName: `org.assertj.core.api.Assertions`
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `org.assertj.core.api.AssertionsForInterfaceTypes assertThat(..)`
   * fullyQualifiedTargetTypeName: `org.assertj.core.api.Assertions`
-* [Use static import](../../../java/usestaticimport.md)
+* [Use static import](../../usestaticimport.md)
   * methodPattern: `org.assertj.core.api.Assertions *(..)`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,7 @@ recipeList:
       fullyQualifiedTargetTypeName: org.assertj.core.api.Assertions
   - org.openrewrite.java.UseStaticImport:
       methodPattern: org.assertj.core.api.Assertions *(..)
-
 ```
 {% endtab %}
 {% endtabs %}
+

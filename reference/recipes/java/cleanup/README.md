@@ -31,4 +31,3 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Use diamond operator](usediamondoperator.md)
 * [Use primitive wrapper `valueOf` method](primitivewrapperclassconstructortovalueof.md)
 
-

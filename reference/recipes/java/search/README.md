@@ -10,4 +10,3 @@
 * [Find types](findtypes.md)
 * [Result of method call ignored](resultofmethodcallignored.md)
 
-

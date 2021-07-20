@@ -1,7 +1,6 @@
 # Use secure temporary file creation
 
-** org.openrewrite.java.security.SecureTempFileCreation**
-_`java.io.File.createTempFile()` has exploitable default file permissions. This recipe migrates to the more secure `java.nio.file.Files.createTempFile()`._
+ **org.openrewrite.java.security.SecureTempFileCreation** _`java.io.File.createTempFile()` has exploitable default file permissions. This recipe migrates to the more secure `java.nio.file.Files.createTempFile()`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`java.io.File.createTempFile()` has exploitable default file permissions. This 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.9.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.security.SecureTempFileCreation`
+

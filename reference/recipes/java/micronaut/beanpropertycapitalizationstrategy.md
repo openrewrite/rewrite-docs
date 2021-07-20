@@ -1,7 +1,6 @@
-# de-capitalize BeanIntrospection `getProperty(..)` and `getRequiredProperty(..)` name arguments
+# de-capitalize BeanIntrospection getProperty\(..\) and getRequiredProperty\(..\) name arguments
 
-** org.openrewrite.java.micronaut.BeanPropertyCapitalizationStrategy**
-_2.x getter names like getXForwarded() would result in the bean property being XForwarded. In 3.x the name is now xForwarded._
+ **org.openrewrite.java.micronaut.BeanPropertyCapitalizationStrategy** _2.x getter names like getXForwarded\(\) would result in the bean property being XForwarded. In 3.x the name is now xForwarded._
 
 ## Source
 
@@ -10,7 +9,6 @@ _2.x getter names like getXForwarded() would result in the bean property being X
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
 * version: 0.1.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.micronaut.BeanPropertyCapitalizationStrategy`
+

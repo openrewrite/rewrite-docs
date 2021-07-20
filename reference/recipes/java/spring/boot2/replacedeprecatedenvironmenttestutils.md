@@ -1,7 +1,6 @@
-# Replace `EnvironmentTestUtils` with `TestPropertyValues`
+# Replace EnvironmentTestUtils with TestPropertyValues
 
-** org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils**
-_Replaces any references to the deprecated `EnvironmentTestUtils` with `TestPropertyValues` and the appropriate functionality._
+ **org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils** _Replaces any references to the deprecated `EnvironmentTestUtils` with `TestPropertyValues` and the appropriate functionality._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replaces any references to the deprecated `EnvironmentTestUtils` with `TestProp
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.7.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils`
+

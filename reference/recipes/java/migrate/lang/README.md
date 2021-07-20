@@ -1,4 +1,4 @@
-# `java.lang` APIs
+# java.lang APIs
 
 ## Recipes
 
@@ -12,5 +12,4 @@
 * [Use `Runtime.Version#interim()`](migrateruntimeversionminortointerim.md)
 * [Use `Runtime.Version#update()`](migrateruntimeversionsecuritytoupdate.md)
 * [Use `SecurityManager#checkMulticast(InetAddress)`](migratesecuritymanagermulticast.md)
-
 

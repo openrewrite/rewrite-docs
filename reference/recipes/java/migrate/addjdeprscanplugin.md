@@ -1,6 +1,6 @@
 # Add JDeprScan Maven Plug-in
 
-** org.openrewrite.java.migrate.AddJdeprscanPlugin**
+ **org.openrewrite.java.migrate.AddJdeprscanPlugin**
 
 ## Source
 
@@ -9,7 +9,6 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.4.0
-
 
 ## Usage
 
@@ -70,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.AddJdeprscanPlugin`
+

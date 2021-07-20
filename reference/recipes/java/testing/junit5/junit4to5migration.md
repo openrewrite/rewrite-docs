@@ -1,7 +1,6 @@
 # JUnit Jupiter migration from JUnit 4.x
 
-** org.openrewrite.java.testing.junit5.JUnit4to5Migration**
-_Migrates JUnit 4.x tests to JUnit Jupiter._
+ **org.openrewrite.java.testing.junit5.JUnit4to5Migration** _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.8.0
-
 
 ## Usage
 
@@ -81,14 +79,14 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Reorder method arguments](../../../java/reordermethodarguments.md)
+* [Reorder method arguments](../../reordermethodarguments.md)
   * methodPattern: `org.junit.Assume assume*(String, boolean)`
   * newParameterNames: `[b, message]`
   * oldParameterNames: `[message, b]`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.junit.Assume`
   * newFullyQualifiedTypeName: `org.junit.jupiter.api.Assumptions`
-* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners.md)
+* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](removeobsoleterunners.md)
   * obsoleteRunners: `[org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]`
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `junit`
@@ -120,25 +118,24 @@ Recipes can also be activated directly from the command line by adding the argum
   * releasesOnly: `false`
   * scope: `test`
   * onlyIfUsing: `[org.junit.jupiter.params.ParameterizedTest]`
-* [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled.md)
-* [Use `MatcherAssert#assertThat(..)`](../../../java/testing/junit5/usehamcrestassertthat.md)
-* [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension.md)
-* [Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`](../../../java/testing/junit5/usetestmethodorder.md)
-* [Migrate JUnit 4 `TestCase` to JUnit Jupiter](../../../java/testing/junit5/migratejunittestcase.md)
-* [JUnit4 Assert To JUnit Jupiter Assertions](../../../java/testing/junit5/asserttoassertions.md)
-* [JUnit4 `@Category` to JUnit Jupiter `@Tag`](../../../java/testing/junit5/categorytotag.md)
-* [Cleanup JUnit imports](../../../java/testing/junit5/cleanupjunitimports.md)
-* [JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`](../../../java/testing/junit5/expectedexceptiontoassertthrows.md)
-* [Use JUnit Jupiter `@TempDir`](../../../java/testing/junit5/temporaryfoldertotempdir.md)
-* [Migrate JUnit 4 lifecycle annotations to JUnit Jupiter](../../../java/testing/junit5/updatebeforeafterannotations.md)
-* [Migrate JUnit 4 `@Test` annotations to JUnit5](../../../java/testing/junit5/updatetestannotation.md)
-* [JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests](../../../java/testing/junit5/parameterizedrunnertoparameterized.md)
-* [Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests](../../../java/testing/junit5/junitparamsrunnertoparameterized.md)
-* [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension.md)
-* [JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`](../../../java/testing/junit5/expectedexceptiontoassertthrows.md)
-* [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](../../../java/testing/junit5/updatemockwebserver.md)
-* [Add `org.hamcrest:hamcrest` if it is used.](../../../java/testing/hamcrest/addhamcrestifused.md)
-
+* [Use JUnit Jupiter `@Disabled`](ignoretodisabled.md)
+* [Use `MatcherAssert#assertThat(..)`](usehamcrestassertthat.md)
+* [Use Mockito JUnit Jupiter extension](usemockitoextension.md)
+* [Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`](usetestmethodorder.md)
+* [Migrate JUnit 4 `TestCase` to JUnit Jupiter](migratejunittestcase.md)
+* [JUnit4 Assert To JUnit Jupiter Assertions](asserttoassertions.md)
+* [JUnit4 `@Category` to JUnit Jupiter `@Tag`](categorytotag.md)
+* [Cleanup JUnit imports](cleanupjunitimports.md)
+* [JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`](expectedexceptiontoassertthrows.md)
+* [Use JUnit Jupiter `@TempDir`](temporaryfoldertotempdir.md)
+* [Migrate JUnit 4 lifecycle annotations to JUnit Jupiter](updatebeforeafterannotations.md)
+* [Migrate JUnit 4 `@Test` annotations to JUnit5](updatetestannotation.md)
+* [JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests](parameterizedrunnertoparameterized.md)
+* [Pragmatists @RunWith\(JUnitParamsRunner.class\) to JUnit Jupiter Parameterized Tests](junitparamsrunnertoparameterized.md)
+* [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](mockitojunittomockitoextension.md)
+* [JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`](expectedexceptiontoassertthrows.md)
+* [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](updatemockwebserver.md)
+* [Add `org.hamcrest:hamcrest` if it is used.](../hamcrest/addhamcrestifused.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -209,7 +206,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows
   - org.openrewrite.java.testing.junit5.UpdateMockWebServer
   - org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
-
 ```
 {% endtab %}
 {% endtabs %}
+

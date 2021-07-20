@@ -61,7 +61,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes this recipe will make, see its [reference page](../reference/recipes/java/migrate/java8tojava11.md).
+For the full list of changes this recipe will make, see its [reference page](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/migrate/java8tojava11.md).
 
 {% tabs %}
 {% tab title="Example Class \(Before\)" %}

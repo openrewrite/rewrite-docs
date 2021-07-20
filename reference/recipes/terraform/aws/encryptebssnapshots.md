@@ -1,7 +1,6 @@
 # Encrypt EBS snapshots
 
-** org.openrewrite.terraform.aws.EncryptEBSSnapshots**
-_EBS snapshots should be encrypted, as they often include sensitive information, customer PII or CPNI._
+ **org.openrewrite.terraform.aws.EncryptEBSSnapshots** _EBS snapshots should be encrypted, as they often include sensitive information, customer PII or CPNI._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _EBS snapshots should be encrypted, as they often include sensitive information,
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.1.0
-
 
 ## Usage
 
@@ -81,10 +79,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_ebs_snapshot`
   * content: `encrypted = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_ebs_snapshot
       content: encrypted = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

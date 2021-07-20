@@ -1,7 +1,6 @@
 # Migrate from Log4j appender
 
-** org.openrewrite.java.logging.logback.Log4jAppenderToLogback**
-_Migrates custom Log4j appender components to `logback-classic`._
+ **org.openrewrite.java.logging.logback.Log4jAppenderToLogback** _Migrates custom Log4j appender components to `logback-classic`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrates custom Log4j appender components to `logback-classic`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 0.3.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.logging.logback.Log4jAppenderToLogback`
+

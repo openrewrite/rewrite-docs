@@ -1,7 +1,6 @@
-# Use Java SDK instead of `MoreExecutors#directExecutor()`
+# Use Java SDK instead of MoreExecutors\#directExecutor\(\)
 
-** org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor**
-_`Executor` is a SAM-compatible interface, so `Runnable::run` is just as succinct as `MoreExecutors.directExecutor()` but without the third-party library requirement._
+ **org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor** _`Executor` is a SAM-compatible interface, so `Runnable::run` is just as succinct as `MoreExecutors.directExecutor()` but without the third-party library requirement._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`Executor` is a SAM-compatible interface, so `Runnable::run` is just as succinc
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.4.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor`
+

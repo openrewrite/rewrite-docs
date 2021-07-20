@@ -1,7 +1,6 @@
 # Change method access level
 
-** org.openrewrite.java.ChangeMethodAccessLevel**
-_Change the access level (public, protected, private, package private) of a method._
+ **org.openrewrite.java.ChangeMethodAccessLevel** _Change the access level \(public, protected, private, package private\) of a method._
 
 ## Source
 
@@ -14,15 +13,13 @@ _Change the access level (public, protected, private, package private) of a meth
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](/v1beta/pointcut-expressions), that is used to find matching method declarations/invocations. |
+| :--- | :--- | :--- |
+| `String` | methodPattern | A method pattern, expressed as a [pointcut expression](https://github.com/openrewrite/rewrite-docs/tree/eef3e55c64e6b72ab7b6688fa2444b2f41c16183/v1beta/pointcut-expressions/README.md), that is used to find matching method declarations/invocations. |
 | `String` | newAccessLevel | New method access level to apply to the method. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodAccessLevelExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodAccessLevelExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       newAccessLevel: public
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeMethodAccessLevelExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -85,3 +80,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ChangeMethodAccessLevelExample`
+

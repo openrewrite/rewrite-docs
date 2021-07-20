@@ -4,7 +4,7 @@ In this guide we'll look at using Rewrite to perform an automated migration from
 
 ## Example Configuration
 
-The [SpringBoot1To2Migration](../reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) in your build file:
+The [SpringBoot1To2Migration](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -64,7 +64,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes this recipe will make, see its [reference page](../reference/recipes/java/spring/boot2/springboot1to2migration.md).
+For the full list of changes this recipe will make, see its [reference page](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/spring/boot2/springboot1to2migration.md).
 
 ### Request Mapping Annotations.
 

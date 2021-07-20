@@ -1,7 +1,6 @@
 # Encrypt EBS volumes
 
-** org.openrewrite.terraform.aws.EncryptEBSVolumes**
-_Encrypting EBS volumes ensures that replicated copies of your images are secure even if they are accidentally exposed. AWS EBS encryption uses AWS KMS customer master keys (CMK) when creating encrypted volumes and snapshots. Storing EBS volumes in their encrypted state reduces the risk of data exposure or data loss._
+ **org.openrewrite.terraform.aws.EncryptEBSVolumes** _Encrypting EBS volumes ensures that replicated copies of your images are secure even if they are accidentally exposed. AWS EBS encryption uses AWS KMS customer master keys \(CMK\) when creating encrypted volumes and snapshots. Storing EBS volumes in their encrypted state reduces the risk of data exposure or data loss._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Encrypting EBS volumes ensures that replicated copies of your images are secure
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.1.0
-
 
 ## Usage
 
@@ -81,10 +79,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_ebs_volume`
   * content: `encrypted = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_ebs_volume
       content: encrypted = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

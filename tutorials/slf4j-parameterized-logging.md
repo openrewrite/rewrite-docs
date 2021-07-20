@@ -4,7 +4,7 @@ In this guide we'll look at using Rewrite to automatically refactor logging stat
 
 ## Example Configuration
 
-The [ParameterizedLogging](../reference/recipes/java/logging/slf4j/parameterizedlogging.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks) in your build file:
+The [ParameterizedLogging](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/logging/slf4j/parameterizedlogging.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks) in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -62,7 +62,7 @@ dependencies {
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
-For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/logging/slf4j/parameterizedlogging.md).
+For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/logging/slf4j/parameterizedlogging.md).
 
 {% tabs %}
 {% tab title="Example Class \(Before\)" %}

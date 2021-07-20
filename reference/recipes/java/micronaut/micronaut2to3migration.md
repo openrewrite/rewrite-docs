@@ -1,7 +1,6 @@
 # Migrate from 2.x to 3.x
 
-** org.openrewrite.java.micronaut.Micronaut2to3Migration**
-_This recipe will apply changes required for migrating from Micronaut 2 to Micronaut 3._
+ **org.openrewrite.java.micronaut.Micronaut2to3Migration** _This recipe will apply changes required for migrating from Micronaut 2 to Micronaut 3._
 
 ## Source
 
@@ -10,7 +9,6 @@ _This recipe will apply changes required for migrating from Micronaut 2 to Micro
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
 * version: 0.1.0
-
 
 ## Usage
 
@@ -85,75 +83,74 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `micronaut-bom`
   * newVersion: `3.0.0-M2`
   * trustParent: `true`
-* [Rename package name](../../java/changepackage.md)
+* [Rename package name](../changepackage.md)
   * oldPackageName: `io.micronaut.configuration.cassandra`
   * newPackageName: `io.micronaut.cassandra`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.context.ApplicationContext build(..)`
   * newMethodName: `builder`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.core.async.SupplierUtil`
   * newFullyQualifiedTypeName: `io.micronaut.core.util.SupplierUtil`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.http.netty.stream.DelegateHttpRequest getMethod()`
   * newMethodName: `method`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.http.netty.stream.DelegateHttpResponse getStatus()`
   * newMethodName: `status`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.http.server.netty.DelegateHttpResponse getStatus()`
   * newMethodName: `status`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.http.netty.stream.DelegateHttpRequest getUri()`
   * newMethodName: `uri`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.http.netty.stream.DelegateHttpMessage getDecoderResult()`
   * newMethodName: `decoderResult`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.http.netty.stream.DelegateHttpMessage getProtocolVersion()`
   * newMethodName: `protocolVersion`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.management.endpoint.beans.impl.RxJavaBeanDefinitionDataCollector`
   * newFullyQualifiedTypeName: `io.micronaut.management.endpoint.beans.impl.DefaultBeanDefinitionDataCollector`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.management.endpoint.routes.impl.RxJavaRouteDataCollector`
   * newFullyQualifiedTypeName: `io.micronaut.management.endpoint.routes.impl.DefaultRouteDataCollector`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.management.health.aggregator.RxJavaHealthAggregator`
   * newFullyQualifiedTypeName: `io.micronaut.management.health.aggregator.DefaultHealthAggregator`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.messaging.annotation.Body`
   * newFullyQualifiedTypeName: `io.micronaut.messaging.annotation.MessageBody`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.messaging.annotation.Headers`
   * newFullyQualifiedTypeName: `io.micronaut.messaging.annotation.MessageHeaders`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.rss.itunespodcast.ItunesPodcast isExplict()`
   * newMethodName: `isExplicit`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.rss.itunespodcast.ItunesPodcast setExplict(boolean)`
   * newMethodName: `setExplicit`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.rss.itunespodcast.ItunesPodcast explict(boolean)`
   * newMethodName: `setExplicit`
-* [Change type](../../java/changetype.md)
+* [Change type](../changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.runtime.server.EmbeddedServerInstance`
   * newFullyQualifiedTypeName: `io.micronaut.discovery.EmbeddedServerInstance`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.web.router accept(io.micronaut.http.MediaType)`
   * newMethodName: `doesConsume`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.web.router.Route acceptAll()`
   * newMethodName: `consumesAll`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.web.router.RouteMatch accept(io.micronaut.http.MediaType)`
   * newMethodName: `doesConsume`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.micronaut.web.router.RouteMatch explicitAccept(io.micronaut.http.MediaType)`
   * newMethodName: `explicitlyConsumes`
-* [de-capitalize BeanIntrospection `getProperty(..)` and `getRequiredProperty(..)` name arguments](../../java/micronaut/beanpropertycapitalizationstrategy.md)
-* [Provider implementation beans to Micronaut Factories](../../java/micronaut/providerimplementationstomicronautfactories.md)
-
+* [de-capitalize BeanIntrospection `getProperty(..)` and `getRequiredProperty(..)` name arguments](beanpropertycapitalizationstrategy.md)
+* [Provider implementation beans to Micronaut Factories](providerimplementationstomicronautfactories.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -241,7 +238,7 @@ recipeList:
       newMethodName: explicitlyConsumes
   - org.openrewrite.java.micronaut.BeanPropertyCapitalizationStrategy
   - org.openrewrite.java.micronaut.ProviderImplementationsToMicronautFactories
-
 ```
 {% endtab %}
 {% endtabs %}
+

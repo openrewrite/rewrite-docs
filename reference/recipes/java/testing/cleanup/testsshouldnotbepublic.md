@@ -1,7 +1,6 @@
-# Remove `public` visibility of JUnit5 tests
+# Remove public visibility of JUnit5 tests
 
-** org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic**
-_Remove `public` modifier from methods with `@Test`, `@ParametrizedTest`, `@RepeatedTest`, `TestFactory`, `@BeforeEach` or `@AfterEach`. They no longer have to be public visibility to be usable by JUnit 5._
+ **org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic** _Remove `public` modifier from methods with `@Test`, `@ParametrizedTest`, `@RepeatedTest`, `TestFactory`, `@BeforeEach` or `@AfterEach`. They no longer have to be public visibility to be usable by JUnit 5._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove `public` modifier from methods with `@Test`, `@ParametrizedTest`, `@Repe
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.8.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic`
+

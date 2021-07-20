@@ -1,7 +1,6 @@
 # No privileged containers
 
-** org.openrewrite.kubernetes.NoPrivilegedContainers**
-_Privileged containers are containers that have all of the root capabilities of a host machine, allowing access to resources that are not accessible in ordinary containers._
+ **org.openrewrite.kubernetes.NoPrivilegedContainers** _Privileged containers are containers that have all of the root capabilities of a host machine, allowing access to resources that are not accessible in ordinary containers._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Privileged containers are containers that have all of the root capabilities of 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.3.0
-
 
 ## Usage
 
@@ -80,11 +78,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: `PodSecurityPolicy`
   * configurationPath: `/spec/privileged`
   * value: `privileged: false`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,7 @@ recipeList:
       resourceKind: PodSecurityPolicy
       configurationPath: /spec/privileged
       value: privileged: false
-
 ```
 {% endtab %}
 {% endtabs %}
+

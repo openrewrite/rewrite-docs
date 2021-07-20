@@ -1,7 +1,6 @@
 # Quarkus 1.13 migration from Quarkus 1.11
 
-** org.openrewrite.java.quarkus.Quarkus1to1\_13Migration**
-_Migrates Quarkus 1.11 to 1.13._
+ **org.openrewrite.java.quarkus.Quarkus1to1\_13Migration** _Migrates Quarkus 1.11 to 1.13._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrates Quarkus 1.11 to 1.13._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.4.0
-
 
 ## Usage
 
@@ -79,50 +77,49 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Change property key](../../properties/changepropertykey.md)
   * oldPropertyKey: `quarkus.dev.instrumentation`
   * newPropertyKey: `quarkus.live-reload.instrumentation`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Multi collectItems()`
   * newMethodName: `collect`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Multi groupItems()`
   * newMethodName: `group`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Multi transform()`
   * newMethodName: `select`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.MultiTransform byTakingFirstItems(..)`
   * newMethodName: `first`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.MultiTransform byFilteringItemsWith(..)`
   * newMethodName: `where`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Multi subscribeOn(java.util.concurrent.Executor)`
   * newMethodName: `runSubscriptionOn`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.Uni subscribeOn(java.util.concurrent.Executor)`
   * newMethodName: `runSubscriptionOn`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.UniOnFailure apply(java.util.function.Function)`
   * newMethodName: `transform`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.UniOnItem apply(java.util.function.Function)`
   * newMethodName: `transform`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.UniOnItemOrFailure apply(java.util.function.BiFunction)`
   * newMethodName: `transform`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.UniOnNotNull apply(java.util.function.Function)`
   * newMethodName: `transform`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.MultiOnFailure apply(java.util.function.Function)`
   * newMethodName: `transform`
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `io.smallrye.mutiny.groups.MultiOnItem apply(java.util.function.Function)`
   * newMethodName: `transform`
-* [Use `@ConfigMapping`](../../java/quarkus/configpropertiestoconfigmapping.md)
-* [Use Mutiny `multi.toHotStream()`](../../java/quarkus/multitransformhotstreamtomultihotstream.md)
-* [Use `native` profile in `quarkus-maven-plugin`](../../java/quarkus/migratequarkusmavenpluginnativeimagegoal.md)
-* [Configure `quarkus-maven-plugin` with reasonable defaults](../../java/quarkus/configurequarkusmavenpluginwithreasonabledefaults.md)
-
+* [Use `@ConfigMapping`](configpropertiestoconfigmapping.md)
+* [Use Mutiny `multi.toHotStream()`](multitransformhotstreamtomultihotstream.md)
+* [Use `native` profile in `quarkus-maven-plugin`](migratequarkusmavenpluginnativeimagegoal.md)
+* [Configure `quarkus-maven-plugin` with reasonable defaults](configurequarkusmavenpluginwithreasonabledefaults.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -179,7 +176,7 @@ recipeList:
   - org.openrewrite.java.quarkus.MultiTransformHotStreamToMultiHotStream
   - org.openrewrite.java.quarkus.MigrateQuarkusMavenPluginNativeImageGoal
   - org.openrewrite.java.quarkus.ConfigureQuarkusMavenPluginWithReasonableDefaults
-
 ```
 {% endtab %}
 {% endtabs %}
+

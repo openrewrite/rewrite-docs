@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.xml.stream` APIs
+# Migrate deprecated javax.xml.stream APIs
 
-** org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs**
-_Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs** _Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Certain `javax.xml.stream` APIs have become deprecated and their usages changed
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.4.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmleventfactorynewinstancetonewfactory.md)
-* [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory.md)
-* [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory.md)
-
+* [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](migratexmleventfactorynewinstancetonewfactory.md)
+* [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](migratexmlinputfactorynewinstancetonewfactory.md)
+* [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](migratexmloutputfactorynewinstancetonewfactory.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.migrate.javax.MigrateXMLEventFactoryNewInstanceToNewFactory
   - org.openrewrite.java.migrate.javax.MigrateXMLInputFactoryNewInstanceToNewFactory
   - org.openrewrite.java.migrate.javax.MigrateXMLOutputFactoryNewInstanceToNewFactory
-
 ```
 {% endtab %}
 {% endtabs %}
+

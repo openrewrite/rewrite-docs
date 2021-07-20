@@ -1,7 +1,6 @@
 # Cleanup JUnit imports
 
-** org.openrewrite.java.testing.junit5.CleanupJUnitImports**
-_Removes unused `org.junit` import symbols._
+ **org.openrewrite.java.testing.junit5.CleanupJUnitImports** _Removes unused `org.junit` import symbols._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Removes unused `org.junit` import symbols._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.8.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.CleanupJUnitImports`
+

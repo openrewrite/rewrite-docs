@@ -1,4 +1,4 @@
-# `java.net` APIs
+# java.net APIs
 
 ## Recipes
 
@@ -8,5 +8,4 @@
 * [Use `java.net.MulticastSocket#setTimeToLive(int)`](migratemulticastsocketsetttltosettimetolive.md)
 * [Use `java.net.URLDecoder#decode(String, StandardCharsets.UTF_8)`](migrateurldecoderdecode.md)
 * [Use `java.net.URLEncoder#encode(String, StandardCharsets.UTF_8)`](migrateurlencoderencode.md)
-
 

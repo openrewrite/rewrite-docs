@@ -1,7 +1,6 @@
-# Migrate deprecated `java.util.logging` APIs
+# Migrate deprecated java.util.logging APIs
 
-** org.openrewrite.java.migrate.logging.JavaLoggingAPIs**
-_Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.logging.JavaLoggingAPIs** _Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Certain Java logging APIs have become deprecated and their usages changed, nece
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.4.0
-
 
 ## Usage
 
@@ -80,12 +78,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](../../../java/migrate/logging/migrategetloggingmxbeantogetplatformmxbean.md)
-* [Use `Logger#getGlobal()`](../../../java/migrate/logging/migrateloggerglobaltogetglobal.md)
-* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](../../../java/migrate/logging/migrateloggerlogrbtouseresourcebundle.md)
-* [Use `LogRecord#setInstant(Instant)`](../../../java/migrate/logging/migratelogrecordsetmillistosetinstant.md)
-* [Use `PlatformLoggingMXBean`](../../../java/migrate/logging/migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
-
+* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](migrategetloggingmxbeantogetplatformmxbean.md)
+* [Use `Logger#getGlobal()`](migrateloggerglobaltogetglobal.md)
+* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](migrateloggerlogrbtouseresourcebundle.md)
+* [Use `LogRecord#setInstant(Instant)`](migratelogrecordsetmillistosetinstant.md)
+* [Use `PlatformLoggingMXBean`](migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.java.migrate.logging.MigrateLoggerLogrbToUseResourceBundle
   - org.openrewrite.java.migrate.logging.MigrateLogRecordSetMillisToSetInstant
   - org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean
-
 ```
 {% endtab %}
 {% endtabs %}
+

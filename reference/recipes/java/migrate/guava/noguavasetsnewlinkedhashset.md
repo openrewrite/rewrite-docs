@@ -1,7 +1,6 @@
-# Use `new LinkedHashSet<>()` instead of Guava
+# Use new LinkedHashSet&lt;&gt;\(\) instead of Guava
 
-** org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet**
-_Prefer the Java standard library over third-party usage of Guava in simple cases like this._
+ **org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet** _Prefer the Java standard library over third-party usage of Guava in simple cases like this._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.4.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet`
+

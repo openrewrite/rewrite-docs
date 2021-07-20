@@ -1,7 +1,6 @@
 # Make ECR tags immutable
 
-** org.openrewrite.terraform.aws.ImmutableECRTags**
-_Amazon ECR supports immutable tags, preventing image tags from being overwritten. In the past, ECR tags could have been overwritten, this could be overcome by requiring users to uniquely identify an image using a naming convention._
+ **org.openrewrite.terraform.aws.ImmutableECRTags** _Amazon ECR supports immutable tags, preventing image tags from being overwritten. In the past, ECR tags could have been overwritten, this could be overcome by requiring users to uniquely identify an image using a naming convention._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Amazon ECR supports immutable tags, preventing image tags from being overwritte
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.1.0
-
 
 ## Usage
 
@@ -81,10 +79,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_neptune_cluster`
   * content: `image_tag_mutability = "IMMUTABLE"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_neptune_cluster
       content: image_tag_mutability = "IMMUTABLE"
-
 ```
 {% endtab %}
 {% endtabs %}
+

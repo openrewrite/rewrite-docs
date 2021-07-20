@@ -1,7 +1,6 @@
 # Hide utility class constructor
 
-** org.openrewrite.java.cleanup.HideUtilityClassConstructor**
-_Ensures utility classes (classes containing only static methods or fields in their API) do not have a public constructor._
+ **org.openrewrite.java.cleanup.HideUtilityClassConstructor** _Ensures utility classes \(classes containing only static methods or fields in their API\) do not have a public constructor._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Ensures utility classes (classes containing only static methods or fields in th
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.9.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.HideUtilityClassConstructor`
+

@@ -1,7 +1,6 @@
 # Ensure CPU limits are set
 
-** org.openrewrite.kubernetes.MissingCpuLimits**
-_A system without managed quotas could eventually collapse due to inadequate resources for the tasks it bares._
+ **org.openrewrite.kubernetes.MissingCpuLimits** _A system without managed quotas could eventually collapse due to inadequate resources for the tasks it bares._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _A system without managed quotas could eventually collapse due to inadequate res
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.3.0
-
 
 ## Usage
 
@@ -80,10 +78,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/resources/limits/cpu`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,7 @@ recipeList:
   - org.openrewrite.kubernetes.search.FindResourceMissingConfiguration:
       resourceKind: Pod
       configurationPath: /spec/containers/resources/limits/cpu
-
 ```
 {% endtab %}
 {% endtabs %}
+

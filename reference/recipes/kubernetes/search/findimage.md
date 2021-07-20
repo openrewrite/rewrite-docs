@@ -1,7 +1,6 @@
 # Image name
 
-** org.openrewrite.kubernetes.search.FindImage**
-_The image name to search for in containers and initContainers._
+ **org.openrewrite.kubernetes.search.FindImage** _The image name to search for in containers and initContainers._
 
 ## Source
 
@@ -14,17 +13,15 @@ _The image name to search for in containers and initContainers._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | repository | *Optional*. The repository part of the image name to search for in containers and initContainers. |
+| :--- | :--- | :--- |
+| `String` | repository | _Optional_. The repository part of the image name to search for in containers and initContainers. |
 | `String` | imageName | The image name to search for in containers and initContainers. |
-| `String` | imageTag | *Optional*. The tag part of the image name to search for in containers and initContainers. |
+| `String` | imageTag | _Optional_. The tag part of the image name to search for in containers and initContainers. |
 | `boolean` | includeInitContainers | Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindImageExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindImageExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -98,3 +95,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindImageExample`
+

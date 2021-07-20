@@ -1,7 +1,6 @@
 # Mockito 3.x migration from 1.x
 
-** org.openrewrite.java.testing.mockito.Mockito1to3Migration**
-_Spring Boot 2.x requires upgrading from Mockito 1.x to 3.x._
+ **org.openrewrite.java.testing.mockito.Mockito1to3Migration** _Spring Boot 2.x requires upgrading from Mockito 1.x to 3.x._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Spring Boot 2.x requires upgrading from Mockito 1.x to 3.x._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.8.0
-
 
 ## Usage
 
@@ -81,19 +79,19 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.MockitoAnnotations.Mock`
   * newFullyQualifiedTypeName: `org.mockito.Mock`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.Matchers anyVararg()`
   * newMethodName: `any`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.Matchers`
   * newFullyQualifiedTypeName: `org.mockito.ArgumentMatchers`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.invocation.InvocationOnMock getArgumentAt(int, java.lang.Class)`
   * newMethodName: `getArgument`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.runners.MockitoJUnitRunner`
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -103,9 +101,8 @@ Recipes can also be activated directly from the command line by adding the argum
   * releasesOnly: `false`
   * scope: `test`
   * onlyIfUsing: `[org.mockito.junit.jupiter.MockitoExtension]`
-* [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports.md)
-* [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic.md)
-
+* [Cleanup Mockito imports](cleanupmockitoimports.md)
+* [Use static form of Mockito `MockUtil`](mockutilstostatic.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -143,7 +140,7 @@ recipeList:
       onlyIfUsing: [org.mockito.junit.jupiter.MockitoExtension]
   - org.openrewrite.java.testing.mockito.CleanupMockitoImports
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
-
 ```
 {% endtab %}
 {% endtabs %}
+

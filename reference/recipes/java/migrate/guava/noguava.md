@@ -1,7 +1,6 @@
 # Use Java standard library instead of Guava
 
-** org.openrewrite.java.migrate.guava.NoGuava**
-_Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+ **org.openrewrite.java.migrate.guava.NoGuava** _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Guava filled in important gaps in the Java standard library and still does. But
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.4.0
-
 
 ## Usage
 
@@ -80,15 +78,14 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `Set#of(..)` not Guava](../../../java/migrate/guava/noguavaimmutablesetof.md)
-* [Use Java SDK instead of `MoreExecutors#directExecutor()`](../../../java/migrate/guava/noguavadirectexecutor.md)
-* [Use `new ArrayList<>()` instead of Guava](../../../java/migrate/guava/noguavalistsnewarraylist.md)
-* [Use `new CopyOnWriteArrayList<>()` instead of Guava](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist.md)
-* [Use `new LinkedList<>()` instead of Guava](../../../java/migrate/guava/noguavalistsnewlinkedlist.md)
-* [Use `new HashSet<>()` instead of Guava](../../../java/migrate/guava/noguavasetsnewhashset.md)
-* [Construct a set from a `new ConcurrentHashMap<>()` instead of Guava](../../../java/migrate/guava/noguavasetsnewconcurrenthashset.md)
-* [Use `new LinkedHashSet<>()` instead of Guava](../../../java/migrate/guava/noguavasetsnewlinkedhashset.md)
-
+* [Use `Set#of(..)` not Guava](noguavaimmutablesetof.md)
+* [Use Java SDK instead of `MoreExecutors#directExecutor()`](noguavadirectexecutor.md)
+* [Use `new ArrayList<>()` instead of Guava](noguavalistsnewarraylist.md)
+* [Use `new CopyOnWriteArrayList<>()` instead of Guava](noguavalistsnewcopyonwritearraylist.md)
+* [Use `new LinkedList<>()` instead of Guava](noguavalistsnewlinkedlist.md)
+* [Use `new HashSet<>()` instead of Guava](noguavasetsnewhashset.md)
+* [Construct a set from a `new ConcurrentHashMap<>()` instead of Guava](noguavasetsnewconcurrenthashset.md)
+* [Use `new LinkedHashSet<>()` instead of Guava](noguavasetsnewlinkedhashset.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +106,7 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet
-
 ```
 {% endtab %}
 {% endtabs %}
+

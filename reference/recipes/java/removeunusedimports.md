@@ -1,7 +1,6 @@
 # Remove unused imports
 
-** org.openrewrite.java.RemoveUnusedImports**
-_Remove imports for types that are not referenced._
+ **org.openrewrite.java.RemoveUnusedImports** _Remove imports for types that are not referenced._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove imports for types that are not referenced._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.9.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.RemoveUnusedImports`
+

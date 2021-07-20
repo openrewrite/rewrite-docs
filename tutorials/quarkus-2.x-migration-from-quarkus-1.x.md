@@ -4,7 +4,7 @@ In this guide we'll look at using Rewrite to perform an automated migration from
 
 ## Example Configuration
 
-The [Quarkus1to2Migration](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus) in your build file:
+The [Quarkus1to2Migration](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus) in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -64,7 +64,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-Here we highlight a small number of the larger set of refactoring operations `Quarkus1to2Migration` automates. For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md).
+Here we highlight a small number of the larger set of refactoring operations `Quarkus1to2Migration` automates. For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md).
 
 ### Migrate Deprecated Mutiny APIs
 

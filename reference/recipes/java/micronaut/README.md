@@ -6,4 +6,3 @@
 * [Provider implementation beans to Micronaut Factories](providerimplementationstomicronautfactories.md)
 * [de-capitalize BeanIntrospection `getProperty(..)` and `getRequiredProperty(..)` name arguments](beanpropertycapitalizationstrategy.md)
 
-

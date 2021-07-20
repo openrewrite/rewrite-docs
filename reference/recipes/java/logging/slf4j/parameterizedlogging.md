@@ -1,7 +1,6 @@
 # Parameterize SLF4J logging statements
 
-** org.openrewrite.java.logging.slf4j.ParameterizedLogging**
-_SLF4J supports parameterized logging which can significantly boost logging performance for disabled logging statement._
+ **org.openrewrite.java.logging.slf4j.ParameterizedLogging** _SLF4J supports parameterized logging which can significantly boost logging performance for disabled logging statement._
 
 ## Source
 
@@ -10,7 +9,6 @@ _SLF4J supports parameterized logging which can significantly boost logging perf
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 0.3.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.logging.slf4j.ParameterizedLogging`
+

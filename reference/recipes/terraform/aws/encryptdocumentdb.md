@@ -1,7 +1,6 @@
 # Encrypt Neptune storage
 
-** org.openrewrite.terraform.aws.EncryptDocumentDB**
-_The encryption feature available for Amazon DocumentDB clusters provides an additional layer of data protection by helping secure your data against unauthorized access to the underlying storage._
+ **org.openrewrite.terraform.aws.EncryptDocumentDB** _The encryption feature available for Amazon DocumentDB clusters provides an additional layer of data protection by helping secure your data against unauthorized access to the underlying storage._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _The encryption feature available for Amazon DocumentDB clusters provides an add
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.1.0
-
 
 ## Usage
 
@@ -81,10 +79,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_docdb_cluster`
   * content: `storage_encrypted = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_docdb_cluster
       content: storage_encrypted = true
-
 ```
 {% endtab %}
 {% endtabs %}
+
