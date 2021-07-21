@@ -123,6 +123,10 @@ At this point, you're ready to fix Checkstyle policy violations by running `mvn 
 
 Depending on exactly how your build is configured, it might run Checkstyle _before_ Rewrite. So the Checkstyle tool might report violations that would be fixed if your build were to run Rewrite first.
 
+{% hint style="warning" %}
+With this configuration, rewrite refactoring will be run as part of any build that runs checkstyle.
+{% endhint %}
+
 ### Gradle
 
 In Gradle, [Task.dependsOn\(\)](https://docs.gradle.org/current/javadoc/org/gradle/api/Task.html#dependsOn-java.lang.Object...-) can be used to ensure that invoking one task always causes another task to run first. That means making all tasks of type `org.gradle.api.plugins.quality.Checkstyle` depend on the rewriteRun task provided by the Rewrite plugin.
@@ -211,10 +215,6 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-{% hint style="warning" %}
-With this configuration, rewrite refactoring will be part of any maven invocation that includes the "validate" phase of the build lifecycle.
-{% endhint %}
 
 ## Known Limitations
 
