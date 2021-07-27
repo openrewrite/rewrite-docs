@@ -253,7 +253,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Run `./mvnw rewrite:run` or `./gradlew rewriteRun` and observe that the project has been upgraded to Spring Boot 2 and the test classes are all updated to be JUnit 5 tests. If you're using Maven, the pom.xml will also have had the Spring dependencies updated, the Junit 4 dependency removed and Junit 5 dependencies added. Rewrite does not yet support automatic update of Gradle dependencies. Gradle users will have to manually make the corresponding changes.
+Run `./mvnw rewrite:run` or `./gradlew rewriteRun` and observe that the project has been upgraded to Spring Boot 2 and the test classes are all updated to be JUnit 5 tests. If you're using Maven, the pom.xml will also have had the Spring dependencies updated, the Junit 4 dependency removed and Junit 5 dependencies added. OpenRewrite does not yet support automatic update of Gradle dependencies. Gradle users will have to manually make the corresponding changes.
 
 {% hint style="info" %}
 If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.

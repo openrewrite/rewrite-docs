@@ -4,7 +4,7 @@ description: rewrite-gradle-plugin configuration options and task descriptions
 
 # Gradle Plugin Configuration
 
-The Rewrite Gradle Plugin is the fastest way to apply Rewrite recipes to your code as part of your Gradle build. The Rewrite Gradle Plugin is compatible with all versions of Gradle since 4.7.
+The OpenRewrite Gradle Plugin is the fastest way to apply OpenRewrite recipes to your code as part of your Gradle build. The OpenRewrite Gradle Plugin is compatible with all versions of Gradle since 4.7.
 
 ## Plugin Configuration
 
@@ -17,7 +17,7 @@ plugins {
 }
 
 rewrite {
-    // Rewrite Extension Configuration
+    // OpenRewrite Extension Configuration
 }
 
 // Ensure a repository is declared that the rewrite core libraries can be resolved from
@@ -42,7 +42,7 @@ The `rewrite` DSL exposes a few configuration options:
 
 * `activeRecipe` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
 * `activeStyle` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
-* `configFile` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). This file is not required to exist. If not specified otherwise, the default value is `<root project directory>/rewrite.yml`.
+* `configFile` - Where to look for a OpenRewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). This file is not required to exist. If not specified otherwise, the default value is `<root project directory>/rewrite.yml`.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewriteDryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 
 ```groovy
@@ -65,13 +65,13 @@ rewrite {
 }
 ```
 
-## Activating Rewrite Recipes
+## Activating OpenRewrite Recipes
 
 {% hint style="info" %}
 All OpenRewrite libraries and modules are published to MavenCentral. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there or one of its mirrors.
 {% endhint %}
 
-No recipe is ever run on your codebase without being explicitly activated in the plugin's configuration. To make pre-packaged Rewrite recipes available for activation, add them as `rewrite` dependencies:
+No recipe is ever run on your codebase without being explicitly activated in the plugin's configuration. To make pre-packaged OpenRewrite recipes available for activation, add them as `rewrite` dependencies:
 
 ```groovy
 dependencies {

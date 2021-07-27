@@ -8,7 +8,7 @@ description: >-
 
 A recipe represents a group of search and refactoring operations that can be applied to an [abstract syntax tree](abstract-syntax-trees.md). A recipe can represent a single, stand-alone operation or be linked together with other recipes to accomplish a larger goal such as a framework migration.
 
-Rewrite provides a managed environment for discovering, instantiating and configuring recipes. To implement a search or refactoring operation, a recipe delegates to a [visitor](visitors.md) which handles the AST traversal and manipulation.
+OpenRewrite provides a managed environment for discovering, instantiating and configuring recipes. To implement a search or refactoring operation, a recipe delegates to a [visitor](visitors.md) which handles the AST traversal and manipulation.
 
 ## Imperative Recipes
 
@@ -87,7 +87,7 @@ Note that this recipe does not have an associated visitor of its own, instead re
 
 ## Declarative Recipes
 
-Declarative recipes are defined in YAML and loaded as part of Rewrite's managed [Environment](environment.md). A declarative recipe composes and configures other recipes via the Rewrite configuration file. In our above example, the declarative version of the "Migrate JUnit 5" recipe might look similar to the following:
+Declarative recipes are defined in YAML and loaded as part of OpenRewrite's managed [Environment](environment.md). A declarative recipe composes and configures other recipes via the OpenRewrite configuration file. In our above example, the declarative version of the "Migrate JUnit 5" recipe might look similar to the following:
 
 ```yaml
 ---
@@ -114,7 +114,7 @@ In the event that a recipe requires custom validation rules different from the d
 
 ### Recipe Descriptors
 
-Rewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name \(via `Recipe.getDisplayName`\) and it's description \(via `Recipe.getDescription`\) to provide basic information about the recipe. Additionally, Rewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields.Collectively, this meta-data is used to build a recipe descriptor and Rewrite's managed environment provides a mechanism for listing/discovering these descriptors. The descriptors are leverages to generate automated help with the context of the build plugins and they are also useful when building out reference documentation. The following is an example of how to properly define the meta-data on the recipe so that it is available during discovery and automated help:
+OpenRewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name \(via `Recipe.getDisplayName`\) and it's description \(via `Recipe.getDescription`\) to provide basic information about the recipe. Additionally, OpenRewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields.Collectively, this meta-data is used to build a recipe descriptor and OpenRewrite's managed environment provides a mechanism for listing/discovering these descriptors. The descriptors are leverages to generate automated help with the context of the build plugins and they are also useful when building out reference documentation. The following is an example of how to properly define the meta-data on the recipe so that it is available during discovery and automated help:
 
 ```java
 public class ChangeType extends Recipe {
@@ -153,7 +153,7 @@ The top level recipe \(the one that initiates the execution pipeline\) and any s
 
 Each recipe will, in turn, will be executed as a step within the pipeline and step execution consists of the following:
 
-1. A recipe's `validate()` method is called to ensure it has been configured properly. Rewrite is not opinionated about how validation errors are handled and by default it will skip a recipe that fails validation. This behavior can be changed by the introduction of an error handler into the pipeline via the execution context.
+1. A recipe's `validate()` method is called to ensure it has been configured properly. OpenRewrite is not opinionated about how validation errors are handled and by default it will skip a recipe that fails validation. This behavior can be changed by the introduction of an error handler into the pipeline via the execution context.
 2. If a recipe has an associated visitor, the recipe will delegate to its associated visitor to process all source files that have been fed to the pipeline. It is this specific stage that concurrency can be introduced to process the source ASTs in parallel.
 3. If a recipe has a linked/chained recipe, then execution pipeline initiates a step execution for that recipe and this process repeats until there are no more nested recipes.
 

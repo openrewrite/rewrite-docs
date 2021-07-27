@@ -6,10 +6,10 @@ description: 'Search, Organize, and Refactor your Maven poms'
 
 Dependency management is a complex and often frustrating part of software development. Sometimes a transitive dependency you'd never expect makes it onto your runtime classpath. Sometimes your build tool resolves a conflict between requested dependency versions in an unexpected way. Despite the headaches, it wouldn't make sense for most projects to forgo dependencies.
 
-Rewrite can help. In this tutorial, we'll learn how to automate common dependency management tasks by migrating a project from one [slf4j](http://www.slf4j.org/) implementation to another.
+OpenRewrite can help. In this tutorial, we'll learn how to automate common dependency management tasks by migrating a project from one [slf4j](http://www.slf4j.org/) implementation to another.
 
 {% hint style="info" %}
-Currently, Rewrite's dependency management capabilities are only implemented for the Maven build tool. If you are interested in dependency management for Gradle keep an eye on [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
+Currently, OpenRewrite's dependency management capabilities are only implemented for the Maven build tool. If you are interested in dependency management for Gradle keep an eye on [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
 {% endhint %}
 
 ## Setup

@@ -1,6 +1,6 @@
 # Use SLF4J Parameterized Logging
 
-In this guide we'll look at using Rewrite to automatically refactor logging statements to take advantage of [performance improvements offered by using `slf4j` parameterized logging](http://www.slf4j.org/faq.html#logging_performance) over String concatenation.
+In this guide we'll look at using OpenRewrite to automatically refactor logging statements to take advantage of [performance improvements offered by using `slf4j` parameterized logging](http://www.slf4j.org/faq.html#logging_performance) over String concatenation.
 
 ## Example Configuration
 

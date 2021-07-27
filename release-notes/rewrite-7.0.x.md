@@ -2,7 +2,7 @@
 description: 'Released Monday, March 22nd'
 ---
 
-# Rewrite 7.0.x
+# OpenRewrite 7.0.x
 
 These notes are for versions:
 

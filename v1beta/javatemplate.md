@@ -1,6 +1,6 @@
 # JavaTemplate
 
-Manually constructing complex AST elements can prove tedious and foreign to developers used to authoring code as text. Rewrite addresses this problem by providing a utility class, JavaTemplate, that allows a snippet of code to be parsed into a properly constructed AST representation. This functionality is paired with a natural, idiomatic API to allow a developer to express exactly where, in the existing AST, the snippet should be inserted. 
+Manually constructing complex AST elements can prove tedious and foreign to developers used to authoring code as text. OpenRewrite addresses this problem by providing a utility class, JavaTemplate, that allows a snippet of code to be parsed into a properly constructed AST representation. This functionality is paired with a natural, idiomatic API to allow a developer to express exactly where, in the existing AST, the snippet should be inserted. 
 
 ## Creating an Instance of a JavaTemplate
 

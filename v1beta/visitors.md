@@ -10,17 +10,17 @@ description: >-
 
 The [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern#Java_example) is a well-known technique for reasoning about complex object structures. Abstract syntax trees for a language like Java consist of many types, however, when performing semantic analysis or transformation, the work is typically scoped to a few, specific types.
 
-A visitor is analogous to an event-handler, describing "what" to do and "when" to do it as part of Rewrite traversing elements in the tree. Rewrite provides an event-driven model where a developer only needs to implement "visit" methods for object types that they are interested in. This leaves Rewrite with the responsibility of traversing a tree completely.
+A visitor is analogous to an event-handler, describing "what" to do and "when" to do it as part of OpenRewrite traversing elements in the tree. OpenRewrite provides an event-driven model where a developer only needs to implement "visit" methods for object types that they are interested in. This leaves OpenRewrite with the responsibility of traversing a tree completely.
 
-## Rewrite's Visitor Concepts
+## OpenRewrite's Visitor Concepts
 
-All of Rewrite's visitors share a common structure and life cycle that centers on the traversal and transformation of ASTs. It is important to understand the core concepts and the life-cycles provided by the framework.
+All of OpenRewrite's visitors share a common structure and life cycle that centers on the traversal and transformation of ASTs. It is important to understand the core concepts and the life-cycles provided by the framework.
 
 ### `Tree`
 
-**The commodities upon which all of Rewrite's visitors operate are the AST elements and all of those elements implement the `Tree` interface.**
+**The commodities upon which all of OpenRewrite's visitors operate are the AST elements and all of those elements implement the `Tree` interface.**
 
-The first thing that a developer will notice about Rewrite's visitors is that they always accept and return a parameterized type that extends `Tree`. This interface is the foundational contract for all types defined within any abstract syntax tree. A Tree type has the following characteristics:
+The first thing that a developer will notice about OpenRewrite's visitors is that they always accept and return a parameterized type that extends `Tree`. This interface is the foundational contract for all types defined within any abstract syntax tree. A Tree type has the following characteristics:
 
 * It has a unique ID that can be used to identify it as a specific AST instance, even after transformations have taken place on that element.
 * It has an `accept()` method that acts as a callback into a language-specific Visitor.
@@ -29,7 +29,7 @@ The first thing that a developer will notice about Rewrite's visitors is that th
 
 ### `TreeVisitor`
 
-The framework provides the base class `TreeVisitor<T extends Tree, P>` from which all of Rewrite's visitors extend. It is this class that provides the generic, parameterized **`T visit(T, P)`** method that drives a visitor's polymorphic navigation, cursoring, and life-cycle. The parameterized type `T` represents the type of tree elements upon which the visitor will navigate and transform. The second parameterized type `P` is an additional, shared context that is passed to all visit methods as a visitor navigates a given AST.
+The framework provides the base class `TreeVisitor<T extends Tree, P>` from which all of OpenRewrite's visitors extend. It is this class that provides the generic, parameterized **`T visit(T, P)`** method that drives a visitor's polymorphic navigation, cursoring, and life-cycle. The parameterized type `T` represents the type of tree elements upon which the visitor will navigate and transform. The second parameterized type `P` is an additional, shared context that is passed to all visit methods as a visitor navigates a given AST.
 
 ### Cursoring
 
@@ -60,7 +60,7 @@ public class MakeTopeLevelClassFinal extends JavaVisitor<P> {
 
 ## Language-specific Visitors
 
-Each language binding contains a visitor implementation extending from `TreeVisitor`. As an example, the Rewrite language binding for Java is `JavaVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined along with the language-specific traversal logic.
+Each language binding contains a visitor implementation extending from `TreeVisitor`. As an example, the OpenRewrite language binding for Java is `JavaVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined along with the language-specific traversal logic.
 
 ```java
 class JavaVisitor<P> extends TreeVisitor<J, P> {
@@ -154,7 +154,7 @@ The vast majority of the time, visitor methods will return the same type as that
 Generally refactoring visitors must be called on the root AST element to function correctly. Otherwise, internal state like cursors are not accurate. More general purpose visitors can be invoked on any element in the tree.
 {% endhint %}
 
-Since refactor visitors are invoked on their root AST element, the net effect of this pattern is that the visitor receives a top-level AST element and produces a potentially changed top-level AST element. All language-specific, top-level AST elements implement the SourceFile interface, which allows an AST tree to be correlated to the source file path. See the next section on [Recipes](recipes.md) that describes in greater detail how Rewrite manages changes to a collection of top-level AST elements to produce source code or Git-style diffs.
+Since refactor visitors are invoked on their root AST element, the net effect of this pattern is that the visitor receives a top-level AST element and produces a potentially changed top-level AST element. All language-specific, top-level AST elements implement the SourceFile interface, which allows an AST tree to be correlated to the source file path. See the next section on [Recipes](recipes.md) that describes in greater detail how OpenRewrite manages changes to a collection of top-level AST elements to produce source code or Git-style diffs.
 
 {% hint style="warning" %}
 In almost all circumstances, it is important to call the visit method on the super to ensure the refactoring operation navigates deeper down the tree to find all places where the operation should be applied.
@@ -173,7 +173,7 @@ public class RemoveModifiers extends JavaRefactorVisitor {
 ```
 
 {% hint style="warning" %}
-Rewrite AST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
+OpenRewrite AST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
 {% endhint %}
 
 ## Refactor Visitor Pipelines

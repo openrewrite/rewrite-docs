@@ -65,7 +65,7 @@ repositories {
 At this point, you're ready to fix Checkstyle policy violations by running `mvn rewrite:run` or `gradlew rewriteRun`. 
 
 {% hint style="info" %}
-Rewrite can be configured to use different checkstyle policies than your Checkstyle plugin. Follow the "No Checkstyle Plugin" instructions to override the location of the checkstyle configuration file.
+OpenRewrite can be configured to use different checkstyle policies than your Checkstyle plugin. Follow the "No Checkstyle Plugin" instructions to override the location of the checkstyle configuration file.
 {% endhint %}
 
 ### No Checkstyle Plugin
@@ -121,7 +121,7 @@ At this point, you're ready to fix Checkstyle policy violations by running `mvn 
 
 ## Applying Refactors before Checkstyle
 
-Depending on exactly how your build is configured, it might run Checkstyle _before_ Rewrite. So the Checkstyle tool might report violations that would be fixed if your build were to run Rewrite first.
+Depending on exactly how your build is configured, it might run Checkstyle _before_ OpenRewrite. So the Checkstyle tool might report violations that would be fixed if your build were to run OpenRewrite first.
 
 {% hint style="warning" %}
 With this configuration, rewrite refactoring will be run as part of any build that runs checkstyle.
@@ -129,7 +129,7 @@ With this configuration, rewrite refactoring will be run as part of any build th
 
 ### Gradle
 
-In Gradle, [Task.dependsOn\(\)](https://docs.gradle.org/current/javadoc/org/gradle/api/Task.html#dependsOn-java.lang.Object...-) can be used to ensure that invoking one task always causes another task to run first. That means making all tasks of type `org.gradle.api.plugins.quality.Checkstyle` depend on the rewriteRun task provided by the Rewrite plugin.
+In Gradle, [Task.dependsOn\(\)](https://docs.gradle.org/current/javadoc/org/gradle/api/Task.html#dependsOn-java.lang.Object...-) can be used to ensure that invoking one task always causes another task to run first. That means making all tasks of type `org.gradle.api.plugins.quality.Checkstyle` depend on the rewriteRun task provided by the OpenRewrite plugin.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -218,10 +218,10 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
 
 ## Known Limitations
 
-We don't have Rewrite recipes implemented for all publicly available policies. If you find a checkstyle policy violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue.
+We don't have OpenRewrite recipes implemented for all publicly available policies. If you find a checkstyle policy violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue.
 
 {% hint style="info" %}
-Checkstyle configuration loading only informs the behavior of recipes, not which recipes are active. Regardless of the presence or non-presence of Checkstyle configuration, Rewrite will never apply any refactoring you do not explicitly activate.
+Checkstyle configuration loading only informs the behavior of recipes, not which recipes are active. Regardless of the presence or non-presence of Checkstyle configuration, OpenRewrite will never apply any refactoring you do not explicitly activate.
 {% endhint %}
 
 

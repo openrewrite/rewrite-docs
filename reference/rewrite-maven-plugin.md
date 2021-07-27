@@ -4,13 +4,13 @@ description: rewrite-maven-plugin configuration options and goal descriptions
 
 # Maven Plugin Configuration
 
-The Rewrite Maven Plugin is the fastest way to apply Rewrite recipes to your code as part of your Maven build. The Rewrite Maven Plugin is compatible with all versions of Maven since 3.6.
+The OpenRewrite Maven Plugin is the fastest way to apply OpenRewrite recipes to your code as part of your Maven build. The OpenRewrite Maven Plugin is compatible with all versions of Maven since 3.6.
 
 {% hint style="success" %}
-The Rewrite Maven plugin automatically supplies any recipes you configure to run with all source files in the project that are transformable. It will supply Java visitors with Java files, XML visitors with XML files, etc.
+The OpenRewrite Maven plugin automatically supplies any recipes you configure to run with all source files in the project that are transformable. It will supply Java visitors with Java files, XML visitors with XML files, etc.
 {% endhint %}
 
-The Rewrite Maven plugin offers these goals:
+The OpenRewrite Maven plugin offers these goals:
 
 * `mvn rewrite:run` - Run the configured recipes and apply the changes locally.
 * `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes, but do not make changes.
@@ -27,9 +27,9 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 
 * `activeRecipes` - Explicitly turns on recipes by name \(the name given in the `specs.openrewrite.org/v1beta/recipe` resource\). No recipe is run unless explicitly turned on with this setting.
 * `activeStyles` - Explicitly turns on a style by name \(the name given in the `specs.openrewrite.org/v1beta/style` resource\). No style is applied unless explicitly turned on with this setting.
-* `configLocation` - Where to look for a Rewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
+* `configLocation` - Where to look for a OpenRewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
-* `dependencies` - To make pre-packaged Rewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
+* `dependencies` - To make pre-packaged OpenRewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
 
 {% hint style="info" %}
 Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles and will automatically discover recipes on the project classpath.
@@ -49,7 +49,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
             <recipe>org.openrewrite.java.Spring</recipe>
           </activeRecipes>
           <activeStyles>
-            <!-- This style is made up for sake of example. It isn't packaged with Rewrite -->
+            <!-- This style is made up for sake of example. It isn't packaged with OpenRewrite -->
             <style>com.yourorg.SpringStyle</style>
           </activeStyles>
           <!-- These are default values, shown for example. It isn't necessary to supply these values manually: -->
@@ -57,7 +57,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
           <failOnDryRunResults>false</failOnDryRunResults>
         </configuration>
         <dependencies>
-          <!-- This module is made up for sake of example. It isn't packaged with Rewrite -->
+          <!-- This module is made up for sake of example. It isn't packaged with OpenRewrite -->
           <dependency>
             <groupId>com.yourorg.recipes</groupId>
             <artifactId>your-recipes</artifactId>
@@ -128,7 +128,7 @@ If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases.
 
 ## The "Discover" Goal
 
-Execute `mvn rewrite:discover` to list the recipes that the Rewrite Maven plugin has found on your classpath and the recipes that you have activated in your plugin configuration.
+Execute `mvn rewrite:discover` to list the recipes that the OpenRewrite Maven plugin has found on your classpath and the recipes that you have activated in your plugin configuration.
 
 ![The beginning of rewrite:discover output, showing activated and available Recipes](../.gitbook/assets/image%20%2818%29.png)
 
@@ -140,7 +140,7 @@ This same goal also lists all of the parameters that recipes can be or are alrea
 
 Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org/) bill of materials \(BOM\) outlining all of the project's dependencies, including transitive dependencies. The BOM will be written to target/&lt;module name&gt;-&lt;version&gt;-cyclonedx.xml.
 
-![Excerpt from Rewrite-generated CycloneDx BOM](../.gitbook/assets/image%20%2819%29.png)
+![Excerpt from OpenRewrite-generated CycloneDx BOM](../.gitbook/assets/image%20%2819%29.png)
 
 ## Links
 

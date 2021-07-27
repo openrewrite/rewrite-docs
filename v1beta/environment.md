@@ -6,7 +6,7 @@ description: >-
 
 # Environment
 
-Rewrite's `Environment` abstraction provides discovery, activation, and configuration facilities for [Recipes](recipes.md) and [Styles](styles.md). It can be helpful to look at the common runtime contexts in which Rewrite operates to better understand how the environment is established:
+OpenRewrite's `Environment` abstraction provides discovery, activation, and configuration facilities for [Recipes](recipes.md) and [Styles](styles.md). It can be helpful to look at the common runtime contexts in which OpenRewrite operates to better understand how the environment is established:
 
 <table>
   <thead>

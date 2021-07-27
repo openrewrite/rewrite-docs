@@ -13,9 +13,9 @@ In this tutorial we'll assume the existence of two projects, A and B, in differe
 
 ## Renaming in Project A
 
-First, apply a Rewrite build plugin per the [Quickstart: Maven and Gradle](../getting-started/getting-started.md).
+First, apply a OpenRewrite build plugin per the [Quickstart: Maven and Gradle](../getting-started/getting-started.md).
 
-With a Rewrite build plugin applied, create a rewrite.yml at the project root with these contents:
+With a OpenRewrite build plugin applied, create a rewrite.yml at the project root with these contents:
 
 {% code title="A/rewrite.yml" %}
 ```yaml

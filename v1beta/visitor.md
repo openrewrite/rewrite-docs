@@ -10,9 +10,9 @@ description: >-
 
 The [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern#Java_example) is a well-known technique for reasoning about complex object structures. Abstract syntax trees for a language like Java consist of many types, and generally when we are performing some sort of semantic analysis or transformation on a piece of code, we only care about certain types. For example, we only care about method invocations when we are seeking to write a rule transforming a method name.
 
-A visitor is analogous to an event-handler, describing "what" to do and "when" to do it as part of Rewrite traversing elements in the tree. Rewrite provides an event-driven model where we only need to implement visit methods for object types that we care about. This leaves Rewrite with the responsibility of traversing a tree completely.
+A visitor is analogous to an event-handler, describing "what" to do and "when" to do it as part of OpenRewrite traversing elements in the tree. OpenRewrite provides an event-driven model where we only need to implement visit methods for object types that we care about. This leaves OpenRewrite with the responsibility of traversing a tree completely.
 
-Rewrite visitors implement the interface `SourceVisitor<R>`.
+OpenRewrite visitors implement the interface `SourceVisitor<R>`.
 
 ## Returning Values from Visitors
 
@@ -33,7 +33,7 @@ Some reduction operations are so common that `SourceVisitor` provides a default 
 
 ## Language-specific Visitors
 
-Each language binding contains a visitor interface extending from `SourceVisitor`. For example, the Rewrite language binding for Java contains a `JavaSourceVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined:
+Each language binding contains a visitor interface extending from `SourceVisitor`. For example, the OpenRewrite language binding for Java contains a `JavaSourceVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined:
 
 ```java
 interface JavaSourceVisitor<R> extends SourceVisitor<R> {
@@ -124,7 +124,7 @@ public class RemoveModifiers extends JavaRefactorVisitor {
 ```
 
 {% hint style="warning" %}
-Rewrite AST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
+OpenRewrite AST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
 {% endhint %}
 
 ## Refactor Visitor Pipelines
@@ -209,7 +209,7 @@ visitors:
 
 ## Validation
 
-Visitors can optionally provide validation logic using a fluent validation API built into Rewrite. This is useful to check that a visitor is pre-configured with any inputs that it needs to perform its work and perhaps skip it or eagerly fail if the required configuration is not present.
+Visitors can optionally provide validation logic using a fluent validation API built into OpenRewrite. This is useful to check that a visitor is pre-configured with any inputs that it needs to perform its work and perhaps skip it or eagerly fail if the required configuration is not present.
 
 ## `@AutoConfigure` Visitors
 

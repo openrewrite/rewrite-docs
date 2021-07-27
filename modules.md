@@ -1,6 +1,6 @@
 # Modules
 
-Rewrite consists of a core module `rewrite-core` and a series of language bindings including:
+OpenRewrite consists of a core module `rewrite-core` and a series of language bindings including:
 
 * `rewrite-java` containing the Java abstract syntax tree, refactoring rules, and a `JavaParser` interface.
   * `rewrite-java-11` contains the `JavaParser` implementation based off of OpenJDK 11.
@@ -12,5 +12,5 @@ Rewrite consists of a core module `rewrite-core` and a series of language bindin
 
 The core module provides abstractions for building refactoring plans and executing them. It defines interfaces for outputting the transformed source, generating diffs, and mass committing changes to remote Git repositories.
 
-Language bindings provide parsers that generate language-specific Rewrite ASTs that are type-attributed, style-preserving, and serializable.
+Language bindings provide parsers that generate language-specific OpenRewrite ASTs that are type-attributed, style-preserving, and serializable.
 

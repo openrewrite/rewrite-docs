@@ -1,6 +1,6 @@
 # Migrate to Quarkus 2 from Quarkus 1
 
-In this guide we'll look at using Rewrite to perform an automated migration from Quarkus 1.x to Quarkus 2.x.
+In this guide we'll look at using OpenRewrite to perform an automated migration from Quarkus 1.x to Quarkus 2.x.
 
 ## Example Configuration
 

@@ -1,15 +1,15 @@
 ---
-description: 'Prerequisites, tools, and recommendations for developing with Rewrite'
+description: 'Prerequisites, tools, and recommendations for developing with OpenRewrite'
 ---
 
 # Recipe Development Environment
 
-This getting started guide covers setting up your development environment for creating your own Rewrite recipes.
+This getting started guide covers setting up your development environment for creating your own OpenRewrite recipes.
 
 ## Prerequisites
 
 * [JDK](https://adoptopenjdk.net/) \(version 1.8+\)
-  * A JRE alone is insufficient since Rewrite uses compiler internals and tools only found in the JDK
+  * A JRE alone is insufficient since OpenRewrite uses compiler internals and tools only found in the JDK
 * [Gradle](https://gradle.org/) \(version 4.7+ \) or [Maven ](https://maven.apache.org/)\(version 3.2+\)
 * Text Editor or IDE with Java support. [Kotlin ](https://kotlinlang.org/)support optional but recommended for a good test authoring experience
   * [IntelliJ](https://www.jetbrains.com/idea/download/)
@@ -141,7 +141,7 @@ rewrite-java-11 and rewrite-java-8 can happily coexist on the same classpath. At
 
 ### Set Language Level and Bytecode Level
 
-In order to be able to use Rewrite to modernize old projects it's important to be able to run on older JDK implementations. So configure the Java compiler to target Java Language and Bytecode level 1.8.
+In order to be able to use OpenRewrite to modernize old projects it's important to be able to run on older JDK implementations. So configure the Java compiler to target Java Language and Bytecode level 1.8.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -271,16 +271,16 @@ plugins {
 {% endtabs %}
 
 {% hint style="info" %}
-Throughout Rewrite's documentation Java is used for Recipe authoring and Kotlin is used for test authoring. You do not have to be constrained by this recommendation: Recipes and tests can be authored in any language that runs on the JVM.
+Throughout OpenRewrite's documentation Java is used for Recipe authoring and Kotlin is used for test authoring. You do not have to be constrained by this recommendation: Recipes and tests can be authored in any language that runs on the JVM.
 {% endhint %}
 
 ## Project Layout
 
-Having configured the project per these recommendations, you're now able to begin Recipe development. With Gradle and Maven's default project layout, here is where to put the various kinds of sources that go into a Rewrite Module:
+Having configured the project per these recommendations, you're now able to begin Recipe development. With Gradle and Maven's default project layout, here is where to put the various kinds of sources that go into a OpenRewrite Module:
 
 * src/main/java - Recipe implementations in Java
 * src/main/kotlin - Recipe implementations in Kotlin
-* src/main/resources/META-INF/rewrite - Yaml files defining declarative Rewrite Recipes
+* src/main/resources/META-INF/rewrite - Yaml files defining declarative OpenRewrite Recipes
 * src/test/java - Recipe tests in Java
 * src/test/kotlin - Recipe tests in Kotlin
 
@@ -288,7 +288,7 @@ With this project setup is complete and you are ready to move on to authoring a 
 
 ## Recipe Distribution
 
-With your project set up as instructed by this guide the jar produced by your build is ready to be consumed as a rewrite module. Once published to an artifact repository like Maven Central, other projects can take a dependency on your Rewrite module and activate the recipes contained therein.
+With your project set up as instructed by this guide the jar produced by your build is ready to be consumed as a rewrite module. Once published to an artifact repository like Maven Central, other projects can take a dependency on your OpenRewrite module and activate the recipes contained therein.
 
 ## Next Steps
 

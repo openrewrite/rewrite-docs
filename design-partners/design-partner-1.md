@@ -1,6 +1,6 @@
 # Design Partner 1
 
-This guide is an evolving document for engineers at Design Partner 1 to integrate Rewrite recipes into their repositories according to their specific needs.
+This guide is an evolving document for engineers at Design Partner 1 to integrate OpenRewrite recipes into their repositories according to their specific needs.
 
 ## Goals
 

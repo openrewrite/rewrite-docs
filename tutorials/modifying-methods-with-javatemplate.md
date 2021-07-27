@@ -69,7 +69,7 @@ public class ExpandCustomerInfo extends Recipe {
         return "Expand the `CustomerInfo` class with new fields.";
     }
 
-    // Rewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
+    // OpenRewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
     // This recipe has no configuration and delegates to its visitor when it is run.
     @Override
     protected JavaIsoVisitor<ExecutionContext> getVisitor() {
@@ -226,7 +226,7 @@ public class ExpandCustomerInfo extends Recipe {
         return "Expand the `CustomerInfo` class with new fields.";
     }
 
-    // Rewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
+    // OpenRewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
     // This recipe has no configuration and when it is executed, it will delegate to its visitor.
     @Override
     protected ExpandCustomerInfoVisitor getVisitor() {
@@ -287,7 +287,7 @@ public class ExpandCustomerInfo extends Recipe {
 }
 ```
 
-Rewrite provides testing infrastructure for recipes via the rewrite-test module. To create automated tests of this recipe we use the [Kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line `Strings`, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/). To assert that the recipe makes the expected changes to our test class, we will create a new test class that implements the `JavaRecipeTest` interface and use`assertChanged` ensure the recipe is making the expected changes to the test class.
+OpenRewrite provides testing infrastructure for recipes via the rewrite-test module. To create automated tests of this recipe we use the [Kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line `Strings`, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/). To assert that the recipe makes the expected changes to our test class, we will create a new test class that implements the `JavaRecipeTest` interface and use`assertChanged` ensure the recipe is making the expected changes to the test class.
 
 ```kotlin
 package org.openrewrite.samples;

@@ -4,7 +4,7 @@ description: Add arbitrary metadata to ASTs
 
 # Markers
 
-Markers are used to annotate [AST](abstract-syntax-trees.md) elements with metadata. [Visitors](visitors.md) can attach any type implementing the [Marker](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/Marker.java) interface to any AST element. When an AST is printed back to source code Markers are _not_ printed. Markers are used during Rewrite execution to communicate between Recipes and to represent search results.
+Markers are used to annotate [AST](abstract-syntax-trees.md) elements with metadata. [Visitors](visitors.md) can attach any type implementing the [Marker](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/Marker.java) interface to any AST element. When an AST is printed back to source code Markers are _not_ printed. Markers are used during OpenRewrite execution to communicate between Recipes and to represent search results.
 
 ## Usage
 

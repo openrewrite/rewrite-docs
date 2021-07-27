@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction to Rewrite](README.md)
+* [Introduction to OpenRewrite](README.md)
 
 ## Getting Started
 

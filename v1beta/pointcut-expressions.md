@@ -4,7 +4,7 @@ description: A simple and powerful way of identifying method definitions and inv
 
 # Pointcut Expressions
 
-Many recipes operate on method declarations or invocations. Pointcut method expressions are a mechanism for configuring and developing these recipes. Rewrite's pointcut method expressions are derived from AspectJ. AspectJ uses the "pointcut" terminology more generally and expansively than Rewrite does. In Rewrite a "Pointcut expression" is comparable to AspectJ's "Pointcut method expressions".
+Many recipes operate on method declarations or invocations. Pointcut method expressions are a mechanism for configuring and developing these recipes. OpenRewrite's pointcut method expressions are derived from AspectJ. AspectJ uses the "pointcut" terminology more generally and expansively than OpenRewrite does. In OpenRewrite a "Pointcut expression" is comparable to AspectJ's "Pointcut method expressions".
 
 ## Anatomy of a Pointcut Expression
 

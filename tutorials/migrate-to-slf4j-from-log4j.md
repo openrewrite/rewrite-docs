@@ -1,6 +1,6 @@
 # Migrate to SLF4J from Log4j
 
-In this guide, we'll use Rewrite to perform an automated migration from [Apache Log4j 2 \(`Log4j`\)](https://logging.apache.org/log4j/2.x/) to [the Simple Logging Facade for Java \(`SLF4J`\)](http://www.slf4j.org/).
+In this guide, we'll use OpenRewrite to perform an automated migration from [Apache Log4j 2 \(`Log4j`\)](https://logging.apache.org/log4j/2.x/) to [the Simple Logging Facade for Java \(`SLF4J`\)](http://www.slf4j.org/).
 
 ## Example Configuration
 
@@ -66,7 +66,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/logging/slf4j/log4jtoslf4j.md).
 
-Similar to the [`SLF4J Migrator`](http://www.slf4j.org/migrator.html), the goal of the `Log4jToSlf4j` recipe is to significantly reduce the amount of work involved in migrating `Log4j` to `SLF4J`. Because Rewrite works by leveraging type-attributed [Abstract Syntax Trees](../v1beta/abstract-syntax-trees.md) \(AST\) representing your source code, the `Log4jToSlf4j` recipe can overcome several limitations discussed in the [`SLF4J Migrator` guide](http://www.slf4j.org/migrator.html).
+Similar to the [`SLF4J Migrator`](http://www.slf4j.org/migrator.html), the goal of the `Log4jToSlf4j` recipe is to significantly reduce the amount of work involved in migrating `Log4j` to `SLF4J`. Because OpenRewrite works by leveraging type-attributed [Abstract Syntax Trees](../v1beta/abstract-syntax-trees.md) \(AST\) representing your source code, the `Log4jToSlf4j` recipe can overcome several limitations discussed in the [`SLF4J Migrator` guide](http://www.slf4j.org/migrator.html).
 
 ### `.toString()`
 
