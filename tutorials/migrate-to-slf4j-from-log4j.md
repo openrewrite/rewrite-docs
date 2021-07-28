@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:0.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:0.3.0")
 }
 ```
 {% endcode %}
@@ -41,14 +41,14 @@ dependencies {
         <version>4.7.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.logging.slf4.Log4jToSlf4j</recipe>
+            <recipe>org.openrewrite.java.logging.slf4j.Log4jToSlf4j</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>0.2.0</version>
+            <version>0.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
