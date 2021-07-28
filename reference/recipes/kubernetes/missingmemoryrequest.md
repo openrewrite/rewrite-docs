@@ -1,6 +1,7 @@
 # Ensure memory request is set
 
- **org.openrewrite.kubernetes.MissingMemoryRequest** _A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
+** org.openrewrite.kubernetes.MissingMemoryRequest**
+_A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
 
 ### Tags
 
@@ -8,22 +9,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.3.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.3.0
+* version: 1.4.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.3.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.4.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.3.0")
+    id("org.openrewrite.rewrite") version("5.4.0")
 }
 
 rewrite {
@@ -35,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.4.0")
 }
 ```
 {% endcode %}
@@ -50,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.7.0</version>
+        <version>4.8.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.MissingMemoryRequest</recipe>
@@ -60,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.3.0</version>
+            <version>1.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,9 +80,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Missing configuration](search/findresourcemissingconfiguration.md)
+* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `/spec/containers/resources/requests/memory`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -96,7 +99,7 @@ recipeList:
   - org.openrewrite.kubernetes.search.FindResourceMissingConfiguration:
       resourceKind: Pod
       configurationPath: /spec/containers/resources/requests/memory
+
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -15,3 +15,4 @@
 * [Migrate JUnit asserts to AssertJ](junittoassertj.md)
 * [Statically import AssertJ's `assertThat`](staticimports.md)
 
+

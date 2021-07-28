@@ -18,5 +18,6 @@
 
 ## Subcategories
 
-* [Search](search/)
+* [Search](/reference/recipes/maven/search)
+
 

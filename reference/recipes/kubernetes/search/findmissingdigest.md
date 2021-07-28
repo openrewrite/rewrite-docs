@@ -1,49 +1,37 @@
 # Find missing digest
 
- **org.openrewrite.kubernetes.search.FindMissingDigest** _Find instances of a container name that fails to specify a digest._
+** org.openrewrite.kubernetes.search.FindMissingDigest**
+_Find instances of a container name that fails to specify a digest._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.3.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.3.0
+* version: 1.4.0
 
 ## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
-| `boolean` | includeInitContainers | Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
+| -- | -- | -- |
+| `boolean` | includeInitContainers | *Optional*. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindMissingDigestExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.FindMissingDigestExample
-displayName: Find missing digest example
-recipeList:
-  - org.openrewrite.kubernetes.search.FindMissingDigest:
-      includeInitContainers: null
-```
-{% endcode %}
-
-Now that `com.yourorg.FindMissingDigestExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.3.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.4.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.3.0")
+    id("org.openrewrite.rewrite") version("5.4.0")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.FindMissingDigestExample")
+    activeRecipe("org.openrewrite.kubernetes.search.FindMissingDigest")
 }
 
 repositories {
@@ -51,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.4.0")
 }
 ```
 {% endcode %}
@@ -66,17 +54,17 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.7.0</version>
+        <version>4.8.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>com.yourorg.FindMissingDigestExample</recipe>
+            <recipe>org.openrewrite.kubernetes.search.FindMissingDigest</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.3.0</version>
+            <version>1.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -88,5 +76,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindMissingDigestExample`
-
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.search.FindMissingDigest`

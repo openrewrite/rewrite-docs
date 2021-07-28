@@ -1,4 +1,4 @@
-# java.util.logging APIs
+# `java.util.logging` APIs
 
 ## Recipes
 
@@ -8,4 +8,5 @@
 * [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](migrateloggerlogrbtouseresourcebundle.md)
 * [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](migrategetloggingmxbeantogetplatformmxbean.md)
 * [Use `PlatformLoggingMXBean`](migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
+
 

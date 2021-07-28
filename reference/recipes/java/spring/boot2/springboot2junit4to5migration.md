@@ -1,6 +1,7 @@
 # JUnit Jupiter for Spring Boot 2.x projects
 
- **org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration** _Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
+** org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration**
+_Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
 
@@ -11,22 +12,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.7.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.7.0
+* version: 4.8.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.7.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.8.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.3.0")
+    id("org.openrewrite.rewrite") version("5.4.0")
 }
 
 rewrite {
@@ -38,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.7.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.8.0")
 }
 ```
 {% endcode %}
@@ -53,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.7.0</version>
+        <version>4.8.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -63,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.7.0</version>
+            <version>4.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -81,10 +83,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../testing/junit5/runnertoextension.md)
+* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
   * runners: `[org.springframework.test.context.junit4.SpringRunner, org.springframework.test.context.junit4.SpringJUnit4ClassRunner]`
   * extension: `org.springframework.test.context.junit.jupiter.SpringExtension`
-* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../testing/junit5/removeobsoleterunners.md)
+* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners.md)
   * obsoleteRunners: `[org.springframework.boot.junit.runner.classpath.ModifiedClassPathRunner, org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathRunner]`
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.springframework.boot`
@@ -93,8 +95,9 @@ Recipes can also be activated directly from the command line by adding the argum
   * releasesOnly: `false`
   * scope: `test`
   * onlyIfUsing: `[org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension]`
-* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](outputcaptureextension.md)
-* [Remove `@SpringExtension`](unnecessaryspringextension.md)
+* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](../../../java/spring/boot2/outputcaptureextension.md)
+* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -124,7 +127,7 @@ recipeList:
       onlyIfUsing: [org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension]
   - org.openrewrite.java.spring.boot2.OutputCaptureExtension
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
+
 ```
 {% endtab %}
 {% endtabs %}
-

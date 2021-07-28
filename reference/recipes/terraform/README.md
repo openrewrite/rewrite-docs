@@ -6,6 +6,7 @@
 
 ## Subcategories
 
-* [AWS](aws/)
-* [Search](search/)
+* [AWS](/reference/recipes/terraform/aws)
+* [Search](/reference/recipes/terraform/search)
+
 

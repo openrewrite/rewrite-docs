@@ -9,5 +9,6 @@
 
 ## Subcategories
 
-* [Spring Boot 2.x](boot2/)
+* [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
+
 
