@@ -11,7 +11,7 @@ This getting started guide covers setting up your development environment for cr
 * [JDK](https://adoptopenjdk.net/) \(version 1.8+\)
   * A JRE alone is insufficient since OpenRewrite uses compiler internals and tools only found in the JDK
 * [Gradle](https://gradle.org/) \(version 4.7+ \) or [Maven ](https://maven.apache.org/)\(version 3.2+\)
-* Text Editor or IDE with Java support. [Kotlin ](https://kotlinlang.org/)support optional but recommended for a good test authoring experience
+* Text Editor or IDE with Java support. [Kotlin](https://kotlinlang.org/) support optional but recommended for a good test authoring experience
   * [IntelliJ](https://www.jetbrains.com/idea/download/)
   * [Eclipse](https://www.eclipse.org/downloads/) with [Kotlin Plugin](https://marketplace.eclipse.org/content/kotlin-plugin-eclipse)
 
@@ -42,24 +42,24 @@ Which rewrite libraries you take dependencies on is determined by which language
 ```groovy
 dependencies {
     // rewrite-java dependencies only necessary for Java Recipe development
-    implementation("org.openrewrite:rewrite-java:7.8.1")
-    runtimeOnly("org.openrewrite:rewrite-java-11:7.8.1")
-    runtimeOnly("org.openrewrite:rewrite-java-8:7.8.1")
+    implementation("org.openrewrite:rewrite-java:7.10.0")
+    runtimeOnly("org.openrewrite:rewrite-java-11:7.10.0")
+    runtimeOnly("org.openrewrite:rewrite-java-8:7.10.0")
 
     // rewrite-maven dependency only necessary for Maven Recipe development
-    implementation("org.openrewrite:rewrite-maven:7.8.1")
+    implementation("org.openrewrite:rewrite-maven:7.10.0")
 
     // rewrite-yaml dependency only necessary for Yaml Recipe development
-    implementation("org.openrewrite:rewrite-yaml:7.8.1")
+    implementation("org.openrewrite:rewrite-yaml:7.10.0")
 
     // rewrite-properties dependency only necessary for Properties Recipe development
-    implementation("org.openrewrite:rewrite-properties:7.8.1")
+    implementation("org.openrewrite:rewrite-properties:7.10.0")
 
     // rewrite-xml dependency only necessary for XML Recipe development
-    implementation("org.openrewrite:rewrite-xml:7.8.1")
+    implementation("org.openrewrite:rewrite-xml:7.10.0")
 
     // For authoring tests for any kind of Recipe
-    testImplementation("org.openrewrite:rewrite-test:7.8.1")
+    testImplementation("org.openrewrite:rewrite-test:7.10.0")
 }
 ```
 {% endtab %}
@@ -71,19 +71,19 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
-        <version>7.8.1</version>
+        <version>7.10.0</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
-        <version>7.8.1</version>
+        <version>7.10.0</version>
         <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-11</artifactId>
-        <version>7.8.1</version>
+        <version>7.10.0</version>
         <scope>runtime</scope>
     </dependency>
 
@@ -91,7 +91,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-maven</artifactId>
-        <version>7.8.1</version>
+        <version>7.10.0</version>
         <scope>compile</scope>
     </dependency>
 
@@ -99,7 +99,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-yaml</artifactId>
-        <version>7.8.1</version>
+        <version>7.10.0</version>
         <scope>compile</scope>
     </dependency>
 
@@ -107,7 +107,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-properties</artifactId>
-        <version>7.8.1</version>
+        <version>7.10.0</version>
         <scope>compile</scope>
     </dependency>
 
@@ -115,7 +115,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-xml</artifactId>
-        <version>7.8.1</version>
+        <version>7.10.0</version>
         <scope>compile</scope>
     </dependency>    
 
@@ -123,7 +123,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-test</artifactId>
-        <version>7.8.1</version>
+        <version>7.10.0</version>
         <scope>test</scope>
     </dependency>
 </dependencies>
@@ -179,7 +179,7 @@ For a good test authoring experience we recommend also applying the Kotlin plugi
 ```groovy
 // https://kotlinlang.org/docs/gradle.html#targeting-the-jvm
 plugins {
-    id("org.jetbrains.kotlin.jvm") version("1.4.31")
+    id("org.jetbrains.kotlin.jvm") version("1.5.10")
 }
 ```
 {% endcode %}
@@ -284,7 +284,7 @@ Having configured the project per these recommendations, you're now able to begi
 * src/test/java - Recipe tests in Java
 * src/test/kotlin - Recipe tests in Kotlin
 
-With this project setup is complete and you are ready to move on to authoring a Recipe!
+Project setup is complete. You are ready to move on to authoring a Recipe!
 
 ## Recipe Distribution
 
