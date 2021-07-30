@@ -1,6 +1,6 @@
 # Quarkus
 
-_Recipes for upgrading and patching [Quarkus](https://quarkus.io/) applications._
+_Recipes for upgrading and patching_ [_Quarkus_](https://quarkus.io/) _applications._
 
 ## Recipes
 
@@ -12,6 +12,5 @@ _Recipes for upgrading and patching [Quarkus](https://quarkus.io/) applications.
 
 ## Subcategories
 
-* [Quarkus 2.x](/reference/recipes/java/quarkus/quarkus2)
-
+* [Quarkus 2.x](quarkus2/)
 

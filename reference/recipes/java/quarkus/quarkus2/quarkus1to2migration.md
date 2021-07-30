@@ -1,7 +1,6 @@
 # Quarkus 2.x migration from Quarkus 1.x
 
-** org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration**
-_Migrates Quarkus 1.x to 2.x._
+ **org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration** _Migrates Quarkus 1.x to 2.x._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrates Quarkus 1.x to 2.x._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.5.0
-
 
 ## Usage
 
@@ -95,13 +93,13 @@ Recipes can also be activated directly from the command line by adding the argum
   * propertyKey: `quarkus.quartz.store-type`
   * newValue: `jdbc-cmt`
   * oldValue: `db`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.qute.api.CheckedTemplate`
   * newFullyQualifiedTypeName: `io.quarkus.qute.CheckedTemplate`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.qute.api.ResourcePath`
   * newFullyQualifiedTypeName: `io.quarkus.qute.Location`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.mongodb.runtime.MongoClientName`
   * newFullyQualifiedTypeName: `io.quarkus.mongodb.MongoClientName`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
@@ -116,18 +114,17 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `io.quarkus`
   * artifactId: `quarkus-maven-plugin`
   * newVersion: `2.x`
-* [Rename package name](../../../java/changepackage.md)
+* [Rename package name](../../changepackage.md)
   * oldPackageName: `io.vertx.core.http.HttpMethod`
   * newPackageName: `io.quarkus.vertx.web.Route.HttpMethod`
   * recursive: `false`
-* [Quarkus 1.13 migration from Quarkus 1.11](../../../java/quarkus/quarkus1to1_13migration.md)
-* [Use `@GrpcClient`](../../../java/quarkus/quarkus2/grpcserviceannotationtogrpcclient.md)
-* [Remove `avro-maven-plugin`](../../../java/quarkus/quarkus2/removeavromavenplugin.md)
-* [Use `@Identifier("default-kafka-broker")`](../../../java/quarkus/quarkus2/useidentifierondefaultkafkabroker.md)
-* [Use `PanacheEntityBase` static methods](../../../java/quarkus/quarkus2/usepanacheentitybasestaticmethods.md)
-* [Use `Uni<T extends PanacheEntityBase>`](../../../java/quarkus/quarkus2/usepanacheentitybaseunit.md)
-* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](../../../java/quarkus/quarkus2/usereactivepanachemongoentitybaseunit.md)
-
+* [Quarkus 1.13 migration from Quarkus 1.11](../quarkus1to1_13migration.md)
+* [Use `@GrpcClient`](grpcserviceannotationtogrpcclient.md)
+* [Remove `avro-maven-plugin`](removeavromavenplugin.md)
+* [Use `@Identifier("default-kafka-broker")`](useidentifierondefaultkafkabroker.md)
+* [Use `PanacheEntityBase` static methods](usepanacheentitybasestaticmethods.md)
+* [Use `Uni<T extends PanacheEntityBase>`](usepanacheentitybaseunit.md)
+* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](usereactivepanachemongoentitybaseunit.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -189,7 +186,7 @@ recipeList:
   - org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseStaticMethods
   - org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseUniT
   - org.openrewrite.java.quarkus.quarkus2.UseReactivePanacheMongoEntityBaseUniT
-
 ```
 {% endtab %}
 {% endtabs %}
+

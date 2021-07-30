@@ -1,7 +1,6 @@
 # Copy non-inherited annotations from super class
 
-** org.openrewrite.java.micronaut.CopyNonInheritedAnnotationsFromSuperClass**
-_As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/micronaut-core/blob/3.0.x/src/main/docs/guide/appendix/breaks.adoc#annotation-inheritance) that are explicitly meta-annotated with `@Inherited` are inherited from parent classes and interfaces._
+ **org.openrewrite.java.micronaut.CopyNonInheritedAnnotationsFromSuperClass** _As of Micronaut 3.x only_ [_annotations_](https://github.com/micronaut-projects/micronaut-core/blob/3.0.x/src/main/docs/guide/appendix/breaks.adoc#annotation-inheritance) _that are explicitly meta-annotated with `@Inherited` are inherited from parent classes and interfaces._
 
 ## Source
 
@@ -10,7 +9,6 @@ _As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/mi
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
 * version: 0.2.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.micronaut.CopyNonInheritedAnnotationsFromSuperClass`
+

@@ -1,7 +1,6 @@
 # Find missing digest
 
-** org.openrewrite.kubernetes.search.FindMissingDigest**
-_Find instances of a container name that fails to specify a digest._
+ **org.openrewrite.kubernetes.search.FindMissingDigest** _Find instances of a container name that fails to specify a digest._
 
 ## Source
 
@@ -14,9 +13,8 @@ _Find instances of a container name that fails to specify a digest._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `boolean` | includeInitContainers | *Optional*. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
-
+| :--- | :--- | :--- |
+| `boolean` | includeInitContainers | _Optional_. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
 
 ## Usage
 
@@ -77,3 +75,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.search.FindMissingDigest`
+

@@ -1,6 +1,6 @@
 # Kubernetes
 
-_Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration tasks._
+_Recipes to perform_ [_Kubernetes_](https://kubernetes.io/) _hygiene and migration tasks._
 
 ## Recipes
 
@@ -26,8 +26,7 @@ _Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration t
 
 ## Subcategories
 
-* [Resource](/reference/recipes/kubernetes/resource)
-* [Search](/reference/recipes/kubernetes/search)
-* [Services](/reference/recipes/kubernetes/services)
-
+* [Resource](resource/)
+* [Search](search/)
+* [Services](services/)
 

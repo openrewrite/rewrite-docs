@@ -1,7 +1,6 @@
-# Use `PanacheEntityBase` static methods
+# Use PanacheEntityBase static methods
 
-** org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseStaticMethods**
-_The `getEntityManager()` and the `flush()` methods of `PanacheEntityBase` are now static methods._
+ **org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseStaticMethods** _The `getEntityManager()` and the `flush()` methods of `PanacheEntityBase` are now static methods._
 
 ## Source
 
@@ -10,7 +9,6 @@ _The `getEntityManager()` and the `flush()` methods of `PanacheEntityBase` are n
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.5.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseStaticMethods`
+

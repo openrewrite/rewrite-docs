@@ -6,4 +6,3 @@
 * [Find exceeds resource limit](findexceedsresourcevalue.md)
 * [Find exceeds resource ratio](findexceedsresourceratio.md)
 
-

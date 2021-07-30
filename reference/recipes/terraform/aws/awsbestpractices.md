@@ -1,7 +1,6 @@
 # Best practices for AWS
 
-** org.openrewrite.terraform.aws.AWSBestPractices**
-_Securely operate on Amazon Web Services._
+ **org.openrewrite.terraform.aws.AWSBestPractices** _Securely operate on Amazon Web Services._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Securely operate on Amazon Web Services._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.2.0
-
 
 ## Usage
 
@@ -81,25 +79,24 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Encrypt CodeBuild projects](../../terraform/aws/disableinstancemetadataservicev1.md)
-* [Enable API gateway caching](../../terraform/aws/enableapigatewaycaching.md)
-* [Encrypt Aurora clusters](../../terraform/aws/encryptauroraclusters.md)
-* [Encrypt CodeBuild projects](../../terraform/aws/encryptcodebuild.md)
-* [Encrypt DAX storage at rest](../../terraform/aws/encryptdaxstorage.md)
-* [Encrypt Neptune storage](../../terraform/aws/encryptdocumentdb.md)
-* [Scan images pushed to ECR](../../terraform/aws/enabledynamodbpitr.md)
-* [Encrypt EBS volume launch configurations](../../terraform/aws/encryptebsvolumelaunchconfiguration.md)
-* [Encrypt EBS volumes](../../terraform/aws/encryptebsvolumes.md)
-* [Encrypt EBS snapshots](../../terraform/aws/encryptebssnapshots.md)
-* [Enable point-in-time recovery for DynamoDB](../../terraform/aws/enableecrscanonpush.md)
-* [Encrypt ElastiCache Redis at rest](../../terraform/aws/encryptelasticacheredisatrest.md)
-* [Encrypt ElastiCache Redis in transit](../../terraform/aws/encryptelasticacheredisintransit.md)
-* [Encrypt Neptune storage](../../terraform/aws/encryptneptunestorage.md)
-* [Encrypt RDS clusters](../../terraform/aws/encryptrdsclusters.md)
-* [Encrypt DAX storage at rest](../../terraform/aws/encryptredshift.md)
-* [Make ECR tags immutable](../../terraform/aws/immutableecrtags.md)
-* [Use HTTPS for Cloudfront distribution](../../terraform/aws/usehttpsforcloudfrontdistribution.md)
-
+* [Encrypt CodeBuild projects](disableinstancemetadataservicev1.md)
+* [Enable API gateway caching](enableapigatewaycaching.md)
+* [Encrypt Aurora clusters](encryptauroraclusters.md)
+* [Encrypt CodeBuild projects](encryptcodebuild.md)
+* [Encrypt DAX storage at rest](encryptdaxstorage.md)
+* [Encrypt Neptune storage](encryptdocumentdb.md)
+* [Scan images pushed to ECR](enabledynamodbpitr.md)
+* [Encrypt EBS volume launch configurations](encryptebsvolumelaunchconfiguration.md)
+* [Encrypt EBS volumes](encryptebsvolumes.md)
+* [Encrypt EBS snapshots](encryptebssnapshots.md)
+* [Enable point-in-time recovery for DynamoDB](enableecrscanonpush.md)
+* [Encrypt ElastiCache Redis at rest](encryptelasticacheredisatrest.md)
+* [Encrypt ElastiCache Redis in transit](encryptelasticacheredisintransit.md)
+* [Encrypt Neptune storage](encryptneptunestorage.md)
+* [Encrypt RDS clusters](encryptrdsclusters.md)
+* [Encrypt DAX storage at rest](encryptredshift.md)
+* [Make ECR tags immutable](immutableecrtags.md)
+* [Use HTTPS for Cloudfront distribution](usehttpsforcloudfrontdistribution.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -131,7 +128,7 @@ recipeList:
   - org.openrewrite.terraform.aws.EncryptRedshift
   - org.openrewrite.terraform.aws.ImmutableECRTags
   - org.openrewrite.terraform.aws.UseHttpsForCloudfrontDistribution
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
 # Remove unused YAML
 
-** org.openrewrite.yaml.cleanup.RemoveUnused**
-_Remove YAML mapping and sequence keys that have no value._
+ **org.openrewrite.yaml.cleanup.RemoveUnused** _Remove YAML mapping and sequence keys that have no value._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove YAML mapping and sequence keys that have no value._
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
 * version: 7.10.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.yaml.cleanup.RemoveUnused`
+

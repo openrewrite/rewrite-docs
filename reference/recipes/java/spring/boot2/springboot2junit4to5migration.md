@@ -1,7 +1,6 @@
 # JUnit Jupiter for Spring Boot 2.x projects
 
-** org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration**
-_Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
+ **org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration** _Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
 
@@ -17,7 +16,6 @@ _Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.8.0
-
 
 ## Usage
 
@@ -83,10 +81,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
+* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../testing/junit5/runnertoextension.md)
   * runners: `[org.springframework.test.context.junit4.SpringRunner, org.springframework.test.context.junit4.SpringJUnit4ClassRunner]`
   * extension: `org.springframework.test.context.junit.jupiter.SpringExtension`
-* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners.md)
+* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../testing/junit5/removeobsoleterunners.md)
   * obsoleteRunners: `[org.springframework.boot.junit.runner.classpath.ModifiedClassPathRunner, org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathRunner]`
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.springframework.boot`
@@ -95,9 +93,8 @@ Recipes can also be activated directly from the command line by adding the argum
   * releasesOnly: `false`
   * scope: `test`
   * onlyIfUsing: `[org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension]`
-* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](../../../java/spring/boot2/outputcaptureextension.md)
-* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
-
+* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](outputcaptureextension.md)
+* [Remove `@SpringExtension`](unnecessaryspringextension.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -127,7 +124,7 @@ recipeList:
       onlyIfUsing: [org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension]
   - org.openrewrite.java.spring.boot2.OutputCaptureExtension
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
-
 ```
 {% endtab %}
 {% endtabs %}
+

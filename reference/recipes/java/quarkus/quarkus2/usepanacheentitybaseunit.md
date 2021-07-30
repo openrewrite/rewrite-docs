@@ -1,7 +1,6 @@
-# Use `Uni<T extends PanacheEntityBase>`
+# Use Uni
 
-** org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseUniT**
-_The `persist()` and `persistAndFlush()` methods now return an `Uni<T extends PanacheEntityBase>` instead of an `Uni<Void>` to allow chaining the methods._
+ **org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseUniT** _The `persist()` and `persistAndFlush()` methods now return an `Uni<T extends PanacheEntityBase>` instead of an `Uni<Void>` to allow chaining the methods._
 
 ## Source
 
@@ -10,7 +9,6 @@ _The `persist()` and `persistAndFlush()` methods now return an `Uni<T extends Pa
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.5.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseUniT`
+

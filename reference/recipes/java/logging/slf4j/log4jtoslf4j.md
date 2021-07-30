@@ -1,7 +1,6 @@
 # Migrate Log4j logging framework to SLF4J
 
-** org.openrewrite.java.logging.slf4j.Log4jToSlf4j**
-_Use of the traditional Log4j to SLF4J bridge can result in some loss of performance as the Log4j 2 Messages must be formatted before they can be passed to SLF4J._
+ **org.openrewrite.java.logging.slf4j.Log4jToSlf4j** _Use of the traditional Log4j to SLF4J bridge can result in some loss of performance as the Log4j 2 Messages must be formatted before they can be passed to SLF4J._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Use of the traditional Log4j to SLF4J bridge can result in some loss of perform
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 0.4.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.logging.slf4j.Log4jToSlf4j`
+

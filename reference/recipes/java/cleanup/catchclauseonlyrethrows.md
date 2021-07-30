@@ -1,7 +1,6 @@
 # Catch clause should do more than just rethrow
 
-** org.openrewrite.java.cleanup.CatchClauseOnlyRethrows**
-_A `catch` clause that only rethrows the caught exception is unnecessary. Letting the exception bubble up as normal achieves the same result with less code._
+ **org.openrewrite.java.cleanup.CatchClauseOnlyRethrows** _A `catch` clause that only rethrows the caught exception is unnecessary. Letting the exception bubble up as normal achieves the same result with less code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _A `catch` clause that only rethrows the caught exception is unnecessary. Lettin
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.10.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.CatchClauseOnlyRethrows`
+

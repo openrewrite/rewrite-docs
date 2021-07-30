@@ -13,4 +13,3 @@
 * [Use `new LinkedHashSet<>()` instead of Guava](noguavasetsnewlinkedhashset.md)
 * [Use `new LinkedList<>()` instead of Guava](noguavalistsnewlinkedlist.md)
 
-

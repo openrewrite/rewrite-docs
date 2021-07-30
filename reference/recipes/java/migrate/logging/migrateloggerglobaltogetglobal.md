@@ -1,7 +1,6 @@
-# Use `Logger#getGlobal()`
+# Use Logger\#getGlobal\(\)
 
-** org.openrewrite.java.migrate.logging.MigrateLoggerGlobalToGetGlobal**
-_The preferred way to get the global logger object is via the call `Logger#getGlobal()`._
+ **org.openrewrite.java.migrate.logging.MigrateLoggerGlobalToGetGlobal** _The preferred way to get the global logger object is via the call `Logger#getGlobal()`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _The preferred way to get the global logger object is via the call `Logger#getGl
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.5.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.logging.MigrateLoggerGlobalToGetGlobal`
+

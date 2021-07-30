@@ -1,7 +1,6 @@
 # Use Mockito JUnit Jupiter extension
 
-** org.openrewrite.java.testing.junit5.UseMockitoExtension**
-_Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) to `@ExtendWith(MockitoExtension.class)`._
+ **org.openrewrite.java.testing.junit5.UseMockitoExtension** _Migrate uses of `@RunWith(MockitoJUnitRunner.class)` \(and similar annotations\) to `@ExtendWith(MockitoExtension.class)`._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.9.0
-
 
 ## Usage
 
@@ -82,11 +80,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
+* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](runnertoextension.md)
   * runners: `[org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]`
   * extension: `org.mockito.junit.jupiter.MockitoExtension`
-* [Mockito 3.x migration from 1.x](../../../java/testing/mockito/mockito1to3migration.md)
-
+* [Mockito 3.x migration from 1.x](../mockito/mockito1to3migration.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +102,7 @@ recipeList:
       runners: [org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]
       extension: org.mockito.junit.jupiter.MockitoExtension
   - org.openrewrite.java.testing.mockito.Mockito1to3Migration
-
 ```
 {% endtab %}
 {% endtabs %}
+

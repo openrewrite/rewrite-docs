@@ -74,12 +74,12 @@ This guide is an evolving document for engineers at Design Partner 1 to integrat
 | Ensure that `String.equals()` calls avoid NPEs when string literals are involved | ⬤ |
 | Remove unnecessary explicit initialization of types to their default values | ⬤ |
 | Finalize local variables that can be `final` | ⬤ |
-| Make the constructors of static utility classes `private`  | ⬤ |
+| Make the constructors of static utility classes `private` | ⬤ |
 | Ensure that modifiers are declared in the order specified by the Java spec | ⬤ |
 | Ensure that method names comply with the appropriate naming convention | ◑ |
 | Remove unnecessary intermediate construction of `File` objects | ⬤ |
 | Remove meaningless `final` modifier from static methods | ⬤ |
-| Simplify unnecessarily complex boolean expressions  | ⬤ |
+| Simplify unnecessarily complex boolean expressions | ⬤ |
 | Remove unnecessary type arguments and use `<>` operator | ⬤ |
 | Remove unnecessary parentheses | ⬤ |
 | Remove unnecessary throws declarations | ⬤ |

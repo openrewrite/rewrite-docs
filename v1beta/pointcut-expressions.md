@@ -36,7 +36,7 @@ So if you wanted to match invocations of `String.toString(int beginIndex)` then 
 | `java.lang.String substring(int)` | Exactly the [single argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int%29) of `String.substring()` |
 | `java.lang.String substring(int, int)` | Exactly the [two argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int,int%29) of `String.substring()` |
 | `java.lang.String substring(..)` | Any overload of `String.substring()` |
-| `java.lang.String *(int)` | Any method on `String` that accepts a single argument of type `int`  |
+| `java.lang.String *(int)` | Any method on `String` that accepts a single argument of type `int` |
 | `com.yourorg.Foo bar(int, String, ..)` | Any method on `Foo` named `bar` accepting an `int`, a `String`, and zero or more other arguments of any type |
 | `com.yourorg.Foo Foo(*, *, *)` | Constructors of `Foo` accepting exactly three arguments of any type. |
 | `*..String *(..)` | Any method accepting any arguments on classes named "String" in any package |
@@ -119,7 +119,7 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
         }
         return m;
     }
-    
+
     // Other implementation follows
 }
 ```

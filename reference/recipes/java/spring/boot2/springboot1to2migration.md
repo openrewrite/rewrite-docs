@@ -1,7 +1,6 @@
 # Spring Boot 2.x migration from Spring Boot 1.x
 
-** org.openrewrite.java.spring.boot2.SpringBoot1To2Migration**
-_Migrates Spring Boot 1.x to 2.x including best practices._
+ **org.openrewrite.java.spring.boot2.SpringBoot1To2Migration** _Migrates Spring Boot 1.x to 2.x including best practices._
 
 ### Tags
 
@@ -18,7 +17,6 @@ _Migrates Spring Boot 1.x to 2.x including best practices._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.8.0
-
 
 ## Usage
 
@@ -101,19 +99,19 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `org.webjars`
   * artifactId: `webjars-locator`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.support.SpringBootServletInitializer`
   * newFullyQualifiedTypeName: `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.HttpMessageConverters`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.http.HttpMessageConverters`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.ErrorController`
   * newFullyQualifiedTypeName: `org.springframework.boot.web.servlet.error.ErrorController`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.constraints.NotEmpty`
   * newFullyQualifiedTypeName: `javax.validation.constraints.NotEmpty`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.constraints.NotBlank`
   * newFullyQualifiedTypeName: `javax.validation.constraints.NotBlank`
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -128,17 +126,16 @@ Recipes can also be activated directly from the command line by adding the argum
   * version: `2.x`
   * releasesOnly: `false`
   * onlyIfUsing: `[javax.validation.constraints.NotBlank, javax.validation.constraints.NotEmpty]`
-* [JUnit Jupiter for Spring Boot 2.x projects](../../../java/spring/boot2/springboot2junit4to5migration.md)
-* [Remove the `@Autowired` annotation on inferred constructor](../../../java/spring/noautowiredonconstructor.md)
-* [Migrate multi-condition `@ConditionalOnBean` annotations](../../../java/spring/boot2/conditionalonbeananynestedcondition.md)
-* [Migrate `RestTemplateBuilder`](../../../java/spring/boot2/resttemplatebuilderrequestfactory.md)
-* [Replace `EnvironmentTestUtils` with `TestPropertyValues`](../../../java/spring/boot2/replacedeprecatedenvironmenttestutils.md)
-* [Migrate Spring Boot properties to 2.0](../../../java/spring/boot2/springbootproperties_2_0.md)
-* [Migrate Spring Boot properties to 2.1](../../../java/spring/boot2/springbootproperties_2_1.md)
-* [Migrate Spring Boot properties to 2.2](../../../java/spring/boot2/springbootproperties_2_2.md)
-* [Migrate Spring Boot properties to 2.3](../../../java/spring/boot2/springbootproperties_2_3.md)
-* [Spring Boot 2.x best practices](../../../java/spring/boot2/springboot2bestpractices.md)
-
+* [JUnit Jupiter for Spring Boot 2.x projects](springboot2junit4to5migration.md)
+* [Remove the `@Autowired` annotation on inferred constructor](../noautowiredonconstructor.md)
+* [Migrate multi-condition `@ConditionalOnBean` annotations](conditionalonbeananynestedcondition.md)
+* [Migrate `RestTemplateBuilder`](resttemplatebuilderrequestfactory.md)
+* [Replace `EnvironmentTestUtils` with `TestPropertyValues`](replacedeprecatedenvironmenttestutils.md)
+* [Migrate Spring Boot properties to 2.0](springbootproperties_2_0.md)
+* [Migrate Spring Boot properties to 2.1](springbootproperties_2_1.md)
+* [Migrate Spring Boot properties to 2.2](springbootproperties_2_2.md)
+* [Migrate Spring Boot properties to 2.3](springbootproperties_2_3.md)
+* [Spring Boot 2.x best practices](springboot2bestpractices.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -209,7 +206,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_2
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_3
   - org.openrewrite.java.spring.boot2.SpringBoot2BestPractices
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
 # Remove empty blocks
 
-** org.openrewrite.java.cleanup.EmptyBlock**
-_Remove empty blocks that effectively do nothing._
+ **org.openrewrite.java.cleanup.EmptyBlock** _Remove empty blocks that effectively do nothing._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Remove empty blocks that effectively do nothing._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.10.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.EmptyBlock`
+

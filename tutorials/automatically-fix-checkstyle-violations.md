@@ -56,13 +56,12 @@ rewrite {
 repositories {
     mavenCentral() // rewrite is published to Maven Central
 }
-
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-At this point, you're ready to fix Checkstyle policy violations by running `mvn rewrite:run` or `gradlew rewriteRun`. 
+At this point, you're ready to fix Checkstyle policy violations by running `mvn rewrite:run` or `gradlew rewriteRun`.
 
 {% hint style="info" %}
 OpenRewrite can be configured to use different checkstyle policies than your Checkstyle plugin. Follow the "No Checkstyle Plugin" instructions to override the location of the checkstyle configuration file.
@@ -111,7 +110,6 @@ rewrite {
 repositories {
     mavenCentral() // rewrite is published to Maven Central
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -157,7 +155,6 @@ def rewriteRunTask = tasks.named("rewriteRun")
 tasks.withType(Checkstyle) {
     dependsOn(rewriteRunTask)
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -165,7 +162,7 @@ tasks.withType(Checkstyle) {
 
 ### Maven
 
-In Maven, the ordering of goals depends first on which phase of the [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) they are declared in, then secondarily by the order in which plugins are declared. This means that the rewrite-maven-plugin should be declared _above_ the maven-checkstyle-plugin in your pom.xml and configured to execute within the same phase as you configure checkstyle to run its "check" goal. 
+In Maven, the ordering of goals depends first on which phase of the [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) they are declared in, then secondarily by the order in which plugins are declared. This means that the rewrite-maven-plugin should be declared _above_ the maven-checkstyle-plugin in your pom.xml and configured to execute within the same phase as you configure checkstyle to run its "check" goal.
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -223,6 +220,4 @@ We don't have OpenRewrite recipes implemented for all publicly available policie
 {% hint style="info" %}
 Checkstyle configuration loading only informs the behavior of recipes, not which recipes are active. Regardless of the presence or non-presence of Checkstyle configuration, OpenRewrite will never apply any refactoring you do not explicitly activate.
 {% endhint %}
-
-
 

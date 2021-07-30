@@ -1,7 +1,6 @@
 # Scan images pushed to ECR
 
-** org.openrewrite.terraform.aws.EnableDynamoDbPITR**
-_DynamoDB Point-In-Time Recovery (PITR) is an automatic backup service for DynamoDB table data that helps protect your DynamoDB tables from accidental write or delete operations._
+ **org.openrewrite.terraform.aws.EnableDynamoDbPITR** _DynamoDB Point-In-Time Recovery \(PITR\) is an automatic backup service for DynamoDB table data that helps protect your DynamoDB tables from accidental write or delete operations._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _DynamoDB Point-In-Time Recovery (PITR) is an automatic backup service for Dynam
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.2.0
-
 
 ## Usage
 
@@ -81,12 +79,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_dynamodb_table`
-  * content: `point_in_time_recovery {
-  enabled = true
-}`
+  * content: \`point\_in\_time\_recovery {
 
+    enabled = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +104,7 @@ recipeList:
       content: point_in_time_recovery {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

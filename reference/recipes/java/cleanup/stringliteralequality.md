@@ -1,7 +1,6 @@
-# Use `String.equals()` on String literals
+# Use String.equals\(\) on String literals
 
-** org.openrewrite.java.cleanup.StringLiteralEquality**
-_`String.equals()` should be used when checking value equality on String literals. Using `==` or `!=` compares object references, not the actual value of the Strings. This only modifies code where at least one side of the binary operation (`==` or `!=`) is a String literal, such as `"someString" == someVariable;`. This is to prevent inadvertently changing code where referential equality is the user's intent._
+ **org.openrewrite.java.cleanup.StringLiteralEquality** _`String.equals()` should be used when checking value equality on String literals. Using `==` or `!=` compares object references, not the actual value of the Strings. This only modifies code where at least one side of the binary operation \(`==` or `!=`\) is a String literal, such as `"someString" == someVariable;`. This is to prevent inadvertently changing code where referential equality is the user's intent._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`String.equals()` should be used when checking value equality on String literal
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.10.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.StringLiteralEquality`
+

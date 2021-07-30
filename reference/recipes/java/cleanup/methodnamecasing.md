@@ -1,7 +1,6 @@
 # Method name casing
 
-** org.openrewrite.java.cleanup.MethodNameCasing**
-_Method names should comply with a naming convention._
+ **org.openrewrite.java.cleanup.MethodNameCasing** _Method names should comply with a naming convention._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Method names should comply with a naming convention._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.10.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.MethodNameCasing`
+

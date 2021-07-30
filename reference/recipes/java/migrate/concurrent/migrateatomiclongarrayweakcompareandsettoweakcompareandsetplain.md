@@ -1,7 +1,6 @@
-# Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`
+# Use AtomicLongArray\#weakCompareAndSetPlain\(int, long, long\)
 
-** org.openrewrite.java.migrate.concurrent.MigrateAtomicLongArrayWeakCompareAndSetToWeakCompareAndSetPlain**
-_`AtomicLongArray#weakCompareAndSet(int, long, long)` was deprecated in Java 9._
+ **org.openrewrite.java.migrate.concurrent.MigrateAtomicLongArrayWeakCompareAndSetToWeakCompareAndSetPlain** _`AtomicLongArray#weakCompareAndSet(int, long, long)` was deprecated in Java 9._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`AtomicLongArray#weakCompareAndSet(int, long, long)` was deprecated in Java 9._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.5.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `java.util.concurrent.atomic.AtomicLongArray weakCompareAndSet(int, long, long)`
   * newMethodName: `weakCompareAndSetPlain`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.util.concurrent.atomic.AtomicLongArray weakCompareAndSet(int, long, long)
       newMethodName: weakCompareAndSetPlain
-
 ```
 {% endtab %}
 {% endtabs %}
+

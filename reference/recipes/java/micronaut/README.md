@@ -1,6 +1,6 @@
 # Micronaut
 
-_Recipes for upgrading and patching [Micronaut](https://micronaut.io/) applications._
+_Recipes for upgrading and patching_ [_Micronaut_](https://micronaut.io/) _applications._
 
 ## Recipes
 
@@ -11,5 +11,4 @@ _Recipes for upgrading and patching [Micronaut](https://micronaut.io/) applicati
 * [De-capitalize `BeanIntrospection` `getProperty(..)` and `getRequiredProperty(..)` name arguments](beanpropertycapitalizationstrategy.md)
 * [Migrate from Micronaut 2.x to 3.x](micronaut2to3migration.md)
 * [`Provider` implementation beans to Micronaut `@Factory`](providerimplementationstomicronautfactories.md)
-
 
