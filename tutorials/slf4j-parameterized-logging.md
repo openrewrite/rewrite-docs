@@ -15,7 +15,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.logging.slf4.ParameterizedLogging")
+    activeRecipe("org.openrewrite.java.logging.slf4j.ParameterizedLogging")
 }
 
 repositories {
@@ -41,7 +41,7 @@ dependencies {
         <version>4.8.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.logging.slf4.ParameterizedLogging</recipe>
+            <recipe>org.openrewrite.java.logging.slf4j.ParameterizedLogging</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
