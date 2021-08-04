@@ -12,7 +12,7 @@ OpenRewrite provides a managed environment for discovering, instantiating and co
 
 ## Imperative Recipes
 
-An imperative recipe is built by extending the `org.openrewrite.Recipe` class and injecting configuration properties via it's constructor.
+An imperative recipe is built by extending the `org.openrewrite.Recipe` class and injecting configuration properties via its constructor.
 
 Let's look at a simple example where a Java recipe performs an operation to change all references of an original type to a new type.
 
@@ -114,7 +114,7 @@ In the event that a recipe requires custom validation rules different from the d
 
 ### Recipe Descriptors
 
-OpenRewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name \(via `Recipe.getDisplayName`\) and it's description \(via `Recipe.getDescription`\) to provide basic information about the recipe. Additionally, OpenRewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields.Collectively, this meta-data is used to build a recipe descriptor and OpenRewrite's managed environment provides a mechanism for listing/discovering these descriptors. The descriptors are leverages to generate automated help with the context of the build plugins and they are also useful when building out reference documentation. The following is an example of how to properly define the meta-data on the recipe so that it is available during discovery and automated help:
+OpenRewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name \(via `Recipe.getDisplayName`\) and its description \(via `Recipe.getDescription`\) to provide basic information about the recipe. Additionally, OpenRewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields.Collectively, this meta-data is used to build a recipe descriptor and OpenRewrite's managed environment provides a mechanism for listing/discovering these descriptors. The descriptors are leverages to generate automated help with the context of the build plugins and they are also useful when building out reference documentation. The following is an example of how to properly define the meta-data on the recipe so that it is available during discovery and automated help:
 
 ```java
 public class ChangeType extends Recipe {
