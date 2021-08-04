@@ -78,7 +78,7 @@ class JavaVisitor<P> extends TreeVisitor<J, P> {
 }
 ```
 
-An important concept to understand is what happens when the generic`TreeBuilder.visit(T, P)` method is called and how that is mapped into it's language-specific counterpart. Let's visualize how a Java CompilationUnit is passed from a client to the visitor:
+An important concept to understand is what happens when the generic`TreeBuilder.visit(T, P)` method is called and how that is mapped into its language-specific counterpart. Let's visualize how a Java CompilationUnit is passed from a client to the visitor:
 
 ![Example of Visitor Navigation](../.gitbook/assets/image%20%2816%29.png)
 
@@ -135,7 +135,7 @@ assertThat(counter.get()).isEqualTo(3);
 
 ## Refactoring Visitors
 
-A language-specific visitor is always scoped to return the base interface of that language's AST tree. Examining the JavaVisitor a bit closer, the first typed parameters is defined as `org.openrewrite.java.tree.J`and all of it's language-specific visit methods also return `J`.
+A language-specific visitor is always scoped to return the base interface of that language's AST tree. Examining the JavaVisitor a bit closer, the first typed parameters is defined as `org.openrewrite.java.tree.J`and all of its language-specific visit methods also return `J`.
 
 ```java
 class JavaVisitor<P> extends TreeVisitor<J, P> {
