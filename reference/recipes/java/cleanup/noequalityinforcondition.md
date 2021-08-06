@@ -23,7 +23,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.4.0")
+    id("org.openrewrite.rewrite") version("5.5.0")
 }
 
 rewrite {

@@ -10,7 +10,7 @@ This getting started guide covers setting up your development environment for cr
 
 * [JDK](https://adoptopenjdk.net/) \(version 1.8+\)
   * A JRE alone is insufficient since OpenRewrite uses compiler internals and tools only found in the JDK
-* [Gradle](https://gradle.org/) \(version 4.7+ \) or [Maven ](https://maven.apache.org/)\(version 3.2+\)
+* [Gradle](https://gradle.org/) \(version 4.0+ \) or [Maven](https://maven.apache.org/) \(version 3.2+\)
 * Text Editor or IDE with Java support. [Kotlin](https://kotlinlang.org/) support optional but recommended for a good test authoring experience
   * [IntelliJ](https://www.jetbrains.com/idea/download/)
   * [Eclipse](https://www.eclipse.org/downloads/) with [Kotlin Plugin](https://marketplace.eclipse.org/content/kotlin-plugin-eclipse)

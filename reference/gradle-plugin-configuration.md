@@ -4,7 +4,7 @@ description: rewrite-gradle-plugin configuration options and task descriptions
 
 # Gradle Plugin Configuration
 
-The OpenRewrite Gradle Plugin is the fastest way to apply OpenRewrite recipes to your code as part of your Gradle build. The OpenRewrite Gradle Plugin is compatible with all versions of Gradle since 4.7.
+The OpenRewrite Gradle Plugin is the fastest way to apply OpenRewrite recipes to your code as part of your Gradle build. The OpenRewrite Gradle Plugin is compatible with all versions of Gradle since 4.0.
 
 ## Plugin Configuration
 
@@ -13,7 +13,7 @@ Apply the org.openrewrite.rewrite plugin to your build.
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.4.0")
+    id("org.openrewrite.rewrite") version("5.5.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ The `rewrite` DSL exposes a few configuration options:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.4.0")
+    id("org.openrewrite.rewrite") version("5.5.0")
 }
 
 repositories {
@@ -84,7 +84,7 @@ Once a pre-packaged recipe has been added to the `rewrite` dependency configurat
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.4.0")
+    id("org.openrewrite.rewrite") version("5.5.0")
 }
 
 repositories {
