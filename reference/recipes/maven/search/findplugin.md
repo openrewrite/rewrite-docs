@@ -41,7 +41,7 @@ Now that `com.yourorg.FindPluginExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.5.0")
+    id("org.openrewrite.rewrite") version("5.6.0")
 }
 
 rewrite {
