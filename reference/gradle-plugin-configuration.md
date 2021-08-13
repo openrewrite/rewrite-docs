@@ -13,7 +13,7 @@ Apply the org.openrewrite.rewrite plugin to your build.
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.6.0")
+    id("org.openrewrite.rewrite") version("5.7.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ The `rewrite` DSL exposes a few configuration options:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.6.0")
+    id("org.openrewrite.rewrite") version("5.7.0")
 }
 
 repositories {
@@ -75,7 +75,7 @@ No recipe is ever run on your codebase without being explicitly activated in the
 
 ```groovy
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.8.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.9.0")
 }
 ```
 
@@ -84,7 +84,7 @@ Once a pre-packaged recipe has been added to the `rewrite` dependency configurat
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.6.0")
+    id("org.openrewrite.rewrite") version("5.7.0")
 }
 
 repositories {
@@ -93,7 +93,7 @@ repositories {
 
 dependencies {
     testImplementation("junit:junit:4.13")
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.7.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.10.0")
 }
 
 rewrite {
