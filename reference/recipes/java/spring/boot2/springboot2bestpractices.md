@@ -1,6 +1,7 @@
 # Spring Boot 2.x best practices
 
- **org.openrewrite.java.spring.boot2.SpringBoot2BestPractices** _Applies best practices to Spring Boot 2 applications._
+** org.openrewrite.java.spring.boot2.SpringBoot2BestPractices**
+_Applies best practices to Spring Boot 2 applications._
 
 ### Tags
 
@@ -9,22 +10,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.9.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.8.0
+* version: 4.9.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.8.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.9.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.6.0")
+    id("org.openrewrite.rewrite") version("5.7.0")
 }
 
 rewrite {
@@ -36,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.8.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.9.0")
 }
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.8.0</version>
+        <version>4.9.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2BestPractices</recipe>
@@ -61,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.8.0</version>
+            <version>4.9.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -79,9 +81,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Remove `@RequestMapping` annotations](../norequestmappingannotation.md)
-* [Remove implicit web annotation names](../implicitwebannotationnames.md)
-* [Remove `@SpringExtension`](unnecessaryspringextension.md)
+* [Remove `@RequestMapping` annotations](../../../java/spring/norequestmappingannotation.md)
+* [Remove implicit web annotation names](../../../java/spring/implicitwebannotationnames.md)
+* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -98,7 +101,7 @@ recipeList:
   - org.openrewrite.java.spring.NoRequestMappingAnnotation
   - org.openrewrite.java.spring.ImplicitWebAnnotationNames
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
+
 ```
 {% endtab %}
 {% endtabs %}
-

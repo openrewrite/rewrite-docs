@@ -2,7 +2,8 @@
 
 ## Recipes
 
-* [Find externalIPs](findserviceexternalips.md)
+* [Find uses of `externalIP`](findserviceexternalips.md)
 * [Service type](findservicesbytype.md)
-* [Update Service ExternalIPs](updateserviceexternalip.md)
+* [Update `Service` `externalIP`](updateserviceexternalip.md)
+
 

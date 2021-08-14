@@ -23,15 +23,16 @@ _Basic building blocks for transforming Java code._
 
 ## Subcategories
 
-* [Cleanup](cleanup/)
-* [Format](format/)
-* [JDK](migrate/)
-* [JHipster](jhipster/)
-* [Logging](logging/)
-* [Micronaut](micronaut/)
-* [Quarkus](quarkus/)
-* [Search](search/)
-* [Security](security/)
-* [Spring](spring/)
-* [Testing](testing/)
+* [Cleanup](/reference/recipes/java/cleanup)
+* [Format](/reference/recipes/java/format)
+* [JDK](/reference/recipes/java/migrate)
+* [JHipster](/reference/recipes/java/jhipster)
+* [Logging](/reference/recipes/java/logging)
+* [Micronaut](/reference/recipes/java/micronaut)
+* [Quarkus](/reference/recipes/java/quarkus)
+* [Search](/reference/recipes/java/search)
+* [Security](/reference/recipes/java/security)
+* [Spring](/reference/recipes/java/spring)
+* [Testing](/reference/recipes/java/testing)
+
 

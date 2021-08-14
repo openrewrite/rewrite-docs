@@ -1,25 +1,27 @@
 # Migrate Spring Boot properties to 2.2
 
- **org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_2** _Migrate properties found in `application.properties` and `application.yml`._
+** org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_2**
+_Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.9.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.8.0
+* version: 4.9.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.8.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.9.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.6.0")
+    id("org.openrewrite.rewrite") version("5.7.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.8.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.9.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.8.0</version>
+        <version>4.9.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBootProperties_2_2</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.8.0</version>
+            <version>4.9.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -164,6 +166,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Change property key](../../../yaml/changepropertykey.md)
   * oldPropertyKey: `management.endpoints.jmx.unique-names`
   * newPropertyKey: `spring.jmx.unique-names`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -264,7 +267,7 @@ recipeList:
   - org.openrewrite.yaml.ChangePropertyKey:
       oldPropertyKey: management.endpoints.jmx.unique-names
       newPropertyKey: spring.jmx.unique-names
+
 ```
 {% endtab %}
 {% endtabs %}
-

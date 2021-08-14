@@ -1,30 +1,34 @@
 # Update image name
 
- **org.openrewrite.kubernetes.UpdateContainerImageName** _Search for image names that match patterns and replace the components of the name with new values._
+** org.openrewrite.kubernetes.UpdateContainerImageName**
+_Search for image names that match patterns and replace the components of the name with new values._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.4.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.5.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.4.0
+* version: 1.5.0
 
 ## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
-| `String` | repoToFind | _Optional_. The repository part of the image name to search for in containers and initContainers. |
+| -- | -- | -- |
+| `String` | repoToFind | *Optional*. The repository part of the image name to search for in containers and initContainers. |
 | `String` | imageToFind | The image name to search for in containers and initContainers. |
-| `String` | tagToFind | _Optional_. The tag part of the image name to search for in containers and initContainers. |
-| `String` | repoToUpdate | _Optional_. The repository part of the image name to update to in containers and initContainers. |
-| `String` | imageToUpdate | _Optional_. The image name to update to in containers and initContainers. |
-| `String` | tagToUpdate | _Optional_. The tag part of the image name to update to in containers and initContainers. |
-| `boolean` | includeInitContainers | _Optional_. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
+| `String` | tagToFind | *Optional*. The tag part of the image name to search for in containers and initContainers. |
+| `String` | repoToUpdate | *Optional*. The repository part of the image name to update to in containers and initContainers. |
+| `String` | imageToUpdate | *Optional*. The image name to update to in containers and initContainers. |
+| `String` | tagToUpdate | *Optional*. The tag part of the image name to update to in containers and initContainers. |
+| `boolean` | includeInitContainers | *Optional*. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
+| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateContainerImageNameExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateContainerImageNameExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -41,17 +45,18 @@ recipeList:
       imageToUpdate: nginx
       tagToUpdate: v1.2.3
       includeInitContainers: false
+      fileMatcher: **/pod-*.yml
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateContainerImageNameExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.4.0 in your build file:
+Now that `com.yourorg.UpdateContainerImageNameExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.5.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.6.0")
+    id("org.openrewrite.rewrite") version("5.7.0")
 }
 
 rewrite {
@@ -63,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.4.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.5.0")
 }
 ```
 {% endcode %}
@@ -78,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.8.0</version>
+        <version>4.9.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateContainerImageNameExample</recipe>
@@ -88,7 +93,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.4.0</version>
+            <version>1.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -101,4 +106,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.UpdateContainerImageNameExample`
-

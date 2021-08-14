@@ -1,6 +1,7 @@
-# Migrate deprecated java.util.logging APIs
+# Migrate deprecated `java.util.logging` APIs
 
- **org.openrewrite.java.migrate.logging.JavaLoggingAPIs** _Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes._
+** org.openrewrite.java.migrate.logging.JavaLoggingAPIs**
+_Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ### Tags
 
@@ -8,22 +9,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.5.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 0.5.0
+* version: 0.6.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.5.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.6.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.6.0")
+    id("org.openrewrite.rewrite") version("5.7.0")
 }
 
 rewrite {
@@ -35,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.6.0")
 }
 ```
 {% endcode %}
@@ -50,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.8.0</version>
+        <version>4.9.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.logging.JavaLoggingAPIs</recipe>
@@ -60,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>0.5.0</version>
+            <version>0.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,11 +80,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](migrategetloggingmxbeantogetplatformmxbean.md)
-* [Use `Logger#getGlobal()`](migrateloggerglobaltogetglobal.md)
-* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](migrateloggerlogrbtouseresourcebundle.md)
-* [Use `LogRecord#setInstant(Instant)`](migratelogrecordsetmillistosetinstant.md)
-* [Use `PlatformLoggingMXBean`](migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
+* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](../../../java/migrate/logging/migrategetloggingmxbeantogetplatformmxbean.md)
+* [Use `Logger#getGlobal()`](../../../java/migrate/logging/migrateloggerglobaltogetglobal.md)
+* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](../../../java/migrate/logging/migrateloggerlogrbtouseresourcebundle.md)
+* [Use `LogRecord#setInstant(Instant)`](../../../java/migrate/logging/migratelogrecordsetmillistosetinstant.md)
+* [Use `PlatformLoggingMXBean`](../../../java/migrate/logging/migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -100,7 +103,7 @@ recipeList:
   - org.openrewrite.java.migrate.logging.MigrateLoggerLogrbToUseResourceBundle
   - org.openrewrite.java.migrate.logging.MigrateLogRecordSetMillisToSetInstant
   - org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean
+
 ```
 {% endtab %}
 {% endtabs %}
-

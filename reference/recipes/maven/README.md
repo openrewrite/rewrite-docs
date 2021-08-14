@@ -3,6 +3,7 @@
 ## Recipes
 
 * [Add Maven dependency](adddependency.md)
+* [Add Maven dependency](addprovenancescopeddependency.md)
 * [Add Maven plugin](addplugin.md)
 * [Change Maven dependency scope](changedependencyscope.md)
 * [Change Maven project property value](changepropertyvalue.md)
@@ -18,5 +19,6 @@
 
 ## Subcategories
 
-* [Search](search/)
+* [Search](/reference/recipes/maven/search)
+
 

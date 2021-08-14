@@ -11,12 +11,12 @@ _Basic building blocks for transforming YAML._
 * [Copy YAML value](copyvalue.md)
 * [Delete key](deletekey.md)
 * [Delete property](deleteproperty.md)
-* [Insert YAML snippet](insertyaml.md)
 * [Merge YAML snippet](mergeyaml.md)
 
 ## Subcategories
 
-* [Cleanup](cleanup/)
-* [Format](format/)
-* [Search](search/)
+* [Cleanup](/reference/recipes/yaml/cleanup)
+* [Format](/reference/recipes/yaml/format)
+* [Search](/reference/recipes/yaml/search)
+
 
