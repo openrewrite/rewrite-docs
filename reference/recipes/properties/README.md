@@ -7,6 +7,5 @@
 
 ## Subcategories
 
-* [Search](/reference/recipes/properties/search)
-
+* [Search](search/)
 

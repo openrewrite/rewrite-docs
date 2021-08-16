@@ -4,4 +4,3 @@
 
 * [Find Terraform resource](findresource.md)
 
-

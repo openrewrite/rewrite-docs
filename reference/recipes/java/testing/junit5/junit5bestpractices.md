@@ -1,7 +1,6 @@
 # JUnit Jupiter best practices
 
-** org.openrewrite.java.testing.junit5.JUnit5BestPractices**
-_Applies best practices to tests._
+ **org.openrewrite.java.testing.junit5.JUnit5BestPractices** _Applies best practices to tests._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Applies best practices to tests._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.10.0
-
 
 ## Usage
 
@@ -81,9 +79,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports.md)
-* [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
-
+* [Statically import JUnit Jupiter assertions](staticimports.md)
+* [JUnit Jupiter migration from JUnit 4.x](junit4to5migration.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,7 @@ tags:
 recipeList:
   - org.openrewrite.java.testing.junit5.StaticImports
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
-
 ```
 {% endtab %}
 {% endtabs %}
+

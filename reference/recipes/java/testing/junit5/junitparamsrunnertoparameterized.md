@@ -1,7 +1,6 @@
-# Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests
+# Pragmatists @RunWith\(JUnitParamsRunner.class\) to JUnit Jupiter Parameterized Tests
 
-** org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized**
-_Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest equivalent._
+ **org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized** _Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest equivalent._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest e
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.10.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized`
+

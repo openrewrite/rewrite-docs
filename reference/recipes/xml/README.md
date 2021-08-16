@@ -8,6 +8,5 @@ _Basic building blocks for transforming XML._
 
 ## Subcategories
 
-* [Search](/reference/recipes/xml/search)
-
+* [Search](search/)
 

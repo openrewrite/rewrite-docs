@@ -1,7 +1,6 @@
 # Migrate Spring Boot properties to 2.5
 
-** org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_5**
-_Migrate properties found in `application.properties` and `application.yml`._
+ **org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_5** _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrate properties found in `application.properties` and `application.yml`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.9.0
-
 
 ## Usage
 
@@ -82,7 +80,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Change property key](../../../yaml/changepropertykey.md)
   * oldPropertyKey: `spring.sql.init.enabled`
   * newPropertyKey: `spring.sql.init.mode`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,7 @@ recipeList:
   - org.openrewrite.yaml.ChangePropertyKey:
       oldPropertyKey: spring.sql.init.enabled
       newPropertyKey: spring.sql.init.mode
-
 ```
 {% endtab %}
 {% endtabs %}
+

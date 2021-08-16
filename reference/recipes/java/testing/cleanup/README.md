@@ -6,4 +6,3 @@
 * [Remove `public` visibility of JUnit5 tests](testsshouldnotbepublic.md)
 * [Testing best practices](bestpractices.md)
 
-

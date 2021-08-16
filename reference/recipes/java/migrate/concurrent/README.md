@@ -1,4 +1,4 @@
-# `java.util.concurrent` APIs
+# java.util.concurrent APIs
 
 ## Recipes
 
@@ -10,5 +10,4 @@
 * [Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`](migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain.md)
 * [Use `AtomicReference#weakCompareAndSetPlain(T, T)`](migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
 * [Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`](migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain.md)
-
 

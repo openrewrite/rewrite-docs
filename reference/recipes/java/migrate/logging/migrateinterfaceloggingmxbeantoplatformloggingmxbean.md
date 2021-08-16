@@ -1,7 +1,6 @@
-# Use `PlatformLoggingMXBean`
+# Use PlatformLoggingMXBean
 
-** org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean**
-_`java.util.logging.LoggingMXBean` has been deprecated._
+ **org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean** _`java.util.logging.LoggingMXBean` has been deprecated._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`java.util.logging.LoggingMXBean` has been deprecated._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.6.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `java.util.logging.LoggingMXBean`
   * newFullyQualifiedTypeName: `java.lang.management.PlatformLoggingMXBean`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: java.util.logging.LoggingMXBean
       newFullyQualifiedTypeName: java.lang.management.PlatformLoggingMXBean
-
 ```
 {% endtab %}
 {% endtabs %}
+

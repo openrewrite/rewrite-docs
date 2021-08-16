@@ -1,7 +1,6 @@
-# Migrate deprecated `javax` packages to `jakarta`
+# Migrate deprecated javax packages to jakarta
 
-** org.openrewrite.java.migrate.JavaxMigrationToJakarta**
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+ **org.openrewrite.java.migrate.JavaxMigrationToJakarta** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,14 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate deprecated `javax.activation` packages to `jakarta.activation`](../../java/migrate/javaxactivationmigrationtojakartaactivation.md)
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](../../java/migrate/javaxannotationmigrationtojakartaannotation.md)
-* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](../../java/migrate/javaxbatchmigrationtojakartabatch.md)
-* [Migrate deprecated `javax.inject` packages to `jakarta.inject`](../../java/migrate/javaxinjectmigrationtojakartainject.md)
-* [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](../../java/migrate/javaxtransactionmigrationtojakartatransaction.md)
-* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](../../java/migrate/javaxxmlbindmigrationtojakartaxmlbind.md)
-* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](../../java/migrate/javaxxmlwsmigrationtojakartaxmlws.md)
-
+* [Migrate deprecated `javax.activation` packages to `jakarta.activation`](javaxactivationmigrationtojakartaactivation.md)
+* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](javaxannotationmigrationtojakartaannotation.md)
+* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](javaxbatchmigrationtojakartabatch.md)
+* [Migrate deprecated `javax.inject` packages to `jakarta.inject`](javaxinjectmigrationtojakartainject.md)
+* [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](javaxtransactionmigrationtojakartatransaction.md)
+* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](javaxxmlbindmigrationtojakartaxmlbind.md)
+* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](javaxxmlwsmigrationtojakartaxmlws.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,7 @@ recipeList:
   - org.openrewrite.java.migrate.JavaxTransactionMigrationToJakartaTransaction
   - org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind
   - org.openrewrite.java.migrate.JavaxXmlWsMigrationToJakartaXmlWs
-
 ```
 {% endtab %}
 {% endtabs %}
+

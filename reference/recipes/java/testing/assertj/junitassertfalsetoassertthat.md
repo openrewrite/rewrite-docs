@@ -1,7 +1,6 @@
-# JUnit `assertFalse` to AssertJ
+# JUnit assertFalse to AssertJ
 
-** org.openrewrite.java.testing.assertj.JUnitAssertFalseToAssertThat**
-_Convert JUnit-style `assertFalse()` to AssertJ's `assertThat().isFalse()`._
+ **org.openrewrite.java.testing.assertj.JUnitAssertFalseToAssertThat** _Convert JUnit-style `assertFalse()` to AssertJ's `assertThat().isFalse()`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Convert JUnit-style `assertFalse()` to AssertJ's `assertThat().isFalse()`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.10.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.assertj.JUnitAssertFalseToAssertThat`
+

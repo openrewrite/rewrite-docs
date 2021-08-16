@@ -1,7 +1,6 @@
-# Fix deprecated no-arg `ExceptionHandler` constructors
+# Fix deprecated no-arg ExceptionHandler constructors
 
-** org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors**
-_Adds `ErrorResponseProcessor` argument to deprecated no-arg `ExceptionHandler` constructors._
+ **org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors** _Adds `ErrorResponseProcessor` argument to deprecated no-arg `ExceptionHandler` constructors._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Adds `ErrorResponseProcessor` argument to deprecated no-arg `ExceptionHandler` 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
 * version: 0.3.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors`
+

@@ -1,7 +1,6 @@
-# Use `CounterMonitor#setInitThreshold(java.lang.Number)`
+# Use CounterMonitor\#setInitThreshold\(java.lang.Number\)
 
-** org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThreshholdToSetInitThreshold**
-_`CounterMonitor#setThreshhold` has been deprecated in JMX 1.2._
+ **org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThreshholdToSetInitThreshold** _`CounterMonitor#setThreshhold` has been deprecated in JMX 1.2._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`CounterMonitor#setThreshhold` has been deprecated in JMX 1.2._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.6.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `javax.management.monitor.CounterMonitor setThreshold(java.lang.Number)`
   * newMethodName: `setInitThreshold`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: javax.management.monitor.CounterMonitor setThreshold(java.lang.Number)
       newMethodName: setInitThreshold
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
-# Prefer `while` over `for` loops
+# Prefer while over for loops
 
-** org.openrewrite.java.cleanup.WhileInsteadOfFor**
-_When only the condition expression is defined in a for loop, and the initialization and increment expressions are missing, a while loop should be used instead to increase readability._
+ **org.openrewrite.java.cleanup.WhileInsteadOfFor** _When only the condition expression is defined in a for loop, and the initialization and increment expressions are missing, a while loop should be used instead to increase readability._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _When only the condition expression is defined in a for loop, and the initializa
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.11.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.WhileInsteadOfFor`
+

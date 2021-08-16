@@ -1,7 +1,6 @@
-# Use `isEagerFilterInit()`
+# Use isEagerFilterInit\(\)
 
-** org.openrewrite.java.spring.boot2.MigrateUndertowServletWebServerFactoryIsEagerInitFilters**
-_`org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory#isEagerInitFilters` was deprecated in 2.4 and are removed in 2.6._
+ **org.openrewrite.java.spring.boot2.MigrateUndertowServletWebServerFactoryIsEagerInitFilters** _`org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory#isEagerInitFilters` was deprecated in 2.4 and are removed in 2.6._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.9.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory isEagerInitFilters()`
   * newMethodName: `isEagerFilterInit`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory isEagerInitFilters()
       newMethodName: isEagerFilterInit
-
 ```
 {% endtab %}
 {% endtabs %}
+

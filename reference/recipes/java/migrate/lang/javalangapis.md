@@ -1,7 +1,6 @@
-# Migrate deprecated `java.lang` APIs
+# Migrate deprecated java.lang APIs
 
-** org.openrewrite.java.migrate.lang.JavaLangAPIs**
-_Certain Java lang APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.lang.JavaLangAPIs** _Certain Java lang APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Certain Java lang APIs have become deprecated and their usages changed, necessi
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.6.0
-
 
 ## Usage
 
@@ -76,16 +74,15 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `Character#isJavaIdentifierStart(char)`](../../../java/migrate/lang/migratecharacterisjavalettertoisjavaidentifierstart.md)
-* [Use `Character#isJavaIdentifierPart(char)`](../../../java/migrate/lang/migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
-* [Use `Character#isWhitespace(char)`](../../../java/migrate/lang/migratecharacterisspacetoiswhitespace.md)
-* [Use `Class#getDeclaredConstructor().newInstance()`](../../../java/migrate/lang/migrateclassnewinstancetogetdeclaredconstructornewinstance.md)
-* [Use `Runtime.Version#feature()`](../../../java/migrate/lang/migrateruntimeversionmajortofeature.md)
-* [Use `Runtime.Version#interim()`](../../../java/migrate/lang/migrateruntimeversionminortointerim.md)
-* [Use `Runtime.Version#update()`](../../../java/migrate/lang/migrateruntimeversionsecuritytoupdate.md)
-* [Use `SecurityManager#checkMulticast(InetAddress)`](../../../java/migrate/lang/migratesecuritymanagermulticast.md)
-* [Use `ClassLoader#defineClass(String, byte[], int, int)`](../../../java/migrate/lang/migrateclassloaderdefineclass.md)
-
+* [Use `Character#isJavaIdentifierStart(char)`](migratecharacterisjavalettertoisjavaidentifierstart.md)
+* [Use `Character#isJavaIdentifierPart(char)`](migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
+* [Use `Character#isWhitespace(char)`](migratecharacterisspacetoiswhitespace.md)
+* [Use `Class#getDeclaredConstructor().newInstance()`](migrateclassnewinstancetogetdeclaredconstructornewinstance.md)
+* [Use `Runtime.Version#feature()`](migrateruntimeversionmajortofeature.md)
+* [Use `Runtime.Version#interim()`](migrateruntimeversionminortointerim.md)
+* [Use `Runtime.Version#update()`](migrateruntimeversionsecuritytoupdate.md)
+* [Use `SecurityManager#checkMulticast(InetAddress)`](migratesecuritymanagermulticast.md)
+* [Use `ClassLoader#defineClass(String, byte[], int, int)`](migrateclassloaderdefineclass.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +102,7 @@ recipeList:
   - org.openrewrite.java.migrate.lang.MigrateRuntimeVersionSecurityToUpdate
   - org.openrewrite.java.migrate.lang.MigrateSecurityManagerMulticast
   - org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass
-
 ```
 {% endtab %}
 {% endtabs %}
+

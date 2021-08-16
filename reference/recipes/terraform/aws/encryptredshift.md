@@ -1,7 +1,6 @@
 # Encrypt DAX storage at rest
 
-** org.openrewrite.terraform.aws.EncryptRedshift**
-_Redshift clusters should be securely encrypted at rest._
+ **org.openrewrite.terraform.aws.EncryptRedshift** _Redshift clusters should be securely encrypted at rest._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Redshift clusters should be securely encrypted at rest._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.3.0
-
 
 ## Usage
 
@@ -81,10 +79,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_neptune_cluster`
   * content: `encrypted = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_neptune_cluster
       content: encrypted = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

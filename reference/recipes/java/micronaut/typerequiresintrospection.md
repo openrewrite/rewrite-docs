@@ -1,7 +1,6 @@
-# Add `@Introspected` to classes requiring a map representation
+# Add @Introspected to classes requiring a map representation
 
-** org.openrewrite.java.micronaut.TypeRequiresIntrospection**
-_In Micronaut 2.x a reflection-based strategy was used to retrieve that information if the class was not annotated with `@Introspected`. As of Micronaut 3.x it is required to annotate classes with `@Introspected` that are used in this way._
+ **org.openrewrite.java.micronaut.TypeRequiresIntrospection** _In Micronaut 2.x a reflection-based strategy was used to retrieve that information if the class was not annotated with `@Introspected`. As of Micronaut 3.x it is required to annotate classes with `@Introspected` that are used in this way._
 
 ## Source
 
@@ -10,7 +9,6 @@ _In Micronaut 2.x a reflection-based strategy was used to retrieve that informat
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
 * version: 0.3.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.micronaut.TypeRequiresIntrospection`
+

@@ -1,7 +1,6 @@
 # Wrapping and braces
 
-** org.openrewrite.java.format.WrappingAndBraces**
-_Format line wraps and braces in Java code._
+ **org.openrewrite.java.format.WrappingAndBraces** _Format line wraps and braces in Java code._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Format line wraps and braces in Java code._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.11.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.format.WrappingAndBraces`
+

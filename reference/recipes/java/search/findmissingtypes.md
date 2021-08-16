@@ -1,7 +1,6 @@
 # Find missing type information on Java ASTs
 
-** org.openrewrite.java.search.FindMissingTypes**
-_This is a diagnostic recipe to highlight where ASTs are missing type attribution information._
+ **org.openrewrite.java.search.FindMissingTypes** _This is a diagnostic recipe to highlight where ASTs are missing type attribution information._
 
 ## Source
 
@@ -10,7 +9,6 @@ _This is a diagnostic recipe to highlight where ASTs are missing type attributio
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.11.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.search.FindMissingTypes`
+

@@ -1,7 +1,6 @@
-# Convert `OncePerRequestServerFilter` extensions to `HttpServerFilter`
+# Convert OncePerRequestServerFilter extensions to HttpServerFilter
 
-** org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter**
-_Starting in Micronaut 3.0 all filters are executed once per request. Directly implement `HttpServerFilter` instead of extending `OncePerRequestHttpServerFilter` and replace any usages of `micronaut.once` attributes with a custom attribute name._
+ **org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter** _Starting in Micronaut 3.0 all filters are executed once per request. Directly implement `HttpServerFilter` instead of extending `OncePerRequestHttpServerFilter` and replace any usages of `micronaut.once` attributes with a custom attribute name._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Starting in Micronaut 3.0 all filters are executed once per request. Directly i
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
 * version: 0.3.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter`
+

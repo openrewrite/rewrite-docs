@@ -1,7 +1,6 @@
-# Use `NotBlank`
+# Use NotBlank
 
-** org.openrewrite.java.spring.boot2.MigrateNotBlankPackageName**
-_`org.hibernate.validator.constraints.NotBlank` was deprecated in 1.x._
+ **org.openrewrite.java.spring.boot2.MigrateNotBlankPackageName** _`org.hibernate.validator.constraints.NotBlank` was deprecated in 1.x._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`org.hibernate.validator.constraints.NotBlank` was deprecated in 1.x._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.9.0
-
 
 ## Usage
 
@@ -76,7 +74,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.constraints.NotBlank`
   * newFullyQualifiedTypeName: `javax.validation.constraints.NotBlank`
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -85,7 +83,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * version: `2.x`
   * releasesOnly: `false`
   * onlyIfUsing: `[javax.validation.constraints.NotBlank, javax.validation.constraints.NotEmpty]`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +102,7 @@ recipeList:
       version: 2.x
       releasesOnly: false
       onlyIfUsing: [javax.validation.constraints.NotBlank, javax.validation.constraints.NotEmpty]
-
 ```
 {% endtab %}
 {% endtabs %}
+

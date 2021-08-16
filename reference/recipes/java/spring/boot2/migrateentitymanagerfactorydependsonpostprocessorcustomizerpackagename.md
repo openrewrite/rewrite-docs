@@ -1,7 +1,6 @@
-# Use `EntityManagerFactoryDependsOnPostProcessor`
+# Use EntityManagerFactoryDependsOnPostProcessor
 
-** org.openrewrite.java.spring.boot2.MigrateEntityManagerFactoryDependsOnPostProcessorCustomizerPackageName**
-_`org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor` was deprecated in 2.5._
+ **org.openrewrite.java.spring.boot2.MigrateEntityManagerFactoryDependsOnPostProcessorCustomizerPackageName** _`org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor` was deprecated in 2.5._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnP
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.9.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.orm.jpa.EntityManagerFactoryDependsOnPostProcessor`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor
       newFullyQualifiedTypeName: org.springframework.boot.autoconfigure.orm.jpa.EntityManagerFactoryDependsOnPostProcessor
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
-# Use `java.net.MulticastSocket#setTimeToLive(int)`
+# Use java.net.MulticastSocket\#setTimeToLive\(int\)
 
-** org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive**
-_`java.net.MulticastSocket#setTTL(byte)` has been deprecated._
+ **org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive** _`java.net.MulticastSocket#setTTL(byte)` has been deprecated._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`java.net.MulticastSocket#setTTL(byte)` has been deprecated._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.6.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive`
+
