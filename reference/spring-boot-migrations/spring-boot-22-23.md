@@ -44,7 +44,7 @@ At this point, you're able to run any of the Maven goals or Gradle tasks provide
 
 This recipe will modify your application's configuration files based on [the documented changes from the Spring Boot team](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3.0-Configuration-Changelog).
 
-### Deprecations in Spring Boot 2.3
+### Deprecations from Spring Boot 2.3
 
 This recipe will automatically update the following deprecations, [ref](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes#deprecations-in-spring-boot-23):
 
@@ -58,7 +58,7 @@ Remaining deprecations:
 
 ### Deprecations from Spring Boot 2.2
 
-_"Most classes, methods, and properties that were deprecated in Spring Boot 2.2 have been removed in this release. Please ensure that you aren’t calling deprecated methods before upgrading."_ [_ref_](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes#deprecations-from-spring-boot-22)_._
+_"Most classes, methods, and properties that were deprecated in Spring Boot 2.2 have been removed in this release. Please ensure that you aren’t calling deprecated methods before upgrading."_ [_ref_](https://github.com/openrewrite/rewrite-spring/wiki/Spring-Boot-2.2-release-notes-and-OpenRerewrite-migrations#deprecations-from-spring-boot-21)_._
 
-To see upgrades for deprecations in Spring Boot 2.2, refer to Upgrade Spring Boot 2.2.
+To see upgrades for deprecations in Spring Boot 2.2, refer to [Upgrade Spring Boot 2.2](https://docs.openrewrite.org/reference/spring-boot-migrations/spring-boot-21-22).
 
