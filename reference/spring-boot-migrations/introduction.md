@@ -4,7 +4,7 @@ This reference document is intended to help you as you migration your applicatio
 
 ## Common Recipe Setup
 
-Regardless of which specific version of Spring Boot you are migrating to, the setup is similar for In the pom.xml or build.gradle, edit the configuration for your rewrite build plug-in to include the rewrite-spring dependencies, and activate a specific recipe. 
+Regardless of which specific version of Spring Boot you are migrating to, the setup for the rewrite build plug-in is similar.  In your build file, edit the configuration to add the rewrite build plug-in, include the `rewrite-spring` dependency, and activate a spring migration recipe.
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -57,5 +57,16 @@ dependencies {
 The specific migration recipe to activate is specified in the sections below.
 {% endhint %}
 
+## Automated Dependency Updates
+
+Open Rewrite will automatically update Maven-based projects to the correct version of Spring Boot when applying any of the migration recipes.
+
+{% hint style="danger" %}
+If you are using Gradle, you will need to manually update the Spring Boot dependencies to match the version you are migrating to.
+{% endhint %}
+
+## Configuration Property Migration
+
+Open Rewrite will automatically rename the configuration properties that have changed when upgrading to a specific version of Spring Boot. The recipe will make changes to both `.properties` and `.yml` files.  
 
 
