@@ -4,39 +4,11 @@ The following reference is for automating the migration of an application from S
 
 ## Activate Spring Boot Migration Recipe
 
-In the pom.xml or build.gradle, edit the configuration for your rewrite plug-in to activate the recipe that will be used for the migration:
+Edit your `pom.xml` or `build.gradle`, to activate the Spring Boot migration recipe:
 
-{% tabs %}
-{% tab title="Maven" %}
-{% code title="pom.xml" %}
-```markup
-<plugin>
-  <groupId>org.openrewrite.maven</groupId>
-  <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.9.0</version>
-  ...
-  <configuration>
-    <activeRecipes>
-      <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0</recipe>
-    </activeRecipes>
-  </configuration>
-</plugin>
+```text
+org.openrewrite.java.spring.boot2.SpringBootProperties_2_0
 ```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Gradle" %}
-{% code title="build.gradle" %}
-```groovy
-...
-
-rewrite {
-    activeRecipe("org.openrewrite.java.spring.boot2.UpgradeSpringBoot15to20")
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 At this point, you're able to run any of the Maven goals or Gradle tasks provided by the plugins.
 

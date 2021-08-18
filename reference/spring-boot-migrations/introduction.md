@@ -1,6 +1,6 @@
 # Introduction
 
-This reference document is intended to help you as you migration your applications to newer versions of Spring Boot. 
+This reference document is intended to help you as you migrate your applications to newer versions of Spring Boot.
 
 ## Common Recipe Setup
 
@@ -54,12 +54,12 @@ dependencies {
 {% endtabs %}
 
 {% hint style="info" %}
-The specific migration recipe to activate is specified in the sections below.
+The recipe name for each migration is specified in each of the sections that follow.
 {% endhint %}
 
 ## Automated Dependency Updates
 
-Open Rewrite will automatically update Maven-based projects to the correct version of Spring Boot when applying any of the migration recipes.
+OpenRewrite will automatically update Maven-based projects to the correct version of Spring Boot when applying any of the migration recipes.
 
 {% hint style="danger" %}
 If you are using Gradle, you will need to manually update the Spring Boot dependencies to match the version you are migrating to.
