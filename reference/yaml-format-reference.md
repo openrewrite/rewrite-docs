@@ -50,8 +50,8 @@ recipeList:
       methodPattern: com.yourorg.HelloWorld sayGoodbye()
       newMethodName: sayHello
   - org.openrewrite.java.ChangePackage:
-      oldFullyQualifiedPackageName: com.yourorg.goodbye
-      newFullyQualifiedPackageName: com.yourorg.hello
+      oldPackageName: com.yourorg.goodbye
+      newPackageName: com.yourorg.hello
 ```
 {% endcode %}
 

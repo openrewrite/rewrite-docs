@@ -24,8 +24,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FooToBar
 recipeList:
   - org.openrewrite.java.ChangePackage:
-      oldFullyQualifiedPackageName: com.yourorg.foo
-      newFullyQualifiedPackageName: com.yourorg.bar
+      oldPackageName: com.yourorg.foo
+      newPackageName: com.yourorg.bar
 ```
 {% endcode %}
 
@@ -86,8 +86,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FooToBar
 recipeList:
   - org.openrewrite.java.ChangePackage:
-      oldFullyQualifiedPackageName: com.yourorg.foo
-      newFullyQualifiedPackageName: com.yourorg.bar
+      oldPackageName: com.yourorg.foo
+      newPackageName: com.yourorg.bar
 ```
 {% endcode %}
 
