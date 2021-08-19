@@ -138,8 +138,8 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.VetToVeterinary
 recipeList:
   - org.openrewrite.java.ChangePackage:
-      oldFullyQualifiedPackageName: org.springframework.samples.petclinic.vet
-      newFullyQualifiedPackageName: org.springframework.samples.petclinic.veterinary
+      oldPackageName: org.springframework.samples.petclinic.vet
+      newPackageName: org.springframework.samples.petclinic.veterinary
 ```
 {% endcode %}
 
