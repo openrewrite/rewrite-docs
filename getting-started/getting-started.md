@@ -103,6 +103,20 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
+{% hint style="info" %}
+Starting with java 16, the default JVM behavior is not to allow access to protected modules. The workaround for this issue is to add explicit exports for packages used by rewrite's java parser.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Gradle" %}
+{% code title="gradle.properties" %}
+```text
+org.gradle.jvmargs=--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 With `AutoFormat` activated we can now apply it to the project. Run:
 
 {% tabs %}
