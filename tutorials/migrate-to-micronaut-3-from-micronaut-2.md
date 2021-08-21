@@ -39,7 +39,7 @@ dependencies {
         <version>4.9.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>oorg.openrewrite.java.micronaut.Micronaut2to3Migration</recipe>
+            <recipe>org.openrewrite.java.micronaut.Micronaut2to3Migration</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
