@@ -1,6 +1,7 @@
 # Java security best practices
 
- **org.openrewrite.java.security.JavaSecurityBestPractices** _Applies security best practices to Java code._
+** org.openrewrite.java.security.JavaSecurityBestPractices**
+_Applies security best practices to Java code._
 
 ### Tags
 
@@ -8,11 +9,12 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.11.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.13.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.11.0
+* version: 7.13.0
+
 
 ## Usage
 
@@ -23,7 +25,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.7.0")
+    id("org.openrewrite.rewrite") version("5.9.0")
 }
 
 rewrite {
@@ -33,6 +35,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -46,7 +49,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.9.0</version>
+        <version>4.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.security.JavaSecurityBestPractices</recipe>
@@ -67,11 +70,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Result of method call ignored](../search/resultofmethodcallignored.md)
+* [Result of method call ignored](../../java/search/resultofmethodcallignored.md)
   * methodPattern: `java.io.File mkdir*(..)`
-* [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
-* [Use secure temporary file creation](securetempfilecreation.md)
-* [Use comparison rather than equality checks in for conditions](../cleanup/noequalityinforcondition.md)
+* [XML parser XXE vulnerability](../../java/security/xmlparserxxevulnerability.md)
+* [Use secure temporary file creation](../../java/security/securetempfilecreation.md)
+* [Use comparison rather than equality checks in for conditions](../../java/cleanup/noequalityinforcondition.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -89,7 +93,7 @@ recipeList:
   - org.openrewrite.java.security.XmlParserXXEVulnerability
   - org.openrewrite.java.security.SecureTempFileCreation
   - org.openrewrite.java.cleanup.NoEqualityInForCondition
+
 ```
 {% endtab %}
 {% endtabs %}
-

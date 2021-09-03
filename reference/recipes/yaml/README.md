@@ -15,7 +15,8 @@ _Basic building blocks for transforming YAML._
 
 ## Subcategories
 
-* [Cleanup](cleanup/)
-* [Format](format/)
-* [Search](search/)
+* [Cleanup](/reference/recipes/yaml/cleanup)
+* [Format](/reference/recipes/yaml/format)
+* [Search](/reference/recipes/yaml/search)
+
 

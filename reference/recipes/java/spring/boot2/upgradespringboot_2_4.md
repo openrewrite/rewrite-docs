@@ -1,25 +1,27 @@
 # Upgrade to Spring Boot 2.4
 
- **org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_4** _Upgrade to Spring Boot 2.4 from any prior 2.x version._
+** org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_4**
+_Upgrade to Spring Boot 2.4 from any prior 2.x version._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.9.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.9.0
+* version: 4.11.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.9.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.11.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.7.0")
+    id("org.openrewrite.rewrite") version("5.9.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.11.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.9.0</version>
+        <version>4.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.9.0</version>
+            <version>4.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -82,12 +84,25 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.4.x`
-* [JUnit Jupiter for Spring Boot 2.x projects](springboot2junit4to5migration.md)
-* [Upgrade to Spring Boot 2.3](upgradespringboot_2_3.md)
-* [Use `isEagerFilterInit()`](migrateundertowservletwebserverfactoryiseagerinitfilters.md)
-* [Use `setEagerFilterInit(boolean)`](migrateundertowservletwebserverfactoryseteagerinitfilters.md)
-* [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties` ](migrateloggingsystempropertyconstants.md)
-* [Migrate Spring Boot properties to 2.4](springbootproperties_2_4.md)
+* [Remove exclusion](../../../maven/removeexclusion.md)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-test`
+  * exclusionGroupId: `org.junit.vintage`
+  * exclusionArtifactId: `junit-vintage-engine`
+* [Remove exclusion](../../../maven/removeexclusion.md)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-test`
+  * exclusionGroupId: `junit`
+  * exclusionArtifactId: `junit`
+* [JUnit Jupiter for Spring Boot 2.x projects](../../../java/spring/boot2/springboot2junit4to5migration.md)
+* [Upgrade to Spring Framework 5.3](../../../java/spring/framework/upgradespringframework_5_3.md)
+* [Upgrade to Spring Boot 2.3](../../../java/spring/boot2/upgradespringboot_2_3.md)
+* [Use `isEagerFilterInit()`](../../../java/spring/boot2/migrateundertowservletwebserverfactoryiseagerinitfilters.md)
+* [Use `setEagerFilterInit(boolean)`](../../../java/spring/boot2/migrateundertowservletwebserverfactoryseteagerinitfilters.md)
+* [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](../../../java/spring/boot2/migrateloggingsystempropertyconstants.md)
+* [Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL](../../../java/spring/boot2/migratehsqlembeddeddatabaseconnection.md)
+* [Migrate Spring Boot properties to 2.4](../../../java/spring/boot2/springbootproperties_2_4.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -106,13 +121,25 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 2.4.x
+  - org.openrewrite.maven.RemoveExclusion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-test
+      exclusionGroupId: org.junit.vintage
+      exclusionArtifactId: junit-vintage-engine
+  - org.openrewrite.maven.RemoveExclusion:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-test
+      exclusionGroupId: junit
+      exclusionArtifactId: junit
   - org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration
+  - org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3
   - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_3
   - org.openrewrite.java.spring.boot2.MigrateUndertowServletWebServerFactoryIsEagerInitFilters
   - org.openrewrite.java.spring.boot2.MigrateUndertowServletWebServerFactorySetEagerInitFilters
   - org.openrewrite.java.spring.boot2.MigrateLoggingSystemPropertyConstants
+  - org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_4
+
 ```
 {% endtab %}
 {% endtabs %}
-

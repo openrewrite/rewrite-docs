@@ -24,6 +24,8 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Method parameter padding](methodparampad.md)
 * [Modifier order](modifierorder.md)
 * [Multiple variable declarations](multiplevariabledeclarations.md)
+* [No whitespace after](nowhitespaceafter.md)
+* [No whitespace before](nowhitespacebefore.md)
 * [Operator wrapping](operatorwrap.md)
 * [Pad empty `for` loop components](pademptyforloopcomponents.md)
 * [Prefer `while` over `for` loops](whileinsteadoffor.md)
@@ -51,4 +53,5 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [`indexOf` should not compare greater than zero](indexofshouldnotcomparegreaterthanzero.md)
 * [`indexOf()` replaceable by `contains()`](indexofreplaceablebycontains.md)
 * [`switch` statements should have at least 3 `case` clauses](minimumswitchcases.md)
+
 

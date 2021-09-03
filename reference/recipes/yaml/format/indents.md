@@ -1,14 +1,16 @@
 # YAML indent
 
- **org.openrewrite.yaml.format.Indents** _Format tabs and indents in YAML._
+** org.openrewrite.yaml.format.Indents**
+_Format tabs and indents in YAML._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.11.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.13.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.11.0
+* version: 7.13.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.7.0")
+    id("org.openrewrite.rewrite") version("5.9.0")
 }
 
 rewrite {
@@ -29,6 +31,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -42,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.9.0</version>
+        <version>4.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.yaml.format.Indents</recipe>
@@ -58,4 +61,3 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.yaml.format.Indents`
-

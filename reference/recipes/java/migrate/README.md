@@ -1,6 +1,6 @@
-# JDK
+# Modernize
 
-_Modernize your code to a newer JDK version. Along the way, take advantage of newly available APIs and reduce the dependency of your code on third party dependencies where there is equivalent functionality in the Java standard library._
+_Modernize your code to best use the project's current JDK version. Take advantage of newly available APIs and reduce the dependency of your code on third party dependencies where there is equivalent functionality in the Java standard library._
 
 ## Recipes
 
@@ -19,11 +19,12 @@ _Modernize your code to a newer JDK version. Along the way, take advantage of ne
 
 ## Subcategories
 
-* [Guava](guava/)
-* [`java.lang` APIs](lang/)
-* [`java.net` APIs](net/)
-* [`java.sql` APIs](sql/)
-* [`java.util.concurrent` APIs](concurrent/)
-* [`java.util.logging` APIs](logging/)
-* [`javax` APIs](javax/)
+* [Guava](/reference/recipes/java/migrate/guava)
+* [`java.lang` APIs](/reference/recipes/java/migrate/lang)
+* [`java.net` APIs](/reference/recipes/java/migrate/net)
+* [`java.sql` APIs](/reference/recipes/java/migrate/sql)
+* [`java.util.concurrent` APIs](/reference/recipes/java/migrate/concurrent)
+* [`java.util.logging` APIs](/reference/recipes/java/migrate/logging)
+* [`javax` APIs](/reference/recipes/java/migrate/javax)
+
 

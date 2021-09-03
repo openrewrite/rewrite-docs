@@ -1,30 +1,33 @@
-# Encrypt Neptune storage
+# Encrypt DocumentDB storage
 
- **org.openrewrite.terraform.aws.EncryptDocumentDB** _The encryption feature available for Amazon DocumentDB clusters provides an additional layer of data protection by helping secure your data against unauthorized access to the underlying storage._
+** org.openrewrite.terraform.aws.EncryptDocumentDB**
+_The encryption feature available for Amazon DocumentDB clusters provides an additional layer of data protection by helping secure your data against unauthorized access to the underlying storage._
 
 ### Tags
 
+* CKV_AWS_74
 * terraform
 * AWS
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.3.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.5.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 0.3.0
+* version: 0.5.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.3.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.5.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.7.0")
+    id("org.openrewrite.rewrite") version("5.9.0")
 }
 
 rewrite {
@@ -36,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:0.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:0.5.0")
 }
 ```
 {% endcode %}
@@ -51,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.9.0</version>
+        <version>4.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.aws.EncryptDocumentDB</recipe>
@@ -61,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>0.3.0</version>
+            <version>0.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -79,9 +82,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../addconfiguration.md)
+* [Add Terraform configuration](../../terraform/addconfiguration.md)
   * resourceName: `aws_docdb_cluster`
   * content: `storage_encrypted = true`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -89,16 +93,17 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.terraform.aws.EncryptDocumentDB
-displayName: Encrypt Neptune storage
+displayName: Encrypt DocumentDB storage
 description: The encryption feature available for Amazon DocumentDB clusters provides an additional layer of data protection by helping secure your data against unauthorized access to the underlying storage.
 tags:
+  - CKV_AWS_74
   - terraform
   - AWS
 recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_docdb_cluster
       content: storage_encrypted = true
+
 ```
 {% endtab %}
 {% endtabs %}
-

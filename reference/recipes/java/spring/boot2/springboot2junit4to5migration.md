@@ -1,6 +1,7 @@
 # JUnit Jupiter for Spring Boot 2.x projects
 
- **org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration** _Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
+** org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration**
+_Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
 
@@ -11,22 +12,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.9.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.9.0
+* version: 4.11.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.9.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.11.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.7.0")
+    id("org.openrewrite.rewrite") version("5.9.0")
 }
 
 rewrite {
@@ -38,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.11.0")
 }
 ```
 {% endcode %}
@@ -53,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.9.0</version>
+        <version>4.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -63,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.9.0</version>
+            <version>4.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,13 +87,12 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-tools`
   * version: `2.x`
-  * releasesOnly: `false`
-  * scope: `test`
-  * onlyIfUsing: `[org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension]`
-* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](outputcaptureextension.md)
-* [Remove unnecessary Spring `@RunWith`](unnecessaryspringrunwith.md)
-* [Remove `@SpringExtension`](unnecessaryspringextension.md)
-* [Remove obsolete Spring JUnit runners](removeobsoletespringrunners.md)
+  * onlyIfUsing: `org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension`
+* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](../../../java/spring/boot2/outputcaptureextension.md)
+* [Remove unnecessary Spring `@RunWith`](../../../java/spring/boot2/unnecessaryspringrunwith.md)
+* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
+* [Remove obsolete Spring JUnit runners](../../../java/spring/boot2/removeobsoletespringrunners.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,14 +112,12 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: spring-boot-tools
       version: 2.x
-      releasesOnly: false
-      scope: test
-      onlyIfUsing: [org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension]
+      onlyIfUsing: org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension
   - org.openrewrite.java.spring.boot2.OutputCaptureExtension
   - org.openrewrite.java.spring.boot2.UnnecessarySpringRunWith
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
   - org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners
+
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -1,6 +1,7 @@
-# Migrate deprecated javax.xml.bind packages to jakarta.xml.bind
+# Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`
 
- **org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+** org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind**
+_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -10,22 +11,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.6.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 0.6.0
+* version: 0.8.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.6.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.8.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.7.0")
+    id("org.openrewrite.rewrite") version("5.9.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.8.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.9.0</version>
+        <version>4.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>0.6.0</version>
+            <version>0.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -84,8 +86,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
   * version: `3.x`
-  * releasesOnly: `false`
-  * onlyIfUsing: `[javax.xml.bind.*]`
+  * onlyIfUsing: `javax.xml.bind.*`
 * [Upgrade Maven dependency version](../../maven/upgradedependencyversion.md)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
@@ -94,14 +95,13 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.glassfish.jaxb`
   * artifactId: `jaxb-runtime`
   * version: `3.x`
-  * releasesOnly: `false`
   * scope: `runtime`
-  * onlyIfUsing: `[javax.xml.bind.*]`
+  * onlyIfUsing: `javax.xml.bind.*`
 * [Upgrade Maven dependency version](../../maven/upgradedependencyversion.md)
   * groupId: `org.glassfish.jaxb`
   * artifactId: `jaxb-runtime`
   * newVersion: `3.x`
-* [Rename package name](../changepackage.md)
+* [Rename package name](../../java/changepackage.md)
   * oldPackageName: `javax.xml.bind`
   * newPackageName: `jakarta.xml.bind`
 * [Remove Maven dependency](../../maven/removedependency.md)
@@ -110,6 +110,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven dependency](../../maven/removedependency.md)
   * groupId: `com.sun.xml.bind`
   * artifactId: `jaxb-impl`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -128,8 +129,7 @@ recipeList:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
       version: 3.x
-      releasesOnly: false
-      onlyIfUsing: [javax.xml.bind.*]
+      onlyIfUsing: javax.xml.bind.*
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
@@ -138,9 +138,8 @@ recipeList:
       groupId: org.glassfish.jaxb
       artifactId: jaxb-runtime
       version: 3.x
-      releasesOnly: false
       scope: runtime
-      onlyIfUsing: [javax.xml.bind.*]
+      onlyIfUsing: javax.xml.bind.*
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.glassfish.jaxb
       artifactId: jaxb-runtime
@@ -154,7 +153,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: com.sun.xml.bind
       artifactId: jaxb-impl
+
 ```
 {% endtab %}
 {% endtabs %}
-

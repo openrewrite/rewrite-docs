@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Expand Spring YAML properties](expandproperties.md)
 * [Remove `@RequestMapping` annotations](norequestmappingannotation.md)
 * [Remove implicit web annotation names](implicitwebannotationnames.md)
 * [Remove `public` from `@Bean` methods](beanmethodsnotpublic.md)
@@ -10,5 +11,8 @@
 
 ## Subcategories
 
-* [Spring Boot 2.x](boot2/)
+* [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
+* [Spring Data](/reference/recipes/java/spring/data)
+* [Spring Framework](/reference/recipes/java/spring/framework)
+
 

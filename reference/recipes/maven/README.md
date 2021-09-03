@@ -3,7 +3,6 @@
 ## Recipes
 
 * [Add Maven dependency](adddependency.md)
-* [Add Maven dependency](addprovenancescopeddependency.md)
 * [Add Maven plugin](addplugin.md)
 * [Change Maven dependency scope](changedependencyscope.md)
 * [Change Maven project property value](changepropertyvalue.md)
@@ -12,6 +11,7 @@
 * [Remove Maven dependency](removedependency.md)
 * [Remove Maven plugin](removeplugin.md)
 * [Remove Maven project property](removeproperty.md)
+* [Remove exclusion](removeexclusion.md)
 * [Remove redundant explicit dependency versions](removeredundantdependencyversions.md)
 * [Upgrade Maven dependency version](upgradedependencyversion.md)
 * [Upgrade Maven parent project version](upgradeparentversion.md)
@@ -19,5 +19,6 @@
 
 ## Subcategories
 
-* [Search](search/)
+* [Search](/reference/recipes/maven/search)
+
 
