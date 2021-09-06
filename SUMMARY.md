@@ -28,8 +28,6 @@
 * [Gradle Plugin Configuration](reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](reference/yaml-format-reference.md)
 * [Recipes](reference/recipes//README.md)
-    * [Find files](/reference/recipes/findsourcefiles.md)
-    * [Rename a file](/reference/recipes/renamefile.md)
   * [Java](reference/recipes/java/README.md)
     * [Add ASLv2 license header](/reference/recipes/java/addapache2licenseheader.md)
     * [Add license header](/reference/recipes/java/addlicenseheader.md)
