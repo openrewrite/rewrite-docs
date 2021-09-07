@@ -1,7 +1,6 @@
-# `indexOf()` replaceable by `contains()`
+# indexOf\(\) replaceable by contains\(\)
 
-** org.openrewrite.java.cleanup.IndexOfReplaceableByContains**
-_Checking if a value is included in a `String` or `List` using `indexOf(value)>-1` or `indexOf(value)>=0` can be replaced with `contains(value)`._
+ **org.openrewrite.java.cleanup.IndexOfReplaceableByContains** _Checking if a value is included in a `String` or `List` using `indexOf(value)>-1` or `indexOf(value)>=0` can be replaced with `contains(value)`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Checking if a value is included in a `String` or `List` using `indexOf(value)>-
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.13.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.IndexOfReplaceableByContains`
+

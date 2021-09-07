@@ -1,7 +1,6 @@
 # Jump statements should not be redundant
 
-** org.openrewrite.java.cleanup.NoRedundantJumpStatements**
-_Jump statements such as return and continue let you change the default flow of program execution, but jump statements that direct the control flow to the original direction are just a waste of keystrokes._
+ **org.openrewrite.java.cleanup.NoRedundantJumpStatements** _Jump statements such as return and continue let you change the default flow of program execution, but jump statements that direct the control flow to the original direction are just a waste of keystrokes._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Jump statements such as return and continue let you change the default flow of 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.13.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.NoRedundantJumpStatements`
+

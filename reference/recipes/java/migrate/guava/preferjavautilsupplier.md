@@ -1,7 +1,6 @@
-# Prefer `java.util.function.Supplier`
+# Prefer java.util.function.Supplier
 
-** org.openrewrite.java.migrate.guava.PreferJavaUtilSupplier**
-_Guava's `Supplier` extends `java.util.function.Supplier`._
+ **org.openrewrite.java.migrate.guava.PreferJavaUtilSupplier** _Guava's `Supplier` extends `java.util.function.Supplier`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Guava's `Supplier` extends `java.util.function.Supplier`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.8.0
-
 
 ## Usage
 
@@ -80,10 +78,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `com.google.common.base.Supplier`
   * newFullyQualifiedTypeName: `java.util.function.Supplier`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.google.common.base.Supplier
       newFullyQualifiedTypeName: java.util.function.Supplier
-
 ```
 {% endtab %}
 {% endtabs %}
+

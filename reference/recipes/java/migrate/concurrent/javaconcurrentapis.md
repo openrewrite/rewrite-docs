@@ -1,7 +1,6 @@
-# Migrate deprecated `java.util.concurrent` APIs
+# Migrate deprecated java.util.concurrent APIs
 
-** org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs**
-_Certain Java concurrent APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs** _Certain Java concurrent APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Certain Java concurrent APIs have become deprecated and their usages changed, n
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.8.0
-
 
 ## Usage
 
@@ -76,14 +74,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`](../../../java/migrate/concurrent/migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicInteger#weakCompareAndSetPlain(int, int)`](../../../java/migrate/concurrent/migrateatomicintegerweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)`](../../../java/migrate/concurrent/migrateatomicintegerarrayweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicLong#weakCompareAndSetPlain(long, long)`](../../../java/migrate/concurrent/migrateatomiclongweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`](../../../java/migrate/concurrent/migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicReference#weakCompareAndSetPlain(T, T)`](../../../java/migrate/concurrent/migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
-* [Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`](../../../java/migrate/concurrent/migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain.md)
-
+* [Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`](migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicInteger#weakCompareAndSetPlain(int, int)`](migrateatomicintegerweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)`](migrateatomicintegerarrayweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicLong#weakCompareAndSetPlain(long, long)`](migrateatomiclongweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`](migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicReference#weakCompareAndSetPlain(T, T)`](migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
+* [Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`](migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,7 @@ recipeList:
   - org.openrewrite.java.migrate.concurrent.MigrateAtomicLongArrayWeakCompareAndSetToWeakCompareAndSetPlain
   - org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceWeakCompareAndSetToWeakCompareAndSetPlain
   - org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
 # Upgrade to Spring Framework 5.3
 
-** org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_3**
-_Upgrade to Spring Framework to 5.3 from any prior version._
+ **org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_3** _Upgrade to Spring Framework to 5.3 from any prior version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Framework to 5.3 from any prior version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `ObjectUtils#isEmpty(Object)`](../../../java/spring/framework/useobjectutilsisempty.md)
-* [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](../../../java/spring/framework/migrateinstantiationawarebeanpostprocessoradapter.md)
-* [Use varargs equivalents for deprecated JdbcTemplate signatures](../../../java/spring/framework/jdbctemplateobjectarrayargtovarargs.md)
-
+* [Use `ObjectUtils#isEmpty(Object)`](useobjectutilsisempty.md)
+* [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](migrateinstantiationawarebeanpostprocessoradapter.md)
+* [Use varargs equivalents for deprecated JdbcTemplate signatures](jdbctemplateobjectarrayargtovarargs.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty
   - org.openrewrite.java.spring.framework.MigrateInstantiationAwareBeanPostProcessorAdapter
   - org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs
-
 ```
 {% endtab %}
 {% endtabs %}
+

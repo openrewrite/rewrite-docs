@@ -1,7 +1,6 @@
 # Remove obsolete Spring JUnit runners
 
-** org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners**
-_Remove obsolete classpath runners._
+ **org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners** _Remove obsolete classpath runners._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove obsolete classpath runners._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -76,9 +74,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners.md)
+* [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../testing/junit5/removeobsoleterunners.md)
   * obsoleteRunners: `[org.springframework.boot.junit.runner.classpath.ModifiedClassPathRunner, org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathRunner]`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -91,7 +88,7 @@ description: Remove obsolete classpath runners.
 recipeList:
   - org.openrewrite.java.testing.junit5.RemoveObsoleteRunners:
       obsoleteRunners: [org.springframework.boot.junit.runner.classpath.ModifiedClassPathRunner, org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathRunner]
-
 ```
 {% endtab %}
 {% endtabs %}
+

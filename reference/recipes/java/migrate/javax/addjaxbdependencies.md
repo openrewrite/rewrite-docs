@@ -1,7 +1,6 @@
 # Add explicit JAXB dependencies
 
-** org.openrewrite.java.migrate.javax.AddJaxbDependencies**
-_This recipe will add the necessary JAXB dependencies for those projects migrating to Java 11._
+ **org.openrewrite.java.migrate.javax.AddJaxbDependencies** _This recipe will add the necessary JAXB dependencies for those projects migrating to Java 11._
 
 ### Tags
 
@@ -18,7 +17,6 @@ _This recipe will add the necessary JAXB dependencies for those projects migrati
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.8.0
-
 
 ## Usage
 
@@ -109,7 +107,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `com.sun.xml.bind`
   * artifactId: `jaxb-impl`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -151,7 +148,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: com.sun.xml.bind
       artifactId: jaxb-impl
-
 ```
 {% endtab %}
 {% endtabs %}
+

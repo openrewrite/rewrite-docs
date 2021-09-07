@@ -1,11 +1,10 @@
 # Scan images pushed to ECR
 
-** org.openrewrite.terraform.aws.EnableECRScanOnPush**
-_ECR Image Scanning assesses and identifies operating system vulnerabilities. Using automated image scans you can ensure container image vulnerabilities are found before getting pushed to production._
+ **org.openrewrite.terraform.aws.EnableECRScanOnPush** _ECR Image Scanning assesses and identifies operating system vulnerabilities. Using automated image scans you can ensure container image vulnerabilities are found before getting pushed to production._
 
 ### Tags
 
-* CKV_AWS_33
+* CKV\_AWS\_33
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _ECR Image Scanning assesses and identifies operating system vulnerabilities. Us
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_ecr_repository`
-  * content: `image_scanning_configuration {
-  scan_on_push = true
-}`
+  * content: \`image\_scanning\_configuration {
 
+    scan\_on\_push = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: image_scanning_configuration {
   scan_on_push = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

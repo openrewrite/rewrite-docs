@@ -1,7 +1,6 @@
-# Use `RestTemplateBuilder#basicAuthentication`
+# Use RestTemplateBuilder\#basicAuthentication
 
-** org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderBasicAuthorization**
-_`RestTemplateBuilder#basicAuthorization` was deprecated in 2.1._
+ **org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderBasicAuthorization** _`RestTemplateBuilder#basicAuthorization` was deprecated in 2.1._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`RestTemplateBuilder#basicAuthorization` was deprecated in 2.1._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.springframework.boot.web.client.RestTemplateBuilder basicAuthorization(String, String)`
   * newMethodName: `basicAuthentication`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.boot.web.client.RestTemplateBuilder basicAuthorization(String, String)
       newMethodName: basicAuthentication
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -4,4 +4,3 @@
 
 * [Find property](findproperties.md)
 
-

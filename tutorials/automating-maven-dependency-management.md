@@ -136,5 +136,5 @@ Of course, CI failures are always at least a little bit frustrating for develope
 
 ## Next Steps
 
-The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven](../reference/recipes/maven/) recipe reference for the full listing of dependency management recipes.
+The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven]() recipe reference for the full listing of dependency management recipes.
 

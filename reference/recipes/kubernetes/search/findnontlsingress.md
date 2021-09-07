@@ -1,7 +1,6 @@
 # Find non-TLS Ingresses
 
-** org.openrewrite.kubernetes.search.FindNonTlsIngress**
-_Find Ingress resources that don't disallow HTTP or don't have TLS configured._
+ **org.openrewrite.kubernetes.search.FindNonTlsIngress** _Find Ingress resources that don't disallow HTTP or don't have TLS configured._
 
 ## Source
 
@@ -14,9 +13,8 @@ _Find Ingress resources that don't disallow HTTP or don't have TLS configured._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
+| :--- | :--- | :--- |
+| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
 
 ## Usage
 
@@ -77,3 +75,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.search.FindNonTlsIngress`
+

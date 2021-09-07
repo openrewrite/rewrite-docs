@@ -1,7 +1,6 @@
 # Unnecessary throws
 
-** org.openrewrite.java.cleanup.UnnecessaryThrows**
-_Remove unnecessary `throws` declarations._
+ **org.openrewrite.java.cleanup.UnnecessaryThrows** _Remove unnecessary `throws` declarations._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove unnecessary `throws` declarations._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.13.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.UnnecessaryThrows`
+

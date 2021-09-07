@@ -1,7 +1,6 @@
 # Find Terraform resource
 
-** org.openrewrite.terraform.search.FindResource**
-_Find a Terraform resource by resource type._
+ **org.openrewrite.terraform.search.FindResource** _Find a Terraform resource by resource type._
 
 ## Source
 
@@ -14,14 +13,12 @@ _Find a Terraform resource by resource type._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | resourceName | A Terraform resource name, without the quotes. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindResourceExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindResourceExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -92,3 +89,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindResourceExample`
+

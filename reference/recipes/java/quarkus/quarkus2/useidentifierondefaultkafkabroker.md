@@ -1,7 +1,6 @@
-# Use `@Identifier("default-kafka-broker")`
+# Use @Identifier\("default-kafka-broker"\)
 
-** org.openrewrite.java.quarkus.quarkus2.UseIdentifierOnDefaultKafkaBroker**
-_Use `@io.smallrye.common.annotation.Identifier` on default kafka broker configuration._
+ **org.openrewrite.java.quarkus.quarkus2.UseIdentifierOnDefaultKafkaBroker** _Use `@io.smallrye.common.annotation.Identifier` on default kafka broker configuration._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Use `@io.smallrye.common.annotation.Identifier` on default kafka broker configu
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.7.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.quarkus2.UseIdentifierOnDefaultKafkaBroker`
+

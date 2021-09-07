@@ -1,7 +1,6 @@
 # Remove implicit web annotation names
 
-** org.openrewrite.java.spring.ImplicitWebAnnotationNames**
-_Removes implicit web annotation names._
+ **org.openrewrite.java.spring.ImplicitWebAnnotationNames** _Removes implicit web annotation names._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Removes implicit web annotation names._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.ImplicitWebAnnotationNames`
+

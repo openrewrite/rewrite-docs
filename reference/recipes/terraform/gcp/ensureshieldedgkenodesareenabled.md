@@ -1,13 +1,12 @@
 # Ensure shielded GKE nodes are enabled
 
-** org.openrewrite.terraform.gcp.EnsureShieldedGKENodesAreEnabled**
-_Ensure shielded GKE nodes are enabled._
+ **org.openrewrite.terraform.gcp.EnsureShieldedGKENodesAreEnabled** _Ensure shielded GKE nodes are enabled._
 
 ### Tags
 
 * GCP
 * terraform
-* CKV_GCP_71
+* CKV\_GCP\_71
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure shielded GKE nodes are enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_cluster`
   * content: `enable_shielded_nodes = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: google_container_cluster
       content: enable_shielded_nodes = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
-# Upgrade `micronaut.version` Maven property
+# Upgrade micronaut.version Maven property
 
-** org.openrewrite.java.micronaut.UpgradeMicronautMavenPropertyVersion**
-_Set the maven micronaut.version property according to a node-style semver selector or to a specific version number._
+ **org.openrewrite.java.micronaut.UpgradeMicronautMavenPropertyVersion** _Set the maven micronaut.version property according to a node-style semver selector or to a specific version number._
 
 ## Source
 
@@ -14,14 +13,12 @@ _Set the maven micronaut.version property according to a node-style semver selec
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | newVersion | An exact version number, or node-style semver selector used to select the version number. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpgradeMicronautMavenPropertyVersionExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpgradeMicronautMavenPropertyVersionExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -92,3 +89,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.UpgradeMicronautMavenPropertyVersionExample`
+

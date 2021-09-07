@@ -1,13 +1,12 @@
 # Ensure Send email notification for high severity alerts to admins is enabled
 
-** org.openrewrite.terraform.azure.EnsureSendEmailNotificationForHighSeverityAlertsToAdminsIsEnabled**
-_Ensure Send email notification for high severity alerts to admins is enabled._
+ **org.openrewrite.terraform.azure.EnsureSendEmailNotificationForHighSeverityAlertsToAdminsIsEnabled** _Ensure Send email notification for high severity alerts to admins is enabled._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_22
+* CKV\_AZURE\_22
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure Send email notification for high severity alerts to admins is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_security_center_contact`
   * content: `alerts_to_admins = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_security_center_contact
       content: alerts_to_admins = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

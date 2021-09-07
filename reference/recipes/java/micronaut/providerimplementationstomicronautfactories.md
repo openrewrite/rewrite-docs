@@ -1,7 +1,6 @@
-# `Provider` implementation beans to Micronaut `@Factory`
+# Provider implementation beans to Micronaut @Factory
 
-** org.openrewrite.java.micronaut.ProviderImplementationsToMicronautFactories**
-_As of Micronaut 3.x the `@Factory` annotation is required for creating beans from `javax.inject.Provider get()` implementations._
+ **org.openrewrite.java.micronaut.ProviderImplementationsToMicronautFactories** _As of Micronaut 3.x the `@Factory` annotation is required for creating beans from `javax.inject.Provider get()` implementations._
 
 ## Source
 
@@ -10,7 +9,6 @@ _As of Micronaut 3.x the `@Factory` annotation is required for creating beans fr
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
 * version: 1.1.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.micronaut.ProviderImplementationsToMicronautFactories`
+

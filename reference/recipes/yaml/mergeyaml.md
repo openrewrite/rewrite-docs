@@ -1,7 +1,6 @@
 # Merge YAML snippet
 
-** org.openrewrite.yaml.MergeYaml**
-_Merge a YAML snippet with an existing YAML document._
+ **org.openrewrite.yaml.MergeYaml** _Merge a YAML snippet with an existing YAML document._
 
 ## Source
 
@@ -14,17 +13,15 @@ _Merge a YAML snippet with an existing YAML document._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | key | XPath expression used to find matching keys. |
 | `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. |
-| `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
+| `Boolean` | acceptTheirs | _Optional_. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |
+| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.MergeYamlExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.MergeYamlExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,12 +33,11 @@ recipeList:
   - org.openrewrite.yaml.MergeYaml:
       key: /metadata
       yaml: labels: 
-	label-one: "value-one"
+    label-one: "value-one"
       acceptTheirs: null
       fileMatcher: **/application-*.yml
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.MergeYamlExample` has been defined activate it in your build file:
 
@@ -60,7 +56,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -90,3 +85,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.MergeYamlExample`
+

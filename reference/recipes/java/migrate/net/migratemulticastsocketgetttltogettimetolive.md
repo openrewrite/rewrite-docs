@@ -1,7 +1,6 @@
-# Use `java.net.MulticastSocket#getTimeToLive()`
+# Use java.net.MulticastSocket\#getTimeToLive\(\)
 
-** org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive**
-_`java.net.MulticastSocket#getTTL()` has been deprecated._
+ **org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive** _`java.net.MulticastSocket#getTTL()` has been deprecated._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`java.net.MulticastSocket#getTTL()` has been deprecated._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.8.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `java.net.MulticastSocket getTTL()`
   * newMethodName: `getTimeToLive`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.net.MulticastSocket getTTL()
       newMethodName: getTimeToLive
-
 ```
 {% endtab %}
 {% endtabs %}
+

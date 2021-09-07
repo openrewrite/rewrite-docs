@@ -1,13 +1,12 @@
 # Ensure AWS RDS database instance is not publicly accessible
 
-** org.openrewrite.terraform.aws.EnsureAWSRDSDatabaseInstanceIsNotPubliclyAccessible**
-_Ensure AWS RDS database instance is not publicly accessible._
+ **org.openrewrite.terraform.aws.EnsureAWSRDSDatabaseInstanceIsNotPubliclyAccessible** _Ensure AWS RDS database instance is not publicly accessible._
 
 ### Tags
 
 * terraform
 * AWS
-* CKV_AWS_17
+* CKV\_AWS\_17
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure AWS RDS database instance is not publicly accessible._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_db_instance`
   * content: `publicly_accessible = false`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_db_instance
       content: publicly_accessible = false
-
 ```
 {% endtab %}
 {% endtabs %}
+

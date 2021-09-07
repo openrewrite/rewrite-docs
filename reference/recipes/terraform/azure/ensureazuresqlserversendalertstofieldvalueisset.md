@@ -1,12 +1,11 @@
 # Ensure Azure SQL server send alerts to field value is set
 
-** org.openrewrite.terraform.azure.EnsureAzureSQLServerSendAlertsToFieldValueIsSet**
-_Ensure Azure SQL server send alerts to field value is set._
+ **org.openrewrite.terraform.azure.EnsureAzureSQLServerSendAlertsToFieldValueIsSet** _Ensure Azure SQL server send alerts to field value is set._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_26
+* CKV\_AZURE\_26
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure Azure SQL server send alerts to field value is set._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_mssql_server_security_alert_policy`
   * content: `email_addresses = ["placeholderusername@noemail.invalid"]`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_mssql_server_security_alert_policy
       content: email_addresses = ["placeholderusername@noemail.invalid"]
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
-# Use `WebTestClientBuilderCustomizer`
+# Use WebTestClientBuilderCustomizer
 
-** org.openrewrite.java.spring.boot2.MigrateWebTestClientBuilderCustomizerPackageName**
-_`org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientBuilderCustomizer` was deprecated in 2.2._
+ **org.openrewrite.java.spring.boot2.MigrateWebTestClientBuilderCustomizerPackageName** _`org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientBuilderCustomizer` was deprecated in 2.2._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientBuilderC
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientBuilderCustomizer`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.reactive.server.WebTestClientBuilderCustomizer`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientBuilderCustomizer
       newFullyQualifiedTypeName: org.springframework.boot.test.web.reactive.server.WebTestClientBuilderCustomizer
-
 ```
 {% endtab %}
 {% endtabs %}
+

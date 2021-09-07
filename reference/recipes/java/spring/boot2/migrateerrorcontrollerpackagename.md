@@ -1,7 +1,6 @@
-# Use `ErrorController`
+# Use ErrorController
 
-** org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName**
-_`org.springframework.boot.autoconfigure.web.ErrorController` was deprecated in 1.x._
+ **org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName** _`org.springframework.boot.autoconfigure.web.ErrorController` was deprecated in 1.x._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`org.springframework.boot.autoconfigure.web.ErrorController` was deprecated in 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.ErrorController`
   * newFullyQualifiedTypeName: `org.springframework.boot.web.servlet.error.ErrorController`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.ErrorController
       newFullyQualifiedTypeName: org.springframework.boot.web.servlet.error.ErrorController
-
 ```
 {% endtab %}
 {% endtabs %}
+

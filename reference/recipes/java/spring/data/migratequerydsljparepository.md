@@ -1,7 +1,6 @@
-# Use `QuerydslPredicateExecutor<T>`
+# Use QuerydslPredicateExecutor
 
-** org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository**
-_`QuerydslJpaRepository<T, ID extends Serializable>` was deprecated in Spring Data 2.1._
+ **org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository** _`QuerydslJpaRepository<T, ID extends Serializable>` was deprecated in Spring Data 2.1._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`QuerydslJpaRepository<T, ID extends Serializable>` was deprecated in Spring Da
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository`
+

@@ -1,7 +1,6 @@
-# Remove `avro-maven-plugin`
+# Remove avro-maven-plugin
 
-** org.openrewrite.java.quarkus.quarkus2.RemoveAvroMavenPlugin**
-_Removes the `avro-maven-plugin` if the `quarkus-maven-plugin` is found in the project's `pom.xml`. Avro has been integrated with the Quarkus code generation mechanism. This replaces the need to use the Avro plugin._
+ **org.openrewrite.java.quarkus.quarkus2.RemoveAvroMavenPlugin** _Removes the `avro-maven-plugin` if the `quarkus-maven-plugin` is found in the project's `pom.xml`. Avro has been integrated with the Quarkus code generation mechanism. This replaces the need to use the Avro plugin._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Removes the `avro-maven-plugin` if the `quarkus-maven-plugin` is found in the p
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.7.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.quarkus2.RemoveAvroMavenPlugin`
+

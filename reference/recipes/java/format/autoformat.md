@@ -1,7 +1,6 @@
 # Format Java code
 
-** org.openrewrite.java.format.AutoFormat**
-_Format Java code using a standard comprehensive set of Java formatting recipes._
+ **org.openrewrite.java.format.AutoFormat** _Format Java code using a standard comprehensive set of Java formatting recipes._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Format Java code using a standard comprehensive set of Java formatting recipes.
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.13.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.format.AutoFormat`
+

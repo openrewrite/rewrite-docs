@@ -15,4 +15,3 @@
 * [Find uses of deprecated methods](finddeprecatedmethods.md)
 * [Result of method call ignored](resultofmethodcallignored.md)
 
-

@@ -1,7 +1,6 @@
-# Migrate deprecated `java.net` APIs
+# Migrate deprecated java.net APIs
 
-** org.openrewrite.java.migrate.net.JavaNetAPIs**
-_Certain Java networking APIs have become deprecated and their usages changed, necessitating usage changes._
+ **org.openrewrite.java.migrate.net.JavaNetAPIs** _Certain Java networking APIs have become deprecated and their usages changed, necessitating usage changes._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Certain Java networking APIs have become deprecated and their usages changed, n
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.8.0
-
 
 ## Usage
 
@@ -80,12 +78,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `java.net.MulticastSocket#setTimeToLive(int)`](../../../java/migrate/net/migratemulticastsocketsetttltosettimetolive.md)
-* [Use `java.net.MulticastSocket#getTimeToLive()`](../../../java/migrate/net/migratemulticastsocketgetttltogettimetolive.md)
-* [Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR`](../../../java/migrate/net/migratehttpurlconnectionhttpservererrortohttpinternalerror.md)
-* [Use `java.net.URLDecoder#decode(String, StandardCharsets.UTF_8)`](../../../java/migrate/net/migrateurldecoderdecode.md)
-* [Use `java.net.URLEncoder#encode(String, StandardCharsets.UTF_8)`](../../../java/migrate/net/migrateurlencoderencode.md)
-
+* [Use `java.net.MulticastSocket#setTimeToLive(int)`](migratemulticastsocketsetttltosettimetolive.md)
+* [Use `java.net.MulticastSocket#getTimeToLive()`](migratemulticastsocketgetttltogettimetolive.md)
+* [Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR`](migratehttpurlconnectionhttpservererrortohttpinternalerror.md)
+* [Use `java.net.URLDecoder#decode(String, StandardCharsets.UTF_8)`](migrateurldecoderdecode.md)
+* [Use `java.net.URLEncoder#encode(String, StandardCharsets.UTF_8)`](migrateurlencoderencode.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.java.migrate.net.MigrateHttpURLConnectionHttpServerErrorToHttpInternalError
   - org.openrewrite.java.migrate.net.MigrateURLDecoderDecode
   - org.openrewrite.java.migrate.net.MigrateURLEncoderEncode
-
 ```
 {% endtab %}
 {% endtabs %}
+

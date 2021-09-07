@@ -13,4 +13,3 @@
 * [Tabs and indents](tabsandindents.md)
 * [Wrapping and braces](wrappingandbraces.md)
 
-

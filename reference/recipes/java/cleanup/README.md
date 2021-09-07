@@ -54,4 +54,3 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [`indexOf()` replaceable by `contains()`](indexofreplaceablebycontains.md)
 * [`switch` statements should have at least 3 `case` clauses](minimumswitchcases.md)
 
-

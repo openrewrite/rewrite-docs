@@ -1,7 +1,6 @@
-# Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`
+# Convert InstantiationAwareBeanPostProcessorAdapter to SmartInstantiationAwareBeanPostProcessor
 
-** org.openrewrite.java.spring.framework.MigrateInstantiationAwareBeanPostProcessorAdapter**
-_As of Spring-Framework 5.3 `InstantiationAwareBeanPostProcessorAdapter` is deprecated in favor of the existing default methods in `SmartInstantiationAwareBeanPostProcessor`._
+ **org.openrewrite.java.spring.framework.MigrateInstantiationAwareBeanPostProcessorAdapter** _As of Spring-Framework 5.3 `InstantiationAwareBeanPostProcessorAdapter` is deprecated in favor of the existing default methods in `SmartInstantiationAwareBeanPostProcessor`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _As of Spring-Framework 5.3 `InstantiationAwareBeanPostProcessorAdapter` is depr
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.framework.MigrateInstantiationAwareBeanPostProcessorAdapter`
+

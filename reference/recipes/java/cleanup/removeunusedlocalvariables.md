@@ -1,7 +1,6 @@
 # Remove unused local variables
 
-** org.openrewrite.java.cleanup.RemoveUnusedLocalVariables**
-_If a local variable is declared but not used, it is dead code and should be removed._
+ **org.openrewrite.java.cleanup.RemoveUnusedLocalVariables** _If a local variable is declared but not used, it is dead code and should be removed._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _If a local variable is declared but not used, it is dead code and should be rem
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.13.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.RemoveUnusedLocalVariables`
+

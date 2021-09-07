@@ -1,7 +1,6 @@
-# Use `JpaRepository#getById(ID id)`
+# Use JpaRepository\#getById\(ID id\)
 
-** org.openrewrite.java.spring.data.UseJpaRepositoryGetById**
-_`JpaRepository#getOne(ID)` was deprecated in 2.5._
+ **org.openrewrite.java.spring.data.UseJpaRepositoryGetById** _`JpaRepository#getOne(ID)` was deprecated in 2.5._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`JpaRepository#getOne(ID)` was deprecated in 2.5._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.springframework.data.jpa.repository.JpaRepository getOne(..)`
   * newMethodName: `getById`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.data.jpa.repository.JpaRepository getOne(..)
       newMethodName: getById
-
 ```
 {% endtab %}
 {% endtabs %}
+

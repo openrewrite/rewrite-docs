@@ -1,7 +1,6 @@
 # Use comparison rather than equality checks in for conditions
 
-** org.openrewrite.java.cleanup.NoEqualityInForCondition**
-_Testing for loop termination using an equality operator (`==` and `!=`) is dangerous, because it could set up an infinite loop. Using a relational operator instead makes it harder to accidentally write an infinite loop._
+ **org.openrewrite.java.cleanup.NoEqualityInForCondition** _Testing for loop termination using an equality operator \(`==` and `!=`\) is dangerous, because it could set up an infinite loop. Using a relational operator instead makes it harder to accidentally write an infinite loop._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Testing for loop termination using an equality operator (`==` and `!=`) is dang
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.13.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.NoEqualityInForCondition`
+

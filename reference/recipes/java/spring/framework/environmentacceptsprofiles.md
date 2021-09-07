@@ -1,7 +1,6 @@
-# Use `Environment#acceptsProfiles(Profiles)`
+# Use Environment\#acceptsProfiles\(Profiles\)
 
-** org.openrewrite.java.spring.framework.EnvironmentAcceptsProfiles**
-_`Environment#acceptsProfiles(String...)` was deprecated in Spring Framework 5.1._
+ **org.openrewrite.java.spring.framework.EnvironmentAcceptsProfiles** _`Environment#acceptsProfiles(String...)` was deprecated in Spring Framework 5.1._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`Environment#acceptsProfiles(String...)` was deprecated in Spring Framework 5.1
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.framework.EnvironmentAcceptsProfiles`
+

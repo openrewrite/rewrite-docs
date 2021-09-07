@@ -1,13 +1,12 @@
 # Ensure RDS database has IAM authentication enabled
 
-** org.openrewrite.terraform.aws.EnsureRDSDatabaseHasIAMAuthenticationEnabled**
-_Ensure RDS database has IAM authentication enabled._
+ **org.openrewrite.terraform.aws.EnsureRDSDatabaseHasIAMAuthenticationEnabled** _Ensure RDS database has IAM authentication enabled._
 
 ### Tags
 
 * terraform
 * AWS
-* CKV_AWS_161
+* CKV\_AWS\_161
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure RDS database has IAM authentication enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_db_instance`
   * content: `iam_database_authentication_enabled = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_db_instance
       content: iam_database_authentication_enabled = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

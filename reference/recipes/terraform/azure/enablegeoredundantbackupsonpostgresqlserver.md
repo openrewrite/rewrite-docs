@@ -1,13 +1,12 @@
 # Enable geo-redundant backups on PostgreSQL server
 
-** org.openrewrite.terraform.azure.EnableGeoRedundantBackupsOnPostgreSQLServer**
-_Ensure PostgreSQL server enables geo-redundant backups._
+ **org.openrewrite.terraform.azure.EnableGeoRedundantBackupsOnPostgreSQLServer** _Ensure PostgreSQL server enables geo-redundant backups._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_102
+* CKV\_AZURE\_102
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure PostgreSQL server enables geo-redundant backups._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_postgresql_server`
   * content: `geo_redundant_backup_enabled = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_postgresql_server
       content: geo_redundant_backup_enabled = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

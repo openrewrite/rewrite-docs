@@ -1,7 +1,6 @@
-# Use `Character#isWhitespace(char)`
+# Use Character\#isWhitespace\(char\)
 
-** org.openrewrite.java.migrate.lang.MigrateCharacterIsSpaceToIsWhitespace**
-_`Character#isSpace(char)` was deprecated in Java 1.1._
+ **org.openrewrite.java.migrate.lang.MigrateCharacterIsSpaceToIsWhitespace** _`Character#isSpace(char)` was deprecated in Java 1.1._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`Character#isSpace(char)` was deprecated in Java 1.1._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.8.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `java.lang.Character isSpace(char)`
   * newMethodName: `isWhitespace`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Character isSpace(char)
       newMethodName: isWhitespace
-
 ```
 {% endtab %}
 {% endtabs %}
+

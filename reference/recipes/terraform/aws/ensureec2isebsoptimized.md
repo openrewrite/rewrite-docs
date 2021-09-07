@@ -1,11 +1,10 @@
 # Ensure EC2 is EBS optimized
 
-** org.openrewrite.terraform.aws.EnsureEC2IsEBSOptimized**
-_Ensure EC2 is EBS optimized._
+ **org.openrewrite.terraform.aws.EnsureEC2IsEBSOptimized** _Ensure EC2 is EBS optimized._
 
 ### Tags
 
-* CKV_AWS_135
+* CKV\_AWS\_135
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure EC2 is EBS optimized._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_instance`
   * content: `ebs_optimized = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_instance
       content: ebs_optimized = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

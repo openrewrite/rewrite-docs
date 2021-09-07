@@ -1,11 +1,10 @@
 # Ensure GCP Kubernetes cluster node auto-repair configuration is enabled
 
-** org.openrewrite.terraform.gcp.EnsureGCPKubernetesClusterNodeAutoRepairConfigurationIsEnabled**
-_Ensure GCP Kubernetes cluster node auto-repair configuration is enabled._
+ **org.openrewrite.terraform.gcp.EnsureGCPKubernetesClusterNodeAutoRepairConfigurationIsEnabled** _Ensure GCP Kubernetes cluster node auto-repair configuration is enabled._
 
 ### Tags
 
-* CKV_GCP_9
+* CKV\_GCP\_9
 * GCP
 * terraform
 
@@ -16,7 +15,6 @@ _Ensure GCP Kubernetes cluster node auto-repair configuration is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_node_pool`
-  * content: `management {
-  auto_repair = true
-}`
+  * content: \`management {
 
+    auto\_repair = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: management {
   auto_repair = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

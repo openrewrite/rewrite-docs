@@ -1,7 +1,6 @@
 # Java security best practices
 
-** org.openrewrite.java.security.JavaSecurityBestPractices**
-_Applies security best practices to Java code._
+ **org.openrewrite.java.security.JavaSecurityBestPractices** _Applies security best practices to Java code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Applies security best practices to Java code._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.13.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -70,12 +67,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Result of method call ignored](../../java/search/resultofmethodcallignored.md)
+* [Result of method call ignored](../search/resultofmethodcallignored.md)
   * methodPattern: `java.io.File mkdir*(..)`
-* [XML parser XXE vulnerability](../../java/security/xmlparserxxevulnerability.md)
-* [Use secure temporary file creation](../../java/security/securetempfilecreation.md)
-* [Use comparison rather than equality checks in for conditions](../../java/cleanup/noequalityinforcondition.md)
-
+* [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
+* [Use secure temporary file creation](securetempfilecreation.md)
+* [Use comparison rather than equality checks in for conditions](../cleanup/noequalityinforcondition.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +89,7 @@ recipeList:
   - org.openrewrite.java.security.XmlParserXXEVulnerability
   - org.openrewrite.java.security.SecureTempFileCreation
   - org.openrewrite.java.cleanup.NoEqualityInForCondition
-
 ```
 {% endtab %}
 {% endtabs %}
+

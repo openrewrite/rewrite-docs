@@ -1,7 +1,6 @@
-# Use `JpaSort.of(..)`
+# Use JpaSort.of\(..\)
 
-** org.openrewrite.java.spring.data.MigrateJpaSort**
-_Equivalent constructors in `JpaSort` were deprecated in Spring Data 2.3._
+ **org.openrewrite.java.spring.data.MigrateJpaSort** _Equivalent constructors in `JpaSort` were deprecated in Spring Data 2.3._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Equivalent constructors in `JpaSort` were deprecated in Spring Data 2.3._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.data.MigrateJpaSort`
+

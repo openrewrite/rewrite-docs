@@ -1,7 +1,6 @@
-# Use logger instead of `printStackTrace()`
+# Use logger instead of printStackTrace\(\)
 
-** org.openrewrite.java.logging.PrintStackTraceToLogError**
-_When a logger is present, log exceptions rather than calling `printStackTrace()`._
+ **org.openrewrite.java.logging.PrintStackTraceToLogError** _When a logger is present, log exceptions rather than calling `printStackTrace()`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _When a logger is present, log exceptions rather than calling `printStackTrace()
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 0.7.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.logging.PrintStackTraceToLogError`
+

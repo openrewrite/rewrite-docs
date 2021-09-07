@@ -6,4 +6,3 @@
 * [Service type](findservicesbytype.md)
 * [Update `Service` `externalIP`](updateserviceexternalip.md)
 
-

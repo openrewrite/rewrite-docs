@@ -1,12 +1,11 @@
 # Ensure AKS policies add-on
 
-** org.openrewrite.terraform.azure.EnsureAKSPoliciesAddOn**
-_Azure Policy Add-on for Kubernetes service (AKS) extends Gatekeeper v3, an admission controller webhook for Open Policy Agent (OPA), to apply at-scale enforcements and safeguards on your clusters in a centralized, consistent manner._
+ **org.openrewrite.terraform.azure.EnsureAKSPoliciesAddOn** _Azure Policy Add-on for Kubernetes service \(AKS\) extends Gatekeeper v3, an admission controller webhook for Open Policy Agent \(OPA\), to apply at-scale enforcements and safeguards on your clusters in a centralized, consistent manner._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_116
+* CKV\_AZURE\_116
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Azure Policy Add-on for Kubernetes service (AKS) extends Gatekeeper v3, an admi
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,14 +80,17 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_kubernetes_cluster`
-  * content: `addon_profile {
-  azure_policy {
-    enabled = false
-  }
-}`
+  * content: \`addon\_profile {
 
+    azure\_policy {
+
+    enabled = false
+
+    }
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +112,7 @@ recipeList:
     enabled = false
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

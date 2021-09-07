@@ -7,7 +7,7 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
-```
+```text
 plugins {
     id("org.openrewrite.rewrite") version("5.9.0")
 }
@@ -29,7 +29,7 @@ dependencies {
 
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```
+```text
 <project>
   <build>
     <plugins>
@@ -80,12 +80,11 @@ public class ApiClientValidationExceptionHandler extends ConstraintExceptionHand
 
 {% tab title="After" %}
 ```java
-
 import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
 import jakarta.inject.Inject;
-            
+
 public class ApiClientValidationExceptionHandler extends ConstraintExceptionHandler {
-            
+
     @Inject
     public ApiClientValidationExceptionHandler(ErrorResponseProcessor errorResponseProcessor) {
         super(errorResponseProcessor);
@@ -166,7 +165,7 @@ public class Order {
 {% tab title="Dto After" %}
 ```java
 import io.micronaut.core.annotation.Introspected;
-            
+
 @Introspected
 public class Order {
     ...

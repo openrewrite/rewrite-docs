@@ -1,11 +1,10 @@
 # Ensure MySQL server enables geo-redundant backups
 
-** org.openrewrite.terraform.azure.EnsureMySQLServerEnablesGeoRedundantBackups**
-_Ensure MySQL server enables geo-redundant backups._
+ **org.openrewrite.terraform.azure.EnsureMySQLServerEnablesGeoRedundantBackups** _Ensure MySQL server enables geo-redundant backups._
 
 ### Tags
 
-* CKV_AZURE_94
+* CKV\_AZURE\_94
 * Azure
 * terraform
 
@@ -16,7 +15,6 @@ _Ensure MySQL server enables geo-redundant backups._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_mysql_server`
   * content: `geo_redundant_backup_enabled = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_mysql_server
       content: geo_redundant_backup_enabled = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

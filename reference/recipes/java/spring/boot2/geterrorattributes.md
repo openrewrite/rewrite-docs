@@ -1,7 +1,6 @@
-# Use `ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)`
+# Use ErrorAttributes\#getErrorAttributes\(WebRequest, ErrorAttributeOptions\)
 
-** org.openrewrite.java.spring.boot2.GetErrorAttributes**
-_`ErrorAttributes#getErrorAttributes(WebRequest, boolean)` was deprecated in Spring Boot 2.3._
+ **org.openrewrite.java.spring.boot2.GetErrorAttributes** _`ErrorAttributes#getErrorAttributes(WebRequest, boolean)` was deprecated in Spring Boot 2.3._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`ErrorAttributes#getErrorAttributes(WebRequest, boolean)` was deprecated in Spr
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.GetErrorAttributes`
+

@@ -1,7 +1,6 @@
-# Use `ObjectUtils#isEmpty(Object)`
+# Use ObjectUtils\#isEmpty\(Object\)
 
-** org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty**
-_`StringUtils#isEmpty(Object)` was deprecated in 5.3._
+ **org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty** _`StringUtils#isEmpty(Object)` was deprecated in 5.3._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`StringUtils#isEmpty(Object)` was deprecated in 5.3._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `org.springframework.util.StringUtils isEmpty(Object)`
   * fullyQualifiedTargetTypeName: `org.springframework.util.ObjectUtils`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.springframework.util.StringUtils isEmpty(Object)
       fullyQualifiedTargetTypeName: org.springframework.util.ObjectUtils
-
 ```
 {% endtab %}
 {% endtabs %}
+

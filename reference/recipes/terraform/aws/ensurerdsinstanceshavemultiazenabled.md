@@ -1,11 +1,10 @@
 # Ensure RDS instances have Multi-AZ enabled
 
-** org.openrewrite.terraform.aws.EnsureRDSInstancesHaveMultiAZEnabled**
-_Ensure RDS instances have Multi-AZ enabled._
+ **org.openrewrite.terraform.aws.EnsureRDSInstancesHaveMultiAZEnabled** _Ensure RDS instances have Multi-AZ enabled._
 
 ### Tags
 
-* CKV_AWS_157
+* CKV\_AWS\_157
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure RDS instances have Multi-AZ enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_db_instance`
   * content: `multi_az = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_db_instance
       content: multi_az = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

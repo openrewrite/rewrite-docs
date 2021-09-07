@@ -1,7 +1,6 @@
-# Prefer `java.util.function.Predicate`
+# Prefer java.util.function.Predicate
 
-** org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate**
-_Guava's `Predicate` extends `java.util.function.Predicate`._
+ **org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate** _Guava's `Predicate` extends `java.util.function.Predicate`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Guava's `Predicate` extends `java.util.function.Predicate`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.8.0
-
 
 ## Usage
 
@@ -80,10 +78,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `com.google.common.base.Predicate`
   * newFullyQualifiedTypeName: `java.util.function.Predicate`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.google.common.base.Predicate
       newFullyQualifiedTypeName: java.util.function.Predicate
-
 ```
 {% endtab %}
 {% endtabs %}
+

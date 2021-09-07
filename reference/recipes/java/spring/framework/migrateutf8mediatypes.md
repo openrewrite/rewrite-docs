@@ -1,7 +1,6 @@
 # Migrate deprecated Spring-Web UTF8 MediaTypes
 
-** org.openrewrite.java.spring.framework.MigrateUtf8MediaTypes**
-_Spring-Web MediaTypes `APPLICATION_JSON_UTF8` and `APPLICATION_PROBLEM_JSON_UTF8` were deprecated in 5.2._
+ **org.openrewrite.java.spring.framework.MigrateUtf8MediaTypes** _Spring-Web MediaTypes `APPLICATION_JSON_UTF8` and `APPLICATION_PROBLEM_JSON_UTF8` were deprecated in 5.2._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Spring-Web MediaTypes `APPLICATION_JSON_UTF8` and `APPLICATION_PROBLEM_JSON_UTF
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.framework.MigrateUtf8MediaTypes`
+

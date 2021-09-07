@@ -1,7 +1,6 @@
-# Use `spring-boot.run.agents` configuration key in `spring-boot-maven-plugin`
+# Use spring-boot.run.agents configuration key in spring-boot-maven-plugin
 
-** org.openrewrite.java.spring.boot2.SpringBootMavenPluginMigrateAgentToAgents**
-_Migrate the `spring-boot.run.agent` Maven plugin configuration key to `spring-boot.run.agents`. Deprecated in 2.2.x._
+ **org.openrewrite.java.spring.boot2.SpringBootMavenPluginMigrateAgentToAgents** _Migrate the `spring-boot.run.agent` Maven plugin configuration key to `spring-boot.run.agents`. Deprecated in 2.2.x._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrate the `spring-boot.run.agent` Maven plugin configuration key to `spring-b
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.SpringBootMavenPluginMigrateAgentToAgents`
+

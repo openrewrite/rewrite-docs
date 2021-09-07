@@ -1,11 +1,10 @@
 # Ensure IAM password policy requires at least one lowercase letter
 
-** org.openrewrite.terraform.aws.EnsureIAMPasswordPolicyRequiresAtLeastOneLowercaseLetter**
-_Ensure IAM password policy requires at least one lowercase letter._
+ **org.openrewrite.terraform.aws.EnsureIAMPasswordPolicyRequiresAtLeastOneLowercaseLetter** _Ensure IAM password policy requires at least one lowercase letter._
 
 ### Tags
 
-* CKV_AWS_11
+* CKV\_AWS\_11
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure IAM password policy requires at least one lowercase letter._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_iam_account_password_policy`
   * content: `require_lowercase_characters = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_iam_account_password_policy
       content: require_lowercase_characters = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

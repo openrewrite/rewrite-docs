@@ -1,11 +1,10 @@
 # Ensure AWS Elasticsearch has node-to-node encryption enabled
 
-** org.openrewrite.terraform.aws.EnsureAWSElasticsearchHasNodeToNodeEncryptionEnabled**
-_Ensure AWS Elasticsearch has node-to-node encryption enabled._
+ **org.openrewrite.terraform.aws.EnsureAWSElasticsearchHasNodeToNodeEncryptionEnabled** _Ensure AWS Elasticsearch has node-to-node encryption enabled._
 
 ### Tags
 
-* CKV_AWS_6
+* CKV\_AWS\_6
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure AWS Elasticsearch has node-to-node encryption enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_elasticsearch_domain`
-  * content: `node_to_node_encryption {
-  enabled = true
-}`
+  * content: \`node\_to\_node\_encryption {
 
+    enabled = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: node_to_node_encryption {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

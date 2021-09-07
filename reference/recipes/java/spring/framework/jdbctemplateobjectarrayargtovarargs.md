@@ -1,7 +1,6 @@
 # Use varargs equivalents for deprecated JdbcTemplate signatures
 
-** org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs**
-_`JdbcTemplate` signatures with `Object[]` arguments are deprecated, in favor of their existing varargs equivalents._
+ **org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs** _`JdbcTemplate` signatures with `Object[]` arguments are deprecated, in favor of their existing varargs equivalents._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`JdbcTemplate` signatures with `Object[]` arguments are deprecated, in favor of
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs`
+

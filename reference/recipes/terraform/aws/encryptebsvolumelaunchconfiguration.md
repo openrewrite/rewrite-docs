@@ -1,11 +1,10 @@
 # Encrypt EBS volume launch configurations
 
-** org.openrewrite.terraform.aws.EncryptEBSVolumeLaunchConfiguration**
-_EBS volumes allow you to create encrypted launch configurations when creating EC2 instances and auto scaling. When the entire EBS volume is encrypted, data stored at rest on the volume, disk I/O, snapshots created from the volume, and data in-transit between EBS and EC2 are all encrypted._
+ **org.openrewrite.terraform.aws.EncryptEBSVolumeLaunchConfiguration** _EBS volumes allow you to create encrypted launch configurations when creating EC2 instances and auto scaling. When the entire EBS volume is encrypted, data stored at rest on the volume, disk I/O, snapshots created from the volume, and data in-transit between EBS and EC2 are all encrypted._
 
 ### Tags
 
-* CKV_AWS_8
+* CKV\_AWS\_8
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _EBS volumes allow you to create encrypted launch configurations when creating E
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_launch_configuration`
-  * content: `root_block_device {
-  encrypted = true
-}`
+  * content: \`root\_block\_device {
 
+    encrypted = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: root_block_device {
   encrypted = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

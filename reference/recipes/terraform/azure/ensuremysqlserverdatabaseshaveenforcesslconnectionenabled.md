@@ -1,13 +1,12 @@
 # Ensure MySQL server databases have Enforce SSL connection enabled
 
-** org.openrewrite.terraform.azure.EnsureMySQLServerDatabasesHaveEnforceSSLConnectionEnabled**
-_Ensure MySQL server databases have Enforce SSL connection enabled._
+ **org.openrewrite.terraform.azure.EnsureMySQLServerDatabasesHaveEnforceSSLConnectionEnabled** _Ensure MySQL server databases have Enforce SSL connection enabled._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_28
+* CKV\_AZURE\_28
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure MySQL server databases have Enforce SSL connection enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_mysql_server`
   * content: `ssl_enforcement_enabled = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_mysql_server
       content: ssl_enforcement_enabled = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
 # Prepend a random name to each Log4J statement
 
-** org.openrewrite.java.logging.log4j.PrependRandomName**
-_To make finding the callsite of a logging statement easier in code search._
+ **org.openrewrite.java.logging.log4j.PrependRandomName** _To make finding the callsite of a logging statement easier in code search._
 
 ## Source
 
@@ -10,7 +9,6 @@ _To make finding the callsite of a logging statement easier in code search._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 0.7.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.logging.log4j.PrependRandomName`
+

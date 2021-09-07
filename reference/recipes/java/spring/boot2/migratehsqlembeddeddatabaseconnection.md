@@ -1,7 +1,6 @@
 # Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL
 
-** org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection**
-_Spring-Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `EmbeddedDatabaseConnection.HSQLDB` in 2.4._
+ **org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection** _Spring-Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `EmbeddedDatabaseConnection.HSQLDB` in 2.4._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Spring-Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `Embed
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection`
+

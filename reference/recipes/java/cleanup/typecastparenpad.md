@@ -1,7 +1,6 @@
 # Typecast parenthesis padding
 
-** org.openrewrite.java.cleanup.TypecastParenPad**
-_Fixes whitespace padding between a typecast type identifier and the enclosing left and right parenthesis. For example, when configured to remove spacing, `( int ) 0L;` becomes `(int) 0L;`._
+ **org.openrewrite.java.cleanup.TypecastParenPad** _Fixes whitespace padding between a typecast type identifier and the enclosing left and right parenthesis. For example, when configured to remove spacing, `( int ) 0L;` becomes `(int) 0L;`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Fixes whitespace padding between a typecast type identifier and the enclosing l
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.13.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.TypecastParenPad`
+

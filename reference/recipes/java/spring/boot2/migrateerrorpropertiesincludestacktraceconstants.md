@@ -1,7 +1,6 @@
-# Use `ErrorProperties#IncludeStacktrace.ON_PARAM`
+# Use ErrorProperties\#IncludeStacktrace.ON\_PARAM
 
-** org.openrewrite.java.spring.boot2.MigrateErrorPropertiesIncludeStackTraceConstants**
-_`ErrorProperties#IncludeStacktrace.ON_TRACE_PARAM` was deprecated in 2.3.x and removed in 2.5.0._
+ **org.openrewrite.java.spring.boot2.MigrateErrorPropertiesIncludeStackTraceConstants** _`ErrorProperties#IncludeStacktrace.ON_TRACE_PARAM` was deprecated in 2.3.x and removed in 2.5.0._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`ErrorProperties#IncludeStacktrace.ON_TRACE_PARAM` was deprecated in 2.3.x and 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.11.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.MigrateErrorPropertiesIncludeStackTraceConstants`
+

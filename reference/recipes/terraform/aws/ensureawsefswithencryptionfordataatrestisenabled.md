@@ -1,11 +1,10 @@
 # Ensure AWS EFS with encryption for data at rest is enabled
 
-** org.openrewrite.terraform.aws.EnsureAWSEFSWithEncryptionForDataAtRestIsEnabled**
-_Ensure AWS EFS with encryption for data at rest is enabled._
+ **org.openrewrite.terraform.aws.EnsureAWSEFSWithEncryptionForDataAtRestIsEnabled** _Ensure AWS EFS with encryption for data at rest is enabled._
 
 ### Tags
 
-* CKV_AWS_42
+* CKV\_AWS\_42
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure AWS EFS with encryption for data at rest is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_efs_file_system`
   * content: `encrypted = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_efs_file_system
       content: encrypted = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

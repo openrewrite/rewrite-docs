@@ -1,7 +1,6 @@
 # Update image name
 
-** org.openrewrite.kubernetes.UpdateContainerImageName**
-_Search for image names that match patterns and replace the components of the name with new values._
+ **org.openrewrite.kubernetes.UpdateContainerImageName** _Search for image names that match patterns and replace the components of the name with new values._
 
 ## Source
 
@@ -14,21 +13,19 @@ _Search for image names that match patterns and replace the components of the na
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | repoToFind | *Optional*. The repository part of the image name to search for in containers and initContainers. |
+| :--- | :--- | :--- |
+| `String` | repoToFind | _Optional_. The repository part of the image name to search for in containers and initContainers. |
 | `String` | imageToFind | The image name to search for in containers and initContainers. |
-| `String` | tagToFind | *Optional*. The tag part of the image name to search for in containers and initContainers. |
-| `String` | repoToUpdate | *Optional*. The repository part of the image name to update to in containers and initContainers. |
-| `String` | imageToUpdate | *Optional*. The image name to update to in containers and initContainers. |
-| `String` | tagToUpdate | *Optional*. The tag part of the image name to update to in containers and initContainers. |
-| `boolean` | includeInitContainers | *Optional*. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
+| `String` | tagToFind | _Optional_. The tag part of the image name to search for in containers and initContainers. |
+| `String` | repoToUpdate | _Optional_. The repository part of the image name to update to in containers and initContainers. |
+| `String` | imageToUpdate | _Optional_. The image name to update to in containers and initContainers. |
+| `String` | tagToUpdate | _Optional_. The tag part of the image name to update to in containers and initContainers. |
+| `boolean` | includeInitContainers | _Optional_. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
+| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateContainerImageNameExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateContainerImageNameExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -106,3 +103,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.UpdateContainerImageNameExample`
+

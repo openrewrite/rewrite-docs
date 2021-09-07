@@ -1,7 +1,6 @@
-# Find uses of `externalIP`
+# Find uses of externalIP
 
-** org.openrewrite.kubernetes.services.FindServiceExternalIPs**
-_Find any `Service` whose `externalIP` list contains, or does not contain, one of a list of IPs._
+ **org.openrewrite.kubernetes.services.FindServiceExternalIPs** _Find any `Service` whose `externalIP` list contains, or does not contain, one of a list of IPs._
 
 ## Source
 
@@ -14,16 +13,14 @@ _Find any `Service` whose `externalIP` list contains, or does not contain, one o
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `Set` | externalIPs | The list of IP addresses of which at least one external IP should . |
-| `boolean` | findMissing | *Optional*. Whether to treat this search as finding Services whose externalIPs do not contain any of the query IPs. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
+| `boolean` | findMissing | _Optional_. Whether to treat this search as finding Services whose externalIPs do not contain any of the query IPs. |
+| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindServiceExternalIPsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindServiceExternalIPsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -96,3 +93,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindServiceExternalIPsExample`
+

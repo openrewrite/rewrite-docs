@@ -1,7 +1,6 @@
 # Change factory method return types to reflect their resolved return type
 
-** org.openrewrite.java.micronaut.SubclassesReturnedFromFactoriesNotInjectable**
-_As of Micronaut 3.x It is no longer possible to inject the internal implementation type from beans produced via factories. Factory method return types are changed to reflect the resolved return type if the method returns a single non-null type that does not match the method declaration return type._
+ **org.openrewrite.java.micronaut.SubclassesReturnedFromFactoriesNotInjectable** _As of Micronaut 3.x It is no longer possible to inject the internal implementation type from beans produced via factories. Factory method return types are changed to reflect the resolved return type if the method returns a single non-null type that does not match the method declaration return type._
 
 ## Source
 
@@ -10,7 +9,6 @@ _As of Micronaut 3.x It is no longer possible to inject the internal implementat
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
 * version: 1.1.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.micronaut.SubclassesReturnedFromFactoriesNotInjectable`
+

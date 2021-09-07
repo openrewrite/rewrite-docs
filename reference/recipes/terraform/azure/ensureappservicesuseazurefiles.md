@@ -1,13 +1,12 @@
 # Ensure app services use Azure files
 
-** org.openrewrite.terraform.azure.EnsureAppServicesUseAzureFiles**
-_Ensure app services use Azure files._
+ **org.openrewrite.terraform.azure.EnsureAppServicesUseAzureFiles** _Ensure app services use Azure files._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_88
+* CKV\_AZURE\_88
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure app services use Azure files._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.5.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: `storage_account {
-  type = "AzureFiles"
-}`
+  * content: \`storage\_account {
 
+    type = "AzureFiles"
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: storage_account {
   type = "AzureFiles"
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

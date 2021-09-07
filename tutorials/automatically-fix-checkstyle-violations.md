@@ -8,7 +8,7 @@ How you configure Checkstyle integration depends on whether or not your build al
 
 ### With Checkstyle Plugin
 
-If your build uses either the Gradle or Maven checkstyle plugins, then good news, the rewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup ](../reference/recipes/java/cleanup/cleanup.md)recipe. Activating that recipe in your build file and running rewrite is all you need to do to begin auto-remediating Checkstyle policy violations.
+If your build uses either the Gradle or Maven checkstyle plugins, then good news, the rewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup ]()recipe. Activating that recipe in your build file and running rewrite is all you need to do to begin auto-remediating Checkstyle policy violations.
 
 {% tabs %}
 {% tab title="Maven" %}

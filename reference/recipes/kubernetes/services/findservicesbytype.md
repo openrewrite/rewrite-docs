@@ -1,7 +1,6 @@
 # Service type
 
-** org.openrewrite.kubernetes.services.FindServicesByType**
-_Type of Kubernetes `Service` to find._
+ **org.openrewrite.kubernetes.services.FindServicesByType** _Type of Kubernetes `Service` to find._
 
 ## Source
 
@@ -14,15 +13,13 @@ _Type of Kubernetes `Service` to find._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | serviceType | Type of Kubernetes Service to find. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
+| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindServicesByTypeExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindServicesByTypeExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -94,3 +91,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindServicesByTypeExample`
+
