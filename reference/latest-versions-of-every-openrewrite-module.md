@@ -16,7 +16,8 @@
 | org.openrewrite:rewrite-maven-plugin | 4.11.0 |
 | org.openrewrite:rewrite-gradle-plugin | 5.9.0 |
 | org.openrewrite.recipe:rewrite-testing-frameworks | 1.12.0 |
-| org.openrewrite.recipe:rewrite-migrate-jave | 1.1.0 |
+| org.openrewrite.recipe.rewrite-migrate-java | 0.8.0 |
+| org.openrewrite.recipe:rewrite-micronaut | 1.1.0 |
 | org.openrewrite.recipe:rewrite-spring | 4.11.0 |
 | org.openrewrite.recipe:rewrite-terraform | 0.5.0 |
 | org.openrewrite.recipe:rewrite-jhipster | 0.6.0 |
