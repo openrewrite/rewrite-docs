@@ -28,6 +28,7 @@
 * [Maven Plugin Configuration](reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](reference/yaml-format-reference.md)
+* [Method Patterns](reference/method-patterns.md)
 * [Recipes](reference/recipes/README.md)
   * [Java](reference/recipes/java/README.md)
     * [Add ASLv2 license header](reference/recipes/java/addapache2licenseheader.md)
