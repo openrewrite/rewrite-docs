@@ -29,6 +29,7 @@
 * [Gradle Plugin Configuration](reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](reference/yaml-format-reference.md)
 * [Method Patterns](reference/method-patterns.md)
+* [Dependency Version Patterns](reference/dependency-version-patterns.md)
 * [Recipes](reference/recipes/README.md)
   * [Java](reference/recipes/java/README.md)
     * [Add ASLv2 license header](reference/recipes/java/addapache2licenseheader.md)
