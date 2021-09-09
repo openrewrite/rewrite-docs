@@ -18,7 +18,7 @@ The version selector `latest.release` can be specified to mean the most recent r
 
 ### Hyphenated Range 
 
-The selector `X.Y.Z - A.B.C` specifies that versions between `X.Y.Z` and `A.B.C` can be accepted. This is inclusive of `X.Y.Z`and `A.B.C` themselves. If multiple versions within the range are found, the latest is used. If not all digits are specified, then "0" is assumed for any omitted digits.
+The selector `X.Y.Z - A.B.C` specifies that versions between `X.Y.Z` and `A.B.C` can be selected. This is inclusive of `X.Y.Z`and `A.B.C` themselves. If multiple versions within the range are found, the latest is used. If not all digits are specified, then "0" is assumed for any omitted digits.
 
 | Version Selector | Available Versions | Selected Version |
 | :--- | :--- | :--- |
@@ -47,7 +47,7 @@ Prefacing a version number with `~` invokes tilde range semantics. These allow p
 
 ### Caret Range
 
-Prefacing a version number with `^` invokes caret range semantics. Accepts versions that do not modify the left-most non-zero element in the \[major, minor, patch\] tuple. 
+Prefacing a version number with `^` invokes caret range semantics. Selects the latest available version with the left-most, non-zero element in the \[major, minor, patch\] tuple. 
 
 | Version Selector | Available Versions | Selected Version |
 | :--- | :--- | :--- |
@@ -65,7 +65,7 @@ Any version number which does not fit into one of the above categories is treate
 
 ## Version Patterns
 
-Some libraries are published with variants differentiatied by version number. For example, "1.0.0-jre" and "1.0.0-android". To differentiatie between variants of these libraries dependency management recipes accept a "versionPattern" parameter that can be filled in accordingly. This parameter is an exact string and has no wildcard behavior. 
+Some libraries are published with variants differentiated by version number. For example, "1.0.0-jre" and "1.0.0-android". To differentiate between variants of these libraries dependency management recipes accept a "versionPattern" parameter that can be filled in accordingly. This parameter is an exact string and has no wildcard behavior. 
 
 | Version Selector | Version Pattern | Available Versions | Selected Version |
 | :--- | :--- | :--- | :--- |
