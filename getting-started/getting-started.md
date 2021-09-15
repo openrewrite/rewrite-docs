@@ -50,7 +50,15 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.9.0")
+    
+    // apply only to the root project
+    id("org.openrewrite.rewrite") version("5.10.0")
+}
+
+repositories {
+  // The root project doesn't have to be a Java project, but this is necessary
+  // to resolve recipe artifacts.
+  mavenCentral()
 }
 
 rewrite {
@@ -62,6 +70,10 @@ rewrite {
 {% endtabs %}
 
 At this point, you're able to run any of the Maven goals or Gradle tasks provided by the plugins. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) and [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options. Try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a listing of all the recipes available for execution. Until we add dependencies on recipe-providing modules this will list only the recipes built-in to OpenRewrite.
+
+{% hint style="warning" %}
+The Gradle plugin can only be applied to the _root_ project. The tasks on the root project will orchestrate running recipes on all subprojects.
+{% endhint %}
 
 ## Step 3: Execute a Refactoring Recipe
 
