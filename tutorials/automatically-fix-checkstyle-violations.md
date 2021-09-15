@@ -19,7 +19,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.11.0</version>
+      <version>4.12.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>

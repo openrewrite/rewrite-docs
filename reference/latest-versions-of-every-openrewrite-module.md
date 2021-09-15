@@ -15,7 +15,7 @@
 | org.openrewrite:rewrite-properties | 7.14.0 |
 | org.openrewrite:rewrite-maven-plugin | 4.12.0 |
 | org.openrewrite:rewrite-gradle-plugin | 5.10.0 |
-| org.openrewrite.recipe:rewrite-testing-frameworks | 1.13.0 |
+| org.openrewrite.recipe:rewrite-testing-frameworks | 1.13.1 |
 | org.openrewrite.recipe.rewrite-migrate-java | 0.9.0 |
 | org.openrewrite.recipe:rewrite-micronaut | 1.2.0 |
 | org.openrewrite.recipe:rewrite-spring | 4.12.0 |

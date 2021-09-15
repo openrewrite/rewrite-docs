@@ -13,7 +13,7 @@ Apply the org.openrewrite.rewrite plugin to your build.
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.9.0")
+    id("org.openrewrite.rewrite") version("5.10.0")
 }
 
 rewrite {
