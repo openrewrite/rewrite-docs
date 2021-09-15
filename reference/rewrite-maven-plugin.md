@@ -89,7 +89,7 @@ After the goal finishes executing, run `git diff` to see what changes were made,
 
 Execute `mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files at all. This goal can be used to preview the changes that would be made by a recipe.
 
-This goal also produces a report, in the form of a patch file, in which you can see the exact changes that would be made were you to run `mvn rewrite:run`.
+`rewrite:dryRun` outputs a report in the form of a `patch` file-- by default under `target/site/rewrite/rewrite.patch`-- containing changes that would be made if you were to run `mvn rewrite:run`. This `patch` file can be used with `git` or `diff` to view or apply the potential changes. For example, `git diff . target/site/rewrite/rewrite.patch`.
 
 ![Example rewrite.patch file produced by dryRun](../.gitbook/assets/image%20%2822%29.png)
 

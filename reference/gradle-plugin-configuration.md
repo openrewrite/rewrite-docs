@@ -115,6 +115,8 @@ After the goal finishes executing, run `git diff` \(or your VCS system's equival
 
 Execute `gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
 
+`gradle rewriteDryRun` outputs a report in the form of a `patch` file-- by default under `build/reports/rewrite/rewrite.patch`-- containing changes that would be made if you were to run `gradle rewriteRun`. This `patch` file can be used with `git` or `diff` to view or apply the potential changes. For example, `git diff . build/reports/rewrite/rewrite.patch`.
+
 ![Listing of source files that would be changed if rewriteRun were run](../.gitbook/assets/rewrite-warn-gradle-output%20%283%29%20%283%29%20%283%29%20%281%29.png)
 
 `rewriteDryRun` can be used as a "gate" in a continuous integration environment by failing the build if `rewriteDryRun` detects changes to be made and `failOnDryRunResults` is set to `true`:
