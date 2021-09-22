@@ -1,6 +1,7 @@
 # Migrate from Log4j
 
- **org.openrewrite.java.logging.logback.Log4jToLogback** _Migrates Log4j logging framework to logback._
+** org.openrewrite.java.logging.logback.Log4jToLogback**
+_Migrates Log4j logging framework to logback._
 
 ### Tags
 
@@ -10,22 +11,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/0.7.0/jar)
+[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/0.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 0.7.0
+* version: 0.8.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:0.7.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:0.8.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.9.0")
+    id("org.openrewrite.rewrite") version("5.10.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:0.7.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:0.8.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.11.0</version>
+        <version>4.12.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.logback.Log4jToLogback</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>0.7.0</version>
+            <version>0.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,8 +82,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate from Log4j appender](log4jappendertologback.md)
-* [Migrate from Log4j layout](log4jlayouttologback.md)
+* [Migrate from Log4j appender](../../../java/logging/logback/log4jappendertologback.md)
+* [Migrate from Log4j layout](../../../java/logging/logback/log4jlayouttologback.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -98,7 +101,7 @@ tags:
 recipeList:
   - org.openrewrite.java.logging.logback.Log4jAppenderToLogback
   - org.openrewrite.java.logging.logback.Log4jLayoutToLogback
+
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -1,31 +1,33 @@
 # Ensure ECR repositories are encrypted
 
- **org.openrewrite.terraform.aws.EnsureECRRepositoriesAreEncrypted** _Ensure ECR repositories are encrypted._
+** org.openrewrite.terraform.aws.EnsureECRRepositoriesAreEncrypted**
+_Ensure ECR repositories are encrypted._
 
 ### Tags
 
-* CKV\_AWS\_136
+* CKV_AWS_136
 * terraform
 * AWS
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.5.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 0.5.0
+* version: 0.6.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.5.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.6.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.9.0")
+    id("org.openrewrite.rewrite") version("5.10.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:0.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:0.6.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.11.0</version>
+        <version>4.12.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.aws.EnsureECRRepositoriesAreEncrypted</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>0.5.0</version>
+            <version>0.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,13 +82,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../addconfiguration.md)
+* [Add Terraform configuration](../../terraform/addconfiguration.md)
   * resourceName: `aws_ecr_repository`
-  * content: \`encryption\_configuration {
+  * content: `encryption_configuration {
+  encryption_type = "KMS"
+}`
 
-    encryption\_type = "KMS"
-
-    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -106,7 +107,7 @@ recipeList:
       content: encryption_configuration {
   encryption_type = "KMS"
 }
+
 ```
 {% endtab %}
 {% endtabs %}
-

@@ -25,9 +25,12 @@
 * [Prefer `java.util.function.Function`](preferjavautilfunction.md)
 * [Prefer `java.util.function.Predicate`](preferjavautilpredicate.md)
 * [Prefer `java.util.function.Supplier`](preferjavautilsupplier.md)
+* [Use `Files#createTempDirectory()` instead of Guava](noguavacreatetempdir.md)
 * [Use Java SDK instead of `MoreExecutors#directExecutor()`](noguavadirectexecutor.md)
 * [Use Java standard library instead of Guava](noguava.md)
-* [Use `Set#of(..)` not Guava](noguavaimmutablesetof.md)
+* [Use `List.of(..)` in Java 9 or higher](noguavaimmutablelistof.md)
+* [Use `Map.of(..)` in Java 9 or higher](noguavaimmutablemapof.md)
+* [Use `Set.of(..)` in Java 9 or higher](noguavaimmutablesetof.md)
 * [Use `new ArrayList<>()` instead of Guava](noguavalistsnewarraylist.md)
 * [Use `new AtomicReference<>()` instead of Guava](noguavaatomicsnewreference.md)
 * [Use `new CopyOnWriteArrayList<>()` instead of Guava](noguavalistsnewcopyonwritearraylist.md)
@@ -35,4 +38,5 @@
 * [Use `new LinkedHashMap<>()` instead of Guava](noguavamapsnewlinkedhashmap.md)
 * [Use `new LinkedHashSet<>()` instead of Guava](noguavasetsnewlinkedhashset.md)
 * [Use `new LinkedList<>()` instead of Guava](noguavalistsnewlinkedlist.md)
+
 

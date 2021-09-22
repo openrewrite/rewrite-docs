@@ -1,25 +1,27 @@
-# Use JpaRepository\#getById\(ID id\)
+# Use `JpaRepository#getById(ID id)`
 
- **org.openrewrite.java.spring.data.UseJpaRepositoryGetById** _`JpaRepository#getOne(ID)` was deprecated in 2.5._
+** org.openrewrite.java.spring.data.UseJpaRepositoryGetById**
+_`JpaRepository#getOne(ID)` was deprecated in 2.5._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.11.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.12.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.11.0
+* version: 4.12.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.11.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.12.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.9.0")
+    id("org.openrewrite.rewrite") version("5.10.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.11.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.12.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.11.0</version>
+        <version>4.12.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.data.UseJpaRepositoryGetById</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.11.0</version>
+            <version>4.12.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.springframework.data.jpa.repository.JpaRepository getOne(..)`
   * newMethodName: `getById`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.data.jpa.repository.JpaRepository getOne(..)
       newMethodName: getById
+
 ```
 {% endtab %}
 {% endtabs %}
-

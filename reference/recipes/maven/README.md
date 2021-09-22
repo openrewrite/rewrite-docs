@@ -8,6 +8,7 @@
 * [Change Maven project property value](changepropertyvalue.md)
 * [Exclude Maven dependency](excludedependency.md)
 * [Manage dependencies](managedependencies.md)
+* [Order POM elements](orderpomelements.md)
 * [Remove Maven dependency](removedependency.md)
 * [Remove Maven plugin](removeplugin.md)
 * [Remove Maven project property](removeproperty.md)
@@ -19,5 +20,6 @@
 
 ## Subcategories
 
-* [Search](search/)
+* [Search](/reference/recipes/maven/search)
+
 

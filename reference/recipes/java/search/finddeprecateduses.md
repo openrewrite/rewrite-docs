@@ -1,22 +1,24 @@
 # Find uses of deprecated classes
 
- **org.openrewrite.java.search.FindDeprecatedUses** _Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside of deprecated scopes._
+** org.openrewrite.java.search.FindDeprecatedUses**
+_Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside of deprecated scopes._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.13.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.14.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.13.0
+* version: 7.14.0
 
 ## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
-| `String` | typePattern | _Optional_. A type pattern that is used to find deprecations from certain types. |
-| `Boolean` | matchInherited | _Optional_. When enabled, find types that inherit from a deprecated type. |
-| `Boolean` | ignoreDeprecatedScopes | _Optional_. When a deprecated type is used in a deprecated method or class, ignore it. |
+| -- | -- | -- |
+| `String` | typePattern | *Optional*. A type pattern that is used to find deprecations from certain types. |
+| `Boolean` | matchInherited | *Optional*. When enabled, find types that inherit from a deprecated type. |
+| `Boolean` | ignoreDeprecatedScopes | *Optional*. When a deprecated type is used in a deprecated method or class, ignore it. |
+
 
 ## Usage
 
@@ -27,7 +29,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.9.0")
+    id("org.openrewrite.rewrite") version("5.10.0")
 }
 
 rewrite {
@@ -37,6 +39,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -50,7 +53,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.11.0</version>
+        <version>4.12.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindDeprecatedUses</recipe>
@@ -71,10 +74,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find uses of deprecated methods](finddeprecatedmethods.md)
+* [Find uses of deprecated methods](../../java/search/finddeprecatedmethods.md)
   * methodPattern: `null *(..)`
-* [Find uses of deprecated classes](finddeprecatedclasses.md)
-* [Find uses of deprecated fields](finddeprecatedfields.md)
+* [Find uses of deprecated classes](../../java/search/finddeprecatedclasses.md)
+* [Find uses of deprecated fields](../../java/search/finddeprecatedfields.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -92,7 +96,7 @@ recipeList:
       methodPattern: null *(..)
   - org.openrewrite.java.search.FindDeprecatedClasses:
   - org.openrewrite.java.search.FindDeprecatedFields:
+
 ```
 {% endtab %}
 {% endtabs %}
-

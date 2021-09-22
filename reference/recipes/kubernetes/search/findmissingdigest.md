@@ -1,32 +1,34 @@
 # Find missing digest
 
- **org.openrewrite.kubernetes.search.FindMissingDigest** _Find instances of a container name that fails to specify a digest._
+** org.openrewrite.kubernetes.search.FindMissingDigest**
+_Find instances of a container name that fails to specify a digest._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.7.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.7.0
+* version: 1.8.0
 
 ## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
-| `boolean` | includeInitContainers | _Optional_. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
-| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
+| -- | -- | -- |
+| `boolean` | includeInitContainers | *Optional*. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
+| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.7.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.8.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.9.0")
+    id("org.openrewrite.rewrite") version("5.10.0")
 }
 
 rewrite {
@@ -38,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.7.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.8.0")
 }
 ```
 {% endcode %}
@@ -53,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.11.0</version>
+        <version>4.12.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.search.FindMissingDigest</recipe>
@@ -63,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.7.0</version>
+            <version>1.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,4 +78,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.search.FindMissingDigest`
-

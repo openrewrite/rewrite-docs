@@ -52,3 +52,4 @@
 * [Ensure the storage container storing activity logs is not publicly accessible](ensurethestoragecontainerstoringactivitylogsisnotpubliclyaccessible.md)
 * [Set Azure Storage Account default network access to deny](setazurestorageaccountdefaultnetworkaccesstodeny.md)
 
+

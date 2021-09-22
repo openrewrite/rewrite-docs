@@ -1,31 +1,33 @@
 # Ensure the GKE metadata server is enabled
 
- **org.openrewrite.terraform.gcp.EnsureTheGKEMetadataServerIsEnabled** _Ensure the GKE metadata server is enabled._
+** org.openrewrite.terraform.gcp.EnsureTheGKEMetadataServerIsEnabled**
+_Ensure the GKE metadata server is enabled._
 
 ### Tags
 
 * GCP
-* CKV\_GCP\_69
+* CKV_GCP_69
 * terraform
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.5.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 0.5.0
+* version: 0.6.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.5.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.6.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.9.0")
+    id("org.openrewrite.rewrite") version("5.10.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:0.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:0.6.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.11.0</version>
+        <version>4.12.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.gcp.EnsureTheGKEMetadataServerIsEnabled</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>0.5.0</version>
+            <version>0.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,28 +82,21 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../addconfiguration.md)
+* [Add Terraform configuration](../../terraform/addconfiguration.md)
   * resourceName: `google_container_cluster`
-  * content: \`node\_config {
-
-    workload\_metadata\_config {
-
-    node\_metadata = "GKE\_METADATA\_SERVER"
-
-    }
-
-    }\`
-* [Add Terraform configuration](../addconfiguration.md)
+  * content: `node_config {
+  workload_metadata_config {
+    node_metadata = "GKE_METADATA_SERVER"
+  }
+}`
+* [Add Terraform configuration](../../terraform/addconfiguration.md)
   * resourceName: `google_container_node_pool`
-  * content: \`node\_config {
+  * content: `node_config {
+  workload_metadata_config {
+    node_metadata = "GKE_METADATA_SERVER"
+  }
+}`
 
-    workload\_metadata\_config {
-
-    node\_metadata = "GKE\_METADATA\_SERVER"
-
-    }
-
-    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -130,7 +125,7 @@ recipeList:
     node_metadata = "GKE_METADATA_SERVER"
   }
 }
+
 ```
 {% endtab %}
 {% endtabs %}
-

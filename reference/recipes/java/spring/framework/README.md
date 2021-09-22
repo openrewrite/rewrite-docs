@@ -11,3 +11,4 @@
 * [Use `ObjectUtils#isEmpty(Object)`](useobjectutilsisempty.md)
 * [Use varargs equivalents for deprecated JdbcTemplate signatures](jdbctemplateobjectarrayargtovarargs.md)
 
+

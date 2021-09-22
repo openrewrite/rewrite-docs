@@ -8,10 +8,12 @@
 * [Remove `public` from `@Bean` methods](beanmethodsnotpublic.md)
 * [Remove the `@Autowired` annotation on inferred constructor](noautowiredonconstructor.md)
 * [Separate application YAML by profile](separateapplicationyamlbyprofile.md)
+* [Update the API manifest](updateapimanifest.md)
 
 ## Subcategories
 
-* [Spring Boot 2.x](boot2/)
-* [Spring Data](data/)
-* [Spring Framework](framework/)
+* [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
+* [Spring Data](/reference/recipes/java/spring/data)
+* [Spring Framework](/reference/recipes/java/spring/framework)
+
 

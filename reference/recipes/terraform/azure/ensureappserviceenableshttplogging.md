@@ -1,31 +1,33 @@
 # Ensure app service enables HTTP logging
 
- **org.openrewrite.terraform.azure.EnsureAppServiceEnablesHTTPLogging** _Ensure app service enables HTTP logging._
+** org.openrewrite.terraform.azure.EnsureAppServiceEnablesHTTPLogging**
+_Ensure app service enables HTTP logging._
 
 ### Tags
 
 * Azure
-* CKV\_AZURE\_63
+* CKV_AZURE_63
 * terraform
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.5.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 0.5.0
+* version: 0.6.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.5.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.6.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.9.0")
+    id("org.openrewrite.rewrite") version("5.10.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:0.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:0.6.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.11.0</version>
+        <version>4.12.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.azure.EnsureAppServiceEnablesHTTPLogging</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>0.5.0</version>
+            <version>0.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,19 +82,15 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../addconfiguration.md)
+* [Add Terraform configuration](../../terraform/addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: \`logs {
+  * content: `logs {
+  http_logs {
+    retention_in_days = 4
+    retention_in_mb = 10
+  }
+}`
 
-    http\_logs {
-
-    retention\_in\_days = 4
-
-    retention\_in\_mb = 10
-
-    }
-
-    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +113,7 @@ recipeList:
     retention_in_mb = 10
   }
 }
+
 ```
 {% endtab %}
 {% endtabs %}
-
