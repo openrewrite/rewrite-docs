@@ -4,12 +4,12 @@ Manually constructing complex AST elements can prove tedious and foreign to deve
 
 ## Creating an Instance of a JavaTemplate
 
-The JavaTemplate is always used within the context of a JavaVisitor and the visitor provides a factory method, `template()`, that can be used to create instances of the template:
+The JavaTemplate is always used within the context of a JavaVisitor:
 
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
     private final JavaTemplate template =
-        template("withString(#{}).length()")                     // Code Snippet
+        JavaTemplate.builder(this::getCursor, "withString(#{}).length()")                     // Code Snippet
             .javaParser(JavaParser.fromJavaVersion()             // Parser &
                 .classpath("example-utils")                      // Classpath
                 .build()
@@ -43,17 +43,17 @@ Once an instance of the template has been created, a developer is free to use th
 
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
-    private final JavaTemplate template = template("withString(#{}).length()")
+    private final JavaTemplate template = JavaTemplate.builder(this::getCursor, "withString(#{}).length()")
         .javaParser(JavaParser.fromJavaVersion().classpath("example-utils").build())
         .staticImports("org.example.StringUtils.withString")
         .build();
 
     public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext p) {
-        J.MethodInvocation m = super.visitMethodInvocation(method, p)
+        J.MethodInvocation m = super.visitMethodInvocation(method, p);
         if (m.name.typeInformation.simpleName != "countLetters") {
-            return m
+            return m;
         }
-        return m.withTemplate(template, m.getCoordinates.replace(), m.arguments[0]) //Template Invocation 
+        return m.withTemplate(template, m.getCoordinates.replace(), m.arguments[0]); //Template Invocation 
     }       
 }
 ```
