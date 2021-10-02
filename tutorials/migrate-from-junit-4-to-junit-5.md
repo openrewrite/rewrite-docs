@@ -376,7 +376,6 @@ Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these c
 | Unsupported Functionality |
 | :--- |
 | [Powermock](https://github.com/powermock/powermock) has no JUnit 5 equivalent |
-| [Wiremock](https://github.com/tomakehurst/wiremock) has no JUnit 5 equivalent |
 | The JUnit5 equivalent to JUnit4 ClassPathSuite is not yet released |
 | org.junit.ComparisonFailure |
 | org.junit.MethodRule |
