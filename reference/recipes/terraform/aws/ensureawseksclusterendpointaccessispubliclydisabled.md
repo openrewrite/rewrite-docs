@@ -1,13 +1,12 @@
 # Ensure AWS EKS cluster endpoint access is publicly disabled
 
-** org.openrewrite.terraform.aws.EnsureAWSEKSClusterEndpointAccessIsPubliclyDisabled**
-_Ensure AWS EKS cluster endpoint access is publicly disabled._
+ **org.openrewrite.terraform.aws.EnsureAWSEKSClusterEndpointAccessIsPubliclyDisabled** _Ensure AWS EKS cluster endpoint access is publicly disabled._
 
 ### Tags
 
 * terraform
 * AWS
-* CKV_AWS_39
+* CKV\_AWS\_39
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure AWS EKS cluster endpoint access is publicly disabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_eks_cluster`
-  * content: `vpc_config {
-  endpoint_public_access = false
-}`
+  * content: \`vpc\_config {
 
+    endpoint\_public\_access = false
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: vpc_config {
   endpoint_public_access = false
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

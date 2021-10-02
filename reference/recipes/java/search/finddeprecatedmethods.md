@@ -1,7 +1,6 @@
 # Find uses of deprecated methods
 
-** org.openrewrite.java.search.FindDeprecatedMethods**
-_Find uses of deprecated methods in any API._
+ **org.openrewrite.java.search.FindDeprecatedMethods** _Find uses of deprecated methods in any API._
 
 ## Source
 
@@ -14,10 +13,9 @@ _Find uses of deprecated methods in any API._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | *Optional*. A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
-| `Boolean` | ignoreDeprecatedScopes | *Optional*. When a deprecated method is used in a deprecated method or class, ignore it. |
-
+| :--- | :--- | :--- |
+| `String` | methodPattern | _Optional_. A [method pattern](https://github.com/openrewrite/rewrite-docs/tree/8e67c73df642f6d9856ea927b754365bc0acb46e/reference/method-patterns/README.md) that is used to find matching method invocations. |
+| `Boolean` | ignoreDeprecatedScopes | _Optional_. When a deprecated method is used in a deprecated method or class, ignore it. |
 
 ## Usage
 
@@ -38,7 +36,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -68,3 +65,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.search.FindDeprecatedMethods`
+

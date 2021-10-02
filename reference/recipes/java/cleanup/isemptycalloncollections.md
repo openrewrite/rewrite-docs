@@ -1,7 +1,6 @@
-# Use `Collections#isEmpty()` instead of comparing `size()`
+# Use Collections\#isEmpty\(\) instead of comparing size\(\)
 
-** org.openrewrite.java.cleanup.IsEmptyCallOnCollections**
-_Also check for _not_ `isEmpty()` when testing for not equal to zero size._
+ **org.openrewrite.java.cleanup.IsEmptyCallOnCollections** _Also check for \_not_ `isEmpty()` when testing for not equal to zero size.\_
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Also check for _not_ `isEmpty()` when testing for not equal to zero size._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.IsEmptyCallOnCollections`
+

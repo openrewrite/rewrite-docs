@@ -1,7 +1,6 @@
 # Find uses of deprecated fields
 
-** org.openrewrite.java.search.FindDeprecatedFields**
-_Find uses of deprecated fields in any API._
+ **org.openrewrite.java.search.FindDeprecatedFields** _Find uses of deprecated fields in any API._
 
 ## Source
 
@@ -14,10 +13,9 @@ _Find uses of deprecated fields in any API._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | typePattern | *Optional*. A type pattern that is used to find matching field uses. |
-| `Boolean` | ignoreDeprecatedScopes | *Optional*. When a deprecated method is used in a deprecated method or class, ignore it. |
-
+| :--- | :--- | :--- |
+| `String` | typePattern | _Optional_. A type pattern that is used to find matching field uses. |
+| `Boolean` | ignoreDeprecatedScopes | _Optional_. When a deprecated method is used in a deprecated method or class, ignore it. |
 
 ## Usage
 
@@ -38,7 +36,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -68,3 +65,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.search.FindDeprecatedFields`
+

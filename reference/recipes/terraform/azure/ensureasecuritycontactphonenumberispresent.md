@@ -1,12 +1,11 @@
 # Ensure a security contact phone number is present
 
-** org.openrewrite.terraform.azure.EnsureASecurityContactPhoneNumberIsPresent**
-_Ensure a security contact phone number is present._
+ **org.openrewrite.terraform.azure.EnsureASecurityContactPhoneNumberIsPresent** _Ensure a security contact phone number is present._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_20
+* CKV\_AZURE\_20
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure a security contact phone number is present._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_security_center_contact`
   * content: `phone = "+1-555-555-5555"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_security_center_contact
       content: phone = "+1-555-555-5555"
-
 ```
 {% endtab %}
 {% endtabs %}
+

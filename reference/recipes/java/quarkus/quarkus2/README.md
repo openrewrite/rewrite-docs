@@ -10,4 +10,3 @@
 * [Use `Uni<T extends PanacheEntityBase>`](usepanacheentitybaseunit.md)
 * [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](usereactivepanachemongoentitybaseunit.md)
 
-

@@ -1,7 +1,6 @@
 # Include an assertion in tests
 
-** org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions**
-_For tests not having any assertions, wrap the statements with JUnit Jupiter's `Assertions#assertThrowDoesNotThrow(..)`._
+ **org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions** _For tests not having any assertions, wrap the statements with JUnit Jupiter's `Assertions#assertThrowDoesNotThrow(..)`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _For tests not having any assertions, wrap the statements with JUnit Jupiter's `
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.13.1
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions`
+

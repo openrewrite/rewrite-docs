@@ -1,13 +1,12 @@
 # Ensure app service enables failed request tracing
 
-** org.openrewrite.terraform.azure.EnsureAppServiceEnablesFailedRequestTracing**
-_Ensure app service enables failed request tracing._
+ **org.openrewrite.terraform.azure.EnsureAppServiceEnablesFailedRequestTracing** _Ensure app service enables failed request tracing._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_66
+* CKV\_AZURE\_66
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure app service enables failed request tracing._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: `logs {
-  failed_request_tracing_enabled = true
-}`
+  * content: \`logs {
 
+    failed\_request\_tracing\_enabled = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: logs {
   failed_request_tracing_enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

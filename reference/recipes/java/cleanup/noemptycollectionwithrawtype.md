@@ -1,7 +1,6 @@
-# Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`
+# Use Collections\#emptyList\(\), emptyMap\(\), and emptySet\(\)
 
-** org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType**
-_Replaces `Collections#EMPTY_..` with methods that return generic types._
+ **org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType** _Replaces \`Collections\#EMPTY_..\` with methods that return generic types.\_
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Replaces `Collections#EMPTY_..` with methods that return generic types._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType`
+

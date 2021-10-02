@@ -1,7 +1,6 @@
 # Use Java standard library instead of Guava
 
-** org.openrewrite.java.migrate.guava.NoGuava**
-_Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
+ **org.openrewrite.java.migrate.guava.NoGuava** _Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Guava filled in important gaps in the Java standard library and still does. But
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.9.0
-
 
 ## Usage
 
@@ -80,37 +78,36 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `Files#createTempDirectory()` instead of Guava](../../../java/migrate/guava/noguavacreatetempdir.md)
-* [Use Java SDK instead of `MoreExecutors#directExecutor()`](../../../java/migrate/guava/noguavadirectexecutor.md)
-* [Use `new ArrayList<>()` instead of Guava](../../../java/migrate/guava/noguavalistsnewarraylist.md)
-* [Use `new CopyOnWriteArrayList<>()` instead of Guava](../../../java/migrate/guava/noguavalistsnewcopyonwritearraylist.md)
-* [Use `new LinkedList<>()` instead of Guava](../../../java/migrate/guava/noguavalistsnewlinkedlist.md)
-* [Use `new HashSet<>()` instead of Guava](../../../java/migrate/guava/noguavasetsnewhashset.md)
-* [Construct a set from a `new ConcurrentHashMap<>()` instead of Guava](../../../java/migrate/guava/noguavasetsnewconcurrenthashset.md)
-* [Use `new LinkedHashSet<>()` instead of Guava](../../../java/migrate/guava/noguavasetsnewlinkedhashset.md)
-* [Prefer `java.util.function.Function`](../../../java/migrate/guava/preferjavautilfunction.md)
-* [Prefer `java.util.function.Predicate`](../../../java/migrate/guava/preferjavautilpredicate.md)
-* [Prefer `java.util.function.Supplier`](../../../java/migrate/guava/preferjavautilsupplier.md)
-* [Prefer `java.util.Objects#equals`](../../../java/migrate/guava/preferjavautilobjectsequals.md)
-* [Prefer `java.util.Objects#hash`](../../../java/migrate/guava/preferjavautilobjectshashcode.md)
-* [Prefer `java.util.Collections#unmodifiableNavigableMap`](../../../java/migrate/guava/preferjavautilcollectionsunmodifiablenavigablemap.md)
-* [Prefer `java.util.Collections#synchronizedNavigableMap`](../../../java/migrate/guava/preferjavautilcollectionssynchronizednavigablemap.md)
-* [Prefer `Char#compare`](../../../java/migrate/guava/prefercharcompare.md)
-* [Prefer `Integer#compare`](../../../java/migrate/guava/preferintegercompare.md)
-* [Prefer `Long#compare`](../../../java/migrate/guava/preferlongcompare.md)
-* [Prefer `Short#compare`](../../../java/migrate/guava/prefershortcompare.md)
-* [Prefer `Integer#compareUnsigned`](../../../java/migrate/guava/preferintegercompareunsigned.md)
-* [Prefer `Integer#divideUnsigned`](../../../java/migrate/guava/preferintegerdivideunsigned.md)
-* [Prefer `Integer#parseUnsignedInt`](../../../java/migrate/guava/preferintegerparseunsignedint.md)
-* [Prefer `Long#compareUnsigned`](../../../java/migrate/guava/preferlongcompareunsigned.md)
-* [Prefer `Long#divideUnsigned`](../../../java/migrate/guava/preferlongdivideunsigned.md)
-* [Prefer `Long#parseUnsignedInt`](../../../java/migrate/guava/preferlongparseunsignedlong.md)
-* [Prefer `Long#remainderUnsigned`](../../../java/migrate/guava/preferlongremainderunsigned.md)
-* [Prefer `Math#addExact`](../../../java/migrate/guava/prefermathaddexact.md)
-* [Prefer `Math#subtractExact`](../../../java/migrate/guava/prefermathsubtractexact.md)
-* [Prefer `Math#multiplyExact`](../../../java/migrate/guava/prefermathmultiplyexact.md)
-* [Use `new AtomicReference<>()` instead of Guava](../../../java/migrate/guava/noguavaatomicsnewreference.md)
-
+* [Use `Files#createTempDirectory()` instead of Guava](noguavacreatetempdir.md)
+* [Use Java SDK instead of `MoreExecutors#directExecutor()`](noguavadirectexecutor.md)
+* [Use `new ArrayList<>()` instead of Guava](noguavalistsnewarraylist.md)
+* [Use `new CopyOnWriteArrayList<>()` instead of Guava](noguavalistsnewcopyonwritearraylist.md)
+* [Use `new LinkedList<>()` instead of Guava](noguavalistsnewlinkedlist.md)
+* [Use `new HashSet<>()` instead of Guava](noguavasetsnewhashset.md)
+* [Construct a set from a `new ConcurrentHashMap<>()` instead of Guava](noguavasetsnewconcurrenthashset.md)
+* [Use `new LinkedHashSet<>()` instead of Guava](noguavasetsnewlinkedhashset.md)
+* [Prefer `java.util.function.Function`](preferjavautilfunction.md)
+* [Prefer `java.util.function.Predicate`](preferjavautilpredicate.md)
+* [Prefer `java.util.function.Supplier`](preferjavautilsupplier.md)
+* [Prefer `java.util.Objects#equals`](preferjavautilobjectsequals.md)
+* [Prefer `java.util.Objects#hash`](preferjavautilobjectshashcode.md)
+* [Prefer `java.util.Collections#unmodifiableNavigableMap`](preferjavautilcollectionsunmodifiablenavigablemap.md)
+* [Prefer `java.util.Collections#synchronizedNavigableMap`](preferjavautilcollectionssynchronizednavigablemap.md)
+* [Prefer `Char#compare`](prefercharcompare.md)
+* [Prefer `Integer#compare`](preferintegercompare.md)
+* [Prefer `Long#compare`](preferlongcompare.md)
+* [Prefer `Short#compare`](prefershortcompare.md)
+* [Prefer `Integer#compareUnsigned`](preferintegercompareunsigned.md)
+* [Prefer `Integer#divideUnsigned`](preferintegerdivideunsigned.md)
+* [Prefer `Integer#parseUnsignedInt`](preferintegerparseunsignedint.md)
+* [Prefer `Long#compareUnsigned`](preferlongcompareunsigned.md)
+* [Prefer `Long#divideUnsigned`](preferlongdivideunsigned.md)
+* [Prefer `Long#parseUnsignedInt`](preferlongparseunsignedlong.md)
+* [Prefer `Long#remainderUnsigned`](preferlongremainderunsigned.md)
+* [Prefer `Math#addExact`](prefermathaddexact.md)
+* [Prefer `Math#subtractExact`](prefermathsubtractexact.md)
+* [Prefer `Math#multiplyExact`](prefermathmultiplyexact.md)
+* [Use `new AtomicReference<>()` instead of Guava](noguavaatomicsnewreference.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -153,7 +150,7 @@ recipeList:
   - org.openrewrite.java.migrate.guava.PreferMathSubtractExact
   - org.openrewrite.java.migrate.guava.PreferMathMultiplyExact
   - org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference
-
 ```
 {% endtab %}
 {% endtabs %}
+

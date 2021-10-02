@@ -1,7 +1,6 @@
 # Change method target to variable
 
-** org.openrewrite.java.ChangeMethodTargetToVariable**
-_Change method invocations to method calls on a variable._
+ **org.openrewrite.java.ChangeMethodTargetToVariable** _Change method invocations to method calls on a variable._
 
 ## Source
 
@@ -14,17 +13,15 @@ _Change method invocations to method calls on a variable._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
+| :--- | :--- | :--- |
+| `String` | methodPattern | A [method pattern](https://github.com/openrewrite/rewrite-docs/tree/8e67c73df642f6d9856ea927b754365bc0acb46e/reference/method-patterns/README.md) that is used to find matching method invocations. |
 | `String` | variableName | Name of variable to use as target for the modified method invocation. |
 | `String` | variableType | Type attribution to use for the return type of the modified method invocation. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overloads of the [method pattern](/reference/method-patterns). |
-
+| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overloads of the [method pattern](https://github.com/openrewrite/rewrite-docs/tree/8e67c73df642f6d9856ea927b754365bc0acb46e/reference/method-patterns/README.md). |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodTargetToVariableExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodTargetToVariableExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -40,7 +37,6 @@ recipeList:
       matchOverrides: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeMethodTargetToVariableExample` has been defined activate it in your build file:
 
@@ -59,7 +55,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -89,3 +84,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.ChangeMethodTargetToVariableExample`
+

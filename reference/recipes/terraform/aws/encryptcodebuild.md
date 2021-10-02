@@ -1,11 +1,10 @@
 # Encrypt CodeBuild projects
 
-** org.openrewrite.terraform.aws.EncryptCodeBuild**
-_Build artifacts, such as a cache, logs, exported raw test report data files, and build results, are encrypted by default using CMKs for Amazon S3 that are managed by the AWS Key Management Service._
+ **org.openrewrite.terraform.aws.EncryptCodeBuild** _Build artifacts, such as a cache, logs, exported raw test report data files, and build results, are encrypted by default using CMKs for Amazon S3 that are managed by the AWS Key Management Service._
 
 ### Tags
 
-* CKV_AWS_147
+* CKV\_AWS\_147
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Build artifacts, such as a cache, logs, exported raw test report data files, an
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_codebuild_project`
   * content: `encryption_disabled = false`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_codebuild_project
       content: encryption_disabled = false
-
 ```
 {% endtab %}
 {% endtabs %}
+

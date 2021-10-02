@@ -1,7 +1,6 @@
-# Use Mutiny `multi.toHotStream()`
+# Use Mutiny multi.toHotStream\(\)
 
-** org.openrewrite.java.quarkus.MultiTransformHotStreamToMultiHotStream**
-_Replace Mutiny API usages of `multi.transform().toHotStream()` with `multi.toHotStream()`._
+ **org.openrewrite.java.quarkus.MultiTransformHotStreamToMultiHotStream** _Replace Mutiny API usages of `multi.transform().toHotStream()` with `multi.toHotStream()`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replace Mutiny API usages of `multi.transform().toHotStream()` with `multi.toHo
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
 * version: 0.8.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.MultiTransformHotStreamToMultiHotStream`
+

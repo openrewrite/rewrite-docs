@@ -1,7 +1,6 @@
-# `switch` statements should have at least 3 `case` clauses
+# switch statements should have at least 3 case clauses
 
-** org.openrewrite.java.cleanup.MinimumSwitchCases**
-_`switch` statements are useful when there are many different cases depending on the value of the same expression. For just one or two cases however, the code will be more readable with `if` statements._
+ **org.openrewrite.java.cleanup.MinimumSwitchCases** _`switch` statements are useful when there are many different cases depending on the value of the same expression. For just one or two cases however, the code will be more readable with `if` statements._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _`switch` statements are useful when there are many different cases depending on
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.MinimumSwitchCases`
+

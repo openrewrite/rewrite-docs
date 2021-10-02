@@ -1,7 +1,6 @@
-# Use `DriverManager#setLogWriter(java.io.PrintWriter)`
+# Use DriverManager\#setLogWriter\(java.io.PrintWriter\)
 
-** org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream**
-_`DriverManager#setLogStream(java.io.PrintStream)` was deprecated in Java 1.2._
+ **org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream** _`DriverManager#setLogStream(java.io.PrintStream)` was deprecated in Java 1.2._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`DriverManager#setLogStream(java.io.PrintStream)` was deprecated in Java 1.2._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.9.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream`
+

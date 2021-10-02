@@ -1,7 +1,6 @@
-# `for` loop counters incremented in update.
+# for loop counters incremented in update.
 
-** org.openrewrite.java.cleanup.ForLoopIncrementInUpdate**
-_The increment should be moved to the loop’s increment clause if possible._
+ **org.openrewrite.java.cleanup.ForLoopIncrementInUpdate** _The increment should be moved to the loop’s increment clause if possible._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _The increment should be moved to the loop’s increment clause if possible._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.ForLoopIncrementInUpdate`
+

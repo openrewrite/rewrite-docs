@@ -1,7 +1,6 @@
-# Remove `@RequestMapping` annotations
+# Remove @RequestMapping annotations
 
-** org.openrewrite.java.spring.NoRequestMappingAnnotation**
-_Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@PostMapping`, etc. when possible._
+ **org.openrewrite.java.spring.NoRequestMappingAnnotation** _Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@PostMapping`, etc. when possible._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.NoRequestMappingAnnotation`
+

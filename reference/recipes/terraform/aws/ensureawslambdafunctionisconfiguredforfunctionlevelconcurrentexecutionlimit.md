@@ -1,11 +1,10 @@
 # Ensure AWS Lambda function is configured for function-level concurrent execution limit
 
-** org.openrewrite.terraform.aws.EnsureAWSLambdaFunctionIsConfiguredForFunctionLevelConcurrentExecutionLimit**
-_Ensure AWS Lambda function is configured for function-level concurrent execution limit._
+ **org.openrewrite.terraform.aws.EnsureAWSLambdaFunctionIsConfiguredForFunctionLevelConcurrentExecutionLimit** _Ensure AWS Lambda function is configured for function-level concurrent execution limit._
 
 ### Tags
 
-* CKV_AWS_115
+* CKV\_AWS\_115
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure AWS Lambda function is configured for function-level concurrent executio
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_lambda_function`
   * content: `reserved_concurrent_executions = 0`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_lambda_function
       content: reserved_concurrent_executions = 0
-
 ```
 {% endtab %}
 {% endtabs %}
+

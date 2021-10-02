@@ -1,7 +1,6 @@
 # Equals avoids null
 
-** org.openrewrite.java.cleanup.EqualsAvoidsNull**
-_Checks that any combination of String literals is on the left side of an `equals()` comparison. Also checks for String literals assigned to some field (such as `someString.equals(anotherString = "text"))`._
+ **org.openrewrite.java.cleanup.EqualsAvoidsNull** _Checks that any combination of String literals is on the left side of an `equals()` comparison. Also checks for String literals assigned to some field \(such as `someString.equals(anotherString = "text"))`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Checks that any combination of String literals is on the left side of an `equal
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.EqualsAvoidsNull`
+

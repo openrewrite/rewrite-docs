@@ -1,7 +1,6 @@
-# Prefer `java.util.Collections#synchronizedNavigableMap`
+# Prefer java.util.Collections\#synchronizedNavigableMap
 
-** org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsSynchronizedNavigableMap**
-_This method exists in the Java standard library now._
+ **org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsSynchronizedNavigableMap** _This method exists in the Java standard library now._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _This method exists in the Java standard library now._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.9.0
-
 
 ## Usage
 
@@ -80,10 +78,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `com.google.common.collect.Maps synchronizedNavigableMap(java.util.NavigableMap)`
   * fullyQualifiedTargetTypeName: `java.util.Collections`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: com.google.common.collect.Maps synchronizedNavigableMap(java.util.NavigableMap)
       fullyQualifiedTargetTypeName: java.util.Collections
-
 ```
 {% endtab %}
 {% endtabs %}
+

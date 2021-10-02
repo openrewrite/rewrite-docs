@@ -1,12 +1,11 @@
 # Ensure standard pricing tier is selected
 
-** org.openrewrite.terraform.azure.EnsureStandardPricingTierIsSelected**
-_Ensure standard pricing tier is selected._
+ **org.openrewrite.terraform.azure.EnsureStandardPricingTierIsSelected** _Ensure standard pricing tier is selected._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_19
+* CKV\_AZURE\_19
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure standard pricing tier is selected._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_security_center_subscription_pricing`
   * content: `tier = "Standard"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_security_center_subscription_pricing
       content: tier = "Standard"
-
 ```
 {% endtab %}
 {% endtabs %}
+

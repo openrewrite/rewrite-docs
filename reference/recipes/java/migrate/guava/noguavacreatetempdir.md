@@ -1,7 +1,6 @@
-# Use `Files#createTempDirectory()` instead of Guava
+# Use Files\#createTempDirectory\(\) instead of Guava
 
-** org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir**
-_Replaces Guava `Files#createTempDir()` with Java `Files#createTempDirectory(..)`. Transformations are limited to scopes throwing or catching `java.io.IOException`._
+ **org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir** _Replaces Guava `Files#createTempDir()` with Java `Files#createTempDirectory(..)`. Transformations are limited to scopes throwing or catching `java.io.IOException`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Replaces Guava `Files#createTempDir()` with Java `Files#createTempDirectory(..)
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.9.0
-
 
 ## Usage
 
@@ -75,3 +73,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir`
+

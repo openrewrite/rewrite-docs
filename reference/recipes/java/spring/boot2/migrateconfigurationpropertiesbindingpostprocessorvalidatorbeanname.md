@@ -1,7 +1,6 @@
-# Use `EnableConfigurationProperties#VALIDATOR_BEAN_NAME`
+# Use EnableConfigurationProperties\#VALIDATOR\_BEAN\_NAME
 
-** org.openrewrite.java.spring.boot2.MigrateConfigurationPropertiesBindingPostProcessorValidatorBeanName**
-_Replaces field and static access of `ConfigurationPropertiesBindingPostProcessor#VALIDATOR_BEAN_NAME` with `EnableConfigurationProperties#VALIDATOR_BEAN_NAME`. Deprecated in 2.2.x._
+ **org.openrewrite.java.spring.boot2.MigrateConfigurationPropertiesBindingPostProcessorValidatorBeanName** _Replaces field and static access of `ConfigurationPropertiesBindingPostProcessor#VALIDATOR_BEAN_NAME` with `EnableConfigurationProperties#VALIDATOR_BEAN_NAME`. Deprecated in 2.2.x._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replaces field and static access of `ConfigurationPropertiesBindingPostProcesso
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.MigrateConfigurationPropertiesBindingPostProcessorValidatorBeanName`
+

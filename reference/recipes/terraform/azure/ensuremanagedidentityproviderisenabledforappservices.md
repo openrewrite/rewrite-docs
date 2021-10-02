@@ -1,12 +1,11 @@
 # Ensure managed identity provider is enabled for app services
 
-** org.openrewrite.terraform.azure.EnsureManagedIdentityProviderIsEnabledForAppServices**
-_Ensure managed identity provider is enabled for app services._
+ **org.openrewrite.terraform.azure.EnsureManagedIdentityProviderIsEnabledForAppServices** _Ensure managed identity provider is enabled for app services._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_71
+* CKV\_AZURE\_71
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure managed identity provider is enabled for app services._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: `identity {
-  type = "SystemAssigned"
-}`
+  * content: \`identity {
 
+    type = "SystemAssigned"
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: identity {
   type = "SystemAssigned"
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

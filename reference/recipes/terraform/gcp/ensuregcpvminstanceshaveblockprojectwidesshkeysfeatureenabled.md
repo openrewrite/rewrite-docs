@@ -1,11 +1,10 @@
 # Ensure GCP VM instances have block project-wide SSH keys feature enabled
 
-** org.openrewrite.terraform.gcp.EnsureGCPVMInstancesHaveBlockProjectWideSSHKeysFeatureEnabled**
-_Ensure GCP VM instances have block project-wide SSH keys feature enabled._
+ **org.openrewrite.terraform.gcp.EnsureGCPVMInstancesHaveBlockProjectWideSSHKeysFeatureEnabled** _Ensure GCP VM instances have block project-wide SSH keys feature enabled._
 
 ### Tags
 
-* CKV_GCP_32
+* CKV\_GCP\_32
 * GCP
 * terraform
 
@@ -16,7 +15,6 @@ _Ensure GCP VM instances have block project-wide SSH keys feature enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_compute_instance`
-  * content: `metadata = {
-  block-project-ssh-keys = true
-}`
+  * content: \`metadata = {
 
+    block-project-ssh-keys = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: metadata = {
   block-project-ssh-keys = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

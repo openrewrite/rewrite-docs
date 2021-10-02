@@ -1,7 +1,6 @@
 # Upgrade to Spring Data 2.3
 
-** org.openrewrite.java.spring.data.UpgradeSpringData\_2\_3**
-_Upgrade to Spring Data to 2.3 from any prior version._
+ **org.openrewrite.java.spring.data.UpgradeSpringData\_2\_3** _Upgrade to Spring Data to 2.3 from any prior version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Data to 2.3 from any prior version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -76,8 +74,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `JpaSort.of(..)`](../../../java/spring/data/migratejpasort.md)
-
+* [Use `JpaSort.of(..)`](migratejpasort.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -89,7 +86,7 @@ displayName: Upgrade to Spring Data 2.3
 description: Upgrade to Spring Data to 2.3 from any prior version.
 recipeList:
   - org.openrewrite.java.spring.data.MigrateJpaSort
-
 ```
 {% endtab %}
 {% endtabs %}
+

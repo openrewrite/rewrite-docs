@@ -1,7 +1,6 @@
 # Hidden field
 
-** org.openrewrite.java.cleanup.HiddenField**
-_Refactor local variables or parameters which shadow a field defined in the same class._
+ **org.openrewrite.java.cleanup.HiddenField** _Refactor local variables or parameters which shadow a field defined in the same class._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Refactor local variables or parameters which shadow a field defined in the same
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.HiddenField`
+

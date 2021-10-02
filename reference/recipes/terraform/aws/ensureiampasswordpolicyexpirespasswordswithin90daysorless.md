@@ -1,11 +1,10 @@
 # Ensure IAM password policy expires passwords within 90 days or less
 
-** org.openrewrite.terraform.aws.EnsureIAMPasswordPolicyExpiresPasswordsWithin90DaysOrLess**
-_Ensure IAM password policy expires passwords within 90 days or less._
+ **org.openrewrite.terraform.aws.EnsureIAMPasswordPolicyExpiresPasswordsWithin90DaysOrLess** _Ensure IAM password policy expires passwords within 90 days or less._
 
 ### Tags
 
-* CKV_AWS_9
+* CKV\_AWS\_9
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure IAM password policy expires passwords within 90 days or less._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_iam_account_password_policy`
   * content: `max_password_age = 90`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_iam_account_password_policy
       content: max_password_age = 90
-
 ```
 {% endtab %}
 {% endtabs %}
+

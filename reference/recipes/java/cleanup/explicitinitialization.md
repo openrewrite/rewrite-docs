@@ -1,7 +1,6 @@
 # Explicit initialization
 
-** org.openrewrite.java.cleanup.ExplicitInitialization**
-_Checks if any class or object member is explicitly initialized to default for its type value (`null` for object references, zero for numeric types and `char` and `false` for `boolean`._
+ **org.openrewrite.java.cleanup.ExplicitInitialization** _Checks if any class or object member is explicitly initialized to default for its type value \(`null` for object references, zero for numeric types and `char` and `false` for `boolean`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Checks if any class or object member is explicitly initialized to default for i
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.ExplicitInitialization`
+

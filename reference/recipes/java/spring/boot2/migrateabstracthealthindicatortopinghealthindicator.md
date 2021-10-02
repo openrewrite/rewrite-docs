@@ -1,7 +1,6 @@
-# Use `PingHealthIndicator`
+# Use PingHealthIndicator
 
-** org.openrewrite.java.spring.boot2.MigrateAbstractHealthIndicatorToPingHealthIndicator**
-_`org.springframework.boot.actuate.health.AbstractHealthIndicator` was deprecated in 2.2._
+ **org.openrewrite.java.spring.boot2.MigrateAbstractHealthIndicatorToPingHealthIndicator** _`org.springframework.boot.actuate.health.AbstractHealthIndicator` was deprecated in 2.2._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`org.springframework.boot.actuate.health.AbstractHealthIndicator` was deprecate
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.AbstractHealthIndicator`
   * newFullyQualifiedTypeName: `org.springframework.boot.actuate.health.PingHealthIndicator`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.AbstractHealthIndicator
       newFullyQualifiedTypeName: org.springframework.boot.actuate.health.PingHealthIndicator
-
 ```
 {% endtab %}
 {% endtabs %}
+

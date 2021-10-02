@@ -1,7 +1,6 @@
-# Pad empty `for` loop components
+# Pad empty for loop components
 
-** org.openrewrite.java.cleanup.PadEmptyForLoopComponents**
-_Fixes padding on empty `for` loop iterators and initializers to match Checkstyle policies._
+ **org.openrewrite.java.cleanup.PadEmptyForLoopComponents** _Fixes padding on empty `for` loop iterators and initializers to match Checkstyle policies._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Fixes padding on empty `for` loop iterators and initializers to match Checkstyl
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -61,3 +58,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.PadEmptyForLoopComponents`
+

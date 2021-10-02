@@ -1,7 +1,6 @@
-# JUnit `assertNotNull` to AssertJ
+# JUnit assertNotNull to AssertJ
 
-** org.openrewrite.java.testing.assertj.JUnitAssertNotNullToAssertThat**
-_Convert JUnit-style `assertNotNull()` to AssertJ's `assertThat().isNotNull()`._
+ **org.openrewrite.java.testing.assertj.JUnitAssertNotNullToAssertThat** _Convert JUnit-style `assertNotNull()` to AssertJ's `assertThat().isNotNull()`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Convert JUnit-style `assertNotNull()` to AssertJ's `assertThat().isNotNull()`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.13.1
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.assertj.JUnitAssertNotNullToAssertThat`
+

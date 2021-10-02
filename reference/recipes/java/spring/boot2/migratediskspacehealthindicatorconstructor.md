@@ -1,7 +1,6 @@
-# Use `DiskSpaceHealthIndicator(File, DataSize)`
+# Use DiskSpaceHealthIndicator\(File, DataSize\)
 
-** org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor**
-_`DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Data 2.1 for removal in 2.2._
+ **org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor** _`DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Data 2.1 for removal in 2.2._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Data 2.1 for re
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor`
+

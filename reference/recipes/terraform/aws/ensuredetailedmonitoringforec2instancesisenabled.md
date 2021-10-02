@@ -1,11 +1,10 @@
 # Ensure detailed monitoring for EC2 instances is enabled
 
-** org.openrewrite.terraform.aws.EnsureDetailedMonitoringForEC2InstancesIsEnabled**
-_Ensure detailed monitoring for EC2 instances is enabled._
+ **org.openrewrite.terraform.aws.EnsureDetailedMonitoringForEC2InstancesIsEnabled** _Ensure detailed monitoring for EC2 instances is enabled._
 
 ### Tags
 
-* CKV_AWS_126
+* CKV\_AWS\_126
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure detailed monitoring for EC2 instances is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_instance`
   * content: `monitoring = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_instance
       content: monitoring = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

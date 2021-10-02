@@ -1,7 +1,6 @@
 # Write octal values as decimal
 
-** org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal**
-_Developers may not recognize octal values as such, mistaking them instead for decimal values._
+ **org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal** _Developers may not recognize octal values as such, mistaking them instead for decimal values._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Developers may not recognize octal values as such, mistaking them instead for d
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal`
+

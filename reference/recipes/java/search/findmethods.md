@@ -1,7 +1,6 @@
 # Find methods
 
-** org.openrewrite.java.search.FindMethods**
-_Find methods by pattern._
+ **org.openrewrite.java.search.FindMethods** _Find methods by pattern._
 
 ## Source
 
@@ -14,15 +13,13 @@ _Find methods by pattern._
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overloads of the [method pattern](/reference/method-patterns). |
-
+| :--- | :--- | :--- |
+| `String` | methodPattern | A [method pattern](https://github.com/openrewrite/rewrite-docs/tree/8e67c73df642f6d9856ea927b754365bc0acb46e/reference/method-patterns/README.md) that is used to find matching method invocations. |
+| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overloads of the [method pattern](https://github.com/openrewrite/rewrite-docs/tree/8e67c73df642f6d9856ea927b754365bc0acb46e/reference/method-patterns/README.md). |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindMethodsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindMethodsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       matchOverrides: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.FindMethodsExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -85,3 +80,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindMethodsExample`
+

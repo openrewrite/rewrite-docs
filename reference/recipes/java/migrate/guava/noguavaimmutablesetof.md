@@ -1,10 +1,6 @@
-# Use `Set.of(..)` in Java 9 or higher
+# Use Set.of\(..\) in Java 9 or higher
 
-** org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf**
-_Replaces `ImmutableSet.of(..)` if the returned type is immediately down-cast.
-  Java 9 introduced `List#of(..)`, `Map#of(..)`, `Set#of(..)` which is similar to `ImmutableList#of(..)`, `ImmutableMap#of(..)`, `ImmutableSet#of(..)`, but has a subtle difference.
-  As per the Java 9 documentation, [`Set.of` provides an unspecified iteration order on the set of elements and is subject to change](https://docs.oracle.com/javase/9/docs/api/java/util/Set.html), whereas [Guava `ImmutableSet` preserves the order from construction time](https://github.com/google/guava/wiki/ImmutableCollectionsExplained#how).
-  This is worth pointing out in case your usage calls for iteration order being important._
+ **org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf** _Replaces `ImmutableSet.of(..)` if the returned type is immediately down-cast. Java 9 introduced `List#of(..)`, `Map#of(..)`, `Set#of(..)` which is similar to `ImmutableList#of(..)`, `ImmutableMap#of(..)`, `ImmutableSet#of(..)`, but has a subtle difference. As per the Java 9 documentation,_ [_`Set.of` provides an unspecified iteration order on the set of elements and is subject to change_](https://docs.oracle.com/javase/9/docs/api/java/util/Set.html)_, whereas_ [_Guava `ImmutableSet` preserves the order from construction time_](https://github.com/google/guava/wiki/ImmutableCollectionsExplained#how)_. This is worth pointing out in case your usage calls for iteration order being important._
 
 ## Source
 
@@ -13,7 +9,6 @@ _Replaces `ImmutableSet.of(..)` if the returned type is immediately down-cast.
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.9.0
-
 
 ## Usage
 
@@ -74,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf`
+

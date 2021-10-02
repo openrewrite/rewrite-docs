@@ -1,13 +1,12 @@
 # Ensure key vault key is backed by HSM
 
-** org.openrewrite.terraform.azure.EnsureKeyVaultKeyIsBackedByHSM**
-_Ensure key vault key is backed by HSM._
+ **org.openrewrite.terraform.azure.EnsureKeyVaultKeyIsBackedByHSM** _Ensure key vault key is backed by HSM._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_112
+* CKV\_AZURE\_112
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure key vault key is backed by HSM._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_key_vault_key`
   * content: `key_type = "RSA-HSM"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_key_vault_key
       content: key_type = "RSA-HSM"
-
 ```
 {% endtab %}
 {% endtabs %}
+

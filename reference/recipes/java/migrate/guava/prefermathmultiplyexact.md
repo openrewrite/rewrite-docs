@@ -1,7 +1,6 @@
-# Prefer `Math#multiplyExact`
+# Prefer Math\#multiplyExact
 
-** org.openrewrite.java.migrate.guava.PreferMathMultiplyExact**
-_This method exists in the Java standard library now._
+ **org.openrewrite.java.migrate.guava.PreferMathMultiplyExact** _This method exists in the Java standard library now._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _This method exists in the Java standard library now._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.9.0
-
 
 ## Usage
 
@@ -80,13 +78,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `com.google.common.math.IntMath checkedMultiply(..)`
   * newMethodName: `multiplyExact`
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `com.google.common.math.IntMath multiplyExact(..)`
   * fullyQualifiedTargetTypeName: `java.lang.Math`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +102,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: com.google.common.math.IntMath multiplyExact(..)
       fullyQualifiedTargetTypeName: java.lang.Math
-
 ```
 {% endtab %}
 {% endtabs %}
+

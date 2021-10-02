@@ -1,7 +1,6 @@
 # Update the API manifest
 
-** org.openrewrite.java.spring.UpdateApiManifest**
-_Keep a consolidated manifest of the API endpoints that this application exposes up-to-date._
+ **org.openrewrite.java.spring.UpdateApiManifest** _Keep a consolidated manifest of the API endpoints that this application exposes up-to-date._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Keep a consolidated manifest of the API endpoints that this application exposes
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.UpdateApiManifest`
+

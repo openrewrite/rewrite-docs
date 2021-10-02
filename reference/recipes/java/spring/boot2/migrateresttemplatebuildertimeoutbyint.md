@@ -1,7 +1,6 @@
-# Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`
+# Use RestTemplateBuilder\#setConnectTimeout\(Duration\) and RestTemplateBuilder\#setReadTimeout\(Duration\)
 
-** org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderTimeoutByInt**
-_`RestTemplateBuilder#setConnectTimeout(int)` and `RestTemplateBuilder#setReadTimeout(int)` were deprecated in Spring Boot 2.1._
+ **org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderTimeoutByInt** _`RestTemplateBuilder#setConnectTimeout(int)` and `RestTemplateBuilder#setReadTimeout(int)` were deprecated in Spring Boot 2.1._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`RestTemplateBuilder#setConnectTimeout(int)` and `RestTemplateBuilder#setReadTi
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderTimeoutByInt`
+

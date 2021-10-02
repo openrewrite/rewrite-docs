@@ -1,12 +1,11 @@
 # Ensure private cluster is enabled when creating Kubernetes clusters
 
-** org.openrewrite.terraform.gcp.EnsurePrivateClusterIsEnabledWhenCreatingKubernetesClusters**
-_Ensure private cluster is enabled when creating Kubernetes clusters._
+ **org.openrewrite.terraform.gcp.EnsurePrivateClusterIsEnabledWhenCreatingKubernetesClusters** _Ensure private cluster is enabled when creating Kubernetes clusters._
 
 ### Tags
 
 * GCP
-* CKV_GCP_25
+* CKV\_GCP\_25
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure private cluster is enabled when creating Kubernetes clusters._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_cluster`
-  * content: `private_cluster_config {
-  enable_private_nodes = true
-}`
+  * content: \`private\_cluster\_config {
 
+    enable\_private\_nodes = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: private_cluster_config {
   enable_private_nodes = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

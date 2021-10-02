@@ -1,7 +1,6 @@
 # Remove extra semicolons
 
-** org.openrewrite.java.cleanup.RemoveExtraSemicolons**
-_Optional semicolons at the end of try-with-resources are also removed._
+ **org.openrewrite.java.cleanup.RemoveExtraSemicolons** _Optional semicolons at the end of try-with-resources are also removed._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Optional semicolons at the end of try-with-resources are also removed._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.RemoveExtraSemicolons`
+

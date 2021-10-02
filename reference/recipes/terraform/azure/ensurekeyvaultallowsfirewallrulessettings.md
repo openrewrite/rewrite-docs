@@ -1,12 +1,11 @@
 # Ensure key vault allows firewall rules settings
 
-** org.openrewrite.terraform.azure.EnsureKeyVaultAllowsFirewallRulesSettings**
-_Ensure key vault allows firewall rules settings._
+ **org.openrewrite.terraform.azure.EnsureKeyVaultAllowsFirewallRulesSettings** _Ensure key vault allows firewall rules settings._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_109
+* CKV\_AZURE\_109
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure key vault allows firewall rules settings._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,13 +80,15 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_key_vault`
-  * content: `network_acls {
-  default_action = "Deny"
-  bypass = "AzureServices"
-}`
+  * content: \`network\_acls {
 
+    default\_action = "Deny"
+
+    bypass = "AzureServices"
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +109,7 @@ recipeList:
   default_action = "Deny"
   bypass = "AzureServices"
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

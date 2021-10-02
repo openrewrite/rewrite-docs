@@ -1,4 +1,4 @@
-# `javax` APIs
+# javax APIs
 
 ## Recipes
 
@@ -21,5 +21,4 @@
 * [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](migratexmleventfactorynewinstancetonewfactory.md)
 * [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](migratexmlinputfactorynewinstancetonewfactory.md)
 * [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](migratexmloutputfactorynewinstancetonewfactory.md)
-
 

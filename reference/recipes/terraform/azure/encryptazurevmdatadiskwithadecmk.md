@@ -1,12 +1,11 @@
 # Encrypt Azure VM data disk with ADE/CMK
 
-** org.openrewrite.terraform.azure.EncryptAzureVMDataDiskWithADECMK**
-_Ensure Azure VM data disk is encrypted with ADE/CMK._
+ **org.openrewrite.terraform.azure.EncryptAzureVMDataDiskWithADECMK** _Ensure Azure VM data disk is encrypted with ADE/CMK._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_2
+* CKV\_AZURE\_2
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure Azure VM data disk is encrypted with ADE/CMK._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_managed_disk`
-  * content: `encryption_settings {
-  enabled = true
-}`
+  * content: \`encryption\_settings {
 
+    enabled = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: encryption_settings {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

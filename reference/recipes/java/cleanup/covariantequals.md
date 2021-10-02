@@ -1,7 +1,6 @@
 # Covariant equals
 
-** org.openrewrite.java.cleanup.CovariantEquals**
-_Checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. Covariant `equals()` means a method that is similar to `equals(Object)`, but with a covariant parameter type (any subtype of `Object`)._
+ **org.openrewrite.java.cleanup.CovariantEquals** _Checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. Covariant `equals()` means a method that is similar to `equals(Object)`, but with a covariant parameter type \(any subtype of `Object`\)._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Checks that classes and records which define a covariant `equals()` method also
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.CovariantEquals`
+

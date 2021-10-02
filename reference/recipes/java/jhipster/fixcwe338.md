@@ -1,7 +1,6 @@
-# Fix CWE-338 with `SecureRandom`
+# Fix CWE-338 with SecureRandom
 
-** org.openrewrite.java.jhipster.FixCwe338**
-_Use a cryptographically strong pseudo-random number generator (PRNG)._
+ **org.openrewrite.java.jhipster.FixCwe338** _Use a cryptographically strong pseudo-random number generator \(PRNG\)._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Use a cryptographically strong pseudo-random number generator (PRNG)._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jhipster
 * version: 0.7.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.jhipster.FixCwe338`
+

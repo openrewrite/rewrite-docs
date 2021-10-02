@@ -1,7 +1,6 @@
 # Multiple variable declarations
 
-** org.openrewrite.java.cleanup.MultipleVariableDeclarations**
-_Places each variable declaration in its own statement and on its own line. Using one variable declaration per line encourages commenting and can increase readability._
+ **org.openrewrite.java.cleanup.MultipleVariableDeclarations** _Places each variable declaration in its own statement and on its own line. Using one variable declaration per line encourages commenting and can increase readability._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Places each variable declaration in its own statement and on its own line. Usin
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.MultipleVariableDeclarations`
+

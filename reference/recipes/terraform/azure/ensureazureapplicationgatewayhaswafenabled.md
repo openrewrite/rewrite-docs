@@ -1,12 +1,11 @@
 # Ensure Azure application gateway has WAF enabled
 
-** org.openrewrite.terraform.azure.EnsureAzureApplicationGatewayHasWAFEnabled**
-_Ensure Azure application gateway has WAF enabled._
+ **org.openrewrite.terraform.azure.EnsureAzureApplicationGatewayHasWAFEnabled** _Ensure Azure application gateway has WAF enabled._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_120
+* CKV\_AZURE\_120
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure Azure application gateway has WAF enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_application_gateway`
-  * content: `waf_configuration {
-  enabled = true
-}`
+  * content: \`waf\_configuration {
 
+    enabled = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: waf_configuration {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

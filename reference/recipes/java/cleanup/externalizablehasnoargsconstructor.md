@@ -1,7 +1,6 @@
-# `Externalizable` classes must have a no-arguments constructor
+# Externalizable classes must have a no-arguments constructor
 
-** org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor**
-_`Externalizable` classes handle both serialization and deserialization and must have a no-args constructor for the deserialization process._
+ **org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor** _`Externalizable` classes handle both serialization and deserialization and must have a no-args constructor for the deserialization process._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _`Externalizable` classes handle both serialization and deserialization and must
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor`
+

@@ -1,6 +1,6 @@
 # Micronaut
 
-_Recipes for upgrading and patching [Micronaut](https://micronaut.io/) applications._
+_Recipes for upgrading and patching_ [_Micronaut_](https://micronaut.io/) _applications._
 
 ## Recipes
 
@@ -14,5 +14,4 @@ _Recipes for upgrading and patching [Micronaut](https://micronaut.io/) applicati
 * [`Provider` implementation beans to Micronaut `@Factory`](providerimplementationstomicronautfactories.md)
 * [Upgrade gradle.properties Micronaut version](upgrademicronautgradlepropertiesversion.md)
 * [Upgrade `micronaut.version` Maven property](upgrademicronautmavenpropertyversion.md)
-
 

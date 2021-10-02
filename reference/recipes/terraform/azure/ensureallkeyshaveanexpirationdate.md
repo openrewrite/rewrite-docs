@@ -1,11 +1,10 @@
 # Ensure all keys have an expiration date
 
-** org.openrewrite.terraform.azure.EnsureAllKeysHaveAnExpirationDate**
-_Ensure all keys have an expiration date._
+ **org.openrewrite.terraform.azure.EnsureAllKeysHaveAnExpirationDate** _Ensure all keys have an expiration date._
 
 ### Tags
 
-* CKV_AZURE_40
+* CKV\_AZURE\_40
 * Azure
 * terraform
 
@@ -16,7 +15,6 @@ _Ensure all keys have an expiration date._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_key_vault_key`
   * content: `expiration_date = "2022-12-30T20:00:00Z"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_key_vault_key
       content: expiration_date = "2022-12-30T20:00:00Z"
-
 ```
 {% endtab %}
 {% endtabs %}
+

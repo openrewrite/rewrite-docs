@@ -1,7 +1,6 @@
 # Upgrade to Spring Boot 2.4
 
-** org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_4**
-_Upgrade to Spring Boot 2.4 from any prior 2.x version._
+ **org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_4** _Upgrade to Spring Boot 2.4 from any prior 2.x version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Boot 2.4 from any prior 2.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -94,15 +92,14 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `spring-boot-starter-test`
   * exclusionGroupId: `junit`
   * exclusionArtifactId: `junit`
-* [JUnit Jupiter for Spring Boot 2.x projects](../../../java/spring/boot2/springboot2junit4to5migration.md)
-* [Upgrade to Spring Framework 5.3](../../../java/spring/framework/upgradespringframework_5_3.md)
-* [Upgrade to Spring Boot 2.3](../../../java/spring/boot2/upgradespringboot_2_3.md)
-* [Use `isEagerFilterInit()`](../../../java/spring/boot2/migrateundertowservletwebserverfactoryiseagerinitfilters.md)
-* [Use `setEagerFilterInit(boolean)`](../../../java/spring/boot2/migrateundertowservletwebserverfactoryseteagerinitfilters.md)
-* [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](../../../java/spring/boot2/migrateloggingsystempropertyconstants.md)
-* [Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL](../../../java/spring/boot2/migratehsqlembeddeddatabaseconnection.md)
-* [Migrate Spring Boot properties to 2.4](../../../java/spring/boot2/springbootproperties_2_4.md)
-
+* [JUnit Jupiter for Spring Boot 2.x projects](springboot2junit4to5migration.md)
+* [Upgrade to Spring Framework 5.3](../framework/upgradespringframework_5_3.md)
+* [Upgrade to Spring Boot 2.3](upgradespringboot_2_3.md)
+* [Use `isEagerFilterInit()`](migrateundertowservletwebserverfactoryiseagerinitfilters.md)
+* [Use `setEagerFilterInit(boolean)`](migrateundertowservletwebserverfactoryseteagerinitfilters.md)
+* [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](migrateloggingsystempropertyconstants.md)
+* [Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL](migratehsqlembeddeddatabaseconnection.md)
+* [Migrate Spring Boot properties to 2.4](springbootproperties_2_4.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -139,7 +136,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateLoggingSystemPropertyConstants
   - org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_4
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
 # Remove unnecessary parentheses
 
-** org.openrewrite.java.cleanup.UnnecessaryParentheses**
-_Removes unnecessary parentheses from code where extra parentheses pairs are redundant._
+ **org.openrewrite.java.cleanup.UnnecessaryParentheses** _Removes unnecessary parentheses from code where extra parentheses pairs are redundant._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Removes unnecessary parentheses from code where extra parentheses pairs are red
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.UnnecessaryParentheses`
+

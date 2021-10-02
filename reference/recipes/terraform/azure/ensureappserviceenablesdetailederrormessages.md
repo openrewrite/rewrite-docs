@@ -1,13 +1,12 @@
 # Ensure app service enables detailed error messages
 
-** org.openrewrite.terraform.azure.EnsureAppServiceEnablesDetailedErrorMessages**
-_Ensure app service enables detailed error messages._
+ **org.openrewrite.terraform.azure.EnsureAppServiceEnablesDetailedErrorMessages** _Ensure app service enables detailed error messages._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_65
+* CKV\_AZURE\_65
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure app service enables detailed error messages._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: `logs {
-  detailed_error_messages_enabled = true
-}`
+  * content: \`logs {
 
+    detailed\_error\_messages\_enabled = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: logs {
   detailed_error_messages_enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

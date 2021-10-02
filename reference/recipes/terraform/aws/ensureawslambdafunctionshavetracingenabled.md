@@ -1,11 +1,10 @@
 # Ensure AWS Lambda functions have tracing enabled
 
-** org.openrewrite.terraform.aws.EnsureAWSLambdaFunctionsHaveTracingEnabled**
-_Ensure AWS Lambda functions have tracing enabled._
+ **org.openrewrite.terraform.aws.EnsureAWSLambdaFunctionsHaveTracingEnabled** _Ensure AWS Lambda functions have tracing enabled._
 
 ### Tags
 
-* CKV_AWS_50
+* CKV\_AWS\_50
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure AWS Lambda functions have tracing enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_lambda_function`
-  * content: `tracing_config {
-  mode = "Active"
-}`
+  * content: \`tracing\_config {
 
+    mode = "Active"
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: tracing_config {
   mode = "Active"
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

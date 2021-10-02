@@ -1,13 +1,12 @@
 # Set Azure Storage Account default network access to deny
 
-** org.openrewrite.terraform.azure.SetAzureStorageAccountDefaultNetworkAccessToDeny**
-_Ensure Azure Storage Account default network access is set to Deny._
+ **org.openrewrite.terraform.azure.SetAzureStorageAccountDefaultNetworkAccessToDeny** _Ensure Azure Storage Account default network access is set to Deny._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_35
+* CKV\_AZURE\_35
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure Azure Storage Account default network access is set to Deny._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,15 +80,16 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_storage_account_network_rules`
   * content: `default_action = "Deny"`
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_storage_account`
-  * content: `network_rules {
-  default_action = "Deny"
-}`
+  * content: \`network\_rules {
 
+    default\_action = "Deny"
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +112,7 @@ recipeList:
       content: network_rules {
   default_action = "Deny"
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

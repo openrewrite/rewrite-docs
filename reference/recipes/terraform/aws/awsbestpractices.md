@@ -1,7 +1,6 @@
 # Best practices for AWS
 
-** org.openrewrite.terraform.aws.AWSBestPractices**
-_Securely operate on Amazon Web Services._
+ **org.openrewrite.terraform.aws.AWSBestPractices** _Securely operate on Amazon Web Services._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Securely operate on Amazon Web Services._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -81,55 +79,54 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Encrypt EBS volumes](../../terraform/aws/encryptebsvolumes.md)
-* [Encrypt EBS snapshots](../../terraform/aws/encryptebssnapshots.md)
-* [Ensure AWS Elasticsearch domain encryption for data at rest is enabled](../../terraform/aws/ensureawselasticsearchdomainencryptionfordataatrestisenabled.md)
-* [Ensure AWS Elasticsearch has node-to-node encryption enabled](../../terraform/aws/ensureawselasticsearchhasnodetonodeencryptionenabled.md)
-* [Ensure AWS CMK rotation is enabled](../../terraform/aws/ensureawscmkrotationisenabled.md)
-* [Encrypt EBS volume launch configurations](../../terraform/aws/encryptebsvolumelaunchconfiguration.md)
-* [Ensure IAM password policy expires passwords within 90 days or less](../../terraform/aws/ensureiampasswordpolicyexpirespasswordswithin90daysorless.md)
-* [Ensure AWS IAM password policy has a minimum of 14 characters](../../terraform/aws/ensureawsiampasswordpolicyhasaminimumof14characters.md)
-* [Ensure IAM password policy requires at least one lowercase letter](../../terraform/aws/ensureiampasswordpolicyrequiresatleastonelowercaseletter.md)
-* [Ensure IAM password policy requires at least one number](../../terraform/aws/ensureiampasswordpolicyrequiresatleastonenumber.md)
-* [Ensure IAM password policy prevents password reuse](../../terraform/aws/ensureiampasswordpolicypreventspasswordreuse.md)
-* [Ensure IAM password policy requires at least one symbol](../../terraform/aws/ensureiampasswordpolicyrequiresatleastonesymbol.md)
-* [Ensure IAM password policy requires at least one uppercase letter](../../terraform/aws/ensureiampasswordpolicyrequiresatleastoneuppercaseletter.md)
-* [Encrypt RDS clusters](../../terraform/aws/encryptrdsclusters.md)
-* [Ensure AWS RDS database instance is not publicly accessible](../../terraform/aws/ensureawsrdsdatabaseinstanceisnotpubliclyaccessible.md)
-* [Ensure data stored in an S3 bucket is securely encrypted at rest](../../terraform/aws/ensuredatastoredinans3bucketissecurelyencryptedatrest.md)
-* [Ensure AWS S3 object versioning is enabled](../../terraform/aws/ensureawss3objectversioningisenabled.md)
-* [Enable point-in-time recovery for DynamoDB](../../terraform/aws/enabledynamodbpitr.md)
-* [Encrypt ElastiCache Redis at rest](../../terraform/aws/encryptelasticacheredisatrest.md)
-* [Encrypt ElastiCache Redis in transit](../../terraform/aws/encryptelasticacheredisintransit.md)
-* [Scan images pushed to ECR](../../terraform/aws/enableecrscanonpush.md)
-* [Use HTTPS for Cloudfront distribution](../../terraform/aws/usehttpsforcloudfrontdistribution.md)
-* [Ensure CloudTrail log file validation is enabled](../../terraform/aws/ensurecloudtraillogfilevalidationisenabled.md)
-* [Ensure Amazon EKS control plane logging enabled for all log types](../../terraform/aws/ensureamazonekscontrolplaneloggingenabledforalllogtypes.md)
-* [Ensure AWS EKS cluster endpoint access is publicly disabled](../../terraform/aws/ensureawseksclusterendpointaccessispubliclydisabled.md)
-* [Ensure AWS EFS with encryption for data at rest is enabled](../../terraform/aws/ensureawsefswithencryptionfordataatrestisenabled.md)
-* [Ensure Kinesis Stream is securely encrypted](../../terraform/aws/ensurekinesisstreamissecurelyencrypted.md)
-* [Encrypt Neptune storage](../../terraform/aws/encryptneptunestorage.md)
-* [Encrypt DAX storage at rest](../../terraform/aws/encryptdaxstorage.md)
-* [Ensure AWS Lambda functions have tracing enabled](../../terraform/aws/ensureawslambdafunctionshavetracingenabled.md)
-* [Make ECR tags immutable](../../terraform/aws/immutableecrtags.md)
-* [Encrypt Redshift storage at rest](../../terraform/aws/encryptredshift.md)
-* [Encrypt DocumentDB storage](../../terraform/aws/encryptdocumentdb.md)
-* [Disable Instance Metadata Service version 1](../../terraform/aws/disableinstancemetadataservicev1.md)
-* [Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled](../../terraform/aws/ensureawselasticsearchdomainshaveenforcehttpsenabled.md)
-* [Encrypt Aurora clusters](../../terraform/aws/encryptauroraclusters.md)
-* [Encrypt EFS Volumes in ECS Task Definitions in transit](../../terraform/aws/encryptefsvolumesinecstaskdefinitionsintransit.md)
-* [Ensure AWS Lambda function is configured for function-level concurrent execution limit](../../terraform/aws/ensureawslambdafunctionisconfiguredforfunctionlevelconcurrentexecutionlimit.md)
-* [Ensure enhanced monitoring for Amazon RDS instances is enabled](../../terraform/aws/ensureenhancedmonitoringforamazonrdsinstancesisenabled.md)
-* [Enable API gateway caching](../../terraform/aws/enableapigatewaycaching.md)
-* [Ensure detailed monitoring for EC2 instances is enabled](../../terraform/aws/ensuredetailedmonitoringforec2instancesisenabled.md)
-* [Ensure respective logs of Amazon RDS are enabled](../../terraform/aws/ensurerespectivelogsofamazonrdsareenabled.md)
-* [Ensure VPC subnets do not assign public IP by default](../../terraform/aws/ensurevpcsubnetsdonotassignpublicipbydefault.md)
-* [Ensure EC2 is EBS optimized](../../terraform/aws/ensureec2isebsoptimized.md)
-* [Ensure ECR repositories are encrypted](../../terraform/aws/ensureecrrepositoriesareencrypted.md)
-* [Encrypt CodeBuild projects](../../terraform/aws/encryptcodebuild.md)
-* [Ensure RDS instances have Multi-AZ enabled](../../terraform/aws/ensurerdsinstanceshavemultiazenabled.md)
-* [Ensure RDS database has IAM authentication enabled](../../terraform/aws/ensurerdsdatabasehasiamauthenticationenabled.md)
-
+* [Encrypt EBS volumes](encryptebsvolumes.md)
+* [Encrypt EBS snapshots](encryptebssnapshots.md)
+* [Ensure AWS Elasticsearch domain encryption for data at rest is enabled](ensureawselasticsearchdomainencryptionfordataatrestisenabled.md)
+* [Ensure AWS Elasticsearch has node-to-node encryption enabled](ensureawselasticsearchhasnodetonodeencryptionenabled.md)
+* [Ensure AWS CMK rotation is enabled](ensureawscmkrotationisenabled.md)
+* [Encrypt EBS volume launch configurations](encryptebsvolumelaunchconfiguration.md)
+* [Ensure IAM password policy expires passwords within 90 days or less](ensureiampasswordpolicyexpirespasswordswithin90daysorless.md)
+* [Ensure AWS IAM password policy has a minimum of 14 characters](ensureawsiampasswordpolicyhasaminimumof14characters.md)
+* [Ensure IAM password policy requires at least one lowercase letter](ensureiampasswordpolicyrequiresatleastonelowercaseletter.md)
+* [Ensure IAM password policy requires at least one number](ensureiampasswordpolicyrequiresatleastonenumber.md)
+* [Ensure IAM password policy prevents password reuse](ensureiampasswordpolicypreventspasswordreuse.md)
+* [Ensure IAM password policy requires at least one symbol](ensureiampasswordpolicyrequiresatleastonesymbol.md)
+* [Ensure IAM password policy requires at least one uppercase letter](ensureiampasswordpolicyrequiresatleastoneuppercaseletter.md)
+* [Encrypt RDS clusters](encryptrdsclusters.md)
+* [Ensure AWS RDS database instance is not publicly accessible](ensureawsrdsdatabaseinstanceisnotpubliclyaccessible.md)
+* [Ensure data stored in an S3 bucket is securely encrypted at rest](ensuredatastoredinans3bucketissecurelyencryptedatrest.md)
+* [Ensure AWS S3 object versioning is enabled](ensureawss3objectversioningisenabled.md)
+* [Enable point-in-time recovery for DynamoDB](enabledynamodbpitr.md)
+* [Encrypt ElastiCache Redis at rest](encryptelasticacheredisatrest.md)
+* [Encrypt ElastiCache Redis in transit](encryptelasticacheredisintransit.md)
+* [Scan images pushed to ECR](enableecrscanonpush.md)
+* [Use HTTPS for Cloudfront distribution](usehttpsforcloudfrontdistribution.md)
+* [Ensure CloudTrail log file validation is enabled](ensurecloudtraillogfilevalidationisenabled.md)
+* [Ensure Amazon EKS control plane logging enabled for all log types](ensureamazonekscontrolplaneloggingenabledforalllogtypes.md)
+* [Ensure AWS EKS cluster endpoint access is publicly disabled](ensureawseksclusterendpointaccessispubliclydisabled.md)
+* [Ensure AWS EFS with encryption for data at rest is enabled](ensureawsefswithencryptionfordataatrestisenabled.md)
+* [Ensure Kinesis Stream is securely encrypted](ensurekinesisstreamissecurelyencrypted.md)
+* [Encrypt Neptune storage](encryptneptunestorage.md)
+* [Encrypt DAX storage at rest](encryptdaxstorage.md)
+* [Ensure AWS Lambda functions have tracing enabled](ensureawslambdafunctionshavetracingenabled.md)
+* [Make ECR tags immutable](immutableecrtags.md)
+* [Encrypt Redshift storage at rest](encryptredshift.md)
+* [Encrypt DocumentDB storage](encryptdocumentdb.md)
+* [Disable Instance Metadata Service version 1](disableinstancemetadataservicev1.md)
+* [Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled](ensureawselasticsearchdomainshaveenforcehttpsenabled.md)
+* [Encrypt Aurora clusters](encryptauroraclusters.md)
+* [Encrypt EFS Volumes in ECS Task Definitions in transit](encryptefsvolumesinecstaskdefinitionsintransit.md)
+* [Ensure AWS Lambda function is configured for function-level concurrent execution limit](ensureawslambdafunctionisconfiguredforfunctionlevelconcurrentexecutionlimit.md)
+* [Ensure enhanced monitoring for Amazon RDS instances is enabled](ensureenhancedmonitoringforamazonrdsinstancesisenabled.md)
+* [Enable API gateway caching](enableapigatewaycaching.md)
+* [Ensure detailed monitoring for EC2 instances is enabled](ensuredetailedmonitoringforec2instancesisenabled.md)
+* [Ensure respective logs of Amazon RDS are enabled](ensurerespectivelogsofamazonrdsareenabled.md)
+* [Ensure VPC subnets do not assign public IP by default](ensurevpcsubnetsdonotassignpublicipbydefault.md)
+* [Ensure EC2 is EBS optimized](ensureec2isebsoptimized.md)
+* [Ensure ECR repositories are encrypted](ensureecrrepositoriesareencrypted.md)
+* [Encrypt CodeBuild projects](encryptcodebuild.md)
+* [Ensure RDS instances have Multi-AZ enabled](ensurerdsinstanceshavemultiazenabled.md)
+* [Ensure RDS database has IAM authentication enabled](ensurerdsdatabasehasiamauthenticationenabled.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -191,7 +188,7 @@ recipeList:
   - org.openrewrite.terraform.aws.EncryptCodeBuild
   - org.openrewrite.terraform.aws.EnsureRDSInstancesHaveMultiAZEnabled
   - org.openrewrite.terraform.aws.EnsureRDSDatabaseHasIAMAuthenticationEnabled
-
 ```
 {% endtab %}
 {% endtabs %}
+

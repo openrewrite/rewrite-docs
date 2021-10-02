@@ -1,7 +1,6 @@
 # Finalize classes with private constructors
 
-** org.openrewrite.java.cleanup.FinalClass**
-_Adds the `final` modifier to classes that expose no public or package-private constructors._
+ **org.openrewrite.java.cleanup.FinalClass** _Adds the `final` modifier to classes that expose no public or package-private constructors._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Adds the `final` modifier to classes that expose no public or package-private c
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.FinalClass`
+

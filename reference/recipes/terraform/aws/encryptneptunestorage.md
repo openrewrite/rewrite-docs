@@ -1,11 +1,10 @@
 # Encrypt Neptune storage
 
-** org.openrewrite.terraform.aws.EncryptNeptuneStorage**
-_Encryption of Neptune storage protects data and metadata against unauthorized access._
+ **org.openrewrite.terraform.aws.EncryptNeptuneStorage** _Encryption of Neptune storage protects data and metadata against unauthorized access._
 
 ### Tags
 
-* CKV_AWS_44
+* CKV\_AWS\_44
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Encryption of Neptune storage protects data and metadata against unauthorized a
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_neptune_cluster`
   * content: `storage_encrypted = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_neptune_cluster
       content: storage_encrypted = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

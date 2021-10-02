@@ -1,12 +1,11 @@
 # Ensure the storage container storing activity logs is not publicly accessible
 
-** org.openrewrite.terraform.azure.EnsureTheStorageContainerStoringActivityLogsIsNotPubliclyAccessible**
-_Ensure the storage container storing activity logs is not publicly accessible._
+ **org.openrewrite.terraform.azure.EnsureTheStorageContainerStoringActivityLogsIsNotPubliclyAccessible** _Ensure the storage container storing activity logs is not publicly accessible._
 
 ### Tags
 
 * Azure
-* CKV2_AZURE_8
+* CKV2\_AZURE\_8
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure the storage container storing activity logs is not publicly accessible._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_storage_container`
   * content: `container_access_type = "private"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_storage_container
       content: container_access_type = "private"
-
 ```
 {% endtab %}
 {% endtabs %}
+

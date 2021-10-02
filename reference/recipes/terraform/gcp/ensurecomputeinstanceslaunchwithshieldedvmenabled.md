@@ -1,13 +1,12 @@
 # Ensure compute instances launch with shielded VM enabled
 
-** org.openrewrite.terraform.gcp.EnsureComputeInstancesLaunchWithShieldedVMEnabled**
-_Ensure compute instances launch with shielded VM enabled._
+ **org.openrewrite.terraform.gcp.EnsureComputeInstancesLaunchWithShieldedVMEnabled** _Ensure compute instances launch with shielded VM enabled._
 
 ### Tags
 
 * GCP
 * terraform
-* CKV_GCP_39
+* CKV\_GCP\_39
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure compute instances launch with shielded VM enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,13 +80,15 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_compute_instance`
-  * content: `shielded_instance_config {
-  enable_integrity_monitoring = true
-  enable_vtpm = true
-}`
+  * content: \`shielded\_instance\_config {
 
+    enable\_integrity\_monitoring = true
+
+    enable\_vtpm = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +109,7 @@ recipeList:
   enable_integrity_monitoring = true
   enable_vtpm = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

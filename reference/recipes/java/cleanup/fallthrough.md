@@ -1,7 +1,6 @@
 # Fall through
 
-** org.openrewrite.java.cleanup.FallThrough**
-_Checks for fall-through in switch statements, adding `break` statements in locations where a case contains Java code but does not have a `break`, `return`, `throw`, or `continue` statement._
+ **org.openrewrite.java.cleanup.FallThrough** _Checks for fall-through in switch statements, adding `break` statements in locations where a case contains Java code but does not have a `break`, `return`, `throw`, or `continue` statement._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Checks for fall-through in switch statements, adding `break` statements in loca
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.FallThrough`
+

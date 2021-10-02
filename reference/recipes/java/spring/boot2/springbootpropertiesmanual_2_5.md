@@ -1,7 +1,6 @@
 # Migrate additional Spring Boot properties to 2.5
 
-** org.openrewrite.java.spring.boot2.SpringBootPropertiesManual\_2\_5**
-_Migrate properties found in `application.properties` and `application.yml` which are not generated automatically from Spring Boot's `additional-spring-configuration-metadata.json` file._
+ **org.openrewrite.java.spring.boot2.SpringBootPropertiesManual\_2\_5** _Migrate properties found in `application.properties` and `application.yml` which are not generated automatically from Spring Boot's `additional-spring-configuration-metadata.json` file._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrate properties found in `application.properties` and `application.yml` whic
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -172,7 +170,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Change property key](../../../yaml/changepropertykey.md)
   * oldPropertyKey: `spring.batch.table-prefix`
   * newPropertyKey: `spring.batch.jdbc.table-prefix`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -279,7 +276,7 @@ recipeList:
   - org.openrewrite.yaml.ChangePropertyKey:
       oldPropertyKey: spring.batch.table-prefix
       newPropertyKey: spring.batch.jdbc.table-prefix
-
 ```
 {% endtab %}
 {% endtabs %}
+

@@ -1,7 +1,6 @@
-# Use JUnit Jupiter `@TempDir`
+# Use JUnit Jupiter @TempDir
 
-** org.openrewrite.java.testing.junit5.TemporaryFolderToTempDir**
-_Translates JUnit4's `org.junit.rules.TemporaryFolder` into JUnit 5's `org.junit.jupiter.api.io.TempDir`._
+ **org.openrewrite.java.testing.junit5.TemporaryFolderToTempDir** _Translates JUnit4's `org.junit.rules.TemporaryFolder` into JUnit 5's `org.junit.jupiter.api.io.TempDir`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Translates JUnit4's `org.junit.rules.TemporaryFolder` into JUnit 5's `org.junit
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.13.1
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.TemporaryFolderToTempDir`
+

@@ -1,7 +1,6 @@
-# Use `Map.of(..)` in Java 9 or higher
+# Use Map.of\(..\) in Java 9 or higher
 
-** org.openrewrite.java.migrate.guava.NoGuavaImmutableMapOf**
-_Replaces `ImmutableMap.of(..)` if the returned type is immediately down-cast._
+ **org.openrewrite.java.migrate.guava.NoGuavaImmutableMapOf** _Replaces `ImmutableMap.of(..)` if the returned type is immediately down-cast._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replaces `ImmutableMap.of(..)` if the returned type is immediately down-cast._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.9.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.migrate.guava.NoGuavaImmutableMapOf`
+

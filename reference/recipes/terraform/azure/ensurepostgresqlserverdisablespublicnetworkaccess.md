@@ -1,13 +1,12 @@
 # Ensure PostgreSQL server disables public network access
 
-** org.openrewrite.terraform.azure.EnsurePostgreSQLServerDisablesPublicNetworkAccess**
-_Ensure PostgreSQL server disables public network access._
+ **org.openrewrite.terraform.azure.EnsurePostgreSQLServerDisablesPublicNetworkAccess** _Ensure PostgreSQL server disables public network access._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_68
+* CKV\_AZURE\_68
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure PostgreSQL server disables public network access._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_postgresql_server`
   * content: `public_network_access_enabled = false`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_postgresql_server
       content: public_network_access_enabled = false
-
 ```
 {% endtab %}
 {% endtabs %}
+

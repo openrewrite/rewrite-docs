@@ -1,7 +1,6 @@
 # Order POM elements
 
-** org.openrewrite.maven.OrderPomElements**
-_Order POM elements according to the [recommended](http://maven.apache.org/developers/conventions/code.html#pom-code-convention) order._
+ **org.openrewrite.maven.OrderPomElements** _Order POM elements according to the_ [_recommended_](http://maven.apache.org/developers/conventions/code.html#pom-code-convention) _order._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Order POM elements according to the [recommended](http://maven.apache.org/devel
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.maven.OrderPomElements`
+

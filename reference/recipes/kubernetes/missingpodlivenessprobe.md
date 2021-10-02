@@ -1,7 +1,6 @@
 # Ensure liveness probe is configured
 
-** org.openrewrite.kubernetes.MissingPodLivenessProbe**
-_The kubelet uses liveness probes to know when to schedule restarts for containers. Restarting a container in a deadlock state can help to make the application more available, despite bugs._
+ **org.openrewrite.kubernetes.MissingPodLivenessProbe** _The kubelet uses liveness probes to know when to schedule restarts for containers. Restarting a container in a deadlock state can help to make the application more available, despite bugs._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _The kubelet uses liveness probes to know when to schedule restarts for containe
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.8.0
-
 
 ## Usage
 
@@ -80,10 +78,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Missing configuration](search/findresourcemissingconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `$.spec.containers[:1].livenessProbe`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,7 @@ recipeList:
   - org.openrewrite.kubernetes.search.FindResourceMissingConfiguration:
       resourceKind: Pod
       configurationPath: $.spec.containers[:1].livenessProbe
-
 ```
 {% endtab %}
 {% endtabs %}
+

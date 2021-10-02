@@ -1,6 +1,6 @@
-# Use a long enough byte length for `random` resources
+# Use a long enough byte length for random resources
 
-** org.openrewrite.terraform.SecureRandom**
+ **org.openrewrite.terraform.SecureRandom**
 
 ## Source
 
@@ -13,9 +13,8 @@
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
-| `Integer` | byteLength | *Optional*. The minimum byte length to use. |
-
+| :--- | :--- | :--- |
+| `Integer` | byteLength | _Optional_. The minimum byte length to use. |
 
 ## Usage
 
@@ -76,3 +75,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.terraform.SecureRandom`
+

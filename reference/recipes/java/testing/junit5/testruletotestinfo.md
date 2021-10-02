@@ -1,7 +1,6 @@
 # JUnit TestName @Rule to JUnit Jupiter TestInfo
 
-** org.openrewrite.java.testing.junit5.TestRuleToTestInfo**
-_Replace usages of JUnit 4's `@Rule TestName` with JUnit 5's TestInfo._
+ **org.openrewrite.java.testing.junit5.TestRuleToTestInfo** _Replace usages of JUnit 4's `@Rule TestName` with JUnit 5's TestInfo._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replace usages of JUnit 4's `@Rule TestName` with JUnit 5's TestInfo._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.13.1
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.junit5.TestRuleToTestInfo`
+

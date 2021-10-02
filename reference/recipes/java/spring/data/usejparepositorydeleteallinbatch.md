@@ -1,7 +1,6 @@
-# Use `JpaRepository#deleteAllInBatch(Iterable<T> entities)`
+# Use JpaRepository\#deleteAllInBatch\(Iterable entities\)
 
-** org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch**
-_`JpaRepository#deleteInBatch(Iterable)` was deprecated in 2.5._
+ **org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch** _`JpaRepository#deleteInBatch(Iterable)` was deprecated in 2.5._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`JpaRepository#deleteInBatch(Iterable)` was deprecated in 2.5._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -76,10 +74,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.springframework.data.jpa.repository.JpaRepository deleteInBatch(..)`
   * newMethodName: `deleteAllInBatch`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -93,7 +90,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.data.jpa.repository.JpaRepository deleteInBatch(..)
       newMethodName: deleteAllInBatch
-
 ```
 {% endtab %}
 {% endtabs %}
+

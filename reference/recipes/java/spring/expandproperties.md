@@ -1,7 +1,6 @@
 # Expand Spring YAML properties
 
-** org.openrewrite.java.spring.ExpandProperties**
-_Expand YAML properties to not use the dot syntax shortcut._
+ **org.openrewrite.java.spring.ExpandProperties** _Expand YAML properties to not use the dot syntax shortcut._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Expand YAML properties to not use the dot syntax shortcut._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.ExpandProperties`
+

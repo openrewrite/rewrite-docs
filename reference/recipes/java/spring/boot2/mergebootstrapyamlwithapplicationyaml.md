@@ -1,7 +1,6 @@
-# Merge Spring `bootstrap.yml` with `application.yml`
+# Merge Spring bootstrap.yml with application.yml
 
-** org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml**
-_In Spring Boot 2.4, support for `bootstrap.yml` was removed. It's properties should be merged with `application.yml`._
+ **org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml** _In Spring Boot 2.4, support for `bootstrap.yml` was removed. It's properties should be merged with `application.yml`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _In Spring Boot 2.4, support for `bootstrap.yml` was removed. It's properties sh
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml`
+

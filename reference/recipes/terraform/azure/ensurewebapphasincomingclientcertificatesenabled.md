@@ -1,13 +1,12 @@
 # Ensure Web App has incoming client certificates enabled
 
-** org.openrewrite.terraform.azure.EnsureWebAppHasIncomingClientCertificatesEnabled**
-_Ensure Web App has incoming client certificates enabled._
+ **org.openrewrite.terraform.azure.EnsureWebAppHasIncomingClientCertificatesEnabled** _Ensure Web App has incoming client certificates enabled._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_17
+* CKV\_AZURE\_17
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure Web App has incoming client certificates enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
   * content: `client_cert_enabled = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_app_service
       content: client_cert_enabled = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

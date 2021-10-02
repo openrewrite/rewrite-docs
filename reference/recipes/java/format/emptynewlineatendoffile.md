@@ -1,7 +1,6 @@
 # End files with a single newline
 
-** org.openrewrite.java.format.EmptyNewlineAtEndOfFile**
-_Some tools work better when files end with an empty line._
+ **org.openrewrite.java.format.EmptyNewlineAtEndOfFile** _Some tools work better when files end with an empty line._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Some tools work better when files end with an empty line._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.format.EmptyNewlineAtEndOfFile`
+

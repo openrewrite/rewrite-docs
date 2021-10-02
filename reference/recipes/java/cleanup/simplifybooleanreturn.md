@@ -1,7 +1,6 @@
 # Simplify boolean return
 
-** org.openrewrite.java.cleanup.SimplifyBooleanReturn**
-_Simplifies Boolean expressions by removing redundancies, e.g.: `a && true` simplifies to `a`._
+ **org.openrewrite.java.cleanup.SimplifyBooleanReturn** _Simplifies Boolean expressions by removing redundancies, e.g.: `a && true` simplifies to `a`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Simplifies Boolean expressions by removing redundancies, e.g.: `a && true` simp
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.SimplifyBooleanReturn`
+

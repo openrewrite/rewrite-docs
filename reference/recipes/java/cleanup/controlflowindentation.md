@@ -1,7 +1,6 @@
 # Control flow statement indentation
 
-** org.openrewrite.java.cleanup.ControlFlowIndentation**
-_Program flow control statements like `if`, `while`, and `for` can omit curly braces when they apply to only a single statement. This recipe ensures that any statements which follow that statement are correctly indented to show they are not part of the flow control statement._
+ **org.openrewrite.java.cleanup.ControlFlowIndentation** _Program flow control statements like `if`, `while`, and `for` can omit curly braces when they apply to only a single statement. This recipe ensures that any statements which follow that statement are correctly indented to show they are not part of the flow control statement._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Program flow control statements like `if`, `while`, and `for` can omit curly br
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.ControlFlowIndentation`
+

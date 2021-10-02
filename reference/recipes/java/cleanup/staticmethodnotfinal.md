@@ -1,7 +1,6 @@
 # Static methods not final
 
-** org.openrewrite.java.cleanup.StaticMethodNotFinal**
-_Static methods do not need to be declared final because they cannot be overridden._
+ **org.openrewrite.java.cleanup.StaticMethodNotFinal** _Static methods do not need to be declared final because they cannot be overridden._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Static methods do not need to be declared final because they cannot be overridd
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.StaticMethodNotFinal`
+

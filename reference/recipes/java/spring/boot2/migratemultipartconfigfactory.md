@@ -1,7 +1,6 @@
-# Use `MultipartConfigFactory` with `DataSize` arguments
+# Use MultipartConfigFactory with DataSize arguments
 
-** org.openrewrite.java.spring.boot2.MigrateMultipartConfigFactory**
-_Methods to set DataSize with primitive arguments were deprecated in 2.1 and removed in 2.2._
+ **org.openrewrite.java.spring.boot2.MigrateMultipartConfigFactory** _Methods to set DataSize with primitive arguments were deprecated in 2.1 and removed in 2.2._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Methods to set DataSize with primitive arguments were deprecated in 2.1 and rem
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
-
 
 ## Usage
 
@@ -71,3 +69,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.spring.boot2.MigrateMultipartConfigFactory`
+

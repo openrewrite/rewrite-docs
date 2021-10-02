@@ -1,12 +1,11 @@
-# Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters
+# Enable PodSecurityPolicy controller on Google Kubernetes Engine \(GKE\) clusters
 
-** org.openrewrite.terraform.gcp.EnablePodSecurityPolicyControllerOnGKEClusters**
-_Ensure `PodSecurityPolicy` controller is enabled on Google Kubernetes Engine (GKE) clusters._
+ **org.openrewrite.terraform.gcp.EnablePodSecurityPolicyControllerOnGKEClusters** _Ensure `PodSecurityPolicy` controller is enabled on Google Kubernetes Engine \(GKE\) clusters._
 
 ### Tags
 
 * GCP
-* CKV_GCP_24
+* CKV\_GCP\_24
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure `PodSecurityPolicy` controller is enabled on Google Kubernetes Engine (G
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_cluster`
-  * content: `pod_security_policy_config {
-  enabled = true
-}`
+  * content: \`pod\_security\_policy\_config {
 
+    enabled = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: pod_security_policy_config {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

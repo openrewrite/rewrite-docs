@@ -1,7 +1,6 @@
 # Use diamond operator
 
-** org.openrewrite.java.cleanup.UseDiamondOperator**
-_The diamond operator (`<>`) should be used. Java 7 introduced the diamond operator (<>) to reduce the verbosity of generics code. For instance, instead of having to declare a List's type in both its declaration and its constructor, you can now simplify the constructor declaration with `<>`, and the compiler will infer the type._
+ **org.openrewrite.java.cleanup.UseDiamondOperator** _The diamond operator \(`<>`\) should be used. Java 7 introduced the diamond operator \(&lt;&gt;\) to reduce the verbosity of generics code. For instance, instead of having to declare a List's type in both its declaration and its constructor, you can now simplify the constructor declaration with `<>`, and the compiler will infer the type._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _The diamond operator (`<>`) should be used. Java 7 introduced the diamond opera
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.UseDiamondOperator`
+

@@ -1,13 +1,12 @@
 # Ensure GCP cloud storage bucket with uniform bucket-level access are enabled
 
-** org.openrewrite.terraform.gcp.EnsureGCPCloudStorageBucketWithUniformBucketLevelAccessAreEnabled**
-_Ensure GCP cloud storage bucket with uniform bucket-level access are enabled._
+ **org.openrewrite.terraform.gcp.EnsureGCPCloudStorageBucketWithUniformBucketLevelAccessAreEnabled** _Ensure GCP cloud storage bucket with uniform bucket-level access are enabled._
 
 ### Tags
 
 * GCP
 * terraform
-* CKV_GCP_29
+* CKV\_GCP\_29
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure GCP cloud storage bucket with uniform bucket-level access are enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_storage_bucket`
   * content: `uniform_bucket_level_access = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: google_storage_bucket
       content: uniform_bucket_level_access = true
-
 ```
 {% endtab %}
 {% endtabs %}
+

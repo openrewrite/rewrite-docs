@@ -9,4 +9,3 @@
 * [Use `JpaSort.of(..)`](migratejpasort.md)
 * [Use `QuerydslPredicateExecutor<T>`](migratequerydsljparepository.md)
 
-

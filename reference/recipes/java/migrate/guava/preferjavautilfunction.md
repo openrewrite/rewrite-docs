@@ -1,7 +1,6 @@
-# Prefer `java.util.function.Function`
+# Prefer java.util.function.Function
 
-** org.openrewrite.java.migrate.guava.PreferJavaUtilFunction**
-_Guava's `Function` extends `java.util.function.Function`._
+ **org.openrewrite.java.migrate.guava.PreferJavaUtilFunction** _Guava's `Function` extends `java.util.function.Function`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Guava's `Function` extends `java.util.function.Function`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 0.9.0
-
 
 ## Usage
 
@@ -80,10 +78,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `com.google.common.base.Function`
   * newFullyQualifiedTypeName: `java.util.function.Function`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.google.common.base.Function
       newFullyQualifiedTypeName: java.util.function.Function
-
 ```
 {% endtab %}
 {% endtabs %}
+

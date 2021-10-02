@@ -1,11 +1,10 @@
 # Ensure AWS Elasticsearch domain encryption for data at rest is enabled
 
-** org.openrewrite.terraform.aws.EnsureAWSElasticsearchDomainEncryptionForDataAtRestIsEnabled**
-_Ensure AWS Elasticsearch domain encryption for data at rest is enabled._
+ **org.openrewrite.terraform.aws.EnsureAWSElasticsearchDomainEncryptionForDataAtRestIsEnabled** _Ensure AWS Elasticsearch domain encryption for data at rest is enabled._
 
 ### Tags
 
-* CKV_AWS_5
+* CKV\_AWS\_5
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure AWS Elasticsearch domain encryption for data at rest is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,12 +80,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_elasticsearch_domain`
-  * content: `encrypt_at_rest {
-  enabled = true
-}`
+  * content: \`encrypt\_at\_rest {
 
+    enabled = true
+
+    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +106,7 @@ recipeList:
       content: encrypt_at_rest {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}
+

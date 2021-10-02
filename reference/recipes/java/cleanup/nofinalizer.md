@@ -1,7 +1,6 @@
-# Remove `finalize()` method
+# Remove finalize\(\) method
 
-** org.openrewrite.java.cleanup.NoFinalizer**
-_Finalizers are deprecated. Use of `finalize()` can lead to performance issues, deadlocks, hangs, and other undesirable behavior._
+ **org.openrewrite.java.cleanup.NoFinalizer** _Finalizers are deprecated. Use of `finalize()` can lead to performance issues, deadlocks, hangs, and other undesirable behavior._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Finalizers are deprecated. Use of `finalize()` can lead to performance issues, 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.14.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -65,3 +62,4 @@ repositories {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.NoFinalizer`
+

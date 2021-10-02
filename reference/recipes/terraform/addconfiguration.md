@@ -1,7 +1,6 @@
 # Add Terraform configuration
 
-** org.openrewrite.terraform.AddConfiguration**
-_If the configuration has a different value, leave it alone. If it is missing, add it._
+ **org.openrewrite.terraform.AddConfiguration** _If the configuration has a different value, leave it alone. If it is missing, add it._
 
 ## Source
 
@@ -14,15 +13,13 @@ _If the configuration has a different value, leave it alone. If it is missing, a
 ## Options
 
 | Type | Name | Description |
-| -- | -- | -- |
+| :--- | :--- | :--- |
 | `String` | resourceName | A Terraform resource name, without the quotes. |
 | `String` | content | Terraform to insert if an attribute with the same name or block with the same 'type' is not found. |
 
-
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddConfigurationExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddConfigurationExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -94,3 +91,4 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.AddConfigurationExample`
+

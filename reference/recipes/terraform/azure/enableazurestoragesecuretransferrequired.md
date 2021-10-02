@@ -1,13 +1,12 @@
 # Enable Azure Storage secure transfer required
 
-** org.openrewrite.terraform.azure.EnableAzureStorageSecureTransferRequired**
-_Microsoft recommends requiring secure transfer for all storage accounts._
+ **org.openrewrite.terraform.azure.EnableAzureStorageSecureTransferRequired** _Microsoft recommends requiring secure transfer for all storage accounts._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_3
+* CKV\_AZURE\_3
 
 ## Source
 
@@ -16,7 +15,6 @@ _Microsoft recommends requiring secure transfer for all storage accounts._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 0.6.0
-
 
 ## Usage
 
@@ -82,10 +80,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_storage_account`
   * content: `enable_https_traffic_only = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,7 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_storage_account
       content: enable_https_traffic_only = true
-
 ```
 {% endtab %}
 {% endtabs %}
+
