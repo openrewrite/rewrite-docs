@@ -4,8 +4,10 @@
 
 * [Change properties file property value](changepropertyvalue.md)
 * [Change property key](changepropertykey.md)
+* [Delete Property](deleteproperty.md)
 
 ## Subcategories
 
-* [Search](search/)
+* [Search](/reference/recipes/properties/search)
+
 

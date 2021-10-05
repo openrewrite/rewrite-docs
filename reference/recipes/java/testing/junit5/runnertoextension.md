@@ -1,25 +1,28 @@
-# JUnit 4 @RunWith to JUnit Jupiter @ExtendWith
+# JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`
 
- **org.openrewrite.java.testing.junit5.RunnerToExtension** _Replace runners with the JUnit Jupiter extension equivalent._
+** org.openrewrite.java.testing.junit5.RunnerToExtension**
+_Replace runners with the JUnit Jupiter extension equivalent._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.13.1/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.14.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.13.1
+* version: 1.14.0
 
 ## Options
 
 | Type | Name | Description |
-| :--- | :--- | :--- |
+| -- | -- | -- |
 | `List` | runners | The fully qualified class names of the JUnit4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. |
 | `String` | extension | The fully qualified class names of the JUnit Jupiter extension. |
 
+
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RunnerToExtensionExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RunnerToExtensionExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,14 +37,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RunnerToExtensionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.13.1 in your build file:
+Now that `com.yourorg.RunnerToExtensionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.14.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -53,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.13.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.14.0")
 }
 ```
 {% endcode %}
@@ -68,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RunnerToExtensionExample</recipe>
@@ -78,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.13.1</version>
+            <version>1.14.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -91,4 +94,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.RunnerToExtensionExample`
-

@@ -1,6 +1,7 @@
 # Upgrade to Spring Framework 5.3
 
- **org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_3** _Upgrade to Spring Framework to 5.3 from any prior version._
+** org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_3**
+_Upgrade to Spring Framework to 5.3 from any prior version._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3</recipe>
@@ -79,9 +81,10 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `hibernate-search-orm`
   * newVersion: `5.11.x`
   * trustParent: `true`
-* [Use `ObjectUtils#isEmpty(Object)`](useobjectutilsisempty.md)
-* [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](migrateinstantiationawarebeanpostprocessoradapter.md)
-* [Use varargs equivalents for deprecated JdbcTemplate signatures](jdbctemplateobjectarrayargtovarargs.md)
+* [Use `ObjectUtils#isEmpty(Object)`](../../../java/spring/framework/useobjectutilsisempty.md)
+* [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](../../../java/spring/framework/migrateinstantiationawarebeanpostprocessoradapter.md)
+* [Use varargs equivalents for deprecated JdbcTemplate signatures](../../../java/spring/framework/jdbctemplateobjectarrayargtovarargs.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -100,7 +103,7 @@ recipeList:
   - org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty
   - org.openrewrite.java.spring.framework.MigrateInstantiationAwareBeanPostProcessorAdapter
   - org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs
+
 ```
 {% endtab %}
 {% endtabs %}
-

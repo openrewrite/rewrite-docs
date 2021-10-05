@@ -1,6 +1,7 @@
-# Use ObjectUtils\#isEmpty\(Object\)
+# Use `ObjectUtils#isEmpty(Object)`
 
- **org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty** _`StringUtils#isEmpty(Object)` was deprecated in 5.3._
+** org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty**
+_`StringUtils#isEmpty(Object)` was deprecated in 5.3._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty</recipe>
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method target to static](../../changemethodtargettostatic.md)
+* [Change method target to static](../../../java/changemethodtargettostatic.md)
   * methodPattern: `org.springframework.util.StringUtils isEmpty(Object)`
   * fullyQualifiedTargetTypeName: `org.springframework.util.ObjectUtils`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.springframework.util.StringUtils isEmpty(Object)
       fullyQualifiedTargetTypeName: org.springframework.util.ObjectUtils
+
 ```
 {% endtab %}
 {% endtabs %}
-

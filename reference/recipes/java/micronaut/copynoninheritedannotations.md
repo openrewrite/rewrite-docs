@@ -1,25 +1,27 @@
 # Copy non-inherited annotations from super class
 
- **org.openrewrite.java.micronaut.CopyNonInheritedAnnotations** _As of Micronaut 3.x only_ [_annotations_](https://github.com/micronaut-projects/micronaut-core/blob/3.0.x/src/main/docs/guide/appendix/breaks.adoc#annotation-inheritance) _that are explicitly meta-annotated with `@Inherited` are inherited from parent classes and interfaces._
+** org.openrewrite.java.micronaut.CopyNonInheritedAnnotations**
+_As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/micronaut-core/blob/3.0.x/src/main/docs/guide/appendix/breaks.adoc#annotation-inheritance) that are explicitly meta-annotated with `@Inherited` are inherited from parent classes and interfaces._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-micronaut), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-micronaut/1.2.0/jar)
+[Github](https://github.com/openrewrite/rewrite-micronaut), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-micronaut/1.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 1.2.0
+* version: 1.3.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-micronaut:1.2.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-micronaut:1.3.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.3.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.CopyNonInheritedAnnotations</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>1.2.0</version>
+            <version>1.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -69,4 +71,3 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.micronaut.CopyNonInheritedAnnotations`
-

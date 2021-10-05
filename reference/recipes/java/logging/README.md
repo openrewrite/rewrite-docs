@@ -8,7 +8,8 @@ _Enforce logging best practices and migrate between logging frameworks._
 
 ## Subcategories
 
-* [Log4j](log4j/)
-* [Logback](logback/)
-* [SLF4J](slf4j/)
+* [Log4j](/reference/recipes/java/logging/log4j)
+* [Logback](/reference/recipes/java/logging/logback)
+* [SLF4J](/reference/recipes/java/logging/slf4j)
+
 

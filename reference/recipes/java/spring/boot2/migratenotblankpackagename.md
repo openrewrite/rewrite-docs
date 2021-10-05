@@ -1,6 +1,7 @@
-# Use NotBlank
+# Use `NotBlank`
 
- **org.openrewrite.java.spring.boot2.MigrateNotBlankPackageName** _`org.hibernate.validator.constraints.NotBlank` was deprecated in 1.x._
+** org.openrewrite.java.spring.boot2.MigrateNotBlankPackageName**
+_`org.hibernate.validator.constraints.NotBlank` was deprecated in 1.x._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.MigrateNotBlankPackageName</recipe>
@@ -74,7 +76,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.constraints.NotBlank`
   * newFullyQualifiedTypeName: `javax.validation.constraints.NotBlank`
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -87,6 +89,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `spring-boot-starter-validation`
   * version: `2.x`
   * onlyIfUsing: `javax.validation.constraints.NotEmpty`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -110,7 +113,7 @@ recipeList:
       artifactId: spring-boot-starter-validation
       version: 2.x
       onlyIfUsing: javax.validation.constraints.NotEmpty
+
 ```
 {% endtab %}
 {% endtabs %}
-

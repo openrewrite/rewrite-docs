@@ -3,6 +3,7 @@
 ## Recipes
 
 * [Find annotations](findannotations.md)
+* [Find empty classes](findemptyclasses.md)
 * [Find fields](findfields.md)
 * [Find fields of type](findfieldsoftype.md)
 * [Find methods](findmethods.md)
@@ -15,4 +16,5 @@
 * [Find uses of deprecated fields](finddeprecatedfields.md)
 * [Find uses of deprecated methods](finddeprecatedmethods.md)
 * [Result of method call ignored](resultofmethodcallignored.md)
+
 

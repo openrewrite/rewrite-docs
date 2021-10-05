@@ -1,6 +1,7 @@
-# Migrate deprecated javax.batch packages to jakarta.batch
+# Migrate deprecated `javax.batch` packages to `jakarta.batch`
 
- **org.openrewrite.java.migrate.JavaxBatchMigrationToJakartaBatch** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+** org.openrewrite.java.migrate.JavaxBatchMigrationToJakartaBatch**
+_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -10,22 +11,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.9.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.10.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 0.9.0
+* version: 0.10.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.9.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.10.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.10.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.JavaxBatchMigrationToJakartaBatch</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>0.9.0</version>
+            <version>0.10.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,12 +91,13 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.batch`
   * artifactId: `jakarta.batch-api`
   * newVersion: `2.x`
-* [Rename package name](../changepackage.md)
+* [Rename package name](../../java/changepackage.md)
   * oldPackageName: `javax.batch`
   * newPackageName: `jakarta.batch`
 * [Remove Maven dependency](../../maven/removedependency.md)
   * groupId: `javax.batch`
   * artifactId: `javax.batch-api`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -124,7 +127,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.batch
       artifactId: javax.batch-api
+
 ```
 {% endtab %}
 {% endtabs %}
-

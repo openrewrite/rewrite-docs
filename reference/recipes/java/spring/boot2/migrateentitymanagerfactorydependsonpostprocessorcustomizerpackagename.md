@@ -1,6 +1,7 @@
-# Use EntityManagerFactoryDependsOnPostProcessor
+# Use `EntityManagerFactoryDependsOnPostProcessor`
 
- **org.openrewrite.java.spring.boot2.MigrateEntityManagerFactoryDependsOnPostProcessorCustomizerPackageName** _`org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor` was deprecated in 2.5 for removal in 2.7._
+** org.openrewrite.java.spring.boot2.MigrateEntityManagerFactoryDependsOnPostProcessorCustomizerPackageName**
+_`org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor` was deprecated in 2.5 for removal in 2.7._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.MigrateEntityManagerFactoryDependsOnPostProcessorCustomizerPackageName</recipe>
@@ -74,9 +76,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.orm.jpa.EntityManagerFactoryDependsOnPostProcessor`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -90,7 +93,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor
       newFullyQualifiedTypeName: org.springframework.boot.autoconfigure.orm.jpa.EntityManagerFactoryDependsOnPostProcessor
+
 ```
 {% endtab %}
 {% endtabs %}
-

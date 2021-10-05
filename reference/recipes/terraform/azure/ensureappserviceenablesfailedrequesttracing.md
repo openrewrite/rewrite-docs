@@ -1,31 +1,33 @@
 # Ensure app service enables failed request tracing
 
- **org.openrewrite.terraform.azure.EnsureAppServiceEnablesFailedRequestTracing** _Ensure app service enables failed request tracing._
+** org.openrewrite.terraform.azure.EnsureAppServiceEnablesFailedRequestTracing**
+_Ensure app service enables failed request tracing._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV\_AZURE\_66
+* CKV_AZURE_66
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.6.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/0.7.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 0.6.0
+* version: 0.7.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.6.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:0.7.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:0.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:0.7.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.azure.EnsureAppServiceEnablesFailedRequestTracing</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>0.6.0</version>
+            <version>0.7.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,13 +82,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../addconfiguration.md)
+* [Add Terraform configuration](../../terraform/addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: \`logs {
+  * content: `logs {
+  failed_request_tracing_enabled = true
+}`
 
-    failed\_request\_tracing\_enabled = true
-
-    }\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -106,7 +107,7 @@ recipeList:
       content: logs {
   failed_request_tracing_enabled = true
 }
+
 ```
 {% endtab %}
 {% endtabs %}
-

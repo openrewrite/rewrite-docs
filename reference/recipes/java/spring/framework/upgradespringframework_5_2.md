@@ -1,6 +1,7 @@
 # Upgrade to Spring Framework 5.2
 
- **org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_2** _Upgrade to Spring Framework to 5.2 from any prior version._
+** org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_2**
+_Upgrade to Spring Framework to 5.2 from any prior version._
 
 ## Source
 
@@ -9,6 +10,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.12.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.10.0")
+    id("org.openrewrite.rewrite") version("5.12.0")
 }
 
 rewrite {
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_2</recipe>
@@ -74,7 +76,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate deprecated Spring-Web UTF8 MediaTypes](migrateutf8mediatypes.md)
+* [Migrate deprecated Spring-Web UTF8 MediaTypes](../../../java/spring/framework/migrateutf8mediatypes.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -86,7 +89,7 @@ displayName: Upgrade to Spring Framework 5.2
 description: Upgrade to Spring Framework to 5.2 from any prior version.
 recipeList:
   - org.openrewrite.java.spring.framework.MigrateUtf8MediaTypes
+
 ```
 {% endtab %}
 {% endtabs %}
-

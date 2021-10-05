@@ -3,7 +3,7 @@
 ## Recipes
 
 * [Best practices for GCP](gcpbestpractices.md)
-* [Enable `PodSecurityPolicy` controller on Google Kubernetes Engine \(GKE\) clusters](enablepodsecuritypolicycontrollerongkeclusters.md)
+* [Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters](enablepodsecuritypolicycontrollerongkeclusters.md)
 * [Enable VPC Flow Logs for subnetworks](enablevpcflowlogsforsubnetworks.md)
 * [Enable VPC flow logs and intranode visibility](enablevpcflowlogsandintranodevisibility.md)
 * [Ensure GCP Kubernetes cluster node auto-repair configuration is enabled](ensuregcpkubernetesclusternodeautorepairconfigurationisenabled.md)
@@ -17,4 +17,5 @@
 * [Ensure secure boot for shielded GKE nodes is enabled](ensuresecurebootforshieldedgkenodesisenabled.md)
 * [Ensure shielded GKE nodes are enabled](ensureshieldedgkenodesareenabled.md)
 * [Ensure the GKE metadata server is enabled](ensurethegkemetadataserverisenabled.md)
+
 
