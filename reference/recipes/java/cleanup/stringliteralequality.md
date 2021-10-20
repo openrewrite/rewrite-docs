@@ -9,11 +9,11 @@ _`String.equals()` should be used when checking value equality on String literal
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.15.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.15.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.15.0
+* version: 7.15.1
 
 
 ## Usage
