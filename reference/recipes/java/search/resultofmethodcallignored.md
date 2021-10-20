@@ -43,7 +43,7 @@ Now that `com.yourorg.ResultOfMethodCallIgnoredExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.12.0")
+    id("org.openrewrite.rewrite") version("5.13.0")
 }
 
 rewrite {

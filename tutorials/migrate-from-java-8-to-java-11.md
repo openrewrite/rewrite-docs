@@ -36,7 +36,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.12.0")
+    id("org.openrewrite.rewrite") version("5.13.0")
 }
 
 rewrite {

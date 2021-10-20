@@ -45,7 +45,7 @@ Now that `com.yourorg.DeletePropertyExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.12.0")
+    id("org.openrewrite.rewrite") version("5.13.0")
 }
 
 rewrite {

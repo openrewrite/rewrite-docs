@@ -36,7 +36,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.12.0")
+    id("org.openrewrite.rewrite") version("5.13.0")
 }
 
 rewrite {
@@ -93,7 +93,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.12.0")
+    id("org.openrewrite.rewrite") version("5.13.0")
 }
 
 rewrite {
