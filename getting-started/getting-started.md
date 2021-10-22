@@ -278,7 +278,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.13.1")
 
     // Other project dependencies
 }
