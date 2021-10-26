@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.15.0</version>
+        <version>4.15.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeValueExample</recipe>
