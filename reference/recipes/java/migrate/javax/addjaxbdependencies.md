@@ -13,23 +13,23 @@ _This recipe will add the necessary JAXB dependencies for those projects migrati
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.10.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 0.10.0
+* version: 0.11.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.10.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.11.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.13.1")
+    id("org.openrewrite.rewrite") version("5.14.0")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.10.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.11.0")
 }
 ```
 {% endcode %}
@@ -56,7 +56,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.13.1</version>
+        <version>4.15.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.javax.AddJaxbDependencies</recipe>
@@ -66,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>0.10.0</version>
+            <version>0.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,26 +89,17 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `jakarta.xml.bind-api`
   * version: `2.3.x`
   * onlyIfUsing: `javax.xml.bind.*`
+* [Add JAXB run-time dependency to a Maven project](../../../java/migrate/javax/addjaxbruntime.md)
+  * runtime: `sun`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
   * newVersion: `2.3.x`
-* [Add Maven dependency](../../../maven/adddependency.md)
-  * groupId: `org.glassfish.jaxb`
-  * artifactId: `jaxb-runtime`
-  * version: `2.3.x`
-  * scope: `runtime`
-  * onlyIfUsing: `javax.xml.bind.*`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
-  * groupId: `org.glassfish.jaxb`
-  * artifactId: `jaxb-runtime`
-  * newVersion: `2.3.x`
-* [Remove Maven dependency](../../../maven/removedependency.md)
-  * groupId: `javax.xml.bind`
-  * artifactId: `jaxb-api`
-* [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `com.sun.xml.bind`
   * artifactId: `jaxb-impl`
+  * newVersion: `2.3.x`
+* [Replace `javax.xml.bind:jaxb-api with `jakarta.xml.bind:jakarta.xml.bind-api`](../../../java/migrate/javax/replacejavaxjaxbwithjakarta.md)
 
 {% endtab %}
 
@@ -131,26 +122,17 @@ recipeList:
       artifactId: jakarta.xml.bind-api
       version: 2.3.x
       onlyIfUsing: javax.xml.bind.*
+  - org.openrewrite.java.migrate.javax.AddJaxbRuntime:
+      runtime: sun
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
       newVersion: 2.3.x
-  - org.openrewrite.maven.AddDependency:
-      groupId: org.glassfish.jaxb
-      artifactId: jaxb-runtime
-      version: 2.3.x
-      scope: runtime
-      onlyIfUsing: javax.xml.bind.*
   - org.openrewrite.maven.UpgradeDependencyVersion:
-      groupId: org.glassfish.jaxb
-      artifactId: jaxb-runtime
-      newVersion: 2.3.x
-  - org.openrewrite.maven.RemoveDependency:
-      groupId: javax.xml.bind
-      artifactId: jaxb-api
-  - org.openrewrite.maven.RemoveDependency:
       groupId: com.sun.xml.bind
       artifactId: jaxb-impl
+      newVersion: 2.3.x
+  - org.openrewrite.java.migrate.javax.ReplaceJavaxJaxbWithJakarta
 
 ```
 {% endtab %}

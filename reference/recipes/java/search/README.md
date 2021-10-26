@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Find Types by package](findtypesbypackage.md)
 * [Find annotations](findannotations.md)
 * [Find empty classes](findemptyclasses.md)
 * [Find fields](findfields.md)

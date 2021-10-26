@@ -5,11 +5,11 @@ _Resolve common static analysis issues discovered through 3rd party tools_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.15.1/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.16.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.15.1
+* version: 7.16.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.13.1")
+    id("org.openrewrite.rewrite") version("5.14.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.13.1</version>
+        <version>4.15.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -66,6 +66,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Add `SerialVersionUID` to a Serializable class when it's missing.](../../java/cleanup/addserialversionuidtoserializable.md)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](../../java/cleanup/bigdecimalroundingconstantstoenums.md)
 * [Boolean checks should not be inverted](../../java/cleanup/booleanchecksnotinverted.md)
 * [Catch clause should do more than just rethrow](../../java/cleanup/catchclauseonlyrethrows.md)
@@ -97,7 +98,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove `finalize()` method](../../java/cleanup/nofinalizer.md)
 * [Jump statements should not be redundant](../../java/cleanup/noredundantjumpstatements.md)
 * [No #toString() on String](../../java/cleanup/notostringonstringtype.md)
-* [Use `String`](../../java/cleanup/novalueofonstringtype.md)
+* [Unnecessary String#valueOf(..)](../../java/cleanup/novalueofonstringtype.md)
 * [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
 * [Remove extra semicolons](../../java/cleanup/removeextrasemicolons.md)
 * [Remove unused imports](../../java/removeunusedimports.md)
@@ -111,6 +112,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove unnecessary parentheses](../../java/cleanup/unnecessaryparentheses.md)
 * [Remove Nullable and CheckForNull annotations from primitives](../../java/cleanup/unnecessaryprimitiveannotations.md)
 * [Unnecessary throws](../../java/cleanup/unnecessarythrows.md)
+* [Use Files#createTempDirectory](../../java/cleanup/usefilescreatetempdirectory.md)
 * [No C-style array declarations](../../java/cleanup/usejavastylearraydeclarations.md)
 * [Use diamond operator](../../java/cleanup/usediamondoperator.md)
 * [Prefer `while` over `for` loops](../../java/cleanup/whileinsteadoffor.md)
@@ -126,6 +128,7 @@ name: org.openrewrite.java.cleanup.CommonStaticAnalysis
 displayName: Common static analysis issues
 description: Resolve common static analysis issues discovered through 3rd party tools
 recipeList:
+  - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable
   - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
   - org.openrewrite.java.cleanup.BooleanChecksNotInverted
   - org.openrewrite.java.cleanup.CatchClauseOnlyRethrows
@@ -171,6 +174,7 @@ recipeList:
   - org.openrewrite.java.cleanup.UnnecessaryParentheses
   - org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations
   - org.openrewrite.java.cleanup.UnnecessaryThrows
+  - org.openrewrite.java.cleanup.UseFilesCreateTempDirectory
   - org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations
   - org.openrewrite.java.cleanup.UseDiamondOperator
   - org.openrewrite.java.cleanup.WhileInsteadOfFor

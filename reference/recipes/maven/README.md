@@ -4,6 +4,7 @@
 
 * [Add Maven dependency](adddependency.md)
 * [Add Maven plugin](addplugin.md)
+* [Change Maven Parent Pom](changeparentpom.md)
 * [Change Maven dependency groupId and artifactId](changedependencygroupidandartifactid.md)
 * [Change Maven dependency scope](changedependencyscope.md)
 * [Change Maven project property value](changepropertyvalue.md)
@@ -21,6 +22,7 @@
 
 ## Subcategories
 
+* [Cleanup](/reference/recipes/maven/cleanup)
 * [Search](/reference/recipes/maven/search)
 
 

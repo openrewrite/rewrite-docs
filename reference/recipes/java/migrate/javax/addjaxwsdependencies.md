@@ -13,23 +13,23 @@ _This recipe will add the necessary JAX-WS dependencies for those projects migra
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.10.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/0.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 0.10.0
+* version: 0.11.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.10.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:0.11.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.13.1")
+    id("org.openrewrite.rewrite") version("5.14.0")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.10.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:0.11.0")
 }
 ```
 {% endcode %}
@@ -56,7 +56,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.13.1</version>
+        <version>4.15.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.javax.AddJaxwsDependencies</recipe>
@@ -66,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>0.10.0</version>
+            <version>0.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,23 +89,16 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `jakarta.xml.ws-api`
   * version: `2.3.x`
   * onlyIfUsing: `javax.jws.*`
+* [Add JAX-WS run-time dependency to a Maven project](../../../java/migrate/javax/addjaxwsruntime.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `jakarta.xml.ws`
   * artifactId: `jakarta.xml.ws-api`
   * newVersion: `2.3.x`
-* [Add Maven dependency](../../../maven/adddependency.md)
-  * groupId: `com.sun.xml.ws`
-  * artifactId: `jaxws-rt`
-  * version: `2.3.x`
-  * scope: `runtime`
-  * onlyIfUsing: `javax.jws.*`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
   * newVersion: `2.3.x`
-* [Remove Maven dependency](../../../maven/removedependency.md)
-  * groupId: `javax.xml.ws`
-  * artifactId: `jaxws-api`
+* [Replace `javax.xml.ws:jaxws-api` with `jakarta.xml.ws:jakarta.xml.ws-api`](../../../java/migrate/javax/replacejavaxjaxwswithjakarta.md)
 
 {% endtab %}
 
@@ -128,23 +121,16 @@ recipeList:
       artifactId: jakarta.xml.ws-api
       version: 2.3.x
       onlyIfUsing: javax.jws.*
+  - org.openrewrite.java.migrate.javax.AddJaxwsRuntime
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: jakarta.xml.ws
       artifactId: jakarta.xml.ws-api
       newVersion: 2.3.x
-  - org.openrewrite.maven.AddDependency:
-      groupId: com.sun.xml.ws
-      artifactId: jaxws-rt
-      version: 2.3.x
-      scope: runtime
-      onlyIfUsing: javax.jws.*
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt
       newVersion: 2.3.x
-  - org.openrewrite.maven.RemoveDependency:
-      groupId: javax.xml.ws
-      artifactId: jaxws-api
+  - org.openrewrite.java.migrate.javax.ReplaceJavaxJaxwsWithJakarta
 
 ```
 {% endtab %}

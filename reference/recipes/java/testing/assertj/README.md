@@ -3,6 +3,7 @@
 ## Recipes
 
 * [AssertJ best practices](assertj.md)
+* [JUnit AssertThrows to AssertJ exceptionType](junitassertthrowstoassertexceptiontype.md)
 * [JUnit `assertArrayEquals` To AssertJ](junitassertarrayequalstoassertthat.md)
 * [JUnit `assertEquals` to AssertJ](junitassertequalstoassertthat.md)
 * [JUnit `assertFalse` to AssertJ](junitassertfalsetoassertthat.md)

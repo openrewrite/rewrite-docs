@@ -5,11 +5,11 @@ _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expre
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.15.1/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.16.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.15.1
+* version: 7.16.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.13.1")
+    id("org.openrewrite.rewrite") version("5.14.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.13.1</version>
+        <version>4.15.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
@@ -77,7 +77,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Change StringBuilder and StringBuffer character constructor arg to String](../../java/cleanup/newstringbuilderbufferwithcharargument.md)
 * [No double brace initialization](../../java/cleanup/nodoublebraceinitialization.md)
 * [No #toString() on String](../../java/cleanup/notostringonstringtype.md)
-* [Use `String`](../../java/cleanup/novalueofonstringtype.md)
+* [Unnecessary String#valueOf(..)](../../java/cleanup/novalueofonstringtype.md)
 * [Redundant file creation](../../java/cleanup/redundantfilecreation.md)
 * [Simplify boolean expression](../../java/cleanup/simplifybooleanexpression.md)
 * [Simplify boolean return](../../java/cleanup/simplifybooleanreturn.md)

@@ -6,5 +6,6 @@ _Recipes related to [Simple Logging Facade for Java (`SLF4J`)](http://www.slf4j.
 
 * [Migrate Log4j logging framework to SLF4J](log4jtoslf4j.md)
 * [Parameterize SLF4J logging statements](parameterizedlogging.md)
+* [SLF4J logging statements should begin with constants.](slf4jlogshouldbeconstant.md)
 
 

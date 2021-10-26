@@ -10,6 +10,7 @@ _Basic building blocks for transforming Java code._
 * [Change method name](changemethodname.md)
 * [Change method target to static](changemethodtargettostatic.md)
 * [Change method target to variable](changemethodtargettovariable.md)
+* [Change static field access to static method access](changestaticfieldtomethod.md)
 * [Change type](changetype.md)
 * [Delete method argument](deletemethodargument.md)
 * [Generate getter](generategetter.md)
@@ -32,6 +33,7 @@ _Basic building blocks for transforming Java code._
 * [Modernize](/reference/recipes/java/migrate)
 * [Quarkus](/reference/recipes/java/quarkus)
 * [Search](/reference/recipes/java/search)
+* [Security](/reference/recipes/java/security)
 * [Spring](/reference/recipes/java/spring)
 * [Testing](/reference/recipes/java/testing)
 
