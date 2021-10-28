@@ -80,7 +80,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-testing-frameworks</artifactId>
-      <version>1.14.0</version>
+      <version>1.15.1</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -105,7 +105,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.15.1")
 
     // Other project dependencies
 }

@@ -5,11 +5,11 @@ _The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP r
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.2.0/jar)
+[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.2.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 1.2.0
+* version: 1.2.1
 
 ## Options
 
@@ -20,7 +20,7 @@ _The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP r
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-java-security:1.2.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-java-security:1.2.1 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:1.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:1.2.1")
 }
 ```
 {% endcode %}
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>1.2.0</version>
+            <version>1.2.1</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -21,13 +21,13 @@ The Gradle plugin is published to the [Gradle Plugin Portal](https://plugins.gra
 | org.openrewrite.recipe:rewrite-circleci | 1.0.0 |
 | org.openrewrite.recipe:rewrite-concourse | 0.3.0 |
 | org.openrewrite.recipe:rewrite-github-actions | 0.4.0 |
-| org.openrewrite.recipe:rewrite-java-security | 1.2.0 |
+| org.openrewrite.recipe:rewrite-java-security | 1.2.1 |
 | org.openrewrite.recipe:rewrite-jhipster | 0.9.0 |
 | org.openrewrite.recipe:rewrite-kubernetes | 1.10.0 |
 | org.openrewrite.recipe:rewrite-logging-frameworks | 1.0.0 |
 | org.openrewrite.recipe:rewrite-micronaut | 1.4.0 |
 | org.openrewrite.recipe.rewrite-migrate-java | 0.11.0 |
 | org.openrewrite.recipe:rewrite-quarkus | 0.10.0 |
-| org.openrewrite.recipe:rewrite-spring | 4.14.0 |
+| org.openrewrite.recipe:rewrite-spring | 4.14.1 |
 | org.openrewrite.recipe:rewrite-terraform | 0.8.0 |
-| org.openrewrite.recipe:rewrite-testing-frameworks | 1.15.0 |
+| org.openrewrite.recipe:rewrite-testing-frameworks | 1.15.1 |
