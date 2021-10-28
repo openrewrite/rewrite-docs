@@ -49,7 +49,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.15.1</version>
+        <version>4.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.NoValueOfOnStringType</recipe>

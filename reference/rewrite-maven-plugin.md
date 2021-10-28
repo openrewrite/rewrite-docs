@@ -30,6 +30,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `configLocation` - Where to look for a OpenRewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `dependencies` - To make pre-packaged OpenRewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
+* `exclusions` - Skips parsing for any paths matching these exclusions. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename.
 
 {% hint style="info" %}
 Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles and will automatically discover recipes on the project classpath.
@@ -55,6 +56,9 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
           <!-- These are default values, shown for example. It isn't necessary to supply these values manually: -->
           <configLocation>${maven.multiModuleProjectDirectory}/rewrite.yml</configLocation>
           <failOnDryRunResults>false</failOnDryRunResults>
+          <exclusions>
+            <exclude>*/some/irrelevant/or/expensive/directory/**</exclude>
+          </exclusions>
         </configuration>
         <dependencies>
           <!-- This module is made up for sake of example. It isn't packaged with OpenRewrite -->
