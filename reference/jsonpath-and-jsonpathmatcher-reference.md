@@ -5,7 +5,7 @@ description: A tool and syntax for selecting elements within JSON-like structure
 # JsonPath and JsonPathMatcher Reference
 
 {% hint style="info" %}
-Before we begin: `JsonPathMatcher` and `JsonPath` expressions may be used in other markup languages which support it, such as YAML. Despite the name, there is a JsonPathMatcher implementation for YAML documents. In cases where we refer to "JSON", it also applies to markup languages which have JsonPath support, such as YAML.
+Despite the name, `JsonPathMatcher` and `JsonPath` expressions may be used in other markup languages besides JSON which support it, such as YAML. When we refer to "JSON" keep in mind JsonPathMatcher and JsonPath expressions apply to markup languages which have a JsonPathMatcher implementation, such as YAML.
 {% endhint %}
 
 `JsonPathMatcher` provides methods for matching the given cursor location using a provided `JsonPath` expression. "JsonPath" (sometimes stylized as JSONPath) is a query language for JSON, similar to how XPath is a query language for XML. Despite the name, JsonPathMatcher can be used on other languages besides JSON, such as YAML.
