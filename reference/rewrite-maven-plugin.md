@@ -31,6 +31,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `dependencies` - To make pre-packaged OpenRewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
 * `exclusions` - Skips parsing for any paths matching these exclusions. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename.
+* `skipMavenParsing` - When enabled, skip parsing Maven `pom.xml`s, and any transitive poms, as source files. This can be an efficiency improvement in certain situations. Default is `false`. For example, `-DskipMavenParsing=true`. Note, this is passed exclusively as a System property.
 
 {% hint style="info" %}
 Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors, recipes, and styles and will automatically discover recipes on the project classpath.
