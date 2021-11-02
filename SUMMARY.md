@@ -724,10 +724,6 @@
 * [JavaTemplate](v1beta/javatemplate.md)
 * [Pointcut Expressions](v1beta/pointcut-expressions.md)
 
-## Release Notes
-
-* [Rewrite 7.0.x](release-notes/rewrite-7.0.x.md)
-
 ## Design Partners
 
 * [Design Partner 1](design-partners/design-partner-1.md)

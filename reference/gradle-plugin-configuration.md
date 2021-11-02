@@ -75,7 +75,7 @@ No recipe is ever run on your codebase without being explicitly activated in the
 
 ```groovy
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.14.1")
 }
 ```
 

@@ -23,7 +23,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-spring</artifactId>
-      <version>4.13.1</version>
+      <version>4.14.1</version>
     </dependency>
   </dependencies>
 </plugin>
