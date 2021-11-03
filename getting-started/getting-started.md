@@ -15,12 +15,12 @@ Following this guide you will learn:
 ## Step 1: Clone sample project
 
 {% hint style="warning" %}
-The sample spring-petclinic project is based on an older version of project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
+The sample spring-petclinic project is based on an older version of project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net) if you do not already have one.
 {% endhint %}
 
 This guide uses a fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration). Clone it by running:
 
-```text
+```
 git clone https://github.com/openrewrite/spring-petclinic-migration.git
 ```
 
@@ -28,7 +28,7 @@ git clone https://github.com/openrewrite/spring-petclinic-migration.git
 The steps in this guide are applicable to any Java project built with Maven or Gradle. Feel free to use your own project instead.
 {% endhint %}
 
-## Step 2:  Apply rewrite-maven-plugin or rewrite-gradle-plugin
+## Step 2: Apply rewrite-maven-plugin or rewrite-gradle-plugin
 
 In the pom.xml or build.gradle, add this entry to the `plugins` section to apply the rewrite plugin to the project.
 
@@ -122,16 +122,16 @@ Starting with java 16, the default JVM behavior is not to allow access to protec
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="gradle.properties" %}
-```text
-org.gradle.jvmargs=--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+```
+org.gradle.jvmargs=--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
 ```
 {% endcode %}
 {% endtab %}
 
 {% tab title="Maven" %}
-{% code title="MAVEN\_OPS environment variable" %}
-```text
-MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
+{% code title="MAVEN:OPS environment variable" %}
+```
+MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
 ```
 {% endcode %}
 {% endtab %}
@@ -147,13 +147,13 @@ With `AutoFormat` activated we can now apply it to the project. Run:
 {% endtab %}
 
 {% tab title="Gradle" %}
-```text
+```
 ./gradlew rewriteRun
 ```
 {% endtab %}
 {% endtabs %}
 
-![Console output from running ./mvnw rewrite:run with AutoFormat set as an active recipe on spring-petclinic-migration](../.gitbook/assets/image%20%2811%29.png)
+![Console output from running ./mvnw rewrite:run with AutoFormat set as an active recipe on spring-petclinic-migration](<../.gitbook/assets/image (11).png>)
 
 Run `git diff`, or use your preferred IDE's diff viewer, to inspect the changes.
 
@@ -222,7 +222,7 @@ rewrite {
 
 Run `./mvnw rewrite:run` or `./gradlew rewriteRun` to perform the package relocation. Afterwards you'll see both that the sources in the vet package have been moved to the new directory, and references such as import statements have been updated accordingly.
 
-![Git diff showing updated import statements](../.gitbook/assets/image%20%2810%29.png)
+![Git diff showing updated import statements](<../.gitbook/assets/image (10).png>)
 
 You can test that spring-petclinic-migrations still builds & passes its tests by running `./mvnw clean install` or `./gradlew build`. At this point you know how to configure and run any recipe included in rewrite itself.
 
@@ -301,4 +301,3 @@ Now that you're up and running with the rewrite-maven-plugin, you may be interes
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](../reference/yaml-format-reference.md)
-
