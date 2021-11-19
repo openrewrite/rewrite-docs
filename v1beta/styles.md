@@ -34,6 +34,9 @@ styleConfigs:
         - import org.springframework.*
         - <blank line>
         - import static all other imports
+      packagesToFold:
+        - java.awt.*
+        - java.swing.*
   - org.openrewrite.java.style.TabsAndIndentsStyle:
       useTabCharacter: true
       tabSize: 1
