@@ -1,6 +1,6 @@
 # Migrate to SLF4J from Log4j
 
-In this guide, we'll use OpenRewrite to perform an automated migration from [Apache Log4j 2 \(`Log4j`\)](https://logging.apache.org/log4j/2.x/) to [the Simple Logging Facade for Java \(`SLF4J`\)](http://www.slf4j.org/).
+In this guide, we'll use OpenRewrite to perform an automated migration from [Apache `Log4j` 1.x](https://logging.apache.org/log4j/1.2/) to [the Simple Logging Facade for Java \(`SLF4J`\)](http://www.slf4j.org/).
 
 ## Example Configuration
 
