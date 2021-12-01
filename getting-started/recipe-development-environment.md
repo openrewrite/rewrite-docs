@@ -295,6 +295,22 @@ Having configured the project per these recommendations, you're now able to begi
 
 Project setup is complete. You are ready [create a Recipe](../tutorials/writing-a-java-refactoring-recipe.md)!
 
+### IDE Configuration
+
+{% hint style="warning" %}
+Starting with java 16, the default JVM behavior is not to allow access to protected modules. The workaround for this issue is to add explicit exports for packages used by rewrite's java parser. &#x20;
+{% endhint %}
+
+{% hint style="info" %}
+Updating the IDE's JUnit template configuration avoids having to update the configuration for each Test.&#x20;
+{% endhint %}
+
+Add the following exports to the IDE's JVM run configuratons.
+
+```
+--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAME --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+```
+
 ## Recipe Distribution
 
 For your recipes to be usable by the OpenRewrite build plugins or on [app.moderne.io](https://app.moderne.io) they have to be published to an artifact repository.
