@@ -58,6 +58,34 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
+### Running on JDK 16 and newer
+
+OpenRewrite requires access to Java compiler internals to function.
+JDK 16 and newer require explicit opt-in to access these internals via `--add-exports`.
+The workaround for this issue is to add explicit exports for packages used by rewrite's java parser.
+
+{% tabs %}
+{% tab title="Gradle" %}
+In a gradle.properties file at the root of your project, add or update `org.gradle.jvmargs` to include this content:
+
+{% code title="gradle.properties" %}
+```
+org.gradle.jvmargs=--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven" %}
+Set or update your MAVEN_OPTS environment variable to include this content:
+
+{% code title="MAVEN_OPS environment variable" %}
+```
+MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ### Before and After

@@ -66,14 +66,41 @@ rewrite {
 }
 ```
 {% endcode %}
-{% endtab %}
-{% endtabs %}
-
-At this point, you're able to run any of the Maven goals or Gradle tasks provided by the plugins. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) and [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options. Try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a listing of all the recipes available for execution. Until we add dependencies on recipe-providing modules this will list only the recipes built-in to OpenRewrite.
-
 {% hint style="warning" %}
 The Gradle plugin can only be applied to the _root_ project. The tasks on the root project will orchestrate running recipes on all subprojects.
 {% endhint %}
+{% endtab %}
+{% endtabs %}
+
+### Running on JDK 16 and newer
+
+OpenRewrite requires access to Java compiler internals to function.
+JDK 16 and newer require explicit opt-in to access these internals via `--add-exports`.
+The workaround for this issue is to add explicit exports for packages used by rewrite's java parser.
+
+{% tabs %}
+{% tab title="Gradle" %}
+In a gradle.properties file at the root of your project, add or update `org.gradle.jvmargs` to include this content:
+
+{% code title="gradle.properties" %}
+```
+org.gradle.jvmargs=--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven" %}
+Set or update your MAVEN_OPTS environment variable to include this content:
+
+{% code title="MAVEN_OPS environment variable" %}
+```
+MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+At this point, you're able to run any of the Maven goals or Gradle tasks provided by the plugins. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) and [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options. Try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a listing of all the recipes available for execution. Initially this will list only the recipes built-in to OpenRewrite.
 
 ## Step 3: Execute a Refactoring Recipe
 
@@ -110,28 +137,6 @@ plugins {
 rewrite {
     activeRecipe("org.openrewrite.java.format.AutoFormat")
 }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% hint style="warning" %}
-Starting with java 16, the default JVM behavior is not to allow access to protected modules. The workaround for this issue is to add explicit exports for packages used by rewrite's java parser.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Gradle" %}
-{% code title="gradle.properties" %}
-```
-org.gradle.jvmargs=--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Maven" %}
-{% code title="MAVEN:OPS environment variable" %}
-```
-MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
 ```
 {% endcode %}
 {% endtab %}
