@@ -11,15 +11,15 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 plugins {
     id("org.openrewrite.rewrite") version("5.14.0")
 }
-​
+
 rewrite {
     activeRecipe("org.openrewrite.java.micronaut.Micronaut2to3Migration")
 }
-​
+
 repositories {
     mavenCentral()
 }
-​
+
 dependencies {
     rewrite("org.openrewrite.recipe:rewrite-micronaut:1.3.0")
 }

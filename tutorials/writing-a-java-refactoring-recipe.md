@@ -332,8 +332,8 @@ import org.openrewrite.java.JavaParser
 import org.openrewrite.java.JavaRecipeTest
 
 class SayHelloRecipeTest: JavaRecipeTest {
-    override val parser = JavaParser.fromJavaVersion().build()
-    override val recipe = SayHelloRecipe("com.yourorg.A")
+    override val recipe: Recipe
+        get() = SayHelloRecipe("com.yourorg.A")
 
     @Test
     fun addsHelloToA() = assertChanged(
