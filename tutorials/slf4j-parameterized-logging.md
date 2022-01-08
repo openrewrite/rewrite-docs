@@ -11,7 +11,7 @@ The [ParameterizedLogging](https://github.com/openrewrite/rewrite-docs/tree/b187
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.14.0")
+    id("org.openrewrite.rewrite") version("5.15.0")
 }
 
 rewrite {
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:0.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.1.0")
 }
 ```
 {% endcode %}
@@ -38,7 +38,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.13.1</version>
+        <version>4.17.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.slf4j.ParameterizedLogging</recipe>
@@ -48,7 +48,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>0.9.0</version>
+            <version>1.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
