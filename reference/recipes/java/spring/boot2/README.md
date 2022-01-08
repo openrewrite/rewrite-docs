@@ -12,6 +12,7 @@
 * [Migrate Spring Boot properties to 2.3](springbootproperties_2_3.md)
 * [Migrate Spring Boot properties to 2.4](springbootproperties_2_4.md)
 * [Migrate Spring Boot properties to 2.5](springbootproperties_2_5.md)
+* [Migrate additional Spring Boot properties to 2.0](springbootpropertiesmanual_2_0.md)
 * [Migrate additional Spring Boot properties to 2.5](springbootpropertiesmanual_2_5.md)
 * [Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL](migratehsqlembeddeddatabaseconnection.md)
 * [Migrate multi-condition `@ConditionalOnBean` annotations](conditionalonbeananynestedcondition.md)
@@ -45,6 +46,7 @@
 * [Use `SpringBootServletInitializer`](migratespringbootservletinitializerpackagename.md)
 * [Use `WebTestClientBuilderCustomizer`](migratewebtestclientbuildercustomizerpackagename.md)
 * [Use `isEagerFilterInit()`](migrateundertowservletwebserverfactoryiseagerinitfilters.md)
+* [Use `org.springframework.boot.web.server.LocalServerPort`](migratelocalserverportannotation.md)
 * [Use `setEagerFilterInit(boolean)`](migrateundertowservletwebserverfactoryseteagerinitfilters.md)
 * [Use `spring-boot.run.agents` configuration key in `spring-boot-maven-plugin`](springbootmavenpluginmigrateagenttoagents.md)
 

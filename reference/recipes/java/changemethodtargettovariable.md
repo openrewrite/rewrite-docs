@@ -5,11 +5,11 @@ _Change method invocations to method calls on a variable._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.16.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.17.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.16.0
+* version: 7.17.0
 
 ## Options
 
@@ -18,7 +18,7 @@ _Change method invocations to method calls on a variable._
 | `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
 | `String` | variableName | Name of variable to use as target for the modified method invocation. |
 | `String` | variableType | Type attribution to use for the return type of the modified method invocation. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overloads of the [method pattern](/reference/method-patterns). |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |
 
 
 ## Usage
@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangeMethodTargetToVariableExample` has been defined acti
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.14.0")
+    id("org.openrewrite.rewrite") version("5.15.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.16.0</version>
+        <version>4.17.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodTargetToVariableExample</recipe>

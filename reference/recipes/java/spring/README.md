@@ -3,6 +3,7 @@
 ## Recipes
 
 * [Expand Spring YAML properties](expandproperties.md)
+* [Normalize Spring YAML properties to kebab-case](yamlpropertiestokebabcase.md)
 * [Remove `@RequestMapping` annotations](norequestmappingannotation.md)
 * [Remove implicit web annotation names](implicitwebannotationnames.md)
 * [Remove `public` from `@Bean` methods](beanmethodsnotpublic.md)

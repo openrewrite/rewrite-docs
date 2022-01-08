@@ -1,7 +1,19 @@
 # Fields in a `Serializable` class should either be transient or serializable
 
 ** org.openrewrite.java.cleanup.FixSerializableFields**
-_The fields of a class that implements `Serializable` must also implement `Serializable` or be marked as `transient`._
+_The fields of a class that implements `Serializable` must also implement `Serializable` or be marked as `transient`.
+
+This recipe will look for any classes that directly or indirectly implement `Serializable` and for any member fields that are not serializable it will do one of two things:
+
+- If a non-serializable field has a type that is represented by a `SourceFile` within the same project, that SourceFile will be changed to implement `Serializable`.
+
+- If a non-serializable field has a type that is not represented as a `SourceFile`, the field will be marked as `transient`
+
+NOTE: If `markAllAsTransient` is set to `true`, this recipe will mark all non-serializable fields as `transient`.
+
+NOTE: Any fullyQualified names listed in the `fullyQualifiedExclusions` will be marked as transient, even if that SourceFile exists in the same project.
+
+NOTE: This recipe does NOT recursively modify newly `Serilazable` classes to cut down on the graph of SourceFiles that may be impacted during a recipe run._
 
 ### Tags
 
@@ -9,11 +21,11 @@ _The fields of a class that implements `Serializable` must also implement `Seria
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.16.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.17.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.16.0
+* version: 7.17.0
 
 ## Options
 
@@ -49,7 +61,7 @@ Now that `com.yourorg.FixSerializableFieldsExample` has been defined activate it
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.14.0")
+    id("org.openrewrite.rewrite") version("5.15.1")
 }
 
 rewrite {
@@ -73,7 +85,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.16.0</version>
+        <version>4.17.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FixSerializableFieldsExample</recipe>

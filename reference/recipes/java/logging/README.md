@@ -4,6 +4,7 @@ _Enforce logging best practices and migrate between logging frameworks._
 
 ## Recipes
 
+* [Parameterize logging statements](parameterizedlogging.md)
 * [Use logger instead of `printStackTrace()`](printstacktracetologerror.md)
 
 ## Subcategories

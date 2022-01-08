@@ -4,6 +4,7 @@ _Recipes that find and eliminate vulnerable patterns in Java code._
 
 ## Recipes
 
+* [Find text-direction changes](findtextdirectionchanges.md)
 * [Java security best practices](javasecuritybestpractices.md)
 * [Secure random](securerandom.md)
 * [SecureRandom seeds are not constant or predictable](securerandomprefersdefaultseed.md)

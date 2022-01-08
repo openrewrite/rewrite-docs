@@ -17,7 +17,7 @@ The Gradle plugin is published to the [Gradle Plugin Portal](https://plugins.gra
 | org.openrewrite:rewrite-yaml | 7.17.0 |
 | org.openrewrite:rewrite-test | 7.17.0 |
 | org.openrewrite:rewrite-maven-plugin | 4.17.0 |
-| org.openrewrite:rewrite-gradle-plugin | 5.15.0 |
+| org.openrewrite:rewrite-gradle-plugin | 5.15.1 |
 | org.openrewrite.recipe:rewrite-circleci | 1.0.0 |
 | org.openrewrite.recipe:rewrite-concourse | 1.0.0 |
 | org.openrewrite.recipe:rewrite-github-actions | 1.0.0 |

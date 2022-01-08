@@ -5,11 +5,11 @@ _Changes the specified Maven project property value leaving the key intact._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.16.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.17.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.16.0
+* version: 7.17.0
 
 ## Options
 
@@ -17,6 +17,7 @@ _Changes the specified Maven project property value leaving the key intact._
 | -- | -- | -- |
 | `String` | key | The name of the property key whose value is to be changed. |
 | `String` | newValue | Value to apply to the matching property. |
+| `Boolean` | addIfMissing | *Optional*. Add the property if it is missing from the pom file. |
 
 
 ## Usage
@@ -34,6 +35,7 @@ recipeList:
   - org.openrewrite.maven.ChangePropertyValue:
       key: junit.version
       newValue: 4.13
+      addIfMissing: false
 ```
 {% endcode %}
 
@@ -45,7 +47,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.14.0")
+    id("org.openrewrite.rewrite") version("5.15.1")
 }
 
 rewrite {
@@ -69,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.16.0</version>
+        <version>4.17.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>

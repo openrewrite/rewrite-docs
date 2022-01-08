@@ -1,7 +1,7 @@
-# No #toString() on String
+# Unnecessary String#toString()
 
 ** org.openrewrite.java.cleanup.NoToStringOnStringType**
-_Removes`#toString()` from Strings._
+_Remove unnecessary `String#toString()` invocations on objects which are already a string._
 
 ### Tags
 
@@ -9,11 +9,11 @@ _Removes`#toString()` from Strings._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.16.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.17.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.16.0
+* version: 7.17.0
 
 
 ## Usage
@@ -25,7 +25,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.14.0")
+    id("org.openrewrite.rewrite") version("5.15.1")
 }
 
 rewrite {
@@ -49,7 +49,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.16.0</version>
+        <version>4.17.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.NoToStringOnStringType</recipe>

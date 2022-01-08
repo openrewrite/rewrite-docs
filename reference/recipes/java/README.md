@@ -6,6 +6,7 @@ _Basic building blocks for transforming Java code._
 
 * [Add ASLv2 license header](addapache2licenseheader.md)
 * [Add license header](addlicenseheader.md)
+* [Add or update annotation attribute](addorupdateannotationattribute.md)
 * [Change method access level](changemethodaccesslevel.md)
 * [Change method name](changemethodname.md)
 * [Change method target to static](changemethodtargettostatic.md)
@@ -13,9 +14,9 @@ _Basic building blocks for transforming Java code._
 * [Change static field access to static method access](changestaticfieldtomethod.md)
 * [Change type](changetype.md)
 * [Delete method argument](deletemethodargument.md)
-* [Generate getter](generategetter.md)
 * [Order imports](orderimports.md)
 * [Remove annotation](removeannotation.md)
+* [Remove interface implementations](removeimplements.md)
 * [Remove static import](nostaticimport.md)
 * [Remove unused imports](removeunusedimports.md)
 * [Rename package name](changepackage.md)

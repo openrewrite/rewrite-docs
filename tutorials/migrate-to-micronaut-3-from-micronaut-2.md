@@ -9,7 +9,7 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 {% code title="build.gradle" %}
 ```text
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.0")
+    id("org.openrewrite.rewrite") version("5.15.1")
 }
 
 rewrite {

@@ -5,11 +5,11 @@ _Change a property key leaving the value intact._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.16.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.17.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 7.16.0
+* version: 7.17.0
 
 ## Options
 
@@ -17,6 +17,7 @@ _Change a property key leaving the value intact._
 | -- | -- | -- |
 | `String` | oldPropertyKey | The property key to rename. |
 | `String` | newPropertyKey | The new name for the key identified by `oldPropertyKey`. |
+| `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
 
 
@@ -35,6 +36,7 @@ recipeList:
   - org.openrewrite.properties.ChangePropertyKey:
       oldPropertyKey: management.metrics.binders.files.enabled
       newPropertyKey: management.metrics.enable.process.files
+      relaxedBinding: null
       fileMatcher: **/application-*.properties
 ```
 {% endcode %}
@@ -47,7 +49,7 @@ Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.14.0")
+    id("org.openrewrite.rewrite") version("5.15.1")
 }
 
 rewrite {
@@ -71,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.16.0</version>
+        <version>4.17.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyKeyExample</recipe>
