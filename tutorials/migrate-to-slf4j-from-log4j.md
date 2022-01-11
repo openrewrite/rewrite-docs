@@ -1,10 +1,10 @@
 # Migrate to SLF4J from Log4j
 
-In this guide, we'll use OpenRewrite to perform an automated migration from [Apache `Log4j` 1.x](https://logging.apache.org/log4j/1.2/) to [the Simple Logging Facade for Java \(`SLF4J`\)](http://www.slf4j.org/).
+In this guide, we'll use OpenRewrite to perform an automated migration from Apache `Log4j` (handling both [log4j `1.x`]((https://logging.apache.org/log4j/1.2/)) or [log4j `2.x`]((https://logging.apache.org/log4j/2.x/))) to [the Simple Logging Facade for Java \(`SLF4J`\)](http://www.slf4j.org/).
 
 ## Example Configuration
 
-The [Log4jToSlf4j](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/logging/slf4j/log4jtoslf4j.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks) in your build file:
+The [org.openrewrite.java.logging.slf4j.Log4jToSlf4j](https://github.com/openrewrite/rewrite-docs/blob/master/reference/recipes/java/logging/slf4j/log4jtoslf4j.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks) in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -64,13 +64,13 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/logging/slf4j/log4jtoslf4j.md).
+For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/blob/master/reference/recipes/java/logging/slf4j/log4jtoslf4j.md).
 
 Similar to the [`SLF4J Migrator`](http://www.slf4j.org/migrator.html), the goal of the `Log4jToSlf4j` recipe is to significantly reduce the amount of work involved in migrating `Log4j` to `SLF4J`. Because OpenRewrite works by leveraging type-attributed [Abstract Syntax Trees](../v1beta/abstract-syntax-trees.md) \(AST\) representing your source code, the `Log4jToSlf4j` recipe can overcome several limitations discussed in the [`SLF4J Migrator` guide](http://www.slf4j.org/migrator.html).
 
 ### `.toString()`
 
-Because `Log4j` logging statements are automatically migrated to use the [`SLF4J Parameterized Logging` equivalent](http://www.slf4j.org/faq.html#logging_performance)\(see ["Use SLF4J Parameterized Logging"](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/logging/slf4j/parameterizedlogging.md)\), messages of type `String` are supported. Therefore, there is no need to add a `.toString()` method invocation on the object.
+Because `Log4j` logging statements are automatically migrated to use the [`SLF4J Parameterized Logging` equivalent](http://www.slf4j.org/faq.html#logging_performance)\(see ["Use SLF4J Parameterized Logging"](https://github.com/openrewrite/rewrite-docs/blob/master/reference/recipes/java/logging/slf4j/parameterizedlogging.md)\), messages of type `String` are supported. Therefore, there is no need to add a `.toString()` method invocation on the object.
 
 {% tabs %}
 {% tab title="Object Parameters \(Before\)" %}
@@ -214,13 +214,13 @@ class Example {
 {% endtab %}
 {% endtabs %}
 
-For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/logging/slf4j/log4jtoslf4j.md).
+For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/blob/master/reference/recipes/java/logging/slf4j/log4jtoslf4j.md).
 
 ### Known Limitations
 
 The following is a list of known limitations/issues:
 
+* Currently, `log4j` properties and configuration files are not migrated.
 * `Log4j` configuration customizations which do not have an `SLF4J` equivalent cannot be migrated.
 
 We are always looking for feedback on which tasks should be prioritized. If you have a specific use case that is not yet covered by this project, please reach out to our team!
-
