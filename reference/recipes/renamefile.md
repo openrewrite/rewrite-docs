@@ -45,7 +45,7 @@ Now that `com.yourorg.RenameFileExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.1")
+    id("org.openrewrite.rewrite") version("5.15.3")
 }
 
 rewrite {

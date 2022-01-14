@@ -47,7 +47,7 @@ Now that `com.yourorg.ChangePackageExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.1")
+    id("org.openrewrite.rewrite") version("5.15.3")
 }
 
 rewrite {

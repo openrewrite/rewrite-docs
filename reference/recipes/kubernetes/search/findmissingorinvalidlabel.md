@@ -46,7 +46,7 @@ Now that `com.yourorg.FindMissingOrInvalidLabelExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.1")
+    id("org.openrewrite.rewrite") version("5.15.3")
 }
 
 rewrite {

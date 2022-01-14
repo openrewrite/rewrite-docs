@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangeMethodTargetToVariableExample` has been defined acti
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.1")
+    id("org.openrewrite.rewrite") version("5.15.3")
 }
 
 rewrite {
