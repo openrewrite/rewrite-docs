@@ -53,7 +53,7 @@ Now that `com.yourorg.AddPluginExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.3")
+    id("org.openrewrite.rewrite") version("5.15.5")
 }
 
 rewrite {

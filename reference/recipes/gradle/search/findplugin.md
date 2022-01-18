@@ -42,7 +42,7 @@ Now that `com.yourorg.FindPluginExample` has been defined activate it and take a
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.3")
+    id("org.openrewrite.rewrite") version("5.15.5")
 }
 
 rewrite {

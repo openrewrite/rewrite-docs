@@ -42,7 +42,7 @@ Now that `com.yourorg.UpgradeMicronautGradlePropertiesVersionExample` has been d
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.3")
+    id("org.openrewrite.rewrite") version("5.15.5")
 }
 
 rewrite {
