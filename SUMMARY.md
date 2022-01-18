@@ -23,6 +23,7 @@
 * [Refactoring with Declarative YAML Recipes](tutorials/authoring-declarative-yaml-recipes.md)
 * [Automating Maven Dependency Management](tutorials/automating-maven-dependency-management.md)
 * [Running Rewrite without build tool plugins](tutorials/running-rewrite-without-build-tool-plugins.md)
+* [Writing recipes over multiple source file types](tutorials/writing-recipes-over-multiple-source-file-types.md)
 
 ## Reference
 
