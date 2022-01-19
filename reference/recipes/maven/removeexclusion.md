@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.17.0</version>
+        <version>4.17.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveExclusionExample</recipe>

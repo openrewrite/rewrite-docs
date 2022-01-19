@@ -19,7 +19,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.17.0</version>
+      <version>4.17.2</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
@@ -80,7 +80,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.17.0</version>
+      <version>4.17.2</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
@@ -173,7 +173,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.17.0</version>
+      <version>4.17.2</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
