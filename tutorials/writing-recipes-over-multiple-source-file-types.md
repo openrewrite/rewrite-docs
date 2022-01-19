@@ -4,7 +4,7 @@ Sometimes we need to examine multiple source files or multiple types of source f
 
 Use the `visit(List<SourceFile> before, ExecutionContext ctx)` method on `Recipe` to iterate over and maintain decision state, and then `ListUtils.map` to execute the transformation.
 
-```
+```java
 package org.openrewrite;
 
 import org.openrewrite.internal.ListUtils;
@@ -32,6 +32,45 @@ public class MavenYamlRecipe extends Recipe {
         return ListUtils.map(before, sourceFile -> (SourceFile) new YamlVisitor<Integer>() {
             // whatever your YAML visitor does can now respond to pomConditionMet
         }.visitNonNull(sourceFile, 0));
+    }
+}
+```
+
+To write a unit test that tests multiple source file types, use their respective parsers:
+
+```kotlin
+package org.openrewrite
+
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
+import org.openrewrite.maven.MavenParser
+import org.openrewrite.yaml.YamlParser
+
+class MavenYamlTest {
+
+    @Test
+    fun mavenYaml() {
+        val sources =
+            MavenParser.builder().build().parse(
+                """
+                    <project>
+                        <groupId>org.openrewrite</groupId>
+                        <artifactId>test</artifactId>
+                        <version>0.1.0</version>
+                    </project>
+                """
+            ).plus(
+                YamlParser().parse("""
+                  key: value
+                """)
+            )
+
+        val results = MavenYaml().run(sources)
+        assertThat(results.map { it.after!!.printAll() }).containsExactly(
+            """
+                key: changedValue
+            """.trimIndent()
+        )
     }
 }
 ```
