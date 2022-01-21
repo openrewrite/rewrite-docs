@@ -77,4 +77,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.search.FindMissingDigest`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.kubernetes.search.FindMissingDigest`

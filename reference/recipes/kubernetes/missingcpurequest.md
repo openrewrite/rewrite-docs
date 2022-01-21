@@ -74,7 +74,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.kubernetes.MissingCpuRequest`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.kubernetes.MissingCpuRequest`
 
 ## Definition
 

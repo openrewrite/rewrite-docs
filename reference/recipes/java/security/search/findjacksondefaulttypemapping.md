@@ -70,7 +70,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping`
 
 ## Definition
 

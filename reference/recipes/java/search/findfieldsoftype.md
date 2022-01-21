@@ -82,4 +82,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindFieldsOfTypeExample`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipes=com.yourorg.FindFieldsOfTypeExample`

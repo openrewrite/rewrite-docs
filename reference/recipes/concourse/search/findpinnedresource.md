@@ -76,7 +76,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.concourse.search.FindPinnedResource`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.concourse.search.FindPinnedResource`
 
 ## Definition
 
