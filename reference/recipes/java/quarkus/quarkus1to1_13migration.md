@@ -70,7 +70,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.quarkus.Quarkus1to1_13Migration`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.java.quarkus.Quarkus1to1_13Migration`
 
 ## Definition
 

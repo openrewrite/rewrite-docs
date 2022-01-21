@@ -60,4 +60,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments`

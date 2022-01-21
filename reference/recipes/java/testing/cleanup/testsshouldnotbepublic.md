@@ -74,4 +74,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic`

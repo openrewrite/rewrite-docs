@@ -76,7 +76,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.terraform.azure.SetAzureStorageAccountDefaultNetworkAccessToDeny`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.terraform.azure.SetAzureStorageAccountDefaultNetworkAccessToDeny`
 
 ## Definition
 

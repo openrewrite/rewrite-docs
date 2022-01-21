@@ -91,7 +91,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.AddCronTriggerExample`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipes=com.yourorg.AddCronTriggerExample`
 
 ## Definition
 
