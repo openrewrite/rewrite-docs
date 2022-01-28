@@ -47,7 +47,7 @@ Now that `com.yourorg.ChangeMethodAccessLevelExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.5")
+    id("org.openrewrite.rewrite") version("5.15.7")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.17.2</version>
+        <version>4.17.3</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodAccessLevelExample</recipe>
