@@ -9,11 +9,11 @@ _Replaces `String` literals with a length of 5 or greater repeated a minimum of 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.17.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.17.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.17.0
+* version: 7.17.2
 
 
 ## Usage

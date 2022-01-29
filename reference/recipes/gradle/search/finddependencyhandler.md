@@ -5,16 +5,16 @@ _Find the dependency handler containing any number of dependency definitions._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.17.0/jar)
+[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.17.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.17.0
+* version: 7.17.2
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.17.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.17.2 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.17.0")
+    rewrite("org.openrewrite:rewrite-gradle:7.17.2")
 }
 ```
 {% endcode %}
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.17.0</version>
+            <version>7.17.2</version>
           </dependency>
         </dependencies>
       </plugin>

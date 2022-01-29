@@ -16,7 +16,7 @@ At a minimum for this example, you need the following dependencies:
 {% tab title="Maven" %}
 ```xml
 <properties>
-  <rewrite.version>7.17.0</rewrite.version>
+  <rewrite.version>7.17.2</rewrite.version>
 </properties>
 <dependencies>
   <dependency>
