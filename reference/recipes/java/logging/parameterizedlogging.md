@@ -42,7 +42,7 @@ Now that `com.yourorg.ParameterizedLoggingExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.8")
+    id("org.openrewrite.rewrite") version("5.15.9")
 }
 
 rewrite {

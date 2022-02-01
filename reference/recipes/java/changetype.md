@@ -45,7 +45,7 @@ Now that `com.yourorg.ChangeTypeExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.8")
+    id("org.openrewrite.rewrite") version("5.15.9")
 }
 
 rewrite {

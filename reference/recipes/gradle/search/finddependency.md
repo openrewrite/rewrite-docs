@@ -51,7 +51,7 @@ Now that `com.yourorg.FindDependencyExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.8")
+    id("org.openrewrite.rewrite") version("5.15.9")
 }
 
 rewrite {

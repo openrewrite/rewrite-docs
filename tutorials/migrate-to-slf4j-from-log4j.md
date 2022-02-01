@@ -11,7 +11,7 @@ The [org.openrewrite.java.logging.slf4j.Log4jToSlf4j](https://github.com/openrew
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.8")
+    id("org.openrewrite.rewrite") version("5.15.9")
 }
 
 rewrite {

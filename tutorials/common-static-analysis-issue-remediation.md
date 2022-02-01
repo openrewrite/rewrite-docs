@@ -29,7 +29,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
 ```
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.15.8")
+    id("org.openrewrite.rewrite") version("5.15.9")
 }
 
 rewrite {
