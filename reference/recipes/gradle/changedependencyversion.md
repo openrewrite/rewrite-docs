@@ -54,7 +54,7 @@ Now that `com.yourorg.ChangeDependencyVersionExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.7")
+    id("org.openrewrite.rewrite") version("5.15.8")
 }
 
 rewrite {
@@ -81,7 +81,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.17.3</version>
+        <version>4.17.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeDependencyVersionExample</recipe>
