@@ -44,6 +44,8 @@ The `rewrite` DSL exposes a few configuration options:
 * `activeStyle` - Explicitly turns on a style by name (the name given in the `specs.openrewrite.org/v1beta/style` resource). No style is applied unless explicitly turned on with this setting.
 * `configFile` - Where to look for a OpenRewrite YML configuration file somewhere in the project directory (or really anywhere on disk). This file is not required to exist. If not specified otherwise, the default value is `<root project directory>/rewrite.yml`.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewriteDryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
+* `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. Default threshold is 10Mb.
+* `exclusion` - One or more paths, relative to the root project, where non-Java sources are ignored during parsing. Supports [glob patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/FileSystem.html#getPathMatcher(java.lang.String)).
 
 ```groovy
 plugins {
@@ -59,9 +61,16 @@ rewrite {
     activeRecipe("com.yourorg.ExampleRecipe", "com.yourorg.ExampleRecipe2")
     activeStyle("com.yourorg.ExampleStyle", "com.yourorg.ExampleStyle2")
 
+    exclusion(
+            // Excludes a particular yaml file
+            "subproject-a/src/main/resources/generated.yaml",
+            // Exclude all json files
+            "**/*.json")
+    
     // These are default values, shown for example. It isn't necessary to supply these values manually:
     configFile = project.getRootProject().file("rewrite.yml")
     failOnDryRunResults = false
+    sizeThresholdMb = 10
 }
 ```
 

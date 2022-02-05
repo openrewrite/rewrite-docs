@@ -30,6 +30,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `configLocation` - Where to look for a OpenRewrite YML configuration file somewhere in the project directory \(or really anywhere on disk\). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is \(unless an absolute path is given\) evaluated for _each_ module relative to that module's project directory.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `dependencies` - To make pre-packaged OpenRewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
+* `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. Default threshold is 10Mb.
 * `exclusions` - Skips parsing for any paths matching these exclusions. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename.
 * `skipMavenParsing` - When enabled, skip parsing Maven `pom.xml`s, and any transitive poms, as source files. This can be an efficiency improvement in certain situations. Default is `false`. For example, `-DskipMavenParsing=true`.
 
