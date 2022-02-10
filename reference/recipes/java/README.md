@@ -14,6 +14,7 @@ _Basic building blocks for transforming Java code._
 * [Change static field access to static method access](changestaticfieldtomethod.md)
 * [Change type](changetype.md)
 * [Delete method argument](deletemethodargument.md)
+* [Generating an asciidoc report](reportingrecipe.md)
 * [Order imports](orderimports.md)
 * [Remove annotation](removeannotation.md)
 * [Remove interface implementations](removeimplements.md)
@@ -21,7 +22,9 @@ _Basic building blocks for transforming Java code._
 * [Remove unused imports](removeunusedimports.md)
 * [Rename package name](changepackage.md)
 * [Reorder method arguments](reordermethodarguments.md)
+* [Replace constant with literal value](replaceconstant.md)
 * [Simplify a call chain](simplifymethodchain.md)
+* [Update source positions](updatesourcepositions.md)
 * [Use static import](usestaticimport.md)
 
 ## Subcategories

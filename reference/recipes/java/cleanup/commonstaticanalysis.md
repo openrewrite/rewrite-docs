@@ -5,11 +5,11 @@ _Resolve common static analysis issues discovered through 3rd party tools_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.17.2/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.18.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.17.2
+* version: 7.18.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.9")
+    id("org.openrewrite.rewrite") version("5.16.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.17.4</version>
+        <version>4.18.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -60,7 +60,7 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.cleanup.CommonStaticAnalysis`
 
 ## Definition
 
@@ -106,9 +106,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
 * [Redundant file creation](../../java/cleanup/redundantfilecreation.md)
 * [Remove extra semicolons](../../java/cleanup/removeextrasemicolons.md)
-* [Remove unused imports](../../java/removeunusedimports.md)
 * [Remove unused local variables](../../java/cleanup/removeunusedlocalvariables.md)
-* [Remove unused private methods](../../java/cleanup/removeunusedprivatemethods.md)
 * [Reformat local variable names to camelCase](../../java/cleanup/renamelocalvariablestocamelcase.md)
 * [Simplify boolean expression](../../java/cleanup/simplifybooleanexpression.md)
 * [Simplify boolean return](../../java/cleanup/simplifybooleanreturn.md)
@@ -121,7 +119,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Unnecessary throws](../../java/cleanup/unnecessarythrows.md)
 * [Use `Collection` interfaces](../../java/cleanup/usecollectioninterfaces.md)
 * [Use diamond operator](../../java/cleanup/usediamondoperator.md)
-* [Use Files#createTempDirectory](../../java/cleanup/usefilescreatetempdirectory.md)
 * [No C-style array declarations](../../java/cleanup/usejavastylearraydeclarations.md)
 * [Use lambdas where possible](../../java/cleanup/uselambdaforfunctionalinterface.md)
 * [Prefer `while` over `for` loops](../../java/cleanup/whileinsteadoffor.md)
@@ -177,9 +174,7 @@ recipeList:
   - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf
   - org.openrewrite.java.cleanup.RedundantFileCreation
   - org.openrewrite.java.cleanup.RemoveExtraSemicolons
-  - org.openrewrite.java.RemoveUnusedImports
-  - org.openrewrite.java.cleanup.RemoveUnusedLocalVariables
-  - org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods
+  - org.openrewrite.java.cleanup.RemoveUnusedLocalVariables:
   - org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase
   - org.openrewrite.java.cleanup.SimplifyBooleanExpression
   - org.openrewrite.java.cleanup.SimplifyBooleanReturn
@@ -192,7 +187,6 @@ recipeList:
   - org.openrewrite.java.cleanup.UnnecessaryThrows
   - org.openrewrite.java.cleanup.UseCollectionInterfaces
   - org.openrewrite.java.cleanup.UseDiamondOperator
-  - org.openrewrite.java.cleanup.UseFilesCreateTempDirectory
   - org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations
   - org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface
   - org.openrewrite.java.cleanup.WhileInsteadOfFor

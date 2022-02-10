@@ -5,11 +5,11 @@ _The image name to search for in containers and initContainers._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.11.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.12.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.11.0
+* version: 1.12.0
 
 ## Options
 
@@ -43,14 +43,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindImageExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.11.0 in your build file:
+Now that `com.yourorg.FindImageExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.12.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.9")
+    id("org.openrewrite.rewrite") version("5.16.0")
 }
 
 rewrite {
@@ -62,7 +62,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.11.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.12.0")
 }
 ```
 {% endcode %}
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.17.4</version>
+        <version>4.18.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindImageExample</recipe>
@@ -87,7 +87,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.11.0</version>
+            <version>1.12.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -99,4 +99,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipes=com.yourorg.FindImageExample`
+Recipes can also be activated directly from the commandline by adding the argument `-DactiveRecipe=com.yourorg.FindImageExample`

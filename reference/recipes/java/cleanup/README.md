@@ -65,7 +65,6 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Use `Collection` interfaces](usecollectioninterfaces.md)
 * [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](noemptycollectionwithrawtype.md)
 * [Use `Collections#isEmpty()` instead of comparing `size()`](isemptycalloncollections.md)
-* [Use Files#createTempDirectory](usefilescreatetempdirectory.md)
 * [Use `String.equals()` on String literals](stringliteralequality.md)
 * [Use comparison rather than equality checks in for conditions](noequalityinforcondition.md)
 * [Use diamond operator](usediamondoperator.md)

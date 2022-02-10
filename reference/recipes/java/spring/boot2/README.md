@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource.](databasecomponentandbeaninitializationordering.md)
 * [JUnit Jupiter for Spring Boot 2.x projects](springboot2junit4to5migration.md)
 * [Merge Spring `bootstrap.yml` with `application.yml`](mergebootstrapyamlwithapplicationyaml.md)
 * [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](outputcaptureextension.md)
@@ -15,6 +16,7 @@
 * [Migrate additional Spring Boot properties to 2.0](springbootpropertiesmanual_2_0.md)
 * [Migrate additional Spring Boot properties to 2.5](springbootpropertiesmanual_2_5.md)
 * [Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL](migratehsqlembeddeddatabaseconnection.md)
+* [Migrate flyway and liquibase credentials.](migratedatabasecredentials.md)
 * [Migrate multi-condition `@ConditionalOnBean` annotations](conditionalonbeananynestedcondition.md)
 * [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](migrateloggingsystempropertyconstants.md)
 * [Remove `@SpringExtension`](unnecessaryspringextension.md)
@@ -49,5 +51,9 @@
 * [Use `org.springframework.boot.web.server.LocalServerPort`](migratelocalserverportannotation.md)
 * [Use `setEagerFilterInit(boolean)`](migrateundertowservletwebserverfactoryseteagerinitfilters.md)
 * [Use `spring-boot.run.agents` configuration key in `spring-boot-maven-plugin`](springbootmavenpluginmigrateagenttoagents.md)
+
+## Subcategories
+
+* [Search](/reference/recipes/java/spring/boot2/search)
 
 
