@@ -13,7 +13,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.17.4</version>
+  <version>4.18.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
@@ -23,7 +23,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-migrate-java</artifactId>
-      <version>1.0.0</version>
+      <version>1.1.0</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -36,7 +36,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.15.9")
+    id("org.openrewrite.rewrite") version("5.16.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.0.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.1.0")
 
     // Other project dependencies
 }
