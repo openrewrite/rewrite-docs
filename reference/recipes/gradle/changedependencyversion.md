@@ -54,7 +54,7 @@ Now that `com.yourorg.ChangeDependencyVersionExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.16.0")
+    id("org.openrewrite.rewrite") version("5.15.10")
 }
 
 rewrite {

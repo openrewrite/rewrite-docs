@@ -44,7 +44,7 @@ Now that `com.yourorg.ChangeResourceVersionExample` has been defined activate it
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.16.0")
+    id("org.openrewrite.rewrite") version("5.15.10")
 }
 
 rewrite {
