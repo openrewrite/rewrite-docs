@@ -337,7 +337,7 @@ Once your recipe module is published, either locally for testing or to an extern
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.16.0")
+    id("org.openrewrite.rewrite") version("5.16.2")
 }
 
 repositories {
@@ -365,7 +365,7 @@ Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDry
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.18.0</version>
+                <version>4.19.0</version>
                 <configuration>
                     <activeRecipes>
                         <recipe> [your recipe name] </recipe>
