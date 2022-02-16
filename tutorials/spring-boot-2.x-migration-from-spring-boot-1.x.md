@@ -48,7 +48,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.19.0</version>
+            <version>4.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
