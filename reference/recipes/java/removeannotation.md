@@ -31,7 +31,7 @@ name: com.yourorg.RemoveAnnotationExample
 displayName: Remove annotation example
 recipeList:
   - org.openrewrite.java.RemoveAnnotation:
-      annotationPattern: @java.lang.SuppressWarnings("deprecation")
+      annotationPattern: '@java.lang.SuppressWarnings("deprecation")'
 ```
 {% endcode %}
 
