@@ -65,19 +65,16 @@ rewrite {
 }
 ```
 {% endcode %}
+
 {% hint style="info" %}
-When applied to a multi-project build, behavior differs depending on whether the plugin is applied to the root project or to a sub-project.
-Applied to the root project, the plugin will parse and refactor all sources from all projects.
-Appiled to any project other than the root project, the plugin will parse and refactor only sources from that project.
+When applied to a multi-project build, behavior differs depending on whether the plugin is applied to the root project or to a sub-project. Applied to the root project, the plugin will parse and refactor all sources from all projects. Appiled to any project other than the root project, the plugin will parse and refactor only sources from that project.
 {% endhint %}
 {% endtab %}
 {% endtabs %}
 
 ### Running on JDK 16 and newer
 
-OpenRewrite requires access to Java compiler internals to function.
-JDK 16 and newer require explicit opt-in to access these internals via `--add-exports`.
-The workaround for this issue is to add explicit exports for packages used by rewrite's java parser.
+OpenRewrite requires access to Java compiler internals to function. JDK 16 and newer require explicit opt-in to access these internals via `--add-exports`. The are a few options for to setting explicit exports for packages used by rewrite's java parser.&#x20;
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -96,12 +93,58 @@ org.gradle.jvmargs= \
 {% endcode %}
 {% endtab %}
 
-{% tab title="Maven" %}
-Set or update your MAVEN_OPTS environment variable to include this content:
+{% tab title="Maven opts" %}
+Use the MAVEN\_OPTS environment variable for passing the necessary exports to the jvm.
 
-{% code title="MAVEN_OPS environment variable" %}
 ```
 MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
+```
+{% endtab %}
+
+{% tab title="Maven Exec plugin" %}
+Use the [Exec Maven Plugin](https://www.mojohaus.org/exec-maven-plugin/index.html) to avoid setting the MAVEN\_OPTS environment variable by executing rewrite in a separate process with a configured set of environment variables.
+
+{% code title="pom.xml" %}
+```
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>3.0.0</version>
+    <executions>
+        <execution>
+            <goals>
+                <goal>exec</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <executable>mvn</executable>
+        <arguments>
+            <argument>rewrite:run</argument>
+        </arguments>
+        <environmentVariables>
+            <MAVEN_OPTS> --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</MAVEN_OPTS>
+        </environmentVariables>
+    </configuration>
+</plugin>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven Java Settings" %}
+Define the exports in the ** **_**.mvn/jvm.config**_ file.
+
+{% code title=".mvn/jvm.config" %}
+```
+--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
 ```
 {% endcode %}
 {% endtab %}
