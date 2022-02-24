@@ -32,7 +32,7 @@ With the plugin applied, the `rewrite` DSL is available for configuration.
 
 When applied to a multi-project build, plugin behavior differs depending on whether the plugin is applied to the root project or to a sub-project.
 Applied to the root project, the plugin will parse and refactor all sources from all projects.
-Appiled to any project other than the root project, the plugin will parse and refactor only sources from that project.
+Applied to any project other than the root project, the plugin will parse and refactor only sources from that project.
 
 The rewrite gradle plugin resolves the rewrite core libraries and any recipe modules added to the `rewrite` configuration at runtime.
 It will attempt to resolve them from whatever repositories are available to the project.
