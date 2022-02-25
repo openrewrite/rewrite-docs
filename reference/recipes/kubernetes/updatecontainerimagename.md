@@ -45,7 +45,7 @@ recipeList:
       imageToUpdate: nginx
       tagToUpdate: v1.2.3
       includeInitContainers: false
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

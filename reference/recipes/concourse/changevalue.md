@@ -37,7 +37,7 @@ recipeList:
       keyPath: $.resources[?(@.type == 'git')].source.uri
       oldValue: null
       newValue: null
-      fileMatcher: **/pipeline*.yml
+      fileMatcher: '**/pipeline*.yml'
 ```
 {% endcode %}
 

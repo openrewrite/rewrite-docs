@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.kubernetes.search.FindDisallowedImageTags:
       disallowedTags: latest
       includeInitContainers: false
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.kubernetes.services.FindServiceExternalIPs:
       externalIPs: 192.168.0.1
       findMissing: null
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

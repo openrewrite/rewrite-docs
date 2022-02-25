@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.kubernetes.search.FindMissingOrInvalidAnnotation:
       annotationName: mycompany.io/annotation
       value: value.*
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

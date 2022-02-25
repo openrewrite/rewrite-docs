@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.concourse.UpdateGitResourceUri:
       oldURIPattern: https://github.com/openrewrite/rewrite
       newURI: git@gitlab.com:openrewrite/rewrite.git
-      fileMatcher: **/pipeline*.yml
+      fileMatcher: '**/pipeline*.yml'
 ```
 {% endcode %}
 

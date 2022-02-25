@@ -38,7 +38,7 @@ recipeList:
       yaml: labels: 
 	label-one: "value-one"
       acceptTheirs: null
-      fileMatcher: **/application-*.yml
+      fileMatcher: '**/application-*.yml'
 ```
 {% endcode %}
 

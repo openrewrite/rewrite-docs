@@ -32,7 +32,7 @@ name: com.yourorg.RenameFileExample
 displayName: Rename a file example
 recipeList:
   - org.openrewrite.RenameFile:
-      fileMatcher: **/application-*.yml
+      fileMatcher: '**/application-*.yml'
       fileName: application.yml
 ```
 {% endcode %}
