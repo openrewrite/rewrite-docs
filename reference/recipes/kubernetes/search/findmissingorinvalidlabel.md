@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.kubernetes.search.FindMissingOrInvalidLabel:
       labelName: mylabel
       value: value(.*)
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

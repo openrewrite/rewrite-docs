@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.yaml.ChangeKey:
       oldKeyPath: $.subjects.kind
       newKey: kind
-      fileMatcher: **/application-*.yml
+      fileMatcher: '**/application-*.yml'
 ```
 {% endcode %}
 

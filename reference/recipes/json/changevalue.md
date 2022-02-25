@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.json.ChangeValue:
       oldKeyPath: $.subjects.kind
       value: 'Deployment'
-      fileMatcher: **/application-*.json
+      fileMatcher: '**/application-*.json'
 ```
 {% endcode %}
 

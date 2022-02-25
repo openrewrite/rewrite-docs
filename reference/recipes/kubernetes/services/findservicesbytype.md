@@ -33,7 +33,7 @@ displayName: Service type example
 recipeList:
   - org.openrewrite.kubernetes.services.FindServicesByType:
       serviceType: NodePort
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

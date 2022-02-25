@@ -43,7 +43,7 @@ recipeList:
       resources: pods
       resourceNames: my-pod
       verbs: get,list
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

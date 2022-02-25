@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.properties.DeleteProperty:
       propertyKey: management.metrics.binders.files.enabled
       relaxedBinding: null
-      fileMatcher: **/application-*.properties
+      fileMatcher: '**/application-*.properties'
 ```
 {% endcode %}
 

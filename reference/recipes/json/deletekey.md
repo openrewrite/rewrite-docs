@@ -33,7 +33,7 @@ displayName: Delete key example
 recipeList:
   - org.openrewrite.json.DeleteKey:
       keyPath: $.subjects.kind
-      fileMatcher: **/application-*.json
+      fileMatcher: '**/application-*.json'
 ```
 {% endcode %}
 

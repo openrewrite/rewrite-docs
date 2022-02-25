@@ -37,7 +37,7 @@ recipeList:
       propertyKey: management.metrics.binders.files.enabled
       coalesce: true
       relaxedBinding: null
-      fileMatcher: **/application-*.yml
+      fileMatcher: '**/application-*.yml'
 ```
 {% endcode %}
 

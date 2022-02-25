@@ -33,7 +33,7 @@ displayName: Delete key example
 recipeList:
   - org.openrewrite.yaml.DeleteKey:
       keyPath: $.source.kind
-      fileMatcher: **/application-*.yml
+      fileMatcher: '**/application-*.yml'
 ```
 {% endcode %}
 

@@ -37,7 +37,7 @@ recipeList:
       oldPropertyKey: management.metrics.binders.files.enabled
       newPropertyKey: management.metrics.enable.process.files
       relaxedBinding: null
-      fileMatcher: **/application-*.properties
+      fileMatcher: '**/application-*.properties'
 ```
 {% endcode %}
 

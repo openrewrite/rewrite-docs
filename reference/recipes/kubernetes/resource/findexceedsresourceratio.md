@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.kubernetes.resource.FindExceedsResourceRatio:
       resourceType: memory
       ratioLimit: 2
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

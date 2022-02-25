@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.properties.AddProperty:
       property: management.metrics.enable.process.files
       value: true
-      fileMatcher: **/application-*.properties
+      fileMatcher: '**/application-*.properties'
 ```
 {% endcode %}
 

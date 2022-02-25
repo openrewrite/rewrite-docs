@@ -35,7 +35,7 @@ recipeList:
   - org.openrewrite.kubernetes.services.UpdateServiceExternalIP:
       ipToFind: 192.168.0.1
       ipToUpdate: 10.10.0.1
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 

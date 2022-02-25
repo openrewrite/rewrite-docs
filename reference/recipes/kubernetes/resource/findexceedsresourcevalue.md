@@ -37,7 +37,7 @@ recipeList:
       resourceValueType: limits
       resourceType: memory
       resourceLimit: 2Gi
-      fileMatcher: **/pod-*.yml
+      fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}
 
