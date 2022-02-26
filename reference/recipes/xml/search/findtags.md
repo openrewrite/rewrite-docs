@@ -5,11 +5,11 @@ _Find XML tags by XPath expression._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-xml/7.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-xml/7.19.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.18.0
+* version: 7.19.0
 
 ## Options
 
@@ -43,7 +43,7 @@ Now that `com.yourorg.FindTagsExample` has been defined activate it in your buil
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.10")
+    id("org.openrewrite.rewrite") version("5.16.2")
 }
 
 rewrite {

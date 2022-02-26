@@ -5,11 +5,11 @@ _Rename a method._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.19.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.18.0
+* version: 7.19.0
 
 ## Options
 
@@ -18,6 +18,7 @@ _Rename a method._
 | `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method declarations/invocations. |
 | `String` | newMethodName | The method name that will replace the existing name. |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |
+| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
 
 
 ## Usage
@@ -36,6 +37,7 @@ recipeList:
       methodPattern: org.mockito.Matchers anyVararg()
       newMethodName: any
       matchOverrides: null
+      ignoreDefinition: true
 ```
 {% endcode %}
 
@@ -47,7 +49,7 @@ Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.10")
+    id("org.openrewrite.rewrite") version("5.16.2")
 }
 
 rewrite {

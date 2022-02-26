@@ -5,18 +5,19 @@ _Change a given type to another._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.19.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.18.0
+* version: 7.19.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. |
-| `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". |
+| `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. |
+| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
 
 
 ## Usage
@@ -34,6 +35,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.junit.Assume
       newFullyQualifiedTypeName: org.junit.jupiter.api.Assumptions
+      ignoreDefinition: true
 ```
 {% endcode %}
 
@@ -45,7 +47,7 @@ Now that `com.yourorg.ChangeTypeExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.10")
+    id("org.openrewrite.rewrite") version("5.16.2")
 }
 
 rewrite {

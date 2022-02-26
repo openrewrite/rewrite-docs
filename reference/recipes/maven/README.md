@@ -29,5 +29,6 @@
 
 * [Cleanup](/reference/recipes/maven/cleanup)
 * [Search](/reference/recipes/maven/search)
+* [Utilities](/reference/recipes/maven/utilities)
 
 

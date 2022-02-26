@@ -5,11 +5,11 @@ _Adds the specified dependencies to a Maven plugin. Will not add the plugin if i
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.19.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.18.0
+* version: 7.19.0
 
 ## Options
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.AddPluginDependencyExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.10")
+    id("org.openrewrite.rewrite") version("5.16.2")
 }
 
 rewrite {

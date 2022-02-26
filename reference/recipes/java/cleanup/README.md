@@ -54,6 +54,7 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Replace duplicate `String` literals](replaceduplicatestringliterals.md)
 * [Simplify boolean expression](simplifybooleanexpression.md)
 * [Simplify boolean return](simplifybooleanreturn.md)
+* [Simplify consecutive assignments](simplifyconsecutiveassignments.md)
 * [Simplify lambda blocks to expressions](lambdablocktoexpression.md)
 * [Static methods not final](staticmethodnotfinal.md)
 * [Typecast parenthesis padding](typecastparenpad.md)

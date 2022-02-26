@@ -5,11 +5,11 @@ _Reorder method arguments into the specified order._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.19.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.18.0
+* version: 7.19.0
 
 ## Options
 
@@ -18,6 +18,7 @@ _Reorder method arguments into the specified order._
 | `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
 | `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. |
 | `String[]` | oldParameterNames | *Optional*. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. |
+| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
 
 
 ## Usage
@@ -36,6 +37,7 @@ recipeList:
       methodPattern: com.yourorg.A foo(String, Integer, Integer)
       newParameterNames: [foo, bar, baz]
       oldParameterNames: [baz, bar, foo]
+      ignoreDefinition: true
 ```
 {% endcode %}
 
@@ -47,7 +49,7 @@ Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined activate i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.10")
+    id("org.openrewrite.rewrite") version("5.16.2")
 }
 
 rewrite {

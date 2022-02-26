@@ -5,11 +5,11 @@ _Delete an argument from method invocations._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.19.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.18.0
+* version: 7.19.0
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.DeleteMethodArgumentExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.15.10")
+    id("org.openrewrite.rewrite") version("5.16.2")
 }
 
 rewrite {
