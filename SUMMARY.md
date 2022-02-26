@@ -35,7 +35,7 @@
 * [Method Patterns](reference/method-patterns.md)
 * [Dependency Version Selectors](reference/dependency-version-selectors.md)
 * [Recipes](reference/recipes/README.md)
-* [Gradle](reference/recipes/gradle/README.md)
+  * [Gradle](reference/recipes/gradle/README.md)
     * [Change Gradle dependency artifactId](/reference/recipes/gradle/changedependencyartifactid.md)
     * [Change Gradle dependency groupId](/reference/recipes/gradle/changedependencygroupid.md)
     * [Change a Gradle dependency version](/reference/recipes/gradle/changedependencyversion.md)
