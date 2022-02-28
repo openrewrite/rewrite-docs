@@ -37,7 +37,7 @@ recipeList:
       apiVersion: policy/v1beta1
       resourceKind: PodSecurityPolicy
       configurationPath: $.spec
-      value: privileged: false
+      value: 'privileged: false'
 ```
 {% endcode %}
 
