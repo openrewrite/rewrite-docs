@@ -54,6 +54,9 @@ public class SayHelloRecipe extends Recipe {
             example = "com.yourorg.FooBar")
     @NonNull
     private final String fullyQualifiedClassName;
+    public String getFullyQualifiedClassName() {
+        return fullyQualifiedClassName;
+    }
 
     // Recipes must be serializable. This is verified by RecipeTest.assertChanged() and RecipeTest.assertUnchanged()
     @JsonCreator
@@ -106,6 +109,9 @@ public class SayHelloRecipe extends Recipe {
             example = "com.yourorg.FooBar")
     @NonNull
     private final String fullyQualifiedClassName;
+    public String getFullyQualifiedClassName() {
+        return fullyQualifiedClassName;
+    }
 
     // Recipes must be serializable. This is verified by RecipeTest.assertChanged() and RecipeTest.assertUnchanged()
     @JsonCreator
@@ -253,6 +259,9 @@ public class SayHelloRecipe extends Recipe {
             example = "com.yourorg.FooBar")
     @NonNull
     private final String fullyQualifiedClassName;
+    public String getFullyQualifiedClassName() {
+        return fullyQualifiedClassName;
+    }
 
     // Recipes must be serializable. This is verified by RecipeTest.assertChanged() and RecipeTest.assertUnchanged()
     @JsonCreator
