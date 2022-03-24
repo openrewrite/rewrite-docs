@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Simplify [Micrometer](https://micrometer.io) meter tags](simplifymicrometermetertags.md)
+* [Simplify Micrometer meter tags](simplifymicrometermetertags.md)
 
 
