@@ -3,14 +3,12 @@
 ## Recipes
 
 * [Change Gradle dependency artifactId](changedependencyartifactid.md)
-* [Change Gradle dependency groupId](changedependencygroupid.md)
-* [Change a Gradle dependency version](changedependencyversion.md)
-* [Remove repository](removerepository.md)
-* [Update a Gradle plugin by id](upgradepluginversion.md)
-* [Use `Map` notation for Gradle dependency declarations](dependencyusemapnotation.md)
+* [Change Gradle dependency groupId](broken-reference)
+* [Change a Gradle dependency version](broken-reference)
+* [Remove repository](broken-reference)
+* [Update a Gradle plugin by id](broken-reference)
+* [Use `Map` notation for Gradle dependency declarations](broken-reference)
 
 ## Subcategories
 
-* [Search](/reference/recipes/gradle/search)
-
-
+* [Search](search/)

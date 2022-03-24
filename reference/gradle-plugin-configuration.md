@@ -30,20 +30,15 @@ With the plugin applied, the `rewrite` DSL is available for configuration.
 
 ### Multi-Module Gradle Projects
 
-When applied to a multi-project build, plugin behavior differs depending on whether the plugin is applied to the root project or to a sub-project.
-Applied to the root project, the plugin will parse and refactor all sources from all projects.
-Applied to any project other than the root project, the plugin will parse and refactor only sources from that project.
+When applied to a multi-project build, plugin behavior differs depending on whether the plugin is applied to the root project or to a sub-project. Applied to the root project, the plugin will parse and refactor all sources from all projects. Applied to any project other than the root project, the plugin will parse and refactor only sources from that project.
 
-The rewrite gradle plugin resolves the rewrite core libraries and any recipe modules added to the `rewrite` configuration at runtime.
-It will attempt to resolve them from whatever repositories are available to the project.
-This is accomplished by adding Maven Central, or a mirror of it, to your project's repositories:
+The rewrite gradle plugin resolves the rewrite core libraries and any recipe modules added to the `rewrite` configuration at runtime. It will attempt to resolve them from whatever repositories are available to the project. This is accomplished by adding Maven Central, or a mirror of it, to your project's repositories:
 
 ```groovy
 repositories {
     mavenCentral()
 }
 ```
-
 
 ### Configuring the 'rewrite' DSL
 
@@ -54,7 +49,7 @@ The `rewrite` DSL exposes a few configuration options:
 * `configFile` - Where to look for a OpenRewrite YML configuration file somewhere in the project directory (or really anywhere on disk). This file is not required to exist. If not specified otherwise, the default value is `<project directory>/rewrite.yml`.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewriteDryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. Default threshold is 10Mb.
-* `exclusion` - One or more paths, relative to the project the plugin is applied to, where non-Java sources are ignored during parsing. Supports [glob patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/FileSystem.html#getPathMatcher(java.lang.String)).
+* `exclusion` - One or more paths, relative to the project the plugin is applied to, where non-Java sources are ignored during parsing. Supports [glob patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/FileSystem.html#getPathMatcher\(java.lang.String\)).
 
 ```groovy
 plugins {
@@ -123,11 +118,11 @@ rewrite {
 
 Execute `gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterward, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
-![Showing which files were changed and by what visitors](<../.gitbook/assets/rewrite-fix-gradle-output (2) (2) (4) (4) (5) (6) (6) (9) (2) (13) (1).png>)
+![Showing which files were changed and by what visitors](<../.gitbook/assets/rewrite-fix-gradle-output (2) (2) (4) (4) (5) (6) (6) (9) (2) (1) (1).png>)
 
 After the goal finishes executing, run `git diff` (or your VCS system's equivalent) to see what changes were made, review, and commit them.
 
-![Example of changes made to netflix conductor by the rewriteRun task](<../.gitbook/assets/rewrite-fix-git-diff-output (1) (1) (3) (3) (3) (1) (25).png>)
+![Example of changes made to netflix conductor by the rewriteRun task](<../.gitbook/assets/rewrite-fix-git-diff-output (1) (1) (3) (3) (3) (1) (1) (1).png>)
 
 ## The "dryRun" Task
 
@@ -135,7 +130,7 @@ Execute `gradle rewriteDryRun` to dry-run the active recipes and print which vis
 
 `rewriteDryRun` outputs a report in the form of a `patch` file, by default under `build/reports/rewrite/rewrite.patch`, containing changes that would be made if you were to run `rewriteRun`. This `patch` file can be used with `git` or `diff` to view or apply the potential changes. For example, `git diff . build/reports/rewrite/rewrite.patch`.
 
-![Listing of source files that would be changed if rewriteRun were run](<../.gitbook/assets/rewrite-warn-gradle-output (3) (3) (3) (1) (4).png>)
+![Listing of source files that would be changed if rewriteRun were run](<../.gitbook/assets/rewrite-warn-gradle-output (3) (3) (3) (1) (1) (1).png>)
 
 `rewriteDryRun` can be used as a "gate" in a continuous integration environment by failing the build if `rewriteDryRun` detects changes to be made and `failOnDryRunResults` is set to `true`:
 

@@ -1,34 +1,32 @@
 # Kubernetes
 
-_Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration tasks._
+_Recipes to perform_ [_Kubernetes_](https://kubernetes.io) _hygiene and migration tasks._
 
 ## Recipes
 
-* [Add Kubernetes configuration](addconfiguration.md)
-* [Ensure CPU limits are set](missingcpulimits.md)
-* [Ensure CPU request is set](missingcpurequest.md)
-* [Ensure image pull policy is `Always`](imagepullpolicyalways.md)
-* [Ensure lifecycle rule on `StorageBucket`](lifecycleruleonstoragebucket.md)
-* [Ensure liveness probe is configured](missingpodlivenessprobe.md)
-* [Ensure memory limits are set](missingmemorylimits.md)
-* [Ensure memory request is set](missingmemoryrequest.md)
-* [Ensure readiness probe is configured](missingpodreadinessprobe.md)
-* [Kubernetes best practices](kubernetesbestpractices.md)
-* [Limit root capabilities in a container](limitcontainercapabilities.md)
-* [No host IPC sharing](nohostipcsharing.md)
-* [No host network sharing](nohostnetworksharing.md)
-* [No host process ID sharing](nohostprocessidsharing.md)
-* [No privilege escalation](noprivilegeescalation.md)
-* [No privileged containers](noprivilegedcontainers.md)
-* [No root containers](norootcontainers.md)
-* [Read-only root filesystem](readonlyrootfilesystem.md)
-* [Update image name](updatecontainerimagename.md)
+* [Add Kubernetes configuration](broken-reference)
+* [Ensure CPU limits are set](broken-reference)
+* [Ensure CPU request is set](broken-reference)
+* [Ensure image pull policy is `Always`](broken-reference)
+* [Ensure lifecycle rule on `StorageBucket`](broken-reference)
+* [Ensure liveness probe is configured](broken-reference)
+* [Ensure memory limits are set](broken-reference)
+* [Ensure memory request is set](broken-reference)
+* [Ensure readiness probe is configured](broken-reference)
+* [Kubernetes best practices](broken-reference)
+* [Limit root capabilities in a container](broken-reference)
+* [No host IPC sharing](broken-reference)
+* [No host network sharing](broken-reference)
+* [No host process ID sharing](broken-reference)
+* [No privilege escalation](broken-reference)
+* [No privileged containers](broken-reference)
+* [No root containers](broken-reference)
+* [Read-only root filesystem](broken-reference)
+* [Update image name](broken-reference)
 
 ## Subcategories
 
-* [RBAC](/reference/recipes/kubernetes/rbac)
-* [Resource](/reference/recipes/kubernetes/resource)
-* [Search](/reference/recipes/kubernetes/search)
-* [Services](/reference/recipes/kubernetes/services)
-
-
+* [RBAC](rbac/)
+* [Resource](resource/)
+* [Search](search/)
+* [Services](services/)

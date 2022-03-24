@@ -2,19 +2,17 @@
 
 ## Recipes
 
-* [Expand Spring YAML properties](expandproperties.md)
-* [Normalize Spring YAML properties to kebab-case](yamlpropertiestokebabcase.md)
-* [Remove `@RequestMapping` annotations](norequestmappingannotation.md)
-* [Remove implicit web annotation names](implicitwebannotationnames.md)
-* [Remove `public` from `@Bean` methods](beanmethodsnotpublic.md)
-* [Remove the `@Autowired` annotation on inferred constructor](noautowiredonconstructor.md)
-* [Separate application YAML by profile](separateapplicationyamlbyprofile.md)
-* [Update the API manifest](updateapimanifest.md)
+* [Expand Spring YAML properties](broken-reference)
+* [Normalize Spring YAML properties to kebab-case](broken-reference)
+* [Remove `@RequestMapping` annotations](broken-reference)
+* [Remove implicit web annotation names](broken-reference)
+* [Remove `public` from `@Bean` methods](broken-reference)
+* [Remove the `@Autowired` annotation on inferred constructor](broken-reference)
+* [Separate application YAML by profile](broken-reference)
+* [Update the API manifest](broken-reference)
 
 ## Subcategories
 
-* [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
-* [Spring Data](/reference/recipes/java/spring/data)
-* [Spring Framework](/reference/recipes/java/spring/framework)
-
-
+* [Spring Boot 2.x](boot2/)
+* [Spring Data](data/)
+* [Spring Framework](framework/)

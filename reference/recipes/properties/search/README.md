@@ -2,6 +2,4 @@
 
 ## Recipes
 
-* [Find property](findproperties.md)
-
-
+* [Find property](broken-reference)

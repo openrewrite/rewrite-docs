@@ -2,16 +2,14 @@
 
 ## Recipes
 
-* [Blank lines](blanklines.md)
-* [End files with a single newline](emptynewlineatendoffile.md)
-* [Format Java code](autoformat.md)
-* [Normalize format](normalizeformat.md)
-* [Normalize the line breaks](normalizelinebreaks.md)
-* [Normalize to tabs or spaces](normalizetabsorspaces.md)
-* [Remove trailing whitespace](removetrailingwhitespace.md)
-* [Single line comments begin with a whitespace](singlelinecomments.md)
-* [Spaces](spaces.md)
-* [Tabs and indents](tabsandindents.md)
-* [Wrapping and braces](wrappingandbraces.md)
-
-
+* [Blank lines](broken-reference)
+* [End files with a single newline](broken-reference)
+* [Format Java code](broken-reference)
+* [Normalize format](broken-reference)
+* [Normalize the line breaks](broken-reference)
+* [Normalize to tabs or spaces](broken-reference)
+* [Remove trailing whitespace](broken-reference)
+* [Single line comments begin with a whitespace](broken-reference)
+* [Spaces](broken-reference)
+* [Tabs and indents](broken-reference)
+* [Wrapping and braces](broken-reference)
