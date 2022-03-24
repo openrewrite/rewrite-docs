@@ -2,11 +2,13 @@
 
 ## Recipes
 
-* [Find annotation](broken-reference)
-* [Find annotation](broken-reference)
-* [Find disallowed image tags](broken-reference)
-* [Find image by name](broken-reference)
-* [Find label](broken-reference)
-* [Find missing configuration](broken-reference)
-* [Find missing image digest](broken-reference)
-* [Find non-TLS Ingresses](broken-reference)
+* [Find annotation](findannotation.md)
+* [Find annotation](findmissingorinvalidannotation.md)
+* [Find disallowed image tags](finddisallowedimagetags.md)
+* [Find image by name](findimage.md)
+* [Find label](findmissingorinvalidlabel.md)
+* [Find missing configuration](findresourcemissingconfiguration.md)
+* [Find missing image digest](findmissingdigest.md)
+* [Find non-TLS Ingresses](findnontlsingress.md)
+
+

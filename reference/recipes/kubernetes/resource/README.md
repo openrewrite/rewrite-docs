@@ -2,6 +2,8 @@
 
 ## Recipes
 
-* [Cap exceeds resource value](broken-reference)
-* [Find exceeds resource limit](broken-reference)
-* [Find exceeds resource ratio](broken-reference)
+* [Cap exceeds resource value](capresourcevaluetomaximum.md)
+* [Find exceeds resource limit](findexceedsresourcevalue.md)
+* [Find exceeds resource ratio](findexceedsresourceratio.md)
+
+

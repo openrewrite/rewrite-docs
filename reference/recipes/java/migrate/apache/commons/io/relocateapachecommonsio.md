@@ -1,6 +1,7 @@
-# Relocate org.apache.commons:commons-io to commons-io:commons-io
+# Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`
 
-\*\* org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo\*\* _The deployment of `org.apache.commons:commons-io` _ [_was a publishing mistake around 2012_](https://issues.sonatype.org/browse/MVNCENTRAL-244) _which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
+** org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo**
+_The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 
 ### Tags
 
@@ -14,6 +15,7 @@
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.3.0
+
 
 ## Usage
 
@@ -84,6 +86,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * oldArtifactId: `commons-io`
   * newGroupId: `commons-io`
   * newArtifactId: `commons-io`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -102,6 +105,7 @@ recipeList:
       oldArtifactId: commons-io
       newGroupId: commons-io
       newArtifactId: commons-io
+
 ```
 {% endtab %}
 {% endtabs %}

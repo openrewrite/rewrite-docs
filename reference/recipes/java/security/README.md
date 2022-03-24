@@ -4,16 +4,18 @@ _Recipes that find and eliminate vulnerable patterns in Java code._
 
 ## Recipes
 
-* [Find text-direction changes](broken-reference)
-* [Java security best practices](broken-reference)
-* [Secure random](broken-reference)
-* [SecureRandom seeds are not constant or predictable](broken-reference)
+* [Find text-direction changes](findtextdirectionchanges.md)
+* [Java security best practices](javasecuritybestpractices.md)
+* [Secure random](securerandom.md)
+* [SecureRandom seeds are not constant or predictable](securerandomprefersdefaultseed.md)
 * [Use Files#createTempDirectory](usefilescreatetempdirectory.md)
-* [Use secure temporary file creation](broken-reference)
-* [XML parser XXE vulnerability](broken-reference)
+* [Use secure temporary file creation](securetempfilecreation.md)
+* [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
 
 ## Subcategories
 
-* [Marshalling](marshalling/)
-* [Search](search/)
-* [Spring](spring/)
+* [Marshalling](/reference/recipes/java/security/marshalling)
+* [Search](/reference/recipes/java/security/search)
+* [Spring](/reference/recipes/java/security/spring)
+
+

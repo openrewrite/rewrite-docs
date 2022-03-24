@@ -2,5 +2,7 @@
 
 ## Recipes
 
-* [Find YAML entries](broken-reference)
-* [Find YAML properties](broken-reference)
+* [Find YAML entries](findkey.md)
+* [Find YAML properties](findproperty.md)
+
+

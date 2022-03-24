@@ -1,15 +1,17 @@
-# java.lang APIs
+# `java.lang` APIs
 
 ## Recipes
 
-* [Migrate deprecated `java.lang` APIs](broken-reference)
-* [Use `Character#isJavaIdentifierPart(char)`](broken-reference)
-* [Use `Character#isJavaIdentifierStart(char)`](broken-reference)
-* [Use `Character#isWhitespace(char)`](broken-reference)
-* [Use `Class#getDeclaredConstructor().newInstance()`](broken-reference)
-* [Use `ClassLoader#defineClass(String, byte[], int, int)`](broken-reference)
+* [Migrate deprecated `java.lang` APIs](javalangapis.md)
+* [Use `Character#isJavaIdentifierPart(char)`](migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
+* [Use `Character#isJavaIdentifierStart(char)`](migratecharacterisjavalettertoisjavaidentifierstart.md)
+* [Use `Character#isWhitespace(char)`](migratecharacterisspacetoiswhitespace.md)
+* [Use `Class#getDeclaredConstructor().newInstance()`](migrateclassnewinstancetogetdeclaredconstructornewinstance.md)
+* [Use `ClassLoader#defineClass(String, byte[], int, int)`](migrateclassloaderdefineclass.md)
 * [Use `Map.of(..)` where possible](usemapof.md)
-* [Use `Runtime.Version#feature()`](broken-reference)
-* [Use `Runtime.Version#interim()`](broken-reference)
-* [Use `Runtime.Version#update()`](broken-reference)
-* [Use `SecurityManager#checkMulticast(InetAddress)`](broken-reference)
+* [Use `Runtime.Version#feature()`](migrateruntimeversionmajortofeature.md)
+* [Use `Runtime.Version#interim()`](migrateruntimeversionminortointerim.md)
+* [Use `Runtime.Version#update()`](migrateruntimeversionsecuritytoupdate.md)
+* [Use `SecurityManager#checkMulticast(InetAddress)`](migratesecuritymanagermulticast.md)
+
+

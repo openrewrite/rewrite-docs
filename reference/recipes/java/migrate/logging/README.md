@@ -1,10 +1,12 @@
-# java.util.logging APIs
+# `java.util.logging` APIs
 
 ## Recipes
 
-* [Migrate deprecated `java.util.logging` APIs](broken-reference)
-* [Use `LogRecord#setInstant(Instant)`](broken-reference)
-* [Use `Logger#getGlobal()`](broken-reference)
-* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](broken-reference)
-* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](broken-reference)
-* [Use `PlatformLoggingMXBean`](broken-reference)
+* [Migrate deprecated `java.util.logging` APIs](javaloggingapis.md)
+* [Use `LogRecord#setInstant(Instant)`](migratelogrecordsetmillistosetinstant.md)
+* [Use `Logger#getGlobal()`](migrateloggerglobaltogetglobal.md)
+* [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](migrateloggerlogrbtouseresourcebundle.md)
+* [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](migrategetloggingmxbeantogetplatformmxbean.md)
+* [Use `PlatformLoggingMXBean`](migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
+
+

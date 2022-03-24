@@ -2,5 +2,7 @@
 
 ## Recipes
 
-* [Find pinned resources by type](broken-reference)
-* [Find privileged `resource_type` definitions.](broken-reference)
+* [Find pinned resources by type](findpinnedresource.md)
+* [Find privileged `resource_type` definitions.](findprivilegedresourcetype.md)
+
+

@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Dependency management dependencies should have a version](broken-reference)
+* [Dependency management dependencies should have a version](dependencymanagementdependencyrequiresversion.md)
+
+

@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Find Terraform resource](broken-reference)
+* [Find Terraform resource](findresource.md)
+
+
