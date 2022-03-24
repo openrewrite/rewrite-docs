@@ -18,19 +18,11 @@ The OpenRewrite Maven plugin offers these goals:
 * `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org) bill of materials outlining the project's dependencies, including transitive dependencies.
 
 {% hint style="info" %}
-_`rewrite`_ namespaced properties can be used for substituting plugin properties
+_`rewrite`_ name-spaced properties can be used for substituting plugin properties
 
-* `activeRecipes`
-
-&#x20;   `-Drewrite.activeRecipes=org.example.Recipe1,an.example.Recipe2`&#x20;
-
-* `activeStyles`
-
-&#x20;   `-Drewrite.activeStyles=org.example.Style`
-
-* `recipeArtifactCoordinates`
-
-&#x20;   `-Drewrite.recipeArtifactCoordinates=org.yourdomain:your-recipe:1.0`
+* `-Drewrite.activeRecipes=org.example.Recipe1,an.example.Recipe2`&#x20;
+* `-Drewrite.activeStyles=org.example.Style`
+* `-Drewrite.recipeArtifactCoordinates=org.yourdomain:your-recipe:1.0`
 {% endhint %}
 
 {% hint style="info" %}
