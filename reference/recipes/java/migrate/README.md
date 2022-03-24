@@ -20,6 +20,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Migrate deprecated `javax.validation` packages to `jakarta.validation`](javaxvalidationmigrationtojakartavalidation.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](javaxxmlwsmigrationtojakartaxmlws.md)
+* [migrate persistence.xml files](javaxperistencexmltojakartapersistencexml.md)
 
 ## Subcategories
 

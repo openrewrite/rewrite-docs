@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Add Managed Maven Dependency](addmanageddependency.md)
 * [Add Maven dependency](adddependency.md)
 * [Add Maven plugin](addplugin.md)
 * [Add Maven plugin dependencies](addplugindependency.md)

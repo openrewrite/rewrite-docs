@@ -5,11 +5,11 @@ _Resolve common static analysis issues discovered through 3rd party tools_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.19.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.20.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.19.0
+* version: 7.20.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.16.2")
+    id("org.openrewrite.rewrite") version("5.18.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.20.0</version>
+        <version>4.21.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -117,7 +117,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove unnecessary parentheses](../../java/cleanup/unnecessaryparentheses.md)
 * [Remove Nullable and CheckForNull annotations from primitives](../../java/cleanup/unnecessaryprimitiveannotations.md)
 * [Unnecessary throws](../../java/cleanup/unnecessarythrows.md)
-* [Use `Collection` interfaces](../../java/cleanup/usecollectioninterfaces.md)
 * [Use diamond operator](../../java/cleanup/usediamondoperator.md)
 * [No C-style array declarations](../../java/cleanup/usejavastylearraydeclarations.md)
 * [Use lambdas where possible](../../java/cleanup/uselambdaforfunctionalinterface.md)
@@ -185,7 +184,6 @@ recipeList:
   - org.openrewrite.java.cleanup.UnnecessaryParentheses
   - org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations
   - org.openrewrite.java.cleanup.UnnecessaryThrows
-  - org.openrewrite.java.cleanup.UseCollectionInterfaces
   - org.openrewrite.java.cleanup.UseDiamondOperator
   - org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations
   - org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface

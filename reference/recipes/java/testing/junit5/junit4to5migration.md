@@ -10,23 +10,23 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.19.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.18.0
+* version: 1.19.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.18.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.19.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.16.2")
+    id("org.openrewrite.rewrite") version("5.18.0")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.18.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.19.0")
 }
 ```
 {% endcode %}
@@ -53,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.20.0</version>
+        <version>4.21.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit4to5Migration</recipe>
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.18.0</version>
+            <version>1.19.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -94,11 +94,14 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `junit`
   * artifactId: `junit`
 * [Exclude Maven dependency](../../../maven/excludedependency.md)
+  * groupId: `junit`
+  * artifactId: `junit`
+* [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `org.junit.vintage`
   * artifactId: `junit-vintage-engine`
 * [Exclude Maven dependency](../../../maven/excludedependency.md)
-  * groupId: `junit`
-  * artifactId: `junit`
+  * groupId: `org.junit.vintage`
+  * artifactId: `junit-vintage-engine`
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter-api`
@@ -160,11 +163,14 @@ recipeList:
       groupId: junit
       artifactId: junit
   - org.openrewrite.maven.ExcludeDependency:
+      groupId: junit
+      artifactId: junit
+  - org.openrewrite.maven.RemoveDependency:
       groupId: org.junit.vintage
       artifactId: junit-vintage-engine
   - org.openrewrite.maven.ExcludeDependency:
-      groupId: junit
-      artifactId: junit
+      groupId: org.junit.vintage
+      artifactId: junit-vintage-engine
   - org.openrewrite.maven.AddDependency:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter-api

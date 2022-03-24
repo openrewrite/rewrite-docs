@@ -5,11 +5,11 @@ _Find resource manifests that have limits set beyond a specific maximum._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.13.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.14.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.13.0
+* version: 1.14.0
 
 ## Options
 
@@ -41,14 +41,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindExceedsResourceValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.13.0 in your build file:
+Now that `com.yourorg.FindExceedsResourceValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.14.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.16.2")
+    id("org.openrewrite.rewrite") version("5.18.0")
 }
 
 rewrite {
@@ -60,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.14.0")
 }
 ```
 {% endcode %}
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.20.0</version>
+        <version>4.21.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindExceedsResourceValueExample</recipe>
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.13.0</version>
+            <version>1.14.0</version>
           </dependency>
         </dependencies>
       </plugin>

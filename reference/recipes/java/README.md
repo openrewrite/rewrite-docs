@@ -30,11 +30,13 @@ _Basic building blocks for transforming Java code._
 ## Subcategories
 
 * [Cleanup](/reference/recipes/java/cleanup)
+* [Dataflow analysis](/reference/recipes/java/dataflow)
 * [Format](/reference/recipes/java/format)
 * [JHipster](/reference/recipes/java/jhipster)
 * [Logging](/reference/recipes/java/logging)
 * [Micronaut](/reference/recipes/java/micronaut)
 * [Modernize](/reference/recipes/java/migrate)
+* [OpenRewrite best practices](/reference/recipes/java/recipes)
 * [Quarkus](/reference/recipes/java/quarkus)
 * [Search](/reference/recipes/java/search)
 * [Security](/reference/recipes/java/security)

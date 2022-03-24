@@ -5,11 +5,11 @@ _This recipe will add a JAXB run-time dependency to any maven project that has a
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.2.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.2.0
+* version: 1.3.0
 
 ## Options
 
@@ -35,14 +35,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddJaxbRuntimeExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.2.0 in your build file:
+Now that `com.yourorg.AddJaxbRuntimeExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.3.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.16.2")
+    id("org.openrewrite.rewrite") version("5.18.0")
 }
 
 rewrite {
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.3.0")
 }
 ```
 {% endcode %}
@@ -69,7 +69,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.20.0</version>
+        <version>4.21.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddJaxbRuntimeExample</recipe>
@@ -79,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.2.0</version>
+            <version>1.3.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -5,11 +5,11 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.19.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.20.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.19.0
+* version: 7.20.0
 
 ## Options
 
@@ -42,7 +42,7 @@ recipeList:
       oldArtifactId: spring-boot-starter-parent
       newArtifactId: spring-boot-starter-parent
       newVersion: 29.X
-      versionPattern: -jre
+      versionPattern: '-jre'
       allowVersionDowngrades: false
 ```
 {% endcode %}
@@ -55,7 +55,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.16.2")
+    id("org.openrewrite.rewrite") version("5.18.0")
 }
 
 rewrite {
@@ -79,7 +79,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.20.0</version>
+        <version>4.21.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeParentPomExample</recipe>
