@@ -20,9 +20,11 @@ The OpenRewrite Maven plugin offers these goals:
 {% hint style="info" %}
 _`rewrite`_ name-spaced properties can be used for substituting plugin properties
 
-* `-Drewrite.activeRecipes=org.example.Recipe1,an.example.Recipe2`&#x20;
-* `-Drewrite.activeStyles=org.example.Style`
-* `-Drewrite.recipeArtifactCoordinates=org.yourdomain:your-recipe:1.0`
+`-Drewrite.activeRecipes=org.example.Recipe1,an.example.Recipe2`&#x20;
+
+`-Drewrite.activeStyles=org.example.Style`
+
+`-Drewrite.recipeArtifactCoordinates=org.yourdomain:your-recipe:1.0`
 {% endhint %}
 
 {% hint style="info" %}
