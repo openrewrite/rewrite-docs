@@ -1,15 +1,15 @@
-# Change properties file property value
+# Change property value
 
 ** org.openrewrite.properties.ChangePropertyValue**
 _Change a property value leaving the key intact._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.20.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.21.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 7.20.0
+* version: 7.21.0
 
 ## Options
 
@@ -32,7 +32,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangePropertyValueExample
-displayName: Change properties file property value example
+displayName: Change property value example
 recipeList:
   - org.openrewrite.properties.ChangePropertyValue:
       propertyKey: management.metrics.binders.files.enabled
@@ -51,7 +51,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.18.0")
+    id("org.openrewrite.rewrite") version("5.19.0")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.21.0</version>
+        <version>4.22.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>

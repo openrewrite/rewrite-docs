@@ -25,6 +25,7 @@ _Best practices for JUnit Jupiter tests._
 * [Use JUnit Jupiter `@TempDir`](temporaryfoldertotempdir.md)
 * [Use `MatcherAssert#assertThat(..)`](usehamcrestassertthat.md)
 * [Use Mockito JUnit Jupiter extension](usemockitoextension.md)
+* [Use Vertx JUnit 5 Extension](vertxunittovertxjunit5.md)
 * [Use wiremock extension](usewiremockextension.md)
 * [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](updatemockwebserver.md)
 

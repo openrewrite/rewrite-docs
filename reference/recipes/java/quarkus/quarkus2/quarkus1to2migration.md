@@ -5,23 +5,23 @@ _Migrates Quarkus 1.x to 2.x._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/1.3.0/jar)
+[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/1.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 1.3.0
+* version: 1.4.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:1.3.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:1.4.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.18.0")
+    id("org.openrewrite.rewrite") version("5.19.0")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.4.0")
 }
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.21.0</version>
+        <version>4.22.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration</recipe>
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>1.3.0</version>
+            <version>1.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,13 +85,13 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Change property key](../../../properties/changepropertykey.md)
   * oldPropertyKey: `quarkus.neo4j.pool.metrics-enabled`
   * newPropertyKey: `quarkus.neo4j.pool.metrics.enabled`
-* [Change properties file property value](../../../properties/changepropertyvalue.md)
+* [Change property value](../../../properties/changepropertyvalue.md)
   * propertyKey: `quarkus.quartz.force-start`
   * newValue: `forced`
 * [Change property key](../../../properties/changepropertykey.md)
   * oldPropertyKey: `quarkus.quartz.force-start`
   * newPropertyKey: `quarkus.quartz.start-mode`
-* [Change properties file property value](../../../properties/changepropertyvalue.md)
+* [Change property value](../../../properties/changepropertyvalue.md)
   * propertyKey: `quarkus.quartz.store-type`
   * newValue: `jdbc-cmt`
   * oldValue: `db`

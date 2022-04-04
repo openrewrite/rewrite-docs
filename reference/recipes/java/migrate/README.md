@@ -26,7 +26,9 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 
 * [Apache](/reference/recipes/java/migrate/apache)
 * [Guava](/reference/recipes/java/migrate/guava)
+* [Jacoco](/reference/recipes/java/migrate/jacoco)
 * [Metrics](/reference/recipes/java/migrate/metrics)
+* [Wro4j](/reference/recipes/java/migrate/wro4j)
 * [`java.lang` APIs](/reference/recipes/java/migrate/lang)
 * [`java.net` APIs](/reference/recipes/java/migrate/net)
 * [`java.sql` APIs](/reference/recipes/java/migrate/sql)
