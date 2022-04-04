@@ -1,14 +1,15 @@
-# Generating an asciidoc report
+# Randomize tree IDs
 
-** org.openrewrite.java.ReportingRecipe**
+** org.openrewrite.java.RandomizeId**
+_Scramble the IDs. This was intended as a utility to test _en masse_ different techniques for UUID generation and compare their relative performance outside of a microbenchmark._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.20.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.21.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.20.0
+* version: 7.21.0
 
 
 ## Usage
@@ -20,11 +21,11 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.18.0")
+    id("org.openrewrite.rewrite") version("5.19.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.ReportingRecipe")
+    activeRecipe("org.openrewrite.java.RandomizeId")
 }
 
 repositories {
@@ -44,10 +45,10 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.21.0</version>
+        <version>4.22.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.ReportingRecipe</recipe>
+            <recipe>org.openrewrite.java.RandomizeId</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -59,4 +60,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.ReportingRecipe`
+Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.java.RandomizeId`
