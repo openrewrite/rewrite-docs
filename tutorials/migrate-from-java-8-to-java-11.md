@@ -23,7 +23,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-migrate-java</artifactId>
-      <version>1.4.1</version>
+      <version>1.4.2</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.4.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.4.2")
 
     // Other project dependencies
 }

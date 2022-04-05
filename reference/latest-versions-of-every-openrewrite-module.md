@@ -25,7 +25,7 @@ OpenRewrite itself and all recipe modules are published to [Maven Central](https
 | org.openrewrite.recipe:rewrite-kubernetes         | 1.15.0  |
 | org.openrewrite.recipe:rewrite-logging-frameworks | 1.5.1   |
 | org.openrewrite.recipe:rewrite-micronaut          | 1.9.1   |
-| org.openrewrite.recipe.rewrite-migrate-java       | 1.4.1   |
+| org.openrewrite.recipe.rewrite-migrate-java       | 1.4.2   |
 | org.openrewrite.recipe:rewrite-quarkus            | 1.4.1   |
 | org.openrewrite.recipe:rewrite-spring             | 4.19.2  |
 | org.openrewrite.recipe:rewrite-terraform          | 1.4.1   |
