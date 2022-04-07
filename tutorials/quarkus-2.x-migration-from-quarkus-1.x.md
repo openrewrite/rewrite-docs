@@ -60,16 +60,16 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ## Before and After
 
-Here we highlight a small number of the larger set of refactoring operations `Quarkus1to2Migration` automates. For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/blob/master/reference/recipes/java/micronaut/micronaut2to3migration.md).
+Here we highlight a small number of the larger set of refactoring operations `Quarkus1to2Migration` automates. For the full list of changes, see the recipe's [reference documentation](broken-reference).
 
 ### Migrate Deprecated Mutiny APIs
 
 {% tabs %}
-{% tab title="Deprecated Mutiny APIs \(Before\)" %}
+{% tab title="Deprecated Mutiny APIs (Before)" %}
 ```java
 package org.acme.demo.service;
 
@@ -122,7 +122,7 @@ public class FactorService {
 ```
 {% endtab %}
 
-{% tab title="Deprecated Mutiny APIs \(After\)" %}
+{% tab title="Deprecated Mutiny APIs (After)" %}
 ```java
 package org.acme.demo.service;
 
@@ -178,7 +178,7 @@ public class FactorService {
 ### Migrate `io.quarkus.qute.api.*`
 
 {% tabs %}
-{% tab title="io.quarkus.qute.api.\* \(Before\)" %}
+{% tab title="io.quarkus.qute.api.* (Before)" %}
 ```java
 package org.acme.demo.misc;
 
@@ -207,7 +207,7 @@ class HelloTemplate {
 ```
 {% endtab %}
 
-{% tab title="io.quarkus.qute.api.\* \(After\)" %}
+{% tab title="io.quarkus.qute.api.* (After)" %}
 ```java
 package org.acme.demo.misc;
 
@@ -240,7 +240,7 @@ class HelloTemplate {
 ### Migrate `application.properties` keys and values
 
 {% tabs %}
-{% tab title="application.properties \(Before\)" %}
+{% tab title="application.properties (Before)" %}
 ```markup
 quarkus.dev.instrumentation=true
 smallrye.jwt.sign.key-location=/keys/signing.pem
@@ -253,7 +253,7 @@ quarkus.neo4j.pool.metrics-enabled=true
 ```
 {% endtab %}
 
-{% tab title="application.properties \(After\)" %}
+{% tab title="application.properties (After)" %}
 ```markup
 quarkus.live-reload.instrumentation=true
 smallrye.jwt.sign.key.location=/keys/signing.pem
@@ -269,9 +269,8 @@ quarkus.neo4j.pool.metrics.enabled=true
 
 ### Known Limitations
 
-| Unsupported Functionality | Issue |
-| :--- | :--- |
-| `@ConfigProperties`-annotated interfaces migrate to using `@ConfigMapping`, but not yet `@ConfigProperties`-annotated classes | [\#24](https://github.com/openrewrite/rewrite-quarkus/issues/24) |
-| [Kubernetes Client 5.4](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#kubernetes-client) | - |
-| [Vert.x 4.0](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#vertx) | - |
-
+| Unsupported Functionality                                                                                                     | Issue                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `@ConfigProperties`-annotated interfaces migrate to using `@ConfigMapping`, but not yet `@ConfigProperties`-annotated classes | [#24](https://github.com/openrewrite/rewrite-quarkus/issues/24) |
+| [Kubernetes Client 5.4](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#kubernetes-client)                      | -                                                               |
+| [Vert.x 4.0](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#vertx)                                             | -                                                               |
