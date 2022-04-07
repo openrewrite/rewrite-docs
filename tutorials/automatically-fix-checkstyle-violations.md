@@ -19,7 +19,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.22.1</version>
+      <version>4.22.2</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
@@ -46,7 +46,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("5.19.1")
+    id("org.openrewrite.rewrite") version("5.19.2")
 }
 
 rewrite {
@@ -80,7 +80,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.22.1</version>
+      <version>4.22.2</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
@@ -99,7 +99,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.19.1")
+    id("org.openrewrite.rewrite") version("5.19.2")
 }
 
 rewrite {
@@ -136,7 +136,7 @@ In Gradle, [Task.dependsOn\(\)](https://docs.gradle.org/current/javadoc/org/grad
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("5.19.1")
+    id("org.openrewrite.rewrite") version("5.19.2")
 }
 
 rewrite {
@@ -173,7 +173,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.22.1</version>
+      <version>4.22.2</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>

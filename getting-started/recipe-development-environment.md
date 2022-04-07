@@ -48,24 +48,24 @@ Which rewrite libraries you take dependencies on is determined by which language
 ```groovy
 dependencies {
     // rewrite-java dependencies only necessary for Java Recipe development
-    implementation("org.openrewrite:rewrite-java:7.21.1")
-    runtimeOnly("org.openrewrite:rewrite-java-11:7.21.1")
-    runtimeOnly("org.openrewrite:rewrite-java-8:7.21.1")
+    implementation("org.openrewrite:rewrite-java:7.21.3")
+    runtimeOnly("org.openrewrite:rewrite-java-11:7.21.3")
+    runtimeOnly("org.openrewrite:rewrite-java-8:7.21.3")
 
     // rewrite-maven dependency only necessary for Maven Recipe development
-    implementation("org.openrewrite:rewrite-maven:7.21.1")
+    implementation("org.openrewrite:rewrite-maven:7.21.3")
 
     // rewrite-yaml dependency only necessary for Yaml Recipe development
-    implementation("org.openrewrite:rewrite-yaml:7.21.1")
+    implementation("org.openrewrite:rewrite-yaml:7.21.3")
 
     // rewrite-properties dependency only necessary for Properties Recipe development
-    implementation("org.openrewrite:rewrite-properties:7.21.1")
+    implementation("org.openrewrite:rewrite-properties:7.21.3")
 
     // rewrite-xml dependency only necessary for XML Recipe development
-    implementation("org.openrewrite:rewrite-xml:7.21.1")
+    implementation("org.openrewrite:rewrite-xml:7.21.3")
 
     // For authoring tests for any kind of Recipe
-    testImplementation("org.openrewrite:rewrite-test:7.21.1")
+    testImplementation("org.openrewrite:rewrite-test:7.21.3")
     testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
     testImplementation("org.junit.jupiter:junit-jupiter-params:latest.release")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:latest.release")
@@ -80,19 +80,19 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
-        <version>7.21.1</version>
+        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
-        <version>7.21.1</version>
+        <version>7.21.3</version>
         <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-11</artifactId>
-        <version>7.21.1</version>
+        <version>7.21.3</version>
         <scope>runtime</scope>
     </dependency>
 
@@ -100,7 +100,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-maven</artifactId>
-        <version>7.21.1</version>
+        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>
 
@@ -108,7 +108,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-yaml</artifactId>
-        <version>7.21.1</version>
+        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>
 
@@ -116,7 +116,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-properties</artifactId>
-        <version>7.21.1</version>
+        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>
 
@@ -124,7 +124,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-xml</artifactId>
-        <version>7.21.1</version>
+        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>    
 
@@ -132,7 +132,7 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-test</artifactId>
-        <version>7.21.1</version>
+        <version>7.21.3</version>
         <scope>test</scope>
     </dependency>
 </dependencies>
@@ -337,7 +337,7 @@ Once your recipe module is published, either locally for testing or to an extern
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.19.1")
+    id("org.openrewrite.rewrite") version("5.19.2")
 }
 
 repositories {
@@ -365,7 +365,7 @@ Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDry
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.22.1</version>
+                <version>4.22.2</version>
                 <configuration>
                     <activeRecipes>
                         <recipe> [your recipe name] </recipe>
