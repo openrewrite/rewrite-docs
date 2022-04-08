@@ -51,7 +51,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 plugins {
     id("java")
     
-    id("org.openrewrite.rewrite") version("5.19.2")
+    id("org.openrewrite.rewrite") version("5.19.3")
 }
 
 repositories {
@@ -181,7 +181,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.19.2")
+    id("org.openrewrite.rewrite") version("5.19.3")
 }
 
 rewrite {
@@ -262,7 +262,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.19.2")
+    id("org.openrewrite.rewrite") version("5.19.3")
 }
 
 rewrite {
@@ -322,7 +322,7 @@ After applying these steps, the relevant portions of your build file will look l
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.19.2")
+    id("org.openrewrite.rewrite") version("5.19.3")
 }
 
 rewrite {

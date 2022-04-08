@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangeStaticFieldToMethodExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.19.2")
+    id("org.openrewrite.rewrite") version("5.19.3")
 }
 
 rewrite {

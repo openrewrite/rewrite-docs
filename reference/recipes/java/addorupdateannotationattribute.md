@@ -47,7 +47,7 @@ Now that `com.yourorg.AddOrUpdateAnnotationAttributeExample` has been defined ac
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.19.2")
+    id("org.openrewrite.rewrite") version("5.19.3")
 }
 
 rewrite {

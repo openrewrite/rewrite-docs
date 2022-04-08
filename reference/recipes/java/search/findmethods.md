@@ -45,7 +45,7 @@ Now that `com.yourorg.FindMethodsExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.19.2")
+    id("org.openrewrite.rewrite") version("5.19.3")
 }
 
 rewrite {

@@ -16,7 +16,7 @@ OpenRewrite itself and all recipe modules are published to [Maven Central](https
 | org.openrewrite:rewrite-yaml                      | 7.21.3  |
 | org.openrewrite:rewrite-test                      | 7.21.3  |
 | org.openrewrite:rewrite-maven-plugin              | 4.22.2  |
-| org.openrewrite:rewrite-gradle-plugin             | 5.19.2  |
+| org.openrewrite:rewrite-gradle-plugin             | 5.19.3  |
 | org.openrewrite.recipe:rewrite-circleci           | 1.5.2   |
 | org.openrewrite.recipe:rewrite-concourse          | 1.4.1   |
 | org.openrewrite.recipe:rewrite-github-actions     | 1.4.0   |
