@@ -391,5 +391,5 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 ## Next Steps
 
 * [Writing a Java Refactoring Recipe](../tutorials/writing-a-java-refactoring-recipe.md)
-* [Maven Plugin Configuration](broken-reference)
+* [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
