@@ -6,7 +6,7 @@ description: Declaring and configuring Recipes and Styles in YAML
 
 There are two places OpenRewrite [YAML](https://yaml.org) files may appear:
 
-* Within the rewrite.yml file of a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](broken-reference)
+* Within the rewrite.yml file of a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](rewrite-maven-plugin.md)
   * Will not be included in jars published from your project
 * Inside the META-INF/rewrite folder of a jar
   * Put your recipes here if you want to redistribute and apply them to other repositories
@@ -58,7 +58,7 @@ recipeList:
 To run this recipe:
 
 1. Put the above into a rewrite.yml file at the project root
-2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](broken-reference) with `com.yourorg.SayHello` listed as an active recipe
+2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](rewrite-maven-plugin.md) with `com.yourorg.SayHello` listed as an active recipe
 3. Run the "rewrite:run" maven goal or "rewriteRun" gradle task
 
 {% hint style="success" %}
@@ -100,6 +100,6 @@ styleConfigs:
 To put this style in effect for any formatting performed by OpenRewrite within the current project:
 
 1. Put the above into a rewrite.yml file at the project root
-2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](broken-reference) with `com.yourorg.YesTabsNoStarImports` listed as the active style
+2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](rewrite-maven-plugin.md) with `com.yourorg.YesTabsNoStarImports` listed as the active style
 
 The next time any OpenRewrite recipe is run any formatting it performs will take these styles into account.
