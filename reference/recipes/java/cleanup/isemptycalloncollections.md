@@ -1,4 +1,4 @@
-# Use `Collections#isEmpty()` instead of comparing `size()`
+# Use `Collection#isEmpty()` instead of comparing `size()`
 
 ** org.openrewrite.java.cleanup.IsEmptyCallOnCollections**
 _Also check for _not_ `isEmpty()` when testing for not equal to zero size._
