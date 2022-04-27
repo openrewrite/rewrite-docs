@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Add `@DelegatesTo` to the Gradle API](adddelegatestogradleapi.md)
 * [Add Gradle wrapper](addgradlewrapper.md)
 * [Change Gradle dependency artifactId](changedependencyartifactid.md)
 * [Change Gradle dependency groupId](changedependencygroupid.md)
@@ -13,5 +14,7 @@
 
 ## Subcategories
 
-* [Search](search/)
-* [Security](../maven/security/)
+* [Search](/reference/recipes/gradle/search)
+* [Security](/reference/recipes/gradle/security)
+
+

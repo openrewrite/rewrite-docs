@@ -26,11 +26,11 @@ _Basic building blocks for transforming Java code._
 * [Simplify a call chain](simplifymethodchain.md)
 * [Update source positions](updatesourcepositions.md)
 * [Use static import](usestaticimport.md)
+* [Uses `@RewriteSkip` annotation](doesnotuserewriteskip.md)
 
 ## Subcategories
 
 * [Cleanup](/reference/recipes/java/cleanup)
-* [Dataflow analysis](/reference/recipes/java/dataflow)
 * [Format](/reference/recipes/java/format)
 * [JHipster](/reference/recipes/java/jhipster)
 * [Logging](/reference/recipes/java/logging)

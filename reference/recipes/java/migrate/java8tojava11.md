@@ -13,23 +13,23 @@ _This recipe will apply changes commonly needed when migrating from Java 8 to Ja
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.4.3/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.5.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.4.3
+* version: 1.5.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.4.3 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.5.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.19.3")
+    id("org.openrewrite.rewrite") version("5.20.0")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.4.3")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.5.0")
 }
 ```
 {% endcode %}
@@ -56,7 +56,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.22.2</version>
+        <version>4.23.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
@@ -66,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.4.3</version>
+            <version>1.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,9 +96,11 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](../../java/migrate/javax/javaxlangmodelutil.md)
 * [Migrate deprecated `javax.management.monitor` APIs](../../java/migrate/javax/javaxmanagementmonitorapis.md)
 * [Migrate deprecated `javax.xml.stream` APIs](../../java/migrate/javax/javaxxmlstreamapis.md)
+* [Remove Cobertura Maven plugin](../../java/migrate/cobertura/removecoberturamavenplugin.md)
 * [Upgrade Wro4j plugin version](../../java/migrate/wro4j/upgradewro4jmavenpluginversion.md)
 * [Upgrade JaCoCo Maven plugin version](../../java/migrate/jacoco/upgradejacocomavenpluginversion.md)
 * [Change Maven Java version property values to 11](../../java/migrate/javaversion11.md)
+* [Migrate `java.util` APIs](../../java/migrate/util/javautilapis.md)
 
 {% endtab %}
 
@@ -128,9 +130,11 @@ recipeList:
   - org.openrewrite.java.migrate.javax.JavaxLangModelUtil
   - org.openrewrite.java.migrate.javax.JavaxManagementMonitorAPIs
   - org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs
+  - org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin
   - org.openrewrite.java.migrate.wro4j.UpgradeWro4jMavenPluginVersion
   - org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion
   - org.openrewrite.java.migrate.JavaVersion11
+  - org.openrewrite.java.migrate.util.JavaUtilAPIs
 
 ```
 {% endtab %}

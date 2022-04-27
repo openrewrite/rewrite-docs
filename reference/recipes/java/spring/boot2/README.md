@@ -16,6 +16,7 @@
 * [Migrate Spring Boot properties to 2.6](springbootproperties_2_6.md)
 * [Migrate additional Spring Boot properties to 2.0](springbootpropertiesmanual_2_0.md)
 * [Migrate additional Spring Boot properties to 2.5](springbootpropertiesmanual_2_5.md)
+* [Migrate additional Spring Boot properties to 2.6](springbootpropertiesmanual_2_6.md)
 * [Migrate deprecated ActuatorMediaType to ApiVersion#getProducedMimeType](migrateactuatormediatypetoapiversion.md)
 * [Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL](migratehsqlembeddeddatabaseconnection.md)
 * [Migrate flyway and liquibase credentials.](migratedatabasecredentials.md)

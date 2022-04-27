@@ -8,6 +8,7 @@
 * [Find fields of type](findfieldsoftype.md)
 * [Find literals](findliterals.md)
 * [Find method usages](findmethods.md)
+* [Find methods with empty bodies](findemptymethods.md)
 * [Find missing type information on Java ASTs](findmissingtypes.md)
 * [Find plain text secrets](findsecrets.md)
 * [Find text](findtext.md)

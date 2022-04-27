@@ -5,11 +5,11 @@ _Migrate accesses to a static field to invocations of a static method._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.21.3/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.22.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.21.3
+* version: 7.22.0
 
 ## Options
 
@@ -18,6 +18,7 @@ _Migrate accesses to a static field to invocations of a static method._
 | `String` | oldClassName | The fully qualified name of the class containing the field to replace. |
 | `String` | oldFieldName | The simple name of the static field to replace. |
 | `String` | newClassName | *Optional*. The fully qualified name of the class containing the method to use. Leave empty to keep the same class. |
+| `String` | newTarget | *Optional*. An optional method target that can be used to specify a static field within the new class. |
 | `String` | newMethodName | The simple name of the method to use. The method must be static and have no arguments. |
 
 
@@ -37,6 +38,7 @@ recipeList:
       oldClassName: java.util.Collections
       oldFieldName: EMPTY_LIST
       newClassName: java.util.List
+      newTarget: OK_RESPONSE
       newMethodName: of
 ```
 {% endcode %}
@@ -49,7 +51,7 @@ Now that `com.yourorg.ChangeStaticFieldToMethodExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.19.3")
+    id("org.openrewrite.rewrite") version("5.20.0")
 }
 
 rewrite {
@@ -73,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.22.2</version>
+        <version>4.23.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeStaticFieldToMethodExample</recipe>

@@ -5,23 +5,23 @@ _Remove any extra trailing whitespace from the end of each line._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-hcl), [Issue Tracker](https://github.com/openrewrite/rewrite-hcl/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-hcl/7.21.3/jar)
+[Github](https://github.com/openrewrite/rewrite-hcl), [Issue Tracker](https://github.com/openrewrite/rewrite-hcl/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-hcl/7.22.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 7.21.3
+* version: 7.22.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-hcl:7.21.3 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-hcl:7.22.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.19.3")
+    id("org.openrewrite.rewrite") version("5.20.0")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-hcl:7.21.3")
+    rewrite("org.openrewrite:rewrite-hcl:7.22.0")
 }
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.22.2</version>
+        <version>4.23.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.hcl.format.RemoveTrailingWhitespace</recipe>
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-hcl</artifactId>
-            <version>7.21.3</version>
+            <version>7.22.0</version>
           </dependency>
         </dependencies>
       </plugin>

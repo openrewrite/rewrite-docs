@@ -5,11 +5,11 @@ _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expre
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.21.3/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.22.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.21.3
+* version: 7.22.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.19.3")
+    id("org.openrewrite.rewrite") version("5.20.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.22.2</version>
+        <version>4.23.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
@@ -83,6 +83,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Fix missing braces](../../java/cleanup/needbraces.md)
 * [Operator wrapping](../../java/cleanup/operatorwrap.md)
 * [Remove unnecessary parentheses](../../java/cleanup/unnecessaryparentheses.md)
+* [Remove redundant casts](../../java/cleanup/removeredundanttypecast.md)
 
 {% endtab %}
 
@@ -111,6 +112,7 @@ recipeList:
   - org.openrewrite.java.cleanup.NeedBraces
   - org.openrewrite.java.cleanup.OperatorWrap
   - org.openrewrite.java.cleanup.UnnecessaryParentheses
+  - org.openrewrite.java.cleanup.RemoveRedundantTypeCast
 
 ```
 {% endtab %}
