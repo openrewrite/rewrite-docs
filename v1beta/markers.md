@@ -16,7 +16,7 @@ Markers are used to annotate [AST](abstract-syntax-trees.md) elements with metad
 ### Style Markers
 
 * [NamedStyles](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/style/NamedStyles.java) - A named collection of [styles](styles.md) representing code style/formatting and configuration options
-  * [CheckStyle](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/Checkstyle.java), [IntelliJ](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java), [AutoDetect-java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/Autodetect.java), [AutoDetect-xml](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/style/Autodetect.java)
+  * [CheckStyle](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/Checkstyle.java), [IntelliJ](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java), [AutoDetect-java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/Autodetect.java), [AutoDetect-xml](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/style/Autodetect.java), [DeclarativeNamedStyles](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/config/DeclarativeNamedStyles.java)
 
 ### Java Markers
 
