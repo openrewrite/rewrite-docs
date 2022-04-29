@@ -20,7 +20,7 @@ Markers are used to annotate [AST](abstract-syntax-trees.md) elements with metad
 
 ### Java Markers
 
-* [JavaProject](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/marker/JavaProject.java) - Name and GAV coordinates of the source files associated project
+* [JavaProject](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/marker/JavaProject.java) - Name and publication coordinates (groupId, artifactId, version) of the source files associated project
 * [JavaSourceSet](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/marker/JavaSourceSet.java) - Name (e.g. main or test) and list of fully qualified types representing the classpath
 * [JavaVersion](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/marker/JavaVersion.java) - Java version including source and target compatibility of a source file
 * [JavaVarKeyword](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/JavaVarKeyword.java) - An AST marker for inferred type variable declarations
