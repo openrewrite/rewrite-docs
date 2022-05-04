@@ -13,9 +13,13 @@ The OpenRewrite Maven plugin automatically supplies any recipes you configure to
 The OpenRewrite Maven plugin offers these goals:
 
 * `mvn rewrite:run` - Run the configured recipes and apply the changes locally.
-* `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes, but do not make changes.
+* `mvn rewrite:runNoFork` - Run the configured recipes and apply the changes locally. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
+* `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each maven modules' `target` folder.
+* `mvn rewrite:dryRunNoFork` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each maven modules' `target` folder. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
 * `mvn rewrite:discover` - Generate a report of available recipes found on the classpath.
 * `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org) bill of materials outlining the project's dependencies, including transitive dependencies.
+
+
 
 {% hint style="info" %}
 _`rewrite`_ name-spaced properties can be used for substituting plugin properties
@@ -28,6 +32,10 @@ _`rewrite`_ name-spaced properties can be used for substituting plugin propertie
 {% endhint %}
 
 {% hint style="info" %}
+The goals `rewrite:run` and `rewrite:dryRun` are configured to fork Maven's life cycle and are a better choice when running recipes via a stand-alone goal (`mvn rewrite:run`) because this will trigger all the necessary life-cycle goals prior to running rewrite's plugin. However, when using rewrite within the context of an integration build (`mvn deploy rewrite:run`) it may be more efficient to use the non-forking variants, as these will not cause duplicate life cycle phases to be called.&#x20;
+{% endhint %}
+
+{% hint style="info" %}
 In some circumstances, depending on how your project pom.xml is configured, you may get a [`NoPluginFoundForPrefixException`](https://cwiki.apache.org/confluence/display/MAVEN/NoPluginFoundForPrefixException). The root cause for this varies from pom.xml to pom.xml. In any case, as a quick fix to get unstuck, try referencing the fully-qualified rewrite-maven-plugin coordinates instead of the shorthand prefix. That is, try using `mvn org.openrewrite.maven:rewrite-maven-plugin:GOAL` (such as `mvn org.openrewrite.maven:rewrite-maven-plugin:run`, etc.) rather than `mvn rewrite:GOAL`.
 {% endhint %}
 
@@ -35,13 +43,15 @@ In some circumstances, depending on how your project pom.xml is configured, you 
 
 It generally makes sense to apply the plugin to the root pom.xml in a repository so that the configuration applies to each project in a multi-module project. The configuration block below contains an example of every configuration option.
 
-* `activeRecipes` - Explicitly turns on recipes by name (the name given in the `specs.openrewrite.org/v1beta/recipe` resource). No recipe is run unless explicitly turned on with this setting. You can set `activeRecipes` ad-hoc directly on the commandline using `-Drewrite.activeRecipes=an.example.Recipe0,an.example.Recipe1`. For example, `./mvnw rewrite:run -Drewrite.activeRecipes=an.example.Recipe0`.
-* `activeStyles` - Explicitly turns on a style by name (the name given in the `specs.openrewrite.org/v1beta/style` resource). No style is applied unless explicitly turned on with this setting. This can be invoked ad-hoc directly on the commandline using `-Drewrite.activeStyles=an.example.Style0,an.example.Style1`. For example, `./mvnw rewrite:run -Drewrite.activeStyles=an.example.Style0`.
-* `configLocation` - Where to look for a OpenRewrite YML configuration file somewhere in the project directory (or really anywhere on disk). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is (unless an absolute path is given) evaluated for _each_ module relative to that module's project directory.
-* `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
+* `activeRecipes` - Explicitly turns on recipes by name (the name given in the `specs.openrewrite.org/v1beta/recipe` resource). No recipe is run unless explicitly turned on with this setting. You can set `activeRecipes` ad-hoc directly on the command-line using `-Drewrite.activeRecipes=an.example.Recipe0,an.example.Recipe1`. For example, `./mvnw rewrite:run -Drewrite.activeRecipes=an.example.Recipe0`.
+* `activeStyles` - Explicitly turns on a style by name (the name given in the `specs.openrewrite.org/v1beta/style` resource). No style is applied unless explicitly turned on with this setting. This can be invoked ad-hoc directly on the command-line using `-Drewrite.activeStyles=an.example.Style0,an.example.Style1`. For example, `./mvnw rewrite:run -Drewrite.activeStyles=an.example.Style0`.
+* `configLocation` - Where to look for an OpenRewrite YML configuration file somewhere in the project directory (or really anywhere on disk). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is (unless an absolute path is given) evaluated for _each_ module relative to that module's project directory.
 * `dependencies` - To make pre-packaged OpenRewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
-* `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. Default threshold is 10Mb.
+* `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `exclusions` - Skips parsing for any paths matching these exclusions. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename.
+* `pomCacheDirectory` - The directory where OpenRewrite will cache pom.xml and meta-data. The default value is `~/.rewrite-cache`
+* `pomCacheEnabled` - This flag determines if OpenRewrite will cache pom.xml and meta-data using an on-disk cache. The default is `true`
+* `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. The default threshold is 10Mb.
 * `skipMavenParsing` - When enabled, skip parsing Maven `pom.xml`s, and any transitive poms, as source files. This can be an efficiency improvement in certain situations. Default is `false`. For example, `-DskipMavenParsing=true`.
 
 {% hint style="info" %}
@@ -90,6 +100,8 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
 {% hint style="info" %}
 To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
 {% endhint %}
+
+
 
 ## The "Run" Goal
 
@@ -157,6 +169,20 @@ This same goal also lists all of the parameters that recipes can be or are alrea
 Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org) bill of materials (BOM) outlining all of the project's dependencies, including transitive dependencies. The BOM will be written to target/\<module name>-\<version>-cyclonedx.xml.
 
 ![Excerpt from OpenRewrite-generated CycloneDx BOM](<../.gitbook/assets/image (19).png>)
+
+## Rewrite's Pom Cache
+
+Rewrite's maven parser has its own resolution logic for pom files. (It will download metadata and poms from maven repositories). To speed up this process, there is a caching abstraction with two implementations (one that uses RocksDB and one that uses an in-memory cache to reduce the number of times a pom/metadata is downloaded from a repository.
+
+The Maven plugin uses the RocksDB cache by default and will store this cache in `~/.rewrite-cache` . RocksDB is a high-performance, embedded database that is maintained by Facebook. The database engine is written in C++ and is used by the plugin via a JNI wrapper that has no transitive dependencies.
+
+### Cache Troubleshooting
+
+In the very rare cases where the Maven plugin is unable to write to its on-disk folder or you encounter a serialization issue when reading/writing to the cache, there are several options available:
+
+* Check if the folder is writable by the Maven process. The default folder location is under the user's home folder (`~./rewrite-cache`) and you can choose an alternate location by using the plugin's `pomCacheDirectory` configuration property.
+* It is safe to simply delete all of the contents within the cache folder. The first time the plugin is executed after deleting the cache, it will download and re-populate this cache folder.
+* The `pomCacheEnabled` can be set to `false` in which case the plugin will use an in-memory cache instead. This will make running recipes slower when a project had deep dependency trees.
 
 ## Links
 
