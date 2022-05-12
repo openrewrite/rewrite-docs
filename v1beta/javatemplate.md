@@ -8,7 +8,7 @@ More advanced refactoring recipes often require the construction of complex AST 
 
 ## Construction
 
-`JavaTemplate` are constructed within a `JavaVisitor` by calling `JavaTemplate.bulider()`:
+`JavaTemplate` are constructed within a `JavaVisitor` by calling `JavaTemplate.builder()`:
 
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
