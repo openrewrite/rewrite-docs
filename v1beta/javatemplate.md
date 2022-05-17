@@ -3,7 +3,7 @@
 More advanced refactoring recipes often require the construction of complex AST elements. Manually constructing complex AST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into AST elements ready fo ruse in a [visitor](visitors.md).
 
 {% hint style="success" %}
-`JavaTemplate` produces ASTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion. &#x20;
+`JavaTemplate` produces ASTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion.
 {% endhint %}
 
 ## Construction
@@ -27,30 +27,39 @@ public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
 
 A template is always constructed from a `String` code snippet. The snippet must be syntactically correct code for the context it is being inserted into. Snippets may reference variables, functions, and other symbols visible within the lexical scope of the insertion point.
 
-Snippets may include parameter substitution indicators. Parameter substitution indicators are positional. There are two kinds of parameter substitution indicator. Which kind is appropriate depends on whether the parameter being substituted represents something with a type or not.
+Snippets may include parameter substitution indicators. Parameter substitution indicators are positional. There are two kinds of parameter substitution indicator, typed and untyped.&#x20;
 
 The substitution of these indicators with their actual values happens when the template is applied via `withTemplate()`. See [Usage](javatemplate.md#usage).
 
 #### Typed Substitution Indicators
 
-In order for the AST resulting from templating to be correctly type-attributed, substitutions into a typed insertion point must indicate that type. Whether an insertion point is typed or not depends on the Java language grammar.&#x20;
+In order for the AST resulting from templating to be correctly type-attributed, substitutions of AST elements into a typed insertion point must indicate that type. Whether an insertion point is typed or not depends on the Java language grammar.
 
-Typed substitution indicators take the form `#{any(<type>)}` where \<type> is the expected type of the parameter. If any type is permissible then the shortest form `#{any()}` should be used. Examples of snippets with typed substitution indicators:
+Typed substitution indicators take the form `#{any(<type>)}` where \<type> is the expected type of the parameter. If any type is permissible then the shortest form `#{any()}` should be used. When substituting an array type use `#{anyArray()}`. Examples of snippets with typed substitution indicators:
 
-* `Object o = #{any()}`
+* `Object o = #{any()};`
 * `boolean b = #{any(boolean)};`
 * `foo.acceptsACollection(#{any(java.util.Collection)});`
+* `String[] = #{anyArray(java.lang.String)};`
+
+{% hint style="info" %}
+It is unnecessary to provide a typed substitution indicator if you're providing a simple value like a `String` to a template. Typed substitution indicators are required when supplying an AST element as a template substitution parameter.
+{% endhint %}
+
+{% hint style="warning" %}
+If the recipe test harness fails because of missing type information when you've used templates double check that you're providing accurate types and imports to the template. While correct source can sometimes be produced from ASTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
+{% endhint %}
 
 #### Untyped Substitution Indicators
 
-It is correct to use the untyped substitution indicator `#{}` anywhere that the concept of type is nonsensical . Examples of untyped insertion points include the text of a comment, the name of a class in a class declaration, and keywords like `if` or `while`. Examples of snippets with untyped substitution indicators:
+It is correct to use the untyped substitution indicator `#{}` when providing a non-AST element like a `String` as template substitution argument . When providing an AST element, like a `J.Identifier`, into a context where the concept of type is nonsensical first convert them to an appropriate `String`. Examples of untyped insertion points include the text of a comment, the name of a class in a class declaration, and keywords like `if` or `while`. Examples of snippets with untyped substitution indicators:
 
 * `//TODO: Fix bug #{}`
 * `public class #{} { }`
 
 ### Additional Imports
 
-If a snippet of code is introducing a type that might be new to the insertion scope, `JavaTemplate` has to be informed using the method `JavaTemplate.Builder.imports()`. For static imports, use `JavaTemplate.Builder.staticImports()`.  For example:
+If a snippet of code is introducing a type that might be new to the insertion scope, `JavaTemplate` has to be informed using the method `JavaTemplate.Builder.imports()`. For static imports, use `JavaTemplate.Builder.staticImports()`. For example:
 
 ```java
 JavaTemplate.builder(this::getCursor, "new SecureRandom()")
@@ -59,7 +68,7 @@ JavaTemplate.builder(this::getCursor, "new SecureRandom()")
 ```
 
 {% hint style="warning" %}
-Failing to declare required imports results in `JavaTemplate` producing AST elements missing type attribution, or failing outright with an exception.&#x20;
+Failing to declare required imports results in `JavaTemplate` producing AST elements missing type attribution, or failing outright with an exception. While correct source can sometimes be produced from ASTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
 {% endhint %}
 
 {% hint style="warning" %}
@@ -89,7 +98,7 @@ It isn't always possible to include all the libraries a Recipe may want to refer
 
 #### From Stubs
 
-Whenever a symbol you want to reference is not, or cannot, be looked up from the runtime classpath a stub providing all of the relevant type information can be provided instead. Stubs are provided with `JavaParser.Builder.dependsOn()`. Stubs must be valid Java source files, but only methods that are used in the template must exist in the stub, and those methods can be implemented with the bare minimum to be syntactically valid method declarations.&#x20;
+Whenever a symbol you want to reference is not, or cannot, be looked up from the runtime classpath a stub providing all of the relevant type information can be provided instead. Stubs are provided with `JavaParser.Builder.dependsOn()`. Stubs must be valid Java source files, but only methods that are used in the template must exist in the stub, and those methods can be implemented with the bare minimum to be syntactically valid method declarations.
 
 ```java
 JavaTemplate.builder(this::getCursor,"Duration.ofMillis(#{any(int)})")
@@ -150,5 +159,5 @@ public String foo(Object arg1, String arg2) {
 You might want to replace the entire method declaration with the template result, in which case `J.MethodDeclaration.getCoordinates().replace()` is the appropriate coordinate. But maybe you just want to add an annotation, in which case `J.MethodDeclaration.getCoordinates().addAnnotation()` is appropriate. Each AST element exposes different coordinates. All coordinates include a "replace" coordinate to replace the entire AST element with the template result. Look for a `getCoordinates()` method to see what other coordinates are available.
 
 {% hint style="info" %}
-There are thousands of possible coordinates, many with no practical application. To avoid wasting effort implementing coordinates no one would ever use, coordinates have been implemented on an as-needed basis. If existing coordinates are insufficient to your needs, come tell us about it in the [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared\_invite/zt-nj42n3ea-b\~62rIHzb3Vo0E1APKCXEA) or [file an issue](https://github.com/openrewrite/rewrite/issues).&#x20;
+There are thousands of possible coordinates, many with no practical application. To avoid wasting effort implementing coordinates no one would ever use, coordinates have been implemented on an as-needed basis. If existing coordinates are insufficient to your needs, come tell us about it in the [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared\_invite/zt-nj42n3ea-b\~62rIHzb3Vo0E1APKCXEA) or [file an issue](https://github.com/openrewrite/rewrite/issues).
 {% endhint %}
