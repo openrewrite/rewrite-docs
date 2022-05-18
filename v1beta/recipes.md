@@ -177,8 +177,21 @@ As an example, let's assume that two recipes are added to the execution pipeline
 
 When large recipes are applied to large repositories, the performance impact of additional cycles can be substantial. Whenever possible recipes should complete all of their own work within a single cycle, rather than spreading it out over multiple cycles. Whenever a recipe requires more than a single cycle to complete its work, it must return `true` from `Recipe.causesAnotherCycle()` for another cycle to be added.
 
+If a [Declarative Recipe](recipes.md#declarative-recipes) needs to cause another cycle but none of its constituent recipes return `true` from `Recipe.causesAnotherCycle()`, the declarative recipe can set the property in yaml:
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.NeedsAnotherCycle
+displayName: Test
+causesAnotherCycle: true
+recipeList:
+  - com.yourorg.SomeRecipeThatDoesNotCauseAnotherCycle
+  - com.yourorg.SomeOtherRecipeThatDoesNotCauseAnotherCycle
+```
+
 {% hint style="success" %}
-Calling `Recipe.doNext()` during the execution of a recipe/visitor causes that recipe to execute immediately after the current recipe during the current cycle. `Recipe.doNext()` does not cause an extra cycle to execute or be required.
+Calling `Recipe.doNext()` during the execution of a recipe/visitor schedules that recipe to execute immediately after the current recipe during the current cycle. `Recipe.doNext()` does not cause an extra cycle to execute or be required.
 {% endhint %}
 
 ### Result Set
