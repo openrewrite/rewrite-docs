@@ -15,10 +15,10 @@ _Change method invocations to static method calls._
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. The original method call may or may not be a static method invocation. |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. The original method call may or may not be a static method invocation. |
 | `String` | fullyQualifiedTargetTypeName | A fully-qualified class name of the type upon which the static method is defined. |
 | `String` | returnType | *Optional*. Sometimes changing the target type also changes the return type. In the Guava example, changing from `ImmutableSet#of(..)` to `Set#of(..)` widens the return type from Guava's `ImmutableSet` to just `java.util.Set`. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 
 
 ## Usage

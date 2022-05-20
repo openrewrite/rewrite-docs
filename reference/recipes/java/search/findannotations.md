@@ -15,7 +15,7 @@ _Find all annotations matching the annotation pattern._
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns). |
+| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns.md). |
 
 
 ## Usage

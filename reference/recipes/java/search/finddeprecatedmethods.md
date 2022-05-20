@@ -15,7 +15,7 @@ _Find uses of deprecated methods in any API._
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | methodPattern | *Optional*. A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
+| `String` | methodPattern | *Optional*. A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
 | `Boolean` | ignoreDeprecatedScopes | *Optional*. When a deprecated method is used in a deprecated method or class, ignore it. |
 
 

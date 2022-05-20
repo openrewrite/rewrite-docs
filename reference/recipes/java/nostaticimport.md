@@ -15,7 +15,7 @@ _Removes static imports and replaces them with qualified references. For example
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
 
 
 ## Usage

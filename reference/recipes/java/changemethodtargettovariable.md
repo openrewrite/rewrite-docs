@@ -15,10 +15,10 @@ _Change method invocations to method calls on a variable._
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
 | `String` | variableName | Name of variable to use as target for the modified method invocation. |
 | `String` | variableType | Type attribution to use for the return type of the modified method invocation. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns). |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 
 
 ## Usage

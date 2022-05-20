@@ -15,7 +15,7 @@ _Delete an argument from method invocations._
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) that is used to find matching method invocations. |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
 | `int` | argumentIndex | A zero-based index that indicates which argument will be removed from the method invocation. |
 
 
