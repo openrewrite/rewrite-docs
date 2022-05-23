@@ -77,7 +77,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-DactiveRecipe=org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily`
 
 ## Definition
 
