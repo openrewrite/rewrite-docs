@@ -6,6 +6,7 @@ _Recipes that find and eliminate vulnerable patterns in Java code._
 
 * [Find text-direction changes](findtextdirectionchanges.md)
 * [Java security best practices](javasecuritybestpractices.md)
+* [Partial path traversal vulnerability](partialpathtraversalvulnerability.md)
 * [Secure random](securerandom.md)
 * [SecureRandom seeds are not constant or predictable](securerandomprefersdefaultseed.md)
 * [Use Files#createTempDirectory](usefilescreatetempdirectory.md)

@@ -1,39 +1,54 @@
 # Update Gradle wrapper
 
 ** org.openrewrite.gradle.UpdateGradleWrapper**
-_Update the version of Gradle used in an existing Gradle Wrapper._
+_Update the version of Gradle used in an existing Gradle wrapper._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.22.0/jar)
+[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.22.0
+* version: 7.24.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | version | *Optional*. The version of Gradle to use. Defaults to 7.4.2 |
-| `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. If not specified the existing distribution type will be used. |
-| `String` | distributionUrl | *Optional*. The URL to download the Gradle distribution from. Providing the distribution url overrides the "Version" and "Distribution type" parameters. This is intended to cover customized distributions of the Gradle wrapper. |
+| `String` | version | An exact version number or node-style semver selector used to select the version number. |
+| `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. Defaults to "bin". |
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.22.0 in your build file:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateGradleWrapperExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+
+{% code title="rewrite.yml" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.UpdateGradleWrapperExample
+displayName: Update Gradle wrapper example
+recipeList:
+  - org.openrewrite.gradle.UpdateGradleWrapper:
+      version: 7.x
+      distribution: null
+```
+{% endcode %}
+
+Now that `com.yourorg.UpdateGradleWrapperExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.24.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.gradle.UpdateGradleWrapper")
+    activeRecipe("com.yourorg.UpdateGradleWrapperExample")
 }
 
 repositories {
@@ -41,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.22.0")
+    rewrite("org.openrewrite:rewrite-gradle:7.24.0")
 }
 ```
 {% endcode %}
@@ -56,17 +71,17 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.gradle.UpdateGradleWrapper</recipe>
+            <recipe>com.yourorg.UpdateGradleWrapperExample</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.22.0</version>
+            <version>7.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,4 +93,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.gradle.UpdateGradleWrapper`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.UpdateGradleWrapperExample`

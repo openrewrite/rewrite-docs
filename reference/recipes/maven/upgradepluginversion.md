@@ -5,11 +5,11 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.22.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.22.0
+* version: 7.24.0
 
 ## Options
 
@@ -17,7 +17,7 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 | -- | -- | -- |
 | `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | newVersion | An exact version number, or node-style semver selector used to select the version number. |
+| `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `Boolean` | trustParent | *Optional*. Even if the parent suggests a version that is older than what we are trying to upgrade to, trust it anyway. Useful when you want to wait for the parent to catch up before upgrading. The parent is not trusted by default. |
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradePluginVersionExample</recipe>
@@ -90,4 +90,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.UpgradePluginVersionExample`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.UpgradePluginVersionExample`

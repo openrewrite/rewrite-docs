@@ -5,11 +5,11 @@ _Removes the specified Maven project property from the pom.xml._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.22.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.22.0
+* version: 7.24.0
 
 ## Options
 
@@ -43,7 +43,7 @@ Now that `com.yourorg.RemovePropertyExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemovePropertyExample</recipe>
@@ -82,4 +82,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.RemovePropertyExample`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.RemovePropertyExample`

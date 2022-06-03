@@ -6,6 +6,8 @@
 * [Add Maven dependency](adddependency.md)
 * [Add Maven plugin](addplugin.md)
 * [Add Maven plugin dependencies](addplugindependency.md)
+* [Add Maven project property](addproperty.md)
+* [Add a comment to a `Maven` dependency](addcommenttomavendependency.md)
 * [Change Maven Parent Pom](changeparentpom.md)
 * [Change Maven dependency groupId, artifactId and optionally the version](changedependencygroupidandartifactid.md)
 * [Change Maven dependency scope](changedependencyscope.md)

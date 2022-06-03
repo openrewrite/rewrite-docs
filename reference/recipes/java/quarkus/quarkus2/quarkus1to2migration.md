@@ -5,23 +5,23 @@ _Migrates Quarkus 1.x to 2.x._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/1.5.0/jar)
+[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/1.7.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 1.5.0
+* version: 1.7.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:1.5.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:1.7.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.7.0")
 }
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration</recipe>
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>1.5.0</version>
+            <version>1.7.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,12 +70,19 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipesorg.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration`
 
 ## Definition
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Quarkus 1.13 migration from Quarkus 1.11](../../../java/quarkus/quarkus1to1_13migration.md)
+* [Use `@GrpcClient`](../../../java/quarkus/quarkus2/grpcserviceannotationtogrpcclient.md)
+* [Remove `avro-maven-plugin`](../../../java/quarkus/quarkus2/removeavromavenplugin.md)
+* [Use `@Identifier("default-kafka-broker")`](../../../java/quarkus/quarkus2/useidentifierondefaultkafkabroker.md)
+* [Use `PanacheEntityBase` static methods](../../../java/quarkus/quarkus2/usepanacheentitybasestaticmethods.md)
+* [Use `Uni<T extends PanacheEntityBase>`](../../../java/quarkus/quarkus2/usepanacheentitybaseunit.md)
+* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](../../../java/quarkus/quarkus2/usereactivepanachemongoentitybaseunit.md)
 * [Change property key](../../../properties/changepropertykey.md)
   * oldPropertyKey: `smallrye.jwt.sign.key-location`
   * newPropertyKey: `smallrye.jwt.sign.key.location`
@@ -120,13 +127,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * oldPackageName: `io.vertx.core.http.HttpMethod`
   * newPackageName: `io.quarkus.vertx.web.Route.HttpMethod`
   * recursive: `false`
-* [Quarkus 1.13 migration from Quarkus 1.11](../../../java/quarkus/quarkus1to1_13migration.md)
-* [Use `@GrpcClient`](../../../java/quarkus/quarkus2/grpcserviceannotationtogrpcclient.md)
-* [Remove `avro-maven-plugin`](../../../java/quarkus/quarkus2/removeavromavenplugin.md)
-* [Use `@Identifier("default-kafka-broker")`](../../../java/quarkus/quarkus2/useidentifierondefaultkafkabroker.md)
-* [Use `PanacheEntityBase` static methods](../../../java/quarkus/quarkus2/usepanacheentitybasestaticmethods.md)
-* [Use `Uni<T extends PanacheEntityBase>`](../../../java/quarkus/quarkus2/usepanacheentitybaseunit.md)
-* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](../../../java/quarkus/quarkus2/usereactivepanachemongoentitybaseunit.md)
 
 {% endtab %}
 
@@ -138,6 +138,13 @@ name: org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration
 displayName: Quarkus 2.x migration from Quarkus 1.x
 description: Migrates Quarkus 1.x to 2.x.
 recipeList:
+  - org.openrewrite.java.quarkus.Quarkus1to1_13Migration
+  - org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient
+  - org.openrewrite.java.quarkus.quarkus2.RemoveAvroMavenPlugin
+  - org.openrewrite.java.quarkus.quarkus2.UseIdentifierOnDefaultKafkaBroker
+  - org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseStaticMethods
+  - org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseUniT
+  - org.openrewrite.java.quarkus.quarkus2.UseReactivePanacheMongoEntityBaseUniT
   - org.openrewrite.properties.ChangePropertyKey:
       oldPropertyKey: smallrye.jwt.sign.key-location
       newPropertyKey: smallrye.jwt.sign.key.location
@@ -182,13 +189,6 @@ recipeList:
       oldPackageName: io.vertx.core.http.HttpMethod
       newPackageName: io.quarkus.vertx.web.Route.HttpMethod
       recursive: false
-  - org.openrewrite.java.quarkus.Quarkus1to1_13Migration
-  - org.openrewrite.java.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient
-  - org.openrewrite.java.quarkus.quarkus2.RemoveAvroMavenPlugin
-  - org.openrewrite.java.quarkus.quarkus2.UseIdentifierOnDefaultKafkaBroker
-  - org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseStaticMethods
-  - org.openrewrite.java.quarkus.quarkus2.UsePanacheEntityBaseUniT
-  - org.openrewrite.java.quarkus.quarkus2.UseReactivePanacheMongoEntityBaseUniT
 
 ```
 {% endtab %}

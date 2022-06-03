@@ -5,11 +5,11 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.22.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.22.0
+* version: 7.24.0
 
 ## Options
 
@@ -19,7 +19,7 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 | `String` | newGroupId | *Optional*. The groupId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldGroupId`. |
 | `String` | oldArtifactId | The artifactId of the maven parent pom to be changed away from. |
 | `String` | newArtifactId | *Optional*. The artifactId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldArtifactId`. |
-| `String` | newVersion | An exact version number, or node-style semver selector used to select the version number. |
+| `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `boolean` | allowVersionDowngrades | *Optional*. If the new parent has the same group/artifact, this flag can be used to only upgrade the version if the target version is newer than the current. |
 
@@ -55,7 +55,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -79,7 +79,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeParentPomExample</recipe>
@@ -94,4 +94,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.ChangeParentPomExample`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.ChangeParentPomExample`

@@ -5,17 +5,17 @@ _Deletes key/value pairs from properties files._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.22.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 7.22.0
+* version: 7.24.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | propertyKey | The key to be deleted. |
+| `String` | propertyKey | The key(s) to be deleted. This is a glob expression. |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
 
@@ -33,7 +33,7 @@ name: com.yourorg.DeletePropertyExample
 displayName: Delete Property example
 recipeList:
   - org.openrewrite.properties.DeleteProperty:
-      propertyKey: management.metrics.binders.files.enabled
+      propertyKey: management.metrics.binders.files.enabled or management.metrics.*
       relaxedBinding: null
       fileMatcher: '**/application-*.properties'
 ```
@@ -47,7 +47,7 @@ Now that `com.yourorg.DeletePropertyExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeletePropertyExample</recipe>
@@ -86,4 +86,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.DeletePropertyExample`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.DeletePropertyExample`

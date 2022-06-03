@@ -5,11 +5,11 @@ _Add a managed maven dependency to a pom.xml file._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.22.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.22.0
+* version: 7.24.0
 
 ## Options
 
@@ -17,7 +17,7 @@ _Add a managed maven dependency to a pom.xml file._
 | -- | -- | -- |
 | `String` | groupId | The first part of a dependency coordinate 'org.apache.logging.log4j:ARTIFACT_ID:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'org.apache.logging.log4j:log4j-bom:VERSION'. |
-| `String` | version | An exact version number, or node-style semver selector used to select the version number. |
+| `String` | version | An exact version number or node-style semver selector used to select the version number. |
 | `String` | scope | *Optional*. An optional scope to use for the dependency management tag. |
 | `String` | type | *Optional*. An optional type to use for the dependency management tag. |
 | `String` | classifier | *Optional*. An optional classifier to use for the dependency management tag |
@@ -61,7 +61,7 @@ Now that `com.yourorg.AddManagedDependencyExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -85,7 +85,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddManagedDependencyExample</recipe>
@@ -100,4 +100,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.AddManagedDependencyExample`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.AddManagedDependencyExample`

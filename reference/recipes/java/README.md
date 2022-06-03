@@ -24,6 +24,7 @@ _Basic building blocks for transforming Java code._
 * [Reorder method arguments](reordermethodarguments.md)
 * [Replace constant with literal value](replaceconstant.md)
 * [Simplify a call chain](simplifymethodchain.md)
+* [Transform calls to `Objects.isNull(..)` and `Objects.nonNull(..)`](removeobjectsisnull.md)
 * [Update source positions](updatesourcepositions.md)
 * [Use static import](usestaticimport.md)
 * [Uses `@RewriteSkip` annotation](doesnotuserewriteskip.md)

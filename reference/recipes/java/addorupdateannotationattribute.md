@@ -5,11 +5,11 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.22.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.22.0
+* version: 7.24.0
 
 ## Options
 
@@ -18,6 +18,7 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 | `String` | annotationType | The fully qualified name of the annotation. |
 | `String` | attributeName | *Optional*. The name of attribute to change. If omitted defaults to 'value'. |
 | `String` | attributeValue | The value to set the attribute to. |
+| `Boolean` | addOnly | When set to `true` will not change existing annotation attribute values. |
 
 
 ## Usage
@@ -36,6 +37,7 @@ recipeList:
       annotationType: org.junit.Test
       attributeName: timeout
       attributeValue: 500
+      addOnly: null
 ```
 {% endcode %}
 
@@ -47,7 +49,7 @@ Now that `com.yourorg.AddOrUpdateAnnotationAttributeExample` has been defined ac
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -71,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddOrUpdateAnnotationAttributeExample</recipe>
@@ -86,4 +88,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.AddOrUpdateAnnotationAttributeExample`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.AddOrUpdateAnnotationAttributeExample`

@@ -35,6 +35,7 @@
 * [Upgrade to Spring Boot 2.4](upgradespringboot_2_4.md)
 * [Upgrade to Spring Boot 2.5](upgradespringboot_2_5.md)
 * [Upgrade to Spring Boot 2.6](upgradespringboot_2_6.md)
+* [Upgrade to Spring Boot 2.7](upgradespringboot_2_7.md)
 * [Use `DiskSpaceHealthIndicator(File, DataSize)`](migratediskspacehealthindicatorconstructor.md)
 * [Use `EnableConfigurationProperties#VALIDATOR_BEAN_NAME`](migrateconfigurationpropertiesbindingpostprocessorvalidatorbeanname.md)
 * [Use `ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)`](geterrorattributes.md)

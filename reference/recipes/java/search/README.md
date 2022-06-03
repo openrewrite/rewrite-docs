@@ -19,5 +19,6 @@
 * [Find uses of deprecated methods](finddeprecatedmethods.md)
 * [List potentially dead code by declared method](potentiallydeadcode.md)
 * [Result of method call ignored](resultofmethodcallignored.md)
+* [URIs created with an HTTP scheme](uricreatedwithhttpscheme.md)
 
 

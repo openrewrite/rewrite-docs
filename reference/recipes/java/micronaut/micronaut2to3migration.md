@@ -5,23 +5,23 @@ _This recipe will apply changes required for migrating from Micronaut 2 to Micro
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-micronaut), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-micronaut/1.10.0/jar)
+[Github](https://github.com/openrewrite/rewrite-micronaut), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-micronaut/1.12.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 1.10.0
+* version: 1.12.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-micronaut:1.10.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-micronaut:1.12.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.10.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.12.0")
 }
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.Micronaut2to3Migration</recipe>
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>1.10.0</version>
+            <version>1.12.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,12 +70,19 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.java.micronaut.Micronaut2to3Migration`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipesorg.openrewrite.java.micronaut.Micronaut2to3Migration`
 
 ## Definition
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [De-capitalize `BeanIntrospection` `getProperty(..)` and `getRequiredProperty(..)` name arguments](../../java/micronaut/beanpropertycapitalizationstrategy.md)
+* [Copy non-inherited annotations from super class](../../java/micronaut/copynoninheritedannotations.md)
+* [Change factory method return types to reflect their resolved return type](../../java/micronaut/subclassesreturnedfromfactoriesnotinjectable.md)
+* [Convert `OncePerRequestServerFilter` extensions to `HttpServerFilter`](../../java/micronaut/onceperrequesthttpserverfiltertohttpserverfilter.md)
+* [`Provider` implementation beans to Micronaut `@Factory`](../../java/micronaut/providerimplementationstomicronautfactories.md)
+* [Add `@Introspected` to classes requiring a map representation](../../java/micronaut/typerequiresintrospection.md)
+* [Fix deprecated no-arg `ExceptionHandler` constructors](../../java/micronaut/fixdeprecatedexceptionhandlerconstructors.md)
 * [Upgrade Maven parent project version](../../maven/upgradeparentversion.md)
   * groupId: `io.micronaut`
   * artifactId: `micronaut-parent`
@@ -84,6 +91,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `io.micronaut`
   * artifactId: `micronaut-bom`
   * newVersion: `3.x`
+  * overrideManagedVersion: `true`
 * [Upgrade gradle.properties Micronaut version](../../java/micronaut/upgrademicronautgradlepropertiesversion.md)
   * newVersion: `3.x`
 * [Upgrade `micronaut.version` Maven property](../../java/micronaut/upgrademicronautmavenpropertyversion.md)
@@ -184,13 +192,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Change type](../../java/changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.test.annotation.MicronautTest`
   * newFullyQualifiedTypeName: `io.micronaut.test.extensions.junit5.annotation.MicronautTest`
-* [De-capitalize `BeanIntrospection` `getProperty(..)` and `getRequiredProperty(..)` name arguments](../../java/micronaut/beanpropertycapitalizationstrategy.md)
-* [Copy non-inherited annotations from super class](../../java/micronaut/copynoninheritedannotations.md)
-* [Change factory method return types to reflect their resolved return type](../../java/micronaut/subclassesreturnedfromfactoriesnotinjectable.md)
-* [Convert `OncePerRequestServerFilter` extensions to `HttpServerFilter`](../../java/micronaut/onceperrequesthttpserverfiltertohttpserverfilter.md)
-* [`Provider` implementation beans to Micronaut `@Factory`](../../java/micronaut/providerimplementationstomicronautfactories.md)
-* [Add `@Introspected` to classes requiring a map representation](../../java/micronaut/typerequiresintrospection.md)
-* [Fix deprecated no-arg `ExceptionHandler` constructors](../../java/micronaut/fixdeprecatedexceptionhandlerconstructors.md)
 
 {% endtab %}
 
@@ -202,6 +203,13 @@ name: org.openrewrite.java.micronaut.Micronaut2to3Migration
 displayName: Migrate from Micronaut 2.x to 3.x
 description: This recipe will apply changes required for migrating from Micronaut 2 to Micronaut 3.
 recipeList:
+  - org.openrewrite.java.micronaut.BeanPropertyCapitalizationStrategy
+  - org.openrewrite.java.micronaut.CopyNonInheritedAnnotations
+  - org.openrewrite.java.micronaut.SubclassesReturnedFromFactoriesNotInjectable
+  - org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter
+  - org.openrewrite.java.micronaut.ProviderImplementationsToMicronautFactories
+  - org.openrewrite.java.micronaut.TypeRequiresIntrospection
+  - org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: io.micronaut
       artifactId: micronaut-parent
@@ -210,6 +218,7 @@ recipeList:
       groupId: io.micronaut
       artifactId: micronaut-bom
       newVersion: 3.x
+      overrideManagedVersion: true
   - org.openrewrite.java.micronaut.UpgradeMicronautGradlePropertiesVersion:
       newVersion: 3.x
   - org.openrewrite.java.micronaut.UpgradeMicronautMavenPropertyVersion:
@@ -310,13 +319,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.micronaut.test.annotation.MicronautTest
       newFullyQualifiedTypeName: io.micronaut.test.extensions.junit5.annotation.MicronautTest
-  - org.openrewrite.java.micronaut.BeanPropertyCapitalizationStrategy
-  - org.openrewrite.java.micronaut.CopyNonInheritedAnnotations
-  - org.openrewrite.java.micronaut.SubclassesReturnedFromFactoriesNotInjectable
-  - org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter
-  - org.openrewrite.java.micronaut.ProviderImplementationsToMicronautFactories
-  - org.openrewrite.java.micronaut.TypeRequiresIntrospection
-  - org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors
 
 ```
 {% endtab %}

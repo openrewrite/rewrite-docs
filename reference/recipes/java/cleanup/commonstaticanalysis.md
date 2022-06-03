@@ -5,11 +5,11 @@ _Resolve common static analysis issues discovered through 3rd party tools_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.22.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.22.0
+* version: 7.24.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.20.0")
+    id("org.openrewrite.rewrite") version("5.22.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.23.0</version>
+        <version>4.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -60,7 +60,7 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipesorg.openrewrite.java.cleanup.CommonStaticAnalysis`
 
 ## Definition
 
@@ -83,13 +83,13 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Fall through](../../java/cleanup/fallthrough.md)
 * [Finalize classes with private constructors](../../java/cleanup/finalclass.md)
 * [`for` loop counters incremented in update](../../java/cleanup/forloopincrementinupdate.md)
-* [Hidden field](../../java/cleanup/hiddenfield.md)
 * [Hide utility class constructor](../../java/cleanup/hideutilityclassconstructor.md)
 * [Use `indexOf(String, int)`](../../java/cleanup/indexofchecksshoulduseastartposition.md)
 * [`indexOf()` replaceable by `contains()`](../../java/cleanup/indexofreplaceablebycontains.md)
 * [`indexOf` should not compare greater than zero](../../java/cleanup/indexofshouldnotcomparegreaterthanzero.md)
 * [Use `Collection#isEmpty()` instead of comparing `size()`](../../java/cleanup/isemptycalloncollections.md)
 * [Simplify lambda blocks to expressions](../../java/cleanup/lambdablocktoexpression.md)
+* [Rename packages to lowercase](../../java/cleanup/lowercasepackage.md)
 * [Method name casing](../../java/cleanup/methodnamecasing.md)
 * [`switch` statements should have at least 3 `case` clauses](../../java/cleanup/minimumswitchcases.md)
 * [Modifier order](../../java/cleanup/modifierorder.md)
@@ -109,12 +109,10 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
 * [Redundant file creation](../../java/cleanup/redundantfilecreation.md)
 * [Remove extra semicolons](../../java/cleanup/removeextrasemicolons.md)
-* [Remove redundant casts](../../java/cleanup/removeredundanttypecast.md)
 * [Remove unused local variables](../../java/cleanup/removeunusedlocalvariables.md)
 * [Reformat local variable names to camelCase](../../java/cleanup/renamelocalvariablestocamelcase.md)
 * [Rename methods named `hashcode`, `equal`, or `tostring`.](../../java/cleanup/renamemethodsnamedhashcodeequalortostring.md)
 * [Reformat private field names to camelCase](../../java/cleanup/renameprivatefieldstocamelcase.md)
-* [Replace duplicate `String` literals](../../java/cleanup/replaceduplicatestringliterals.md)
 * [Use method references in lambda](../../java/cleanup/replacelambdawithmethodreference.md)
 * [Simplify boolean expression](../../java/cleanup/simplifybooleanexpression.md)
 * [Simplify boolean return](../../java/cleanup/simplifybooleanreturn.md)
@@ -159,14 +157,14 @@ recipeList:
   - org.openrewrite.java.cleanup.FallThrough
   - org.openrewrite.java.cleanup.FinalClass
   - org.openrewrite.java.cleanup.ForLoopIncrementInUpdate
-  - org.openrewrite.java.cleanup.HiddenField
   - org.openrewrite.java.cleanup.HideUtilityClassConstructor
   - org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition
   - org.openrewrite.java.cleanup.IndexOfReplaceableByContains
   - org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero
   - org.openrewrite.java.cleanup.IsEmptyCallOnCollections
   - org.openrewrite.java.cleanup.LambdaBlockToExpression
-  - org.openrewrite.java.cleanup.MethodNameCasing
+  - org.openrewrite.java.cleanup.LowercasePackage
+  - org.openrewrite.java.cleanup.MethodNameCasing:
   - org.openrewrite.java.cleanup.MinimumSwitchCases
   - org.openrewrite.java.cleanup.ModifierOrder
   - org.openrewrite.java.cleanup.MultipleVariableDeclarations
@@ -185,12 +183,10 @@ recipeList:
   - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf
   - org.openrewrite.java.cleanup.RedundantFileCreation
   - org.openrewrite.java.cleanup.RemoveExtraSemicolons
-  - org.openrewrite.java.cleanup.RemoveRedundantTypeCast
   - org.openrewrite.java.cleanup.RemoveUnusedLocalVariables:
   - org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase
   - org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
   - org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase
-  - org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals
   - org.openrewrite.java.cleanup.ReplaceLambdaWithMethodReference
   - org.openrewrite.java.cleanup.SimplifyBooleanExpression
   - org.openrewrite.java.cleanup.SimplifyBooleanReturn
