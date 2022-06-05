@@ -1,32 +1,40 @@
 # Latest versions of every OpenRewrite module
 
-OpenRewrite itself and all recipe modules are published to [Maven Central](https://search.maven.org/search?q=org.openrewrite). The Gradle plugin is published to the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.openrewrite.rewrite).
+OpenRewrite's modules are published to [Maven Central](https://search.maven.org/search?q=org.openrewrite). Each time a release is made, a bill of materials artifact is also published to correctly align and manage the versions of all published artifacts. The Gradle plugin is published to the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.openrewrite.rewrite).
 
-| Module                                            | Version |
-| ------------------------------------------------- |---------|
-| org.openrewrite:rewrite-core                      | 7.21.3  |
-| org.openrewrite:rewrite-groovy                    | 7.21.3  |
-| org.openrewrite:rewrite-gradle                    | 7.21.3  |
-| org.openrewrite:rewrite-hcl                       | 7.21.3  |
-| org.openrewrite:rewrite-java                      | 7.21.3  |
-| org.openrewrite:rewrite-json                      | 7.21.3  |
-| org.openrewrite:rewrite-maven                     | 7.21.3  |
-| org.openrewrite:rewrite-properties                | 7.21.3  |
-| org.openrewrite:rewrite-xml                       | 7.21.3  |
-| org.openrewrite:rewrite-yaml                      | 7.21.3  |
-| org.openrewrite:rewrite-test                      | 7.21.3  |
-| org.openrewrite:rewrite-maven-plugin              | 4.22.2  |
-| org.openrewrite:rewrite-gradle-plugin             | 5.19.3  |
-| org.openrewrite.recipe:rewrite-circleci           | 1.5.2   |
-| org.openrewrite.recipe:rewrite-concourse          | 1.4.1   |
-| org.openrewrite.recipe:rewrite-github-actions     | 1.4.0   |
-| org.openrewrite.recipe:rewrite-java-security      | 1.8.2   |
-| org.openrewrite.recipe:rewrite-jhipster           | 1.4.2   |
-| org.openrewrite.recipe:rewrite-kubernetes         | 1.15.1  |
-| org.openrewrite.recipe:rewrite-logging-frameworks | 1.5.2   |
-| org.openrewrite.recipe:rewrite-micronaut          | 1.9.2   |
-| org.openrewrite.recipe.rewrite-migrate-java       | 1.4.3   |
-| org.openrewrite.recipe:rewrite-quarkus            | 1.4.2   |
-| org.openrewrite.recipe:rewrite-spring             | 4.19.3  |
-| org.openrewrite.recipe:rewrite-terraform          | 1.4.2   |
-| org.openrewrite.recipe:rewrite-testing-frameworks | 1.20.2  |
+It is highly recommended that developers use the rewrite-recipe-bom to align the versions of Rewrite's modules to ensure compatibility. The use of the "bill of materials" means that a developer will only need to specify explicit versions of the BOM and the build plugins:\
+
+
+| Module                                            | Version    |
+| ------------------------------------------------- | ---------- |
+| **org.openrewrite:rewrite-recipe-bom**            | **1.3.0**  |
+| **org.openrewrite:rewrite-maven-plugin**          | **4.25.0** |
+| **org.openrewrite:rewrite-gradle-plugin**         | **5.22.0** |
+| org.openrewrite:rewrite-core                      | 7.24.0     |
+| org.openrewrite:rewrite-groovy                    | 7.24.0     |
+| org.openrewrite:rewrite-gradle                    | 7.24.0     |
+| org.openrewrite:rewrite-hcl                       | 7.24.0     |
+| org.openrewrite:rewrite-java                      | 7.24.0     |
+| org.openrewrite:rewrite-java-8                    | 7.24.0     |
+| org.openrewrite:rewrite-java-11                   | 7.24.0     |
+| org.openrewrite:rewrite-java-17                   | 7.24.0     |
+| org.openrewrite:rewrite-json                      | 7.24.0     |
+| org.openrewrite:rewrite-maven                     | 7.24.0     |
+| org.openrewrite:rewrite-properties                | 7.24.0     |
+| org.openrewrite:rewrite-protobuf                  | 7.24.0     |
+| org.openrewrite:rewrite-xml                       | 7.24.0     |
+| org.openrewrite:rewrite-yaml                      | 7.24.0     |
+| org.openrewrite:rewrite-test                      | 7.24.0     |
+| org.openrewrite.recipe:rewrite-circleci           | 1.8.0      |
+| org.openrewrite.recipe:rewrite-concourse          | 1.7.0      |
+| org.openrewrite.recipe:rewrite-github-actions     | 1.7.0      |
+| org.openrewrite.recipe:rewrite-java-security      | 1.12.0     |
+| org.openrewrite.recipe:rewrite-jhipster           | 1.7.0      |
+| org.openrewrite.recipe:rewrite-kubernetes         | 1.18.0     |
+| org.openrewrite.recipe:rewrite-logging-frameworks | 1.8.0      |
+| org.openrewrite.recipe:rewrite-micronaut          | 1.12.0     |
+| org.openrewrite.recipe.rewrite-migrate-java       | 1.7.0      |
+| org.openrewrite.recipe:rewrite-quarkus            | 1.7.0      |
+| org.openrewrite.recipe:rewrite-spring             | 4.22.0     |
+| org.openrewrite.recipe:rewrite-terraform          | 1.7.0      |
+| org.openrewrite.recipe:rewrite-testing-frameworks | 1.23.0     |
