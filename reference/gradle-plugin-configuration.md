@@ -84,11 +84,12 @@ rewrite {
 All OpenRewrite libraries and modules are published to MavenCentral. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there or one of its mirrors.
 {% endhint %}
 
-No recipe is ever run on your codebase without being explicitly activated in the plugin's configuration. To make pre-packaged OpenRewrite recipes available for activation, add them as `rewrite` dependencies:
+No recipe is ever run on your codebase without being explicitly activated in the plugin's configuration. To make pre-packaged OpenRewrite recipes available for activation, add Rewrite's bill of materials along with the specific `rewrite` dependencies:
 
 ```groovy
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.19.3")
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+    rewrite("org.openrewrite.recipe:rewrite-spring")
 }
 ```
 
@@ -105,8 +106,9 @@ repositories {
 }
 
 dependencies {
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
     testImplementation("junit:junit:4.13")
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.20.2")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
 }
 
 rewrite {

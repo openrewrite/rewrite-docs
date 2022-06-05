@@ -15,19 +15,25 @@ At a minimum for this example, you need the following dependencies:
 {% tabs %}
 {% tab title="Maven" %}
 ```xml
-<properties>
-  <rewrite.version>7.21.3</rewrite.version>
-</properties>
+<dependencyManagement>
+  <dependencies>
+      <dependency>
+          <groupId>org.openrewrite.recipe</groupId>
+          <artifactId>rewrite-recipe-bom</artifactId>
+          <version>1.3.0</version>
+          <type>pom</type>
+          <scope>import</scope>
+      </dependency>
+  </dependencies>
+</dependencyManagement>
 <dependencies>
   <dependency>
     <groupId>org.openrewrite</groupId>
     <artifactId>rewrite-java</artifactId>
-    <version>${rewrite.version}</version>
   </dependency>
   <dependency>
     <groupId>org.openrewrite</groupId>
     <artifactId>rewrite-java-11</artifactId>
-    <version>${rewrite.version}</version>
     <scope>runtime</scope>
   </dependency>
 </dependencies>
@@ -37,8 +43,9 @@ At a minimum for this example, you need the following dependencies:
 {% tab title="Gradle" %}
 ```kotlin
 dependencies {
-    implementation("org.openrewrite:rewrite-java:latest.release")
-    runtimeOnly("org.openrewrite:rewrite-java-11:latest.release")
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+    implementation("org.openrewrite:rewrite-java")
+    runtimeOnly("org.openrewrite:rewrite-java-11")
 }
 ```
 {% endtab %}
@@ -106,5 +113,4 @@ public class RunRewriteManually {
 
     }
 }
-
 ```

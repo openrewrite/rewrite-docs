@@ -23,7 +23,8 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.19.3")
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+    rewrite("org.openrewrite.recipe:rewrite-spring")
 }
 ```
 {% endcode %}
@@ -33,6 +34,18 @@ dependencies {
 {% code title="pom.xml" %}
 ```markup
 <project>
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-recipe-bom</artifactId>
+            <version>1.3.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
   <build>
     <plugins>
       <plugin>
@@ -48,7 +61,6 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.19.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -60,7 +72,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ## Before and After
 
@@ -188,7 +200,7 @@ class OwnerController {
 
 {% tabs %}
 {% tab title="Before: ConditionalOnBean" %}
-```text
+```
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -215,7 +227,7 @@ public class SchoolConfig {
 {% endtab %}
 
 {% tab title="After:  AnyNestedCondition" %}
-```text
+```
 import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
@@ -260,9 +272,8 @@ public class SchoolConfig {
 
 ### Known Limitations
 
-| Unsupported Functionality | Issue |
-| :--- | :--- |
-| ConditionalOnAnyBean should create new CompilationUnit when the condition is on the parent class | [\#34](https://github.com/openrewrite/rewrite-spring/issues/34) |
-| JAXRS to Spring WebMVC annotations | [\#69](https://github.com/openrewrite/rewrite-spring/issues/69) |
-| `@EmbeddedKafkaRule` to `@EmbeddedKafka` test conversion | [\#75](https://github.com/openrewrite/rewrite-spring/issues/75) |
-
+| Unsupported Functionality                                                                        | Issue                                                          |
+| ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| ConditionalOnAnyBean should create new CompilationUnit when the condition is on the parent class | [#34](https://github.com/openrewrite/rewrite-spring/issues/34) |
+| JAXRS to Spring WebMVC annotations                                                               | [#69](https://github.com/openrewrite/rewrite-spring/issues/69) |
+| `@EmbeddedKafkaRule` to `@EmbeddedKafka` test conversion                                         | [#75](https://github.com/openrewrite/rewrite-spring/issues/75) |

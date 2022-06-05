@@ -1,6 +1,6 @@
 # Use SLF4J Parameterized Logging
 
-In this guide we'll look at using OpenRewrite to automatically refactor logging statements to take advantage of [performance improvements offered by using `slf4j` parameterized logging](http://www.slf4j.org/faq.html#logging_performance) over String concatenation.
+In this guide we'll look at using OpenRewrite to automatically refactor logging statements to take advantage of [performance improvements offered by using `slf4j` parameterized logging](http://www.slf4j.org/faq.html#logging\_performance) over String concatenation.
 
 ## Example Configuration
 
@@ -23,7 +23,8 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.5.2")
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks")
 }
 ```
 {% endcode %}
@@ -32,7 +33,18 @@ dependencies {
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-<project>
+  <project>
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-recipe-bom</artifactId>
+            <version>1.3.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
@@ -48,7 +60,6 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.5.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -60,12 +71,12 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 For the full list of changes, see the recipe's [reference documentation](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/logging/slf4j/parameterizedlogging.md).
 
 {% tabs %}
-{% tab title="Example Class \(Before\)" %}
+{% tab title="Example Class (Before)" %}
 ```java
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -88,7 +99,7 @@ class Example {
 ```
 {% endtab %}
 
-{% tab title="Example Class \(After\)" %}
+{% tab title="Example Class (After)" %}
 ```java
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -111,4 +122,3 @@ class Example {
 ```
 {% endtab %}
 {% endtabs %}
-

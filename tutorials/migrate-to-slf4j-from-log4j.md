@@ -23,7 +23,8 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.5.2")
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks")
 }
 ```
 {% endcode %}
@@ -33,6 +34,17 @@ dependencies {
 {% code title="pom.xml" %}
 ```markup
 <project>
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-recipe-bom</artifactId>
+            <version>1.3.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
@@ -48,7 +60,6 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.5.2</version>
           </dependency>
         </dependencies>
       </plugin>

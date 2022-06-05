@@ -112,7 +112,7 @@ Within the `ExpandCustomerInfoVisitor`, we will add logic to remove the abstract
 When using a template to replace a method's body, the template must include the open and closing curly braces.
 {% endhint %}
 
-The method is then replaced with a copy that removes the abstract modifier and the template is then used within the visitMethodDeclaration\(\) method to replace the method body:
+The method is then replaced with a copy that removes the abstract modifier and the template is then used within the visitMethodDeclaration() method to replace the method body:
 
 ```java
 public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
@@ -287,50 +287,55 @@ public class ExpandCustomerInfo extends Recipe {
 }
 ```
 
-OpenRewrite provides testing infrastructure for recipes via the rewrite-test module. To create automated tests of this recipe we use the [Kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line `Strings`, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/). To assert that the recipe makes the expected changes to our test class, we will create a new test class that implements the `JavaRecipeTest` interface and use`assertChanged` ensure the recipe is making the expected changes to the test class.
+OpenRewrite provides testing infrastructure for recipes via the rewrite-test module. To create automated tests of this recipe we use the [Kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line `Strings`, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/). To assert that the recipe makes the expected changes to our test class, we will create a new test class that implements the `RewriteTest` interface and use `runRecipe` to ensure the recipe is making the expected changes to the source.
 
 ```kotlin
 package org.openrewrite.samples;
 
 import org.openrewrite.java.JavaParser
 import org.junit.jupiter.api.Test
-import org.openrewrite.java.JavaRecipeTest
+import org.openrewrite.test.RecipeSpec
+import org.openrewrite.test.RewriteTest
 
-class ExpandCustomerInfoTest : JavaRecipeTest {
+class ExpandCustomerInfoTest : RewriteTest {
 
-    override val recipe = ExpandCustomerInfo()
+    override fun defaults(spec: RecipeSpec) {
+        spec
+            .recipe(ExpandCustomerInfo())
+    }
 
     @Test
-    fun testExapandCustomerInfo() = assertChanged(
-        before = """
-            package com.yourorg;
-
-            public abstract class Customer {
-                private Date dateOfBirth;
-                private String firstName;
-                private String lastName;
-
-                public abstract void setCustomerInfo(String lastName);
-            }
-        """,
-        after = """
-            package com.yourorg;
-
-            import java.util.Date;
-
-            public abstract class Customer {
-                private Date dateOfBirth;
-                private String firstName;
-                private String lastName;
-
-                public void setCustomerInfo(Date dateOfBirth, String firstName, String lastName){
-                    this.dateOfBirth = dateOfBirth;
-                    this.firstName = firstName;
-                    this.lastName = lastName;
+    fun testExapandCustomerInfo() = rewriteRun(
+        java(
+            """
+                package com.yourorg;
+    
+                public abstract class Customer {
+                    private Date dateOfBirth;
+                    private String firstName;
+                    private String lastName;
+    
+                    public abstract void setCustomerInfo(String lastName);
                 }
-            }
-        """
+            """,
+            """
+                package com.yourorg;
+    
+                import java.util.Date;
+    
+                public abstract class Customer {
+                    private Date dateOfBirth;
+                    private String firstName;
+                    private String lastName;
+    
+                    public void setCustomerInfo(Date dateOfBirth, String firstName, String lastName){
+                        this.dateOfBirth = dateOfBirth;
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                    }
+                }
+            """
+        )
     )
 }
 ```
-

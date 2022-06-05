@@ -82,14 +82,17 @@ dependencies {
 {% tab title="Maven" %}
 ```markup
 <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-recipe-bom</artifactId>
-            <version>1.3.0</version>
-        </dependency>
-    </dependencies>
+  <dependencies>
+      <dependency>
+          <groupId>org.openrewrite.recipe</groupId>
+          <artifactId>rewrite-recipe-bom</artifactId>
+          <version>1.3.0</version>
+          <type>pom</type>
+          <scope>import</scope>
+      </dependency>
+  </dependencies>
 </dependencyManagement>
+
 ...
 <dependencies>
     <!-- rewrite-java depedencies only necessary for Java Recipe development -->

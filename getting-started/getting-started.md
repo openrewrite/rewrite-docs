@@ -72,84 +72,6 @@ When applied to a multi-project build, behavior differs depending on whether the
 {% endtab %}
 {% endtabs %}
 
-### Running on JDK 16 and newer
-
-OpenRewrite requires access to Java compiler internals to function. JDK 16 and newer require explicit opt-in to access these internals via `--add-exports`. The are a few options for to setting explicit exports for packages used by rewrite's java parser.&#x20;
-
-{% tabs %}
-{% tab title="Gradle" %}
-In a gradle.properties file at the root of your project, add or update `org.gradle.jvmargs` to include this content:
-
-{% code title="gradle.properties" %}
-```
-org.gradle.jvmargs= \
-    --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Maven opts" %}
-Use the MAVEN\_OPTS environment variable for passing the necessary exports to the jvm.
-
-```
-MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
-```
-{% endtab %}
-
-{% tab title="Maven Exec plugin" %}
-Use the [Exec Maven Plugin](https://www.mojohaus.org/exec-maven-plugin/index.html) to avoid setting the MAVEN\_OPTS environment variable by executing rewrite in a separate process with a configured set of environment variables.
-
-{% code title="pom.xml" %}
-```
-<plugin>
-    <groupId>org.codehaus.mojo</groupId>
-    <artifactId>exec-maven-plugin</artifactId>
-    <version>3.0.0</version>
-    <executions>
-        <execution>
-            <goals>
-                <goal>exec</goal>
-            </goals>
-        </execution>
-    </executions>
-    <configuration>
-        <executable>mvn</executable>
-        <arguments>
-            <argument>rewrite:run</argument>
-        </arguments>
-        <environmentVariables>
-            <MAVEN_OPTS> --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</MAVEN_OPTS>
-        </environmentVariables>
-    </configuration>
-</plugin>
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Maven Java Settings" %}
-Define the exports in the ** **_**.mvn/jvm.config**_ file.
-
-{% code title=".mvn/jvm.config" %}
-```
---add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 At this point, you're able to run any of the Maven goals or Gradle tasks provided by the plugins. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) and [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options. Try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a listing of all the recipes available for execution. Initially this will list only the recipes built-in to OpenRewrite.
 
 ## Step 3: Execute a Refactoring Recipe
@@ -242,17 +164,21 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-<plugin>
-  <groupId>org.openrewrite.maven</groupId>
-  <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.25.0</version>
-  <configuration>
-    <activeRecipes>
-      <recipe>org.openrewrite.java.format.AutoFormat</recipe>
-      <recipe>com.yourorg.VetToVeterinary</recipe>
-    </activeRecipes>
-  </configuration>
-</plugin>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.openrewrite.maven</groupId>
+      <artifactId>rewrite-maven-plugin</artifactId>
+      <version>4.25.0</version>
+      <configuration>
+        <activeRecipes>
+          <recipe>org.openrewrite.java.format.AutoFormat</recipe>
+          <recipe>com.yourorg.VetToVeterinary</recipe>
+        </activeRecipes>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
 ```
 {% endcode %}
 {% endtab %}
@@ -260,33 +186,34 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
-plugins {
-    id("java")
-    id("org.openrewrite.rewrite") version("5.22.0")
-}
-
-rewrite {
-    activeRecipe(
-        "org.openrewrite.java.format.AutoFormat",
-        "com.yourorg.VetToVeterinary")
-}
+    plugins {
+        id("java")
+        id("org.openrewrite.rewrite") version("5.22.0")
+    }
+    
+    rewrite {
+        activeRecipe(
+            "org.openrewrite.java.format.AutoFormat",
+            "com.yourorg.VetToVeterinary")
+    }
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-Run `./mvnw rewrite:run` or `./gradlew rewriteRun` to perform the package relocation. Afterwards you'll see both that the sources in the vet package have been moved to the new directory, and references such as import statements have been updated accordingly.
+Run `./mvnw rewrite:run` or `./gradlew rewriteRun` to perform the package relocation. Afterward you'll see both that the sources in the vet package have been moved to the new directory, and references such as import statements have been updated accordingly.
 
 ![Git diff showing updated import statements](<../.gitbook/assets/image (10).png>)
 
-You can test that spring-petclinic-migrations still builds & passes its tests by running `./mvnw clean install` or `./gradlew build`. At this point you know how to configure and run any recipe included in rewrite itself.
+You can test that spring-petclinic-migrations still builds & passes its tests by running `./mvnw clean install` or `./gradlew build`. At this point, you know how to configure and run any recipe included in Rewrite itself.
 
 ## Step 5: Running Recipes from External Modules
 
-Not all rewrite recipes are bundled into the core libraries. In this example we'll use [rewrite-spring](https://github.com/openrewrite/rewrite-spring), a rewrite-maintained module which contains spring, mockito, junit, and assertJ related refactoring recipes.
+Not all rewrite recipes are bundled into the core libraries. In this example, we'll use [rewrite-spring](https://github.com/openrewrite/rewrite-spring), a rewrite-maintained module that contains Spring, Mockito, JUnit, and AssertJ-related refactoring recipes.
 
-1. Add a `rewrite` dependency on rewrite-spring
-2. Set the `org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration` recipe as active.
+1. Add the `rewrite-recipe-bom` to manage versions of various Rewrite artifacts
+2. Add a `rewrite` dependency on rewrite-spring
+3. Set the `org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration` recipe as active.
 
 After applying these steps, the relevant portions of your build file will look like this:
 
@@ -294,25 +221,42 @@ After applying these steps, the relevant portions of your build file will look l
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-<plugin>
-  <groupId>org.openrewrite.maven</groupId>
-  <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.25.0</version>
-  <configuration>
-    <activeRecipes>
-      <recipe>org.openrewrite.java.format.AutoFormat</recipe>
-      <recipe>com.yourorg.VetToVeterinary</recipe>
-      <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
-    </activeRecipes>
-  </configuration>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.openrewrite.maven</groupId>
+      <artifactId>rewrite-maven-plugin</artifactId>
+      <version>4.25.0</version>
+      <configuration>
+        <activeRecipes>
+          <recipe>org.openrewrite.java.format.AutoFormat</recipe>
+          <recipe>com.yourorg.VetToVeterinary</recipe>
+          <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
+        </activeRecipes>
+      </configuration>
+    <plugin>
+  </plugins>
+<build>
+...
+<dependencyManagement>
   <dependencies>
-    <dependency>
-      <groupId>org.openrewrite.recipe</groupId>
-      <artifactId>rewrite-spring</artifactId>
-      <version>4.19.3</version>
-    </dependency>
+      <dependency>
+          <groupId>org.openrewrite.recipe</groupId>
+          <artifactId>rewrite-recipe-bom</artifactId>
+          <version>1.3.0</version>
+          <type>pom</type>
+          <scope>import</scope>
+      </dependency>
   </dependencies>
-</plugin>
+</dependencyManagement>
+...
+<dependencies>
+  <dependency>
+    <groupId>org.openrewrite.recipe</groupId>
+    <artifactId>rewrite-spring</artifactId>
+  </dependency>
+</dependencies>
+
 ```
 {% endcode %}
 {% endtab %}
@@ -333,7 +277,8 @@ rewrite {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.19.3")
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+    rewrite("org.openrewrite.recipe:rewrite-spring")
 
     // Other project dependencies
 }

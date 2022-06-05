@@ -10,23 +10,39 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-<plugin>
-  <groupId>org.openrewrite.maven</groupId>
-  <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.25.0</version>
-  <configuration>
-    <activeRecipes>
-      <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
-    </activeRecipes>
-  </configuration>
+<dependencyManagement>
   <dependencies>
-    <dependency>
-      <groupId>org.openrewrite.recipe</groupId>
-      <artifactId>rewrite-migrate-java</artifactId>
-      <version>1.4.3</version>
-    </dependency>
+      <dependency>
+          <groupId>org.openrewrite.recipe</groupId>
+          <artifactId>rewrite-recipe-bom</artifactId>
+          <version>1.3.0</version>
+          <type>pom</type>
+          <scope>import</scope>
+      </dependency>
   </dependencies>
-</plugin>
+</dependencyManagement>
+
+...
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.openrewrite.maven</groupId>
+      <artifactId>rewrite-maven-plugin</artifactId>
+      <version>4.25.0</version>
+      <configuration>
+        <activeRecipes>
+          <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
+        </activeRecipes>
+      </configuration>
+      <dependencies>
+        <dependency>
+          <groupId>org.openrewrite.recipe</groupId>
+          <artifactId>rewrite-migrate-java</artifactId>
+        </dependency>
+      </dependencies>
+    </plugin>
+  </plugins>
+</build>
 ```
 {% endcode %}
 {% endtab %}
@@ -34,37 +50,38 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
-plugins {
-    id("java")
-    id("org.openrewrite.rewrite") version("5.22.0")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.migrate.Java8toJava11")
-}
-
-repositories {
-    mavenCentral() // rewrite-spring is published to Maven Central
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.4.3")
-
-    // Other project dependencies
-}
+  plugins {
+      id("java")
+      id("org.openrewrite.rewrite") version("5.22.0")
+  }
+  
+  rewrite {
+      activeRecipe("org.openrewrite.java.migrate.Java8toJava11")
+  }
+  
+  repositories {
+      mavenCentral() // rewrite-spring is published to Maven Central
+  }
+  
+  dependencies {
+      implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+      rewrite("org.openrewrite.recipe:rewrite-migrate-java")
+  
+      // Other project dependencies
+  }
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ## Before and After
 
 For the full list of changes this recipe will make, see its [reference page](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/migrate/java8tojava11.md).
 
 {% tabs %}
-{% tab title="Example Class \(Before\)" %}
+{% tab title="Example Class (Before)" %}
 ```java
 package org.openrewrite.example;
 
@@ -95,7 +112,7 @@ public class Example {
 ```
 {% endtab %}
 
-{% tab title="Example Class \(After\)" %}
+{% tab title="Example Class (After)" %}
 ```java
 package org.openrewrite.example;
 
@@ -132,7 +149,7 @@ The above example class demonstrates the two most common code migration tasks wh
 {% endhint %}
 
 {% tabs %}
-{% tab title="Maven pom \(Before\)" %}
+{% tab title="Maven pom (Before)" %}
 ```markup
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -199,7 +216,7 @@ The above example class demonstrates the two most common code migration tasks wh
 ```
 {% endtab %}
 
-{% tab title="Maven pom \(After\)" %}
+{% tab title="Maven pom (After)" %}
 ```markup
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -305,5 +322,4 @@ The following is a list of known limitations/issues:
 * The current recipe adds the JAXB and JAX-WS artifacts available from the Jakarta project. If your organization uses an alternate runtime, this may not be desirable.
 * There are several build tool plugins that are used to generate Java code from WSDL files and this recipe currently does not automate this process. You will need to manually update the related build plugins.
 * There are several additional libraries that have been removed from the Java 11 standard library that are not included with this recipe: `java.corba`, `javax.transaction`, `javax.batch`, JavaFX, Web Start. If you require support for one of these libraries, please reach out to our team or create an issue.
-* This recipe does not cover all deprecations listed by the `jdeprscan` tool.  Please see the following these issue \([\#6](https://github.com/openrewrite/rewrite-migrate-java/issues/6), [\#7](https://github.com/openrewrite/rewrite-migrate-java/issues/7), [\#8](https://github.com/openrewrite/rewrite-migrate-java/issues/8), [\#9](https://github.com/openrewrite/rewrite-migrate-java/issues/9), [\#10](https://github.com/openrewrite/rewrite-migrate-java/issues/10), [\#11](https://github.com/openrewrite/rewrite-migrate-java/issues/11), [\#12](https://github.com/openrewrite/rewrite-migrate-java/issues/12), [\#13](https://github.com/openrewrite/rewrite-migrate-java/issues/13), [\#14](https://github.com/openrewrite/rewrite-migrate-java/issues/14), [\#15](https://github.com/openrewrite/rewrite-migrate-java/issues/15), [\#16](https://github.com/openrewrite/rewrite-migrate-java/issues/16)\) for a list of those deprecations covered/not covered and submit an issue if you are impacted by a deprecation that is not covered by this recipe. 
-
+* This recipe does not cover all deprecations listed by the `jdeprscan` tool. Please see the following these issue ([#6](https://github.com/openrewrite/rewrite-migrate-java/issues/6), [#7](https://github.com/openrewrite/rewrite-migrate-java/issues/7), [#8](https://github.com/openrewrite/rewrite-migrate-java/issues/8), [#9](https://github.com/openrewrite/rewrite-migrate-java/issues/9), [#10](https://github.com/openrewrite/rewrite-migrate-java/issues/10), [#11](https://github.com/openrewrite/rewrite-migrate-java/issues/11), [#12](https://github.com/openrewrite/rewrite-migrate-java/issues/12), [#13](https://github.com/openrewrite/rewrite-migrate-java/issues/13), [#14](https://github.com/openrewrite/rewrite-migrate-java/issues/14), [#15](https://github.com/openrewrite/rewrite-migrate-java/issues/15), [#16](https://github.com/openrewrite/rewrite-migrate-java/issues/16)) for a list of those deprecations covered/not covered and submit an issue if you are impacted by a deprecation that is not covered by this recipe.

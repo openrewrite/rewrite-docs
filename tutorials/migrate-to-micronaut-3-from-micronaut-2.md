@@ -7,7 +7,7 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
-```text
+```
 plugins {
     id("org.openrewrite.rewrite") version("5.22.0")
 }
@@ -21,7 +21,8 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.9.2")
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+    rewrite("org.openrewrite.recipe:rewrite-micronaut")
 }
 ```
 {% endcode %}
@@ -29,8 +30,19 @@ dependencies {
 
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```text
+```
 <project>
+  <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-recipe-bom</artifactId>
+            <version>1.3.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
@@ -46,7 +58,6 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>1.9.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -58,31 +69,11 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-### Running on JDK 16 and newer
 
-OpenRewrite requires access to Java compiler internals to function.
-JDK 16 and newer require explicit opt-in to access these internals via `--add-exports`.
-The workaround for this issue is to add explicit exports for packages used by rewrite's java parser.
 
 {% tabs %}
-{% tab title="Gradle" %}
-In a gradle.properties file at the root of your project, add or update `org.gradle.jvmargs` to include this content:
-
-{% code title="gradle.properties" %}
-```
-org.gradle.jvmargs= \
-    --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED \
-    --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
-```
-{% endcode %}
-{% endtab %}
-
 {% tab title="Maven" %}
-Set or update your MAVEN_OPTS environment variable to include this content:
+Set or update your MAVEN\_OPTS environment variable to include this content:
 
 {% code title="MAVEN_OPS environment variable" %}
 ```
@@ -92,7 +83,7 @@ MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --ad
 {% endtab %}
 {% endtabs %}
 
-At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` \(or equivalent\), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ### Before and After
 
@@ -210,11 +201,10 @@ public class Order {
 
 ### Known Limitations
 
-| Unsupported Functionality | Issue |
-| :--- | :--- |
-| Maybe add RxJava2 dependencies | [\#26](https://github.com/openrewrite/rewrite-micronaut/issues/26) |
-| Non-Inherited annotations from super-class method are not copied to overriden method | [\#13](https://github.com/openrewrite/rewrite-micronaut/issues/13) |
-| DefaultContext doCreateBean deprecated | [\#23](https://github.com/openrewrite/rewrite-micronaut/issues/23) |
-| DefaultHttpHostResolver constructor arg Provider to BeanProvider | [\#22](https://github.com/openrewrite/rewrite-micronaut/issues/22) |
-| Change io.micronaut.core.beans.PropertyDescriptor to BeanProperty | [\#21](https://github.com/openrewrite/rewrite-micronaut/issues/21) |
-
+| Unsupported Functionality                                                            | Issue                                                             |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| Maybe add RxJava2 dependencies                                                       | [#26](https://github.com/openrewrite/rewrite-micronaut/issues/26) |
+| Non-Inherited annotations from super-class method are not copied to overriden method | [#13](https://github.com/openrewrite/rewrite-micronaut/issues/13) |
+| DefaultContext doCreateBean deprecated                                               | [#23](https://github.com/openrewrite/rewrite-micronaut/issues/23) |
+| DefaultHttpHostResolver constructor arg Provider to BeanProvider                     | [#22](https://github.com/openrewrite/rewrite-micronaut/issues/22) |
+| Change io.micronaut.core.beans.PropertyDescriptor to BeanProperty                    | [#21](https://github.com/openrewrite/rewrite-micronaut/issues/21) |
