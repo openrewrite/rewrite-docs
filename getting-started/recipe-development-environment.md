@@ -19,7 +19,7 @@ This getting started guide covers setting up your development environment for cr
 
 The easiest way to get started developing your own recipes is to visit the [rewrite-recipe-starter](https://github.com/moderneinc/rewrite-recipe-starter) repository and click the "Use this template" button. That template comes already set up with all the necessary dependencies, build configuration, an example recipe, and tests of the example recipe.
 
-If you've chosen to use the template, skip to [Recipe Distribution](recipe-development-environment.md#recipe-distribution).&#x20;
+If you've chosen to use the template, skip to [Recipe Distribution](recipe-development-environment.md#recipe-distribution).
 
 ## Manual Project Setup
 
@@ -39,33 +39,39 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 {% endtab %}
 {% endtabs %}
 
-### Dependencies
+### Dependencies & Dependency Management
 
-Which rewrite libraries you take dependencies on is determined by which languages/data formats you want to write Recipes for.
+Rewrite provides a bill of materials (BOM) that when imported into your build, will manage the versions of any rewrite dependencies that are included within a project.
+
+You can import the bill of materials into either Gradle or Maven and then include concrete dependencies on the various rewrite libraries without specifying their version. &#x20;
 
 {% tabs %}
 {% tab title="Gradle" %}
 ```groovy
 dependencies {
+    // import Rewrite's bill of materials.
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+
     // rewrite-java dependencies only necessary for Java Recipe development
-    implementation("org.openrewrite:rewrite-java:7.21.3")
-    runtimeOnly("org.openrewrite:rewrite-java-11:7.21.3")
-    runtimeOnly("org.openrewrite:rewrite-java-8:7.21.3")
+    implementation("org.openrewrite:rewrite-java")
+    runtimeOnly("org.openrewrite:rewrite-java-8")
+    runtimeOnly("org.openrewrite:rewrite-java-11")
+    runtimeOnly("org.openrewrite:rewrite-java-17")
 
     // rewrite-maven dependency only necessary for Maven Recipe development
-    implementation("org.openrewrite:rewrite-maven:7.21.3")
+    implementation("org.openrewrite:rewrite-maven")
 
     // rewrite-yaml dependency only necessary for Yaml Recipe development
-    implementation("org.openrewrite:rewrite-yaml:7.21.3")
+    implementation("org.openrewrite:rewrite-yaml")
 
     // rewrite-properties dependency only necessary for Properties Recipe development
-    implementation("org.openrewrite:rewrite-properties:7.21.3")
+    implementation("org.openrewrite:rewrite-properties")
 
     // rewrite-xml dependency only necessary for XML Recipe development
-    implementation("org.openrewrite:rewrite-xml:7.21.3")
+    implementation("org.openrewrite:rewrite-xml")
 
     // For authoring tests for any kind of Recipe
-    testImplementation("org.openrewrite:rewrite-test:7.21.3")
+    testImplementation("org.openrewrite:rewrite-test")
     testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
     testImplementation("org.junit.jupiter:junit-jupiter-params:latest.release")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:latest.release")
@@ -75,24 +81,31 @@ dependencies {
 
 {% tab title="Maven" %}
 ```markup
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-recipe-bom</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+...
 <dependencies>
     <!-- rewrite-java depedencies only necessary for Java Recipe development -->
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
-        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
-        <version>7.21.3</version>
         <scope>runtime</scope>
     </dependency>
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-11</artifactId>
-        <version>7.21.3</version>
         <scope>runtime</scope>
     </dependency>
 
@@ -100,7 +113,6 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-maven</artifactId>
-        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>
 
@@ -108,7 +120,6 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-yaml</artifactId>
-        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>
 
@@ -116,7 +127,6 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-properties</artifactId>
-        <version>7.21.3</version>
         <scope>compile</scope>
     </dependency>
 
@@ -124,15 +134,13 @@ dependencies {
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-xml</artifactId>
-        <version>7.21.3</version>
         <scope>compile</scope>
-    </dependency>    
+    </dependency>
 
     <!-- For authoring tests for any kind of Recipe -->
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-test</artifactId>
-        <version>7.21.3</version>
         <scope>test</scope>
     </dependency>
 </dependencies>
@@ -145,7 +153,7 @@ rewrite-test uses [JUnit 5](https://junit.org/junit5/).
 {% endhint %}
 
 {% hint style="success" %}
-rewrite-java-11 and rewrite-java-8 can happily coexist on the same classpath. At runtime the appropriate module for the current JDK will be selected.
+rewite-java-17, rewrite-java-11 and rewrite-java-8 can happily coexist on the same classpath. At runtime the appropriate module for the current JDK will be selected.
 {% endhint %}
 
 ### Set Language Level and Bytecode Level
@@ -280,12 +288,12 @@ plugins {
 {% endtabs %}
 
 {% hint style="info" %}
-Throughout OpenRewrite's documentation Java is used for Recipe authoring and Kotlin is used for test authoring. You do not have to be constrained by this recommendation: Recipes and tests can be authored in any language that runs on the JVM.
+Throughout OpenRewrite's documentation, Java is used for Recipe authoring and Kotlin is used for test authoring. You do not have to be constrained by this recommendation: Recipes and tests can be authored in any language that runs on the JVM.
 {% endhint %}
 
 ### Project Layout
 
-Having configured the project per these recommendations, you're now able to begin Recipe development. With Gradle and Maven's default project layout, here is where to put the various kinds of sources that go into a OpenRewrite Module:
+Having configured the project per these recommendations, you're now able to begin Recipe development. With Gradle and Maven's default project layout, here is where to put the various kinds of sources that go into an OpenRewrite Module:
 
 * src/main/java - Recipe implementations in Java
 * src/main/kotlin - Recipe implementations in Kotlin
@@ -298,11 +306,11 @@ Project setup is complete. You are ready [create a Recipe](../tutorials/writing-
 ### IDE Configuration
 
 {% hint style="warning" %}
-Starting with java 16, the default JVM behavior is not to allow access to protected modules. The workaround for this issue is to add explicit exports for packages used by rewrite's java parser. &#x20;
+Starting with java 16, the default JVM behavior is not to allow access to protected modules. The workaround for this issue is to add explicit exports for packages used by rewrite's java parser.
 {% endhint %}
 
 {% hint style="info" %}
-Updating the IDE's JUnit template configuration avoids having to update the configuration for each Test.&#x20;
+Updating the IDE's JUnit template configuration avoids having to update the configuration for each Test.
 {% endhint %}
 
 Add the following exports to the IDE's JVM run configuratons.
@@ -317,11 +325,11 @@ For your recipes to be usable by the OpenRewrite build plugins or on [app.modern
 
 ### Local Publishing for Testing
 
-Before you publish your recipe module to an artifact repository, you may want to try it out locally. To do this on the command line, run `./gradlew publishToMavenLocal` (or equivalently `./gradlew pTML`). This will publish to your local maven repository, typically under `~/.m2/repository`.&#x20;
+Before you publish your recipe module to an artifact repository, you may want to try it out locally. To do this on the command line, run `./gradlew publishToMavenLocal` (or equivalently `./gradlew pTML`). This will publish to your local maven repository, typically under `~/.m2/repository`.
 
 ### Publishing to Artifact Repositories
 
-The [rewrite-recipe-starter](https://github.com/moderneinc/rewrite-recipe-starter) project is configured to publish to Moderne's open artifact repository.  [app.moderne.io](https://app.moderne.io) can draw recipes from this repository, as well as from [Maven Central](https://search.maven.org).&#x20;
+The [rewrite-recipe-starter](https://github.com/moderneinc/rewrite-recipe-starter) project is configured to publish to Moderne's open artifact repository. [app.moderne.io](https://app.moderne.io) can draw recipes from this repository, as well as from [Maven Central](https://search.maven.org).
 
 Also see:
 

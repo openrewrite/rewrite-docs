@@ -176,9 +176,9 @@ public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, Ex
 }
 ```
 
-### Using JavaTemplate to say hello\(\)
+### Using JavaTemplate to say hello()
 
-Templates are created using the `JavaTemplate.builder()` method. Within a template `#{}` is the signifier for positional parameter substitution. So to produce the hello\(\) method add this to the visitor:
+Templates are created using the `JavaTemplate.builder()` method. Within a template `#{}` is the signifier for positional parameter substitution. So to produce the hello() method add this to the visitor:
 
 ```java
 public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
@@ -325,13 +325,19 @@ public class SayHelloRecipe extends Recipe {
 
 ## Testing
 
-To create automated tests of this visitor we use the [kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line Strings, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/) and `JavaRecipeTest` class provided by rewrite-test. For `SayHelloRecipe` it is sensible to test:
+To create automated tests of this visitor we use the [Kotlin](https://kotlinlang.org/) language, mostly for convenient access to multi-line Strings, with [JUnit 5](https://junit.org/junit5/docs/current/user-guide/) and using a fluent testing API that is provided by the rewrite-test module.
+
+For `SayHelloRecipe` it is sensible to test:
 
 * That a class matching the configured `fullyQualifiedClassName` with no `hello()` method will have a `hello()` method added
 * That a class that already has a different `hello()` implementation will be left untouched
 * That a class not matching the configured `fullyQualifiedClassName` with no `hello()` method will be left untouched
 
-To assert that a Recipe does make a change, use `RecipeTest.assertChanged`. To assert that a Recipe does _not_ make a change it shouldn't, use `RecipeTest.assertUnchanged`. These methods will default to using the `parser` and `recipe` properties on the class.
+The test for the recipe will implement the `RewriteTest` interface that provides the entry point to the testing infrastructure via the method variants of `rewriteRun().` Our test will override the `defaults(RecipeSpec)`method and define both the recipe and the Java parser configuration that will be shared by all three of the tests.\
+\
+Each test will define a Java `SourceSpec` that, at a minimum, will define the initial source code (the "before" state) for each test. If a second argument is excluded from a source specification, the testing infrastructure will assert that no changes are made to the given source file. If a second argument (the "after" state) is defined for a test, the testing infrastructure will assert that the source file has been transformed correctly after the recipe has been executed.
+
+
 
 ```kotlin
 package org.openrewrite.samples
@@ -340,48 +346,57 @@ import org.junit.jupiter.api.Test
 import org.openrewrite.java.JavaParser
 import org.openrewrite.java.JavaRecipeTest
 
-class SayHelloRecipeTest: JavaRecipeTest {
-    override val recipe: Recipe
-        get() = SayHelloRecipe("com.yourorg.A")
+class SayHelloRecipeTest: RewriteTest {
+
+    override fun defaults(spec: RecipeSpec) {
+        spec
+            .recipe(SayHelloRecipe("com.yourorg.A"))
+    }
 
     @Test
-    fun addsHelloToA() = assertChanged(
-        before = """
-            package com.yourorg;
-
-            class A {
-            }
-        """,
-        after = """
-            package com.yourorg;
-
-            class A {
-                public String hello() {
-                    return "Hello from com.yourorg.A!";
+    fun addsHelloToA() = rewriteRun(
+        java(
+            """
+                package com.yourorg;
+    
+                class A {
                 }
-            }
-        """
+            """,
+            """
+                package com.yourorg;
+    
+                class A {
+                    public String hello() {
+                        return "Hello from com.yourorg.A!";
+                    }
+                }
+            """
+        )
     )
 
     @Test
-    fun doesNotChangeExistingHello() = assertUnchanged(
-        before = """
-            package com.yourorg;
-
-            class A {
-                public String hello() { return ""; }
-            }
-        """
+    fun doesNotChangeExistingHello() = rewriteRun(
+        java(
+            """
+                package com.yourorg;
+    
+                class A {
+                    public String hello() { return ""; }
+                }
+            """
+        )
     )
 
     @Test
-    fun doesNotChangeOtherClass() = assertUnchanged(
-        before = """
-            package com.yourorg;
-
-            class B {
-            }
-        """
+    fun doesNotChangeOtherClass() = rewriteRun(
+        java(
+            """
+                package com.yourorg;
+    
+                class B {
+                }
+            """
+        )
     )
 }
 ```
@@ -392,7 +407,7 @@ Users of [IntelliJ Idea](https://www.jetbrains.com/idea/) benefit from Java synt
 
 ## Declarative YAML Usage
 
-`SayHelloRecipe` is now ready to be used in code or declaratively from YAML. 
+`SayHelloRecipe` is now ready to be used in code or declaratively from YAML.
 
 {% tabs %}
 {% tab title="YAML" %}
@@ -406,4 +421,3 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
-
