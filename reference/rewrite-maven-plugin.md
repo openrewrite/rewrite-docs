@@ -180,7 +180,7 @@ The Maven plugin uses the RocksDB cache by default and will store this cache in 
 
 In the very rare cases where the Maven plugin is unable to write to its on-disk folder or you encounter a serialization issue when reading/writing to the cache, there are several options available:
 
-* Check if the folder is writable by the Maven process. The default folder location is under the user's home folder (`~./rewrite-cache`) and you can choose an alternate location by using the plugin's `pomCacheDirectory` configuration property.
+* Check if the folder is writable by the Maven process. The default folder location is under the user's home folder (`~/.rewrite-cache`) and you can choose an alternate location by using the plugin's `pomCacheDirectory` configuration property.
 * It is safe to simply delete all of the contents within the cache folder. The first time the plugin is executed after deleting the cache, it will download and re-populate this cache folder.
 * The `pomCacheEnabled` can be set to `false` in which case the plugin will use an in-memory cache instead. This will make running recipes slower when a project had deep dependency trees.
 
