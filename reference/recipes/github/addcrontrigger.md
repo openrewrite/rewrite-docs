@@ -39,7 +39,7 @@ Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.0")
+    id("org.openrewrite.rewrite") version("5.22.2")
 }
 
 rewrite {

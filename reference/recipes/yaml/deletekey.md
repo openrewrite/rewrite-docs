@@ -45,7 +45,7 @@ Now that `com.yourorg.DeleteKeyExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.0")
+    id("org.openrewrite.rewrite") version("5.22.2")
 }
 
 rewrite {

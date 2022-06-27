@@ -39,7 +39,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.25.0</version>
+  <version>4.25.3</version>
 </plugin>
 ```
 {% endcode %}
@@ -50,8 +50,7 @@ In the pom.xml or build.gradle, add this entry to the `plugins` section to apply
 ```groovy
 plugins {
     id("java")
-    
-    id("org.openrewrite.rewrite") version("5.22.0")
+    id("org.openrewrite.rewrite") version("5.22.2")
 }
 
 repositories {
@@ -87,7 +86,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.25.0</version>
+  <version>4.25.3</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -103,7 +102,7 @@ To configure this recipe to be active add this configuration to the plugin in th
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.22.0")
+    id("org.openrewrite.rewrite") version("5.22.2")
 }
 
 rewrite {
@@ -169,7 +168,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.25.0</version>
+      <version>4.25.3</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -188,7 +187,7 @@ This creates a new recipe called `com.yourorg.VetToVeterinary`. Now add it to th
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("5.22.0")
+        id("org.openrewrite.rewrite") version("5.22.2")
     }
     
     rewrite {
@@ -226,7 +225,7 @@ After applying these steps, the relevant portions of your build file will look l
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.25.0</version>
+      <version>4.25.3</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -266,7 +265,7 @@ After applying these steps, the relevant portions of your build file will look l
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.22.0")
+    id("org.openrewrite.rewrite") version("5.22.2")
 }
 
 rewrite {

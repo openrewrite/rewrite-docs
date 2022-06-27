@@ -51,7 +51,7 @@ Now that `com.yourorg.ChangeManagedDependencyGroupIdAndArtifactIdExample` has be
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.0")
+    id("org.openrewrite.rewrite") version("5.22.2")
 }
 
 rewrite {
