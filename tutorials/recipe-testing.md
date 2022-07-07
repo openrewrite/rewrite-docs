@@ -18,7 +18,7 @@ OpenRewrite provides infrastructure that allows developers to quickly build test
           <dependency>
               <groupId>org.openrewrite.recipe</groupId>
               <artifactId>rewrite-recipe-bom</artifactId>
-              <version>1.3.0</version>
+              <version>1.4.0</version>
               <type>pom</type>
               <scope>import</scope>
           </dependency>
@@ -79,7 +79,7 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "1.5.21"
 }
 
-val rewriteBomVersion = "1.3.0"
+val rewriteBomVersion = "1.4.0"
 ...
 dependencies {
     implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:${rewriteBomVersion}"))

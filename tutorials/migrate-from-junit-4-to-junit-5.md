@@ -15,7 +15,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
       <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-recipe-bom</artifactId>
-          <version>1.3.0</version>
+          <version>1.4.0</version>
           <type>pom</type>
           <scope>import</scope>
       </dependency>
@@ -28,7 +28,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.25.0</version>
+      <version>4.26.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -53,7 +53,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("5.22.2")
+        id("org.openrewrite.rewrite") version("5.23.0")
     }
     
     rewrite {
@@ -65,7 +65,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     }
     
     dependencies {
-        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.4.0"))
         rewrite("org.openrewrite.recipe:rewrite-spring")
     
         // Other project dependencies
@@ -90,7 +90,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
       <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-recipe-bom</artifactId>
-          <version>1.3.0</version>
+          <version>1.4.0</version>
           <type>pom</type>
           <scope>import</scope>
       </dependency>
@@ -102,7 +102,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.25.0</version>
+      <version>4.26.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -126,7 +126,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("5.22.2")
+        id("org.openrewrite.rewrite") version("5.23.0")
     }
     
     rewrite {
@@ -138,7 +138,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     }
     
     dependencies {
-        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.3.0"))
+        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.4.0"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies
