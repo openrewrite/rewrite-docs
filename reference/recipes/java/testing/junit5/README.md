@@ -4,8 +4,10 @@ _Best practices for JUnit Jupiter tests._
 
 ## Recipes
 
+* [Clean Up Assertions](cleanupassertions.md)
 * [Cleanup JUnit imports](cleanupjunitimports.md)
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](runnertoextension.md)
+* [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](enclosedtonested.md)
 * [JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests](parameterizedrunnertoparameterized.md)
 * [JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`](expectedexceptiontoassertthrows.md)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](mockitojunittomockitoextension.md)

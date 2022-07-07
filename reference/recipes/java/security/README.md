@@ -9,7 +9,7 @@ _Recipes that find and eliminate vulnerable patterns in Java code._
 * [Partial path traversal vulnerability](partialpathtraversalvulnerability.md)
 * [Secure random](securerandom.md)
 * [SecureRandom seeds are not constant or predictable](securerandomprefersdefaultseed.md)
-* [Use Files#createTempDirectory](usefilescreatetempdirectory.md)
+* [Use `Files#createTempDirectory`](usefilescreatetempdirectory.md)
 * [Use secure temporary file creation](securetempfilecreation.md)
 * [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
 

@@ -13,6 +13,7 @@
 
 ## Subcategories
 
+* [Boot3](/reference/recipes/java/spring/boot3)
 * [Cve](/reference/recipes/java/spring/cve)
 * [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
 * [Spring Data](/reference/recipes/java/spring/data)

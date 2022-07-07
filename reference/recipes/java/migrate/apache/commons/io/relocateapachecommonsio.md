@@ -1,6 +1,7 @@
-# Relocate org.apache.commons:commons-io to commons-io:commons-io
+# Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`
 
-\*\* org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo\*\* _The deployment of `org.apache.commons:commons-io` _ [_was a publishing mistake around 2012_](https://issues.sonatype.org/browse/MVNCENTRAL-244) _which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
+** org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo**
+_The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 
 ### Tags
 
@@ -9,22 +10,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.7.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.7.0
+* version: 1.8.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.7.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.8.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.2")
+    id("org.openrewrite.rewrite") version("5.23.0")
 }
 
 rewrite {
@@ -36,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.7.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.8.0")
 }
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.25.0</version>
+        <version>4.26.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo</recipe>
@@ -61,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.7.0</version>
+            <version>1.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -79,11 +81,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change Maven dependency groupId, artifactId and optionally the version](../../../../../maven/changedependencygroupidandartifactid.md)
+* [Change Maven dependency groupId, artifactId and/or the version](../../../../../maven/changedependencygroupidandartifactid.md)
   * oldGroupId: `org.apache.commons`
   * oldArtifactId: `commons-io`
   * newGroupId: `commons-io`
   * newArtifactId: `commons-io`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -102,6 +105,7 @@ recipeList:
       oldArtifactId: commons-io
       newGroupId: commons-io
       newArtifactId: commons-io
+
 ```
 {% endtab %}
 {% endtabs %}

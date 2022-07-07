@@ -10,23 +10,23 @@ _Applies best practices to tests._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.23.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.23.0
+* version: 1.24.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.23.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.24.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.2")
+    id("org.openrewrite.rewrite") version("5.23.0")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.23.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.24.0")
 }
 ```
 {% endcode %}
@@ -53,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.25.3</version>
+        <version>4.26.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.23.0</version>
+            <version>1.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -83,9 +83,7 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Statically import JUnit Jupiter assertions](../../../java/testing/junit5/staticimports.md)
 * [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
-* [`assertEquals(a, null)` to `assertNull(a)`](../../../java/testing/cleanup/assertequalsnulltoassertnull.md)
-* [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](../../../java/testing/cleanup/assertfalseequalstoassertnotequals.md)
-* [Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`](../../../java/testing/cleanup/asserttrueequalstoassertequals.md)
+* [Clean Up Assertions](../../../java/testing/junit5/cleanupassertions.md)
 
 {% endtab %}
 
@@ -102,9 +100,7 @@ tags:
 recipeList:
   - org.openrewrite.java.testing.junit5.StaticImports
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
-  - org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull
-  - org.openrewrite.java.testing.cleanup.AssertFalseEqualsToAssertNotEquals
-  - org.openrewrite.java.testing.cleanup.AssertTrueEqualsToAssertEquals
+  - org.openrewrite.java.testing.junit5.CleanupAssertions
 
 ```
 {% endtab %}

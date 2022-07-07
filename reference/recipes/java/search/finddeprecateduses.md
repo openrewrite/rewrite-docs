@@ -5,11 +5,11 @@ _Find deprecated uses of methods, fields, and types. Optionally ignore those cla
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.24.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.24.0
+* version: 7.25.0
 
 ## Options
 
@@ -29,7 +29,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.2")
+    id("org.openrewrite.rewrite") version("5.23.0")
 }
 
 rewrite {
@@ -53,7 +53,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.25.3</version>
+        <version>4.26.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindDeprecatedUses</recipe>
@@ -75,9 +75,11 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Find uses of deprecated methods](../../java/search/finddeprecatedmethods.md)
-  * methodPattern: `null *(..)`
+  * methodPattern: ` *(..)`
 * [Find uses of deprecated classes](../../java/search/finddeprecatedclasses.md)
+  * typePattern: ``
 * [Find uses of deprecated fields](../../java/search/finddeprecatedfields.md)
+  * typePattern: ``
 
 {% endtab %}
 
@@ -88,14 +90,17 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.search.FindDeprecatedUses
 displayName: Find uses of deprecated classes
 description: Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside of deprecated scopes.
+typePattern: 
 
 
 
 recipeList:
   - org.openrewrite.java.search.FindDeprecatedMethods:
-      methodPattern: null *(..)
+      methodPattern:  *(..)
   - org.openrewrite.java.search.FindDeprecatedClasses:
+      typePattern: 
   - org.openrewrite.java.search.FindDeprecatedFields:
+      typePattern: 
 
 ```
 {% endtab %}

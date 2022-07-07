@@ -5,18 +5,18 @@ _Delete a YAML property. Nested YAML mappings are interpreted as dot separated p
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.24.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.24.0
+* version: 7.25.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | propertyKey | The key to be deleted. |
-| `Boolean` | coalesce | Simplify nested map hierarchies into their simplest dot separated property form. |
+| `Boolean` | coalesce | *Optional*. (Deprecated: in a future version, this recipe will always use the `false` behavior) Simplify nested map hierarchies into their simplest dot separated property form. |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.DeletePropertyExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.2")
+    id("org.openrewrite.rewrite") version("5.23.0")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.25.0</version>
+        <version>4.26.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeletePropertyExample</recipe>

@@ -5,17 +5,17 @@ _Change a YAML property key leaving the value intact. Nested YAML mappings are i
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.24.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.24.0
+* version: 7.25.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | oldPropertyKey | The property key to rename. |
+| `String` | oldPropertyKey | The property key to rename. Supports glob |
 | `String` | newPropertyKey | The new name for the property key. |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
@@ -34,7 +34,7 @@ name: com.yourorg.ChangePropertyKeyExample
 displayName: Change property key example
 recipeList:
   - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: management.metrics.binders.files.enabled
+      oldPropertyKey: management.metrics.binders.*.enabled
       newPropertyKey: management.metrics.enable.process.files
       relaxedBinding: null
       fileMatcher: '**/application-*.yml'
@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.2")
+    id("org.openrewrite.rewrite") version("5.23.0")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.25.0</version>
+        <version>4.26.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyKeyExample</recipe>

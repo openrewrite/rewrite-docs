@@ -9,11 +9,11 @@ _Adds the Apache Software License Version 2.0 to Java source files which are mis
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.24.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.24.0
+* version: 7.25.0
 
 
 ## Usage
@@ -25,7 +25,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.22.2")
+    id("org.openrewrite.rewrite") version("5.23.0")
 }
 
 rewrite {
@@ -49,7 +49,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.25.3</version>
+        <version>4.26.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.AddApache2LicenseHeader</recipe>

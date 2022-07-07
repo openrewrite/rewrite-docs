@@ -6,11 +6,13 @@
 * [Add Gradle wrapper](addgradlewrapper.md)
 * [Change Gradle dependency artifactId](changedependencyartifactid.md)
 * [Change Gradle dependency groupId](changedependencygroupid.md)
+* [Change Gradle project Java compatibility](changejavacompatibility.md)
 * [Change a Gradle dependency version](changedependencyversion.md)
 * [Remove repository](removerepository.md)
 * [Update Gradle wrapper](updategradlewrapper.md)
 * [Update a Gradle plugin by id](upgradepluginversion.md)
 * [Use `Map` notation for Gradle dependency declarations](dependencyusemapnotation.md)
+* [Use `String` notation for Gradle dependency declarations](dependencyusestringnotation.md)
 
 ## Subcategories
 

@@ -28,6 +28,7 @@
 * [Replace `EnvironmentTestUtils` with `TestPropertyValues`](replacedeprecatedenvironmenttestutils.md)
 * [Spring Boot 2.x best practices](springboot2bestpractices.md)
 * [Spring Boot 2.x migration from Spring Boot 1.x](springboot1to2migration.md)
+* [Spring Security 5.4 introduces the ability to configure HttpSecurity by creating a SecurityFilterChain bean](websecurityconfigureradapterrecipe.md)
 * [Upgrade to Spring Boot 2.0 from 1.x](upgradespringboot_2_0.md)
 * [Upgrade to Spring Boot 2.1](upgradespringboot_2_1.md)
 * [Upgrade to Spring Boot 2.2](upgradespringboot_2_2.md)
