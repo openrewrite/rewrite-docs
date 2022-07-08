@@ -36,7 +36,7 @@
 * [Method Patterns](reference/method-patterns.md)
 * [Dependency Version Selectors](reference/dependency-version-selectors.md)
 * [Recipes](reference/recipes/README.md)
-  * [Gradle](reference/recipes/gradle/README.md)
+* [Gradle](reference/recipes/gradle/README.md)
     * [Add @DelegatesTo to the Gradle API](/reference/recipes/gradle/adddelegatestogradleapi.md)
     * [Add Gradle wrapper](/reference/recipes/gradle/addgradlewrapper.md)
     * [Change Gradle dependency artifactId](/reference/recipes/gradle/changedependencyartifactid.md)
