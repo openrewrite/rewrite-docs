@@ -50,7 +50,7 @@ Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.23.0")
+    id("org.openrewrite.rewrite") version("5.24.0")
 }
 
 rewrite {
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.26.0</version>
+        <version>4.27.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeDependabotScheduleIntervalExample</recipe>
