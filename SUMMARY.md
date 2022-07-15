@@ -35,7 +35,7 @@
 * [Declarative YAML Format](reference/yaml-format-reference.md)
 * [Method Patterns](reference/method-patterns.md)
 * [Dependency Version Selectors](reference/dependency-version-selectors.md)
-* [Recipes](README.md)
+* [Recipes](reference/recipes/README.md)
     * [Delete files](/reference/recipes/deletesourcefiles.md)
     * [Find files](/reference/recipes/findsourcefiles.md)
     * [Rename a file](/reference/recipes/renamefile.md)
