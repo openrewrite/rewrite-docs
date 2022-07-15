@@ -5,11 +5,11 @@ _Move whitespace to the outermost AST element possible._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-xml/7.25.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-xml/7.26.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.25.0
+* version: 7.26.0
 
 
 ## Usage

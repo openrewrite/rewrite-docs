@@ -1,7 +1,7 @@
-# Change XML Attribute
+# Change XML Tag Name
 
-** org.openrewrite.xml.ChangeTagAttribute**
-_Alters XML Attribute value within specified element._
+** org.openrewrite.xml.ChangeTagName**
+_Alters the name of XML tags matching the provided expression._
 
 ## Source
 
@@ -16,35 +16,31 @@ _Alters XML Attribute value within specified element._
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. |
-| `String` | attributeName | The name of the attribute whose value is to be changed. |
-| `String` | newValue | The new value to be used for key specified by `attributeName`. |
-| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
+| `String` | newName | The new name for the tag. |
 | `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. |
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeTagAttributeExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeTagNameExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.ChangeTagAttributeExample
-displayName: Change XML Attribute example
+name: com.yourorg.ChangeTagNameExample
+displayName: Change XML Tag Name example
 recipeList:
-  - org.openrewrite.xml.ChangeTagAttribute:
-      elementName: property
-      attributeName: name
-      newValue: newfoo.bar.attribute.value.string
-      oldValue: foo.bar.attribute.value.string
+  - org.openrewrite.xml.ChangeTagName:
+      elementName: /settings/servers/server/username
+      newName: user
       fileMatcher: '**/application-*.xml'
 ```
 {% endcode %}
 
 
-Now that `com.yourorg.ChangeTagAttributeExample` has been defined activate it in your build file:
+Now that `com.yourorg.ChangeTagNameExample` has been defined activate it in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -55,7 +51,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.ChangeTagAttributeExample")
+    activeRecipe("com.yourorg.ChangeTagNameExample")
 }
 
 repositories {
@@ -78,7 +74,7 @@ repositories {
         <version>4.27.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>com.yourorg.ChangeTagAttributeExample</recipe>
+            <recipe>com.yourorg.ChangeTagNameExample</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -90,4 +86,4 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.ChangeTagAttributeExample`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.ChangeTagNameExample`

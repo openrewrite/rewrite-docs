@@ -9,11 +9,11 @@ _Checks that classes and records which define a covariant `equals()` method also
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.25.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.26.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.25.0
+* version: 7.26.0
 
 
 ## Usage
