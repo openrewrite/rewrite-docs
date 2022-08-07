@@ -5,11 +5,11 @@ _Adds a comment as the first element in a `XML` tag._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-xml/7.26.3/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-xml/7.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.26.3
+* version: 7.27.1
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.AddCommentToXmlTagExample` has been defined activate it in
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.25.0")
+    id("org.openrewrite.rewrite") version("5.26.1")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.30.0</version>
+        <version>4.31.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCommentToXmlTagExample</recipe>

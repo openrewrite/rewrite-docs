@@ -6,6 +6,7 @@
 * [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](asserttruecomparisontoassertequals.md)
 * [Remove empty tests without comments](removeemptytests.md)
 * [Remove `public` visibility of JUnit5 tests](testsshouldnotbepublic.md)
+* [Remove `test` prefix from JUnit5 tests](removetestprefix.md)
 * [Replace JUnit `assertFalse(!<boolean>)` to `assertTrue(<boolean>)`](assertfalsenegationtoasserttrue.md)
 * [Replace JUnit `assertFalse(a == null)` to `assertNotNull(a)`](assertfalsenulltoassertnotnull.md)
 * [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](assertfalseequalstoassertnotequals.md)

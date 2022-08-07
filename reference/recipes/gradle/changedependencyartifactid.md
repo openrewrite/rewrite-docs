@@ -5,25 +5,18 @@ _Change the artifactId of a specified Gradle dependency. _
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.26.3/jar)
+[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.26.3
+* version: 7.27.1
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-                        | `String` | dependencyPattern | A dependency pattern specifying which dependencies should have their artifactId updated. Dependency patterns are a concise way of describing which dependencies are applicable to a recipe. Valid dependency patterns take one of these forms:
-
-* groupId:artifactId
-* groupId:artifactId:versionSelector
-* groupId:artifactId:versionSelector/versionPattern
-
-"groupId" and "artifactId" accept glob patterns.
-"versionSelector" accepts both literal version numbers and semver selectors.
-"versionPattern" is used for artifacts that encode variant/platform information in their version.Guava is a common example of such a library. Guava appends "-jre" or "-android" to its version to indicate platform compatibility. |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | newArtifactId | The new artifactId to use. |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. |
 
@@ -41,20 +34,21 @@ name: com.yourorg.ChangeDependencyArtifactIdExample
 displayName: Change Gradle dependency artifactId example
 recipeList:
   - org.openrewrite.gradle.ChangeDependencyArtifactId:
-      dependencyPattern: com.fasterxml.jackson*:jackson-module*
-      newArtifactId: rewrite-core
+      groupId: com.fasterxml.jackson*
+      artifactId: jackson-module*
+      newArtifactId: jackson-custom
       configuration: api
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeDependencyArtifactIdExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.26.3 in your build file:
+Now that `com.yourorg.ChangeDependencyArtifactIdExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.27.1 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.25.0")
+    id("org.openrewrite.rewrite") version("5.26.1")
 }
 
 rewrite {
@@ -66,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.26.3")
+    rewrite("org.openrewrite:rewrite-gradle:7.27.1")
 }
 ```
 {% endcode %}
@@ -81,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.30.0</version>
+        <version>4.31.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeDependencyArtifactIdExample</recipe>
@@ -91,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.26.3</version>
+            <version>7.27.1</version>
           </dependency>
         </dependencies>
       </plugin>

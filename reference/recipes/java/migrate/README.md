@@ -7,6 +7,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Add JDeprScan Maven Plug-in](addjdeprscanplugin.md)
 * [Add Maven Jar Plugin to suppress Illegal Reflection Warnings](addsuppressionforillegalreflectionwarningsplugin.md)
 * [Change Maven Java version property values to 11](javaversion11.md)
+* [Change Maven Java version property values to 17](javaversion17.md)
 * [Migrate Java 8 to Java 11](java8tojava11.md)
 * [Migrate deprecated `javax` packages to `jakarta`](javaxmigrationtojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](javaxactivationmigrationtojakartaactivation.md)

@@ -49,6 +49,7 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Reformat local variable names to camelCase](renamelocalvariablestocamelcase.md)
 * [Reformat private field names to camelCase](renameprivatefieldstocamelcase.md)
 * [Remove Nullable and CheckForNull annotations from primitives](unnecessaryprimitiveannotations.md)
+* [Remove Unneeded Assertions](removeunneededassertion.md)
 * [Remove author tags from JavaDocs](removejavadocauthortag.md)
 * [Remove empty blocks](emptyblock.md)
 * [Remove extra semicolons](removeextrasemicolons.md)

@@ -9,23 +9,23 @@ _Does not allow a process to gain more privileges than its parent process._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.19.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.20.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.19.0
+* version: 1.20.1
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.19.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.20.1 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.25.0")
+    id("org.openrewrite.rewrite") version("5.26.1")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.19.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.20.1")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.30.0</version>
+        <version>4.31.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.NoPrivilegeEscalation</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.19.0</version>
+            <version>1.20.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -82,7 +82,7 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
   * resourceKind: `Pod`
-  * configurationPath: `$.spec.containers[*].*`
+  * configurationPath: `$.spec.containers`
   * value: `securityContext:
   allowPrivilegeEscalation: false`
 
@@ -100,7 +100,7 @@ tags:
 recipeList:
   - org.openrewrite.kubernetes.AddConfiguration:
       resourceKind: Pod
-      configurationPath: $.spec.containers[*].*
+      configurationPath: $.spec.containers
       value: securityContext:
   allowPrivilegeEscalation: false
 

@@ -5,11 +5,11 @@ _Resolve common static analysis issues discovered through 3rd party tools_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.26.3/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.26.3
+* version: 7.27.1
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.25.0")
+    id("org.openrewrite.rewrite") version("5.26.1")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.30.0</version>
+        <version>4.31.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -82,7 +82,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Fall through](../../java/cleanup/fallthrough.md)
 * [Finalize classes with private constructors](../../java/cleanup/finalclass.md)
 * [`for` loop counters incremented in update](../../java/cleanup/forloopincrementinupdate.md)
-* [Hide utility class constructor](../../java/cleanup/hideutilityclassconstructor.md)
 * [Use `indexOf(String, int)`](../../java/cleanup/indexofchecksshoulduseastartposition.md)
 * [`indexOf()` replaceable by `contains()`](../../java/cleanup/indexofreplaceablebycontains.md)
 * [`indexOf` should not compare greater than zero](../../java/cleanup/indexofshouldnotcomparegreaterthanzero.md)
@@ -154,7 +153,6 @@ recipeList:
   - org.openrewrite.java.cleanup.FallThrough
   - org.openrewrite.java.cleanup.FinalClass
   - org.openrewrite.java.cleanup.ForLoopIncrementInUpdate
-  - org.openrewrite.java.cleanup.HideUtilityClassConstructor
   - org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition
   - org.openrewrite.java.cleanup.IndexOfReplaceableByContains
   - org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero

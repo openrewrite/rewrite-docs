@@ -12,6 +12,7 @@ _Recipes that find and eliminate vulnerable patterns in Java code._
 * [Use `Files#createTempDirectory`](usefilescreatetempdirectory.md)
 * [Use secure temporary file creation](securetempfilecreation.md)
 * [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
+* [Zip slip](zipslip.md)
 
 ## Subcategories
 

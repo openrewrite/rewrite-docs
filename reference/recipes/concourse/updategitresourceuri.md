@@ -5,11 +5,11 @@ _Update git resource `source.uri` URI values to point to a new URI value._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-concourse), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-concourse/1.8.0/jar)
+[Github](https://github.com/openrewrite/rewrite-concourse), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-concourse/1.9.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 1.8.0
+* version: 1.9.2
 
 ## Options
 
@@ -39,14 +39,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:1.8.0 in your build file:
+Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:1.9.2 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.25.0")
+    id("org.openrewrite.rewrite") version("5.26.1")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:1.8.0")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:1.9.2")
 }
 ```
 {% endcode %}
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.30.0</version>
+        <version>4.31.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateGitResourceUriExample</recipe>
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>1.8.0</version>
+            <version>1.9.2</version>
           </dependency>
         </dependencies>
       </plugin>
