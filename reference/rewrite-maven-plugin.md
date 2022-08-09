@@ -66,7 +66,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.31.1</version>
+        <version>4.31.3</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.Spring</recipe>

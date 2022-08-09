@@ -44,7 +44,7 @@ Now that `com.yourorg.AddConfigurationExample` has been defined activate it and 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.26.1")
+    id("org.openrewrite.rewrite") version("5.26.3")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.31.1</version>
+        <version>4.31.3</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddConfigurationExample</recipe>

@@ -25,7 +25,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.26.1")
+    id("org.openrewrite.rewrite") version("5.26.3")
 }
 
 rewrite {
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.31.1</version>
+        <version>4.31.3</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.security.UseFilesCreateTempDirectory</recipe>
