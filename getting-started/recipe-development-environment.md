@@ -43,7 +43,7 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 
 Rewrite provides a bill of materials (BOM) that when imported into your build, will manage the versions of any rewrite dependencies that are included within a project.
 
-You can import the bill of materials into either Gradle or Maven and then include concrete dependencies on the various rewrite libraries without specifying their version. &#x20;
+You can import the bill of materials into either Gradle or Maven and then include concrete dependencies on the various rewrite libraries without specifying their version.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -165,12 +165,23 @@ In order to be able to use OpenRewrite to modernize old projects it's important 
 
 {% tabs %}
 {% tab title="Gradle" %}
+For Gradle Kotlin
+
+{% code title="build.gradle.kts" %}
+```kotlin
+tasks.named<JavaCompile>("compileJava") {
+    options.release.set(8)
+}
+```
+{% endcode %}
+
+For Gradle Groovy
+
 {% code title="build.gradle" %}
 ```groovy
-// See https://docs.gradle.org/current/userguide/building_java_projects.html#sec:java_cross_compilation
-tasks.withType(JavaCompile) {        
-    sourceCompatibility = JavaVersion.VERSION_1_8.toString()
-    targetCompatibility = JavaVersion.VERSION_1_8.toString()
+// notice that we allow test source code to be compiled to release level >8
+tasks.compileJava {
+    options.release.set(8)
 }
 ```
 {% endcode %}

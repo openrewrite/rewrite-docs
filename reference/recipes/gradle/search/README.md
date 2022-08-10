@@ -2,8 +2,6 @@
 
 ## Recipes
 
-* [Find Gradle `dependencies` blocks](finddependencyhandler.md)
-* [Find Gradle dependency](finddependency.md)
-* [Find Gradle plugin](findplugin.md)
-
-
+* [Find Gradle `dependencies` blocks](broken-reference)
+* [Find Gradle dependency](broken-reference)
+* [Find Gradle plugin](broken-reference)
