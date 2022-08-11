@@ -50,6 +50,22 @@ The `rewrite` DSL exposes a few configuration options:
 * `failOnDryRunResults` - Boolean flag toggling whether `rewriteDryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. Default threshold is 10Mb.
 * `exclusion` - One or more paths, relative to the project the plugin is applied to, where non-Java sources are ignored during parsing. Supports [glob patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/FileSystem.html#getPathMatcher\(java.lang.String\)).
+*   `plainTextMasks` - A set of file masks to denote which files should be parsed as plain text. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename. **Exclusions take precedence over any plain text masks.** If this configuration is not explicitly defined the default masks are&#x20;
+
+    ```
+    **/META-INF/services/**
+    **/.gitignore
+    **/.gitattributes
+    **/.java-version
+    **/.sdkmanrc
+    **/gradlew
+    **/*.sh
+    **/*.bash
+    **/*.bat
+    **/*.ksh
+    **/*.txt
+    **/*.jsp
+    ```
 
 ```groovy
 plugins {
@@ -70,6 +86,7 @@ rewrite {
             "subproject-a/src/main/resources/generated.yaml",
             // Exclude all json files
             "**/*.json")
+    plainTextMask("**/*.txt")
     
     // These are default values, shown for example. It isn't necessary to supply these values manually:
     configFile = project.getRootProject().file("rewrite.yml")

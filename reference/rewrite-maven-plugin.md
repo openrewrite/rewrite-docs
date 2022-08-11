@@ -19,8 +19,6 @@ The OpenRewrite Maven plugin offers these goals:
 * `mvn rewrite:discover` - Generate a report of available recipes found on the classpath.
 * `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org) bill of materials outlining the project's dependencies, including transitive dependencies.
 
-
-
 {% hint style="info" %}
 _`rewrite`_ name-spaced properties can be used for substituting plugin properties
 
@@ -32,7 +30,7 @@ _`rewrite`_ name-spaced properties can be used for substituting plugin propertie
 {% endhint %}
 
 {% hint style="info" %}
-The goals `rewrite:run` and `rewrite:dryRun` are configured to fork Maven's life cycle and are a better choice when running recipes via a stand-alone goal (`mvn rewrite:run`) because this will trigger all the necessary life-cycle goals prior to running rewrite's plugin. However, when using rewrite within the context of an integration build (`mvn deploy rewrite:run`) it may be more efficient to use the non-forking variants, as these will not cause duplicate life cycle phases to be called.&#x20;
+The goals `rewrite:run` and `rewrite:dryRun` are configured to fork Maven's life cycle and are a better choice when running recipes via a stand-alone goal (`mvn rewrite:run`) because this will trigger all the necessary life-cycle goals prior to running rewrite's plugin. However, when using rewrite within the context of an integration build (`mvn deploy rewrite:run`) it may be more efficient to use the non-forking variants, as these will not cause duplicate life cycle phases to be called.
 {% endhint %}
 
 {% hint style="info" %}
@@ -49,6 +47,21 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 * `dependencies` - To make pre-packaged OpenRewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
 * `exclusions` - Skips parsing for any paths matching these exclusions. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename.
+*   `plainTextMasks` - A set of file masks to denote which files should be parsed as plain text. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename. **Exclusions take precedence over any plain text masks.** If this configuration is not explicitly defined the default masks are&#x20;
+
+    ```
+    **/META-INF/services/**
+    **/.gitignore
+    **/.gitattributes
+    **/.java-version
+    **/.sdkmanrc
+    **/*.sh
+    **/*.bash
+    **/*.bat
+    **/*.ksh
+    **/*.txt
+    **/*.jsp
+    ```
 * `pomCacheDirectory` - The directory where OpenRewrite will cache pom.xml and meta-data. The default value is `~/.rewrite-cache`
 * `pomCacheEnabled` - This flag determines if OpenRewrite will cache pom.xml and meta-data using an on-disk cache. The default is `true`
 * `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. The default threshold is 10Mb.
@@ -81,6 +94,9 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
           <exclusions>
             <exclude>*/some/irrelevant/or/expensive/directory/**</exclude>
           </exclusions>
+          <plainTextMasks>
+	    <plainTextMask>**/.txt</plainTextMask>
+	  </plainTextMasks>
         </configuration>
         <dependencies>
           <!-- This module is made up for sake of example. It isn't packaged with OpenRewrite -->
@@ -100,8 +116,6 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
 {% hint style="info" %}
 To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
 {% endhint %}
-
-
 
 ## The "Run" Goal
 
