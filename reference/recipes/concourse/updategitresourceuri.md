@@ -46,7 +46,7 @@ Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.26.3")
+    id("org.openrewrite.rewrite") version("5.27.0")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.31.3</version>
+        <version>4.32.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateGitResourceUriExample</recipe>

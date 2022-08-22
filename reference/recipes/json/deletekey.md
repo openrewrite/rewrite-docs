@@ -5,11 +5,11 @@ _Delete a JSON mapping entry key._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-json), [Issue Tracker](https://github.com/openrewrite/rewrite-json/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-json/7.27.3/jar)
+[Github](https://github.com/openrewrite/rewrite-json), [Issue Tracker](https://github.com/openrewrite/rewrite-json/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-json/7.28.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-json
-* version: 7.27.3
+* version: 7.28.0
 
 ## Options
 
@@ -37,14 +37,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.DeleteKeyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-json:7.27.3 in your build file:
+Now that `com.yourorg.DeleteKeyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-json:7.28.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.26.3")
+    id("org.openrewrite.rewrite") version("5.27.0")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-json:7.27.3")
+    rewrite("org.openrewrite:rewrite-json:7.28.0")
 }
 ```
 {% endcode %}
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.31.3</version>
+        <version>4.32.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeleteKeyExample</recipe>
@@ -81,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-json</artifactId>
-            <version>7.27.3</version>
+            <version>7.28.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -5,11 +5,11 @@ _Takes two patterns for the start/end methods to find flow between._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.27.3/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.28.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.27.3
+* version: 7.28.0
 
 ## Options
 
@@ -53,7 +53,7 @@ Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined activate i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.26.3")
+    id("org.openrewrite.rewrite") version("5.27.0")
 }
 
 rewrite {
@@ -77,7 +77,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.31.3</version>
+        <version>4.32.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindFlowBetweenMethodsExample</recipe>
