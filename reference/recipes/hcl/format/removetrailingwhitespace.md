@@ -70,4 +70,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipesorg.openrewrite.hcl.format.RemoveTrailingWhitespace`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.hcl.format.RemoveTrailingWhitespace`

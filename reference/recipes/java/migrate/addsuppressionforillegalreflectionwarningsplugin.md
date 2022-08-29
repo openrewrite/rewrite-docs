@@ -76,4 +76,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipesorg.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.java.migrate.AddSuppressionForIllegalReflectionWarningsPlugin`
