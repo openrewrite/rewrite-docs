@@ -56,6 +56,7 @@ And here is a main method that is mostly complete. You just need to change the `
 ```java
 package org.openrewrite.java;
 
+import org.openrewrite.ExecutionContext;
 import org.openrewrite.InMemoryExecutionContext;
 import org.openrewrite.Recipe;
 import org.openrewrite.Result;
@@ -95,12 +96,13 @@ public class RunRewriteManually {
                         bfa.isRegularFile() && p.getFileName().toString().endsWith(".java"))
                 .collect(Collectors.toList());
 
+        ExecutionContext ctx = new InMemoryExecutionContext(Throwable::printStackTrace);
+
         // parser the source files into ASTs
-        List<J.CompilationUnit> cus = javaParser.parse(sourcePaths, projectDir,
-                new InMemoryExecutionContext(Throwable::printStackTrace));
+        List<J.CompilationUnit> cus = javaParser.parse(sourcePaths, projectDir, ctx);
 
         // collect results
-        List<Result> results = recipe.run(cus);
+        List<Result> results = recipe.run(cus, ctx);
 
         for (Result result : results) {
             // print diffs to the console
