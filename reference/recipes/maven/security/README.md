@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Use HTTPS for repositories](broken-reference)
+* [Use HTTPS for repositories](usehttpsforrepositories.md)
+
+

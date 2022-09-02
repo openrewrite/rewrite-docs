@@ -33,6 +33,7 @@ _Basic building blocks for transforming Java code._
 ## Subcategories
 
 * [Cleanup](/reference/recipes/java/cleanup)
+* [Controlflow](/reference/recipes/java/controlflow)
 * [Format](/reference/recipes/java/format)
 * [JHipster](/reference/recipes/java/jhipster)
 * [Logging](/reference/recipes/java/logging)

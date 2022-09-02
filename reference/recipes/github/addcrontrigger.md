@@ -1,24 +1,27 @@
 # Add cron workflow trigger
 
-\*\* org.openrewrite.github.AddCronTrigger\*\* _The `schedule` _ [_event_](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events) _allows you to trigger a workflow at a scheduled time._
+** org.openrewrite.github.AddCronTrigger**
+_The `schedule` [event](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events) allows you to trigger a workflow at a scheduled time._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-github-actions), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.9.1/jar)
+[Github](https://github.com/openrewrite/rewrite-github-actions), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.10.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 1.9.1
+* version: 1.10.0
 
 ## Options
 
-| Type     | Name | Description                                                                                                             |
-| -------- | ---- | ----------------------------------------------------------------------------------------------------------------------- |
-| `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag\_20\_25\_07). |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07). |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCronTriggerExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCronTriggerExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -32,14 +35,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.9.1 in your build file:
+Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.10.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.27.0")
+    id("org.openrewrite.rewrite") version("5.28.0")
 }
 
 rewrite {
@@ -51,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.9.1")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.10.0")
 }
 ```
 {% endcode %}
@@ -66,7 +69,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.32.0</version>
+        <version>4.33.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCronTriggerExample</recipe>
@@ -76,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>1.9.1</version>
+            <version>1.10.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -88,7 +91,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipescom.yourorg.AddCronTriggerExample`
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.AddCronTriggerExample`
 
 ## Definition
 
@@ -96,10 +99,11 @@ Recipes can also be activated directly from the commandline by adding the argume
 {% tab title="Recipe List" %}
 * [Merge YAML snippet](../yaml/mergeyaml.md)
   * key: `$.on`
-  * yaml: \`schedule:
-  * cron: "0 18 \* \* \*"\`
+  * yaml: `schedule:
+  - cron: "0 18 * * *"`
   * acceptTheirs: `true`
   * fileMatcher: `.github/workflows/*.yml`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -118,6 +122,7 @@ recipeList:
   - cron: "0 18 * * *"
       acceptTheirs: true
       fileMatcher: .github/workflows/*.yml
+
 ```
 {% endtab %}
 {% endtabs %}

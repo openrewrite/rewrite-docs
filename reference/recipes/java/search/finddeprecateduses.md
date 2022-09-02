@@ -5,11 +5,11 @@ _Find deprecated uses of methods, fields, and types. Optionally ignore those cla
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.28.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.29.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.28.0
+* version: 7.29.0
 
 ## Options
 
@@ -29,7 +29,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.27.0")
+    id("org.openrewrite.rewrite") version("5.28.0")
 }
 
 rewrite {
@@ -44,7 +44,7 @@ repositories {
 {% endcode %}
 {% endtab %}
 
-{% tab title="Maven" %}
+{% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
 <project>
@@ -53,7 +53,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.32.0</version>
+        <version>4.33.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindDeprecatedUses</recipe>
@@ -63,6 +63,15 @@ repositories {
     </plugins>
   </build>
 </project>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven Command Line" %}
+{% code title="shell" %}
+```shell
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.33.0:run \
+  -DactiveRecipes=org.openrewrite.java.search.FindDeprecatedUses
 ```
 {% endcode %}
 {% endtab %}

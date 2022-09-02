@@ -11,23 +11,23 @@ _Migrates usage of Apache Log4j to using SLF4J directly. Use of the traditional 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.10.1/jar)
+[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 1.10.1
+* version: 1.11.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.10.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.11.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.27.0")
+    id("org.openrewrite.rewrite") version("5.28.0")
 }
 
 rewrite {
@@ -39,13 +39,13 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.10.1")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.11.0")
 }
 ```
 {% endcode %}
 {% endtab %}
 
-{% tab title="Maven" %}
+{% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
 <project>
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.32.0</version>
+        <version>4.33.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.slf4j.Log4jToSlf4j</recipe>
@@ -64,13 +64,23 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.10.1</version>
+            <version>1.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
     </plugins>
   </build>
 </project>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven Command Line" %}
+{% code title="shell" %}
+```shell
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.33.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.11.0 \
+  -DactiveRecipes=org.openrewrite.java.logging.slf4j.Log4jToSlf4j
 ```
 {% endcode %}
 {% endtab %}
@@ -83,6 +93,7 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Migrate Log4j 1.x to SLF4J 1.x](../../../java/logging/slf4j/log4j1toslf4j1.md)
+* [Loggers should be named for their enclosing classes.](../../../java/logging/slf4j/loggersnamedforenclosingclass.md)
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `org.apache.logging.log4j`
   * artifactId: `log4j-to-slf4j`
@@ -132,6 +143,7 @@ tags:
   - log4j
 recipeList:
   - org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1
+  - org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass
   - org.openrewrite.maven.RemoveDependency:
       groupId: org.apache.logging.log4j
       artifactId: log4j-to-slf4j

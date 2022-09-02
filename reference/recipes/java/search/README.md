@@ -13,6 +13,7 @@
 * [Find plain text secrets](findsecrets.md)
 * [Find text](findtext.md)
 * [Find types](findtypes.md)
+* [Find uses of `@Repeatable` annotations.](findrepeatableannotations.md)
 * [Find uses of deprecated classes](finddeprecatedclasses.md)
 * [Find uses of deprecated classes](finddeprecateduses.md)
 * [Find uses of deprecated fields](finddeprecatedfields.md)

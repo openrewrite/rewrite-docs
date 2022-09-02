@@ -11,23 +11,23 @@ _Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.26.1/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.27.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.26.1
+* version: 1.27.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.26.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.27.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.27.0")
+    id("org.openrewrite.rewrite") version("5.28.0")
 }
 
 rewrite {
@@ -39,13 +39,13 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.26.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.27.0")
 }
 ```
 {% endcode %}
 {% endtab %}
 
-{% tab title="Maven" %}
+{% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
 <project>
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.32.0</version>
+        <version>4.33.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.UseMockitoExtension</recipe>
@@ -64,13 +64,23 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.26.1</version>
+            <version>1.27.0</version>
           </dependency>
         </dependencies>
       </plugin>
     </plugins>
   </build>
 </project>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven Command Line" %}
+{% code title="shell" %}
+```shell
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.33.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.27.0 \
+  -DactiveRecipes=org.openrewrite.java.testing.junit5.UseMockitoExtension
 ```
 {% endcode %}
 {% endtab %}
@@ -82,7 +92,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Mockito 3.x migration from 1.x](../../../java/testing/mockito/mockito1to3migration.md)
+* [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration.md)
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](../../../java/testing/mockito/mockitojunitrunnersilenttoextension.md)
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
   * runners: `[org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]`
@@ -102,7 +112,7 @@ tags:
   - testing
   - mockito
 recipeList:
-  - org.openrewrite.java.testing.mockito.Mockito1to3Migration
+  - org.openrewrite.java.testing.mockito.Mockito1to4Migration
   - org.openrewrite.java.testing.mockito.MockitoJUnitRunnerSilentToExtension
   - org.openrewrite.java.testing.junit5.RunnerToExtension:
       runners: [org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]

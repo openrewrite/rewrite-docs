@@ -14,6 +14,7 @@
 * [Migrate Spring Boot properties to 2.4](springbootproperties_2_4.md)
 * [Migrate Spring Boot properties to 2.5](springbootproperties_2_5.md)
 * [Migrate Spring Boot properties to 2.6](springbootproperties_2_6.md)
+* [Migrate Spring Boot properties to 2.7](springbootproperties_2_7.md)
 * [Migrate additional Spring Boot properties to 2.0](springbootpropertiesmanual_2_0.md)
 * [Migrate additional Spring Boot properties to 2.5](springbootpropertiesmanual_2_5.md)
 * [Migrate additional Spring Boot properties to 2.6](springbootpropertiesmanual_2_6.md)

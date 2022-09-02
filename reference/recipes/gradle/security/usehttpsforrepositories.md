@@ -9,23 +9,23 @@ _Use HTTPS for repository urls_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.28.0/jar)
+[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.29.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.28.0
+* version: 7.29.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.28.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.29.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.27.0")
+    id("org.openrewrite.rewrite") version("5.28.0")
 }
 
 rewrite {
@@ -37,13 +37,13 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.28.0")
+    rewrite("org.openrewrite:rewrite-gradle:7.29.0")
 }
 ```
 {% endcode %}
 {% endtab %}
 
-{% tab title="Maven" %}
+{% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
 <project>
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.32.0</version>
+        <version>4.33.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.gradle.security.UseHttpsForRepositories</recipe>
@@ -62,13 +62,23 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.28.0</version>
+            <version>7.29.0</version>
           </dependency>
         </dependencies>
       </plugin>
     </plugins>
   </build>
 </project>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Maven Command Line" %}
+{% code title="shell" %}
+```shell
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.33.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-gradle:7.29.0 \
+  -DactiveRecipes=org.openrewrite.gradle.security.UseHttpsForRepositories
 ```
 {% endcode %}
 {% endtab %}
