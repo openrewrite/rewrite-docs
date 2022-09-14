@@ -2,14 +2,12 @@
 
 ## Recipes
 
-* [Add Terraform configuration](addconfiguration.md)
-* [Use a long enough byte length for `random` resources](securerandom.md)
+* [Add Terraform configuration](broken-reference)
+* [Use a long enough byte length for `random` resources](broken-reference)
 
 ## Subcategories
 
-* [AWS](/reference/recipes/terraform/aws)
-* [Azure](/reference/recipes/terraform/azure)
-* [GCP](/reference/recipes/terraform/gcp)
-* [Search](/reference/recipes/terraform/search)
-
-
+* [AWS](aws/)
+* [Azure](azure/)
+* [GCP](gcp/)
+* [Search](search/)

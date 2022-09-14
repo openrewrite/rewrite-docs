@@ -2,6 +2,4 @@
 
 ## Recipes
 
-* [Find XML tags](findtags.md)
-
-
+* [Find XML tags](broken-reference)

@@ -2,6 +2,4 @@
 
 ## Recipes
 
-* [List all dependencies](listdependencies.md)
-
-
+* [List all dependencies](broken-reference)

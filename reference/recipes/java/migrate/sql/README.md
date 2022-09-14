@@ -1,8 +1,6 @@
-# `java.sql` APIs
+# java.sql APIs
 
 ## Recipes
 
-* [Migrate deprecated `java.sql` APIs](javasqlapis.md)
-* [Use `DriverManager#setLogWriter(java.io.PrintWriter)`](migratedrivermanagersetlogstream.md)
-
-
+* [Migrate deprecated `java.sql` APIs](broken-reference)
+* [Use `DriverManager#setLogWriter(java.io.PrintWriter)`](broken-reference)

@@ -2,6 +2,4 @@
 
 ## Recipes
 
-* [Find content](findcontent.md)
-
-
+* [Find content](broken-reference)

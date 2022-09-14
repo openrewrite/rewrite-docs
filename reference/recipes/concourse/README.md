@@ -1,16 +1,14 @@
 # Concourse
 
-_Recipes to perform [Concourse](https://concourse-ci.org/) hygiene and migration tasks._
+_Recipes to perform_ [_Concourse_](https://concourse-ci.org/) _hygiene and migration tasks._
 
 ## Recipes
 
-* [Change Concourse value](changevalue.md)
-* [Change resource version](changeresourceversion.md)
-* [Find resource](findresource.md)
-* [Update git resource `source.uri` references](updategitresourceuri.md)
+* [Change Concourse value](broken-reference)
+* [Change resource version](broken-reference)
+* [Find resource](broken-reference)
+* [Update git resource `source.uri` references](broken-reference)
 
 ## Subcategories
 
-* [Search](/reference/recipes/concourse/search)
-
-
+* [Search](search/)

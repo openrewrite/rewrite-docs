@@ -4,12 +4,10 @@ _Basic building blocks for transforming JSON._
 
 ## Recipes
 
-* [Change key](changekey.md)
-* [Change value](changevalue.md)
-* [Delete key](deletekey.md)
+* [Change key](broken-reference)
+* [Change value](broken-reference)
+* [Delete key](broken-reference)
 
 ## Subcategories
 
-* [Search](/reference/recipes/json/search)
-
-
+* [Search](search/)

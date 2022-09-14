@@ -2,13 +2,11 @@
 
 ## Recipes
 
-* [Migrate `java.util` APIs](javautilapis.md)
-* [Use `EnumSet of(..)`](useenumsetof.md)
-* [Use `List.of(..)` in Java 9 or higher](migratecollectionssingletonlist.md)
-* [Use `List.of(..)` in Java 9 or higher](migratecollectionsunmodifiablelist.md)
-* [Use `Map.of(..)` in Java 9 or higher](migratecollectionssingletonmap.md)
-* [Use `Map.of(..)` where possible](usemapof.md)
-* [Use `Set.of(..)` in Java 9 or higher](migratecollectionssingletonset.md)
-* [Use `Set.of(..)` in Java 9 or higher](migratecollectionsunmodifiableset.md)
-
-
+* [Migrate `java.util` APIs](broken-reference)
+* [Use `EnumSet of(..)`](broken-reference)
+* [Use `List.of(..)` in Java 9 or higher](broken-reference)
+* [Use `List.of(..)` in Java 9 or higher](broken-reference)
+* [Use `Map.of(..)` in Java 9 or higher](broken-reference)
+* [Use `Map.of(..)` where possible](broken-reference)
+* [Use `Set.of(..)` in Java 9 or higher](broken-reference)
+* [Use `Set.of(..)` in Java 9 or higher](broken-reference)

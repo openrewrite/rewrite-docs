@@ -65,7 +65,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     }
     
     dependencies {
-        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.7.0"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.8.1"))
         rewrite("org.openrewrite.recipe:rewrite-spring")
     
         // Other project dependencies

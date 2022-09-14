@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.7.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.8.1"))
     rewrite("org.openrewrite.recipe:rewrite-micronaut")
 }
 ```
@@ -68,8 +68,6 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-
 
 {% tabs %}
 {% tab title="Maven" %}

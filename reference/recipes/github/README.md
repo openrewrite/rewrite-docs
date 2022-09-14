@@ -1,16 +1,14 @@
 # Github Actions
 
-_Recipes to perform [Github Actions](https://docs.github.com/en/actions) hygiene and migration tasks._
+_Recipes to perform_ [_Github Actions_](https://docs.github.com/en/actions) _hygiene and migration tasks._
 
 ## Recipes
 
-* [Add cron workflow trigger](addcrontrigger.md)
-* [Add manual workflow trigger](addmanualtrigger.md)
-* [Cancel in-progress workflow when it is triggered again](autocancelinprogressworkflow.md)
-* [Change dependabot schedule interval](changedependabotscheduleinterval.md)
-* [Check for github-actions updates daily](dependabotcheckforgithubactionsupdatesdaily.md)
-* [Check for github-actions updates weekly](dependabotcheckforgithubactionsupdatesweekly.md)
-* [Setup Java dependency caching](setupjavacaching.md)
-* [Use `actions/setup-java` `temurin` distribution](actionssetupjavaadoptopenjdktotemurin.md)
-
-
+* [Add cron workflow trigger](broken-reference)
+* [Add manual workflow trigger](broken-reference)
+* [Cancel in-progress workflow when it is triggered again](broken-reference)
+* [Change dependabot schedule interval](broken-reference)
+* [Check for github-actions updates daily](broken-reference)
+* [Check for github-actions updates weekly](broken-reference)
+* [Setup Java dependency caching](broken-reference)
+* [Use `actions/setup-java` `temurin` distribution](broken-reference)

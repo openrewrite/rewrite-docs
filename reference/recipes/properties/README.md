@@ -2,13 +2,11 @@
 
 ## Recipes
 
-* [Add a new property](addproperty.md)
-* [Change property key](changepropertykey.md)
-* [Change property value](changepropertyvalue.md)
-* [Delete Property](deleteproperty.md)
+* [Add a new property](broken-reference)
+* [Change property key](broken-reference)
+* [Change property value](broken-reference)
+* [Delete Property](broken-reference)
 
 ## Subcategories
 
-* [Search](/reference/recipes/properties/search)
-
-
+* [Search](search/)
