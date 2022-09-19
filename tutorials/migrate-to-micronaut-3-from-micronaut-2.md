@@ -37,7 +37,7 @@ dependencies {
         <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-recipe-bom</artifactId>
-            <version>1.4.0</version>
+            <version>1.8.1</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
@@ -64,18 +64,6 @@ dependencies {
     </plugins>
   </build>
 </project>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="Maven" %}
-Set or update your MAVEN\_OPTS environment variable to include this content:
-
-{% code title="MAVEN_OPS environment variable" %}
-```
-MAVEN_OPTS="--add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
 ```
 {% endcode %}
 {% endtab %}
