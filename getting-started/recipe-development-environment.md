@@ -315,7 +315,7 @@ Having configured the project per these recommendations, you're now able to begi
 * src/test/java - Recipe tests in Java
 * src/test/kotlin - Recipe tests in Kotlin
 
-Project setup is complete. You are ready [create a Recipe](../tutorials/writing-a-java-refactoring-recipe.md)!
+Project setup is complete. You are ready [create a Recipe](../tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md)!
 
 ## Recipe Distribution
 
@@ -396,6 +396,6 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 
 ## Next Steps
 
-* [Writing a Java Refactoring Recipe](../tutorials/writing-a-java-refactoring-recipe.md)
+* [Writing a Java Refactoring Recipe](../tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md)
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)

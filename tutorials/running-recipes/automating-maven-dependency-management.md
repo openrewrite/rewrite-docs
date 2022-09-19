@@ -1,5 +1,5 @@
 ---
-description: 'Search, Organize, and Refactor your Maven poms'
+description: Search, Organize, and Refactor your Maven poms
 ---
 
 # Automating Maven Dependency Management
@@ -15,7 +15,7 @@ Currently, OpenRewrite's dependency management capabilities are only implemented
 ## Setup
 
 1. Clone our fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration), or select your own project
-2. Familiarize yourself with the basics of applying the rewrite-maven-plugin as described in our [quickstart guide](../getting-started/getting-started.md).
+2. Familiarize yourself with the basics of applying the rewrite-maven-plugin as described in our [quickstart guide](../../getting-started/getting-started.md).
 
 {% hint style="warning" %}
 The sample spring-petclinic project is based on an older version of the project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
@@ -62,7 +62,7 @@ recipeList:
 Now run `mvn rewrite:dryRun`. This won't make changes to the project's files. It will produce a `rewrite.patch` file in the reports directory, with a link in the console log:
 
 {% code title="Console Log" %}
-```text
+```
 These recipes would make changes to pom.xml:
     org.openrewrite.maven.search.DependencyInsight
 Report available:
@@ -73,7 +73,7 @@ Run 'mvn rewrite:run' to apply the recipes.
 
 Use your preferred diff viewer to inspect the `rewrite.patch` file, which reveals all of the dependencies that transitively depend on logback.
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](<../../.gitbook/assets/image (22).png>)
 
 At this point, you have all of the information you need to manually exclude logback-classic from those other dependencies and add a dependency on your preferred slf4j implementation. But that wouldn't prevent logback-classic from being added back in the future. There is an easier, future-proof way to do it.
 
@@ -120,9 +120,9 @@ And set the `com.yourorg.UseSlf4jSimple` recipe as active in your pom.xml:
 
 You can now run `mvn rewrite:dryRun` again to preview the changes that will be made and `mvn rewrite:run` to apply the changes.
 
-![Exclusions for logback-classic added everywhere it was being brought in transitively](../.gitbook/assets/image%20%2821%29.png)
+![Exclusions for logback-classic added everywhere it was being brought in transitively](<../../.gitbook/assets/image (21).png>)
 
-![New dependency on slf4j-simple](../.gitbook/assets/image%20%2823%29.png)
+![New dependency on slf4j-simple](<../../.gitbook/assets/image (23).png>)
 
 {% hint style="info" %}
 No explicit version number is added for slf4j-simple because an appropriate version is set by the project's parent pom. AddDependency is smart enough not to add the unnecessary version number.
@@ -136,5 +136,4 @@ Of course, CI failures are always at least a little bit frustrating for develope
 
 ## Next Steps
 
-The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven]() recipe reference for the full listing of dependency management recipes.
-
+The dependency management recipes used in this guide aren't the only such recipes included in rewrite. See the [Maven](automating-maven-dependency-management.md) recipe reference for the full listing of dependency management recipes.

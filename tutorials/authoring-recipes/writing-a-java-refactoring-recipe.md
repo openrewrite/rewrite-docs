@@ -27,7 +27,7 @@ class A {
 }
 ```
 
-This guide assumes you've already set up your [Recipe Development Environment](../getting-started/recipe-development-environment.md).
+This guide assumes you've already set up your [Recipe Development Environment](../../getting-started/recipe-development-environment.md).
 
 ## Defining SayHelloRecipe
 

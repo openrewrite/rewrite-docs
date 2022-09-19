@@ -40,7 +40,7 @@ public abstract class Customer {
 }
 ```
 
-This guide assumes you've already set up your [Recipe Development Environment](../getting-started/recipe-development-environment.md).
+This guide assumes you've already set up your [Recipe Development Environment](../../getting-started/recipe-development-environment.md).
 
 ## Define a Recipe & Visitor
 

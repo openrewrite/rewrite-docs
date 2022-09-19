@@ -75,7 +75,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-Here we highlight a small number of the larger set of refactoring operations `Quarkus1to2Migration` automates. For the full list of changes, see the recipe's [reference documentation](../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md).
+Here we highlight a small number of the larger set of refactoring operations `Quarkus1to2Migration` automates. For the full list of changes, see the recipe's [reference documentation](../../reference/recipes/java/quarkus/quarkus2/quarkus1to2migration.md).
 
 ### Migrate Deprecated Mutiny APIs
 

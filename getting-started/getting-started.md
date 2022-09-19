@@ -255,7 +255,6 @@ After applying these steps, the relevant portions of your build file will look l
     <artifactId>rewrite-spring</artifactId>
   </dependency>
 </dependencies>
-
 ```
 {% endcode %}
 {% endtab %}
@@ -296,7 +295,7 @@ If you want to know when dependency management for Gradle will be added to rewri
 
 Now that you're up and running with the rewrite-maven-plugin, you may be interested in these topics:
 
-* [Writing a Java Refactoring Recipe](../tutorials/writing-a-java-refactoring-recipe.md)
+* [Writing a Java Refactoring Recipe](../tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md)
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](../reference/yaml-format-reference.md)
