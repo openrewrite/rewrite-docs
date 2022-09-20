@@ -33,7 +33,7 @@
 * [Latest versions of every OpenRewrite module](reference/latest-versions-of-every-openrewrite-module.md)
 * [Maven Plugin Configuration](reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](reference/gradle-plugin-configuration.md)
-* [JsonPath and JsonPathMatcher Reference](reference/jsonpath-and-jsonpathmatcher-reference.md)
+* [JsonPath and JsonPathMatcher](reference/jsonpath-and-jsonpathmatcher-reference.md)
 * [Declarative YAML Format](reference/yaml-format-reference.md)
 * [Method Patterns](reference/method-patterns.md)
 * [Dependency Version Selectors](reference/dependency-version-selectors.md)

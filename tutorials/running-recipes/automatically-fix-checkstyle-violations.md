@@ -4,11 +4,11 @@ Most programmers agree that having consistent formatting across a code base make
 
 ## Example Configuration
 
-How you configure Checkstyle integration depends on whether or not your build also applies a Checkstyle plugin. For Gradle builds this means the built-in plugin named [Checkstyle Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html). For Maven builds this means [maven-checkstyle-plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/).
+How you configure Checkstyle integration depends on whether or not your build also applies a Checkstyle plugin. For Gradle builds this means the built-in plugin named [Checkstyle Plugin](https://docs.gradle.org/current/userguide/checkstyle\_plugin.html). For Maven builds this means [maven-checkstyle-plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/).
 
 ### With Checkstyle Plugin
 
-If your build uses either the Gradle or Maven checkstyle plugins, then good news, the rewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup ]()recipe. Activating that recipe in your build file and running rewrite is all you need to do to begin auto-remediating Checkstyle policy violations.
+If your build uses either the Gradle or Maven checkstyle plugins, then good news, the rewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup ](automatically-fix-checkstyle-violations.md)recipe. Activating that recipe in your build file and running rewrite is all you need to do to begin auto-remediating Checkstyle policy violations.
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -127,7 +127,7 @@ With this configuration, rewrite refactoring will be run as part of any build th
 
 ### Gradle
 
-In Gradle, [Task.dependsOn\(\)](https://docs.gradle.org/current/javadoc/org/gradle/api/Task.html#dependsOn-java.lang.Object...-) can be used to ensure that invoking one task always causes another task to run first. That means making all tasks of type `org.gradle.api.plugins.quality.Checkstyle` depend on the rewriteRun task provided by the OpenRewrite plugin.
+In Gradle, [Task.dependsOn()](https://docs.gradle.org/current/javadoc/org/gradle/api/Task.html#dependsOn-java.lang.Object...-) can be used to ensure that invoking one task always causes another task to run first. That means making all tasks of type `org.gradle.api.plugins.quality.Checkstyle` depend on the rewriteRun task provided by the OpenRewrite plugin.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -220,4 +220,3 @@ We don't have OpenRewrite recipes implemented for all publicly available policie
 {% hint style="info" %}
 Checkstyle configuration loading only informs the behavior of recipes, not which recipes are active. Regardless of the presence or non-presence of Checkstyle configuration, OpenRewrite will never apply any refactoring you do not explicitly activate.
 {% endhint %}
-

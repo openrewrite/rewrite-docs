@@ -67,8 +67,6 @@ OpenRewrite provides infrastructure that allows developers to quickly build test
 </project>    
 ```
 {% endcode %}
-
-
 {% endtab %}
 
 {% tab title="Gradle" %}
@@ -95,7 +93,6 @@ dependencies {
     // Optional dependency on assertJ to provide fluent assertions.
     testImplementation("org.assertj:assertj-core:latest.release")
 }
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -106,7 +103,7 @@ The tests in this guide are written in Kotlin to take advantage of multi-line st
 
 ### `RewriteTest` Interface
 
-OpenRewrite provides a convenient interface that acts as both an entry point in which to exercise recipes in tests and also provides a fluent API for expressing recipe and source file configuration. For the sake of this guide, let's assume we have the following recipe that ensures a class's package declaration is all lowercase:&#x20;
+OpenRewrite provides a convenient interface that acts as both an entry point in which to exercise recipes in tests and also provides a fluent API for expressing recipe and source file configuration. For the sake of this guide, let's assume we have the following recipe that ensures a class's package declaration is all lowercase:
 
 ```java
 package org.openrewrite.java.cleanup;
@@ -161,7 +158,7 @@ public class LowercasePackage extends Recipe {
 }
 ```
 
-In order to test this recipe, at a minimum the testing class will implement `RewriteTest` , define recipe/parser configuration via `RecipeSpec`, and define one or more source file assertions using the fluent API provided by the interface.  As an example, the following test class overrides the `defaults(`RecipeSpec`)`method to define which recipe will be used by all tests defined in the class. Each of the three tests demonstrates how the fluent API is used to create source files and then assert the recipe has made the correct transformations to those files.
+In order to test this recipe, at a minimum the testing class will implement `RewriteTest` , define recipe/parser configuration via `RecipeSpec`, and define one or more source file assertions using the fluent API provided by the interface. As an example, the following test class overrides the `defaults(`RecipeSpec`)`method to define which recipe will be used by all tests defined in the class. Each of the three tests demonstrates how the fluent API is used to create source files and then assert the recipe has made the correct transformations to those files.
 
 ```kotlin
 package org.openrewrite.java.cleanup
@@ -247,7 +244,6 @@ interface LowercasePackageTest : RewriteTest {
         }
     )
 }
-
 ```
 
 #### `RecipeSpec`
@@ -258,7 +254,7 @@ The `RewriteTest.defaults()` method can be used to define common RecipeSpec cust
 
 #### SourceSpecs
 
-A `SourceSpec` is used to define a source file that will be parsed during a test and then processed  within the environment defined by the `RecipeSpec`. At a bare minimum a `SourceSpec` will define the type of source file and its initial ("before") contents. The testing infrastructure will select the appropriate parser based on the source file type and parser the contents into a `SourceFile`. ``&#x20;
+A `SourceSpec` is used to define a source file that will be parsed during a test and then processed within the environment defined by the `RecipeSpec`. At a bare minimum a `SourceSpec` will define the type of source file and its initial ("before") contents. The testing infrastructure will select the appropriate parser based on the source file type and parser the contents into a `SourceFile`. \`\`
 
 In a majority of cases, a SourceSpec will also define an "after" state which defines what the source file contents will look like after it has been processed by the given recipe environment. The testing framework will automatically fail a given test if the source file has not been transformed into its "after" state. Any SourceSpec that does not define an "after" state is implicitly saying "the recipe should not make any changes to this source file.
 

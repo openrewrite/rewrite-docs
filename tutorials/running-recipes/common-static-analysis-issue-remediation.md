@@ -9,7 +9,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```text
+```
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
@@ -140,4 +140,4 @@ public class MessageExtBatch implements Serializable {
 
 ## Known Limitations
 
-We don't have OpenRewrite recipes implemented for all publicly available policies. If you find a  violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue.
+We don't have OpenRewrite recipes implemented for all publicly available policies. If you find a violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue.
