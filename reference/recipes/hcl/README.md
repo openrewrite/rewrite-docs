@@ -2,10 +2,12 @@
 
 ## Recipes
 
-* [Delete content](broken-reference)
-* [Move content to another file](broken-reference)
+* [Delete content](deletecontent.md)
+* [Move content to another file](movecontenttofile.md)
 
 ## Subcategories
 
-* [Format](format/)
-* [Search](search/)
+* [Format](/reference/recipes/hcl/format)
+* [Search](/reference/recipes/hcl/search)
+
+

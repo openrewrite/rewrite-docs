@@ -5,11 +5,11 @@ _Add a managed maven dependency to a pom.xml file._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.29.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.30.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.29.0
+* version: 7.30.0
 
 ## Options
 
@@ -61,7 +61,7 @@ Now that `com.yourorg.AddManagedDependencyExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.28.0")
+    id("org.openrewrite.rewrite") version("5.29.0")
 }
 
 rewrite {
@@ -85,7 +85,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.33.0</version>
+        <version>4.34.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddManagedDependencyExample</recipe>

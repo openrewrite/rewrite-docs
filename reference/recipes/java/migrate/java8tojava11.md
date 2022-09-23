@@ -13,23 +13,23 @@ _This recipe will apply changes commonly needed when migrating from Java 8 to Ja
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.10.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.10.0
+* version: 1.11.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.10.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.11.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.28.0")
+    id("org.openrewrite.rewrite") version("5.29.0")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.10.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.11.0")
 }
 ```
 {% endcode %}
@@ -56,7 +56,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.33.0</version>
+        <version>4.34.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
@@ -66,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.10.0</version>
+            <version>1.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,8 +80,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.33.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.10.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.11.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.Java8toJava11
 ```
 {% endcode %}
@@ -94,6 +94,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Use `java.util.Base64` instead of `sun.misc`](../../java/migrate/usejavautilbase64.md)
 * [Add explicit JAX-WS dependencies](../../java/migrate/javax/addjaxwsdependencies.md)
 * [Add explicit JAXB dependencies](../../java/migrate/javax/addjaxbdependencies.md)
 * [Add explicit Inject dependencies](../../java/migrate/javax/addinjectdependencies.md)
@@ -128,6 +129,7 @@ tags:
   - jaxws
   - jakarta
 recipeList:
+  - org.openrewrite.java.migrate.UseJavaUtilBase64
   - org.openrewrite.java.migrate.javax.AddJaxwsDependencies
   - org.openrewrite.java.migrate.javax.AddJaxbDependencies
   - org.openrewrite.java.migrate.javax.AddInjectDependencies

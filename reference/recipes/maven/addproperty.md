@@ -5,11 +5,11 @@ _Add a new property to the Maven project property._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.29.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.30.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.29.0
+* version: 7.30.0
 
 ## Options
 
@@ -18,6 +18,7 @@ _Add a new property to the Maven project property._
 | `String` | key | The name of the property key to be added. |
 | `String` | value | The value of property to be added. |
 | `Boolean` | preserveExistingValue | *Optional*. Preserve previous value if the property already exists in the pom file. |
+| `Boolean` | trustParent | *Optional*. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |
 
 
 ## Usage
@@ -36,6 +37,7 @@ recipeList:
       key: junit.version
       value: 4.13
       preserveExistingValue: false
+      trustParent: false
 ```
 {% endcode %}
 
@@ -47,7 +49,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.28.0")
+    id("org.openrewrite.rewrite") version("5.29.0")
 }
 
 rewrite {
@@ -71,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.33.0</version>
+        <version>4.34.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPropertyExample</recipe>

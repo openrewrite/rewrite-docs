@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Spring4Shell fix](broken-reference)
+* [Spring4Shell fix](spring4shell.md)
+
+

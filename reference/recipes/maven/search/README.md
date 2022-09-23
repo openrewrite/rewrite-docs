@@ -2,7 +2,9 @@
 
 ## Recipes
 
-* [Find Maven dependency](broken-reference)
-* [Find Maven plugin](broken-reference)
-* [Find Maven project properties](broken-reference)
-* [Maven dependency insight](broken-reference)
+* [Find Maven dependency](finddependency.md)
+* [Find Maven plugin](findplugin.md)
+* [Find Maven project properties](findproperties.md)
+* [Maven dependency insight](dependencyinsight.md)
+
+

@@ -5,11 +5,11 @@ _Resolve common static analysis issues discovered through 3rd party tools_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.29.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.30.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.29.0
+* version: 7.30.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.28.0")
+    id("org.openrewrite.rewrite") version("5.29.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.33.0</version>
+        <version>4.34.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -62,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.33.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis
 ```
 {% endcode %}
@@ -119,7 +119,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Reformat local variable names to camelCase](../../java/cleanup/renamelocalvariablestocamelcase.md)
 * [Rename methods named `hashcode`, `equal`, or `tostring`.](../../java/cleanup/renamemethodsnamedhashcodeequalortostring.md)
 * [Reformat private field names to camelCase](../../java/cleanup/renameprivatefieldstocamelcase.md)
-* [Use method references in lambda](../../java/cleanup/replacelambdawithmethodreference.md)
 * [Simplify boolean expression](../../java/cleanup/simplifybooleanexpression.md)
 * [Simplify boolean return](../../java/cleanup/simplifybooleanreturn.md)
 * [Static methods not final](../../java/cleanup/staticmethodnotfinal.md)
@@ -131,7 +130,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Use diamond operator](../../java/cleanup/usediamondoperator.md)
 * [No C-style array declarations](../../java/cleanup/usejavastylearraydeclarations.md)
 * [Use lambdas where possible](../../java/cleanup/uselambdaforfunctionalinterface.md)
-* [Use `String::replace()` when fist parameter is not a real regular expression](../../java/cleanup/usestringreplace.md)
 * [Prefer `while` over `for` loops](../../java/cleanup/whileinsteadoffor.md)
 * [Write octal values as decimal](../../java/cleanup/writeoctalvaluesasdecimal.md)
 
@@ -189,7 +187,6 @@ recipeList:
   - org.openrewrite.java.cleanup.RenameLocalVariablesToCamelCase
   - org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
   - org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase
-  - org.openrewrite.java.cleanup.ReplaceLambdaWithMethodReference
   - org.openrewrite.java.cleanup.SimplifyBooleanExpression
   - org.openrewrite.java.cleanup.SimplifyBooleanReturn
   - org.openrewrite.java.cleanup.StaticMethodNotFinal
@@ -201,7 +198,6 @@ recipeList:
   - org.openrewrite.java.cleanup.UseDiamondOperator
   - org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations
   - org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface
-  - org.openrewrite.java.cleanup.UseStringReplace
   - org.openrewrite.java.cleanup.WhileInsteadOfFor
   - org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal
 

@@ -2,16 +2,18 @@
 
 ## Recipes
 
-* [AssertJ best practices](broken-reference)
-* [JUnit AssertThrows to AssertJ exceptionType](broken-reference)
-* [JUnit `assertArrayEquals` To AssertJ](broken-reference)
-* [JUnit `assertEquals` to AssertJ](broken-reference)
-* [JUnit `assertFalse` to AssertJ](broken-reference)
-* [JUnit `assertNotEquals` to AssertJ](broken-reference)
-* [JUnit `assertNotNull` to AssertJ](broken-reference)
-* [JUnit `assertNull` to AssertJ](broken-reference)
-* [JUnit `assertSame` to AssertJ](broken-reference)
-* [JUnit `assertTrue` to AssertJ](broken-reference)
-* [JUnit fail to AssertJ](broken-reference)
-* [Migrate JUnit asserts to AssertJ](broken-reference)
-* [Statically import AssertJ's `assertThat`](broken-reference)
+* [AssertJ best practices](assertj.md)
+* [JUnit AssertThrows to AssertJ exceptionType](junitassertthrowstoassertexceptiontype.md)
+* [JUnit `assertArrayEquals` To AssertJ](junitassertarrayequalstoassertthat.md)
+* [JUnit `assertEquals` to AssertJ](junitassertequalstoassertthat.md)
+* [JUnit `assertFalse` to AssertJ](junitassertfalsetoassertthat.md)
+* [JUnit `assertNotEquals` to AssertJ](junitassertnotequalstoassertthat.md)
+* [JUnit `assertNotNull` to AssertJ](junitassertnotnulltoassertthat.md)
+* [JUnit `assertNull` to AssertJ](junitassertnulltoassertthat.md)
+* [JUnit `assertSame` to AssertJ](junitassertsametoassertthat.md)
+* [JUnit `assertTrue` to AssertJ](junitasserttruetoassertthat.md)
+* [JUnit fail to AssertJ](junitfailtoassertjfail.md)
+* [Migrate JUnit asserts to AssertJ](junittoassertj.md)
+* [Statically import AssertJ's `assertThat`](staticimports.md)
+
+

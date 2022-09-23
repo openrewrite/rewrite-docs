@@ -5,11 +5,11 @@ _Merge a YAML snippet with an existing YAML document._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.29.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.30.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.29.0
+* version: 7.30.0
 
 ## Options
 
@@ -19,6 +19,7 @@ _Merge a YAML snippet with an existing YAML document._
 | `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. |
 | `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+| `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. |
 
 
 ## Usage
@@ -39,6 +40,7 @@ recipeList:
 	label-one: "value-one"
       acceptTheirs: null
       fileMatcher: '**/application-*.yml'
+      objectIdentifyingProperty: name
 ```
 {% endcode %}
 
@@ -50,7 +52,7 @@ Now that `com.yourorg.MergeYamlExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.28.0")
+    id("org.openrewrite.rewrite") version("5.29.0")
 }
 
 rewrite {
@@ -74,7 +76,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.33.0</version>
+        <version>4.34.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.MergeYamlExample</recipe>

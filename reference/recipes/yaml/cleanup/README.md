@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Remove unused YAML](broken-reference)
+* [Remove unused YAML](removeunused.md)
+
+

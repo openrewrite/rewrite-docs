@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [YAML indent](broken-reference)
+* [YAML indent](indents.md)
+
+

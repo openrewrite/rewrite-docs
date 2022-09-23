@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Remove Cobertura Maven plugin](broken-reference)
+* [Remove Cobertura Maven plugin](removecoberturamavenplugin.md)
+
+

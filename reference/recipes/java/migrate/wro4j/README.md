@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Upgrade Wro4j plugin version](broken-reference)
+* [Upgrade Wro4j plugin version](upgradewro4jmavenpluginversion.md)
+
+
