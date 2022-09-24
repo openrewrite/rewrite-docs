@@ -4,38 +4,12 @@ description: Add arbitrary metadata to ASTs
 
 # Markers
 
-Markers are used to annotate [AST](abstract-syntax-trees.md) elements with metadata. [Visitors](visitors.md) can attach any type implementing the [Marker](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/Marker.java) interface to any AST element having [Markers](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java). Markers can be used to identify search results or to communicate between Recipes during OpenRewrite execution. When an AST is printed back to source code only [SearchResult](markers.md#searchresult) Markers are printed.&#x20;
-
-### Build Markers
-
-* [BuildTool](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/BuildTool.java) - Type and version of the build tool
-* [BuildEnvironment](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/BuildEnvironment.java) - Provides information on the build tool and associated environment
-  * [Jenkins](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/JenkinsBuildEnvironment.java), [Gitlab](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/GitlabBuildEnvironment.java), [GithubActions](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/GithubActionsBuildEnvironment.java), [Drone](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/DroneBuildEnvironment.java), [CircleCi](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/CircleCiBuildEnvironment.java), [Travis](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/TravisBuildEnvironment.java)
-* [GitProvenance](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/GitProvenance.java#L34) - Keeps track of Git metadata associated with a particular Java project
-
-### Style Markers
-
-* [NamedStyles](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/style/NamedStyles.java) - A named collection of [styles](styles.md) representing code style/formatting and configuration options
-  * [CheckStyle](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/Checkstyle.java), [IntelliJ](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java), [AutoDetect-java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/Autodetect.java), [AutoDetect-xml](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/style/Autodetect.java), [DeclarativeNamedStyles](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/config/DeclarativeNamedStyles.java)
-
-### Java Markers
-
-* [JavaProject](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/marker/JavaProject.java) - Name and publication coordinates (groupId, artifactId, version) of the source files associated project
-* [JavaSourceSet](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/marker/JavaSourceSet.java) - Name (e.g. main or test) and list of fully qualified types representing the classpath
-* [JavaVersion](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/marker/JavaVersion.java) - Java version including source and target compatibility of a source file
-* [JavaVarKeyword](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/JavaVarKeyword.java) - An AST marker for inferred type variable declarations
-
-### Maven Markers
-
-* [MavenResolutionResult](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/tree/MavenResolutionResult.java) - Rich data model of a pom.xml, including full dependency resolution information
-
-### Recipe Markers
-
-* [RecipesThatMadeChanges](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/RecipesThatMadeChanges.java) - Provides a collection of Recipes having made changes to the AST during recipe execution
-
-### Search Makers&#x20;
-
-* [SearchResult](markers.md#recipesearchresult) - A printable marker added to an AST identifiying a search result
+Markers annotate [AST](abstract-syntax-trees.md) elements with metadata.
+[Visitors](visitors.md) can read or attach any type implementing the [Marker](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/Marker.java) interface to any AST element's [Markers](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java).
+Markers can be used to identify search results or to communicate between Recipes during OpenRewrite execution.
+When an AST is printed back to source code most markers, being metadata, have no textual representation within the source.
+The exception is [SearchResult](markers.md#searchresult) Markers which are printed as comments that indicate the result of a search.
+OpenRewrite attaches [framework provided markers](/reference/framework-provided-markers.md) to ASTs. 
 
 ## Usage
 
@@ -75,11 +49,14 @@ The [Markers](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/sr
 
 ## SearchResult
 
-The most common form of Marker in a typical Recipe is a [SearchResult](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/SearchResult.java). Any Recipe which adds SearchResult markers to an AST can be described as a search recipe. RecipeSearchResults include which specific recipe instance created it. So recipes are able to differentiate between search results left by an instance of the search visitor they're interested in and results left by a different instance of the same type of visitor. RecipeSearchResults can optionally include a text description.
+The most common form of Marker in a typical Recipe is a [SearchResult](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/SearchResult.java).
+A Recipe which adds `SearchResult` markers to an AST is described as a search recipe.
+`SearchResult`s can optionally include a text description.
+When a `SearchResult` is added to an AST element, it is printed as a comment next to the element it is attached to.
 
 ### Adding a Search Result to an AST
 
-In this example the search recipe [FindAnnotations](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java) adds a `RecipeSearchResult` indicating that it found a matching Annotation.
+In this example the search recipe [FindAnnotations](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java) adds a `SearchResult` indicating that it found a matching Annotation.
 
 {% code title="FindAnnotations.java" %}
 ```java
@@ -105,9 +82,9 @@ public J.Identifier visitIdentifier(J.Identifier identifier, ExecutionContext ct
 ```
 {% endcode %}
 
-SearchResult Markers are written back to source code as comments where the description is the content
+SearchResult Markers are written back to source code as comments, including the description if one is present.
 
-So for example if the `FindMethods("A singleArg(String)")` recipe were applied to this Java source file:
+For example: if the `FindMethods("A singleArg(String)")` recipe were applied to this Java source file:
 
 ```java
 class Test {

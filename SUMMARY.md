@@ -37,6 +37,7 @@
 * [Declarative YAML Format](reference/yaml-format-reference.md)
 * [Method Patterns](reference/method-patterns.md)
 * [Dependency Version Selectors](reference/dependency-version-selectors.md)
+* [Framework Provided Markers](reference/framework-provided-markers.md)
 * [Recipes](reference/recipes/README.md)
   * [General](/reference/recipes/general/README.md)
     * [Delete files](/reference/recipes/deletesourcefiles.md)
