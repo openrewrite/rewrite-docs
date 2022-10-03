@@ -916,7 +916,3 @@
 * [Markers](v1beta/markers.md)
 * [JavaTemplate](v1beta/javatemplate.md)
 * [Pointcut Expressions](v1beta/pointcut-expressions.md)
-
-## Design Partners
-
-* [Design Partner 1](design-partners/design-partner-1.md)
