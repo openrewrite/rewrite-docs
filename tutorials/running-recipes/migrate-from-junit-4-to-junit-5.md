@@ -10,19 +10,6 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-<dependencyManagement>
-  <dependencies>
-      <dependency>
-          <groupId>org.openrewrite.recipe</groupId>
-          <artifactId>rewrite-recipe-bom</artifactId>
-          <version>1.8.1</version>
-          <type>pom</type>
-          <scope>import</scope>
-      </dependency>
-  </dependencies>
-</dependencyManagement>
-
-...
 <build>
   <plugins>
     <plugin>
@@ -38,7 +25,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-spring</artifactId>
-          <version>4.19.3</version>
+          <version>4.27.0</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -85,18 +72,6 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-<dependencyManagement>
-  <dependencies>
-      <dependency>
-          <groupId>org.openrewrite.recipe</groupId>
-          <artifactId>rewrite-recipe-bom</artifactId>
-          <version>1.8.1</version>
-          <type>pom</type>
-          <scope>import</scope>
-      </dependency>
-  </dependencies>
-</dependencyManagement>
-
 <build>
   <plugins>
     <plugin>
@@ -112,6 +87,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
+          <version>1.28.0</version>
         </dependency>
       </dependencies>
     </plugin>

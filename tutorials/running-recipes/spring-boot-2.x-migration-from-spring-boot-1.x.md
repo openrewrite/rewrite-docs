@@ -33,19 +33,7 @@ dependencies {
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-<project>
-  <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-recipe-bom</artifactId>
-            <version>1.8.1</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-  </dependencyManagement>
-  
+<project>  
   <build>
     <plugins>
       <plugin>
@@ -61,6 +49,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
+            <version>4.27.0</version>
           </dependency>
         </dependencies>
       </plugin>

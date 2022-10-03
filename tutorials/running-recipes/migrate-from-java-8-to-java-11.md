@@ -10,19 +10,6 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
-<dependencyManagement>
-  <dependencies>
-      <dependency>
-          <groupId>org.openrewrite.recipe</groupId>
-          <artifactId>rewrite-recipe-bom</artifactId>
-          <version>1.8.1</version>
-          <type>pom</type>
-          <scope>import</scope>
-      </dependency>
-  </dependencies>
-</dependencyManagement>
-
-...
 <build>
   <plugins>
     <plugin>
@@ -38,6 +25,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-migrate-java</artifactId>
+          <version>1.11.0</version>
         </dependency>
       </dependencies>
     </plugin>

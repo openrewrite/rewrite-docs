@@ -32,17 +32,6 @@ dependencies {
 {% code title="pom.xml" %}
 ```
 <project>
-  <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-recipe-bom</artifactId>
-            <version>1.8.1</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
@@ -58,6 +47,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
+            <version>1.16.1</version>
           </dependency>
         </dependencies>
       </plugin>
