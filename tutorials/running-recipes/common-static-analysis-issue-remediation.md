@@ -13,7 +13,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.34.0</version>
+  <version>4.34.2</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -29,7 +29,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
 ```
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.29.0")
+    id("org.openrewrite.rewrite") version("5.29.2")
 }
 
 rewrite {
@@ -78,9 +78,7 @@ queue.findAll().forEach((MessageQueue msg) -> {
 {% tab title="Before" %}
 ```java
 class Menu {
-    static final List<String> menuItems = new ArrayList<>() {
-        {add("rice");add("beans");}
-    } 
+    static final List<String> menuItems = Arrays.asList("rice", "beans");
     
     void newOrder(String main, String desert) {
         List<String> menuItems = new ArrayList<>() {

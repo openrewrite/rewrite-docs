@@ -48,7 +48,7 @@ Now that `com.yourorg.ChangeDependencyClassifierExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.29.0")
+    id("org.openrewrite.rewrite") version("5.29.2")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.34.0</version>
+        <version>4.34.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeDependencyClassifierExample</recipe>
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.30.0</version>
+            <version>7.30.1</version>
           </dependency>
         </dependencies>
       </plugin>
