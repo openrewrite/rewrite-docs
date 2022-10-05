@@ -102,7 +102,7 @@ public class RunRewriteManually {
         List<J.CompilationUnit> cus = javaParser.parse(sourcePaths, projectDir, ctx);
 
         // collect results
-        List<Result> results = recipe.run(cus, ctx);
+        List<Result> results = recipe.run(cus, ctx).getResults();
 
         for (Result result : results) {
             // print diffs to the console
