@@ -35,33 +35,33 @@ OpenRewrite provides infrastructure that allows developers to quickly build test
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
-            <scope>test<scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
-            <scope>test<scope>
+            <scope>test</scope>
         </dependency>
         <!-- Optional dependencies and only needed if writing tests in Kotlin. -->
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-reflect</artifactId>
             <version>${kotlin.version}</version>
-            <scope>test<scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
-            <scope>test<scope>
+            <scope>test</scope>
         </dependency>
         <!-- Optional dependency on assertJ to provide fluent assertions. -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj.version}</version>
-            <scope>test<scope>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>    
