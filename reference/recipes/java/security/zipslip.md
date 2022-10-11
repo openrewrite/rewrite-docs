@@ -5,11 +5,11 @@ _Zip slip is an arbitrary file overwrite critical vulnerability, which typically
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.16.0/jar)
+[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.17.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 1.16.0
+* version: 1.17.0
 
 ## Options
 
@@ -35,14 +35,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:1.16.0 in your build file:
+Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:1.17.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.29.2")
+    id("org.openrewrite.rewrite") version("5.30.0")
 }
 
 rewrite {
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:1.16.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:1.17.0")
 }
 ```
 {% endcode %}
@@ -69,7 +69,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.34.2</version>
+        <version>4.35.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ZipSlipExample</recipe>
@@ -79,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>1.16.0</version>
+            <version>1.17.0</version>
           </dependency>
         </dependencies>
       </plugin>

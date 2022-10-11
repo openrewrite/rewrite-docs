@@ -5,20 +5,20 @@ _Make existing dependencies managed by moving their version to be specified in t
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.31.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.30.0
+* version: 7.31.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | groupPattern | Group glob expression pattern used to match dependencies that should be managed.Group is the the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | groupPattern | Group glob expression pattern used to match dependencies that should be managed.Group is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | artifactPattern | *Optional*. Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | version | *Optional*. Version to use for the dependency in dependency management. Defaults to the existing version found on the matching dependency, or the max version if multiple dependencies match the glob expression patterns. |
 | `Boolean` | addToRootPom | *Optional*. Add to the root pom where root is the eldest parent of the pom within the source set. |
+| `Boolean` | skipModelUpdate | *Optional*. Optionally skip updating the dependency model after managing dependencies. Updating the model does not affect the source code of the POM,but will cause the resolved dependency model to reflect the changes made to the POM. If this recipe is ran standalone, it is not necessary to update the model. |
 
 
 ## Usage
@@ -36,8 +36,8 @@ recipeList:
   - org.openrewrite.maven.ManageDependencies:
       groupPattern: com.google.*
       artifactPattern: guava*
-      version: 1.0.0
       addToRootPom: true
+      skipModelUpdate: null
 ```
 {% endcode %}
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.ManageDependenciesExample` has been defined activate it in
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.29.2")
+    id("org.openrewrite.rewrite") version("5.30.0")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.34.2</version>
+        <version>4.35.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ManageDependenciesExample</recipe>

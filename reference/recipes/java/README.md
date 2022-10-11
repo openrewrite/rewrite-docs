@@ -14,6 +14,7 @@ _Basic building blocks for transforming Java code._
 * [Change static field access to static method access](changestaticfieldtomethod.md)
 * [Change type](changetype.md)
 * [Delete method argument](deletemethodargument.md)
+* [Demonstrate rendering of `Markup` markers.](recipemarkupdemonstration.md)
 * [Demonstrate rendering of recipe exceptions](recipeexceptiondemonstration.md)
 * [Order imports](orderimports.md)
 * [Randomize tree IDs](randomizeid.md)

@@ -5,11 +5,11 @@ _Resolve common static analysis issues discovered through 3rd party tools_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.31.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.30.0
+* version: 7.31.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.29.2")
+    id("org.openrewrite.rewrite") version("5.30.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.34.2</version>
+        <version>4.35.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -62,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis
 ```
 {% endcode %}
@@ -81,7 +81,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Boolean checks should not be inverted](../../java/cleanup/booleanchecksnotinverted.md)
 * [CaseInsensitive comparisons do not alter case](../../java/cleanup/caseinsensitivecomparisonsdonotchangecase.md)
 * [Catch clause should do more than just rethrow](../../java/cleanup/catchclauseonlyrethrows.md)
-* [Control flow statement indentation](../../java/cleanup/controlflowindentation.md)
 * [Covariant equals](../../java/cleanup/covariantequals.md)
 * [Default comes last](../../java/cleanup/defaultcomeslast.md)
 * [Remove empty blocks](../../java/cleanup/emptyblock.md)
@@ -100,7 +99,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Method name casing](../../java/cleanup/methodnamecasing.md)
 * [`switch` statements should have at least 3 `case` clauses](../../java/cleanup/minimumswitchcases.md)
 * [Modifier order](../../java/cleanup/modifierorder.md)
-* [Multiple variable declarations](../../java/cleanup/multiplevariabledeclarations.md)
+* [No multiple variable declarations](../../java/cleanup/multiplevariabledeclarations.md)
 * [Fix missing braces](../../java/cleanup/needbraces.md)
 * [Nested enums are not static](../../java/cleanup/nestedenumsarenotstatic.md)
 * [Change StringBuilder and StringBuffer character constructor arg to String](../../java/cleanup/newstringbuilderbufferwithcharargument.md)
@@ -149,7 +148,6 @@ recipeList:
   - org.openrewrite.java.cleanup.BooleanChecksNotInverted
   - org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase
   - org.openrewrite.java.cleanup.CatchClauseOnlyRethrows
-  - org.openrewrite.java.cleanup.ControlFlowIndentation
   - org.openrewrite.java.cleanup.CovariantEquals
   - org.openrewrite.java.cleanup.DefaultComesLast
   - org.openrewrite.java.cleanup.EmptyBlock

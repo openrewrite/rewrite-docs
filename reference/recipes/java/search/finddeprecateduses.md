@@ -1,15 +1,15 @@
 # Find uses of deprecated classes, methods, and fields
 
 ** org.openrewrite.java.search.FindDeprecatedUses**
-_Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside of deprecated scopes._
+_Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside deprecated scopes._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.31.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.30.0
+* version: 7.31.0
 
 ## Options
 
@@ -29,7 +29,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.29.2")
+    id("org.openrewrite.rewrite") version("5.30.0")
 }
 
 rewrite {
@@ -53,7 +53,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.34.2</version>
+        <version>4.35.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindDeprecatedUses</recipe>
@@ -70,7 +70,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
   -DactiveRecipes=org.openrewrite.java.search.FindDeprecatedUses
 ```
 {% endcode %}
@@ -98,7 +98,7 @@ Recipes can also be activated directly from the command line by adding the argum
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.search.FindDeprecatedUses
 displayName: Find uses of deprecated classes, methods, and fields
-description: Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside of deprecated scopes.
+description: Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside deprecated scopes.
 typePattern: 
 
 

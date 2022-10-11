@@ -13,5 +13,6 @@ _Basic building blocks for transforming XML._
 
 * [Format](/reference/recipes/xml/format)
 * [Search](/reference/recipes/xml/search)
+* [Security](/reference/recipes/xml/security)
 
 

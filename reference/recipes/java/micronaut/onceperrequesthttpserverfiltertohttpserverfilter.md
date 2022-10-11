@@ -5,23 +5,23 @@ _Starting in Micronaut 3.0 all filters are executed once per request. Directly i
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-micronaut), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-micronaut/1.16.1/jar)
+[Github](https://github.com/openrewrite/rewrite-micronaut), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-micronaut/1.17.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 1.16.1
+* version: 1.17.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-micronaut:1.16.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-micronaut:1.17.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.29.2")
+    id("org.openrewrite.rewrite") version("5.30.0")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.16.1")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.17.0")
 }
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.34.2</version>
+        <version>4.35.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter</recipe>
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>1.16.1</version>
+            <version>1.17.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -72,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.34.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-micronaut:1.16.1 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-micronaut:1.17.0 \
   -DactiveRecipes=org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter
 ```
 {% endcode %}

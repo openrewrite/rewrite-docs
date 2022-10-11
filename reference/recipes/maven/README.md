@@ -33,7 +33,10 @@
 
 ## Subcategories
 
-* [Cleanup](cleanup/)
-* [Search](search/)
-* [Security](../gradle/security/)
-* [Utilities](utilities/)
+* [Cleanup](/reference/recipes/maven/cleanup)
+* [Search](/reference/recipes/maven/search)
+* [Security](/reference/recipes/maven/security)
+* [Spring](/reference/recipes/maven/spring)
+* [Utilities](/reference/recipes/maven/utilities)
+
+
