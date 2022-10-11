@@ -105,7 +105,7 @@ No recipe is ever run on your codebase without being explicitly activated in the
 
 ```groovy
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.9.1"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.9.1"))
     rewrite("org.openrewrite.recipe:rewrite-spring")
 }
 ```
@@ -123,8 +123,8 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.9.1"))
     testImplementation("junit:junit:4.13")
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.9.1"))
     rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
 }
 
