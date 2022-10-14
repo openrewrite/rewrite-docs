@@ -43,7 +43,7 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 
 * `activeRecipes` - Explicitly turns on recipes by name (the name given in the `specs.openrewrite.org/v1beta/recipe` resource). No recipe is run unless explicitly turned on with this setting. You can set `activeRecipes` ad-hoc directly on the command-line using `-Drewrite.activeRecipes=an.example.Recipe0,an.example.Recipe1`. For example, `./mvnw rewrite:run -Drewrite.activeRecipes=an.example.Recipe0`.
 * `activeStyles` - Explicitly turns on a style by name (the name given in the `specs.openrewrite.org/v1beta/style` resource). No style is applied unless explicitly turned on with this setting. This can be invoked ad-hoc directly on the command-line using `-Drewrite.activeStyles=an.example.Style0,an.example.Style1`. For example, `./mvnw rewrite:run -Drewrite.activeStyles=an.example.Style0`.
-* `checkstyleDetectionEnabled` - Rewrite will, by default, detect the presence of the Checkstyle plugin and attempt to derive the coding style from the Checkstyle configuration file.  If this flag is set to `false`, the plugin will not attempt to parse the Checkstyle configuration.
+* `checkstyleDetectionEnabled` - Rewrite will, by default, detect the presence of the Checkstyle plugin and attempt to derive the coding style from the Checkstyle configuration file. If this flag is set to `false`, the plugin will not attempt to parse the Checkstyle configuration.
 * `configLocation` - Where to look for an OpenRewrite YML configuration file somewhere in the project directory (or really anywhere on disk). If you want to customize this, prefixing the file name with the Maven property `${maven.multiModuleProjectDirectory}` is a handy way of ensuring that each module resolves the same configuration file relative to the root directory of the repository. This `configLocation` is (unless an absolute path is given) evaluated for _each_ module relative to that module's project directory.
 * `dependencies` - To make pre-packaged OpenRewrite recipes available to the Maven plugin, add them as **plugin** dependencies.
 * `failOnDryRunResults` - Boolean flag toggling whether `rewrite:dryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
@@ -175,7 +175,7 @@ Execute `mvn rewrite:discover` to list the recipes that the OpenRewrite Maven pl
 
 ![The beginning of rewrite:discover output, showing activated and available Recipes](<../.gitbook/assets/image (18).png>)
 
-This same goal also lists all of the parameters that recipes can be or are already configured with.
+The discover goal will produce additional details (including recipe configuration options) when setting the `details` flag:  `mvn rewrite:discover -Ddetail=true`
 
 ![Recipes showing their configurable parameters. "!" means a parameter is required.](<../.gitbook/assets/image (17).png>)
 
