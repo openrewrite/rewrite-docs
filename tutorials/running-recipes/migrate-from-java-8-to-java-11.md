@@ -52,7 +52,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
   }
   
   dependencies {
-      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.9.1"))
+      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.11.0"))
       rewrite("org.openrewrite.recipe:rewrite-migrate-java")
   
       // Other project dependencies
