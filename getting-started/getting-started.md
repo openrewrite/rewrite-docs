@@ -263,7 +263,7 @@ rewrite {
 }
 
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.10.0"))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.11.0"))
     rewrite("org.openrewrite.recipe:rewrite-spring")
 
     // Other project dependencies
