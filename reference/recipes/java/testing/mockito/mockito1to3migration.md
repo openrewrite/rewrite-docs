@@ -10,16 +10,16 @@ _Upgrade Mockito from 1.x to 3.x._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.29.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.30.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.29.0
+* version: 1.30.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.29.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.30.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.29.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.30.0")
 }
 ```
 {% endcode %}
@@ -53,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.35.1</version>
+        <version>4.36.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.Mockito1to3Migration</recipe>
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.29.0</version>
+            <version>1.30.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -77,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.29.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.30.0 \
   -DactiveRecipes=org.openrewrite.java.testing.mockito.Mockito1to3Migration
 ```
 {% endcode %}
@@ -148,12 +148,16 @@ Recipes can also be activated directly from the command line by adding the argum
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
 * [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports.md)
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic.md)
+* [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.mockito`
   * artifactId: `mockito-junit-jupiter`
   * version: `3.x`
   * onlyIfUsing: `org.mockito.junit.jupiter.MockitoExtension`
-* [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension.md)
+* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+  * groupId: `org.mockito`
+  * artifactId: `*`
+  * newVersion: `3.x`
 
 {% endtab %}
 
@@ -225,12 +229,16 @@ recipeList:
       newFullyQualifiedTypeName: org.mockito.junit.MockitoJUnitRunner
   - org.openrewrite.java.testing.mockito.CleanupMockitoImports
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
+  - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
   - org.openrewrite.maven.AddDependency:
       groupId: org.mockito
       artifactId: mockito-junit-jupiter
       version: 3.x
       onlyIfUsing: org.mockito.junit.jupiter.MockitoExtension
-  - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
+  - org.openrewrite.maven.UpgradeDependencyVersion:
+      groupId: org.mockito
+      artifactId: *
+      newVersion: 3.x
 
 ```
 {% endtab %}

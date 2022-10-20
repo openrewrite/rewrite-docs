@@ -9,11 +9,11 @@ _Finalizers are deprecated. Use of `finalize()` can lead to performance issues, 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.31.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.31.0
+* version: 7.32.0
 
 
 ## Usage
@@ -49,7 +49,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.35.1</version>
+        <version>4.36.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.NoFinalizer</recipe>
@@ -66,7 +66,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.NoFinalizer
 ```
 {% endcode %}

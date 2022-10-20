@@ -13,16 +13,16 @@ _This recipe will apply changes commonly needed when migrating from Java 8 to Ja
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.12.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.13.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.12.0
+* version: 1.13.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.12.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.13.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.12.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.13.0")
 }
 ```
 {% endcode %}
@@ -56,7 +56,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.35.1</version>
+        <version>4.36.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
@@ -66,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.12.0</version>
+            <version>1.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,8 +80,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.12.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.13.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.Java8toJava11
 ```
 {% endcode %}
@@ -99,6 +99,9 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Add explicit JAXB dependencies](../../java/migrate/javax/addjaxbdependencies.md)
 * [Add explicit Inject dependencies](../../java/migrate/javax/addinjectdependencies.md)
 * [Add JDeprScan Maven Plug-in](../../java/migrate/addjdeprscanplugin.md)
+  * release: ``
+* [`BigDecimal` rounding constants to `RoundingMode` enums](../../java/cleanup/bigdecimalroundingconstantstoenums.md)
+* [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
 * [Migrate deprecated `java.util.concurrent` APIs](../../java/migrate/concurrent/javaconcurrentapis.md)
 * [Migrate deprecated `java.lang` APIs](../../java/migrate/lang/javalangapis.md)
 * [Migrate deprecated `java.util.logging` APIs](../../java/migrate/logging/javaloggingapis.md)
@@ -112,6 +115,8 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Upgrade JaCoCo Maven plugin version](../../java/migrate/jacoco/upgradejacocomavenpluginversion.md)
 * [Change Maven Java version property values to 11](../../java/migrate/javaversion11.md)
 * [Migrate `java.util` APIs](../../java/migrate/util/javautilapis.md)
+* [Replace !optional.isPresent() with optional.isEmpty()](../../java/migrate/util/optionalnotpresenttoisempty.md)
+* [Replace !optional.isEmpty() with optional.isPresent()](../../java/migrate/util/optionalnotemptytoispresent.md)
 
 {% endtab %}
 
@@ -133,7 +138,10 @@ recipeList:
   - org.openrewrite.java.migrate.javax.AddJaxwsDependencies
   - org.openrewrite.java.migrate.javax.AddJaxbDependencies
   - org.openrewrite.java.migrate.javax.AddInjectDependencies
-  - org.openrewrite.java.migrate.AddJDeprScanPlugin
+  - org.openrewrite.java.migrate.AddJDeprScanPlugin:
+      release: 
+  - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
+  - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf
   - org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs
   - org.openrewrite.java.migrate.lang.JavaLangAPIs
   - org.openrewrite.java.migrate.logging.JavaLoggingAPIs
@@ -147,6 +155,8 @@ recipeList:
   - org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion
   - org.openrewrite.java.migrate.JavaVersion11
   - org.openrewrite.java.migrate.util.JavaUtilAPIs
+  - org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty
+  - org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent
 
 ```
 {% endtab %}

@@ -3,18 +3,23 @@
 ** org.openrewrite.java.migrate.JavaVersion17**
 _Change maven.compiler.source and maven.compiler.target values to 17._
 
+### Tags
+
+* java17
+* compiler
+
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.12.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.13.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.12.0
+* version: 1.13.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.12.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.13.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -33,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.12.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.13.0")
 }
 ```
 {% endcode %}
@@ -48,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.35.1</version>
+        <version>4.36.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.JavaVersion17</recipe>
@@ -58,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.12.0</version>
+            <version>1.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -72,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.35.1:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.12.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.13.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.JavaVersion17
 ```
 {% endcode %}
@@ -98,7 +103,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * key: `maven.compiler.target`
   * newValue: `17`
   * addIfMissing: `false`
-* [Replace `String#format(String, Object...)` with `String#formatted(Object...)`](../../java/migrate/lang/stringformatted.md)
 
 {% endtab %}
 
@@ -109,6 +113,9 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.JavaVersion17
 displayName: Change Maven Java version property values to 17
 description: Change maven.compiler.source and maven.compiler.target values to 17.
+tags:
+  - java17
+  - compiler
 recipeList:
   - org.openrewrite.maven.ChangePropertyValue:
       key: java.version
@@ -122,7 +129,6 @@ recipeList:
       key: maven.compiler.target
       newValue: 17
       addIfMissing: false
-  - org.openrewrite.java.migrate.lang.StringFormatted
 
 ```
 {% endtab %}

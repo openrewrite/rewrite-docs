@@ -11,6 +11,7 @@
 * [Find methods with empty bodies](findemptymethods.md)
 * [Find missing type information on Java ASTs](findmissingtypes.md)
 * [Find plain text secrets](findsecrets.md)
+* [Find source files with imports](findimports.md)
 * [Find text](findtext.md)
 * [Find types](findtypes.md)
 * [Find uses of `@Repeatable` annotations.](findrepeatableannotations.md)

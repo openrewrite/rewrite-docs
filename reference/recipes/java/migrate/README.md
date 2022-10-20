@@ -39,6 +39,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Migrate deprecated `javax.ws` packages to `jakarta.ws`](javaxwstojakartaws.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](javaxxmlwsmigrationtojakartaxmlws.md)
+* [Upgrade to Java 17](upgradejava17.md)
 * [Use `java.util.Base64` instead of `sun.misc`](usejavautilbase64.md)
 * [migrate persistence.xml files](javaxperistencexmltojakartapersistencexml.md)
 

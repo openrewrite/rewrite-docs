@@ -5,11 +5,11 @@ _Delete a JSON mapping entry key._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-json), [Issue Tracker](https://github.com/openrewrite/rewrite-json/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-json/7.31.0/jar)
+[Github](https://github.com/openrewrite/rewrite-json), [Issue Tracker](https://github.com/openrewrite/rewrite-json/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-json/7.32.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-json
-* version: 7.31.0
+* version: 7.32.0
 
 ## Options
 
@@ -37,7 +37,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.DeleteKeyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-json:7.31.0 in your build file:
+Now that `com.yourorg.DeleteKeyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-json:7.32.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-json:7.31.0")
+    rewrite("org.openrewrite:rewrite-json:7.32.0")
 }
 ```
 {% endcode %}
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.35.1</version>
+        <version>4.36.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeleteKeyExample</recipe>
@@ -81,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-json</artifactId>
-            <version>7.31.0</version>
+            <version>7.32.0</version>
           </dependency>
         </dependencies>
       </plugin>

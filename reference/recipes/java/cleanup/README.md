@@ -55,6 +55,7 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Remove empty blocks](emptyblock.md)
 * [Remove extra semicolons](removeextrasemicolons.md)
 * [Remove `finalize()` method](nofinalizer.md)
+* [Remove garbage collection invocations](removecallstosystemgc.md)
 * [Remove redundant casts](removeredundanttypecast.md)
 * [Remove unnecessary parentheses](unnecessaryparentheses.md)
 * [Remove unneeded block](removeunneededblock.md)
