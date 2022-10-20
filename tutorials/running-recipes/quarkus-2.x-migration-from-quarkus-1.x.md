@@ -49,7 +49,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>1.11.0</version>
+            <version>1.13.0</version>
           </dependency>
         </dependencies>
       </plugin>

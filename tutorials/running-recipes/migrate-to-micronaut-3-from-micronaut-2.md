@@ -47,7 +47,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>1.16.1</version>
+            <version>1.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
