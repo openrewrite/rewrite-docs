@@ -47,7 +47,7 @@ Now that `com.yourorg.ExcludeDependencyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.30.0")
+    id("org.openrewrite.rewrite") version("5.31.0")
 }
 
 rewrite {

@@ -48,7 +48,7 @@ Now that `com.yourorg.ChangeDependencyArtifactIdExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.30.0")
+    id("org.openrewrite.rewrite") version("5.31.0")
 }
 
 rewrite {
