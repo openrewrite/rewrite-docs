@@ -12,6 +12,7 @@
 * [Authoring Recipes](tutorials/authoring-recipes/README.md)
   * [Recipe Testing](tutorials/authoring-recipes/recipe-testing.md)
   * [Writing a Java Refactoring Recipe](tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md)
+  * [Recipe Conventions and Best Practices](tutorials/authoring-recipes/recipe-conventions-and-best-practices.md)
   * [Modifying Methods with JavaTemplate](tutorials/authoring-recipes/modifying-methods-with-javatemplate.md)
   * [Writing recipes over multiple source file types](tutorials/authoring-recipes/writing-recipes-over-multiple-source-file-types.md)
 * [Running Recipes](tutorials/running-recipes/README.md)
