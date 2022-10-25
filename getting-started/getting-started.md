@@ -15,7 +15,7 @@ Following this guide you will learn:
 ## Step 1: Clone sample project
 
 {% hint style="warning" %}
-The sample spring-petclinic project is based on an older version of project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net) if you do not already have one.
+The sample spring-petclinic project is based on project that requires a JDK version 11 to build. Newer JDK versions will not work. Get OpenJDK 11 [here](https://adoptopenjdk.net) if you do not already have one.
 {% endhint %}
 
 This guide uses a fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration). Clone it by running:
