@@ -132,7 +132,7 @@ public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
     public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext p) {
         J.MethodInvocation m = super.visitMethodInvocation(method, p);
         if (m.name.typeInformation.simpleName == "countLetters") {
-            m = m.withTemplate(template, m.getCoordinates.replace(), m.arguments[0]); //Template Invocation 
+            m = m.withTemplate(template, m.getCoordinates().replace(), m..getArguments().get(0)); //Template Invocation 
             maybeAddImport("org.example.StringUtils", "withString");
         }
         return m;
