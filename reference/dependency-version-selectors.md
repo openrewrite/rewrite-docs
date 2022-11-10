@@ -53,7 +53,7 @@ Prefacing a version number with `^` invokes caret range semantics. Selects the l
 | ---------------- | --------------------------------- | ---------------- |
 | `^1.0.0`         | 1.0.0, 1.1.0, 1.1.1, 1.2.0, 2.0.0 | 1.2.0            |
 | `^1.1.0`         | 1.0.0, 1.1.0, 1.1.1, 1.2.0, 2.0.0 | 1.1.1            |
-| `^0.2.0`         | 0.1.0, 0.2.0, 0.2.1, 0.3.0        | `0.2.1`          |
+| `^0.2.0`         | 0.1.0, 0.2.0, 0.2.1, 0.3.0        | 0.2.1            |
 
 ### Exact Version
 
@@ -61,7 +61,7 @@ Any version number which does not fit into one of the above categories is treate
 
 | Version Selector | Available Versions  | Selected Version |
 | ---------------- | ------------------- | ---------------- |
-| 1.0.0            | 0.9.0, 1.0.0, 1.1.1 | 1.1.1            |
+| `1.0.0`          | 0.9.0, 1.0.0, 1.1.1 | 1.0.0            |
 
 ## Version Patterns
 
@@ -69,4 +69,4 @@ Some libraries are published with variants differentiated by version number. For
 
 | Version Selector | Version Pattern | Available Versions       | Selected Version |
 | ---------------- | --------------- | ------------------------ | ---------------- |
-| 1.0.0            | jre             | 1.0.0-jre, 1.0.0-android | 1.0.0-jre        |
+| `1.0.0`          | `jre`           | 1.0.0-jre, 1.0.0-android | 1.0.0-jre        |
