@@ -32,4 +32,5 @@ assertTrue(condition);
 
 ## Next Steps
 
-In [Getting Started](getting-started/getting-started.md), we'll learn how to configure Maven/Gradle to add OpenRewrite as a build step and then use the tools to perform from transformations.
+* If you want to learn how to configure Maven or Gradle to use OpenRewrite and then use the tools to perform code transformations, check out the [Getting Started Guide](getting-started/getting-started.md).
+* If you want to learn how to write your own recipe, check out the [Authoring Recipes Section](tutorials/authoring-recipes/).
