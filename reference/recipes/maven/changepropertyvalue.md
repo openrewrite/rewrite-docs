@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.31.0")
+    id("org.openrewrite.rewrite") version("5.32.0")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.36.0</version>
+        <version>4.37.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>

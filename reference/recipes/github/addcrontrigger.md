@@ -39,7 +39,7 @@ Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.31.0")
+    id("org.openrewrite.rewrite") version("5.32.0")
 }
 
 rewrite {
@@ -66,7 +66,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.36.0</version>
+        <version>4.37.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCronTriggerExample</recipe>
