@@ -73,3 +73,7 @@ Throughout our ASTs and other APIs we have been careful to use Java's nullabilit
 ### Avoid constructing AST elements by hand
 
 Even very simple pieces of code have complex AST representations which are tedious and error-prone to construct by hand. With your visitor, prefer faculties like [JavaTemplate](../../v1beta/javatemplate.md) to turn code snippets into AST elements. In data formats like XML or Json it is usually most convenient to use the format's parser to turn a snippet of text into usable AST elements.
+
+### Prefer Cursor Messaging to Execution Context Messaging
+
+There are a few ways to pass state around within and between visitors. All Recipes in a run will have the same `ExecutionContext` object passed between them, and it contains a map into which any recipe may read or write arbitrary data. Similarly the `Cursor` object returned by `TreeVisitor.getCursor()` has a map into which any recipe may read or write arbitrary data. The difference is that the `Cursor` is a stack which keeps track of a visitor's current progress through an AST and is thrown away after all visiting is complete. Because the data in `ExecutionContext` lives for the span of the recipe run, and on into separate cycles, it can potentially change the behavior of other recipes. So whenever communication is needed but only within the current visitor or recipe, the cursor stack should be used instead of adding messages to the execution context.

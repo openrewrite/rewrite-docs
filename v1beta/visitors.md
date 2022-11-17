@@ -8,7 +8,7 @@ description: >-
 
 ## The Visitor Pattern
 
-The [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern#Java_example) is a well-known technique for reasoning about complex object structures. Abstract syntax trees for a language like Java consist of many types, however, when performing semantic analysis or transformation, the work is typically scoped to a few, specific types.
+The [visitor pattern](https://en.wikipedia.org/wiki/Visitor\_pattern#Java\_example) is a well-known technique for reasoning about complex object structures. Abstract syntax trees for a language like Java consist of many types, however, when performing semantic analysis or transformation, the work is typically scoped to a few, specific types.
 
 A visitor is analogous to an event-handler, describing "what" to do and "when" to do it as part of OpenRewrite traversing elements in the tree. OpenRewrite provides an event-driven model where a developer only needs to implement "visit" methods for object types that they are interested in. This leaves OpenRewrite with the responsibility of traversing a tree completely.
 
@@ -33,9 +33,9 @@ The framework provides the base class `TreeVisitor<T extends Tree, P>` from whic
 
 ### Cursoring
 
-All visitors have a cursoring mechanism that maintain a stack of AST elements as they traverse the tree. The cursor allows visitors to be contextually aware of the location, within the AST, of an element as it is visited.
+All visitors have access to a `Cursor` which keeps track of a visitor's position within the AST while it is being traversed. Since AST elements are acyclic and therefore do not contain references to their parent element, the `Cursor` is the primary mechanism by which parent or sibling AST elements may be accessed during visiting. Logically a `Cursor` is a stack. Whenever an AST elment is visited a `Cursor` pointing to it is pushed on top of the stack. When visiting that element is over its `Cursor` is removed from the stack. In this way the `Cursor` keeps track of the visitor's current position within the AST.&#x20;
 
-As an example of how cursoring can be helpful, image a visitor that is tasked with traversing a Java AST and marking only the top-level class as "final". The compilation unit, expressed as an AST, may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times. The cursor can be used to determine which class declaration represents the top-level class:
+As an example of how the `Cursor` can be helpful, image a visitor that is tasked with traversing a Java AST and marking only the top-level class as "final". The compilation unit may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which class declaration represents the top-level class:
 
 ```java
 public class MakeTopeLevelClassFinal extends JavaVisitor<P> {
@@ -54,6 +54,32 @@ public class MakeTopeLevelClassFinal extends JavaVisitor<P> {
         }
 
         return c;
+    }
+}
+```
+
+Each `Cursor` within the stack has a `Map` into which arbitrary data may be read or written. This data is thrown away along with the `Cursor` which contains it the visit is over. The purpose of this mechanism is to facilitate communication between different visit methods. Because this information is discarded when visiting is complete there is no need to worry about it affecting any other visitor or recipe in the run. For example, imagine a visitor which needs to make a change to a class declaration based on something it finds within a method declaration:
+
+```java
+public class ChangesClassBasedOnMethod extends JavaVisitor<ExecutionContext> {
+    @Override
+    public J visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext ctx) {
+        // Traverses down into sub-elements of the current class declaration
+        cd = super.visitClassDeclaration(cd, ctx);
+        
+        J.MethodInvocation m = getCursor().pollMessage("FOUND_METHOD");
+        if(m != null) {
+            // Do something with the information which has been provided via the cursor
+        }
+    }
+    
+    @Override
+    public J visitMethodDeclaration(J.MethodDeclaration m, ExecutionContext ctx) {
+        if(/* m meets some criteria */) {
+            // Puts the message on the cursor corresponding to the element this message will be read from
+            getCursor().putMessageOnFirstEnclosing(J.ClassDeclaration.class, "FOUND_METHOD", m);
+        }
+        return m;
     }
 }
 ```
@@ -80,7 +106,7 @@ class JavaVisitor<P> extends TreeVisitor<J, P> {
 
 An important concept to understand is what happens when the generic`TreeBuilder.visit(T, P)` method is called and how that is mapped into its language-specific counterpart. Let's visualize how a Java CompilationUnit is passed from a client to the visitor:
 
-![Example of Visitor Navigation](../.gitbook/assets/image%20%2816%29.png)
+![Example of Visitor Navigation](<../.gitbook/assets/image (16).png>)
 
 The most obvious observation is that calling the generic form of `visit()` will result in having the compilation unit's `accept()` method executed. The `accept()` method will then cast the visitor to the language-specific variant and then call the appropriate, language-specific `visitCompilationUnit()` method.
 
@@ -179,4 +205,3 @@ OpenRewrite AST types are immutable. So remember to always assign the result of 
 ## Refactor Visitor Pipelines
 
 Refactoring visitors can be chained together by calling `andThen(anotherVisitor)`. This is useful for building up pipelines of refactoring operations built up of lower-level components. For example, when [ChangeFieldType](visitors.md) finds a matching field that it is going to transform, it chains together an [AddImport](visitors.md) visitor to add the new import if necessary, and a [RemoveImport](visitors.md) to remove the old import if there are no longer any references to it.
-
