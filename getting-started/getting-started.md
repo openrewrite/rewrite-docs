@@ -312,7 +312,7 @@ Unlike Maven projects, Gradle projects have two options for specifying versions 
 
 If you choose to use the `rewrite-recipe-bom`, you won't have to worry about specifying versions for your rewrite recipes as all of the recipes you include in your `dependencies` section will have an appropriate version specified in the bill of materials (BOM). For Gradle projects, this is the recommended approach.
 
-If you choose to not use the `rewrite-recipe-bom`, you'll need to ensure that you have the appropriate version of all of your dependencies included (as you would with Maven projects).
+If you choose to not use `rewrite-recipe-bom`, you'll need to specify the version of each rewrite recipe module you use. 
 
 Presuming you chose to use the `rewrite-recipe-bom`, your `build.gradle` file should look similar to this:
 
