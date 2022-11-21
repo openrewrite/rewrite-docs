@@ -307,7 +307,7 @@ To double-check that everything is working, run the command `./mvnw rewrite:run`
 
 Unlike Maven projects, Gradle projects have two options for specifying versions for recipes. You can:
 
-1. Add `rewrite-recipe-bom` as a dependency
+1. Add `rewrite-recipe-bom` as a [bill of materials (BOM) dependency](https://docs.gradle.org/current/userguide/platforms.html#sub:bom_import)
 2. Add `rewrite-spring` as a dependency with a version specified
 
 If you choose to use the `rewrite-recipe-bom`, you won't have to worry about specifying versions for your rewrite recipes as all of the recipes you include in your `dependencies` section will have an appropriate version specified in the bill of materials (BOM). For Gradle projects, this is the recommended approach.
