@@ -241,7 +241,7 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-Once this recipe has been added to your active recipes, you can run either `./mvnw rewrite:run` or `./gradelw rewriteRun` to execute all of your active recipes. Afterward, you'll see that:
+Once this recipe has been added to your active recipes, you can run either `./mvnw rewrite:run` or `./gradlew rewriteRun` to execute all of your active recipes. Afterward, you'll see that:
 
 * The source files in the `vet` package have been moved to the newly created `veterinary` package
 * References such as import statements have been updated to reflect the new name
