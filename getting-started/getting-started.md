@@ -88,10 +88,6 @@ rewrite {
 // ...
 ```
 {% endcode %}
-
-{% hint style="info" %}
-When applied to a multi-project build, behavior differs depending on whether the plugin is applied to the root project or to a sub-project. Applied to the root project, the plugin will parse and refactor all sources from all projects. Applied to any project other than the root project, the plugin will parse and refactor only sources from that project.
-{% endhint %}
 {% endtab %}
 {% endtabs %}
 
