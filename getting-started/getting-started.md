@@ -27,7 +27,7 @@ This quick start guide assumes that you:
 
 ## Step 1: Clone sample project
 
-The first step in this process is making sure you have some code to work with. We've created a [sample repository](https://github.com/openrewrite/spring-petclinic-migration) that you can use if you'd like. However, as all of the steps in this guide apply to any Java project built with Maven or Gradle, please feel free to use your own and skip to [Step 2](#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
+The first step in this process is making sure you have some code to work with. We've prepared a [sample repository](https://github.com/openrewrite/spring-petclinic-migration) that you can use if you'd like. However, as all of the steps in this guide apply to any Java project built with Maven or Gradle, please feel free to use your own and skip to [Step 2](#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
 
 {% hint style="warning" %}
 The sample spring-petclinic project requires JDK version 11 to build. Newer JDK versions will not work. Get OpenJDK 11 [here](https://adoptium.net/temurin/releases/?version=11) if you do not already have that version installed.
