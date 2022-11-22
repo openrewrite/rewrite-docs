@@ -127,7 +127,7 @@ plugins {
 
 rewrite {
     activeRecipe(
-            'org.openrewrite.java.format.AutoFormat',
+        'org.openrewrite.java.format.AutoFormat',
     )
 }
 ```
