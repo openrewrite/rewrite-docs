@@ -1,20 +1,21 @@
 ---
 description: >-
-  This guide covers configuring rewrite with Maven or Gradle and using it to run refactoring recipes.
+  This guide covers configuring rewrite with Maven or Gradle and using it to run
+  refactoring recipes.
 ---
 
-# Quick Start: Setting Up Your Project and Running Recipes
+# Quickstart: Setting Up Your Project and Running Recipes
 
 To help orient you to OpenRewrite, let's walk through configuring a project to use the Maven or Gradle rewrite plugin. Then let's walk through running various types of recipes on said project and talk through the results.
 
 In this guide you will:
 
-* [Clone a sample project](#step-1-clone-sample-project)
-* [Add the rewrite-maven-plugin or rewrite-gradle-plugin to your project](#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project)
-* [Activate a recipe so it can be run](#step-3-activate-a-recipe)
-* [Run a simple refactoring recipe](#step-4-run-a-simple-refactoring-recipe)
-* [Run a recipe with YAML configuration](#step-5-run-a-recipe-with-yaml-configuration)
-* [Add and run an externally created recipe](#step-6-running-recipes-from-external-modules)
+* [Clone a sample project](getting-started.md#step-1-clone-sample-project)
+* [Add the rewrite-maven-plugin or rewrite-gradle-plugin to your project](getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project)
+* [Activate a recipe so it can be run](getting-started.md#step-3-activate-a-recipe)
+* [Run a simple refactoring recipe](getting-started.md#step-4-run-a-simple-refactoring-recipe)
+* [Run a recipe with YAML configuration](getting-started.md#step-5-run-a-recipe-with-yaml-configuration)
+* [Add and run an externally created recipe](getting-started.md#step-6-running-recipes-from-external-modules)
 
 ## Prerequisites
 
@@ -27,7 +28,7 @@ This quick start guide assumes that you:
 
 ## Step 1: Clone sample project
 
-The first step in this process is making sure you have some code to work with. We've prepared a [sample repository](https://github.com/openrewrite/spring-petclinic-migration) that you can use if you'd like. However, as all of the steps in this guide apply to any Java project built with Maven or Gradle, please feel free to use your own and skip to [Step 2](#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
+The first step in this process is making sure you have some code to work with. We've prepared a [sample repository](https://github.com/openrewrite/spring-petclinic-migration) that you can use if you'd like. However, as all of the steps in this guide apply to any Java project built with Maven or Gradle, please feel free to use your own and skip to [Step 2](getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
 
 {% hint style="warning" %}
 The sample spring-petclinic project requires JDK version 11 to build. Newer JDK versions will not work. Get OpenJDK 11 [here](https://adoptium.net/temurin/releases/?version=11) if you do not already have that version installed.
@@ -45,7 +46,6 @@ Once you've checked out your project, the next step is to add the rewrite plugin
 
 {% tabs %}
 {% tab title="Maven" %}
-
 Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks like:
 
 {% code title="pom.xml" %}
@@ -60,7 +60,6 @@ Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks lik
 {% endtab %}
 
 {% tab title="Gradle" %}
-
 * Add the rewrite plugin to the `plugins` section of your `build.gradle` file
 * Make sure `mavenCentral()` is included in the `repositories` section
 * Add a `rewrite` section that will be filled in later
@@ -169,7 +168,7 @@ From there, you can commit the changes or add additional recipes based on your n
 Some recipes are more complex than `AutoFormat` and require configuration (in a `rewrite.yml` file) to run them. For instance, the built-in recipe [org.openrewrite.java.ChangePackage](https://docs.openrewrite.org/reference/recipes/java/changepackage) has three options that need to be configured:
 
 | Type      | Name           | Description                                                        |
-|-----------|----------------|--------------------------------------------------------------------|
+| --------- | -------------- | ------------------------------------------------------------------ |
 | `String`  | oldPackageName | The package name to replace.                                       |
 | `String`  | newPackageName | New package name to replace the old package name with.             |
 | `Boolean` | recursive      | _Optional_. Whether or not to recursively change subpackage names. |
@@ -252,16 +251,16 @@ From there, you can confirm that everything still builds and passes its tests by
 At this point, you know how to configure and run any recipe included in Rewrite itself. However, many recipes are not bundled into the core library. For example, all of the Spring, Mockito, JUnit, and AssertJ-related recipes maintained by the Rewrite team live in the [rewrite-spring repository](https://github.com/openrewrite/rewrite-spring).
 
 {% hint style="info" %}
-You can search through all of the recipes in the [OpenRewrite docs](https://docs.openrewrite.org/reference/recipes). Each recipe page has instructions for how to import the recipe and what parameters (if any) need to be included. 
+You can search through all of the recipes in the [OpenRewrite docs](https://docs.openrewrite.org/reference/recipes). Each recipe page has instructions for how to import the recipe and what parameters (if any) need to be included.
 {% endhint %}
 
-Let's pretend that you want to migrate JUnit 4 to JUnit 5 in a Spring project you have. If you take a look at the [Usage section](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2junit4to5migration#usage) in the [JUnit 4 to 5 migration recipe](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2junit4to5migration), you'll see what you need to include in your `build.gradle` or `pom.xml` file in order to use this recipe. 
+Let's pretend that you want to migrate JUnit 4 to JUnit 5 in a Spring project you have. If you take a look at the [Usage section](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2junit4to5migration#usage) in the [JUnit 4 to 5 migration recipe](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2junit4to5migration), you'll see what you need to include in your `build.gradle` or `pom.xml` file in order to use this recipe.
 
-Below, we'll walk through the [Maven](#maven--external-modules) and [Gradle](#gradle--external-modules) changes and provide some additional context around said changes.
+Below, we'll walk through the [Maven](getting-started.md#maven--external-modules) and [Gradle](getting-started.md#gradle--external-modules) changes and provide some additional context around said changes.
 
 ### Maven + External Modules
 
-For Maven projects, you'll need to: 
+For Maven projects, you'll need to:
 
 * Add the recipe to the `activeRecipes` list
 * Add a dependency on `rewrite-spring` (where the JUnit 4 to 5 recipe lives)
@@ -303,12 +302,12 @@ To double-check that everything is working, run the command `./mvnw rewrite:run`
 
 Unlike Maven projects, Gradle projects have two options for specifying versions for recipes. You can:
 
-1. Add `rewrite-recipe-bom` as a [bill of materials (BOM) dependency](https://docs.gradle.org/current/userguide/platforms.html#sub:bom_import)
+1. Add `rewrite-recipe-bom` as a [bill of materials (BOM) dependency](https://docs.gradle.org/current/userguide/platforms.html#sub:bom\_import)
 2. Add `rewrite-spring` as a dependency with a version specified
 
 If you choose to use the `rewrite-recipe-bom`, you won't have to worry about specifying versions for your rewrite recipes as all of the recipes you include in your `dependencies` section will have an appropriate version specified in the bill of materials (BOM). For Gradle projects, this is the recommended approach.
 
-If you choose to not use `rewrite-recipe-bom`, you'll need to specify the version of each rewrite recipe module you use. 
+If you choose to not use `rewrite-recipe-bom`, you'll need to specify the version of each rewrite recipe module you use.
 
 Presuming you chose to use the `rewrite-recipe-bom`, your `build.gradle` file should look similar to this:
 
@@ -337,9 +336,9 @@ dependencies {
 ```
 {% endcode %}
 
-To check that everything worked correctly, run the command `./gradelw rewriteRun`. You should see that the project has been upgraded to Spring Boot 2 and all of the test classes have been updated to JUnit 5. 
+To check that everything worked correctly, run the command `./gradlew rewriteRun`. You should see that the project has been upgraded to Spring Boot 2 and all of the test classes have been updated to JUnit 5.
 
-Please note, though, that your `build.gradle` file _will not_ be updated as part of this. You will manually have to change the Spring and JUnit dependencies to reflect the appropriate versions. 
+Please note, though, that your `build.gradle` file _will not_ be updated as part of this. You will manually have to change the Spring and JUnit dependencies to reflect the appropriate versions.
 
 {% hint style="info" %}
 If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
