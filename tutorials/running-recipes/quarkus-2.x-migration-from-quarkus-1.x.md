@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.11.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.12.3"))
     rewrite("org.openrewrite.recipe:rewrite-quarkus")
 }
 ```

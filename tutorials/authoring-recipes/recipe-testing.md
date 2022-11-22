@@ -18,7 +18,7 @@ OpenRewrite provides infrastructure that allows developers to quickly build test
           <dependency>
               <groupId>org.openrewrite.recipe</groupId>
               <artifactId>rewrite-recipe-bom</artifactId>
-              <version>1.11.0</version>
+              <version>1.12.3</version>
               <type>pom</type>
               <scope>import</scope>
           </dependency>
@@ -72,15 +72,13 @@ OpenRewrite provides infrastructure that allows developers to quickly build test
 {% tab title="Gradle" %}
 ```groovy
 plugins {
-    `java-library`
-
-    id("org.jetbrains.kotlin.jvm") version "1.5.21"
+    id("java-library")
+    id("org.jetbrains.kotlin.jvm") version "1.7.20"
 }
 
-val rewriteBomVersion = "1.4.0"
 ...
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:${rewriteBomVersion}"))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.12.3"))
 
     testImplementation("org.openrewrite:rewrite-test")
     testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
