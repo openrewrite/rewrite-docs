@@ -42,10 +42,9 @@ public class MakeTopeLevelClassFinal extends JavaVisitor<P> {
 
     @Override
     public J visitClassDeclaration(J.ClassDeclaration classDeclaration, P context) {
-        //The base class provides the proper, language-specific navigation of
-        //a J.ClassDeclaration. It is very important to call the super to enure the
-        //visitor navigates the class declaration's sub-tree.
-        J.ClassDeclaration c = visitAndCast(classDeclaration, super::visitClassDeclaration);
+        // The base class provides the language-specific navigation of sub-elements
+        // Without this invocation sub-elements, like inner classes, will never be visited
+        J.ClassDeclaration c = super.visitClassDeclaration(classDeclaration, context);
 
         // If the current class declaration is not enclosed by another class declaration,
         // it must be the top-level class.
