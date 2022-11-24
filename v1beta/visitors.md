@@ -82,6 +82,7 @@ public class ChangesClassBasedOnMethod extends JavaVisitor<ExecutionContext> {
         if(m != null) {
             // Do something with the information which has been provided via the cursor
         }
+        return cd;
     }
     
     @Override
