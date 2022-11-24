@@ -38,22 +38,34 @@ All visitors have access to a `Cursor` which keeps track of a visitor's position
 As an example of how the `Cursor` can be helpful, image a visitor that is tasked with traversing a Java AST and marking only the top-level class as "final". The compilation unit may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which class declaration represents the top-level class:
 
 ```java
-public class MakeTopeLevelClassFinal extends JavaVisitor<P> {
+@Override
+public J visitClassDeclaration(J.ClassDeclaration classDeclaration, ExecutionContext context) {
+    // The base class provides the language-specific navigation of sub-elements
+    // Without this invocation sub-elements, like inner classes, will never be visited
+    J.ClassDeclaration c = (J.ClassDeclaration) super.visitClassDeclaration(classDeclaration, context);
 
-    @Override
-    public J visitClassDeclaration(J.ClassDeclaration classDeclaration, P context) {
-        // The base class provides the language-specific navigation of sub-elements
-        // Without this invocation sub-elements, like inner classes, will never be visited
-        J.ClassDeclaration c = (J.ClassDeclaration) super.visitClassDeclaration(classDeclaration, context);
-
-        // If the current class declaration is not enclosed by another class declaration,
-        // it must be the top-level class.
-        if(getCursor().firstEnclosing(J.ClassDecl.class) == null) {
-            c = c.withModifiers("final");
-        }
-
+    // Visitors must always decline to make an unnecessary change
+    if(c.getModifiers().stream().anyMatch(modifier -> modifier.getType() == J.Modifier.Type.Final)) {
         return c;
     }
+
+    // If the current class declaration is not enclosed by another class declaration,
+    // it must be the top-level class.
+    if (getCursor().getParentOrThrow().firstEnclosing(J.ClassDeclaration.class) == null) {
+        c = c.withModifiers(ListUtils.concat(c.getModifiers(),
+                new J.Modifier(Tree.randomId(), Space.EMPTY, Markers.EMPTY,
+                        J.Modifier.Type.Final, Collections.emptyList())));
+
+        // Ensure modifiers are in the idiomatic order
+        c = (J.ClassDeclaration) new ModifierOrder().getVisitor()
+                .visitNonNull(c, context);
+
+        // Format only the method declaration, stopping after the modifiers
+        // Making the most minimal possible change makes changes easier for reviewers to accept
+        c = autoFormat(c, c.getName(), context, getCursor().getParentOrThrow());
+    }
+
+    return c;
 }
 ```
 
@@ -64,7 +76,7 @@ public class ChangesClassBasedOnMethod extends JavaVisitor<ExecutionContext> {
     @Override
     public J visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext ctx) {
         // Traverses down into sub-elements of the current class declaration
-        cd = super.visitClassDeclaration(cd, ctx);
+        cd = (J.ClassDeclaration) super.visitClassDeclaration(cd, ctx);
         
         J.MethodInvocation m = getCursor().pollMessage("FOUND_METHOD");
         if(m != null) {
