@@ -103,48 +103,48 @@
 * [org.openrewrite.xml.security.UpdateOwaspSuppressionDate](https://docs.openrewrite.org/reference/recipes/xml/security/updateowaspsuppressiondate): Updates the expiration date for OWASP suppressions having a matching cve tag. For use with the OWASP `dependency-check` tool. More details: https://jeremylong.github.io/DependencyCheck/general/suppression.html. 
 
 ## Removed Recipes
-* [org.openrewrite.gradle.UpgradePluginVersion](https://docs.openrewrite.org/reference/recipes/gradle/upgradepluginversion): Update a Gradle plugin by id to a later version. 
-* [org.openrewrite.gradle.search.FindPlugin](https://docs.openrewrite.org/reference/recipes/gradle/search/findplugin): Find a Gradle plugin by id. 
-* [org.openrewrite.java.migrate.ChangeJavaxAnnotationToJakarta](https://docs.openrewrite.org/reference/recipes/java/migrate/changejavaxannotationtojakarta): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`. 
-* [org.openrewrite.java.migrate.JavaxActivationMigrationToJakartaActivation](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxactivationmigrationtojakartaactivation): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxAnnotationMigrationToJakartaAnnotation](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxannotationmigrationtojakartaannotation): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxAnnotationPackageToJakarta](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxannotationpackagetojakarta): Change type of classes in the `javax.annotation` package to jakarta. 
-* [org.openrewrite.java.migrate.JavaxAnnotationSecurityPackageToJakarta](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxannotationsecuritypackagetojakarta): Change type of classes in the `javax.annotation.security` package to jakarta. 
-* [org.openrewrite.java.migrate.JavaxAnnotationSqlPackageToJakarta](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxannotationsqlpackagetojakarta): Change type of classes in the `javax.annotation.sql` package to jakarta. 
-* [org.openrewrite.java.migrate.JavaxBatchMigrationToJakartaBatch](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxbatchmigrationtojakartabatch): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxDecoratorToJakartaDecorator](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxdecoratortojakartadecorator): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxEjbToJakartaEjb](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxejbtojakartaejb): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxElToJakartaEl](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxeltojakartael): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxEnterpriseToJakartaEnterprise](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxenterprisetojakartaenterprise): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxFacesToJakartaFaces](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxfacestojakartafaces): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxInjectMigrationToJakartaInject](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxinjectmigrationtojakartainject): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxInterceptorToJakartaInterceptor](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxinterceptortojakartainterceptor): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxJmsToJakartaJms](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxjmstojakartajms): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxJsonToJakartaJson](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxjsontojakartajson): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxJwsToJakartaJws](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxjwstojakartajws): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxMailToJakartaMail](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxmailtojakartamail): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxMigrationToJakarta](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxmigrationtojakarta): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxPeristenceXmlToJakartaPersistenceXml](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxperistencexmltojakartapersistencexml):  
-* [org.openrewrite.java.migrate.JavaxPersistenceToJakartaPersistence](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxpersistencetojakartapersistence): Java EE has been rebranded to Jakarta EE, necessitating a package relocation 
-* [org.openrewrite.java.migrate.JavaxResourceToJakartaResource](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxresourcetojakartaresource): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxSecurityToJakartaSecurity](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxsecuritytojakartasecurity): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxServletToJakartaServlet](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxservlettojakartaservlet): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxTransactionMigrationToJakartaTransaction](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxtransactionmigrationtojakartatransaction): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxValidationMigrationToJakartaValidation](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxvalidationmigrationtojakartavalidation): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxWebsocketToJakartaWebsocket](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxwebsockettojakartawebsocket): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxWsToJakartaWs](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxwstojakartaws): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxxmlbindmigrationtojakartaxmlbind): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxXmlSoapToJakartaXmlSoap](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxxmlsoaptojakartaxmlsoap): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.JavaxXmlWsMigrationToJakartaXmlWs](https://docs.openrewrite.org/reference/recipes/java/migrate/javaxxmlwsmigrationtojakartaxmlws): Java EE has been rebranded to Jakarta EE, necessitating a package relocation. 
-* [org.openrewrite.java.migrate.UpgradeJava17](https://docs.openrewrite.org/reference/recipes/java/migrate/upgradejava17): This recipe will apply changes commonly needed when migrating to Java 17, including intermediate versions. 
-* [org.openrewrite.java.migrate.javax.ReplaceJavaxJaxbWithJakarta](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/replacejavaxjaxbwithjakarta): This recipe will replace the legacy `javax-api` artifact with the Jakarta EE equivalent. 
-* [org.openrewrite.java.migrate.javax.ReplaceJavaxJaxwsWithJakarta](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/replacejavaxjaxwswithjakarta): This recipe will replace the legacy javax `jaxws-api` artifact with the Jakarta EE equivalent. The jakarta JAX-WS API 2.3.x is part of JakartaEE 8 and still uses `javax` packaging. 
-* [org.openrewrite.java.spring.boot2.MigrateNotBlankPackageName](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/migratenotblankpackagename): `org.hibernate.validator.constraints.NotBlank` was deprecated in 1.x. 
-* [org.openrewrite.java.spring.boot2.MigrateNotEmptyPackageName](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/migratenotemptypackagename): `org.hibernate.validator.constraints.NotEmpty` was deprecated in 1.x. 
-* [org.openrewrite.java.spring.boot2.SpringBoot2To3Migration](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2to3migration): Migrates Spring Boot 2.x to latest version of 3.x 
-* [org.openrewrite.java.spring.cve.Spring4Shell](https://docs.openrewrite.org/reference/recipes/java/spring/cve/spring4shell): See the [blog post](https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement#status) on the issue. This recipe can be further refined as more information becomes available. 
-* [org.openrewrite.xml.security.DateBoundSuppressions](https://docs.openrewrite.org/reference/recipes/xml/security/dateboundsuppressions): Adds an expiration date to all OWASP suppressions in order to ensure that they are periodically reviewed. For use with the OWASP `dependency-check` tool. More details: https://jeremylong.github.io/DependencyCheck/general/suppression.html 
-* [org.openrewrite.xml.security.RemoveSuppressions](https://docs.openrewrite.org/reference/recipes/xml/security/removesuppressions): Remove all OWASP suppressions with a suppression end date in the past, as these are no longer valid. For use with the OWASP `dependency-check` tool. More details on OWASP suppression files: https://jeremylong.github.io/DependencyCheck/general/suppression.html 
+* **org.openrewrite.gradle.UpgradePluginVersion**: Update a Gradle plugin by id to a later version.
+* **org.openrewrite.gradle.search.FindPlugin**: Find a Gradle plugin by id.
+* **org.openrewrite.java.migrate.ChangeJavaxAnnotationToJakarta**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`.
+* **org.openrewrite.java.migrate.JavaxActivationMigrationToJakartaActivation**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxAnnotationMigrationToJakartaAnnotation**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxAnnotationPackageToJakarta**: Change type of classes in the `javax.annotation` package to jakarta.
+* **org.openrewrite.java.migrate.JavaxAnnotationSecurityPackageToJakarta**: Change type of classes in the `javax.annotation.security` package to jakarta.
+* **org.openrewrite.java.migrate.JavaxAnnotationSqlPackageToJakarta**: Change type of classes in the `javax.annotation.sql` package to jakarta.
+* **org.openrewrite.java.migrate.JavaxBatchMigrationToJakartaBatch**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxDecoratorToJakartaDecorator**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxEjbToJakartaEjb**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxElToJakartaEl**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxEnterpriseToJakartaEnterprise**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxFacesToJakartaFaces**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxInjectMigrationToJakartaInject**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxInterceptorToJakartaInterceptor**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxJmsToJakartaJms**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxJsonToJakartaJson**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxJwsToJakartaJws**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxMailToJakartaMail**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxMigrationToJakarta**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxPeristenceXmlToJakartaPersistenceXml**:
+* **org.openrewrite.java.migrate.JavaxPersistenceToJakartaPersistence**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation
+* **org.openrewrite.java.migrate.JavaxResourceToJakartaResource**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxSecurityToJakartaSecurity**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxServletToJakartaServlet**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxTransactionMigrationToJakartaTransaction**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxValidationMigrationToJakartaValidation**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxWebsocketToJakartaWebsocket**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxWsToJakartaWs**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxXmlBindMigrationToJakartaXmlBind**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxXmlSoapToJakartaXmlSoap**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.JavaxXmlWsMigrationToJakartaXmlWs**: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* **org.openrewrite.java.migrate.UpgradeJava17**: This recipe will apply changes commonly needed when migrating to Java 17, including intermediate versions.
+* **org.openrewrite.java.migrate.javax.ReplaceJavaxJaxbWithJakarta**: This recipe will replace the legacy `javax-api` artifact with the Jakarta EE equivalent.
+* **org.openrewrite.java.migrate.javax.ReplaceJavaxJaxwsWithJakarta**: This recipe will replace the legacy javax `jaxws-api` artifact with the Jakarta EE equivalent. The jakarta JAX-WS API 2.3.x is part of JakartaEE 8 and still uses `javax` packaging.
+* **org.openrewrite.java.spring.boot2.MigrateNotBlankPackageName**: `org.hibernate.validator.constraints.NotBlank` was deprecated in 1.x.
+* **org.openrewrite.java.spring.boot2.MigrateNotEmptyPackageName**: `org.hibernate.validator.constraints.NotEmpty` was deprecated in 1.x.
+* **org.openrewrite.java.spring.boot2.SpringBoot2To3Migration**: Migrates Spring Boot 2.x to latest version of 3.x
+* **org.openrewrite.java.spring.cve.Spring4Shell**: See the [blog post](https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement#status) on the issue. This recipe can be further refined as more information becomes available.
+* **org.openrewrite.xml.security.DateBoundSuppressions**: Adds an expiration date to all OWASP suppressions in order to ensure that they are periodically reviewed. For use with the OWASP `dependency-check` tool. More details: https://jeremylong.github.io/DependencyCheck/general/suppression.html
+* **org.openrewrite.xml.security.RemoveSuppressions**: Remove all OWASP suppressions with a suppression end date in the past, as these are no longer valid. For use with the OWASP `dependency-check` tool. More details on OWASP suppression files: https://jeremylong.github.io/DependencyCheck/general/suppression.html
 
 ## Changed Recipes
 * [org.openrewrite.FindQuarks](https://docs.openrewrite.org/reference/recipes/findquarks) was changed:
