@@ -30,6 +30,10 @@
 * [Running Rewrite on a Gradle project without modifying the build](tutorials/running-rewrite-on-a-gradle-project-without-modifying-the-build.md)
 * [Running Rewrite without build tool plugins](tutorials/running-rewrite-without-build-tool-plugins.md)
 
+## Changelog
+
+* [7.33.0 Release](changelog/7-33-0-Release.md)
+
 ## Reference
 
 * [Latest versions of every OpenRewrite module](reference/latest-versions-of-every-openrewrite-module.md)
