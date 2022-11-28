@@ -1,6 +1,6 @@
 # Catch clause should do more than just rethrow
 
-** org.openrewrite.java.cleanup.CatchClauseOnlyRethrows**
+**org.openrewrite.java.cleanup.CatchClauseOnlyRethrows**
 _A `catch` clause that only rethrows the caught exception is unnecessary. Letting the exception bubble up as normal achieves the same result with less code._
 
 ### Tags
@@ -9,11 +9,11 @@ _A `catch` clause that only rethrows the caught exception is unnecessary. Lettin
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
@@ -66,7 +66,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.CatchClauseOnlyRethrows
 ```
 {% endcode %}

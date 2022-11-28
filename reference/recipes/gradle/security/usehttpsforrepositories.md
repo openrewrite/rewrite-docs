@@ -1,7 +1,7 @@
 # Use HTTPS for repositories
 
-** org.openrewrite.gradle.security.UseHttpsForRepositories**
-_Use HTTPS for repository urls_
+**org.openrewrite.gradle.security.UseHttpsForRepositories**
+_Use HTTPS for repository urls._
 
 ### Tags
 
@@ -9,16 +9,16 @@ _Use HTTPS for repository urls_
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.32.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.33.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.32.0")
+    rewrite("org.openrewrite:rewrite-gradle:7.33.0")
 }
 ```
 {% endcode %}
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.32.0</version>
+            <version>7.33.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,8 +76,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-gradle:7.32.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-gradle:7.33.0 \
   -DactiveRecipes=org.openrewrite.gradle.security.UseHttpsForRepositories
 ```
 {% endcode %}

@@ -1,15 +1,15 @@
 # Update CircleCI image
 
-** org.openrewrite.circleci.UpdateImage**
+**org.openrewrite.circleci.UpdateImage**
 _See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circleci-images/)._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-circleci), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-circleci/1.14.0/jar)
+[Github](https://github.com/openrewrite/rewrite-circleci), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-circleci/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-circleci
-* version: 1.14.0
+* version: 1.15.0
 
 ## Options
 
@@ -35,7 +35,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateImageExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:1.14.0 in your build file:
+Now that `com.yourorg.UpdateImageExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-circleci:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-circleci:1.15.0")
 }
 ```
 {% endcode %}
@@ -79,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-circleci</artifactId>
-            <version>1.14.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>

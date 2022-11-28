@@ -1,15 +1,15 @@
 # Move content to another file
 
-** org.openrewrite.hcl.MoveContentToFile**
+**org.openrewrite.hcl.MoveContentToFile**
 _Move content to another HCL file, deleting it in the original file._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-hcl), [Issue Tracker](https://github.com/openrewrite/rewrite-hcl/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-hcl/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite-hcl), [Issue Tracker](https://github.com/openrewrite/rewrite-hcl/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-hcl/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 
@@ -39,7 +39,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.MoveContentToFileExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-hcl:7.32.0 in your build file:
+Now that `com.yourorg.MoveContentToFileExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-hcl:7.33.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-hcl:7.32.0")
+    rewrite("org.openrewrite:rewrite-hcl:7.33.0")
 }
 ```
 {% endcode %}
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-hcl</artifactId>
-            <version>7.32.0</version>
+            <version>7.33.0</version>
           </dependency>
         </dependencies>
       </plugin>

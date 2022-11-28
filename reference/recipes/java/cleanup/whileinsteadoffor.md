@@ -1,6 +1,6 @@
 # Prefer `while` over `for` loops
 
-** org.openrewrite.java.cleanup.WhileInsteadOfFor**
+**org.openrewrite.java.cleanup.WhileInsteadOfFor**
 _When only the condition expression is defined in a for loop, and the initialization and increment expressions are missing, a while loop should be used instead to increase readability._
 
 ### Tags
@@ -9,11 +9,11 @@ _When only the condition expression is defined in a for loop, and the initializa
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
@@ -66,7 +66,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.WhileInsteadOfFor
 ```
 {% endcode %}

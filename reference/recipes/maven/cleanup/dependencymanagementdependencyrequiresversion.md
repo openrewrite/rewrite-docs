@@ -1,15 +1,15 @@
 # Dependency management dependencies should have a version
 
-** org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion**
+**org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion**
 _If they don't have a version, they can't possibly affect dependency resolution anywhere, and can be safely removed._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
@@ -62,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion
 ```
 {% endcode %}

@@ -1,15 +1,15 @@
 # Find fields
 
-** org.openrewrite.java.search.FindFields**
+**org.openrewrite.java.search.FindFields**
 _Find uses of a field._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 

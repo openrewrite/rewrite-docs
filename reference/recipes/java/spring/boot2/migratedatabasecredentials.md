@@ -1,20 +1,20 @@
-# Migrate flyway and liquibase credentials.
+# Migrate flyway and liquibase credentials
 
-** org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials**
+**org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials**
 _If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may need to provide additional username and password properties. In earlier versions of Spring Boot, these settings were derived from `spring.datasource` properties but this turned out to be problematic for people that provided their own `DataSource` beans._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.29.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.29.0
+* version: 4.30.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.29.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.29.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
 }
 ```
 {% endcode %}
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.29.0</version>
+            <version>4.30.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -72,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.29.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials
 ```
 {% endcode %}
@@ -98,7 +98,7 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials
-displayName: Migrate flyway and liquibase credentials.
+displayName: Migrate flyway and liquibase credentials
 description: If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may need to provide additional username and password properties. In earlier versions of Spring Boot, these settings were derived from `spring.datasource` properties but this turned out to be problematic for people that provided their own `DataSource` beans.
 recipeList:
   - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials$MigrateDatabaseCredentialsForToolYaml

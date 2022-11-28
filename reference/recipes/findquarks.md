@@ -1,21 +1,15 @@
 # Find instances of type `Quark`
 
-** org.openrewrite.FindQuarks**
+**org.openrewrite.FindQuarks**
 _Find instances of type `Quark`._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.32.0
-
-## Options
-
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | includeAll | *Optional*. Flag to include all instances of type `Quark`, instead of only those with parser failures. Defaults to false. |
+* version: 7.33.0
 
 
 ## Usage
@@ -68,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.FindQuarks
 ```
 {% endcode %}

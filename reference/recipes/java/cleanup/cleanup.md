@@ -1,15 +1,15 @@
 # Code cleanup
 
-** org.openrewrite.java.cleanup.Cleanup**
+**org.openrewrite.java.cleanup.Cleanup**
 _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
@@ -62,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.Cleanup
 ```
 {% endcode %}
@@ -91,6 +91,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Fix missing braces](../../java/cleanup/needbraces.md)
 * [Operator wrapping](../../java/cleanup/operatorwrap.md)
 * [Remove unnecessary parentheses](../../java/cleanup/unnecessaryparentheses.md)
+* [Replace calls to `Thread.run()` with `Thread.start()`](../../java/cleanup/replacethreadrunwiththreadstart.md)
 
 {% endtab %}
 
@@ -118,6 +119,7 @@ recipeList:
   - org.openrewrite.java.cleanup.NeedBraces
   - org.openrewrite.java.cleanup.OperatorWrap
   - org.openrewrite.java.cleanup.UnnecessaryParentheses
+  - org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart
 
 ```
 {% endtab %}

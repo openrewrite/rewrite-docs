@@ -1,6 +1,6 @@
 # Use comparison rather than equality checks in for conditions
 
-** org.openrewrite.java.cleanup.NoEqualityInForCondition**
+**org.openrewrite.java.cleanup.NoEqualityInForCondition**
 _Testing for loop termination using an equality operator (`==` and `!=`) is dangerous, because it could set up an infinite loop. Using a relational operator instead makes it harder to accidentally write an infinite loop._
 
 ### Tags
@@ -9,11 +9,11 @@ _Testing for loop termination using an equality operator (`==` and `!=`) is dang
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
@@ -66,7 +66,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.NoEqualityInForCondition
 ```
 {% endcode %}

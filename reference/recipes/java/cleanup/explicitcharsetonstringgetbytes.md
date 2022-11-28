@@ -1,21 +1,21 @@
-# Set charset encoding explicitly when calling `String#getBytes`. This will not override any existing explicit encodings, even if they don't match the default encoding option.
+# Set charset encoding explicitly when calling `String#getBytes`
 
-** org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes**
-_This makes the behavior of the code platform neutral._
+**org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes**
+_This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | encoding | *Optional*. The default encoding to supply to the `getBytes` call. |
+| `String` | encoding | *Optional*. The default encoding to supply to the `getBytes` call |
 
 
 ## Usage
@@ -68,7 +68,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes
 ```
 {% endcode %}

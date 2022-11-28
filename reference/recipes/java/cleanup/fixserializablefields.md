@@ -1,6 +1,6 @@
 # Fields in a `Serializable` class should either be transient or serializable
 
-** org.openrewrite.java.cleanup.FixSerializableFields**
+**org.openrewrite.java.cleanup.FixSerializableFields**
 _The fields of a class that implements `Serializable` must also implement `Serializable` or be marked as `transient`.
 
 This recipe will look for any classes that directly or indirectly implement `Serializable` and for any member fields that are not serializable it will do one of two things:
@@ -21,11 +21,11 @@ NOTE: This recipe does NOT recursively modify newly `Serilazable` classes to cut
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 

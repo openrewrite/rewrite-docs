@@ -1,6 +1,6 @@
 # Spring Boot 2.x migration from Spring Boot 1.x
 
-** org.openrewrite.java.spring.boot2.SpringBoot1To2Migration**
+**org.openrewrite.java.spring.boot2.SpringBoot1To2Migration**
 _Migrates Spring Boot 1.x to latest version of 2.x, updating tests to JUnit 5, and applying 2.x best practices._
 
 ### Tags
@@ -13,16 +13,16 @@ _Migrates Spring Boot 1.x to latest version of 2.x, updating tests to JUnit 5, a
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.29.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.29.0
+* version: 4.30.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.29.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.29.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
 }
 ```
 {% endcode %}
@@ -66,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.29.0</version>
+            <version>4.30.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,8 +80,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.29.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.SpringBoot1To2Migration
 ```
 {% endcode %}

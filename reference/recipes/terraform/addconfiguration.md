@@ -1,15 +1,15 @@
 # Add Terraform configuration
 
-** org.openrewrite.terraform.AddConfiguration**
+**org.openrewrite.terraform.AddConfiguration**
 _If the configuration has a different value, leave it alone. If it is missing, add it._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/1.13.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/1.14.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 1.13.0
+* version: 1.14.0
 
 ## Options
 
@@ -37,7 +37,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:1.13.0 in your build file:
+Now that `com.yourorg.AddConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:1.14.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:1.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:1.14.0")
 }
 ```
 {% endcode %}
@@ -81,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>1.13.0</version>
+            <version>1.14.0</version>
           </dependency>
         </dependencies>
       </plugin>

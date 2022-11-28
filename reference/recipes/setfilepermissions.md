@@ -1,15 +1,15 @@
 # Set File Permission Attributes
 
-** org.openrewrite.SetFilePermissions**
+**org.openrewrite.SetFilePermissions**
 _Set a files read, write and executable permission attributes._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 

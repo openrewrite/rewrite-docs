@@ -1,15 +1,15 @@
 # Zip slip
 
-** org.openrewrite.java.security.ZipSlip**
+**org.openrewrite.java.security.ZipSlip**
 _Zip slip is an arbitrary file overwrite critical vulnerability, which typically results in remote command execution. A fuller description of this vulnerability is available in the [Snyk documentation](https://snyk.io/research/zip-slip-vulnerability) on it._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.19.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 1.18.0
+* version: 1.19.0
 
 ## Options
 
@@ -35,7 +35,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:1.18.0 in your build file:
+Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:1.19.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:1.18.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:1.19.0")
 }
 ```
 {% endcode %}
@@ -79,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>1.18.0</version>
+            <version>1.19.0</version>
           </dependency>
         </dependencies>
       </plugin>

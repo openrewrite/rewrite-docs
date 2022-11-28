@@ -1,6 +1,6 @@
 # Ensure storage account uses latest TLS version
 
-** org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion**
+**org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion**
 _Communication between an Azure Storage account and a client application is encrypted using Transport Layer Security (TLS). Microsoft recommends using the latest version of TLS for all your Microsoft Azure App Service web applications._
 
 ### Tags
@@ -11,16 +11,16 @@ _Communication between an Azure Storage account and a client application is encr
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/1.13.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/1.14.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 1.13.0
+* version: 1.14.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:1.13.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:1.14.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:1.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:1.14.0")
 }
 ```
 {% endcode %}
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>1.13.0</version>
+            <version>1.14.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:1.13.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:1.14.0 \
   -DactiveRecipes=org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion
 ```
 {% endcode %}

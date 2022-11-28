@@ -1,6 +1,6 @@
 # JUnit Jupiter migration from JUnit 4.x
 
-** org.openrewrite.java.testing.junit5.JUnit4to5Migration**
+**org.openrewrite.java.testing.junit5.JUnit4to5Migration**
 _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
@@ -10,16 +10,16 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.30.0
+* version: 1.31.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.30.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0")
 }
 ```
 {% endcode %}
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.30.0</version>
+            <version>1.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -77,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.30.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 \
   -DactiveRecipes=org.openrewrite.java.testing.junit5.JUnit4to5Migration
 ```
 {% endcode %}
@@ -106,7 +106,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension.md)
 * [Migrate from JUnit4 `@FixedMethodOrder` to JUnit5 `@TestMethodOrder`](../../../java/testing/junit5/usetestmethodorder.md)
 * [Migrate JUnit 4 `TestCase` to JUnit Jupiter](../../../java/testing/junit5/migratejunittestcase.md)
-* [JUnit4 Assert To JUnit Jupiter Assertions](../../../java/testing/junit5/asserttoassertions.md)
+* [JUnit4 `Assert` To JUnit Jupiter `Assertions`](../../../java/testing/junit5/asserttoassertions.md)
 * [JUnit4 `@Category` to JUnit Jupiter `@Tag`](../../../java/testing/junit5/categorytotag.md)
 * [Cleanup JUnit imports](../../../java/testing/junit5/cleanupjunitimports.md)
 * [Use JUnit Jupiter `@TempDir`](../../../java/testing/junit5/temporaryfoldertotempdir.md)
@@ -121,7 +121,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](../../../java/testing/junit5/updatemockwebserver.md)
 * [Use Vertx JUnit 5 Extension](../../../java/testing/junit5/vertxunittovertxjunit5.md)
 * [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](../../../java/testing/junit5/enclosedtonested.md)
-* [JUnit5 inner test classes should be annotated with `@Nested`.](../../../java/testing/junit5/addmissingnested.md)
+* [JUnit5 inner test classes should be annotated with `@Nested`](../../../java/testing/junit5/addmissingnested.md)
 * [Add `org.hamcrest:hamcrest` if it is used.](../../../java/testing/hamcrest/addhamcrestifused.md)
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `junit`
@@ -145,6 +145,14 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `junit-jupiter-params`
   * version: `5.x`
   * onlyIfUsing: `org.junit.jupiter.params.ParameterizedTest`
+* [Upgrade Maven plugin version](../../../maven/upgradepluginversion.md)
+  * groupId: `org.apache.maven.plugins`
+  * artifactId: `maven-surefire-plugin`
+  * newVersion: `2.22.x`
+* [Upgrade Maven plugin version](../../../maven/upgradepluginversion.md)
+  * groupId: `org.apache.maven.plugins`
+  * artifactId: `maven-failsafe-plugin`
+  * newVersion: `2.22.x`
 
 {% endtab %}
 
@@ -213,6 +221,14 @@ recipeList:
       artifactId: junit-jupiter-params
       version: 5.x
       onlyIfUsing: org.junit.jupiter.params.ParameterizedTest
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.apache.maven.plugins
+      artifactId: maven-surefire-plugin
+      newVersion: 2.22.x
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.apache.maven.plugins
+      artifactId: maven-failsafe-plugin
+      newVersion: 2.22.x
 
 ```
 {% endtab %}

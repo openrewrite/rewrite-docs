@@ -1,20 +1,20 @@
 # Migrate Spring Boot properties to 2.2
 
-** org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_2**
+**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_2**
 _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.29.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.29.0
+* version: 4.30.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.29.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.29.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
 }
 ```
 {% endcode %}
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.29.0</version>
+            <version>4.30.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -72,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.29.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.SpringBootProperties_2_2
 ```
 {% endcode %}
@@ -86,95 +86,49 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `logging.file`
   * newPropertyKey: `logging.file.name`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `logging.file`
-  * newPropertyKey: `logging.file.name`
-  * except: `[path]`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `logging.path`
   * newPropertyKey: `logging.file.path`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `logging.path`
-  * newPropertyKey: `logging.file.path`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jetty.accesslog.date-format`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `server.jetty.accesslog.date-format`
-  * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jetty.accesslog.extended-format`
   * newPropertyKey: `server.jetty.accesslog.format`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `server.jetty.accesslog.extended-format`
-  * newPropertyKey: `server.jetty.accesslog.format`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jetty.accesslog.locale`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `server.jetty.accesslog.locale`
-  * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jetty.accesslog.log-cookies`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `server.jetty.accesslog.log-cookies`
-  * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jetty.accesslog.log-latency`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `server.jetty.accesslog.log-latency`
-  * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jetty.accesslog.log-server`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `server.jetty.accesslog.log-server`
-  * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jetty.accesslog.time-zone`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `server.jetty.accesslog.time-zone`
-  * newPropertyKey: `server.jetty.accesslog.custom-format`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.tomcat.max-http-header-size`
   * newPropertyKey: `server.max-http-header-size`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `server.tomcat.max-http-header-size`
-  * newPropertyKey: `server.max-http-header-size`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.jmx-enabled`
   * newPropertyKey: `spring.datasource.tomcat.jmx-enabled`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `spring.datasource.jmx-enabled`
-  * newPropertyKey: `spring.datasource.tomcat.jmx-enabled`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.streams.cache-max-bytes-buffering`
   * newPropertyKey: `spring.kafka.streams.cache-max-size-buffering`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `spring.kafka.streams.cache-max-bytes-buffering`
-  * newPropertyKey: `spring.kafka.streams.cache-max-size-buffering`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.rabbitmq.template.queue`
   * newPropertyKey: `spring.rabbitmq.template.default-receive-queue`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `spring.rabbitmq.template.queue`
-  * newPropertyKey: `spring.rabbitmq.template.default-receive-queue`
-* [Change property key](../../../properties/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.reactor.stacktrace-mode.enabled`
   * newPropertyKey: `spring.reactor.debug-agent.enabled`
-* [Change property key](../../../yaml/changepropertykey.md)
-  * oldPropertyKey: `spring.reactor.stacktrace-mode.enabled`
-  * newPropertyKey: `spring.reactor.debug-agent.enabled`
-* [Change property key](../../../properties/changepropertykey.md)
-  * oldPropertyKey: `management.endpoints.jmx.unique-names`
-  * newPropertyKey: `spring.jmx.unique-names`
-* [Change property key](../../../yaml/changepropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.endpoints.jmx.unique-names`
   * newPropertyKey: `spring.jmx.unique-names`
 
@@ -188,95 +142,49 @@ name: org.openrewrite.java.spring.boot2.SpringBootProperties_2_2
 displayName: Migrate Spring Boot properties to 2.2
 description: Migrate properties found in `application.properties` and `application.yml`.
 recipeList:
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: logging.file
       newPropertyKey: logging.file.name
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: logging.file
-      newPropertyKey: logging.file.name
-      except: [path]
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: logging.path
       newPropertyKey: logging.file.path
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: logging.path
-      newPropertyKey: logging.file.path
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.date-format
       newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: server.jetty.accesslog.date-format
-      newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.extended-format
       newPropertyKey: server.jetty.accesslog.format
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: server.jetty.accesslog.extended-format
-      newPropertyKey: server.jetty.accesslog.format
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.locale
       newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: server.jetty.accesslog.locale
-      newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.log-cookies
       newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: server.jetty.accesslog.log-cookies
-      newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.log-latency
       newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: server.jetty.accesslog.log-latency
-      newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.log-server
       newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: server.jetty.accesslog.log-server
-      newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.time-zone
       newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: server.jetty.accesslog.time-zone
-      newPropertyKey: server.jetty.accesslog.custom-format
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.tomcat.max-http-header-size
       newPropertyKey: server.max-http-header-size
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: server.tomcat.max-http-header-size
-      newPropertyKey: server.max-http-header-size
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.datasource.jmx-enabled
       newPropertyKey: spring.datasource.tomcat.jmx-enabled
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: spring.datasource.jmx-enabled
-      newPropertyKey: spring.datasource.tomcat.jmx-enabled
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.kafka.streams.cache-max-bytes-buffering
       newPropertyKey: spring.kafka.streams.cache-max-size-buffering
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: spring.kafka.streams.cache-max-bytes-buffering
-      newPropertyKey: spring.kafka.streams.cache-max-size-buffering
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.rabbitmq.template.queue
       newPropertyKey: spring.rabbitmq.template.default-receive-queue
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: spring.rabbitmq.template.queue
-      newPropertyKey: spring.rabbitmq.template.default-receive-queue
-  - org.openrewrite.properties.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.reactor.stacktrace-mode.enabled
       newPropertyKey: spring.reactor.debug-agent.enabled
-  - org.openrewrite.yaml.ChangePropertyKey:
-      oldPropertyKey: spring.reactor.stacktrace-mode.enabled
-      newPropertyKey: spring.reactor.debug-agent.enabled
-  - org.openrewrite.properties.ChangePropertyKey:
-      oldPropertyKey: management.endpoints.jmx.unique-names
-      newPropertyKey: spring.jmx.unique-names
-  - org.openrewrite.yaml.ChangePropertyKey:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.endpoints.jmx.unique-names
       newPropertyKey: spring.jmx.unique-names
 

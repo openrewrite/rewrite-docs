@@ -19,6 +19,7 @@ _Recipes that find and eliminate vulnerable patterns in Java code._
 
 * [Marshalling](/reference/recipes/java/security/marshalling)
 * [Search](/reference/recipes/java/security/search)
+* [Secrets](/reference/recipes/java/security/secrets)
 * [Spring](/reference/recipes/java/security/spring)
 
 

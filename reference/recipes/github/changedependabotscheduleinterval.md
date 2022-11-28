@@ -1,6 +1,6 @@
 # Change dependabot schedule interval
 
-** org.openrewrite.github.ChangeDependabotScheduleInterval**
+**org.openrewrite.github.ChangeDependabotScheduleInterval**
 _Change the schedule interval for a given package-ecosystem in a `dependabot.yml` configuration file. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates)._
 
 ### Tags
@@ -11,11 +11,11 @@ _Change the schedule interval for a given package-ecosystem in a `dependabot.yml
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-github-actions), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.13.0/jar)
+[Github](https://github.com/openrewrite/rewrite-github-actions), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.14.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 1.13.0
+* version: 1.14.0
 
 ## Options
 
@@ -43,7 +43,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.13.0 in your build file:
+Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.14.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -62,7 +62,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.14.0")
 }
 ```
 {% endcode %}
@@ -87,7 +87,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>1.13.0</version>
+            <version>1.14.0</version>
           </dependency>
         </dependencies>
       </plugin>

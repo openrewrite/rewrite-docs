@@ -1,15 +1,15 @@
-# Finds flow between two methods.
+# Finds flow between two methods
 
-** org.openrewrite.java.search.FindFlowBetweenMethods**
+**org.openrewrite.java.search.FindFlowBetweenMethods**
 _Takes two patterns for the start/end methods to find flow between._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 
@@ -33,7 +33,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindFlowBetweenMethodsExample
-displayName: Finds flow between two methods. example
+displayName: Finds flow between two methods example
 recipeList:
   - org.openrewrite.java.search.FindFlowBetweenMethods:
       startMethodPattern: java.util.List add(..)

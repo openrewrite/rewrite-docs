@@ -1,15 +1,15 @@
-# Demonstrate rendering of `Markup` markers.
+# Demonstrate rendering of `Markup` markers
 
-** org.openrewrite.java.RecipeMarkupDemonstration**
+**org.openrewrite.java.RecipeMarkupDemonstration**
 _Tooling may decide to elide or display differently markup of different levels._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 
@@ -28,7 +28,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RecipeMarkupDemonstrationExample
-displayName: Demonstrate rendering of `Markup` markers. example
+displayName: Demonstrate rendering of `Markup` markers example
 recipeList:
   - org.openrewrite.java.RecipeMarkupDemonstration:
       level: null

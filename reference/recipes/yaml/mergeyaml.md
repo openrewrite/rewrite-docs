@@ -1,15 +1,15 @@
 # Merge YAML snippet
 
-** org.openrewrite.yaml.MergeYaml**
+**org.openrewrite.yaml.MergeYaml**
 _Merge a YAML snippet with an existing YAML document._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-yaml/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 
