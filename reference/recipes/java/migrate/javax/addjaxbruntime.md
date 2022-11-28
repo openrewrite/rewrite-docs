@@ -1,15 +1,24 @@
-# Add JAXB run-time dependency to a Maven project
+# Use latest JAXB API and runtime for Jakarta EE 8
 
-** org.openrewrite.java.migrate.javax.AddJaxbRuntime**
-_This recipe will add a JAXB run-time dependency to any maven project that has a transitive dependency on JAXB._
+**org.openrewrite.java.migrate.javax.AddJaxbRuntime**
+_Update maven build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.  The recipe will add a JAXB run-time, in `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
+
+### Tags
+
+* jaxb
+* glassfish
+* javax
+* javaee
+* java11
+* jakarta
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.13.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.14.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.13.0
+* version: 1.14.1
 
 ## Options
 
@@ -28,14 +37,14 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddJaxbRuntimeExample
-displayName: Add JAXB run-time dependency to a Maven project example
+displayName: Use latest JAXB API and runtime for Jakarta EE 8 example
 recipeList:
   - org.openrewrite.java.migrate.javax.AddJaxbRuntime:
       runtime: glassfish
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddJaxbRuntimeExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.13.0 in your build file:
+Now that `com.yourorg.AddJaxbRuntimeExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.14.1 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -54,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.14.1")
 }
 ```
 {% endcode %}
@@ -79,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.13.0</version>
+            <version>1.14.1</version>
           </dependency>
         </dependencies>
       </plugin>

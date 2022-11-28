@@ -1,15 +1,15 @@
 # Make all `Recipe#getVisitor()` methods public
 
-** org.openrewrite.java.recipes.PublicGetVisitor**
+**org.openrewrite.java.recipes.PublicGetVisitor**
 _It would be a breaking API change to increase the visibility of the method by default, but any recipe can increase visibility of the `Recipe` class. Making them public makes recipes easier to use in other recipes in unexpected ways._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
@@ -62,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.java.recipes.PublicGetVisitor
 ```
 {% endcode %}

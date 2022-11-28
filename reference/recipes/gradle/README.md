@@ -4,6 +4,7 @@
 
 * [Activate Style in Gradle Project](activatestyle.md)
 * [Add `@DelegatesTo` to the Gradle API](adddelegatestogradleapi.md)
+* [Add Gradle property](addproperty.md)
 * [Add Gradle wrapper](addgradlewrapper.md)
 * [Change Gradle dependency artifactId](changedependencyartifactid.md)
 * [Change Gradle dependency group id](changedependencygroupid.md)
@@ -15,11 +16,13 @@
 * [Remove a Gradle dependency](removegradledependency.md)
 * [Remove repository](removerepository.md)
 * [Update Gradle wrapper](updategradlewrapper.md)
-* [Update a Gradle plugin by id](upgradepluginversion.md)
 * [Use `Map` notation for Gradle dependency declarations](dependencyusemapnotation.md)
 * [Use `String` notation for Gradle dependency declarations](dependencyusestringnotation.md)
 
 ## Subcategories
 
-* [Search](search/)
-* [Security](../maven/security/)
+* [Plugins](/reference/recipes/gradle/plugins)
+* [Search](/reference/recipes/gradle/search)
+* [Security](/reference/recipes/gradle/security)
+
+

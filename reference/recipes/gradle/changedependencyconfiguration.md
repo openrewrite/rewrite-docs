@@ -1,15 +1,15 @@
 # Change a Gradle dependency configuration
 
-** org.openrewrite.gradle.ChangeDependencyConfiguration**
+**org.openrewrite.gradle.ChangeDependencyConfiguration**
 _Finds dependencies declared in `build.gradle` files._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 
@@ -41,7 +41,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeDependencyConfigurationExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.32.0 in your build file:
+Now that `com.yourorg.ChangeDependencyConfigurationExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.33.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -60,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.32.0")
+    rewrite("org.openrewrite:rewrite-gradle:7.33.0")
 }
 ```
 {% endcode %}
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.32.0</version>
+            <version>7.33.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -1,21 +1,27 @@
 # Parameterize logging statements
 
-** org.openrewrite.java.logging.ParameterizedLogging**
+**org.openrewrite.java.logging.ParameterizedLogging**
 _Transform logging statements using concatenation for messages and variables into a parameterized format. For example, `logger.info("hi " + userName)` becomes `logger.info("hi {}", userName)`._
+
+### Tags
+
+* RSPEC-2629
+* RSPEC-3457
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.14.0/jar)
+[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 1.14.0
+* version: 1.15.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | methodPattern | A method used to find matching statements to parameterize. |
+| `Boolean` | removeToString | *Optional*. Optionally remove `toString(`) method invocations from Object parameters. |
 
 
 ## Usage
@@ -32,10 +38,11 @@ displayName: Parameterize logging statements example
 recipeList:
   - org.openrewrite.java.logging.ParameterizedLogging:
       methodPattern: org.slf4j.Logger info(..)
+      removeToString: null
 ```
 {% endcode %}
 
-Now that `com.yourorg.ParameterizedLoggingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.14.0 in your build file:
+Now that `com.yourorg.ParameterizedLoggingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -54,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0")
 }
 ```
 {% endcode %}
@@ -79,7 +86,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.14.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>

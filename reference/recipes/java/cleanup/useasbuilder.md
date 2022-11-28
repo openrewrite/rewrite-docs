@@ -1,15 +1,15 @@
 # Use the builder pattern where possible
 
-** org.openrewrite.java.cleanup.UseAsBuilder**
+**org.openrewrite.java.cleanup.UseAsBuilder**
 _When an API has been designed as a builder, use it that way rather than as a series of setter calls._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 

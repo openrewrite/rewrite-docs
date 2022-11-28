@@ -1,6 +1,6 @@
 # Migrate Log4j 1.x to Log4j 2.x
 
-** org.openrewrite.java.logging.log4j.Log4j1ToLog4j2**
+**org.openrewrite.java.logging.log4j.Log4j1ToLog4j2**
 _Migrates Log4j 1.x to Log4j 2.x._
 
 ### Tags
@@ -10,16 +10,16 @@ _Migrates Log4j 1.x to Log4j 2.x._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.14.0/jar)
+[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 1.14.0
+* version: 1.15.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.14.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0")
 }
 ```
 {% endcode %}
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.14.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -77,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.14.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 \
   -DactiveRecipes=org.openrewrite.java.logging.log4j.Log4j1ToLog4j2
 ```
 {% endcode %}
@@ -117,6 +117,9 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `log4j`
   * artifactId: `log4j`
+* [Remove Maven dependency](../../../maven/removedependency.md)
+  * groupId: `ch.qos.reload4j`
+  * artifactId: `reload4j`
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.apache.logging.log4j`
   * artifactId: `log4j-api`
@@ -127,6 +130,18 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `log4j-core`
   * version: `latest.release`
   * onlyIfUsing: `org.apache.logging.log4j.*`
+* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+  * oldGroupId: `org.slf4j`
+  * oldArtifactId: `slf4j-log4j12`
+  * newGroupId: `org.apache.logging.log4j`
+  * newArtifactId: `log4j-slf4j-impl`
+  * newVersion: `latest.release`
+* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+  * oldGroupId: `org.slf4j`
+  * oldArtifactId: `slf4j-reload4j`
+  * newGroupId: `org.apache.logging.log4j`
+  * newArtifactId: `log4j-slf4j-impl`
+  * newVersion: `latest.release`
 
 {% endtab %}
 
@@ -167,6 +182,9 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: log4j
       artifactId: log4j
+  - org.openrewrite.maven.RemoveDependency:
+      groupId: ch.qos.reload4j
+      artifactId: reload4j
   - org.openrewrite.maven.AddDependency:
       groupId: org.apache.logging.log4j
       artifactId: log4j-api
@@ -177,6 +195,18 @@ recipeList:
       artifactId: log4j-core
       version: latest.release
       onlyIfUsing: org.apache.logging.log4j.*
+  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+      oldGroupId: org.slf4j
+      oldArtifactId: slf4j-log4j12
+      newGroupId: org.apache.logging.log4j
+      newArtifactId: log4j-slf4j-impl
+      newVersion: latest.release
+  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+      oldGroupId: org.slf4j
+      oldArtifactId: slf4j-reload4j
+      newGroupId: org.apache.logging.log4j
+      newArtifactId: log4j-slf4j-impl
+      newVersion: latest.release
 
 ```
 {% endtab %}

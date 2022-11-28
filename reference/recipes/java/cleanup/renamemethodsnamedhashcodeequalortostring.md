@@ -1,6 +1,6 @@
-# Rename methods named `hashcode`, `equal`, or `tostring`.
+# Rename methods named `hashcode`, `equal`, or `tostring`
 
-** org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring**
+**org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring**
 _Methods should not be named `hashcode`, `equal`, or `tostring`. Any of these are confusing as they appear to be intended as overridden methods from the `Object` base class, despite being case-insensitive._
 
 ### Tags
@@ -9,11 +9,11 @@ _Methods should not be named `hashcode`, `equal`, or `tostring`. Any of these ar
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
@@ -66,7 +66,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring
 ```
 {% endcode %}

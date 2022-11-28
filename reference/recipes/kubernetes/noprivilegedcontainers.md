@@ -1,6 +1,6 @@
 # No privileged containers
 
-** org.openrewrite.kubernetes.NoPrivilegedContainers**
+**org.openrewrite.kubernetes.NoPrivilegedContainers**
 _Privileged containers are containers that have all of the root capabilities of a host machine, allowing access to resources that are not accessible in ordinary containers._
 
 ### Tags
@@ -9,16 +9,16 @@ _Privileged containers are containers that have all of the root capabilities of 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.24.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.25.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.24.0
+* version: 1.25.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.24.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.25.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.24.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.25.0")
 }
 ```
 {% endcode %}
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.24.0</version>
+            <version>1.25.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,8 +76,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:1.24.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:1.25.0 \
   -DactiveRecipes=org.openrewrite.kubernetes.NoPrivilegedContainers
 ```
 {% endcode %}

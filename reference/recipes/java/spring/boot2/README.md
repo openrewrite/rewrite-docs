@@ -2,7 +2,7 @@
 
 ## Recipes
 
-* [Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource.](databasecomponentandbeaninitializationordering.md)
+* [Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource](databasecomponentandbeaninitializationordering.md)
 * [JUnit Jupiter for Spring Boot 2.x projects](springboot2junit4to5migration.md)
 * [Merge Spring `bootstrap.yml` with `application.yml`](mergebootstrapyamlwithapplicationyaml.md)
 * [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](outputcaptureextension.md)
@@ -17,7 +17,8 @@
 * [Migrate Spring Boot properties to 2.7](springbootproperties_2_7.md)
 * [Migrate deprecated ActuatorMediaType to ApiVersion#getProducedMimeType](migrateactuatormediatypetoapiversion.md)
 * [Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL](migratehsqlembeddeddatabaseconnection.md)
-* [Migrate flyway and liquibase credentials.](migratedatabasecredentials.md)
+* [Migrate flyway and liquibase credentials](migratedatabasecredentials.md)
+* [Migrate hibernate validator constraints to javax.](migratehibernatecontraintstojavax.md)
 * [Migrate multi-condition `@ConditionalOnBean` annotations](conditionalonbeananynestedcondition.md)
 * [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](migrateloggingsystempropertyconstants.md)
 * [Move SAML relying party identity provider property to asserting party](samlrelyingpartypropertyapplicationpropertiesmove.md)
@@ -27,7 +28,6 @@
 * [Replace `EnvironmentTestUtils` with `TestPropertyValues`](replacedeprecatedenvironmenttestutils.md)
 * [Spring Boot 2.x best practices](springboot2bestpractices.md)
 * [Spring Boot 2.x migration from Spring Boot 1.x](springboot1to2migration.md)
-* [Spring Boot 3.x migration from Spring Boot 2.x](springboot2to3migration.md)
 * [Spring Security 5.4 introduces the ability to configure HttpSecurity by creating a SecurityFilterChain bean](websecurityconfigureradapter.md)
 * [Upgrade to Spring Boot 2.0 from 1.x](upgradespringboot_2_0.md)
 * [Upgrade to Spring Boot 2.1](upgradespringboot_2_1.md)
@@ -44,8 +44,6 @@
 * [Use `ErrorProperties#IncludeStacktrace.ON_PARAM`](migrateerrorpropertiesincludestacktraceconstants.md)
 * [Use `HttpMessageConverters`](migratehttpmessageconverterspackagename.md)
 * [Use `MultipartConfigFactory` with `DataSize` arguments](migratemultipartconfigfactory.md)
-* [Use `NotBlank`](migratenotblankpackagename.md)
-* [Use `NotEmpty`](migratenotemptypackagename.md)
 * [Use `PingHealthIndicator`](migrateabstracthealthindicatortopinghealthindicator.md)
 * [Use `RestClientBuilderCustomizer`](migraterestclientbuildercustomizerpackagename.md)
 * [Use `RestTemplateBuilder#basicAuthentication`](migrateresttemplatebuilderbasicauthorization.md)

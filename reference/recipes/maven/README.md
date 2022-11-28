@@ -7,6 +7,7 @@
 * [Add Maven plugin](addplugin.md)
 * [Add Maven plugin dependencies](addplugindependency.md)
 * [Add Maven project property](addproperty.md)
+* [Add Repository](addrepository.md)
 * [Add a comment to a `Maven` dependency](addcommenttomavendependency.md)
 * [Change Maven Parent Pom](changeparentpom.md)
 * [Change Maven dependency classifier](changedependencyclassifier.md)
@@ -33,8 +34,10 @@
 
 ## Subcategories
 
-* [Cleanup](cleanup/)
-* [Search](search/)
-* [Security](../gradle/security/)
-* [Spring](spring/)
-* [Utilities](utilities/)
+* [Cleanup](/reference/recipes/maven/cleanup)
+* [Search](/reference/recipes/maven/search)
+* [Security](/reference/recipes/maven/security)
+* [Spring](/reference/recipes/maven/spring)
+* [Utilities](/reference/recipes/maven/utilities)
+
+

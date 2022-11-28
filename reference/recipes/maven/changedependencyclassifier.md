@@ -1,22 +1,22 @@
 # Change Maven dependency classifier
 
-** org.openrewrite.maven.ChangeDependencyClassifier**
+**org.openrewrite.maven.ChangeDependencyClassifier**
 _Add or alter the classifier of the specified dependency._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | newClassifier | *Optional*. Classifier to apply to specified Maven dependency. May be omitted, which indicates that no classifier should be added and any existing scope be removed from the dependency. |
 
 

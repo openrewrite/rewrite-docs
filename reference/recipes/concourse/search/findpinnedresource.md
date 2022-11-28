@@ -1,15 +1,15 @@
 # Find pinned resources by type
 
-** org.openrewrite.concourse.search.FindPinnedResource**
+**org.openrewrite.concourse.search.FindPinnedResource**
 _Find resources of a particular type that have pinned versions._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-concourse), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-concourse/1.13.0/jar)
+[Github](https://github.com/openrewrite/rewrite-concourse), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-concourse/1.14.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 1.13.0
+* version: 1.14.0
 
 ## Options
 
@@ -20,7 +20,7 @@ _Find resources of a particular type that have pinned versions._
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-concourse:1.13.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-concourse:1.14.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:1.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:1.14.0")
 }
 ```
 {% endcode %}
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>1.13.0</version>
+            <version>1.14.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-concourse:1.13.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-concourse:1.14.0 \
   -DactiveRecipes=org.openrewrite.concourse.search.FindPinnedResource
 ```
 {% endcode %}

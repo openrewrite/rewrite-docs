@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Assertion arguments should be passed in the correct order](assertionsargumentorder.md)
 * [Include an assertion in tests](testsshouldincludeassertions.md)
 * [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](asserttruecomparisontoassertequals.md)
 * [Remove empty tests without comments](removeemptytests.md)

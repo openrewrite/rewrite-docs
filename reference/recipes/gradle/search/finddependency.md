@@ -1,20 +1,20 @@
 # Find Gradle dependency
 
-** org.openrewrite.gradle.search.FindDependency**
+**org.openrewrite.gradle.search.FindDependency**
 _Finds dependencies declared in `build.gradle` files. See the [reference](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph) on Gradle configurations or the diagram below for a description of what configuration to use. A project's compile and runtime classpath is based on these configurations.
 
 <img alt="Gradle compile classpath" src="https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-main.png" width="200px"/>
  A project's test classpath is based on these configurations.
 
-<img alt="Gradle test classpath" src="https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-test.png" width="200px"/>_
+<img alt="Gradle test classpath" src="https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-test.png" width="200px"/>._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.32.0
+* version: 7.33.0
 
 ## Options
 
@@ -44,7 +44,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindDependencyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.32.0 in your build file:
+Now that `com.yourorg.FindDependencyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.33.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.32.0")
+    rewrite("org.openrewrite:rewrite-gradle:7.33.0")
 }
 ```
 {% endcode %}
@@ -88,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.32.0</version>
+            <version>7.33.0</version>
           </dependency>
         </dependencies>
       </plugin>

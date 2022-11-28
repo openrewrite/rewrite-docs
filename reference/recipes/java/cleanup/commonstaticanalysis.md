@@ -1,15 +1,15 @@
 # Common static analysis issues
 
-** org.openrewrite.java.cleanup.CommonStaticAnalysis**
-_Resolve common static analysis issues discovered through 3rd party tools_
+**org.openrewrite.java.cleanup.CommonStaticAnalysis**
+_Resolve common static analysis issues discovered through 3rd party tools._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.32.0
+* version: 7.33.0
 
 
 ## Usage
@@ -62,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis
 ```
 {% endcode %}
@@ -89,10 +89,12 @@ Recipes can also be activated directly from the command line by adding the argum
 * [`Externalizable` classes have no-arguments constructor](../../java/cleanup/externalizablehasnoargsconstructor.md)
 * [Fall through](../../java/cleanup/fallthrough.md)
 * [Finalize classes with private constructors](../../java/cleanup/finalclass.md)
+* [Fix `String#format` and `String#formatted` expressions](../../java/cleanup/fixstringformatexpressions.md)
 * [`for` loop counters incremented in update](../../java/cleanup/forloopincrementinupdate.md)
 * [Use `indexOf(String, int)`](../../java/cleanup/indexofchecksshoulduseastartposition.md)
 * [`indexOf()` replaceable by `contains()`](../../java/cleanup/indexofreplaceablebycontains.md)
 * [`indexOf` should not compare greater than zero](../../java/cleanup/indexofshouldnotcomparegreaterthanzero.md)
+* [Inline variable](../../java/cleanup/inlinevariable.md)
 * [Use `Collection#isEmpty()` instead of comparing `size()`](../../java/cleanup/isemptycalloncollections.md)
 * [Simplify lambda blocks to expressions](../../java/cleanup/lambdablocktoexpression.md)
 * [Rename packages to lowercase](../../java/cleanup/lowercasepackage.md)
@@ -102,7 +104,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [No multiple variable declarations](../../java/cleanup/multiplevariabledeclarations.md)
 * [Fix missing braces](../../java/cleanup/needbraces.md)
 * [Nested enums are not static](../../java/cleanup/nestedenumsarenotstatic.md)
-* [Change StringBuilder and StringBuffer character constructor arg to String](../../java/cleanup/newstringbuilderbufferwithcharargument.md)
+* [Change `StringBuilder` and `StringBuffer` character constructor argument to `String`](../../java/cleanup/newstringbuilderbufferwithcharargument.md)
 * [No double brace initialization](../../java/cleanup/nodoublebraceinitialization.md)
 * [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](../../java/cleanup/noemptycollectionwithrawtype.md)
 * [Use comparison rather than equality checks in for conditions](../../java/cleanup/noequalityinforcondition.md)
@@ -116,7 +118,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Redundant file creation](../../java/cleanup/redundantfilecreation.md)
 * [Remove extra semicolons](../../java/cleanup/removeextrasemicolons.md)
 * [Reformat local variable names to camelCase](../../java/cleanup/renamelocalvariablestocamelcase.md)
-* [Rename methods named `hashcode`, `equal`, or `tostring`.](../../java/cleanup/renamemethodsnamedhashcodeequalortostring.md)
+* [Rename methods named `hashcode`, `equal`, or `tostring`](../../java/cleanup/renamemethodsnamedhashcodeequalortostring.md)
 * [Reformat private field names to camelCase](../../java/cleanup/renameprivatefieldstocamelcase.md)
 * [Use method references in lambda](../../java/cleanup/replacelambdawithmethodreference.md)
 * [Simplify boolean expression](../../java/cleanup/simplifybooleanexpression.md)
@@ -127,6 +129,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Unnecessary explicit type arguments](../../java/cleanup/unnecessaryexplicittypearguments.md)
 * [Remove unnecessary parentheses](../../java/cleanup/unnecessaryparentheses.md)
 * [Remove Nullable and CheckForNull annotations from primitives](../../java/cleanup/unnecessaryprimitiveannotations.md)
+* [Upper case literal suffixes](../../java/cleanup/uppercaseliteralsuffixes.md)
 * [Use diamond operator](../../java/cleanup/usediamondoperator.md)
 * [No C-style array declarations](../../java/cleanup/usejavastylearraydeclarations.md)
 * [Use lambdas where possible](../../java/cleanup/uselambdaforfunctionalinterface.md)
@@ -141,7 +144,7 @@ Recipes can also be activated directly from the command line by adding the argum
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.cleanup.CommonStaticAnalysis
 displayName: Common static analysis issues
-description: Resolve common static analysis issues discovered through 3rd party tools
+description: Resolve common static analysis issues discovered through 3rd party tools.
 recipeList:
   - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable
   - org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet
@@ -157,10 +160,12 @@ recipeList:
   - org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor
   - org.openrewrite.java.cleanup.FallThrough
   - org.openrewrite.java.cleanup.FinalClass
+  - org.openrewrite.java.cleanup.FixStringFormatExpressions
   - org.openrewrite.java.cleanup.ForLoopIncrementInUpdate
   - org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition
   - org.openrewrite.java.cleanup.IndexOfReplaceableByContains
   - org.openrewrite.java.cleanup.IndexOfShouldNotCompareGreaterThanZero
+  - org.openrewrite.java.cleanup.InlineVariable
   - org.openrewrite.java.cleanup.IsEmptyCallOnCollections
   - org.openrewrite.java.cleanup.LambdaBlockToExpression
   - org.openrewrite.java.cleanup.LowercasePackage
@@ -195,6 +200,7 @@ recipeList:
   - org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments
   - org.openrewrite.java.cleanup.UnnecessaryParentheses
   - org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations
+  - org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes
   - org.openrewrite.java.cleanup.UseDiamondOperator
   - org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations
   - org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface

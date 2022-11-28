@@ -1,15 +1,15 @@
 # Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement
 
-** org.openrewrite.java.testing.junit5.RemoveObsoleteRunners**
+**org.openrewrite.java.testing.junit5.RemoveObsoleteRunners**
 _Some JUnit4 `@RunWith` annotations do not require replacement with an equivalent JUnit Jupiter `@ExtendsWith` annotation. This can be used to remove those runners that either do not have a JUnit Jupiter equivalent or do not require a replacement as part of JUnit 4 to 5 migration._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.30.0
+* version: 1.31.0
 
 ## Options
 
@@ -35,7 +35,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.30.0 in your build file:
+Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0")
 }
 ```
 {% endcode %}
@@ -79,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.30.0</version>
+            <version>1.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
