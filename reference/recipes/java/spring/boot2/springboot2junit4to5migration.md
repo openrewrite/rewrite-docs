@@ -1,7 +1,6 @@
 # JUnit Jupiter for Spring Boot 2.x projects
 
-**org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration**
-_Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
+**org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration** _Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
 
@@ -17,7 +16,6 @@ _Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -93,17 +91,16 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
-* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](../../../java/spring/boot2/outputcaptureextension.md)
-* [Remove unnecessary Spring `@RunWith`](../../../java/spring/boot2/unnecessaryspringrunwith.md)
-* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
-* [Remove obsolete Spring JUnit runners](../../../java/spring/boot2/removeobsoletespringrunners.md)
+* [JUnit Jupiter migration from JUnit 4.x](../../testing/junit5/junit4to5migration.md)
+* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](outputcaptureextension.md)
+* [Remove unnecessary Spring `@RunWith`](unnecessaryspringrunwith.md)
+* [Remove `@SpringExtension`](unnecessaryspringextension.md)
+* [Remove obsolete Spring JUnit runners](removeobsoletespringrunners.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-tools`
   * version: `2.x`
   * onlyIfUsing: `org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -129,7 +126,6 @@ recipeList:
       artifactId: spring-boot-tools
       version: 2.x
       onlyIfUsing: org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension
-
 ```
 {% endtab %}
 {% endtabs %}

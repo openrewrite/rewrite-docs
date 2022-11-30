@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.annotation` packages to `jakarta.annotation`
+# Migrate deprecated javax.annotation packages to jakarta.annotation
 
-**org.openrewrite.java.migrate.jakarta.JavaxAnnotationPackageToJakarta**
-_Change type of classes in the `javax.annotation` package to jakarta._
+**org.openrewrite.java.migrate.jakarta.JavaxAnnotationPackageToJakarta** _Change type of classes in the `javax.annotation` package to jakarta._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Change type of classes in the `javax.annotation` package to jakarta._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -92,28 +90,27 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.Generated`
   * newFullyQualifiedTypeName: `jakarta.annotation.Generated`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.ManagedBean`
   * newFullyQualifiedTypeName: `jakarta.annotation.ManagedBean`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.PostConstruct`
   * newFullyQualifiedTypeName: `jakarta.annotation.PostConstruct`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.PreDestroy`
   * newFullyQualifiedTypeName: `jakarta.annotation.PreDestroy`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.Priority`
   * newFullyQualifiedTypeName: `jakarta.annotation.Priority`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.Resource`
   * newFullyQualifiedTypeName: `jakarta.annotation.Resource`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.Resources`
   * newFullyQualifiedTypeName: `jakarta.annotation.Resources`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -149,7 +146,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.annotation.Resources
       newFullyQualifiedTypeName: jakarta.annotation.Resources
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Find unhandled TERM signals
 
-**org.openrewrite.cloudsuitability.FindUnhandledTermSignal**
-_For containerization, the TERM signal must be handled._
+**org.openrewrite.cloudsuitability.FindUnhandledTermSignal** _For containerization, the TERM signal must be handled._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _For containerization, the TERM signal must be handled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find method usages](../java/search/findmethods.md)
   * methodPattern: `java.lang.Runtime addShutdownHook(..)`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindMethods:
       methodPattern: java.lang.Runtime addShutdownHook(..)
-
 ```
 {% endtab %}
 {% endtabs %}

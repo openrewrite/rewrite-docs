@@ -1,7 +1,6 @@
-# Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`
+# Use Collections#emptyList(), emptyMap(), and emptySet()
 
-**org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType**
-_Replaces `Collections#EMPTY_..` with methods that return generic types._
+**org.openrewrite.java.cleanup.NoEmptyCollectionWithRawType** _Replaces `Collections#EMPTY_..` with methods that return generic types._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Replaces `Collections#EMPTY_..` with methods that return generic types._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

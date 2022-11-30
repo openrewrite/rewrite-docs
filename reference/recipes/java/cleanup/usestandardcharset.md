@@ -1,7 +1,6 @@
-# Use `StandardCharset` constants
+# Use StandardCharset constants
 
-**org.openrewrite.java.cleanup.UseStandardCharset**
-_Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharset` constant._
+**org.openrewrite.java.cleanup.UseStandardCharset** _Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharset` constant._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardChars
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

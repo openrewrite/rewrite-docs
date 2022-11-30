@@ -1,7 +1,6 @@
 # Remove empty blocks
 
-**org.openrewrite.java.cleanup.EmptyBlock**
-_Remove empty blocks that effectively do nothing._
+**org.openrewrite.java.cleanup.EmptyBlock** _Remove empty blocks that effectively do nothing._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Remove empty blocks that effectively do nothing._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

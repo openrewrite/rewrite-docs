@@ -1,7 +1,6 @@
 # Find YAML properties
 
-**org.openrewrite.yaml.search.FindProperty**
-_Find a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e.  as Spring Boot interprets `application.yml` files._
+**org.openrewrite.yaml.search.FindProperty** _Find a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e. as Spring Boot interprets `application.yml` files._
 
 ## Source
 
@@ -13,16 +12,14 @@ _Find a YAML property. Nested YAML mappings are interpreted as dot separated pro
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | propertyKey | The key to look for. Glob is supported. |
-| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
-
+| Type      | Name           | Description                                                                                                                                                                                                                                                                                   |
+| --------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | propertyKey    | The key to look for. Glob is supported.                                                                                                                                                                                                                                                       |
+| `Boolean` | relaxedBinding | _Optional_. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false` to use exact matching. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindPropertyExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindPropertyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       relaxedBinding: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.FindPropertyExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

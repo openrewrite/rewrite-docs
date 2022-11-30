@@ -1,7 +1,6 @@
-# Find uses of `@Repeatable` annotations
+# Find uses of @Repeatable annotations
 
-**org.openrewrite.java.search.FindRepeatableAnnotations**
-_Java 8 introduced the concept of `@Repeatable` annotations._
+**org.openrewrite.java.search.FindRepeatableAnnotations** _Java 8 introduced the concept of `@Repeatable` annotations._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Java 8 introduced the concept of `@Repeatable` annotations._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
-# Use `System.lineSeparator()`
+# Use System.lineSeparator()
 
-**org.openrewrite.java.migrate.apache.commons.io.UseSystemLineSeparator**
-_Migrate `IOUtils.LINE_SEPARATOR` to `System.lineSeparator()`._
+**org.openrewrite.java.migrate.apache.commons.io.UseSystemLineSeparator** _Migrate `IOUtils.LINE_SEPARATOR` to `System.lineSeparator()`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Migrate `IOUtils.LINE_SEPARATOR` to `System.lineSeparator()`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -90,12 +88,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change static field access to static method access](../../../../../java/changestaticfieldtomethod.md)
+* [Change static field access to static method access](../../../../changestaticfieldtomethod.md)
   * oldClassName: `org.apache.commons.io.IOUtils`
   * oldFieldName: `LINE_SEPARATOR`
   * newClassName: `java.lang.System`
   * newMethodName: `lineSeparator`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
       oldFieldName: LINE_SEPARATOR
       newClassName: java.lang.System
       newMethodName: lineSeparator
-
 ```
 {% endtab %}
 {% endtabs %}

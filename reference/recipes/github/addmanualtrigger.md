@@ -1,7 +1,6 @@
 # Add manual workflow trigger
 
-**org.openrewrite.github.AddManualTrigger**
-_You can manually trigger workflow runs. To trigger specific workflows in a repository, use the `workflow_dispatch` event._
+**org.openrewrite.github.AddManualTrigger** _You can manually trigger workflow runs. To trigger specific workflows in a repository, use the `workflow_dispatch` event._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _You can manually trigger workflow runs. To trigger specific workflows in a repo
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
 * version: 1.14.0
-
 
 ## Usage
 
@@ -95,7 +93,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * yaml: `workflow_dispatch:`
   * acceptTheirs: `true`
   * fileMatcher: `.github/workflows/*.yml`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
       yaml: workflow_dispatch:
       acceptTheirs: true
       fileMatcher: .github/workflows/*.yml
-
 ```
 {% endtab %}
 {% endtabs %}

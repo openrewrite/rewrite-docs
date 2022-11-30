@@ -1,7 +1,6 @@
 # Remove unnecessary parentheses
 
-**org.openrewrite.java.cleanup.UnnecessaryParentheses**
-_Removes unnecessary parentheses from code where extra parentheses pairs are redundant._
+**org.openrewrite.java.cleanup.UnnecessaryParentheses** _Removes unnecessary parentheses from code where extra parentheses pairs are redundant._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Removes unnecessary parentheses from code where extra parentheses pairs are red
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -36,7 +34,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

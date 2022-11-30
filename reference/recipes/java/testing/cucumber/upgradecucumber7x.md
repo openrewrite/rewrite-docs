@@ -1,7 +1,6 @@
 # Upgrade to Cucumber-JVM 7.x
 
-**org.openrewrite.java.testing.cucumber.UpgradeCucumber7x**
-_Upgrade to Cucumber-JVM 7.x from any previous version._
+**org.openrewrite.java.testing.cucumber.UpgradeCucumber7x** _Upgrade to Cucumber-JVM 7.x from any previous version._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Upgrade to Cucumber-JVM 7.x from any previous version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,16 +89,15 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Cucumber-JVM 5.x](../../../java/testing/cucumber/upgradecucumber5x.md)
-* [Cucumber-Java8 migration to Cucumber-Java](../../../java/testing/cucumber/cucumberjava8tojava.md)
-* [Drop SummaryPrinter](../../../java/testing/cucumber/dropsummaryprinter.md)
-* [Replace Cucumber-Java step definition regexes with Cucumber expressions](../../../java/testing/cucumber/regextocucumberexpression.md)
-* [Cucumber to Junit Test Suites](../../../java/testing/cucumber/cucumbertojunitplatformsuite.md)
+* [Upgrade to Cucumber-JVM 5.x](upgradecucumber5x.md)
+* [Cucumber-Java8 migration to Cucumber-Java](cucumberjava8tojava.md)
+* [Drop SummaryPrinter](dropsummaryprinter.md)
+* [Replace Cucumber-Java step definition regexes with Cucumber expressions](regextocucumberexpression.md)
+* [Cucumber to Junit Test Suites](cucumbertojunitplatformsuite.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `io.cucumber`
   * artifactId: `*`
   * newVersion: `7.x`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -123,7 +120,6 @@ recipeList:
       groupId: io.cucumber
       artifactId: *
       newVersion: 7.x
-
 ```
 {% endtab %}
 {% endtabs %}

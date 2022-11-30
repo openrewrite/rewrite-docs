@@ -1,7 +1,6 @@
 # Simplify boolean expression
 
-**org.openrewrite.java.cleanup.SimplifyBooleanExpression**
-_Checks for over-complicated boolean expressions. Finds code like `if (b == true)`, `b || true`, `!false`, etc._
+**org.openrewrite.java.cleanup.SimplifyBooleanExpression** _Checks for over-complicated boolean expressions. Finds code like `if (b == true)`, `b || true`, `!false`, etc._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Checks for over-complicated boolean expressions. Finds code like `if (b == true
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

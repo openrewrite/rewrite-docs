@@ -1,7 +1,6 @@
 # Dependency management dependencies should have a version
 
-**org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion**
-_If they don't have a version, they can't possibly affect dependency resolution anywhere, and can be safely removed._
+**org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion** _If they don't have a version, they can't possibly affect dependency resolution anywhere, and can be safely removed._
 
 ## Source
 
@@ -10,7 +9,6 @@ _If they don't have a version, they can't possibly affect dependency resolution 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

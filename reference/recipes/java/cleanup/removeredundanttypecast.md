@@ -1,7 +1,6 @@
 # Remove redundant casts
 
-**org.openrewrite.java.cleanup.RemoveRedundantTypeCast**
-_Removes unnecessary type casts. Does not currently check casts in lambdas, class constructors, and method invocations._
+**org.openrewrite.java.cleanup.RemoveRedundantTypeCast** _Removes unnecessary type casts. Does not currently check casts in lambdas, class constructors, and method invocations._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Removes unnecessary type casts. Does not currently check casts in lambdas, clas
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

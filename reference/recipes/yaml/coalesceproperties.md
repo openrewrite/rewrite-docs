@@ -1,7 +1,6 @@
 # Coalesce YAML properties
 
-**org.openrewrite.yaml.CoalesceProperties**
-_Simplify nested map hierarchies into their simplest dot separated property form, i.e. as Spring Boot interprets application.yml files._
+**org.openrewrite.yaml.CoalesceProperties** _Simplify nested map hierarchies into their simplest dot separated property form, i.e. as Spring Boot interprets application.yml files._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Simplify nested map hierarchies into their simplest dot separated property form
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

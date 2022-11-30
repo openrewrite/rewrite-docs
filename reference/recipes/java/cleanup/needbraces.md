@@ -1,7 +1,6 @@
 # Fix missing braces
 
-**org.openrewrite.java.cleanup.NeedBraces**
-_Adds missing braces around code such as single-line `if`, `for`, `while`, and `do-while` block bodies._
+**org.openrewrite.java.cleanup.NeedBraces** _Adds missing braces around code such as single-line `if`, `for`, `while`, and `do-while` block bodies._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Adds missing braces around code such as single-line `if`, `for`, `while`, and `
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

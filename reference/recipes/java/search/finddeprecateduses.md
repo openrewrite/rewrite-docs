@@ -1,7 +1,6 @@
 # Find uses of deprecated classes, methods, and fields
 
-**org.openrewrite.java.search.FindDeprecatedUses**
-_Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside deprecated scopes._
+**org.openrewrite.java.search.FindDeprecatedUses** _Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside deprecated scopes._
 
 ## Source
 
@@ -13,12 +12,11 @@ _Find deprecated uses of methods, fields, and types. Optionally ignore those cla
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | typePattern | *Optional*. A type pattern that is used to find deprecations from certain types. |
-| `Boolean` | matchInherited | *Optional*. When enabled, find types that inherit from a deprecated type. |
-| `Boolean` | ignoreDeprecatedScopes | *Optional*. When a deprecated type is used in a deprecated method or class, ignore it. |
-
+| Type      | Name                   | Description                                                                            |
+| --------- | ---------------------- | -------------------------------------------------------------------------------------- |
+| `String`  | typePattern            | _Optional_. A type pattern that is used to find deprecations from certain types.       |
+| `Boolean` | matchInherited         | _Optional_. When enabled, find types that inherit from a deprecated type.              |
+| `Boolean` | ignoreDeprecatedScopes | _Optional_. When a deprecated type is used in a deprecated method or class, ignore it. |
 
 ## Usage
 
@@ -39,7 +37,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -83,13 +80,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find uses of deprecated methods](../../java/search/finddeprecatedmethods.md)
-  * methodPattern: ` *(..)`
-* [Find uses of deprecated classes](../../java/search/finddeprecatedclasses.md)
-  * typePattern: ``
-* [Find uses of deprecated fields](../../java/search/finddeprecatedfields.md)
-  * typePattern: ``
-
+* [Find uses of deprecated methods](finddeprecatedmethods.md)
+  * methodPattern: `*(..)`
+* [Find uses of deprecated classes](finddeprecatedclasses.md)
+  * typePattern: \`\`
+* [Find uses of deprecated fields](finddeprecatedfields.md)
+  * typePattern: \`\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -110,7 +106,6 @@ recipeList:
       typePattern: 
   - org.openrewrite.java.search.FindDeprecatedFields:
       typePattern: 
-
 ```
 {% endtab %}
 {% endtabs %}

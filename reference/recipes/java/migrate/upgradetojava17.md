@@ -1,8 +1,6 @@
 # Migrate to Java 11 from Java 8 through 16
 
-**org.openrewrite.java.migrate.UpgradeToJava17**
-_This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
-_
+**org.openrewrite.java.migrate.UpgradeToJava17** \_This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17. \_
 
 ### Tags
 
@@ -16,7 +14,6 @@ _
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -92,13 +89,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate to Java 11 from Java 8 through 10](../../java/migrate/java8tojava11.md)
-* [Change Maven Java version property values to 17](../../java/migrate/javaversion17.md)
-* [Replace `String#format(String, Object...)` with `String#formatted(Object...)`](../../java/migrate/lang/stringformatted.md)
-* [Update Lombok dependency to a Java 17 compatible version](../../java/migrate/lombok/updatelomboktojava17.md)
-* [Add JDeprScan Maven Plug-in](../../java/migrate/addjdeprscanplugin.md)
+* [Migrate to Java 11 from Java 8 through 10](java8tojava11.md)
+* [Change Maven Java version property values to 17](javaversion17.md)
+* [Replace `String#format(String, Object...)` with `String#formatted(Object...)`](lang/stringformatted.md)
+* [Update Lombok dependency to a Java 17 compatible version](lombok/updatelomboktojava17.md)
+* [Add JDeprScan Maven Plug-in](addjdeprscanplugin.md)
   * release: `17`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +115,6 @@ recipeList:
   - org.openrewrite.java.migrate.lombok.UpdateLombokToJava17
   - org.openrewrite.java.migrate.AddJDeprScanPlugin:
       release: 17
-
 ```
 {% endtab %}
 {% endtabs %}

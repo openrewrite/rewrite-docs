@@ -1,11 +1,10 @@
 # Encrypt DAX storage at rest
 
-**org.openrewrite.terraform.aws.EncryptDAXStorage**
-_DAX encryption at rest automatically integrates with AWS KMS for managing the single service default key used to encrypt clusters._
+**org.openrewrite.terraform.aws.EncryptDAXStorage** _DAX encryption at rest automatically integrates with AWS KMS for managing the single service default key used to encrypt clusters._
 
 ### Tags
 
-* CKV_AWS_47
+* CKV\_AWS\_47
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _DAX encryption at rest automatically integrates with AWS KMS for managing the s
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_dax_cluster`
   * content: `server_side_encryption = enabled`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_dax_cluster
       content: server_side_encryption = enabled
-
 ```
 {% endtab %}
 {% endtabs %}

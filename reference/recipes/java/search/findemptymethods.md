@@ -1,7 +1,6 @@
 # Find methods with empty bodies
 
-**org.openrewrite.java.search.FindEmptyMethods**
-_Find methods with empty bodies and single public no arg constructors._
+**org.openrewrite.java.search.FindEmptyMethods** _Find methods with empty bodies and single public no arg constructors._
 
 ### Tags
 
@@ -17,10 +16,9 @@ _Find methods with empty bodies and single public no arg constructors._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-
+| Type      | Name           | Description                                                                                                     |
+| --------- | -------------- | --------------------------------------------------------------------------------------------------------------- |
+| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](../../../method-patterns.md). |
 
 ## Usage
 
@@ -41,7 +39,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # Rename a file
 
-**org.openrewrite.RenameFile**
-_Rename a file while keeping it in the same directory._
+**org.openrewrite.RenameFile** _Rename a file while keeping it in the same directory._
 
 ## Source
 
@@ -13,16 +12,14 @@ _Rename a file while keeping it in the same directory._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | fileMatcher | Matching files will be renamed. This is a glob expression. |
-| `String` | fileName | Just the file name without the folder path that precedes it. |
-
+| Type     | Name        | Description                                                  |
+| -------- | ----------- | ------------------------------------------------------------ |
+| `String` | fileMatcher | Matching files will be renamed. This is a glob expression.   |
+| `String` | fileName    | Just the file name without the folder path that precedes it. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RenameFileExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RenameFileExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       fileName: application.yml
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.RenameFileExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

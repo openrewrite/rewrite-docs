@@ -1,7 +1,6 @@
-# Maintain parity with Spring Boot 2.x by disabling sanitization of `/env`, `/configprops`, and `/quartz` endpoints.
+# Maintain parity with Spring Boot 2.x by disabling sanitization of /env, /configprops, and /quartz en
 
-**org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization**
-_Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. This recipe maintains the previous behavior but adds a warning comment that these settings should be reviewed. See https://github.com/openrewrite/rewrite-spring/issues/228_
+**org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization** _Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. This recipe maintains the previous behavior but adds a warning comment that these settings should be reviewed. See https://github.com/openrewrite/rewrite-spring/issues/228_
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boo
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -92,23 +90,22 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Delete a spring configuration property from any configuration files that contains a matching key](../../../java/spring/deletespringproperty.md)
+* [Delete a spring configuration property from any configuration files that contains a matching key](../deletespringproperty.md)
   * propertyKey: `management.endpoint.configprops.additional-keys-to-sanitize`
-* [Delete a spring configuration property from any configuration files that contains a matching key](../../../java/spring/deletespringproperty.md)
+* [Delete a spring configuration property from any configuration files that contains a matching key](../deletespringproperty.md)
   * propertyKey: `management.endpoint.env.additional-keys-to-sanitize`
-* [Add a spring configuration property to a configuration file if it does not already exist in that file](../../../java/spring/addspringproperty.md)
+* [Add a spring configuration property to a configuration file if it does not already exist in that file](../addspringproperty.md)
   * property: `management.endpoint.configprops.show-values`
   * value: `ALWAYS`
   * comment: `This value was added to maintain parity with SpringBoot 2.x and should be changed to either to "NEVER" or "WHEN_AUTHORIZED".`
-* [Add a spring configuration property to a configuration file if it does not already exist in that file](../../../java/spring/addspringproperty.md)
+* [Add a spring configuration property to a configuration file if it does not already exist in that file](../addspringproperty.md)
   * property: `management.endpoint.env.show-values`
   * value: `ALWAYS`
   * comment: `This value was added to maintain parity with SpringBoot 2.x and should be changed to either to "NEVER" or "WHEN_AUTHORIZED".`
-* [Add a spring configuration property to a configuration file if it does not already exist in that file](../../../java/spring/addspringproperty.md)
+* [Add a spring configuration property to a configuration file if it does not already exist in that file](../addspringproperty.md)
   * property: `management.endpoint.quartz.show-values`
   * value: `ALWAYS`
   * comment: `This value was added to maintain parity with SpringBoot 2.x and should be changed to either to "NEVER" or "WHEN_AUTHORIZED".`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -139,7 +136,6 @@ recipeList:
       property: management.endpoint.quartz.show-values
       value: ALWAYS
       comment: This value was added to maintain parity with SpringBoot 2.x and should be changed to either to "NEVER" or "WHEN_AUTHORIZED".
-
 ```
 {% endtab %}
 {% endtabs %}

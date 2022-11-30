@@ -1,7 +1,6 @@
 # Add a new property
 
-**org.openrewrite.properties.AddProperty**
-_Adds a new property to a property file at the bottom of the file if it's missing. Whitespace before and after the `=` must be included in the property and value._
+**org.openrewrite.properties.AddProperty** _Adds a new property to a property file at the bottom of the file if it's missing. Whitespace before and after the `=` must be included in the property and value._
 
 ## Source
 
@@ -13,17 +12,15 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | property | The property key to add. |
-| `String` | value | The value of the new property key. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
+| Type     | Name        | Description                                                             |
+| -------- | ----------- | ----------------------------------------------------------------------- |
+| `String` | property    | The property key to add.                                                |
+| `String` | value       | The value of the new property key.                                      |
+| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddPropertyExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddPropertyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       fileMatcher: '**/application-*.properties'
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.AddPropertyExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

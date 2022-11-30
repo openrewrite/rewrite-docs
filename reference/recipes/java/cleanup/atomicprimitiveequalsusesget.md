@@ -1,7 +1,6 @@
 # Atomic Boolean, Integer, and Long equality checks compare their values
 
-**org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet**
-_`AtomicBoolean#equals(Object)`, `AtomicInteger#equals(Object)` and `AtomicLong#equals(Object)` are only equal to their instance. This recipe converts `a.equals(b)` to `a.get() == b.get()`._
+**org.openrewrite.java.cleanup.AtomicPrimitiveEqualsUsesGet** _`AtomicBoolean#equals(Object)`, `AtomicInteger#equals(Object)` and `AtomicLong#equals(Object)` are only equal to their instance. This recipe converts `a.equals(b)` to `a.get() == b.get()`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _`AtomicBoolean#equals(Object)`, `AtomicInteger#equals(Object)` and `AtomicLong#
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

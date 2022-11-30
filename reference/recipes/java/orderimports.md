@@ -1,7 +1,6 @@
 # Order imports
 
-**org.openrewrite.java.OrderImports**
-_Group and order imports._
+**org.openrewrite.java.OrderImports** _Group and order imports._
 
 ## Source
 
@@ -13,10 +12,9 @@ _Group and order imports._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | removeUnused | *Optional*. Remove unnecessary imports. |
-
+| Type      | Name         | Description                             |
+| --------- | ------------ | --------------------------------------- |
+| `Boolean` | removeUnused | _Optional_. Remove unnecessary imports. |
 
 ## Usage
 
@@ -37,7 +35,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

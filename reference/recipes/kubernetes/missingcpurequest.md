@@ -1,7 +1,6 @@
 # Ensure CPU request is set
 
-**org.openrewrite.kubernetes.MissingCpuRequest**
-_If a container is created in a namespace that has a default CPU limit, and the container does not specify its own CPU limit, then the container is assigned the default CPU limit._
+**org.openrewrite.kubernetes.MissingCpuRequest** _If a container is created in a namespace that has a default CPU limit, and the container does not specify its own CPU limit, then the container is assigned the default CPU limit._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _If a container is created in a namespace that has a default CPU limit, and the 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.25.0
-
 
 ## Usage
 
@@ -90,9 +88,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Find missing configuration](search/findresourcemissingconfiguration.md)
   * configurationPath: `..spec.containers[:1].resources.requests.cpu`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.kubernetes.search.FindResourceMissingConfiguration:
       configurationPath: ..spec.containers[:1].resources.requests.cpu
-
 ```
 {% endtab %}
 {% endtabs %}

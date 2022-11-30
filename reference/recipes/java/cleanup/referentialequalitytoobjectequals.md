@@ -1,7 +1,6 @@
-# Replace referential equality operators with Object equals method invocations when the operands both override `Object.equals(Object obj)`
+# Replace referential equality operators with Object equals method invocations when the operands both
 
-**org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals**
-_Using `==` or `!=` compares object references, not the equality of two objects. This modifies code where both sides of a binary operation (`==` or `!=`) override `Object.equals(Object obj)` except when the comparison is within an overridden `Object.equals(Object obj)` method declaration itself.WARNING, The resulting transformation must be carefully reviewed since any modifications change the programs semantics._
+**org.openrewrite.java.cleanup.ReferentialEqualityToObjectEquals** _Using `==` or `!=` compares object references, not the equality of two objects. This modifies code where both sides of a binary operation (`==` or `!=`) override `Object.equals(Object obj)` except when the comparison is within an overridden `Object.equals(Object obj)` method declaration itself.WARNING, The resulting transformation must be carefully reviewed since any modifications change the programs semantics._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Using `==` or `!=` compares object references, not the equality of two objects.
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

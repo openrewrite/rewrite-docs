@@ -1,7 +1,6 @@
-# Find vulnerable uses of Jackson `@JsonTypeInfo`
+# Find vulnerable uses of Jackson @JsonTypeInfo
 
-**org.openrewrite.java.security.search.FindVulnerableJacksonJsonTypeInfo**
-_Identify where attackers can deserialize gadgets into a target field._
+**org.openrewrite.java.security.search.FindVulnerableJacksonJsonTypeInfo** _Identify where attackers can deserialize gadgets into a target field._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Identify where attackers can deserialize gadgets into a target field._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -86,11 +84,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find annotations](../../../java/search/findannotations.md)
+* [Find annotations](../../search/findannotations.md)
   * annotationPattern: `@com.fasterxml.jackson.annotation.JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.CLASS)`
-* [Find annotations](../../../java/search/findannotations.md)
+* [Find annotations](../../search/findannotations.md)
   * annotationPattern: `@com.fasterxml.jackson.annotation.JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.MINIMAL_CLASS)`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +102,6 @@ recipeList:
       annotationPattern: @com.fasterxml.jackson.annotation.JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.CLASS)
   - org.openrewrite.java.search.FindAnnotations:
       annotationPattern: @com.fasterxml.jackson.annotation.JsonTypeInfo(use=com.fasterxml.jackson.annotation.JsonTypeInfo.Id.MINIMAL_CLASS)
-
 ```
 {% endtab %}
 {% endtabs %}

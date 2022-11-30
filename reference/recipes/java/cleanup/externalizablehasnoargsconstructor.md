@@ -1,7 +1,6 @@
-# `Externalizable` classes have no-arguments constructor
+# Externalizable classes have no-arguments constructor
 
-**org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor**
-_`Externalizable` classes handle both serialization and deserialization and must have a no-args constructor for the deserialization process._
+**org.openrewrite.java.cleanup.ExternalizableHasNoArgsConstructor** _`Externalizable` classes handle both serialization and deserialization and must have a no-args constructor for the deserialization process._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _`Externalizable` classes handle both serialization and deserialization and must
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # Update OWASP suppression date bounds
 
-**org.openrewrite.xml.security.UpdateOwaspSuppressionDate**
-_Updates the expiration date for OWASP suppressions having a matching cve tag. For use with the OWASP `dependency-check` tool. More details: https://jeremylong.github.io/DependencyCheck/general/suppression.html._
+**org.openrewrite.xml.security.UpdateOwaspSuppressionDate** _Updates the expiration date for OWASP suppressions having a matching cve tag. For use with the OWASP `dependency-check` tool. More details: https://jeremylong.github.io/DependencyCheck/general/suppression.html._
 
 ## Source
 
@@ -13,16 +12,14 @@ _Updates the expiration date for OWASP suppressions having a matching cve tag. F
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `List` | cveList | Update suppressions having any of the specified CVE tags. |
-| `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. |
-
+| Type     | Name      | Description                                                                                   |
+| -------- | --------- | --------------------------------------------------------------------------------------------- |
+| `List`   | cveList   | Update suppressions having any of the specified CVE tags.                                     |
+| `String` | untilDate | _Optional_. Optional. The date to add to the suppression. Default will be 30 days from today. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateOwaspSuppressionDateExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateOwaspSuppressionDateExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       untilDate: 2023-01-01
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.UpdateOwaspSuppressionDateExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

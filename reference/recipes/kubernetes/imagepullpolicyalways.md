@@ -1,7 +1,6 @@
-# Ensure image pull policy is `Always`
+# Ensure image pull policy is Always
 
-**org.openrewrite.kubernetes.ImagePullPolicyAlways**
-_Ensures the latest version of a tag is deployed each time._
+**org.openrewrite.kubernetes.ImagePullPolicyAlways** _Ensures the latest version of a tag is deployed each time._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Ensures the latest version of a tag is deployed each time._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.25.0
-
 
 ## Usage
 
@@ -90,11 +88,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `$.spec.containers`
   * value: `imagePullPolicy: Always`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,6 @@ recipeList:
       resourceKind: Pod
       configurationPath: $.spec.containers
       value: imagePullPolicy: Always
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
-# `BigDecimal` rounding constants to `RoundingMode` enums
+# BigDecimal rounding constants to RoundingMode enums
 
-**org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums**
-_Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum._
+**org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums** _Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

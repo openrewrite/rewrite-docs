@@ -1,12 +1,11 @@
 # Ensure Azure SQL Server threat detection alerts are enabled for all threat types
 
-**org.openrewrite.terraform.azure.EnsureAzureSQLServerThreatDetectionAlertsAreEnabledForAllThreatTypes**
-_Ensure Azure SQL Server threat detection alerts are enabled for all threat types._
+**org.openrewrite.terraform.azure.EnsureAzureSQLServerThreatDetectionAlertsAreEnabledForAllThreatTypes** _Ensure Azure SQL Server threat detection alerts are enabled for all threat types._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_25
+* CKV\_AZURE\_25
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure Azure SQL Server threat detection alerts are enabled for all threat type
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_mssql_server_security_alert_policy`
   * content: `disabled_alerts = []`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_mssql_server_security_alert_policy
       content: disabled_alerts = []
-
 ```
 {% endtab %}
 {% endtabs %}

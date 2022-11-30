@@ -1,7 +1,6 @@
-# Find uses of `file://` scheme in string literals
+# Find uses of file:// scheme in string literals
 
-**org.openrewrite.cloudsuitability.FindFileScheme**
-_Use backing service or use TKG._
+**org.openrewrite.cloudsuitability.FindFileScheme** _Use backing service or use TKG._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Use backing service or use TKG._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find literals](../java/search/findliterals.md)
   * pattern: `file://`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindLiterals:
       pattern: file://
-
 ```
 {% endtab %}
 {% endtabs %}

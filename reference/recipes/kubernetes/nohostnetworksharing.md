@@ -1,7 +1,6 @@
 # No host network sharing
 
-**org.openrewrite.kubernetes.NoHostNetworkSharing**
-_When using the host network mode for a container, that container’s network stack is not isolated from the Docker host, so the container shares the host’s networking namespace and does not get its own IP-address allocation._
+**org.openrewrite.kubernetes.NoHostNetworkSharing** _When using the host network mode for a container, that container’s network stack is not isolated from the Docker host, so the container shares the host’s networking namespace and does not get its own IP-address allocation._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _When using the host network mode for a container, that container’s network st
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.25.0
-
 
 ## Usage
 
@@ -90,11 +88,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
+* [Add Kubernetes configuration](addconfiguration.md)
   * resourceKind: `Pod`
   * configurationPath: `$.spec`
   * value: `hostNetwork: false`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,6 @@ recipeList:
       resourceKind: Pod
       configurationPath: $.spec
       value: hostNetwork: false
-
 ```
 {% endtab %}
 {% endtabs %}

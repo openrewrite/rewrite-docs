@@ -20,6 +20,8 @@ When authoring your tests always remember to test that changes aren't made when 
 
 ### Naming conventions
 
+Recipes should always have a non-blank description. Recipe parameters should always have a fully filled out `@Option` annotation. This metadata is used when generating documentation, when build plugins display recipe information in their discover action, and in the [Moderne saas](https://app.gitbook.com/s/JC9dRbwVINQjAyoDyBuW/alerts).
+
 Recipe names, descriptions, and parameters should follow our [recipe naming conventions](https://github.com/openrewrite/rewrite/blob/main/doc/adr/0002-recipe-naming.md).&#x20;
 
 ### If it can be declarative, it should be declarative
@@ -77,3 +79,7 @@ Even very simple pieces of code have complex AST representations which are tedio
 ### Prefer Cursor Messaging to Execution Context Messaging
 
 There are a few ways to pass state around within and between visitors. All Recipes in a run will have the same `ExecutionContext` object passed between them, and it contains a map into which any recipe may read or write arbitrary data. Similarly the `Cursor` object returned by `TreeVisitor.getCursor()` has a map into which any recipe may read or write arbitrary data. The difference is that the `Cursor` is a stack which keeps track of a visitor's current progress through an AST and is thrown away after all visiting is complete. Because the data in `ExecutionContext` lives for the span of the recipe run, and on into separate cycles, it can potentially change the behavior of other recipes. So whenever communication is needed but only within the current visitor or recipe, the cursor stack should be used instead of adding messages to the execution context.
+
+### Stay Single Cycle
+
+OpenRewrite executes recipes in a loop, each iteration of that loop through the full recipe list is called a cycle. This is so that if one recipe makes a change another recipe would respond to it can have a chance to do so, regardless of the order they are executed in. By default only a single cycle is executed, unless some recipe in the group overrides `Recipe.causesAnotherCycle()` to return `true`. For larger recipes, such as a framework migraiton, the performance impact of causing another cycle can be substantially detrimental. Whenever possible a recipe should complete all of its work the first time, avoiding overriding `Recipe.causesAnotherCycle()` if at all possible.

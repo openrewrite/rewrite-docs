@@ -1,12 +1,11 @@
 # Ensure AKV secrets have an expiration date set
 
-**org.openrewrite.terraform.azure.EnsureAKVSecretsHaveAnExpirationDateSet**
-_Ensure AKV secrets have an expiration date set._
+**org.openrewrite.terraform.azure.EnsureAKVSecretsHaveAnExpirationDateSet** _Ensure AKV secrets have an expiration date set._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_41
+* CKV\_AZURE\_41
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure AKV secrets have an expiration date set._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_key_vault_secret`
   * content: `expiration_date = "2022-12-30T20:00:00Z"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_key_vault_secret
       content: expiration_date = "2022-12-30T20:00:00Z"
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
-# Find instances of type `Quark`
+# Find instances of type Quark
 
-**org.openrewrite.FindQuarks**
-_Find instances of type `Quark`._
+**org.openrewrite.FindQuarks** _Find instances of type `Quark`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Find instances of type `Quark`._
 * groupId: org.openrewrite
 * artifactId: rewrite-core
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

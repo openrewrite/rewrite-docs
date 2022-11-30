@@ -1,7 +1,6 @@
-# Rename methods named `hashcode`, `equal`, or `tostring`
+# Rename methods named hashcode, equal, or tostring
 
-**org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring**
-_Methods should not be named `hashcode`, `equal`, or `tostring`. Any of these are confusing as they appear to be intended as overridden methods from the `Object` base class, despite being case-insensitive._
+**org.openrewrite.java.cleanup.RenameMethodsNamedHashcodeEqualOrTostring** _Methods should not be named `hashcode`, `equal`, or `tostring`. Any of these are confusing as they appear to be intended as overridden methods from the `Object` base class, despite being case-insensitive._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Methods should not be named `hashcode`, `equal`, or `tostring`. Any of these ar
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

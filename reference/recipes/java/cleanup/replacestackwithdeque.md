@@ -1,8 +1,8 @@
-# Replace `java.util.Stack` with `java.util.Deque`
+# Replace java.util.Stack with java.util.Deque
 
-**org.openrewrite.java.cleanup.ReplaceStackWithDeque**
-_From the Javadoc of `Stack`:
-> A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class._
+**org.openrewrite.java.cleanup.ReplaceStackWithDeque** \_From the Javadoc of `Stack`:
+
+> A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class.\_
 
 ## Source
 
@@ -11,7 +11,6 @@ _From the Javadoc of `Stack`:
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -32,7 +31,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
-# Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`
+# Replace invocations of Collections#sort(List, Comparator) with List#sort(Comparator)
 
-**org.openrewrite.java.cleanup.UseListSort**
-_The `java.util.Collections#sort(..)` implementation defers to the `java.util.List#sort(Comparator)`, replaced it with the `java.util.List#sort(Comparator)` implementation for better readability._
+**org.openrewrite.java.cleanup.UseListSort** _The `java.util.Collections#sort(..)` implementation defers to the `java.util.List#sort(Comparator)`, replaced it with the `java.util.List#sort(Comparator)` implementation for better readability._
 
 ## Source
 
@@ -10,7 +9,6 @@ _The `java.util.Collections#sort(..)` implementation defers to the `java.util.Li
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

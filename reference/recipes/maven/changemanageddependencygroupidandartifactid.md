@@ -1,7 +1,6 @@
 # Change Maven managed dependency groupId, artifactId and optionally the version
 
-**org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId**
-_Change the groupId, artifactId and optionally the version of a specified Maven managed dependency._
+**org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId** _Change the groupId, artifactId and optionally the version of a specified Maven managed dependency._
 
 ## Source
 
@@ -13,20 +12,18 @@ _Change the groupId, artifactId and optionally the version of a specified Maven 
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a managed dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a managed dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | newGroupId | The new groupId to use. |
-| `String` | newArtifactId | The new artifactId to use. |
-| `String` | newVersion | *Optional*. The new version to use. |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
-
+| Type     | Name           | Description                                                                                                                                                                                                         |
+| -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String` | oldGroupId     | The old groupId to replace. The groupId is the first part of a managed dependency coordinate 'com.google.guava:guava:VERSION'.                                                                                      |
+| `String` | oldArtifactId  | The old artifactId to replace. The artifactId is the second part of a managed dependency coordinate 'com.google.guava:guava:VERSION'.                                                                               |
+| `String` | newGroupId     | The new groupId to use.                                                                                                                                                                                             |
+| `String` | newArtifactId  | The new artifactId to use.                                                                                                                                                                                          |
+| `String` | newVersion     | _Optional_. The new version to use.                                                                                                                                                                                 |
+| `String` | versionPattern | _Optional_. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeManagedDependencyGroupIdAndArtifactIdExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeManagedDependencyGroupIdAndArtifactIdExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -45,7 +42,6 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.ChangeManagedDependencyGroupIdAndArtifactIdExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -63,7 +59,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

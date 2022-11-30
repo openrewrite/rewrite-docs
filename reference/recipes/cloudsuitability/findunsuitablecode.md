@@ -1,7 +1,6 @@
 # Find code unsuitable for the cloud
 
-**org.openrewrite.cloudsuitability.FindUnsuitableCode**
-_Locate patterns that may cause problems in containerized cloud environments._
+**org.openrewrite.cloudsuitability.FindUnsuitableCode** _Locate patterns that may cause problems in containerized cloud environments._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Locate patterns that may cause problems in containerized cloud environments._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -86,28 +84,27 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Uses of JNDI](../cloudsuitability/findjavabatch.md)
-* [Uses of Java Batch annotations](../cloudsuitability/findjavabatchannotations.md)
-* [Uses of distributed caches](../cloudsuitability/finddistributedcacheuses.md)
-* [Uses of caches](../cloudsuitability/findcacheuses.md)
-* [Uses of CORBA](../cloudsuitability/findcorba.md)
-* [Uses of ehcache](../cloudsuitability/findehcache.md)
-* [Find EJB message-driven beans (MDBs)](../cloudsuitability/findejbmdb.md)
-* [Find EJB stateful beans](../cloudsuitability/findejbstateful.md)
-* [Find EJB stateless beans](../cloudsuitability/findejbstateless.md)
-* [Find uses of Java file IO](../cloudsuitability/findfileio.md)
-* [Find uses of `file://` scheme in string literals](../cloudsuitability/findfilescheme.md)
-* [Find unhandled TERM signals](../cloudsuitability/findunhandledtermsignal.md)
-* [Find uses of hardcoded IP addresses](../cloudsuitability/findhardcodedipaddress.md)
-* [Find remote method invocations](../cloudsuitability/findremotemethodinvocations.md)
-* [Find use of JAX-RS](../cloudsuitability/findjaxrs.md)
-* [Find uses of JCA](../cloudsuitability/findjcaannotations.md)
-* [Find uses of JCache](../cloudsuitability/findjcache.md)
-* [Find uses of Jersey](../cloudsuitability/findjersey.md)
-* [Find uses of Jetty](../cloudsuitability/findjetty.md)
-* [Find JMS files](../cloudsuitability/findjms.md)
-* [Find uses of JNI](../cloudsuitability/findjni.md)
-
+* [Uses of JNDI](findjavabatch.md)
+* [Uses of Java Batch annotations](findjavabatchannotations.md)
+* [Uses of distributed caches](finddistributedcacheuses.md)
+* [Uses of caches](findcacheuses.md)
+* [Uses of CORBA](findcorba.md)
+* [Uses of ehcache](findehcache.md)
+* [Find EJB message-driven beans (MDBs)](findejbmdb.md)
+* [Find EJB stateful beans](findejbstateful.md)
+* [Find EJB stateless beans](findejbstateless.md)
+* [Find uses of Java file IO](findfileio.md)
+* [Find uses of `file://` scheme in string literals](findfilescheme.md)
+* [Find unhandled TERM signals](findunhandledtermsignal.md)
+* [Find uses of hardcoded IP addresses](findhardcodedipaddress.md)
+* [Find remote method invocations](findremotemethodinvocations.md)
+* [Find use of JAX-RS](findjaxrs.md)
+* [Find uses of JCA](findjcaannotations.md)
+* [Find uses of JCache](findjcache.md)
+* [Find uses of Jersey](findjersey.md)
+* [Find uses of Jetty](findjetty.md)
+* [Find JMS files](findjms.md)
+* [Find uses of JNI](findjni.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -139,7 +136,6 @@ recipeList:
   - org.openrewrite.cloudsuitability.FindJetty
   - org.openrewrite.cloudsuitability.FindJMS
   - org.openrewrite.cloudsuitability.FindJNI
-
 ```
 {% endtab %}
 {% endtabs %}

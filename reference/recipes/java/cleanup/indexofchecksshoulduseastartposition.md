@@ -1,7 +1,6 @@
-# Use `indexOf(String, int)`
+# Use indexOf(String, int)
 
-**org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition**
-_Replaces `indexOf(String)` in binary operations if the compared value is an int and not less than 1._
+**org.openrewrite.java.cleanup.IndexOfChecksShouldUseAStartPosition** _Replaces `indexOf(String)` in binary operations if the compared value is an int and not less than 1._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Replaces `indexOf(String)` in binary operations if the compared value is an int
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

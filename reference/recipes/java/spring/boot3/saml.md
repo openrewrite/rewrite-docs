@@ -1,7 +1,6 @@
 # Migrate SAML configuration to Spring Boot 3.0 in yaml format
 
-**org.openrewrite.java.spring.boot3.Saml**
-_Renames spring.security.saml2.relyingparty.registration.(any).identityprovider to spring.security.saml2.relyingparty.registration.(any).assertingparty._
+**org.openrewrite.java.spring.boot3.Saml** _Renames spring.security.saml2.relyingparty.registration.(any).identityprovider to spring.security.saml2.relyingparty.registration.(any).assertingparty._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Renames spring.security.saml2.relyingparty.registration.(any).identityprovider 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -89,7 +87,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Change key](../../../yaml/changekey.md)
   * oldKeyPath: `$.spring.security.saml2.relyingparty.registration.*[?(@.identityprovider)]`
   * newKey: `assertingparty`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.yaml.ChangeKey:
       oldKeyPath: $.spring.security.saml2.relyingparty.registration.*[?(@.identityprovider)]
       newKey: assertingparty
-
 ```
 {% endtab %}
 {% endtabs %}

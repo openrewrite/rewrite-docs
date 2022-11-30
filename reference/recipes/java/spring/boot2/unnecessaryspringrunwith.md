@@ -1,7 +1,6 @@
-# Remove unnecessary Spring `@RunWith`
+# Remove unnecessary Spring @RunWith
 
-**org.openrewrite.java.spring.boot2.UnnecessarySpringRunWith**
-_Remove `@RunWith` annotations on Spring tests._
+**org.openrewrite.java.spring.boot2.UnnecessarySpringRunWith** _Remove `@RunWith` annotations on Spring tests._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove `@RunWith` annotations on Spring tests._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,10 +84,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
+* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../testing/junit5/runnertoextension.md)
   * runners: `[org.springframework.test.context.junit4.SpringRunner, org.springframework.test.context.junit4.SpringJUnit4ClassRunner]`
   * extension: `org.springframework.test.context.junit.jupiter.SpringExtension`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.java.testing.junit5.RunnerToExtension:
       runners: [org.springframework.test.context.junit4.SpringRunner, org.springframework.test.context.junit4.SpringJUnit4ClassRunner]
       extension: org.springframework.test.context.junit.jupiter.SpringExtension
-
 ```
 {% endtab %}
 {% endtabs %}

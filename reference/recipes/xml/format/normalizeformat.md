@@ -1,7 +1,6 @@
 # Normalize format
 
-**org.openrewrite.xml.format.NormalizeFormat**
-_Move whitespace to the outermost AST element possible._
+**org.openrewrite.xml.format.NormalizeFormat** _Move whitespace to the outermost AST element possible._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Move whitespace to the outermost AST element possible._
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

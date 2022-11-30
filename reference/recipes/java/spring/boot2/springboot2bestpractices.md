@@ -1,7 +1,6 @@
 # Spring Boot 2.x best practices
 
-**org.openrewrite.java.spring.boot2.SpringBoot2BestPractices**
-_Applies best practices to Spring Boot 2 applications._
+**org.openrewrite.java.spring.boot2.SpringBoot2BestPractices** _Applies best practices to Spring Boot 2 applications._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Applies best practices to Spring Boot 2 applications._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -91,11 +89,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Remove `@RequestMapping` annotations](../../../java/spring/norequestmappingannotation.md)
-* [Remove implicit web annotation names](../../../java/spring/implicitwebannotationnames.md)
-* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
-* [Remove `public` from `@Bean` methods](../../../java/spring/beanmethodsnotpublic.md)
-
+* [Remove `@RequestMapping` annotations](../norequestmappingannotation.md)
+* [Remove implicit web annotation names](../implicitwebannotationnames.md)
+* [Remove `@SpringExtension`](unnecessaryspringextension.md)
+* [Remove `public` from `@Bean` methods](../beanmethodsnotpublic.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.java.spring.ImplicitWebAnnotationNames
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
   - org.openrewrite.java.spring.BeanMethodsNotPublic
-
 ```
 {% endtab %}
 {% endtabs %}

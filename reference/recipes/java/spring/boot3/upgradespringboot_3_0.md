@@ -1,7 +1,6 @@
 # Upgrade to Spring Boot 3.0 from 2.7
 
-**org.openrewrite.java.spring.boot3.UpgradeSpringBoot\_3\_0**
-_Upgrade to Spring Boot 3.0 from prior 2.x version._
+**org.openrewrite.java.spring.boot3.UpgradeSpringBoot\_3\_0** _Upgrade to Spring Boot 3.0 from prior 2.x version._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Upgrade to Spring Boot 3.0 from prior 2.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -92,14 +90,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade Maven Pom to Spring Boot 3.0 from 2.x](../../../java/spring/boot3/mavenpomupgrade.md)
-* [Migrate to Jakarta EE 9 from Jakarta EE 8](../../../java/migrate/jakarta/javaxmigrationtojakarta.md)
-* [Remove Unnecessary @ConstructorBinding](../../../java/spring/boot3/removeconstructorbindingannotation.md)
-* [Maintain parity with Spring Boot 2.x by exposing all actuator endpoints via JMX.](../../../java/spring/boot3/legacyjmxexposure.md)
-* [Maintain parity with Spring Boot 2.x by disabling sanitization of `/env`, `/configprops`, and `/quartz` endpoints.](../../../java/spring/boot3/actuatorendpointsanitization.md)
-* [Migrate SAML configuration to Spring Boot 3.0 in yaml format](../../../java/spring/boot3/saml.md)
-* [Migrate Spring Boot properties to 3.0.0](../../../java/spring/boot3/springbootproperties_3_0_0.md)
-
+* [Upgrade Maven Pom to Spring Boot 3.0 from 2.x](mavenpomupgrade.md)
+* [Migrate to Jakarta EE 9 from Jakarta EE 8](../../migrate/jakarta/javaxmigrationtojakarta.md)
+* [Remove Unnecessary @ConstructorBinding](removeconstructorbindingannotation.md)
+* [Maintain parity with Spring Boot 2.x by exposing all actuator endpoints via JMX.](legacyjmxexposure.md)
+* [Maintain parity with Spring Boot 2.x by disabling sanitization of `/env`, `/configprops`, and `/quartz` endpoints.](actuatorendpointsanitization.md)
+* [Migrate SAML configuration to Spring Boot 3.0 in yaml format](saml.md)
+* [Migrate Spring Boot properties to 3.0.0](springbootproperties\_3\_0\_0.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -121,7 +118,6 @@ recipeList:
   - org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization
   - org.openrewrite.java.spring.boot3.Saml
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_0_0
-
 ```
 {% endtab %}
 {% endtabs %}

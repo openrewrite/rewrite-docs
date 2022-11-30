@@ -1,7 +1,6 @@
 # Add the Gradle Enterprise plugin
 
-**org.openrewrite.gradle.plugins.AddGradleEnterprise**
-_Add the Gradle Enterprise plugin to `settings.gradle(.kts)`._
+**org.openrewrite.gradle.plugins.AddGradleEnterprise** _Add the Gradle Enterprise plugin to `settings.gradle(.kts)`._
 
 ## Source
 
@@ -13,15 +12,13 @@ _Add the Gradle Enterprise plugin to `settings.gradle(.kts)`._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
+| Type     | Name    | Description                                                                              |
+| -------- | ------- | ---------------------------------------------------------------------------------------- |
 | `String` | version | An exact version number or node-style semver selector used to select the version number. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddGradleEnterpriseExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddGradleEnterpriseExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -97,10 +94,9 @@ Recipes can also be activated directly from the commandline by adding the argume
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Update a Gradle plugin by id](../../gradle/plugins/upgradepluginversion.md)
+* [Update a Gradle plugin by id](upgradepluginversion.md)
   * pluginIdPattern: `com.gradle.enterprise`
-  * newVersion: ``
-
+  * newVersion: \`\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -116,7 +112,6 @@ recipeList:
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: com.gradle.enterprise
       newVersion: 
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Upgrade to Cucumber-JVM 2.x
 
-**org.openrewrite.java.testing.cucumber.UpgradeCucumber2x**
-_Upgrade to Cucumber-JVM 2.x from any previous version._
+**org.openrewrite.java.testing.cucumber.UpgradeCucumber2x** _Upgrade to Cucumber-JVM 2.x from any previous version._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Upgrade to Cucumber-JVM 2.x from any previous version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -101,7 +99,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * oldArtifactId: `cucumber-java8`
   * newGroupId: `io.cucumber`
   * newArtifactId: `cucumber-java8`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -125,7 +122,6 @@ recipeList:
       oldArtifactId: cucumber-java8
       newGroupId: io.cucumber
       newArtifactId: cucumber-java8
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Migrate Spring Boot properties to 2.1
 
-**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_1**
-_Migrate properties found in `application.properties` and `application.yml`._
+**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_1** _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrate properties found in `application.properties` and `application.yml`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,79 +84,78 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `management.metrics.binders.files.enabled`
   * newPropertyKey: `management.metrics.enable.process.files`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `management.metrics.binders.jvm.enabled`
   * newPropertyKey: `management.metrics.enable.jvm`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `management.metrics.binders.logback.enabled`
   * newPropertyKey: `management.metrics.enable.logback`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `server.servlet.path`
   * newPropertyKey: `spring.mvc.servlet.path`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.activemq.pool.maximum-active-session-per-connection`
   * newPropertyKey: `spring.activemq.pool.max-sessions-per-connection`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.artemis.pool.maximum-active-session-per-connection`
   * newPropertyKey: `spring.artemis.pool.max-sessions-per-connection`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.admin.ssl.keystore-location`
   * newPropertyKey: `spring.kafka.admin.ssl.key-store-location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.admin.ssl.keystore-password`
   * newPropertyKey: `spring.kafka.admin.ssl.key-store-password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.admin.ssl.truststore-location`
   * newPropertyKey: `spring.kafka.admin.ssl.trust-store-location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.admin.ssl.truststore-password`
   * newPropertyKey: `spring.kafka.admin.ssl.trust-store-password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.consumer.ssl.keystore-location`
   * newPropertyKey: `spring.kafka.consumer.ssl.key-store-location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.consumer.ssl.keystore-password`
   * newPropertyKey: `spring.kafka.consumer.ssl.key-store-password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.consumer.ssl.truststore-location`
   * newPropertyKey: `spring.kafka.consumer.ssl.trust-store-location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.consumer.ssl.truststore-password`
   * newPropertyKey: `spring.kafka.consumer.ssl.trust-store-password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.producer.ssl.keystore-location`
   * newPropertyKey: `spring.kafka.producer.ssl.key-store-location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.producer.ssl.keystore-password`
   * newPropertyKey: `spring.kafka.producer.ssl.key-store-password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.producer.ssl.truststore-location`
   * newPropertyKey: `spring.kafka.producer.ssl.trust-store-location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.producer.ssl.truststore-password`
   * newPropertyKey: `spring.kafka.producer.ssl.trust-store-password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.ssl.keystore-location`
   * newPropertyKey: `spring.kafka.ssl.key-store-location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.ssl.keystore-password`
   * newPropertyKey: `spring.kafka.ssl.key-store-password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.ssl.truststore-location`
   * newPropertyKey: `spring.kafka.ssl.trust-store-location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.kafka.ssl.truststore-password`
   * newPropertyKey: `spring.kafka.ssl.trust-store-password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.mvc.formcontent.putfilter.enabled`
   * newPropertyKey: `spring.mvc.formcontent.filter.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.resources.chain.gzipped`
   * newPropertyKey: `spring.resources.chain.compressed`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -241,7 +238,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.resources.chain.gzipped
       newPropertyKey: spring.resources.chain.compressed
-
 ```
 {% endtab %}
 {% endtabs %}

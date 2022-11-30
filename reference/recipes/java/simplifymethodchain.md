@@ -1,7 +1,6 @@
 # Simplify a call chain
 
-**org.openrewrite.java.SimplifyMethodChain**
-_Simplify `a.b().c()` to `a.d()`._
+**org.openrewrite.java.SimplifyMethodChain** _Simplify `a.b().c()` to `a.d()`._
 
 ## Source
 
@@ -13,16 +12,14 @@ _Simplify `a.b().c()` to `a.d()`._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `List` | methodPatternChain | A list of [method patterns](/reference/method-patterns.md) that are called in sequence |
-| `String` | newMethodName | The method name that will replace the existing name. The new method name target is assumed to have the same arguments as the last method in the chain. |
-
+| Type     | Name               | Description                                                                                                                                            |
+| -------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `List`   | methodPatternChain | A list of [method patterns](../../method-patterns.md) that are called in sequence                                                                      |
+| `String` | newMethodName      | The method name that will replace the existing name. The new method name target is assumed to have the same arguments as the last method in the chain. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.SimplifyMethodChainExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.SimplifyMethodChainExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       newMethodName: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.SimplifyMethodChainExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

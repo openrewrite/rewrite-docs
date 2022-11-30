@@ -1,7 +1,6 @@
 # Normalize to tabs or spaces
 
-**org.openrewrite.xml.format.NormalizeTabsOrSpaces**
-_Consistently use either tabs or spaces in indentation._
+**org.openrewrite.xml.format.NormalizeTabsOrSpaces** _Consistently use either tabs or spaces in indentation._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Consistently use either tabs or spaces in indentation._
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

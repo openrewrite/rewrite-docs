@@ -1,7 +1,6 @@
 # Find Artifactory secrets
 
-**org.openrewrite.java.security.secrets.FindArtifactorySecrets**
-_Locates Artifactory secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindArtifactorySecrets** _Locates Artifactory secrets stored in plain text in code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates Artifactory secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,13 +88,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Artifactory`
   * valuePattern: `(?:\s|=|:|"|^)AP[\dABCDEF][a-zA-Z0-9]{8,}(?:\s|"|$)`
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Artifactory`
   * valuePattern: `(?:\s|=|:|"|^)AKC[a-zA-Z0-9]{10,}(?:\s|"|$)`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +112,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
       secretName: Artifactory
       valuePattern: (?:\s|=|:|"|^)AKC[a-zA-Z0-9]{10,}(?:\s|"|$)
-
 ```
 {% endtab %}
 {% endtabs %}

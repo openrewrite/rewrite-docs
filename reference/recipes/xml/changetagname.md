@@ -1,7 +1,6 @@
 # Change XML Tag Name
 
-**org.openrewrite.xml.ChangeTagName**
-_Alters the name of XML tags matching the provided expression._
+**org.openrewrite.xml.ChangeTagName** _Alters the name of XML tags matching the provided expression._
 
 ## Source
 
@@ -13,17 +12,15 @@ _Alters the name of XML tags matching the provided expression._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
+| Type     | Name        | Description                                                                                           |
+| -------- | ----------- | ----------------------------------------------------------------------------------------------------- |
 | `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. |
-| `String` | newName | The new name for the tag. |
-| `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. |
-
+| `String` | newName     | The new name for the tag.                                                                             |
+| `String` | fileMatcher | _Optional_. If provided only matching files will be modified. This is a glob expression.              |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeTagNameExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeTagNameExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       fileMatcher: '**/application-*.xml'
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeTagNameExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

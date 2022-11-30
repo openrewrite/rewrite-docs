@@ -1,7 +1,6 @@
 # Finalize classes with private constructors
 
-**org.openrewrite.java.cleanup.FinalClass**
-_Adds the `final` modifier to classes that expose no public or package-private constructors._
+**org.openrewrite.java.cleanup.FinalClass** _Adds the `final` modifier to classes that expose no public or package-private constructors._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Adds the `final` modifier to classes that expose no public or package-private c
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

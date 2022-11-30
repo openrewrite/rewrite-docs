@@ -1,7 +1,6 @@
-# `switch` statements should have at least 3 `case` clauses
+# switch statements should have at least 3 case clauses
 
-**org.openrewrite.java.cleanup.MinimumSwitchCases**
-_`switch` statements are useful when many code paths branch depending on the value of a single expression. For just one or two code paths, the code will be more readable with `if` statements._
+**org.openrewrite.java.cleanup.MinimumSwitchCases** _`switch` statements are useful when many code paths branch depending on the value of a single expression. For just one or two code paths, the code will be more readable with `if` statements._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _`switch` statements are useful when many code paths branch depending on the val
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

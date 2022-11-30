@@ -1,7 +1,6 @@
 # Use logger instead of system print statements
 
-**org.openrewrite.java.logging.SystemPrintToLogging**
-_Replace `System.out` and `System.err` print statements with a logger._
+**org.openrewrite.java.logging.SystemPrintToLogging** _Replace `System.out` and `System.err` print statements with a logger._
 
 ## Source
 
@@ -13,13 +12,12 @@ _Replace `System.out` and `System.err` print statements with a logger._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | addLogger | *Optional*. Add a logger field to the class if it isn't already present. |
-| `String` | loggerName | *Optional*. The name of the logger to use when generating a field. |
-| `String` | loggingFramework | *Optional*. The logging framework to use. |
-| `String` | level | *Optional*. The logging level to turn `System.out` print statements into. |
-
+| Type      | Name             | Description                                                               |
+| --------- | ---------------- | ------------------------------------------------------------------------- |
+| `Boolean` | addLogger        | _Optional_. Add a logger field to the class if it isn't already present.  |
+| `String`  | loggerName       | _Optional_. The name of the logger to use when generating a field.        |
+| `String`  | loggingFramework | _Optional_. The logging framework to use.                                 |
+| `String`  | level            | _Optional_. The logging level to turn `System.out` print statements into. |
 
 ## Usage
 
@@ -95,17 +93,16 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use logger instead of system print statements](../../java/logging/systemerrtologging.md)
-  * loggerName: ``
-  * loggingFramework: ``
-* [Use logger instead of system print statements](../../java/logging/systemouttologging.md)
-  * loggerName: ``
-  * loggingFramework: ``
-  * level: ``
-* [Use logger instead of `printStackTrace()`](../../java/logging/printstacktracetologerror.md)
-  * loggerName: ``
-  * loggingFramework: ``
-
+* [Use logger instead of system print statements](systemerrtologging.md)
+  * loggerName: \`\`
+  * loggingFramework: \`\`
+* [Use logger instead of system print statements](systemouttologging.md)
+  * loggerName: \`\`
+  * loggingFramework: \`\`
+  * level: \`\`
+* [Use logger instead of `printStackTrace()`](printstacktracetologerror.md)
+  * loggerName: \`\`
+  * loggingFramework: \`\`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -133,7 +130,6 @@ recipeList:
   - org.openrewrite.java.logging.PrintStackTraceToLogError:
       loggerName: 
       loggingFramework: 
-
 ```
 {% endtab %}
 {% endtabs %}

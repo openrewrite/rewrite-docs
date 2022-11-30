@@ -1,7 +1,6 @@
 # Migrate Log4j 2.x to Logback
 
-**org.openrewrite.java.logging.logback.Log4jToLogback**
-_Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementation directly. Note, this currently does not modify `log4j.properties` files._
+**org.openrewrite.java.logging.logback.Log4jToLogback** _Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementation directly. Note, this currently does not modify `log4j.properties` files._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementatio
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 1.15.0
-
 
 ## Usage
 
@@ -92,9 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate Log4j to SLF4J](../../../java/logging/slf4j/log4jtoslf4j.md)
-* [Migrate Log4j 2.x Appender to logback-classic equivalents](../../../java/logging/logback/log4jappendertologback.md)
-* [Migrate Log4j 2.x Layout to logback-classic equivalents](../../../java/logging/logback/log4jlayouttologback.md)
+* [Migrate Log4j to SLF4J](../slf4j/log4jtoslf4j.md)
+* [Migrate Log4j 2.x Appender to logback-classic equivalents](log4jappendertologback.md)
+* [Migrate Log4j 2.x Layout to logback-classic equivalents](log4jlayouttologback.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `ch.qos.logback`
   * artifactId: `logback-core`
@@ -113,7 +111,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `org.apache.logging.log4j`
   * artifactId: `log4j-*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -149,7 +146,6 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: org.apache.logging.log4j
       artifactId: log4j-*
-
 ```
 {% endtab %}
 {% endtabs %}

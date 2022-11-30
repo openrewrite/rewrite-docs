@@ -1,7 +1,6 @@
 # Set File Permission Attributes
 
-**org.openrewrite.SetFilePermissions**
-_Set a files read, write and executable permission attributes._
+**org.openrewrite.SetFilePermissions** _Set a files read, write and executable permission attributes._
 
 ## Source
 
@@ -13,18 +12,16 @@ _Set a files read, write and executable permission attributes._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | fileMatcher | Permissions will be applied to matching files. This is a glob expression. |
-| `Boolean` | isReadable | File read permission. |
-| `Boolean` | isWritable | File write permission. |
-| `Boolean` | isExecutable | Files executable permission. |
-
+| Type      | Name         | Description                                                               |
+| --------- | ------------ | ------------------------------------------------------------------------- |
+| `String`  | fileMatcher  | Permissions will be applied to matching files. This is a glob expression. |
+| `Boolean` | isReadable   | File read permission.                                                     |
+| `Boolean` | isWritable   | File write permission.                                                    |
+| `Boolean` | isExecutable | Files executable permission.                                              |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.SetFilePermissionsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.SetFilePermissionsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -40,7 +37,6 @@ recipeList:
       isExecutable: true
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.SetFilePermissionsExample` has been defined activate it in your build file:
 
@@ -59,7 +55,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

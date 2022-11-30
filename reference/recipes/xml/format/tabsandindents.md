@@ -1,7 +1,6 @@
 # Tabs and indents
 
-**org.openrewrite.xml.format.TabsAndIndents**
-_Format tabs and indents in XML code._
+**org.openrewrite.xml.format.TabsAndIndents** _Format tabs and indents in XML code._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Format tabs and indents in XML code._
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

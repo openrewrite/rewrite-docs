@@ -1,13 +1,12 @@
 # Ensure storage account uses latest TLS version
 
-**org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion**
-_Communication between an Azure Storage account and a client application is encrypted using Transport Layer Security (TLS). Microsoft recommends using the latest version of TLS for all your Microsoft Azure App Service web applications._
+**org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion** _Communication between an Azure Storage account and a client application is encrypted using Transport Layer Security (TLS). Microsoft recommends using the latest version of TLS for all your Microsoft Azure App Service web applications._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_44
+* CKV\_AZURE\_44
 
 ## Source
 
@@ -16,7 +15,6 @@ _Communication between an Azure Storage account and a client application is encr
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_storage_account`
   * content: `min_tls_version = "TLS1_2"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_storage_account
       content: min_tls_version = "TLS1_2"
-
 ```
 {% endtab %}
 {% endtabs %}

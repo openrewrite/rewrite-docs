@@ -1,7 +1,6 @@
 # Find use of JavaFX
 
-**org.openrewrite.cloudsuitability.FindJavaFX**
-_JavaFX is not cloud compatible and requires the JRE on the remote device._
+**org.openrewrite.cloudsuitability.FindJavaFX** _JavaFX is not cloud compatible and requires the JRE on the remote device._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _JavaFX is not cloud compatible and requires the JRE on the remote device._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javafx..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javafx..*
-
 ```
 {% endtab %}
 {% endtabs %}

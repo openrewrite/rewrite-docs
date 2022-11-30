@@ -1,7 +1,6 @@
 # Cucumber-Java8 migration to Cucumber-Java
 
-**org.openrewrite.java.testing.cucumber.CucumberJava8ToJava**
-_Migrates Cucumber-Java8 step definitions and LambdaGlue hooks to Cucumber-Java annotated methods._
+**org.openrewrite.java.testing.cucumber.CucumberJava8ToJava** _Migrates Cucumber-Java8 step definitions and LambdaGlue hooks to Cucumber-Java annotated methods._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Migrates Cucumber-Java8 step definitions and LambdaGlue hooks to Cucumber-Java 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,17 +89,16 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Replace Cucumber-Java8 hook definition with Cucumber-Java](../../../java/testing/cucumber/cucumberjava8hookdefinitiontocucumberjava.md)
-* [Replace Cucumber-Java8 step definitions with Cucumber-Java](../../../java/testing/cucumber/cucumberjava8stepdefinitiontocucumberjava.md)
+* [Replace Cucumber-Java8 hook definition with Cucumber-Java](cucumberjava8hookdefinitiontocucumberjava.md)
+* [Replace Cucumber-Java8 step definitions with Cucumber-Java](cucumberjava8stepdefinitiontocucumberjava.md)
 * [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
   * oldGroupId: `io.cucumber`
   * oldArtifactId: `cucumber-java8`
   * newGroupId: `io.cucumber`
   * newArtifactId: `cucumber-java`
-* [Rename package name](../../../java/changepackage.md)
+* [Rename package name](../../changepackage.md)
   * oldPackageName: `io.cucumber.java8`
   * newPackageName: `io.cucumber.java`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -125,7 +122,6 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: io.cucumber.java8
       newPackageName: io.cucumber.java
-
 ```
 {% endtab %}
 {% endtabs %}

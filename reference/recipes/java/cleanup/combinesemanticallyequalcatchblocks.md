@@ -1,7 +1,6 @@
 # Combine semantically equal catch blocks
 
-**org.openrewrite.java.cleanup.CombineSemanticallyEqualCatchBlocks**
-_Combine catches in a try that contain semantically equivalent blocks. No change will be made when a caught exception exists if combing catches may change application behavior or type attribution is missing._
+**org.openrewrite.java.cleanup.CombineSemanticallyEqualCatchBlocks** _Combine catches in a try that contain semantically equivalent blocks. No change will be made when a caught exception exists if combing catches may change application behavior or type attribution is missing._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Combine catches in a try that contain semantically equivalent blocks. No change
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

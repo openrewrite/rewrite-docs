@@ -1,7 +1,6 @@
 # Simplify boolean return
 
-**org.openrewrite.java.cleanup.SimplifyBooleanReturn**
-_Simplifies Boolean expressions by removing redundancies, e.g.: `a && true` simplifies to `a`._
+**org.openrewrite.java.cleanup.SimplifyBooleanReturn** _Simplifies Boolean expressions by removing redundancies, e.g.: `a && true` simplifies to `a`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Simplifies Boolean expressions by removing redundancies, e.g.: `a && true` simp
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

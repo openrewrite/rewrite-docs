@@ -1,7 +1,6 @@
-# Find Gradle `dependencies` blocks
+# Find Gradle dependencies blocks
 
-**org.openrewrite.gradle.search.FindDependencyHandler**
-_Find the dependency handler containing any number of dependency definitions._
+**org.openrewrite.gradle.search.FindDependencyHandler** _Find the dependency handler containing any number of dependency definitions._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Find the dependency handler containing any number of dependency definitions._
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
 * version: 7.33.0
-
 
 ## Usage
 
@@ -89,7 +87,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Find method usages](../../java/search/findmethods.md)
   * methodPattern: `RewriteGradleProject dependencies(groovy.lang.Closure)`
   * matchOverrides: `false`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.java.search.FindMethods:
       methodPattern: RewriteGradleProject dependencies(groovy.lang.Closure)
       matchOverrides: false
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Find uses of JCache
 
-**org.openrewrite.cloudsuitability.FindJCache**
-_Convert to redis or consider TKG._
+**org.openrewrite.cloudsuitability.FindJCache** _Convert to redis or consider TKG._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Convert to redis or consider TKG._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javax.cache..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javax.cache..*
-
 ```
 {% endtab %}
 {% endtabs %}

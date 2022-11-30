@@ -1,7 +1,6 @@
 # Unnecessary close in try-with-resources
 
-**org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources**
-_Remove unnecessary `AutoCloseable#close()` statements in try-with-resources._
+**org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources** _Remove unnecessary `AutoCloseable#close()` statements in try-with-resources._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Remove unnecessary `AutoCloseable#close()` statements in try-with-resources._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

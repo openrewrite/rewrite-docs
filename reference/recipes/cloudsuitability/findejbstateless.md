@@ -1,7 +1,6 @@
 # Find EJB stateless beans
 
-**org.openrewrite.cloudsuitability.FindEjbStateless**
-_Refer to platform documentation._
+**org.openrewrite.cloudsuitability.FindEjbStateless** _Refer to platform documentation._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Refer to platform documentation._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javax.ejb.Stateless`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javax.ejb.Stateless
-
 ```
 {% endtab %}
 {% endtabs %}

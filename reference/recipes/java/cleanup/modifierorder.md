@@ -1,7 +1,6 @@
 # Modifier order
 
-**org.openrewrite.java.cleanup.ModifierOrder**
-_Modifiers should be declared in the correct order as recommended by the JLS._
+**org.openrewrite.java.cleanup.ModifierOrder** _Modifiers should be declared in the correct order as recommended by the JLS._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Modifiers should be declared in the correct order as recommended by the JLS._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

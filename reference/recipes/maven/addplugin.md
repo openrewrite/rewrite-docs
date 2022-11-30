@@ -1,7 +1,6 @@
 # Add Maven plugin
 
-**org.openrewrite.maven.AddPlugin**
-_Add the specified Maven plugin to the pom.xml._
+**org.openrewrite.maven.AddPlugin** _Add the specified Maven plugin to the pom.xml._
 
 ## Source
 
@@ -13,20 +12,18 @@ _Add the specified Maven plugin to the pom.xml._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | version | A fixed version of the plugin to add. |
-| `String` | configuration | *Optional*. Optional plugin configuration provided as raw XML |
-| `String` | dependencies | *Optional*. Optional plugin dependencies provided as raw XML. |
-| `String` | executions | *Optional*. Optional executions provided as raw XML. |
-
+| Type     | Name          | Description                                                                                      |
+| -------- | ------------- | ------------------------------------------------------------------------------------------------ |
+| `String` | groupId       | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'.  |
+| `String` | artifactId    | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
+| `String` | version       | A fixed version of the plugin to add.                                                            |
+| `String` | configuration | _Optional_. Optional plugin configuration provided as raw XML                                    |
+| `String` | dependencies  | _Optional_. Optional plugin dependencies provided as raw XML.                                    |
+| `String` | executions    | _Optional_. Optional executions provided as raw XML.                                             |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddPluginExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddPluginExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -45,7 +42,6 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.AddPluginExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -63,7 +59,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

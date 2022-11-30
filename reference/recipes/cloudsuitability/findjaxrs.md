@@ -1,7 +1,6 @@
 # Find use of JAX-RS
 
-**org.openrewrite.cloudsuitability.FindJaxRs**
-_Refer to platform documentation._
+**org.openrewrite.cloudsuitability.FindJaxRs** _Refer to platform documentation._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Refer to platform documentation._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -94,7 +92,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * fullyQualifiedTypeName: `com.sun.jersey..*`
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javax.ws.rs..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,6 @@ recipeList:
       fullyQualifiedTypeName: com.sun.jersey..*
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javax.ws.rs..*
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Simplify constant if branch execution
 
-**org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution**
-_Checks for if expressions that are always `true` or `false` and simplifies them._
+**org.openrewrite.java.cleanup.SimplifyConstantIfBranchExecution** _Checks for if expressions that are always `true` or `false` and simplifies them._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Checks for if expressions that are always `true` or `false` and simplifies them
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

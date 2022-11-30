@@ -1,7 +1,6 @@
 # Redundant file creation
 
-**org.openrewrite.java.cleanup.RedundantFileCreation**
-_Remove unnecessary intermediate creations of files._
+**org.openrewrite.java.cleanup.RedundantFileCreation** _Remove unnecessary intermediate creations of files._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove unnecessary intermediate creations of files._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

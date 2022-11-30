@@ -1,7 +1,6 @@
 # Upgrade to Spring Boot 2.3
 
-**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_3**
-_Upgrade to Spring Boot 2.3 from any prior 2.x version._
+**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_3** _Upgrade to Spring Boot 2.3 from any prior 2.x version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Boot 2.3 from any prior 2.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,7 +84,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Spring Boot 2.2](../../../java/spring/boot2/upgradespringboot_2_2.md)
+* [Upgrade to Spring Boot 2.2](upgradespringboot\_2\_2.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -96,11 +94,10 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.3.x`
-* [Use `RestClientBuilderCustomizer`](../../../java/spring/boot2/migraterestclientbuildercustomizerpackagename.md)
-* [Use `ErrorProperties#IncludeStacktrace.ON_PARAM`](../../../java/spring/boot2/migrateerrorpropertiesincludestacktraceconstants.md)
-* [Use `ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)`](../../../java/spring/boot2/geterrorattributes.md)
-* [Migrate Spring Boot properties to 2.3](../../../java/spring/boot2/springbootproperties_2_3.md)
-
+* [Use `RestClientBuilderCustomizer`](migraterestclientbuildercustomizerpackagename.md)
+* [Use `ErrorProperties#IncludeStacktrace.ON_PARAM`](migrateerrorpropertiesincludestacktraceconstants.md)
+* [Use `ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)`](geterrorattributes.md)
+* [Migrate Spring Boot properties to 2.3](springbootproperties\_2\_3.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -125,7 +122,6 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateErrorPropertiesIncludeStackTraceConstants
   - org.openrewrite.java.spring.boot2.GetErrorAttributes
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_3
-
 ```
 {% endtab %}
 {% endtabs %}

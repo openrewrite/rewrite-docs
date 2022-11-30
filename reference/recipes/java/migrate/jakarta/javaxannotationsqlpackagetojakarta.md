@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`
+# Migrate deprecated javax.annotation.sql packages to jakarta.annotation.sql
 
-**org.openrewrite.java.migrate.jakarta.JavaxAnnotationSqlPackageToJakarta**
-_Change type of classes in the `javax.annotation.sql` package to jakarta._
+**org.openrewrite.java.migrate.jakarta.JavaxAnnotationSqlPackageToJakarta** _Change type of classes in the `javax.annotation.sql` package to jakarta._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Change type of classes in the `javax.annotation.sql` package to jakarta._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -92,13 +90,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.sql.DataSourceDefinition`
   * newFullyQualifiedTypeName: `jakarta.annotation.sql.DataSourceDefinition`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.sql.DataSourceDefinitions`
   * newFullyQualifiedTypeName: `jakarta.annotation.sql.DataSourceDefinitions`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +116,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.annotation.sql.DataSourceDefinitions
       newFullyQualifiedTypeName: jakarta.annotation.sql.DataSourceDefinitions
-
 ```
 {% endtab %}
 {% endtabs %}

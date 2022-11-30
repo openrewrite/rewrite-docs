@@ -1,7 +1,6 @@
 # Remove out-of-date OWASP suppressions
 
-**org.openrewrite.xml.security.RemoveOwaspSuppressions**
-_Remove all OWASP suppressions with a suppression end date in the past, as these are no longer valid. For use with the OWASP `dependency-check` tool. More details on OWASP suppression files: https://jeremylong.github.io/DependencyCheck/general/suppression.html._
+**org.openrewrite.xml.security.RemoveOwaspSuppressions** _Remove all OWASP suppressions with a suppression end date in the past, as these are no longer valid. For use with the OWASP `dependency-check` tool. More details on OWASP suppression files: https://jeremylong.github.io/DependencyCheck/general/suppression.html._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove all OWASP suppressions with a suppression end date in the past, as these
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

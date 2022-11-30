@@ -1,7 +1,6 @@
 # Upgrade Wro4j plugin version
 
-**org.openrewrite.java.migrate.wro4j.UpgradeWro4jMavenPluginVersion**
-_This recipe will upgrade Wro4j to a more recent version compatible with Java 11._
+**org.openrewrite.java.migrate.wro4j.UpgradeWro4jMavenPluginVersion** _This recipe will upgrade Wro4j to a more recent version compatible with Java 11._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _This recipe will upgrade Wro4j to a more recent version compatible with Java 11
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -95,7 +93,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `ro.isdc.wro4j`
   * artifactId: `wro4j-maven-plugin`
   * newVersion: `1.10.1`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
       groupId: ro.isdc.wro4j
       artifactId: wro4j-maven-plugin
       newVersion: 1.10.1
-
 ```
 {% endtab %}
 {% endtabs %}

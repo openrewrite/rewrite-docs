@@ -1,7 +1,6 @@
 # Upgrade to Spring Boot 2.1
 
-**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_1**
-_Upgrade to Spring Boot 2.1 from any prior 2.x version._
+**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_1** _Upgrade to Spring Boot 2.1 from any prior 2.x version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Boot 2.1 from any prior 2.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -95,11 +93,10 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.1.x`
-* [Use `RestTemplateBuilder#basicAuthentication`](../../../java/spring/boot2/migrateresttemplatebuilderbasicauthorization.md)
-* [Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`](../../../java/spring/boot2/migrateresttemplatebuildertimeoutbyint.md)
-* [Use `MultipartConfigFactory` with `DataSize` arguments](../../../java/spring/boot2/migratemultipartconfigfactory.md)
-* [Migrate Spring Boot properties to 2.1](../../../java/spring/boot2/springbootproperties_2_1.md)
-
+* [Use `RestTemplateBuilder#basicAuthentication`](migrateresttemplatebuilderbasicauthorization.md)
+* [Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`](migrateresttemplatebuildertimeoutbyint.md)
+* [Use `MultipartConfigFactory` with `DataSize` arguments](migratemultipartconfigfactory.md)
+* [Migrate Spring Boot properties to 2.1](springbootproperties\_2\_1.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -123,7 +120,6 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderTimeoutByInt
   - org.openrewrite.java.spring.boot2.MigrateMultipartConfigFactory
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_1
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Clean Up Assertions
 
-**org.openrewrite.java.testing.junit5.CleanupAssertions**
-_Simplifies JUnit Jupiter assertions to their most-direct equivalents_
+**org.openrewrite.java.testing.junit5.CleanupAssertions** _Simplifies JUnit Jupiter assertions to their most-direct equivalents_
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Simplifies JUnit Jupiter assertions to their most-direct equivalents_
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,15 +89,14 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Replace JUnit `assertTrue(!<boolean>)` to `assertFalse(<boolean>)`](../../../java/testing/cleanup/asserttruenegationtoassertfalse.md)
-* [Replace JUnit `assertFalse(!<boolean>)` to `assertTrue(<boolean>)`](../../../java/testing/cleanup/assertfalsenegationtoasserttrue.md)
-* [Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`](../../../java/testing/cleanup/asserttrueequalstoassertequals.md)
-* [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](../../../java/testing/cleanup/asserttruecomparisontoassertequals.md)
-* [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](../../../java/testing/cleanup/assertfalseequalstoassertnotequals.md)
-* [`assertEquals(a, null)` to `assertNull(a)`](../../../java/testing/cleanup/assertequalsnulltoassertnull.md)
-* [Replace JUnit `assertFalse(a == null)` to `assertNotNull(a)`](../../../java/testing/cleanup/assertfalsenulltoassertnotnull.md)
-* [Assertion arguments should be passed in the correct order](../../../java/testing/cleanup/assertionsargumentorder.md)
-
+* [Replace JUnit `assertTrue(!<boolean>)` to `assertFalse(<boolean>)`](../cleanup/asserttruenegationtoassertfalse.md)
+* [Replace JUnit `assertFalse(!<boolean>)` to `assertTrue(<boolean>)`](../cleanup/assertfalsenegationtoasserttrue.md)
+* [Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`](../cleanup/asserttrueequalstoassertequals.md)
+* [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](../cleanup/asserttruecomparisontoassertequals.md)
+* [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](../cleanup/assertfalseequalstoassertnotequals.md)
+* [`assertEquals(a, null)` to `assertNull(a)`](../cleanup/assertequalsnulltoassertnull.md)
+* [Replace JUnit `assertFalse(a == null)` to `assertNotNull(a)`](../cleanup/assertfalsenulltoassertnotnull.md)
+* [Assertion arguments should be passed in the correct order](../cleanup/assertionsargumentorder.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -121,7 +118,6 @@ recipeList:
   - org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull
   - org.openrewrite.java.testing.cleanup.AssertFalseNullToAssertNotNull
   - org.openrewrite.java.testing.cleanup.AssertionsArgumentOrder
-
 ```
 {% endtab %}
 {% endtabs %}

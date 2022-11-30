@@ -1,7 +1,6 @@
 # Upper case literal suffixes
 
-**org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes**
-_Using upper case literal suffixes for declaring literals is less ambiguous, e.g., `1l` versus `1L`._
+**org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes** _Using upper case literal suffixes for declaring literals is less ambiguous, e.g., `1l` versus `1L`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Using upper case literal suffixes for declaring literals is less ambiguous, e.g
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

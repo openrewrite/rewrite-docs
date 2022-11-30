@@ -1,7 +1,6 @@
 # Randomize tree IDs
 
-**org.openrewrite.java.RandomizeId**
-_Scramble the IDs. This was intended as a utility to test _en masse_ different techniques for UUID generation and compare their relative performance outside of a microbenchmark._
+**org.openrewrite.java.RandomizeId** _Scramble the IDs. This was intended as a utility to test en masse different techniques for UUID generation and compare their relative performance outside of a microbenchmark._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Scramble the IDs. This was intended as a utility to test _en masse_ different t
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

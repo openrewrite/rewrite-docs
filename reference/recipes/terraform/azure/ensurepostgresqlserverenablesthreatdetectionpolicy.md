@@ -1,13 +1,12 @@
 # Ensure PostgreSQL server enables Threat Detection policy
 
-**org.openrewrite.terraform.azure.EnsurePostgreSQLServerEnablesThreatDetectionPolicy**
-_Ensure PostgreSQL server enables Threat Detection policy._
+**org.openrewrite.terraform.azure.EnsurePostgreSQLServerEnablesThreatDetectionPolicy** _Ensure PostgreSQL server enables Threat Detection policy._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_128
+* CKV\_AZURE\_128
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure PostgreSQL server enables Threat Detection policy._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,12 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_postgresql_server`
-  * content: `threat_detection_policy {
-  enabled = true
-}`
-
+  * content: `threat_detection_policy { enabled = true }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +112,6 @@ recipeList:
       content: threat_detection_policy {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}

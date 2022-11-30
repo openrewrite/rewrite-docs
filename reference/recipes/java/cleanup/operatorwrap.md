@@ -1,7 +1,6 @@
 # Operator wrapping
 
-**org.openrewrite.java.cleanup.OperatorWrap**
-_Fixes line wrapping policies on operators._
+**org.openrewrite.java.cleanup.OperatorWrap** _Fixes line wrapping policies on operators._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Fixes line wrapping policies on operators._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

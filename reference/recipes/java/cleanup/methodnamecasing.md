@@ -1,7 +1,6 @@
 # Method name casing
 
-**org.openrewrite.java.cleanup.MethodNameCasing**
-_Method names should comply with a naming convention._
+**org.openrewrite.java.cleanup.MethodNameCasing** _Method names should comply with a naming convention._
 
 ### Tags
 
@@ -17,11 +16,10 @@ _Method names should comply with a naming convention._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | includeTestSources | *Optional*. Changes only apply to main by default. `includeTestSources` will apply the recipe to `test` source files. |
-| `Boolean` | renamePublicMethods | *Optional*. Changes are not applied to public methods unless specified. |
-
+| Type      | Name                | Description                                                                                                           |
+| --------- | ------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `Boolean` | includeTestSources  | _Optional_. Changes only apply to main by default. `includeTestSources` will apply the recipe to `test` source files. |
+| `Boolean` | renamePublicMethods | _Optional_. Changes are not applied to public methods unless specified.                                               |
 
 ## Usage
 
@@ -42,7 +40,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # Nested enums are not static
 
-**org.openrewrite.java.cleanup.NestedEnumsAreNotStatic**
-_Remove static modifier from nested enum types since they are implicitly static._
+**org.openrewrite.java.cleanup.NestedEnumsAreNotStatic** _Remove static modifier from nested enum types since they are implicitly static._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Remove static modifier from nested enum types since they are implicitly static.
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

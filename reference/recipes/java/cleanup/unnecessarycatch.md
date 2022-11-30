@@ -1,7 +1,6 @@
 # Remove catch for a checked exception if the try block does not throw that exception
 
-**org.openrewrite.java.cleanup.UnnecessaryCatch**
-_A refactoring operation may result in a checked exception that is no longer thrown from a `try` block. This recipe will find and remove unnecessary catch blocks._
+**org.openrewrite.java.cleanup.UnnecessaryCatch** _A refactoring operation may result in a checked exception that is no longer thrown from a `try` block. This recipe will find and remove unnecessary catch blocks._
 
 ## Source
 
@@ -10,7 +9,6 @@ _A refactoring operation may result in a checked exception that is no longer thr
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

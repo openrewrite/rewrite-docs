@@ -1,11 +1,10 @@
 # Disable Instance Metadata Service version 1
 
-**org.openrewrite.terraform.aws.DisableInstanceMetadataServiceV1**
-_As a request/response method IMDSv1 is prone to local misconfigurations._
+**org.openrewrite.terraform.aws.DisableInstanceMetadataServiceV1** _As a request/response method IMDSv1 is prone to local misconfigurations._
 
 ### Tags
 
-* CKV_AWS_79
+* CKV\_AWS\_79
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _As a request/response method IMDSv1 is prone to local misconfigurations._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,13 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_instance`
-  * content: `metadata_options {
-  http_endpoint = "enabled"
-  http_tokens   = "required"
-}`
-
+  * content: `metadata_options { http_endpoint = "enabled" http_tokens = "required" }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +113,6 @@ recipeList:
   http_endpoint = "enabled"
   http_tokens   = "required"
 }
-
 ```
 {% endtab %}
 {% endtabs %}

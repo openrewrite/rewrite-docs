@@ -1,7 +1,6 @@
-# Uses `@RewriteSkip` annotation
+# Uses @RewriteSkip annotation
 
-**org.openrewrite.java.DoesNotUseRewriteSkip**
-_The annotation provides a mechanism to skip a whole source file from consideration_
+**org.openrewrite.java.DoesNotUseRewriteSkip** _The annotation provides a mechanism to skip a whole source file from consideration_
 
 ## Source
 
@@ -10,7 +9,6 @@ _The annotation provides a mechanism to skip a whole source file from considerat
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

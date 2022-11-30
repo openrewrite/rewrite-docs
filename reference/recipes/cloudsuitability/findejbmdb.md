@@ -1,7 +1,6 @@
 # Find EJB message-driven beans (MDBs)
 
-**org.openrewrite.cloudsuitability.FindEjbMdb**
-_Consult MDB documentation._
+**org.openrewrite.cloudsuitability.FindEjbMdb** _Consult MDB documentation._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Consult MDB documentation._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -94,7 +92,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * fullyQualifiedTypeName: `javax.ejb.MessageDriven`
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javax.ejb.ActivationConfigProperty`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,6 @@ recipeList:
       fullyQualifiedTypeName: javax.ejb.MessageDriven
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javax.ejb.ActivationConfigProperty
-
 ```
 {% endtab %}
 {% endtabs %}

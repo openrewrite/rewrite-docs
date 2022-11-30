@@ -1,7 +1,6 @@
-# Add a comment to a `XML` tag
+# Add a comment to a XML tag
 
-**org.openrewrite.xml.AddCommentToXmlTag**
-_Adds a comment as the first element in a `XML` tag._
+**org.openrewrite.xml.AddCommentToXmlTag** _Adds a comment as the first element in a `XML` tag._
 
 ## Source
 
@@ -13,16 +12,14 @@ _Adds a comment as the first element in a `XML` tag._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | xPath | An XPath expression used to find matching tags. |
-| `String` | commentText | The text to add as a comment.. |
-
+| Type     | Name        | Description                                     |
+| -------- | ----------- | ----------------------------------------------- |
+| `String` | xPath       | An XPath expression used to find matching tags. |
+| `String` | commentText | The text to add as a comment..                  |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCommentToXmlTagExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCommentToXmlTagExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       commentText: This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.AddCommentToXmlTagExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

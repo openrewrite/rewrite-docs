@@ -1,7 +1,6 @@
 # No double brace initialization
 
-**org.openrewrite.java.cleanup.NoDoubleBraceInitialization**
-_Replace `List`, `Map`, and `Set` double brace initialization with an initialization block._
+**org.openrewrite.java.cleanup.NoDoubleBraceInitialization** _Replace `List`, `Map`, and `Set` double brace initialization with an initialization block._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Replace `List`, `Map`, and `Set` double brace initialization with an initializa
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -36,7 +34,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

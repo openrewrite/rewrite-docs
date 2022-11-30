@@ -1,7 +1,6 @@
 # Normalize the line breaks
 
-**org.openrewrite.java.format.NormalizeLineBreaks**
-_Consistently use either Windows style (CRLF) or Linux style (LF) line breaks. If no `GeneralFormatStyle` is specified this will use whichever style of line endings are more common._
+**org.openrewrite.java.format.NormalizeLineBreaks** _Consistently use either Windows style (CRLF) or Linux style (LF) line breaks. If no `GeneralFormatStyle` is specified this will use whichever style of line endings are more common._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Consistently use either Windows style (CRLF) or Linux style (LF) line breaks. I
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

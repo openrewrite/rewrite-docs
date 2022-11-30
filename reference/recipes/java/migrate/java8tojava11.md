@@ -1,8 +1,6 @@
 # Migrate to Java 11 from Java 8 through 10
 
-**org.openrewrite.java.migrate.Java8toJava11**
-_This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
-_
+**org.openrewrite.java.migrate.Java8toJava11** \_This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11. \_
 
 ### Tags
 
@@ -19,7 +17,6 @@ _
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -95,30 +92,29 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `java.util.Base64` instead of `sun.misc`](../../java/migrate/usejavautilbase64.md)
-* [Add explicit JAXB dependencies](../../java/migrate/javax/addjaxbdependencies.md)
-* [Add explicit JAX-WS dependencies](../../java/migrate/javax/addjaxwsdependencies.md)
-* [Add explicit Inject dependencies](../../java/migrate/javax/addinjectdependencies.md)
-* [Add JDeprScan Maven Plug-in](../../java/migrate/addjdeprscanplugin.md)
-  * release: ``
-* [`BigDecimal` rounding constants to `RoundingMode` enums](../../java/cleanup/bigdecimalroundingconstantstoenums.md)
-* [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
-* [Migrate deprecated `java.util.concurrent` APIs](../../java/migrate/concurrent/javaconcurrentapis.md)
-* [Migrate deprecated `java.lang` APIs](../../java/migrate/lang/javalangapis.md)
-* [Migrate deprecated `java.util.logging` APIs](../../java/migrate/logging/javaloggingapis.md)
-* [Migrate deprecated `java.net` APIs](../../java/migrate/net/javanetapis.md)
-* [Migrate deprecated `java.sql` APIs](../../java/migrate/sql/javasqlapis.md)
-* [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](../../java/migrate/javax/javaxlangmodelutil.md)
-* [Migrate deprecated `javax.management.monitor` APIs](../../java/migrate/javax/javaxmanagementmonitorapis.md)
-* [Migrate deprecated `javax.xml.stream` APIs](../../java/migrate/javax/javaxxmlstreamapis.md)
-* [Remove Cobertura Maven plugin](../../java/migrate/cobertura/removecoberturamavenplugin.md)
-* [Upgrade Wro4j plugin version](../../java/migrate/wro4j/upgradewro4jmavenpluginversion.md)
-* [Upgrade JaCoCo Maven plugin version](../../java/migrate/jacoco/upgradejacocomavenpluginversion.md)
-* [Change Maven Java version property values to 11](../../java/migrate/javaversion11.md)
-* [Migrate `java.util` APIs](../../java/migrate/util/javautilapis.md)
-* [Replace !optional.isPresent() with optional.isEmpty()](../../java/migrate/util/optionalnotpresenttoisempty.md)
-* [Replace !optional.isEmpty() with optional.isPresent()](../../java/migrate/util/optionalnotemptytoispresent.md)
-
+* [Use `java.util.Base64` instead of `sun.misc`](usejavautilbase64.md)
+* [Add explicit JAXB dependencies](javax/addjaxbdependencies.md)
+* [Add explicit JAX-WS dependencies](javax/addjaxwsdependencies.md)
+* [Add explicit Inject dependencies](javax/addinjectdependencies.md)
+* [Add JDeprScan Maven Plug-in](addjdeprscanplugin.md)
+  * release: \`\`
+* [`BigDecimal` rounding constants to `RoundingMode` enums](../cleanup/bigdecimalroundingconstantstoenums.md)
+* [Use primitive wrapper `valueOf` method](../cleanup/primitivewrapperclassconstructortovalueof.md)
+* [Migrate deprecated `java.util.concurrent` APIs](concurrent/javaconcurrentapis.md)
+* [Migrate deprecated `java.lang` APIs](lang/javalangapis.md)
+* [Migrate deprecated `java.util.logging` APIs](logging/javaloggingapis.md)
+* [Migrate deprecated `java.net` APIs](net/javanetapis.md)
+* [Migrate deprecated `java.sql` APIs](sql/javasqlapis.md)
+* [Migrate deprecated `javax.lang.model.util` APIs in openjdk.](javax/javaxlangmodelutil.md)
+* [Migrate deprecated `javax.management.monitor` APIs](javax/javaxmanagementmonitorapis.md)
+* [Migrate deprecated `javax.xml.stream` APIs](javax/javaxxmlstreamapis.md)
+* [Remove Cobertura Maven plugin](cobertura/removecoberturamavenplugin.md)
+* [Upgrade Wro4j plugin version](wro4j/upgradewro4jmavenpluginversion.md)
+* [Upgrade JaCoCo Maven plugin version](jacoco/upgradejacocomavenpluginversion.md)
+* [Change Maven Java version property values to 11](javaversion11.md)
+* [Migrate `java.util` APIs](util/javautilapis.md)
+* [Replace !optional.isPresent() with optional.isEmpty()](util/optionalnotpresenttoisempty.md)
+* [Replace !optional.isEmpty() with optional.isPresent()](util/optionalnotemptytoispresent.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -159,7 +155,6 @@ recipeList:
   - org.openrewrite.java.migrate.util.JavaUtilAPIs
   - org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty
   - org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent
-
 ```
 {% endtab %}
 {% endtabs %}

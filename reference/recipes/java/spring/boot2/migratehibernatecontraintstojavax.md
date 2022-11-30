@@ -1,7 +1,6 @@
 # Migrate hibernate validator constraints to javax.
 
-**org.openrewrite.java.spring.boot2.MigrateHibernateContraintsToJavax**
-_`org.hibernate.validator.constraints` were deprecated in 1.x. in favor of their javax counterparts._
+**org.openrewrite.java.spring.boot2.MigrateHibernateContraintsToJavax** _`org.hibernate.validator.constraints` were deprecated in 1.x. in favor of their javax counterparts._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`org.hibernate.validator.constraints` were deprecated in 1.x. in favor of their
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,10 +84,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.constraints.NotBlank`
   * newFullyQualifiedTypeName: `javax.validation.constraints.NotBlank`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.hibernate.validator.constraints.NotEmpty`
   * newFullyQualifiedTypeName: `javax.validation.constraints.NotEmpty`
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -97,7 +95,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `validation-api`
   * version: `2.x`
   * onlyIfUsing: `javax.validation.constraints.*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +116,6 @@ recipeList:
       artifactId: validation-api
       version: 2.x
       onlyIfUsing: javax.validation.constraints.*
-
 ```
 {% endtab %}
 {% endtabs %}

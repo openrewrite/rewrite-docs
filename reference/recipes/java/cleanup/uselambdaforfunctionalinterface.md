@@ -1,7 +1,6 @@
 # Use lambdas where possible
 
-**org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface**
-_Instead of anonymous class declarations, use a lambda where possible._
+**org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface** _Instead of anonymous class declarations, use a lambda where possible._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Instead of anonymous class declarations, use a lambda where possible._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

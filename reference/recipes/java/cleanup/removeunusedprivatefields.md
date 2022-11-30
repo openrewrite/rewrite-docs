@@ -1,7 +1,6 @@
 # Remove unused private fields
 
-**org.openrewrite.java.cleanup.RemoveUnusedPrivateFields**
-_If a private field is declared but not used in the program, it can be considered dead code and should therefore be removed._
+**org.openrewrite.java.cleanup.RemoveUnusedPrivateFields** _If a private field is declared but not used in the program, it can be considered dead code and should therefore be removed._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _If a private field is declared but not used in the program, it can be considere
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

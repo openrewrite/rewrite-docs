@@ -1,7 +1,6 @@
 # Find uses of Jersey
 
-**org.openrewrite.cloudsuitability.FindJersey**
-_Refer to 3rd party organization for cloud affinity of library._
+**org.openrewrite.cloudsuitability.FindJersey** _Refer to 3rd party organization for cloud affinity of library._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Refer to 3rd party organization for cloud affinity of library._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `com.sun.jersey..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: com.sun.jersey..*
-
 ```
 {% endtab %}
 {% endtabs %}

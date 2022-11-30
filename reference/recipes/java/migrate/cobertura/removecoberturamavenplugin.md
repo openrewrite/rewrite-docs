@@ -1,7 +1,6 @@
 # Remove Cobertura Maven plugin
 
-**org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin**
-_This recipe will remove Cobertura, as it is not compatible with Java 11._
+**org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin** _This recipe will remove Cobertura, as it is not compatible with Java 11._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _This recipe will remove Cobertura, as it is not compatible with Java 11._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -94,7 +92,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven plugin](../../../maven/removeplugin.md)
   * groupId: `org.codehaus.mojo`
   * artifactId: `cobertura-maven-plugin`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,6 @@ recipeList:
   - org.openrewrite.maven.RemovePlugin:
       groupId: org.codehaus.mojo
       artifactId: cobertura-maven-plugin
-
 ```
 {% endtab %}
 {% endtabs %}

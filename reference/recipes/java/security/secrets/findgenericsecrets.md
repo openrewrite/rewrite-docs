@@ -1,7 +1,6 @@
 # Find generic secrets
 
-**org.openrewrite.java.security.secrets.FindGenericSecrets**
-_Locates generic secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindGenericSecrets** _Locates generic secrets stored in plain text in code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates generic secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,13 +88,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Generic API key`
   * valuePattern: `[aA][pP][iI]_?[kK][eE][yY].*['|"][0-9a-zA-Z]{32,45}['|"]`
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Generic secret`
   * valuePattern: `[sS][eE][cC][rR][eE][tT].*['|"][0-9a-zA-Z]{32,45}['|"]`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +112,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
       secretName: Generic secret
       valuePattern: [sS][eE][cC][rR][eE][tT].*['|"][0-9a-zA-Z]{32,45}['|"]
-
 ```
 {% endtab %}
 {% endtabs %}

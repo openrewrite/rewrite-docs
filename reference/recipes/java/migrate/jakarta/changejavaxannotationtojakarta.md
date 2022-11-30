@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.annotation` packages to `jakarta.annotation`
+# Migrate deprecated javax.annotation packages to jakarta.annotation
 
-**org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta**
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`._
+**org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation. E
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](../../../java/migrate/jakarta/javaxannotationpackagetojakarta.md)
-* [Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`](../../../java/migrate/jakarta/javaxannotationsecuritypackagetojakarta.md)
-* [Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`](../../../java/migrate/jakarta/javaxannotationsqlpackagetojakarta.md)
-
+* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](javaxannotationpackagetojakarta.md)
+* [Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`](javaxannotationsecuritypackagetojakarta.md)
+* [Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`](javaxannotationsqlpackagetojakarta.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxAnnotationPackageToJakarta
   - org.openrewrite.java.migrate.jakarta.JavaxAnnotationSecurityPackageToJakarta
   - org.openrewrite.java.migrate.jakarta.JavaxAnnotationSqlPackageToJakarta
-
 ```
 {% endtab %}
 {% endtabs %}

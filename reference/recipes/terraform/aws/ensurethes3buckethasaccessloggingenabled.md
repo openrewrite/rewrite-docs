@@ -1,12 +1,11 @@
 # Ensure the S3 bucket has access logging enabled
 
-**org.openrewrite.terraform.aws.EnsureTheS3BucketHasAccessLoggingEnabled**
-_Ensure the S3 bucket has access logging enabled._
+**org.openrewrite.terraform.aws.EnsureTheS3BucketHasAccessLoggingEnabled** _Ensure the S3 bucket has access logging enabled._
 
 ### Tags
 
 * terraform
-* CKV_AWS_18
+* CKV\_AWS\_18
 * AWS
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure the S3 bucket has access logging enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,13 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_s3_bucket`
-  * content: `logging {
-  target_bucket = var.target_bucket
-  target_prefix = "log/${var.s3_bucket_name}"
-}`
-
+  * content: `logging { target_bucket = var.target_bucket target_prefix = "log/${var.s3_bucket_name}" }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +113,6 @@ recipeList:
   target_bucket = var.target_bucket
   target_prefix = "log/${var.s3_bucket_name}"
 }
-
 ```
 {% endtab %}
 {% endtabs %}

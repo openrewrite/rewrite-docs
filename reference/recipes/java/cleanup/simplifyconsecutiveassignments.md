@@ -1,7 +1,6 @@
 # Simplify consecutive assignments
 
-**org.openrewrite.java.cleanup.SimplifyConsecutiveAssignments**
-_Combine consecutive assignments into a single statement where possible._
+**org.openrewrite.java.cleanup.SimplifyConsecutiveAssignments** _Combine consecutive assignments into a single statement where possible._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Combine consecutive assignments into a single statement where possible._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # Find AWS secrets
 
-**org.openrewrite.java.security.secrets.FindAwsSecrets**
-_Locates AWS secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindAwsSecrets** _Locates AWS secrets stored in plain text in code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates AWS secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,14 +88,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `AWS access key`
   * valuePattern: `AKIA[0-9A-Z]{16}`
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `AWS access key`
   * keyPattern: `aws.{0,20}?(key|pwd|pw|password|pass|token)`
   * valuePattern: `^([0-9a-zA-Z/+]{40})$`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +114,6 @@ recipeList:
       secretName: AWS access key
       keyPattern: aws.{0,20}?(key|pwd|pw|password|pass|token)
       valuePattern: ^([0-9a-zA-Z/+]{40})$
-
 ```
 {% endtab %}
 {% endtabs %}

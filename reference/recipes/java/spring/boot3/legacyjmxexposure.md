@@ -1,7 +1,6 @@
 # Maintain parity with Spring Boot 2.x by exposing all actuator endpoints via JMX.
 
-**org.openrewrite.java.spring.boot3.LegacyJmxExposure**
-_Spring Boot 3.0 only exposes the health endpoint via JMX. This change exposes all actuator endpoints via JMX to maintain parity with Spring Boot 2.x. See See https://github.com/openrewrite/rewrite-spring/issues/229_
+**org.openrewrite.java.spring.boot3.LegacyJmxExposure** _Spring Boot 3.0 only exposes the health endpoint via JMX. This change exposes all actuator endpoints via JMX to maintain parity with Spring Boot 2.x. See See https://github.com/openrewrite/rewrite-spring/issues/229_
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Spring Boot 3.0 only exposes the health endpoint via JMX. This change exposes a
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -92,11 +90,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add a spring configuration property to a configuration file if it does not already exist in that file](../../../java/spring/addspringproperty.md)
+* [Add a spring configuration property to a configuration file if it does not already exist in that file](../addspringproperty.md)
   * property: `management.endpoints.jmx.exposure.include`
   * value: `*`
   * comment: `In Spring Boot 3.0 only the health endpoint is exposed over JMX. This setting was changed to maintain parity with Spring Boot 2.x but should be reviewed.`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +112,6 @@ recipeList:
       property: management.endpoints.jmx.exposure.include
       value: *
       comment: In Spring Boot 3.0 only the health endpoint is exposed over JMX. This setting was changed to maintain parity with Spring Boot 2.x but should be reviewed.
-
 ```
 {% endtab %}
 {% endtabs %}

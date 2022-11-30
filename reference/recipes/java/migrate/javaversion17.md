@@ -1,7 +1,6 @@
 # Change Maven Java version property values to 17
 
-**org.openrewrite.java.migrate.JavaVersion17**
-_Change maven.compiler.source and maven.compiler.target values to 17._
+**org.openrewrite.java.migrate.JavaVersion17** _Change maven.compiler.source and maven.compiler.target values to 17._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Change maven.compiler.source and maven.compiler.target values to 17._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -103,7 +101,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * key: `maven.compiler.target`
   * newValue: `17`
   * addIfMissing: `false`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -129,7 +126,6 @@ recipeList:
       key: maven.compiler.target
       newValue: 17
       addIfMissing: false
-
 ```
 {% endtab %}
 {% endtabs %}

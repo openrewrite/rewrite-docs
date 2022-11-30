@@ -1,7 +1,6 @@
 # Uses of JNDI
 
-**org.openrewrite.cloudsuitability.FindJavaBatch**
-_The advice is to remove JNDI provider or move to TKG._
+**org.openrewrite.cloudsuitability.FindJavaBatch** _The advice is to remove JNDI provider or move to TKG._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _The advice is to remove JNDI provider or move to TKG._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -93,7 +91,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javax.naming..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +106,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javax.naming..*
-
 ```
 {% endtab %}
 {% endtabs %}

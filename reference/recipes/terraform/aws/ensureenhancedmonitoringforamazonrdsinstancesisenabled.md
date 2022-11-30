@@ -1,11 +1,10 @@
 # Ensure enhanced monitoring for Amazon RDS instances is enabled
 
-**org.openrewrite.terraform.aws.EnsureEnhancedMonitoringForAmazonRDSInstancesIsEnabled**
-_Ensure enhanced monitoring for Amazon RDS instances is enabled._
+**org.openrewrite.terraform.aws.EnsureEnhancedMonitoringForAmazonRDSInstancesIsEnabled** _Ensure enhanced monitoring for Amazon RDS instances is enabled._
 
 ### Tags
 
-* CKV_AWS_118
+* CKV\_AWS\_118
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure enhanced monitoring for Amazon RDS instances is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_db_instance`
   * content: `monitoring_interval = 5`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_db_instance
       content: monitoring_interval = 5
-
 ```
 {% endtab %}
 {% endtabs %}

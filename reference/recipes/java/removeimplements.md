@@ -1,7 +1,6 @@
 # Remove interface implementations
 
-**org.openrewrite.java.RemoveImplements**
-_Removes `implements` clauses from classes implementing the specified interface. Removes `@Overrides` annotations from methods which no longer override anything._
+**org.openrewrite.java.RemoveImplements** _Removes `implements` clauses from classes implementing the specified interface. Removes `@Overrides` annotations from methods which no longer override anything._
 
 ## Source
 
@@ -13,16 +12,14 @@ _Removes `implements` clauses from classes implementing the specified interface.
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | interfaceType | The fully qualified name of the interface to remove. |
-| `String` | filter | Only apply the interface removal to classes with fully qualified names that begin with this filter. `null` or empty matches all classes. |
-
+| Type     | Name          | Description                                                                                                                              |
+| -------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `String` | interfaceType | The fully qualified name of the interface to remove.                                                                                     |
+| `String` | filter        | Only apply the interface removal to classes with fully qualified names that begin with this filter. `null` or empty matches all classes. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RemoveImplementsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RemoveImplementsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       filter: com.yourorg.
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.RemoveImplementsExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

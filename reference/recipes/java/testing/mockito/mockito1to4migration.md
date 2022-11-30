@@ -1,7 +1,6 @@
 # Mockito 4.x upgrade
 
-**org.openrewrite.java.testing.mockito.Mockito1to4Migration**
-_Upgrade Mockito from 1.x to 4.x._
+**org.openrewrite.java.testing.mockito.Mockito1to4Migration** _Upgrade Mockito from 1.x to 4.x._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Upgrade Mockito from 1.x to 4.x._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,12 +89,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Mockito 3.x migration from 1.x](../../../java/testing/mockito/mockito1to3migration.md)
+* [Mockito 3.x migration from 1.x](mockito1to3migration.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.mockito`
   * artifactId: `*`
   * newVersion: `4.x`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +112,6 @@ recipeList:
       groupId: org.mockito
       artifactId: *
       newVersion: 4.x
-
 ```
 {% endtab %}
 {% endtabs %}

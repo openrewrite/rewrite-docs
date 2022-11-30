@@ -1,7 +1,6 @@
 # URIs created with an HTTP scheme
 
-**org.openrewrite.java.search.UriCreatedWithHttpScheme**
-_This is a sample recipe demonstrating a simple application of local data flow analysis._
+**org.openrewrite.java.search.UriCreatedWithHttpScheme** _This is a sample recipe demonstrating a simple application of local data flow analysis._
 
 ## Source
 
@@ -10,7 +9,6 @@ _This is a sample recipe demonstrating a simple application of local data flow a
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

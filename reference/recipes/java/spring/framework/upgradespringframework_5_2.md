@@ -1,7 +1,6 @@
 # Upgrade to Spring Framework 5.2
 
-**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_2**
-_Upgrade to Spring Framework to 5.2 from any prior version._
+**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_2** _Upgrade to Spring Framework to 5.2 from any prior version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Framework to 5.2 from any prior version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,11 +84,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Spring Framework 5.1](../../../java/spring/framework/upgradespringframework_5_1.md)
-* [Upgrade spring-framework Maven dependencies](../../../java/spring/framework/upgradespringframeworkdependencies.md)
+* [Upgrade to Spring Framework 5.1](upgradespringframework\_5\_1.md)
+* [Upgrade spring-framework Maven dependencies](upgradespringframeworkdependencies.md)
   * newVersion: `5.2.x`
-* [Migrate deprecated Spring-Web UTF8 MediaTypes](../../../java/spring/framework/migrateutf8mediatypes.md)
-
+* [Migrate deprecated Spring-Web UTF8 MediaTypes](migrateutf8mediatypes.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +102,6 @@ recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFrameworkDependencies:
       newVersion: 5.2.x
   - org.openrewrite.java.spring.framework.MigrateUtf8MediaTypes
-
 ```
 {% endtab %}
 {% endtabs %}

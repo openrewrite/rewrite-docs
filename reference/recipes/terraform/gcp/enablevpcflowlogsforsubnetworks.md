@@ -1,12 +1,11 @@
 # Enable VPC Flow Logs for subnetworks
 
-**org.openrewrite.terraform.gcp.EnableVPCFlowLogsForSubnetworks**
-_Ensure GCP VPC flow logs for subnets are enabled. Flow Logs capture information on IP traffic moving through network interfaces. This information can be used to monitor anomalous traffic and provide security insights._
+**org.openrewrite.terraform.gcp.EnableVPCFlowLogsForSubnetworks** _Ensure GCP VPC flow logs for subnets are enabled. Flow Logs capture information on IP traffic moving through network interfaces. This information can be used to monitor anomalous traffic and provide security insights._
 
 ### Tags
 
 * GCP
-* CKV_GCP_26
+* CKV\_GCP\_26
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure GCP VPC flow logs for subnets are enabled. Flow Logs capture information
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,14 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_compute_subnetwork`
-  * content: `log_config {
-  aggregation_interval = "INTERVAL_10_MIN"
-  flow_sampling        = 0.5
-  metadata             = "INCLUDE_ALL_METADATA"
-}`
-
+  * content: `log_config { aggregation_interval = "INTERVAL_10_MIN" flow_sampling = 0.5 metadata = "INCLUDE_ALL_METADATA" }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -121,7 +114,6 @@ recipeList:
   flow_sampling        = 0.5
   metadata             = "INCLUDE_ALL_METADATA"
 }
-
 ```
 {% endtab %}
 {% endtabs %}

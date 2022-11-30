@@ -1,7 +1,6 @@
-# Replace calls to `Thread.run()` with `Thread.start()`
+# Replace calls to Thread.run() with Thread.start()
 
-**org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart**
-_`Thread.run()` should not be called directly._
+**org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart** _`Thread.run()` should not be called directly._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _`Thread.run()` should not be called directly._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -79,10 +76,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../java/changemethodname.md)
+* [Change method name](../changemethodname.md)
   * methodPattern: `java.lang.Thread run()`
   * newMethodName: `start`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -98,7 +94,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Thread run()
       newMethodName: start
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Upgrade Maven Pom to Spring Boot 3.0 from 2.x
 
-**org.openrewrite.java.spring.boot3.MavenPomUpgrade**
-_Upgrade Maven Pom to Spring Boot 3.0 from prior 2.x version._
+**org.openrewrite.java.spring.boot3.MavenPomUpgrade** _Upgrade Maven Pom to Spring Boot 3.0 from prior 2.x version._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Upgrade Maven Pom to Spring Boot 3.0 from prior 2.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -100,7 +98,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `3.0.0-SNAPSHOT`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -123,7 +120,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 3.0.0-SNAPSHOT
-
 ```
 {% endtab %}
 {% endtabs %}

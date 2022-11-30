@@ -1,7 +1,6 @@
-# Rename caught exceptions in empty catch blocks to `ignored`
+# Rename caught exceptions in empty catch blocks to ignored
 
-**org.openrewrite.java.cleanup.RenameExceptionInEmptyCatch**
-_Renames caught exceptions in empty catch blocks to `ignored`. `ignored` will be incremented by 1 if a namespace conflict exists._
+**org.openrewrite.java.cleanup.RenameExceptionInEmptyCatch** _Renames caught exceptions in empty catch blocks to `ignored`. `ignored` will be incremented by 1 if a namespace conflict exists._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Renames caught exceptions in empty catch blocks to `ignored`. `ignored` will be
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

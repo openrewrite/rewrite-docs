@@ -1,7 +1,6 @@
 # Enable Gradle parallel execution
 
-**org.openrewrite.gradle.search.EnableGradleParallelExecution**
-_Most builds consist of more than one project and some of those projects are usually independent of one another. Yet Gradle will only run one task at a time by default, regardless of the project structure. By using the `--parallel` switch, you can force Gradle to execute tasks in parallel as long as those tasks are in different projects. See the [Gradle performance documentation](https://docs.gradle.org/current/userguide/performance.html#parallel_execution) for more._
+**org.openrewrite.gradle.search.EnableGradleParallelExecution** _Most builds consist of more than one project and some of those projects are usually independent of one another. Yet Gradle will only run one task at a time by default, regardless of the project structure. By using the `--parallel` switch, you can force Gradle to execute tasks in parallel as long as those tasks are in different projects. See the_ [_Gradle performance documentation_](https://docs.gradle.org/current/userguide/performance.html#parallel\_execution) _for more._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Most builds consist of more than one project and some of those projects are usu
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
 * version: 7.33.0
-
 
 ## Usage
 
@@ -86,10 +84,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Gradle property](../../gradle/addproperty.md)
+* [Add Gradle property](../addproperty.md)
   * key: `org.gradle.parallel`
   * value: `true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.gradle.AddProperty:
       key: org.gradle.parallel
       value: true
-
 ```
 {% endtab %}
 {% endtabs %}

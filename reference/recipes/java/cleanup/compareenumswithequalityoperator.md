@@ -1,7 +1,6 @@
 # Enum values should be compared with "=="
 
-**org.openrewrite.java.cleanup.CompareEnumsWithEqualityOperator**
-_Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!Enum equals(java.lang.Object)` will change to `!=`._
+**org.openrewrite.java.cleanup.CompareEnumsWithEqualityOperator** _Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!Enum equals(java.lang.Object)` will change to `!=`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
-# Use `java.nio.charset.StandardCharsets`
+# Use java.nio.charset.StandardCharsets
 
-**org.openrewrite.java.migrate.apache.commons.io.UseStandardCharsets**
-_Migrate `org.apache.commons.io.Charsets` to `java.nio.charset.StandardCharsets`._
+**org.openrewrite.java.migrate.apache.commons.io.UseStandardCharsets** _Migrate `org.apache.commons.io.Charsets` to `java.nio.charset.StandardCharsets`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Migrate `org.apache.commons.io.Charsets` to `java.nio.charset.StandardCharsets`
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -90,25 +88,24 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../../../java/changetype.md)
+* [Change type](../../../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.commons.io.Charsets.ISO_8859_1`
   * newFullyQualifiedTypeName: `java.nio.charset.StandardCharsets.ISO_8859_1`
-* [Change type](../../../../../java/changetype.md)
+* [Change type](../../../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.commons.io.Charsets.US_ASCII`
   * newFullyQualifiedTypeName: `java.nio.charset.StandardCharsets.US_ASCII`
-* [Change type](../../../../../java/changetype.md)
+* [Change type](../../../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.commons.io.Charsets.UTF_8`
   * newFullyQualifiedTypeName: `java.nio.charset.StandardCharsets.UTF_8`
-* [Change type](../../../../../java/changetype.md)
+* [Change type](../../../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.commons.io.Charsets.UTF_16`
   * newFullyQualifiedTypeName: `java.nio.charset.StandardCharsets.UTF_16`
-* [Change type](../../../../../java/changetype.md)
+* [Change type](../../../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.commons.io.Charsets.UTF_16BE`
   * newFullyQualifiedTypeName: `java.nio.charset.StandardCharsets.UTF_16BE`
-* [Change type](../../../../../java/changetype.md)
+* [Change type](../../../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.commons.io.Charsets.UTF_16LE`
   * newFullyQualifiedTypeName: `java.nio.charset.StandardCharsets.UTF_16LE`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -139,7 +136,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.commons.io.Charsets.UTF_16LE
       newFullyQualifiedTypeName: java.nio.charset.StandardCharsets.UTF_16LE
-
 ```
 {% endtab %}
 {% endtabs %}

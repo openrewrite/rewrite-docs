@@ -1,7 +1,6 @@
 # Find empty classes
 
-**org.openrewrite.java.search.FindEmptyClasses**
-_Find empty classes without annotations that do not implement an interface or extend a class._
+**org.openrewrite.java.search.FindEmptyClasses** _Find empty classes without annotations that do not implement an interface or extend a class._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Find empty classes without annotations that do not implement an interface or ex
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -10,7 +10,6 @@
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
 
-
 ## Usage
 
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.14.1 in your build file:
@@ -107,7 +106,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * attributeName: `xsi:schemaLocation`
   * newValue: `https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd`
   * fileMatcher: `**/persistence.xml`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -140,7 +138,6 @@ recipeList:
       attributeName: xsi:schemaLocation
       newValue: https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd
       fileMatcher: **/persistence.xml
-
 ```
 {% endtab %}
 {% endtabs %}

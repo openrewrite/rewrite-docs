@@ -1,11 +1,10 @@
 # Ensure Amazon EKS control plane logging enabled for all log types
 
-**org.openrewrite.terraform.aws.EnsureAmazonEKSControlPlaneLoggingEnabledForAllLogTypes**
-_Ensure Amazon EKS control plane logging enabled for all log types._
+**org.openrewrite.terraform.aws.EnsureAmazonEKSControlPlaneLoggingEnabledForAllLogTypes** _Ensure Amazon EKS control plane logging enabled for all log types._
 
 ### Tags
 
-* CKV_AWS_37
+* CKV\_AWS\_37
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure Amazon EKS control plane logging enabled for all log types._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_eks_cluster`
   * content: `enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_eks_cluster
       content: enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
-
 ```
 {% endtab %}
 {% endtabs %}

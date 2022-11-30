@@ -1,7 +1,6 @@
 # Boolean checks should not be inverted
 
-**org.openrewrite.java.cleanup.BooleanChecksNotInverted**
-_It is needlessly complex to invert the result of a boolean comparison. The opposite comparison should be made instead._
+**org.openrewrite.java.cleanup.BooleanChecksNotInverted** _It is needlessly complex to invert the result of a boolean comparison. The opposite comparison should be made instead._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _It is needlessly complex to invert the result of a boolean comparison. The oppo
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

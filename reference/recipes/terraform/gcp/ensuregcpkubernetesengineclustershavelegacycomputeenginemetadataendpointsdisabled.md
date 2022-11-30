@@ -1,12 +1,11 @@
 # Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpoints disabled
 
-**org.openrewrite.terraform.gcp.EnsureGCPKubernetesEngineClustersHaveLegacyComputeEngineMetadataEndpointsDisabled**
-_Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpoints disabled._
+**org.openrewrite.terraform.gcp.EnsureGCPKubernetesEngineClustersHaveLegacyComputeEngineMetadataEndpointsDisabled** _Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpoints disabled._
 
 ### Tags
 
 * GCP
-* CKV_GCP_67
+* CKV\_GCP\_67
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpo
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_cluster`
   * content: `min_master_version = 1.12`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: google_container_cluster
       content: min_master_version = 1.12
-
 ```
 {% endtab %}
 {% endtabs %}

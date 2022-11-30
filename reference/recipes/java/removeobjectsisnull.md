@@ -1,7 +1,6 @@
-# Transform calls to `Objects.isNull(..)` and `Objects.nonNull(..)`
+# Transform calls to Objects.isNull(..) and Objects.nonNull(..)
 
-**org.openrewrite.java.RemoveObjectsIsNull**
-_Replace calls to `Objects.isNull(..)` and `Objects.nonNull(..)` with a simple null check. Using these methods outside of stream predicates is not idiomatic._
+**org.openrewrite.java.RemoveObjectsIsNull** _Replace calls to `Objects.isNull(..)` and `Objects.nonNull(..)` with a simple null check. Using these methods outside of stream predicates is not idiomatic._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replace calls to `Objects.isNull(..)` and `Objects.nonNull(..)` with a simple n
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

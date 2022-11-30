@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.persistence` packages to `jakarta.persistence`
+# Migrate deprecated javax.persistence packages to jakarta.persistence
 
-**org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence**
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation_
+**org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation_
 
 ## Source
 
@@ -10,7 +9,6 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation_
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -95,7 +93,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.persistence`
   * artifactId: `jakarta.persistence-api`
   * newVersion: `3.x`
-* [Rename package name](../../../java/changepackage.md)
+* [Rename package name](../../changepackage.md)
   * oldPackageName: `javax.persistence`
   * newPackageName: `jakarta.persistence`
   * recursive: `true`
@@ -105,7 +103,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `org.eclipse.persistence`
   * artifactId: `javax.persistence`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -135,7 +132,6 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: org.eclipse.persistence
       artifactId: javax.persistence
-
 ```
 {% endtab %}
 {% endtabs %}

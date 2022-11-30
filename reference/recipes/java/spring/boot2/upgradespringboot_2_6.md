@@ -1,7 +1,6 @@
 # Upgrade to Spring Boot 2.6
 
-**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_6**
-_Upgrade to Spring Boot 2.6 from any prior 2.x version._
+**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_6** _Upgrade to Spring Boot 2.6 from any prior 2.x version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Boot 2.6 from any prior 2.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,7 +84,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Spring Boot 2.5](../../../java/spring/boot2/upgradespringboot_2_5.md)
+* [Upgrade to Spring Boot 2.5](upgradespringboot\_2\_5.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -96,13 +94,12 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.6.x`
-* [Migrate Spring Boot properties to 2.6](../../../java/spring/boot2/springbootproperties_2_6.md)
+* [Migrate Spring Boot properties to 2.6](springbootproperties\_2\_6.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-dependencies`
   * newVersion: `2021.0.X`
   * overrideManagedVersion: `true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -129,7 +126,6 @@ recipeList:
       artifactId: spring-cloud-dependencies
       newVersion: 2021.0.X
       overrideManagedVersion: true
-
 ```
 {% endtab %}
 {% endtabs %}

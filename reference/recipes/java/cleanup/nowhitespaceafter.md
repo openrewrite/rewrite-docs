@@ -1,7 +1,6 @@
 # No whitespace after
 
-**org.openrewrite.java.cleanup.NoWhitespaceAfter**
-_Removes unnecessary whitespace appearing after a token. A linebreak after a token is allowed unless `allowLineBreaks` is set to `false`, in which case it will be removed._
+**org.openrewrite.java.cleanup.NoWhitespaceAfter** _Removes unnecessary whitespace appearing after a token. A linebreak after a token is allowed unless `allowLineBreaks` is set to `false`, in which case it will be removed._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Removes unnecessary whitespace appearing after a token. A linebreak after a tok
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

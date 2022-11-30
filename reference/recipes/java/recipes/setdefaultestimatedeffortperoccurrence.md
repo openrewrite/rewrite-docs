@@ -1,7 +1,6 @@
 # Set default estimated effort
 
-**org.openrewrite.java.recipes.SetDefaultEstimatedEffortPerOccurrence**
-_Retrofit recipes with a deafult estimated effort per occurrence._
+**org.openrewrite.java.recipes.SetDefaultEstimatedEffortPerOccurrence** _Retrofit recipes with a deafult estimated effort per occurrence._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Retrofit recipes with a deafult estimated effort per occurrence._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

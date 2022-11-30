@@ -1,7 +1,6 @@
 # Uses of distributed caches
 
-**org.openrewrite.cloudsuitability.FindDistributedCacheUses**
-_Distributed caches must be remediated to function in K8S._
+**org.openrewrite.cloudsuitability.FindDistributedCacheUses** _Distributed caches must be remediated to function in K8S._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Distributed caches must be remediated to function in K8S._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -100,7 +98,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * fullyQualifiedTypeName: `org.infinispan..*`
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `net.spy.memcached..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -123,7 +120,6 @@ recipeList:
       fullyQualifiedTypeName: org.infinispan..*
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: net.spy.memcached..*
-
 ```
 {% endtab %}
 {% endtabs %}

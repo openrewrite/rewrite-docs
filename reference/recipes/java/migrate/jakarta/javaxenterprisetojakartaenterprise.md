@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`
+# Migrate deprecated javax.enterprise packages to jakarta.enterprise
 
-**org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise**
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+**org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -95,14 +93,13 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.enterprise`
   * artifactId: `jakarta.enterprise.cdi-api`
   * newVersion: `3.0.1`
-* [Rename package name](../../../java/changepackage.md)
+* [Rename package name](../../changepackage.md)
   * oldPackageName: `javax.enterprise`
   * newPackageName: `jakarta.enterprise`
   * recursive: `true`
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `javax.enterprise`
   * artifactId: `cdi-api`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -129,7 +126,6 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.enterprise
       artifactId: cdi-api
-
 ```
 {% endtab %}
 {% endtabs %}

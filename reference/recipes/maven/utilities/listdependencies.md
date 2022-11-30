@@ -1,7 +1,6 @@
 # List all dependencies
 
-**org.openrewrite.maven.utilities.ListDependencies**
-_List all the dependencies in a scope and add to a text file._
+**org.openrewrite.maven.utilities.ListDependencies** _List all the dependencies in a scope and add to a text file._
 
 ## Source
 
@@ -13,10 +12,9 @@ _List all the dependencies in a scope and add to a text file._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | scope | *Optional*. A scope to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a runtime, provided, or compile dependency. |
-
+| Type     | Name  | Description                                                                                                                                                                              |
+| -------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String` | scope | _Optional_. A scope to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a runtime, provided, or compile dependency. |
 
 ## Usage
 
@@ -37,7 +35,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

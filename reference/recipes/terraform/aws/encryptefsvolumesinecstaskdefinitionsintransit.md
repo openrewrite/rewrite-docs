@@ -1,11 +1,10 @@
 # Encrypt EFS Volumes in ECS Task Definitions in transit
 
-**org.openrewrite.terraform.aws.EncryptEFSVolumesInECSTaskDefinitionsInTransit**
-_Enable attached EFS definitions in ECS tasks to use encryption in transit._
+**org.openrewrite.terraform.aws.EncryptEFSVolumesInECSTaskDefinitionsInTransit** _Enable attached EFS definitions in ECS tasks to use encryption in transit._
 
 ### Tags
 
-* CKV_AWS_97
+* CKV\_AWS\_97
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Enable attached EFS definitions in ECS tasks to use encryption in transit._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,12 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_ecs_task_definition`
-  * content: `volume {
-  transit_encryption = "ENABLED"
-}`
-
+  * content: `volume { transit_encryption = "ENABLED" }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +112,6 @@ recipeList:
       content: volume {
   transit_encryption = "ENABLED"
 }
-
 ```
 {% endtab %}
 {% endtabs %}

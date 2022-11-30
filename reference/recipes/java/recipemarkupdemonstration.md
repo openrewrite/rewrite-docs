@@ -1,7 +1,6 @@
-# Demonstrate rendering of `Markup` markers
+# Demonstrate rendering of Markup markers
 
-**org.openrewrite.java.RecipeMarkupDemonstration**
-_Tooling may decide to elide or display differently markup of different levels._
+**org.openrewrite.java.RecipeMarkupDemonstration** _Tooling may decide to elide or display differently markup of different levels._
 
 ## Source
 
@@ -13,15 +12,13 @@ _Tooling may decide to elide or display differently markup of different levels._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
+| Type     | Name  | Description                |
+| -------- | ----- | -------------------------- |
 | `String` | level | The `Markup#Level` to add. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RecipeMarkupDemonstrationExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RecipeMarkupDemonstrationExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,7 +31,6 @@ recipeList:
       level: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.RecipeMarkupDemonstrationExample` has been defined activate it in your build file:
 
@@ -53,7 +49,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

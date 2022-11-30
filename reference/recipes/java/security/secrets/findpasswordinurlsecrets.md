@@ -1,7 +1,6 @@
 # Find passwords used in URLs
 
-**org.openrewrite.java.security.secrets.FindPasswordInUrlSecrets**
-_Locates URLs that contain passwords in plain text._
+**org.openrewrite.java.security.secrets.FindPasswordInUrlSecrets** _Locates URLs that contain passwords in plain text._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates URLs that contain passwords in plain text._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,10 +88,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Password in URL`
   * valuePattern: `[a-zA-Z]{3,10}://[^/\s:@]{3,20}:[^/\s:@]{3,20}@.{1,100}["'\s]`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +106,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
       secretName: Password in URL
       valuePattern: [a-zA-Z]{3,10}://[^/\s:@]{3,20}:[^/\s:@]{3,20}@.{1,100}["'\s]
-
 ```
 {% endtab %}
 {% endtabs %}

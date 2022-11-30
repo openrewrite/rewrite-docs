@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`
+# Migrate deprecated javax.annotation.security packages to jakarta.annotation.security
 
-**org.openrewrite.java.migrate.jakarta.JavaxAnnotationSecurityPackageToJakarta**
-_Change type of classes in the `javax.annotation.security` package to jakarta._
+**org.openrewrite.java.migrate.jakarta.JavaxAnnotationSecurityPackageToJakarta** _Change type of classes in the `javax.annotation.security` package to jakarta._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Change type of classes in the `javax.annotation.security` package to jakarta._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -92,22 +90,21 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.security.DeclareRoles`
   * newFullyQualifiedTypeName: `jakarta.annotation.security.DeclareRoles`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.security.DenyAll`
   * newFullyQualifiedTypeName: `jakarta.annotation.security.DenyAll`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.security.PermitAll`
   * newFullyQualifiedTypeName: `jakarta.annotation.security.PermitAll`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.security.RolesAllowed`
   * newFullyQualifiedTypeName: `jakarta.annotation.security.RolesAllowed`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.annotation.security.RunAs`
   * newFullyQualifiedTypeName: `jakarta.annotation.security.RunAs`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -137,7 +134,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.annotation.security.RunAs
       newFullyQualifiedTypeName: jakarta.annotation.security.RunAs
-
 ```
 {% endtab %}
 {% endtabs %}

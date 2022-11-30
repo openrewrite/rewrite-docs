@@ -1,13 +1,12 @@
 # Ensure MySQL is using the latest version of TLS encryption
 
-**org.openrewrite.terraform.azure.EnsureMySQLIsUsingTheLatestVersionOfTLSEncryption**
-_Ensure MySQL is using the latest version of TLS encryption._
+**org.openrewrite.terraform.azure.EnsureMySQLIsUsingTheLatestVersionOfTLSEncryption** _Ensure MySQL is using the latest version of TLS encryption._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_54
+* CKV\_AZURE\_54
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure MySQL is using the latest version of TLS encryption._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_mysql_server`
   * content: `ssl_minimal_tls_version_enforced = TLS1_2`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_mysql_server
       content: ssl_minimal_tls_version_enforced = TLS1_2
-
 ```
 {% endtab %}
 {% endtabs %}

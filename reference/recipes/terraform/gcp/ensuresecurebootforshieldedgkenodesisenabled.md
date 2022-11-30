@@ -1,12 +1,11 @@
 # Ensure secure boot for shielded GKE nodes is enabled
 
-**org.openrewrite.terraform.gcp.EnsureSecureBootForShieldedGKENodesIsEnabled**
-_Ensure secure boot for shielded GKE nodes is enabled._
+**org.openrewrite.terraform.gcp.EnsureSecureBootForShieldedGKENodesIsEnabled** _Ensure secure boot for shielded GKE nodes is enabled._
 
 ### Tags
 
 * GCP
-* CKV_GCP_68
+* CKV\_GCP\_68
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure secure boot for shielded GKE nodes is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,21 +90,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_cluster`
-  * content: `node_config {
-  shielded_instance_config {
-    enable_secure_boot = true
-  }
-}`
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+  * content: `node_config { shielded_instance_config { enable_secure_boot = true } }`
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_node_pool`
-  * content: `node_config {
-  shielded_instance_config {
-    enable_secure_boot = true
-  }
-}`
-
+  * content: `node_config { shielded_instance_config { enable_secure_boot = true } }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -135,7 +124,6 @@ recipeList:
     enable_secure_boot = true
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}

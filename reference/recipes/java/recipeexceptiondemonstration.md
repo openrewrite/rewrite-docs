@@ -1,7 +1,6 @@
 # Demonstrate rendering of recipe exceptions
 
-**org.openrewrite.java.RecipeExceptionDemonstration**
-_Show how recipe exceptions are rendered in various forms of OpenRewrite tooling._
+**org.openrewrite.java.RecipeExceptionDemonstration** _Show how recipe exceptions are rendered in various forms of OpenRewrite tooling._
 
 ## Source
 
@@ -13,16 +12,15 @@ _Show how recipe exceptions are rendered in various forms of OpenRewrite tooling
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | throwOnMethodPattern | *Optional*. A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. |
-| `Boolean` | throwOnVisitAll | *Optional*.  |
-| `Boolean` | throwOnVisitAllVisitor | *Optional*.  |
-| `Boolean` | throwOnApplicableTest | *Optional*.  |
-| `Boolean` | throwOnApplicableTestVisitor | *Optional*.  |
-| `Boolean` | throwOnSingleSourceApplicableTest | *Optional*.  |
-| `Boolean` | throwOnSingleSourceApplicableTestVisitor | *Optional*.  |
-
+| Type      | Name                                     | Description                                                                                                             |
+| --------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `String`  | throwOnMethodPattern                     | _Optional_. A [method pattern](../../method-patterns.md) that is used to find matching method declarations/invocations. |
+| `Boolean` | throwOnVisitAll                          | _Optional_.                                                                                                             |
+| `Boolean` | throwOnVisitAllVisitor                   | _Optional_.                                                                                                             |
+| `Boolean` | throwOnApplicableTest                    | _Optional_.                                                                                                             |
+| `Boolean` | throwOnApplicableTestVisitor             | _Optional_.                                                                                                             |
+| `Boolean` | throwOnSingleSourceApplicableTest        | _Optional_.                                                                                                             |
+| `Boolean` | throwOnSingleSourceApplicableTestVisitor | _Optional_.                                                                                                             |
 
 ## Usage
 
@@ -43,7 +41,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

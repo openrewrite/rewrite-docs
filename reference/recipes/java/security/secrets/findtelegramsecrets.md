@@ -1,7 +1,6 @@
 # Find Telegram secrets
 
-**org.openrewrite.java.security.secrets.FindTelegramSecrets**
-_Locates Telegram secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindTelegramSecrets** _Locates Telegram secrets stored in plain text in code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates Telegram secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,10 +88,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Telegram bot API key`
   * valuePattern: `[0-9]+:AA[0-9A-Za-z\-_]{33}`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +106,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
       secretName: Telegram bot API key
       valuePattern: [0-9]+:AA[0-9A-Za-z\-_]{33}
-
 ```
 {% endtab %}
 {% endtabs %}

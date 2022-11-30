@@ -1,7 +1,6 @@
 # Upgrade to Spring Framework 5.1
 
-**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_1**
-_Upgrade to Spring Framework to 5.1 from any prior version._
+**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_1** _Upgrade to Spring Framework to 5.1 from any prior version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Framework to 5.1 from any prior version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,10 +84,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade spring-framework Maven dependencies](../../../java/spring/framework/upgradespringframeworkdependencies.md)
+* [Upgrade spring-framework Maven dependencies](upgradespringframeworkdependencies.md)
   * newVersion: `5.1.x`
-* [Use `Environment#acceptsProfiles(Profiles)`](../../../java/spring/framework/environmentacceptsprofiles.md)
-
+* [Use `Environment#acceptsProfiles(Profiles)`](environmentacceptsprofiles.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFrameworkDependencies:
       newVersion: 5.1.x
   - org.openrewrite.java.spring.framework.EnvironmentAcceptsProfiles
-
 ```
 {% endtab %}
 {% endtabs %}

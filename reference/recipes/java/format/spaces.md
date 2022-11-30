@@ -1,7 +1,6 @@
 # Spaces
 
-**org.openrewrite.java.format.Spaces**
-_Format whitespace in Java code._
+**org.openrewrite.java.format.Spaces** _Format whitespace in Java code._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Format whitespace in Java code._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

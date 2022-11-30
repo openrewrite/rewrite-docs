@@ -1,7 +1,6 @@
 # Use the builder pattern where possible
 
-**org.openrewrite.java.cleanup.UseAsBuilder**
-_When an API has been designed as a builder, use it that way rather than as a series of setter calls._
+**org.openrewrite.java.cleanup.UseAsBuilder** _When an API has been designed as a builder, use it that way rather than as a series of setter calls._
 
 ## Source
 
@@ -13,17 +12,15 @@ _When an API has been designed as a builder, use it that way rather than as a se
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | builderType |  |
-| `Boolean` | immutable | *Optional*. The builder is immutable if you must assign the result of calls to intermediate variables or use directly. Defaults to true as many purpose-built builders will be immutable. |
-| `String` | builderCreator | *Optional*. The method that creates the builder instance, which may not be a method of the builder itself. |
-
+| Type      | Name           | Description                                                                                                                                                                               |
+| --------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | builderType    |                                                                                                                                                                                           |
+| `Boolean` | immutable      | _Optional_. The builder is immutable if you must assign the result of calls to intermediate variables or use directly. Defaults to true as many purpose-built builders will be immutable. |
+| `String`  | builderCreator | _Optional_. The method that creates the builder instance, which may not be a method of the builder itself.                                                                                |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UseAsBuilderExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UseAsBuilderExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       builderCreator: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.UseAsBuilderExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

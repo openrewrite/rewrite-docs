@@ -1,7 +1,6 @@
 # Find Stripe secrets
 
-**org.openrewrite.java.security.secrets.FindStripeSecrets**
-_Locates Stripe secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindStripeSecrets** _Locates Stripe secrets stored in plain text in code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates Stripe secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,10 +88,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Stripe API key`
   * valuePattern: `(s|r)k_live_[0-9a-zA-Z]{24}`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +106,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
       secretName: Stripe API key
       valuePattern: (s|r)k_live_[0-9a-zA-Z]{24}
-
 ```
 {% endtab %}
 {% endtabs %}

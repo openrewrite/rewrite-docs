@@ -1,7 +1,6 @@
 # Use Mockito JUnit Jupiter extension
 
-**org.openrewrite.java.testing.junit5.UseMockitoExtension**
-_Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) to `@ExtendWith(MockitoExtension.class)`._
+**org.openrewrite.java.testing.junit5.UseMockitoExtension** _Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) to `@ExtendWith(MockitoExtension.class)`._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -92,12 +90,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration.md)
-* [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](../../../java/testing/mockito/mockitojunitrunnersilenttoextension.md)
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
+* [Mockito 4.x upgrade](../mockito/mockito1to4migration.md)
+* [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](../mockito/mockitojunitrunnersilenttoextension.md)
+* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](runnertoextension.md)
   * runners: `[org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]`
   * extension: `org.mockito.junit.jupiter.MockitoExtension`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +114,6 @@ recipeList:
   - org.openrewrite.java.testing.junit5.RunnerToExtension:
       runners: [org.mockito.runners.MockitoJUnitRunner, org.mockito.junit.MockitoJUnitRunner, org.mockito.runners.MockitoJUnit44Runner, org.mockito.junit.MockitoJUnit44Runner]
       extension: org.mockito.junit.jupiter.MockitoExtension
-
 ```
 {% endtab %}
 {% endtabs %}

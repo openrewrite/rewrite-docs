@@ -1,13 +1,12 @@
 # Encrypt RDS clusters
 
-**org.openrewrite.terraform.aws.EncryptRDSClusters**
-_Native RDS encryption helps protect your cloud applications and fulfils compliance requirements for data-at-rest encryption._
+**org.openrewrite.terraform.aws.EncryptRDSClusters** _Native RDS encryption helps protect your cloud applications and fulfils compliance requirements for data-at-rest encryption._
 
 ### Tags
 
 * terraform
 * AWS
-* CKV_AWS_16
+* CKV\_AWS\_16
 
 ## Source
 
@@ -16,7 +15,6 @@ _Native RDS encryption helps protect your cloud applications and fulfils complia
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_db_instance`
   * content: `storage_encrypted = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_db_instance
       content: storage_encrypted = true
-
 ```
 {% endtab %}
 {% endtabs %}

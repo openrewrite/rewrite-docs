@@ -1,7 +1,6 @@
-# `for` loop counters should use postfix operators
+# for loop counters should use postfix operators
 
-**org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators**
-_Replace `for` loop control variables using pre-increment (`++i`) or pre-decrement (`--i`) operators with their post-increment (`i++`) or post-decrement (`i++`) notation equivalents._
+**org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators** _Replace `for` loop control variables using pre-increment (`++i`) or pre-decrement (`--i`) operators with their post-increment (`i++`) or post-decrement (`i++`) notation equivalents._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Replace `for` loop control variables using pre-increment (`++i`) or pre-decreme
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

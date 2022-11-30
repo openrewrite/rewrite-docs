@@ -1,13 +1,12 @@
 # Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days
 
-**org.openrewrite.terraform.azure.EnsureAzureNetworkWatcherNSGFlowLogsRetentionIsGreaterThan90Days**
-_Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days._
+**org.openrewrite.terraform.azure.EnsureAzureNetworkWatcherNSGFlowLogsRetentionIsGreaterThan90Days** _Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_12
+* CKV\_AZURE\_12
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_network_watcher_flow_log`
   * content: `days = 90`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_network_watcher_flow_log
       content: days = 90
-
 ```
 {% endtab %}
 {% endtabs %}

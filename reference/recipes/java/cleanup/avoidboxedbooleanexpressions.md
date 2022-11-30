@@ -1,7 +1,6 @@
 # Avoid boxed boolean expressions
 
-**org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions**
-_Under certain conditions the `java.lang.Boolean` type is used as an expression, and it may throw a `NullPointerException` if the value is null._
+**org.openrewrite.java.cleanup.AvoidBoxedBooleanExpressions** _Under certain conditions the `java.lang.Boolean` type is used as an expression, and it may throw a `NullPointerException` if the value is null._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Under certain conditions the `java.lang.Boolean` type is used as an expression,
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

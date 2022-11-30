@@ -1,11 +1,10 @@
 # Use HTTPS for Cloudfront distribution
 
-**org.openrewrite.terraform.aws.UseHttpsForCloudfrontDistribution**
-_Secure communication by default._
+**org.openrewrite.terraform.aws.UseHttpsForCloudfrontDistribution** _Secure communication by default._
 
 ### Tags
 
-* CKV_AWS_34
+* CKV\_AWS\_34
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Secure communication by default._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_cloudfront_distribution`
   * content: `viewer_protocol_policy = "https-only"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_cloudfront_distribution
       content: viewer_protocol_policy = "https-only"
-
 ```
 {% endtab %}
 {% endtabs %}

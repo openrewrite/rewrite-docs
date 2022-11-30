@@ -1,7 +1,6 @@
 # Parameterize SLF4J logging statements
 
-**org.openrewrite.java.logging.slf4j.ParameterizedLogging**
-_SLF4J supports parameterized logging, which can significantly boost logging performance for disabled logging statements._
+**org.openrewrite.java.logging.slf4j.ParameterizedLogging** _SLF4J supports parameterized logging, which can significantly boost logging performance for disabled logging statements._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _SLF4J supports parameterized logging, which can significantly boost logging per
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 1.15.0
-
 
 ## Usage
 
@@ -92,17 +90,16 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger trace(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger debug(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger info(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger warn(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger error(..)`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -127,7 +124,6 @@ recipeList:
       methodPattern: org.slf4j.Logger warn(..)
   - org.openrewrite.java.logging.ParameterizedLogging:
       methodPattern: org.slf4j.Logger error(..)
-
 ```
 {% endtab %}
 {% endtabs %}

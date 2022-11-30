@@ -12,24 +12,22 @@
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | id | Repository id |
-| `String` | url | Repository URL |
-| `String` | repoName | *Optional*. Repository name |
-| `String` | layout | *Optional*. Repository layout |
-| `Boolean` | snapshotsEnabled | *Optional*. Snapshots from the repository are available |
-| `String` | snapshotsChecksumPolicy | *Optional*. Snapshots checksum policy |
-| `String` | snapshotsUpdatePolicy | *Optional*. Snapshots update policy policy |
-| `Boolean` | releasesEnabled | *Optional*. Releases from the repository are available |
-| `String` | releasesChecksumPolicy | *Optional*. Releases checksum policy |
-| `String` | releasesUpdatePolicy | *Optional*. Releases update policy |
-
+| Type      | Name                    | Description                                             |
+| --------- | ----------------------- | ------------------------------------------------------- |
+| `String`  | id                      | Repository id                                           |
+| `String`  | url                     | Repository URL                                          |
+| `String`  | repoName                | _Optional_. Repository name                             |
+| `String`  | layout                  | _Optional_. Repository layout                           |
+| `Boolean` | snapshotsEnabled        | _Optional_. Snapshots from the repository are available |
+| `String`  | snapshotsChecksumPolicy | _Optional_. Snapshots checksum policy                   |
+| `String`  | snapshotsUpdatePolicy   | _Optional_. Snapshots update policy policy              |
+| `Boolean` | releasesEnabled         | _Optional_. Releases from the repository are available  |
+| `String`  | releasesChecksumPolicy  | _Optional_. Releases checksum policy                    |
+| `String`  | releasesUpdatePolicy    | _Optional_. Releases update policy                      |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddRepositoryExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddRepositoryExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -52,7 +50,6 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.AddRepositoryExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -70,7 +67,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

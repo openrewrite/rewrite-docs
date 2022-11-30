@@ -1,7 +1,6 @@
 # Simplify lambda blocks to expressions
 
-**org.openrewrite.java.cleanup.LambdaBlockToExpression**
-_Single-line statement lambdas returning a value can be replaced with expression lambdas._
+**org.openrewrite.java.cleanup.LambdaBlockToExpression** _Single-line statement lambdas returning a value can be replaced with expression lambdas._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Single-line statement lambdas returning a value can be replaced with expression
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

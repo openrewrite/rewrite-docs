@@ -1,7 +1,6 @@
 # Default comes last
 
-**org.openrewrite.java.cleanup.DefaultComesLast**
-_Ensure the `default` case comes last after all the cases in a switch statement._
+**org.openrewrite.java.cleanup.DefaultComesLast** _Ensure the `default` case comes last after all the cases in a switch statement._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Ensure the `default` case comes last after all the cases in a switch statement.
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

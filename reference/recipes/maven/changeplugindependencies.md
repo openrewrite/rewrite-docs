@@ -1,7 +1,6 @@
 # Change Maven plugin dependencies
 
-**org.openrewrite.maven.ChangePluginDependencies**
-_Applies the specified dependencies to a Maven plugin. Will not add the plugin if it does not already exist in the pom._
+**org.openrewrite.maven.ChangePluginDependencies** _Applies the specified dependencies to a Maven plugin. Will not add the plugin if it does not already exist in the pom._
 
 ## Source
 
@@ -13,17 +12,15 @@ _Applies the specified dependencies to a Maven plugin. Will not add the plugin i
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | dependencies | *Optional*. Plugin dependencies provided as dependency coordinates of format "groupId:artifactId:version". When supplying multiple coordinates separate them with ",". Supplying `null` will remove any existing plugin dependencies. |
-
+| Type     | Name         | Description                                                                                                                                                                                                                           |
+| -------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String` | groupId      | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'.                                                                                                                                       |
+| `String` | artifactId   | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'.                                                                                                                                      |
+| `String` | dependencies | _Optional_. Plugin dependencies provided as dependency coordinates of format "groupId:artifactId:version". When supplying multiple coordinates separate them with ",". Supplying `null` will remove any existing plugin dependencies. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePluginDependenciesExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePluginDependenciesExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       dependencies: org.openrewrite.recipe:rewrite-spring:1.0.0, org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangePluginDependenciesExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

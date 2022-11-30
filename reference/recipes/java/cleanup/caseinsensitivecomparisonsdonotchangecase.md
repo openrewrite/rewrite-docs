@@ -1,7 +1,6 @@
 # CaseInsensitive comparisons do not alter case
 
-**org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase**
-_Remove `String#toLowerCase()` or `String#toUpperCase()` from `String#equalsIgnoreCase(..)` comparisons._
+**org.openrewrite.java.cleanup.CaseInsensitiveComparisonsDoNotChangeCase** _Remove `String#toLowerCase()` or `String#toUpperCase()` from `String#equalsIgnoreCase(..)` comparisons._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Remove `String#toLowerCase()` or `String#toUpperCase()` from `String#equalsIgno
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

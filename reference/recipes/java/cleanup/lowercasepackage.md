@@ -1,7 +1,6 @@
 # Rename packages to lowercase
 
-**org.openrewrite.java.cleanup.LowercasePackage**
-_By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase._
+**org.openrewrite.java.cleanup.LowercasePackage** _By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _By convention all Java package names should contain only lowercase letters, num
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

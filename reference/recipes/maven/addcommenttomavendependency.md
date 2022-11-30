@@ -1,7 +1,6 @@
-# Add a comment to a `Maven` dependency
+# Add a comment to a Maven dependency
 
-**org.openrewrite.maven.AddCommentToMavenDependency**
-_Adds a comment as the first element in a `Maven` dependency._
+**org.openrewrite.maven.AddCommentToMavenDependency** _Adds a comment as the first element in a `Maven` dependency._
 
 ## Source
 
@@ -13,18 +12,16 @@ _Adds a comment as the first element in a `Maven` dependency._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | xPath | An XPath expression used to find matching tags. |
-| `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | commentText | The text to add as a comment.. |
-
+| Type     | Name        | Description                                                                  |
+| -------- | ----------- | ---------------------------------------------------------------------------- |
+| `String` | xPath       | An XPath expression used to find matching tags.                              |
+| `String` | groupId     | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.  |
+| `String` | artifactId  | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | commentText | The text to add as a comment..                                               |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCommentToMavenDependencyExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCommentToMavenDependencyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -40,7 +37,6 @@ recipeList:
       commentText: This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activate it in your build file:
 
@@ -59,7 +55,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

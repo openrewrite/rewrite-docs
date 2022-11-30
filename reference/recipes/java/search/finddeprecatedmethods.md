@@ -1,7 +1,6 @@
 # Find uses of deprecated methods
 
-**org.openrewrite.java.search.FindDeprecatedMethods**
-_Find uses of deprecated methods in any API._
+**org.openrewrite.java.search.FindDeprecatedMethods** _Find uses of deprecated methods in any API._
 
 ## Source
 
@@ -13,11 +12,10 @@ _Find uses of deprecated methods in any API._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | *Optional*. A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
-| `Boolean` | ignoreDeprecatedScopes | *Optional*. When set to `true` deprecated methods used within deprecated methods or classes will be ignored. |
-
+| Type      | Name                   | Description                                                                                                   |
+| --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `String`  | methodPattern          | _Optional_. A [method pattern](../../../method-patterns.md) that is used to find matching method invocations. |
+| `Boolean` | ignoreDeprecatedScopes | _Optional_. When set to `true` deprecated methods used within deprecated methods or classes will be ignored.  |
 
 ## Usage
 
@@ -38,7 +36,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

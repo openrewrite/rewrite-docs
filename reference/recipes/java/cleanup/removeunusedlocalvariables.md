@@ -1,7 +1,6 @@
 # Remove unused local variables
 
-**org.openrewrite.java.cleanup.RemoveUnusedLocalVariables**
-_If a local variable is declared but not used, it is dead code and should be removed._
+**org.openrewrite.java.cleanup.RemoveUnusedLocalVariables** _If a local variable is declared but not used, it is dead code and should be removed._
 
 ### Tags
 
@@ -17,10 +16,9 @@ _If a local variable is declared but not used, it is dead code and should be rem
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String[]` | ignoreVariablesNamed | *Optional*. An array of variable identifier names for local variables to ignore, even if the local variable is unused. |
-
+| Type       | Name                 | Description                                                                                                            |
+| ---------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `String[]` | ignoreVariablesNamed | _Optional_. An array of variable identifier names for local variables to ignore, even if the local variable is unused. |
 
 ## Usage
 
@@ -41,7 +39,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

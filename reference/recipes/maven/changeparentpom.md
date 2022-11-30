@@ -1,7 +1,6 @@
 # Change Maven Parent Pom
 
-**org.openrewrite.maven.ChangeParentPom**
-_Change the parent pom of a Maven pom.xml. Identifies the parent pom to be changed by its groupId and artifactId._
+**org.openrewrite.maven.ChangeParentPom** _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be changed by its groupId and artifactId._
 
 ## Source
 
@@ -13,21 +12,19 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldGroupId | The groupId of the maven parent pom to be changed away from. |
-| `String` | newGroupId | *Optional*. The groupId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldGroupId`. |
-| `String` | oldArtifactId | The artifactId of the maven parent pom to be changed away from. |
-| `String` | newArtifactId | *Optional*. The artifactId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldArtifactId`. |
-| `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
-| `boolean` | allowVersionDowngrades | *Optional*. If the new parent has the same group/artifact, this flag can be used to only upgrade the version if the target version is newer than the current. |
-
+| Type      | Name                   | Description                                                                                                                                                                                                         |
+| --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | oldGroupId             | The groupId of the maven parent pom to be changed away from.                                                                                                                                                        |
+| `String`  | newGroupId             | _Optional_. The groupId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldGroupId`.                                                                            |
+| `String`  | oldArtifactId          | The artifactId of the maven parent pom to be changed away from.                                                                                                                                                     |
+| `String`  | newArtifactId          | _Optional_. The artifactId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldArtifactId`.                                                                      |
+| `String`  | newVersion             | An exact version number or node-style semver selector used to select the version number.                                                                                                                            |
+| `String`  | versionPattern         | _Optional_. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
+| `boolean` | allowVersionDowngrades | _Optional_. If the new parent has the same group/artifact, this flag can be used to only upgrade the version if the target version is newer than the current.                                                       |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeParentPomExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeParentPomExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -47,7 +44,6 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -65,7 +61,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # SLF4J best practices
 
-**org.openrewrite.java.logging.slf4j.Slf4jBestPractices**
-_Applies best practices to logging with SLF4J._
+**org.openrewrite.java.logging.slf4j.Slf4jBestPractices** _Applies best practices to logging with SLF4J._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Applies best practices to logging with SLF4J._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 1.15.0
-
 
 ## Usage
 
@@ -91,12 +89,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Convert Logger#error|warn(Throwable#message) to Logger#error|warn(<log-message>, e)](../../../java/logging/slf4j/convertlogmessagemessageonlytologmessageandthrowable.md)
-  * logMessage: ``
-* [Loggers should be named for their enclosing classes](../../../java/logging/slf4j/loggersnamedforenclosingclass.md)
-* [Parameterize SLF4J logging statements](../../../java/logging/slf4j/parameterizedlogging.md)
-* [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant.md)
-
+* [Convert Logger#error|warn(Throwable#message) to Logger#error|warn(, e)](convertlogmessagemessageonlytologmessageandthrowable.md)
+  * logMessage: \`\`
+* [Loggers should be named for their enclosing classes](loggersnamedforenclosingclass.md)
+* [Parameterize SLF4J logging statements](parameterizedlogging.md)
+* [SLF4J logging statements should begin with constants](slf4jlogshouldbeconstant.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +112,6 @@ recipeList:
   - org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass
   - org.openrewrite.java.logging.slf4j.ParameterizedLogging
   - org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant
-
 ```
 {% endtab %}
 {% endtabs %}

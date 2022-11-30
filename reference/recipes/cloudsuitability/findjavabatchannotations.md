@@ -1,7 +1,6 @@
 # Uses of Java Batch annotations
 
-**org.openrewrite.cloudsuitability.FindJavaBatchAnnotations**
-_Batch processing can include long running processes._
+**org.openrewrite.cloudsuitability.FindJavaBatchAnnotations** _Batch processing can include long running processes._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Batch processing can include long running processes._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find annotations](../java/search/findannotations.md)
   * annotationPattern: `@javax.batch..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindAnnotations:
       annotationPattern: @javax.batch..*
-
 ```
 {% endtab %}
 {% endtabs %}

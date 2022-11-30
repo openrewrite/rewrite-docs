@@ -1,11 +1,10 @@
 # Ensure CloudTrail log file validation is enabled
 
-**org.openrewrite.terraform.aws.EnsureCloudTrailLogFileValidationIsEnabled**
-_Ensure CloudTrail log file validation is enabled._
+**org.openrewrite.terraform.aws.EnsureCloudTrailLogFileValidationIsEnabled** _Ensure CloudTrail log file validation is enabled._
 
 ### Tags
 
-* CKV_AWS_36
+* CKV\_AWS\_36
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure CloudTrail log file validation is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_cloudtrail`
   * content: `enable_log_file_validation = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_cloudtrail
       content: enable_log_file_validation = true
-
 ```
 {% endtab %}
 {% endtabs %}

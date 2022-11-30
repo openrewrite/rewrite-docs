@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.activation` packages to `jakarta.activation`
+# Migrate deprecated javax.activation packages to jakarta.activation
 
-**org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation**
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+**org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -101,14 +99,13 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.activation`
   * artifactId: `jakarta.activation-api`
   * newVersion: `2.x`
-* [Rename package name](../../../java/changepackage.md)
+* [Rename package name](../../changepackage.md)
   * oldPackageName: `javax.activation`
   * newPackageName: `jakarta.activation`
   * recursive: `true`
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `javax.activation`
   * artifactId: `javax.activation-api`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -139,7 +136,6 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.activation
       artifactId: javax.activation-api
-
 ```
 {% endtab %}
 {% endtabs %}

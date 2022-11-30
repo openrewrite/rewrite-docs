@@ -1,13 +1,12 @@
 # Ensure log profile is configured to capture all activities
 
-**org.openrewrite.terraform.azure.EnsureLogProfileIsConfiguredToCaptureAllActivities**
-_Ensure log profile is configured to capture all activities._
+**org.openrewrite.terraform.azure.EnsureLogProfileIsConfiguredToCaptureAllActivities** _Ensure log profile is configured to capture all activities._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_38
+* CKV\_AZURE\_38
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure log profile is configured to capture all activities._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,14 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_monitor_log_profile`
-  * content: `categories = [
-  "Action",
-  "Delete",
-  "Write",
-]`
-
+  * content: `categories = [ "Action", "Delete", "Write", ]`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -121,7 +114,6 @@ recipeList:
   "Delete",
   "Write",
 ]
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
-# Use `ElementScanner9`
+# Use ElementScanner9
 
-**org.openrewrite.java.migrate.javax.MigrateElementScanner6To9**
-_`ElementScanner6` was deprecated in Java 9._
+**org.openrewrite.java.migrate.javax.MigrateElementScanner6To9** _`ElementScanner6` was deprecated in Java 9._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`ElementScanner6` was deprecated in Java 9._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -86,10 +84,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `javax.lang.model.util.ElementScanner6`
   * newFullyQualifiedTypeName: `javax.lang.model.util.ElementScanner9`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.lang.model.util.ElementScanner6
       newFullyQualifiedTypeName: javax.lang.model.util.ElementScanner9
-
 ```
 {% endtab %}
 {% endtabs %}

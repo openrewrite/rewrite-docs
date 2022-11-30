@@ -1,13 +1,12 @@
 # Ensure FTP Deployments are disabled
 
-**org.openrewrite.terraform.azure.EnsureFTPDeploymentsAreDisabled**
-_Ensure FTP Deployments are disabled._
+**org.openrewrite.terraform.azure.EnsureFTPDeploymentsAreDisabled** _Ensure FTP Deployments are disabled._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_78
+* CKV\_AZURE\_78
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure FTP Deployments are disabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
   * content: `ftps_state = "Disabled"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_app_service
       content: ftps_state = "Disabled"
-
 ```
 {% endtab %}
 {% endtabs %}

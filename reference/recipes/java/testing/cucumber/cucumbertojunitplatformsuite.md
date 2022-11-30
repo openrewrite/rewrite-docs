@@ -1,7 +1,6 @@
 # Cucumber to Junit Test Suites
 
-**org.openrewrite.java.testing.cucumber.CucumberToJunitPlatformSuite**
-_Migrates Cucumber tests to Junit Test Suites._
+**org.openrewrite.java.testing.cucumber.CucumberToJunitPlatformSuite** _Migrates Cucumber tests to Junit Test Suites._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Migrates Cucumber tests to Junit Test Suites._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,13 +89,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Replace @Cucumber with @Suite](../../../java/testing/cucumber/cucumberannotationtosuite.md)
+* [Replace @Cucumber with @Suite](cucumberannotationtosuite.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.junit.platform`
   * artifactId: `junit-platform-suite`
   * version: `1.9.x`
   * onlyIfUsing: `org.junit.platform.suite.api.*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +114,6 @@ recipeList:
       artifactId: junit-platform-suite
       version: 1.9.x
       onlyIfUsing: org.junit.platform.suite.api.*
-
 ```
 {% endtab %}
 {% endtabs %}

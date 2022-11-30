@@ -1,7 +1,6 @@
-# Use `Map#containsKey`
+# Use Map#containsKey
 
-**org.openrewrite.java.cleanup.UseMapContainsKey**
-_`map.keySet().contains(a)` can be simplified to `map.containsKey(a)`._
+**org.openrewrite.java.cleanup.UseMapContainsKey** _`map.keySet().contains(a)` can be simplified to `map.containsKey(a)`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`map.keySet().contains(a)` can be simplified to `map.containsKey(a)`._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -75,10 +72,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Simplify a call chain](../../java/simplifymethodchain.md)
+* [Simplify a call chain](../simplifymethodchain.md)
   * methodPatternChain: `[java.util.Map keySet(), java.util.Set contains(..)]`
   * newMethodName: `containsKey`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -92,7 +88,6 @@ recipeList:
   - org.openrewrite.java.SimplifyMethodChain:
       methodPatternChain: [java.util.Map keySet(), java.util.Set contains(..)]
       newMethodName: containsKey
-
 ```
 {% endtab %}
 {% endtabs %}

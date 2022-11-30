@@ -1,7 +1,6 @@
 # List effective Maven repositories
 
-**org.openrewrite.maven.search.EffectiveMavenRepositories**
-_Lists the Maven repositories that would be used for dependency resolution, in order of precedence. This includes Maven repositories defined in the Maven settings file (and those contributed by active profiles) as determined when the AST was produced._
+**org.openrewrite.maven.search.EffectiveMavenRepositories** _Lists the Maven repositories that would be used for dependency resolution, in order of precedence. This includes Maven repositories defined in the Maven settings file (and those contributed by active profiles) as determined when the AST was produced._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Lists the Maven repositories that would be used for dependency resolution, in o
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

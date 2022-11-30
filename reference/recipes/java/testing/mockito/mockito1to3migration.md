@@ -1,7 +1,6 @@
 # Mockito 3.x migration from 1.x
 
-**org.openrewrite.java.testing.mockito.Mockito1to3Migration**
-_Upgrade Mockito from 1.x to 3.x._
+**org.openrewrite.java.testing.mockito.Mockito1to3Migration** _Upgrade Mockito from 1.x to 3.x._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Upgrade Mockito from 1.x to 3.x._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,64 +89,64 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.MockitoAnnotations.Mock`
   * newFullyQualifiedTypeName: `org.mockito.Mock`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.Matchers`
   * newFullyQualifiedTypeName: `org.mockito.ArgumentMatchers`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyVararg()`
   * newMethodName: `any`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyObject()`
   * newMethodName: `any`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyListOf()`
   * newMethodName: `anyList`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anySetOf()`
   * newMethodName: `anySet`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyMapOf()`
   * newMethodName: `anyMap`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyCollectionOf()`
   * newMethodName: `anyCollection`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyIterableOf()`
   * newMethodName: `anyIterable`
-* [Delete method argument](../../../java/deletemethodargument.md)
+* [Delete method argument](../../deletemethodargument.md)
   * methodPattern: `org.mockito.ArgumentMatchers isNull(java.lang.Class)`
   * argumentIndex: `0`
-* [Delete method argument](../../../java/deletemethodargument.md)
+* [Delete method argument](../../deletemethodargument.md)
   * methodPattern: `org.mockito.ArgumentMatchers notNull(java.lang.Class)`
   * argumentIndex: `0`
-* [Reorder method arguments](../../../java/reordermethodarguments.md)
+* [Reorder method arguments](../../reordermethodarguments.md)
   * methodPattern: `org.mockito.MockedStatic verify(org.mockito.verification.VerificationMode, org.mockito.MockedStatic.Verification)`
   * newParameterNames: `[verification, mode]`
   * oldParameterNames: `[mode, verification]`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.Mockito verifyZeroInteractions(..)`
   * newMethodName: `verifyNoInteractions`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.mockito.invocation.InvocationOnMock getArgumentAt(int, java.lang.Class)`
   * newMethodName: `getArgument`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.exceptions.verification.TooLittleActualInvocations`
   * newFullyQualifiedTypeName: `org.mockito.exceptions.verification.TooFewActualInvocations`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.configuration.AnnotationEngine`
   * newFullyQualifiedTypeName: `org.mockito.plugins.AnnotationEngine`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.plugins.InstantiatorProvider`
   * newFullyQualifiedTypeName: `org.mockito.plugins.InstantiatorProvider2`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.runners.MockitoJUnitRunner`
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
-* [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports.md)
-* [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic.md)
-* [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension.md)
+* [Cleanup Mockito imports](cleanupmockitoimports.md)
+* [Use static form of Mockito `MockUtil`](mockutilstostatic.md)
+* [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../junit5/mockitojunittomockitoextension.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.mockito`
   * artifactId: `mockito-junit-jupiter`
@@ -158,7 +156,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.mockito`
   * artifactId: `*`
   * newVersion: `3.x`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -239,7 +236,6 @@ recipeList:
       groupId: org.mockito
       artifactId: *
       newVersion: 3.x
-
 ```
 {% endtab %}
 {% endtabs %}

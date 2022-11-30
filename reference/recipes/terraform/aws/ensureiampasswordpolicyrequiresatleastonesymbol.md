@@ -1,11 +1,10 @@
 # Ensure IAM password policy requires at least one symbol
 
-**org.openrewrite.terraform.aws.EnsureIAMPasswordPolicyRequiresAtLeastOneSymbol**
-_Ensure IAM password policy requires at least one symbol._
+**org.openrewrite.terraform.aws.EnsureIAMPasswordPolicyRequiresAtLeastOneSymbol** _Ensure IAM password policy requires at least one symbol._
 
 ### Tags
 
-* CKV_AWS_14
+* CKV\_AWS\_14
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure IAM password policy requires at least one symbol._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_iam_account_password_policy`
   * content: `require_symbols = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_iam_account_password_policy
       content: require_symbols = true
-
 ```
 {% endtab %}
 {% endtabs %}

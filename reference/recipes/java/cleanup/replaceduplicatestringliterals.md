@@ -1,7 +1,6 @@
-# Replace duplicate `String` literals
+# Replace duplicate String literals
 
-**org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals**
-_Replaces `String` literals with a length of 5 or greater repeated a minimum of 3 times. Qualified `String` literals include final Strings, method invocations, and new class invocations. Adds a new `private static final String` or uses an existing equivalent class field. A new variable name will be generated based on the literal value if an existing field does not exist. The generated name will append a numeric value to the variable name if a name already exists in the compilation unit._
+**org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals** _Replaces `String` literals with a length of 5 or greater repeated a minimum of 3 times. Qualified `String` literals include final Strings, method invocations, and new class invocations. Adds a new `private static final String` or uses an existing equivalent class field. A new variable name will be generated based on the literal value if an existing field does not exist. The generated name will append a numeric value to the variable name if a name already exists in the compilation unit._
 
 ### Tags
 
@@ -17,10 +16,9 @@ _Replaces `String` literals with a length of 5 or greater repeated a minimum of 
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | includeTestSources | *Optional*. Changes only apply to main by default. `includeTestSources` will apply the recipe to `test` source files. |
-
+| Type      | Name               | Description                                                                                                           |
+| --------- | ------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `Boolean` | includeTestSources | _Optional_. Changes only apply to main by default. `includeTestSources` will apply the recipe to `test` source files. |
 
 ## Usage
 
@@ -41,7 +39,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

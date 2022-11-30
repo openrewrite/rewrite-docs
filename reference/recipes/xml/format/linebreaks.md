@@ -1,7 +1,6 @@
 # Blank lines
 
-**org.openrewrite.xml.format.LineBreaks**
-_Add line breaks at appropriate places between XML syntax elements._
+**org.openrewrite.xml.format.LineBreaks** _Add line breaks at appropriate places between XML syntax elements._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Add line breaks at appropriate places between XML syntax elements._
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

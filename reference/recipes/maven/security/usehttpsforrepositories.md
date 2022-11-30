@@ -1,7 +1,6 @@
 # Use HTTPS for repositories
 
-**org.openrewrite.maven.security.UseHttpsForRepositories**
-_Use HTTPS for repository urls._
+**org.openrewrite.maven.security.UseHttpsForRepositories** _Use HTTPS for repository urls._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Use HTTPS for repository urls._
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
 * version: 7.33.0
-
 
 ## Usage
 
@@ -36,7 +34,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

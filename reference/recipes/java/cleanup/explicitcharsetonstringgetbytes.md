@@ -1,7 +1,6 @@
-# Set charset encoding explicitly when calling `String#getBytes`
+# Set charset encoding explicitly when calling String#getBytes
 
-**org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes**
-_This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option._
+**org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes** _This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option._
 
 ## Source
 
@@ -13,10 +12,9 @@ _This makes the behavior of the code platform neutral. It will not override any 
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | encoding | *Optional*. The default encoding to supply to the `getBytes` call |
-
+| Type     | Name     | Description                                                       |
+| -------- | -------- | ----------------------------------------------------------------- |
+| `String` | encoding | _Optional_. The default encoding to supply to the `getBytes` call |
 
 ## Usage
 
@@ -37,7 +35,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

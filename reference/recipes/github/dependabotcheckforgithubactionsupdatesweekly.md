@@ -1,7 +1,6 @@
 # Check for github-actions updates weekly
 
-**org.openrewrite.github.DependabotCheckForGithubActionsUpdatesWeekly**
-_Set dependabot to check for github-actions updates weekly._
+**org.openrewrite.github.DependabotCheckForGithubActionsUpdatesWeekly** _Set dependabot to check for github-actions updates weekly._
 
 ### Tags
 
@@ -17,7 +16,6 @@ _Set dependabot to check for github-actions updates weekly._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
 * version: 1.14.0
-
 
 ## Usage
 
@@ -93,10 +91,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change dependabot schedule interval](../github/changedependabotscheduleinterval.md)
+* [Change dependabot schedule interval](changedependabotscheduleinterval.md)
   * packageEcosystem: `github-actions`
   * interval: `weekly`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +112,6 @@ recipeList:
   - org.openrewrite.github.ChangeDependabotScheduleInterval:
       packageEcosystem: github-actions
       interval: weekly
-
 ```
 {% endtab %}
 {% endtabs %}

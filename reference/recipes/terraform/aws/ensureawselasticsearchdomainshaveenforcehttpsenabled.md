@@ -1,11 +1,10 @@
-# Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled
+# Ensure AWS Elasticsearch domains have EnforceHTTPS enabled
 
-**org.openrewrite.terraform.aws.EnsureAWSElasticsearchDomainsHaveEnforceHTTPSEnabled**
-_Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled._
+**org.openrewrite.terraform.aws.EnsureAWSElasticsearchDomainsHaveEnforceHTTPSEnabled** _Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled._
 
 ### Tags
 
-* CKV_AWS_83
+* CKV\_AWS\_83
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure AWS Elasticsearch domains have `EnforceHTTPS` enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,12 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_elasticsearch_domain`
-  * content: `domain_endpoint_options {
-  enforce_https = true
-}`
-
+  * content: `domain_endpoint_options { enforce_https = true }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +112,6 @@ recipeList:
       content: domain_endpoint_options {
   enforce_https = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}

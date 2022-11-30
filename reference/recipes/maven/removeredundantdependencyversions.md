@@ -1,7 +1,6 @@
 # Remove redundant explicit dependency versions
 
-**org.openrewrite.maven.RemoveRedundantDependencyVersions**
-_Remove explicitly-specified dependency versions when a parent POM's dependencyManagement specifies the version._
+**org.openrewrite.maven.RemoveRedundantDependencyVersions** _Remove explicitly-specified dependency versions when a parent POM's dependencyManagement specifies the version._
 
 ## Source
 
@@ -13,12 +12,11 @@ _Remove explicitly-specified dependency versions when a parent POM's dependencyM
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupPattern | *Optional*. Group glob expression pattern used to match dependencies that should be managed.Group is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | artifactPattern | *Optional*. Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `Boolean` | onlyIfVersionsMatch | *Optional*. Only remove the explicit version if it matches the managed dependency version. Default true. |
-
+| Type      | Name                | Description                                                                                                                                                                             |
+| --------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | groupPattern        | _Optional_. Group glob expression pattern used to match dependencies that should be managed.Group is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'.        |
+| `String`  | artifactPattern     | _Optional_. Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `Boolean` | onlyIfVersionsMatch | _Optional_. Only remove the explicit version if it matches the managed dependency version. Default true.                                                                                |
 
 ## Usage
 
@@ -39,7 +37,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

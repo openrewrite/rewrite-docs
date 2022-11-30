@@ -1,7 +1,6 @@
 # Parameterize Log4j 2.x logging statements
 
-**org.openrewrite.java.logging.log4j.ParameterizedLogging**
-_Log4j 2.x supports parameterized logging, which can significantly boost logging performance for disabled logging statements._
+**org.openrewrite.java.logging.log4j.ParameterizedLogging** _Log4j 2.x supports parameterized logging, which can significantly boost logging performance for disabled logging statements._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Log4j 2.x supports parameterized logging, which can significantly boost logging
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 1.15.0
-
 
 ## Usage
 
@@ -91,35 +89,34 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Logger info(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Logger trace(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Logger debug(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Logger info(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Logger warn(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Logger error(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Logger fatal(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Category info(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Logger trace(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Category debug(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Category info(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Category warn(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Category error(..)`
-* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
+* [Parameterize logging statements](../parameterizedlogging.md)
   * methodPattern: `org.apache.logging.log4j.Category fatal(..)`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -161,7 +158,6 @@ recipeList:
       methodPattern: org.apache.logging.log4j.Category error(..)
   - org.openrewrite.java.logging.ParameterizedLogging:
       methodPattern: org.apache.logging.log4j.Category fatal(..)
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Remove unused private methods
 
-**org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods**
-_`private` methods that are never executed are dead code and should be removed._
+**org.openrewrite.java.cleanup.RemoveUnusedPrivateMethods** _`private` methods that are never executed are dead code and should be removed._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _`private` methods that are never executed are dead code and should be removed._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

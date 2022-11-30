@@ -1,7 +1,6 @@
 # Use static import
 
-**org.openrewrite.java.UseStaticImport**
-_Removes unnecessary receiver types from static method invocations. For example, `Collections.emptyList()` becomes `emptyList()`._
+**org.openrewrite.java.UseStaticImport** _Removes unnecessary receiver types from static method invocations. For example, `Collections.emptyList()` becomes `emptyList()`._
 
 ## Source
 
@@ -13,15 +12,13 @@ _Removes unnecessary receiver types from static method invocations. For example,
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
-
+| Type     | Name          | Description                                                                                    |
+| -------- | ------------- | ---------------------------------------------------------------------------------------------- |
+| `String` | methodPattern | A [method pattern](../../method-patterns.md) that is used to find matching method invocations. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UseStaticImportExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UseStaticImportExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,7 +31,6 @@ recipeList:
       methodPattern: java.util.Collections emptyList()
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.UseStaticImportExample` has been defined activate it in your build file:
 
@@ -53,7 +49,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

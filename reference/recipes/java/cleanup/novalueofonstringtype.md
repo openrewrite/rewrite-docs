@@ -1,7 +1,6 @@
 # Unnecessary String#valueOf(..)
 
-**org.openrewrite.java.cleanup.NoValueOfOnStringType**
-_Replace unnecessary `String#valueOf(..)` method invocations with the argument directly. This occurs when the argument to `String#valueOf(arg)` is a string literal, such as `String.valueOf("example")`. Or, when the `String#valueOf(..)` invocation is used in a concatenation, such as `"example" + String.valueOf("example")`._
+**org.openrewrite.java.cleanup.NoValueOfOnStringType** _Replace unnecessary `String#valueOf(..)` method invocations with the argument directly. This occurs when the argument to `String#valueOf(arg)` is a string literal, such as `String.valueOf("example")`. Or, when the `String#valueOf(..)` invocation is used in a concatenation, such as `"example" + String.valueOf("example")`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Replace unnecessary `String#valueOf(..)` method invocations with the argument d
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

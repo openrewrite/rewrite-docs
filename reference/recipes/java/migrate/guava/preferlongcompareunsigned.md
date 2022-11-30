@@ -1,7 +1,6 @@
-# Prefer `Long#compareUnsigned`
+# Prefer Long#compareUnsigned
 
-**org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned**
-_This method exists in the Java standard library now._
+**org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned** _This method exists in the Java standard library now._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _This method exists in the Java standard library now._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -90,13 +88,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `com.google.common.primitives.UnsignedLongs compare(int, int)`
   * newMethodName: `compareUnsigned`
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `com.google.common.primitives.UnsignedLongs compareUnsigned(int, int)`
   * fullyQualifiedTargetTypeName: `java.lang.Long`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +112,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: com.google.common.primitives.UnsignedLongs compareUnsigned(int, int)
       fullyQualifiedTargetTypeName: java.lang.Long
-
 ```
 {% endtab %}
 {% endtabs %}

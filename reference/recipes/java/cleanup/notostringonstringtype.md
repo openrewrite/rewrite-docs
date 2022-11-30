@@ -1,7 +1,6 @@
 # Unnecessary String#toString()
 
-**org.openrewrite.java.cleanup.NoToStringOnStringType**
-_Remove unnecessary `String#toString()` invocations on objects which are already a string._
+**org.openrewrite.java.cleanup.NoToStringOnStringType** _Remove unnecessary `String#toString()` invocations on objects which are already a string._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Remove unnecessary `String#toString()` invocations on objects which are already
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

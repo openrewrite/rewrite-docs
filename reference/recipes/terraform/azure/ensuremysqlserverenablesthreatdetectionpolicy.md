@@ -1,12 +1,11 @@
 # Ensure MySQL server enables Threat Detection policy
 
-**org.openrewrite.terraform.azure.EnsureMySQLServerEnablesThreatDetectionPolicy**
-_Ensure MySQL server enables Threat Detection policy._
+**org.openrewrite.terraform.azure.EnsureMySQLServerEnablesThreatDetectionPolicy** _Ensure MySQL server enables Threat Detection policy._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_127
+* CKV\_AZURE\_127
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure MySQL server enables Threat Detection policy._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,12 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_mysql_server`
-  * content: `threat_detection_policy {
-  enabled = true
-}`
-
+  * content: `threat_detection_policy { enabled = true }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +112,6 @@ recipeList:
       content: threat_detection_policy {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Find Jackson default type mapping enablement
 
-**org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping**
-_`ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization._
+**org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping** _`ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -86,10 +84,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find method usages](../../../java/search/findmethods.md)
+* [Find method usages](../../search/findmethods.md)
   * methodPattern: `com.fasterxml.jackson.databind.ObjectMapper enableDefaultTyping(..)`
   * matchOverrides: `true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.java.search.FindMethods:
       methodPattern: com.fasterxml.jackson.databind.ObjectMapper enableDefaultTyping(..)
       matchOverrides: true
-
 ```
 {% endtab %}
 {% endtabs %}

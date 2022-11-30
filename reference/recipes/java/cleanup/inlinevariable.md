@@ -1,7 +1,6 @@
 # Inline variable
 
-**org.openrewrite.java.cleanup.InlineVariable**
-_Inline variables when they are immediately used to return or throw._
+**org.openrewrite.java.cleanup.InlineVariable** _Inline variables when they are immediately used to return or throw._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Inline variables when they are immediately used to return or throw._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

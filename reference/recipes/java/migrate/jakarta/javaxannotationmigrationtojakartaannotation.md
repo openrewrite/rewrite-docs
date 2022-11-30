@@ -1,7 +1,6 @@
-# Migrate deprecated `javax.annotation` packages to `jakarta.annotation`
+# Migrate deprecated javax.annotation packages to jakarta.annotation
 
-**org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation**
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+**org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -101,11 +99,10 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.annotation`
   * artifactId: `jakarta.annotation-api`
   * newVersion: `2.x`
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](../../../java/migrate/jakarta/changejavaxannotationtojakarta.md)
+* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](changejavaxannotationtojakarta.md)
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `javax.annotation`
   * artifactId: `javax.annotation-api`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -133,7 +130,6 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.annotation
       artifactId: javax.annotation-api
-
 ```
 {% endtab %}
 {% endtabs %}

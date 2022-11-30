@@ -1,12 +1,11 @@
 # Ensure the GKE metadata server is enabled
 
-**org.openrewrite.terraform.gcp.EnsureTheGKEMetadataServerIsEnabled**
-_Ensure the GKE metadata server is enabled._
+**org.openrewrite.terraform.gcp.EnsureTheGKEMetadataServerIsEnabled** _Ensure the GKE metadata server is enabled._
 
 ### Tags
 
 * GCP
-* CKV_GCP_69
+* CKV\_GCP\_69
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure the GKE metadata server is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,21 +90,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_cluster`
-  * content: `node_config {
-  workload_metadata_config {
-    node_metadata = "GKE_METADATA_SERVER"
-  }
-}`
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+  * content: `node_config { workload_metadata_config { node_metadata = "GKE_METADATA_SERVER" } }`
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_node_pool`
-  * content: `node_config {
-  workload_metadata_config {
-    node_metadata = "GKE_METADATA_SERVER"
-  }
-}`
-
+  * content: `node_config { workload_metadata_config { node_metadata = "GKE_METADATA_SERVER" } }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -135,7 +124,6 @@ recipeList:
     node_metadata = "GKE_METADATA_SERVER"
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}

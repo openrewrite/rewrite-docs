@@ -1,7 +1,6 @@
 # Hidden field
 
-**org.openrewrite.java.cleanup.HiddenField**
-_Refactor local variables or parameters which shadow a field defined in the same class._
+**org.openrewrite.java.cleanup.HiddenField** _Refactor local variables or parameters which shadow a field defined in the same class._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Refactor local variables or parameters which shadow a field defined in the same
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

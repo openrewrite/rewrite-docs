@@ -1,7 +1,6 @@
 # Find uses of JCA
 
-**org.openrewrite.cloudsuitability.FindJcaAnnotations**
-_Java messaging can present problems in TAS due to its emphemerality. Convert to a backing service or use TKG._
+**org.openrewrite.cloudsuitability.FindJcaAnnotations** _Java messaging can present problems in TAS due to its emphemerality. Convert to a backing service or use TKG._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Java messaging can present problems in TAS due to its emphemerality. Convert to
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -94,7 +92,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * fullyQualifiedTypeName: `javax.resource.AdministeredObjectDefinition`
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javax.resource.ConnectionFactoryDefinition*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,6 @@ recipeList:
       fullyQualifiedTypeName: javax.resource.AdministeredObjectDefinition
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javax.resource.ConnectionFactoryDefinition*
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Find literals
 
-**org.openrewrite.java.search.FindLiterals**
-_Find literals matching a pattern._
+**org.openrewrite.java.search.FindLiterals** _Find literals matching a pattern._
 
 ## Source
 
@@ -13,15 +12,13 @@ _Find literals matching a pattern._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
+| Type     | Name    | Description                                             |
+| -------- | ------- | ------------------------------------------------------- |
 | `String` | pattern | A regular expression pattern to match literals against. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindLiteralsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindLiteralsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,7 +31,6 @@ recipeList:
       pattern: file://
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.FindLiteralsExample` has been defined activate it in your build file:
 
@@ -53,7 +49,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

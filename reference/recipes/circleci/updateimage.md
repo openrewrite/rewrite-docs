@@ -1,7 +1,6 @@
 # Update CircleCI image
 
-**org.openrewrite.circleci.UpdateImage**
-_See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circleci-images/)._
+**org.openrewrite.circleci.UpdateImage** _See the list of_ [_pre-built CircleCI images_](https://circleci.com/docs/2.0/circleci-images/)_._
 
 ## Source
 
@@ -13,15 +12,13 @@ _See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circl
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
+| Type     | Name  | Description   |
+| -------- | ----- | ------------- |
 | `String` | image | Image to use. |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateImageExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateImageExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -99,9 +96,8 @@ Recipes can also be activated directly from the commandline by adding the argume
 {% tab title="Recipe List" %}
 * [Change value](../yaml/changevalue.md)
   * oldKeyPath: `$.jobs.build.machine.image`
-  * value: ``
+  * value: \`\`
   * fileMatcher: `.circleci/config.yml`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -118,7 +114,6 @@ recipeList:
       oldKeyPath: $.jobs.build.machine.image
       value: 
       fileMatcher: .circleci/config.yml
-
 ```
 {% endtab %}
 {% endtabs %}

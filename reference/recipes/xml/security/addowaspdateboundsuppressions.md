@@ -1,7 +1,6 @@
 # Add date bounds to OWASP suppressions
 
-**org.openrewrite.xml.security.AddOwaspDateBoundSuppressions**
-_Adds an expiration date to all OWASP suppressions in order to ensure that they are periodically reviewed. For use with the OWASP `dependency-check` tool. More details: https://jeremylong.github.io/DependencyCheck/general/suppression.html._
+**org.openrewrite.xml.security.AddOwaspDateBoundSuppressions** _Adds an expiration date to all OWASP suppressions in order to ensure that they are periodically reviewed. For use with the OWASP `dependency-check` tool. More details: https://jeremylong.github.io/DependencyCheck/general/suppression.html._
 
 ## Source
 
@@ -13,10 +12,9 @@ _Adds an expiration date to all OWASP suppressions in order to ensure that they 
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. |
-
+| Type     | Name      | Description                                                                                   |
+| -------- | --------- | --------------------------------------------------------------------------------------------- |
+| `String` | untilDate | _Optional_. Optional. The date to add to the suppression. Default will be 30 days from today. |
 
 ## Usage
 
@@ -37,7 +35,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

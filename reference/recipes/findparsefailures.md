@@ -1,7 +1,6 @@
-# Find source files with `ParseExceptionResult` markers
+# Find source files with ParseExceptionResult markers
 
-**org.openrewrite.FindParseFailures**
-_This recipe explores parse failures after an AST is produced for classifying the types of failures that can occur and prioritizing fixes according to the most common problems._
+**org.openrewrite.FindParseFailures** _This recipe explores parse failures after an AST is produced for classifying the types of failures that can occur and prioritizing fixes according to the most common problems._
 
 ## Source
 
@@ -10,7 +9,6 @@ _This recipe explores parse failures after an AST is produced for classifying th
 * groupId: org.openrewrite
 * artifactId: rewrite-core
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # Change Maven project property value
 
-**org.openrewrite.maven.ChangePropertyValue**
-_Changes the specified Maven project property value leaving the key intact._
+**org.openrewrite.maven.ChangePropertyValue** _Changes the specified Maven project property value leaving the key intact._
 
 ## Source
 
@@ -13,18 +12,16 @@ _Changes the specified Maven project property value leaving the key intact._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | key | The name of the property key whose value is to be changed. |
-| `String` | newValue | Value to apply to the matching property. |
-| `Boolean` | addIfMissing | *Optional*. Add the property if it is missing from the pom file. |
-| `Boolean` | trustParent | *Optional*. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |
-
+| Type      | Name         | Description                                                                                                                                                                                                                        |
+| --------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | key          | The name of the property key whose value is to be changed.                                                                                                                                                                         |
+| `String`  | newValue     | Value to apply to the matching property.                                                                                                                                                                                           |
+| `Boolean` | addIfMissing | _Optional_. Add the property if it is missing from the pom file.                                                                                                                                                                   |
+| `Boolean` | trustParent  | _Optional_. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyValueExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyValueExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -40,7 +37,6 @@ recipeList:
       trustParent: false
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it in your build file:
 
@@ -59,7 +55,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

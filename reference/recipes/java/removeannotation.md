@@ -1,7 +1,6 @@
 # Remove annotation
 
-**org.openrewrite.java.RemoveAnnotation**
-_Remove matching annotations wherever they occur._
+**org.openrewrite.java.RemoveAnnotation** _Remove matching annotations wherever they occur._
 
 ## Source
 
@@ -13,15 +12,13 @@ _Remove matching annotations wherever they occur._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns.md). |
-
+| Type     | Name              | Description                                                                       |
+| -------- | ----------------- | --------------------------------------------------------------------------------- |
+| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](../../method-patterns.md). |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RemoveAnnotationExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.RemoveAnnotationExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,7 +31,6 @@ recipeList:
       annotationPattern: '@java.lang.SuppressWarnings("deprecation")'
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.RemoveAnnotationExample` has been defined activate it in your build file:
 
@@ -53,7 +49,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

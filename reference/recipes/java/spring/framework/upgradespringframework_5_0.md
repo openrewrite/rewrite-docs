@@ -1,7 +1,6 @@
 # Upgrade to Spring Framework 5.0
 
-**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_0**
-_Upgrade to Spring Framework to 5.0 from any prior version._
+**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_0** _Upgrade to Spring Framework to 5.0 from any prior version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Framework to 5.0 from any prior version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,8 +84,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Transform classes that extend `WebMvcConfigurerAdapter` to implement the `WebMvcConfigurer` interface instead](../../../java/spring/framework/migratewebmvcconfigureradapter.md)
-
+* [Transform classes that extend `WebMvcConfigurerAdapter` to implement the `WebMvcConfigurer` interface instead](migratewebmvcconfigureradapter.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,7 +96,6 @@ displayName: Upgrade to Spring Framework 5.0
 description: Upgrade to Spring Framework to 5.0 from any prior version.
 recipeList:
   - org.openrewrite.java.spring.framework.MigrateWebMvcConfigurerAdapter
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Simplify compound statement
 
-**org.openrewrite.java.cleanup.SimplifyCompoundStatement**
-_Fixes or removes useless compound statements. For example, removing `b &= true`, and replacing `b &= false` with `b = false`._
+**org.openrewrite.java.cleanup.SimplifyCompoundStatement** _Fixes or removes useless compound statements. For example, removing `b &= true`, and replacing `b &= false` with `b = false`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Fixes or removes useless compound statements. For example, removing `b &= true`
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

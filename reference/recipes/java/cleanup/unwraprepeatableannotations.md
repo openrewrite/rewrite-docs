@@ -1,7 +1,6 @@
-# Unwrap `@Repeatable` annotations
+# Unwrap @Repeatable annotations
 
-**org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations**
-_Java 8 introduced the concept of `@Repeatable` annotations, making the wrapper annotation unnecessary._
+**org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations** _Java 8 introduced the concept of `@Repeatable` annotations, making the wrapper annotation unnecessary._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Java 8 introduced the concept of `@Repeatable` annotations, making the wrapper 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

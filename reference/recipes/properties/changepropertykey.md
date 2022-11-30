@@ -1,7 +1,6 @@
 # Change property key
 
-**org.openrewrite.properties.ChangePropertyKey**
-_Change a property key leaving the value intact._
+**org.openrewrite.properties.ChangePropertyKey** _Change a property key leaving the value intact._
 
 ## Source
 
@@ -13,18 +12,16 @@ _Change a property key leaving the value intact._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldPropertyKey | The property key to rename. |
-| `String` | newPropertyKey | The new name for the key identified by `oldPropertyKey`. |
-| `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
+| Type      | Name           | Description                                                                                                                                                                                                                                                                                      |
+| --------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `String`  | oldPropertyKey | The property key to rename.                                                                                                                                                                                                                                                                      |
+| `String`  | newPropertyKey | The new name for the key identified by `oldPropertyKey`.                                                                                                                                                                                                                                         |
+| `Boolean` | relaxedBinding | _Optional_. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false` to use exact matching. |
+| `String`  | fileMatcher    | _Optional_. Matching files will be modified. This is a glob expression.                                                                                                                                                                                                                          |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyKeyExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePropertyKeyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -40,7 +37,6 @@ recipeList:
       fileMatcher: '**/application-*.properties'
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in your build file:
 
@@ -59,7 +55,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

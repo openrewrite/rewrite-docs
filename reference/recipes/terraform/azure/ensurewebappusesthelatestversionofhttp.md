@@ -1,12 +1,11 @@
 # Ensure Web App uses the latest version of HTTP
 
-**org.openrewrite.terraform.azure.EnsureWebAppUsesTheLatestVersionOfHTTP**
-_Ensure Web App uses the latest version of HTTP._
+**org.openrewrite.terraform.azure.EnsureWebAppUsesTheLatestVersionOfHTTP** _Ensure Web App uses the latest version of HTTP._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_18
+* CKV\_AZURE\_18
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure Web App uses the latest version of HTTP._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,12 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: `site_config {
-  http2_enabled = true
-}`
-
+  * content: `site_config { http2_enabled = true }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +112,6 @@ recipeList:
       content: site_config {
   http2_enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}

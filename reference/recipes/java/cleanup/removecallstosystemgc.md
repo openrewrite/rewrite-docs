@@ -1,7 +1,6 @@
 # Remove garbage collection invocations
 
-**org.openrewrite.java.cleanup.RemoveCallsToSystemGc**
-_Removes calls to `System.gc()` and `Runtime.gc()`. When to invoke garbage collection is best left to the JVM._
+**org.openrewrite.java.cleanup.RemoveCallsToSystemGc** _Removes calls to `System.gc()` and `Runtime.gc()`. When to invoke garbage collection is best left to the JVM._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Removes calls to `System.gc()` and `Runtime.gc()`. When to invoke garbage colle
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

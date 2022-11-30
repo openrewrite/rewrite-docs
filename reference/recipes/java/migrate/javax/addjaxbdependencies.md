@@ -1,8 +1,6 @@
 # Add explicit JAXB dependencies
 
-**org.openrewrite.java.migrate.javax.AddJaxbDependencies**
-_This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. **The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
-_
+**org.openrewrite.java.migrate.javax.AddJaxbDependencies** \_This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. \*\*The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace. \_
 
 ### Tags
 
@@ -19,7 +17,6 @@ _
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -122,7 +119,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
   * newVersion: `2.3.x`
-* [Use latest JAXB API and runtime for Jakarta EE 8](../../../java/migrate/javax/addjaxbruntime.md)
+* [Use latest JAXB API and runtime for Jakarta EE 8](addjaxbruntime.md)
   * runtime: `glassfish`
 * [Remove redundant explicit dependency versions](../../../maven/removeredundantdependencyversions.md)
   * groupPattern: `org.glassfish.jaxb`
@@ -136,7 +133,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupPattern: `jakarta.xml.bind`
   * artifactPattern: `*`
   * onlyIfVersionsMatch: `true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -195,7 +191,6 @@ recipeList:
       groupPattern: jakarta.xml.bind
       artifactPattern: *
       onlyIfVersionsMatch: true
-
 ```
 {% endtab %}
 {% endtabs %}

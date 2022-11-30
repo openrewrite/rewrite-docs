@@ -1,13 +1,12 @@
 # Enable VPC flow logs and intranode visibility
 
-**org.openrewrite.terraform.gcp.EnableVPCFlowLogsAndIntranodeVisibility**
-_Enable VPC flow logs and intranode visibility._
+**org.openrewrite.terraform.gcp.EnableVPCFlowLogsAndIntranodeVisibility** _Enable VPC flow logs and intranode visibility._
 
 ### Tags
 
 * GCP
 * terraform
-* CKV_GCP_61
+* CKV\_GCP\_61
 
 ## Source
 
@@ -16,7 +15,6 @@ _Enable VPC flow logs and intranode visibility._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_cluster`
   * content: `enable_intranode_visibility = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: google_container_cluster
       content: enable_intranode_visibility = true
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Find secrets
 
-**org.openrewrite.java.security.secrets.FindSecrets**
-_Locates secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindSecrets** _Locates secrets stored in plain text in code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,33 +88,32 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find Artifactory secrets](../../../java/security/secrets/findartifactorysecrets.md)
-* [Find AWS secrets](../../../java/security/secrets/findawssecrets.md)
-* [Find Azure secrets](../../../java/security/secrets/findazuresecrets.md)
-* [Find Discord secrets](../../../java/security/secrets/finddiscordsecrets.md)
-* [Find generic secrets](../../../java/security/secrets/findgenericsecrets.md)
-* [Find GitHub secrets](../../../java/security/secrets/findgithubsecrets.md)
-* [Find Google secrets](../../../java/security/secrets/findgooglesecrets.md)
-* [Find Heroku secrets](../../../java/security/secrets/findherokusecrets.md)
-* [Find JWT secrets](../../../java/security/secrets/findjwtsecrets.md)
-* [Find MailChimp secrets](../../../java/security/secrets/findmailchimpsecrets.md)
-* [Find Mailgun secrets](../../../java/security/secrets/findmailgunsecrets.md)
-* [Find NPM secrets](../../../java/security/secrets/findnpmsecrets.md)
-* [Find NPM secrets](../../../java/security/secrets/findnpmsecrets.md)
-* [Find passwords used in URLs](../../../java/security/secrets/findpasswordinurlsecrets.md)
-* [Find PayPal secrets](../../../java/security/secrets/findpaypalsecrets.md)
-* [Find PGP secrets](../../../java/security/secrets/findpgpsecrets.md)
-* [Find Picatic secrets](../../../java/security/secrets/findpicaticsecrets.md)
-* [Find RSA private keys](../../../java/security/secrets/findrsasecrets.md)
-* [Find SendGrid secrets](../../../java/security/secrets/findsendgridsecrets.md)
-* [Find Slack secrets](../../../java/security/secrets/findslacksecrets.md)
-* [Find Square secrets](../../../java/security/secrets/findsquaresecrets.md)
-* [Find SSH secrets](../../../java/security/secrets/findsshsecrets.md)
-* [Find Stripe secrets](../../../java/security/secrets/findstripesecrets.md)
-* [Find Telegram secrets](../../../java/security/secrets/findtelegramsecrets.md)
-* [Find Twilio secrets](../../../java/security/secrets/findtwiliosecrets.md)
-* [Find Twitter secrets](../../../java/security/secrets/findtwittersecrets.md)
-
+* [Find Artifactory secrets](findartifactorysecrets.md)
+* [Find AWS secrets](findawssecrets.md)
+* [Find Azure secrets](findazuresecrets.md)
+* [Find Discord secrets](finddiscordsecrets.md)
+* [Find generic secrets](findgenericsecrets.md)
+* [Find GitHub secrets](findgithubsecrets.md)
+* [Find Google secrets](findgooglesecrets.md)
+* [Find Heroku secrets](findherokusecrets.md)
+* [Find JWT secrets](findjwtsecrets.md)
+* [Find MailChimp secrets](findmailchimpsecrets.md)
+* [Find Mailgun secrets](findmailgunsecrets.md)
+* [Find NPM secrets](findnpmsecrets.md)
+* [Find NPM secrets](findnpmsecrets.md)
+* [Find passwords used in URLs](findpasswordinurlsecrets.md)
+* [Find PayPal secrets](findpaypalsecrets.md)
+* [Find PGP secrets](findpgpsecrets.md)
+* [Find Picatic secrets](findpicaticsecrets.md)
+* [Find RSA private keys](findrsasecrets.md)
+* [Find SendGrid secrets](findsendgridsecrets.md)
+* [Find Slack secrets](findslacksecrets.md)
+* [Find Square secrets](findsquaresecrets.md)
+* [Find SSH secrets](findsshsecrets.md)
+* [Find Stripe secrets](findstripesecrets.md)
+* [Find Telegram secrets](findtelegramsecrets.md)
+* [Find Twilio secrets](findtwiliosecrets.md)
+* [Find Twitter secrets](findtwittersecrets.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -155,7 +152,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindTelegramSecrets
   - org.openrewrite.java.security.secrets.FindTwilioSecrets
   - org.openrewrite.java.security.secrets.FindTwitterSecrets
-
 ```
 {% endtab %}
 {% endtabs %}

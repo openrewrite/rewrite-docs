@@ -1,11 +1,10 @@
 # Ensure binary authorization is used
 
-**org.openrewrite.terraform.gcp.EnsureBinaryAuthorizationIsUsed**
-_Ensure binary authorization is used._
+**org.openrewrite.terraform.gcp.EnsureBinaryAuthorizationIsUsed** _Ensure binary authorization is used._
 
 ### Tags
 
-* CKV_GCP_66
+* CKV\_GCP\_66
 * GCP
 * terraform
 
@@ -16,7 +15,6 @@ _Ensure binary authorization is used._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `google_container_cluster`
   * content: `enable_binary_authorization = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: google_container_cluster
       content: enable_binary_authorization = true
-
 ```
 {% endtab %}
 {% endtabs %}

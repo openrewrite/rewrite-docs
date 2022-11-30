@@ -1,7 +1,6 @@
 # Upgrade to Cucumber-JVM 5.x
 
-**org.openrewrite.java.testing.cucumber.UpgradeCucumber5x**
-_Upgrade to Cucumber-JVM 5.x from any previous version._
+**org.openrewrite.java.testing.cucumber.UpgradeCucumber5x** _Upgrade to Cucumber-JVM 5.x from any previous version._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Upgrade to Cucumber-JVM 5.x from any previous version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,11 +89,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Cucumber-JVM 2.x](../../../java/testing/cucumber/upgradecucumber2x.md)
-* [Rename package name](../../../java/changepackage.md)
+* [Upgrade to Cucumber-JVM 2.x](upgradecucumber2x.md)
+* [Rename package name](../../changepackage.md)
   * oldPackageName: `cucumber.api`
   * newPackageName: `io.cucumber`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: cucumber.api
       newPackageName: io.cucumber
-
 ```
 {% endtab %}
 {% endtabs %}

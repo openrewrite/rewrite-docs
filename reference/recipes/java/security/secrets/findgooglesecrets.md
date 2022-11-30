@@ -1,7 +1,6 @@
 # Find Google secrets
 
-**org.openrewrite.java.security.secrets.FindGoogleSecrets**
-_Locates Google secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindGoogleSecrets** _Locates Google secrets stored in plain text in code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates Google secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,16 +88,15 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Google API key`
   * valuePattern: `AIza[0-9A-Za-z\-_]{35}`
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Google OAuth token`
   * valuePattern: `[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com`
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Google OAuth token`
   * valuePattern: `ya29\.[0-9A-Za-z\-_]+`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -121,7 +118,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
       secretName: Google OAuth token
       valuePattern: ya29\.[0-9A-Za-z\-_]+
-
 ```
 {% endtab %}
 {% endtabs %}

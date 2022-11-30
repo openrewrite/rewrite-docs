@@ -1,7 +1,6 @@
 # Change Maven dependency groupId, artifactId and/or the version
 
-**org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId**
-_Change the groupId, artifactId and/or the version of a specified Maven dependency._
+**org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId** _Change the groupId, artifactId and/or the version of a specified Maven dependency._
 
 ## Source
 
@@ -13,21 +12,19 @@ _Change the groupId, artifactId and/or the version of a specified Maven dependen
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
-| `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
-| `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. |
-| `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
-| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
-| `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |
-
+| Type      | Name                   | Description                                                                                                                                                                                                         |
+| --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | oldGroupId             | The old groupId to replace. The groupId is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions.                                                                   |
+| `String`  | oldArtifactId          | The old artifactId to replace. The artifactId is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions.                                                            |
+| `String`  | newGroupId             | _Optional_. The new groupId to use. Defaults to the existing group id.                                                                                                                                              |
+| `String`  | newArtifactId          | _Optional_. The new artifactId to use. Defaults to the existing artifact id.                                                                                                                                        |
+| `String`  | newVersion             | _Optional_. An exact version number or node-style semver selector used to select the version number.                                                                                                                |
+| `String`  | versionPattern         | _Optional_. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
+| `Boolean` | overrideManagedVersion | _Optional_. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`.                                               |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -47,7 +44,6 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -65,7 +61,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

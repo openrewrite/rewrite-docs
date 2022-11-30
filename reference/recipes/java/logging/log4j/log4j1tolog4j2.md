@@ -1,7 +1,6 @@
 # Migrate Log4j 1.x to Log4j 2.x
 
-**org.openrewrite.java.logging.log4j.Log4j1ToLog4j2**
-_Migrates Log4j 1.x to Log4j 2.x._
+**org.openrewrite.java.logging.log4j.Log4j1ToLog4j2** _Migrates Log4j 1.x to Log4j 2.x._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Migrates Log4j 1.x to Log4j 2.x._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 1.15.0
-
 
 ## Usage
 
@@ -91,19 +89,19 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Rename package name](../../../java/changepackage.md)
+* [Rename package name](../../changepackage.md)
   * oldPackageName: `org.apache.log4j`
   * newPackageName: `org.apache.logging.log4j`
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `org.apache.logging.log4j.Logger getLogger(..)`
   * fullyQualifiedTargetTypeName: `org.apache.logging.log4j.LogManager`
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `org.apache.logging.log4j.Logger getRootLogger()`
   * fullyQualifiedTargetTypeName: `org.apache.logging.log4j.LogManager`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.apache.logging.log4j.Category getEffectiveLevel()`
   * newMethodName: `getLevel`
-* [Parameterize Log4j 2.x logging statements](../../../java/logging/log4j/parameterizedlogging.md)
+* [Parameterize Log4j 2.x logging statements](parameterizedlogging.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.apache.logging.log4j`
   * artifactId: `log4j-api`
@@ -142,7 +140,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * newGroupId: `org.apache.logging.log4j`
   * newArtifactId: `log4j-slf4j-impl`
   * newVersion: `latest.release`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -207,7 +204,6 @@ recipeList:
       newGroupId: org.apache.logging.log4j
       newArtifactId: log4j-slf4j-impl
       newVersion: latest.release
-
 ```
 {% endtab %}
 {% endtabs %}

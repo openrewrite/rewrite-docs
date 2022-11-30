@@ -1,7 +1,6 @@
 # Find Slack secrets
 
-**org.openrewrite.java.security.secrets.FindSlackSecrets**
-_Locates Slack secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindSlackSecrets** _Locates Slack secrets stored in plain text in code._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Locates Slack secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -86,13 +84,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Slack`
   * valuePattern: `(xox[pboa]-[0-9]{12}-[0-9]{12}-[0-9]{12}-[a-z0-9]{32})`
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `Slack`
   * valuePattern: `xox(?:a|b|p|o|s|r)-(?:\d+-)+[a-z0-9]+`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +106,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
       secretName: Slack
       valuePattern: xox(?:a|b|p|o|s|r)-(?:\d+-)+[a-z0-9]+
-
 ```
 {% endtab %}
 {% endtabs %}

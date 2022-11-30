@@ -1,7 +1,6 @@
-# Use `Runtime.Version#feature()`
+# Use Runtime.Version#feature()
 
-**org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMajorToFeature**
-_`Runtime.Version#major()` was deprecated in Java 10._
+**org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMajorToFeature** _`Runtime.Version#major()` was deprecated in Java 10._
 
 ## Source
 
@@ -10,7 +9,6 @@ _`Runtime.Version#major()` was deprecated in Java 10._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -86,10 +84,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `java.lang.Runtime.Version major()`
   * newMethodName: `feature`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Runtime.Version major()
       newMethodName: feature
-
 ```
 {% endtab %}
 {% endtabs %}

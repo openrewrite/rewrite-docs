@@ -1,7 +1,6 @@
 # Update Lombok dependency to a Java 17 compatible version
 
-**org.openrewrite.java.migrate.lombok.UpdateLombokToJava17**
-_Update Lombok dependency to a version that is compatible with Java 17._
+**org.openrewrite.java.migrate.lombok.UpdateLombokToJava17** _Update Lombok dependency to a version that is compatible with Java 17._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Update Lombok dependency to a version that is compatible with Java 17._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -95,23 +93,22 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.projectlombok`
   * artifactId: `lombok`
   * newVersion: `1.18.*`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.Builder`
   * newFullyQualifiedTypeName: `lombok.Builder`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.Value`
   * newFullyQualifiedTypeName: `lombok.Value`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.Wither`
   * newFullyQualifiedTypeName: `lombok.With`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.var`
   * newFullyQualifiedTypeName: `lombok.var`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.val`
   * newFullyQualifiedTypeName: `lombok.val`
-* [Replace `lombok.val` with `final var`](../../../java/migrate/lombok/lombokvaltofinalvar.md)
-
+* [Replace `lombok.val` with `final var`](lombokvaltofinalvar.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -145,7 +142,6 @@ recipeList:
       oldFullyQualifiedTypeName: lombok.experimental.val
       newFullyQualifiedTypeName: lombok.val
   - org.openrewrite.java.migrate.lombok.LombokValToFinalVar
-
 ```
 {% endtab %}
 {% endtabs %}

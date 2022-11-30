@@ -1,11 +1,10 @@
 # Ensure PostgreSQL server enables infrastructure encryption
 
-**org.openrewrite.terraform.azure.EnsurePostgreSQLServerEnablesInfrastructureEncryption**
-_Ensure PostgreSQL server enables infrastructure encryption._
+**org.openrewrite.terraform.azure.EnsurePostgreSQLServerEnablesInfrastructureEncryption** _Ensure PostgreSQL server enables infrastructure encryption._
 
 ### Tags
 
-* CKV_AZURE_130
+* CKV\_AZURE\_130
 * Azure
 * terraform
 
@@ -16,7 +15,6 @@ _Ensure PostgreSQL server enables infrastructure encryption._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_postgresql_server`
   * content: `infrastructure_encryption_enabled = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_postgresql_server
       content: infrastructure_encryption_enabled = true
-
 ```
 {% endtab %}
 {% endtabs %}

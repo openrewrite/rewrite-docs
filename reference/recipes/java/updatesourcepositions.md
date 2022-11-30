@@ -1,7 +1,6 @@
 # Update source positions
 
-**org.openrewrite.java.UpdateSourcePositions**
-_Calculate start position and length for every AST element._
+**org.openrewrite.java.UpdateSourcePositions** _Calculate start position and length for every AST element._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Calculate start position and length for every AST element._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

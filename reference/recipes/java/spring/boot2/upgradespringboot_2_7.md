@@ -1,7 +1,6 @@
 # Upgrade to Spring Boot 2.7
 
-**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_7**
-_Upgrade to Spring Boot 2.7 from any prior 2.x version._
+**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_7** _Upgrade to Spring Boot 2.7 from any prior 2.x version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Boot 2.7 from any prior 2.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,7 +84,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Spring Boot 2.6](../../../java/spring/boot2/upgradespringboot_2_6.md)
+* [Upgrade to Spring Boot 2.6](upgradespringboot\_2\_6.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -96,18 +94,17 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.7.x`
-* [Spring Security 5.4 introduces the ability to configure HttpSecurity by creating a SecurityFilterChain bean](../../../java/spring/boot2/websecurityconfigureradapter.md)
-* [Change type](../../../java/changetype.md)
+* [Spring Security 5.4 introduces the ability to configure HttpSecurity by creating a SecurityFilterChain bean](websecurityconfigureradapter.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.server.LocalServerPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.server.LocalServerPort`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.autoconfigure.web.server.LocalManagementPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.server.LocalManagementPort`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.rsocket.context.LocalRSocketServerPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.rsocket.server.LocalRSocketServerPort`
-* [Migrate Spring Boot properties to 2.7](../../../java/spring/boot2/springbootproperties_2_7.md)
-
+* [Migrate Spring Boot properties to 2.7](springbootproperties\_2\_7.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -139,7 +136,6 @@ recipeList:
       oldFullyQualifiedTypeName: org.springframework.boot.rsocket.context.LocalRSocketServerPort
       newFullyQualifiedTypeName: org.springframework.boot.test.rsocket.server.LocalRSocketServerPort
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_7
-
 ```
 {% endtab %}
 {% endtabs %}

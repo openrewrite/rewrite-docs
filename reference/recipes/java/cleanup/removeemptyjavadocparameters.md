@@ -1,7 +1,6 @@
-# Remove JavaDoc `@params`, `@return`, and `@throws` with no description
+# Remove JavaDoc @params, @return, and @throws with no description
 
-**org.openrewrite.java.cleanup.RemoveEmptyJavaDocParameters**
-_Removes `@params`, `@return`, and `@throws` with no description from JavaDocs._
+**org.openrewrite.java.cleanup.RemoveEmptyJavaDocParameters** _Removes `@params`, `@return`, and `@throws` with no description from JavaDocs._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Removes `@params`, `@return`, and `@throws` with no description from JavaDocs._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

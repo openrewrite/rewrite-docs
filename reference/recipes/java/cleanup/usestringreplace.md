@@ -1,7 +1,6 @@
-# Use `String::replace()` when fist parameter is not a real regular expression
+# Use String::replace() when fist parameter is not a real regular expression
 
-**org.openrewrite.java.cleanup.UseStringReplace**
-_When `String::replaceAll` is used, the first argument should be a real regular expression. If it’s not the case, `String::replace` does exactly the same thing as `String::replaceAll` without the performance drawback of the regex._
+**org.openrewrite.java.cleanup.UseStringReplace** _When `String::replaceAll` is used, the first argument should be a real regular expression. If it’s not the case, `String::replace` does exactly the same thing as `String::replaceAll` without the performance drawback of the regex._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _When `String::replaceAll` is used, the first argument should be a real regular 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

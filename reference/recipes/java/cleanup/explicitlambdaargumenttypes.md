@@ -1,7 +1,6 @@
 # Use explicit types on lambda arguments
 
-**org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes**
-_Adds explicit types on lambda arguments, which are otherwise optional. This can make the code clearer and easier to read. This does not add explicit types on arguments when the lambda has one or two parameters and does not have a block body, as things are considered more readable in those cases. For example, `stream.map((a, b) -> a.length);` will not have explicit types added._
+**org.openrewrite.java.cleanup.ExplicitLambdaArgumentTypes** _Adds explicit types on lambda arguments, which are otherwise optional. This can make the code clearer and easier to read. This does not add explicit types on arguments when the lambda has one or two parameters and does not have a block body, as things are considered more readable in those cases. For example, `stream.map((a, b) -> a.length);` will not have explicit types added._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Adds explicit types on lambda arguments, which are otherwise optional. This can
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

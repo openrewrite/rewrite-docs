@@ -1,7 +1,6 @@
 # Migrate Spring Boot properties to 2.7
 
-**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_7**
-_Migrate properties found in `application.properties` and `application.yml`._
+**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_7** _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrate properties found in `application.properties` and `application.yml`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,62 +84,61 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Move SAML relying party identity provider property to asserting party](../../../java/spring/boot2/samlrelyingpartypropertyapplicationpropertiesmove.md)
+* [Move SAML relying party identity provider property to asserting party](samlrelyingpartypropertyapplicationpropertiesmove.md)
 * [Change key](../../../yaml/changekey.md)
   * oldKeyPath: `$.spring.security.saml2.relyingparty.registration.*[?(@.identityprovider)]`
   * newKey: `assertingparty`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.artemis.host`
   * newPropertyKey: `spring.artemis.broker-url`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.artemis.port`
   * newPropertyKey: `spring.artemis.broker-url`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.batch.initialize-schema`
   * newPropertyKey: `spring.batch.jdbc.initialize-schema`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.batch.schema`
   * newPropertyKey: `spring.batch.jdbc.schema`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.batch.table-prefix`
   * newPropertyKey: `spring.batch.jdbc.table-prefix`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.continue-on-error`
   * newPropertyKey: `spring.sql.init.continue-on-error`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.data`
   * newPropertyKey: `spring.sql.init.data-locations`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.data-password`
   * newPropertyKey: `spring.sql.init.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.data-username`
   * newPropertyKey: `spring.sql.init.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.initialization-mode`
   * newPropertyKey: `spring.sql.init.mode`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.platform`
   * newPropertyKey: `spring.sql.init.platform`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.schema`
   * newPropertyKey: `spring.sql.init.schema-locations`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.schema-password`
   * newPropertyKey: `spring.sql.init.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.schema-username`
   * newPropertyKey: `spring.sql.init.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.separator`
   * newPropertyKey: `spring.sql.init.separator`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.sql-script-encoding`
   * newPropertyKey: `spring.sql.init.encoding`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.flyway.check-location`
   * newPropertyKey: `spring.flyway.fail-on-missing-locations`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -207,7 +204,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.flyway.check-location
       newPropertyKey: spring.flyway.fail-on-missing-locations
-
 ```
 {% endtab %}
 {% endtabs %}

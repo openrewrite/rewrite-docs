@@ -1,7 +1,6 @@
 # Remove Unneeded Assertions
 
-**org.openrewrite.java.cleanup.RemoveUnneededAssertion**
-_Remove unneeded assertions like `assert true`, `assertTrue(true)`, or `assertFalse(false)`._
+**org.openrewrite.java.cleanup.RemoveUnneededAssertion** _Remove unneeded assertions like `assert true`, `assertTrue(true)`, or `assertFalse(false)`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Remove unneeded assertions like `assert true`, `assertTrue(true)`, or `assertFa
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

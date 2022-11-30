@@ -1,7 +1,6 @@
-# Migrate `java.util` APIs
+# Migrate java.util APIs
 
-**org.openrewrite.java.migrate.util.JavaUtilAPIs**
-_Certain java util APIs have been introduced and are favored over previous APIs._
+**org.openrewrite.java.migrate.util.JavaUtilAPIs** _Certain java util APIs have been introduced and are favored over previous APIs._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Certain java util APIs have been introduced and are favored over previous APIs.
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -86,12 +84,11 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `List.of(..)` in Java 9 or higher](../../../java/migrate/util/migratecollectionssingletonlist.md)
-* [Use `Map.of(..)` in Java 9 or higher](../../../java/migrate/util/migratecollectionssingletonmap.md)
-* [Use `Set.of(..)` in Java 9 or higher](../../../java/migrate/util/migratecollectionssingletonset.md)
-* [Use `List.of(..)` in Java 9 or higher](../../../java/migrate/util/migratecollectionsunmodifiablelist.md)
-* [Use `Set.of(..)` in Java 9 or higher](../../../java/migrate/util/migratecollectionsunmodifiableset.md)
-
+* [Use `List.of(..)` in Java 9 or higher](migratecollectionssingletonlist.md)
+* [Use `Map.of(..)` in Java 9 or higher](migratecollectionssingletonmap.md)
+* [Use `Set.of(..)` in Java 9 or higher](migratecollectionssingletonset.md)
+* [Use `List.of(..)` in Java 9 or higher](migratecollectionsunmodifiablelist.md)
+* [Use `Set.of(..)` in Java 9 or higher](migratecollectionsunmodifiableset.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ recipeList:
   - org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet
   - org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList
   - org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet
-
 ```
 {% endtab %}
 {% endtabs %}

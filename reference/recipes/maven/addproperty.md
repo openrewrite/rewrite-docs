@@ -1,7 +1,6 @@
 # Add Maven project property
 
-**org.openrewrite.maven.AddProperty**
-_Add a new property to the Maven project property._
+**org.openrewrite.maven.AddProperty** _Add a new property to the Maven project property._
 
 ## Source
 
@@ -13,18 +12,16 @@ _Add a new property to the Maven project property._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | key | The name of the property key to be added. |
-| `String` | value | The value of property to be added. |
-| `Boolean` | preserveExistingValue | *Optional*. Preserve previous value if the property already exists in the pom file. |
-| `Boolean` | trustParent | *Optional*. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |
-
+| Type      | Name                  | Description                                                                                                                                                                                                                        |
+| --------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | key                   | The name of the property key to be added.                                                                                                                                                                                          |
+| `String`  | value                 | The value of property to be added.                                                                                                                                                                                                 |
+| `Boolean` | preserveExistingValue | _Optional_. Preserve previous value if the property already exists in the pom file.                                                                                                                                                |
+| `Boolean` | trustParent           | _Optional_. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddPropertyExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddPropertyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -40,7 +37,6 @@ recipeList:
       trustParent: false
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.AddPropertyExample` has been defined activate it in your build file:
 
@@ -59,7 +55,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # Upgrade to Spring Boot 2.5
 
-**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_5**
-_Upgrade to Spring Boot 2.5 from any prior 2.x version._
+**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_5** _Upgrade to Spring Boot 2.5 from any prior 2.x version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Boot 2.5 from any prior 2.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,7 +84,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Spring Boot 2.4](../../../java/spring/boot2/upgradespringboot_2_4.md)
+* [Upgrade to Spring Boot 2.4](upgradespringboot\_2\_4.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -96,17 +94,16 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.5.x`
-* [Migrate flyway and liquibase credentials](../../../java/spring/boot2/migratedatabasecredentials.md)
-* [Migrate deprecated ActuatorMediaType to ApiVersion#getProducedMimeType](../../../java/spring/boot2/migrateactuatormediatypetoapiversion.md)
-* [Change type](../../../java/changetype.md)
+* [Migrate flyway and liquibase credentials](migratedatabasecredentials.md)
+* [Migrate deprecated ActuatorMediaType to ApiVersion#getProducedMimeType](migrateactuatormediatypetoapiversion.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.orm.jpa.EntityManagerFactoryDependsOnPostProcessor`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.ResourceProperties`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.WebProperties$Resources`
-* [Migrate Spring Boot properties to 2.5](../../../java/spring/boot2/springbootproperties_2_5.md)
-* [Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource](../../../java/spring/boot2/databasecomponentandbeaninitializationordering.md)
-
+* [Migrate Spring Boot properties to 2.5](springbootproperties\_2\_5.md)
+* [Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource](databasecomponentandbeaninitializationordering.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -137,7 +134,6 @@ recipeList:
       newFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.WebProperties$Resources
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_5
   - org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering
-
 ```
 {% endtab %}
 {% endtabs %}

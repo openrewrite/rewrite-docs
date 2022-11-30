@@ -1,12 +1,11 @@
 # Ensure Azure key vault is recoverable
 
-**org.openrewrite.terraform.azure.EnsureAzureKeyVaultIsRecoverable**
-_Ensure Azure key vault is recoverable._
+**org.openrewrite.terraform.azure.EnsureAzureKeyVaultIsRecoverable** _Ensure Azure key vault is recoverable._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_42
+* CKV\_AZURE\_42
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure Azure key vault is recoverable._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,13 +90,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_key_vault`
   * content: `soft_delete_enabled = true`
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_key_vault`
   * content: `purge_protection_enabled = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +116,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_key_vault
       content: purge_protection_enabled = true
-
 ```
 {% endtab %}
 {% endtabs %}

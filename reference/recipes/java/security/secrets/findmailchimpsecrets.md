@@ -1,7 +1,6 @@
 # Find MailChimp secrets
 
-**org.openrewrite.java.security.secrets.FindMailChimpSecrets**
-_Locates MailChimp secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindMailChimpSecrets** _Locates MailChimp secrets stored in plain text in code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Locates MailChimp secrets stored in plain text in code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,13 +88,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `MailChimp access key`
   * valuePattern: `[0-9a-z]{32}-us[0-9]{1,2}`
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
+* [Find secrets with regular expressions](findsecretsbypattern.md)
   * secretName: `MailChimp API key`
   * valuePattern: `[0-9a-f]{32}-us[0-9]{1,2}`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,7 +112,6 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
       secretName: MailChimp API key
       valuePattern: [0-9a-f]{32}-us[0-9]{1,2}
-
 ```
 {% endtab %}
 {% endtabs %}

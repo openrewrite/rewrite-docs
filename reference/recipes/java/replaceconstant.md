@@ -1,7 +1,6 @@
 # Replace constant with literal value
 
-**org.openrewrite.java.ReplaceConstant**
-_Replace a named constant with a literal value when you wish to remove the old constant._
+**org.openrewrite.java.ReplaceConstant** _Replace a named constant with a literal value when you wish to remove the old constant._
 
 ## Source
 
@@ -13,17 +12,15 @@ _Replace a named constant with a literal value when you wish to remove the old c
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | owningType | The target type in which the constant to be replaced is defined. |
-| `String` | constantName | The name of the constant field to replace. |
-| `String` | literalValue | The literal value to replace. |
-
+| Type     | Name         | Description                                                      |
+| -------- | ------------ | ---------------------------------------------------------------- |
+| `String` | owningType   | The target type in which the constant to be replaced is defined. |
+| `String` | constantName | The name of the constant field to replace.                       |
+| `String` | literalValue | The literal value to replace.                                    |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ReplaceConstantExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ReplaceConstantExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       literalValue: UTF_8
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ReplaceConstantExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

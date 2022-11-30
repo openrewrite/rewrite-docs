@@ -10,7 +10,6 @@
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
 
-
 ## Usage
 
 This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.14.1 in your build file:
@@ -181,10 +180,9 @@ Recipes can also be activated directly from the command line by adding the argum
   * newGroupId: `org.glassfish`
   * newArtifactId: `jakarta.json`
   * newVersion: `2.0.x`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.datatype.jsr353.JSR353Module`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.datatype.jsonp.JSONPModule`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -294,7 +292,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.datatype.jsr353.JSR353Module
       newFullyQualifiedTypeName: com.fasterxml.jackson.datatype.jsonp.JSONPModule
-
 ```
 {% endtab %}
 {% endtabs %}

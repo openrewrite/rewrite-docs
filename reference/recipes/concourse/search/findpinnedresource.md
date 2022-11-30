@@ -1,7 +1,6 @@
 # Find pinned resources by type
 
-**org.openrewrite.concourse.search.FindPinnedResource**
-_Find resources of a particular type that have pinned versions._
+**org.openrewrite.concourse.search.FindPinnedResource** _Find resources of a particular type that have pinned versions._
 
 ## Source
 
@@ -13,10 +12,9 @@ _Find resources of a particular type that have pinned versions._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | resourceType | *Optional*. The resource type to search for. Leave empty to find all pins. |
-
+| Type     | Name         | Description                                                                |
+| -------- | ------------ | -------------------------------------------------------------------------- |
+| `String` | resourceType | _Optional_. The resource type to search for. Leave empty to find all pins. |
 
 ## Usage
 
@@ -94,7 +92,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find YAML entries](../../yaml/search/findkey.md)
   * key: `$.resources[?(@.type == '')].version`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +106,6 @@ resourceType:
 recipeList:
   - org.openrewrite.yaml.search.FindKey:
       key: $.resources[?(@.type == '')].version
-
 ```
 {% endtab %}
 {% endtabs %}

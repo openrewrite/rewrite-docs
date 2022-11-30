@@ -1,13 +1,12 @@
-# Ensure key vault secrets have `content_type` set
+# Ensure key vault secrets have content\_type set
 
-**org.openrewrite.terraform.azure.EnsureKeyVaultSecretsHaveContentTypeSet**
-_Ensure key vault secrets have `content_type` set._
+**org.openrewrite.terraform.azure.EnsureKeyVaultSecretsHaveContentTypeSet** _Ensure key vault secrets have `content_type` set._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_114
+* CKV\_AZURE\_114
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure key vault secrets have `content_type` set._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_key_vault`
   * content: `content_type = "text/plain"`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: azurerm_key_vault
       content: content_type = "text/plain"
-
 ```
 {% endtab %}
 {% endtabs %}

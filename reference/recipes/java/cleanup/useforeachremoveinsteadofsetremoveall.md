@@ -1,7 +1,6 @@
-# Replace `java.util.Set#removeAll(java.util.Collection)` with `java.util.Collection#forEach(Set::remove)`
+# Replace java.util.Set#removeAll(java.util.Collection) with java.util.Collection#forEach(Set::remove)
 
-**org.openrewrite.java.cleanup.UseForEachRemoveInsteadOfSetRemoveAll**
-_Using `java.util.Collection#forEach(Set::remove)` rather than `java.util.Set#removeAll(java.util.Collection)` may improve performance due to a possible O(n^2) complexity._
+**org.openrewrite.java.cleanup.UseForEachRemoveInsteadOfSetRemoveAll** _Using `java.util.Collection#forEach(Set::remove)` rather than `java.util.Set#removeAll(java.util.Collection)` may improve performance due to a possible O(n^2) complexity._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Using `java.util.Collection#forEach(Set::remove)` rather than `java.util.Set#re
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

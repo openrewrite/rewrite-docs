@@ -1,7 +1,6 @@
 # Migrate flyway and liquibase credentials
 
-**org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials**
-_If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may need to provide additional username and password properties. In earlier versions of Spring Boot, these settings were derived from `spring.datasource` properties but this turned out to be problematic for people that provided their own `DataSource` beans._
+**org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials** _If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may need to provide additional username and password properties. In earlier versions of Spring Boot, these settings were derived from `spring.datasource` properties but this turned out to be problematic for people that provided their own `DataSource` beans._
 
 ## Source
 
@@ -10,7 +9,6 @@ _If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,11 +84,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate flyway credentials](../../../java/spring/boot2/migratedatabasecredentials$migratedatabasecredentialsfortoolyaml.md)
-* [Migrate flyway credentials](../../../java/spring/boot2/migratedatabasecredentials$migratedatabasecredentialsfortoolproperties.md)
-* [Migrate liquibase credentials](../../../java/spring/boot2/migratedatabasecredentials$migratedatabasecredentialsfortoolyaml.md)
-* [Migrate liquibase credentials](../../../java/spring/boot2/migratedatabasecredentials$migratedatabasecredentialsfortoolproperties.md)
-
+* [Migrate flyway credentials](migratedatabasecredentials$migratedatabasecredentialsfortoolyaml.md)
+* [Migrate flyway credentials](migratedatabasecredentials$migratedatabasecredentialsfortoolproperties.md)
+* [Migrate liquibase credentials](migratedatabasecredentials$migratedatabasecredentialsfortoolyaml.md)
+* [Migrate liquibase credentials](migratedatabasecredentials$migratedatabasecredentialsfortoolproperties.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -105,7 +102,6 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials$MigrateDatabaseCredentialsForToolProperties
   - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials$MigrateDatabaseCredentialsForToolYaml
   - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials$MigrateDatabaseCredentialsForToolProperties
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Uses of CORBA
 
-**org.openrewrite.cloudsuitability.FindCorba**
-_Replace with cloud-friendly framework or move to TKG._
+**org.openrewrite.cloudsuitability.FindCorba** _Replace with cloud-friendly framework or move to TKG._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Replace with cloud-friendly framework or move to TKG._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `org.omg.CORBA..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: org.omg.CORBA..*
-
 ```
 {% endtab %}
 {% endtabs %}

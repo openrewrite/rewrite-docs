@@ -1,7 +1,6 @@
 # Use Vertx JUnit 5 Extension
 
-**org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5**
-_Migrates Vertx `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`._
+**org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5** _Migrates Vertx `@RunWith`  `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith`  `VertxExtension`._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _Migrates Vertx `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,7 +89,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
+* [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](runnertoextension.md)
   * runners: `[org.vertx.testtools.VertxUnitRunner]`
   * extension: `org.vertx.testtools.VertxExtension`
 * [Add Maven dependency](../../../maven/adddependency.md)
@@ -99,7 +97,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `vertx-junit5`
   * version: `4.x`
   * onlyIfUsing: `io.vertx.junit5.VertxExtension`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -121,7 +118,6 @@ recipeList:
       artifactId: vertx-junit5
       version: 4.x
       onlyIfUsing: io.vertx.junit5.VertxExtension
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
-# Change `StringBuilder` and `StringBuffer` character constructor argument to `String`
+# Change StringBuilder and StringBuffer character constructor argument to String
 
-**org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument**
-_Instantiating a `StringBuilder` or a `StringBuffer` with a `Character` results in the `int` representation of the character being used for the initial size._
+**org.openrewrite.java.cleanup.NewStringBuilderBufferWithCharArgument** _Instantiating a `StringBuilder` or a `StringBuffer` with a `Character` results in the `int` representation of the character being used for the initial size._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Instantiating a `StringBuilder` or a `StringBuffer` with a `Character` results 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

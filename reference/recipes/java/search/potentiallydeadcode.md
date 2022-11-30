@@ -1,7 +1,6 @@
 # List potentially dead code by declared method
 
-**org.openrewrite.java.search.PotentiallyDeadCode**
-_Method definitions that are defined in this project and aren't used._
+**org.openrewrite.java.search.PotentiallyDeadCode** _Method definitions that are defined in this project and aren't used._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Method definitions that are defined in this project and aren't used._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

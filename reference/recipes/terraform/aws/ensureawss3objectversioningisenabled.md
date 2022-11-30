@@ -1,11 +1,10 @@
 # Ensure AWS S3 object versioning is enabled
 
-**org.openrewrite.terraform.aws.EnsureAWSS3ObjectVersioningIsEnabled**
-_Ensure AWS S3 object versioning is enabled._
+**org.openrewrite.terraform.aws.EnsureAWSS3ObjectVersioningIsEnabled** _Ensure AWS S3 object versioning is enabled._
 
 ### Tags
 
-* CKV_AWS_21
+* CKV\_AWS\_21
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure AWS S3 object versioning is enabled._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,12 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_s3_bucket`
-  * content: `versioning {
-  enabled = true
-}`
-
+  * content: `versioning { enabled = true }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +112,6 @@ recipeList:
       content: versioning {
   enabled = true
 }
-
 ```
 {% endtab %}
 {% endtabs %}

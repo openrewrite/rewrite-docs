@@ -1,7 +1,6 @@
 # Add Managed Maven Dependency
 
-**org.openrewrite.maven.AddManagedDependency**
-_Add a managed maven dependency to a pom.xml file._
+**org.openrewrite.maven.AddManagedDependency** _Add a managed maven dependency to a pom.xml file._
 
 ## Source
 
@@ -13,24 +12,22 @@ _Add a managed maven dependency to a pom.xml file._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'org.apache.logging.log4j:ARTIFACT_ID:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'org.apache.logging.log4j:log4j-bom:VERSION'. |
-| `String` | version | An exact version number or node-style semver selector used to select the version number. |
-| `String` | scope | *Optional*. An optional scope to use for the dependency management tag. |
-| `String` | type | *Optional*. An optional type to use for the dependency management tag. |
-| `String` | classifier | *Optional*. An optional classifier to use for the dependency management tag |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select 29.0-jre |
-| `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |
-| `String` | onlyIfUsing | *Optional*. Only add managed dependencies to projects having a dependency matching the expression. |
-| `Boolean` | addToRootPom | *Optional*. Add to the root pom where root is the eldest parent of the pom within the source set. |
-
+| Type      | Name           | Description                                                                                                                                                                                                   |
+| --------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | groupId        | The first part of a dependency coordinate 'org.apache.logging.log4j:ARTIFACT\_ID:VERSION'.                                                                                                                    |
+| `String`  | artifactId     | The second part of a dependency coordinate 'org.apache.logging.log4j:log4j-bom:VERSION'.                                                                                                                      |
+| `String`  | version        | An exact version number or node-style semver selector used to select the version number.                                                                                                                      |
+| `String`  | scope          | _Optional_. An optional scope to use for the dependency management tag.                                                                                                                                       |
+| `String`  | type           | _Optional_. An optional type to use for the dependency management tag.                                                                                                                                        |
+| `String`  | classifier     | _Optional_. An optional classifier to use for the dependency management tag                                                                                                                                   |
+| `String`  | versionPattern | _Optional_. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select 29.0-jre |
+| `Boolean` | releasesOnly   | _Optional_. Whether to exclude snapshots from consideration when using a semver selector                                                                                                                      |
+| `String`  | onlyIfUsing    | _Optional_. Only add managed dependencies to projects having a dependency matching the expression.                                                                                                            |
+| `Boolean` | addToRootPom   | _Optional_. Add to the root pom where root is the eldest parent of the pom within the source set.                                                                                                             |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddManagedDependencyExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddManagedDependencyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -53,7 +50,6 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.AddManagedDependencyExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -71,7 +67,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # Java security best practices
 
-**org.openrewrite.java.security.JavaSecurityBestPractices**
-_Applies security best practices to Java code._
+**org.openrewrite.java.security.JavaSecurityBestPractices** _Applies security best practices to Java code._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Applies security best practices to Java code._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
 * version: 1.19.0
-
 
 ## Usage
 
@@ -90,11 +88,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [XML parser XXE vulnerability](../../java/security/xmlparserxxevulnerability.md)
-* [Use `Files#createTempDirectory`](../../java/security/usefilescreatetempdirectory.md)
-* [Use secure temporary file creation](../../java/security/securetempfilecreation.md)
-* [Use comparison rather than equality checks in for conditions](../../java/cleanup/noequalityinforcondition.md)
-
+* [XML parser XXE vulnerability](xmlparserxxevulnerability.md)
+* [Use `Files#createTempDirectory`](usefilescreatetempdirectory.md)
+* [Use secure temporary file creation](securetempfilecreation.md)
+* [Use comparison rather than equality checks in for conditions](../cleanup/noequalityinforcondition.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,6 @@ recipeList:
   - org.openrewrite.java.security.UseFilesCreateTempDirectory
   - org.openrewrite.java.security.SecureTempFileCreation
   - org.openrewrite.java.cleanup.NoEqualityInForCondition
-
 ```
 {% endtab %}
 {% endtabs %}

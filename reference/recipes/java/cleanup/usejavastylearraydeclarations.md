@@ -1,7 +1,6 @@
 # No C-style array declarations
 
-**org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations**
-_Change C-Style array declarations `int i[];` to `int[] i;`._
+**org.openrewrite.java.cleanup.UseJavaStyleArrayDeclarations** _Change C-Style array declarations `int i[];` to `int[] i;`._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Change C-Style array declarations `int i[];` to `int[] i;`._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

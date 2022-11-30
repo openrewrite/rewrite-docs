@@ -1,7 +1,6 @@
 # Change key
 
-**org.openrewrite.yaml.ChangeKey**
-_Change a YAML mapping entry key leaving the value intact._
+**org.openrewrite.yaml.ChangeKey** _Change a YAML mapping entry key leaving the value intact._
 
 ## Source
 
@@ -13,17 +12,15 @@ _Change a YAML mapping entry key leaving the value intact._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldKeyPath | A JsonPath expression to locate a YAML entry. |
-| `String` | newKey | The new name for the key selected by oldKeyPath. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
+| Type     | Name        | Description                                                             |
+| -------- | ----------- | ----------------------------------------------------------------------- |
+| `String` | oldKeyPath  | A JsonPath expression to locate a YAML entry.                           |
+| `String` | newKey      | The new name for the key selected by oldKeyPath.                        |
+| `String` | fileMatcher | _Optional_. Matching files will be modified. This is a glob expression. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeKeyExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeKeyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       fileMatcher: '**/application-*.yml'
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeKeyExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

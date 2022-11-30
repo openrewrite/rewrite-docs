@@ -1,11 +1,10 @@
 # Ensure ECR repositories are encrypted
 
-**org.openrewrite.terraform.aws.EnsureECRRepositoriesAreEncrypted**
-_Ensure ECR repositories are encrypted._
+**org.openrewrite.terraform.aws.EnsureECRRepositoriesAreEncrypted** _Ensure ECR repositories are encrypted._
 
 ### Tags
 
-* CKV_AWS_136
+* CKV\_AWS\_136
 * terraform
 * AWS
 
@@ -16,7 +15,6 @@ _Ensure ECR repositories are encrypted._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,12 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_ecr_repository`
-  * content: `encryption_configuration {
-  encryption_type = "KMS"
-}`
-
+  * content: `encryption_configuration { encryption_type = "KMS" }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +112,6 @@ recipeList:
       content: encryption_configuration {
   encryption_type = "KMS"
 }
-
 ```
 {% endtab %}
 {% endtabs %}

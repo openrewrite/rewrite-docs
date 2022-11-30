@@ -1,7 +1,6 @@
 # Upgrade to Spring Boot 2.0 from 1.x
 
-**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_0**
-_Upgrade to Spring Boot 2.0 from prior 1.x version._
+**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_0** _Upgrade to Spring Boot 2.0 from prior 1.x version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Boot 2.0 from prior 1.x version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -105,14 +103,13 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `org.webjars`
   * artifactId: `webjars-locator`
-* [Upgrade to Spring Framework 5.0](../../../java/spring/framework/upgradespringframework_5_0.md)
-* [Use `SpringBootServletInitializer`](../../../java/spring/boot2/migratespringbootservletinitializerpackagename.md)
-* [Use `HttpMessageConverters`](../../../java/spring/boot2/migratehttpmessageconverterspackagename.md)
-* [Use `ErrorController`](../../../java/spring/boot2/migrateerrorcontrollerpackagename.md)
-* [Migrate hibernate validator constraints to javax.](../../../java/spring/boot2/migratehibernatecontraintstojavax.md)
-* [Use `org.springframework.boot.web.server.LocalServerPort`](../../../java/spring/boot2/migratelocalserverportannotation.md)
-* [Migrate Spring Boot properties to 2.0](../../../java/spring/boot2/springbootproperties_2_0.md)
-
+* [Upgrade to Spring Framework 5.0](../framework/upgradespringframework\_5\_0.md)
+* [Use `SpringBootServletInitializer`](migratespringbootservletinitializerpackagename.md)
+* [Use `HttpMessageConverters`](migratehttpmessageconverterspackagename.md)
+* [Use `ErrorController`](migrateerrorcontrollerpackagename.md)
+* [Migrate hibernate validator constraints to javax.](migratehibernatecontraintstojavax.md)
+* [Use `org.springframework.boot.web.server.LocalServerPort`](migratelocalserverportannotation.md)
+* [Migrate Spring Boot properties to 2.0](springbootproperties\_2\_0.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -149,7 +146,6 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateHibernateContraintsToJavax
   - org.openrewrite.java.spring.boot2.MigrateLocalServerPortAnnotation
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_0
-
 ```
 {% endtab %}
 {% endtabs %}

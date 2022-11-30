@@ -1,7 +1,6 @@
 # Merge YAML snippet
 
-**org.openrewrite.yaml.MergeYaml**
-_Merge a YAML snippet with an existing YAML document._
+**org.openrewrite.yaml.MergeYaml** _Merge a YAML snippet with an existing YAML document._
 
 ## Source
 
@@ -13,19 +12,17 @@ _Merge a YAML snippet with an existing YAML document._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | key | A JsonPath expression used to find matching keys. |
-| `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. |
-| `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-| `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. |
-
+| Type      | Name                      | Description                                                                                                                                                 |
+| --------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String`  | key                       | A JsonPath expression used to find matching keys.                                                                                                           |
+| `String`  | yaml                      | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings.                                                            |
+| `Boolean` | acceptTheirs              | _Optional_. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |
+| `String`  | fileMatcher               | _Optional_. Matching files will be modified. This is a glob expression.                                                                                     |
+| `String`  | objectIdentifyingProperty | _Optional_. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence.     |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.MergeYamlExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.MergeYamlExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -44,7 +41,6 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.MergeYamlExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -62,7 +58,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

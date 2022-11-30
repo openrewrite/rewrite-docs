@@ -1,7 +1,6 @@
 # Add license header
 
-**org.openrewrite.java.AddLicenseHeader**
-_Adds license headers to Java source files when missing. Does not override existing license headers._
+**org.openrewrite.java.AddLicenseHeader** _Adds license headers to Java source files when missing. Does not override existing license headers._
 
 ## Source
 
@@ -13,15 +12,13 @@ _Adds license headers to Java source files when missing. Does not override exist
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | licenseText | The license header text without the block comment. May contain ${CURRENT_YEAR} property. |
-
+| Type     | Name        | Description                                                                               |
+| -------- | ----------- | ----------------------------------------------------------------------------------------- |
+| `String` | licenseText | The license header text without the block comment. May contain ${CURRENT\_YEAR} property. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddLicenseHeaderExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddLicenseHeaderExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -34,7 +31,6 @@ recipeList:
       licenseText: Copyright ${CURRENT_YEAR} the original author or authors...
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.AddLicenseHeaderExample` has been defined activate it in your build file:
 
@@ -53,7 +49,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

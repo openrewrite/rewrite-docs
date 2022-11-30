@@ -1,12 +1,11 @@
 # Ensure app service enables HTTP logging
 
-**org.openrewrite.terraform.azure.EnsureAppServiceEnablesHTTPLogging**
-_Ensure app service enables HTTP logging._
+**org.openrewrite.terraform.azure.EnsureAppServiceEnablesHTTPLogging** _Ensure app service enables HTTP logging._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_63
+* CKV\_AZURE\_63
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure app service enables HTTP logging._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,15 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: `logs {
-  http_logs {
-    retention_in_days = 4
-    retention_in_mb = 10
-  }
-}`
-
+  * content: `logs { http_logs { retention_in_days = 4 retention_in_mb = 10 } }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -123,7 +115,6 @@ recipeList:
     retention_in_mb = 10
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}

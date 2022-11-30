@@ -1,7 +1,6 @@
 # Change XML Attribute
 
-**org.openrewrite.xml.ChangeTagAttribute**
-_Alters XML Attribute value within specified element._
+**org.openrewrite.xml.ChangeTagAttribute** _Alters XML Attribute value within specified element._
 
 ## Source
 
@@ -13,19 +12,17 @@ _Alters XML Attribute value within specified element._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. |
-| `String` | attributeName | The name of the attribute whose value is to be changed. |
-| `String` | newValue | The new value to be used for key specified by `attributeName`. |
-| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
-| `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. |
-
+| Type     | Name          | Description                                                                                           |
+| -------- | ------------- | ----------------------------------------------------------------------------------------------------- |
+| `String` | elementName   | The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. |
+| `String` | attributeName | The name of the attribute whose value is to be changed.                                               |
+| `String` | newValue      | The new value to be used for key specified by `attributeName`.                                        |
+| `String` | oldValue      | _Optional_. Only change the property value if it matches the configured `oldValue`.                   |
+| `String` | fileMatcher   | _Optional_. If provided only matching files will be modified. This is a glob expression.              |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeTagAttributeExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeTagAttributeExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -42,7 +39,6 @@ recipeList:
       fileMatcher: '**/application-*.xml'
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeTagAttributeExample` has been defined activate it in your build file:
 
@@ -61,7 +57,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

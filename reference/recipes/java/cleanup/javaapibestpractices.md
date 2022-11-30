@@ -1,7 +1,6 @@
 # Java API best practices
 
-**org.openrewrite.java.cleanup.JavaApiBestPractices**
-_Use the Java standard library in a way that is most idiomatic._
+**org.openrewrite.java.cleanup.JavaApiBestPractices** _Use the Java standard library in a way that is most idiomatic._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Use the Java standard library in a way that is most idiomatic._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -75,8 +72,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use `Map#containsKey`](../../java/cleanup/usemapcontainskey.md)
-
+* [Use `Map#containsKey`](usemapcontainskey.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -88,7 +84,6 @@ displayName: Java API best practices
 description: Use the Java standard library in a way that is most idiomatic.
 recipeList:
   - org.openrewrite.java.cleanup.UseMapContainsKey
-
 ```
 {% endtab %}
 {% endtabs %}

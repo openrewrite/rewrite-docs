@@ -1,7 +1,6 @@
 # Print Maven dependency hierarchy in DOT format
 
-**org.openrewrite.maven.utilities.PrintMavenAsDot**
-_The DOT language format is specified [here](https://graphviz.org/doc/info/lang.html)._
+**org.openrewrite.maven.utilities.PrintMavenAsDot** _The DOT language format is specified_ [_here_](https://graphviz.org/doc/info/lang.html)_._
 
 ## Source
 
@@ -10,7 +9,6 @@ _The DOT language format is specified [here](https://graphviz.org/doc/info/lang.
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

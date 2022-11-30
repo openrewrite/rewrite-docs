@@ -1,7 +1,6 @@
 # Remove Nullable and CheckForNull annotations from primitives
 
-**org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations**
-_Remove `@Nullable` and `@CheckForNull` annotations from primitives since they can't be null._
+**org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations** _Remove `@Nullable` and `@CheckForNull` annotations from primitives since they can't be null._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Remove `@Nullable` and `@CheckForNull` annotations from primitives since they c
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

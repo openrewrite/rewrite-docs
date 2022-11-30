@@ -1,7 +1,6 @@
 # Blank lines
 
-**org.openrewrite.java.format.BlankLines**
-_Add and/or remove blank lines._
+**org.openrewrite.java.format.BlankLines** _Add and/or remove blank lines._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Add and/or remove blank lines._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

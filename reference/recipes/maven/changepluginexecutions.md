@@ -1,7 +1,6 @@
 # Change Maven plugin executions
 
-**org.openrewrite.maven.ChangePluginExecutions**
-_Apply the specified executions to a Maven plugin. Will not add the plugin if it does not already exist in the pom._
+**org.openrewrite.maven.ChangePluginExecutions** _Apply the specified executions to a Maven plugin. Will not add the plugin if it does not already exist in the pom._
 
 ## Source
 
@@ -13,17 +12,15 @@ _Apply the specified executions to a Maven plugin. Will not add the plugin if it
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | executions | *Optional*. Plugin goal executions provided as raw XML. Supplying `null` will remove any existing executions. |
-
+| Type     | Name       | Description                                                                                                   |
+| -------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
+| `String` | groupId    | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'.               |
+| `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'.              |
+| `String` | executions | _Optional_. Plugin goal executions provided as raw XML. Supplying `null` will remove any existing executions. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePluginExecutionsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangePluginExecutionsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       executions: <execution><phase>validate</phase><goals><goal>dryRun</goal></goals></execution>
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangePluginExecutionsExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

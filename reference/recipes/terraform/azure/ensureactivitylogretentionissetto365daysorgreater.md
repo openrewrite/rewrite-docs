@@ -1,12 +1,11 @@
 # Ensure activity log retention is set to 365 days or greater
 
-**org.openrewrite.terraform.azure.EnsureActivityLogRetentionIsSetTo365DaysOrGreater**
-_Ensure activity log retention is set to 365 days or greater._
+**org.openrewrite.terraform.azure.EnsureActivityLogRetentionIsSetTo365DaysOrGreater** _Ensure activity log retention is set to 365 days or greater._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_37
+* CKV\_AZURE\_37
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure activity log retention is set to 365 days or greater._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,13 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_monitor_log_profile`
-  * content: `retention_policy {
-  enabled = true
-  days = 365
-}`
-
+  * content: `retention_policy { enabled = true days = 365 }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +113,6 @@ recipeList:
   enabled = true
   days = 365
 }
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Change Maven dependency classifier
 
-**org.openrewrite.maven.ChangeDependencyClassifier**
-_Add or alter the classifier of the specified dependency._
+**org.openrewrite.maven.ChangeDependencyClassifier** _Add or alter the classifier of the specified dependency._
 
 ## Source
 
@@ -13,17 +12,15 @@ _Add or alter the classifier of the specified dependency._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
-| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
-| `String` | newClassifier | *Optional*. Classifier to apply to specified Maven dependency. May be omitted, which indicates that no classifier should be added and any existing scope be removed from the dependency. |
-
+| Type     | Name          | Description                                                                                                                                                                              |
+| -------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `String` | groupId       | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression.                                                                               |
+| `String` | artifactId    | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression.                                                                              |
+| `String` | newClassifier | _Optional_. Classifier to apply to specified Maven dependency. May be omitted, which indicates that no classifier should be added and any existing scope be removed from the dependency. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyClassifierExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyClassifierExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,7 +35,6 @@ recipeList:
       newClassifier: jar
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeDependencyClassifierExample` has been defined activate it in your build file:
 
@@ -57,7 +53,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

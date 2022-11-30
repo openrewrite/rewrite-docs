@@ -1,7 +1,6 @@
 # Upgrade JaCoCo Maven plugin version
 
-**org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion**
-_This recipe will upgrade the JaCoCo Maven plugin to a more recent version compatible with Java 11._
+**org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion** _This recipe will upgrade the JaCoCo Maven plugin to a more recent version compatible with Java 11._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _This recipe will upgrade the JaCoCo Maven plugin to a more recent version compa
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -95,7 +93,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.jacoco`
   * artifactId: `jacoco-maven-plugin`
   * newVersion: `0.8.8`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
       groupId: org.jacoco
       artifactId: jacoco-maven-plugin
       newVersion: 0.8.8
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Find fields
 
-**org.openrewrite.java.search.FindFields**
-_Find uses of a field._
+**org.openrewrite.java.search.FindFields** _Find uses of a field._
 
 ## Source
 
@@ -13,16 +12,14 @@ _Find uses of a field._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
+| Type     | Name                   | Description                                                             |
+| -------- | ---------------------- | ----------------------------------------------------------------------- |
 | `String` | fullyQualifiedTypeName | A fully-qualified Java type name, that is used to find matching fields. |
-| `String` | fieldName | The name of a field on the type. |
-
+| `String` | fieldName              | The name of a field on the type.                                        |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindFieldsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FindFieldsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,7 +33,6 @@ recipeList:
       fieldName: QUOTE_FIELD_NAMES
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.FindFieldsExample` has been defined activate it in your build file:
 
@@ -55,7 +51,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

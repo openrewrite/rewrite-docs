@@ -1,7 +1,6 @@
 # Remove author tags from JavaDocs
 
-**org.openrewrite.java.cleanup.RemoveJavaDocAuthorTag**
-_Removes author tags from JavaDocs to reduce code maintenance._
+**org.openrewrite.java.cleanup.RemoveJavaDocAuthorTag** _Removes author tags from JavaDocs to reduce code maintenance._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Removes author tags from JavaDocs to reduce code maintenance._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

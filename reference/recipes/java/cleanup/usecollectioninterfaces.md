@@ -1,7 +1,6 @@
-# Use `Collection` interfaces
+# Use Collection interfaces
 
-**org.openrewrite.java.cleanup.UseCollectionInterfaces**
-_Use `Deque`, `List`, `Map`, `ConcurrentMap`, `Queue`, and `Set` instead of implemented collections. Replaces the return type of public method declarations and the variable type public variable declarations._
+**org.openrewrite.java.cleanup.UseCollectionInterfaces** _Use `Deque`, `List`, `Map`, `ConcurrentMap`, `Queue`, and `Set` instead of implemented collections. Replaces the return type of public method declarations and the variable type public variable declarations._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Use `Deque`, `List`, `Map`, `ConcurrentMap`, `Queue`, and `Set` instead of impl
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

@@ -1,7 +1,6 @@
 # Migrate JUnit asserts to AssertJ
 
-**org.openrewrite.java.testing.assertj.JUnitToAssertj**
-_AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
+**org.openrewrite.java.testing.assertj.JUnitToAssertj** _AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
 
 ### Tags
 
@@ -15,7 +14,6 @@ _AssertJ provides a rich set of assertions, truly helpful error messages, improv
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
 * version: 1.31.0
-
 
 ## Usage
 
@@ -91,22 +89,21 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit `assertArrayEquals` To AssertJ](../../../java/testing/assertj/junitassertarrayequalstoassertthat.md)
-* [JUnit `assertEquals` to AssertJ](../../../java/testing/assertj/junitassertequalstoassertthat.md)
-* [JUnit `assertFalse` to AssertJ](../../../java/testing/assertj/junitassertfalsetoassertthat.md)
-* [JUnit `assertNotEquals` to AssertJ](../../../java/testing/assertj/junitassertnotequalstoassertthat.md)
-* [JUnit `assertNotNull` to AssertJ](../../../java/testing/assertj/junitassertnotnulltoassertthat.md)
-* [JUnit `assertNull` to AssertJ](../../../java/testing/assertj/junitassertnulltoassertthat.md)
-* [JUnit `assertSame` to AssertJ](../../../java/testing/assertj/junitassertsametoassertthat.md)
-* [JUnit `assertTrue` to AssertJ](../../../java/testing/assertj/junitasserttruetoassertthat.md)
-* [JUnit fail to AssertJ](../../../java/testing/assertj/junitfailtoassertjfail.md)
-* [JUnit AssertThrows to AssertJ exceptionType](../../../java/testing/assertj/junitassertthrowstoassertexceptiontype.md)
+* [JUnit `assertArrayEquals` To AssertJ](junitassertarrayequalstoassertthat.md)
+* [JUnit `assertEquals` to AssertJ](junitassertequalstoassertthat.md)
+* [JUnit `assertFalse` to AssertJ](junitassertfalsetoassertthat.md)
+* [JUnit `assertNotEquals` to AssertJ](junitassertnotequalstoassertthat.md)
+* [JUnit `assertNotNull` to AssertJ](junitassertnotnulltoassertthat.md)
+* [JUnit `assertNull` to AssertJ](junitassertnulltoassertthat.md)
+* [JUnit `assertSame` to AssertJ](junitassertsametoassertthat.md)
+* [JUnit `assertTrue` to AssertJ](junitasserttruetoassertthat.md)
+* [JUnit fail to AssertJ](junitfailtoassertjfail.md)
+* [JUnit AssertThrows to AssertJ exceptionType](junitassertthrowstoassertexceptiontype.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.assertj`
   * artifactId: `assertj-core`
   * version: `3.x`
   * onlyIfUsing: `org.assertj.core.api.Assertions`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -135,7 +132,6 @@ recipeList:
       artifactId: assertj-core
       version: 3.x
       onlyIfUsing: org.assertj.core.api.Assertions
-
 ```
 {% endtab %}
 {% endtabs %}

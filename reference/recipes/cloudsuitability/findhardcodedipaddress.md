@@ -1,7 +1,6 @@
 # Find uses of hardcoded IP addresses
 
-**org.openrewrite.cloudsuitability.FindHardcodedIpAddress**
-_Hardcoded IP addresses are problematic in K8S._
+**org.openrewrite.cloudsuitability.FindHardcodedIpAddress** _Hardcoded IP addresses are problematic in K8S._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Hardcoded IP addresses are problematic in K8S._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find literals](../java/search/findliterals.md)
   * pattern: `(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindLiterals:
       pattern: (25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}
-
 ```
 {% endtab %}
 {% endtabs %}

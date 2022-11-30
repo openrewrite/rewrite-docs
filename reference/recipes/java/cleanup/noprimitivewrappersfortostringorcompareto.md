@@ -1,7 +1,6 @@
 # No primitive wrappers for #toString() or #compareTo(..)
 
-**org.openrewrite.java.cleanup.NoPrimitiveWrappersForToStringOrCompareTo**
-_Primitive wrappers should not be instantiated only for `#toString()` or `#compareTo(..)` invocations._
+**org.openrewrite.java.cleanup.NoPrimitiveWrappersForToStringOrCompareTo** _Primitive wrappers should not be instantiated only for `#toString()` or `#compareTo(..)` invocations._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Primitive wrappers should not be instantiated only for `#toString()` or `#compa
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

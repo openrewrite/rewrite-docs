@@ -1,12 +1,11 @@
 # Encrypt ElastiCache Redis at rest
 
-**org.openrewrite.terraform.aws.EncryptElastiCacheRedisAtRest**
-_ElastiCache for Redis offers default encryption at rest as a service._
+**org.openrewrite.terraform.aws.EncryptElastiCacheRedisAtRest** _ElastiCache for Redis offers default encryption at rest as a service._
 
 ### Tags
 
 * terraform
-* CKV_AWS_29
+* CKV\_AWS\_29
 * AWS
 
 ## Source
@@ -16,7 +15,6 @@ _ElastiCache for Redis offers default encryption at rest as a service._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,10 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_elasticache_replication_group`
   * content: `at_rest_encryption_enabled = true`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +110,6 @@ recipeList:
   - org.openrewrite.terraform.AddConfiguration:
       resourceName: aws_elasticache_replication_group
       content: at_rest_encryption_enabled = true
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # No whitespace before
 
-**org.openrewrite.java.cleanup.NoWhitespaceBefore**
-_Removes unnecessary whitespace preceding a token. A linebreak before a token will be removed unless `allowLineBreaks` is set to `true`._
+**org.openrewrite.java.cleanup.NoWhitespaceBefore** _Removes unnecessary whitespace preceding a token. A linebreak before a token will be removed unless `allowLineBreaks` is set to `true`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Removes unnecessary whitespace preceding a token. A linebreak before a token wi
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

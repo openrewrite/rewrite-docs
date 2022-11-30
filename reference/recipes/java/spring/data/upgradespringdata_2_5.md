@@ -1,7 +1,6 @@
 # Upgrade to Spring Data 2.5
 
-**org.openrewrite.java.spring.data.UpgradeSpringData\_2\_5**
-_Upgrade to Spring Data to 2.5 from any prior version._
+**org.openrewrite.java.spring.data.UpgradeSpringData\_2\_5** _Upgrade to Spring Data to 2.5 from any prior version._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Upgrade to Spring Data to 2.5 from any prior version._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,10 +84,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Spring Data 2.3](../../../java/spring/data/upgradespringdata_2_3.md)
-* [Use `JpaRepository#getById(ID id)`](../../../java/spring/data/usejparepositorygetbyid.md)
-* [Use `JpaRepository#deleteAllInBatch(Iterable<T> entities)`](../../../java/spring/data/usejparepositorydeleteallinbatch.md)
-
+* [Upgrade to Spring Data 2.3](upgradespringdata\_2\_3.md)
+* [Use `JpaRepository#getById(ID id)`](usejparepositorygetbyid.md)
+* [Use `JpaRepository#deleteAllInBatch(Iterable<T> entities)`](usejparepositorydeleteallinbatch.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -103,7 +100,6 @@ recipeList:
   - org.openrewrite.java.spring.data.UpgradeSpringData_2_3
   - org.openrewrite.java.spring.data.UseJpaRepositoryGetById
   - org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,7 +1,6 @@
 # Migrate to Jakarta EE 9 from Jakarta EE 8
 
-**org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta**
-_Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` namespace._
+**org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta** _Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` namespace._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` nam
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -92,36 +90,35 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate deprecated `javax.activation` packages to `jakarta.activation`](../../../java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](../../../java/migrate/jakarta/javaxannotationmigrationtojakartaannotation.md)
-* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](../../../java/migrate/jakarta/javaxbatchmigrationtojakartabatch.md)
-* [Migrate deprecated `javax.decorator` packages to `jakarta.decorator`](../../../java/migrate/jakarta/javaxdecoratortojakartadecorator.md)
-* [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](../../../java/migrate/jakarta/javaxejbtojakartaejb.md)
-* [Migrate deprecated `javax.el` packages to `jakarta.el`](../../../java/migrate/jakarta/javaxeltojakartael.md)
-* [Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`](../../../java/migrate/jakarta/javaxenterprisetojakartaenterprise.md)
-* [Migrate deprecated `javax.faces` packages to `jakarta.faces`](../../../java/migrate/jakarta/javaxfacestojakartafaces.md)
-* [Migrate deprecated `javax.inject` packages to `jakarta.inject`](../../../java/migrate/jakarta/javaxinjectmigrationtojakartainject.md)
-* [Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`](../../../java/migrate/jakarta/javaxinterceptortojakartainterceptor.md)
-* [Migrate deprecated `javax.jms` packages to `jakarta.jms`](../../../java/migrate/jakarta/javaxjmstojakartajms.md)
-* [Migrate deprecated `javax.json` packages to `jakarta.json`](../../../java/migrate/jakarta/javaxjsontojakartajson.md)
-* [Migrate deprecated `javax.jws` packages to `jakarta.jws`](../../../java/migrate/jakarta/javaxjwstojakartajws.md)
-* [Migrate deprecated `javax.mail` packages to `jakarta.mail`](../../../java/migrate/jakarta/javaxmailtojakartamail.md)
-* [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](../../../java/migrate/jakarta/javaxpersistencetojakartapersistence.md)
-* [Migrate deprecated `javax.resource` packages to `jakarta.resource`](../../../java/migrate/jakarta/javaxresourcetojakartaresource.md)
-* [Migrate deprecated `javax.security` packages to `jakarta.security`](../../../java/migrate/jakarta/javaxsecuritytojakartasecurity.md)
-* [Migrate deprecated `javax.servlet` packages to `jakarta.servlet`](../../../java/migrate/jakarta/javaxservlettojakartaservlet.md)
-* [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](../../../java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
-* [Migrate deprecated `javax.validation` packages to `jakarta.validation`](../../../java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
-* [Migrate deprecated `javax.websocket` packages to `jakarta.websocket`](../../../java/migrate/jakarta/javaxwebsockettojakartawebsocket.md)
-* [Migrate deprecated `javax.ws` packages to `jakarta.ws`](../../../java/migrate/jakarta/javaxwstojakartaws.md)
-* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](../../../java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
-* [Migrate deprecated `javax.soap` packages to `jakarta.soap`](../../../java/migrate/jakarta/javaxxmlsoaptojakartaxmlsoap.md)
-* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](../../../java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
-* [Migrate Jackson from javax to jakarta namespace](../../../java/migrate/jakarta/jacksonjavaxtojakarta.md)
-* [Migrate Ehcache from javax to jakarta namespace](../../../java/migrate/jakarta/ehcachejavaxtojakarta.md)
-* [Migrate Johnzon from javax to jakarta namespace](../../../java/migrate/jakarta/johnzonjavaxtojakarta.md)
-* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](../../../java/migrate/jakarta/restassuredjavaxtojakarta.md)
-
+* [Migrate deprecated `javax.activation` packages to `jakarta.activation`](javaxactivationmigrationtojakartaactivation.md)
+* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](javaxannotationmigrationtojakartaannotation.md)
+* [Migrate deprecated `javax.batch` packages to `jakarta.batch`](javaxbatchmigrationtojakartabatch.md)
+* [Migrate deprecated `javax.decorator` packages to `jakarta.decorator`](javaxdecoratortojakartadecorator.md)
+* [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](javaxejbtojakartaejb.md)
+* [Migrate deprecated `javax.el` packages to `jakarta.el`](javaxeltojakartael.md)
+* [Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`](javaxenterprisetojakartaenterprise.md)
+* [Migrate deprecated `javax.faces` packages to `jakarta.faces`](javaxfacestojakartafaces.md)
+* [Migrate deprecated `javax.inject` packages to `jakarta.inject`](javaxinjectmigrationtojakartainject.md)
+* [Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`](javaxinterceptortojakartainterceptor.md)
+* [Migrate deprecated `javax.jms` packages to `jakarta.jms`](javaxjmstojakartajms.md)
+* [Migrate deprecated `javax.json` packages to `jakarta.json`](javaxjsontojakartajson.md)
+* [Migrate deprecated `javax.jws` packages to `jakarta.jws`](javaxjwstojakartajws.md)
+* [Migrate deprecated `javax.mail` packages to `jakarta.mail`](javaxmailtojakartamail.md)
+* [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](javaxpersistencetojakartapersistence.md)
+* [Migrate deprecated `javax.resource` packages to `jakarta.resource`](javaxresourcetojakartaresource.md)
+* [Migrate deprecated `javax.security` packages to `jakarta.security`](javaxsecuritytojakartasecurity.md)
+* [Migrate deprecated `javax.servlet` packages to `jakarta.servlet`](javaxservlettojakartaservlet.md)
+* [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](javaxtransactionmigrationtojakartatransaction.md)
+* [Migrate deprecated `javax.validation` packages to `jakarta.validation`](javaxvalidationmigrationtojakartavalidation.md)
+* [Migrate deprecated `javax.websocket` packages to `jakarta.websocket`](javaxwebsockettojakartawebsocket.md)
+* [Migrate deprecated `javax.ws` packages to `jakarta.ws`](javaxwstojakartaws.md)
+* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](javaxxmlbindmigrationtojakartaxmlbind.md)
+* [Migrate deprecated `javax.soap` packages to `jakarta.soap`](javaxxmlsoaptojakartaxmlsoap.md)
+* [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](javaxxmlwsmigrationtojakartaxmlws.md)
+* [Migrate Jackson from javax to jakarta namespace](jacksonjavaxtojakarta.md)
+* [Migrate Ehcache from javax to jakarta namespace](ehcachejavaxtojakarta.md)
+* [Migrate Johnzon from javax to jakarta namespace](johnzonjavaxtojakarta.md)
+* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](restassuredjavaxtojakarta.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -165,7 +162,6 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta
-
 ```
 {% endtab %}
 {% endtabs %}

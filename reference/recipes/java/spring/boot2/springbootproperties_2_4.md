@@ -1,7 +1,6 @@
 # Migrate Spring Boot properties to 2.4
 
-**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_4**
-_Migrate properties found in `application.properties` and `application.yml`._
+**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_4** _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Migrate properties found in `application.properties` and `application.yml`._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -86,38 +84,37 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `logging.pattern.rolling-file-name`
   * newPropertyKey: `logging.logback.rollingpolicy.file-name-pattern`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `logging.file.clean-history-on-start`
   * newPropertyKey: `logging.logback.rollingpolicy.clean-history-on-start`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `logging.file.max-size`
   * newPropertyKey: `logging.logback.rollingpolicy.max-file-size`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `logging.file.total-size-cap`
   * newPropertyKey: `logging.logback.rollingpolicy.total-size-cap`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `logging.file.max-history`
   * newPropertyKey: `logging.logback.rollingpolicy.max-history`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.profiles`
   * newPropertyKey: `spring.config.activate.on-profile`
   * except: `[active, default, group, include]`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.data.neo4j.password`
   * newPropertyKey: `spring.neo4j.authentication.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.data.neo4j.repositories.enabled`
   * newPropertyKey: `spring.data.neo4j.repositories.type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.data.neo4j.uri`
   * newPropertyKey: `spring.neo4j.uri`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `spring.data.neo4j.username`
   * newPropertyKey: `spring.neo4j.authentication.password`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -159,7 +156,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.neo4j.username
       newPropertyKey: spring.neo4j.authentication.password
-
 ```
 {% endtab %}
 {% endtabs %}

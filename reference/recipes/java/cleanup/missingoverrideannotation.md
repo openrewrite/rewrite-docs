@@ -1,7 +1,6 @@
-# Add missing `@Override` to overriding and implementing methods
+# Add missing @Override to overriding and implementing methods
 
-**org.openrewrite.java.cleanup.MissingOverrideAnnotation**
-_Adds `@Override` to methods overriding superclass methods or implementing interface methods. Annotating methods improves readability by showing the author's intent to override. Additionally, when annotated, the compiler will emit an error when a signature of the overridden method does not match the superclass method._
+**org.openrewrite.java.cleanup.MissingOverrideAnnotation** _Adds `@Override` to methods overriding superclass methods or implementing interface methods. Annotating methods improves readability by showing the author's intent to override. Additionally, when annotated, the compiler will emit an error when a signature of the overridden method does not match the superclass method._
 
 ### Tags
 
@@ -17,10 +16,9 @@ _Adds `@Override` to methods overriding superclass methods or implementing inter
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | ignoreAnonymousClassMethods | *Optional*. When enabled, ignore missing annotations on methods which override methods when the class definition is within an anonymous class. |
-
+| Type      | Name                        | Description                                                                                                                                    |
+| --------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Boolean` | ignoreAnonymousClassMethods | _Optional_. When enabled, ignore missing annotations on methods which override methods when the class definition is within an anonymous class. |
 
 ## Usage
 
@@ -41,7 +39,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

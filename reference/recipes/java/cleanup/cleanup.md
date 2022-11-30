@@ -1,7 +1,6 @@
 # Code cleanup
 
-**org.openrewrite.java.cleanup.Cleanup**
-_Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions._
+**org.openrewrite.java.cleanup.Cleanup** _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expre
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
@@ -75,24 +72,23 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Default comes last](../../java/cleanup/defaultcomeslast.md)
-* [Remove empty blocks](../../java/cleanup/emptyblock.md)
-* [End files with a single newline](../../java/format/emptynewlineatendoffile.md)
-* [`for` loop counters should use postfix operators](../../java/cleanup/forloopcontrolvariablepostfixoperators.md)
-* [Method parameter padding](../../java/cleanup/methodparampad.md)
-* [No whitespace after](../../java/cleanup/nowhitespaceafter.md)
-* [No whitespace before](../../java/cleanup/nowhitespacebefore.md)
-* [Pad empty `for` loop components](../../java/cleanup/pademptyforloopcomponents.md)
-* [Typecast parenthesis padding](../../java/cleanup/typecastparenpad.md)
-* [Equals avoids null](../../java/cleanup/equalsavoidsnull.md)
-* [Explicit initialization](../../java/cleanup/explicitinitialization.md)
-* [Fall through](../../java/cleanup/fallthrough.md)
-* [Hide utility class constructor](../../java/cleanup/hideutilityclassconstructor.md)
-* [Fix missing braces](../../java/cleanup/needbraces.md)
-* [Operator wrapping](../../java/cleanup/operatorwrap.md)
-* [Remove unnecessary parentheses](../../java/cleanup/unnecessaryparentheses.md)
-* [Replace calls to `Thread.run()` with `Thread.start()`](../../java/cleanup/replacethreadrunwiththreadstart.md)
-
+* [Default comes last](defaultcomeslast.md)
+* [Remove empty blocks](emptyblock.md)
+* [End files with a single newline](../format/emptynewlineatendoffile.md)
+* [`for` loop counters should use postfix operators](forloopcontrolvariablepostfixoperators.md)
+* [Method parameter padding](methodparampad.md)
+* [No whitespace after](nowhitespaceafter.md)
+* [No whitespace before](nowhitespacebefore.md)
+* [Pad empty `for` loop components](pademptyforloopcomponents.md)
+* [Typecast parenthesis padding](typecastparenpad.md)
+* [Equals avoids null](equalsavoidsnull.md)
+* [Explicit initialization](explicitinitialization.md)
+* [Fall through](fallthrough.md)
+* [Hide utility class constructor](hideutilityclassconstructor.md)
+* [Fix missing braces](needbraces.md)
+* [Operator wrapping](operatorwrap.md)
+* [Remove unnecessary parentheses](unnecessaryparentheses.md)
+* [Replace calls to `Thread.run()` with `Thread.start()`](replacethreadrunwiththreadstart.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -120,7 +116,6 @@ recipeList:
   - org.openrewrite.java.cleanup.OperatorWrap
   - org.openrewrite.java.cleanup.UnnecessaryParentheses
   - org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart
-
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,8 +1,6 @@
 # Spring Boot 2.5 upgrades plus any possible manual changes that need to be reviewed.
 
-**org.openrewrite.java.spring.boot2.search.UpgradeRequirementsSpringBoot\_2\_5**
-_Identify changes needed to upgrade to Spring Boot 2.5.
-_
+**org.openrewrite.java.spring.boot2.search.UpgradeRequirementsSpringBoot\_2\_5** \_Identify changes needed to upgrade to Spring Boot 2.5. \_
 
 ### Tags
 
@@ -16,7 +14,6 @@ _
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -92,10 +89,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find projects affected by changes to the default error view message attribute](../../../../java/spring/boot2/search/messagesinthedefaulterrorview.md)
-* [In Spring Boot 2.5 a `DefaultConfigurationCustomizer` can now be used in favour of defining one or more `*Provider` beans](../../../../java/spring/boot2/search/customizingjooqdefaultconfiguration.md)
-* [Applications using logging shutdown hooks](../../../../java/spring/boot2/search/loggingshutdownhooks.md)
-
+* [Find projects affected by changes to the default error view message attribute](messagesinthedefaulterrorview.md)
+* [In Spring Boot 2.5 a `DefaultConfigurationCustomizer` can now be used in favour of defining one or more `*Provider` beans](customizingjooqdefaultconfiguration.md)
+* [Applications using logging shutdown hooks](loggingshutdownhooks.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -113,7 +109,6 @@ recipeList:
   - org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView
   - org.openrewrite.java.spring.boot2.search.CustomizingJooqDefaultConfiguration
   - org.openrewrite.java.spring.boot2.search.LoggingShutdownHooks
-
 ```
 {% endtab %}
 {% endtabs %}

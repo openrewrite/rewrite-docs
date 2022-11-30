@@ -1,7 +1,6 @@
-# `finalize()` calls super
+# finalize() calls super
 
-**org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper**
-_Overrides of `Object#finalize()` should call super._
+**org.openrewrite.java.cleanup.ObjectFinalizeCallsSuper** _Overrides of `Object#finalize()` should call super._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Overrides of `Object#finalize()` should call super._
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -35,7 +33,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

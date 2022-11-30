@@ -1,7 +1,6 @@
 # Find uses of Java file IO
 
-**org.openrewrite.cloudsuitability.FindFileIo**
-_Move to cloud friendly alternative or TKG._
+**org.openrewrite.cloudsuitability.FindFileIo** _Move to cloud friendly alternative or TKG._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Move to cloud friendly alternative or TKG._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -97,7 +95,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * fullyQualifiedTypeName: `java.io.LineNumber*`
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `java.io.*File*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +114,6 @@ recipeList:
       fullyQualifiedTypeName: java.io.LineNumber*
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: java.io.*File*
-
 ```
 {% endtab %}
 {% endtabs %}

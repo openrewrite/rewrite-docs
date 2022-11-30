@@ -1,13 +1,12 @@
 # Disable Kubernetes dashboard
 
-**org.openrewrite.terraform.azure.DisableKubernetesDashboard**
-_Disabling the dashboard eliminates it as an attack vector. The dashboard add-on is disabled by default for all new clusters created on Kubernetes 1.18 or greater._
+**org.openrewrite.terraform.azure.DisableKubernetesDashboard** _Disabling the dashboard eliminates it as an attack vector. The dashboard add-on is disabled by default for all new clusters created on Kubernetes 1.18 or greater._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_8
+* CKV\_AZURE\_8
 
 ## Source
 
@@ -16,7 +15,6 @@ _Disabling the dashboard eliminates it as an attack vector. The dashboard add-on
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,14 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_kubernetes_cluster`
-  * content: `addon_profile {
-  kube_dashboard {
-    enabled = false
-  }
-}`
-
+  * content: `addon_profile { kube_dashboard { enabled = false } }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -121,7 +114,6 @@ recipeList:
     enabled = false
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}

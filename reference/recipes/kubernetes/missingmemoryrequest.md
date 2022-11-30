@@ -1,7 +1,6 @@
 # Ensure memory request is set
 
-**org.openrewrite.kubernetes.MissingMemoryRequest**
-_A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
+**org.openrewrite.kubernetes.MissingMemoryRequest** _A container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than the limit set. This configuration may save resources and prevent an attack on an exploited container._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _A container is guaranteed to have as much memory as it requests, but is not all
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
 * version: 1.25.0
-
 
 ## Usage
 
@@ -90,9 +88,8 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find missing configuration](../kubernetes/search/findresourcemissingconfiguration.md)
+* [Find missing configuration](search/findresourcemissingconfiguration.md)
   * configurationPath: `..spec.containers[:1].resources.requests.memory`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.kubernetes.search.FindResourceMissingConfiguration:
       configurationPath: ..spec.containers[:1].resources.requests.memory
-
 ```
 {% endtab %}
 {% endtabs %}

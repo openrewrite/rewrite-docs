@@ -1,13 +1,12 @@
 # Ensure data stored in an S3 bucket is securely encrypted at rest
 
-**org.openrewrite.terraform.aws.EnsureDataStoredInAnS3BucketIsSecurelyEncryptedAtRest**
-_Ensure data stored in an S3 bucket is securely encrypted at rest._
+**org.openrewrite.terraform.aws.EnsureDataStoredInAnS3BucketIsSecurelyEncryptedAtRest** _Ensure data stored in an S3 bucket is securely encrypted at rest._
 
 ### Tags
 
 * terraform
 * AWS
-* CKV_AWS_19
+* CKV\_AWS\_19
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure data stored in an S3 bucket is securely encrypted at rest._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,16 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `aws_s3_bucket`
-  * content: `server_side_encryption_configuration {
-  rule {
-    apply_server_side_encryption_by_default {
-      sse_algorithm = "AES256"
-    }
-  }
-}`
-
+  * content: `server_side_encryption_configuration { rule { apply_server_side_encryption_by_default { sse_algorithm = "AES256" } } }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -125,7 +116,6 @@ recipeList:
     }
   }
 }
-
 ```
 {% endtab %}
 {% endtabs %}

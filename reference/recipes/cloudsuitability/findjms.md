@@ -1,7 +1,6 @@
 # Find JMS files
 
-**org.openrewrite.cloudsuitability.FindJMS**
-_Run embedded service broker as a JMS Provider._
+**org.openrewrite.cloudsuitability.FindJMS** _Run embedded service broker as a JMS Provider._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Run embedded service broker as a JMS Provider._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -92,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javax.jms..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -107,7 +104,6 @@ tags:
 recipeList:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javax.jms..*
-
 ```
 {% endtab %}
 {% endtabs %}

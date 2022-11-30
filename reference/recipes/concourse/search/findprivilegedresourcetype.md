@@ -1,7 +1,6 @@
-# Find privileged `resource_type` definitions.
+# Find privileged resource\_type definitions.
 
-**org.openrewrite.concourse.search.FindPrivilegedResourceType**
-_By default, `resource_type` definitions are unprivileged._
+**org.openrewrite.concourse.search.FindPrivilegedResourceType** _By default, `resource_type` definitions are unprivileged._
 
 ## Source
 
@@ -10,7 +9,6 @@ _By default, `resource_type` definitions are unprivileged._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
 * version: 1.14.0
-
 
 ## Usage
 
@@ -88,7 +86,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find YAML entries](../../yaml/search/findkey.md)
   * key: `$.resource_types[*].privileged`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -101,7 +98,6 @@ description: By default, `resource_type` definitions are unprivileged.
 recipeList:
   - org.openrewrite.yaml.search.FindKey:
       key: $.resource_types[*].privileged
-
 ```
 {% endtab %}
 {% endtabs %}

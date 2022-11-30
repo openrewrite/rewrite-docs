@@ -1,7 +1,6 @@
-# Prefer `Integer#compare`
+# Prefer Integer#compare
 
-**org.openrewrite.java.migrate.guava.PreferIntegerCompare**
-_This method exists in the Java standard library now._
+**org.openrewrite.java.migrate.guava.PreferIntegerCompare** _This method exists in the Java standard library now._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _This method exists in the Java standard library now._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.14.1
-
 
 ## Usage
 
@@ -90,10 +88,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method target to static](../../../java/changemethodtargettostatic.md)
+* [Change method target to static](../../changemethodtargettostatic.md)
   * methodPattern: `com.google.common.primitives.Ints compare(int, int)`
   * fullyQualifiedTargetTypeName: `java.lang.Integer`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -109,7 +106,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: com.google.common.primitives.Ints compare(int, int)
       fullyQualifiedTargetTypeName: java.lang.Integer
-
 ```
 {% endtab %}
 {% endtabs %}

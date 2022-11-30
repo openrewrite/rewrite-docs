@@ -1,7 +1,6 @@
 # YAML indent
 
-**org.openrewrite.yaml.format.Indents**
-_Format tabs and indents in YAML._
+**org.openrewrite.yaml.format.Indents** _Format tabs and indents in YAML._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Format tabs and indents in YAML._
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

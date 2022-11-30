@@ -1,7 +1,6 @@
 # Migrate Log4j 2.x to SLF4J 1.x
 
-**org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1**
-_Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
+**org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1** _Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this cur
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 1.15.0
-
 
 ## Usage
 
@@ -92,20 +90,19 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.logging.log4j.LogManager`
   * newFullyQualifiedTypeName: `org.slf4j.LoggerFactory`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.apache.logging.log4j.Logger fatal(..)`
   * newMethodName: `error`
-* [Change method name](../../../java/changemethodname.md)
+* [Change method name](../../changemethodname.md)
   * methodPattern: `org.apache.logging.log4j.Category fatal(..)`
   * newMethodName: `error`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.logging.log4j.Logger`
   * newFullyQualifiedTypeName: `org.slf4j.Logger`
-* [Parameterize SLF4J logging statements](../../../java/logging/slf4j/parameterizedlogging.md)
-
+* [Parameterize SLF4J logging statements](parameterizedlogging.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -133,7 +130,6 @@ recipeList:
       oldFullyQualifiedTypeName: org.apache.logging.log4j.Logger
       newFullyQualifiedTypeName: org.slf4j.Logger
   - org.openrewrite.java.logging.slf4j.ParameterizedLogging
-
 ```
 {% endtab %}
 {% endtabs %}

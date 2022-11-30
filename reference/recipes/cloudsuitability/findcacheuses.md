@@ -1,7 +1,6 @@
 # Uses of caches
 
-**org.openrewrite.cloudsuitability.FindCacheUses**
-_Cloud readiness issue as potential state information that is not persisted to a backing service._
+**org.openrewrite.cloudsuitability.FindCacheUses** _Cloud readiness issue as potential state information that is not persisted to a backing service._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Cloud readiness issue as potential state information that is not persisted to a
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -112,7 +110,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * fullyQualifiedTypeName: `org.shiftone-cache..*`
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `com.ibm.websphere.objectgrid..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -147,7 +144,6 @@ recipeList:
       fullyQualifiedTypeName: org.shiftone-cache..*
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: com.ibm.websphere.objectgrid..*
-
 ```
 {% endtab %}
 {% endtabs %}

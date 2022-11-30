@@ -1,7 +1,6 @@
 # Find remote method invocations
 
-**org.openrewrite.cloudsuitability.FindRemoteMethodInvocations**
-_Remote Method Invocations are not cloud native. Move to cloud friendly alternatives such as REST endpoints._
+**org.openrewrite.cloudsuitability.FindRemoteMethodInvocations** _Remote Method Invocations are not cloud native. Move to cloud friendly alternatives such as REST endpoints._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Remote Method Invocations are not cloud native. Move to cloud friendly alternat
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 1.0.0
-
 
 ## Usage
 
@@ -94,7 +92,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * fullyQualifiedTypeName: `javax.rmi..*`
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `org.omg.IOP..*`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -111,7 +108,6 @@ recipeList:
       fullyQualifiedTypeName: javax.rmi..*
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: org.omg.IOP..*
-
 ```
 {% endtab %}
 {% endtabs %}

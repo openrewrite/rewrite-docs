@@ -1,7 +1,6 @@
-# Use a standard name for `ExecutionContext`
+# Use a standard name for ExecutionContext
 
-**org.openrewrite.java.recipes.ExecutionContextParameterName**
-_Visitors that are parameterized with `ExecutionContext` should use the parameter name `ctx`._
+**org.openrewrite.java.recipes.ExecutionContextParameterName** _Visitors that are parameterized with `ExecutionContext` should use the parameter name `ctx`._
 
 ## Source
 
@@ -10,7 +9,6 @@ _Visitors that are parameterized with `ExecutionContext` should use the paramete
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.33.0
-
 
 ## Usage
 
@@ -31,7 +29,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

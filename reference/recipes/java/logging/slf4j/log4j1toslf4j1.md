@@ -1,7 +1,6 @@
 # Migrate Log4j 1.x to SLF4J 1.x
 
-**org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1**
-_Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
+**org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1** _Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this cur
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
 * version: 1.15.0
-
 
 ## Usage
 
@@ -92,13 +90,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.log4j.MDC`
   * newFullyQualifiedTypeName: `org.slf4j.MDC`
-* [Migrate Log4j 1.x to Log4j 2.x](../../../java/logging/log4j/log4j1tolog4j2.md)
-* [Migrate Log4j 2.x to SLF4J 1.x](../../../java/logging/slf4j/log4j2toslf4j1.md)
-* [Parameterize SLF4J logging statements](../../../java/logging/slf4j/parameterizedlogging.md)
-
+* [Migrate Log4j 1.x to Log4j 2.x](../log4j/log4j1tolog4j2.md)
+* [Migrate Log4j 2.x to SLF4J 1.x](log4j2toslf4j1.md)
+* [Parameterize SLF4J logging statements](parameterizedlogging.md)
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +116,6 @@ recipeList:
   - org.openrewrite.java.logging.log4j.Log4j1ToLog4j2
   - org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1
   - org.openrewrite.java.logging.slf4j.ParameterizedLogging
-
 ```
 {% endtab %}
 {% endtabs %}

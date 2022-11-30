@@ -1,13 +1,12 @@
 # Ensure Azure SQL server audit log retention is greater than 90 days
 
-**org.openrewrite.terraform.azure.EnsureAzureSQLServerAuditLogRetentionIsGreaterThan90Days**
-_Ensure Azure SQL server audit log retention is greater than 90 days._
+**org.openrewrite.terraform.azure.EnsureAzureSQLServerAuditLogRetentionIsGreaterThan90Days** _Ensure Azure SQL server audit log retention is greater than 90 days._
 
 ### Tags
 
 * Azure
 * terraform
-* CKV_AZURE_24
+* CKV\_AZURE\_24
 
 ## Source
 
@@ -16,7 +15,6 @@ _Ensure Azure SQL server audit log retention is greater than 90 days._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,17 +90,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_sql_server`
-  * content: `extended_auditing_policy {
-  retention_in_days = 90
-}`
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+  * content: `extended_auditing_policy { retention_in_days = 90 }`
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_mssql_server`
-  * content: `extended_auditing_policy {
-  retention_in_days = 90
-}`
-
+  * content: `extended_auditing_policy { retention_in_days = 90 }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -127,7 +120,6 @@ recipeList:
       content: extended_auditing_policy {
   retention_in_days = 90
 }
-
 ```
 {% endtab %}
 {% endtabs %}

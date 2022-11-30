@@ -1,7 +1,6 @@
 # Find source files with imports
 
-**org.openrewrite.java.search.FindImports**
-_Locates source files that have imports matching the given type pattern, regardless of whether that import is used in the code._
+**org.openrewrite.java.search.FindImports** _Locates source files that have imports matching the given type pattern, regardless of whether that import is used in the code._
 
 ## Source
 
@@ -13,10 +12,9 @@ _Locates source files that have imports matching the given type pattern, regardl
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | typePattern | *Optional*. A type pattern that is used to find matching field uses. |
-
+| Type     | Name        | Description                                                          |
+| -------- | ----------- | -------------------------------------------------------------------- |
+| `String` | typePattern | _Optional_. A type pattern that is used to find matching field uses. |
 
 ## Usage
 
@@ -37,7 +35,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

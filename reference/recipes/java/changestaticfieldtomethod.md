@@ -1,7 +1,6 @@
 # Change static field access to static method access
 
-**org.openrewrite.java.ChangeStaticFieldToMethod**
-_Migrate accesses to a static field to invocations of a static method._
+**org.openrewrite.java.ChangeStaticFieldToMethod** _Migrate accesses to a static field to invocations of a static method._
 
 ## Source
 
@@ -13,19 +12,17 @@ _Migrate accesses to a static field to invocations of a static method._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldClassName | The fully qualified name of the class containing the field to replace. |
-| `String` | oldFieldName | The simple name of the static field to replace. |
-| `String` | newClassName | *Optional*. The fully qualified name of the class containing the method to use. Leave empty to keep the same class. |
-| `String` | newTarget | *Optional*. An optional method target that can be used to specify a static field within the new class. |
-| `String` | newMethodName | The simple name of the method to use. The method must be static and have no arguments. |
-
+| Type     | Name          | Description                                                                                                         |
+| -------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `String` | oldClassName  | The fully qualified name of the class containing the field to replace.                                              |
+| `String` | oldFieldName  | The simple name of the static field to replace.                                                                     |
+| `String` | newClassName  | _Optional_. The fully qualified name of the class containing the method to use. Leave empty to keep the same class. |
+| `String` | newTarget     | _Optional_. An optional method target that can be used to specify a static field within the new class.              |
+| `String` | newMethodName | The simple name of the method to use. The method must be static and have no arguments.                              |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeStaticFieldToMethodExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeStaticFieldToMethodExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -42,7 +39,6 @@ recipeList:
       newMethodName: of
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeStaticFieldToMethodExample` has been defined activate it in your build file:
 
@@ -61,7 +57,6 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}

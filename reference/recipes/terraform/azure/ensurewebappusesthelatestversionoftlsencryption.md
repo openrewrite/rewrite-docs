@@ -1,12 +1,11 @@
 # Ensure Web App uses the latest version of TLS encryption
 
-**org.openrewrite.terraform.azure.EnsureWebAppUsesTheLatestVersionOfTLSEncryption**
-_Ensure Web App uses the latest version of TLS encryption._
+**org.openrewrite.terraform.azure.EnsureWebAppUsesTheLatestVersionOfTLSEncryption** _Ensure Web App uses the latest version of TLS encryption._
 
 ### Tags
 
 * Azure
-* CKV_AZURE_15
+* CKV\_AZURE\_15
 * terraform
 
 ## Source
@@ -16,7 +15,6 @@ _Ensure Web App uses the latest version of TLS encryption._
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 1.14.0
-
 
 ## Usage
 
@@ -92,12 +90,9 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../../terraform/addconfiguration.md)
+* [Add Terraform configuration](../addconfiguration.md)
   * resourceName: `azurerm_app_service`
-  * content: `site_config {
-  min_tls_version = "1.2"
-}`
-
+  * content: `site_config { min_tls_version = "1.2" }`
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -117,7 +112,6 @@ recipeList:
       content: site_config {
   min_tls_version = "1.2"
 }
-
 ```
 {% endtab %}
 {% endtabs %}

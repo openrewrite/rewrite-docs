@@ -1,11 +1,6 @@
 # Find projects affected by changes to the default error view message attribute
 
-**org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView**
-_As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown.
-`spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item
-([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)).
-You can still use the `server.error.include-message` property if you want messages to be included.
-_
+**org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView** \_As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown. `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)). You can still use the `server.error.include-message` property if you want messages to be included. \_
 
 ### Tags
 
@@ -19,7 +14,6 @@ _
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 4.30.0
-
 
 ## Usage
 
@@ -101,7 +95,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Find Maven dependency](../../../../maven/search/finddependency.md)
   * groupId: `org.springframework`
   * artifactId: `spring-webflux`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -125,7 +118,6 @@ recipeList:
   - org.openrewrite.maven.search.FindDependency:
       groupId: org.springframework
       artifactId: spring-webflux
-
 ```
 {% endtab %}
 {% endtabs %}
