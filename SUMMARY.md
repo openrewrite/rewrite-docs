@@ -32,6 +32,7 @@
 
 ## Changelog
 
+* [Snapshot (2022-11-30)](changelog/snapshot-2022-11-30.md)
 * [7.33.0 Release (2022-11-16)](changelog/7-33-0-Release.md)
 
 ## Reference
