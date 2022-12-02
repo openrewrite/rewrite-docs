@@ -96,7 +96,11 @@ dependencies {
 {% endtabs %}
 
 {% hint style="info" %}
-The tests in this guide are written in Kotlin to take advantage of multi-line strings. This is completely optional but makes it easier to express source code (as strings) when providing the before/after state that is processed by a recipe.
+While Recipes should generally be compiled with Java 8 as the target for compatibliity, tests can be compiled to target newer versions of the Java Runtime.
+
+We recommend either compiling tests targeting Java 17 so you can use multi-line strings, or using Kotlin to get access to multi-line strings.&#x20;
+
+This tutorial uses Kotlin for tests, but which language you use is a matter of preference.
 {% endhint %}
 
 ### `RewriteTest` Interface
