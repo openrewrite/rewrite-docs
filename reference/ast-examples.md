@@ -19,7 +19,7 @@ To help you get started on working with ASTs and OpenRewrite, this guide will:
   * [NewClass](#newclass)
   * [Statement](#statement)
   * [VariableDeclarations](#variabledeclarations)
-* [Teach you how to use the debugger to learn more about ASTs yourself](#using-the-debugger-to-detect-elements)
+* [Teach you how to use the debugger to learn more about ASTs yourself](#using-the-debugger-to-detect-asts)
 
 ## High-level AST Explanation
 
