@@ -99,7 +99,14 @@ A [MethodDeclaration](https://github.com/openrewrite/rewrite/blob/main/rewrite-j
 
 ### MethodInvocation
 
-A [MethodInvocation element](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3523-L3694) is all the code for invoking a method. Method invocations have a somewhat surprising structure where the highest-level AST element is the last part of the invocation. For instance, in the below code, `this.a` is defined by taking the `stream`, running `map` on it, and then running `collect` on that. Each of those pieces is a `MethodInvocation`. However, instead of `stream` being the highest-level element in the tree, `collect` is:
+A [MethodInvocation](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3523-L3694) consists of its select, any defined type parameters, the method name, and its arguments. Method invocations have a somewhat surprising structure where the highest-level AST element consists of the select expression (everything to the left of the last dot) and the name on the right. In the below code:
+
+![MethodInvocation Element Example](<../.gitbook/assets/MethodInvocation.png>)
+
+1. The "top-level" method invocation `this.a.stream().map(it -> it + 1).collect(Collectors.toList())` - The select expression is `this.a.stream().map(it -> it + 1)`, the name is `collect`, and there is a single argument expression, `Collectors.toList()`.
+2. The argument passed into the above method invocation is itself a method invocation, `Collectors.toList()`. - The select expression is `Collectors`, the name is `toList` and there are no arguments.
+3. The select expression of the top-level method invocation is also a method invocation, `this.a.stream().map(it -> it + 1)`. - The select expression is `this.a.stream()`, the name is `map` and the argument is the lambda expression `it -> it + 1`.
+4. The select expression of the `map` method invocation, `this.a.stream()` is a method invocation where `this.a` is the select expression, `stream` is the name, and there are no arguments.
 
 * Rest of the AST...
   * Collect element
