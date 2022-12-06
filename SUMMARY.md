@@ -40,7 +40,7 @@
 * [Latest versions of every OpenRewrite module](reference/latest-versions-of-every-openrewrite-module.md)
 * [Maven Plugin Configuration](reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](reference/gradle-plugin-configuration.md)
-* [AST Element Examples](reference/ast-examples.md)
+* [AST Examples](reference/ast-examples.md)
 * [JsonPath and JsonPathMatcher](reference/jsonpath-and-jsonpathmatcher-reference.md)
 * [Declarative YAML Format](reference/yaml-format-reference.md)
 * [Method Patterns](reference/method-patterns.md)
