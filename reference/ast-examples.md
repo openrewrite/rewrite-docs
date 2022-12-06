@@ -55,7 +55,7 @@ A [Binary](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/mai
 
 ### Block 
 
-A [Block element](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L712-L851) is the code contained between curly braces. Blocks can be nested inside of each other.
+A [Block](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L712-L851) is a pair of curly braces and the [Statements](#statement) contained within. Blocks can be nested inside of each other.
 
 ![Block Element Example](<../.gitbook/assets/Block.png>)
 
