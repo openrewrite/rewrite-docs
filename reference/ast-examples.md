@@ -93,7 +93,7 @@ An [Identifier element](https://github.com/openrewrite/rewrite/blob/main/rewrite
 
 ### MethodDeclaration
 
-A [MethodDeclaration element](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3517) is all the code for creating a method.
+A [MethodDeclaration](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3517) is the annotations, modifiers, return type, name, argument list, and body which together define a method on a [class](#classdeclaration).
 
 ![MethodDeclaration Element Example](<../.gitbook/assets/MethodDeclaration.png>)
 
