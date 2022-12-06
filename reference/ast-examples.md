@@ -49,7 +49,7 @@ public class A {
 
 ### Binary
 
-A [Binary element](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L597-L705) is any operation with a left and right side (usually separated by something like a `+`).
+A [Binary](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L597-L705) is an [Expression](#expression) with a left and right side, separated by an operator. Examples of operators include `+`, `-`, `||`, `&&`, and more.
 
 ![Binary Element Example](<../.gitbook/assets/Binary.png>)
 
