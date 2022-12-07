@@ -1,4 +1,4 @@
-# Migrate to Java 11 from Java 8 through 16
+# Migrate to Java 17 from Java 8 through 16
 
 **org.openrewrite.java.migrate.UpgradeToJava17** \_This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17. \_
 
