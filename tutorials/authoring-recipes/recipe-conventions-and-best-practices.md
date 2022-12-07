@@ -4,11 +4,11 @@ description: Conventions to follow, pitfalls to avoid
 
 # Recipe Conventions and Best Practices
 
-[Recipes](../../v1beta/recipes.md) use [Visitors](../../v1beta/visitors.md) to operate on diverse and unexpected [ASTs](../../v1beta/abstract-syntax-trees.md). This document describes an assortment of conventions, best practices, and pitfalls to avoid to create reliable, scalable recipes.
+[Recipes](../../concepts-and-explanations/recipes.md) use [Visitors](../../concepts-and-explanations/visitors.md) to operate on diverse and unexpected [ASTs](../../concepts-and-explanations/abstract-syntax-trees.md). This document describes an assortment of conventions, best practices, and pitfalls to avoid to create reliable, scalable recipes.
 
 ### Do No Harm
 
-If your Recipe cannot determine that a change is safe to make, such as when a type you're looking for is unavailable, it is always preferable to make no change than to make the wrong change. Relatedly, when making changes always strive to make the most minimal, least invasive version of that change. Keeping changes minimal makes for easy to review diffs and higher rates of pull request acceptance. A change which unnecessarily clobbers formatting or is otherwise overly broad will burden code reviewers and drastically reduce the rate at which they accept changes.&#x20;
+If your Recipe cannot determine that a change is safe to make, such as when a type you're looking for is unavailable, it is always preferable to make no change than to make the wrong change. Relatedly, when making changes always strive to make the most minimal, least invasive version of that change. Keeping changes minimal makes for easy-to-review diffs and higher rates of pull request acceptance. A change that unnecessarily clobbers formatting or is otherwise overly broad will burden code reviewers and drastically reduce the rate at which they accept changes.&#x20;
 
 {% hint style="success" %}
 RewriteTest helps you to verify that your recipe does not make unnecessary changes by running your recipe in a loop. If you see your change being made many times it is likely your visitor fails to avoid making unnecessary changes.&#x20;
@@ -20,7 +20,7 @@ When authoring your tests always remember to test that changes aren't made when 
 
 ### Naming conventions
 
-Recipes should always have a non-blank description. Recipe parameters should always have a fully filled out `@Option` annotation. This metadata is used when generating documentation, when build plugins display recipe information in their discover action, and in the [Moderne saas](https://app.gitbook.com/s/JC9dRbwVINQjAyoDyBuW/alerts).
+Recipes should always have a non-blank description. Recipe parameters should always have a fully filled-out `@Option` annotation. This metadata is used when generating documentation, when build plugins display recipe information in their discover action, and in the [Moderne saas](https://app.gitbook.com/s/JC9dRbwVINQjAyoDyBuW/alerts).
 
 Recipe names, descriptions, and parameters should follow our [recipe naming conventions](https://github.com/openrewrite/rewrite/blob/main/doc/adr/0002-recipe-naming.md).&#x20;
 
@@ -33,18 +33,18 @@ If your Recipe exists only to aggregate other recipes together in a unit, it is 
 Recipes may be configured in code, from yaml, or from a web interface. If your recipe is configured with complex types this becomes untenable and your recipe's interoperability and utility will be reduced. If the implementation of a visitor is simplified by using complex types, then it is the job of the recipe to assemble those more complex types out of the simple types it is configured with.
 
 {% hint style="warning" %}
-Recipe options which are configured with `String` parameters should generally treat the empty string and `null` similarly. Depending on the frontend which configures the recipe either value may be used to represent omitted configuration.
+Recipe options which are configured with `String` parameters should generally treat the empty string and `null` similarly. Depending on the front-end which configures the recipe either value may be used to represent omitted configuration.
 {% endhint %}
 
 ### Be deliberate about AST traversal
 
-As the author of a visitor the traversal of the AST is in your hands. Calling`super.visitSomeAstElement()` is what causes the traversal of sub-elements of the current element to happen. So if you know that no traversal of sub-elements will be necessary, you can skip this call entirely to improve the performance of your recipe. Usually it is most convenient to call at the beginning of each visit method you implement.
+As the author of a visitor, the traversal of the AST is in your hands. Calling`super.visitSomeAstElement()` is what causes the traversal of sub-elements of the current element to happen. So if you know that no traversal of sub-elements will be necessary, you can skip this call entirely to improve the performance of your recipe. Usually, it is most convenient to call at the beginning of each visit method you implement.
 
 ### Use Applicability Tests
 
-Most recipes are not universally applicable to every source file. Often you can know ahead of time that your recipe will not need to modify source files where a particular type is not present. The visitor returned from  `Recipe.getSingleSourceApplicableTest()` making any change to the AST is interpreted as an "affirmative" result that the Recipe is applicable to the AST. Use `Applicability.and()`, `Applicability.or()`, and `Applicability.not()` to create more complex applicability criteria from simple building blocks.&#x20;
+Most recipes are not universally applicable to every source file. Often you can know ahead of time that your recipe will not need to modify source files where a particular type is not present. If the visitor returned from  `Recipe.getSingleSourceApplicableTest()` makes any change to the AST, that is interpreted as an "affirmative" result that the Recipe is applicable to the AST. Use `Applicability.and()`, `Applicability.or()`, and `Applicability.not()` to create more complex applicability criteria from simple building blocks.&#x20;
 
-Using applicability tests can simplify implementation of your recipe by separating the code which detects "should a change be made" from the code which enacts "making the change". This enhances readability, simplifying debugging and maintenance.
+Using applicability tests can simplify the implementation of your recipe by separating the code which detects "should a change be made" from the code which enacts "making the change". This enhances readability, simplifying debugging and maintenance.
 
 {% hint style="info" %}
 Applicability tests are most worthwhile when they can cheaply prevent a visitor from running unnecessarily.
@@ -56,7 +56,7 @@ Applicability tests are most worthwhile when they can cheaply prevent a visitor 
 
 ### Recipe and AST immutability
 
-Recipes must have no mutable state. `Recipe.getVisitor()` must always return a brand new visitor instance. During recipe execution the same recipe may be invoked multiple times, possibly on sources it has seen before, so any mutable state is an opportunity for bugs. During test execution recipe execution is single threaded for simplicity, but outside of tests recipe execution is paralellized. Following this rule is essential for OpenRewrite to operate reliabliy and correctly.
+Recipes must have no mutable state. `Recipe.getVisitor()` must always return a brand new visitor instance. During recipe execution the same recipe may be invoked multiple times, possibly on sources it has seen before, so any mutable state is an opportunity for bugs. During test execution recipe execution is single-threaded for simplicity, but outside of tests recipe execution is parallelized. Following this rule is essential for OpenRewrite to operate reliably and correctly.
 
 {% hint style="warning" %}
 All AST fields should be treated as immutable, even in certain circumstances where mutation is _technically_ possible it is always a bug for a recipe to mutate those fields.&#x20;
@@ -66,20 +66,20 @@ OpenRewrite detects that a visitor/recipe has made a change based on referential
 
 ### Use ListUtils for collections manipulation
 
-Since referential equality is so important for OpenRewrite to detect changes, typical collection creation and manipulation patterns like newing up your own collection or using Java streams are usually a mistake. Instead we provide the `ListUtils` class which provides referential-equality conscious data access and manipulation faculties which avoid unnecessary memory allocations.
+Since referential equality is so important for OpenRewrite to detect changes, typical collection creation and manipulation patterns like newing up your own collection or using Java streams are usually a mistake. Instead, we provide the `ListUtils` class which provides referential-equality conscious data access and manipulation faculties that avoid unnecessary memory allocations.
 
 ### Nullability matters
 
-Throughout our ASTs and other APIs we have been careful to use Java's nullability annotations to indicate whether a field is nullable or not. If a field is nullable then there _will_ be ASTs where that field is null. To operate correctly on the wildly diverse code which exists throughout the world Recipe/Visitors must decline to make changes when a field they need to make changes is null.
+Throughout our ASTs and other APIs, we have been careful to use Java's nullability annotations to indicate whether a field is nullable or not. If a field is nullable then there _will_ be ASTs where that field is null. To operate correctly on the wildly diverse code which exists throughout the world, Recipe/Visitors must decline to make changes when a field they need to make changes is null.
 
 ### Avoid constructing AST elements by hand
 
-Even very simple pieces of code have complex AST representations which are tedious and error-prone to construct by hand. With your visitor, prefer faculties like [JavaTemplate](../../v1beta/javatemplate.md) to turn code snippets into AST elements. In data formats like XML or Json it is usually most convenient to use the format's parser to turn a snippet of text into usable AST elements.
+Even very simple pieces of code have complex AST representations which are tedious and error-prone to construct by hand. With your visitor, prefer faculties like [JavaTemplate](../../concepts-and-explanations/javatemplate.md) to turn code snippets into AST elements. In data formats like XML or JSON it is usually most convenient to use the format's parser to turn a snippet of text into usable AST elements.
 
 ### Prefer Cursor Messaging to Execution Context Messaging
 
-There are a few ways to pass state around within and between visitors. All Recipes in a run will have the same `ExecutionContext` object passed between them, and it contains a map into which any recipe may read or write arbitrary data. Similarly the `Cursor` object returned by `TreeVisitor.getCursor()` has a map into which any recipe may read or write arbitrary data. The difference is that the `Cursor` is a stack which keeps track of a visitor's current progress through an AST and is thrown away after all visiting is complete. Because the data in `ExecutionContext` lives for the span of the recipe run, and on into separate cycles, it can potentially change the behavior of other recipes. So whenever communication is needed but only within the current visitor or recipe, the cursor stack should be used instead of adding messages to the execution context.
+There are a few ways to pass state around within and between visitors. All Recipes in a run will have the same `ExecutionContext` object passed between them, and it contains a map into which any recipe may read or write arbitrary data. Similarly, the `Cursor` object returned by `TreeVisitor.getCursor()` has a map into which any recipe may read or write arbitrary data. The difference is that the `Cursor` is a stack that keeps track of a visitor's current progress through an AST and is thrown away after all visiting is complete. Because the data in `ExecutionContext` lives for the span of the recipe run, and on into separate cycles, it can potentially change the behavior of other recipes. So whenever communication is needed but only within the current visitor or recipe, the cursor stack should be used instead of adding messages to the execution context.
 
 ### Stay Single Cycle
 
-OpenRewrite executes recipes in a loop, each iteration of that loop through the full recipe list is called a cycle. This is so that if one recipe makes a change another recipe would respond to it can have a chance to do so, regardless of the order they are executed in. By default only a single cycle is executed, unless some recipe in the group overrides `Recipe.causesAnotherCycle()` to return `true`. For larger recipes, such as a framework migraiton, the performance impact of causing another cycle can be substantially detrimental. Whenever possible a recipe should complete all of its work the first time, avoiding overriding `Recipe.causesAnotherCycle()` if at all possible.
+OpenRewrite executes recipes in a loop, each iteration of that loop through the full recipe list is called a cycle. This is so that if one recipe makes a change another recipe would respond to it can have a chance to do so, regardless of the order they are executed in. By default only a single cycle is executed, unless some recipe in the group overrides `Recipe.causesAnotherCycle()` to return `true`. For larger recipes, such as a framework migration, the performance impact of causing another cycle can be substantially detrimental. Whenever possible a recipe should complete all of its work the first time, avoiding overriding `Recipe.causesAnotherCycle()` if at all possible.

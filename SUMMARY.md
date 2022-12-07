@@ -41,7 +41,6 @@
 * [Latest versions of every OpenRewrite module](reference/latest-versions-of-every-openrewrite-module.md)
 * [Maven Plugin Configuration](reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](reference/gradle-plugin-configuration.md)
-* [AST Examples](reference/ast-examples.md)
 * [JsonPath and JsonPathMatcher](reference/jsonpath-and-jsonpathmatcher-reference.md)
 * [Declarative YAML Format](reference/yaml-format-reference.md)
 * [Method Patterns](reference/method-patterns.md)
@@ -1031,13 +1030,14 @@
       * [Find YAML entries](reference/recipes/yaml/search/findkey.md)
       * [Find YAML properties](reference/recipes/yaml/search/findproperty.md)
 
-## Concepts & Explanations <a href="#v1beta" id="v1beta"></a>
+## Concepts & Explanations
 
-* [Abstract Syntax Trees](v1beta/abstract-syntax-trees.md)
-* [Recipes](v1beta/recipes.md)
-* [Visitors](v1beta/visitors.md)
-* [Styles](v1beta/styles.md)
-* [Environment](v1beta/environment.md)
-* [Markers](v1beta/markers.md)
-* [JavaTemplate](v1beta/javatemplate.md)
-* [Pointcut Expressions](v1beta/pointcut-expressions.md)
+* [Abstract Syntax Trees](/concepts-and-explanations/abstract-syntax-trees.md)
+* [Java AST Examples](/concepts-and-explanations/ast-examples.md)
+* [Recipes](/concepts-and-explanations/recipes.md)
+* [Visitors](/concepts-and-explanations/visitors.md)
+* [Styles](/concepts-and-explanations/styles.md)
+* [Environment](/concepts-and-explanations/environment.md)
+* [Markers](/concepts-and-explanations/markers.md)
+* [JavaTemplate](/concepts-and-explanations/javatemplate.md)
+* [Pointcut Expressions](/concepts-and-explanations/pointcut-expressions.md)

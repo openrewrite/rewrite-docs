@@ -1,14 +1,14 @@
 # Framework Provided Markers
 
-Not everything a [Recipe](/v1beta/recipes.md) may wish to know about an [AST](/v1beta/abstract-syntax-trees.md) is contained in the AST itself.
-OpenRewrite attaches [Markers](/v1beta/markers.md) to an AST provide Recipes access to relevant metadata.
+Not everything a [Recipe](/concepts-and-explanations/recipes.md) may wish to know about an [AST](/concepts-and-explanations/abstract-syntax-trees.md) is contained in the AST itself.
+OpenRewrite attaches [Markers](/concepts-and-explanations/markers.md) to an AST provide Recipes access to relevant metadata.
 This document provides Recipe authors a reference for what metadata is available and how to access it.
 
 ## Accessing Provided Markers
 
 All markers described in this document are found on the root element of the AST.
 The root AST element varies by language, but they all implement the `SourceFile` interface.
-From anywhere in a [Visitor](/v1beta/visitor.md) the cursor can be used to access the markers on the root element like so:
+From anywhere in a [Visitor](/concepts-and-explanations/visitor.md) the cursor can be used to access the markers on the root element like so:
 
 ```java
 class SomeVisitor implements JavaVisitor<ExecutionContext> {
