@@ -25,11 +25,9 @@ To help you get started on working with ASTs and OpenRewrite, this guide will:
 
 In order to programmatically modify code without risking the introduction of syntactic or semantic errors, there must be a data structure which accurately and comprehensively represent said code. OpenRewrite uses [Abstract Syntax Trees](/v1beta/abstract-syntax-trees.md) (AST) for this purpose. Like other tree data structures, more complex ASTs are recursively composed out of other, simpler ASTs. 
 
-For instance, you could have a [CompilationUnit](#compilationunit) which then has a [ClassDeclaration](#classdeclaration) inside of that which then has a [MethodDeclaration](#methoddeclaration) inside of that and so on. On top of being a valid AST that would _also_ represent valid Java code. 
+For instance, a [ClassDeclaration](#classdeclaration) is an AST which defines a class. A typical class declaration will be composed of elements such as fields, methods, constructors, and inner classes. Each of these are represented as their own, smaller AST. So the term "AST" may refer to an entire, complete Java file or just one piece of it.
 
-On the other hand, you _could_ define a [Binary](#binary) with other Binaries inside of that. That would be a valid AST but it **would not** represent valid Java code as just entering `1+2` (a valid Binary) in a Java file would not compile (that code would need to be in an expression which is then in a class to be valid).
-
-> Every object in the [code section](#code) is an AST in the sense that it implements a Tree interface. These objects, however, need to be combined in an appropriate way to represent valid Java. It is your duty as a recipe author to ensure that the final AST represents valid Java code.
+It is possible to manipulate ASTs to create code which will not compile. OpenRewrite provides some safeguards against grammatically invalid transformations in its type system - you can't replace an import statement with a method declaration, for example. But there are plenty ways ASTs can be valid according to the Java grammar without being valid, compilable programs. For example, nothing prevents you from modifying an AST such that a variable is used before it is defined. It is the responsibility of recipe authors to consider language semantics and the full range of possibilities when making changes. In accordance with the principle of Doing No Harm, always err on the side of leaving code untouched rather than making a risky change. 
 
 ## Code
 
