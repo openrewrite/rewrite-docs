@@ -9,7 +9,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Change Maven Java version property values to 11](javaversion11.md)
 * [Change Maven Java version property values to 17](javaversion17.md)
 * [Migrate to Java 11 from Java 8 through 10](java8tojava11.md)
-* [Migrate to Java 11 from Java 8 through 16](upgradetojava17.md)
+* [Migrate to Java 17 from Java 8 through 16](upgradetojava17.md)
 * [Use `java.util.Base64` instead of `sun.misc`](usejavautilbase64.md)
 
 ## Subcategories
