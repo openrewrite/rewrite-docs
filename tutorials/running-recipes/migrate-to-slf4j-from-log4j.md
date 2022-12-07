@@ -67,7 +67,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 For the full list of changes, see the recipe's [reference documentation](../../reference/recipes/java/logging/slf4j/log4jtoslf4j.md).
 
-Similar to the [`SLF4J Migrator`](http://www.slf4j.org/migrator.html), the goal of the `Log4jToSlf4j` recipe is to significantly reduce the amount of work involved in migrating `Log4j` to `SLF4J`. Because OpenRewrite works by leveraging type-attributed [Abstract Syntax Trees](../../v1beta/abstract-syntax-trees.md) (AST) representing your source code, the `Log4jToSlf4j` recipe can overcome several limitations discussed in the [`SLF4J Migrator` guide](http://www.slf4j.org/migrator.html).
+Similar to the [`SLF4J Migrator`](http://www.slf4j.org/migrator.html), the goal of the `Log4jToSlf4j` recipe is to significantly reduce the amount of work involved in migrating `Log4j` to `SLF4J`. Because OpenRewrite works by leveraging type-attributed [Abstract Syntax Trees](../../concepts-and-explanations/abstract-syntax-trees.md) (AST) representing your source code, the `Log4jToSlf4j` recipe can overcome several limitations discussed in the [`SLF4J Migrator` guide](http://www.slf4j.org/migrator.html).
 
 ### `.toString()`
 
