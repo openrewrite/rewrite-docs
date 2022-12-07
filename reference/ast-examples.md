@@ -23,7 +23,7 @@ To help you get started on working with ASTs and OpenRewrite, this guide will:
 
 ## High-level AST Explanation
 
-In order for a computer to parse and change code, there needs to be some data structure defined that can accurately represent said code. OpenRewrite uses an [Abstract Syntax Tree](/v1beta/abstract-syntax-trees.md) (AST) for this purpose. Like many tree data structures, ASTs are often composed of many other ASTs. 
+In order to programmatically modify code without risking the introduction of syntactic or semantic errors, there must be a data structure which accurately and comprehensively represent said code. OpenRewrite uses [Abstract Syntax Trees](/v1beta/abstract-syntax-trees.md) (AST) for this purpose. Like other tree data structures, more complex ASTs are recursively composed out of other, simpler ASTs. 
 
 For instance, you could have a [CompilationUnit](#compilationunit) which then has a [ClassDeclaration](#classdeclaration) inside of that which then has a [MethodDeclaration](#methoddeclaration) inside of that and so on. On top of being a valid AST that would _also_ represent valid Java code. 
 
