@@ -20,6 +20,7 @@ To help you get started on working with Java ASTs and OpenRewrite, this guide wi
   * [Statement](#statement)
   * [VariableDeclarations](#variabledeclarations)
 * [Teach you how to use the debugger to learn more about ASTs yourself](#using-the-debugger-to-detect-asts)
+* [Provide a high-level diagram that shows how ASTs relate to each other](#ast-diagram)
 
 ## High-level AST Explanation
 
@@ -183,3 +184,7 @@ If you add a breakpoint in the `visitCompilationUnit` method, you'll find that t
 If you add a breakpoint in the `JavaVisitor.java` class instead, you can pick which AST type you want to explore. For instance, if you wanted to see what a `ClassDeclaration` AST is in your code, you could add a breakpoint in the [visitClassDeclaration method](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L410-L453). You'll now find that the AST begins with a `ClassDeclaration` instead of  `CompilationUnit`. You can step through the tree in the same way as before and you'll find everything else is the same. The benefit of this approach is that you can continue to resume the program and it'll stop at every point in the AST that a `ClassDeclaration` is visited.
 
 ![ClassDeclaration Debugger Example](<../.gitbook/assets/ClassDeclarationDebugger.png>)
+
+## AST Diagram
+
+![Debugger Example](<../.gitbook/assets/AST-Example.png>)
