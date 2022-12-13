@@ -1,6 +1,7 @@
 # Mockito 3.x migration from 1.x
 
-**org.openrewrite.java.testing.mockito.Mockito1to3Migration** _Upgrade Mockito from 1.x to 3.x._
+**org.openrewrite.java.testing.mockito.Mockito1to3Migration**
+_Upgrade Mockito from 1.x to 3.x._
 
 ### Tags
 
@@ -9,22 +10,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.31.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.32.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.31.0
+* version: 1.32.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -36,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0")
 }
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.Mockito1to3Migration</recipe>
@@ -61,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.31.0</version>
+            <version>1.32.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0 \
   -DactiveRecipes=org.openrewrite.java.testing.mockito.Mockito1to3Migration
 ```
 {% endcode %}
@@ -89,64 +91,76 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.MockitoAnnotations.Mock`
   * newFullyQualifiedTypeName: `org.mockito.Mock`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.Matchers`
   * newFullyQualifiedTypeName: `org.mockito.ArgumentMatchers`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyVararg()`
   * newMethodName: `any`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyObject()`
   * newMethodName: `any`
-* [Change method name](../../changemethodname.md)
-  * methodPattern: `org.mockito.ArgumentMatchers anyListOf()`
+* [Change method name](../../../java/changemethodname.md)
+  * methodPattern: `org.mockito.ArgumentMatchers anyListOf(java.lang.Class)`
   * newMethodName: `anyList`
-* [Change method name](../../changemethodname.md)
-  * methodPattern: `org.mockito.ArgumentMatchers anySetOf()`
+* [Delete method argument](../../../java/deletemethodargument.md)
+  * methodPattern: `org.mockito.ArgumentMatchers anyList(java.lang.Class)`
+  * argumentIndex: `0`
+* [Change method name](../../../java/changemethodname.md)
+  * methodPattern: `org.mockito.ArgumentMatchers anySetOf(java.lang.Class)`
   * newMethodName: `anySet`
-* [Change method name](../../changemethodname.md)
-  * methodPattern: `org.mockito.ArgumentMatchers anyMapOf()`
+* [Delete method argument](../../../java/deletemethodargument.md)
+  * methodPattern: `org.mockito.ArgumentMatchers anySet(java.lang.Class)`
+  * argumentIndex: `0`
+* [Change method name](../../../java/changemethodname.md)
+  * methodPattern: `org.mockito.ArgumentMatchers anyMapOf(java.lang.Class, java.lang.Class)`
   * newMethodName: `anyMap`
-* [Change method name](../../changemethodname.md)
+* [Delete method argument](../../../java/deletemethodargument.md)
+  * methodPattern: `org.mockito.ArgumentMatchers anyMap(java.lang.Class, java.lang.Class)`
+  * argumentIndex: `0`
+* [Delete method argument](../../../java/deletemethodargument.md)
+  * methodPattern: `org.mockito.ArgumentMatchers anyMap(java.lang.Class, java.lang.Class)`
+  * argumentIndex: `0`
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyCollectionOf()`
   * newMethodName: `anyCollection`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.mockito.ArgumentMatchers anyIterableOf()`
   * newMethodName: `anyIterable`
-* [Delete method argument](../../deletemethodargument.md)
+* [Delete method argument](../../../java/deletemethodargument.md)
   * methodPattern: `org.mockito.ArgumentMatchers isNull(java.lang.Class)`
   * argumentIndex: `0`
-* [Delete method argument](../../deletemethodargument.md)
+* [Delete method argument](../../../java/deletemethodargument.md)
   * methodPattern: `org.mockito.ArgumentMatchers notNull(java.lang.Class)`
   * argumentIndex: `0`
-* [Reorder method arguments](../../reordermethodarguments.md)
+* [Reorder method arguments](../../../java/reordermethodarguments.md)
   * methodPattern: `org.mockito.MockedStatic verify(org.mockito.verification.VerificationMode, org.mockito.MockedStatic.Verification)`
   * newParameterNames: `[verification, mode]`
   * oldParameterNames: `[mode, verification]`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.mockito.Mockito verifyZeroInteractions(..)`
   * newMethodName: `verifyNoInteractions`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.mockito.invocation.InvocationOnMock getArgumentAt(int, java.lang.Class)`
   * newMethodName: `getArgument`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.exceptions.verification.TooLittleActualInvocations`
   * newFullyQualifiedTypeName: `org.mockito.exceptions.verification.TooFewActualInvocations`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.configuration.AnnotationEngine`
   * newFullyQualifiedTypeName: `org.mockito.plugins.AnnotationEngine`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.plugins.InstantiatorProvider`
   * newFullyQualifiedTypeName: `org.mockito.plugins.InstantiatorProvider2`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.runners.MockitoJUnitRunner`
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
-* [Cleanup Mockito imports](cleanupmockitoimports.md)
-* [Use static form of Mockito `MockUtil`](mockutilstostatic.md)
-* [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../junit5/mockitojunittomockitoextension.md)
+* [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports.md)
+* [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic.md)
+* [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.mockito`
   * artifactId: `mockito-junit-jupiter`
@@ -156,6 +170,8 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.mockito`
   * artifactId: `*`
   * newVersion: `3.x`
+  * retainVersions: `[]`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -182,14 +198,26 @@ recipeList:
       methodPattern: org.mockito.ArgumentMatchers anyObject()
       newMethodName: any
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyListOf()
+      methodPattern: org.mockito.ArgumentMatchers anyListOf(java.lang.Class)
       newMethodName: anyList
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.mockito.ArgumentMatchers anyList(java.lang.Class)
+      argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anySetOf()
+      methodPattern: org.mockito.ArgumentMatchers anySetOf(java.lang.Class)
       newMethodName: anySet
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.mockito.ArgumentMatchers anySet(java.lang.Class)
+      argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyMapOf()
+      methodPattern: org.mockito.ArgumentMatchers anyMapOf(java.lang.Class, java.lang.Class)
       newMethodName: anyMap
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.mockito.ArgumentMatchers anyMap(java.lang.Class, java.lang.Class)
+      argumentIndex: 0
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.mockito.ArgumentMatchers anyMap(java.lang.Class, java.lang.Class)
+      argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.mockito.ArgumentMatchers anyCollectionOf()
       newMethodName: anyCollection
@@ -236,6 +264,8 @@ recipeList:
       groupId: org.mockito
       artifactId: *
       newVersion: 3.x
+      retainVersions: []
+
 ```
 {% endtab %}
 {% endtabs %}

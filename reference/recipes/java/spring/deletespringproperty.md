@@ -1,14 +1,15 @@
-# Delete a spring configuration property from any configuration files that contains a matching key
+# Delete a spring configuration property
 
 **org.openrewrite.java.spring.DeleteSpringProperty**
+_Delete a spring configuration property from any configuration file that contains a matching key._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.30.0
+* version: 4.31.0
 
 ## Options
 
@@ -27,21 +28,21 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.DeleteSpringPropertyExample
-displayName: Delete a spring configuration property from any configuration files that contains a matching key example
+displayName: Delete a spring configuration property example
 recipeList:
   - org.openrewrite.java.spring.DeleteSpringProperty:
       propertyKey: management.endpoint.configprops.*
 ```
 {% endcode %}
 
-Now that `com.yourorg.DeleteSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
+Now that `com.yourorg.DeleteSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -53,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.31.0")
 }
 ```
 {% endcode %}
@@ -68,7 +69,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeleteSpringPropertyExample</recipe>
@@ -78,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.30.0</version>
+            <version>4.31.0</version>
           </dependency>
         </dependencies>
       </plugin>

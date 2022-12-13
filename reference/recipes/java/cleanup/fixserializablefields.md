@@ -1,17 +1,19 @@
-# Fields in a Serializable class should either be transient or serializable
+# Fields in a `Serializable` class should either be transient or serializable
 
-**org.openrewrite.java.cleanup.FixSerializableFields** \_The fields of a class that implements `Serializable` must also implement `Serializable` or be marked as `transient`.
+**org.openrewrite.java.cleanup.FixSerializableFields**
+_The fields of a class that implements `Serializable` must also implement `Serializable` or be marked as `transient`.
 
 This recipe will look for any classes that directly or indirectly implement `Serializable` and for any member fields that are not serializable it will do one of two things:
 
-* If a non-serializable field has a type that is represented by a `SourceFile` within the same project, that SourceFile will be changed to implement `Serializable`.
-* If a non-serializable field has a type that is not represented as a `SourceFile`, the field will be marked as `transient`
+- If a non-serializable field has a type that is represented by a `SourceFile` within the same project, that SourceFile will be changed to implement `Serializable`.
+
+- If a non-serializable field has a type that is not represented as a `SourceFile`, the field will be marked as `transient`
 
 NOTE: If `markAllAsTransient` is set to `true`, this recipe will mark all non-serializable fields as `transient`.
 
 NOTE: Any fullyQualified names listed in the `fullyQualifiedExclusions` will be marked as transient, even if that SourceFile exists in the same project.
 
-NOTE: This recipe does NOT recursively modify newly `Serilazable` classes to cut down on the graph of SourceFiles that may be impacted during a recipe run.\_
+NOTE: This recipe does NOT recursively modify newly `Serilazable` classes to cut down on the graph of SourceFiles that may be impacted during a recipe run._
 
 ### Tags
 
@@ -19,22 +21,24 @@ NOTE: This recipe does NOT recursively modify newly `Serilazable` classes to cut
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.33.0
+* version: 7.34.0
 
 ## Options
 
-| Type      | Name                     | Description                                                                                                        |
-| --------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `Boolean` | markAllAsTransient       | Mark any fields that are not serializable as transient                                                             |
-| `List`    | fullyQualifiedExclusions | _Optional_. A list of fully-qualified names that should always be marked as transient vs being made `Serializable` |
+| Type | Name | Description |
+| -- | -- | -- |
+| `Boolean` | markAllAsTransient | Mark any fields that are not serializable as transient |
+| `List` | fullyQualifiedExclusions | *Optional*. A list of fully-qualified names that should always be marked as transient vs being made `Serializable` |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FixSerializableFieldsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.FixSerializableFieldsExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -49,6 +53,7 @@ recipeList:
 ```
 {% endcode %}
 
+
 Now that `com.yourorg.FixSerializableFieldsExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -56,7 +61,7 @@ Now that `com.yourorg.FixSerializableFieldsExample` has been defined activate it
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -66,6 +71,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -79,7 +85,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FixSerializableFieldsExample</recipe>

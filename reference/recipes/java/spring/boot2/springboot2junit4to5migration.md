@@ -1,32 +1,36 @@
-# JUnit Jupiter for Spring Boot 2.x projects
+# Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4.
 
-**org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration** _Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter._
+**org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration**
+_This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations.
+_
 
 ### Tags
 
 * spring
 * junit
-* testing
-* spring-boot
+* test
+* jupiter
+* boot
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.30.0
+* version: 4.31.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -38,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.31.0")
 }
 ```
 {% endcode %}
@@ -53,7 +57,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -63,7 +67,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.30.0</version>
+            <version>4.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -77,8 +81,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.31.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration
 ```
 {% endcode %}
@@ -91,16 +95,17 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit Jupiter migration from JUnit 4.x](../../testing/junit5/junit4to5migration.md)
-* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](outputcaptureextension.md)
-* [Remove unnecessary Spring `@RunWith`](unnecessaryspringrunwith.md)
-* [Remove `@SpringExtension`](unnecessaryspringextension.md)
-* [Remove obsolete Spring JUnit runners](removeobsoletespringrunners.md)
+* [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
+* [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](../../../java/spring/boot2/outputcaptureextension.md)
+* [Remove unnecessary Spring `@RunWith`](../../../java/spring/boot2/unnecessaryspringrunwith.md)
+* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
+* [Remove obsolete Spring JUnit runners](../../../java/spring/boot2/removeobsoletespringrunners.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-tools`
   * version: `2.x`
   * onlyIfUsing: `org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -108,13 +113,15 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration
-displayName: JUnit Jupiter for Spring Boot 2.x projects
-description: Migrates Spring Boot 2.x projects having JUnit 4.x tests to JUnit Jupiter.
+displayName: Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4.
+description: This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations.
+
 tags:
   - spring
   - junit
-  - testing
-  - spring-boot
+  - test
+  - jupiter
+  - boot
 recipeList:
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
   - org.openrewrite.java.spring.boot2.OutputCaptureExtension
@@ -126,6 +133,7 @@ recipeList:
       artifactId: spring-boot-tools
       version: 2.x
       onlyIfUsing: org.springframework.boot.testsupport.runner.classpath.ModifiedClassPathExtension
+
 ```
 {% endtab %}
 {% endtabs %}

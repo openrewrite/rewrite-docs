@@ -1,20 +1,22 @@
-# Set charset encoding explicitly when calling String#getBytes
+# Set charset encoding explicitly when calling `String#getBytes`
 
-**org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes** _This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option._
+**org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes**
+_This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.33.0
+* version: 7.34.0
 
 ## Options
 
-| Type     | Name     | Description                                                       |
-| -------- | -------- | ----------------------------------------------------------------- |
-| `String` | encoding | _Optional_. The default encoding to supply to the `getBytes` call |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | encoding | *Optional*. The default encoding to supply to the `getBytes` call |
+
 
 ## Usage
 
@@ -25,7 +27,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -35,6 +37,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -48,7 +51,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes</recipe>
@@ -65,7 +68,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.ExplicitCharsetOnStringGetBytes
 ```
 {% endcode %}

@@ -1,31 +1,33 @@
 # Find pinned resources by type
 
-**org.openrewrite.concourse.search.FindPinnedResource** _Find resources of a particular type that have pinned versions._
+**org.openrewrite.concourse.search.FindPinnedResource**
+_Find resources of a particular type that have pinned versions._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-concourse), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-concourse/1.14.0/jar)
+[Github](https://github.com/openrewrite/rewrite-concourse), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-concourse/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 1.14.0
+* version: 1.15.0
 
 ## Options
 
-| Type     | Name         | Description                                                                |
-| -------- | ------------ | -------------------------------------------------------------------------- |
-| `String` | resourceType | _Optional_. The resource type to search for. Leave empty to find all pins. |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | resourceType | *Optional*. The resource type to search for. Leave empty to find all pins. |
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-concourse:1.14.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-concourse:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:1.15.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.concourse.search.FindPinnedResource</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>1.14.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-concourse:1.14.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-concourse:1.15.0 \
   -DactiveRecipes=org.openrewrite.concourse.search.FindPinnedResource
 ```
 {% endcode %}
@@ -92,6 +94,7 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find YAML entries](../../yaml/search/findkey.md)
   * key: `$.resources[?(@.type == '')].version`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -106,6 +109,7 @@ resourceType:
 recipeList:
   - org.openrewrite.yaml.search.FindKey:
       key: $.resources[?(@.type == '')].version
+
 ```
 {% endtab %}
 {% endtabs %}

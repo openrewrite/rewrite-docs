@@ -1,29 +1,32 @@
-# Use System.lineSeparator()
+# Prefer `System.lineSeparator()`
 
-**org.openrewrite.java.migrate.apache.commons.io.UseSystemLineSeparator** _Migrate `IOUtils.LINE_SEPARATOR` to `System.lineSeparator()`._
+**org.openrewrite.java.migrate.apache.commons.io.UseSystemLineSeparator**
+_Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`._
 
 ### Tags
 
 * apache
+* commons
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.14.1/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.14.1
+* version: 1.15.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.14.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -35,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.14.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.15.0")
 }
 ```
 {% endcode %}
@@ -50,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.apache.commons.io.UseSystemLineSeparator</recipe>
@@ -60,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.14.1</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -74,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.14.1 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.15.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.apache.commons.io.UseSystemLineSeparator
 ```
 {% endcode %}
@@ -88,11 +91,12 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change static field access to static method access](../../../../changestaticfieldtomethod.md)
+* [Change static field access to static method access](../../../../../java/changestaticfieldtomethod.md)
   * oldClassName: `org.apache.commons.io.IOUtils`
   * oldFieldName: `LINE_SEPARATOR`
   * newClassName: `java.lang.System`
   * newMethodName: `lineSeparator`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -100,16 +104,18 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.apache.commons.io.UseSystemLineSeparator
-displayName: Use `System.lineSeparator()`
-description: Migrate `IOUtils.LINE_SEPARATOR` to `System.lineSeparator()`.
+displayName: Prefer `System.lineSeparator()`
+description: Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`.
 tags:
   - apache
+  - commons
 recipeList:
   - org.openrewrite.java.ChangeStaticFieldToMethod:
       oldClassName: org.apache.commons.io.IOUtils
       oldFieldName: LINE_SEPARATOR
       newClassName: java.lang.System
       newMethodName: lineSeparator
+
 ```
 {% endtab %}
 {% endtabs %}

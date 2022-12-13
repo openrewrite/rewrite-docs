@@ -1,6 +1,7 @@
 # Find secrets
 
-**org.openrewrite.java.security.secrets.FindSecrets** _Locates secrets stored in plain text in code._
+**org.openrewrite.java.security.secrets.FindSecrets**
+_Locates secrets stored in plain text in code._
 
 ### Tags
 
@@ -8,22 +9,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.19.0/jar)
+[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.20.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 1.19.0
+* version: 1.20.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-java-security:1.19.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-java-security:1.20.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -35,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:1.19.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:1.20.0")
 }
 ```
 {% endcode %}
@@ -50,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.security.secrets.FindSecrets</recipe>
@@ -60,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>1.19.0</version>
+            <version>1.20.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -74,8 +76,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-security:1.19.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-security:1.20.0 \
   -DactiveRecipes=org.openrewrite.java.security.secrets.FindSecrets
 ```
 {% endcode %}
@@ -88,32 +90,33 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find Artifactory secrets](findartifactorysecrets.md)
-* [Find AWS secrets](findawssecrets.md)
-* [Find Azure secrets](findazuresecrets.md)
-* [Find Discord secrets](finddiscordsecrets.md)
-* [Find generic secrets](findgenericsecrets.md)
-* [Find GitHub secrets](findgithubsecrets.md)
-* [Find Google secrets](findgooglesecrets.md)
-* [Find Heroku secrets](findherokusecrets.md)
-* [Find JWT secrets](findjwtsecrets.md)
-* [Find MailChimp secrets](findmailchimpsecrets.md)
-* [Find Mailgun secrets](findmailgunsecrets.md)
-* [Find NPM secrets](findnpmsecrets.md)
-* [Find NPM secrets](findnpmsecrets.md)
-* [Find passwords used in URLs](findpasswordinurlsecrets.md)
-* [Find PayPal secrets](findpaypalsecrets.md)
-* [Find PGP secrets](findpgpsecrets.md)
-* [Find Picatic secrets](findpicaticsecrets.md)
-* [Find RSA private keys](findrsasecrets.md)
-* [Find SendGrid secrets](findsendgridsecrets.md)
-* [Find Slack secrets](findslacksecrets.md)
-* [Find Square secrets](findsquaresecrets.md)
-* [Find SSH secrets](findsshsecrets.md)
-* [Find Stripe secrets](findstripesecrets.md)
-* [Find Telegram secrets](findtelegramsecrets.md)
-* [Find Twilio secrets](findtwiliosecrets.md)
-* [Find Twitter secrets](findtwittersecrets.md)
+* [Find Artifactory secrets](../../../java/security/secrets/findartifactorysecrets.md)
+* [Find AWS secrets](../../../java/security/secrets/findawssecrets.md)
+* [Find Azure secrets](../../../java/security/secrets/findazuresecrets.md)
+* [Find Discord secrets](../../../java/security/secrets/finddiscordsecrets.md)
+* [Find generic secrets](../../../java/security/secrets/findgenericsecrets.md)
+* [Find GitHub secrets](../../../java/security/secrets/findgithubsecrets.md)
+* [Find Google secrets](../../../java/security/secrets/findgooglesecrets.md)
+* [Find Heroku secrets](../../../java/security/secrets/findherokusecrets.md)
+* [Find JWT secrets](../../../java/security/secrets/findjwtsecrets.md)
+* [Find MailChimp secrets](../../../java/security/secrets/findmailchimpsecrets.md)
+* [Find Mailgun secrets](../../../java/security/secrets/findmailgunsecrets.md)
+* [Find NPM secrets](../../../java/security/secrets/findnpmsecrets.md)
+* [Find NPM secrets](../../../java/security/secrets/findnpmsecrets.md)
+* [Find passwords used in URLs](../../../java/security/secrets/findpasswordinurlsecrets.md)
+* [Find PayPal secrets](../../../java/security/secrets/findpaypalsecrets.md)
+* [Find PGP secrets](../../../java/security/secrets/findpgpsecrets.md)
+* [Find Picatic secrets](../../../java/security/secrets/findpicaticsecrets.md)
+* [Find RSA private keys](../../../java/security/secrets/findrsasecrets.md)
+* [Find SendGrid secrets](../../../java/security/secrets/findsendgridsecrets.md)
+* [Find Slack secrets](../../../java/security/secrets/findslacksecrets.md)
+* [Find Square secrets](../../../java/security/secrets/findsquaresecrets.md)
+* [Find SSH secrets](../../../java/security/secrets/findsshsecrets.md)
+* [Find Stripe secrets](../../../java/security/secrets/findstripesecrets.md)
+* [Find Telegram secrets](../../../java/security/secrets/findtelegramsecrets.md)
+* [Find Twilio secrets](../../../java/security/secrets/findtwiliosecrets.md)
+* [Find Twitter secrets](../../../java/security/secrets/findtwittersecrets.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -152,6 +155,7 @@ recipeList:
   - org.openrewrite.java.security.secrets.FindTelegramSecrets
   - org.openrewrite.java.security.secrets.FindTwilioSecrets
   - org.openrewrite.java.security.secrets.FindTwitterSecrets
+
 ```
 {% endtab %}
 {% endtabs %}

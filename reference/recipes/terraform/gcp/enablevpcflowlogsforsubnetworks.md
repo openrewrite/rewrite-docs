@@ -1,31 +1,33 @@
 # Enable VPC Flow Logs for subnetworks
 
-**org.openrewrite.terraform.gcp.EnableVPCFlowLogsForSubnetworks** _Ensure GCP VPC flow logs for subnets are enabled. Flow Logs capture information on IP traffic moving through network interfaces. This information can be used to monitor anomalous traffic and provide security insights._
+**org.openrewrite.terraform.gcp.EnableVPCFlowLogsForSubnetworks**
+_Ensure GCP VPC flow logs for subnets are enabled. Flow Logs capture information on IP traffic moving through network interfaces. This information can be used to monitor anomalous traffic and provide security insights._
 
 ### Tags
 
 * GCP
-* CKV\_GCP\_26
+* CKV_GCP_26
 * terraform
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/1.14.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 1.14.0
+* version: 1.15.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:1.14.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:1.15.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.gcp.EnableVPCFlowLogsForSubnetworks</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>1.14.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:1.14.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:1.15.0 \
   -DactiveRecipes=org.openrewrite.terraform.gcp.EnableVPCFlowLogsForSubnetworks
 ```
 {% endcode %}
@@ -90,9 +92,14 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Terraform configuration](../addconfiguration.md)
+* [Add Terraform configuration](../../terraform/addconfiguration.md)
   * resourceName: `google_compute_subnetwork`
-  * content: `log_config { aggregation_interval = "INTERVAL_10_MIN" flow_sampling = 0.5 metadata = "INCLUDE_ALL_METADATA" }`
+  * content: `log_config {
+  aggregation_interval = "INTERVAL_10_MIN"
+  flow_sampling        = 0.5
+  metadata             = "INCLUDE_ALL_METADATA"
+}`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -114,6 +121,7 @@ recipeList:
   flow_sampling        = 0.5
   metadata             = "INCLUDE_ALL_METADATA"
 }
+
 ```
 {% endtab %}
 {% endtabs %}

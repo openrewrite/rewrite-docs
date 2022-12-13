@@ -1,6 +1,7 @@
 # Best practices for GCP
 
-**org.openrewrite.terraform.gcp.GCPBestPractices** _Securely operate on Google Cloud Platform._
+**org.openrewrite.terraform.gcp.GCPBestPractices**
+_Securely operate on Google Cloud Platform._
 
 ### Tags
 
@@ -9,22 +10,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/1.14.0/jar)
+[Github](https://github.com/openrewrite/rewrite-terraform), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-terraform/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 1.14.0
+* version: 1.15.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:1.14.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-terraform:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -36,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:1.15.0")
 }
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.gcp.GCPBestPractices</recipe>
@@ -61,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>1.14.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:1.14.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:1.15.0 \
   -DactiveRecipes=org.openrewrite.terraform.gcp.GCPBestPractices
 ```
 {% endcode %}
@@ -89,20 +91,21 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Ensure GCP Kubernetes cluster node auto-repair configuration is enabled](ensuregcpkubernetesclusternodeautorepairconfigurationisenabled.md)
-* [Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters](enablepodsecuritypolicycontrollerongkeclusters.md)
-* [Ensure private cluster is enabled when creating Kubernetes clusters](ensureprivateclusterisenabledwhencreatingkubernetesclusters.md)
-* [Enable VPC Flow Logs for subnetworks](enablevpcflowlogsforsubnetworks.md)
-* [Ensure GCP cloud storage bucket with uniform bucket-level access are enabled](ensuregcpcloudstoragebucketwithuniformbucketlevelaccessareenabled.md)
-* [Ensure GCP VM instances have block project-wide SSH keys feature enabled](ensuregcpvminstanceshaveblockprojectwidesshkeysfeatureenabled.md)
-* [Ensure IP forwarding on instances is disabled](ensureipforwardingoninstancesisdisabled.md)
-* [Ensure compute instances launch with shielded VM enabled](ensurecomputeinstanceslaunchwithshieldedvmenabled.md)
-* [Enable VPC flow logs and intranode visibility](enablevpcflowlogsandintranodevisibility.md)
-* [Ensure binary authorization is used](ensurebinaryauthorizationisused.md)
-* [Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpoints disabled](ensuregcpkubernetesengineclustershavelegacycomputeenginemetadataendpointsdisabled.md)
-* [Ensure secure boot for shielded GKE nodes is enabled](ensuresecurebootforshieldedgkenodesisenabled.md)
-* [Ensure the GKE metadata server is enabled](ensurethegkemetadataserverisenabled.md)
-* [Ensure shielded GKE nodes are enabled](ensureshieldedgkenodesareenabled.md)
+* [Ensure GCP Kubernetes cluster node auto-repair configuration is enabled](../../terraform/gcp/ensuregcpkubernetesclusternodeautorepairconfigurationisenabled.md)
+* [Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters](../../terraform/gcp/enablepodsecuritypolicycontrollerongkeclusters.md)
+* [Ensure private cluster is enabled when creating Kubernetes clusters](../../terraform/gcp/ensureprivateclusterisenabledwhencreatingkubernetesclusters.md)
+* [Enable VPC Flow Logs for subnetworks](../../terraform/gcp/enablevpcflowlogsforsubnetworks.md)
+* [Ensure GCP cloud storage bucket with uniform bucket-level access are enabled](../../terraform/gcp/ensuregcpcloudstoragebucketwithuniformbucketlevelaccessareenabled.md)
+* [Ensure GCP VM instances have block project-wide SSH keys feature enabled](../../terraform/gcp/ensuregcpvminstanceshaveblockprojectwidesshkeysfeatureenabled.md)
+* [Ensure IP forwarding on instances is disabled](../../terraform/gcp/ensureipforwardingoninstancesisdisabled.md)
+* [Ensure compute instances launch with shielded VM enabled](../../terraform/gcp/ensurecomputeinstanceslaunchwithshieldedvmenabled.md)
+* [Enable VPC flow logs and intranode visibility](../../terraform/gcp/enablevpcflowlogsandintranodevisibility.md)
+* [Ensure binary authorization is used](../../terraform/gcp/ensurebinaryauthorizationisused.md)
+* [Ensure GCP Kubernetes engine clusters have legacy compute engine metadata endpoints disabled](../../terraform/gcp/ensuregcpkubernetesengineclustershavelegacycomputeenginemetadataendpointsdisabled.md)
+* [Ensure secure boot for shielded GKE nodes is enabled](../../terraform/gcp/ensuresecurebootforshieldedgkenodesisenabled.md)
+* [Ensure the GKE metadata server is enabled](../../terraform/gcp/ensurethegkemetadataserverisenabled.md)
+* [Ensure shielded GKE nodes are enabled](../../terraform/gcp/ensureshieldedgkenodesareenabled.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -130,6 +133,7 @@ recipeList:
   - org.openrewrite.terraform.gcp.EnsureSecureBootForShieldedGKENodesIsEnabled
   - org.openrewrite.terraform.gcp.EnsureTheGKEMetadataServerIsEnabled
   - org.openrewrite.terraform.gcp.EnsureShieldedGKENodesAreEnabled
+
 ```
 {% endtab %}
 {% endtabs %}

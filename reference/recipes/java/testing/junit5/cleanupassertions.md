@@ -1,6 +1,7 @@
 # Clean Up Assertions
 
-**org.openrewrite.java.testing.junit5.CleanupAssertions** _Simplifies JUnit Jupiter assertions to their most-direct equivalents_
+**org.openrewrite.java.testing.junit5.CleanupAssertions**
+_Simplifies JUnit Jupiter assertions to their most-direct equivalents_
 
 ### Tags
 
@@ -9,22 +10,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.31.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.32.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.31.0
+* version: 1.32.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -36,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0")
 }
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.CleanupAssertions</recipe>
@@ -61,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.31.0</version>
+            <version>1.32.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0 \
   -DactiveRecipes=org.openrewrite.java.testing.junit5.CleanupAssertions
 ```
 {% endcode %}
@@ -89,14 +91,15 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Replace JUnit `assertTrue(!<boolean>)` to `assertFalse(<boolean>)`](../cleanup/asserttruenegationtoassertfalse.md)
-* [Replace JUnit `assertFalse(!<boolean>)` to `assertTrue(<boolean>)`](../cleanup/assertfalsenegationtoasserttrue.md)
-* [Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`](../cleanup/asserttrueequalstoassertequals.md)
-* [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](../cleanup/asserttruecomparisontoassertequals.md)
-* [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](../cleanup/assertfalseequalstoassertnotequals.md)
-* [`assertEquals(a, null)` to `assertNull(a)`](../cleanup/assertequalsnulltoassertnull.md)
-* [Replace JUnit `assertFalse(a == null)` to `assertNotNull(a)`](../cleanup/assertfalsenulltoassertnotnull.md)
-* [Assertion arguments should be passed in the correct order](../cleanup/assertionsargumentorder.md)
+* [Replace JUnit `assertTrue(!<boolean>)` to `assertFalse(<boolean>)`](../../../java/testing/cleanup/asserttruenegationtoassertfalse.md)
+* [Replace JUnit `assertFalse(!<boolean>)` to `assertTrue(<boolean>)`](../../../java/testing/cleanup/assertfalsenegationtoasserttrue.md)
+* [Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`](../../../java/testing/cleanup/asserttrueequalstoassertequals.md)
+* [Junit `assertTrue(a == b)` to `assertEquals(a,b)`](../../../java/testing/cleanup/asserttruecomparisontoassertequals.md)
+* [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](../../../java/testing/cleanup/assertfalseequalstoassertnotequals.md)
+* [`assertEquals(a, null)` to `assertNull(a)`](../../../java/testing/cleanup/assertequalsnulltoassertnull.md)
+* [Replace JUnit `assertFalse(a == null)` to `assertNotNull(a)`](../../../java/testing/cleanup/assertfalsenulltoassertnotnull.md)
+* [Assertion arguments should be passed in the correct order](../../../java/testing/cleanup/assertionsargumentorder.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -118,6 +121,7 @@ recipeList:
   - org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull
   - org.openrewrite.java.testing.cleanup.AssertFalseNullToAssertNotNull
   - org.openrewrite.java.testing.cleanup.AssertionsArgumentOrder
+
 ```
 {% endtab %}
 {% endtabs %}

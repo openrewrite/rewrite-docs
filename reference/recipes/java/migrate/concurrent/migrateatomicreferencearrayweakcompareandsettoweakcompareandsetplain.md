@@ -1,25 +1,27 @@
-# Use AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)
+# Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`
 
-**org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain** _`AtomicReferenceArray#weakCompareAndSet(int, T, T)` was deprecated in Java 9._
+**org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain**
+_Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)` instead of the deprecated `AtomicReferenceArray#weakCompareAndSet(int, T, T)` in Java 9 or higher._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.14.1/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.14.1
+* version: 1.15.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.14.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.14.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.15.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.14.1</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.14.1 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.15.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain
 ```
 {% endcode %}
@@ -84,9 +86,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `java.util.concurrent.atomic.AtomicReferenceArray weakCompareAndSet(int, ..)`
   * newMethodName: `weakCompareAndSetPlain`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -95,11 +98,12 @@ Recipes can also be activated directly from the command line by adding the argum
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain
 displayName: Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`
-description: `AtomicReferenceArray#weakCompareAndSet(int, T, T)` was deprecated in Java 9.
+description: Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)` instead of the deprecated `AtomicReferenceArray#weakCompareAndSet(int, T, T)` in Java 9 or higher.
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.util.concurrent.atomic.AtomicReferenceArray weakCompareAndSet(int, ..)
       newMethodName: weakCompareAndSetPlain
+
 ```
 {% endtab %}
 {% endtabs %}

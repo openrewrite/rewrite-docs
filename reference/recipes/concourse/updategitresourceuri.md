@@ -1,26 +1,29 @@
-# Update git resource source.uri references
+# Update git resource `source.uri` references
 
-**org.openrewrite.concourse.UpdateGitResourceUri** _Update git resource `source.uri` URI values to point to a new URI value._
+**org.openrewrite.concourse.UpdateGitResourceUri**
+_Update git resource `source.uri` URI values to point to a new URI value._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-concourse), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-concourse/1.14.0/jar)
+[Github](https://github.com/openrewrite/rewrite-concourse), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-concourse/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 1.14.0
+* version: 1.15.0
 
 ## Options
 
-| Type     | Name          | Description                                                                                                    |
-| -------- | ------------- | -------------------------------------------------------------------------------------------------------------- |
-| `String` | oldURIPattern | _Optional_. The old URI value to replace. This can be a regex pattern. If left empty, replace all occurrences. |
-| `String` | newURI        | New URI value to replace the old URI value with.                                                               |
-| `String` | fileMatcher   | _Optional_. Matching files will be modified. This is a glob expression.                                        |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | oldURIPattern | *Optional*. The old URI value to replace. This can be a regex pattern. If left empty, replace all occurrences. |
+| `String` | newURI | New URI value to replace the old URI value with. |
+| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateGitResourceUriExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.UpdateGitResourceUriExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,14 +39,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:1.14.0 in your build file:
+Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -55,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:1.15.0")
 }
 ```
 {% endcode %}
@@ -70,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateGitResourceUriExample</recipe>
@@ -80,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>1.14.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -98,11 +101,12 @@ Recipes can also be activated directly from the commandline by adding the argume
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change Concourse value](changevalue.md)
+* [Change Concourse value](../concourse/changevalue.md)
   * keyPath: `$.resources[?(@.type == 'git')].source.uri`
-  * oldValue: \`\`
-  * newValue: \`\`
-  * fileMatcher: \`\`
+  * oldValue: ``
+  * newValue: ``
+  * fileMatcher: ``
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -124,6 +128,7 @@ recipeList:
       oldValue: 
       newValue: 
       fileMatcher: 
+
 ```
 {% endtab %}
 {% endtabs %}

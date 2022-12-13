@@ -1,6 +1,7 @@
-# Migrate deprecated javax.xml.ws packages to jakarta.xml.ws
+# Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`
 
-**org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs** _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+**org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs**
+_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
@@ -10,22 +11,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.14.1/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.14.1
+* version: 1.15.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.14.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.14.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.15.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.14.1</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.14.1 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.15.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs
 ```
 {% endcode %}
@@ -99,6 +101,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.xml.ws`
   * artifactId: `jakarta.xml.ws-api`
   * newVersion: `3.x`
+  * retainVersions: `[]`
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
@@ -109,13 +112,15 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
   * newVersion: `3.x`
-* [Rename package name](../../changepackage.md)
+  * retainVersions: `[]`
+* [Rename package name](../../../java/changepackage.md)
   * oldPackageName: `javax.xml.ws`
   * newPackageName: `jakarta.xml.ws`
   * recursive: `true`
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `javax.xml.ws`
   * artifactId: `jaxws-api`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -139,6 +144,7 @@ recipeList:
       groupId: jakarta.xml.ws
       artifactId: jakarta.xml.ws-api
       newVersion: 3.x
+      retainVersions: []
   - org.openrewrite.maven.AddDependency:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt
@@ -149,6 +155,7 @@ recipeList:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt
       newVersion: 3.x
+      retainVersions: []
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.xml.ws
       newPackageName: jakarta.xml.ws
@@ -156,6 +163,7 @@ recipeList:
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.xml.ws
       artifactId: jaxws-api
+
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,25 +1,27 @@
 # Upgrade to Spring Boot 2.5
 
-**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_5** _Upgrade to Spring Boot 2.5 from any prior 2.x version._
+**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_5**
+_Upgrade to Spring Boot 2.5 from any prior 2.x version._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.30.0
+* version: 4.31.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.31.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.30.0</version>
+            <version>4.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.31.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5
 ```
 {% endcode %}
@@ -84,26 +86,29 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Spring Boot 2.4](upgradespringboot\_2\_4.md)
+* [Migrate to Spring Boot 2.4 from Spring Boot 2.0 through 2.3](../../../java/spring/boot2/upgradespringboot_2_4.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.5.x`
   * overrideManagedVersion: `true`
+  * retainVersions: `[]`
 * [Upgrade Maven parent project version](../../../maven/upgradeparentversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.5.x`
-* [Migrate flyway and liquibase credentials](migratedatabasecredentials.md)
-* [Migrate deprecated ActuatorMediaType to ApiVersion#getProducedMimeType](migrateactuatormediatypetoapiversion.md)
-* [Change type](../../changetype.md)
+  * retainVersions: `[]`
+* [Migrate flyway and liquibase credentials](../../../java/spring/boot2/migratedatabasecredentials.md)
+* [Migrate deprecated ActuatorMediaType to ApiVersion#getProducedMimeType](../../../java/spring/boot2/migrateactuatormediatypetoapiversion.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.jpa.EntityManagerFactoryDependsOnPostProcessor`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.orm.jpa.EntityManagerFactoryDependsOnPostProcessor`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.ResourceProperties`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.WebProperties$Resources`
-* [Migrate Spring Boot properties to 2.5](springbootproperties\_2\_5.md)
-* [Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource](databasecomponentandbeaninitializationordering.md)
+* [Migrate Spring Boot properties to 2.5](../../../java/spring/boot2/springbootproperties_2_5.md)
+* [Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource](../../../java/spring/boot2/databasecomponentandbeaninitializationordering.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -120,10 +125,12 @@ recipeList:
       artifactId: *
       newVersion: 2.5.x
       overrideManagedVersion: true
+      retainVersions: []
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 2.5.x
+      retainVersions: []
   - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials
   - org.openrewrite.java.spring.boot2.MigrateActuatorMediaTypeToApiVersion
   - org.openrewrite.java.ChangeType:
@@ -134,6 +141,7 @@ recipeList:
       newFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.WebProperties$Resources
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_5
   - org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering
+
 ```
 {% endtab %}
 {% endtabs %}

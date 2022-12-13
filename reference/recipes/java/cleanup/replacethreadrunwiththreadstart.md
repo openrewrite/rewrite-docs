@@ -1,6 +1,7 @@
-# Replace calls to Thread.run() with Thread.start()
+# Replace calls to `Thread.run()` with `Thread.start()`
 
-**org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart** _`Thread.run()` should not be called directly._
+**org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart**
+_`Thread.run()` should not be called directly._
 
 ### Tags
 
@@ -8,11 +9,12 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.33.0
+* version: 7.34.0
+
 
 ## Usage
 
@@ -23,7 +25,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -33,6 +35,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -46,7 +49,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart</recipe>
@@ -63,7 +66,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.ReplaceThreadRunWithThreadStart
 ```
 {% endcode %}
@@ -76,9 +79,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change method name](../changemethodname.md)
+* [Change method name](../../java/changemethodname.md)
   * methodPattern: `java.lang.Thread run()`
   * newMethodName: `start`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -94,6 +98,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Thread run()
       newMethodName: start
+
 ```
 {% endtab %}
 {% endtabs %}

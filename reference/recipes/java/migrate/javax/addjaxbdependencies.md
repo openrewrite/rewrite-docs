@@ -1,6 +1,8 @@
 # Add explicit JAXB dependencies
 
-**org.openrewrite.java.migrate.javax.AddJaxbDependencies** \_This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. \*\*The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace. \_
+**org.openrewrite.java.migrate.javax.AddJaxbDependencies**
+_This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. **The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
+_
 
 ### Tags
 
@@ -12,22 +14,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.14.1/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.14.1
+* version: 1.15.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.14.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -39,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.14.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.15.0")
 }
 ```
 {% endcode %}
@@ -54,7 +57,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.javax.AddJaxbDependencies</recipe>
@@ -64,7 +67,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.14.1</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,8 +81,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.14.1 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.15.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.javax.AddJaxbDependencies
 ```
 {% endcode %}
@@ -119,7 +122,8 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
   * newVersion: `2.3.x`
-* [Use latest JAXB API and runtime for Jakarta EE 8](addjaxbruntime.md)
+  * retainVersions: `[]`
+* [Use latest JAXB API and runtime for Jakarta EE 8](../../../java/migrate/javax/addjaxbruntime.md)
   * runtime: `glassfish`
 * [Remove redundant explicit dependency versions](../../../maven/removeredundantdependencyversions.md)
   * groupPattern: `org.glassfish.jaxb`
@@ -133,6 +137,7 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupPattern: `jakarta.xml.bind`
   * artifactPattern: `*`
   * onlyIfVersionsMatch: `true`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -177,6 +182,7 @@ recipeList:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
       newVersion: 2.3.x
+      retainVersions: []
   - org.openrewrite.java.migrate.javax.AddJaxbRuntime:
       runtime: glassfish
   - org.openrewrite.maven.RemoveRedundantDependencyVersions:
@@ -191,6 +197,7 @@ recipeList:
       groupPattern: jakarta.xml.bind
       artifactPattern: *
       onlyIfVersionsMatch: true
+
 ```
 {% endtab %}
 {% endtabs %}

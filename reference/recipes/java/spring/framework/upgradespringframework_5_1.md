@@ -1,25 +1,27 @@
-# Upgrade to Spring Framework 5.1
+# Migrate to Spring Framework 5.1 from Spring Framework 5.0
 
-**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_1** _Upgrade to Spring Framework to 5.1 from any prior version._
+**org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_1**
+_Migrate applications built on Spring Framework 5.0 to the latest Spring Framework 5.1 release._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.30.0
+* version: 4.31.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.31.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_1</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.30.0</version>
+            <version>4.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.31.0 \
   -DactiveRecipes=org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_1
 ```
 {% endcode %}
@@ -84,9 +86,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade spring-framework Maven dependencies](upgradespringframeworkdependencies.md)
+* [Upgrade spring-framework Maven dependencies](../../../java/spring/framework/upgradespringframeworkdependencies.md)
   * newVersion: `5.1.x`
-* [Use `Environment#acceptsProfiles(Profiles)`](environmentacceptsprofiles.md)
+* [Use `Environment#acceptsProfiles(Profiles)`](../../../java/spring/framework/environmentacceptsprofiles.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -94,12 +97,13 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_1
-displayName: Upgrade to Spring Framework 5.1
-description: Upgrade to Spring Framework to 5.1 from any prior version.
+displayName: Migrate to Spring Framework 5.1 from Spring Framework 5.0
+description: Migrate applications built on Spring Framework 5.0 to the latest Spring Framework 5.1 release.
 recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFrameworkDependencies:
       newVersion: 5.1.x
   - org.openrewrite.java.spring.framework.EnvironmentAcceptsProfiles
+
 ```
 {% endtab %}
 {% endtabs %}

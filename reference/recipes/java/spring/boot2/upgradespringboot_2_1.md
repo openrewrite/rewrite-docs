@@ -1,25 +1,33 @@
-# Upgrade to Spring Boot 2.1
+# Migrate to Spring Boot 2.1 from Spring Boot 2.0
 
-**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_1** _Upgrade to Spring Boot 2.1 from any prior 2.x version._
+**org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_1**
+_Migrate applications built on Spring Boot 2.0 to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1.
+_
+
+### Tags
+
+* spring
+* boot
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.30.0
+* version: 4.31.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -31,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.31.0")
 }
 ```
 {% endcode %}
@@ -46,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1</recipe>
@@ -56,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.30.0</version>
+            <version>4.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.31.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1
 ```
 {% endcode %}
@@ -89,14 +97,17 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `*`
   * newVersion: `2.1.x`
   * overrideManagedVersion: `true`
+  * retainVersions: `[]`
 * [Upgrade Maven parent project version](../../../maven/upgradeparentversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.1.x`
-* [Use `RestTemplateBuilder#basicAuthentication`](migrateresttemplatebuilderbasicauthorization.md)
-* [Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`](migrateresttemplatebuildertimeoutbyint.md)
-* [Use `MultipartConfigFactory` with `DataSize` arguments](migratemultipartconfigfactory.md)
-* [Migrate Spring Boot properties to 2.1](springbootproperties\_2\_1.md)
+  * retainVersions: `[]`
+* [Use `RestTemplateBuilder#basicAuthentication`](../../../java/spring/boot2/migrateresttemplatebuilderbasicauthorization.md)
+* [Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`](../../../java/spring/boot2/migrateresttemplatebuildertimeoutbyint.md)
+* [Use `MultipartConfigFactory` with `DataSize` arguments](../../../java/spring/boot2/migratemultipartconfigfactory.md)
+* [Migrate Spring Boot properties to 2.1](../../../java/spring/boot2/springbootproperties_2_1.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -104,22 +115,29 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1
-displayName: Upgrade to Spring Boot 2.1
-description: Upgrade to Spring Boot 2.1 from any prior 2.x version.
+displayName: Migrate to Spring Boot 2.1 from Spring Boot 2.0
+description: Migrate applications built on Spring Boot 2.0 to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1.
+
+tags:
+  - spring
+  - boot
 recipeList:
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: *
       newVersion: 2.1.x
       overrideManagedVersion: true
+      retainVersions: []
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 2.1.x
+      retainVersions: []
   - org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderBasicAuthorization
   - org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderTimeoutByInt
   - org.openrewrite.java.spring.boot2.MigrateMultipartConfigFactory
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_1
+
 ```
 {% endtab %}
 {% endtabs %}

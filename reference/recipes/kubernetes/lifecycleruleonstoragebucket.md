@@ -1,6 +1,7 @@
-# Ensure lifecycle rule on StorageBucket
+# Ensure lifecycle rule on `StorageBucket`
 
-**org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket** _When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
+**org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket**
+_When defining a rule, you can specify any set of conditions for any action. The following configuration defines a rule to delete all objects older than 7 days in a bucket._
 
 ### Tags
 
@@ -8,22 +9,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.25.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.26.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.25.0
+* version: 1.26.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.25.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.26.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -35,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.25.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.26.0")
 }
 ```
 {% endcode %}
@@ -50,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket</recipe>
@@ -60,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.25.0</version>
+            <version>1.26.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -74,8 +76,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:1.25.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:1.26.0 \
   -DactiveRecipes=org.openrewrite.kubernetes.LifecycleRuleOnStorageBucket
 ```
 {% endcode %}
@@ -88,12 +90,16 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Kubernetes configuration](addconfiguration.md)
+* [Add Kubernetes configuration](../kubernetes/addconfiguration.md)
   * apiVersion: `storage.cnrm.cloud.google.com/v1beta1`
   * resourceKind: `StorageBucket`
   * configurationPath: `$.spec`
-  * value: \`lifecycleRule:
-  * action: type: Delete condition: age: 7\`
+  * value: `lifecycleRule:
+  - action:
+      type: Delete
+    condition:
+      age: 7`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -115,6 +121,7 @@ recipeList:
       type: Delete
     condition:
       age: 7
+
 ```
 {% endtab %}
 {% endtabs %}

@@ -4,13 +4,13 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 
 ## Recipes
 
-* [Add JDeprScan Maven Plug-in](addjdeprscanplugin.md)
+* [Add `JDeprScan` Maven Plug-in](addjdeprscanplugin.md)
 * [Add Maven Jar Plugin to suppress Illegal Reflection Warnings](addsuppressionforillegalreflectionwarningsplugin.md)
 * [Change Maven Java version property values to 11](javaversion11.md)
 * [Change Maven Java version property values to 17](javaversion17.md)
 * [Migrate to Java 11 from Java 8 through 10](java8tojava11.md)
 * [Migrate to Java 17 from Java 8 through 16](upgradetojava17.md)
-* [Use `java.util.Base64` instead of `sun.misc`](usejavautilbase64.md)
+* [Prefer `java.util.Base64` instead of `sun.misc`](usejavautilbase64.md)
 
 ## Subcategories
 
@@ -20,6 +20,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Jacoco](/reference/recipes/java/migrate/jacoco)
 * [Jakarta](/reference/recipes/java/migrate/jakarta)
 * [Lombok](/reference/recipes/java/migrate/lombok)
+* [Maven](/reference/recipes/java/migrate/maven)
 * [Metrics](/reference/recipes/java/migrate/metrics)
 * [Search](/reference/recipes/java/migrate/search)
 * [Util](/reference/recipes/java/migrate/util)

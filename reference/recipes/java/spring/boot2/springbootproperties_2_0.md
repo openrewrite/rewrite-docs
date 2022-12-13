@@ -1,25 +1,27 @@
 # Migrate Spring Boot properties to 2.0
 
-**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_0** _Migrate properties found in `application.properties` and `application.yml`._
+**org.openrewrite.java.spring.boot2.SpringBootProperties\_2\_0**
+_Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.30.0
+* version: 4.31.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.31.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBootProperties_2_0</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.30.0</version>
+            <version>4.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.31.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.SpringBootProperties_2_0
 ```
 {% endcode %}
@@ -92,510 +94,511 @@ Recipes can also be activated directly from the command line by adding the argum
   * propertyKey: `spring.main.banner-mode`
   * newValue: `off`
   * oldValue: `false`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.main.show-banner`
   * newPropertyKey: `spring.main.banner-mode`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.main.web-environment`
   * newPropertyKey: `spring.main.web-application-type`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `banner.charset`
   * newPropertyKey: `spring.banner.charset`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `banner.image.height`
   * newPropertyKey: `spring.banner.image.height`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `banner.image.invert`
   * newPropertyKey: `spring.banner.image.invert`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `banner.image.location`
   * newPropertyKey: `spring.banner.image.location`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `banner.image.margin`
   * newPropertyKey: `spring.banner.image.margin`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `banner.image.width`
   * newPropertyKey: `spring.banner.image.width`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `banner.location`
   * newPropertyKey: `spring.banner.location`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `security.filter-dispatcher-types`
   * newPropertyKey: `spring.security.filter.dispatcher-types`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `security.filter-order`
   * newPropertyKey: `spring.security.filter.order`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.data.cassandra.repositories.enabled`
   * newPropertyKey: `spring.data.cassandra.repositories.type`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.data.couchbase.repositories.enabled`
   * newPropertyKey: `spring.data.couchbase.repositories.type`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.data.mongodb.repositories.enabled`
   * newPropertyKey: `spring.data.mongodb.repositories.type`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.jta.bitronix.properties.background-recovery-interval`
   * newPropertyKey: `spring.jta.bitronix.properties.background-recovery-interval-seconds`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.mvc.media-types`
   * newPropertyKey: `spring.mvc.contentnegotiation.media-types`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.baseline-description`
   * newPropertyKey: `spring.flyway.baseline-description`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.baseline-on-migrate`
   * newPropertyKey: `spring.flyway.baseline-on-migrate`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.baseline-version`
   * newPropertyKey: `spring.flyway.baseline-version`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.check-location`
   * newPropertyKey: `spring.flyway.check-location`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.clean-on-validation-error`
   * newPropertyKey: `spring.flyway.clean-on-validation-error`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.enabled`
   * newPropertyKey: `spring.flyway.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.encoding`
   * newPropertyKey: `spring.flyway.encoding`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.init-sqls`
   * newPropertyKey: `spring.flyway.init-sqls`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.locations`
   * newPropertyKey: `spring.flyway.locations`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.out-of-order`
   * newPropertyKey: `spring.flyway.out-of-order`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.password`
   * newPropertyKey: `spring.flyway.password`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.placeholder-prefix`
   * newPropertyKey: `spring.flyway.placeholder-prefix`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.placeholder-replacement`
   * newPropertyKey: `spring.flyway.placeholder-replacement`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.placeholder-suffix`
   * newPropertyKey: `spring.flyway.placeholder-suffix`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.placeholders`
   * newPropertyKey: `spring.flyway.placeholders`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.schemas`
   * newPropertyKey: `spring.flyway.schemas`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.sql-migration-prefix`
   * newPropertyKey: `spring.flyway.sql-migration-prefix`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.sql-migration-separator`
   * newPropertyKey: `spring.flyway.sql-migration-separator`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.sql-migration-suffix`
   * newPropertyKey: `spring.flyway.sql-migration-suffixes`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.table`
   * newPropertyKey: `spring.flyway.table`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.target`
   * newPropertyKey: `spring.flyway.target`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.url`
   * newPropertyKey: `spring.flyway.url`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.user`
   * newPropertyKey: `spring.flyway.user`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `flyway.validate-on-migrate`
   * newPropertyKey: `spring.flyway.validate-on-migrate`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.change-log`
   * newPropertyKey: `spring.liquibase.change-log`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.check-change-log-location`
   * newPropertyKey: `spring.liquibase.check-change-log-location`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.contexts`
   * newPropertyKey: `spring.liquibase.contexts`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.default-schema`
   * newPropertyKey: `spring.liquibase.default-schema`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.drop-first`
   * newPropertyKey: `spring.liquibase.drop-first`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.enabled`
   * newPropertyKey: `spring.liquibase.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.labels`
   * newPropertyKey: `spring.liquibase.labels`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.parameters`
   * newPropertyKey: `spring.liquibase.parameters`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.password`
   * newPropertyKey: `spring.liquibase.password`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.rollback-file`
   * newPropertyKey: `spring.liquibase.rollback-file`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.url`
   * newPropertyKey: `spring.liquibase.url`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `liquibase.user`
   * newPropertyKey: `spring.liquibase.user`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `security.user.name`
   * newPropertyKey: `spring.security.user.name`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `security.user.password`
   * newPropertyKey: `spring.security.user.password`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `security.user.role`
   * newPropertyKey: `spring.security.user.roles`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.context-parameters`
   * newPropertyKey: `server.servlet.context-parameters`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.context-path`
   * newPropertyKey: `server.servlet.context-path`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.display-name`
   * newPropertyKey: `server.servlet.application-display-name`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jsp-servlet.class-name`
   * newPropertyKey: `server.servlet.jsp.class-name`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jsp-servlet.init-parameters`
   * newPropertyKey: `server.servlet.jsp.init-parameters`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jsp-servlet.registered`
   * newPropertyKey: `server.servlet.jsp.registered`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.servlet-path`
   * newPropertyKey: `server.servlet.path`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.cookie.comment`
   * newPropertyKey: `server.servlet.session.cookie.comment`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.cookie.domain`
   * newPropertyKey: `server.servlet.session.cookie.domain`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.cookie.http-only`
   * newPropertyKey: `server.servlet.session.cookie.http-only`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.cookie.max-age`
   * newPropertyKey: `server.servlet.session.cookie.max-age`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.cookie.name`
   * newPropertyKey: `server.servlet.session.cookie.name`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.cookie.path`
   * newPropertyKey: `server.servlet.session.cookie.path`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.cookie.secure`
   * newPropertyKey: `server.servlet.session.cookie.secure`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.persistent`
   * newPropertyKey: `server.servlet.session.persistent`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.store-dir`
   * newPropertyKey: `server.servlet.session.store-dir`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.timeout`
   * newPropertyKey: `server.servlet.session.timeout`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.session.tracking-modes`
   * newPropertyKey: `server.servlet.session.tracking-modes`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.batch.initializer.enabled`
   * newPropertyKey: `spring.batch.initialize-schema`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.data.cassandra.connect-timeout-millis`
   * newPropertyKey: `spring.data.cassandra.connect-timeout`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.data.cassandra.read-timeout-millis`
   * newPropertyKey: `spring.data.cassandra.read-timeout`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.initialize`
   * newPropertyKey: `spring.datasource.initialization-mode`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.flyway.sql-migration-suffix`
   * newPropertyKey: `spring.flyway.sql-migration-suffixes`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.git.properties`
   * newPropertyKey: `spring.info.git.location`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.http.multipart.enabled`
   * newPropertyKey: `spring.servlet.multipart.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.http.multipart.file-size-threshold`
   * newPropertyKey: `spring.servlet.multipart.file-size-threshold`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.http.multipart.location`
   * newPropertyKey: `spring.servlet.multipart.location`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.http.multipart.max-file-size`
   * newPropertyKey: `spring.servlet.multipart.max-file-size`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.http.multipart.max-request-size`
   * newPropertyKey: `spring.servlet.multipart.max-request-size`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.http.multipart.resolve-lazily`
   * newPropertyKey: `spring.servlet.multipart.resolve-lazily`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.messages.cache-seconds`
   * newPropertyKey: `spring.messages.cache-duration`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.redis.pool.max-active`
   * newPropertyKey: `spring.redis.jedis.pool.max-idle`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.redis.pool.max-idle`
   * newPropertyKey: `spring.redis.jedis.pool.max-idle`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.redis.pool.max-wait`
   * newPropertyKey: `spring.redis.jedis.pool.max-wait`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.redis.pool.min-idle`
   * newPropertyKey: `spring.redis.jedis.pool.min-idle`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.resources.cache-period`
   * newPropertyKey: `spring.resources.cache.period`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.session.jdbc.initializer.enabled`
   * newPropertyKey: `spring.session.jdbc.initialize-schema`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.session.mongo.collection-name`
   * newPropertyKey: `spring.session.mongodb.collection-name`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.thymeleaf.content-type`
   * newPropertyKey: `spring.thymeleaf.servlet.content-type`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.auditevents.enabled`
   * newPropertyKey: `management.endpoint.auditevents.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.auditevents.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.auditevents`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.autoconfig.enabled`
   * newPropertyKey: `management.endpoint.conditions.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.autoconfig.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.conditions`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.beans.enabled`
   * newPropertyKey: `management.endpoint.beans.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.beans.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.beans`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.configprops.enabled`
   * newPropertyKey: `management.endpoint.configprops.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.configprops.keys-to-sanitize`
   * newPropertyKey: `management.endpoint.configprops.keys-to-sanitize`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.configprops.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.configprops`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.cors.allow-credentials`
   * newPropertyKey: `management.endpoints.web.cors.allow-credentials`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.cors.allowed-headers`
   * newPropertyKey: `management.endpoints.web.cors.allowed-headers`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.cors.allowed-methods`
   * newPropertyKey: `management.endpoints.web.cors.allowed-methods`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.cors.allowed-origins`
   * newPropertyKey: `management.endpoints.web.cors.allowed-origins`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.cors.exposed-headers`
   * newPropertyKey: `management.endpoints.web.cors.exposed-headers`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.cors.max-age`
   * newPropertyKey: `management.endpoints.web.cors.max-age`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.dump.enabled`
   * newPropertyKey: `management.endpoint.threaddump.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.dump.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.dump`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.enabled`
   * newPropertyKey: `management.endpoints.enabled-by-default`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.env.enabled`
   * newPropertyKey: `management.endpoint.env.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.env.keys-to-sanitize`
   * newPropertyKey: `management.endpoint.env.keys-to-sanitize`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.env.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.env`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.flyway.enabled`
   * newPropertyKey: `management.endpoint.flyway.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.health.enabled`
   * newPropertyKey: `management.endpoint.health.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.health.mapping`
   * newPropertyKey: `management.health.status.http-mapping`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.health.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.health`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.health.time-to-live`
   * newPropertyKey: `management.endpoint.health.cache.time-to-live`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.heapdump.enabled`
   * newPropertyKey: `management.endpoint.heapdump.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.heapdump.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.heapdump`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.info.enabled`
   * newPropertyKey: `management.endpoint.info.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.info.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.info`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.jmx.domain`
   * newPropertyKey: `management.endpoints.jmx.domain`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.jmx.enabled`
   * newPropertyKey: `management.endpoints.jmx.exposure.exclude`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.jmx.static-names`
   * newPropertyKey: `management.endpoints.jmx.static-names`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.jmx.unique-names`
   * newPropertyKey: `management.endpoints.jmx.unique-names`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.jolokia.enabled`
   * newPropertyKey: `management.endpoint.jolokia.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.jolokia.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.jolokia`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.liquibase.enabled`
   * newPropertyKey: `management.endpoint.liquibase.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.logfile.enabled`
   * newPropertyKey: `management.endpoint.logfile.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.logfile.external-file`
   * newPropertyKey: `management.endpoint.logfile.external-file`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.logfile.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.logfile`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.loggers.enabled`
   * newPropertyKey: `management.endpoint.loggers.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.loggers.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.loggers`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.mappings.enabled`
   * newPropertyKey: `management.endpoint.mappings.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.mappings.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.mappings`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.metrics.enabled`
   * newPropertyKey: `management.endpoint.metrics.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.metrics.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.metrics`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.shutdown.enabled`
   * newPropertyKey: `management.endpoint.shutdown.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.shutdown.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.shutdown`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.trace.filter.enabled`
   * newPropertyKey: `management.trace.http.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.trace.enabled`
   * newPropertyKey: `management.endpoint.httptrace.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `endpoints.trace.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.httptrace`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `jolokia.config`
   * newPropertyKey: `management.endpoint.jolokia.config`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.add-application-context-header`
   * newPropertyKey: `management.server.add-application-context-header`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.address`
   * newPropertyKey: `management.server.address`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.context-path`
   * newPropertyKey: `management.server.servlet.context-path`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.port`
   * newPropertyKey: `management.server.port`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.ciphers`
   * newPropertyKey: `management.server.ssl.ciphers`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.client-auth`
   * newPropertyKey: `management.server.ssl.client-auth`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.enabled`
   * newPropertyKey: `management.server.ssl.enabled`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.enabled-protocols`
   * newPropertyKey: `management.server.ssl.enabled-protocols`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.key-alias`
   * newPropertyKey: `management.server.ssl.key-alias`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.key-password`
   * newPropertyKey: `management.server.ssl.key-password`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.key-store`
   * newPropertyKey: `management.server.ssl.key-store`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.key-store-password`
   * newPropertyKey: `management.server.ssl.key-store-password`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.key-store-provider`
   * newPropertyKey: `management.server.ssl.key-store-provider`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.key-store-type`
   * newPropertyKey: `management.server.ssl.key-store-type`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.protocol`
   * newPropertyKey: `management.server.ssl.protocol`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.trust-store`
   * newPropertyKey: `management.server.ssl.trust-store`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.trust-store-password`
   * newPropertyKey: `management.server.ssl.trust-store-password`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.trust-store-provider`
   * newPropertyKey: `management.server.ssl.trust-store-provider`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.ssl.trust-store-type`
   * newPropertyKey: `management.server.ssl.trust-store-type`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.trace.include`
   * newPropertyKey: `management.trace.http.include`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.metrics.export.statsd.host`
   * newPropertyKey: `management.metrics.export.statsd.host`
-* [Change the key of a spring application property](../changespringpropertykey.md)
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.metrics.export.statsd.port`
   * newPropertyKey: `management.metrics.export.statsd.port`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -1118,6 +1121,7 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.metrics.export.statsd.port
       newPropertyKey: management.metrics.export.statsd.port
+
 ```
 {% endtab %}
 {% endtabs %}

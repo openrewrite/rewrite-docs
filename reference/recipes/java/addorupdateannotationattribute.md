@@ -1,27 +1,30 @@
 # Add or update annotation attribute
 
-**org.openrewrite.java.AddOrUpdateAnnotationAttribute** _Some annotations accept arguments. This recipe sets an existing argument to the specified value, or adds the argument if it is not already set._
+**org.openrewrite.java.AddOrUpdateAnnotationAttribute**
+_Some annotations accept arguments. This recipe sets an existing argument to the specified value, or adds the argument if it is not already set._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.33.0
+* version: 7.34.0
 
 ## Options
 
-| Type      | Name           | Description                                                                  |
-| --------- | -------------- | ---------------------------------------------------------------------------- |
-| `String`  | annotationType | The fully qualified name of the annotation.                                  |
-| `String`  | attributeName  | _Optional_. The name of attribute to change. If omitted defaults to 'value'. |
-| `String`  | attributeValue | The value to set the attribute to.                                           |
-| `Boolean` | addOnly        | When set to `true` will not change existing annotation attribute values.     |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | annotationType | The fully qualified name of the annotation. |
+| `String` | attributeName | *Optional*. The name of attribute to change. If omitted defaults to 'value'. |
+| `String` | attributeValue | The value to set the attribute to. |
+| `Boolean` | addOnly | When set to `true` will not change existing annotation attribute values. |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddOrUpdateAnnotationAttributeExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddOrUpdateAnnotationAttributeExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,6 +41,7 @@ recipeList:
 ```
 {% endcode %}
 
+
 Now that `com.yourorg.AddOrUpdateAnnotationAttributeExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -45,7 +49,7 @@ Now that `com.yourorg.AddOrUpdateAnnotationAttributeExample` has been defined ac
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -55,6 +59,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -68,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddOrUpdateAnnotationAttributeExample</recipe>
