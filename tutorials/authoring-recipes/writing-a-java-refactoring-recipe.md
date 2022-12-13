@@ -4,7 +4,7 @@ description: Adding a method to a class that returns a String
 
 # Writing a Java Refactoring Recipe
 
-In this tutorial, we'll create a basic refactoring recipe that adds a method returning a`String` to a user-specified class. This `SayHelloRecipe` will take a class like this:
+In this tutorial, we'll create a basic refactoring recipe that adds a method returning a `String` to a user-specified class. This `SayHelloRecipe` will take a class like this:
 
 ```java
 package com.yourorg;
