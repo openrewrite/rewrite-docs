@@ -46,7 +46,7 @@
 * [Dependency Version Selectors](reference/dependency-version-selectors.md)
 * [Framework Provided Markers](reference/framework-provided-markers.md)
 * [Recipes](reference/recipes/README.md)
-  * [General](reference/recipes//README.md)
+  * [General](reference/recipes/README.md)
     * [Delete files](/reference/recipes/deletesourcefiles.md)
     * [Find files](/reference/recipes/findsourcefiles.md)
     * [Find instances of type Quark](/reference/recipes/findquarks.md)
