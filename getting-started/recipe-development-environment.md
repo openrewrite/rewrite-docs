@@ -55,7 +55,9 @@ dependencies {
     // rewrite-java dependencies only necessary for Java Recipe development
     implementation("org.openrewrite:rewrite-java")
 
-    // add based on your Java needs
+    // You only need the version that corresponds to your current
+    // Java version. It is fine to add all of them, though, as
+    // they can coexist on a classpath.
     runtimeOnly("org.openrewrite:rewrite-java-8")
     runtimeOnly("org.openrewrite:rewrite-java-11")
     runtimeOnly("org.openrewrite:rewrite-java-17")
@@ -104,7 +106,9 @@ dependencies {
         <scope>compile</scope>
     </dependency>
 
-    <!-- add based on your Java needs -->
+    <!-- You only need the version that corresponds to your current
+    Java version. It is fine to add all of them, though, as
+    they can coexist on a classpath. -->
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java-8</artifactId>
