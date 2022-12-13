@@ -219,7 +219,7 @@ Having configured the project per these recommendations, you're now able to begi
 
 * `src/main/java` - Recipe implementations
 * `src/test/java` - Recipe tests
-* (optional) `src/main/resources/META-INF/rewrite` - YAML files for defining [declarative OpenRewrite Recipes](/reference/yaml-format-reference.md)
+* (optional) `src/main/resources/META-INF/rewrite` - YAML files for defining [declarative OpenRewrite Recipes](../reference/yaml-format-reference.md)
 
 With all of that done, your project setup is complete! You are now ready to [create a Recipe](../tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md).
 
@@ -231,14 +231,14 @@ For your recipes to be usable by the OpenRewrite build plugins or on [public.mod
 
 Before you publish your recipe module to an artifact repository, you may want to try it out locally. To do this, on the command line, run `./gradlew publishToMavenLocal` (or equivalently `./gradlew pTML`). This will publish to your local maven repository, typically under `~/.m2/repository`.
 
-Once your artifact is published, you can test this recipe in a separate repository locally by following the instructions in the [running your recipes](#running-your-recipes) section.
+Once your artifact is published, you can test this recipe in a separate repository locally by following the instructions in the [running your recipes](recipe-development-environment.md#running-your-recipes) section.
 
 ### Publishing to Artifact Repositories
 
 The [rewrite-recipe-starter](https://github.com/moderneinc/rewrite-recipe-starter) project is configured to publish to Moderne's open artifact repository (via the `publishing` task at the bottom of the `build.gradle.kts` file). If you want to publish elsewhere, you'll want to update that task. [public.moderne.io](https://public.moderne.io) can draw recipes from the provided repository, as well as from [Maven Central](https://search.maven.org).
 
 {% hint style="info" %}
-Running the publish task _will not_ update [public.moderne.io](https://public.moderne.io), as only Moderne employees can add new recipes. If you want to add your recipe to [public.moderne.io](https://public.moderne.io), please ask the team in [Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA) or in [Discord](https://discord.gg/xk3ZKrhWAb).
+Running the publish task _will not_ update [public.moderne.io](https://public.moderne.io), as only Moderne employees can add new recipes. If you want to add your recipe to [public.moderne.io](https://public.moderne.io), please ask the team in [Slack](https://join.slack.com/t/rewriteoss/shared\_invite/zt-nj42n3ea-b\~62rIHzb3Vo0E1APKCXEA) or in [Discord](https://discord.gg/xk3ZKrhWAb).
 {% endhint %}
 
 These other docs might also be useful for you depending on where you want to publish the recipe:
@@ -248,7 +248,7 @@ These other docs might also be useful for you depending on where you want to pub
 
 ### Running your Recipes
 
-Once your recipe module is published, either locally for testing or to an external artifact repository for broader distribution, you'll need to configure a separate repository to test with (See the [Getting Started Guide](/getting-started/getting-started.md) for more detailed instructions). In the repository you want to test your recipe against, update the build plugins accordingly:
+Once your recipe module is published, either locally for testing or to an external artifact repository for broader distribution, you'll need to configure a separate repository to test with (See the [Getting Started Guide](getting-started.md) for more detailed instructions). In the repository you want to test your recipe against, update the build plugins accordingly:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -273,7 +273,17 @@ rewrite {
 ```
 
 {% hint style="info" %}
-If testing locally, your `rewrite` `dependency` should match the structure of your `.m2` folder. For example, if the path to your recipe in the `.m2` folder is: `~/.m2/repository/com/yourorg/rewrite-recipe-starter` and the jar in that folder is: `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa.jar`, then the `rewrite` `dependency` should be: `rewrite("com.yourorg:rewrite-recipe-starter:0.1.0-dev.25.uncommitted+f58d7fa")`.
+If testing locally, your `rewrite` `dependency` should match the structure of your `.m2` folder. For example, if the path to your recipe in the `.m2` folder is:
+
+* `~/.m2/repository/com/yourorg/rewrite-recipe-starter`&#x20;
+
+and the jar in that folder is:&#x20;
+
+* `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa.jar`
+
+&#x20;then the `rewrite` `dependency` should be:&#x20;
+
+* `rewrite("com.yourorg:rewrite-recipe-starter:0.1.0-dev.25.uncommitted+f58d7fa")`.
 {% endhint %}
 
 Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDryRun`
@@ -307,7 +317,19 @@ Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDry
 ```
 
 {% hint style="info" %}
-If testing locally, your `rewrite` `dependency` should match the structure of your `.m2` folder. For example, if the path to your recipe in the `.m2` folder is: `~/.m2/repository/com/yourorg/rewrite-recipe-starter` and the jar in that folder is: `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa.jar`, then the `rewrite` `dependency` should have a `groupId` of `com.yourorg`, an `artifactId` of `rewrite-recipe-start`, and a `version` of `0.1.0-dev.25.uncommitted+f58d7fa`.
+If testing locally, your `rewrite` `dependency` should match the structure of your `.m2` folder. For example, if the path to your recipe in the `.m2` folder is:&#x20;
+
+* `~/.m2/repository/com/yourorg/rewrite-recipe-starter`&#x20;
+
+and the jar in that folder is:&#x20;
+
+* `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa.jar`
+
+then the `rewrite` `dependency` should have:
+
+* A `groupId` of `com.yourorg`
+* An `artifactId` of `rewrite-recipe-start`,
+* A `version` of `0.1.0-dev.25.uncommitted+f58d7fa`.
 {% endhint %}
 
 Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
