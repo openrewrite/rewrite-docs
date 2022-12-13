@@ -5,8 +5,9 @@ When building recipes, it's important to understand how OpenRewrite Abstract Syn
 To help you get started on working with Java ASTs and OpenRewrite, this guide will:
 
 * [Explain how ASTs work at a high-level](ast-examples.md#high-level-ast-explanation)
+* [Provide a high-level diagram that shows how ASTs relate to each other](ast-examples.md#ast-diagram)
 * [Provide a sample chunk of code to demonstrate ASTs](ast-examples.md#code)
-* Discuss how that code relates to different types of ASTs
+* [Discuss how that code relates to different types of ASTs](ast-examples.md#java-ast-types)
   * [Binary](ast-examples.md#binary)
   * [Block](ast-examples.md#block)
   * [ClassDeclaration](ast-examples.md#classdeclaration)
@@ -20,7 +21,6 @@ To help you get started on working with Java ASTs and OpenRewrite, this guide wi
   * [Statement](ast-examples.md#statement)
   * [VariableDeclarations](ast-examples.md#variabledeclarations)
 * [Teach you how to use the debugger to learn more about ASTs yourself](ast-examples.md#using-the-debugger-to-detect-asts)
-* [Provide a high-level diagram that shows how ASTs relate to each other](ast-examples.md#ast-diagram)
 
 ## High-level AST Explanation
 
@@ -32,7 +32,7 @@ It's important to note that it is possible to manipulate ASTs to create code tha
 
 For example, nothing prevents you from modifying an AST so that a variable is used before it is defined. It is the responsibility of recipe authors to consider language semantics and the full range of possibilities when making changes. In accordance with the principle of [Doing No Harm](../tutorials/authoring-recipes/recipe-conventions-and-best-practices.md#do-no-harm), always err on the side of leaving code untouched rather than making a risky change.
 
-## Example
+## AST Diagram
 
 This diagram demonstrates how a simple Java class is represented as an AST. Note the hierarchical structure where AST elements are composed out of other AST elements.
 
