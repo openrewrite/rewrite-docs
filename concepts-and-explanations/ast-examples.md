@@ -185,4 +185,4 @@ If you add a breakpoint in the `JavaVisitor.java` class instead, you can pick wh
 
 ## AST Diagram
 
-![](../.gitbook/assets/AST-Example.png)
+<figure><img src="../.gitbook/assets/AST-Example.png" alt=""><figcaption></figcaption></figure>
