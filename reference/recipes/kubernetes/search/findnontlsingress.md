@@ -5,11 +5,11 @@ _Find Ingress resources that don't disallow HTTP or don't have TLS configured._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.25.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.26.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.25.0
+* version: 1.26.0
 
 ## Options
 
@@ -20,14 +20,14 @@ _Find Ingress resources that don't disallow HTTP or don't have TLS configured._
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.25.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.26.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.25.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.26.0")
 }
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.search.FindNonTlsIngress</recipe>
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.25.0</version>
+            <version>1.26.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:1.25.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:1.26.0 \
   -DactiveRecipes=org.openrewrite.kubernetes.search.FindNonTlsIngress
 ```
 {% endcode %}

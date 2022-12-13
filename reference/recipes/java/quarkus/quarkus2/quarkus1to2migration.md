@@ -1,25 +1,27 @@
 # Quarkus 2.x migration from Quarkus 1.x
 
-**org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration** _Migrates Quarkus 1.x to 2.x._
+**org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration**
+_Migrates Quarkus 1.x to 2.x._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/1.14.0/jar)
+[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 1.14.0
+* version: 1.15.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:1.14.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.15.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>1.14.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-quarkus:1.14.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-quarkus:1.15.0 \
   -DactiveRecipes=org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration
 ```
 {% endcode %}
@@ -84,13 +86,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Quarkus 1.13 migration from Quarkus 1.11](../quarkus1to1\_13migration.md)
-* [Use `@GrpcClient`](grpcserviceannotationtogrpcclient.md)
-* [Remove `avro-maven-plugin`](removeavromavenplugin.md)
-* [Use `@Identifier("default-kafka-broker")`](useidentifierondefaultkafkabroker.md)
-* [Use `PanacheEntityBase` static methods](usepanacheentitybasestaticmethods.md)
-* [Use `Uni<T extends PanacheEntityBase>`](usepanacheentitybaseunit.md)
-* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](usereactivepanachemongoentitybaseunit.md)
+* [Quarkus 1.13 migration from Quarkus 1.11](../../../java/quarkus/quarkus1to1_13migration.md)
+* [Use `@GrpcClient`](../../../java/quarkus/quarkus2/grpcserviceannotationtogrpcclient.md)
+* [Remove `avro-maven-plugin`](../../../java/quarkus/quarkus2/removeavromavenplugin.md)
+* [Use `@Identifier("default-kafka-broker")`](../../../java/quarkus/quarkus2/useidentifierondefaultkafkabroker.md)
+* [Use `PanacheEntityBase` static methods](../../../java/quarkus/quarkus2/usepanacheentitybasestaticmethods.md)
+* [Use `Uni<T extends PanacheEntityBase>`](../../../java/quarkus/quarkus2/usepanacheentitybaseunit.md)
+* [Use `Uni<T extends ReactivePanacheMongoEntityBase>`](../../../java/quarkus/quarkus2/usereactivepanachemongoentitybaseunit.md)
 * [Change property key](../../../properties/changepropertykey.md)
   * oldPropertyKey: `smallrye.jwt.sign.key-location`
   * newPropertyKey: `smallrye.jwt.sign.key.location`
@@ -110,31 +112,34 @@ Recipes can also be activated directly from the command line by adding the argum
   * propertyKey: `quarkus.quartz.store-type`
   * newValue: `jdbc-cmt`
   * oldValue: `db`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.qute.api.CheckedTemplate`
   * newFullyQualifiedTypeName: `io.quarkus.qute.CheckedTemplate`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.qute.api.ResourcePath`
   * newFullyQualifiedTypeName: `io.quarkus.qute.Location`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.mongodb.runtime.MongoClientName`
   * newFullyQualifiedTypeName: `io.quarkus.mongodb.MongoClientName`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `io.quarkus`
   * artifactId: `quarkus-universe-bom`
   * newVersion: `2.x`
+  * retainVersions: `[]`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `io.quarkus`
   * artifactId: `quarkus-bom`
   * newVersion: `2.x`
+  * retainVersions: `[]`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion.md)
   * groupId: `io.quarkus`
   * artifactId: `quarkus-maven-plugin`
   * newVersion: `2.x`
-* [Rename package name](../../changepackage.md)
+* [Rename package name](../../../java/changepackage.md)
   * oldPackageName: `io.vertx.core.http.HttpMethod`
   * newPackageName: `io.quarkus.vertx.web.Route.HttpMethod`
   * recursive: `false`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -184,10 +189,12 @@ recipeList:
       groupId: io.quarkus
       artifactId: quarkus-universe-bom
       newVersion: 2.x
+      retainVersions: []
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: io.quarkus
       artifactId: quarkus-bom
       newVersion: 2.x
+      retainVersions: []
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: io.quarkus
       artifactId: quarkus-maven-plugin
@@ -196,6 +203,7 @@ recipeList:
       oldPackageName: io.vertx.core.http.HttpMethod
       newPackageName: io.quarkus.vertx.web.Route.HttpMethod
       recursive: false
+
 ```
 {% endtab %}
 {% endtabs %}

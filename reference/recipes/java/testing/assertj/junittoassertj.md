@@ -1,6 +1,7 @@
 # Migrate JUnit asserts to AssertJ
 
-**org.openrewrite.java.testing.assertj.JUnitToAssertj** _AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
+**org.openrewrite.java.testing.assertj.JUnitToAssertj**
+_AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability._
 
 ### Tags
 
@@ -9,22 +10,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.31.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.32.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.31.0
+* version: 1.32.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -36,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0")
 }
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.JUnitToAssertj</recipe>
@@ -61,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.31.0</version>
+            <version>1.32.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0 \
   -DactiveRecipes=org.openrewrite.java.testing.assertj.JUnitToAssertj
 ```
 {% endcode %}
@@ -89,21 +91,22 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [JUnit `assertArrayEquals` To AssertJ](junitassertarrayequalstoassertthat.md)
-* [JUnit `assertEquals` to AssertJ](junitassertequalstoassertthat.md)
-* [JUnit `assertFalse` to AssertJ](junitassertfalsetoassertthat.md)
-* [JUnit `assertNotEquals` to AssertJ](junitassertnotequalstoassertthat.md)
-* [JUnit `assertNotNull` to AssertJ](junitassertnotnulltoassertthat.md)
-* [JUnit `assertNull` to AssertJ](junitassertnulltoassertthat.md)
-* [JUnit `assertSame` to AssertJ](junitassertsametoassertthat.md)
-* [JUnit `assertTrue` to AssertJ](junitasserttruetoassertthat.md)
-* [JUnit fail to AssertJ](junitfailtoassertjfail.md)
-* [JUnit AssertThrows to AssertJ exceptionType](junitassertthrowstoassertexceptiontype.md)
+* [JUnit `assertArrayEquals` To AssertJ](../../../java/testing/assertj/junitassertarrayequalstoassertthat.md)
+* [JUnit `assertEquals` to AssertJ](../../../java/testing/assertj/junitassertequalstoassertthat.md)
+* [JUnit `assertFalse` to AssertJ](../../../java/testing/assertj/junitassertfalsetoassertthat.md)
+* [JUnit `assertNotEquals` to AssertJ](../../../java/testing/assertj/junitassertnotequalstoassertthat.md)
+* [JUnit `assertNotNull` to AssertJ](../../../java/testing/assertj/junitassertnotnulltoassertthat.md)
+* [JUnit `assertNull` to AssertJ](../../../java/testing/assertj/junitassertnulltoassertthat.md)
+* [JUnit `assertSame` to AssertJ](../../../java/testing/assertj/junitassertsametoassertthat.md)
+* [JUnit `assertTrue` to AssertJ](../../../java/testing/assertj/junitasserttruetoassertthat.md)
+* [JUnit fail to AssertJ](../../../java/testing/assertj/junitfailtoassertjfail.md)
+* [JUnit AssertThrows to AssertJ exceptionType](../../../java/testing/assertj/junitassertthrowstoassertexceptiontype.md)
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.assertj`
   * artifactId: `assertj-core`
   * version: `3.x`
   * onlyIfUsing: `org.assertj.core.api.Assertions`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -132,6 +135,7 @@ recipeList:
       artifactId: assertj-core
       version: 3.x
       onlyIfUsing: org.assertj.core.api.Assertions
+
 ```
 {% endtab %}
 {% endtabs %}

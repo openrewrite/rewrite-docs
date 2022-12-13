@@ -2,7 +2,7 @@
 
 ## Recipes
 
-* [Replace `lombok.val` with `final var`](lombokvaltofinalvar.md)
-* [Update Lombok dependency to a Java 17 compatible version](updatelomboktojava17.md)
+* [Migrate Lombok to a Java 17 compatible version](updatelomboktojava17.md)
+* [Prefer `final var`](lombokvaltofinalvar.md)
 
 

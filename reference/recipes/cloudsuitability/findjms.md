@@ -1,33 +1,35 @@
 # Find JMS files
 
-**org.openrewrite.cloudsuitability.FindJMS** _Run embedded service broker as a JMS Provider._
+**org.openrewrite.cloudsuitability.FindJms**
+_Run embedded service broker as a JMS Provider._
 
 ### Tags
 
-* java-jks
+* java-jms
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer), [Issue Tracker](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-cloud-suitability-analyzer/1.0.0/jar)
+[Github](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer), [Issue Tracker](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-cloud-suitability-analyzer/1.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
-* version: 1.0.0
+* version: 1.1.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-cloud-suitability-analyzer:1.0.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-cloud-suitability-analyzer:1.1.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.cloudsuitability.FindJMS")
+    activeRecipe("org.openrewrite.cloudsuitability.FindJms")
 }
 
 repositories {
@@ -35,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cloud-suitability-analyzer:1.0.0")
+    rewrite("org.openrewrite.recipe:rewrite-cloud-suitability-analyzer:1.1.0")
 }
 ```
 {% endcode %}
@@ -50,17 +52,17 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.cloudsuitability.FindJMS</recipe>
+            <recipe>org.openrewrite.cloudsuitability.FindJms</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cloud-suitability-analyzer</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -74,15 +76,15 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-cloud-suitability-analyzer:1.0.0 \
-  -DactiveRecipes=org.openrewrite.cloudsuitability.FindJMS
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-cloud-suitability-analyzer:1.1.0 \
+  -DactiveRecipes=org.openrewrite.cloudsuitability.FindJms
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.cloudsuitability.FindJMS`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.cloudsuitability.FindJms`
 
 ## Definition
 
@@ -90,20 +92,22 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Find types](../java/search/findtypes.md)
   * fullyQualifiedTypeName: `javax.jms..*`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.cloudsuitability.FindJMS
+name: org.openrewrite.cloudsuitability.FindJms
 displayName: Find JMS files
 description: Run embedded service broker as a JMS Provider.
 tags:
-  - java-jks
+  - java-jms
 recipeList:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: javax.jms..*
+
 ```
 {% endtab %}
 {% endtabs %}

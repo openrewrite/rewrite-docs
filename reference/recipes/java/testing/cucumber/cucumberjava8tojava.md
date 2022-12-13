@@ -1,6 +1,7 @@
 # Cucumber-Java8 migration to Cucumber-Java
 
-**org.openrewrite.java.testing.cucumber.CucumberJava8ToJava** _Migrates Cucumber-Java8 step definitions and LambdaGlue hooks to Cucumber-Java annotated methods._
+**org.openrewrite.java.testing.cucumber.CucumberJava8ToJava**
+_Migrates Cucumber-Java8 step definitions and LambdaGlue hooks to Cucumber-Java annotated methods._
 
 ### Tags
 
@@ -9,22 +10,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.31.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.32.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.31.0
+* version: 1.32.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -36,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0")
 }
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.cucumber.CucumberJava8ToJava</recipe>
@@ -61,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.31.0</version>
+            <version>1.32.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.31.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:1.32.0 \
   -DactiveRecipes=org.openrewrite.java.testing.cucumber.CucumberJava8ToJava
 ```
 {% endcode %}
@@ -89,16 +91,17 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Replace Cucumber-Java8 hook definition with Cucumber-Java](cucumberjava8hookdefinitiontocucumberjava.md)
-* [Replace Cucumber-Java8 step definitions with Cucumber-Java](cucumberjava8stepdefinitiontocucumberjava.md)
+* [Replace Cucumber-Java8 hook definition with Cucumber-Java](../../../java/testing/cucumber/cucumberjava8hookdefinitiontocucumberjava.md)
+* [Replace Cucumber-Java8 step definitions with Cucumber-Java](../../../java/testing/cucumber/cucumberjava8stepdefinitiontocucumberjava.md)
 * [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
   * oldGroupId: `io.cucumber`
   * oldArtifactId: `cucumber-java8`
   * newGroupId: `io.cucumber`
   * newArtifactId: `cucumber-java`
-* [Rename package name](../../changepackage.md)
+* [Rename package name](../../../java/changepackage.md)
   * oldPackageName: `io.cucumber.java8`
   * newPackageName: `io.cucumber.java`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -122,6 +125,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: io.cucumber.java8
       newPackageName: io.cucumber.java
+
 ```
 {% endtab %}
 {% endtabs %}

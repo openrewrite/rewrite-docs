@@ -1,14 +1,16 @@
 # Common static analysis issues
 
-**org.openrewrite.java.cleanup.CommonStaticAnalysis** _Resolve common static analysis issues discovered through 3rd party tools._
+**org.openrewrite.java.cleanup.CommonStaticAnalysis**
+_Resolve common static analysis issues discovered through 3rd party tools._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.33.0
+* version: 7.34.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -29,6 +31,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -42,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -59,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
   -DactiveRecipes=org.openrewrite.java.cleanup.CommonStaticAnalysis
 ```
 {% endcode %}
@@ -72,66 +75,67 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add `serialVersionUID` to a `Serializable` class when missing](addserialversionuidtoserializable.md)
-* [Atomic Boolean, Integer, and Long equality checks compare their values](atomicprimitiveequalsusesget.md)
-* [`BigDecimal` rounding constants to `RoundingMode` enums](bigdecimalroundingconstantstoenums.md)
-* [Boolean checks should not be inverted](booleanchecksnotinverted.md)
-* [CaseInsensitive comparisons do not alter case](caseinsensitivecomparisonsdonotchangecase.md)
-* [Catch clause should do more than just rethrow](catchclauseonlyrethrows.md)
-* [Covariant equals](covariantequals.md)
-* [Default comes last](defaultcomeslast.md)
-* [Remove empty blocks](emptyblock.md)
-* [Equals avoids null](equalsavoidsnull.md)
-* [Explicit initialization](explicitinitialization.md)
-* [`Externalizable` classes have no-arguments constructor](externalizablehasnoargsconstructor.md)
-* [Fall through](fallthrough.md)
-* [Finalize classes with private constructors](finalclass.md)
-* [Fix `String#format` and `String#formatted` expressions](fixstringformatexpressions.md)
-* [`for` loop counters incremented in update](forloopincrementinupdate.md)
-* [Use `indexOf(String, int)`](indexofchecksshoulduseastartposition.md)
-* [`indexOf()` replaceable by `contains()`](indexofreplaceablebycontains.md)
-* [`indexOf` should not compare greater than zero](indexofshouldnotcomparegreaterthanzero.md)
-* [Inline variable](inlinevariable.md)
-* [Use `Collection#isEmpty()` instead of comparing `size()`](isemptycalloncollections.md)
-* [Simplify lambda blocks to expressions](lambdablocktoexpression.md)
-* [Rename packages to lowercase](lowercasepackage.md)
-* [Method name casing](methodnamecasing.md)
-* [`switch` statements should have at least 3 `case` clauses](minimumswitchcases.md)
-* [Modifier order](modifierorder.md)
-* [No multiple variable declarations](multiplevariabledeclarations.md)
-* [Fix missing braces](needbraces.md)
-* [Nested enums are not static](nestedenumsarenotstatic.md)
-* [Change `StringBuilder` and `StringBuffer` character constructor argument to `String`](newstringbuilderbufferwithcharargument.md)
-* [No double brace initialization](nodoublebraceinitialization.md)
-* [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](noemptycollectionwithrawtype.md)
-* [Use comparison rather than equality checks in for conditions](noequalityinforcondition.md)
-* [Remove `finalize()` method](nofinalizer.md)
-* [No primitive wrappers for #toString() or #compareTo(..)](noprimitivewrappersfortostringorcompareto.md)
-* [Jump statements should not be redundant](noredundantjumpstatements.md)
-* [Unnecessary String#toString()](notostringonstringtype.md)
-* [Unnecessary String#valueOf(..)](novalueofonstringtype.md)
-* [`finalize()` calls super](objectfinalizecallssuper.md)
-* [Use primitive wrapper `valueOf` method](primitivewrapperclassconstructortovalueof.md)
-* [Redundant file creation](redundantfilecreation.md)
-* [Remove extra semicolons](removeextrasemicolons.md)
-* [Reformat local variable names to camelCase](renamelocalvariablestocamelcase.md)
-* [Rename methods named `hashcode`, `equal`, or `tostring`](renamemethodsnamedhashcodeequalortostring.md)
-* [Reformat private field names to camelCase](renameprivatefieldstocamelcase.md)
-* [Use method references in lambda](replacelambdawithmethodreference.md)
-* [Simplify boolean expression](simplifybooleanexpression.md)
-* [Simplify boolean return](simplifybooleanreturn.md)
-* [Static methods not final](staticmethodnotfinal.md)
-* [Use `String.equals()` on String literals](stringliteralequality.md)
-* [Unnecessary close in try-with-resources](unnecessarycloseintrywithresources.md)
-* [Unnecessary explicit type arguments](unnecessaryexplicittypearguments.md)
-* [Remove unnecessary parentheses](unnecessaryparentheses.md)
-* [Remove Nullable and CheckForNull annotations from primitives](unnecessaryprimitiveannotations.md)
-* [Upper case literal suffixes](uppercaseliteralsuffixes.md)
-* [Use diamond operator](usediamondoperator.md)
-* [No C-style array declarations](usejavastylearraydeclarations.md)
-* [Use lambdas where possible](uselambdaforfunctionalinterface.md)
-* [Prefer `while` over `for` loops](whileinsteadoffor.md)
-* [Write octal values as decimal](writeoctalvaluesasdecimal.md)
+* [Add `serialVersionUID` to a `Serializable` class when missing](../../java/cleanup/addserialversionuidtoserializable.md)
+* [Atomic Boolean, Integer, and Long equality checks compare their values](../../java/cleanup/atomicprimitiveequalsusesget.md)
+* [`BigDecimal` rounding constants to `RoundingMode` enums](../../java/cleanup/bigdecimalroundingconstantstoenums.md)
+* [Boolean checks should not be inverted](../../java/cleanup/booleanchecksnotinverted.md)
+* [CaseInsensitive comparisons do not alter case](../../java/cleanup/caseinsensitivecomparisonsdonotchangecase.md)
+* [Catch clause should do more than just rethrow](../../java/cleanup/catchclauseonlyrethrows.md)
+* [Covariant equals](../../java/cleanup/covariantequals.md)
+* [Default comes last](../../java/cleanup/defaultcomeslast.md)
+* [Remove empty blocks](../../java/cleanup/emptyblock.md)
+* [Equals avoids null](../../java/cleanup/equalsavoidsnull.md)
+* [Explicit initialization](../../java/cleanup/explicitinitialization.md)
+* [`Externalizable` classes have no-arguments constructor](../../java/cleanup/externalizablehasnoargsconstructor.md)
+* [Fall through](../../java/cleanup/fallthrough.md)
+* [Finalize classes with private constructors](../../java/cleanup/finalclass.md)
+* [Fix `String#format` and `String#formatted` expressions](../../java/cleanup/fixstringformatexpressions.md)
+* [`for` loop counters incremented in update](../../java/cleanup/forloopincrementinupdate.md)
+* [Use `indexOf(String, int)`](../../java/cleanup/indexofchecksshoulduseastartposition.md)
+* [`indexOf()` replaceable by `contains()`](../../java/cleanup/indexofreplaceablebycontains.md)
+* [`indexOf` should not compare greater than zero](../../java/cleanup/indexofshouldnotcomparegreaterthanzero.md)
+* [Inline variable](../../java/cleanup/inlinevariable.md)
+* [Use `Collection#isEmpty()` instead of comparing `size()`](../../java/cleanup/isemptycalloncollections.md)
+* [Simplify lambda blocks to expressions](../../java/cleanup/lambdablocktoexpression.md)
+* [Rename packages to lowercase](../../java/cleanup/lowercasepackage.md)
+* [Method name casing](../../java/cleanup/methodnamecasing.md)
+* [`switch` statements should have at least 3 `case` clauses](../../java/cleanup/minimumswitchcases.md)
+* [Modifier order](../../java/cleanup/modifierorder.md)
+* [No multiple variable declarations](../../java/cleanup/multiplevariabledeclarations.md)
+* [Fix missing braces](../../java/cleanup/needbraces.md)
+* [Nested enums are not static](../../java/cleanup/nestedenumsarenotstatic.md)
+* [Change `StringBuilder` and `StringBuffer` character constructor argument to `String`](../../java/cleanup/newstringbuilderbufferwithcharargument.md)
+* [No double brace initialization](../../java/cleanup/nodoublebraceinitialization.md)
+* [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](../../java/cleanup/noemptycollectionwithrawtype.md)
+* [Use comparison rather than equality checks in for conditions](../../java/cleanup/noequalityinforcondition.md)
+* [Remove `finalize()` method](../../java/cleanup/nofinalizer.md)
+* [No primitive wrappers for #toString() or #compareTo(..)](../../java/cleanup/noprimitivewrappersfortostringorcompareto.md)
+* [Jump statements should not be redundant](../../java/cleanup/noredundantjumpstatements.md)
+* [Unnecessary String#toString()](../../java/cleanup/notostringonstringtype.md)
+* [Unnecessary String#valueOf(..)](../../java/cleanup/novalueofonstringtype.md)
+* [`finalize()` calls super](../../java/cleanup/objectfinalizecallssuper.md)
+* [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
+* [Redundant file creation](../../java/cleanup/redundantfilecreation.md)
+* [Remove extra semicolons](../../java/cleanup/removeextrasemicolons.md)
+* [Reformat local variable names to camelCase](../../java/cleanup/renamelocalvariablestocamelcase.md)
+* [Rename methods named `hashcode`, `equal`, or `tostring`](../../java/cleanup/renamemethodsnamedhashcodeequalortostring.md)
+* [Reformat private field names to camelCase](../../java/cleanup/renameprivatefieldstocamelcase.md)
+* [Use method references in lambda](../../java/cleanup/replacelambdawithmethodreference.md)
+* [Simplify boolean expression](../../java/cleanup/simplifybooleanexpression.md)
+* [Simplify boolean return](../../java/cleanup/simplifybooleanreturn.md)
+* [Static methods not final](../../java/cleanup/staticmethodnotfinal.md)
+* [Use `String.equals()` on String literals](../../java/cleanup/stringliteralequality.md)
+* [Unnecessary close in try-with-resources](../../java/cleanup/unnecessarycloseintrywithresources.md)
+* [Unnecessary explicit type arguments](../../java/cleanup/unnecessaryexplicittypearguments.md)
+* [Remove unnecessary parentheses](../../java/cleanup/unnecessaryparentheses.md)
+* [Remove Nullable and CheckForNull annotations from primitives](../../java/cleanup/unnecessaryprimitiveannotations.md)
+* [Upper case literal suffixes](../../java/cleanup/uppercaseliteralsuffixes.md)
+* [Use diamond operator](../../java/cleanup/usediamondoperator.md)
+* [No C-style array declarations](../../java/cleanup/usejavastylearraydeclarations.md)
+* [Use lambdas where possible](../../java/cleanup/uselambdaforfunctionalinterface.md)
+* [Prefer `while` over `for` loops](../../java/cleanup/whileinsteadoffor.md)
+* [Write octal values as decimal](../../java/cleanup/writeoctalvaluesasdecimal.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -202,6 +206,7 @@ recipeList:
   - org.openrewrite.java.cleanup.UseLambdaForFunctionalInterface
   - org.openrewrite.java.cleanup.WhileInsteadOfFor
   - org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal
+
 ```
 {% endtab %}
 {% endtabs %}

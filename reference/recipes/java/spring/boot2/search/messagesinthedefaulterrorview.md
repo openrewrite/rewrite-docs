@@ -1,6 +1,11 @@
 # Find projects affected by changes to the default error view message attribute
 
-**org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView** \_As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown. `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)). You can still use the `server.error.include-message` property if you want messages to be included. \_
+**org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView**
+_As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown.
+`spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item
+([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)).
+You can still use the `server.error.include-message` property if you want messages to be included.
+_
 
 ### Tags
 
@@ -9,22 +14,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.30.0
+* version: 4.31.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -36,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.31.0")
 }
 ```
 {% endcode %}
@@ -51,7 +57,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView</recipe>
@@ -61,7 +67,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.30.0</version>
+            <version>4.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,8 +81,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.31.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView
 ```
 {% endcode %}
@@ -95,6 +101,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Find Maven dependency](../../../../maven/search/finddependency.md)
   * groupId: `org.springframework`
   * artifactId: `spring-webflux`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -118,6 +125,7 @@ recipeList:
   - org.openrewrite.maven.search.FindDependency:
       groupId: org.springframework
       artifactId: spring-webflux
+
 ```
 {% endtab %}
 {% endtabs %}

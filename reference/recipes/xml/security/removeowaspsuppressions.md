@@ -1,14 +1,16 @@
 # Remove out-of-date OWASP suppressions
 
-**org.openrewrite.xml.security.RemoveOwaspSuppressions** _Remove all OWASP suppressions with a suppression end date in the past, as these are no longer valid. For use with the OWASP `dependency-check` tool. More details on OWASP suppression files: https://jeremylong.github.io/DependencyCheck/general/suppression.html._
+**org.openrewrite.xml.security.RemoveOwaspSuppressions**
+_Remove all OWASP suppressions with a suppression end date in the past, as these are no longer valid. For use with the OWASP `dependency-check` tool. More details on OWASP suppression files: https://jeremylong.github.io/DependencyCheck/general/suppression.html._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-xml/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-xml/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.33.0
+* version: 7.34.0
+
 
 ## Usage
 
@@ -19,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -29,6 +31,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -42,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.xml.security.RemoveOwaspSuppressions</recipe>
@@ -59,7 +62,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
   -DactiveRecipes=org.openrewrite.xml.security.RemoveOwaspSuppressions
 ```
 {% endcode %}

@@ -1,6 +1,7 @@
 # Migrate Log4j 2.x to SLF4J 1.x
 
-**org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1** _Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
+**org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1**
+_Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files._
 
 ### Tags
 
@@ -10,22 +11,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.15.0/jar)
+[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 1.15.0
+* version: 1.16.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.15.0</version>
+            <version>1.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0 \
   -DactiveRecipes=org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1
 ```
 {% endcode %}
@@ -90,19 +92,20 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.logging.log4j.LogManager`
   * newFullyQualifiedTypeName: `org.slf4j.LoggerFactory`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.apache.logging.log4j.Logger fatal(..)`
   * newMethodName: `error`
-* [Change method name](../../changemethodname.md)
+* [Change method name](../../../java/changemethodname.md)
   * methodPattern: `org.apache.logging.log4j.Category fatal(..)`
   * newMethodName: `error`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.logging.log4j.Logger`
   * newFullyQualifiedTypeName: `org.slf4j.Logger`
-* [Parameterize SLF4J logging statements](parameterizedlogging.md)
+* [Parameterize SLF4J logging statements](../../../java/logging/slf4j/parameterizedlogging.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -130,6 +133,7 @@ recipeList:
       oldFullyQualifiedTypeName: org.apache.logging.log4j.Logger
       newFullyQualifiedTypeName: org.slf4j.Logger
   - org.openrewrite.java.logging.slf4j.ParameterizedLogging
+
 ```
 {% endtab %}
 {% endtabs %}

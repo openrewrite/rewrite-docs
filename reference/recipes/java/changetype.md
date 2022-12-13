@@ -1,26 +1,29 @@
 # Change type
 
-**org.openrewrite.java.ChangeType** _Change a given type to another._
+**org.openrewrite.java.ChangeType**
+_Change a given type to another._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.33.0
+* version: 7.34.0
 
 ## Options
 
-| Type      | Name                      | Description                                                                                                                                                                             |
-| --------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `String`  | oldFullyQualifiedTypeName | Fully-qualified class name of the original type.                                                                                                                                        |
-| `String`  | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. |
-| `Boolean` | ignoreDefinition          | _Optional_. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it.                |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. |
+| `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. |
+| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeTypeExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.ChangeTypeExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -36,6 +39,7 @@ recipeList:
 ```
 {% endcode %}
 
+
 Now that `com.yourorg.ChangeTypeExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -43,7 +47,7 @@ Now that `com.yourorg.ChangeTypeExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -53,6 +57,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -66,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTypeExample</recipe>

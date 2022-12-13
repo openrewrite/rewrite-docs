@@ -1,34 +1,36 @@
 # Use logger instead of system print statements
 
-**org.openrewrite.java.logging.SystemPrintToLogging** _Replace `System.out` and `System.err` print statements with a logger._
+**org.openrewrite.java.logging.SystemPrintToLogging**
+_Replace `System.out` and `System.err` print statements with a logger._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.15.0/jar)
+[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 1.15.0
+* version: 1.16.0
 
 ## Options
 
-| Type      | Name             | Description                                                               |
-| --------- | ---------------- | ------------------------------------------------------------------------- |
-| `Boolean` | addLogger        | _Optional_. Add a logger field to the class if it isn't already present.  |
-| `String`  | loggerName       | _Optional_. The name of the logger to use when generating a field.        |
-| `String`  | loggingFramework | _Optional_. The logging framework to use.                                 |
-| `String`  | level            | _Optional_. The logging level to turn `System.out` print statements into. |
+| Type | Name | Description |
+| -- | -- | -- |
+| `Boolean` | addLogger | *Optional*. Add a logger field to the class if it isn't already present. |
+| `String` | loggerName | *Optional*. The name of the logger to use when generating a field. |
+| `String` | loggingFramework | *Optional*. The logging framework to use. |
+| `String` | level | *Optional*. The logging level to turn `System.out` print statements into. |
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -40,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0")
 }
 ```
 {% endcode %}
@@ -55,7 +57,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.SystemPrintToLogging</recipe>
@@ -65,7 +67,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.15.0</version>
+            <version>1.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -79,8 +81,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0 \
   -DactiveRecipes=org.openrewrite.java.logging.SystemPrintToLogging
 ```
 {% endcode %}
@@ -93,16 +95,17 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use logger instead of system print statements](systemerrtologging.md)
-  * loggerName: \`\`
-  * loggingFramework: \`\`
-* [Use logger instead of system print statements](systemouttologging.md)
-  * loggerName: \`\`
-  * loggingFramework: \`\`
-  * level: \`\`
-* [Use logger instead of `printStackTrace()`](printstacktracetologerror.md)
-  * loggerName: \`\`
-  * loggingFramework: \`\`
+* [Use logger instead of system print statements](../../java/logging/systemerrtologging.md)
+  * loggerName: ``
+  * loggingFramework: ``
+* [Use logger instead of system print statements](../../java/logging/systemouttologging.md)
+  * loggerName: ``
+  * loggingFramework: ``
+  * level: ``
+* [Use logger instead of `printStackTrace()`](../../java/logging/printstacktracetologerror.md)
+  * loggerName: ``
+  * loggingFramework: ``
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -130,6 +133,7 @@ recipeList:
   - org.openrewrite.java.logging.PrintStackTraceToLogError:
       loggerName: 
       loggingFramework: 
+
 ```
 {% endtab %}
 {% endtabs %}

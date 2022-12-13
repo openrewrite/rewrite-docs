@@ -1,6 +1,7 @@
 # Parameterize SLF4J logging statements
 
-**org.openrewrite.java.logging.slf4j.ParameterizedLogging** _SLF4J supports parameterized logging, which can significantly boost logging performance for disabled logging statements._
+**org.openrewrite.java.logging.slf4j.ParameterizedLogging**
+_SLF4J supports parameterized logging, which can significantly boost logging performance for disabled logging statements._
 
 ### Tags
 
@@ -10,22 +11,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.15.0/jar)
+[Github](https://github.com/openrewrite/rewrite-logging-frameworks), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 1.15.0
+* version: 1.16.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -37,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0")
 }
 ```
 {% endcode %}
@@ -52,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.slf4j.ParameterizedLogging</recipe>
@@ -62,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.15.0</version>
+            <version>1.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.15.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:1.16.0 \
   -DactiveRecipes=org.openrewrite.java.logging.slf4j.ParameterizedLogging
 ```
 {% endcode %}
@@ -90,16 +92,17 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Parameterize logging statements](../parameterizedlogging.md)
+* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger trace(..)`
-* [Parameterize logging statements](../parameterizedlogging.md)
+* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger debug(..)`
-* [Parameterize logging statements](../parameterizedlogging.md)
+* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger info(..)`
-* [Parameterize logging statements](../parameterizedlogging.md)
+* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger warn(..)`
-* [Parameterize logging statements](../parameterizedlogging.md)
+* [Parameterize logging statements](../../../java/logging/parameterizedlogging.md)
   * methodPattern: `org.slf4j.Logger error(..)`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -124,6 +127,7 @@ recipeList:
       methodPattern: org.slf4j.Logger warn(..)
   - org.openrewrite.java.logging.ParameterizedLogging:
       methodPattern: org.slf4j.Logger error(..)
+
 ```
 {% endtab %}
 {% endtabs %}

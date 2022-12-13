@@ -1,27 +1,30 @@
-# Add a comment to a Maven dependency
+# Add a comment to a `Maven` dependency
 
-**org.openrewrite.maven.AddCommentToMavenDependency** _Adds a comment as the first element in a `Maven` dependency._
+**org.openrewrite.maven.AddCommentToMavenDependency**
+_Adds a comment as the first element in a `Maven` dependency._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.33.0
+* version: 7.34.0
 
 ## Options
 
-| Type     | Name        | Description                                                                  |
-| -------- | ----------- | ---------------------------------------------------------------------------- |
-| `String` | xPath       | An XPath expression used to find matching tags.                              |
-| `String` | groupId     | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'.  |
-| `String` | artifactId  | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | commentText | The text to add as a comment..                                               |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | xPath | An XPath expression used to find matching tags. |
+| `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | commentText | The text to add as a comment.. |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCommentToMavenDependencyExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCommentToMavenDependencyExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -38,6 +41,7 @@ recipeList:
 ```
 {% endcode %}
 
+
 Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activate it in your build file:
 
 {% tabs %}
@@ -45,7 +49,7 @@ Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activ
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -55,6 +59,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -68,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCommentToMavenDependencyExample</recipe>

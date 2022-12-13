@@ -1,25 +1,27 @@
 # Enable Gradle parallel execution
 
-**org.openrewrite.gradle.search.EnableGradleParallelExecution** _Most builds consist of more than one project and some of those projects are usually independent of one another. Yet Gradle will only run one task at a time by default, regardless of the project structure. By using the `--parallel` switch, you can force Gradle to execute tasks in parallel as long as those tasks are in different projects. See the_ [_Gradle performance documentation_](https://docs.gradle.org/current/userguide/performance.html#parallel\_execution) _for more._
+**org.openrewrite.gradle.search.EnableGradleParallelExecution**
+_Most builds consist of more than one project and some of those projects are usually independent of one another. Yet Gradle will only run one task at a time by default, regardless of the project structure. By using the `--parallel` switch, you can force Gradle to execute tasks in parallel as long as those tasks are in different projects. See the [Gradle performance documentation](https://docs.gradle.org/current/userguide/performance.html#parallel_execution) for more._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.33.0
+* version: 7.34.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.33.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite:rewrite-gradle:7.34.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -31,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.33.0")
+    rewrite("org.openrewrite:rewrite-gradle:7.34.0")
 }
 ```
 {% endcode %}
@@ -46,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.gradle.search.EnableGradleParallelExecution</recipe>
@@ -56,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-gradle</artifactId>
-            <version>7.33.0</version>
+            <version>7.34.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -70,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-gradle:7.33.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-gradle:7.34.0 \
   -DactiveRecipes=org.openrewrite.gradle.search.EnableGradleParallelExecution
 ```
 {% endcode %}
@@ -84,9 +86,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Gradle property](../addproperty.md)
+* [Add Gradle property](../../gradle/addproperty.md)
   * key: `org.gradle.parallel`
   * value: `true`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -100,6 +103,7 @@ recipeList:
   - org.openrewrite.gradle.AddProperty:
       key: org.gradle.parallel
       value: true
+
 ```
 {% endtab %}
 {% endtabs %}

@@ -2,9 +2,9 @@
 
 ## Recipes
 
-* [Add a spring configuration property to a configuration file if it does not already exist in that file](addspringproperty.md)
+* [Add a spring configuration property](addspringproperty.md)
 * [Change the key of a spring application property](changespringpropertykey.md)
-* [Delete a spring configuration property from any configuration files that contains a matching key](deletespringproperty.md)
+* [Delete a spring configuration property](deletespringproperty.md)
 * [Expand Spring YAML properties](expandproperties.md)
 * [Normalize Spring YAML properties to kebab-case](yamlpropertiestokebabcase.md)
 * [Remove `@RequestMapping` annotations](norequestmappingannotation.md)

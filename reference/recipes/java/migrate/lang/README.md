@@ -2,8 +2,7 @@
 
 ## Recipes
 
-* [Migrate deprecated `java.lang` APIs](javalangapis.md)
-* [Replace `String#format(String, Object...)` with `String#formatted(Object...)`](stringformatted.md)
+* [Prefer `String#formatted(Object...)`](stringformatted.md)
 * [Use `Character#isJavaIdentifierPart(char)`](migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
 * [Use `Character#isJavaIdentifierStart(char)`](migratecharacterisjavalettertoisjavaidentifierstart.md)
 * [Use `Character#isWhitespace(char)`](migratecharacterisspacetoiswhitespace.md)
@@ -13,5 +12,6 @@
 * [Use `Runtime.Version#interim()`](migrateruntimeversionminortointerim.md)
 * [Use `Runtime.Version#update()`](migrateruntimeversionsecuritytoupdate.md)
 * [Use `SecurityManager#checkMulticast(InetAddress)`](migratesecuritymanagermulticast.md)
+* [Use modernized `java.lang` APIs](javalangapis.md)
 
 

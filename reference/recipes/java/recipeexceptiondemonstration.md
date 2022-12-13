@@ -1,26 +1,28 @@
 # Demonstrate rendering of recipe exceptions
 
-**org.openrewrite.java.RecipeExceptionDemonstration** _Show how recipe exceptions are rendered in various forms of OpenRewrite tooling._
+**org.openrewrite.java.RecipeExceptionDemonstration**
+_Show how recipe exceptions are rendered in various forms of OpenRewrite tooling._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.33.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.33.0
+* version: 7.34.0
 
 ## Options
 
-| Type      | Name                                     | Description                                                                                                             |
-| --------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `String`  | throwOnMethodPattern                     | _Optional_. A [method pattern](../../method-patterns.md) that is used to find matching method declarations/invocations. |
-| `Boolean` | throwOnVisitAll                          | _Optional_.                                                                                                             |
-| `Boolean` | throwOnVisitAllVisitor                   | _Optional_.                                                                                                             |
-| `Boolean` | throwOnApplicableTest                    | _Optional_.                                                                                                             |
-| `Boolean` | throwOnApplicableTestVisitor             | _Optional_.                                                                                                             |
-| `Boolean` | throwOnSingleSourceApplicableTest        | _Optional_.                                                                                                             |
-| `Boolean` | throwOnSingleSourceApplicableTestVisitor | _Optional_.                                                                                                             |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | throwOnMethodPattern | *Optional*. A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. |
+| `Boolean` | throwOnVisitAll | *Optional*.  |
+| `Boolean` | throwOnVisitAllVisitor | *Optional*.  |
+| `Boolean` | throwOnApplicableTest | *Optional*.  |
+| `Boolean` | throwOnApplicableTestVisitor | *Optional*.  |
+| `Boolean` | throwOnSingleSourceApplicableTest | *Optional*.  |
+| `Boolean` | throwOnSingleSourceApplicableTestVisitor | *Optional*.  |
+
 
 ## Usage
 
@@ -31,7 +33,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -41,6 +43,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}
@@ -54,7 +57,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.RecipeExceptionDemonstration</recipe>
@@ -71,7 +74,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
   -DactiveRecipes=org.openrewrite.java.RecipeExceptionDemonstration
 ```
 {% endcode %}

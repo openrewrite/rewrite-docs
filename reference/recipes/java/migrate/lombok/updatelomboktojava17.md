@@ -1,6 +1,7 @@
-# Update Lombok dependency to a Java 17 compatible version
+# Migrate Lombok to a Java 17 compatible version
 
-**org.openrewrite.java.migrate.lombok.UpdateLombokToJava17** _Update Lombok dependency to a version that is compatible with Java 17._
+**org.openrewrite.java.migrate.lombok.UpdateLombokToJava17**
+_Update Lombok dependency to a version that is compatible with Java 17 and migrate experimental Lombok types that have been promoted._
 
 ### Tags
 
@@ -9,22 +10,23 @@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.14.1/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.14.1
+* version: 1.15.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.14.1 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -36,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.14.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.15.0")
 }
 ```
 {% endcode %}
@@ -51,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.lombok.UpdateLombokToJava17</recipe>
@@ -61,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.14.1</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,8 +77,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.14.1 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.15.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.lombok.UpdateLombokToJava17
 ```
 {% endcode %}
@@ -93,22 +95,24 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.projectlombok`
   * artifactId: `lombok`
   * newVersion: `1.18.*`
-* [Change type](../../changetype.md)
+  * retainVersions: `[]`
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.Builder`
   * newFullyQualifiedTypeName: `lombok.Builder`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.Value`
   * newFullyQualifiedTypeName: `lombok.Value`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.Wither`
   * newFullyQualifiedTypeName: `lombok.With`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.var`
   * newFullyQualifiedTypeName: `lombok.var`
-* [Change type](../../changetype.md)
+* [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `lombok.experimental.val`
   * newFullyQualifiedTypeName: `lombok.val`
-* [Replace `lombok.val` with `final var`](lombokvaltofinalvar.md)
+* [Prefer `final var`](../../../java/migrate/lombok/lombokvaltofinalvar.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -116,8 +120,8 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.lombok.UpdateLombokToJava17
-displayName: Update Lombok dependency to a Java 17 compatible version
-description: Update Lombok dependency to a version that is compatible with Java 17.
+displayName: Migrate Lombok to a Java 17 compatible version
+description: Update Lombok dependency to a version that is compatible with Java 17 and migrate experimental Lombok types that have been promoted.
 tags:
   - java17
   - lombok
@@ -126,6 +130,7 @@ recipeList:
       groupId: org.projectlombok
       artifactId: lombok
       newVersion: 1.18.*
+      retainVersions: []
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: lombok.experimental.Builder
       newFullyQualifiedTypeName: lombok.Builder
@@ -142,6 +147,7 @@ recipeList:
       oldFullyQualifiedTypeName: lombok.experimental.val
       newFullyQualifiedTypeName: lombok.val
   - org.openrewrite.java.migrate.lombok.LombokValToFinalVar
+
 ```
 {% endtab %}
 {% endtabs %}

@@ -1,30 +1,33 @@
-# Spring Boot 2.5 upgrades plus any possible manual changes that need to be reviewed.
+# Migrate to Spring Boot 2.5 from Spring Boot 2.0 through 2.4
 
-**org.openrewrite.java.spring.boot2.search.UpgradeRequirementsSpringBoot\_2\_5** \_Identify changes needed to upgrade to Spring Boot 2.5. \_
+**org.openrewrite.java.spring.boot2.search.UpgradeRequirementsSpringBoot\_2\_5**
+_Migrate applications built on Spring Boot 2.0 through 2.4 to the latest Spring Boot 2.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.5.
+_
 
 ### Tags
 
 * spring
-* spring-boot
+* boot
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.30.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.31.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.30.0
+* version: 4.31.0
+
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.30.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.31.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.32.0")
+    id("org.openrewrite.rewrite") version("5.33.0")
 }
 
 rewrite {
@@ -36,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.31.0")
 }
 ```
 {% endcode %}
@@ -51,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.37.0</version>
+        <version>4.38.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.search.UpgradeRequirementsSpringBoot_2_5</recipe>
@@ -61,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.30.0</version>
+            <version>4.31.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.37.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.30.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.31.0 \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.search.UpgradeRequirementsSpringBoot_2_5
 ```
 {% endcode %}
@@ -89,9 +92,10 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Find projects affected by changes to the default error view message attribute](messagesinthedefaulterrorview.md)
-* [In Spring Boot 2.5 a `DefaultConfigurationCustomizer` can now be used in favour of defining one or more `*Provider` beans](customizingjooqdefaultconfiguration.md)
-* [Applications using logging shutdown hooks](loggingshutdownhooks.md)
+* [Find projects affected by changes to the default error view message attribute](../../../../java/spring/boot2/search/messagesinthedefaulterrorview.md)
+* [In Spring Boot 2.5 a `DefaultConfigurationCustomizer` can now be used in favour of defining one or more `*Provider` beans](../../../../java/spring/boot2/search/customizingjooqdefaultconfiguration.md)
+* [Applications using logging shutdown hooks](../../../../java/spring/boot2/search/loggingshutdownhooks.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -99,16 +103,17 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.search.UpgradeRequirementsSpringBoot_2_5
-displayName: Spring Boot 2.5 upgrades plus any possible manual changes that need to be reviewed.
-description: Identify changes needed to upgrade to Spring Boot 2.5.
+displayName: Migrate to Spring Boot 2.5 from Spring Boot 2.0 through 2.4
+description: Migrate applications built on Spring Boot 2.0 through 2.4 to the latest Spring Boot 2.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.5.
 
 tags:
   - spring
-  - spring-boot
+  - boot
 recipeList:
   - org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView
   - org.openrewrite.java.spring.boot2.search.CustomizingJooqDefaultConfiguration
   - org.openrewrite.java.spring.boot2.search.LoggingShutdownHooks
+
 ```
 {% endtab %}
 {% endtabs %}

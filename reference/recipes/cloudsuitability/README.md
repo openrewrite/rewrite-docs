@@ -9,6 +9,7 @@ _Locating many of the same patterns that [Cloud Suitability Analyzer](https://gi
 * [Find EJB stateless beans](findejbstateless.md)
 * [Find JMS files](findjms.md)
 * [Find code unsuitable for the cloud](findunsuitablecode.md)
+* [Find java key store files](findjks.md)
 * [Find remote method invocations](findremotemethodinvocations.md)
 * [Find unhandled TERM signals](findunhandledtermsignal.md)
 * [Find use of JAX-RS](findjaxrs.md)
