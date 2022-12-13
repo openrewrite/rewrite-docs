@@ -7,8 +7,8 @@ It is highly recommended that developers use the rewrite-recipe-bom to align the
 | Module                                            | Version    |
 | ------------------------------------------------- |------------|
 | **org.openrewrite:rewrite-recipe-bom**            | **1.12.3** |
-| **org.openrewrite:rewrite-maven-plugin**          | **4.37.0** |
-| **org.openrewrite:rewrite-gradle-plugin**         | **5.32.0** |
+| **org.openrewrite:rewrite-maven-plugin**          | **4.38.0** |
+| **org.openrewrite:rewrite-gradle-plugin**         | **5.33.0** |
 | org.openrewrite:rewrite-core                      | 7.33.0     |
 | org.openrewrite:rewrite-groovy                    | 7.33.0     |
 | org.openrewrite:rewrite-gradle                    | 7.33.0     |
