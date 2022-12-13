@@ -32,9 +32,15 @@ It's important to note that it is possible to manipulate ASTs to create code tha
 
 For example, nothing prevents you from modifying an AST so that a variable is used before it is defined. It is the responsibility of recipe authors to consider language semantics and the full range of possibilities when making changes. In accordance with the principle of [Doing No Harm](../tutorials/authoring-recipes/recipe-conventions-and-best-practices.md#do-no-harm), always err on the side of leaving code untouched rather than making a risky change.
 
-## Code
+## Example
 
-Below is a simple Java class whose entire purpose is to demonstrate different types of ASTs. Each of the following sections will highlight different parts of this code to demonstrate which chunks correspond to which AST.
+This diagram demonstrates how a simple Java class is represented as an AST. Note the hierarchical structure where AST elements are composed out of other AST elements.
+
+<figure><img src="../.gitbook/assets/Vertical AST Example.png" alt=""><figcaption></figcaption></figure>
+
+## Java AST Types
+
+Below is a simple Java class whose entire purpose is to demonstrate different types of ASTs. Each of the following sections will highlight different parts of this code to demonstrate which chunks correspond to which AST. This listing of AST types is not exhaustive, but should give you a good sense of the most common types.
 
 ```java
 package org.openrewrite;
@@ -182,7 +188,3 @@ If you add a breakpoint in the `visitCompilationUnit` method, you'll find that t
 If you add a breakpoint in the `JavaVisitor.java` class instead, you can pick which AST type you want to explore. For instance, if you wanted to see what a `ClassDeclaration` AST is in your code, you could add a breakpoint in the [visitClassDeclaration method](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L410-L453). You'll now find that the AST begins with a `ClassDeclaration` instead of `CompilationUnit`. You can step through the tree in the same way as before and you'll find everything else is the same. The benefit of this approach is that you can continue to resume the program and it'll stop at every point in the AST that a `ClassDeclaration` is visited.
 
 ![ClassDeclaration Debugger Example](../.gitbook/assets/ClassDeclarationDebugger.png)
-
-## AST Diagram
-
-<figure><img src="../.gitbook/assets/AST-Example.png" alt=""><figcaption></figcaption></figure>
