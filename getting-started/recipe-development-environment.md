@@ -170,7 +170,7 @@ rewite-java-17, rewrite-java-11 and rewrite-java-8 can happily coexist on the sa
 
 ### Set Language Level and Bytecode Level
 
-In order to be able to use OpenRewrite to modernize old projects it's important to be able to run on older JDK implementations. To run these old JDK implementations, please update the Java compiler to target Java Language and Bytecode level 1.8:
+"To enable running on the widest possible range of JDK versions, configure the Java compiler to target Java Language and Bytecode level 1.8:"
 
 {% tabs %}
 {% tab title="Gradle" %}
