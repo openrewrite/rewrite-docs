@@ -46,8 +46,6 @@ Here is what the class should look like with just these things defined:
 ```java
 package com.yourorg;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 import org.openrewrite.Option;
@@ -56,6 +54,7 @@ import org.openrewrite.internal.lang.NonNull;
 
 // Making your recipe immutable helps make them idempotent and eliminates a variety of possible bugs.
 // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite.
+// Also note: All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
 @Value
 @EqualsAndHashCode(callSuper = false)
 public class SayHelloRecipe extends Recipe {
@@ -84,6 +83,10 @@ public class SayHelloRecipe extends Recipe {
     // TODO: Override getVisitor() to return a JavaIsoVisitor to perform the refactoring
 }
 ```
+
+{% hint style="info" %}
+If you don't use Lombok's `@Value` annotation, it will be up to you to ensure that the recipe is serializable (possibly via `@JsonCreator` and `@JsonProperty`). 
+{% endhint %}
 
 ## Writing Tests
 
@@ -365,8 +368,6 @@ With all of that done, the complete `SayHelloRecipe` looks like this:
 ```java
 package com.yourorg;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 import org.openrewrite.ExecutionContext;
@@ -379,6 +380,7 @@ import org.openrewrite.java.tree.J;
 
 // Making your recipe immutable helps make them idempotent and eliminates categories of possible bugs.
 // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite.
+// Also note: All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
 @Value
 @EqualsAndHashCode(callSuper = false)
 public class SayHelloRecipe extends Recipe {
@@ -387,12 +389,6 @@ public class SayHelloRecipe extends Recipe {
             example = "com.yourorg.FooBar")
     @NonNull
     String fullyQualifiedClassName;
-
-    // All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
-    @JsonCreator
-    public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
-        this.fullyQualifiedClassName = fullyQualifiedClassName;
-    }
 
     @Override
     public String getDisplayName() {
@@ -422,7 +418,7 @@ public class SayHelloRecipe extends Recipe {
                 return classDecl;
             }
 
-            // Check if the class already has a method named "hello"
+            // Check if the class already has a method named "hello".
             boolean helloMethodExists = classDecl.getBody().getStatements().stream()
                     .filter(statement -> statement instanceof J.MethodDeclaration)
                     .map(J.MethodDeclaration.class::cast)
