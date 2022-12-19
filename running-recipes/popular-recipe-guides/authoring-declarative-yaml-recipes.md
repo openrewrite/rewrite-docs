@@ -13,7 +13,7 @@ In this tutorial we'll assume the existence of two projects, A and B, in differe
 
 ## Renaming in Project A
 
-First, apply a OpenRewrite build plugin per the [Quickstart: Maven and Gradle](../../getting-started/getting-started.md).
+First, apply a OpenRewrite build plugin per the [Quickstart: Maven and Gradle](../getting-started.md).
 
 With a OpenRewrite build plugin applied, create a rewrite.yml at the project root with these contents:
 
@@ -153,4 +153,4 @@ Recipes will never be applied just because they exist on the classpath. A Recipe
 ## Next Steps
 
 * [Declarative YAML Format](../../reference/yaml-format-reference.md)
-* [Writing a Java Refactoring Recipe](../authoring-recipes/writing-a-java-refactoring-recipe.md)
+* [Writing a Java Refactoring Recipe](../../authoring-recipes/writing-a-java-refactoring-recipe.md)

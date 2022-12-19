@@ -15,7 +15,7 @@ Currently, OpenRewrite's dependency management capabilities are only implemented
 ## Setup
 
 1. Clone our fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration), or select your own project
-2. Familiarize yourself with the basics of applying the rewrite-maven-plugin as described in our [quickstart guide](../../getting-started/getting-started.md).
+2. Familiarize yourself with the basics of applying the rewrite-maven-plugin as described in our [quickstart guide](../getting-started.md).
 
 {% hint style="warning" %}
 The sample spring-petclinic project is based on an older version of the project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.

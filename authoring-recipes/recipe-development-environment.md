@@ -221,7 +221,7 @@ Having configured the project per these recommendations, you're now able to begi
 * `src/test/java` - Recipe tests
 * (optional) `src/main/resources/META-INF/rewrite` - YAML files for defining [declarative OpenRewrite Recipes](../reference/yaml-format-reference.md)
 
-With all of that done, your project setup is complete! You are now ready to [create a Recipe](../tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md).
+With all of that done, your project setup is complete! You are now ready to [create a Recipe](writing-a-java-refactoring-recipe.md).
 
 ## Recipe Distribution
 
@@ -248,7 +248,7 @@ These other docs might also be useful for you depending on where you want to pub
 
 ### Running your Recipes
 
-Once your recipe module is published, either locally for testing or to an external artifact repository for broader distribution, you'll need to configure a separate repository to test with (See the [Getting Started Guide](getting-started.md) for more detailed instructions). In the repository you want to test your recipe against, update the build plugins accordingly:
+Once your recipe module is published, either locally for testing or to an external artifact repository for broader distribution, you'll need to configure a separate repository to test with (See the [Getting Started Guide](../running-recipes/getting-started.md) for more detailed instructions). In the repository you want to test your recipe against, update the build plugins accordingly:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -338,6 +338,6 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 
 ## Next Steps
 
-* [Writing a Java Refactoring Recipe](../tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md)
+* [Writing a Java Refactoring Recipe](writing-a-java-refactoring-recipe.md)
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)

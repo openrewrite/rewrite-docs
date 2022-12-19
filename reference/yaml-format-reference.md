@@ -10,7 +10,7 @@ There are two places OpenRewrite [YAML](https://yaml.org) files may appear:
   * Will not be included in jars published from your project
 * Inside the META-INF/rewrite folder of a jar
   * Put your recipes here if you want to redistribute and apply them to other repositories
-  * See [Recipe Development Environment](../getting-started/recipe-development-environment.md) for instructions on setting up your project for recipe development
+  * See [Recipe Development Environment](../authoring-recipes/recipe-development-environment.md) for instructions on setting up your project for recipe development
   * e.g.: [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite)
 
 In either case, these YAML files share the same format and purpose: making styles and recipes available to rewrite. A single OpenRewrite YAML file may contain any number of recipes and styles, separated by `---`.

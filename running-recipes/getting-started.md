@@ -348,7 +348,7 @@ If you want to know when dependency management for Gradle will be added to rewri
 
 Now that you know how to configure and run recipes, you may be interested in these topics:
 
-* [Writing a Java Refactoring Recipe](../tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md)
+* [Writing a Java Refactoring Recipe](../authoring-recipes/writing-a-java-refactoring-recipe.md)
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
 * [Declarative YAML Format](../reference/yaml-format-reference.md)

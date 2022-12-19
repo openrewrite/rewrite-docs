@@ -4,8 +4,9 @@ description: Adding a method to a class that returns a String
 
 # Writing a Java Refactoring Recipe
 
-To help you get started with writing recipes, this guide will walk you through all the steps needed to create a basic refactoring recipe. This
-`SayHelloRecipe` will add a `hello()` method to a user specified class if that class does not already have one. For example, it would take a class like this:
+To help you get started with writing recipes, this guide will walk you through all the steps needed to create a basic refactoring recipe. This `SayHelloRecipe` will add a `hello()` method to a user specified class if that class does not already have one.&#x20;
+
+For example, it would take a class like this:
 
 ```java
 package com.yourorg;
@@ -29,13 +30,13 @@ class FooBar {
 
 ## Prerequisites
 
-This guide assumes you've already set up your [Recipe Development Environment](../../getting-started/recipe-development-environment.md) and that you are familiar with writing Java code.
+This guide assumes you've already set up your [Recipe Development Environment](recipe-development-environment.md) and that you are familiar with writing Java code.
 
 ## Outlining SayHelloRecipe
 
 Let's begin by creating a Java class that extends `org.openrewrite.Recipe`. At a minimum, this recipe should have:
 
-* An `Option` that is the fully qualified name of the class you want to add the `hello()` method to. 
+* An `Option` that is the fully qualified name of the class you want to add the `hello()` method to.
 * A serializable constructor that takes in the fully qualified class name.
 * A `getDisplayName()` method that returns the display name for this recipe.
 * A `getDescription()` method that returns the description for this recipe.
@@ -169,7 +170,7 @@ Please note that:
 
 * The test file implements the `RewriteTest` interface, which provides an entry point to the testing infrastructure via the method variants of `rewriteRun()`.
 * It is possible to set up defaults for all of the tests via the `defaults()` method so that you don't have to repeat the same code in each test.
-* Each test, at a minimum, will define the initial source code (the "before" state). 
+* Each test, at a minimum, will define the initial source code (the "before" state).
   * If there _is_ a second argument included (the "after" state), then the testing infrastructure will assert that the source file has been transformed into this new state after the recipe has been executed.
   * If there _is not_ a second argument, then the testing infrastructure will assert that the source file has not been changed after the recipe has been executed.
 
@@ -181,19 +182,19 @@ Now that we have a basic outline of a recipe and the tests, it's time to make th
 
 There are two main pieces to this:
 
-1. Figure out [which ASTs](/concepts-and-explanations/ast-examples.md) have the data we need to make the changes we want.
+1. Figure out [which ASTs](../concepts-and-explanations/ast-examples.md) have the data we need to make the changes we want.
 2. Override the `Recipe.getVisitor()` method to return a visitor that is responsible for refactoring the code as desired. This visitor is where all of our core logic will live. It should ensure:
-    * That we don't change classes that don't match the specified fully qualified class name 
-    * That we don't change existing `hello()` methods. 
-    * That we _do_ add a `hello()` method to a class that matches that fully qualified class name and doesn't have an existing `hello()` method.
+   * That we don't change classes that don't match the specified fully qualified class name
+   * That we don't change existing `hello()` methods.
+   * That we _do_ add a `hello()` method to a class that matches that fully qualified class name and doesn't have an existing `hello()` method.
 
 ### Figure out which ASTs are needed
 
 Before we begin writing any code, it's a good idea to figure out which ASTs contain the data we need and which ASTs we might need to change to get the results we want. Using an AST that's too broad in scope will result in us having to do much more work than necessary, but using an AST that's too narrow in scope will result in us being unable to make the changes we need to.
 
-For our use case, we care about reading class names and, potentially, changing methods inside of the class. 
+For our use case, we care about reading class names and, potentially, changing methods inside of the class.
 
-If we take a look at the [AST Examples doc](https://docs.openrewrite.org/concepts-and-explanations/ast-examples#ast-diagram), we can see that a [J.ClassDeclaration](https://github.com/openrewrite/rewrite/blob/v7.34.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1062-L1336) has the information we need. It has a `FullyQualified` type that we can use to ensure we're only making changes on the specified class, and it contains a `Block` that includes `Statements` that may be `MethodDeclarations`, so we can check for a `hello()` method and potentially add one if it doesn't exist. 
+If we take a look at the [AST Examples doc](https://docs.openrewrite.org/concepts-and-explanations/ast-examples#ast-diagram), we can see that a [J.ClassDeclaration](https://github.com/openrewrite/rewrite/blob/v7.34.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1062-L1336) has the information we need. It has a `FullyQualified` type that we can use to ensure we're only making changes on the specified class, and it contains a `Block` that includes `Statements` that may be `MethodDeclarations`, so we can check for a `hello()` method and potentially add one if it doesn't exist.
 
 ### Override the visitor
 
@@ -204,7 +205,7 @@ With the knowledge of the AST we need obtained, let's make an outline of what ou
 public class SayHelloRecipe extends Recipe {
     // ...
 
-     @Override
+    @Override
     protected JavaIsoVisitor<ExecutionContext> getVisitor() {
         // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
         return new SayHelloVisitor();
@@ -254,7 +255,7 @@ public class SayHelloRecipe extends Recipe {
 
 #### Filtering out classes that already have a hello() method
 
-To filter out classes that already have a `hello()` method, we need to first figure out how to check for that. A good understanding of the [ASTs](/concepts-and-explanations/ast-examples.md) is necessary for this type of filtering. With that knowledge, we can build up a stream, filter it down, and check for any matches by doing something like:
+To filter out classes that already have a `hello()` method, we need to first figure out how to check for that. A good understanding of the [ASTs](../concepts-and-explanations/ast-examples.md) is necessary for this type of filtering. With that knowledge, we can build up a stream, filter it down, and check for any matches by doing something like:
 
 ```java
 // ...
@@ -289,9 +290,9 @@ public class SayHelloRecipe extends Recipe {
 
 #### Adding a hello() method to the classes that need it
 
-In order to create complex AST elements such as a new method, it's a good idea to use a [Java Template](/concepts-and-explanations/javatemplate.md). At a high-level, Java Templates simplify the creation of ASTs by converting code snippets into fully created ASTs.
+In order to create complex AST elements such as a new method, it's a good idea to use a [Java Template](../concepts-and-explanations/javatemplate.md). At a high-level, Java Templates simplify the creation of ASTs by converting code snippets into fully created ASTs.
 
-Templates are created using the `JavaTemplate.builder()` method. Within a template, `#{}` can be used to signify that a value will be substituted there later on. In our recipe, for instance, we don't know what the fully qualified class name is when we're compiling the program. Instead, we need to rely on the user to provide that later. 
+Templates are created using the `JavaTemplate.builder()` method. Within a template, `#{}` can be used to signify that a value will be substituted there later on. In our recipe, for instance, we don't know what the fully qualified class name is when we're compiling the program. Instead, we need to rely on the user to provide that later.
 
 Here is what a template like that might look like for our recipe:
 
@@ -332,7 +333,7 @@ public class SayHelloRecipe extends Recipe {
                 return classDecl;
             }
 
-            // Check if the class already has a method named "hello".
+            // Check if the class already has a method named "hello"
             boolean helloMethodExists = classDecl.getBody().getStatements().stream()
                     .filter(statement -> statement instanceof J.MethodDeclaration)
                     .map(J.MethodDeclaration.class::cast)
@@ -421,7 +422,7 @@ public class SayHelloRecipe extends Recipe {
                 return classDecl;
             }
 
-            // Check if the class already has a method named "hello".
+            // Check if the class already has a method named "hello"
             boolean helloMethodExists = classDecl.getBody().getStatements().stream()
                     .filter(statement -> statement instanceof J.MethodDeclaration)
                     .map(J.MethodDeclaration.class::cast)
@@ -479,6 +480,6 @@ recipeList:
 
 Congratulations on finishing your first recipe! Before you begin making your own recipe, please consider checking out these other docs:
 
-* [A deeper look into testing](/tutorials/authoring-recipes/recipe-testing.md)
-* [A best practice guide for making recipes](/tutorials/authoring-recipes/recipe-conventions-and-best-practices.md)
-* [A more complex recipe creation tutorial](/tutorials/authoring-recipes/modifying-methods-with-javatemplate.md)
+* [A deeper look into testing](recipe-testing.md)
+* [A best practice guide for making recipes](recipe-conventions-and-best-practices.md)
+* [A more complex recipe creation tutorial](modifying-methods-with-javatemplate.md)

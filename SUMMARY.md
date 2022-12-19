@@ -2,33 +2,32 @@
 
 * [Introduction to OpenRewrite](README.md)
 
-## Getting Started
+## Authoring Recipes
 
-* [Quickstart: Setting Up Your Project and Running Recipes](getting-started/getting-started.md)
-* [Recipe Development Environment](getting-started/recipe-development-environment.md)
+* [Recipe Development Environment](authoring-recipes/recipe-development-environment.md)
+* [Writing a Java Refactoring Recipe](authoring-recipes/writing-a-java-refactoring-recipe.md)
+* [Recipe Testing](authoring-recipes/recipe-testing.md)
+* [Recipe Conventions and Best Practices](authoring-recipes/recipe-conventions-and-best-practices.md)
+* [Modifying Methods with JavaTemplate](authoring-recipes/modifying-methods-with-javatemplate.md)
+* [Writing recipes over multiple source file types](authoring-recipes/writing-recipes-over-multiple-source-file-types.md)
 
-## Tutorials & Guides <a href="#tutorials" id="tutorials"></a>
+## Running Recipes
 
-* [Authoring Recipes](tutorials/authoring-recipes/README.md)
-  * [Recipe Testing](tutorials/authoring-recipes/recipe-testing.md)
-  * [Writing a Java Refactoring Recipe](tutorials/authoring-recipes/writing-a-java-refactoring-recipe.md)
-  * [Recipe Conventions and Best Practices](tutorials/authoring-recipes/recipe-conventions-and-best-practices.md)
-  * [Modifying Methods with JavaTemplate](tutorials/authoring-recipes/modifying-methods-with-javatemplate.md)
-  * [Writing recipes over multiple source file types](tutorials/authoring-recipes/writing-recipes-over-multiple-source-file-types.md)
-* [Running Recipes](tutorials/running-recipes/README.md)
-  * [Common Static Analysis Issue Remediation](tutorials/running-recipes/common-static-analysis-issue-remediation.md)
-  * [Automatically Fix Checkstyle Violations](tutorials/running-recipes/automatically-fix-checkstyle-violations.md)
-  * [Migrate to Java 11 from Java 8](tutorials/running-recipes/migrate-from-java-8-to-java-11.md)
-  * [Migrate to JUnit 5 from JUnit 4](tutorials/running-recipes/migrate-from-junit-4-to-junit-5.md)
-  * [Migrate to Spring Boot 2 from Spring Boot 1](tutorials/running-recipes/spring-boot-2.x-migration-from-spring-boot-1.x.md)
-  * [Migrate to Quarkus 2 from Quarkus 1](tutorials/running-recipes/quarkus-2.x-migration-from-quarkus-1.x.md)
-  * [Migrate to Micronaut 3 from Micronaut 2](tutorials/running-recipes/migrate-to-micronaut-3-from-micronaut-2.md)
-  * [Migrate to SLF4J from Log4j](tutorials/running-recipes/migrate-to-slf4j-from-log4j.md)
-  * [Use SLF4J Parameterized Logging](tutorials/running-recipes/slf4j-parameterized-logging.md)
-  * [Refactoring with Declarative YAML Recipes](tutorials/running-recipes/authoring-declarative-yaml-recipes.md)
-  * [Automating Maven Dependency Management](tutorials/running-recipes/automating-maven-dependency-management.md)
-* [Running Rewrite on a Gradle project without modifying the build](tutorials/running-rewrite-on-a-gradle-project-without-modifying-the-build.md)
-* [Running Rewrite without build tool plugins](tutorials/running-rewrite-without-build-tool-plugins.md)
+* [Quickstart: Setting Up Your Project and Running Recipes](running-recipes/getting-started.md)
+* [Running Rewrite on a Gradle project without modifying the build](running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build.md)
+* [Running Rewrite without build tool plugins](running-recipes/running-rewrite-without-build-tool-plugins.md)
+* [Popular Recipe Guides](running-recipes/popular-recipe-guides/README.md)
+  * [Common Static Analysis Issue Remediation](running-recipes/popular-recipe-guides/common-static-analysis-issue-remediation.md)
+  * [Automatically Fix Checkstyle Violations](running-recipes/popular-recipe-guides/automatically-fix-checkstyle-violations.md)
+  * [Migrate to Java 11 from Java 8](running-recipes/popular-recipe-guides/migrate-from-java-8-to-java-11.md)
+  * [Migrate to JUnit 5 from JUnit 4](running-recipes/popular-recipe-guides/migrate-from-junit-4-to-junit-5.md)
+  * [Migrate to Spring Boot 2 from Spring Boot 1](running-recipes/popular-recipe-guides/spring-boot-2.x-migration-from-spring-boot-1.x.md)
+  * [Migrate to Quarkus 2 from Quarkus 1](running-recipes/popular-recipe-guides/quarkus-2.x-migration-from-quarkus-1.x.md)
+  * [Migrate to Micronaut 3 from Micronaut 2](running-recipes/popular-recipe-guides/migrate-to-micronaut-3-from-micronaut-2.md)
+  * [Migrate to SLF4J from Log4j](running-recipes/popular-recipe-guides/migrate-to-slf4j-from-log4j.md)
+  * [Use SLF4J Parameterized Logging](running-recipes/popular-recipe-guides/slf4j-parameterized-logging.md)
+  * [Refactoring with Declarative YAML Recipes](running-recipes/popular-recipe-guides/authoring-declarative-yaml-recipes.md)
+  * [Automating Maven Dependency Management](running-recipes/popular-recipe-guides/automating-maven-dependency-management.md)
 
 ## Changelog
 
