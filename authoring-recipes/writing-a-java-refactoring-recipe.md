@@ -92,6 +92,10 @@ If you don't use Lombok's `@Value` annotation, it will be up to you to ensure th
 
 Now that we have a basic recipe defined (albeit one that doesn't _do_ anything yet), it's a good idea to write some tests. This will not only allow us to confirm that we've set everything up correctly so far, but it will also ensure that we've thought more about how this recipe will work.
 
+{% hint style="info" %}
+For a more extensive look into recipe testing, check out the [Recipe Testing Guide](/authoring-recipes/recipe-testing.md)
+{% endhint %}
+
 For our `SayHelloRecipe`, we want to ensure:
 
 * That a class matching the configured `fullyQualifiedClassName` with no `hello()` method will have a `hello()` method added
