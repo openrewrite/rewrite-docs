@@ -1,15 +1,59 @@
 # Recipe Testing
 
-OpenRewrite provides infrastructure that allows developers to quickly build tests to exercise their recipe and then assert that the recipe has made the correct changes. To leverage Rewrite's testing facilities, you can add the following dependencies to your project's build file:
+When developing new recipes, it's very important to test them to ensure that they not only make the expected changes but that they also **don't** make unnecessary changes. 
+
+To help you create tests that meet those standards, this guide will:
+
+* [Show you what dependencies you need to add to your project to utilize the OpenRewrite testing framework](#adding-dependencies)
+* [Provide a simple example recipe to discuss writing tests for](#sample-recipe) 
+* [Present you with some examples of good tests for said recipe](#writing-tests)
+* [Explain the key classes that make up the tests](#rewritetest-interface)
+* [Give some additional advanced testing tips](#advanced-recipe-testing)
+
+## Prerequisites
+
+This guide assumes that:
+
+* You've already set up your [recipe development environment](/authoring-recipes/recipe-development-environment.md)
+* You're familiar with [creating Java refactoring recipes](/authoring-recipes/writing-a-java-refactoring-recipe.md)
+
+## Adding Dependencies
+
+Before you can go about writing tests, you'll want to add some dependencies to your project's build file so that you have all of the tools needed to create said tests:
 
 {% tabs %}
+{% tab title="Gradle" %}
+```groovy
+plugins {
+    id("java-library")
+}
+
+// ...
+dependencies {
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.12.3"))
+
+    testImplementation("org.openrewrite:rewrite-test")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
+
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:latest.release")
+
+    // Optional dependency to make SLF4J logging work.
+    // Any SLF4J implementation can work here.
+    // Also requires a logback.xml file like:
+    // https://gist.github.com/mike-solomon/dabcb2cbd9bca33e4ffeee8fc1c09454
+    testRuntimeOnly("ch.qos.logback:logback-classic:1.2.+")
+
+    // Optional dependency on assertJ to provide fluent assertions.
+    testImplementation("org.assertj:assertj-core:latest.release")
+}
+```
+{% endtab %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```xml
 <project>
     <properties>
         <junit.version>5.8.2</junit.version>
-        <kotlin.version>1.5.31</kotlin.version>
         <assertj.version>3.23.1</assertj.version>
     </properties>
     ...
@@ -43,19 +87,6 @@ OpenRewrite provides infrastructure that allows developers to quickly build test
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- Optional dependencies and only needed if writing tests in Kotlin. -->
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-reflect</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
-        </dependency>
         <!-- Optional dependency on assertJ to provide fluent assertions. -->
         <dependency>
             <groupId>org.assertj</groupId>
@@ -68,47 +99,22 @@ OpenRewrite provides infrastructure that allows developers to quickly build test
 ```
 {% endcode %}
 {% endtab %}
-
-{% tab title="Gradle" %}
-```groovy
-plugins {
-    id("java-library")
-    id("org.jetbrains.kotlin.jvm") version "1.7.20"
-}
-
-...
-dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.12.3"))
-
-    testImplementation("org.openrewrite:rewrite-test")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:latest.release")
-
-    // Optional dependencies and only needed if writing tests in Kotlin.
-    testImplementation("org.jetbrains.kotlin:kotlin-reflect")
-    testImplementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-    // Optional dependency on assertJ to provide fluent assertions.
-    testImplementation("org.assertj:assertj-core:latest.release")
-}
-```
-{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-While Recipes should generally be compiled with Java 8 as the target for compatibliity, tests can be compiled to target newer versions of the Java Runtime.
+While recipes should generally be compiled with Java 8 as the target for compatibility, tests can be compiled to target newer versions of the Java Runtime.
 
-We recommend either compiling tests targeting Java 17 so you can use multi-line strings, or using Kotlin to get access to multi-line strings.&#x20;
+We recommend either using Java 17 or Kotlin so that you get access to multi-line strings in your tests.
 
-This tutorial uses Kotlin for tests, but which language you use is a matter of preference.
+This tutorial uses Java for tests, but which language you use is a matter of preference.
 {% endhint %}
 
-### `RewriteTest` Interface
+## Sample Recipe
 
-OpenRewrite provides a convenient interface that acts as both an entry point in which to exercise recipes in tests and also provides a fluent API for expressing recipe and source file configuration. For the sake of this guide, let's assume we have the following recipe that ensures a class's package declaration is all lowercase:
+With the dependencies set up, we now need a recipe that we can write tests for. For the sake of an example, let's assume we have the following recipe that ensures a class's package declaration is all lowercase: 
 
 ```java
-package org.openrewrite.java.cleanup;
+package com.yourorg;
 
 import org.openrewrite.ExecutionContext;
 import org.openrewrite.Recipe;
@@ -148,11 +154,14 @@ public class LowercasePackage extends Recipe {
         return new JavaIsoVisitor<ExecutionContext>() {
             @Override
             public J.Package visitPackage(J.Package pkg, ExecutionContext executionContext) {
+                // Grab the package name without spaces
                 String packageText = pkg.getExpression().print(getCursor()).replaceAll("\\s", "");
                 String lowerCase = packageText.toLowerCase();
+
                 if(!packageText.equals(lowerCase)) {
                     doNext(new ChangePackage(packageText, lowerCase, true));
                 }
+
                 return pkg;
             }
         };
@@ -160,127 +169,178 @@ public class LowercasePackage extends Recipe {
 }
 ```
 
-In order to test this recipe, at a minimum the testing class will implement `RewriteTest` , define recipe/parser configuration via `RecipeSpec`, and define one or more source file assertions using the fluent API provided by the interface. As an example, the following test class overrides the `defaults(`RecipeSpec`)`method to define which recipe will be used by all tests defined in the class. Each of the three tests demonstrates how the fluent API is used to create source files and then assert the recipe has made the correct transformations to those files.
+## Writing Tests
 
-```kotlin
-package org.openrewrite.java.cleanup
+Now that we have a recipe to test with, let's go over what every test class should have. At the very least, your tests should:
 
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
-import org.openrewrite.PathUtils
-import org.openrewrite.java.JavaParser
-import org.openrewrite.test.RecipeSpec
-import org.openrewrite.test.RewriteTest
-import java.nio.file.Paths
+  * Implement the [RewriteTest interface](#rewritetest-interface)
+  * Specify the recipe to test via a [RecipeSpec](#recipespec)
+  * Define one or more source file assertions using the [Fluent API](https://java-design-patterns.com/patterns/fluentinterface/) provided by the interface
 
-interface LowercasePackageTest : RewriteTest {
+First, we'll provide an example of what these tests might look like. After that, we'll provide more context around a few key pieces.
+
+### Example tests
+
+```java
+package com.yourorg;
+
+import org.junit.jupiter.api.Test;
+import org.openrewrite.PathUtils;
+import org.openrewrite.java.JavaParser;
+import org.openrewrite.test.RecipeSpec;
+import org.openrewrite.test.RewriteTest;
+
+import java.nio.file.Paths;
+
+import static org.openrewrite.java.Assertions.java;
+import static org.assertj.core.api.Assertions.assertThat;
+
+class LowercasePackageTest implements RewriteTest {
 
     // Note, you can define defaults for the RecipeSpec and these defaults will be
     // used for all tests.
-    override fun defaults(spec: RecipeSpec) {
-        spec
-            .recipe(LowercasePackage()) // Which recipe each test should run
+    @Override
+    public void defaults(RecipeSpec spec) {
+        spec.recipe(new LowercasePackage());
     }
 
-    // A java source file that already has a lowercase package name should be left
+    // A Java source file that already has a lowercase package name should be left
     // unchanged.
     @Test
-    fun packageIsAlreadyLowercase() = rewriteRun(
-        java("""
-            package com.lowercase;
-            class A {}
-        """),
-    )
+    void packageIsAlreadyLowercase() {
+        rewriteRun(
+            java(
+                """
+                    package com.yourorg;
 
-    // Assert that a java source file with uppercase letters in its package name
+                    class A {}
+                """
+            )
+        );
+    }
+
+    // Assert that a Java source file with uppercase letters in its package name
     // is correctly transformed by the recipe.
     @Test
-    fun lowerCasePackage() = rewriteRun(
-        // Each test can customize the RecipeSpec prior to execution of the test.
-        // In this case, the recipe has already been defined in defaults(), and
-        // this test will use a parser that logs warnings and errors
-        { spec -> spec
-            .parser(JavaParser.fromJavaVersion()
-                .logCompilationWarningsAndErrors(false)
-                .build())
-        },
-        java(
-            // The Java source file before transformation:
-            """
-                package com.UPPERCASE.CamelCase;
-                class A {}
-            """,
-            // The expected Java source file after transformation.
-            """
-                package com.uppercase.camelcase;
-                class A {}
-            """)
-            // An optional callback that can be used after the recipe has been
-            // executed to assert additional conditions on the resulting source file.
-            { spec ->
-                spec.afterRecipe { cu ->
-                    assertThat(PathUtils.equalIgnoringSeparators(cu.sourcePath, Paths.get("com/uppercase/camelcase/A.java"))).isTrue
-            }
-        }
-    )
-    
-    // This test defines both source files and asserts that each file is correctly
-    // handled by the recipe.
+    void lowerCasePackage() {
+        // Each test can customize the RecipeSpec before the test is executed.
+        // In this case, the recipe has already been defined in defaults(). We
+        // can extend that and add a parser that logs warnings and errors for
+        // just this test.
+        rewriteRun(
+            // You'll need to have an SLF4J logger configured to see
+            // these warnings and errors.
+            spec -> spec
+                    .parser(JavaParser.fromJavaVersion()
+                            .logCompilationWarningsAndErrors(true)),
+            java(
+                // The Java source file before the recipe is run:
+                """
+                    package com.UPPERCASE.CamelCase;
+                    class FooBar {}
+                """,
+                // The expected Java source file after the recipe is run:
+                """
+                    package com.uppercase.camelcase;
+                    class FooBar {}
+                """,
+                // An optional callback that can be used after the recipe has been
+                // executed to assert additional conditions on the resulting source file:
+                spec -> spec.afterRecipe(cu -> assertThat(PathUtils.equalIgnoringSeparators(cu.getSourcePath(), Paths.get("com/uppercase/camelcase/FooBar.java"))).isTrue()))
+        );
+    }
+
+    // Demonstrates how you can do multiple checks in one test.
+    //
+    // You can also combine different types (such as `java` and `text`) in one test:
+    // https://github.com/openrewrite/rewrite-spring/blob/main/src/testWithSpringBoot_2_7/java/org/openrewrite/java/spring/boot2/MoveAutoConfigurationToImportsFileTest.java#L177-L224
     @Test
-    fun combinedExample() = rewriteRun(
-        // Assert the first source file is not modified.
-        java("""
-            package com.lowercase;
-            class A {}
-        """),
-        //Assert the second source file is modified.
-        java(
-            """
-                package com.UPPERCASE.CamelCase;
-                class A {}
-            """,
-            """
-                package com.uppercase.camelcase;
-                class A {}
-            """)
-        }
-    )
+    void combinedExample() {
+        rewriteRun(
+            // Assert the first source file is not modified.
+            java(
+                """
+                    package com.lowercase;
+                    class A {}
+                """
+            ),
+            // Assert the second source file is modified.
+            java(
+                """
+                    package com.UPPERCASE.CamelCase;
+                    class FooBar {}
+                """,
+                """
+                    package com.uppercase.camelcase;
+                    class FooBar {}
+                """
+            )
+        );
+    }
 }
 ```
 
-#### `RecipeSpec`
+### RewriteTest Interface
 
-The `RecipeSpec` class drives which recipe will be executed for a given test and allows a developer to customize aspects of the environment in which the recipe runs. The [`RecipeSpec`](https://github.com/openrewrite/rewrite/blob/main/rewrite-test/src/main/java/org/openrewrite/test/RecipeSpec.java) can be used to customize the parser(s) that will be used to compile source files, manipulate the \`ExecutionContext\`, and provides convinient callbacks that can be used to execute code before/after the test.
+As mentioned above, the first thing all tests need to do is implement the [RewriteTest interface](https://github.com/openrewrite/rewrite/blob/main/rewrite-test/src/main/java/org/openrewrite/test/RewriteTest.java). This interface not only acts as the entry point to testing your recipe, but it also provides a [Fluent API](https://java-design-patterns.com/patterns/fluentinterface/) for expressing recipe and source file configuration. 
 
-The `RewriteTest.defaults()` method can be used to define common RecipeSpec customizations that should be applied for all tests in the testing class. Additionally, there are overloaded versions of `RewriteTest.runRecipe` that allow the `RecipeSpec` to be further customized for that specific test.
+In the above tests, we utilize two main pieces of this interface:
 
-#### SourceSpecs
+* The `defaults` method to set up the environment needed for each test (via [RecipeSpecs](#recipespec))
+* The `rewriteRun` method to assert that the recipe has made the correct transformations on the code (via [SourceSpecs](#sourcespecs))
 
-A `SourceSpec` is used to define a source file that will be parsed during a test and then processed within the environment defined by the `RecipeSpec`. At a bare minimum a `SourceSpec` will define the type of source file and its initial ("before") contents. The testing infrastructure will select the appropriate parser based on the source file type and parser the contents into a `SourceFile`. \`\`
+### RecipeSpec
 
-In a majority of cases, a SourceSpec will also define an "after" state which defines what the source file contents will look like after it has been processed by the given recipe environment. The testing framework will automatically fail a given test if the source file has not been transformed into its "after" state. Any SourceSpec that does not define an "after" state is implicitly saying "the recipe should not make any changes to this source file.
+Before you begin writing the core logic for your tests, you'll need to set up your environment. You can do this by utilizing the [RecipeSpec class](https://github.com/openrewrite/rewrite/blob/main/rewrite-test/src/main/java/org/openrewrite/test/RecipeSpec.java). This class serves a few main purposes:
 
-A developer can assert additional conditions on a source file by using the `afterRecipe` callback that is defined on the `SourceSpec`. This can be convenient when asserting conditions on the resulting semantic model that are not represented in the rendering of the source code after the recipe has transformed the source file.
+* It allows you to specify which recipe will be executed for any given test
+* It allows you to customize the environment in which the recipe runs (such as what parser(s) to use and whether or not you should log Java compilation errors)
+* It provides convenient callbacks that can be used to execute code before or after any given test
 
-The `RewriteTest` interface provides fluent entry points to create the various types of source specs.
+The `RewriteTest.defaults()` method can be used to define common `RecipeSpec` customizations that should be applied to all of the tests in the testing class. Additionally, there are overloaded versions of the `RewriteTest.runRecipe()` method that allow the `RecipeSpec` to be further customized for a specific test. For instance, you may want different tests to have [different Spring properties](https://github.com/openrewrite/rewrite-spring/blob/main/src/test/java/org/openrewrite/java/spring/AddSpringPropertyTest.java) or [different Java versions](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/test/java/org/openrewrite/java/migrate/jakarta/JavaxToJakartaTest.java).
 
-### Advanced Recipe Testing
+### SourceSpec
 
-#### Customizing Source File Paths and Markers
+Once you've set up your environment, the next step is to write the tests themselves. The core component of each test is the [SourceSpec class](https://github.com/openrewrite/rewrite/blob/main/rewrite-test/src/main/java/org/openrewrite/test/SourceSpec.java). 
 
-Occasionally, it is desirable to modify a specific source file prior to being processed through the Recipe testing environment. This type of customization can be achieved by using the callback method provided as an optional parameter on the fluent API. As an example, let us assume a recipe has been built to manipulate properties within an "application.properties" source file but only when its path is "main/resources/application.properties". To correctly define the path for the source file, a developer can leverage the callback:
+At a minimum, a `SourceSpec` will define the type of source file (such as `java` or `text`) and its initial "before" contents. If a test is defined with only these pieces, then the testing infrastructure will pass a test if the specified code has not changed at all after the given recipe has run.
 
-```kotlin
-fun propertiesChangeTest() = rewriteRun(
-    properties(
-        // Before
-        """
-            server.port=8080
-        """,
-        // After
-        """
-            server.port=80
-        """
-    ) {p -> p.path(Paths.get("main/resources/application.properties")
-) 
+In a majority of cases, though, a `SourceSpec` will also define an "after" state which defines what the source file contents will look like after it has been processed by the given recipe. In this case, the testing framework will pass the test if the source file has been transformed into the "after" state.
+
+A developer can assert additional conditions on a source file by using the `afterRecipe` callback that is defined on the `SourceSpec`. This can be convenient when asserting conditions on the resulting semantic model that are not represented in the rendering of the source code after the recipe has transformed the source file. For instance, you may want to confirm that the path to a file has changed such as in the [sample tests](#example-tests) above. This file path is not visible in the "after" code and can only be tested via this callback.
+
+## Advanced Recipe Testing
+
+### Customizing Source File Paths and Markers
+
+Occasionally, it is desirable to modify a specific source file before it is processed by the recipe testing environment. This type of customization can be achieved by using the callback method provided as an optional parameter on the Fluent API. 
+
+As an example, let us assume a recipe has been built to manipulate properties within an `application.properties` source file, but only when its path is `main/resources/application.properties`. To correctly define the path for the source file, a developer can leverage the callback:
+
+```java
+@Test
+void propertiesChangeTest() {
+    rewriteRun(
+        properties(
+            // Before
+            """
+                server.port=8080
+                """,
+            // After
+            """
+                server.port=80
+            """,
+            s -> s.path("src/main/resources/application.properties")
+        )
+    );
+}
 ```
+
+{% hint style="info" %}
+You'll need to add `org.openrewrite:rewrite-properties` as a test dependency for `properties` to be available in your tests.
+{% endhint %}
+
+## Next Steps
+
+Now that you're familiar with writing tests, consider reading over the [best practice guide for making recipes](/authoring-recipes/recipe-conventions-and-best-practices.md). You could also check out [a more complex recipe tutorial](/authoring-recipes/modifying-methods-with-javatemplate.md) if you'd like to learn even more about creating recipes. 
+
