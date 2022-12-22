@@ -74,7 +74,7 @@ ChangeMethodName cmn = new ChangeMethodName("org.mockito.Matchers anyVararg()", 
 MethodMatcher mm = new MethodMatcher("org.mockito.Matchers anyVararg()");
 ```
 
-`MethodMatcher.matches()` has overloads that accept method declarations, method invocations, and constrcutor invocations. `matches()` returns `true` if the argument matches the method pattern the matcher was initialized with. They are frequently used by visitors to avoid making changes to AST elements other than those indicated by the method pattern.
+`MethodMatcher.matches()` has overloads that accept method declarations, method invocations, and constructor invocations. `matches()` returns `true` if the argument matches the method pattern the matcher was initialized with. They are frequently used by visitors to avoid making changes to LST elements other than those indicated by the method pattern.
 
 ```java
 // Adapted from org.openrewrite.java.ChangeMethodName for the sake of example

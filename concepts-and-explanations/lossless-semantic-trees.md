@@ -1,6 +1,6 @@
 # Lossless Semantic Trees
 
-A Lossless Semantic Tree (LST) is a tree representation of code. Unlike the traditional [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract\_syntax\_tree) (AST), Moderne's LST offers a unique set of characteristics that make it suitable for both single-repository and mass transformation operations:
+A Lossless Semantic Tree (LST) is a tree representation of code. Unlike the traditional [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract\_syntax\_tree) (AST), OpenRewrite's LST offers a unique set of characteristics that make it suitable for both single-repository and mass transformation operations:
 
 * **Type-attributed**. Each LST element is imbued with type information. For example, when referencing a field, the source code may just refer to it as `myField`. The OpenRewrite LST element for `myField`, on the other hand, would contain additional information about what the type of `myField` is, even if it isn't defined in the same source file or even the same project.
 * **Format-preserving**. Whitespace before and after LST elements is preserved in the tree so the tree can be printed out to reconstitute the original source code without clobbering formatting. Additionally, refactoring operations that insert code are sensitive to the local style of the code around them and match the local style.
