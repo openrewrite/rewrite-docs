@@ -1032,8 +1032,8 @@
 
 ## Concepts & Explanations
 
-* [Abstract Syntax Trees](concepts-and-explanations/abstract-syntax-trees.md)
-* [Java AST Examples](concepts-and-explanations/ast-examples.md)
+* [Lossless Semantic Tree](concepts-and-explanations/lossless-semantic-trees.md.md)
+* [Java LST Examples](concepts-and-explanations/lst-examples.md)
 * [Recipes](concepts-and-explanations/recipes.md)
 * [Visitors](concepts-and-explanations/visitors.md)
 * [Styles](concepts-and-explanations/styles.md)

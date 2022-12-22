@@ -1,13 +1,13 @@
 # Framework Provided Markers
 
-Not everything a [Recipe](/concepts-and-explanations/recipes.md) may wish to know about an [AST](/concepts-and-explanations/abstract-syntax-trees.md) is contained in the AST itself.
-OpenRewrite attaches [Markers](/concepts-and-explanations/markers.md) to an AST provide Recipes access to relevant metadata.
+Not everything a [Recipe](/concepts-and-explanations/recipes.md) may wish to know about an [LST](/concepts-and-explanations/lossless-semantic-trees.md) is contained in the LST itself.
+OpenRewrite attaches [Markers](/concepts-and-explanations/markers.md) to an LST provide Recipes access to relevant metadata.
 This document provides Recipe authors a reference for what metadata is available and how to access it.
 
 ## Accessing Provided Markers
 
-All markers described in this document are found on the root element of the AST.
-The root AST element varies by language, but they all implement the `SourceFile` interface.
+All markers described in this document are found on the root element of the LST.
+The root LST element varies by language, but they all implement the `SourceFile` interface.
 From anywhere in a [Visitor](/concepts-and-explanations/visitor.md) the cursor can be used to access the markers on the root element like so:
 
 ```java
@@ -37,14 +37,14 @@ These markers are language-independent, appearing on source files of all formats
 ### Build Tool
 
 The [BuildTool](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/BuildTool.java) 
-marker records the type and version of build tool which produced the AST.
-Available on all ASTs produced by one of our build tool plugins.
+marker records the type and version of build tool which produced the LST.
+Available on all LSTs produced by one of our build tool plugins.
 
 ### Build Environment
 
 The subtypes of [BuildEnvironment](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/BuildEnvironment.java)
-record information on the continuous integration environment from within which the AST was produced.
-Available on all ASTs produced from a supported CI environment. 
+record information on the continuous integration environment from within which the LST was produced.
+Available on all LSTs produced from a supported CI environment. 
 
 Supported CI environments:
 
@@ -59,7 +59,7 @@ Supported CI environments:
 
 The [GitProvenance](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/GitProvenance.java#L34)
 marker records Git branch, origin, and change hash.  
-Available on all ASTs produced from a Git repository. 
+Available on all LSTs produced from a Git repository. 
 
 ## Java Markers
 

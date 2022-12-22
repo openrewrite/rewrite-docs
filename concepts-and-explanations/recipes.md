@@ -6,9 +6,9 @@ description: >-
 
 # Recipes
 
-A recipe represents a group of search and refactoring operations that can be applied to an [abstract syntax tree](abstract-syntax-trees.md). A recipe can represent a single, stand-alone operation or be linked together with other recipes to accomplish a larger goal such as a framework migration.
+A recipe represents a group of search and refactoring operations that can be applied to a [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md). A recipe can represent a single, stand-alone operation or be linked together with other recipes to accomplish a larger goal such as a framework migration.
 
-OpenRewrite provides a managed environment for discovering, instantiating and configuring recipes. To implement a search or refactoring operation, a recipe delegates to a [visitor](visitors.md) which handles the AST traversal and manipulation.
+OpenRewrite provides a managed environment for discovering, instantiating and configuring recipes. To implement a search or refactoring operation, a recipe delegates to a [visitor](visitors.md) which handles the LST traversal and manipulation.
 
 ## Imperative Recipes
 
@@ -34,7 +34,7 @@ public class ChangeType extends Recipe {
 
     @Override
     protected JavaVisitor<ExecutionContext> getVisitor() {
-        //Construct an instance of a visitor that will operate over the ASTs.
+        //Construct an instance of a visitor that will operate over the LSTs.
         return new ChangeTypeVisitor(oldFullyQualifiedTypeName, newFullyQualifiedTypeName);
     }
 
@@ -47,13 +47,13 @@ public class ChangeType extends Recipe {
 }
 ```
 
-This recipe accepts two configuration parameters via its constructor. Recipes may be linked together with many other recipes and run in a variety of orders, contexts, and number of cycles. Making your recipes immutable, as this one is, is a strongly recommended best practice. Any mutable state should be local to the visitor, a fresh instance of which should be returned from each invocation of  `getVisitor()`.&#x20;
+This recipe accepts two configuration parameters via its constructor. Recipes may be linked together with many other recipes and run in a variety of orders, contexts, and number of cycles. Making your recipes immutable, as this one is, is a strongly recommended best practice. Any mutable state should be local to the visitor, a fresh instance of which should be returned from each invocation of `getVisitor()`.&#x20;
 
 ### Linking Recipes Together
 
 Consider this non-exhaustive list of steps required to migrate a project from JUnit 4 to JUnit 5:
 
-* Replace the annotation`org.junit.Test` with `org.junit.jupiter.api.Test`.
+* Replace the annotation `org.junit.Test` with `org.junit.jupiter.api.Test`.
 * Changing assertions from `org.junit.Assert` to `org.junit.jupiter.api.Assertions`, including updating the order of arguments within the method invocations.
 * Removing public visibility from test classes and methods that no longer need to be `public` in JUnit 5
 * Modifying the Maven pom.xml to include dependencies on JUnit 5, and remove dependencies on JUnit 4
@@ -107,7 +107,7 @@ recipeList:
 OpenRewrite provides a managed environment in which a set of recipes are executed. It will instantiate recipe instances and often inject configuration properties that have been defined within configuration files. The Recipe class exposes a `validate()` method that is called by the framework to determine whether all required configuration to a recipe has been supplied. The default implementation of`validate()` provides basic required/optional validation checks if a recipe's fields are annotated with `@NonNull`.
 
 {% hint style="success" %}
-The default logic will look for both package level annotations (NonNullFields) and field level annotations (NonNull, Nullable).
+The default logic will look for both package-level annotations (NonNullFields) and field-level annotations (NonNull, Nullable).
 {% endhint %}
 
 In the event that a recipe requires custom validation rules different from the default behavior, a subclass can override `validate()` with an appropriate implementation.
@@ -149,13 +149,13 @@ There are a few recommended best practices when defining the help meta-data and 
 
 The execution pipeline dictates how a recipe is applied to a set of source files to perform a transformational task. A transformation is initiated by calling a recipe's run() method and passing to it the set of source files that will be passed through the pipeline. The execution pipeline maintains and manages the intermediate state of the source files as they are passed to visitors and nested recipes.
 
-The top level recipe (the one that initiates the execution pipeline) and any subsequent recipes that have been chained together will all participate in the execution pipeline. Recipes are composable and therefore, nested steps may contribute additional nested recipes to the pipeline as well.
+The top-level recipe (the one that initiates the execution pipeline) and any subsequent recipes that have been chained together will all participate in the execution pipeline. Recipes are composable and therefore, nested steps may contribute additional nested recipes to the pipeline as well.
 
 Each recipe will, in turn, will be executed as a step within the pipeline and step execution consists of the following:
 
 1. A recipe's `validate()` method is called to ensure it has been configured properly. OpenRewrite is not opinionated about how validation errors are handled and by default it will skip a recipe that fails validation. This behavior can be changed by the introduction of an error handler into the pipeline via the execution context.
-2. If a recipe has an associated visitor, the recipe will delegate to its associated visitor to process all source files that have been fed to the pipeline. It is this specific stage that concurrency can be introduced to process the source ASTs in parallel.
-3. If a recipe has a linked/chained recipe, then execution pipeline initiates a step execution for that recipe and this process repeats until there are no more nested recipes.
+2. If a recipe has an associated visitor, the recipe will delegate to its associated visitor to process all source files that have been fed to the pipeline. It is this specific stage that concurrency can be introduced to process the source LSTs in parallel.
+3. If a recipe has a linked/chained recipe, then the execution pipeline initiates a step execution for that recipe and this process repeats until there are no more nested recipes.
 
 Using the same "Migrate JUnit 5" recipe as an example, the flow through the pipeline looks as follows:
 
@@ -173,7 +173,7 @@ Each recipe that is added to the execution pipeline constitutes a execution step
 
 The recipes in the execution pipeline may produce changes that in turn cause another recipe to do further work. As a result, the pipeline may perform multiple passes (or cycles) over all the recipes in the pipeline again until either no changes are made in a pass or some maximum number of passes is reached (by default 3). This allows recipes to respond to changes made by other recipes which execute after them in the pipeline.
 
-As an example, let's assume that two recipes are added to the execution pipeline. The first recipe performs whitespace-formatting to an AST and the second recipe generates additional code that is added to the same AST. Those two recipes are executed in order, so the formatting recipe is applied before the second recipe adds its generated code. The execution pipeline detects that changes have been made and executes a second pass through the recipes. During the second pass, the formatting recipe will now properly format the generated code that was added as a result of the first cycle through the execution pipeline.
+As an example, let's assume that two recipes are added to the execution pipeline. The first recipe performs whitespace-formatting to an LST and the second recipe generates additional code that is added to the same LST. Those two recipes are executed in order, so the formatting recipe is applied before the second recipe adds its generated code. The execution pipeline detects that changes have been made and executes a second pass through the recipes. During the second pass, the formatting recipe will now properly format the generated code that was added as a result of the first cycle through the execution pipeline.
 
 When large recipes are applied to large repositories, the performance impact of additional cycles can be substantial. Whenever possible recipes should complete all of their own work within a single cycle, rather than spreading it out over multiple cycles. Whenever a recipe requires more than a single cycle to complete its work, it must return `true` from `Recipe.causesAnotherCycle()` for another cycle to be added.
 

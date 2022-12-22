@@ -189,23 +189,23 @@ Now that we have a basic outline of a recipe and the tests, it's time to make th
 
 There are two main pieces to this:
 
-1. Figure out [which ASTs](../concepts-and-explanations/ast-examples.md) have the data we need to make the changes we want.
+1. Figure out [which LSTs](../concepts-and-explanations/lossless-semantic-trees.md) have the data we need to make the changes we want.
 2. Override the `Recipe.getVisitor()` method to return a visitor that is responsible for refactoring the code as desired. This visitor is where all of our core logic will live. It should ensure:
    * That we don't change classes that don't match the specified fully qualified class name
    * That we don't change existing `hello()` methods.
    * That we _do_ add a `hello()` method to a class that matches that fully qualified class name and doesn't have an existing `hello()` method.
 
-### Figure out which ASTs are needed
+### Figure out which LSTs are needed
 
-Before we begin writing any code, it's a good idea to figure out which ASTs contain the data we need and which ASTs we might need to change to get the results we want. Using an AST that's too broad in scope will result in us having to do much more work than necessary, but using an AST that's too narrow in scope will result in us being unable to make the changes we need to.
+Before we begin writing any code, it's a good idea to figure out which LSTs contain the data we need and which LSTs we might need to change to get the results we want. Using an LST that's too broad in scope will result in us having to do much more work than necessary, but using an LST that's too narrow in scope will result in us being unable to make the changes we need to.
 
 For our use case, we care about reading class names and, potentially, changing methods inside of the class.
 
-If we take a look at the [AST Examples doc](https://docs.openrewrite.org/concepts-and-explanations/ast-examples#ast-diagram), we can see that a [J.ClassDeclaration](https://github.com/openrewrite/rewrite/blob/v7.34.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1062-L1336) has the information we need. It has a `FullyQualified` type that we can use to ensure we're only making changes on the specified class, and it contains a `Block` that includes `Statements` that may be `MethodDeclarations`, so we can check for a `hello()` method and potentially add one if it doesn't exist.
+If we take a look at the [LST Examples doc](/concepts-and-explanations/lst-examples.md), we can see that a [J.ClassDeclaration](https://github.com/openrewrite/rewrite/blob/v7.34.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1062-L1336) has the information we need. It has a `FullyQualified` type that we can use to ensure we're only making changes on the specified class, and it contains a `Block` that includes `Statements` that may be `MethodDeclarations`, so we can check for a `hello()` method and potentially add one if it doesn't exist.
 
 ### Override the visitor
 
-With the knowledge of the AST we need obtained, let's make an outline of what our visitor should look like and do:
+With the knowledge of the LST we need obtained, let's make an outline of what our visitor should look like and do:
 
 ```java
 // ...
@@ -262,7 +262,7 @@ public class SayHelloRecipe extends Recipe {
 
 #### Filtering out classes that already have a hello() method
 
-To filter out classes that already have a `hello()` method, we need to first figure out how to check for that. A good understanding of the [ASTs](../concepts-and-explanations/ast-examples.md) is necessary for this type of filtering. With that knowledge, we can build up a stream, filter it down, and check for any matches by doing something like:
+To filter out classes that already have a `hello()` method, we need to first figure out how to check for that. A good understanding of the [LSTs](../concepts-and-explanations/lst-examples.md) is necessary for this type of filtering. With that knowledge, we can build up a stream, filter it down, and check for any matches by doing something like:
 
 ```java
 // ...
@@ -297,7 +297,7 @@ public class SayHelloRecipe extends Recipe {
 
 #### Adding a hello() method to the classes that need it
 
-In order to create complex AST elements such as a new method, it's a good idea to use a [Java Template](../concepts-and-explanations/javatemplate.md). At a high-level, Java Templates simplify the creation of ASTs by converting code snippets into fully created ASTs.
+In order to create complex LST elements such as a new method, it's a good idea to use a [Java Template](../concepts-and-explanations/javatemplate.md). At a high-level, Java Templates simplify the creation of LSTs by converting code snippets into fully created LSTs.
 
 Templates are created using the `JavaTemplate.builder()` method. Within a template, `#{}` can be used to signify that a value will be substituted there later on. In our recipe, for instance, we don't know what the fully qualified class name is when we're compiling the program. Instead, we need to rely on the user to provide that later.
 
@@ -351,7 +351,7 @@ public class SayHelloRecipe extends Recipe {
                 return classDecl;
             }
 
-            // Interpolate the fullyQualifiedClassName into the template and use the resulting AST to update the class body
+            // Interpolate the fullyQualifiedClassName into the template and use the resulting LST to update the class body
             classDecl = classDecl.withBody(
                     classDecl.getBody().withTemplate(
                             helloTemplate,
@@ -433,7 +433,7 @@ public class SayHelloRecipe extends Recipe {
                 return classDecl;
             }
 
-            // Interpolate the fullyQualifiedClassName into the template and use the resulting AST to update the class body
+            // Interpolate the fullyQualifiedClassName into the template and use the resulting LST to update the class body
             classDecl = classDecl.withBody(
                     classDecl.getBody().withTemplate(
                             helloTemplate,
