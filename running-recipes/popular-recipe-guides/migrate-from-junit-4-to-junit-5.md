@@ -376,7 +376,7 @@ public class ExampleJunitTestClass {
 {% endtabs %}
 
 {% hint style="info" %}
-If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
+Dependency management for Gradle is not currently available but this feature is on OpenRewrite's roadmap.
 {% endhint %}
 
 ### Known Limitations

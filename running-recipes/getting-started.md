@@ -341,7 +341,7 @@ To check that everything worked correctly, run the command `./gradlew rewriteRun
 Please note, though, that your `build.gradle` file _will not_ be updated as part of this. You will manually have to change the Spring and JUnit dependencies to reflect the appropriate versions.
 
 {% hint style="info" %}
-If you want to know when dependency management for Gradle will be added to rewrite, follow [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
+Dependency management for Gradle is not yet available but this feature is on OpenRewrite's roadmap.
 {% endhint %}
 
 ## Next Steps

@@ -8,10 +8,6 @@ Dependency management is a complex and often frustrating part of software develo
 
 OpenRewrite can help. In this tutorial, we'll learn how to automate common dependency management tasks by migrating a project from one [slf4j](http://www.slf4j.org/) implementation to another.
 
-{% hint style="info" %}
-Currently, OpenRewrite's dependency management capabilities are only implemented for the Maven build tool. If you are interested in dependency management for Gradle keep an eye on [this issue](https://github.com/openrewrite/rewrite-roadmap/issues/7) on our roadmap.
-{% endhint %}
-
 ## Setup
 
 1. Clone our fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration), or select your own project

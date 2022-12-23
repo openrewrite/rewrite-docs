@@ -498,7 +498,6 @@
         * [Find MailChimp secrets](reference/recipes/java/security/secrets/findmailchimpsecrets.md)
         * [Find Mailgun secrets](reference/recipes/java/security/secrets/findmailgunsecrets.md)
         * [Find NPM secrets](reference/recipes/java/security/secrets/findnpmsecrets.md)
-        *
         * [Find PGP secrets](reference/recipes/java/security/secrets/findpgpsecrets.md)
         * [Find PayPal secrets](reference/recipes/java/security/secrets/findpaypalsecrets.md)
         * [Find Picatic secrets](reference/recipes/java/security/secrets/findpicaticsecrets.md)
@@ -923,7 +922,6 @@
     * [Find uses of JCache](reference/recipes/cloudsuitability/findjcache.md)
     * [Find uses of JNI](reference/recipes/cloudsuitability/findjni.md)
     * [Find uses of Java file IO](reference/recipes/cloudsuitability/findfileio.md)
-    *
     * [Find uses of Jersey](reference/recipes/cloudsuitability/findjersey.md)
     * [Find uses of Jetty](reference/recipes/cloudsuitability/findjetty.md)
     * [Find uses of file:// scheme in string literals](reference/recipes/cloudsuitability/findfilescheme.md)
@@ -934,7 +932,6 @@
     * [Uses of caches](reference/recipes/cloudsuitability/findcacheuses.md)
     * [Uses of distributed caches](reference/recipes/cloudsuitability/finddistributedcacheuses.md)
     * [Uses of ehcache](reference/recipes/cloudsuitability/findehcache.md)
-  *
   * [Config](reference/recipes/config/README.md)
     * [org.openrewrite.config.CompositeRecipe](reference/recipes/config/compositerecipe.md)
   * [Gradle](reference/recipes/gradle/README.md)
