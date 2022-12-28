@@ -4,7 +4,7 @@ description: Conventions to follow, pitfalls to avoid
 
 # Recipe Conventions and Best Practices
 
-[Recipes](../concepts-and-explanations/recipes.md) use [Visitors](../concepts-and-explanations/visitors.md) to operate on diverse and unexpected [ASTs](../concepts-and-explanations/abstract-syntax-trees.md). This document describes an assortment of conventions, best practices, and pitfalls to avoid to create reliable, scalable recipes.
+[Recipes](../concepts-and-explanations/recipes.md) use [Visitors](../concepts-and-explanations/visitors.md) to operate on diverse and unexpected [LSTs](../concepts-and-explanations/lossless-semantic-trees.md). This document describes an assortment of conventions, best practices, and pitfalls to avoid to create reliable, scalable recipes.
 
 ### Do No Harm
 
@@ -36,13 +36,13 @@ Recipes may be configured in code, from YAML, or from a web interface. If your r
 Recipe options that are configured with `String` parameters should generally treat the empty string and `null` similarly. Depending on the front-end which configures the recipe either value may be used to represent omitted configuration.
 {% endhint %}
 
-### Be deliberate about AST traversal
+### Be deliberate about LST traversal
 
-As the author of a visitor, the traversal of the AST is in your hands. Calling`super.visitSomeAstElement()` is what causes the traversal of sub-elements of the current element to happen. So if you know that no traversal of sub-elements will be necessary, you can skip this call entirely to improve the performance of your recipe. Usually, it is most convenient to call at the beginning of each visit method you implement.
+As the author of a visitor, the traversal of the LST is in your hands. Calling `super.visitSomeLstElement()` is what causes the traversal of sub-elements of the current element to happen. So if you know that no traversal of sub-elements will be necessary, you can skip this call entirely to improve the performance of your recipe. Usually, it is most convenient to call at the beginning of each visit method you implement.
 
 ### Use Applicability Tests
 
-Most recipes are not universally applicable to every source file. Often you can know ahead of time that your recipe will not need to modify source files where a particular type is not present. If the visitor returned from `Recipe.getSingleSourceApplicableTest()` makes any change to the AST, that is interpreted as an "affirmative" result that the Recipe is applicable to the AST. Use `Applicability.and()`, `Applicability.or()`, and `Applicability.not()` to create more complex applicability criteria from simple building blocks.
+Most recipes are not universally applicable to every source file. Often you can know ahead of time that your recipe will not need to modify source files where a particular type is not present. If the visitor returned from `Recipe.getSingleSourceApplicableTest()` makes any change to the LST, that is interpreted as an "affirmative" result that the Recipe is applicable to the LST. Use `Applicability.and()`, `Applicability.or()`, and `Applicability.not()` to create more complex applicability criteria from simple building blocks.
 
 Using applicability tests can simplify the implementation of your recipe by separating the code which detects "should a change be made" from the code which enacts "making the change". This enhances readability, simplifying debugging and maintenance.
 
@@ -54,15 +54,15 @@ Applicability tests are most worthwhile when they can cheaply prevent a visitor 
 `Recipe.getApplicableTest()` returning an affirmative result for _any_ source file marks the recipe as applicable to _all_ source files. For most recipes `Recipe.getSingleSourceApplicableTest()` is the appropriate method to overload.
 {% endhint %}
 
-### Recipe and AST immutability
+### Recipe and LST immutability
 
 Recipes must have no mutable state. `Recipe.getVisitor()` must always return a brand new visitor instance. During recipe execution the same recipe may be invoked multiple times, possibly on sources it has seen before, so any mutable state is an opportunity for bugs. During test execution recipe execution is single-threaded for simplicity, but outside of tests recipe execution is parallelized. Following this rule is essential for OpenRewrite to operate reliably and correctly.
 
 {% hint style="warning" %}
-All AST fields should be treated as immutable, even in certain circumstances where mutation is _technically_ possible it is always a bug for a recipe to mutate those fields.
+All LST fields should be treated as immutable, even in certain circumstances where mutation is _technically_ possible it is always a bug for a recipe to mutate those fields.
 {% endhint %}
 
-OpenRewrite detects that a visitor/recipe has made a change based on referential equality. Mutating an AST foils this detection, and can potentially cause incorrect diffs to be created.
+OpenRewrite detects that a visitor/recipe has made a change based on referential equality. Mutating an LST foils this detection, and can potentially cause incorrect diffs to be created.
 
 ### Use ListUtils for collections manipulation
 
@@ -70,15 +70,15 @@ Since referential equality is so important for OpenRewrite to detect changes, ty
 
 ### Nullability matters
 
-Throughout our ASTs and other APIs, we have been careful to use Java's nullability annotations to indicate whether a field is nullable or not. If a field is nullable then there _will_ be ASTs where that field is null. To operate correctly on the wildly diverse code which exists throughout the world, Recipe/Visitors must decline to make changes when a field they need to make changes is null.
+Throughout our LSTs and other APIs, we have been careful to use Java's nullability annotations to indicate whether a field is nullable or not. If a field is nullable then there _will_ be LSTs where that field is null. To operate correctly on the wildly diverse code which exists throughout the world, Recipe/Visitors must decline to make changes when a field they need to make changes is null.
 
-### Avoid constructing AST elements by hand
+### Avoid constructing LST elements by hand
 
-Even very simple pieces of code have complex AST representations which are tedious and error-prone to construct by hand. With your visitor, prefer faculties like [JavaTemplate](../concepts-and-explanations/javatemplate.md) to turn code snippets into AST elements. In data formats like XML or JSON it is usually most convenient to use the format's parser to turn a snippet of text into usable AST elements.
+Even very simple pieces of code have complex LST representations which are tedious and error-prone to construct by hand. With your visitor, prefer faculties like [JavaTemplate](../concepts-and-explanations/javatemplate.md) to turn code snippets into LST elements. In data formats like XML or JSON it is usually most convenient to use the format's parser to turn a snippet of text into usable LST elements.
 
 ### Prefer Cursor Messaging to Execution Context Messaging
 
-There are a few ways to pass state around within and between visitors. All Recipes in a run will have the same `ExecutionContext` object passed between them, and it contains a map into which any recipe may read or write arbitrary data. Similarly, the `Cursor` object returned by `TreeVisitor.getCursor()` has a map into which any recipe may read or write arbitrary data. The difference is that the `Cursor` is a stack that keeps track of a visitor's current progress through an AST and is thrown away after all visiting is complete. Because the data in `ExecutionContext` lives for the span of the recipe run, and on into separate cycles, it can potentially change the behavior of other recipes. So whenever communication is needed but only within the current visitor or recipe, the cursor stack should be used instead of adding messages to the execution context.
+There are a few ways to pass state around within and between visitors. All Recipes in a run will have the same `ExecutionContext` object passed between them, and it contains a map into which any recipe may read or write arbitrary data. Similarly, the `Cursor` object returned by `TreeVisitor.getCursor()` has a map into which any recipe may read or write arbitrary data. The difference is that the `Cursor` is a stack that keeps track of a visitor's current progress through an LST and is thrown away after all visiting is complete. Because the data in `ExecutionContext` lives for the span of the recipe run, and on into separate cycles, it can potentially change the behavior of other recipes. So whenever communication is needed but only within the current visitor or recipe, the cursor stack should be used instead of adding messages to the execution context.
 
 ### Stay Single Cycle
 

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Observes each element of an AST and reduces all these observations to a single
+  Observes each element of an LST and reduces all these observations to a single
   value.
 ---
 
@@ -14,28 +14,28 @@ A visitor is analogous to an event-handler, describing "what" to do and "when" t
 
 ## OpenRewrite's Visitor Concepts
 
-All of OpenRewrite's visitors share a common structure and life cycle that centers on the traversal and transformation of ASTs. It is important to understand the core concepts and the life-cycles provided by the framework.
+All of OpenRewrite's visitors share a common structure and life cycle that centers on the traversal and transformation of LSTs. It is important to understand the core concepts and the life-cycles provided by the framework.
 
 ### `Tree`
 
-**The commodities upon which all of OpenRewrite's visitors operate are the AST elements and all of those elements implement the `Tree` interface.**
+**The commodities upon which all of OpenRewrite's visitors operate are the LST elements and all of those elements implement the `Tree` interface.**
 
 The first thing that a developer will notice about OpenRewrite's visitors is that they always accept and return a parameterized type that extends `Tree`. This interface is the foundational contract for all types defined within any abstract syntax tree. A Tree type has the following characteristics:
 
-* It has a unique ID that can be used to identify it as a specific AST instance, even after transformations have taken place on that element.
+* It has a unique ID that can be used to identify it as a specific LST instance, even after transformations have taken place on that element.
 * It has an `accept()` method that acts as a callback into a language-specific Visitor.
 * It has facilities to convert itself back into a source-readable form via several `print()` methods.
-* It implements Markable such that all AST elements can have [Markers](markers.md) applied to express additional meta-data about the element.
+* It implements Markable such that all LST elements can have [Markers](markers.md) applied to express additional meta-data about the element.
 
 ### `TreeVisitor`
 
-The framework provides the base class `TreeVisitor<T extends Tree, P>` from which all of OpenRewrite's visitors extend. It is this class that provides the generic, parameterized **`T visit(T, P)`** method that drives a visitor's polymorphic navigation, cursoring, and life-cycle. The parameterized type `T` represents the type of tree elements upon which the visitor will navigate and transform. The second parameterized type `P` is an additional, shared context that is passed to all visit methods as a visitor navigates a given AST.
+The framework provides the base class `TreeVisitor<T extends Tree, P>` from which all of OpenRewrite's visitors extend. It is this class that provides the generic, parameterized **`T visit(T, P)`** method that drives a visitor's polymorphic navigation, cursoring, and life-cycle. The parameterized type `T` represents the type of tree elements upon which the visitor will navigate and transform. The second parameterized type `P` is an additional, shared context that is passed to all visit methods as a visitor navigates a given LST.
 
 ### Cursoring
 
-All visitors have access to a `Cursor` which keeps track of a visitor's position within the AST while it is being traversed. Since AST elements are acyclic and therefore do not contain references to their parent element, the `Cursor` is the primary mechanism by which parent or sibling AST elements may be accessed during visiting. Logically a `Cursor` is a stack. Whenever an AST elment is visited a `Cursor` pointing to it is pushed on top of the stack. When visiting that element is over its `Cursor` is removed from the stack. In this way the `Cursor` keeps track of the visitor's current position within the AST.&#x20;
+All visitors have access to a `Cursor` which keeps track of a visitor's position within the LST while it is being traversed. Since LST elements are acyclic and therefore do not contain references to their parent element, the `Cursor` is the primary mechanism by which parent or sibling LST elements may be accessed during visiting. Logically a `Cursor` is a stack. Whenever an LST elment is visited a `Cursor` pointing to it is pushed on top of the stack. When visiting that element is over its `Cursor` is removed from the stack. In this way the `Cursor` keeps track of the visitor's current position within the LST.&#x20;
 
-As an example of how the `Cursor` can be helpful, image a visitor that is tasked with traversing a Java AST and marking only the top-level class as "final". The compilation unit may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which class declaration represents the top-level class:
+As an example of how the `Cursor` can be helpful, image a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The compilation unit may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which class declaration represents the top-level class:
 
 ```java
 @Override
@@ -98,7 +98,7 @@ public class ChangesClassBasedOnMethod extends JavaVisitor<ExecutionContext> {
 
 ## Language-specific Visitors
 
-Each language binding contains a visitor implementation extending from `TreeVisitor`. As an example, the OpenRewrite language binding for Java is `JavaVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined along with the language-specific traversal logic.
+Each language binding contains a visitor implementation extending from `TreeVisitor`. As an example, the OpenRewrite language binding for Java is `JavaVisitor`. It is on these language-specific source visitors that the visit methods for each LST element are defined along with the language-specific traversal logic.
 
 ```java
 class JavaVisitor<P> extends TreeVisitor<J, P> {
@@ -132,7 +132,7 @@ A client may have a reference to the language-specific visitor and it may be tem
 
 ## Example: Counting the number of Java method invocations
 
-Let's implement a simple Java visitor that will count the number of method invocations in a Java AST. This example will use the second typed parameter of the visitor as our shared counter.
+Let's implement a simple Java visitor that will count the number of method invocations in a Java LST. This example will use the second typed parameter of the visitor as our shared counter.
 
 ```java
 class JavaMethodCount extends AbstractSourceVisitor<AtomicInteger> {
@@ -146,7 +146,7 @@ class JavaMethodCount extends AbstractSourceVisitor<AtomicInteger> {
 }
 ```
 
-The visitor's shared context is a simple, mutable AtomicInteger and in our example the `visitMethodInvocation` is overridden to increment the counter. The JavaVisitor will traverse the AST and call this method each time a method invocation is encountered in the tree.
+The visitor's shared context is a simple, mutable AtomicInteger and in our example the `visitMethodInvocation` is overridden to increment the counter. The JavaVisitor will traverse the LST and call this method each time a method invocation is encountered in the tree.
 
 It is straightforward to leverage the the newly created visitor. A caller will first initialize the shared counter, it will instantiate the visitor, and call the visitor's visit method passing both the compilation unit and the counter.
 
@@ -173,7 +173,7 @@ assertThat(counter.get()).isEqualTo(3);
 
 ## Refactoring Visitors
 
-A language-specific visitor is always scoped to return the base interface of that language's AST tree. Examining the JavaVisitor a bit closer, the first typed parameters is defined as `org.openrewrite.java.tree.J`and all of its language-specific visit methods also return `J`.
+A language-specific visitor is always scoped to return the base interface of that language's LST tree. Examining the JavaVisitor a bit closer, the first typed parameters is defined as `org.openrewrite.java.tree.J`and all of its language-specific visit methods also return `J`.
 
 ```java
 class JavaVisitor<P> extends TreeVisitor<J, P> {
@@ -184,15 +184,15 @@ class JavaVisitor<P> extends TreeVisitor<J, P> {
 }
 ```
 
-A transforming visitor can accept an existing AST element and return either a modified version of that element or, in some cases, a different element entirely.
+A transforming visitor can accept an existing LST element and return either a modified version of that element or, in some cases, a different element entirely.
 
 The vast majority of the time, visitor methods will return the same type as that of their input parameter. As examples, `visitMethodInvocation` will typically return `J.MethodInvocation`, `visitCompilationUnit` will typically return a `J.CompilationUnit`, and so on. There are a narrow set of circumstances when this is not true. For example, an UnwrapParentheses visitor might override the `J.Parentheses<?>` and can return whatever type of expression is inside the parentheses it is unwrapping.
 
 {% hint style="warning" %}
-Generally refactoring visitors must be called on the root AST element to function correctly. Otherwise, internal state like cursors are not accurate. More general purpose visitors can be invoked on any element in the tree.
+Generally refactoring visitors must be called on the root LST element to function correctly. Otherwise, internal state like cursors are not accurate. More general purpose visitors can be invoked on any element in the tree.
 {% endhint %}
 
-Since refactor visitors are invoked on their root AST element, the net effect of this pattern is that the visitor receives a top-level AST element and produces a potentially changed top-level AST element. All language-specific, top-level AST elements implement the SourceFile interface, which allows an AST tree to be correlated to the source file path. See the next section on [Recipes](recipes.md) that describes in greater detail how OpenRewrite manages changes to a collection of top-level AST elements to produce source code or Git-style diffs.
+Since refactor visitors are invoked on their root LST element, the net effect of this pattern is that the visitor receives a top-level LST element and produces a potentially changed top-level LST element. All language-specific, top-level LST elements implement the SourceFile interface, which allows an LST tree to be correlated to the source file path. See the next section on [Recipes](recipes.md) that describes in greater detail how OpenRewrite manages changes to a collection of top-level LST elements to produce source code or Git-style diffs.
 
 {% hint style="warning" %}
 In almost all circumstances, it is important to call the visit method on the super to ensure the refactoring operation navigates deeper down the tree to find all places where the operation should be applied.
@@ -211,7 +211,7 @@ public class RemoveModifiers extends JavaRefactorVisitor {
 ```
 
 {% hint style="warning" %}
-OpenRewrite AST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
+OpenRewrite LST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
 {% endhint %}
 
 ## Refactor Visitor Pipelines

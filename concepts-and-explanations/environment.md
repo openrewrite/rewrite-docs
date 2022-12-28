@@ -39,8 +39,8 @@ OpenRewrite's `Environment` abstraction provides discovery, activation, and conf
       <td style="text-align:left">Mass-refactoring microservice</td>
       <td style="text-align:left">Adds visitors and recipes to an environment based on post body inputs
         to the service. If the service is operating off of a data store of pre-published
-        ASTs, there is no need for any style configuration because the styles should
-        already be stored with the ASTs this service is designed to operate on.</td>
+        LSTs, there is no need for any style configuration because the styles should
+        already be stored with the LSTs this service is designed to operate on.</td>
     </tr>
   </tbody>
 </table>

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Preserves the stylistic expectations of each project on ASTs generated from
+  Preserves the stylistic expectations of each project on LSTs generated from
   source files in that project.
 ---
 
@@ -8,9 +8,9 @@ description: >-
 
 Styles implement the `org.openrewrite.Style` interface.
 
-Styles are given to a `org.openrewrite.Parser` at construction. These styles flow from the parser to any ASTs that are produced by that parser, providing a durable record of the style of the surrounding project that goes with that AST.
+Styles are given to a `org.openrewrite.Parser` at construction. These styles flow from the parser to any LSTs that are produced by that parser, providing a durable record of the style of the surrounding project that goes with that LST.
 
-Styles are persisted with a top-level `SourceFile` AST element when that AST is serialized. Then when batch processing ASTs from a variety of projects _en masse_, the transformation can be contextualized to the style of the individual projects that source files originated from.
+Styles are persisted with a top-level `SourceFile` LST element when that LST is serialized. Then when batch processing LSTs from a variety of projects _en masse_, the transformation can be contextualized to the style of the individual projects that source files originated from.
 
 ## Declarative Styles
 

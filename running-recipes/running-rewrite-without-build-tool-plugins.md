@@ -98,7 +98,7 @@ public class RunRewriteManually {
 
         ExecutionContext ctx = new InMemoryExecutionContext(Throwable::printStackTrace);
 
-        // parser the source files into ASTs
+        // parser the source files into LSTs
         List<J.CompilationUnit> cus = javaParser.parse(sourcePaths, projectDir, ctx);
 
         // collect results

@@ -1,9 +1,9 @@
 # JavaTemplate
 
-More advanced refactoring recipes often require the construction of complex AST elements. Manually constructing complex AST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into AST elements ready fo ruse in a [visitor](visitors.md).
+More advanced refactoring recipes often require the construction of complex [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md) (LST) elements. Manually constructing complex LST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into LST elements ready for use in a [visitor](visitors.md).
 
 {% hint style="success" %}
-`JavaTemplate` produces ASTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion.
+`JavaTemplate` produces LSTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion.
 {% endhint %}
 
 ## Construction
@@ -33,7 +33,7 @@ The substitution of these indicators with their actual values happens when the t
 
 #### Typed Substitution Indicators
 
-In order for the AST resulting from templating to be correctly type-attributed, substitutions of AST elements into a typed insertion point must indicate that type. Whether an insertion point is typed or not depends on the Java language grammar.
+In order for the LST resulting from templating to be correctly type-attributed, substitutions of LST elements into a typed insertion point must indicate that type. Whether an insertion point is typed or not depends on the Java language grammar.
 
 Typed substitution indicators take the form `#{any(<type>)}` where \<type> is the expected type of the parameter. If any type is permissible then the shortest form `#{any()}` should be used. When substituting an array type use `#{anyArray()}`. Examples of snippets with typed substitution indicators:
 
@@ -43,16 +43,16 @@ Typed substitution indicators take the form `#{any(<type>)}` where \<type> is th
 * `String[] = #{anyArray(java.lang.String)};`
 
 {% hint style="info" %}
-It is unnecessary to provide a typed substitution indicator if you're providing a simple value like a `String` to a template. Typed substitution indicators are required when supplying an AST element as a template substitution parameter.
+It is unnecessary to provide a typed substitution indicator if you're providing a simple value like a `String` to a template. Typed substitution indicators are required when supplying an LST element as a template substitution parameter.
 {% endhint %}
 
 {% hint style="warning" %}
-If the recipe test harness fails because of missing type information when you've used templates double check that you're providing accurate types and imports to the template. While correct source can sometimes be produced from ASTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
+If the recipe test harness fails because of missing type information when you've used templates double-check that you're providing accurate types and imports to the template. While correct source can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
 {% endhint %}
 
 #### Untyped Substitution Indicators
 
-It is correct to use the untyped substitution indicator `#{}` when providing a non-AST element like a `String` as template substitution argument . When providing an AST element, like a `J.Identifier`, into a context where the concept of type is nonsensical first convert them to an appropriate `String`. Examples of untyped insertion points include the text of a comment, the name of a class in a class declaration, and keywords like `if` or `while`. Examples of snippets with untyped substitution indicators:
+It is correct to use the untyped substitution indicator `#{}` when providing a non-LST element like a `String` as template substitution argument. When providing an LST element, like a `J.Identifier`, into a context where the concept of type is nonsensical first convert them to an appropriate `String`. Examples of untyped insertion points include the text of a comment, the name of a class in a class declaration, and keywords like `if` or `while`. Examples of snippets with untyped substitution indicators:
 
 * `//TODO: Fix bug #{}`
 * `public class #{} { }`
@@ -68,7 +68,7 @@ JavaTemplate.builder(this::getCursor, "new SecureRandom()")
 ```
 
 {% hint style="warning" %}
-Failing to declare required imports results in `JavaTemplate` producing AST elements missing type attribution, or failing outright with an exception. While correct source can sometimes be produced from ASTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
+Failing to declare required imports results in `JavaTemplate` producing LST elements missing type attribution, or failing outright with an exception. While correct source can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
 {% endhint %}
 
 {% hint style="warning" %}
@@ -77,7 +77,7 @@ Declaring an import to `JavaTemplate` does not automatically add a corresponding
 
 ### Referencing External Types
 
-`JavaTemplate` uses a `JavaParser` to convert text into AST elements. The default `JavaParser` is aware only of types provided by the Java Runtime, so if your snippet references any types from other sources you must supply an appropriately configured `JavaParser`.
+`JavaTemplate` uses a `JavaParser` to convert text into LST elements. The default `JavaParser` is aware only of types provided by the Java Runtime, so if your snippet references any types from other sources you must supply an appropriately configured `JavaParser`.
 
 #### From the runtime classpath
 
@@ -120,7 +120,7 @@ There are many examples of `JavaTemplate` stubs in [rewrite-testing-frameworks](
 
 ## Usage
 
-Once an instance of the template has been created it can be applied to an AST element with the method `J.withTemplate()`. This example visitor uses a template to replace all method invocations of `countLetters(String)` with `withString(String).length()`:
+Once an instance of the template has been created it can be applied to an LST element with the method `J.withTemplate()`. This example visitor uses a template to replace all method invocations of `countLetters(String)` with `withString(String).length()`:
 
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
@@ -148,7 +148,7 @@ Don't forget to use `JavaVisitor.maybeAddImport()` to add imports for any new ty
 
 ### Coordinates
 
-Most AST elements are complex enough that there isn't only one way a template could possibly be applied to it. To resolve these ambiguities, every AST element exposes one or more coordinates indicating exactly what substitution should be made. Consider this simple method declaration:
+Most LST elements are complex enough that there isn't only one way a template could possibly be applied to it. To resolve these ambiguities, every LST element exposes one or more coordinates indicating exactly what substitution should be made. Consider this simple method declaration:
 
 ```java
 public String foo(Object arg1, String arg2) {
@@ -156,7 +156,7 @@ public String foo(Object arg1, String arg2) {
 }
 ```
 
-You might want to replace the entire method declaration with the template result, in which case `J.MethodDeclaration.getCoordinates().replace()` is the appropriate coordinate. But maybe you just want to add an annotation, in which case `J.MethodDeclaration.getCoordinates().addAnnotation()` is appropriate. Each AST element exposes different coordinates. All coordinates include a "replace" coordinate to replace the entire AST element with the template result. Look for a `getCoordinates()` method to see what other coordinates are available.
+You might want to replace the entire method declaration with the template result, in which case `J.MethodDeclaration.getCoordinates().replace()` is the appropriate coordinate. But maybe you just want to add an annotation, in which case `J.MethodDeclaration.getCoordinates().addAnnotation()` is appropriate. Each LST element exposes different coordinates. All coordinates include a "replace" coordinate to replace the entire LST element with the template result. Look for a `getCoordinates()` method to see what other coordinates are available.
 
 {% hint style="info" %}
 There are thousands of possible coordinates, many with no practical application. To avoid wasting effort implementing coordinates no one would ever use, coordinates have been implemented on an as-needed basis. If existing coordinates are insufficient to your needs, come tell us about it in the [OpenRewrite Slack](https://join.slack.com/t/rewriteoss/shared\_invite/zt-nj42n3ea-b\~62rIHzb3Vo0E1APKCXEA) or [file an issue](https://github.com/openrewrite/rewrite/issues).

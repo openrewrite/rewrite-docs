@@ -35,7 +35,7 @@ The `Change` collection that is returned will only have results for source files
 | `getVisitorsThatMadeChanges()` | The visitor names changing this source. |
 | `diff()`/`diff(Path)` | A git-style diff \(with an optional path to relativize file paths in the output\) |
 
-Below is a snippet demonstrating how you can overwrite source files on disk with the changes made by a refactoring operation by using the `print()` method on the fixed AST.
+Below is a snippet demonstrating how you can overwrite source files on disk with the changes made by a refactoring operation by using the `print()` method on the fixed LST.
 
 ```java
 for (Change change : changes) {
@@ -56,5 +56,5 @@ In this way, individual visitors can support one another without requiring any e
 
 ### Next Steps
 
-In [Styles](styles.md), we'll show how to configure styles that are stored with the AST that make these refactoring operations produce changes that look idiomatically consistent with the surrounding project.
+In [Styles](styles.md), we'll show how to configure styles that are stored with the LST that make these refactoring operations produce changes that look idiomatically consistent with the surrounding project.
 

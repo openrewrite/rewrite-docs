@@ -1,6 +1,6 @@
 ---
 description: >-
-  Observes each element of an AST and reduces all these observations to a single
+  Observes each element of an LST and reduces all these observations to a single
   value.
 ---
 
@@ -33,7 +33,7 @@ Some reduction operations are so common that `SourceVisitor` provides a default 
 
 ## Language-specific Visitors
 
-Each language binding contains a visitor interface extending from `SourceVisitor`. For example, the OpenRewrite language binding for Java contains a `JavaSourceVisitor`. It is on these language-specific source visitors that the visit methods for each AST element are defined:
+Each language binding contains a visitor interface extending from `SourceVisitor`. For example, the OpenRewrite language binding for Java contains a `JavaSourceVisitor`. It is on these language-specific source visitors that the visit methods for each LST element are defined:
 
 ```java
 interface JavaSourceVisitor<R> extends SourceVisitor<R> {
@@ -51,7 +51,7 @@ interface JavaSourceVisitor<R> extends SourceVisitor<R> {
 }
 ```
 
-Additionally, each language binding defines an abstract class that implements its visitor interface. This abstract class contains the traversal logic for the language's AST. The Java visitor is `AbstractJavaSourceVisitor`, and the class naming is wholly similar for other language bindings.
+Additionally, each language binding defines an abstract class that implements its visitor interface. This abstract class contains the traversal logic for the language's LST. The Java visitor is `AbstractJavaSourceVisitor`, and the class naming is wholly similar for other language bindings.
 
 ## Example: Counting the number of Java method invocations
 
@@ -77,7 +77,7 @@ Much of this is relatively straightforward. Unless you know nothing is relevant 
 
 ## Calling Visitors
 
-Invoke a visitor by instantiating it and calling `visit` on any AST node \(usually the root\). A visitor can return any type.
+Invoke a visitor by instantiating it and calling `visit` on any LST node \(usually the root\). A visitor can return any type.
 
 ```java
 JavaParser jp = JavaParser.fromJavaVersion().build();
@@ -101,15 +101,15 @@ assertThat(methodCount).isEqualTo(3);
 
 ## Refactoring Visitors
 
-Each language binding provides a further specialization of `SourceVisitor` that is used for transforming source code, e.g. `JavaRefactorVisitor`. The return type of this visitor is set to the base interface of that language's AST tree. `JavaRefactorVisitor` always reduces to a `org.openrewrite.java.J`.
+Each language binding provides a further specialization of `SourceVisitor` that is used for transforming source code, e.g. `JavaRefactorVisitor`. The return type of this visitor is set to the base interface of that language's LST tree. `JavaRefactorVisitor` always reduces to a `org.openrewrite.java.J`.
 
 The vast majority of the time, visitor methods should return the type of their input parameter. So `visitMethodInvocation` should return a `J.MethodInvocation`, `visitCompilationUnit` should return a `J.CompilationUnit`, and so on. There are a narrow set of circumstances when this is not true. For example, [UnwrapParentheses](../reference/java/refactoring-java-source-code/unwrapparentheses.md) visits `J.Parentheses<?>` and can return whatever type of expression is inside the parentheses it is unwrapping.
 
 {% hint style="warning" %}
-Generally refactoring visitors must be called on the root AST element to function correctly. Otherwise, internal state like cursors are not accurate. More general purpose visitors can be invoked on any element in the tree.
+Generally refactoring visitors must be called on the root LST element to function correctly. Otherwise, internal state like cursors are not accurate. More general purpose visitors can be invoked on any element in the tree.
 {% endhint %}
 
-Since refactor visitors are invoked on their root AST element, the net effect of this pattern is that the visitor receives a top-level AST element and produces a potentially changed top-level AST element. [Refactor](refactor.md) describes in greater detail how this changed top-level AST element is used to produce fixed code or Git-style diffs.
+Since refactor visitors are invoked on their root LST element, the net effect of this pattern is that the visitor receives a top-level LST element and produces a potentially changed top-level LST element. [Refactor](refactor.md) describes in greater detail how this changed top-level LST element is used to produce fixed code or Git-style diffs.
 
 Like with other visitors, most of the time it is important to call super on visit methods in a refactoring visitor to allow the operation to dig deeper in the tree looking for further code to change. Only if you are certain that nothing further down the tree will require changes should you not call super on a visit method. Every language-specific refactor visitor shares a utility method called `refactor` that helps you call super and cast the result in one call:
 
@@ -124,7 +124,7 @@ public class RemoveModifiers extends JavaRefactorVisitor {
 ```
 
 {% hint style="warning" %}
-OpenRewrite AST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
+OpenRewrite LST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
 {% endhint %}
 
 ## Refactor Visitor Pipelines
@@ -133,7 +133,7 @@ Refactoring visitors can be chained together by calling `andThen(anotherVisitor)
 
 ## Cursoring
 
-Visitors can be cursored or not. Cursored visitors maintain a stack of AST elements that have been traversed in the tree thus far. In exchange for the extra memory footprint, such visitors can operate based on the location of AST elements in the tree. Many refactoring operations don't require this state. Below is an example of a Java refactoring operation that makes each top-level class final. Since class declarations can be nested \(e.g. inner classes\), we use the cursor to determine if the class is top-level or not. Refactoring operations should also be given a fully-qualified name with a package representing the group of operations and a name signifying what it does.
+Visitors can be cursored or not. Cursored visitors maintain a stack of LST elements that have been traversed in the tree thus far. In exchange for the extra memory footprint, such visitors can operate based on the location of LST elements in the tree. Many refactoring operations don't require this state. Below is an example of a Java refactoring operation that makes each top-level class final. Since class declarations can be nested \(e.g. inner classes\), we use the cursor to determine if the class is top-level or not. Refactoring operations should also be given a fully-qualified name with a package representing the group of operations and a name signifying what it does.
 
 ```java
 public class MakeClassesFinal extends JavaRefactorVisitor {
@@ -217,7 +217,7 @@ Marking a visitor class with the annotation `@AutoConfigure` signals that [Envir
 
 Only visitors which have no required configuration parameters can be marked as `@AutoConfigure`.
 
-Not every visitor is going to be auto-configurable. For example, [AddAnnotation](../reference/java/refactoring-java-source-code/addannotation.md) is a building-block visitor designed to be applied to specific AST elements that meet some criteria, and isn't something we apply generally to a whole set of source files.
+Not every visitor is going to be auto-configurable. For example, [AddAnnotation](../reference/java/refactoring-java-source-code/addannotation.md) is a building-block visitor designed to be applied to specific LST elements that meet some criteria, and isn't something we apply generally to a whole set of source files.
 
 ## Next Steps
 

@@ -10,7 +10,7 @@ Despite the name, `JsonPathMatcher` and `JsonPath` expressions may be used in ot
 
 `JsonPathMatcher` provides methods for matching the given cursor location using a provided `JsonPath` expression. "JsonPath" (sometimes stylized as JSONPath) is a query language for JSON, similar to how XPath is a query language for XML. Despite the name, JsonPathMatcher can be used on other languages besides JSON, such as YAML.
 
-JsonPathMatcher and JsonPath expressions go hand-in-hand. A JsonPath expression specifies a path to an element in the JSON or YAML structure. A JsonPathMatcher provides methods which visitors can use to make decisions about whether an AST element is a desired target.
+JsonPathMatcher and JsonPath expressions go hand-in-hand. A JsonPath expression specifies a path to an element in the JSON or YAML structure. A JsonPathMatcher provides methods which visitors can use to make decisions about whether an LST element is a desired target.
 
 ## JsonPath Expression Notation
 
