@@ -1029,7 +1029,7 @@
 
 ## Concepts & Explanations
 
-* [Lossless Semantic Tree](concepts-and-explanations/lossless-semantic-trees.md.md)
+* [Lossless Semantic Tree](concepts-and-explanations/lossless-semantic-trees.md)
 * [Java LST Examples](concepts-and-explanations/lst-examples.md)
 * [Recipes](concepts-and-explanations/recipes.md)
 * [Visitors](concepts-and-explanations/visitors.md)
