@@ -1,4 +1,4 @@
-# Lossless Semantic Trees
+# Lossless Semantic Tree
 
 A Lossless Semantic Tree (LST) is a tree representation of code. Unlike the traditional [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract\_syntax\_tree) (AST), OpenRewrite's LST offers a unique set of characteristics that make it suitable for both single-repository and mass transformation operations:
 
@@ -19,3 +19,7 @@ logger.info("Hi");
 The production of type-attributed LSTs for a whole organization is arbitrarily computationally complex since it requires dependency resolution, parsing of the source code, and type attribution (basically Java compilation up to the point of bytecode generation). Since OpenRewrite LSTs are serializable, we can store them as a byproduct of compilation and then operate on them _en masse_ later.
 
 Once we have a serialized LST for a particular source file, and since it also contains type information, it can be refactored/searched completely independently of other source files in the same source package or repository. This makes mass search and refactoring an approximately linearly scalable operation.
+
+{% hint style="info" %}
+If you want to see specific examples of Java LSTs, please read our [Java LST Examples doc](lst-examples.md).&#x20;
+{% endhint %}
