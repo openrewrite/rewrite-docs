@@ -2,6 +2,12 @@
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from Java 8 to Java 17. Upgrading an older codebase to Java 17 can be a daunting and time-consuming task. As a developer, you can use OpenRewrite to quickly tackle the most common issues you will encounter with your upgrade.
 
+This recipe covers the following themes:
+
+* Applications that use any of the Java EE specifications will have those dependencies migrated to Jakarta EE 8. Additionally, the migration to Jakarta EE 8 will also add explicit runtime dependencies on those projects that have transitive dependencies on the Jakrata EE APIs. Currently, only Maven-based build files are supported.
+* Any deprecated APIs in the earlier versions of Java that have a well-defined migration path will be automatically applied to an application's sources. The remediation included with this recipe were originally identified using a build plugin called Jdeprscan.
+* Illegal Reflective Access warnings will be logged when an application attempts to use an API that has not been publically exported via the module system. This recipe will upgrade well-known, third-party libraries if they provide a version that is compliant with the Java module system.
+
 ## Example Configuration
 
 The Java 17 migration recipe can be applied by including OpenRewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
@@ -66,7 +72,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the complete list of changes made by this recipe, please see the reference pages for [Java 11](../../reference/recipes/java/migrate/java8tojava11.md) and Java 17. If you have a specific use case that is not yet covered by this project, please reach out to our team!
+For the complete list of changes made by this recipe, please see the reference pages for [Java 11](../../reference/recipes/java/migrate/java8tojava11.md) and [Java 17](../../reference/recipes/java/migrate/upgradetojava17.md). If you have a specific use case that is not yet covered by this project, please reach out to our team!
 
 {% tabs %}
 {% tab title="Example Class (Before)" %}
