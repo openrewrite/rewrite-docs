@@ -195,7 +195,7 @@ The above example class demonstrates the two most common code migration tasks wh
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
