@@ -1,10 +1,10 @@
-# Migrate to Java 11 from Java 8
+# Migrate to Java 17
 
-In this tutorial, we'll use OpenRewrite to perform an automated migration from Java 8 to Java 11. Upgrading an older codebase to Java 11 can be a daunting and time-consuming task. As a developer, you can use OpenRewrite to quickly tackle the most common issues you will encounter with your upgrade.
+In this tutorial, we'll use OpenRewrite to perform an automated migration from Java 8 to Java 17. Upgrading an older codebase to Java 17 can be a daunting and time-consuming task. As a developer, you can use OpenRewrite to quickly tackle the most common issues you will encounter with your upgrade.
 
 ## Example Configuration
 
-The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/java/migrate/java8tojava11) can be applied by including OpenRewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
+The Java 17 migration recipe can be applied by including OpenRewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -15,17 +15,17 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.38.0</version>
+      <version>4.38.1</version>
       <configuration>
         <activeRecipes>
-          <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
+          <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
         </activeRecipes>
       </configuration>
       <dependencies>
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-migrate-java</artifactId>
-          <version>1.13.0</version>
+          <version>1.15.0</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -40,11 +40,11 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
 ```groovy
   plugins {
       id("java")
-      id("org.openrewrite.rewrite") version("5.33.0")
+      id("org.openrewrite.rewrite") version("5.33.2")
   }
   
   rewrite {
-      activeRecipe("org.openrewrite.java.migrate.Java8toJava11")
+      activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")
   }
   
   repositories {
@@ -52,7 +52,7 @@ The [Java 11 migration recipe](https://docs.openrewrite.org/reference/recipes/ja
   }
   
   dependencies {
-      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.12.3"))
+      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.13.1"))
       rewrite("org.openrewrite.recipe:rewrite-migrate-java")
   
       // Other project dependencies
@@ -66,7 +66,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes this recipe will make, see its [reference page](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/migrate/java8tojava11.md).
+For the complete list of changes made by this recipe, please see the reference pages for [Java 11](../../reference/recipes/java/migrate/java8tojava11.md) and Java 17. If you have a specific use case that is not yet covered by this project, please reach out to our team!
 
 {% tabs %}
 {% tab title="Example Class (Before)" %}
@@ -133,7 +133,7 @@ public class Example {
 {% endtabs %}
 
 {% hint style="info" %}
-The above example class demonstrates the two most common code migration tasks when moving to Java 11. There are many additional tasks covered by this recipe that are not represented in this example.
+The above example class demonstrates the two most common code migration tasks when moving to Java 11. There are many additional tasks covered by this recipe that are not represented in this example.&#x20;
 {% endhint %}
 
 {% tabs %}
@@ -150,7 +150,6 @@ The above example class demonstrates the two most common code migration tasks wh
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
     </properties>
 
     <dependencies>
@@ -174,32 +173,6 @@ The above example class demonstrates the two most common code migration tasks wh
             </exclusions>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                 <groupId>org.jvnet.jaxb2.maven2</groupId>
-                 <artifactId>maven-jaxb2-plugin</artifactId>
-                 <version>${maven-jaxb2-plugin.version}</version>
-                 <executions>
-                     <execution>
-                         <goals>
-                             <goal>generate</goal>
-                         </goals>
-                     </execution>
-                 </executions>
-                 <configuration>
-                     <args>
-                         <arg>-XautoNameResolution</arg>
-                     </args>
-                     <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
-                     <schemaIncludes>
-                         <include>*.wsdl</include>
-                     </schemaIncludes>
-                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-                 </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
 ```
 {% endtab %}
@@ -217,7 +190,6 @@ The above example class demonstrates the two most common code migration tasks wh
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
-        <maven-jaxb2-plugin.version>2.5.0</maven-jaxb2-plugin.version>
     </properties>
 
     <dependencies>
@@ -254,40 +226,6 @@ The above example class demonstrates the two most common code migration tasks wh
             <scope>runtime</scope>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                 <groupId>org.jvnet.jaxb2.maven2</groupId>
-                 <artifactId>maven-jaxb2-plugin</artifactId>
-                 <version>${maven-jaxb2-plugin.version}</version>
-                 <executions>
-                     <execution>
-                         <goals>
-                             <goal>generate</goal>
-                         </goals>
-                     </execution>
-                 </executions>
-                 <configuration>
-                     <args>
-                         <arg>-XautoNameResolution</arg>
-                     </args>
-                     <schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
-                     <schemaIncludes>
-                         <include>*.wsdl</include>
-                     </schemaIncludes>
-                     <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jdeprscan-plugin</artifactId>
-                <version>3.0.0-alpha-1</version>
-                <configuration>
-                    <release>11</release>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
 ```
 {% endtab %}
@@ -303,7 +241,7 @@ Dependency management for Gradle is not currently available but this feature is 
 
 ### Known Limitations
 
-The rewrite-migrate-java project is in its infancy and we are always looking for feedback on which tasks should be prioritized. If you have a specific use case that is not yet covered by this project, please reach out to our team!
+
 
 The following is a list of known limitations/issues:
 
