@@ -31,6 +31,7 @@
 
 ## Changelog
 
+* [Snapshot (2023-01-04)](changelog/snapshot-2023-01-04.md)
 * [Snapshot (2022-12-28)](changelog/snapshot-2022-12-28.md)
 * [7.34.2 Release (2022-12-16)](changelog/7-34-2-Release.md)
 * [7.34.0 Release (2022-12-09)](changelog/7-34-0-Release.md)
@@ -552,6 +553,7 @@
         * [Migrate deprecated Spring-Boot EmbeddedDatabaseConnection.HSQL](reference/recipes/java/spring/boot2/migratehsqlembeddeddatabaseconnection.md)
         * [Migrate flyway and liquibase credentials](reference/recipes/java/spring/boot2/migratedatabasecredentials.md)
         * [Migrate multi-condition @ConditionalOnBean annotations](reference/recipes/java/spring/boot2/conditionalonbeananynestedcondition.md)
+        * [Migrate to Spring Boot 2.0 from Spring Boot 1.5](/reference/recipes/java/spring/boot2/upgradespringboot_2_0.md)
         * [Migrate to Spring Boot 2.0 from Spring Boot 1.5](reference/recipes/java/spring/boot2/migratespringboot\_2\_0.md)
         * [Migrate to Spring Boot 2.1 from Spring Boot 2.0](reference/recipes/java/spring/boot2/upgradespringboot\_2\_1.md)
         * [Migrate to Spring Boot 2.2 from Spring Boot 2.0 through 2.1](reference/recipes/java/spring/boot2/upgradespringboot\_2\_2.md)
@@ -945,6 +947,7 @@
   * [Gradle](reference/recipes/gradle/README.md)
     * [Activate Style in Gradle Project](reference/recipes/gradle/activatestyle.md)
     * [Add @DelegatesTo to the Gradle API](reference/recipes/gradle/adddelegatestogradleapi.md)
+    * [Add Gradle dependency](/reference/recipes/gradle/adddependency.md)
     * [Add Gradle property](reference/recipes/gradle/addproperty.md)
     * [Add Gradle wrapper](reference/recipes/gradle/addgradlewrapper.md)
     * [Change Gradle dependency artifactId](reference/recipes/gradle/changedependencyartifactid.md)
