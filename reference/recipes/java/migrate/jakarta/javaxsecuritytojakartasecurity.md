@@ -1,4 +1,4 @@
-# Migrate deprecated `javax.security` packages to `jakarta.security`
+# Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`
 
 **org.openrewrite.java.migrate.jakarta.JavaxSecurityToJakartaSecurity**
 _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
@@ -90,15 +90,15 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.security.enterprise`
   * artifactId: `jakarta.security.enterprise-api`
   * version: `2.x`
-  * onlyIfUsing: `javax.security.*`
+  * onlyIfUsing: `javax.security.enterprise.+`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `jakarta.security.enterprise`
   * artifactId: `jakarta.security.enterprise-api`
   * newVersion: `2.x`
   * retainVersions: `[]`
 * [Rename package name](../../../java/changepackage.md)
-  * oldPackageName: `javax.security`
-  * newPackageName: `jakarta.security`
+  * oldPackageName: `javax.security.enterprise`
+  * newPackageName: `jakarta.security.enterprise`
   * recursive: `true`
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `javax.security.enterprise`
@@ -118,15 +118,15 @@ recipeList:
       groupId: jakarta.security.enterprise
       artifactId: jakarta.security.enterprise-api
       version: 2.x
-      onlyIfUsing: javax.security.*
+      onlyIfUsing: javax.security.enterprise.+
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: jakarta.security.enterprise
       artifactId: jakarta.security.enterprise-api
       newVersion: 2.x
       retainVersions: []
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: javax.security
-      newPackageName: jakarta.security
+      oldPackageName: javax.security.enterprise
+      newPackageName: jakarta.security.enterprise
       recursive: true
   - org.openrewrite.maven.RemoveDependency:
       groupId: javax.security.enterprise
