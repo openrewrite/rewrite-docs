@@ -1,36 +1,17 @@
-# Introduction to OpenRewrite
+# Rewrite Docs
 
-## **Large-Scale Automated Source Code Refactoring**
+The docs behind [docs.openrewrite.org](https://docs.openrewrite.org/).
 
-OpenRewrite enables large-scale distributed source code refactoring for framework migrations, vulnerability patches, and API migrations with an early focus on the Java language.
+## Auto-Generated Recipe Docs
 
-## Semantic Code Search and Transformation
+All of the documentation about specific recipes is auto-generated via the [rewrite-recipe-markdown-generator](https://github.com/openrewrite/rewrite-recipe-markdown-generator). This includes names, descriptions, tags, source links, example usage, and license information.
 
-The OpenRewrite project is a [semantic code search](https://en.wikipedia.org/wiki/Semantic\_search) and transformation ecosystem for Java and other source code. It consists of a platform of prepackaged refactoring recipes for common framework migration and stylistic consistency tasks. It also allows you to define custom recipes to achieve a wide range of source code transformations.
+If you wish to update any of those things, please update the recipes themselves rather than submitting a PR here (as any manual changes will be clobbered with the next release).
 
-## What Does OpenRewrite Do?
+You can find the auto-generated recipe docs in the [reference/recipes directory](/reference/recipes/).
 
-OpenRewrite works by making changes to [Lossless Semantic Trees](concepts-and-explanations/lossless-semantic-trees.md) (LST) representing your source code and printing the modified trees back into source code. You can then review the changes in your code and commit. Modifications to the LST are performed in [Visitors](concepts-and-explanations/visitors.md) and visitors are aggregated into [Recipes](concepts-and-explanations/recipes.md). OpenRewrite recipes make minimally invasive changes to your source code that honor the original formatting.
+## Contributing
 
-For example, if you want to consistently use static imports across all of your test files, rather than doing this manually, you could use the UseStaticImport visitor provided by OpenRewrite. Applied to the file below, you can see the changes this generates.
+We encourage you to contribute to our docs! Please feel free to create an issue or open a PR if you find any issues.
 
-```java
-// Before OpenRewrite
-import org.junit.Assert;
-...
-
-Assert.assertTrue(condition);
-```
-
-```java
-// After OpenRewrite
-import static org.junit.Assert.assertTrue;
-...
-
-assertTrue(condition);
-```
-
-## Next Steps
-
-* If you want to learn how to create your own recipes, start with the [Recipe Development Environment guide](authoring-recipes/recipe-development-environment.md) and then work through the [Writing a Java Refactoring Recipe guide](authoring-recipes/writing-a-java-refactoring-recipe.md).&#x20;
-* If you want to learn how to use OpenRewrite to perform code transformations in a Maven or  Gradle project, check out the [Setting Up Your Project and Running Recipes Guide](running-recipes/getting-started.md).
+We use [GitBook](https://www.gitbook.com/) to manage our documentation. When any changes are merged into this directory, a build is kicked off to update the GitBook docs.
