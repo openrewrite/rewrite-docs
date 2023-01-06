@@ -125,18 +125,18 @@ Once an instance of the template has been created it can be applied to an LST el
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
     private final JavaTemplate template = JavaTemplate.builder(this::getCursor, "withString(#{any(java.lang.String)}).length()")
-        .javaParser(JavaParser.fromJavaVersion().classpath("example-utils").build())
+        .javaParser(() -> JavaParser.fromJavaVersion().classpath("example-utils").build())
         .staticImports("org.example.StringUtils.withString")
         .build();
 
     public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext p) {
         J.MethodInvocation m = super.visitMethodInvocation(method, p);
-        if (m.name.typeInformation.simpleName == "countLetters") {
-            m = m.withTemplate(template, m.getCoordinates().replace(), m..getArguments().get(0)); //Template Invocation 
+        if (m.getSimpleName().equals("countLetters")) {
+            m = m.withTemplate(template, m.getCoordinates().replace(), m.getArguments().get(0)); //Template Invocation 
             maybeAddImport("org.example.StringUtils", "withString");
         }
         return m;
-    }       
+    }
 }
 ```
 
