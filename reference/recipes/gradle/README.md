@@ -21,6 +21,8 @@
 
 ## Subcategories
 
-* [Plugins](plugins/)
-* [Search](search/)
-* [Security](../maven/security/)
+* [Plugins](/reference/recipes/gradle/plugins)
+* [Search](/reference/recipes/gradle/search)
+* [Security](/reference/recipes/gradle/security)
+
+

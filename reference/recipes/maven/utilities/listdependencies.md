@@ -5,11 +5,11 @@ _List all the dependencies in a scope and add to a text file._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.34.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.34.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.34.0
+* version: 7.34.3
 
 ## Options
 
@@ -27,7 +27,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {
@@ -51,7 +51,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.0</version>
+        <version>4.38.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.utilities.ListDependencies</recipe>
@@ -68,7 +68,7 @@ repositories {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.2:run \
   -DactiveRecipes=org.openrewrite.maven.utilities.ListDependencies
 ```
 {% endcode %}

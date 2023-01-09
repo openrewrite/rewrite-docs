@@ -28,7 +28,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {
@@ -55,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.0</version>
+        <version>4.38.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily</recipe>
@@ -79,7 +79,7 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.0:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.2:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-github-actions:1.15.0 \
   -DactiveRecipes=org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily
 ```

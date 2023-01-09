@@ -5,11 +5,11 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.34.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.34.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 7.34.0
+* version: 7.34.3
 
 ## Options
 
@@ -17,6 +17,7 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 | -- | -- | -- |
 | `String` | property | The property key to add. |
 | `String` | value | The value of the new property key. |
+| `String` | delimiter | *Optional*. Property entries support different delimiters (`=`, `:`, or whitespace). The default value is `=` unless provided the delimiter of the new property entry. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
 
 
@@ -35,6 +36,7 @@ recipeList:
   - org.openrewrite.properties.AddProperty:
       property: management.metrics.enable.process.files
       value: true
+      delimiter: :
       fileMatcher: '**/application-*.properties'
 ```
 {% endcode %}
@@ -47,7 +49,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {
@@ -71,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.0</version>
+        <version>4.38.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPropertyExample</recipe>

@@ -26,6 +26,7 @@
 * [Remove Maven plugin](removeplugin.md)
 * [Remove Maven plugin dependency](removeplugindependency.md)
 * [Remove Maven project property](removeproperty.md)
+* [Remove duplicate Maven dependencies](removeduplicatedependencies.md)
 * [Remove exclusion](removeexclusion.md)
 * [Remove redundant explicit dependency versions](removeredundantdependencyversions.md)
 * [Set Maven project packaging](changepackaging.md)
@@ -35,8 +36,10 @@
 
 ## Subcategories
 
-* [Cleanup](cleanup/)
-* [Search](search/)
-* [Security](../gradle/security/)
-* [Spring](spring/)
-* [Utilities](utilities/)
+* [Cleanup](/reference/recipes/maven/cleanup)
+* [Search](/reference/recipes/maven/search)
+* [Security](/reference/recipes/maven/security)
+* [Spring](/reference/recipes/maven/spring)
+* [Utilities](/reference/recipes/maven/utilities)
+
+

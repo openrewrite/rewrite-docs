@@ -5,11 +5,11 @@ _Change method invocations to method calls on a variable._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.34.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.34.0
+* version: 7.34.3
 
 ## Options
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangeMethodTargetToVariableExample` has been defined acti
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.0</version>
+        <version>4.38.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodTargetToVariableExample</recipe>

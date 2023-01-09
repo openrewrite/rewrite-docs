@@ -5,11 +5,11 @@ _Find JSON object members by JsonPath expression._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-json), [Issue Tracker](https://github.com/openrewrite/rewrite-json/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-json/7.34.0/jar)
+[Github](https://github.com/openrewrite/rewrite-json), [Issue Tracker](https://github.com/openrewrite/rewrite-json/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-json/7.34.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-json
-* version: 7.34.0
+* version: 7.34.3
 
 ## Options
 
@@ -35,14 +35,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindKeyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-json:7.34.0 in your build file:
+Now that `com.yourorg.FindKeyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-json:7.34.3 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-json:7.34.0")
+    rewrite("org.openrewrite:rewrite-json:7.34.3")
 }
 ```
 {% endcode %}
@@ -69,7 +69,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.0</version>
+        <version>4.38.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindKeyExample</recipe>
@@ -79,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-json</artifactId>
-            <version>7.34.0</version>
+            <version>7.34.3</version>
           </dependency>
         </dependencies>
       </plugin>
