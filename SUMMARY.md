@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction to OpenRewrite](README.md)
+* [Introduction to OpenRewrite](introduction.md)
 
 ## Running Recipes
 
