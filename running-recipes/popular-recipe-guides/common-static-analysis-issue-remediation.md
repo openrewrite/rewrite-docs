@@ -13,7 +13,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.38.0</version>
+  <version>4.38.1</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
@@ -29,7 +29,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
 ```
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("5.33.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {

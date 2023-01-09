@@ -11,7 +11,7 @@ The [SpringBoot1To2Migration](https://github.com/openrewrite/rewrite-docs/tree/b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.12.3"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.13.1"))
     rewrite("org.openrewrite.recipe:rewrite-spring")
 }
 ```
@@ -39,7 +39,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.0</version>
+        <version>1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot1To2Migration</recipe>
