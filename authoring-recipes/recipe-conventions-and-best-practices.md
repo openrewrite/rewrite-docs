@@ -18,7 +18,7 @@ To get the most use out of this document, it would be beneficial for you to:
 
 ### Do No Harm
 
-One of the most important conventions to keep in mind when creating recipes is the concept of "Do No Harm". If your recipe cannot determine that a change is safe to me, **it should make no changes rather than making a potentially wrong change**. 
+One of the most important conventions to keep in mind when creating recipes is the concept of "Do No Harm". If your recipe cannot determine that a change is safe, **it should make no changes rather than making a potentially wrong change**. 
 
 For example, in the [RenameLocalVariableToCamelCase recipe](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/RenameLocalVariablesToCamelCase.java), we prevent the recipe from renaming variables to a name that _could_ be a namespace conflict. Likewise, we opt out of renaming class fields since they _might_ be in use by some downstream API. We favor making fewer changes over making wrong changes.
 
@@ -29,7 +29,7 @@ By reducing a recipe's scope and minimizing the number of changes a recipe makes
 On the other hand, a change that unnecessarily clobbers formatting or is otherwise overly broad in scope will burden code reviewers and drastically reduce the rate at which they accept changes.
 
 {% hint style="success" %}
-[RewriteTest](/authoring-recipes/recipe-testing.md#rewritetest-interface) helps you to verify that your recipe does not make unnecessary changes by running your recipe in a loop. If you see your change being made many times it is likely your visitor fails to avoid making unnecessary changes. See the [cycle section](#stay-single-cycle) for more information.
+[RewriteTest](/authoring-recipes/recipe-testing.md#rewritetest-interface) helps you to verify that your recipe does not make unnecessary changes by running your recipe over multiple cycles. If you see your change being made many times it is likely your visitor fails to avoid making unnecessary changes. See the [cycle section](#stay-single-cycle) for more information.
 {% endhint %}
 
 {% hint style="info" %}
@@ -151,6 +151,6 @@ Because of that, whenever shared state is needed within a single visitor or reci
 
 #### Override the visit method if you need pass state between visitors
 
-If you need to pass state between different visitors in the same recipe, you should override the `visit` function and create a variable whose scope is accessible to your visitors. For example, in the [AddDependency recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), we create a [scopeByProject Map](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L155) that is then shared between a [UsesTypes visitor](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L159-L164) and a [MavenVisitor](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L191).
+If you need to pass state between different visitors in the same recipe, you should override the `Recile.visit(before, ExecutionContext)` function and create a variable whose scope is accessible to your visitors. For example, in the [AddDependency recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), we create a [scopeByProject Map](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L155) that is then shared between a [UsesTypes visitor](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L159-L164) and a [MavenVisitor](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L191).
 
 Unlike the `ExecutionContext` mentioned above, this state will not carry over between cycles and there is, therefore, no risk of harming other recipes.
