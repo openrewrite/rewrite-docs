@@ -1,7 +1,6 @@
 # Use the latest JAX-WS API and runtime for Jakarta EE 8
 
-**org.openrewrite.java.migrate.javax.AddJaxwsRuntime**
-_Update maven build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.  The recipe will add a JAX-WS run-time, in `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
+**org.openrewrite.java.migrate.javax.AddJaxwsRuntime** _Update maven build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the**** ****`javax`**** ****namespace, despite the move to the Jakarta artifact**._
 
 ### Tags
 
@@ -18,7 +17,6 @@ _Update maven build files to use the latest JAX-WS runtime from Jakarta EE 8 to 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.15.0
-
 
 ## Usage
 

@@ -1,7 +1,6 @@
-# Fix `String#format` and `String#formatted` expressions
+# Fix String#format and String#formatted expressions
 
-**org.openrewrite.java.cleanup.FixStringFormatExpressions**
-_Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index._
+**org.openrewrite.java.cleanup.FixStringFormatExpressions** _Fix `String#format` and `String#formatted` expressions by replacing  newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Fix `String#format` and `String#formatted` expressions by replacing `\n` newlin
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.34.3
-
 
 ## Usage
 
