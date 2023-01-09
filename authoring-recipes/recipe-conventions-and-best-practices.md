@@ -113,6 +113,10 @@ If we used a typical Java stream, regardless of whether or not there were any ch
 
 Throughout our LSTs and other APIs, we have been careful to use Java's nullability annotations to indicate whether a field is nullable or not. If a field is nullable then there _will_ be LSTs where that field is null. To operate correctly on the wildly diverse code which exists throughout the world, Recipe/Visitors must not make changes if a field they need is null.
 
+### Week Year ("YYYY") should not be used for date formatting
+
+If your recipe is going to work with dates, please ensure that you adhere to [RSPEC-3986](https://rules.sonarsource.com/java/RSPEC-3986). Dates should be constructed with `y` for `Year` instead of `Y` for `Week Year`.
+
 ### Avoid constructing LST elements by hand
 
 Even very simple pieces of code have complex LST representations which are tedious and error-prone to construct by hand. Never attempt to build up LSTs by hand. Instead, you should use faculties like [JavaTemplate](../concepts-and-explanations/javatemplate.md) to turn code snippets into [LST elements](/concepts-and-explanations/lst-examples.md). For data formats like XML or JSON, it is usually more convenient to use the format's parser to turn a snippet of text into usable LST elements.
