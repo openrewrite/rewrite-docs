@@ -32,5 +32,5 @@ assertTrue(condition);
 
 ## Next Steps
 
-* If you want to learn how to create your own recipes, start with the [Recipe Development Environment guide](authoring-recipes/recipe-development-environment.md) and then work through the [Writing a Java Refactoring Recipe guide](authoring-recipes/writing-a-java-refactoring-recipe.md).&#x20;
-* If you want to learn how to use OpenRewrite to perform code transformations in a Maven or  Gradle project, check out the [Setting Up Your Project and Running Recipes Guide](running-recipes/getting-started.md).
+* If you want to learn how to use OpenRewrite to perform code transformations in a Maven or Gradle project, check out the [Setting Up Your Project and Running Recipes Guide](running-recipes/getting-started.md).
+* If you want to learn how to create your own recipes, start with the [Recipe Development Environment guide](authoring-recipes/recipe-development-environment.md) and then work through the [Writing a Java Refactoring Recipe guide](authoring-recipes/writing-a-java-refactoring-recipe.md).
