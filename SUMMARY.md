@@ -4,7 +4,7 @@
 
 ## Running Recipes
 
-* [Quickstart: setting up your project and running recipes](running-recipes/getting-started.md)
+* [Quickstart: Setting up your project and running recipes](running-recipes/getting-started.md)
 * [Running Rewrite on a Gradle project without modifying the build](running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build.md)
 * [Running Rewrite without build tool plugins](running-recipes/running-rewrite-without-build-tool-plugins.md)
 * [Popular recipe guides](running-recipes/popular-recipe-guides/README.md)
