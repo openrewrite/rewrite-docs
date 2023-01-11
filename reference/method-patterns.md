@@ -66,7 +66,7 @@ Constructing a similarly configured instance of the same recipe in Java:
 ChangeMethodName cmn = new ChangeMethodName("org.mockito.Matchers anyVararg()", "any");
 ```
 
-### Authoring Recipes with MethodMatcher
+### Authoring recipes with MethodMatcher
 
 `org.openrewrite.java.MethodMatcher` is the class that most recipes will use method patterns with. Instances are created by providing the method pattern to its constructor:
 
