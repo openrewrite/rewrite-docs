@@ -1,4 +1,4 @@
-# Recipe Testing
+# Recipe testing
 
 When developing new recipes, it's very important to test them to ensure that they not only make the expected changes but that they also **don't** make unnecessary changes. 
 
@@ -17,7 +17,7 @@ This guide assumes that:
 * You've already set up your [recipe development environment](/authoring-recipes/recipe-development-environment.md)
 * You're familiar with [creating Java refactoring recipes](/authoring-recipes/writing-a-java-refactoring-recipe.md)
 
-## Adding Dependencies
+## Adding dependencies
 
 Before you can go about writing tests, you'll want to add some dependencies to your project's build file so that you have all of the tools needed to create said tests:
 
@@ -109,7 +109,7 @@ We recommend either using Java 17 or Kotlin so that you get access to multi-line
 This tutorial uses Java for tests, but which language you use is a matter of preference.
 {% endhint %}
 
-## Sample Recipe
+## Sample recipe
 
 With the dependencies set up, we now need a recipe that we can write tests for. For the sake of an example, let's assume we have the following recipe that ensures a class's package declaration is all lowercase: 
 
@@ -169,7 +169,7 @@ public class LowercasePackage extends Recipe {
 }
 ```
 
-## Writing Tests
+## Writing tests
 
 Now that we have a recipe to test with, let's go over what every test class should have. At the very least, your tests should:
 
@@ -280,7 +280,7 @@ class LowercasePackageTest implements RewriteTest {
 }
 ```
 
-### RewriteTest Interface
+### RewriteTest interface
 
 As mentioned above, the first thing all tests need to do is implement the [RewriteTest interface](https://github.com/openrewrite/rewrite/blob/main/rewrite-test/src/main/java/org/openrewrite/test/RewriteTest.java). This interface not only acts as the entry point to testing your recipe, but it also provides a [Fluent API](https://java-design-patterns.com/patterns/fluentinterface/) for expressing recipe and source file configuration. 
 
@@ -309,9 +309,9 @@ In a majority of cases, though, a `SourceSpec` will also define an "after" state
 
 A developer can assert additional conditions on a source file by using the `afterRecipe` callback that is defined on the `SourceSpec`. This can be convenient when asserting conditions on the resulting semantic model that are not represented in the rendering of the source code after the recipe has transformed the source file. For instance, you may want to confirm that the path to a file has changed such as in the [sample tests](#example-tests) above. This file path is not visible in the "after" code and can only be tested via this callback.
 
-## Advanced Recipe Testing
+## Advanced recipe testing
 
-### Customizing Source File Paths and Markers
+### Customizing source file paths and markers
 
 Occasionally, it is desirable to modify a specific source file before it is processed by the recipe testing environment. This type of customization can be achieved by using the callback method provided as an optional parameter on the Fluent API. 
 
@@ -340,7 +340,7 @@ void propertiesChangeTest() {
 You'll need to add `org.openrewrite:rewrite-properties` as a test dependency for `properties` to be available in your tests.
 {% endhint %}
 
-## Next Steps
+## Next steps
 
 Now that you're familiar with writing tests, consider reading over the [best practice guide for making recipes](/authoring-recipes/recipe-conventions-and-best-practices.md). You could also check out [a more complex recipe tutorial](/authoring-recipes/modifying-methods-with-javatemplate.md) if you'd like to learn even more about creating recipes. 
 

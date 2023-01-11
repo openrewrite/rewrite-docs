@@ -2,7 +2,7 @@
 description: Declaring and configuring Recipes and Styles in YAML
 ---
 
-# Declarative YAML Format
+# Declarative YAML format
 
 There are two places OpenRewrite [YAML](https://yaml.org) files may appear:
 

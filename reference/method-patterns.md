@@ -2,11 +2,11 @@
 description: A simple and powerful way of identifying method definitions and invocations
 ---
 
-# Method Patterns
+# Method patterns
 
 Many recipes operate on method declarations or invocations. Method patterns are a mechanism for configuring and developing such recipes. OpenRewrite's pointcut method expressions are derived from AspectJ. An OpenRewrite "method pattern" is comparable to an AspectJ's "Pointcut method expression".
 
-## Anatomy of a Method Pattern
+## Anatomy of a method pattern
 
 A pointcut method expression can identify one or more method definitions or invocations based on their:
 
@@ -45,7 +45,7 @@ So if you wanted to match invocations of `String.toString(int beginIndex)` then 
 
 ## Usage
 
-### Configuring Recipes
+### Configuring recipes
 
 Recipes which take method patterns as arguments take them as strings. In yaml that looks like this:
 

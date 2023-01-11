@@ -2,7 +2,7 @@
 description: A tool and syntax for selecting elements within JSON-like structures
 ---
 
-# JsonPath and JsonPathMatcher Reference
+# JsonPath and JsonPathMatcher reference
 
 {% hint style="info" %}
 Despite the name, `JsonPathMatcher` and `JsonPath` expressions may be used in other markup languages besides JSON which support it, such as YAML. When we refer to "JSON" keep in mind JsonPathMatcher and JsonPath expressions apply to markup languages which have a JsonPathMatcher implementation, such as YAML.
@@ -12,7 +12,7 @@ Despite the name, `JsonPathMatcher` and `JsonPath` expressions may be used in ot
 
 JsonPathMatcher and JsonPath expressions go hand-in-hand. A JsonPath expression specifies a path to an element in the JSON or YAML structure. A JsonPathMatcher provides methods which visitors can use to make decisions about whether an LST element is a desired target.
 
-## JsonPath Expression Notation
+## JsonPath expression notation
 
 A JsonPath expression specifies a path to an element, or set of elements, in a JSON-like structure.
 
@@ -20,9 +20,9 @@ A JsonPath expression specifies a path to an element, or set of elements, in a J
 The JsonPath expression syntax OpenRewrite provides is a subset implementation of the JsonPath syntax.
 {% endhint %}
 
-### Syntax Components
+### Syntax components
 
-Paths can use dot notation, or bracket notation. For example, these two JsonPath expressions are equivalent:
+Paths can use dot notation or bracket notation. For example, these two JsonPath expressions are equivalent:
 
 ```text
 $.spec.containers[0].image
@@ -43,7 +43,7 @@ Additional syntax subcomponents of a JsonPath expression are shown below:
 | `[(expression)]` | Script expressions can be used instead of explicit property names or indexes. |
 | `@` | Used in filter expressions to refer to the current node being processed. |
 
-### Filter Expressions
+### Filter expressions
 
 Filters are logical expressions used to filter arrays. An example of a JsonPath expression with a filter is:
 
@@ -60,9 +60,8 @@ The supported operators of a filter expression are shown below:
 | `==` | Equals to. String values should be enclosed in single quotes. For example, `[?(@.kind == 'Deployment')]`. |
 | `=~` | Matches a [JavaScript regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions). For example, `[?(@.uses =~ 'actions/setup-java@v2.*')]` matches items which `uses` starts with `actions/setup-java@v2`, and so would include `actions/setup-java@v2.1.0`. |
 
-## Configuring Recipes using JsonPath Expressions
-
-Recipes which take JsonPath expressions as arguments take them as strings. In yaml that looks like this:
+## Configuring recipes using JsonPath expressions
+Recipes that take JsonPath expressions as arguments take them as strings. In YAML, that looks like this:
 
 ```yaml
 ---
@@ -111,7 +110,7 @@ subjects:
 {% endtab %}
 {% endtabs %}
 
-## Authoring Recipes with JsonPathMatcher
+## Authoring recipes with JsonPathMatcher
 
 `org.openrewrite.json.JsonPathMatcher` (or `org.openrewrite.yaml.JsonPathMatcher`) are the classes that most recipes will use JsonPath expression patterns with. Instances are created by providing the JsonPath expression pattern to the JsonPathMatcher constructor:
 

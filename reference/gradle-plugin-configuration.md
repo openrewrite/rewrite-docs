@@ -2,11 +2,11 @@
 description: rewrite-gradle-plugin configuration options and task descriptions
 ---
 
-# Gradle Plugin Configuration
+# Gradle plugin configuration
 
 The OpenRewrite Gradle Plugin is the fastest way to apply OpenRewrite recipes to your code as part of your Gradle build. The OpenRewrite Gradle Plugin is compatible with all versions of Gradle since 4.0.
 
-## Plugin Configuration
+## Plugin configuration
 
 Apply the org.openrewrite.rewrite plugin to your build.
 
@@ -28,7 +28,7 @@ repositories {
 
 With the plugin applied, the `rewrite` DSL is available for configuration.
 
-### Multi-Module Gradle Projects
+### Multi-module Gradle projects
 
 When applied to a multi-project build, plugin behavior differs depending on whether the plugin is applied to the root project or to a sub-project. Applied to the root project, the plugin will parse and refactor all sources from all projects. Applied to any project other than the root project, the plugin will parse and refactor only sources from that project.
 
@@ -95,7 +95,7 @@ rewrite {
 }
 ```
 
-## Activating OpenRewrite Recipes
+## Activating OpenRewrite recipes
 
 {% hint style="info" %}
 All OpenRewrite libraries and modules are published to MavenCentral. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there or one of its mirrors.
@@ -133,7 +133,7 @@ rewrite {
 }
 ```
 
-## The "Run" Task
+## The "Run" task
 
 Execute `gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterward, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
@@ -143,7 +143,7 @@ After the goal finishes executing, run `git diff` (or your VCS system's equivale
 
 ![Example of changes made to netflix conductor by the rewriteRun task](<../.gitbook/assets/rewrite-fix-git-diff-output (1) (1) (3) (3) (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (30).png>)
 
-## The "dryRun" Task
+## The "dryRun" task
 
 Execute `gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
 
@@ -168,7 +168,7 @@ tasks.named("check").configure {
 }
 ```
 
-## The "Discover" Task
+## The "Discover" task
 
 Execute `gradle rewriteDiscover` to list the recipes available on your classpath.
 

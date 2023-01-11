@@ -2,7 +2,7 @@
 description: Prerequisites, tools, and recommendations for developing with OpenRewrite
 ---
 
-# Recipe Development Environment
+# Recipe development environment
 
 This getting started guide covers setting up your development environment for creating your own OpenRewrite recipes.
 
@@ -15,13 +15,13 @@ This getting started guide covers setting up your development environment for cr
   * [IntelliJ](https://www.jetbrains.com/idea/download/)
   * [Eclipse](https://www.eclipse.org/downloads/) (optionally) with [Kotlin Plugin](https://marketplace.eclipse.org/content/kotlin-plugin-eclipse)
 
-## Automatic Project Setup
+## Automatic project setup
 
 The easiest way to get started developing your own recipes is to visit the [rewrite-recipe-starter](https://github.com/moderneinc/rewrite-recipe-starter) repository and click the "Use this template" button. That template comes already set up with all the necessary dependencies, build configuration, an example recipe, and tests of the example recipe.
 
 If you've chosen to use the template, skip to [Recipe Distribution](recipe-development-environment.md#recipe-distribution).
 
-## Manual Project Setup
+## Manual project setup
 
 Gradle and Maven both provide helpful commands for initializing a new project. Either of these commands will lay out an appropriate directory structure and a basic `build.gradle` or `pom.xml` file.
 
@@ -39,7 +39,7 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 {% endtab %}
 {% endtabs %}
 
-### Dependencies & Dependency Management
+### Dependencies & dependency management
 
 Rewrite provides a bill of materials (BOM) that, when imported into your build, will manage the versions of any rewrite dependencies that are included within a project.
 
@@ -213,7 +213,7 @@ tasks.compileJava {
 {% endtab %}
 {% endtabs %}
 
-### Project Layout
+### Project layout
 
 Having configured the project per these recommendations, you're now able to begin Recipe development. With Gradle and Maven's default project layout, you'll want to put your files in these directories:
 
@@ -223,17 +223,17 @@ Having configured the project per these recommendations, you're now able to begi
 
 With all of that done, your project setup is complete! You are now ready to [create a Recipe](writing-a-java-refactoring-recipe.md).
 
-## Recipe Distribution
+## Recipe distribution
 
 For your recipes to be usable by the OpenRewrite build plugins or on [public.moderne.io](https://public.moderne.io) they have to be published to an artifact repository.
 
-### Local Publishing for Testing
+### Local publishing for testing
 
 Before you publish your recipe module to an artifact repository, you may want to try it out locally. To do this, on the command line, run `./gradlew publishToMavenLocal` (or equivalently `./gradlew pTML`). This will publish to your local maven repository, typically under `~/.m2/repository`.
 
 Once your artifact is published, you can test this recipe in a separate repository locally by following the instructions in the [running your recipes](recipe-development-environment.md#running-your-recipes) section.
 
-### Publishing to Artifact Repositories
+### Publishing to artifact repositories
 
 The [rewrite-recipe-starter](https://github.com/moderneinc/rewrite-recipe-starter) project is configured to publish to Moderne's open artifact repository (via the `publishing` task at the bottom of the `build.gradle.kts` file). If you want to publish elsewhere, you'll want to update that task. [public.moderne.io](https://public.moderne.io) can draw recipes from the provided repository, as well as from [Maven Central](https://search.maven.org).
 
@@ -336,7 +336,7 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 {% endtab %}
 {% endtabs %}
 
-## Next Steps
+## Next steps
 
 * [Writing a Java Refactoring Recipe](writing-a-java-refactoring-recipe.md)
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)

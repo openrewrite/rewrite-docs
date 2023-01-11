@@ -2,7 +2,7 @@
 description: Conventions to follow, pitfalls to avoid
 ---
 
-# Recipe Conventions and Best Practices
+# Recipe conventions and best practices
 
 To help you create reliable and scalable recipes, this document will describe an assortment of conventions and best practices to keep in mind when making new recipes. 
 
@@ -14,11 +14,11 @@ To get the most use out of this document, it would be beneficial for you to:
 * Know how to [create](/authoring-recipes/writing-a-java-refactoring-recipe.md) and [test](/authoring-recipes/recipe-testing.md) recipes 
 * Understand how [recipes](/concepts-and-explanations/recipes.md) work at a high level (by using [visitors](/concepts-and-explanations/visitors.md) to operate on diverse and unexpected [LSTs](/concepts-and-explanations/lossless-semantic-trees.md))
 
-## Best Practices
+## Best practices
 
-### Do No Harm
+### Do no harm
 
-One of the most important conventions to keep in mind when creating recipes is the concept of "Do No Harm". If your recipe cannot determine that a change is safe, **it should make no changes rather than making a potentially wrong change**. 
+One of the most important conventions to keep in mind when creating recipes is the concept of "Do no harm". If your recipe cannot determine that a change is safe, **it should make no changes rather than making a potentially wrong change**. 
 
 For example, in the [RenameLocalVariableToCamelCase recipe](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/RenameLocalVariablesToCamelCase.java), we prevent the recipe from renaming variables to a name that _could_ be a namespace conflict. Likewise, we opt out of renaming class fields since they _might_ be in use by some downstream API. We favor making fewer changes over making wrong changes.
 
@@ -69,7 +69,7 @@ By not calling `super.visitSomeLstElement()`, you will often improve the perform
 If you do decide to include `super.visitSomeLstElement()`, it is often most convenient to do so at the beginning of each `visit` method you override.
 {% endhint %}
 
-### Use Applicability Tests
+### Use applicability tests
 
 Most recipes are not universally applicable to every source file. For instance, a recipe that makes changes to a method introduced in Java 17 would not be useful to run on Java 8 code. Likewise, a recipe that works with ArrayLists would not apply to a file that does not contain an ArrayList.
 
@@ -121,13 +121,13 @@ If your recipe is going to work with dates, please ensure that you adhere to [RS
 
 Even very simple pieces of code have complex LST representations which are tedious and error-prone to construct by hand. Never attempt to build up LSTs by hand. Instead, you should use faculties like [JavaTemplate](../concepts-and-explanations/javatemplate.md) to turn code snippets into [LST elements](/concepts-and-explanations/lst-examples.md). For data formats like XML or JSON, it is usually more convenient to use the format's parser to turn a snippet of text into usable LST elements.
 
-### Stay Single Cycle
+### Stay single cycle
 
 OpenRewrite executes recipes in a loop. Each iteration of that loop through the full recipe list is called a cycle. This is so that if one recipe makes a change and another recipe would do something based on that change, it will have a chance to do so. This happens regardless of the order the recipes are executed in.
 
 By default, only a single cycle is executed unless some recipe in the group overrides `Recipe.causesAnotherCycle()` to return `true`. For larger recipes, such as a framework migration, the performance impact of causing another cycle can be substantially detrimental. Whenever possible, a recipe should complete all of its work the first time (which avoids the need to override `Recipe.causesAnotherCycle()`).
 
-### State Conventions
+### State conventions
 
 You should generally avoid passing [state](https://en.wikipedia.org/wiki/State_(computer_science)) across visitors if at all possible. If you do need to pass state around, though, you should first figure out which parts of your recipe need what information.
 

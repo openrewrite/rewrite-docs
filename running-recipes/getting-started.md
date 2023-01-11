@@ -4,7 +4,7 @@ description: >-
   refactoring recipes.
 ---
 
-# Quickstart: Setting Up Your Project and Running Recipes
+# Quickstart: Setting up your project and running recipes
 
 To help orient you to OpenRewrite, let's walk through configuring a project to use the Maven or Gradle rewrite plugin. Then let's walk through running various types of recipes on said project and talk through the results.
 
@@ -94,7 +94,7 @@ At this point, you're able to run any of the Maven goals or Gradle tasks provide
 
 From the command line, try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a list of all the recipes available for execution. Initially, this will list only the recipes built-in to OpenRewrite.
 
-## Step 3: Activate a Recipe
+## Step 3: Activate a recipe
 
 Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.format.AutoFormat](https://docs.openrewrite.org/reference/recipes/java/format/autoformat) recipe as an example (which will format your code according to IntelliJ's default Java style). To activate this recipe, please modify your `pom.xml` or `build.gradle` file so that the sections you modified earlier look like the below example:
 
@@ -135,7 +135,7 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-## Step 4: Run a Simple Refactoring Recipe
+## Step 4: Run a simple refactoring recipe
 
 Now that you've activated the `AutoFormat` recipe, you can run it by executing the command:
 
@@ -163,7 +163,7 @@ To see what has changed in the code, run `git diff` or use your preferred IDE's 
 
 From there, you can commit the changes or add additional recipes based on your needs.
 
-## Step 5: Run a Recipe with YAML Configuration
+## Step 5: Run a recipe with YAML configuration
 
 Some recipes are more complex than `AutoFormat` and require configuration (in a `rewrite.yml` file) to run them. For instance, the built-in recipe [org.openrewrite.java.ChangePackage](https://docs.openrewrite.org/reference/recipes/java/changepackage) has three options that need to be configured:
 
@@ -258,7 +258,7 @@ Let's pretend that you want to migrate JUnit 4 to JUnit 5 in a Spring project yo
 
 Below, we'll walk through the [Maven](getting-started.md#maven--external-modules) and [Gradle](getting-started.md#gradle--external-modules) changes and provide some additional context around said changes.
 
-### Maven + External Modules
+### Maven + external modules
 
 For Maven projects, you'll need to:
 
@@ -298,7 +298,7 @@ After doing that, your `pom.xml` file should look similar to this:
 
 To double-check that everything is working, run the command `./mvnw rewrite:run`. Your project should be upgraded to Spring Boot 2 and all of the test classes should be updated to JUnit 5. Your `pom.xml` file will also have had its Spring dependencies updated, the JUnit 4 dependency removed, and the JUnit 5 dependency added.
 
-### Gradle + External Modules
+### Gradle + external modules
 
 Unlike Maven projects, Gradle projects have two options for specifying versions for recipes. You can:
 
@@ -344,11 +344,11 @@ Please note, though, that your `build.gradle` file _will not_ be updated as part
 Dependency management for Gradle is not yet available but this feature is on OpenRewrite's roadmap.
 {% endhint %}
 
-## Next Steps
+## Next steps
 
 Now that you know how to configure and run recipes, you may be interested in these topics:
 
-* [Writing a Java Refactoring Recipe](../authoring-recipes/writing-a-java-refactoring-recipe.md)
-* [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
-* [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
-* [Declarative YAML Format](../reference/yaml-format-reference.md)
+* [Writing a Java refactoring recipe](../authoring-recipes/writing-a-java-refactoring-recipe.md)
+* [Maven plugin configuration](../reference/rewrite-maven-plugin.md)
+* [Gradle plugin configuration](../reference/gradle-plugin-configuration.md)
+* [Declarative YAML format](../reference/yaml-format-reference.md)

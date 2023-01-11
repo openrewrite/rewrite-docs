@@ -1,4 +1,4 @@
-# Modifying Methods with JavaTemplate
+# Modifying methods with JavaTemplate
 
 This tutorial will demonstrate how the `JavaTemplate` can be used to manipulate and change a method declaration using rewrite's refactoring capabilities. You will build a recipe that modifies the `setCustomerInfo()` method in the following class:
 
@@ -42,7 +42,7 @@ public abstract class Customer {
 
 This guide assumes you've already set up your [Recipe Development Environment](recipe-development-environment.md).
 
-## Define a Recipe & Visitor
+## Define a recipe & visitor
 
 Create a new class that extends `org.openrewrite.Recipe`. This recipe will act as a wrapper around a visitor we will build to target the method `com.yourorg.Customer.setCustomerInfo()`and this recipe does not require any additional configuration properties. The visitor is defined as an inner class to the recipe because it is not intended to be used outside the context of the recipe.
 
@@ -94,7 +94,7 @@ public class ExpandCustomerInfo extends Recipe {
 }
 ```
 
-## Add a Method Body to `setCustomerInfo()`
+## Add a method body to `setCustomerInfo()`
 
 Within the `ExpandCustomerInfoVisitor`, we will add logic to remove the abstract modifier from the method and use the `JavaTemplate` to add a method body to declaration. This is accomplished by defining a `JavaTemplate` that represents the method body as an instance variable within the `ExpandCustomerInfoVisitor`:
 
@@ -129,7 +129,7 @@ public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
 }
 ```
 
-## Add Parameters to `setCustomerInfo()`
+## Add parameters to `setCustomerInfo()`
 
 Next, we will use `JavaTemplate` to add two additional parameters to the method declaration. Here we use an interpolation signifier `#{}` to leave a space for the existing argument so that it is preserved when we replace the method's argument list.
 
@@ -165,7 +165,7 @@ public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
 }
 ```
 
-## Add Additional Statements to `setCustomerInfo()`
+## Add additional statements to `setCustomerInfo()`
 
 We'll use another template to add the assignment statements to the method body.
 
@@ -197,7 +197,7 @@ public MethodDeclaration visitMethodDeclaration(MethodDeclaration method, P p) {
 }
 ```
 
-## Testing The Recipe
+## Testing the recipe
 
 After following the steps above, the final recipe will look like the following:
 

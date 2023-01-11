@@ -2,7 +2,7 @@
 description: Adding a method to a class that returns a String
 ---
 
-# Writing a Java Refactoring Recipe
+# Writing a Java refactoring recipe
 
 To help you get started with writing recipes, this guide will walk you through all the steps needed to create a basic refactoring recipe. This `SayHelloRecipe` will add a `hello()` method to a user specified class if that class does not already have one.&#x20;
 
@@ -88,7 +88,7 @@ public class SayHelloRecipe extends Recipe {
 If you don't use Lombok's `@Value` annotation, it will be up to you to ensure that the recipe is serializable (possibly via `@JsonCreator` and `@JsonProperty`). 
 {% endhint %}
 
-## Writing Tests
+## Writing tests
 
 Now that we have a basic recipe defined (albeit one that doesn't _do_ anything yet), it's a good idea to write some tests. This will not only allow us to confirm that we've set everything up correctly so far, but it will also ensure that we've thought more about how this recipe will work.
 
@@ -459,7 +459,7 @@ class FooBar {
 }
 ```
 
-## Declarative YAML Usage
+## Declarative YAML usage
 
 `SayHelloRecipe` is now ready to be used in code or declaratively from YAML:
 
@@ -476,7 +476,7 @@ recipeList:
 {% endtab %}
 {% endtabs %}
 
-## Next Steps
+## Next steps
 
 Congratulations on finishing your first recipe! Before you begin making your own recipe, please consider checking out these other docs:
 
