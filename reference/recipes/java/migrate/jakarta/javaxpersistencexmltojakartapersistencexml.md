@@ -1,19 +1,19 @@
 # migrate persistence.xml files
 
-**org.openrewrite.java.migrate.jakarta.JavaxPeristenceXmlToJakartaPersistenceXml**
+**org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml**
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.15.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.16.0-SNAPSHOT/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.15.0
+* version: 1.16.0-SNAPSHOT
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.15.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.16.0-SNAPSHOT in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -24,7 +24,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.jakarta.JavaxPeristenceXmlToJakartaPersistenceXml")
+    activeRecipe("org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml")
 }
 
 repositories {
@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.15.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.16.0-SNAPSHOT")
 }
 ```
 {% endcode %}
@@ -50,14 +50,14 @@ dependencies {
         <version>4.38.2</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.jakarta.JavaxPeristenceXmlToJakartaPersistenceXml</recipe>
+            <recipe>org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.15.0</version>
+            <version>1.16.0-SNAPSHOT</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -72,14 +72,14 @@ dependencies {
 {% code title="shell" %}
 ```shell
 mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.2:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.15.0 \
-  -DactiveRecipes=org.openrewrite.java.migrate.jakarta.JavaxPeristenceXmlToJakartaPersistenceXml
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.16.0-SNAPSHOT \
+  -DactiveRecipes=org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.JavaxPeristenceXmlToJakartaPersistenceXml`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml`
 
 ## Definition
 
@@ -114,7 +114,7 @@ Recipes can also be activated directly from the command line by adding the argum
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxPeristenceXmlToJakartaPersistenceXml
+name: org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml
 displayName: migrate persistence.xml files
 description: null
 recipeList:
