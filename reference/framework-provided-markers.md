@@ -1,10 +1,10 @@
-# Framework Provided Markers
+# Framework provided markers
 
 Not everything a [Recipe](/concepts-and-explanations/recipes.md) may wish to know about an [LST](/concepts-and-explanations/lossless-semantic-trees.md) is contained in the LST itself.
 OpenRewrite attaches [Markers](/concepts-and-explanations/markers.md) to an LST provide Recipes access to relevant metadata.
 This document provides Recipe authors a reference for what metadata is available and how to access it.
 
-## Accessing Provided Markers
+## Accessing provided markers
 
 All markers described in this document are found on the root element of the LST.
 The root LST element varies by language, but they all implement the `SourceFile` interface.
@@ -30,17 +30,17 @@ class SomeVisitor implements JavaVisitor<ExecutionContext> {
 }
 ```
 
-## Build Markers
+## Build markers
 
 These markers are language-independent, appearing on source files of all formats.
 
-### Build Tool
+### BuildTool
 
 The [BuildTool](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/BuildTool.java) 
 marker records the type and version of build tool which produced the LST.
 Available on all LSTs produced by one of our build tool plugins.
 
-### Build Environment
+### BuildEnvironment
 
 The subtypes of [BuildEnvironment](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/BuildEnvironment.java)
 record information on the continuous integration environment from within which the LST was produced.
@@ -55,7 +55,7 @@ Supported CI environments:
 * [CircleCi](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/CircleCiBuildEnvironment.java)
 * [Travis](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/TravisBuildEnvironment.java)
 
-### Git Provenance
+### GitProvenance
 
 The [GitProvenance](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/GitProvenance.java#L34)
 marker records Git branch, origin, and change hash.  
@@ -72,7 +72,7 @@ It is available on Java source files.
 
 ### Checkstyle
 
-The [CheckStyle](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/Checkstyle.java)
+The [Checkstyle](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/Checkstyle.java)
 marker is a `NamedStyles` which records Checkstyle settings.
 It is available on Java source files in projects that configure checkstyle.
 
@@ -93,7 +93,7 @@ Available on all Java sources, as well as non-Java sources placed in a Java sour
 Available on all Java sources.
 
 
-## Maven Markers
+## Maven markers
 
 These markers are available on Maven pom.xml sources.
 

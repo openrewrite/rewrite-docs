@@ -2,7 +2,7 @@
 description: rewrite-maven-plugin configuration options and goal descriptions
 ---
 
-# Maven Plugin Configuration
+# Maven plugin configuration
 
 The OpenRewrite Maven Plugin is the fastest way to apply OpenRewrite recipes to your code as part of your Maven build. The OpenRewrite Maven Plugin is compatible with all versions of Maven since 3.6.
 
@@ -118,7 +118,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
 To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
 {% endhint %}
 
-## The "Run" Goal
+## The "Run" goal
 
 Execute `mvn rewrite:run` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterward, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
@@ -128,7 +128,7 @@ After the goal finishes executing, run `git diff` to see what changes were made,
 
 ![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:run goal](<../.gitbook/assets/image (7).png>)
 
-## The "dryRun" Goal
+## The "dryRun" goal
 
 Execute `mvn rewrite:dryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files at all. This goal can be used to preview the changes that would be made by a recipe.
 
@@ -169,7 +169,7 @@ If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases.
 </project>
 ```
 
-## The "Discover" Goal
+## The "Discover" goal
 
 Execute `mvn rewrite:discover` to list the recipes that the OpenRewrite Maven plugin has found on your classpath and the recipes that you have activated in your plugin configuration.
 
@@ -179,19 +179,19 @@ The discover goal will produce additional details (including recipe configuratio
 
 ![Recipes showing their configurable parameters. "!" means a parameter is required.](<../.gitbook/assets/image (17).png>)
 
-## The "CycloneDx" Goal
+## The "CycloneDx" goal
 
 Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org) bill of materials (BOM) outlining all of the project's dependencies, including transitive dependencies. The BOM will be written to target/\<module name>-\<version>-cyclonedx.xml.
 
 ![Excerpt from OpenRewrite-generated CycloneDx BOM](<../.gitbook/assets/image (19).png>)
 
-## Rewrite's Pom Cache
+## Rewrite's pom cache
 
 Rewrite's maven parser has its own resolution logic for pom files. (It will download metadata and poms from maven repositories). To speed up this process, there is a caching abstraction with two implementations (one that uses RocksDB and one that uses an in-memory cache to reduce the number of times a pom/metadata is downloaded from a repository.
 
 The Maven plugin uses the RocksDB cache by default and will store this cache in `~/.rewrite-cache` . RocksDB is a high-performance, embedded database that is maintained by Facebook. The database engine is written in C++ and is used by the plugin via a JNI wrapper that has no transitive dependencies.
 
-### Cache Troubleshooting
+### Cache troubleshooting
 
 In the very rare cases where the Maven plugin is unable to write to its on-disk folder or you encounter a serialization issue when reading/writing to the cache, there are several options available:
 
