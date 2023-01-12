@@ -1,7 +1,7 @@
 ---
 description: >-
-  This guide covers configuring rewrite with Maven or Gradle and using it to run
-  refactoring recipes.
+  This guide covers configuring OpenRewrite with Maven or Gradle and using it to
+  run refactoring recipes.
 ---
 
 # Quickstart: Setting up your project and running recipes

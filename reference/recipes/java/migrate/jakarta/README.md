@@ -36,6 +36,4 @@
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](javaxxmlwsmigrationtojakartaxmlws.md)
 * [Migrate to Jakarta EE 9 from Jakarta EE 8](javaxmigrationtojakarta.md)
-* [migrate persistence.xml files](javaxperistencexmltojakartapersistencexml.md)
-
-
+* [migrate persistence.xml files](broken-reference)
