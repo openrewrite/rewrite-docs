@@ -1,8 +1,8 @@
 # Writing recipes over multiple source file types
 
-Sometimes we need to examine multiple source files or multiple types of source files to make a decision in a visitor about whether we intend to make a change. For example, we could be looking for a particular condition to be present in a Maven POM file, and if the condition is met alter an application property in a YAML file.
+When creating new recipes, you may find it desirable to examine multiple source files, potentially of different types, to make key decisions in your visitor. For example, you may want to look for a particular condition to be present in a Maven POM file and, if that condition is met, alter an application property in a YAML file.
 
-Use the `visit(List<SourceFile> before, ExecutionContext ctx)` method on `Recipe` to iterate over and maintain decision state, and then `ListUtils.map` to execute the transformation.
+You should use the `visit(List<SourceFile> before, ExecutionContext ctx)` method in the `Recipe` class to iterate over and maintain the decision state, and then `ListUtils.map` to execute the transformation.
 
 ```java
 package org.openrewrite;
