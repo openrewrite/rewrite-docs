@@ -7,7 +7,7 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | Module                                            | Version    |
 | ------------------------------------------------- | ---------- |
 | **org.openrewrite:rewrite-recipe-bom**            | **1.13.1** |
-| **org.openrewrite:rewrite-maven-plugin**          | **4.38.1** |
+| **org.openrewrite:rewrite-maven-plugin**          | **4.38.2** |
 | **org.openrewrite:rewrite-gradle-plugin**         | **5.33.2** |
 | org.openrewrite:rewrite-core                      | 7.34.3     |
 | org.openrewrite:rewrite-groovy                    | 7.34.3     |
