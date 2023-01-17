@@ -1,14 +1,14 @@
 # Modifying methods with JavaTemplate
 
-Previously, we wrote a Java recipe that [added a hello() method to a class if it didn't already have one](/authoring-recipes/writing-a-java-refactoring-recipe.md). In that guide, we used a `JavaTemplate` to create a basic method. However, a `JavaTemplate` can be used for much more complicated changes, such as refactoring existing methods. Let's explore that.
+Previously, we wrote a Java recipe that [added a hello() method to a class if it didn't already have one](writing-a-java-refactoring-recipe.md). In that guide, we used a `JavaTemplate` to create a basic method. However, a `JavaTemplate` can be used for much more complicated changes, such as refactoring existing methods. Let's explore that.
 
-In this guide, you will build a recipe that [finds a specific abstract method](#limit-the-visitors-scope) and:
+In this guide, you will build a recipe that [finds a specific abstract method](modifying-methods-with-javatemplate.md#limit-the-visitors-scope) and:
 
-* [Remove the abstract modifier from it](#remove-the-abstract-modifier)
-* [Define a method body for it](#build-the-template-for-the-setcustomerinfo-method-body)
-* [Fix the formatting issues that arise](#fixing-formatting)
-* [Add two additional parameters to the method declaration](#add-parameters-to-setcustomerinfo)
-* [Add two additional statements to the method's body](#add-additional-statements-to-setcustomerinfo)
+* [Remove the abstract modifier from it](modifying-methods-with-javatemplate.md#remove-the-abstract-modifier)
+* [Define a method body for it](modifying-methods-with-javatemplate.md#build-the-template-for-the-setcustomerinfo-method-body)
+* [Fix the formatting issues that arise](modifying-methods-with-javatemplate.md#fixing-formatting)
+* [Add two additional parameters to the method declaration](modifying-methods-with-javatemplate.md#add-parameters-to-setcustomerinfo)
+* [Add two additional statements to the method's body](modifying-methods-with-javatemplate.md#add-additional-statements-to-setcustomerinfo)
 
 This recipe will refactor code like this:
 
@@ -52,7 +52,7 @@ This guide assumes that:
 
 * You're familiar with writing Java code
 * You've already set up your [Recipe Development Environment](recipe-development-environment.md)
-* You've read through the [Java refactoring recipe guide](/authoring-recipes/writing-a-java-refactoring-recipe.md) and the [recipe testing guide](/authoring-recipes/recipe-testing.md)
+* You've read through the [Java refactoring recipe guide](writing-a-java-refactoring-recipe.md) and the [recipe testing guide](recipe-testing.md)
 
 ## Outline the recipe
 
@@ -86,21 +86,17 @@ public class ExpandCustomerInfo extends Recipe {
 
 ```
 
-{% hint style="info" %}
-The `ExpandCustomerInfoVisitor` is defined in an inner class to the recipe because it is not intended to be used outside the context of the recipe.
-{% endhint %}
-
 ## Write tests
 
-Once the recipe has been outlined, the next step is to write some tests. It's important to write these tests early so you can make sure you truly understand what the recipe you're writing is doing. 
+Once the recipe has been outlined, the next step is to write some tests. It's important to write these tests early so you can make sure you truly understand what the recipe you're writing is doing.
 
-For our recipe, let's write two tests: 
+For our recipe, let's write two tests:
 
 * A test that ensures that we do not modify methods that do not match the method we want to change
 * A test that is an exact copy of the before and after code provided at the beginning of this guide
 
 {% hint style="info" %}
-If you don't remember how to write tests or want more information about writing them, please see our [recipe testing guide](/authoring-recipes/recipe-testing.md)
+If you don't remember how to write tests or want more information about writing them, please see our [recipe testing guide](recipe-testing.md)
 {% endhint %}
 
 Here is what these tests should look like:
@@ -214,12 +210,12 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 ```
 
 {% hint style="success" %}
-If you need help deciding what [LST](/concepts-and-explanations/lossless-semantic-trees.md) to interact with (such as `MethodDeclaration` vs. `MethodInvocation`), check out our [Java LST examples guide](/concepts-and-explanations/lst-examples.md).
+If you need help deciding what [LST](../concepts-and-explanations/lossless-semantic-trees.md) to interact with (such as `MethodDeclaration` vs. `MethodInvocation`), check out our [Java LST examples guide](../concepts-and-explanations/lst-examples.md).
 {% endhint %}
 
 ### Remove the abstract modifier
 
-Next up on our list of tasks is to remove the `abstract` modifier from our `setCustomerInfo()` method. [MethodDeclarations](/concepts-and-explanations/lst-examples.md#methoddeclaration) have a list of `Modifiers` in them. We can use a Java stream and the `filter` function to remove the `abstract` modifier:
+Next up on our list of tasks is to remove the `abstract` modifier from our `setCustomerInfo()` method. [MethodDeclarations](../concepts-and-explanations/lst-examples.md#methoddeclaration) have a list of `Modifiers` in them. We can use a Java stream and the `filter` function to remove the `abstract` modifier:
 
 ```java
 protected JavaIsoVisitor<ExecutionContext> getVisitor() {
@@ -256,7 +252,7 @@ public void setCustomerInfo(String lastName);
 
 Now that we've limited our scope to the correct method and removed the `abstract` modifier from it, let's update the method parameters for the `setCustomerInfo()` method.
 
-As mentioned in our [best practice guide](/authoring-recipes/recipe-conventions-and-best-practices.md#avoid-constructing-lst-elements-by-hand), you should avoid constructing LST elements by hand. Instead, you should use the `JavaTemplate` class to construct any objects you need.
+As mentioned in our [best practice guide](recipe-conventions-and-best-practices.md#avoid-constructing-lst-elements-by-hand), you should avoid constructing LST elements by hand. Instead, you should use the `JavaTemplate` class to construct any objects you need.
 
 Worth noting is that these templates will completely replace the existing data unless we specify otherwise. While we technically could write a template that specifies three new parameters, let's write one that utilizes the existing `lastName` parameter so you can see what that looks like. To do that, we will use an interpolation marker (`#{}`). When we are visiting the method later, we can replace it with the existing argument.
 
@@ -337,7 +333,7 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 
             return methodDeclaration;
         }
-    }
+    };
 }
 ```
 
@@ -354,7 +350,7 @@ When making changes in a recipe, OpenRewrite tries to keep the existing styles a
 
 To address this, you can use the [maybeAutoFormat function](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L66-L79). This function takes in a before and after state as well as the execution context. The before state is the current `methodDeclaration` and the after state is what we already defined above with the template.
 
-Using that function, we can change our visitor to fix the formatting of the body: 
+Using that function, we can change our visitor to fix the formatting of the body:
 
 ```java
 protected JavaIsoVisitor<ExecutionContext> getVisitor() {
@@ -377,7 +373,7 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 
             return methodDeclaration;
         }
-    }
+    };
 }
 ```
 
@@ -405,7 +401,7 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
                 .build();
 
         // ...
-    }
+    };
 }
 ```
 
@@ -428,7 +424,7 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 
             return methodDeclaration;
         }
-    }
+    };
 }
 ```
 
@@ -521,4 +517,3 @@ public class ExpandCustomerInfo extends Recipe {
     }
 }
 ```
-
