@@ -123,7 +123,7 @@ You can use `J.Identifier.getFieldType()` to tell what class the identifier is a
 
 ### MethodDeclaration
 
-A [MethodDeclaration](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3517) is the annotations, modifiers, return type, name, argument list, and body which together define a method on a [Class](#classdeclaration).
+A [MethodDeclaration](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3223-L3517) is the annotations, modifiers, return type, name, argument list, and body which together define a method on a [Class](#classdeclaration).
 
 ![MethodDeclaration Example](../.gitbook/assets/MethodDeclaration.png)
 
