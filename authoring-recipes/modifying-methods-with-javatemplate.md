@@ -79,9 +79,8 @@ public class ExpandCustomerInfo extends Recipe {
     @Override
     public JavaIsoVisitor<ExecutionContext> getVisitor() {
         return new JavaIsoVisitor<ExecutionContext>() {
-
-    private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-        // TODO: Implement the visitor
+            // TODO: Implement the visitor
+        };
     }
 }
 
@@ -195,20 +194,22 @@ When making a visitor, one of the first things you should do is ensure that your
 We can make a [MethodMatcher](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/MethodMatcher.java) that looks for a method like that. Once that's made, we can override the `visitMethodDeclaration()` function to check if any method matches the one we want. If the match fails, we should return the method as is:
 
 ```java
-private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-    // Used to identify the method declaration that will be refactored
-    private final MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
+protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    return new JavaIsoVisitor<ExecutionContext>() {
+        // Used to identify the method declaration that will be refactored
+        private final MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
 
-    @Override
-    public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
-        if (!methodMatcher.matches(methodDeclaration.getMethodType())) {
+        @Override
+        public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+            if (!methodMatcher.matches(methodDeclaration.getMethodType())) {
+                return methodDeclaration;
+            }
+
+            // TODO: Implement refactoring operations on the matching "setCustomerInfo()" method declaration.
+
             return methodDeclaration;
         }
-
-        // TODO: Implement refactoring operations on the matching "setCustomerInfo()" method declaration.
-
-        return methodDeclaration;
-    }
+    };
 }
 ```
 
@@ -221,22 +222,24 @@ If you need help deciding what [LST](/concepts-and-explanations/lossless-semanti
 Next up on our list of tasks is to remove the `abstract` modifier from our `setCustomerInfo()` method. [MethodDeclarations](/concepts-and-explanations/lst-examples.md#methoddeclaration) have a list of `Modifiers` in them. We can use a Java stream and the `filter` function to remove the `abstract` modifier:
 
 ```java
-private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-    // ...
+protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    return new JavaIsoVisitor<ExecutionContext>() {
+       // ...
 
-    @Override
-    public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
-        // ...
+        @Override
+        public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+            // ...
 
-        // Remove the abstract modifier from the method
-        methodDeclaration = methodDeclaration.withModifiers(methodDeclaration.getModifiers().stream()
-                .filter(modifier -> modifier.getType() != Type.Abstract)
-                .collect(Collectors.toList()));
+            // Remove the abstract modifier from the method
+            methodDeclaration = methodDeclaration.withModifiers(methodDeclaration.getModifiers().stream()
+                    .filter(modifier -> modifier.getType() != Type.Abstract)
+                    .collect(Collectors.toList()));
 
-        // ...
+            // ...
 
-        return methodDeclaration;
-    }
+            return methodDeclaration;
+        }
+    };
 }
 ```
 
@@ -258,15 +261,17 @@ As mentioned in our [best practice guide](/authoring-recipes/recipe-conventions-
 Worth noting is that these templates will completely replace the existing data unless we specify otherwise. While we technically could write a template that specifies three new parameters, let's write one that utilizes the existing `lastName` parameter so you can see what that looks like. To do that, we will use an interpolation marker (`#{}`). When we are visiting the method later, we can replace it with the existing argument.
 
 ```java
-private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-    // ...
+protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    return new JavaIsoVisitor<ExecutionContext>() {
+        // ...
 
-    // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
-    private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
-            .imports("java.util.Date")
-            .build();
+        // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
+        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
+                .imports("java.util.Date")
+                .build();
 
-    // ...
+        // ...
+    };
 }
 ```
 
@@ -277,25 +282,27 @@ Note: When building a template, if you use a type that's not a base Java type, y
 With that template defined, we can now use it to replace the existing parameters via the `withTemplate()` function. This function takes in a `JavaTemplate`, some coordinates (where our template should be applied), and then 0 or more optional parameters (which will replace the interpolation marker we specified earlier):
 
 ```java
-private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-    // ...
-
-    // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
-    private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
-            .imports("java.util.Date")
-            .build();
-
-    @Override
-    public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
-        // Add two parameters to the method declaration by inserting them in from of the first argument
-        methodDeclaration = methodDeclaration.withTemplate(addMethodParametersTemplate,
-                methodDeclaration.getCoordinates().replaceParameters(),
-                methodDeclaration.getParameters().get(0));
+        // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
+        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
+                .imports("java.util.Date")
+                .build();
 
-        return methodDeclaration;
-    }
+        @Override
+        public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+            // ...
+
+            // Add two parameters to the method declaration by inserting them in from of the first argument
+            methodDeclaration = methodDeclaration.withTemplate(addMethodParametersTemplate,
+                    methodDeclaration.getCoordinates().replaceParameters(),
+                    methodDeclaration.getParameters().get(0));
+
+            return methodDeclaration;
+        }
+    };
 }
 ```
 
@@ -314,20 +321,22 @@ For this recipe, we want to add a `MethodBody` to our `setCustomerInfo()` method
 Let's define a `JavaTemplate` that we can use to create the empty method body and then use it to replace the null body that currently exists in our method:
 
 ```java
-private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-    // ...
-
-    // Template used to add a method body to the "setCustomerInfo()" method declaration
-    private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, "").build();
-
-    @Override
-    public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
-        // Add a method body
-        methodDeclaration = methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody());
+        // Template used to add a method body to the "setCustomerInfo()" method declaration
+        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, "").build();
 
-        return methodDeclaration;
+        @Override
+        public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+            // ...
+
+            // Add a method body
+            methodDeclaration = methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody());
+
+            return methodDeclaration;
+        }
     }
 }
 ```
@@ -348,24 +357,26 @@ To address this, you can use the [maybeAutoFormat function](https://github.com/o
 Using that function, we can change our visitor to fix the formatting of the body: 
 
 ```java
-private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-    // ...
-
-    // Template used to add a method body to "setCustomerInfo()" method declaration.
-    private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, "").build();
-
-    @Override
-    public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
-        // Add a method body and format it
-        methodDeclaration = maybeAutoFormat(
-                methodDeclaration,
-                methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody()),
-                executionContext
-        );
+        // Template used to add a method body to "setCustomerInfo()" method declaration
+        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, "").build();
 
-        return methodDeclaration;
+        @Override
+        public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+            // ...
+
+            // Add a method body and format it
+            methodDeclaration = maybeAutoFormat(
+                    methodDeclaration,
+                    methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody()),
+                    executionContext
+            );
+
+            return methodDeclaration;
+        }
     }
 }
 ```
@@ -382,33 +393,42 @@ public void setCustomerInfo(Date dateOfBirth, String firstName, String lastName)
 All that's left to do now is add the assignment statements to the method body. As before, we'll make a `JavaTemplate` that creates these statements:
 
 ```java
-private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-    // ...
+protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    return new JavaIsoVisitor<ExecutionContext>() {
+        // ...
 
-    // Template used to add statements to the method body of the "setCustomerInfo()" method
-    private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(this::getCursor,
-            "this.dateOfBirth = dateOfBirth;\n" +
-                    "this.firstName = firstName;\n" +
-                    "this.lastName = lastName;\n")
-            .build();
+        // Template used to add statements to the method body of the "setCustomerInfo()" method
+        private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(this::getCursor,
+                "this.dateOfBirth = dateOfBirth;\n" +
+                        "this.firstName = firstName;\n" +
+                        "this.lastName = lastName;\n")
+                .build();
 
-    // ...
+        // ...
+    }
 }
 ```
 
 We can then use this `JavaTemplate` in our visitor to add statements to the `setCustomerInfo()` method body:
 
 ```java
-public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
-    // ...
+protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    return new JavaIsoVisitor<ExecutionContext>() {
+        // ...
 
-    // Safe to assert since we just added a body to the method
-    assert methodDeclaration.getBody() != null;
+        @Override
+        public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+            // ...
 
-    // Add the assignment statements to the "setCustomerInfo()" method body
-    methodDeclaration = methodDeclaration.withTemplate(addStatementsTemplate, methodDeclaration.getBody().getCoordinates().lastStatement());
+            // Safe to assert since we just added a body to the method
+            assert methodDeclaration.getBody() != null;
 
-    return methodDeclaration;
+            // Add the assignment statements to the "setCustomerInfo()" method body
+            methodDeclaration = methodDeclaration.withTemplate(addStatementsTemplate, methodDeclaration.getBody().getCoordinates().lastStatement());
+
+            return methodDeclaration;
+        }
+    }
 }
 ```
 
@@ -447,59 +467,58 @@ public class ExpandCustomerInfo extends Recipe {
     // This recipe has no configuration and delegates to its visitor when it is run.
     @Override
     protected JavaIsoVisitor<ExecutionContext> getVisitor() {
-        return new ExpandCustomerInfoVisitor();
-    }
+        return new JavaIsoVisitor<ExecutionContext>() {
+            // Used to identify the method declaration that will be refactored
+            private final MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
 
-    private class ExpandCustomerInfoVisitor extends JavaIsoVisitor<ExecutionContext> {
-        // Used to identify the method declaration that will be refactored
-        private final MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
+            // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
+            private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
+                    .imports("java.util.Date")
+                    .build();
 
-        // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
-        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
-                .imports("java.util.Date")
-                .build();
+            // Template used to add a method body to the "setCustomerInfo()" method declaration
+            private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, " ").build();
 
-        // Template used to add a method body to the "setCustomerInfo()" method declaration
-        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, " ").build();
+            // Template used to add statements to the method body of the "setCustomerInfo()" method
+            private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(this::getCursor,
+                            "this.dateOfBirth = dateOfBirth;\n" +
+                                    "this.firstName = firstName;\n" +
+                                    "this.lastName = lastName;\n")
+                    .build();
 
-        // Template used to add statements to the method body of the "setCustomerInfo()" method
-        private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(this::getCursor,
-                        "this.dateOfBirth = dateOfBirth;\n" +
-                                "this.firstName = firstName;\n" +
-                                "this.lastName = lastName;\n")
-                .build();
+            @Override
+            public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+                if (!methodMatcher.matches(methodDeclaration.getMethodType())) {
+                    return methodDeclaration;
+                }
 
-        @Override
-        public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
-            if (!methodMatcher.matches(methodDeclaration.getMethodType())) {
+                // Remove the abstract modifier from the method
+                methodDeclaration = methodDeclaration.withModifiers(methodDeclaration.getModifiers().stream()
+                        .filter(modifier -> modifier.getType() != Type.Abstract)
+                        .collect(Collectors.toList()));
+
+                // Add two parameters to the method declaration by inserting them in from of the first argument
+                methodDeclaration = methodDeclaration.withTemplate(addMethodParametersTemplate,
+                        methodDeclaration.getCoordinates().replaceParameters(),
+                        methodDeclaration.getParameters().get(0));
+
+                // Add a method body and format it
+                methodDeclaration = maybeAutoFormat(
+                        methodDeclaration,
+                        methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody()),
+                        executionContext
+                );
+
+                // Safe to assert since we just added a body to the method
+                assert methodDeclaration.getBody() != null;
+
+                // Add the assignment statements to the "setCustomerInfo()" method body
+                methodDeclaration = methodDeclaration.withTemplate(addStatementsTemplate, methodDeclaration.getBody().getCoordinates().lastStatement());
+
                 return methodDeclaration;
             }
-
-            // Remove the abstract modifier from the method
-            methodDeclaration = methodDeclaration.withModifiers(methodDeclaration.getModifiers().stream()
-                    .filter(modifier -> modifier.getType() != Type.Abstract)
-                    .collect(Collectors.toList()));
-
-            // Add two parameters to the method declaration by inserting them in from of the first argument
-            methodDeclaration = methodDeclaration.withTemplate(addMethodParametersTemplate,
-                    methodDeclaration.getCoordinates().replaceParameters(),
-                    methodDeclaration.getParameters().get(0));
-
-            // Add a method body and format it
-            methodDeclaration = maybeAutoFormat(
-                    methodDeclaration,
-                    methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody()),
-                    executionContext
-            );
-
-            // Safe to assert since we just added a body to the method
-            assert methodDeclaration.getBody() != null;
-
-            // Add the assignment statements to the "setCustomerInfo()" method body
-            methodDeclaration = methodDeclaration.withTemplate(addStatementsTemplate, methodDeclaration.getBody().getCoordinates().lastStatement());
-
-            return methodDeclaration;
-        }
+        };
     }
 }
 ```
+
