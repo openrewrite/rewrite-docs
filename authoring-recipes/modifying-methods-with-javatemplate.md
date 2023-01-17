@@ -56,7 +56,7 @@ This guide assumes that:
 
 ## Outline the recipe
 
-Let's begin by outlining our recipe. As before, we'll extend `org.openrewrite.Recipe`, add the basic methods (`getDisplayName()`, `getDescription()`, and `getVisitor()`), and then define our own `ExpandCustomerInfoVisitor`:
+Let's begin by outlining our recipe. As before, we'll extend `org.openrewrite.Recipe`, add the basic methods (`getDisplayName()`, `getDescription()`, and `getVisitor()`), and then define our own visitor:
 
 ```java
 package com.yourorg;
