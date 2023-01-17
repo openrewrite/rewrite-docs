@@ -94,3 +94,11 @@ dependencies {
 {% endtabs %}
 
 Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.InstallOrbExample`
+
+## See how the recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.circleci.InstallOrb)
+
+The Moderne public SaaS instance enables you to try out recipes across thousands of open-source repositories and author new public recipes easily.
+
+Please contact Moderne for more information about safely running the recipes on your own codebase in a private SaaS.
