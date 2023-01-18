@@ -19,7 +19,7 @@ This getting started guide covers setting up your development environment for cr
 
 The easiest way to get started developing your own recipes is to visit the [rewrite-recipe-starter](https://github.com/moderneinc/rewrite-recipe-starter) repository and click the "Use this template" button. That template comes already set up with all the necessary dependencies, build configuration, an example recipe, and tests of the example recipe.
 
-If you've chosen to use the template, skip to [Recipe Distribution](recipe-development-environment.md#recipe-distribution).
+If you've chosen to use the template, skip to [Recipe Distribution](recipe-development-environment.md#recipe-distribution). If you'd prefer to not use the template, please continue with the below instructions.
 
 ## Manual project setup
 
@@ -275,13 +275,13 @@ rewrite {
 {% hint style="info" %}
 If testing locally, your `rewrite` `dependency` should match the structure of your `.m2` folder. For example, if the path to your recipe in the `.m2` folder is:
 
-* `~/.m2/repository/com/yourorg/rewrite-recipe-starter`&#x20;
+* `~/.m2/repository/com/yourorg/rewrite-recipe-starter`
 
-and the jar in that folder is:&#x20;
+and the jar in that folder is:
 
 * `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa.jar`
 
-&#x20;then the `rewrite` `dependency` should be:&#x20;
+then the `rewrite` `dependency` should be:
 
 * `rewrite("com.yourorg:rewrite-recipe-starter:0.1.0-dev.25.uncommitted+f58d7fa")`.
 {% endhint %}
@@ -317,11 +317,11 @@ Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDry
 ```
 
 {% hint style="info" %}
-If testing locally, your `rewrite` `dependency` should match the structure of your `.m2` folder. For example, if the path to your recipe in the `.m2` folder is:&#x20;
+If testing locally, your `rewrite` `dependency` should match the structure of your `.m2` folder. For example, if the path to your recipe in the `.m2` folder is:
 
-* `~/.m2/repository/com/yourorg/rewrite-recipe-starter`&#x20;
+* `~/.m2/repository/com/yourorg/rewrite-recipe-starter`
 
-and the jar in that folder is:&#x20;
+and the jar in that folder is:
 
 * `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa.jar`
 
@@ -342,4 +342,4 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
 
-Test: {{ myVariable }}
+Test: \{{ myVariable \}}
