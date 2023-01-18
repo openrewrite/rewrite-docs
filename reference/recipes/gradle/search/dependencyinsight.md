@@ -1,11 +1,11 @@
 # Gradle dependency insight
 
 **org.openrewrite.gradle.search.DependencyInsight**
-_Find direct and transitive dependencies matching a group, artifact, and optionally a configuration name.Results include dependencies that either directly match or transitively include a matching dependency._
+_Find direct and transitive dependencies matching a group, artifact, and optionally a configuration name. Results include dependencies that either directly match or transitively include a matching dependency._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite-gradle/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.35.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite/tree/main/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.35.0-SNAPSHOT/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
