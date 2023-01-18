@@ -956,7 +956,7 @@
     * [Uses of caches](reference/recipes/cloudsuitability/findcacheuses.md)
     * [Uses of distributed caches](reference/recipes/cloudsuitability/finddistributedcacheuses.md)
     * [Uses of ehcache](reference/recipes/cloudsuitability/findehcache.md)
-  * [Uncategorized](reference/uncategorized-readme.md)
+  * [Core](reference/recipes/core-readme.md)
     * [Delete files](reference/recipes/deletesourcefiles.md)
     * [Find files](reference/recipes/findsourcefiles.md)
     * [Find instances of type Quark](reference/recipes/findquarks.md)
