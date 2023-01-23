@@ -5,11 +5,11 @@ _Change a property key leaving the value intact._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.34.3/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-properties/7.35.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 7.34.3
+* version: 7.35.0
 
 ## Options
 
@@ -19,6 +19,7 @@ _Change a property key leaving the value intact._
 | `String` | newPropertyKey | The new name for the key identified by `oldPropertyKey`. |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+| `Boolean` | regex | *Optional*. Default false. If enabled, `oldPropertyKey` will be interepreted as a Regular Expression, and capture group contents will be available in `newPropertyKey` |
 
 
 ## Usage
@@ -38,6 +39,7 @@ recipeList:
       newPropertyKey: management.metrics.enable.process.files
       relaxedBinding: null
       fileMatcher: '**/application-*.properties'
+      regex: true
 ```
 {% endcode %}
 
@@ -49,7 +51,7 @@ Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.2")
+    id("org.openrewrite.rewrite") version("5.34.0")
 }
 
 rewrite {
@@ -73,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.2</version>
+        <version>4.39.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyKeyExample</recipe>
@@ -88,4 +90,12 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.ChangePropertyKeyExample`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.ChangePropertyKeyExample`
+
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.properties.ChangePropertyKey)
+
+The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

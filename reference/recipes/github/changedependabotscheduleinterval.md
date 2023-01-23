@@ -11,11 +11,11 @@ _Change the schedule interval for a given package-ecosystem in a `dependabot.yml
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-github-actions), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.15.0/jar)
+[Github](https://github.com/openrewrite/rewrite-github-actions), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 1.15.0
+* version: 1.16.0
 
 ## Options
 
@@ -43,14 +43,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.15.0 in your build file:
+Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.16.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.2")
+    id("org.openrewrite.rewrite") version("5.34.0")
 }
 
 rewrite {
@@ -62,7 +62,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.15.0")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.16.0")
 }
 ```
 {% endcode %}
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.2</version>
+        <version>4.39.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeDependabotScheduleIntervalExample</recipe>
@@ -87,7 +87,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>1.15.0</version>
+            <version>1.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -99,4 +99,12 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.ChangeDependabotScheduleIntervalExample`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.ChangeDependabotScheduleIntervalExample`
+
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.github.ChangeDependabotScheduleInterval)
+
+The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
