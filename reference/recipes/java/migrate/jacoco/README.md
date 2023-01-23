@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Upgrade JaCoCo Maven plugin version](upgradejacocomavenpluginversion.md)
+* [Upgrade JaCoCo Maven plugin version](./upgradejacocomavenpluginversion.md)
 
 

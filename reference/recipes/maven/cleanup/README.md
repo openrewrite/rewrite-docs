@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Dependency management dependencies should have a version](dependencymanagementdependencyrequiresversion.md)
+* [Dependency management dependencies should have a version](./dependencymanagementdependencyrequiresversion.md)
 
 

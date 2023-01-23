@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Remove Cobertura Maven plugin](removecoberturamavenplugin.md)
+* [Remove Cobertura Maven plugin](./removecoberturamavenplugin.md)
 
 

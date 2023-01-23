@@ -2,8 +2,8 @@
 
 ## Recipes
 
-* [Add Terraform configuration](addconfiguration.md)
-* [Use a long enough byte length for `random` resources](securerandom.md)
+* [Add Terraform configuration](./addconfiguration.md)
+* [Use a long enough byte length for `random` resources](./securerandom.md)
 
 ## Subcategories
 

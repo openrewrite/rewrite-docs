@@ -2,7 +2,7 @@
 
 ## Recipes
 
-* [Enable CSRF attack prevention](csrfprotection.md)
-* [Prevent clickjacking](preventclickjacking.md)
+* [Enable CSRF attack prevention](./csrfprotection.md)
+* [Prevent clickjacking](./preventclickjacking.md)
 
 

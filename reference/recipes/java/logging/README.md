@@ -4,11 +4,11 @@ _Enforce logging best practices and migrate between logging frameworks._
 
 ## Recipes
 
-* [Parameterize logging statements](parameterizedlogging.md)
-* [Use logger instead of `printStackTrace()`](printstacktracetologerror.md)
-* [Use logger instead of system print statements](systemerrtologging.md)
-* [Use logger instead of system print statements](systemouttologging.md)
-* [Use logger instead of system print statements](systemprinttologging.md)
+* [Parameterize logging statements](./parameterizedlogging.md)
+* [Use logger instead of `printStackTrace()`](./printstacktracetologerror.md)
+* [Use logger instead of system print statements](./systemerrtologging.md)
+* [Use logger instead of system print statements](./systemouttologging.md)
+* [Use logger instead of system print statements](./systemprinttologging.md)
 
 ## Subcategories
 

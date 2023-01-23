@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Find content](findcontent.md)
+* [Find content](./findcontent.md)
 
 

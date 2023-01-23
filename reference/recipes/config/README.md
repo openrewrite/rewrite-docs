@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [org.openrewrite.config.CompositeRecipe](compositerecipe.md)
+* [org.openrewrite.config.CompositeRecipe](./compositerecipe.md)
 
 

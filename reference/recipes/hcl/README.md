@@ -2,8 +2,8 @@
 
 ## Recipes
 
-* [Delete content](deletecontent.md)
-* [Move content to another file](movecontenttofile.md)
+* [Delete content](./deletecontent.md)
+* [Move content to another file](./movecontenttofile.md)
 
 ## Subcategories
 

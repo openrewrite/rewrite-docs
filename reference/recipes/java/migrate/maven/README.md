@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Use Maven Compiler Plugin Release Configuration](usemavencompilerpluginreleaseconfiguration.md)
+* [Use Maven Compiler Plugin Release Configuration](./usemavencompilerpluginreleaseconfiguration.md)
 
 
