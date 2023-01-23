@@ -47,7 +47,7 @@
 * [Dependency version selectors](reference/dependency-version-selectors.md)
 * [Framework provided markers](reference/framework-provided-markers.md)
 * [Recipe catalog](reference/recipes/README.md)
-  * [CircleCI](/reference/recipes/circleci/README.md)
+  * [CircleCI](reference/recipes/circleci/README.md)
     * [Install an orb](/reference/recipes/circleci/installorb.md)
     * [Update CircleCI image](/reference/recipes/circleci/updateimage.md)
   * [Concourse](reference/recipes/concourse/README.md)
