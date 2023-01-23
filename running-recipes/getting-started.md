@@ -287,7 +287,7 @@ After doing that, your `pom.xml` file should look similar to this:
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.28.0</version>
+            <version>4.32.0</version>
           </dependency>
         </dependencies>
       </plugin>

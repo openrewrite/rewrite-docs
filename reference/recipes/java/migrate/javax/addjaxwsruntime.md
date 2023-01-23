@@ -1,7 +1,6 @@
 # Use the latest JAX-WS API and runtime for Jakarta EE 8
 
-**org.openrewrite.java.migrate.javax.AddJaxwsRuntime**
-_Update maven build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.  The recipe will add a JAX-WS run-time, in `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
+**org.openrewrite.java.migrate.javax.AddJaxwsRuntime** _Update maven build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the**** ****`javax`**** ****namespace, despite the move to the Jakarta artifact**._
 
 ### Tags
 
@@ -18,7 +17,6 @@ _Update maven build files to use the latest JAX-WS runtime from Jakarta EE 8 to 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.16.0
-
 
 ## Usage
 
@@ -92,7 +90,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.javax.AddJaxwsRuntime)
+[![Moderne Link Image](../../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.javax.AddJaxwsRuntime)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

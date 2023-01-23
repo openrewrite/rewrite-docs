@@ -4,21 +4,21 @@ description: Conventions to follow, pitfalls to avoid
 
 # Recipe conventions and best practices
 
-To help you create reliable and scalable recipes, this document will describe an assortment of conventions and best practices to keep in mind when making new recipes. 
+To help you create reliable and scalable recipes, this document will describe an assortment of conventions and best practices to keep in mind when making new recipes.
 
 ## Prerequisites
 
 To get the most use out of this document, it would be beneficial for you to:
 
-* Be familiar with the [Recipe Development Environment](/authoring-recipes/recipe-development-environment.md)
-* Know how to [create](/authoring-recipes/writing-a-java-refactoring-recipe.md) and [test](/authoring-recipes/recipe-testing.md) recipes 
-* Understand how [recipes](/concepts-and-explanations/recipes.md) work at a high level (by using [visitors](/concepts-and-explanations/visitors.md) to operate on diverse and unexpected [LSTs](/concepts-and-explanations/lossless-semantic-trees.md))
+* Be familiar with the [Recipe Development Environment](recipe-development-environment.md)
+* Know how to [create](writing-a-java-refactoring-recipe.md) and [test](recipe-testing.md) recipes
+* Understand how [recipes](../concepts-and-explanations/recipes.md) work at a high level (by using [visitors](../concepts-and-explanations/visitors.md) to operate on diverse and unexpected [LSTs](../concepts-and-explanations/lossless-semantic-trees.md))
 
 ## Best practices
 
 ### Do no harm
 
-One of the most important conventions to keep in mind when creating recipes is the concept of "Do no harm". If your recipe cannot determine that a change is safe, **it should make no changes rather than making a potentially wrong change**. 
+One of the most important conventions to keep in mind when creating recipes is the concept of "Do no harm". If your recipe cannot determine that a change is safe, **it should make no changes rather than making a potentially wrong change**.
 
 For example, in the [RenameLocalVariableToCamelCase recipe](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/RenameLocalVariablesToCamelCase.java), we prevent the recipe from renaming variables to a name that _could_ be a namespace conflict. Likewise, we opt out of renaming class fields since they _might_ be in use by some downstream API. We favor making fewer changes over making wrong changes.
 
@@ -29,7 +29,7 @@ By reducing a recipe's scope and minimizing the number of changes a recipe makes
 On the other hand, a change that unnecessarily clobbers formatting or is otherwise overly broad in scope will burden code reviewers and drastically reduce the rate at which they accept changes.
 
 {% hint style="success" %}
-[RewriteTest](/authoring-recipes/recipe-testing.md#rewritetest-interface) helps you to verify that your recipe does not make unnecessary changes by running your recipe over multiple cycles. If you see your change being made many times it is likely your visitor fails to avoid making unnecessary changes. See the [cycle section](#stay-single-cycle) for more information.
+[RewriteTest](recipe-testing.md#rewritetest-interface) helps you to verify that your recipe does not make unnecessary changes by running your recipe over multiple cycles. If you see your change being made many times it is likely your visitor fails to avoid making unnecessary changes. See the [cycle section](recipe-conventions-and-best-practices.md#stay-single-cycle) for more information.
 {% endhint %}
 
 {% hint style="info" %}
@@ -38,30 +38,30 @@ When authoring your tests, always remember to test that changes aren't made when
 
 ### Naming conventions
 
-All recipe names, descriptions, and parameters should follow our [recipe naming conventions](https://github.com/openrewrite/rewrite/blob/main/doc/adr/0002-recipe-naming.md). 
+All recipe names, descriptions, and parameters should follow our [recipe naming conventions](https://github.com/openrewrite/rewrite/blob/main/doc/adr/0002-recipe-naming.md).
 
 By following these conventions, you'll ensure that:
 
-* The [documentation](/reference/recipes/) generated for your recipe is valid and clear to others
+* The [documentation](broken-reference) generated for your recipe is valid and clear to others
 * The [Moderne Saas](https://public.moderne.io/) can accurately filter and display your recipe and its parameters
 
 ### If it can be declarative, it should be declarative
 
-Before you begin writing a new recipe, take the time to examine existing recipes. You may find that what you want to do can be done by combining existing recipes without writing any code. You can achieve this by creating a [declarative YAML](/reference/yaml-format-reference.md) file.
+Before you begin writing a new recipe, take the time to examine existing recipes. You may find that what you want to do can be done by combining existing recipes without writing any code. You can achieve this by creating a [declarative YAML](../reference/yaml-format-reference.md) file.
 
-For instance, let's say you wanted to create a recipe that combines the functionality of numerous other static analysis recipes. You _could_ [imperatively code](https://gist.github.com/mike-solomon/a57a7f685bf8213d98162d57406cf8ae) a new recipe that calls one recipe after the next. However, that approach is strongly discouraged. Instead, you should [declaratively list out](https://gist.github.com/mike-solomon/95fa160b2ee07baf2256d57884321621) each recipe you want to run in a YAML file. In doing so, you will not only save time, but you will also substantially reduce the number of potential errors. 
+For instance, let's say you wanted to create a recipe that combines the functionality of numerous other static analysis recipes. You _could_ [imperatively code](https://gist.github.com/mike-solomon/a57a7f685bf8213d98162d57406cf8ae) a new recipe that calls one recipe after the next. However, that approach is strongly discouraged. Instead, you should [declaratively list out](https://gist.github.com/mike-solomon/95fa160b2ee07baf2256d57884321621) each recipe you want to run in a YAML file. In doing so, you will not only save time, but you will also substantially reduce the number of potential errors.
 
 If your recipe can be declarative, it should be.
 
 {% hint style="info" %}
-For more information on imperative and declarative recipes, please read the [Recipe documentation](/concepts-and-explanations/recipes.md).
+For more information on imperative and declarative recipes, please read the [Recipe documentation](../concepts-and-explanations/recipes.md).
 {% endhint %}
 
 ### Be deliberate about LST traversal
 
-As the author of a [visitor](/concepts-and-explanations/visitor.md), the traversal of the [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md) (LST) is in your hands. This traversal through the sub-elements can be achieved by calling a method like `super.visitSomeLstElement()`.
+As the author of a [visitor](../concepts-and-explanations/visitor.md), the traversal of the [Lossless Semantic Tree](../concepts-and-explanations/lossless-semantic-trees.md) (LST) is in your hands. This traversal through the sub-elements can be achieved by calling a method like `super.visitSomeLstElement()`.
 
-For instance, let's say you were creating a recipe that adds the `public` visibility modifier to a [ClassDeclaration](/concepts-and-explanations/lst-examples.md#classdeclaration). If you did not call `super.visitClassDeclaration()` in your overridden `visitClassDeclaration` method, then your recipe would not visit or check for inner classes. It's _possible_ this is what you want, but it's also possible that this is a bug.
+For instance, let's say you were creating a recipe that adds the `public` visibility modifier to a [ClassDeclaration](../concepts-and-explanations/lst-examples.md#classdeclaration). If you did not call `super.visitClassDeclaration()` in your overridden `visitClassDeclaration` method, then your recipe would not visit or check for inner classes. It's _possible_ this is what you want, but it's also possible that this is a bug.
 
 By not calling `super.visitSomeLstElement()`, you will often improve the performance of your recipe. However, in many cases, that could be a confusing bug. It's your responsibility to take the time to think through these options and decide one way or another.
 
@@ -75,7 +75,7 @@ Most recipes are not universally applicable to every source file. For instance, 
 
 Instead of running your recipe on every file, you can have your recipe provide some context on when it should be run. By doing so, you'll not only make it so your recipe can be run on more files more quickly, but you'll also enhance the readability of your recipe. That, in turn, simplifies debugging and maintenance and leads to better recipes.
 
-To do this, you'll want to override either the [Recipe.getApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L203) or the [Recipe.getSingleSourceApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L241). Both of these methods expect a [visitor](/concepts-and-explanations/visitor.md) to be returned from the method. This visitor **is not** the same visitor that is used by your recipe to make changes to the source code. Instead, this visitor should make a change to the LST if the recipe applies to a particular file.
+To do this, you'll want to override either the [Recipe.getApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L203) or the [Recipe.getSingleSourceApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L241). Both of these methods expect a [visitor](../concepts-and-explanations/visitor.md) to be returned from the method. This visitor **is not** the same visitor that is used by your recipe to make changes to the source code. Instead, this visitor should make a change to the LST if the recipe applies to a particular file.
 
 {% hint style="info" %}
 `Recipe.getApplicableTest()` runs on every file in a repository. If _any_ of the files result in a change to the LST, then that signifies the recipe applies to _all_ files in that repository. `Recipe.getSingleSourceApplicableTest()` is much narrower in scope. Instead of determining whether or not a recipe applies to the entire repository, it determines whether or not the recipe applies to a specific file. For most recipes, `Recipe.getSingleSourceApplicableTest()` is the preferred method to override.
@@ -83,7 +83,7 @@ To do this, you'll want to override either the [Recipe.getApplicableTest() metho
 
 For instance, in the [MigrateCollectionsSingletonSet recipe](https://github.com/openrewrite/rewrite-migrate-java/blob/v1.15.0/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java#L51-L52), we return a visitor that makes a change if the Java version is 9 and if the file contains the specified `singleton` method. If a change is made by this visitor, we know that the recipe "applies" to this file and, therefore, should be run on it. If the visitor did not make a change, then we know that this file can be safely ignored by this recipe.
 
-You can use `Applicability.and()`, `Applicability.or()`, and `Applicability.not()` to create more complex applicability criteria from simple building blocks. 
+You can use `Applicability.and()`, `Applicability.or()`, and `Applicability.not()` to create more complex applicability criteria from simple building blocks.
 
 {% hint style="success" %}
 Applicability tests are most worthwhile when they can cheaply prevent a visitor from running unnecessarily.
@@ -91,13 +91,13 @@ Applicability tests are most worthwhile when they can cheaply prevent a visitor 
 
 ### Recipe and LST immutability
 
-Recipes must have no mutable state. Likewise, `Recipe.getVisitor()` must always return a brand-new visitor instance. This is because, during recipe execution, the same recipe may be invoked multiple times, possibly on sources it has seen before. Any mutable state could lead to strange and confusing bugs. Following this rule is essential for OpenRewrite to operate reliably and correctly. 
+Recipes must have no mutable state. Likewise, `Recipe.getVisitor()` must always return a brand-new visitor instance. This is because, during recipe execution, the same recipe may be invoked multiple times, possibly on sources it has seen before. Any mutable state could lead to strange and confusing bugs. Following this rule is essential for OpenRewrite to operate reliably and correctly.
 
 {% hint style="info" %}
 During test execution, recipe execution is single-threaded for simplicity. However, outside of tests, recipe execution is parallelized.
 {% endhint %}
 
-Also note that, inside the `Recipe.getVisitor()` method, all LST fields (such as the [Body](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1161) on a [Class Declaration](/concepts-and-explanations/lst-examples.md#classdeclaration)) should be treated as immutable. Even if there are certain circumstances where mutating these fields is _technically_ possible, it is **always** a bug for a recipe to mutate those fields. 
+Also note that, inside the `Recipe.getVisitor()` method, all LST fields (such as the [Body](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1161) on a [Class Declaration](../concepts-and-explanations/lst-examples.md#classdeclaration)) should be treated as immutable. Even if there are certain circumstances where mutating these fields is _technically_ possible, it is **always** a bug for a recipe to mutate those fields.
 
 OpenRewrite detects that a visitor/recipe has made a change based on referential equality. Mutating fields on an LST breaks this detection, and can potentially cause incorrect diffs to be created.
 
@@ -119,7 +119,7 @@ If your recipe is going to work with dates, please ensure that you adhere to [RS
 
 ### Avoid constructing LST elements by hand
 
-Even very simple pieces of code have complex LST representations which are tedious and error-prone to construct by hand. Never attempt to build up LSTs by hand. Instead, you should use faculties like [JavaTemplate](../concepts-and-explanations/javatemplate.md) to turn code snippets into [LST elements](/concepts-and-explanations/lst-examples.md). For data formats like XML or JSON, it is usually more convenient to use the format's parser to turn a snippet of text into usable LST elements.
+Even very simple pieces of code have complex LST representations which are tedious and error-prone to construct by hand. Never attempt to build up LSTs by hand. Instead, you should use faculties like [JavaTemplate](../concepts-and-explanations/javatemplate.md) to turn code snippets into [LST elements](../concepts-and-explanations/lst-examples.md). For data formats like XML or JSON, it is usually more convenient to use the format's parser to turn a snippet of text into usable LST elements.
 
 ### Stay single cycle
 
@@ -129,19 +129,19 @@ By default, only a single cycle is executed unless some recipe in the group over
 
 ### State conventions
 
-You should generally avoid passing [state](https://en.wikipedia.org/wiki/State_(computer_science)) across visitors if at all possible. If you do need to pass state around, though, you should first figure out which parts of your recipe need what information.
+You should generally avoid passing [state](https://en.wikipedia.org/wiki/State\_\(computer\_science\)) across visitors if at all possible. If you do need to pass state around, though, you should first figure out which parts of your recipe need what information.
 
-If you need to pass state between functions in the **same** visitor, then you should [use cursor messaging instead of execution context messaging](#prefer-cursor-messaging-to-execution-context-messaging).
+If you need to pass state between functions in the **same** visitor, then you should [use cursor messaging instead of execution context messaging](recipe-conventions-and-best-practices.md#prefer-cursor-messaging-to-execution-context-messaging).
 
-If you need to pass state between **different** visitors, then you should [override the visit function](#override-the-visit-method-if-you-need-pass-state-between-visitors).
+If you need to pass state between **different** visitors, then you should [override the visit function](recipe-conventions-and-best-practices.md#override-the-visit-method-if-you-need-pass-state-between-visitors).
 
 #### Use cursor messaging instead of execution context messaging
 
 When passing state between functions in the same visitor, there are two main options: cursor messaging and execution context messaging.
 
-Cursor messaging is the preferred method. With it, you can utilize `TreeVisitor.getCursor()` to access a map that arbitrary data can be read from or written to. For instance, in the [AddDependency recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), we pass data from the [overridden visitTag method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L182) to the [overridden visitDocument method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L196) in our `MavenVisitor`. 
+Cursor messaging is the preferred method. With it, you can utilize `TreeVisitor.getCursor()` to access a map that arbitrary data can be read from or written to. For instance, in the [AddDependency recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), we pass data from the [overridden visitTag method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L182) to the [overridden visitDocument method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L196) in our `MavenVisitor`.
 
-The `Cursor` object is a stack that keeps track of a visitor's current progress through an LST. Once everything has been visited in a particular [cycle](/concepts-and-explanations/recipes.md#execution-cycles), all of this information is then thrown away. There is no risk of this state leaking into places that you don't want.
+The `Cursor` object is a stack that keeps track of a visitor's current progress through an LST. Once everything has been visited in a particular [cycle](../concepts-and-explanations/recipes.md#execution-cycles), all of this information is then thrown away. There is no risk of this state leaking into places that you don't want.
 
 The `ExecutionContext` object, on the other hand, has a few key differences that make it less suitable for most situations. All recipes in a run will have the same `ExecutionContext` object. This object contains a map, similar to the `Cursor`, that recipes can read from or write arbitrary data to. Unlike the `Cursor` map, though, this `ExecutionContext` map sticks around between recipe run cycles. This poses some considerable danger.
 
