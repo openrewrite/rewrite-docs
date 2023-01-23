@@ -4,7 +4,7 @@ _Recipes to perform [CircleCI](https://circleci.com/) hygiene and migration task
 
 ## Recipes
 
-* [Install an orb](installorb.md)
-* [Update CircleCI image](updateimage.md)
+* [Install an orb](./installorb.md)
+* [Update CircleCI image](./updateimage.md)
 
 
