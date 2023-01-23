@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Use HTTPS for repositories](../../maven/security/usehttpsforrepositories.md)
+* [Use HTTPS for repositories](usehttpsforrepositories.md)
+
+

@@ -2,7 +2,7 @@
 
 ## Recipes
 
-* [Cucumber to Junit Test Suites](cucumbertojunitplatformsuite.md)
+* [Cucumber to JUnit Test Suites](cucumbertojunitplatformsuite.md)
 * [Cucumber-Java8 migration to Cucumber-Java](cucumberjava8tojava.md)
 * [Drop SummaryPrinter](dropsummaryprinter.md)
 * [Replace @Cucumber with @Suite](cucumberannotationtosuite.md)

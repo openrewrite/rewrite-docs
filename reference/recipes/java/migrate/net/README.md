@@ -1,4 +1,4 @@
-# `java.net` APIs
+# java.net APIs
 
 ## Recipes
 

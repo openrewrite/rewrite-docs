@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Use HTTPS for repositories](../../gradle/security/usehttpsforrepositories.md)
+* [Use HTTPS for repositories](usehttpsforrepositories.md)
+
+

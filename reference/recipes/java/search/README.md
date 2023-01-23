@@ -6,6 +6,8 @@
 * [Find empty classes](findemptyclasses.md)
 * [Find fields](findfields.md)
 * [Find fields of type](findfieldsoftype.md)
+* [Find files compiled at a specific Java version](hasjavaversion.md)
+* [Find files in a source set](hassourceset.md)
 * [Find literals](findliterals.md)
 * [Find method usages](findmethods.md)
 * [Find methods with empty bodies](findemptymethods.md)

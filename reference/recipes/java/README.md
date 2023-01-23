@@ -41,7 +41,6 @@ _Basic building blocks for transforming Java code._
 * [Micronaut](/reference/recipes/java/micronaut)
 * [Modernize](/reference/recipes/java/migrate)
 * [OpenRewrite best practices](/reference/recipes/java/recipes)
-* [Quarkus](/reference/recipes/java/quarkus)
 * [Search](/reference/recipes/java/search)
 * [Security](/reference/recipes/java/security)
 * [Spring](/reference/recipes/java/spring)

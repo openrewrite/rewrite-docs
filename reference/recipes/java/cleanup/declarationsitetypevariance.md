@@ -5,11 +5,11 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.35.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.35.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.35.0-SNAPSHOT
+* version: 7.35.0
 
 ## Options
 
@@ -47,7 +47,7 @@ Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined activ
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.33.2")
+    id("org.openrewrite.rewrite") version("5.34.0")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.38.2</version>
+        <version>4.39.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeclarationSiteTypeVarianceExample</recipe>
@@ -86,4 +86,12 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.DeclarationSiteTypeVarianceExample`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.DeclarationSiteTypeVarianceExample`
+
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.DeclarationSiteTypeVariance)
+
+The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
