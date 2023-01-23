@@ -1,4 +1,4 @@
-# Migrate to Jakarta EE 9
+# Migrate to Jakarta EE 9 from Jakarta EE 8
 
 **org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta**
 _Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` namespace._
@@ -11,23 +11,23 @@ _Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` nam
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.16.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.16.0
+* version: 1.15.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.16.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.15.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.16.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.15.0")
 }
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.38.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta</recipe>
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.16.0</version>
+            <version>1.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.39.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.16.0 \
+mvn org.openrewrite.maven:rewrite-maven-plugin:4.38.2:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:1.15.0 \
   -DactiveRecipes=org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
 ```
 {% endcode %}
@@ -94,8 +94,6 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](../../../java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
 * [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](../../../java/migrate/jakarta/javaxannotationmigrationtojakartaannotation.md)
-* [Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`](../../../java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication.md)
-* [Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`](../../../java/migrate/jakarta/javaxauthorizationmigrationtojakartaauthorization.md)
 * [Migrate deprecated `javax.batch` packages to `jakarta.batch`](../../../java/migrate/jakarta/javaxbatchmigrationtojakartabatch.md)
 * [Migrate deprecated `javax.decorator` packages to `jakarta.decorator`](../../../java/migrate/jakarta/javaxdecoratortojakartadecorator.md)
 * [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](../../../java/migrate/jakarta/javaxejbtojakartaejb.md)
@@ -109,9 +107,8 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Migrate deprecated `javax.jws` packages to `jakarta.jws`](../../../java/migrate/jakarta/javaxjwstojakartajws.md)
 * [Migrate deprecated `javax.mail` packages to `jakarta.mail`](../../../java/migrate/jakarta/javaxmailtojakartamail.md)
 * [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](../../../java/migrate/jakarta/javaxpersistencetojakartapersistence.md)
-* [Migrate xmlns entries in `persistence.xml` files](../../../java/migrate/jakarta/javaxpersistencexmltojakartapersistencexml.md)
 * [Migrate deprecated `javax.resource` packages to `jakarta.resource`](../../../java/migrate/jakarta/javaxresourcetojakartaresource.md)
-* [Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`](../../../java/migrate/jakarta/javaxsecuritytojakartasecurity.md)
+* [Migrate deprecated `javax.security` packages to `jakarta.security`](../../../java/migrate/jakarta/javaxsecuritytojakartasecurity.md)
 * [Migrate deprecated `javax.servlet` packages to `jakarta.servlet`](../../../java/migrate/jakarta/javaxservlettojakartaservlet.md)
 * [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](../../../java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
 * [Migrate deprecated `javax.validation` packages to `jakarta.validation`](../../../java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
@@ -124,7 +121,6 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Migrate Ehcache from javax to jakarta namespace](../../../java/migrate/jakarta/ehcachejavaxtojakarta.md)
 * [Migrate Johnzon from javax to jakarta namespace](../../../java/migrate/jakarta/johnzonjavaxtojakarta.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](../../../java/migrate/jakarta/restassuredjavaxtojakarta.md)
-* [Migrate Hibernate dependencies to 6.1.x](../../../java/migrate/hibernate/migratetohibernatedependencies61.md)
 
 {% endtab %}
 
@@ -133,7 +129,7 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
-displayName: Migrate to Jakarta EE 9
+displayName: Migrate to Jakarta EE 9 from Jakarta EE 8
 description: Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` namespace.
 tags:
   - jaxb
@@ -142,8 +138,6 @@ tags:
 recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation
   - org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation
-  - org.openrewrite.java.migrate.jakarta.JavaxAuthenticationMigrationToJakartaAuthentication
-  - org.openrewrite.java.migrate.jakarta.JavaxAuthorizationMigrationToJakartaAuthorization
   - org.openrewrite.java.migrate.jakarta.JavaxBatchMigrationToJakartaBatch
   - org.openrewrite.java.migrate.jakarta.JavaxDecoratorToJakartaDecorator
   - org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb
@@ -157,7 +151,6 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxJwsToJakartaJws
   - org.openrewrite.java.migrate.jakarta.JavaxMailToJakartaMail
   - org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence
-  - org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml
   - org.openrewrite.java.migrate.jakarta.JavaxResourceToJakartaResource
   - org.openrewrite.java.migrate.jakarta.JavaxSecurityToJakartaSecurity
   - org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet
@@ -172,16 +165,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta
   - org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta
-  - org.openrewrite.java.migrate.hibernate.MigrateToHibernateDependencies61
 
 ```
 {% endtab %}
 {% endtabs %}
-
-## See how this recipe works across multiple open-source repositories
-
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta)
-
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
-
-Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

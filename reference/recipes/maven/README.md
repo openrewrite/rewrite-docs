@@ -20,7 +20,6 @@
 * [Change Maven project property value](changepropertyvalue.md)
 * [Exclude Maven dependency](excludedependency.md)
 * [Manage dependencies](managedependencies.md)
-* [Normalize Maven variables](normalizemavenvariables.md)
 * [Order POM elements](orderpomelements.md)
 * [Remove Maven dependency](removedependency.md)
 * [Remove Maven managed dependency](removemanageddependency.md)
@@ -30,7 +29,6 @@
 * [Remove duplicate Maven dependencies](removeduplicatedependencies.md)
 * [Remove exclusion](removeexclusion.md)
 * [Remove redundant explicit dependency versions](removeredundantdependencyversions.md)
-* [Remove repository](removerepository.md)
 * [Set Maven project packaging](changepackaging.md)
 * [Upgrade Maven dependency version](upgradedependencyversion.md)
 * [Upgrade Maven parent project version](upgradeparentversion.md)
@@ -38,10 +36,8 @@
 
 ## Subcategories
 
-* [Cleanup](/reference/recipes/maven/cleanup)
-* [Search](/reference/recipes/maven/search)
-* [Security](/reference/recipes/maven/security)
-* [Spring](/reference/recipes/maven/spring)
-* [Utilities](/reference/recipes/maven/utilities)
-
-
+* [Cleanup](cleanup/)
+* [Search](search/)
+* [Security](../gradle/security/)
+* [Spring](spring/)
+* [Utilities](utilities/)

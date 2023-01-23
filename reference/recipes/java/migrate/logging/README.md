@@ -1,4 +1,4 @@
-# java.util.logging APIs
+# `java.util.logging` APIs
 
 ## Recipes
 

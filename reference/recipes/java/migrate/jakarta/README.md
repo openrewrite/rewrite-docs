@@ -26,9 +26,7 @@
 * [Migrate deprecated `javax.mail` packages to `jakarta.mail`](javaxmailtojakartamail.md)
 * [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](javaxpersistencetojakartapersistence.md)
 * [Migrate deprecated `javax.resource` packages to `jakarta.resource`](javaxresourcetojakartaresource.md)
-* [Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`](javaxauthenticationmigrationtojakartaauthentication.md)
-* [Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`](javaxsecuritytojakartasecurity.md)
-* [Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`](javaxauthorizationmigrationtojakartaauthorization.md)
+* [Migrate deprecated `javax.security` packages to `jakarta.security`](javaxsecuritytojakartasecurity.md)
 * [Migrate deprecated `javax.servlet` packages to `jakarta.servlet`](javaxservlettojakartaservlet.md)
 * [Migrate deprecated `javax.soap` packages to `jakarta.soap`](javaxxmlsoaptojakartaxmlsoap.md)
 * [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](javaxtransactionmigrationtojakartatransaction.md)
@@ -37,7 +35,5 @@
 * [Migrate deprecated `javax.ws` packages to `jakarta.ws`](javaxwstojakartaws.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](javaxxmlwsmigrationtojakartaxmlws.md)
-* [Migrate to Jakarta EE 9](javaxmigrationtojakarta.md)
-* [Migrate xmlns entries in `persistence.xml` files](javaxpersistencexmltojakartapersistencexml.md)
-
-
+* [Migrate to Jakarta EE 9 from Jakarta EE 8](javaxmigrationtojakarta.md)
+* [migrate persistence.xml files](broken-reference)

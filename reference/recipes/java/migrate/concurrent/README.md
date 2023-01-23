@@ -1,4 +1,4 @@
-# java.util.concurrent APIs
+# `java.util.concurrent` APIs
 
 ## Recipes
 

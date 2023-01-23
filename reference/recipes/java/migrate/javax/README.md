@@ -1,4 +1,4 @@
-# javax APIs
+# `javax` APIs
 
 ## Recipes
 

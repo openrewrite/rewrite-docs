@@ -6,7 +6,7 @@
 * [Change the key of a spring application property](changespringpropertykey.md)
 * [Delete a spring configuration property](deletespringproperty.md)
 * [Expand Spring YAML properties](expandproperties.md)
-* [Normalize Spring properties to kebab-case](propertiestokebabcase.md)
+* [Normalize Spring YAML properties to kebab-case](broken-reference)
 * [Remove `@RequestMapping` annotations](norequestmappingannotation.md)
 * [Remove implicit web annotation names](implicitwebannotationnames.md)
 * [Remove `public` from `@Bean` methods](beanmethodsnotpublic.md)
@@ -17,9 +17,7 @@
 
 ## Subcategories
 
-* [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
-* [Spring Boot 3.x](/reference/recipes/java/spring/boot3)
-* [Spring Data](/reference/recipes/java/spring/data)
-* [Spring Framework](/reference/recipes/java/spring/framework)
-
-
+* [Spring Boot 2.x](boot2/)
+* [Spring Boot 3.x](boot3/)
+* [Spring Data](data/)
+* [Spring Framework](framework/)

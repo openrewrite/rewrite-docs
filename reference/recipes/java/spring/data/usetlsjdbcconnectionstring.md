@@ -5,18 +5,16 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.32.0-SNAPSHOT/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.32.0
+* version: 4.32.0-SNAPSHOT
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | propertyKey | The Spring property key to perform updates against. If this value is specified, the specified property will be used for searching, otherwise a default of `spring.datasource.url` will be used instead. |
-| `Integer` | oldPort | The non-TLS enabled port number to replace with the TLS-enabled port. If this value is specified, no changes will be made to jdbc connection strings which do not contain this port number.  |
 | `Integer` | port | The TLS-enabled port to use. |
 | `String` | attribute | A connection attribute, if any, indicating to the JDBC provider that this is a TLS connection. |
 
@@ -34,21 +32,19 @@ name: com.yourorg.UseTlsJdbcConnectionStringExample
 displayName: Use TLS for JDBC connection strings example
 recipeList:
   - org.openrewrite.java.spring.data.UseTlsJdbcConnectionString:
-      propertyKey: spring.datasource.url
-      oldPort: 1234
       port: 1234
       attribute: sslConnection=true
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.32.0 in your build file:
+Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.32.0-SNAPSHOT in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.33.2")
 }
 
 rewrite {
@@ -60,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.32.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.32.0-SNAPSHOT")
 }
 ```
 {% endcode %}
@@ -75,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.38.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseTlsJdbcConnectionStringExample</recipe>
@@ -85,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.32.0</version>
+            <version>4.32.0-SNAPSHOT</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -97,12 +93,4 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.UseTlsJdbcConnectionStringExample`
-
-## See how this recipe works across multiple open-source repositories
-
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.spring.data.UseTlsJdbcConnectionString)
-
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
-
-Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+Recipes can also be activated directly from the commandline by adding the argument `-Drewrite.activeRecipes=com.yourorg.UseTlsJdbcConnectionStringExample`

@@ -1,6 +1,6 @@
 # Core Recipes
 
-_Recipes broadly applicable to all types of source files._
+_Recipes broadly applicable to all types of source file._
 
 ## Recipes
 

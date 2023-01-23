@@ -1,5 +1,7 @@
 # Quarkus
 
+_Recipes for upgrading and patching [Quarkus](https://quarkus.io/) applications._
+
 ## Recipes
 
 * [Configure `quarkus-maven-plugin` with reasonable defaults](configurequarkusmavenpluginwithreasonabledefaults.md)
@@ -10,6 +12,6 @@
 
 ## Subcategories
 
-* [Quarkus 2.x](/reference/recipes/quarkus/quarkus2)
+* [Quarkus 2.x](/reference/recipes/java/quarkus/quarkus2)
 
 

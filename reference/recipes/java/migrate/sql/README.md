@@ -1,4 +1,4 @@
-# java.sql APIs
+# `java.sql` APIs
 
 ## Recipes
 
