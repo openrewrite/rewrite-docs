@@ -4,10 +4,10 @@ _Recipes to perform [Concourse](https://concourse-ci.org/) hygiene and migration
 
 ## Recipes
 
-* [Change Concourse value](changevalue.md)
-* [Change resource version](changeresourceversion.md)
-* [Find resource](findresource.md)
-* [Update git resource `source.uri` references](updategitresourceuri.md)
+* [Change Concourse value](./changevalue.md)
+* [Change resource version](./changeresourceversion.md)
+* [Find resource](./findresource.md)
+* [Update git resource `source.uri` references](./updategitresourceuri.md)
 
 ## Subcategories
 
