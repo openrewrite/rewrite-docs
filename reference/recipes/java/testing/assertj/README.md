@@ -15,6 +15,7 @@
 * [JUnit fail to AssertJ](./junitfailtoassertjfail.md)
 * [Migrate JUnit asserts to AssertJ](./junittoassertj.md)
 * [Statically import AssertJ's `assertThat`](./staticimports.md)
+* [Use AssertJ `hasSize()` on collections](./useexplicitsize.md)
 * [Use explicit contains in Assertj](./useexplicitcontains.md)
 
 

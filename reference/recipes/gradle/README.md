@@ -7,8 +7,8 @@
 * [Add Gradle dependency](./adddependency.md)
 * [Add Gradle property](./addproperty.md)
 * [Add Gradle wrapper](./addgradlewrapper.md)
-* [Change Gradle dependency artifactId](./changedependencyartifactid.md)
-* [Change Gradle dependency group id](./changedependencygroupid.md)
+* [Change Gradle dependency artifact](./changedependencyartifactid.md)
+* [Change Gradle dependency group](./changedependencygroupid.md)
 * [Change Gradle project Java compatibility](./changejavacompatibility.md)
 * [Change a Gradle dependency classifier](./changedependencyclassifier.md)
 * [Change a Gradle dependency configuration](./changedependencyconfiguration.md)
@@ -19,6 +19,7 @@
 * [Remove a Gradle dependency](./removegradledependency.md)
 * [Remove repository](./removerepository.md)
 * [Update Gradle wrapper](./updategradlewrapper.md)
+* [Upgrade Gradle dependencies who use a fixed literal version](./upgradeliteraldependencyversion.md)
 * [Use `Map` notation for Gradle dependency declarations](./dependencyusemapnotation.md)
 * [Use `String` notation for Gradle dependency declarations](./dependencyusestringnotation.md)
 
