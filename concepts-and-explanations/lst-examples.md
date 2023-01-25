@@ -1,32 +1,32 @@
-# Java LST Examples
+# Java LST examples
 
-When building recipes, it's important to understand how OpenRewrite [Lossless Semantic Trees](/concepts-and-explanations/lossless-semantic-trees.md) (LSTs) correspond to code. You couldn't, for example, properly rename a variable with a recipe unless you knew that [J.Identifier](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2310-L2343) is the class used to represent a variable.
+When building recipes, it's important to understand how OpenRewrite [Lossless Semantic Trees](lossless-semantic-trees.md) (LSTs) correspond to code. You couldn't, for example, properly rename a variable with a recipe unless you knew that [J.Identifier](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2310-L2343) is the class used to represent a variable.
 
 To help you get started on working with Java LSTs and OpenRewrite, this guide will:
 
-* [Explain how LSTs work at a high-level](#high-level-lst-explanation)
-* [Provide a high-level diagram that shows how LSTs relate to each other](#lst-diagram)
-* [Provide a sample chunk of code to demonstrate LSTs](#code)
-* [Discuss how that code relates to different types of LSTs](#java-lst-types)
-  * [Binary](#binary)
-  * [Block](#block)
-  * [ClassDeclaration](#classdeclaration)
-  * [CompilationUnit](#compilationunit)
-  * [Expression](#expression)
-  * [FieldAccess](#fieldaccess)
-  * [Identifier](#identifier)
-  * [MethodDeclaration](#methoddeclaration)
-  * [MethodInvocation](#methodinvocation)
-  * [NewClass](#newclass)
-  * [Statement](#statement)
-  * [VariableDeclarations](#variabledeclarations)
-* [Teach you how to use the debugger to learn more about LSTs yourself](#using-the-debugger-to-detect-lsts)
+* [Explain how LSTs work at a high-level](lst-examples.md#high-level-lst-explanation)
+* [Provide a high-level diagram that shows how LSTs relate to each other](lst-examples.md#lst-diagram)
+* [Provide a sample chunk of code to demonstrate LSTs](lst-examples.md#code)
+* [Discuss how that code relates to different types of LSTs](lst-examples.md#java-lst-types)
+  * [Binary](lst-examples.md#binary)
+  * [Block](lst-examples.md#block)
+  * [ClassDeclaration](lst-examples.md#classdeclaration)
+  * [CompilationUnit](lst-examples.md#compilationunit)
+  * [Expression](lst-examples.md#expression)
+  * [FieldAccess](lst-examples.md#fieldaccess)
+  * [Identifier](lst-examples.md#identifier)
+  * [MethodDeclaration](lst-examples.md#methoddeclaration)
+  * [MethodInvocation](lst-examples.md#methodinvocation)
+  * [NewClass](lst-examples.md#newclass)
+  * [Statement](lst-examples.md#statement)
+  * [VariableDeclarations](lst-examples.md#variabledeclarations)
+* [Teach you how to learn more about LSTs yourself](lst-examples.md#using-the-debugger-to-detect-lsts)
 
 ## High-level LST Explanation
 
-In order to programmatically modify code without risking the introduction of syntactic or semantic errors, you must use a data structure that can accurately and comprehensively represent said code. OpenRewrite uses [Lossless Semantic Trees](/concepts-and-explanations/lossless-semantic-trees.md) (LSTs) for this purpose. Like other tree data structures, more complex LSTs are recursively composed of other, simpler LSTs.
+In order to programmatically modify code without risking the introduction of syntactic or semantic errors, you must use a data structure that can accurately and comprehensively represent said code. OpenRewrite uses [Lossless Semantic Trees](lossless-semantic-trees.md) (LSTs) for this purpose. Like other tree data structures, more complex LSTs are recursively composed of other, simpler LSTs.
 
-For instance, a [ClassDeclaration](#classdeclaration) is an LST that defines a class. A typical class declaration will be composed of elements such as fields, methods, constructors, and inner classes. Each of those elements are, themselves, an LST. So the term "LST" may refer to an entire, complete Java file or just one piece of it.
+For instance, a [ClassDeclaration](lst-examples.md#classdeclaration) is an LST that defines a class. A typical class declaration will be composed of elements such as fields, methods, constructors, and inner classes. Each of those elements are, themselves, an LST. So the term "LST" may refer to an entire, complete Java file or just one piece of it.
 
 It's important to note that it is possible to manipulate LSTs to create code that will not compile. While OpenRewrite provides some safeguards against grammatically invalid transformations in its type system (such as not allowing import statements to be replaced with a method declaration), it is still possible to write code that is valid according to the Java grammar without being a valid, compilable program.
 
@@ -68,13 +68,13 @@ public class A {
 
 ### Binary
 
-A [Binary](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L597-L705) is an [Expression](#expression) with a left and right side, separated by an operator. Examples of operators include `+`, `-`, `||`, `&&`, and more.
+A [Binary](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L597-L705) is an [Expression](lst-examples.md#expression) with a left and right side, separated by an operator. Examples of operators include `+`, `-`, `||`, `&&`, and more.
 
 ![Binary Example](../.gitbook/assets/Binary.png)
 
 ### Block
 
-A [Block](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L712-L851) is a pair of curly braces and the [Statements](#statement) contained within. Blocks can be nested inside of each other.
+A [Block](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L712-L851) is a pair of curly braces and the [Statements](lst-examples.md#statement) contained within. Blocks can be nested inside of each other.
 
 ![Block Example](../.gitbook/assets/Block.png)
 
@@ -101,7 +101,7 @@ A [CompilationUnit](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-
 
 ### Expression
 
-An [Expression](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/Expression.java) is anything that returns a value. `MethodInvocation`, `Identifier`, and `Binary` are all examples of expressions. Please note that some LSTs such as `MethodInvocation` are both a [Statement](#statement) and an Expression.
+An [Expression](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/Expression.java) is anything that returns a value. `MethodInvocation`, `Identifier`, and `Binary` are all examples of expressions. Please note that some LSTs such as `MethodInvocation` are both a [Statement](lst-examples.md#statement) and an Expression.
 
 In the below code, only some of the expressions are highlighted as expressions can often have many expressions inside of them and it would be too difficult to read if all of them were highlighted. For instance, `import java.util.ArrayList` is many expressions (`java`, `util`, `ArrayList`, `java.util`, and `java.util.ArrayList`).
 
@@ -123,7 +123,7 @@ You can use `J.Identifier.getFieldType()` to tell what class the identifier is a
 
 ### MethodDeclaration
 
-A [MethodDeclaration](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3223-L3517) is the annotations, modifiers, return type, name, argument list, and body which together define a method on a [Class](#classdeclaration).
+A [MethodDeclaration](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3223-L3517) is the annotations, modifiers, return type, name, argument list, and body which together define a method on a [Class](lst-examples.md#classdeclaration).
 
 ![MethodDeclaration Example](../.gitbook/assets/MethodDeclaration.png)
 
@@ -158,7 +158,7 @@ A [NewClass](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/sr
 
 ### Statement
 
-A [Statement](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/Statement.java) is anything that appears on its own line within a block. Statement elements are usually terminated with a semicolon. `if`, `while`, `try`, `Block`, `return`, and `MethodInvocation` are all examples of statements. Please note that some LST elements such as `MethodInvocation` are both Statements and [Expressions](#expression).
+A [Statement](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/Statement.java) is anything that appears on its own line within a block. Statement elements are usually terminated with a semicolon. `if`, `while`, `try`, `Block`, `return`, and `MethodInvocation` are all examples of statements. Please note that some LST elements such as `MethodInvocation` are both Statements and [Expressions](lst-examples.md#expression).
 
 In the below code, only some of the statements are highlighted as statements will often have many sub-statements and the diagram would become too difficult to read. For instance, `List<Integer> a = new ArrayList<>()` is a statement as well as `new ArrayList<>()`.
 
@@ -172,9 +172,13 @@ A [VariableDeclarations](https://github.com/openrewrite/rewrite/blob/v7.33.0/rew
 
 ## Using the Debugger To Detect LSTs
 
+{% hint style="success" %}
+If you want an easier and more visual way to examine LSTs, check out the [TreeVisitingPrinter guide](tree-visiting-printer.md).
+{% endhint %}
+
 If you find yourself still unsure what makes up a particular LST or if you want to traverse the LST yourself, you can use the Java debugger to help you.
 
-Let's use the example code from above as an example. You can make a simple recipe that doesn't do much aside from visit a [CompilationUnit](#compilationunit): [gist](https://gist.github.com/mike-solomon/0f9a171d0b444f3bb576f9cba2e5a304). You can then make a test that checks that the code hasn't changed: [gist](https://gist.github.com/mike-solomon/9e13ae5acb6c60effaf6557176771785).
+Let's use the example code from above as an example. You can make a simple recipe that doesn't do much aside from visit a [CompilationUnit](lst-examples.md#compilationunit): [gist](https://gist.github.com/mike-solomon/0f9a171d0b444f3bb576f9cba2e5a304). You can then make a test that checks that the code hasn't changed: [gist](https://gist.github.com/mike-solomon/9e13ae5acb6c60effaf6557176771785).
 
 Once you have that recipe and test class created, there are two main places where you'll want to add breakpoints:
 
