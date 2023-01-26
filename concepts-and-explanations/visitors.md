@@ -33,9 +33,9 @@ The framework provides the base class `TreeVisitor<T extends Tree, P>` from whic
 
 ### Cursoring
 
-All visitors have access to a `Cursor` which keeps track of a visitor's position within the LST while it is being traversed. Since LST elements are acyclic and therefore do not contain references to their parent element, the `Cursor` is the primary mechanism by which parent or sibling LST elements may be accessed during visiting. Logically a `Cursor` is a stack. Whenever an LST elment is visited a `Cursor` pointing to it is pushed on top of the stack. When visiting that element is over its `Cursor` is removed from the stack. In this way the `Cursor` keeps track of the visitor's current position within the LST.&#x20;
+All visitors have access to a `Cursor` which keeps track of a visitor's position within the LST while it is being traversed. Since LST elements are acyclic and therefore do not contain references to their parent element, the `Cursor` is the primary mechanism by which parent or sibling LST elements may be accessed during visiting. Logically a `Cursor` is a stack. Whenever an LST elment is visited a `Cursor` pointing to it is pushed on top of the stack. When visiting that element is over its `Cursor` is removed from the stack. In this way the `Cursor` keeps track of the visitor's current position within the LST.
 
-As an example of how the `Cursor` can be helpful, image a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The compilation unit may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which class declaration represents the top-level class:
+As an example of how the `Cursor` can be helpful, imagine a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The compilation unit may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which class declaration represents the top-level class:
 
 ```java
 @Override
