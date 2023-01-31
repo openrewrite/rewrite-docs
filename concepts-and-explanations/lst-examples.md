@@ -6,8 +6,7 @@ To help you get started on working with Java LSTs and OpenRewrite, this guide wi
 
 * [Explain how LSTs work at a high-level](lst-examples.md#high-level-lst-explanation)
 * [Provide a high-level diagram that shows how LSTs relate to each other](lst-examples.md#lst-diagram)
-* [Provide a sample chunk of code to demonstrate LSTs](lst-examples.md#code)
-* [Discuss how that code relates to different types of LSTs](lst-examples.md#java-lst-types)
+* [Provide a sample chunk of code and discuss how that code relates to different types of LSTs](lst-examples.md#java-lst-types)
   * [Binary](lst-examples.md#binary)
   * [Block](lst-examples.md#block)
   * [ClassDeclaration](lst-examples.md#classdeclaration)
