@@ -21,7 +21,7 @@ To help you get started on working with Java LSTs and OpenRewrite, this guide wi
   * [VariableDeclarations](lst-examples.md#variabledeclarations)
 * [Teach you how to learn more about LSTs yourself](lst-examples.md#using-the-debugger-to-detect-lsts)
 
-## High-level LST Explanation
+## High-level LST explanation
 
 In order to programmatically modify code without risking the introduction of syntactic or semantic errors, you must use a data structure that can accurately and comprehensively represent said code. OpenRewrite uses [Lossless Semantic Trees](lossless-semantic-trees.md) (LSTs) for this purpose. Like other tree data structures, more complex LSTs are recursively composed of other, simpler LSTs.
 
@@ -31,13 +31,13 @@ It's important to note that it is possible to manipulate LSTs to create code tha
 
 For example, nothing prevents you from modifying an LST so that a variable is used before it is defined. It is the responsibility of recipe authors to consider language semantics and the full range of possibilities when making changes. In accordance with the principle of [Doing No Harm](../authoring-recipes/recipe-conventions-and-best-practices.md#do-no-harm), always err on the side of leaving code untouched rather than making a risky change.
 
-## LST Diagram
+## LST diagram
 
 This diagram demonstrates how a simple Java class is represented as an LST. Note the hierarchical structure where LST elements are composed out of other LST elements.
 
 <figure><img src="../.gitbook/assets/Vertical AST Example.png" alt=""><figcaption></figcaption></figure>
 
-## Java LST Types
+## Java LST types
 
 Below is a simple Java class whose entire purpose is to demonstrate different types of LSTs. Each of the following sections will highlight different parts of this code to demonstrate which chunks correspond to which LST. This listing of LST types is not exhaustive but should give you a good sense of the most common types.
 
@@ -169,7 +169,7 @@ A [VariableDeclarations](https://github.com/openrewrite/rewrite/blob/v7.33.0/rew
 
 ![VariableDeclarations Example](../.gitbook/assets/VariableDeclarations.png)
 
-## Using the Debugger To Detect LSTs
+## Using the debugger to detect LSTs
 
 {% hint style="success" %}
 If you want an easier and more visual way to examine LSTs, check out the [TreeVisitingPrinter guide](tree-visiting-printer.md).
