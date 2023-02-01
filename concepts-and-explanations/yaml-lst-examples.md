@@ -14,7 +14,7 @@ If you want a more thorough explanation of what LSTs are and how they're used in
 
 ## Sample YAML
 
-Below is a simple YAML file whose entire purpose is to demonstrate different types of LSTs. Each of the following sections will highlight different parts of this file to demonstrate which chunks correspond to which LST. This listing of LSTs is not exhausting, but it should give you a good sense of the most common types.
+Below is a simple YAML file whose entire purpose is to demonstrate different types of LSTs. Each of the following sections will highlight different parts of this file to demonstrate which chunks correspond to which LST. This listing of LSTs is not exhaustive, but it should give you a good sense of the most common types.
 
 ```yaml
 document: this is document 1
