@@ -1076,6 +1076,7 @@
 
 * [Lossless Semantic Trees (LST)](concepts-and-explanations/lossless-semantic-trees.md)
 * [Java LST examples](concepts-and-explanations/lst-examples.md)
+* [YAML LST examples](concepts-and-explanations/yaml-lst-examples.md)
 * [TreeVisitingPrinter](concepts-and-explanations/tree-visiting-printer.md)
 * [Recipes](concepts-and-explanations/recipes.md)
 * [Visitors](concepts-and-explanations/visitors.md)
