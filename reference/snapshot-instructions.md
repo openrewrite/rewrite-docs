@@ -28,7 +28,7 @@ dependencies {
 }
 ```
 
-## Maven Instructions
+## Maven instructions
 
 To utilize snapshot versions in Maven projects, you'll need to make the following changes to your `pom.xml` file:
 
