@@ -12,6 +12,7 @@ To utilize snapshot versions in Gradle projects, you'll need to make the followi
 
 ```groovy
 repositories {
+    // Possibly other repositories such as mavenCentral()
     // ...
 
     maven {
@@ -36,6 +37,9 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 
 ```xml
 <repositories>
+    <!-- Possibly other repositories -->
+    <!-- ... -->
+
     <repository>
         <id>rewrite-snapshots</id>
         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
