@@ -8,7 +8,7 @@ This document provides Recipe authors a reference for what metadata is available
 
 All markers described in this document are found on the root element of the LST.
 The root LST element varies by language, but they all implement the `SourceFile` interface.
-From anywhere in a [Visitor](/concepts-and-explanations/visitor.md) the cursor can be used to access the markers on the root element like so:
+From anywhere in a [Visitor](/concepts-and-explanations/visitors.md) the cursor can be used to access the markers on the root element like so:
 
 ```java
 class SomeVisitor implements JavaVisitor<ExecutionContext> {

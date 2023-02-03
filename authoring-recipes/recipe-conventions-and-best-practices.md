@@ -59,7 +59,7 @@ For more information on imperative and declarative recipes, please read the [Rec
 
 ### Be deliberate about LST traversal
 
-As the author of a [visitor](../concepts-and-explanations/visitor.md), the traversal of the [Lossless Semantic Tree](../concepts-and-explanations/lossless-semantic-trees.md) (LST) is in your hands. This traversal through the sub-elements can be achieved by calling a method like `super.visitSomeLstElement()`.
+As the author of a [visitor](../concepts-and-explanations/visitors.md), the traversal of the [Lossless Semantic Tree](../concepts-and-explanations/lossless-semantic-trees.md) (LST) is in your hands. This traversal through the sub-elements can be achieved by calling a method like `super.visitSomeLstElement()`.
 
 For instance, let's say you were creating a recipe that adds the `public` visibility modifier to a [ClassDeclaration](../concepts-and-explanations/lst-examples.md#classdeclaration). If you did not call `super.visitClassDeclaration()` in your overridden `visitClassDeclaration` method, then your recipe would not visit or check for inner classes. It's _possible_ this is what you want, but it's also possible that this is a bug.
 
@@ -75,7 +75,7 @@ Most recipes are not universally applicable to every source file. For instance, 
 
 Instead of running your recipe on every file, you can have your recipe provide some context on when it should be run. By doing so, you'll not only make it so your recipe can be run on more files more quickly, but you'll also enhance the readability of your recipe. That, in turn, simplifies debugging and maintenance and leads to better recipes.
 
-To do this, you'll want to override either the [Recipe.getApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L203) or the [Recipe.getSingleSourceApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L241). Both of these methods expect a [visitor](../concepts-and-explanations/visitor.md) to be returned from the method. This visitor **is not** the same visitor that is used by your recipe to make changes to the source code. Instead, this visitor should make a change to the LST if the recipe applies to a particular file.
+To do this, you'll want to override either the [Recipe.getApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L203) or the [Recipe.getSingleSourceApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L241). Both of these methods expect a [visitor](../concepts-and-explanations/visitors.md) to be returned from the method. This visitor **is not** the same visitor that is used by your recipe to make changes to the source code. Instead, this visitor should make a change to the LST if the recipe applies to a particular file.
 
 {% hint style="info" %}
 `Recipe.getApplicableTest()` runs on every file in a repository. If _any_ of the files result in a change to the LST, then that signifies the recipe applies to _all_ files in that repository. `Recipe.getSingleSourceApplicableTest()` is much narrower in scope. Instead of determining whether or not a recipe applies to the entire repository, it determines whether or not the recipe applies to a specific file. For most recipes, `Recipe.getSingleSourceApplicableTest()` is the preferred method to override.
