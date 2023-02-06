@@ -5,11 +5,11 @@ _Removes a matching Maven repository._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.35.0/jar)
+[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.36.0-SNAPSHOT/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.35.0
+* version: 7.36.0-SNAPSHOT
 
 ## Options
 
@@ -17,14 +17,6 @@ _Removes a matching Maven repository._
 | -- | -- | -- |
 | `String` | id | *Optional*. Repository id |
 | `String` | url | Repository URL |
-| `String` | repoName | *Optional*. Repository name |
-| `String` | layout | *Optional*. Repository layout |
-| `Boolean` | snapshotsEnabled | *Optional*. Snapshots from the repository are available |
-| `String` | snapshotsChecksumPolicy | *Optional*. Snapshots checksum policy |
-| `String` | snapshotsUpdatePolicy | *Optional*. Snapshots update policy policy |
-| `Boolean` | releasesEnabled | *Optional*. Releases from the repository are available |
-| `String` | releasesChecksumPolicy | *Optional*. Releases checksum policy |
-| `String` | releasesUpdatePolicy | *Optional*. Releases update policy |
 
 
 ## Usage
@@ -42,14 +34,6 @@ recipeList:
   - org.openrewrite.maven.RemoveRepository:
       id: null
       url: null
-      repoName: null
-      layout: null
-      snapshotsEnabled: null
-      snapshotsChecksumPolicy: null
-      snapshotsUpdatePolicy: null
-      releasesEnabled: null
-      releasesChecksumPolicy: null
-      releasesUpdatePolicy: null
 ```
 {% endcode %}
 
@@ -61,7 +45,7 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.35.0")
 }
 
 rewrite {
