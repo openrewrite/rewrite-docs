@@ -51,6 +51,7 @@
 * [Method patterns](reference/method-patterns.md)
 * [Dependency version selectors](reference/dependency-version-selectors.md)
 * [Framework provided markers](reference/framework-provided-markers.md)
+* [Building OpenRewrite from source](reference/building-openrewrite-from-source.md)
 * [Recipe catalog](reference/recipes/README.md)
   * [CircleCI](reference/recipes/circleci/README.md)
     * [Install an orb](reference/recipes/circleci/installorb.md)
@@ -1079,7 +1080,6 @@
     * [Search](reference/recipes/yaml/search/README.md)
       * [Find YAML entries](reference/recipes/yaml/search/findkey.md)
       * [Find YAML properties](reference/recipes/yaml/search/findproperty.md)
-* [Building OpenRewrite from source](reference/building-openrewrite-from-source.md)
 
 ## Concepts & Explanations
 

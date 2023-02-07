@@ -12,7 +12,7 @@ To compile and run tests invoke `./gradlew build`. To publish a snapshot build t
 
 OpenRewrite typically accesses the Maven Central artifact repository to download necessary dependencies. If organizational security policy or network configuration forbids this, then you can use a Gradle [init script](https://docs.gradle.org/current/userguide/init\_scripts.html) to forcibly reconfigure the OpenRewrite build to use a different repository.
 
-Copy this script to a file named `init.gradle.kts` into the /.gradle directory. Modify the `enterpriseRepository` value as appropriate for your situation.
+Copy this script to a file named `init.gradle.kts` into the `/.gradle` directory. Modify the `enterpriseRepository` value as appropriate for your situation.
 
 ```kotlin
 import org.gradle.api.artifacts.repositories.MavenArtifactRepository
