@@ -2,9 +2,9 @@
 
 When you first begin to look into [Lossless Semantic Trees](/concepts-and-explanations/lossless-semantic-trees.md) (LSTs), it can be difficult to understand what code corresponds to what LST. You _could_ use a debugger to step through the tree, but that can take a lot of time and it's easy to get lost in irrelevant elements.
 
-Fortunately, in OpenRewrite `7.35.0`, a new option was created: the [TreeVisitingPrinter](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/TreeVisitingPrinter.java). Utilizing this, you can inject a snippet of code into your Java recipe and quickly see how certain code translates to specific LSTs.
+Fortunately, in OpenRewrite `7.35.0`, a new option was created: the [TreeVisitingPrinter](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/TreeVisitingPrinter.java). Utilizing this, you can inject a snippet of code into your Java recipe (or use the debugger to run a command) and quickly see how certain code translates to specific LSTs.
 
-This guide will walk through the process of adding this to a recipe and running it to get a visual representation of the code.
+This guide will walk through the different ways you can use the `TreeVisitingPrinter` to get a visual representation of the LST for your code.
 
 ## Prerequisites
 
@@ -14,21 +14,52 @@ This guide assumes that you:
 * Have already set up your [Recipe Development Environment](/authoring-recipes/recipe-development-environment.md)
 * Are using at least [OpenRewrite](https://github.com/openrewrite/rewrite) version `7.35.0` or [Rewrite-Recipe-Bom](https://github.com/openrewrite/rewrite-recipe-bom) version `1.14.0`
 
-## Adding TreeVisitingPrinter to a recipe
+## Using TreeVisitingPrinter.printTree 
 
-To use the `TreeVisitingPrinter` to examine some code, the first thing you will need to do is add this code to a [visitor](/concepts-and-explanations/visitors.md) in a Java recipe:
+There are two ways you can access the visual representation of the LST for some code: 
+
+1. Add a snippet of code to your recipe OR 
+2. Add a breakpoint in your recipe and enter a manual command when the breakpoint is hit
+
+Let's walk through both of these.
+
+### Adding code to your recipe
+
+Inside of any `visit<LST>` method in a visitor (such as `visitVariableDeclarations` or `visitCompilationUnit`), add this line of code: 
 
 ```java
-@Override
-public J.CompilationUnit visitCompilationUnit(J.CompilationUnit cu, ExecutionContext executionContext) {
-    System.out.println("------LST Start------");
-    System.out.println(TreeVisitingPrinter.printTree(cu));
-    System.out.println("------LST End------");
-    return super.visitCompilationUnit(cu, executionContext);
+System.out.println(TreeVisitingPrinter.printTree(getCursor()));
+```
+
+Then, when you run your tests, you will see the visual representation of the LST in the console. 
+
+If you don't have a recipe to use or if you want to grab a simple one to start with, check out the [example](#example) below.
+
+### Using the debugger
+
+1. Inside of any `visit<LST>` method in a visitor (such as `visitVariableDeclarations` or `visitCompilationUnit`), add a breakpoint.
+2. Trigger the debugger by debugging a test that will reach your breakpoint.
+3. Once your breakpoint is hit, type `TreeVisitingPrinter.printTree(getCursor())` into the `Evaluate expression` prompt and press enter.
+4. You should see a `result` appear. You can press `view` to get a pop-up of the LST in your IDE or you could copy it to another text editor for use in the future.
+
+![Entering the printTree expression](/.gitbook/assets/TVPExpression.png)
+
+![LST result](/.gitbook/assets/TVPResult.png)
+
+## Example
+
+Let's imagine that you wanted to see what the LST looked like for this code: 
+
+```java
+class A {
+    void test() {
+        int a;
+        a = 0;
+    }
 }
 ```
 
-A simple recipe that does nothing other than utilize this printer would be:
+To begin, you will need a recipe you can modify and run. Here is a simple recipe you can use that does nothing other than utilize the `TreeVisitingPrinter`:
 
 ```java
 package com.yourorg;
@@ -49,33 +80,18 @@ public class SomeRecipe extends Recipe {
     public JavaIsoVisitor<ExecutionContext> getVisitor() {
         return new JavaIsoVisitor<ExecutionContext>() {
             @Override
-            public J.CompilationUnit visitCompilationUnit(J.CompilationUnit cu, ExecutionContext executionContext) {
-                System.out.println("------LST Start------");
-                System.out.println(TreeVisitingPrinter.printTree(cu));
-                System.out.println("------LST  End------");
-                return super.visitCompilationUnit(cu, executionContext);
+            public J.CompilationUnit visitCompilationUnit(J.CompilationUnit compUnit, ExecutionContext executionContext) {
+                // This next line could be ommitted in favor of a breakpoint
+                // if you'd prefer to use the debugger instead.
+                System.out.println(TreeVisitingPrinter.printTree(getCursor()));
+                return super.visitCompilationUnit(compUnit, executionContext);
             }
         };
     }
 }
 ```
 
-## Using tests to see the tree for some code
-
-Once you've added the above snippet to your recipe, you can see a visual LST for any code by writing a test with the code you are interested in.
-
-For example, if you wanted to see what the LST looks like for this code:
-
-```java
-class A {
-    void test() {
-        int a;
-        a = 0;
-    }
-}
-```
-
-You could write this test:
+Once you have that recipe, you would then write a test that includes the snippet of code you care about:
 
 ```java
 @Test
@@ -89,16 +105,15 @@ void someTest() {
                         a = 0;
                     }
                 }
-                """
+            """
         )
     );
 }
 ```
 
-And, if you ran the test, you would see this in your console:
+From there, if you ran that test, you would see this in your console:
 
 ```
-------LST Start------
 ----J.CompilationUnit
     \---J.ClassDeclaration
         |---J.Identifier | "A"
@@ -115,11 +130,10 @@ And, if you ran the test, you would see this in your console:
                         \-------J.Assignment | "a = 0"
                                 |---J.Identifier | "a"
                                 \-------J.Literal
-------LST End------
 ```
 
-{% hint style="info" %}
-The `TreeVisitingPrinter` skips unvisited elements such as `JRightPadded` or `JLeftPadded` that you might see if you traced through the tree yourself.
-{% endhint %}
+You could then use this tree to help make key decisions about your recipe and what LSTs it should handle. For instance, if you saw `int l = ~k;` in some code, but were unsure what `~` was, you could use this printer to find out that it's a `J.Unary`.
 
-You could then use this tree to help make key decisions about your recipe and what LSTs it should handle. For instance, if you saw `int l = ~k;` but were unsure what `~` was, you could use this printer to find out that it's a `J.Unary` and adjust your recipe accordingly. 
+## Limitations
+
+The `TreeVisitingPrinter` skips unvisited elements such as `JRightPadded` or `JLeftPadded` that you might see if you traced through the tree yourself. This is done to make the visual easier to understand - but it's important to know that it will not perfectly match the actual OpenRewrite LST.
