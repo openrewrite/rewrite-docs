@@ -1,104 +1,114 @@
----
-description: >-
-  Observes each element of an LST and reduces all these observations to a single
-  value.
----
-
 # Visitors
 
-## The Visitor Pattern
+In OpenRewrite [recipes](/concepts-and-explanations/recipes.md), a visitor is where the core logic lives. You can think of a visitor as an event handler that describes "what" to do and "when" to do it.
 
-The [visitor pattern](https://en.wikipedia.org/wiki/Visitor\_pattern#Java\_example) is a well-known technique for reasoning about complex object structures. Abstract syntax trees for a language like Java consist of many types, however, when performing semantic analysis or transformation, the work is typically scoped to a few, specific types.
+As OpenRewrite traverses through the [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md) (LST) that your code is translated into, it will rely on the "events" you handle in your visitor to determine what, if anything, should be changed or returned. You only need to handle the "events" that are relevant to your recipe.
 
-A visitor is analogous to an event-handler, describing "what" to do and "when" to do it as part of OpenRewrite traversing elements in the tree. OpenRewrite provides an event-driven model where a developer only needs to implement "visit" methods for object types that they are interested in. This leaves OpenRewrite with the responsibility of traversing a tree completely.
+For instance, if you wanted to write a recipe that renamed a Java package to be lowercase, your visitor would only need to worry about the `visitPackage` "event". All other "events" such as `visitClassDeclaration` or `visitVariableDeclarations` could be safely ignored.
 
-## OpenRewrite's Visitor Concepts
+To help you understand more about visitors, this guide will walk you through numerous concepts and examples. By the end, you should feel more confident in working with and implementing visitors in your own recipes.
 
-All of OpenRewrite's visitors share a common structure and life cycle that centers on the traversal and transformation of LSTs. It is important to understand the core concepts and the life-cycles provided by the framework.
+{% hint style="success" %}
+Being familiar with the [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern#Java_example) will help you understand OpenRewrite's visitors better as they are heavily inspired by that design pattern.
+{% endhint %}
 
-### `Tree`
+## Key components
 
-**The commodities upon which all of OpenRewrite's visitors operate are the LST elements and all of those elements implement the `Tree` interface.**
+All OpenRewrite visitors share a common structure and life cycle. In order to effectively work with visitors, it's necessary to understand these topics. 
 
-The first thing that a developer will notice about OpenRewrite's visitors is that they always accept and return a parameterized type that extends `Tree`. This interface is the foundational contract for all types defined within any abstract syntax tree. A Tree type has the following characteristics:
+Let's dive into the most important ones:
 
-* It has a unique ID that can be used to identify it as a specific LST instance, even after transformations have taken place on that element.
-* It has an `accept()` method that acts as a callback into a language-specific Visitor.
-* It has facilities to convert itself back into a source-readable form via several `print()` methods.
-* It implements Markable such that all LST elements can have [Markers](markers.md) applied to express additional meta-data about the element.
+### Tree
 
-### `TreeVisitor`
+Visitors always accept and return a parameterized type that extends `Tree`. This interface is the foundational contract for all types defined within any LST (both visitors and LSTs stem from this `Tree` interface).
 
-The framework provides the base class `TreeVisitor<T extends Tree, P>` from which all of OpenRewrite's visitors extend. It is this class that provides the generic, parameterized **`T visit(T, P)`** method that drives a visitor's polymorphic navigation, cursoring, and life-cycle. The parameterized type `T` represents the type of tree elements upon which the visitor will navigate and transform. The second parameterized type `P` is an additional, shared context that is passed to all visit methods as a visitor navigates a given LST.
+The `Tree` interface has the following characteristics:
+
+* It has a unique ID that can be used to identify it as a specific LST, even after transformations have taken place on it.
+* It has an `accept()` method that acts as a callback into a language-specific visitor.
+* It can convert itself back into a source-readable form via several `print()` methods.
+* It contains [markers](markers.md) which provide metadata about the LST.
+
+### TreeVisitor
+
+All of OpenRewrite's visitors extend the abstract class `TreeVisitor<T extends Tree, P>`. It is this class that provides the generic, parameterized `visit(T, P)` method that drives a visitor's polymorphic navigation, cursoring, and life cycle.
+
+The parameterized type `T` represents the type of LSTs upon which the visitor will navigate and transform. The second paramter, `P`, is an additional, shared context that is passed to all visit methods as a visitor navigates a given LST (See [sharing data between visitors](#sharing-data-between-visitors) for more information).
 
 ### Cursoring
 
-All visitors have access to a `Cursor` which keeps track of a visitor's position within the LST while it is being traversed. Since LST elements are acyclic and therefore do not contain references to their parent element, the `Cursor` is the primary mechanism by which parent or sibling LST elements may be accessed during visiting. Logically a `Cursor` is a stack. Whenever an LST elment is visited a `Cursor` pointing to it is pushed on top of the stack. When visiting that element is over its `Cursor` is removed from the stack. In this way the `Cursor` keeps track of the visitor's current position within the LST.
+All visitors have access to a `Cursor` which keeps track of a visitor's position within the LST while it is being traversed. Since LSTs are acyclic and therefore do not contain references to their parent element, the `Cursor` is the primary mechanism by which parent or sibling LSTs may be accessed.
 
-As an example of how the `Cursor` can be helpful, imagine a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The compilation unit may include a class that itself has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which class declaration represents the top-level class:
+Logically a `Cursor` is a stack. Whenever an LST is visited, a `Cursor` pointing to it is pushed on top of the stack. When the visit for the LST completes, its `Cursor` is removed from the stack. In this way, the `Cursor` keeps track of the visitor's current position within the LST.
+
+As an example of how the `Cursor` can be helpful, imagine a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The [compilation unit](/concepts-and-explanations/lst-examples.md#compilationunit) may include a class that has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which [class declaration](/concepts-and-explanations/lst-examples.md#classdeclaration) represents the top-level class:
 
 ```java
 @Override
-public J visitClassDeclaration(J.ClassDeclaration classDeclaration, ExecutionContext context) {
+public J visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext context) {
     // The base class provides the language-specific navigation of sub-elements
-    // Without this invocation sub-elements, like inner classes, will never be visited
-    J.ClassDeclaration c = (J.ClassDeclaration) super.visitClassDeclaration(classDeclaration, context);
+    // Without this invocation, sub-elements such as inner classes will never be visited
+    J.ClassDeclaration classDeclaration = (J.ClassDeclaration) super.visitClassDeclaration(cd, context);
 
     // Visitors must always decline to make an unnecessary change
-    if(c.getModifiers().stream().anyMatch(modifier -> modifier.getType() == J.Modifier.Type.Final)) {
-        return c;
+    if (classDeclaration.getModifiers().stream().anyMatch(modifier -> modifier.getType() == J.Modifier.Type.Final)) {
+        return classDeclaration;
     }
 
     // If the current class declaration is not enclosed by another class declaration,
     // it must be the top-level class.
     if (getCursor().getParentOrThrow().firstEnclosing(J.ClassDeclaration.class) == null) {
-        c = c.withModifiers(ListUtils.concat(c.getModifiers(),
+        classDeclaration = classDeclaration.withModifiers(ListUtils.concat(classDeclaration.getModifiers(),
                 new J.Modifier(Tree.randomId(), Space.EMPTY, Markers.EMPTY,
                         J.Modifier.Type.Final, Collections.emptyList())));
 
         // Ensure modifiers are in the idiomatic order
-        c = (J.ClassDeclaration) new ModifierOrder().getVisitor()
-                .visitNonNull(c, context);
+        classDeclaration = (J.ClassDeclaration) new ModifierOrder().getVisitor()
+                .visitNonNull(classDeclaration, context);
 
         // Format only the method declaration, stopping after the modifiers
         // Making the most minimal possible change makes changes easier for reviewers to accept
-        c = autoFormat(c, c.getName(), context, getCursor().getParentOrThrow());
+        classDeclaration = autoFormat(classDeclaration, classDeclaration.getName(), context, getCursor().getParentOrThrow());
     }
 
-    return c;
+    return classDeclaration;
 }
 ```
 
-Each `Cursor` within the stack has a `Map` into which arbitrary data may be read or written. This data is thrown away along with the `Cursor` which contains it the visit is over. The purpose of this mechanism is to facilitate communication between different visit methods. Because this information is discarded when visiting is complete there is no need to worry about it affecting any other visitor or recipe in the run. For example, imagine a visitor which needs to make a change to a class declaration based on something it finds within a method declaration:
+Each `Cursor` within the stack has a `Map` into which arbitrary data may be read from or written to. This data is thrown away (along with the `Cursor` which contains it) once the visit is over. The purpose of this mechanism is to facilitate communication between different visit methods. Because this information is discarded when visiting is complete, there is no need to worry about it affecting any other visitor or recipe in the run.
+
+For example, imagine you wanted to make a visitor which needs to change to a class declaration based on something it finds within a method declaration. You could freely add information to the cursor without worry that this would affect any other visitors or recipes:
 
 ```java
 public class ChangesClassBasedOnMethod extends JavaVisitor<ExecutionContext> {
     @Override
     public J visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext ctx) {
         // Traverses down into sub-elements of the current class declaration
-        cd = (J.ClassDeclaration) super.visitClassDeclaration(cd, ctx);
-        
-        J.MethodInvocation m = getCursor().pollMessage("FOUND_METHOD");
-        if(m != null) {
+        J.ClassDeclaration classDeclaration = (J.ClassDeclaration) super.visitClassDeclaration(cd, ctx);
+
+        J.MethodInvocation methodInvocation = getCursor().pollMessage("FOUND_METHOD");
+        if (methodInvocation != null) {
             // Do something with the information which has been provided via the cursor
         }
-        return cd;
+
+        return classDeclaration;
     }
-    
+
     @Override
-    public J visitMethodDeclaration(J.MethodDeclaration m, ExecutionContext ctx) {
-        if(/* m meets some criteria */) {
+    public J visitMethodDeclaration(J.MethodDeclaration methodDeclaration, ExecutionContext ctx) {
+        if (/* methodDeclaration meets some criteria */) {
             // Puts the message on the cursor corresponding to the element this message will be read from
-            getCursor().putMessageOnFirstEnclosing(J.ClassDeclaration.class, "FOUND_METHOD", m);
+            getCursor().putMessageOnFirstEnclosing(J.ClassDeclaration.class, "FOUND_METHOD", methodDeclaration);
         }
-        return m;
+
+        return methodDeclaration;
     }
 }
 ```
 
-## Language-specific Visitors
+## Language-specific visitors
 
-Each language binding contains a visitor implementation extending from `TreeVisitor`. As an example, the OpenRewrite language binding for Java is `JavaVisitor`. It is on these language-specific source visitors that the visit methods for each LST element are defined along with the language-specific traversal logic.
+Each language binding contains a visitor implementation that extends `TreeVisitor`. As an example, the OpenRewrite language binding for Java is [JavaVisitor](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java) and the language binding for YAML is [YamlVisitor](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/YamlVisitor.java). It is in these language-specific source visitors that the visit methods for each LST are defined, along with the language-specific traversal logic.
 
 ```java
 class JavaVisitor<P> extends TreeVisitor<J, P> {
@@ -116,7 +126,7 @@ class JavaVisitor<P> extends TreeVisitor<J, P> {
 }
 ```
 
-An important concept to understand is what happens when the generic`TreeBuilder.visit(T, P)` method is called and how that is mapped into its language-specific counterpart. Let's visualize how a Java CompilationUnit is passed from a client to the visitor:
+An important concept to understand is what happens when the generic `TreeBuilder.visit(T, P)` method is called and how that is mapped into its language-specific counterpart. Let's visualize how a Java `CompilationUnit` is passed from a client to a visitor:
 
 ![Example of Visitor Navigation](<../.gitbook/assets/image (16).png>)
 
@@ -127,93 +137,113 @@ Less obvious, in the above visualization, is that the base implementation also m
 {% hint style="danger" %}
 STRONG WARNING!
 
-A client may have a reference to the language-specific visitor and it may be tempting to call the language-specific visit methods directly, Circumventing the generic `TreeBuilder.visit()` method also means the developer is circumventing proper cursor management and critical visitor life-cycle management.
+A client may have a reference to the language-specific visitor and it may be tempting to call the language-specific visit methods directly. However, circumventing the generic `TreeBuilder.visit()` method will result in the `cursor` not working and key life-cycle management methods not being visited.
 {% endhint %}
 
-## Example: Counting the number of Java method invocations
+## Isomorphic vs. non-isomorphic visitors
 
-Let's implement a simple Java visitor that will count the number of method invocations in a Java LST. This example will use the second typed parameter of the visitor as our shared counter.
+Every language has two types of visitors: an [isomorphic](https://en.wikipedia.org/wiki/Isomorphism) (iso) visitor and a non-isomorphic visitor. Essentially, a visitor that is isomorphic will always replace LSTs with LSTs that are the exact same type.
+
+For instance, in the [JavaIsoVisitor](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/JavaIsoVisitor.java), a `visitClassDeclaration` function will _always_ return a `J.ClassDeclaration`. Likewise, a `visitBinary` will always return a `J.Binary`. You can modify those LSTs to have different values, but at the end of the day, the type needs to be the same. This greatly simplifies the development process as the compiler and type system will help enforce these restrictions.
+
+There are some cases, however, where you might want to replace LSTs with other types of LSTs (such as replacing a method with a variable declaration). If you tried to use the `JavaIsoVisitor` for something like that, you would get an exception as the type system would not allow for that change. Instead, you should use the [JavaVisitor](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java) class instead. Just be aware that you will lose many of the automated checks during development.
+
+{% hint style="success" %}
+If your recipe can use the isomorphic visitor, you should favor that over the non-isomorphic visitor.
+{% endhint %}
+
+## Sharing data between visitors
+
+Most of the time, visitors will extend a tree that has an [ExecutionContext](/concepts-and-explanations/recipes.md#execution-context) type such as in `JavaIsoVisitor<ExecutionContext>`. This context allows recipes to share state and respond to changes in other recipes.
+
+There are some cases, though, where you may want to share other types of information between visitors. For instance, you may want to count the number of times a method appears or define a boolean that detects if a change has happened or not.
+
+In those cases, you can specify a different, mutable type for your visitor such as in this visitor which counts the number of method invocations in a Java LST:
 
 ```java
-class JavaMethodCount extends AbstractSourceVisitor<AtomicInteger> {
+public class MethodCountVisitor extends JavaIsoVisitor<AtomicInteger> {
+    @Override
+    public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, AtomicInteger counter) {
+        // Increment the shared counter when visiting a method invocation.
+        counter.incrementAndGet();
 
-  @Override
-  public J visitMethodInvocation(J.MethodInvocation method, AtomicInteger p) {
-    //increment the shared counter when visiting a method invocation.
-    p.incrementAndGet();
-    return super.visitMethodInvocation(method, p);
-  }
+        return super.visitMethodInvocation(method, counter);
+    }
+
+    public static int countMethods(Tree tree) {
+        return new MethodCountVisitor().reduce(tree, new AtomicInteger()).get();
+    }
 }
 ```
 
-The visitor's shared context is a simple, mutable AtomicInteger and in our example the `visitMethodInvocation` is overridden to increment the counter. The JavaVisitor will traverse the LST and call this method each time a method invocation is encountered in the tree.
+{% hint style="info" %}
+You _do not_ need to worry about thread safety with the type that you use in your visitor. In the above example, we chose to use an `AtomicInteger` simply because it's a mutable integer object.
+{% endhint %}
 
-It is straightforward to leverage the the newly created visitor. A caller will first initialize the shared counter, it will instantiate the visitor, and call the visitor's visit method passing both the compilation unit and the counter.
-
-```java
-JavaParser jp = JavaParser.fromJavaVersion().build();
-
-J.CompilationUnit cu = jp.parse(
-        "    import org.slf4j.Logger;\n" +
-        "    public class Sample {\n" +
-        "        Logger logger;\n" +
-        "\n" +
-        "        {\n" +
-        "            logger.info(\"1\");\n" +
-        "            logger.warn(\"2\");\n" +
-        "            logger.error(\"3\");\n" +
-        "        }\n" +
-        "    }"
-).get(0);
-
-AtomicInteger counter = new AtomicInteger(0);
-new JavaMethodCount().visit(cu, counter);
-assertThat(counter.get()).isEqualTo(3);
-```
-
-## Refactoring Visitors
-
-A language-specific visitor is always scoped to return the base interface of that language's LST tree. Examining the JavaVisitor a bit closer, the first typed parameters is defined as `org.openrewrite.java.tree.J`and all of its language-specific visit methods also return `J`.
+You could then use this visitor in a recipe:
 
 ```java
-class JavaVisitor<P> extends TreeVisitor<J, P> {
-...
-  J visitClassDeclaration(J.ClassDeclaration classDeclaration, P p) {...}
-  J visitCompilationUnit(J.CompilationUnit cu, P p) {...]
-...
+public class TestRecipe extends Recipe {
+    // ...
+
+    @Override
+    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+        return new JavaIsoVisitor<ExecutionContext>() {
+            @Override
+            public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext executionContext) {
+                MethodCountVisitor visitor = new MethodCountVisitor();
+
+                int counterOption1 = MethodCountVisitor.countMethods(classDecl);
+
+                AtomicInteger counterOption2 = new AtomicInteger();
+                visitor.visitClassDeclaration(classDecl, counterOption2);
+
+                // Do something with based on the counter
+                System.out.println("Option 1: " + counterOption1);
+                System.out.println("Option 2: " + counterOption2);
+
+                return super.visitClassDeclaration(classDecl, executionContext);
+            }
+        };
+    }
 }
 ```
 
-A transforming visitor can accept an existing LST element and return either a modified version of that element or, in some cases, a different element entirely.
-
-The vast majority of the time, visitor methods will return the same type as that of their input parameter. As examples, `visitMethodInvocation` will typically return `J.MethodInvocation`, `visitCompilationUnit` will typically return a `J.CompilationUnit`, and so on. There are a narrow set of circumstances when this is not true. For example, an UnwrapParentheses visitor might override the `J.Parentheses<?>` and can return whatever type of expression is inside the parentheses it is unwrapping.
-
-{% hint style="warning" %}
-Generally refactoring visitors must be called on the root LST element to function correctly. Otherwise, internal state like cursors are not accurate. More general purpose visitors can be invoked on any element in the tree.
-{% endhint %}
-
-Since refactor visitors are invoked on their root LST element, the net effect of this pattern is that the visitor receives a top-level LST element and produces a potentially changed top-level LST element. All language-specific, top-level LST elements implement the SourceFile interface, which allows an LST tree to be correlated to the source file path. See the next section on [Recipes](recipes.md) that describes in greater detail how OpenRewrite manages changes to a collection of top-level LST elements to produce source code or Git-style diffs.
-
-{% hint style="warning" %}
-In almost all circumstances, it is important to call the visit method on the super to ensure the refactoring operation navigates deeper down the tree to find all places where the operation should be applied.
-{% endhint %}
-
-Every language-specific refactor visitor shares a utility method called `refactor` that helps you call super and cast the result in one call:
+Or you could use this visitor in a test:
 
 ```java
-public class RemoveModifiers extends JavaRefactorVisitor {
-  public J visitMethod(J.MethodDecl method) {
-    J.MethodDecl m = refactor(method, super::visitMethod);
-    m = m.withModifiers(emptyList());    
-    return m;
-  }
+@Test
+void countsMethods() {
+    rewriteRun(
+        java(
+            """
+              public class Main {
+                    static void myMethod() {
+                        System.out.println("Hello World 1!");
+                        System.out.println("Hello World 2!");
+                        System.out.println("Hello World 3!");
+                    }
+                }
+              """,
+            spec -> spec.afterRecipe(compilationUnit ->
+                    assertThat(MethodCountVisitor.countMethods(compilationUnit)).isEqualTo(3))
+        )
+    );
 }
 ```
 
-{% hint style="warning" %}
-OpenRewrite LST types are immutable. So remember to always assign the result of a `with` call to a variable locally that you return at the end of the visit method.
-{% endhint %}
+If you'd like to see a more complex, real-world example, check out the [FinalizeLocalVariables](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/FinalizeLocalVariables.java) recipe or read through our [multiple visitors doc](/authoring-recipes/multiple-visitors.md).
 
-## Refactor Visitor Pipelines
+## Chaining visitors
 
-Refactoring visitors can be chained together by calling `andThen(anotherVisitor)`. This is useful for building up pipelines of refactoring operations built up of lower-level components. For example, when [ChangeFieldType](visitors.md) finds a matching field that it is going to transform, it chains together an [AddImport](visitors.md) visitor to add the new import if necessary, and a [RemoveImport](visitors.md) to remove the old import if there are no longer any references to it.
+Visitors can be chained together by calling `doAfterVisit(anotherVisitor)`. Some visitors, such as the `JavaVisitor`, include wrappers for this method to make your life easier such as with [maybeAddImport](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L102-L127) and [maybeRemoveImport](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L129-L140).
+
+You can see this being used in the [ChangeFieldType recipe](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-java/src/main/java/org/openrewrite/java/ChangeFieldType.java). We delegate out to other visitors to determine if we should [potentially add an import](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-java/src/main/java/org/openrewrite/java/ChangeFieldType.java#L44) or if we should [potentially remove an import](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-java/src/main/java/org/openrewrite/java/ChangeFieldType.java#L45) from the code our visitor is producing.
+
+## Further reading
+
+If you'd like to see more examples of how visitors are created and used in recipes, please check out these guides:
+
+* [Writing a Java refactoring recipe](/authoring-recipes/writing-a-java-refactoring-recipe.md)
+* [Modifying methods with JavaTemplate](/authoring-recipes/modifying-methods-with-javatemplate.md)
+* [Creating multiple visitors in one recipe](/authoring-recipes/multiple-visitors.md)
