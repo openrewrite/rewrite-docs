@@ -509,7 +509,6 @@
         * [Find MailChimp secrets](reference/recipes/java/security/secrets/findmailchimpsecrets.md)
         * [Find Mailgun secrets](reference/recipes/java/security/secrets/findmailgunsecrets.md)
         * [Find NPM secrets](reference/recipes/java/security/secrets/findnpmsecrets.md)
-        *
         * [Find PGP secrets](reference/recipes/java/security/secrets/findpgpsecrets.md)
         * [Find PayPal secrets](reference/recipes/java/security/secrets/findpaypalsecrets.md)
         * [Find Picatic secrets](reference/recipes/java/security/secrets/findpicaticsecrets.md)
@@ -610,7 +609,6 @@
         * [Downgrade Jakarta Servlet API to 5.0 when using Jetty](reference/recipes/java/spring/boot3/downgradeservletapiwhenusingjetty.md)
         * [Enable Spring Batch Annotation](reference/recipes/java/spring/boot3/removeenablebatchprocessing.md)
         * [Migrate SAML configuration to Spring Boot 3.0 in yaml format](reference/recipes/java/spring/boot3/saml.md)
-        *
         * [Migrate Spring Boot properties to 3.0](reference/recipes/java/spring/boot3/springbootproperties\_3\_0\_0.md)
         * [Migrate to Spring Boot 3.0](reference/recipes/java/spring/boot3/upgradespringboot\_3\_0.md)
         * [Remove Unnecessary @ConstructorBinding](reference/recipes/java/spring/boot3/removeconstructorbindingannotation.md)
@@ -958,7 +956,6 @@
     * [Find uses of JCache](reference/recipes/cloudsuitability/findjcache.md)
     * [Find uses of JNI](reference/recipes/cloudsuitability/findjni.md)
     * [Find uses of Java file IO](reference/recipes/cloudsuitability/findfileio.md)
-    *
     * [Find uses of Jersey](reference/recipes/cloudsuitability/findjersey.md)
     * [Find uses of Jetty](reference/recipes/cloudsuitability/findjetty.md)
     * [Find uses of file:// scheme in string literals](reference/recipes/cloudsuitability/findfilescheme.md)

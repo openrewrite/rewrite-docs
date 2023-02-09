@@ -1,20 +1,20 @@
 # Visitors
 
-In OpenRewrite [recipes](/concepts-and-explanations/recipes.md), a visitor is where the core logic lives. You can think of a visitor as an event handler that describes "what" to do and "when" to do it.
+In OpenRewrite [recipes](recipes.md), a visitor is where the core logic lives. You can think of a visitor as an event handler that describes "what" to do and "when" to do it.
 
-As OpenRewrite traverses through the [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md) (LST) that your code is translated into, it will rely on the "events" you handle in your visitor to determine what, if anything, should be changed or returned. You only need to handle the "events" that are relevant to your recipe.
+As OpenRewrite traverses through the [Lossless Semantic Tree](lossless-semantic-trees.md) (LST) that your code is translated into, it will rely on the "events" you handle in your visitor to determine what, if anything, should be changed or returned. You only need to handle the "events" that are relevant to your recipe.
 
 For instance, if you wanted to write a recipe that renamed a Java package to be lowercase, your visitor would only need to worry about the `visitPackage` "event". All other "events" such as `visitClassDeclaration` or `visitVariableDeclarations` could be safely ignored.
 
 To help you understand more about visitors, this guide will walk you through numerous concepts and examples. By the end, you should feel more confident in working with and implementing visitors in your own recipes.
 
 {% hint style="success" %}
-Being familiar with the [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern#Java_example) will help you understand OpenRewrite's visitors better as they are heavily inspired by that design pattern.
+Being familiar with the [visitor pattern](https://en.wikipedia.org/wiki/Visitor\_pattern#Java\_example) will help you understand OpenRewrite's visitors better as they are heavily inspired by that design pattern.
 {% endhint %}
 
 ## Key components
 
-All OpenRewrite visitors share a common structure and life cycle. In order to effectively work with visitors, it's necessary to understand these topics. 
+All OpenRewrite visitors share a common structure and life cycle. In order to effectively work with visitors, it's necessary to understand these topics.
 
 Let's dive into the most important ones:
 
@@ -33,7 +33,7 @@ The `Tree` interface has the following characteristics:
 
 All of OpenRewrite's visitors extend the abstract class `TreeVisitor<T extends Tree, P>`. It is this class that provides the generic, parameterized `visit(T, P)` method that drives a visitor's polymorphic navigation, cursoring, and life cycle.
 
-The parameterized type `T` represents the type of LSTs upon which the visitor will navigate and transform. The second paramter, `P`, is an additional, shared context that is passed to all visit methods as a visitor navigates a given LST (See [sharing data between visitors](#sharing-data-between-visitors) for more information).
+The parameterized type `T` represents the type of LSTs upon which the visitor will navigate and transform. The second paramter, `P`, is an additional, shared context that is passed to all visit methods as a visitor navigates a given LST (See [sharing data between visitors](visitors.md#sharing-data-between-visitors) for more information).
 
 ### Cursoring
 
@@ -41,7 +41,7 @@ All visitors have access to a `Cursor` which keeps track of a visitor's position
 
 Logically a `Cursor` is a stack. Whenever an LST is visited, a `Cursor` pointing to it is pushed on top of the stack. When the visit for the LST completes, its `Cursor` is removed from the stack. In this way, the `Cursor` keeps track of the visitor's current position within the LST.
 
-As an example of how the `Cursor` can be helpful, imagine a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The [compilation unit](/concepts-and-explanations/lst-examples.md#compilationunit) may include a class that has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which [class declaration](/concepts-and-explanations/lst-examples.md#classdeclaration) represents the top-level class:
+As an example of how the `Cursor` can be helpful, imagine a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The [compilation unit](lst-examples.md#compilationunit) may include a class that has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which [class declaration](lst-examples.md#classdeclaration) represents the top-level class:
 
 ```java
 @Override
@@ -152,9 +152,13 @@ There are some cases, however, where you might want to replace LSTs with other t
 If your recipe can use the isomorphic visitor, you should favor that over the non-isomorphic visitor.
 {% endhint %}
 
+{% hint style="info" %}
+Search recipes are a great example of when JavaVisitor should be used over JavaIsoVisitor. For instance, [FindRepeatableAnnotations](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindRepeatableAnnotations.java) will return a SearchResult instead of an Annotation if it finds one - which wouldn't be possible if JavaIsoVisitor was used.
+{% endhint %}
+
 ## Sharing data between visitors
 
-Most of the time, visitors will extend a tree that has an [ExecutionContext](/concepts-and-explanations/recipes.md#execution-context) type such as in `JavaIsoVisitor<ExecutionContext>`. This context allows recipes to share state and respond to changes in other recipes.
+Most of the time, visitors will extend a tree that has an [ExecutionContext](recipes.md#execution-context) type such as in `JavaIsoVisitor<ExecutionContext>`. This context allows recipes to share state and respond to changes in other recipes.
 
 There are some cases, though, where you may want to share other types of information between visitors. For instance, you may want to count the number of times a method appears or define a boolean that detects if a change has happened or not.
 
@@ -232,7 +236,7 @@ void countsMethods() {
 }
 ```
 
-If you'd like to see a more complex, real-world example, check out the [FinalizeLocalVariables](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/FinalizeLocalVariables.java) recipe or read through our [multiple visitors doc](/authoring-recipes/multiple-visitors.md).
+If you'd like to see a more complex, real-world example, check out the [FinalizeLocalVariables](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/FinalizeLocalVariables.java) recipe or read through our [multiple visitors doc](../authoring-recipes/multiple-visitors.md).
 
 ## Chaining visitors
 
@@ -244,6 +248,6 @@ You can see this being used in the [ChangeFieldType recipe](https://github.com/o
 
 If you'd like to see more examples of how visitors are created and used in recipes, please check out these guides:
 
-* [Writing a Java refactoring recipe](/authoring-recipes/writing-a-java-refactoring-recipe.md)
-* [Modifying methods with JavaTemplate](/authoring-recipes/modifying-methods-with-javatemplate.md)
-* [Creating multiple visitors in one recipe](/authoring-recipes/multiple-visitors.md)
+* [Writing a Java refactoring recipe](../authoring-recipes/writing-a-java-refactoring-recipe.md)
+* [Modifying methods with JavaTemplate](../authoring-recipes/modifying-methods-with-javatemplate.md)
+* [Creating multiple visitors in one recipe](../authoring-recipes/multiple-visitors.md)
