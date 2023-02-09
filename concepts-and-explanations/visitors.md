@@ -51,7 +51,7 @@ public J visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext context) 
     J.ClassDeclaration classDeclaration = (J.ClassDeclaration) super.visitClassDeclaration(cd, context);
 
     // Visitors must always decline to make an unnecessary change
-    if (classDeclaration.getModifiers().stream().anyMatch(modifier -> modifier.getType() == J.Modifier.Type.Final)) {
+    if (classDeclaration.hasModifier(J.Modifier.Type.Final)) {
         return classDeclaration;
     }
 
