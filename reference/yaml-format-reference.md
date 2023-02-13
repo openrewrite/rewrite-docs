@@ -13,7 +13,7 @@ There are two places where you can define an OpenRewrite YAML file:
 
 If you define a recipe or style in the `rewrite.yml` file, they _will not_ be included in the jars published from your project.
 
-If you want to redistribute a recipe or a style and apply them to other projects, you'll need to create them inside of the `META-INF/rewrite` folder of a jar.
+If you want to distribute a recipe or a style and apply them to other projects, you'll need to create them inside of the `META-INF/rewrite` folder of a jar.
 
 ## Best practices
 
@@ -92,7 +92,7 @@ recipeList:
   - com.yourorg.RecipeC
 ```
 
-If you wanted to run this recipe (but not redistribute it to others), you would:
+If you wanted to run this recipe (but not distribute it to others), you would:
 
 1. Copy the above YAML into a `rewrite.yml` file at the root of your project
 2. Configure the [Gradle plugin](gradle-plugin-configuration.md) or [Maven plugin](rewrite-maven-plugin.md) to have an active recipe of `com.yourorg.RecipeA`
