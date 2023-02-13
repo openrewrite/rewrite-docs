@@ -137,11 +137,11 @@ rewrite {
 
 Execute `gradle rewriteRun` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterward, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
-![Showing which files were changed and by what visitors](<../.gitbook/assets/rewrite-fix-gradle-output (2) (2) (4) (4) (5) (6) (6) (9) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (1) (35).png>)
+![Showing which files were changed and by what visitors](<../.gitbook/assets/rewrite-fix-gradle-output (2) (2) (4) (4) (5) (6) (6) (9) (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (1) (1) (9).png>)
 
 After the goal finishes executing, run `git diff` (or your VCS system's equivalent) to see what changes were made, review, and commit them.
 
-![Example of changes made to netflix conductor by the rewriteRun task](<../.gitbook/assets/rewrite-fix-git-diff-output (1) (1) (3) (3) (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (1) (32).png>)
+![Example of changes made to netflix conductor by the rewriteRun task](<../.gitbook/assets/rewrite-fix-git-diff-output (1) (1) (3) (3) (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (10) (1) (1).png>)
 
 ## The "dryRun" task
 
