@@ -102,6 +102,10 @@ recipeList:
   - org.example.testing.AddJUnitDependencies
 ```
 
+{% hint style="info" %}
+For more information on how to work with and use declarative recipes, please read our [Declarative YAML guide](/reference/yaml-format-reference.md).
+{% endhint %}
+
 ## Recipe Configuration & Validation
 
 OpenRewrite provides a managed environment in which a set of recipes are executed. It will instantiate recipe instances and often inject configuration properties that have been defined within configuration files. The Recipe class exposes a `validate()` method that is called by the framework to determine whether all required configuration to a recipe has been supplied. The default implementation of `validate()` provides basic required/optional validation checks if a recipe's fields are annotated with `@NonNull`.

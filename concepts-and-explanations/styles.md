@@ -74,6 +74,10 @@ styleConfigs:
   </tbody>
 </table>
 
+{% hint style="info" %}
+For more information on how to work with and use declarative styles, please read our [Declarative YAML guide](/reference/yaml-format-reference.md#styles).
+{% endhint %}
+
 ## Next Steps
 
 In [Environment](environment.md), we'll see how these styles are activated and applied to the parsers that consume code. It will also show how to discover and activate recipes of visitors.
