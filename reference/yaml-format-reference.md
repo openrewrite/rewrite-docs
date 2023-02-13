@@ -21,7 +21,7 @@ Please keep these conventions in mind when you're creating OpenRewrite YAML file
 
 * A file may contain any number of recipes and styles, separated by `---`.
 * Within a file, recipe and style names must be fully qualified.
-* Custom recipes should not be placed into the `org.openrewrite` namespaced. Instead, they should follow the same [reverse domain name notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation) used in Java packages. 
+* Custom recipes should not be placed into the `org.openrewrite` namespace. Instead, they should follow the same [reverse domain name notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation) used in Java packages. 
 
 ## Recipes
 
