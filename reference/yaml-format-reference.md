@@ -27,6 +27,10 @@ Please keep these conventions in mind when you're creating OpenRewrite YAML file
 
 ### Format
 
+{% hint style="info" %}
+You can find the full recipe schema [here](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/openrewrite.json#L32-L70).
+{% endhint %}
+
 | Key                                                | Type                                                                                                        | Description                                                                                     |
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | type                                               | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                                               |
@@ -101,6 +105,10 @@ If you wanted to run this recipe (but not distribute it to others), you would:
 ## Styles
 
 ### Format
+
+{% hint style="info" %}
+You can find the full style schema [here](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/openrewrite.json#L126-L153).
+{% endhint %}
 
 | Key          | Type             | Description                                                       |
 | ------------ | ---------------- | ----------------------------------------------------------------- |
