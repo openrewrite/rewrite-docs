@@ -42,7 +42,7 @@ All recipe names, descriptions, and parameters should follow our [recipe naming 
 
 By following these conventions, you'll ensure that:
 
-* The [documentation](broken-reference) generated for your recipe is valid and clear to others
+* The [documentation](broken-reference/) generated for your recipe is valid and clear to others
 * The [Moderne Saas](https://public.moderne.io/) can accurately filter and display your recipe and its parameters
 
 ### If it can be declarative, it should be declarative
@@ -54,7 +54,7 @@ For instance, let's say you wanted to create a recipe that combines the function
 If your recipe can be declarative, it should be.
 
 {% hint style="info" %}
-For more information on imperative and declarative recipes, please read the [Recipe documentation](../concepts-and-explanations/recipes.md).
+For more information on imperative and declarative recipes, please read the [Recipe documentation](../concepts-and-explanations/recipes.md). Or if you want to learn how to configure a declarative YAML file, please read our [declarative YAML format doc](../reference/yaml-format-reference.md).
 {% endhint %}
 
 ### Be deliberate about LST traversal
