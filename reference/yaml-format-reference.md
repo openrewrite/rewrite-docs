@@ -28,7 +28,7 @@ Please keep these conventions in mind when you're creating OpenRewrite YAML file
 ### Format
 
 {% hint style="info" %}
-You can find the full recipe schema [here](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/openrewrite.json#L32-L70).
+You can find the full recipe schema [here](https://github.com/openrewrite/rewrite/blob/241e146a8996a917a8a460b27d17136108b3d50a/rewrite-core/openrewrite.json#L32-L75).
 {% endhint %}
 
 | Key                                                | Type                                                                                                        | Description                                                                                     |
@@ -107,7 +107,7 @@ If you wanted to run this recipe (but not distribute it to others), you would:
 ### Format
 
 {% hint style="info" %}
-You can find the full style schema [here](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/openrewrite.json#L126-L153).
+You can find the full style schema [here](https://github.com/openrewrite/rewrite/blob/241e146a8996a917a8a460b27d17136108b3d50a/rewrite-core/openrewrite.json#L126-L153).
 {% endhint %}
 
 | Key          | Type             | Description                                                       |
