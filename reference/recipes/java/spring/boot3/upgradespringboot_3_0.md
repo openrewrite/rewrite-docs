@@ -11,23 +11,23 @@ _
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.33.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.32.0
+* version: 4.33.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.32.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.33.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.32.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.33.0")
 }
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.32.0</version>
+            <version>4.33.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,8 +78,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.39.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.32.0 \
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
   -DactiveRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
 ```
 {% endcode %}
@@ -92,10 +92,13 @@ Recipes can also be activated directly from the command line by adding the argum
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Migrate to Spring Boot 2.7](../../../java/spring/boot2/upgradespringboot_2_7.md)
+* [Enable Spring Batch Annotation](../../../java/spring/boot3/removeenablebatchprocessing.md)
 * [Upgrade Maven Pom to Spring Boot 3.0 from 2.x](../../../java/spring/boot3/mavenpomupgrade.md)
 * [Migrate to Jakarta EE 9](../../../java/migrate/jakarta/javaxmigrationtojakarta.md)
+* [Migrate to Java 17](../../../java/migrate/upgradetojava17.md)
 * [Remove Unnecessary @ConstructorBinding](../../../java/spring/boot3/removeconstructorbindingannotation.md)
-* [Use `org.springframework.boot.autoconfigure.AutoConfiguration.imports`](../../../java/spring/boot2/moveautoconfigurationtoimportsfile.md)
+* [Use `AutoConfiguration#imports`](../../../java/spring/boot2/moveautoconfigurationtoimportsfile.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](../../../java/spring/boot3/actuatorendpointsanitization.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](../../../java/spring/boot3/migratemaxhttpheadersize.md)
 * [Migrate SAML configuration to Spring Boot 3.0 in yaml format](../../../java/spring/boot3/saml.md)
@@ -116,8 +119,11 @@ tags:
   - spring
   - boot
 recipeList:
+  - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
+  - org.openrewrite.java.spring.boot3.RemoveEnableBatchProcessing
   - org.openrewrite.java.spring.boot3.MavenPomUpgrade
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
+  - org.openrewrite.java.migrate.UpgradeToJava17
   - org.openrewrite.java.spring.boot3.RemoveConstructorBindingAnnotation
   - org.openrewrite.java.spring.boot2.MoveAutoConfigurationToImportsFile
   - org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization

@@ -1,27 +1,27 @@
-# Adds @DependsOnDatabaseInitialization to Spring Beans and Components depending on javax.sql.DataSource
+# Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`
 
 **org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering**
-_Beans of certain well-known types, such as JdbcTemplate, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the DataSource directly, annotate its class or @Bean method with @DependsOnDatabaseInitialization to ensure that it too is initialized after the database has been initialized._
+_Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the `DataSource` directly, annotate its class or `@Bean` method with `@DependsOnDatabaseInitialization` to ensure that it too is initialized after the database has been initialized. See the [release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#initialization-ordering) for more._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.32.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/DatabaseComponentAndBeanInitializationOrdering.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.33.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.32.0
+* version: 4.33.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.32.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.33.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.32.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.33.0")
 }
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering</recipe>
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.32.0</version>
+            <version>4.33.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -72,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.39.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:4.32.0 \
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
   -DactiveRecipes=org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering
 ```
 {% endcode %}

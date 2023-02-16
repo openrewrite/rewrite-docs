@@ -5,23 +5,23 @@ _The `@GrpcService` annotation is replaced with `@GrpcClient` in Quarkus 2.x. Re
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-quarkus), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/1.16.0/jar)
+[Github](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/quarkus2/GrpcServiceAnnotationToGrpcClient.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-quarkus/1.17.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 1.16.0
+* version: 1.17.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:1.16.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-quarkus:1.17.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.16.0")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:1.17.0")
 }
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient</recipe>
@@ -58,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>1.16.0</version>
+            <version>1.17.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -72,8 +72,8 @@ dependencies {
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.39.0:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-quarkus:1.16.0 \
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-quarkus:LATEST \
   -DactiveRecipes=org.openrewrite.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient
 ```
 {% endcode %}

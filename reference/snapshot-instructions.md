@@ -57,7 +57,7 @@ You should not append `-SNAPSHOT` to the `rewrite-maven-plugin` version. Only ch
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>4.39.0</version>
+    <version>4.40.0</version>
     <configuration>
         <activeRecipes>
             <recipe>org.openrewrite.github.SetupJavaUpgradeJavaVersion</recipe>

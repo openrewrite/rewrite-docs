@@ -5,11 +5,11 @@ _Add a gradle dependency to a `build.gradle` file in the correct configuration b
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/tree/main/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.35.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.36.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.35.0
+* version: 7.36.0
 
 ## Options
 
@@ -51,14 +51,15 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddDependencyExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.35.0 in your build file:
+
+Now that `com.yourorg.AddDependencyExample` has been defined activate it in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -69,9 +70,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.35.0")
-}
 ```
 {% endcode %}
 {% endtab %}
@@ -85,19 +83,12 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddDependencyExample</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite</groupId>
-            <artifactId>rewrite-gradle</artifactId>
-            <version>7.35.0</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>

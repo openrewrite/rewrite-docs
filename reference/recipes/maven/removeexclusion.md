@@ -1,24 +1,25 @@
 # Remove exclusion
 
 **org.openrewrite.maven.RemoveExclusion**
-_Remove a single exclusion from on a particular dependency._
+_Remove any matching exclusion from any matching dependency._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.35.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveExclusion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-maven/7.36.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.35.0
+* version: 7.36.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | exclusionGroupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | exclusionArtifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob. |
+| `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob. |
+| `String` | exclusionGroupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob. |
+| `String` | exclusionArtifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob. |
+| `Boolean` | onlyIneffective | *Optional*. Default false. If enabled, matching exclusions will only be removed if they are ineffective (if the excluded dependency was not actually a transitive dependency of the target dependency). |
 
 
 ## Usage
@@ -38,6 +39,7 @@ recipeList:
       artifactId: guava
       exclusionGroupId: com.google.guava
       exclusionArtifactId: guava
+      onlyIneffective: true
 ```
 {% endcode %}
 
@@ -49,7 +51,7 @@ Now that `com.yourorg.RemoveExclusionExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -73,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveExclusionExample</recipe>

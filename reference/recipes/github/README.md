@@ -10,6 +10,8 @@ _Recipes to perform [Github Actions](https://docs.github.com/en/actions) hygiene
 * [Change dependabot schedule interval](./changedependabotscheduleinterval.md)
 * [Check for github-actions updates daily](./dependabotcheckforgithubactionsupdatesdaily.md)
 * [Check for github-actions updates weekly](./dependabotcheckforgithubactionsupdatesweekly.md)
+* [Remove all cron triggers](./removeallcrontriggers.md)
+* [Replace runners for a job](./replacerunners.md)
 * [Setup Java dependency caching](./setupjavacaching.md)
 * [Upgrade `actions/setup-java` `java-version`](./setupjavaupgradejavaversion.md)
 * [Use `actions/setup-java` `temurin` distribution](./actionssetupjavaadoptopenjdktotemurin.md)

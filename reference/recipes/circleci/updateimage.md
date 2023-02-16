@@ -5,11 +5,11 @@ _See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circl
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-circleci), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-circleci/1.17.0/jar)
+[Github](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/UpdateImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-circleci/1.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-circleci
-* version: 1.17.0
+* version: 1.18.0
 
 ## Options
 
@@ -35,14 +35,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateImageExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:1.17.0 in your build file:
+Now that `com.yourorg.UpdateImageExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:1.18.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-circleci:1.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-circleci:1.18.0")
 }
 ```
 {% endcode %}
@@ -69,7 +69,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateImageExample</recipe>
@@ -79,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-circleci</artifactId>
-            <version>1.17.0</version>
+            <version>1.18.0</version>
           </dependency>
         </dependencies>
       </plugin>

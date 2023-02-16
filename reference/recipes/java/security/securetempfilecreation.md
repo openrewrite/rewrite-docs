@@ -5,48 +5,33 @@ _`java.io.File.createTempFile()` has exploitable default file permissions. This 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-security), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.21.0/jar)
+[Github](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/SecureTempFileCreation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-java-security/1.22.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 1.21.0
+* version: 1.22.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | target |  |
+| `String` | target | *Optional*. Specify whether this recipe should apply to all sources or only non-test sources. Defaults to non-test sources. |
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.SecureTempFileCreationExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.SecureTempFileCreationExample
-displayName: Use secure temporary file creation example
-recipeList:
-  - org.openrewrite.java.security.SecureTempFileCreation:
-      target: All Source
-```
-{% endcode %}
-
-Now that `com.yourorg.SecureTempFileCreationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:1.21.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-java-security:1.22.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.SecureTempFileCreationExample")
+    activeRecipe("org.openrewrite.java.security.SecureTempFileCreation")
 }
 
 repositories {
@@ -54,13 +39,13 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:1.21.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:1.22.0")
 }
 ```
 {% endcode %}
 {% endtab %}
 
-{% tab title="Maven" %}
+{% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
 <project>
@@ -69,17 +54,17 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>com.yourorg.SecureTempFileCreationExample</recipe>
+            <recipe>org.openrewrite.java.security.SecureTempFileCreation</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>1.21.0</version>
+            <version>1.22.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,9 +74,19 @@ dependencies {
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Maven Command Line" %}
+{% code title="shell" %}
+```shell
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-security:LATEST \
+  -DactiveRecipes=org.openrewrite.java.security.SecureTempFileCreation
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.SecureTempFileCreationExample`
+Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.java.security.SecureTempFileCreation`
 
 ## See how this recipe works across multiple open-source repositories
 

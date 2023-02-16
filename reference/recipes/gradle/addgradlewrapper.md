@@ -5,18 +5,19 @@ _Add a Gradle wrapper where one does not exist._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/tree/main/rewrite-gradle), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.35.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.36.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.35.0
+* version: 7.36.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | version | An exact version number or node-style semver selector used to select the version number. |
+| `String` | version | *Optional*. An exact version number or [dependency version selector](https://docs.openrewrite.org/reference/dependency-version-selectors). Defaults to the latest release version. |
 | `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. Defaults to "bin". |
+| `String` | repositoryUrl | The URL of the repository to download the Gradle distribution from. Currently only supports repositories like services.gradle.org, not arbitrary maven or ivy repositories. Defaults to `https://services.gradle.org/versions/all`. |
 
 
 ## Usage
@@ -34,17 +35,19 @@ recipeList:
   - org.openrewrite.gradle.AddGradleWrapper:
       version: 7.x
       distribution: null
+      repositoryUrl: https://services.gradle.org/versions/all
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddGradleWrapperExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-gradle:7.35.0 in your build file:
+
+Now that `com.yourorg.AddGradleWrapperExample` has been defined activate it in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -55,9 +58,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    rewrite("org.openrewrite:rewrite-gradle:7.35.0")
-}
 ```
 {% endcode %}
 {% endtab %}
@@ -71,19 +71,12 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddGradleWrapperExample</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite</groupId>
-            <artifactId>rewrite-gradle</artifactId>
-            <version>7.35.0</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>

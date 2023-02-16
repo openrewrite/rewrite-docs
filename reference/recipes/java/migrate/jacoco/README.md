@@ -1,4 +1,4 @@
-# Jacoco
+# JaCoCo
 
 ## Recipes
 

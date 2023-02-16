@@ -5,7 +5,7 @@ _Cap resource values that exceed a specific maximum._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.27.0/jar)
+[Github](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/CapResourceValueToMaximum.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.27.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
@@ -48,7 +48,7 @@ Now that `com.yourorg.CapResourceValueToMaximumExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.34.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CapResourceValueToMaximumExample</recipe>

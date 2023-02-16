@@ -1,7 +1,7 @@
-# Migrate to Spring Batch 4.3 from Spring Batch 5.0
+# Migrate to Spring Batch 5.0 from 4.3
 
 **org.openrewrite.java.spring.boot3.SpringBatch4To5Migration**
-_Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 2.3 release._
+_Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release._
 
 ### Tags
 
@@ -10,23 +10,23 @@ _Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 2.3 r
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.33.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-batch-5.0.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.33.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.33.0-SNAPSHOT
+* version: 4.33.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.33.0-SNAPSHOT in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-spring:4.33.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.35.0")
+    id("org.openrewrite.rewrite") version("5.36.0")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.33.0-SNAPSHOT")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.33.0")
 }
 ```
 {% endcode %}
@@ -53,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.39.0</version>
+        <version>4.40.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.SpringBatch4To5Migration</recipe>
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.33.0-SNAPSHOT</version>
+            <version>4.33.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -121,8 +121,8 @@ Recipes can also be activated directly from the command line by adding the argum
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.SpringBatch4To5Migration
-displayName: Migrate to Spring Batch 4.3 from Spring Batch 5.0
-description: Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 2.3 release.
+displayName: Migrate to Spring Batch 5.0 from 4.3
+description: Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release.
 tags:
   - spring
   - batch
