@@ -81,7 +81,7 @@ Declaring an import to `JavaTemplate` does not automatically add a corresponding
 
 #### From the runtime classpath
 
-The function `JavaParser.Bulider.classpath(`) can be used to look up libraries by artifactId from the runtime classpath. In this example, the `template` snippet references a symbol of type `BasicPolymorphicTypeValidator`, which is provided by the jackson-databind library:
+The function `JavaParser.Builder.classpath(`) can be used to look up libraries by artifactId from the runtime classpath. In this example, the `template` snippet references a symbol of type `BasicPolymorphicTypeValidator`, which is provided by the jackson-databind library:
 
 ```java
 JavaTemplate.builder(this::getCursor, template.toString())
@@ -93,7 +93,7 @@ JavaTemplate.builder(this::getCursor, template.toString())
 ```
 
 {% hint style="warning" %}
-It isn't always possible to include all the libraries a Recipe may want to reference on the runtime classpath. This is most frequently an issue when creating recipes that migrate between different versions of the same library. For example, if a recipe migrates Junit 4.0 to 4.13, only one of those versions of Junit can be on the classpath at a time. Recipes that migrate between library versions tend to have the older version on the runtime classpath, providing stubs for the newer types and methods.
+It isn't always possible to include all the libraries a Recipe may want to reference on the runtime classpath. This is most frequently an issue when creating recipes that migrate between different versions of the same library. For example, if a recipe migrates JUnit 4.0 to 4.13, only one of those versions of JUnit can be on the classpath at a time. Recipes that migrate between library versions tend to have the older version on the runtime classpath, providing stubs for the newer types and methods.
 {% endhint %}
 
 #### From Stubs
