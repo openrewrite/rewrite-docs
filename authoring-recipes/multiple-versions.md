@@ -43,8 +43,8 @@ With the `recipe-library` plugin added, you can then add a `recipeDependencies` 
 recipeDependencies {
     parserClasspath("org.mockito:mockito-core:2.16.0")
     parserClasspath("org.mockito:mockito-core:3.12.4")
-    parserClasspath("unit:junit:3.7")
-    parserClasspath("unit:junit:4.13.2")
+    parserClasspath("junit:junit:3.7")
+    parserClasspath("junit:junit:4.13.2")
 }
 ```
 
