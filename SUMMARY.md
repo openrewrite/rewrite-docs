@@ -29,6 +29,7 @@
 * [Modifying methods with JavaTemplate](authoring-recipes/modifying-methods-with-javatemplate.md)
 * [Creating multiple visitors in one recipe](authoring-recipes/multiple-visitors.md)
 * [Writing recipes over multiple source file types](authoring-recipes/writing-recipes-over-multiple-source-file-types.md)
+* [Using multiple versions of a library in a project](authoring-recipes/multiple-versions.md)
 
 ## Changelog
 
