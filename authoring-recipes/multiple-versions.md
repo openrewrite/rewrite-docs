@@ -41,9 +41,10 @@ With the `recipe-library` plugin added, you can then add a `recipeDependencies` 
 
 ```groovy
 recipeDependencies {
-    parserClasspath("org.mockito:mockito-all:1.10.19")
-    parserClasspath("org.mockito:mockito-core:3.+")
-    parserClasspath("org.mockito:mockito-junit-jupiter:3.+")
+    parserClasspath("org.mockito:mockito-core:2.16.0")
+    parserClasspath("org.mockito:mockito-core:3.12.4")
+    parserClasspath("unit:junit:3.7")
+    parserClasspath("unit:junit:4.13.2")
 }
 ```
 
