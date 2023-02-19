@@ -29,21 +29,27 @@ The return type of a method is _not_ represented in method patterns. Methods in 
 
 ### Examples
 
-So if you wanted to match invocations of `String.toString(int beginIndex)` then this expression would match only that method: `java.lang.String toString(int)`. If you wanted to match the two-argument form of the same
+So if you wanted to match invocations of `String.substring(int beginIndex)` then this expression would match only that method: `java.lang.String substring(int)`.
+If you wanted to match the two-argument form of the same, you can use the method pattern `java.lang.String substring(int, int)`.
+The below table shows some more examples of method patterns and the methods they match.
 
-| Method Pattern                              | Matches                                                                                                                                                                                              |
-|:--------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `java.lang.String substring(int)`           | Exactly the [single argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int%29) of `String.substring()`                                |
-| `java.lang.String substring(int, int)`      | Exactly the [two argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int,int%29) of `String.substring()`                               |
-| `java.lang.String substring(..)`            | Any overload of `String.substring()`                                                                                                                                                                 |
-| `java.lang.String *(int)`                   | Any method on `String` that accepts a single argument of type `int`                                                                                                                                  |
-| `java.lang.String format(String, ..)`       | Exactly the [String.format(String, Object...)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) method with varargs. |
-| `java.lang.String format(String, Object[])` | Exactly the [String.format(String, Object...)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) method with varargs. |
-| `com.yourorg.Foo bar(int, String, ..)`      | Any method on `Foo` named `bar` accepting an `int`, a `String`, and zero or more other arguments of any type                                                                                         |
-| `com.yourorg.Foo <constructor>(*, *, *)`    | Constructors of `Foo` accepting exactly three arguments of any type.                                                                                                                                 |
-| `*..String *(..)`                           | Any method accepting any arguments on classes named "String" in any package                                                                                                                          |
-| `*..* *(..)`                                | Any method accepting any arguments on any class                                                                                                                                                      |
-| `org.example..* *(..)`                      | Any method on any class in the "org.example" package, or any sub-package of "org.example"                                                                                                            |
+| Method Pattern                              | Matches                                                                                                                                                                                                         |
+|:--------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `java.lang.String substring(int)`           | Exactly the [single argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int%29) of `String.substring(int beginIndex)`                             |
+| `java.lang.String substring(int, int)`      | Exactly the [two argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int,int%29) of `String.substring(int beginIndex, int endIndex)`              |
+| `java.lang.String substring(..)`            | Any overload of `String.substring()` with any number of arguments                                                                                                                                               |
+| `java.lang.String *(int)`                   | Any method on `String` that accepts a single argument of type `int`                                                                                                                                             |
+| `java.lang.String format(String, ..)`       | Exactly the [String.format(String format, Object... args)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) method with varargs |
+| `java.lang.String format(String, Object[])` | Exactly the [String.format(String format, Object... args)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) method with varargs |
+| `com.yourorg.Foo bar(int, String, ..)`      | Any method on `Foo` named `bar` accepting an `int`, a `String`, and zero or more other arguments of any type                                                                                                    |
+| `com.yourorg.Foo <constructor>(*, *, *)`    | Constructors of `Foo` accepting exactly three arguments of any type                                                                                                                                             |
+| `*..String *(..)`                           | Any method accepting any arguments on classes named "String" in any package                                                                                                                                     |
+| `*..* *(..)`                                | Any method accepting any arguments on any class                                                                                                                                                                 |
+| `org.example..* *(..)`                      | Any method on any class in the "org.example" package, or any sub-package of "org.example"                                                                                                                       |
+
+{% hint style="info" %}
+When matching methods using varags, method patterns should match the parameter _declaration_, not the parameter _use_ for method invocations.
+{% endhint %}
 
 ## Usage
 
