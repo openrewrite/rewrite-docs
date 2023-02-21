@@ -74,6 +74,7 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Rename caught exceptions in empty catch blocks to `ignored`](./renameexceptioninemptycatch.md)
 * [Rename methods named `hashcode`, `equal`, or `tostring`](./renamemethodsnamedhashcodeequalortostring.md)
 * [Rename packages to lowercase](./lowercasepackage.md)
+* [Replace Stream.toList() with Stream.collect(Collectors.toList())](./replacestreamtolistwithcollect.md)
 * [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
 * [Replace duplicate `String` literals](./replaceduplicatestringliterals.md)
 * [Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`](./uselistsort.md)
