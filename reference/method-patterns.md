@@ -29,8 +29,6 @@ The return type of a method is _not_ represented in method patterns. Methods in 
 
 ### Examples
 
-So if you wanted to match invocations of `String.substring(int beginIndex)` then this expression would match only that method: `java.lang.String substring(int)`.
-If you wanted to match the two-argument form of the same, you can use the method pattern `java.lang.String substring(int, int)`.
 The below table shows some more examples of method patterns and the methods they match.
 
 | Method Pattern                              | Matches                                                                                                                                                                                                         |
