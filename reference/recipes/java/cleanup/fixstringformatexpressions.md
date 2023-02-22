@@ -1,7 +1,6 @@
-# Fix `String#format` and `String#formatted` expressions
+# Fix String#format and String#formatted expressions
 
-**org.openrewrite.java.cleanup.FixStringFormatExpressions**
-_Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index._
+**org.openrewrite.java.cleanup.FixStringFormatExpressions** _Fix `String#format` and `String#formatted` expressions by replacing  newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index._
 
 ### Tags
 
@@ -14,7 +13,6 @@ _Fix `String#format` and `String#formatted` expressions by replacing `\n` newlin
 * groupId: org.openrewrite
 * artifactId: rewrite-java
 * version: 7.36.0
-
 
 ## Usage
 
@@ -77,7 +75,7 @@ Recipes can also be activated directly from the command line by adding the argum
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.FixStringFormatExpressions)
+[![Moderne Link Image](../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.FixStringFormatExpressions)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

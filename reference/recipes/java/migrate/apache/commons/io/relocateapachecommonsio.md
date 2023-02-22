@@ -1,7 +1,6 @@
-# Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`
+# Relocate org.apache.commons:commons-io to commons-io:commons-io
 
-**org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo**
-_The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
+**org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo** _The deployment of `org.apache.commons:commons-io` _ [_was a publishing mistake around 2012_](https://issues.sonatype.org/browse/MVNCENTRAL-244) _which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 
 ### Tags
 
@@ -16,7 +15,6 @@ _The deployment of `org.apache.commons:commons-io` [was a publishing mistake aro
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
 * version: 1.17.0
-
 
 ## Usage
 
@@ -97,7 +95,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * oldArtifactId: `commons-io`
   * newGroupId: `commons-io`
   * newArtifactId: `commons-io`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -124,7 +121,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo)
+[![Moderne Link Image](../../../../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

@@ -7,18 +7,6 @@ To help you get started on working with Java LSTs and OpenRewrite, this guide wi
 * [Explain how LSTs work at a high-level](lst-examples.md#high-level-lst-explanation)
 * [Provide a high-level diagram that shows how LSTs relate to each other](lst-examples.md#lst-diagram)
 * [Provide a sample chunk of code and discuss how that code relates to different types of LSTs](lst-examples.md#java-lst-types)
-  * [Binary](lst-examples.md#binary)
-  * [Block](lst-examples.md#block)
-  * [ClassDeclaration](lst-examples.md#classdeclaration)
-  * [CompilationUnit](lst-examples.md#compilationunit)
-  * [Expression](lst-examples.md#expression)
-  * [FieldAccess](lst-examples.md#fieldaccess)
-  * [Identifier](lst-examples.md#identifier)
-  * [MethodDeclaration](lst-examples.md#methoddeclaration)
-  * [MethodInvocation](lst-examples.md#methodinvocation)
-  * [NewClass](lst-examples.md#newclass)
-  * [Statement](lst-examples.md#statement)
-  * [VariableDeclarations](lst-examples.md#variabledeclarations)
 * [Teach you how to learn more about LSTs yourself](lst-examples.md#using-the-debugger-to-detect-lsts)
 
 ## High-level LST explanation
@@ -33,7 +21,7 @@ For example, nothing prevents you from modifying an LST so that a variable is us
 
 ## LST diagram
 
-This diagram demonstrates how a simple Java class is represented as an LST. Note the hierarchical structure where LST elements are composed out of other LST elements.
+This diagram demonstrates how a simple Java class is represented as an LST. Note the hierarchical structure where LSTs are composed out of other LSTs.
 
 <figure><img src="../.gitbook/assets/Vertical AST Example.png" alt=""><figcaption></figcaption></figure>
 
