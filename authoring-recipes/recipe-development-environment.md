@@ -74,6 +74,9 @@ dependencies {
     // rewrite-xml dependency only necessary for XML Recipe development
     implementation("org.openrewrite:rewrite-xml")
 
+    // lombok is optional, but recommended for authoring recipes
+    annotationProcessor("org.projectlombok:lombok:latest.release")
+
     // For authoring tests for any kind of Recipe
     testImplementation("org.openrewrite:rewrite-test")
     testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
@@ -84,7 +87,15 @@ dependencies {
 {% endtab %}
 
 {% tab title="Maven" %}
-```markup
+```xml
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.testSource>17</maven.compiler.testSource>
+    <maven.compiler.testTarget>17</maven.compiler.testTarget>
+</properties>
+
 <dependencyManagement>
   <dependencies>
       <dependency>
@@ -97,7 +108,6 @@ dependencies {
   </dependencies>
 </dependencyManagement>
 
-...
 <dependencies>
     <!-- rewrite-java depedencies only necessary for Java Recipe development -->
     <dependency>
@@ -153,6 +163,13 @@ dependencies {
         <scope>compile</scope>
     </dependency>
 
+    <!-- lombok is optional, but recommended for authoring recipes -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+
     <!-- For authoring tests for any kind of Recipe -->
     <dependency>
         <groupId>org.openrewrite</groupId>
@@ -160,6 +177,15 @@ dependencies {
         <scope>test</scope>
     </dependency>
 </dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M9</version>
+        </plugin>
+    </plugins>
+</build>
 ```
 {% endtab %}
 {% endtabs %}
