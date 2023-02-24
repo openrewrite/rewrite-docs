@@ -46,7 +46,7 @@ The below table shows some more examples of method patterns and the methods they
 | `org.example..* *(..)`                      | Any method on any class in the "org.example" package, or any sub-package of "org.example"                                                                                                                       |
 
 {% hint style="info" %}
-When matching methods using varags, method patterns should match the parameter _declaration_, not the parameter _use_ for method invocations.
+Method patters match against a method's declaration. Varargs methods represent the variadic parameters as an array.
 So for example, the method pattern `String.format(String, Object[])` would match all of these method invocations, regardless of the number of varargs parameters actually passed:
 ```java
 String.format("Foo bar");

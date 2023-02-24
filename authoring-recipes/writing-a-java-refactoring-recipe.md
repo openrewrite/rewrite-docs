@@ -46,6 +46,8 @@ Here is what the class should look like with just these things defined:
 ```java
 package com.yourorg;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 import org.openrewrite.Option;
