@@ -1,0 +1,27 @@
+# Snapshot (2023-02-27)
+
+{% hint style="info" %}
+Want to learn how to use snapshot versions in your project? Check out our [snapshot version guide](/reference/snapshot-instructions.md).
+{% endhint %}
+
+## New Recipes
+* [org.openrewrite.ListRuntimeClasspath](https://docs.openrewrite.org/reference/recipes/listruntimeclasspath): A diagnostic utility which emits the runtime classpath to a data table. 
+* [org.openrewrite.github.PreferTemurinDistributions](https://docs.openrewrite.org/reference/recipes/github/prefertemurindistributions): [Host runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources/) include Temurin by default as part of the (hosted tool cache)(https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#hosted-tool-cache).Using Temurin speeds up builds as there is no need to download and configure the Java SDK with every build. 
+* [org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls](https://docs.openrewrite.org/reference/recipes/java/cleanup/chainstringbuilderappendcalls): String concatenation within calls to `StringBuilder.append()` causes unnecessary memory allocation. Except for concatenations of String literals, which are joined together at compile time. Replaces inefficient concatenations with chained calls to `StringBuilder.append()`. 
+* [org.openrewrite.java.cleanup.NoFinalizedLocalVariables](https://docs.openrewrite.org/reference/recipes/java/cleanup/nofinalizedlocalvariables): Remove the `final` modifier keyword from local variables regardless of whether or not they are used within a local class or an anonymous class. 
+* [org.openrewrite.java.cleanup.ReplaceStringBuilderWithString](https://docs.openrewrite.org/reference/recipes/java/cleanup/replacestringbuilderwithstring): Replace StringBuilder.append() with String if you are only concatenating a small number of strings and the code is simple and easy to read, as the compiler can optimize simple string concatenation expressions into a single String object, which can be more efficient than using StringBuilder. 
+* [org.openrewrite.java.cleanup.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull](https://docs.openrewrite.org/reference/recipes/java/cleanup/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull): Replace `org.apache.commons.lang3.Validate.notNull(Object)` with `Objects.requireNonNull(Object)`. 
+* [org.openrewrite.java.cleanup.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull](https://docs.openrewrite.org/reference/recipes/java/cleanup/replacevalidatenotnullhavingvarargswithobjectsrequirenonnull): Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` with `Objects.requireNonNull(Object, String)`. 
+* [org.openrewrite.java.spring.boot2.AddConfigurationAnnotationIfBeansPresent](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/addconfigurationannotationifbeanspresent): Class having `@Bean' annotation over any methods but missing '@Configuration' annotation over the declaring class would have '@Configuration' annotation added. 
+* [org.openrewrite.java.spring.boot2.AuthorizeHttpRequests](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/authorizehttprequests): Replace 'HttpSecurity.authorizeRequests(...) deprecated in Spring-Security 6 with 'HttpSecurity.authorizeHttpRequests(...) and all method calls on the resultant object respectively. Replace deprecated 'AbstractInterceptUrlConfigurer' and its deprecated subclasses with 'AuthorizeHttpRequestsConfigurer' and its corresponding subclasses. 
+* [org.openrewrite.java.spring.boot2.HttpSecurityLambdaDsl](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/httpsecuritylambdadsl): Converts HttpSecurity chained call from Spring-Security pre 5.2.x into new lambda DSL style calls and removes `and()` methods. 
+* [org.openrewrite.java.spring.boot2.ReplaceExtendWithAndContextConfiguration](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/replaceextendwithandcontextconfiguration): Replaces `@ExtendWith(SpringRunner.class)` and `@ContextConfiguration` with `@SpringJunitConfig`, preserving attributes on `@ContextConfiguration`, unless `@ContextConfiguration(loader = ...)` is used. 
+* [org.openrewrite.java.spring.boot2.ServerHttpSecurityLambdaDsl](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/serverhttpsecuritylambdadsl): Converts ServerHttpSecurity chained call from Spring-Security pre 5.2.x into new lambda DSL style calls and removes `and()` methods. 
+* [org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity](https://docs.openrewrite.org/reference/recipes/java/spring/boot3/configurationoverenablesecurity): Annotations '@EnableXXXSecurity' have '@Configuration' removed from their definition in Spring-Security 6. Consequently classes annotated with '@EnableXXXSecurity' coming from pre-Boot 3 should have '@Configuration' annotation added. 
+
+## Changed Recipes
+* [org.openrewrite.java.security.SecureTempFileCreation](https://docs.openrewrite.org/reference/recipes/java/security/securetempfilecreation) was changed:
+  * Old Options:
+    * `target: { type: String, required: false }`
+  * New Options:
+    * `None`
