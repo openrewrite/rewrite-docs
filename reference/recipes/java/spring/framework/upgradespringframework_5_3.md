@@ -21,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3</recipe>
@@ -97,7 +97,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `hibernate-search-orm`
   * newVersion: `5.11.x`
   * overrideManagedVersion: `true`
-  * retainVersions: `[]`
 * [Remove Maven dependency](../../../maven/removedependency.md)
   * groupId: `org.aspectj`
   * artifactId: `aspectjrt`
@@ -129,7 +128,6 @@ recipeList:
       artifactId: hibernate-search-orm
       newVersion: 5.11.x
       overrideManagedVersion: true
-      retainVersions: []
   - org.openrewrite.maven.RemoveDependency:
       groupId: org.aspectj
       artifactId: aspectjrt

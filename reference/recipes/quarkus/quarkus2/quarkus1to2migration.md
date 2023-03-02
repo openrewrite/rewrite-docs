@@ -21,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration</recipe>
@@ -125,12 +125,10 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `io.quarkus`
   * artifactId: `quarkus-universe-bom`
   * newVersion: `2.x`
-  * retainVersions: `[]`
 * [Upgrade Maven dependency version](../../maven/upgradedependencyversion.md)
   * groupId: `io.quarkus`
   * artifactId: `quarkus-bom`
   * newVersion: `2.x`
-  * retainVersions: `[]`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion.md)
   * groupId: `io.quarkus`
   * artifactId: `quarkus-maven-plugin`
@@ -189,12 +187,10 @@ recipeList:
       groupId: io.quarkus
       artifactId: quarkus-universe-bom
       newVersion: 2.x
-      retainVersions: []
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: io.quarkus
       artifactId: quarkus-bom
       newVersion: 2.x
-      retainVersions: []
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: io.quarkus
       artifactId: quarkus-maven-plugin

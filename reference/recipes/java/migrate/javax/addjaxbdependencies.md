@@ -1,8 +1,7 @@
 # Add explicit JAXB dependencies
 
 **org.openrewrite.java.migrate.javax.AddJaxbDependencies**
-_This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. **The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
-_
+_This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well._
 
 ### Tags
 
@@ -14,23 +13,23 @@ _
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.17.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.17.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.17.0
+* version: 1.17.1
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.17.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.17.1 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -42,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.17.1")
 }
 ```
 {% endcode %}
@@ -57,7 +56,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.javax.AddJaxbDependencies</recipe>
@@ -67,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.17.0</version>
+            <version>1.17.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -117,12 +116,11 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
   * version: `2.3.x`
-  * onlyIfUsing: `javax.xml.bind.*`
+  * onlyIfUsing: `javax.xml.bind..*`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
   * newVersion: `2.3.x`
-  * retainVersions: `[]`
 * [Use latest JAXB API and runtime for Jakarta EE 8](../../../java/migrate/javax/addjaxbruntime.md)
   * runtime: `glassfish`
 * [Remove redundant explicit dependency versions](../../../maven/removeredundantdependencyversions.md)
@@ -146,7 +144,7 @@ Recipes can also be activated directly from the command line by adding the argum
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javax.AddJaxbDependencies
 displayName: Add explicit JAXB dependencies
-description: This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. **The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
+description: This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
 
 tags:
   - jaxb
@@ -177,12 +175,11 @@ recipeList:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
       version: 2.3.x
-      onlyIfUsing: javax.xml.bind.*
+      onlyIfUsing: javax.xml.bind..*
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
       newVersion: 2.3.x
-      retainVersions: []
   - org.openrewrite.java.migrate.javax.AddJaxbRuntime:
       runtime: glassfish
   - org.openrewrite.maven.RemoveRedundantDependencyVersions:

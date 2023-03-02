@@ -26,7 +26,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -53,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.Mockito1to3Migration</recipe>
@@ -170,7 +170,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `org.mockito`
   * artifactId: `*`
   * newVersion: `3.x`
-  * retainVersions: `[]`
 
 {% endtab %}
 
@@ -264,7 +263,6 @@ recipeList:
       groupId: org.mockito
       artifactId: *
       newVersion: 3.x
-      retainVersions: []
 
 ```
 {% endtab %}

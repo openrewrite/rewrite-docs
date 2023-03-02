@@ -1,6 +1,7 @@
 # Add cron workflow trigger
 
-**org.openrewrite.github.AddCronTrigger** _The `schedule` _ [_event_](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events) _allows you to trigger a workflow at a scheduled time._
+**org.openrewrite.github.AddCronTrigger**
+_The `schedule` [event](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events) allows you to trigger a workflow at a scheduled time._
 
 ## Source
 
@@ -12,13 +13,15 @@
 
 ## Options
 
-| Type     | Name | Description                                                                                                             |
-| -------- | ---- | ----------------------------------------------------------------------------------------------------------------------- |
-| `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag\_20\_25\_07). |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07). |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.AddCronTriggerExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddCronTriggerExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -39,7 +42,7 @@ Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -66,7 +69,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCronTriggerExample</recipe>
@@ -96,10 +99,11 @@ Recipes can also be activated directly from the command line by adding the argum
 {% tab title="Recipe List" %}
 * [Merge YAML snippet](../yaml/mergeyaml.md)
   * key: `$.on`
-  * yaml: \`schedule:
-  * cron: "0 18 \* \* \*"\`
+  * yaml: `schedule:
+  - cron: "0 18 * * *"`
   * acceptTheirs: `true`
   * fileMatcher: `.github/workflows/*.yml`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -125,7 +129,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.github.AddCronTrigger)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.github.AddCronTrigger)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

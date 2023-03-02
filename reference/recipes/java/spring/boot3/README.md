@@ -3,7 +3,6 @@
 ## Recipes
 
 * [Bean methods should return concrete types](./precisebeantype.md)
-* [Classes annotated with '@EnableXXXSecurity' coming from pre-Boot 3 project should have @Configuration annotation added](./configurationoverenablesecurity.md)
 * [Downgrade Jakarta Servlet API to 5.0 when using Jetty](./downgradeservletapiwhenusingjetty.md)
 * [Enable Spring Batch Annotation](./removeenablebatchprocessing.md)
 * [Migrate SAML configuration to Spring Boot 3.0 in yaml format](./saml.md)
@@ -14,6 +13,6 @@
 * [Remove Unnecessary @ConstructorBinding](./removeconstructorbindingannotation.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](./actuatorendpointsanitization.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
-* [Upgrade Maven POM to Spring Boot 3.0 from 2.x](./mavenpomupgrade.md)
+* [Upgrade Maven Pom to Spring Boot 3.0 from 2.x](./mavenpomupgrade.md)
 
 

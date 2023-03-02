@@ -4,8 +4,7 @@
 _As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown.
 `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item
 ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)).
-You can still use the `server.error.include-message` property if you want messages to be included.
-_
+You can still use the `server.error.include-message` property if you want messages to be included._
 
 ### Tags
 
@@ -30,7 +29,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -57,7 +56,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView</recipe>

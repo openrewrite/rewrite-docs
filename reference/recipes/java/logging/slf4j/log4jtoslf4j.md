@@ -27,7 +27,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.slf4j.Log4jToSlf4j</recipe>
@@ -102,13 +102,11 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `log4j-api`
   * newVersion: `latest.release`
   * overrideManagedVersion: `true`
-  * retainVersions: `[]`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.apache.logging.log4j`
   * artifactId: `log4j-core`
   * newVersion: `latest.release`
   * overrideManagedVersion: `true`
-  * retainVersions: `[]`
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.slf4j`
   * artifactId: `slf4j-api`
@@ -154,13 +152,11 @@ recipeList:
       artifactId: log4j-api
       newVersion: latest.release
       overrideManagedVersion: true
-      retainVersions: []
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.apache.logging.log4j
       artifactId: log4j-core
       newVersion: latest.release
       overrideManagedVersion: true
-      retainVersions: []
   - org.openrewrite.maven.AddDependency:
       groupId: org.slf4j
       artifactId: slf4j-api

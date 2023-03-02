@@ -1,8 +1,7 @@
 # Find patterns that require updating for Spring Boot 2.5
 
 **org.openrewrite.java.spring.boot2.search.FindUpgradeRequirementsSpringBoot\_2\_5**
-_Looks for a series of patterns that have not yet had auto-remediation recipes developed for.
-_
+_Looks for a series of patterns that have not yet had auto-remediation recipes developed for._
 
 ### Tags
 
@@ -27,7 +26,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -54,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.search.FindUpgradeRequirementsSpringBoot_2_5</recipe>

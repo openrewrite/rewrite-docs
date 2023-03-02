@@ -26,7 +26,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -53,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.SpringBatch4To5Migration</recipe>
@@ -96,7 +96,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `*`
   * newVersion: `5.0.x`
   * overrideManagedVersion: `false`
-  * retainVersions: `[]`
 * [Transform classes that extend `JobExecutionListenerSupport` to implement the `JobExecutionListener` interface instead](../../../java/spring/batch/implementjobexecutionlistenerdirectly.md)
 * [Transform classes that extend `StepExecutionListenerSupport` to implement the `StepExecutionListener` interface instead](../../../java/spring/batch/implementstepexecutionlistenerdirectly.md)
 * [Transform classes that extend `ChunkListenerSupport` to implement the `ChunkListener` interface instead](../../../java/spring/batch/implementchunklistenerdirectly.md)
@@ -132,7 +131,6 @@ recipeList:
       artifactId: *
       newVersion: 5.0.x
       overrideManagedVersion: false
-      retainVersions: []
   - org.openrewrite.java.spring.batch.ImplementJobExecutionListenerDirectly
   - org.openrewrite.java.spring.batch.ImplementStepExecutionListenerDirectly
   - org.openrewrite.java.spring.batch.ImplementChunkListenerDirectly

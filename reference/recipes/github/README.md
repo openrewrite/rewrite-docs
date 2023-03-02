@@ -15,6 +15,5 @@ _Recipes to perform [Github Actions](https://docs.github.com/en/actions) hygiene
 * [Setup Java dependency caching](./setupjavacaching.md)
 * [Upgrade `actions/setup-java` `java-version`](./setupjavaupgradejavaversion.md)
 * [Use `actions/setup-java` `temurin` distribution](./actionssetupjavaadoptopenjdktotemurin.md)
-* [Use `actions/setup-java` `temurin` distribution as they are cached in hosted runners](./prefertemurindistributions.md)
 
 

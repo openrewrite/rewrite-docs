@@ -2,11 +2,8 @@
 
 ## Recipes
 
-* [Add missing '@Configuration' annotation](./addconfigurationannotationifbeanspresent.md)
 * [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](./databasecomponentandbeaninitializationordering.md)
 * [Adjust configuration classes to use the `WebServerFactoryCustomizer` interface](./changeembeddedservletcontainercustomizer.md)
-* [Convert HttpSecurity chained calls into Lambda DSL](./httpsecuritylambdadsl.md)
-* [Convert ServerHttpSecurity chained calls into Lambda DSL](./serverhttpsecuritylambdadsl.md)
 * [Merge Spring `bootstrap.yml` with `application.yml`](./mergebootstrapyamlwithapplicationyaml.md)
 * [Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`](./outputcaptureextension.md)
 * [Migrate `RestTemplateBuilder`](./resttemplatebuilderrequestfactory.md)
@@ -35,8 +32,6 @@
 * [Remove `@SpringExtension`](./unnecessaryspringextension.md)
 * [Remove obsolete Spring JUnit runners](./removeobsoletespringrunners.md)
 * [Remove unnecessary Spring `@RunWith`](./unnecessaryspringrunwith.md)
-* [Replace 'HttpSecurity.authorizeRequests(...) with 'HttpSecurity.authorizeHttpRequests(...) and 'ExpressionUrlAuthorizationConfigurer', 'AbstractInterceptUrlConfigurer' with `AuthorizeHttpRequestsConfigurer`, etc](./authorizehttprequests.md)
-* [Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`](./replaceextendwithandcontextconfiguration.md)
 * [Replace `EnvironmentTestUtils` with `TestPropertyValues`](./replacedeprecatedenvironmenttestutils.md)
 * [Spring Boot 2.x best practices](./springboot2bestpractices.md)
 * [Spring Security 5.4 introduces the ability to configure HttpSecurity by creating a SecurityFilterChain bean](./websecurityconfigureradapter.md)

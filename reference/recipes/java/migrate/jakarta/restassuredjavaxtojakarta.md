@@ -1,28 +1,27 @@
 # Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9
 
 **org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta**
-_Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
-_
+_Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.17.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.17.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.17.0
+* version: 1.17.1
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.17.0 in your build file:
+This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.17.1 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -34,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.17.1")
 }
 ```
 {% endcode %}
@@ -49,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta</recipe>
@@ -59,7 +58,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.17.0</version>
+            <version>1.17.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -91,7 +90,6 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `io.rest-assured`
   * artifactId: `*`
   * newVersion: `5.1.x`
-  * retainVersions: `[]`
 
 {% endtab %}
 
@@ -108,7 +106,6 @@ recipeList:
       groupId: io.rest-assured
       artifactId: *
       newVersion: 5.1.x
-      retainVersions: []
 
 ```
 {% endtab %}

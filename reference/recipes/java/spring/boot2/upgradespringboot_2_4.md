@@ -1,8 +1,7 @@
 # Migrate to Spring Boot 2.4
 
 **org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_4**
-_Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4.
-_
+_Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4._
 
 ### Tags
 
@@ -27,7 +26,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -54,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4</recipe>
@@ -100,12 +99,10 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `*`
   * newVersion: `2.4.x`
   * overrideManagedVersion: `true`
-  * retainVersions: `[]`
 * [Upgrade Maven parent project version](../../../maven/upgradeparentversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.4.x`
-  * retainVersions: `[]`
 * [Remove exclusion](../../../maven/removeexclusion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-test`
@@ -144,12 +141,10 @@ recipeList:
       artifactId: *
       newVersion: 2.4.x
       overrideManagedVersion: true
-      retainVersions: []
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 2.4.x
-      retainVersions: []
   - org.openrewrite.maven.RemoveExclusion:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-test

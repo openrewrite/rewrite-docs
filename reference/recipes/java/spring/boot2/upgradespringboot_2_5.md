@@ -21,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5</recipe>
@@ -93,12 +93,10 @@ Recipes can also be activated directly from the command line by adding the argum
   * artifactId: `*`
   * newVersion: `2.5.x`
   * overrideManagedVersion: `true`
-  * retainVersions: `[]`
 * [Upgrade Maven parent project version](../../../maven/upgradeparentversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.5.x`
-  * retainVersions: `[]`
 * [Migrate flyway and liquibase credentials](../../../java/spring/boot2/migratedatabasecredentials.md)
 * [Migrate deprecated `ActuatorMediaType` to `ApiVersion#getProducedMimeType`](../../../java/spring/boot2/migrateactuatormediatypetoapiversion.md)
 * [Change type](../../../java/changetype.md)
@@ -127,12 +125,10 @@ recipeList:
       artifactId: *
       newVersion: 2.5.x
       overrideManagedVersion: true
-      retainVersions: []
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 2.5.x
-      retainVersions: []
   - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials
   - org.openrewrite.java.spring.boot2.MigrateActuatorMediaTypeToApiVersion
   - org.openrewrite.java.ChangeType:

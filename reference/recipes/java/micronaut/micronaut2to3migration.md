@@ -21,7 +21,7 @@ This recipe has no required configuration options and can be activated directly 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.Micronaut2to3Migration</recipe>
@@ -97,13 +97,11 @@ Recipes can also be activated directly from the command line by adding the argum
   * groupId: `io.micronaut`
   * artifactId: `micronaut-parent`
   * newVersion: `3.x`
-  * retainVersions: `[]`
 * [Upgrade Maven dependency version](../../maven/upgradedependencyversion.md)
   * groupId: `io.micronaut`
   * artifactId: `micronaut-bom`
   * newVersion: `3.x`
   * overrideManagedVersion: `true`
-  * retainVersions: `[]`
 * [Upgrade gradle.properties Micronaut version](../../java/micronaut/upgrademicronautgradlepropertiesversion.md)
   * newVersion: `3.x`
 * [Upgrade `micronaut.version` Maven property](../../java/micronaut/upgrademicronautmavenpropertyversion.md)
@@ -226,13 +224,11 @@ recipeList:
       groupId: io.micronaut
       artifactId: micronaut-parent
       newVersion: 3.x
-      retainVersions: []
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: io.micronaut
       artifactId: micronaut-bom
       newVersion: 3.x
       overrideManagedVersion: true
-      retainVersions: []
   - org.openrewrite.java.micronaut.UpgradeMicronautGradlePropertiesVersion:
       newVersion: 3.x
   - org.openrewrite.java.micronaut.UpgradeMicronautMavenPropertyVersion:

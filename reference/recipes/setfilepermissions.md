@@ -5,11 +5,11 @@ _Set a file's read, write and executable permission attributes._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/SetFilePermissions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.36.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/SetFilePermissions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.37.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.36.0
+* version: 7.37.2
 
 ## Options
 
@@ -23,7 +23,7 @@ _Set a file's read, write and executable permission attributes._
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your rewrite.yml create a new recipe with a unique name. For example: `com.yourorg.SetFilePermissionsExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.SetFilePermissionsExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
@@ -35,9 +35,9 @@ displayName: Set file permission attributes example
 recipeList:
   - org.openrewrite.SetFilePermissions:
       fileMatcher: '**/gradlew.bat'
-      isReadable: true
-      isWritable: true
-      isExecutable: true
+      isReadable: null
+      isWritable: null
+      isExecutable: null
 ```
 {% endcode %}
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.SetFilePermissionsExample` has been defined activate it in
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.36.0")
+    id("org.openrewrite.rewrite") version("5.37.0")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.SetFilePermissionsExample</recipe>
