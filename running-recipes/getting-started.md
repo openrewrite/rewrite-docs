@@ -53,7 +53,7 @@ Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks lik
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.40.0</version>
+  <version>4.41.0</version>
 </plugin>
 ```
 {% endcode %}
@@ -71,7 +71,7 @@ Your file should look similar to:
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '5.36.0'
+    id 'org.openrewrite.rewrite' version '5.37.0'
 }
 
 repositories {
@@ -105,7 +105,7 @@ Before you can run any of the recipes, you will need to update the plugin config
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>4.40.0</version>
+  <version>4.41.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -122,7 +122,7 @@ Before you can run any of the recipes, you will need to update the plugin config
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '5.36.0'
+    id 'org.openrewrite.rewrite' version '5.37.0'
 }
 
 rewrite {
@@ -202,7 +202,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.40.0</version>
+      <version>4.41.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -222,7 +222,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '5.36.0'
+    id 'org.openrewrite.rewrite' version '5.37.0'
 }
 
 rewrite {
@@ -275,7 +275,7 @@ After doing that, your `pom.xml` file should look similar to this:
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.40.0</version>
+        <version>4.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.format.AutoFormat</recipe>
@@ -316,7 +316,7 @@ Presuming you chose to use the `rewrite-recipe-bom`, your `build.gradle` file sh
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '5.36.0'
+    id 'org.openrewrite.rewrite' version '5.37.0'
 }
 
 rewrite {
@@ -328,7 +328,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:1.15.0')
+    rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:1.16.0')
     rewrite('org.openrewrite.recipe:rewrite-spring')
 
     // Other project dependencies

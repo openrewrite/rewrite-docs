@@ -12,7 +12,7 @@ This guide assumes that you:
 
 * Are familiar with writing Java
 * Have already set up your [Recipe Development Environment](/authoring-recipes/recipe-development-environment.md)
-* Are using at least [OpenRewrite](https://github.com/openrewrite/rewrite) version `7.35.0` or [Rewrite-Recipe-Bom](https://github.com/openrewrite/rewrite-recipe-bom) version `1.15.0`
+* Are using at least [OpenRewrite](https://github.com/openrewrite/rewrite) version `7.35.0` or [Rewrite-Recipe-Bom](https://github.com/openrewrite/rewrite-recipe-bom) version `1.16.0`
 
 ## Using TreeVisitingPrinter.printTree 
 
