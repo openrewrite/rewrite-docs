@@ -30,6 +30,7 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Fields in a `Serializable` class should either be transient or serializable](./fixserializablefields.md)
 * [Finalize classes with private constructors](./finalclass.md)
 * [Finalize local variables](./finalizelocalvariables.md)
+* [Finalize method arguments](./finalizemethodarguments.md)
 * [Finalize private fields](./finalizeprivatefields.md)
 * [Fix `String#format` and `String#formatted` expressions](./fixstringformatexpressions.md)
 * [Fix missing braces](./needbraces.md)

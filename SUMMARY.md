@@ -33,6 +33,7 @@
 
 ## Changelog
 
+* [Snapshot (2023-03-06)](changelog/snapshot-2023-03-06.md)
 * [7.37.2 Release (2023-03-02)](changelog/7-37-2-Release.md)
 * [7.36.0 Release (2023-02-16)](changelog/7-36-0-Release.md)
 * [7.35.0 Release (2023-01-20)](changelog/7-35-0-Release.md)
@@ -131,6 +132,7 @@
       * [Fields in a Serializable class should either be transient or serializable](/reference/recipes/java/cleanup/fixserializablefields.md)
       * [Finalize classes with private constructors](/reference/recipes/java/cleanup/finalclass.md)
       * [Finalize local variables](/reference/recipes/java/cleanup/finalizelocalvariables.md)
+      * [Finalize method arguments](/reference/recipes/java/cleanup/finalizemethodarguments.md)
       * [Finalize private fields](/reference/recipes/java/cleanup/finalizeprivatefields.md)
       * [Fix String#format and String#formatted expressions](/reference/recipes/java/cleanup/fixstringformatexpressions.md)
       * [Fix missing braces](/reference/recipes/java/cleanup/needbraces.md)
@@ -180,6 +182,7 @@
       * [Replace Stream.toList() with Stream.collect(Collectors.toList())](/reference/recipes/java/cleanup/replacestreamtolistwithcollect.md)
       * [Replace StringBuilder.append() with String](/reference/recipes/java/cleanup/replacestringbuilderwithstring.md)
       * [Replace calls to Thread.run() with Thread.start()](/reference/recipes/java/cleanup/replacethreadrunwiththreadstart.md)
+      * [Replace deprecated Runtime.Exec() methods](/reference/recipes/java/cleanup/replacedeprecatedruntimeexecmethods.md)
       * [Replace duplicate String literals](/reference/recipes/java/cleanup/replaceduplicatestringliterals.md)
       * [Replace invocations of Collections#sort(List, Comparator) with List#sort(Comparator)](/reference/recipes/java/cleanup/uselistsort.md)
       * [Replace java.util.Set#removeAll(java.util.Collection) with java.util.Collection#forEach(Set::remove)](/reference/recipes/java/cleanup/useforeachremoveinsteadofsetremoveall.md)
