@@ -4,7 +4,7 @@ In this tutorial, we will apply a Rewrite [recipe](https://docs.openrewrite.org/
 
 ## Running a recipe without configuration parameters
 
-If the recipe you're trying to run does not have any configuration parameters, then you can run the recipe by executing a shell command.
+If the recipe you're trying to run does not have any required configuration parameters, then you can run the recipe by executing a shell command.
 
 {% hint style="success" %}
 Our [recipe documentation](https://docs.openrewrite.org/reference/recipes) includes the specific shell commands to run for any recipe without configuration parameters. You may find it easier to copy and run the provided command instead of manually creating it.
