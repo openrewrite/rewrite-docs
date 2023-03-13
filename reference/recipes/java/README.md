@@ -24,6 +24,7 @@ _Basic building blocks for transforming Java code._
 * [Remove unused imports](./removeunusedimports.md)
 * [Rename package name](./changepackage.md)
 * [Reorder method arguments](./reordermethodarguments.md)
+* [Replace String literal with constant](./replacestringliteralwithconstant.md)
 * [Replace constant with literal value](./replaceconstant.md)
 * [Simplify a call chain](./simplifymethodchain.md)
 * [Transform calls to `Objects.isNull(..)` and `Objects.nonNull(..)`](./removeobjectsisnull.md)
@@ -35,6 +36,7 @@ _Basic building blocks for transforming Java code._
 
 * [Cleanup](/reference/recipes/java/cleanup)
 * [Controlflow](/reference/recipes/java/controlflow)
+* [Dependencies](/reference/recipes/java/dependencies)
 * [Format](/reference/recipes/java/format)
 * [JHipster](/reference/recipes/java/jhipster)
 * [Logging](/reference/recipes/java/logging)

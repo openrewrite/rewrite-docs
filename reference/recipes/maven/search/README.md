@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Does not include Maven dependency](./doesnotincludedependency.md)
 * [Find Maven dependency](./finddependency.md)
 * [Find Maven plugin](./findplugin.md)
 * [Find Maven project properties](./findproperties.md)

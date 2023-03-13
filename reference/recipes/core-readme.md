@@ -7,6 +7,7 @@ _Recipes broadly applicable to all types of source files._
 * [Delete files](deletesourcefiles.md)
 * [Find files](findsourcefiles.md)
 * [Find instances of type `Quark`](findquarks.md)
+* [Find source files with `BuildToolFailure` markers](findbuildtoolfailures.md)
 * [Find source files with `ParseExceptionResult` markers](findparsefailures.md)
 * [List runtime classpath](listruntimeclasspath.md)
 * [Rename a file](renamefile.md)
