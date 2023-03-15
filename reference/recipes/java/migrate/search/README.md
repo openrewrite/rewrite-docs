@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [List calculated information about Java version on source files](./aboutjavaversion.md)
+* [Find which Java version is in use](./aboutjavaversion.md)
 
 

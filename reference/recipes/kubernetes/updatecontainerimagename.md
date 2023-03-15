@@ -56,7 +56,7 @@ Now that `com.yourorg.UpdateContainerImageNameExample` has been defined activate
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.37.0")
+    id("org.openrewrite.rewrite") version("5.38.0")
 }
 
 rewrite {
@@ -83,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.41.0</version>
+        <version>4.42.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateContainerImageNameExample</recipe>
@@ -105,7 +105,6 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.UpdateContainerImageNameExample`
 
 ## See how this recipe works across multiple open-source repositories
 

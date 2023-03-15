@@ -5,6 +5,7 @@
 * [Prefer `EnumSet of(..)`](./useenumsetof.md)
 * [Prefer `List.of(..)`](./migratecollectionssingletonlist.md)
 * [Prefer `List.of(..)`](./migratecollectionsunmodifiablelist.md)
+* [Prefer `Locale.of(..)` over `new Locale(..)`](./uselocaleof.md)
 * [Prefer `Map.of(..)`](./migratecollectionssingletonmap.md)
 * [Prefer `Map.of(..)`](./usemapof.md)
 * [Prefer `Optional.isEmpty()`](./optionalnotpresenttoisempty.md)

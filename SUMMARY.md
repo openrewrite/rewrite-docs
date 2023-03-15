@@ -34,8 +34,7 @@
 
 ## Changelog
 
-* [Snapshot (2023-03-13)](changelog/snapshot-2023-03-13.md)
-* [Snapshot (2023-03-06)](changelog/snapshot-2023-03-06.md)
+* [7.38.0 Release (2023-03-15)](changelog/7-38-0-Release.md)
 * [7.37.2 Release (2023-03-02)](changelog/7-37-2-Release.md)
 * [7.36.0 Release (2023-02-16)](changelog/7-36-0-Release.md)
 * [7.35.0 Release (2023-01-20)](changelog/7-35-0-Release.md)
@@ -399,7 +398,7 @@
       * [Metrics](reference/recipes/java/migrate/metrics/README.md)
         * [Simplify [Micrometer](https://micrometer.io) meter tags](/reference/recipes/java/migrate/metrics/simplifymicrometermetertags.md)
       * [Search](reference/recipes/java/migrate/search/README.md)
-        * [List calculated information about Java version on source files](/reference/recipes/java/migrate/search/aboutjavaversion.md)
+        * [Find which Java version is in use](/reference/recipes/java/migrate/search/aboutjavaversion.md)
       * [Wro4j](reference/recipes/java/migrate/wro4j/README.md)
         * [Upgrade Wro4j plugin version](/reference/recipes/java/migrate/wro4j/upgradewro4jmavenpluginversion.md)
       * [java.lang APIs](reference/recipes/java/migrate/lang/README.md)
@@ -428,6 +427,7 @@
         * [Prefer EnumSet of(..)](/reference/recipes/java/migrate/util/useenumsetof.md)
         * [Prefer List.of(..)](/reference/recipes/java/migrate/util/migratecollectionssingletonlist.md)
         * [Prefer List.of(..)](/reference/recipes/java/migrate/util/migratecollectionsunmodifiablelist.md)
+        * [Prefer Locale.of(..) over new Locale(..)](/reference/recipes/java/migrate/util/uselocaleof.md)
         * [Prefer Map.of(..)](/reference/recipes/java/migrate/util/migratecollectionssingletonmap.md)
         * [Prefer Map.of(..)](/reference/recipes/java/migrate/util/usemapof.md)
         * [Prefer Optional.isEmpty()](/reference/recipes/java/migrate/util/optionalnotpresenttoisempty.md)

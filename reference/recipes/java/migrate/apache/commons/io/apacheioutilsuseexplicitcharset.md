@@ -10,11 +10,11 @@ _Use `IOUtils` method invocations that include the charset encoding instead of u
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/io/ApacheIOUtilsUseExplicitCharset.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.17.1/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/io/ApacheIOUtilsUseExplicitCharset.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.17.1
+* version: 1.18.0
 
 ## Options
 
@@ -25,14 +25,14 @@ _Use `IOUtils` method invocations that include the charset encoding instead of u
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.17.1 in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.37.0")
+    id("org.openrewrite.rewrite") version("5.38.0")
 }
 
 rewrite {
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.17.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.18.0")
 }
 ```
 {% endcode %}
@@ -59,7 +59,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.41.0</version>
+        <version>4.42.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.apache.commons.io.ApacheIOUtilsUseExplicitCharset</recipe>
@@ -69,7 +69,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.17.1</version>
+            <version>1.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -82,16 +82,17 @@ dependencies {
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:LATEST \
-  -DactiveRecipes=org.openrewrite.java.migrate.apache.commons.io.ApacheIOUtilsUseExplicitCharset
+  -Drewrite.activeRecipes=org.openrewrite.java.migrate.apache.commons.io.ApacheIOUtilsUseExplicitCharset
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.java.migrate.apache.commons.io.ApacheIOUtilsUseExplicitCharset`
 
 ## See how this recipe works across multiple open-source repositories
 

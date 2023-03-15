@@ -18,6 +18,7 @@
 ## Subcategories
 
 * [Search](/reference/recipes/java/spring/search)
+* [Security5](/reference/recipes/java/spring/security5)
 * [Spring Batch](/reference/recipes/java/spring/batch)
 * [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
 * [Spring Boot 3.x](/reference/recipes/java/spring/boot3)

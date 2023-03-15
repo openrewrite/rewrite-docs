@@ -5,11 +5,11 @@ _This recipe explores build tool failures after an AST is produced for classifyi
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindBuildToolFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.38.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindBuildToolFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-core/7.38.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.38.0-SNAPSHOT
+* version: 7.38.0
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.37.1")
+    id("org.openrewrite.rewrite") version("5.38.0")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.41.1</version>
+        <version>4.42.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.FindBuildToolFailures</recipe>

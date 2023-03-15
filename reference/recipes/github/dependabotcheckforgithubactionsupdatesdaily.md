@@ -12,23 +12,23 @@ _Set dependabot to check for github-actions updates daily._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/github.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.17.0/jar)
+[Github](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/github.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 1.17.0
+* version: 1.18.0
 
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-github-actions:1.17.0 in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-github-actions:1.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.37.0")
+    id("org.openrewrite.rewrite") version("5.38.0")
 }
 
 rewrite {
@@ -40,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.18.0")
 }
 ```
 {% endcode %}
@@ -55,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.41.0</version>
+        <version>4.42.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily</recipe>
@@ -65,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>1.17.0</version>
+            <version>1.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -78,16 +78,17 @@ dependencies {
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-github-actions:LATEST \
-  -DactiveRecipes=org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily
+  -Drewrite.activeRecipes=org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily`
 
 ## Definition
 

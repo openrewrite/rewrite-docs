@@ -10,11 +10,11 @@ _Transform logging statements using concatenation for messages and variables int
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/1.19.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 1.18.0
+* version: 1.19.0
 
 ## Options
 
@@ -42,14 +42,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ParameterizedLoggingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.18.0 in your build file:
+Now that `com.yourorg.ParameterizedLoggingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:1.19.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.37.0")
+    id("org.openrewrite.rewrite") version("5.38.0")
 }
 
 rewrite {
@@ -61,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.18.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:1.19.0")
 }
 ```
 {% endcode %}
@@ -76,7 +76,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.41.0</version>
+        <version>4.42.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ParameterizedLoggingExample</recipe>
@@ -86,7 +86,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>1.18.0</version>
+            <version>1.19.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -98,7 +98,6 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.ParameterizedLoggingExample`
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -5,17 +5,17 @@ _The `schedule` [event](https://docs.github.com/en/actions/reference/events-that
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/AddCronTrigger.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.17.0/jar)
+[Github](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/AddCronTrigger.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-github-actions/1.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 1.17.0
+* version: 1.18.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07). |
+| `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07) or the non standard options @hourly @daily @weekly @weekdays @weekends @monthly @yearly. |
 
 
 ## Usage
@@ -31,18 +31,18 @@ name: com.yourorg.AddCronTriggerExample
 displayName: Add cron workflow trigger example
 recipeList:
   - org.openrewrite.github.AddCronTrigger:
-      cron: 0 18 * * *
+      cron: '@daily'
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.17.0 in your build file:
+Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.18.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.37.0")
+    id("org.openrewrite.rewrite") version("5.38.0")
 }
 
 rewrite {
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.18.0")
 }
 ```
 {% endcode %}
@@ -69,7 +69,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.41.0</version>
+        <version>4.42.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCronTriggerExample</recipe>
@@ -79,7 +79,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>1.17.0</version>
+            <version>1.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -91,7 +91,6 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=com.yourorg.AddCronTriggerExample`
 
 ## Definition
 
@@ -100,7 +99,7 @@ Recipes can also be activated directly from the command line by adding the argum
 * [Merge YAML snippet](../yaml/mergeyaml.md)
   * key: `$.on`
   * yaml: `schedule:
-  - cron: "0 18 * * *"`
+  - cron: ""`
   * acceptTheirs: `true`
   * fileMatcher: `.github/workflows/*.yml`
 
@@ -119,7 +118,7 @@ recipeList:
   - org.openrewrite.yaml.MergeYaml:
       key: $.on
       yaml: schedule:
-  - cron: "0 18 * * *"
+  - cron: ""
       acceptTheirs: true
       fileMatcher: .github/workflows/*.yml
 

@@ -18,14 +18,14 @@ _When using the host network mode for a container, that container’s network st
 
 ## Usage
 
-This recipe has no required configuration options and can be activated directly after taking a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.28.0 in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:1.28.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.37.0")
+    id("org.openrewrite.rewrite") version("5.38.0")
 }
 
 rewrite {
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.41.0</version>
+        <version>4.42.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.NoHostNetworkSharing</recipe>
@@ -75,16 +75,17 @@ dependencies {
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:LATEST \
-  -DactiveRecipes=org.openrewrite.kubernetes.NoHostNetworkSharing
+  -Drewrite.activeRecipes=org.openrewrite.kubernetes.NoHostNetworkSharing
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-Recipes can also be activated directly from the command line by adding the argument `-Drewrite.activeRecipes=org.openrewrite.kubernetes.NoHostNetworkSharing`
 
 ## Definition
 
