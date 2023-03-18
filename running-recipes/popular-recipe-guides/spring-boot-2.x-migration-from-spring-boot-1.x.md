@@ -4,7 +4,7 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 
 ## Example Configuration
 
-The [SpringBoot1To2Migration](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/spring/boot2/springboot1to2migration.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) in your build file:
+The [UpgradeSpringBoot_2_7](/reference/recipes/java/spring/boot2/upgradespringboot_2_7.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -15,7 +15,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.spring.boot2.SpringBoot1To2Migration")
+    activeRecipe("org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7")
 }
 
 repositories {
@@ -42,14 +42,14 @@ dependencies {
         <version>4.42.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.spring.boot2.SpringBoot1To2Migration</recipe>
+            <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.29.0</version>
+            <version>4.34.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -59,13 +59,25 @@ dependencies {
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Maven Command Line" %}
+{% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
+  -Drewrite.activeRecipes=org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ## Before and After
 
-For the full list of changes this recipe will make, see its [reference page](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/java/spring/boot2/springboot1to2migration.md).
+For the full list of changes this recipe will make, see its [reference page](/reference/recipes/java/spring/boot2/upgradespringboot_2_7.md).
 
 ### Request Mapping Annotations.
 
