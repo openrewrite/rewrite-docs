@@ -367,5 +367,3 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 * [Writing a Java Refactoring Recipe](writing-a-java-refactoring-recipe.md)
 * [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md)
-
-Test: \{{ myVariable \}}
