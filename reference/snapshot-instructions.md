@@ -39,37 +39,43 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 <repositories>
     <!-- Possibly other repositories -->
     <!-- ... -->
-
     <repository>
         <id>rewrite-snapshots</id>
         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
 </repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>rewrite-snapshots</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </pluginRepository>
+</pluginRepositories>
 ```
 
-* Update the version numbers of your recipes to use the latest snapshot version. Snapshot versions are 1 minor version ahead of the [latest release](/reference/latest-versions-of-every-openrewrite-module.md) with `-SNAPSHOT` added to the end. For instance, if the latest release is `1.16.0`, the snapshot version would be `1.17.0-SNAPSHOT`:
-
-{% hint style="warning" %}
-You should not append `-SNAPSHOT` to the `rewrite-maven-plugin` version. Only change the dependencies to use the snapshot versions.
-{% endhint %}
+* Update the version numbers of the `rewrite-maven-plugin` and all of its dependencies to use the latest snapshot versions.
+  Snapshot versions are 1 minor version ahead of the [latest release](/reference/latest-versions-of-every-openrewrite-module.md) with `-SNAPSHOT` added to the end.
+  For instance, if the latest release is `1.16.0`, the snapshot version would be `1.17.0-SNAPSHOT`:
 
 ```xml
-<plugin>
-    <groupId>org.openrewrite.maven</groupId>
-    <artifactId>rewrite-maven-plugin</artifactId>
-    <version>4.42.0</version>
-    <configuration>
-        <activeRecipes>
-            <recipe>org.openrewrite.github.SetupJavaUpgradeJavaVersion</recipe>
-        </activeRecipes>
-    </configuration>
-    <dependencies>
-        <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-github-actions</artifactId>
-            <version>1.17.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-</plugin>
-
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.openrewrite.maven</groupId>
+            <artifactId>rewrite-maven-plugin</artifactId>
+            <version>4.43.0-SNAPSHOT</version>
+            <configuration>
+                <activeRecipes>
+                    <recipe>org.openrewrite.github.SetupJavaUpgradeJavaVersion</recipe>
+                </activeRecipes>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>org.openrewrite.recipe</groupId>
+                    <artifactId>rewrite-github-actions</artifactId>
+                    <version>1.17.0-SNAPSHOT</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+    </plugins>
+</build>
 ```
