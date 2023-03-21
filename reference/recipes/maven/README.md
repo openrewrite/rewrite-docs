@@ -31,6 +31,7 @@
 * [Remove exclusion](./removeexclusion.md)
 * [Remove redundant explicit dependency versions](./removeredundantdependencyversions.md)
 * [Remove repository](./removerepository.md)
+* [Rename Maven property key](./renamepropertykey.md)
 * [Set Maven project packaging](./changepackaging.md)
 * [Upgrade Maven dependency version](./upgradedependencyversion.md)
 * [Upgrade Maven parent project version](./upgradeparentversion.md)

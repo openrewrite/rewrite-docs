@@ -13,5 +13,6 @@
 * [Use `Runtime.Version#update()`](./migrateruntimeversionsecuritytoupdate.md)
 * [Use `SecurityManager#checkMulticast(InetAddress)`](./migratesecuritymanagermulticast.md)
 * [Use modernized `java.lang` APIs](./javalangapis.md)
+* [Use text blocks](./usetextblocks.md)
 
 

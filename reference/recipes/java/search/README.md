@@ -3,6 +3,7 @@
 ## Recipes
 
 * [Find annotations](./findannotations.md)
+* [Find class declarations implementing an interface](./findimplementations.md)
 * [Find empty classes](./findemptyclasses.md)
 * [Find fields](./findfields.md)
 * [Find fields of type](./findfieldsoftype.md)

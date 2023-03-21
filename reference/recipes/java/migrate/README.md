@@ -8,8 +8,10 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Add Maven Jar Plugin to suppress Illegal Reflection Warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
 * [Change Maven Java version property values to 11](./javaversion11.md)
 * [Change Maven Java version property values to 17](./javaversion17.md)
+* [Change Maven Java version property values to 20](./javaversion20.md)
 * [Migrate to Java 11](./java8tojava11.md)
 * [Migrate to Java 17](./upgradetojava17.md)
+* [Migrate to Java 20](./upgradetojava20.md)
 * [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
 * [Upgrade Java version](./upgradejavaversion.md)
 
