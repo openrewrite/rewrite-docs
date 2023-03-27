@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Maybe add jakarta.servlet-api](./maybeaddjakartaservletapi.md)
 * [Migrate Ehcache from javax to jakarta namespace](./ehcachejavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](./jacksonjavaxtojakarta.md)
 * [Migrate Johnzon from javax to jakarta namespace](./johnzonjavaxtojakarta.md)

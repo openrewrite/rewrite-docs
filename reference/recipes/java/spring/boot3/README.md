@@ -10,6 +10,7 @@
 * [Enable Spring Batch Annotation](./removeenablebatchprocessing.md)
 * [Maintain trailing slash URL mappings](./maintaintrailingslashurlmappings.md)
 * [Migrate Spring Boot properties to 3.0](./springbootproperties_3_0_0.md)
+* [Migrate thymeleaf dependencies to Spring Boot 3.0.x](./migratethymeleafdependencies.md)
 * [Migrate to Spring Batch 5.0 from 4.3](./springbatch4to5migration.md)
 * [Migrate to Spring Boot 3.0](./upgradespringboot_3_0.md)
 * [Remove Unnecessary `@ConstructorBinding`](./removeconstructorbindingannotation.md)

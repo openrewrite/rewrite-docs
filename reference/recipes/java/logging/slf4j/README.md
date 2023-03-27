@@ -5,6 +5,7 @@ _Recipes related to [Simple Logging Facade for Java (`SLF4J`)](http://www.slf4j.
 ## Recipes
 
 * [Convert Logger#error|warn(Throwable#message) to Logger#error|warn(<log-message>, e)](./convertlogmessagemessageonlytologmessageandthrowable.md)
+* [Enhances logging of exceptions by including the full stack trace in addition to the exception message](./completeexceptionlogging.md)
 * [Loggers should be named for their enclosing classes](./loggersnamedforenclosingclass.md)
 * [Migrate Log4j 1.x to SLF4J 1.x](./log4j1toslf4j1.md)
 * [Migrate Log4j 2.x to SLF4J 1.x](./log4j2toslf4j1.md)
