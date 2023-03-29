@@ -74,8 +74,9 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 For the complete list of changes made by this recipe, please see the reference pages for [Java 11](../../reference/recipes/java/migrate/java8tojava11.md) and [Java 17](../../reference/recipes/java/migrate/upgradetojava17.md). If you have a specific use case that is not yet covered by this project, please reach out to our team!
 
-{% tabs %}
-{% tab title="Example Class (Before)" %}
+### Example Class 
+#### Before
+
 ```java
 package org.openrewrite.example;
 
@@ -104,9 +105,9 @@ public class Example {
     }
 }
 ```
-{% endtab %}
 
-{% tab title="Example Class (After)" %}
+#### After
+
 ```java
 package org.openrewrite.example;
 
@@ -135,15 +136,14 @@ public class Example {
     }    
 }
 ```
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
 The above example class demonstrates the two most common code migration tasks when moving to Java 11. There are many additional tasks covered by this recipe that are not represented in this example.&#x20;
 {% endhint %}
 
-{% tabs %}
-{% tab title="Maven pom (Before)" %}
+### Maven pom
+
+#### Before
 ```markup
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -181,9 +181,7 @@ The above example class demonstrates the two most common code migration tasks wh
     </dependencies>
 </project>
 ```
-{% endtab %}
-
-{% tab title="Maven pom (After)" %}
+#### After
 ```markup
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -234,8 +232,6 @@ The above example class demonstrates the two most common code migration tasks wh
     </dependencies>
 </project>
 ```
-{% endtab %}
-{% endtabs %}
 
 {% hint style="info" %}
 The JAXB and JAX-WS dependencies will only be added to the project if types from those projects are detected.
