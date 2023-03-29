@@ -1,6 +1,7 @@
 # Migrate to Spring Security 6.0
 
-**org.openrewrite.java.spring.security6.UpgradeSpringSecurity\_6\_0** _Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+**org.openrewrite.java.spring.security6.UpgradeSpringSecurity\_6\_0**
+_Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
 
 ### Tags
 
@@ -15,9 +16,10 @@
 * artifactId: rewrite-spring
 * version: 4.35.0-SNAPSHOT
 
+
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.35.0-SNAPSHOT` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.35.0-SNAPSHOT` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -74,6 +76,8 @@ dependencies {
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
@@ -83,13 +87,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtab %}
 {% endtabs %}
 
+
 ## Definition
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade Maven POM to Spring Security 6.0 from 5.x](broken-reference)
-* [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](usesha256inrememberme.md)
-* [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](propagateauthenticationserviceexceptions.md)
+* [Upgrade Maven POM to Spring Security 6.0 from 5.x](../../../java/spring/security6/mavenpomupgrade.md)
+* [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](../../../java/spring/security6/usesha256inrememberme.md)
+* [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](../../../java/spring/security6/propagateauthenticationserviceexceptions.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -114,7 +120,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](../../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.spring.security6.UpgradeSpringSecurity\_6\_0)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

@@ -1,6 +1,7 @@
-# Relocate org.apache.commons:commons-io to commons-io:commons-io
+# Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`
 
-**org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo** _The deployment of `org.apache.commons:commons-io` _ [_was a publishing mistake around 2012_](https://issues.sonatype.org/browse/MVNCENTRAL-244) _which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
+**org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo**
+_The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 
 ### Tags
 
@@ -16,9 +17,10 @@
 * artifactId: rewrite-migrate-java
 * version: 1.18.0
 
+
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.18.0` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -75,6 +77,8 @@ dependencies {
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:LATEST \
@@ -83,6 +87,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 
 ## Definition
 
@@ -93,6 +98,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * oldArtifactId: `commons-io`
   * newGroupId: `commons-io`
   * newArtifactId: `commons-io`
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -119,7 +125,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](../../../../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 
