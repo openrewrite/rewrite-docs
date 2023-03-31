@@ -43,7 +43,7 @@ At a minimum for this example, you need the following dependencies:
 {% tab title="Gradle" %}
 ```kotlin
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.65.0"))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.17.0"))
     implementation("org.openrewrite:rewrite-java")
     runtimeOnly("org.openrewrite:rewrite-java-11")
 }
