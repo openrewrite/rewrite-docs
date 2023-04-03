@@ -26,6 +26,9 @@
 * [Prefer `java.util.Collections#unmodifiableNavigableMap`](./preferjavautilcollectionsunmodifiablenavigablemap.md)
 * [Prefer `java.util.Objects#equals`](./preferjavautilobjectsequals.md)
 * [Prefer `java.util.Objects#hash`](./preferjavautilobjectshashcode.md)
+* [Prefer `java.util.Optional`](./preferjavautiloptional.md)
+* [Prefer `java.util.Optional#or(Supplier<T extends java.util.Optional<T>>)`](./preferjavautiloptionalorsupplier.md)
+* [Prefer `java.util.Optional#orElse(null)` over `com.google.common.base.Optional#orNull()`](./preferjavautiloptionalorelsenull.md)
 * [Prefer `java.util.function.Function`](./preferjavautilfunction.md)
 * [Prefer `java.util.function.Predicate`](./preferjavautilpredicate.md)
 * [Prefer `java.util.function.Supplier`](./preferjavautilsupplier.md)
@@ -38,5 +41,7 @@
 * [Prefer `new LinkedHashSet<>()`](./noguavasetsnewlinkedhashset.md)
 * [Prefer `new LinkedList<>()`](./noguavalistsnewlinkedlist.md)
 * [Prefer the Java standard library instead of Guava](./noguava.md)
+* [Remove `com.google.common.base.Optional#toJavaUtil()`](./noguavaoptionaltojavautil.md)
+* [Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument](./noguavaoptionalfromjavautil.md)
 
 

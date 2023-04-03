@@ -17,6 +17,7 @@
 * [Change Maven plugin configuration](./changepluginconfiguration.md)
 * [Change Maven plugin dependencies](./changeplugindependencies.md)
 * [Change Maven plugin executions](./changepluginexecutions.md)
+* [Change Maven plugin groupId and artifactId](./changeplugingroupidandartifactid.md)
 * [Change Maven project property value](./changepropertyvalue.md)
 * [Exclude Maven dependency](./excludedependency.md)
 * [Manage dependencies](./managedependencies.md)

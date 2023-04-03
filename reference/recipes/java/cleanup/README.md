@@ -60,6 +60,7 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Remove JavaDoc `@params`, `@return`, and `@throws` with no description](./removeemptyjavadocparameters.md)
 * [Remove Nullable and CheckForNull annotations from primitives](./unnecessaryprimitiveannotations.md)
 * [Remove `Object.finalize()` invocations](./removecallstoobjectfinalize.md)
+* [Remove `System.out#println` statements](./removesystemoutprintln.md)
 * [Remove Unneeded Assertions](./removeunneededassertion.md)
 * [Remove author tags from JavaDocs](./removejavadocauthortag.md)
 * [Remove catch for a checked exception if the try block does not throw that exception](./unnecessarycatch.md)
