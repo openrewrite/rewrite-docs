@@ -1,6 +1,7 @@
 # Migrate to Java 20
 
 **org.openrewrite.java.migrate.UpgradeToJava20**
+
 _This recipe will apply changes commonly needed when migrating to Java 20. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 20 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 20._
 
 ### Tags
@@ -9,23 +10,23 @@ _This recipe will apply changes commonly needed when migrating to Java 20. This 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.19.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.19.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.19.0-SNAPSHOT
+* version: 1.19.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.19.0-SNAPSHOT` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.19.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.38.0")
+    id("org.openrewrite.rewrite") version("5.39.0")
 }
 
 rewrite {
@@ -37,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.19.0-SNAPSHOT")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.19.0")
 }
 ```
 {% endcode %}
@@ -52,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.42.0</version>
+        <version>4.43.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.UpgradeToJava20</recipe>
@@ -62,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.19.0-SNAPSHOT</version>
+            <version>1.19.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -79,7 +80,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:LATEST \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
   -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpgradeToJava20
 ```
 {% endcode %}
@@ -92,7 +93,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Migrate to Java 17](../../java/migrate/upgradetojava17.md)
+* [Change Maven Java version property values to 20](../../java/migrate/javaversion20.md)
 * [Prefer `Locale.of(..)` over `new Locale(..)`](../../java/migrate/util/uselocaleof.md)
+* [Replace deprecated Runtime.Exec() methods](../../java/cleanup/replacedeprecatedruntimeexecmethods.md)
 
 {% endtab %}
 
@@ -108,7 +111,9 @@ tags:
   - java20
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava17
+  - org.openrewrite.java.migrate.JavaVersion20
   - org.openrewrite.java.migrate.util.UseLocaleOf
+  - org.openrewrite.java.cleanup.ReplaceDeprecatedRuntimeExecMethods
 
 ```
 {% endtab %}

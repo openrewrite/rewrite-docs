@@ -26,6 +26,7 @@ _Best practices for JUnit Jupiter tests._
 * [Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests](./junitparamsrunnertoparameterized.md)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](./removeobsoleterunners.md)
 * [Statically import JUnit Jupiter assertions](./staticimports.md)
+* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](./migrateassumptions.md)
 * [Use JUnit Jupiter `@Disabled`](./ignoretodisabled.md)
 * [Use JUnit Jupiter `@TempDir`](./temporaryfoldertotempdir.md)
 * [Use `MatcherAssert#assertThat(..)`](./usehamcrestassertthat.md)

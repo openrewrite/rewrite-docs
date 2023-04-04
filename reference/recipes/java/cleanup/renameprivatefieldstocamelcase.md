@@ -1,6 +1,7 @@
 # Reformat private field names to camelCase
 
 **org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase**
+
 _Reformat private field names to camelCase to comply with Java naming convention. The recipe will not rename fields with default, protected or public access modifiers.The recipe will not rename private constants.The first character is set to lower case and existing capital letters are preserved. Special characters that are allowed in java field names `$` and `_` are removed. If a special character is removed the next valid alphanumeric will be capitalized. The recipe will not rename a field if the result already exists in the class, conflicts with a java reserved keyword, or the result is blank._
 
 ### Tags
@@ -10,11 +11,11 @@ _Reformat private field names to camelCase to comply with Java naming convention
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/RenamePrivateFieldsToCamelCase.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.38.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/RenamePrivateFieldsToCamelCase.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.39.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.38.0
+* version: 7.39.1
 
 
 ## Usage
@@ -26,7 +27,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.38.0")
+    id("org.openrewrite.rewrite") version("5.39.0")
 }
 
 rewrite {
@@ -50,7 +51,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.42.0</version>
+        <version>4.43.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.RenamePrivateFieldsToCamelCase</recipe>

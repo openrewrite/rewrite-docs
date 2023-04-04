@@ -1,6 +1,7 @@
 # Remove garbage collection invocations
 
 **org.openrewrite.java.cleanup.RemoveCallsToSystemGc**
+
 _Removes calls to `System.gc()` and `Runtime.gc()`. When to invoke garbage collection is best left to the JVM._
 
 ### Tags
@@ -9,11 +10,11 @@ _Removes calls to `System.gc()` and `Runtime.gc()`. When to invoke garbage colle
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/RemoveCallsToSystemGc.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-java/7.38.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/RemoveCallsToSystemGc.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.39.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.38.0
+* version: 7.39.1
 
 
 ## Usage
@@ -25,7 +26,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.38.0")
+    id("org.openrewrite.rewrite") version("5.39.0")
 }
 
 rewrite {
@@ -49,7 +50,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.42.0</version>
+        <version>4.43.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.RemoveCallsToSystemGc</recipe>

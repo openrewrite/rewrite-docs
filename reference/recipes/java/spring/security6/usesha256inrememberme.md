@@ -1,27 +1,28 @@
 # Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`
 
 **org.openrewrite.java.spring.security6.UseSha256InRememberMe**
-_As of Spring Security 6.0 the SHA-256 algorithm is the default for the encoding and matching algorithm used by `TokenBasedRememberMeServices` and does thus no longer need to be explicitly configured.See the corresponding [https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/authentication.html#servlet-opt-in-sha256-rememberme](Sprint Security 6.0 migration step) for details._
+
+_As of Spring Security 6.0 the SHA-256 algorithm is the default for the encoding and matching algorithm used by `TokenBasedRememberMeServices` and does thus no longer need to be explicitly configured. See the corresponding [Sprint Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/authentication.html#servlet-opt-in-sha256-rememberme) for details._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/UseSha256InRememberMe.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.35.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/UseSha256InRememberMe.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.35.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.35.0-SNAPSHOT
+* version: 4.35.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.35.0-SNAPSHOT` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.35.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.38.0")
+    id("org.openrewrite.rewrite") version("5.39.0")
 }
 
 rewrite {
@@ -33,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.35.0-SNAPSHOT")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.35.0")
 }
 ```
 {% endcode %}
@@ -48,7 +49,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.42.0</version>
+        <version>4.43.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.security6.UseSha256InRememberMe</recipe>
@@ -58,7 +59,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.35.0-SNAPSHOT</version>
+            <version>4.35.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,7 +76,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE \
   -Drewrite.activeRecipes=org.openrewrite.java.spring.security6.UseSha256InRememberMe
 ```
 {% endcode %}

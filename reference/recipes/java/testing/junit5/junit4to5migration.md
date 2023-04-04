@@ -1,6 +1,7 @@
 # JUnit Jupiter migration from JUnit 4.x
 
 **org.openrewrite.java.testing.junit5.JUnit4to5Migration**
+
 _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ### Tags
@@ -10,23 +11,23 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.35.0/jar)
+[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.36.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.35.0
+* version: 1.36.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.35.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.38.0")
+    id("org.openrewrite.rewrite") version("5.39.0")
 }
 
 rewrite {
@@ -38,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.35.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.36.0")
 }
 ```
 {% endcode %}
@@ -53,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.42.0</version>
+        <version>4.43.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit4to5Migration</recipe>
@@ -63,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.35.0</version>
+            <version>1.36.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,7 +81,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:LATEST \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE \
   -Drewrite.activeRecipes=org.openrewrite.java.testing.junit5.JUnit4to5Migration
 ```
 {% endcode %}
@@ -94,13 +95,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tab title="Recipe List" %}
 * [Use wiremock extension](../../../java/testing/junit5/usewiremockextension.md)
 * [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled.md)
-* [Reorder method arguments](../../../java/reordermethodarguments.md)
-  * methodPattern: `org.junit.Assume assume*(String, boolean)`
-  * newParameterNames: `[b, message]`
-  * oldParameterNames: `[message, b]`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `org.junit.Assume`
-  * newFullyQualifiedTypeName: `org.junit.jupiter.api.Assumptions`
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners.md)
   * obsoleteRunners: `[org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]`
 * [Remove Maven plugin dependency](../../../maven/removeplugindependency.md)
@@ -109,6 +103,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * groupId: `org.apache.maven.surefire`
   * artifactId: `surefire-junit*`
 * [Use `MatcherAssert#assertThat(..)`](../../../java/testing/junit5/usehamcrestassertthat.md)
+* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](../../../java/testing/junit5/migrateassumptions.md)
 * [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension.md)
 * [Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`](../../../java/testing/junit5/usetestmethodorder.md)
 * [Migrate JUnit 4 `TestCase` to JUnit Jupiter](../../../java/testing/junit5/migratejunittestcase.md)
@@ -146,11 +141,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * artifactId: `junit-jupiter`
   * version: `5.x`
   * onlyIfUsing: `org.junit.jupiter.api.Test`
+  * acceptTransitive: `true`
 * [Add Maven dependency](../../../maven/adddependency.md)
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter-params`
   * version: `5.x`
   * onlyIfUsing: `org.junit.jupiter.params.ParameterizedTest`
+  * acceptTransitive: `true`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion.md)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-surefire-plugin`
@@ -175,13 +172,6 @@ tags:
 recipeList:
   - org.openrewrite.java.testing.junit5.UseWiremockExtension
   - org.openrewrite.java.testing.junit5.IgnoreToDisabled
-  - org.openrewrite.java.ReorderMethodArguments:
-      methodPattern: org.junit.Assume assume*(String, boolean)
-      newParameterNames: [b, message]
-      oldParameterNames: [message, b]
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.junit.Assume
-      newFullyQualifiedTypeName: org.junit.jupiter.api.Assumptions
   - org.openrewrite.java.testing.junit5.RemoveObsoleteRunners:
       obsoleteRunners: [org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]
   - org.openrewrite.maven.RemovePluginDependency:
@@ -190,6 +180,7 @@ recipeList:
       groupId: org.apache.maven.surefire
       artifactId: surefire-junit*
   - org.openrewrite.java.testing.junit5.UseHamcrestAssertThat
+  - org.openrewrite.java.testing.junit5.MigrateAssumptions
   - org.openrewrite.java.testing.junit5.UseMockitoExtension
   - org.openrewrite.java.testing.junit5.UseTestMethodOrder
   - org.openrewrite.java.testing.junit5.MigrateJUnitTestCase
@@ -227,11 +218,13 @@ recipeList:
       artifactId: junit-jupiter
       version: 5.x
       onlyIfUsing: org.junit.jupiter.api.Test
+      acceptTransitive: true
   - org.openrewrite.maven.AddDependency:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter-params
       version: 5.x
       onlyIfUsing: org.junit.jupiter.params.ParameterizedTest
+      acceptTransitive: true
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
       artifactId: maven-surefire-plugin

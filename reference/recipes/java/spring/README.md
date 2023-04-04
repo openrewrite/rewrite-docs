@@ -11,14 +11,16 @@
 * [Remove implicit web annotation names](./implicitwebannotationnames.md)
 * [Remove `public` from `@Bean` methods](./beanmethodsnotpublic.md)
 * [Remove the `@Autowired` annotation on inferred constructor](./noautowiredonconstructor.md)
-* [Remove unnecessary '@Repository' annotation from Spring Data 'Repository' sub-interface](./norepoannotationonrepointerface.md)
+* [Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface](./norepoannotationonrepointerface.md)
 * [Separate application YAML by profile](./separateapplicationyamlbyprofile.md)
 * [Update the API manifest](./updateapimanifest.md)
 
 ## Subcategories
 
+* [Cloud2022](/reference/recipes/java/spring/cloud2022)
 * [Search](/reference/recipes/java/spring/search)
 * [Security5](/reference/recipes/java/spring/security5)
+* [Security6](/reference/recipes/java/spring/security6)
 * [Spring Batch](/reference/recipes/java/spring/batch)
 * [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
 * [Spring Boot 3.x](/reference/recipes/java/spring/boot3)

@@ -1,27 +1,28 @@
 # Migrate deprecated `javax.servlet` packages to `jakarta.servlet`
 
 **org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet**
+
 _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.18.0/jar)
+[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.19.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.18.0
+* version: 1.19.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.19.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.38.0")
+    id("org.openrewrite.rewrite") version("5.39.0")
 }
 
 rewrite {
@@ -33,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.18.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.19.0")
 }
 ```
 {% endcode %}
@@ -48,7 +49,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.42.0</version>
+        <version>4.43.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet</recipe>
@@ -58,7 +59,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.18.0</version>
+            <version>1.19.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,7 +76,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:LATEST \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
   -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet
 ```
 {% endcode %}
@@ -87,15 +88,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Maven dependency](../../../maven/adddependency.md)
-  * groupId: `jakarta.servlet`
-  * artifactId: `jakarta.servlet-api`
-  * version: `5.x`
-  * onlyIfUsing: `javax.servlet.*`
+* [Maybe add jakarta.servlet-api](../../../java/migrate/jakarta/maybeaddjakartaservletapi.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `jakarta.servlet`
   * artifactId: `jakarta.servlet-api`
-  * newVersion: `5.x`
+  * newVersion: `6.x`
 * [Rename package name](../../../java/changepackage.md)
   * oldPackageName: `javax.servlet`
   * newPackageName: `jakarta.servlet`
@@ -114,15 +111,11 @@ name: org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet
 displayName: Migrate deprecated `javax.servlet` packages to `jakarta.servlet`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 recipeList:
-  - org.openrewrite.maven.AddDependency:
-      groupId: jakarta.servlet
-      artifactId: jakarta.servlet-api
-      version: 5.x
-      onlyIfUsing: javax.servlet.*
+  - org.openrewrite.java.migrate.jakarta.MaybeAddJakartaServletApi
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: jakarta.servlet
       artifactId: jakarta.servlet-api
-      newVersion: 5.x
+      newVersion: 6.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.servlet
       newPackageName: jakarta.servlet

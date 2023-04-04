@@ -1,7 +1,9 @@
 # Migrate to Spring Boot 3.0
 
 **org.openrewrite.java.spring.boot3.UpgradeSpringBoot\_3\_0**
-_Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7._
+
+_Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
+Migrating a Spring Boot application across major versions can be a complex task. Not every part of the  process can be automated, and not everything that possibly could be automated is. We recommend first running each of the minor version upgrades individually, making any manual changes which may be required. When you  have a working spring-boot 2.7.x application, then run this recipe to migrate to 3.0._
 
 ### Tags
 
@@ -10,23 +12,23 @@ _Migrate applications to the latest Spring Boot 3.0 release. This recipe will mo
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite.recipe/rewrite-spring/4.34.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.35.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.34.0
+* version: 4.35.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.34.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.35.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.38.0")
+    id("org.openrewrite.rewrite") version("5.39.0")
 }
 
 rewrite {
@@ -38,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.34.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.35.0")
 }
 ```
 {% endcode %}
@@ -53,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.42.0</version>
+        <version>4.43.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
@@ -63,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.34.0</version>
+            <version>4.35.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,7 +82,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE \
   -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
 ```
 {% endcode %}
@@ -97,23 +99,28 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Upgrade Maven POM to Spring Boot 3.0 from 2.x](../../../java/spring/boot3/mavenpomupgrade.md)
 * [Migrate to Java 17](../../../java/migrate/upgradetojava17.md)
 * [Migrate to Jakarta EE 9](../../../java/migrate/jakarta/javaxmigrationtojakarta.md)
-* [Remove Unnecessary @ConstructorBinding](../../../java/spring/boot3/removeconstructorbindingannotation.md)
+* [Remove Unnecessary `@ConstructorBinding`](../../../java/spring/boot3/removeconstructorbindingannotation.md)
 * [Use `AutoConfiguration#imports`](../../../java/spring/boot2/moveautoconfigurationtoimportsfile.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](../../../java/spring/boot3/actuatorendpointsanitization.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](../../../java/spring/boot3/migratemaxhttpheadersize.md)
 * [Downgrade Jakarta Servlet API to 5.0 when using Jetty](../../../java/spring/boot3/downgradeservletapiwhenusingjetty.md)
-* [Classes annotated with '@EnableXXXSecurity' coming from pre-Boot 3 project should have @Configuration annotation added](../../../java/spring/boot3/configurationoverenablesecurity.md)
+* [Add `@Configuration` to classes with `@EnableXXXSecurity` annotations](../../../java/spring/boot3/configurationoverenablesecurity.md)
+  * forceAddConfiguration: `false`
 * [Migrate Spring Boot properties to 3.0](../../../java/spring/boot3/springbootproperties_3_0_0.md)
+* [Migrate thymeleaf dependencies to Spring Boot 3.0.x](../../../java/spring/boot3/migratethymeleafdependencies.md)
+* [Migrate to Spring Security 6.0](../../../java/spring/security6/upgradespringsecurity_6_0.md)
+* [Migrate to Spring Cloud 2022](../../../java/spring/cloud2022/upgradespringcloud_2022.md)
 
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
 ```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
-displayName: Migrate to Spring Boot 3.0
-description: Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
+        ---
+        type: specs.openrewrite.org/v1beta/recipe
+        name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
+        displayName: Migrate to Spring Boot 3.0
+        description: Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
+Migrating a Spring Boot application across major versions can be a complex task. Not every part of the  process can be automated, and not everything that possibly could be automated is. We recommend first running each of the minor version upgrades individually, making any manual changes which may be required. When you  have a working spring-boot 2.7.x application, then run this recipe to migrate to 3.0.
 
 tags:
   - spring
@@ -129,8 +136,12 @@ recipeList:
   - org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization
   - org.openrewrite.java.spring.boot3.MigrateMaxHttpHeaderSize
   - org.openrewrite.java.spring.boot3.DowngradeServletApiWhenUsingJetty
-  - org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity
+  - org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity:
+      forceAddConfiguration: false
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_0_0
+  - org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies
+  - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0
+  - org.openrewrite.java.spring.cloud2022.UpgradeSpringCloud_2022
 
 ```
 {% endtab %}

@@ -1,21 +1,27 @@
 # Add the Gradle Enterprise plugin
 
 **org.openrewrite.gradle.plugins.AddGradleEnterprise**
-_Add the Gradle Enterprise plugin to `settings.gradle(.kts)`._
+
+_Add the Gradle Enterprise plugin to settings.gradle files._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddGradleEnterprise.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://search.maven.org/artifact/org.openrewrite/rewrite-gradle/7.38.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddGradleEnterprise.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.39.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.38.0
+* version: 7.39.1
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | version | An exact version number or node-style semver selector used to select the version number. |
+| `String` | version | An exact version number or node-style semver selector used to select the plugin version. |
+| `String` | server | *Optional*. The URL of the Gradle Enterprise server. If omitted the recipe will set no URL and Gradle will direct scans to https://scans.gradle.com/ |
+| `Boolean` | allowUntrustedServer | *Optional*. When set to `true` the plugin will be configured to allow unencrypted http connections with the server. If set to `false` or omitted, the plugin will refuse to communicate without transport layer security enabled. |
+| `Boolean` | captureTaskInputFiles | *Optional*. When set to `true` the plugin will capture additional information about the inputs to Gradle tasks. This increases the size of build scans, but is useful for diagnosing issues with task caching.  |
+| `Boolean` | uploadInBackground | *Optional*. When set to `true` the plugin will capture additional information about the outputs of Gradle tasks. This increases the size of build scans, but is useful for diagnosing issues with task caching.  |
+| `PublishCriteria` | publishCriteria | *Optional*. When set to `always` the plugin will publish build scans of every single build. When set to `failure` the plugin will only publish build scans when the build fails. When omitted scans will be published only when the `--scan` option is passed to the build. |
 
 
 ## Usage
@@ -32,6 +38,11 @@ displayName: Add the Gradle Enterprise plugin example
 recipeList:
   - org.openrewrite.gradle.plugins.AddGradleEnterprise:
       version: 3.x
+      server: https://ge.openrewrite.org/
+      allowUntrustedServer: true
+      captureTaskInputFiles: true
+      uploadInBackground: true
+      publishCriteria: true
 ```
 {% endcode %}
 
@@ -43,7 +54,7 @@ Now that `com.yourorg.AddGradleEnterpriseExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.38.0")
+    id("org.openrewrite.rewrite") version("5.39.0")
 }
 
 rewrite {
@@ -67,7 +78,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.42.0</version>
+        <version>4.43.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddGradleEnterpriseExample</recipe>
@@ -82,40 +93,6 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Add a Gradle settings plugin](../../gradle/plugins/addsettingsplugin.md)
-  * pluginId: `com.gradle.enterprise`
-  * version: ``
-* [Update a Gradle plugin by id](../../gradle/plugins/upgradepluginversion.md)
-  * pluginIdPattern: `com.gradle.enterprise`
-  * newVersion: ``
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.gradle.plugins.AddGradleEnterprise
-displayName: Add the Gradle Enterprise plugin
-description: Add the Gradle Enterprise plugin to `settings.gradle(.kts)`.
-version: 
-
-recipeList:
-  - org.openrewrite.gradle.plugins.AddSettingsPlugin:
-      pluginId: com.gradle.enterprise
-      version: 
-  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
-      pluginIdPattern: com.gradle.enterprise
-      newVersion: 
-
-```
-{% endtab %}
-{% endtabs %}
 
 ## See how this recipe works across multiple open-source repositories
 
