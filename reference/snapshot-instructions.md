@@ -21,7 +21,7 @@ repositories {
 }
 ```
 
-* Update your version numbers to use `latest.integration` (you can also specify a specific release such as `1.17.0-SNAPSHOT` instead if you like):
+* Update your version numbers to use `latest.integration` (you can also specify a specific release such as `1.18.0-SNAPSHOT` instead if you like):
 
 ```groovy
 dependencies {
@@ -54,7 +54,7 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 
 * Update the version numbers of the `rewrite-maven-plugin` and all of its dependencies to use the latest snapshot versions.
   Snapshot versions are 1 minor version ahead of the [latest release](/reference/latest-versions-of-every-openrewrite-module.md) with `-SNAPSHOT` added to the end.
-  For instance, if the latest release is `1.16.0`, the snapshot version would be `1.17.0-SNAPSHOT`:
+  For instance, if the latest release is `1.16.0`, the snapshot version would be `1.18.0-SNAPSHOT`:
 
 ```xml
 <build>
@@ -72,7 +72,7 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
                 <dependency>
                     <groupId>org.openrewrite.recipe</groupId>
                     <artifactId>rewrite-github-actions</artifactId>
-                    <version>1.17.0-SNAPSHOT</version>
+                    <version>1.18.0-SNAPSHOT</version>
                 </dependency>
             </dependencies>
         </plugin>
