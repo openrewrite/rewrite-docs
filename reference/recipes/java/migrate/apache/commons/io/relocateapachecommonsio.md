@@ -2,7 +2,7 @@
 
 **org.openrewrite.java.migrate.apache.commons.io.RelocateApacheCommonsIo**
 
-_The deployment of `org.apache.commons:commons-io` _ [_was a publishing mistake around 2012_](https://issues.sonatype.org/browse/MVNCENTRAL-244) _which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
+_The deployment of `org.apache.commons:commons-io`_ [_was a publishing mistake around 2012_](https://issues.sonatype.org/browse/MVNCENTRAL-244) _which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`._
 
 ### Tags
 

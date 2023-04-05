@@ -2,7 +2,7 @@
 
 **org.openrewrite.github.AddCronTrigger**
 
-_The `schedule` _ [_event_](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events) _allows you to trigger a workflow at a scheduled time._
+_The `schedule`_ [_event_](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events) _allows you to trigger a workflow at a scheduled time._
 
 ## Source
 
