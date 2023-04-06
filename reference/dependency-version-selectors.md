@@ -1,6 +1,6 @@
 # Dependency version selectors
 
-Dependency management recipes, such as [Upgrade Maven Dependency Version](broken-reference) or [Add Maven Dependency](broken-reference), accept version numbers as parameters. If you know the exact version number up front you can configure such recipes with it. But the desired version number isn't always knowable up front, or no single version number may be adequate when what is desired can't be known in advance, or might change over time. Dependency management recipes support a variety of version selectors to help express these more complex constraints. These patterns assume that version numbers generally conform to [Semantic Versioning](https://semver.org).
+Dependency management recipes, such as [Upgrade Maven Dependency Version](/reference/recipes/maven/upgradedependencyversion.md) or [Add Maven Dependency](/reference/recipes/maven/adddependency.md), accept version numbers as parameters. If you know the exact version number up front you can configure such recipes with it. But the desired version number isn't always knowable up front, or no single version number may be adequate when what is desired can't be known in advance, or might change over time. Dependency management recipes support a variety of version selectors to help express these more complex constraints. These patterns assume that version numbers generally conform to [Semantic Versioning](https://semver.org).
 
 {% hint style="success" %}
 Maven dependency management recipes use the same artifact repositories your maven build is configured to use.
