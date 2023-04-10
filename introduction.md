@@ -1,5 +1,7 @@
 # Introduction to OpenRewrite
 
+![OpenRewrite](.gitbook/assets/OpenRewrite.gif)
+
 ## **Large-scale automated source code refactoring**
 
 OpenRewrite enables large-scale distributed source code refactoring for framework migrations, vulnerability patches, and API migrations with an early focus on the Java language.
