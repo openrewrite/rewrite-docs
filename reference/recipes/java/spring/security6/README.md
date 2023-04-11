@@ -2,9 +2,13 @@
 
 ## Recipes
 
+* [Keep the default RequestCache querying behavior in Spring Security 5](./updaterequestcache.md)
 * [Migrate to Spring Security 6.0](./upgradespringsecurity_6_0.md)
 * [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](./propagateauthenticationserviceexceptions.md)
 * [Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in](./requireexplicitsavingofsecuritycontextrepository.md)
 * [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](./usesha256inrememberme.md)
+* [Remove the `useAuthorizationManager=true` attribute from `@EnableReactiveMethodSecurity`](./updateenablereactivemethodsecurity.md)
+* [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](./removeuseauthorizationmanager.md)
+* [Remove unneeded `oauth2Login` config when upgrading to Spring Security 6](./removeoauth2loginconfig.md)
 
 
