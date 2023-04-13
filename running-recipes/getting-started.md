@@ -348,6 +348,10 @@ Dependency management for Gradle is not yet available but this feature is on Ope
 
 Now that you know how to configure and run recipes, you may be interested in these topics:
 
+{% hint style="info" %}
+Before making any recipes or configuring any plugins, please [ensure your recipe development environment is set up](../authoring-recipes/recipe-development-environment.md).
+{% endhint %}
+
 * [Writing a Java refactoring recipe](../authoring-recipes/writing-a-java-refactoring-recipe.md)
 * [Maven plugin configuration](../reference/rewrite-maven-plugin.md)
 * [Gradle plugin configuration](../reference/gradle-plugin-configuration.md)
