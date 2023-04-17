@@ -2,7 +2,9 @@
 
 ## Recipes
 
-* [Migrate to Spring Framework 5.8](./upgradespringsecurity_5_8.md)
+* [Migrate to Spring Security 5.8](./upgradespringsecurity_5_8.md)
+* [Replace global method security with method security](./replaceglobalmethodsecuritywithmethodsecurity.md)
+* [Replace global method security with method security](./replaceglobalmethodsecuritywithmethodsecurityxml.md)
 * [Use new `Argon2PasswordEncoder` factory methods](./updateargon2passwordencoder.md)
 * [Use new `Pbkdf2PasswordEncoder` factory methods](./updatepbkdf2passwordencoder.md)
 * [Use new `SCryptPasswordEncoder` factory methods](./updatescryptpasswordencoder.md)
