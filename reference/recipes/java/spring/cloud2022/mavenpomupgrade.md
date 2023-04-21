@@ -11,23 +11,23 @@ _Upgrade Maven POM to Spring Cloud 2022 from prior 2021.x version._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-cloud-2022.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.35.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-cloud-2022.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.35.0
+* version: 4.36.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.35.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.39.0")
+    id("org.openrewrite.rewrite") version("5.40.0")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.35.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
 }
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.43.0</version>
+        <version>4.44.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.cloud2022.MavenPomUpgrade</recipe>
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.35.0</version>
+            <version>4.36.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -102,6 +102,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-starter-parent`
   * newVersion: `2022.0.x`
+* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+  * oldGroupId: `org.springframework.cloud`
+  * oldArtifactId: `spring-cloud-starter-feign`
+  * newArtifactId: `spring-cloud-starter-openfeign`
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-dependencies`
@@ -160,6 +164,10 @@ recipeList:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-starter-parent
       newVersion: 2022.0.x
+  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+      oldGroupId: org.springframework.cloud
+      oldArtifactId: spring-cloud-starter-feign
+      newArtifactId: spring-cloud-starter-openfeign
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-dependencies

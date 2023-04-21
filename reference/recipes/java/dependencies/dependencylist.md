@@ -6,11 +6,11 @@ _Emits a data table detailing all Gradle and Maven dependencies.This recipe make
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/0.4.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/0.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 0.4.0-SNAPSHOT
+* version: 0.4.0
 
 ## Options
 
@@ -38,14 +38,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.DependencyListExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:0.4.0-SNAPSHOT in your build file:
+Now that `com.yourorg.DependencyListExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:0.4.0 in your build file:
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.39.3")
+    id("org.openrewrite.rewrite") version("5.40.0")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:0.4.0-SNAPSHOT")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:0.4.0")
 }
 ```
 {% endcode %}
@@ -72,7 +72,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.43.0</version>
+        <version>4.44.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DependencyListExample</recipe>
@@ -82,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>0.4.0-SNAPSHOT</version>
+            <version>0.4.0</version>
           </dependency>
         </dependencies>
       </plugin>

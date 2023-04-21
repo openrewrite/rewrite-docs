@@ -6,11 +6,11 @@ _Change a property value leaving the key intact._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/7.39.1/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/7.40.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 7.39.1
+* version: 7.40.0
 
 ## Options
 
@@ -19,6 +19,7 @@ _Change a property value leaving the key intact._
 | `String` | propertyKey | The name of the property key whose value is to be changed. |
 | `String` | newValue | The new value to be used for key specified by `propertyKey`. |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
+| `Boolean` | regex | *Optional*. Default false. If enabled, `oldValue` will be interepreted as a Regular Expression, and capture group contents will be available in `newValue` |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
 
@@ -39,6 +40,7 @@ recipeList:
       propertyKey: management.metrics.binders.files.enabled
       newValue: null
       oldValue: null
+      regex: null
       relaxedBinding: null
       fileMatcher: '**/application-*.properties'
 ```
@@ -52,7 +54,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.39.0")
+    id("org.openrewrite.rewrite") version("5.40.0")
 }
 
 rewrite {
@@ -76,7 +78,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.43.0</version>
+        <version>4.44.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>

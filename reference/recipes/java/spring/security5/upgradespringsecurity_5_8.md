@@ -1,4 +1,4 @@
-# Migrate to Spring Framework 5.8
+# Migrate to Spring Security 5.8
 
 **org.openrewrite.java.spring.security5.UpgradeSpringSecurity\_5\_8**
 
@@ -11,23 +11,23 @@ _Migrate applications to the latest Spring Security 5.8 release. This recipe wil
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.35.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.35.0
+* version: 4.36.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.35.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.39.0")
+    id("org.openrewrite.rewrite") version("5.40.0")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.35.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
 }
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.43.0</version>
+        <version>4.44.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_8</recipe>
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.35.0</version>
+            <version>4.36.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -103,6 +103,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Use new `Pbkdf2PasswordEncoder` factory methods](../../../java/spring/security5/updatepbkdf2passwordencoder.md)
 * [Use new `SCryptPasswordEncoder` factory methods](../../../java/spring/security5/updatescryptpasswordencoder.md)
 * [Use new `Argon2PasswordEncoder` factory methods](../../../java/spring/security5/updateargon2passwordencoder.md)
+* [Replace global method security with method security](../../../java/spring/security5/replaceglobalmethodsecuritywithmethodsecurity.md)
+* [Replace global method security with method security](../../../java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
 
 {% endtab %}
 
@@ -111,7 +113,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_8
-displayName: Migrate to Spring Framework 5.8
+displayName: Migrate to Spring Security 5.8
 description: Migrate applications to the latest Spring Security 5.8 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 
 tags:
@@ -128,6 +130,8 @@ recipeList:
   - org.openrewrite.java.spring.security5.UpdatePbkdf2PasswordEncoder
   - org.openrewrite.java.spring.security5.UpdateSCryptPasswordEncoder
   - org.openrewrite.java.spring.security5.UpdateArgon2PasswordEncoder
+  - org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurity
+  - org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurityXml
 
 ```
 {% endtab %}

@@ -4,6 +4,7 @@ _Format and cleanup Java code to ensure a consistent style is used._
 
 ## Recipes
 
+* [Add imports for fully qualified references to types](./shortenfullyqualifiedtypereferences.md)
 * [Add missing `@Override` to overriding and implementing methods](./missingoverrideannotation.md)
 * [Add `serialVersionUID` to a `Serializable` class when missing](./addserialversionuidtoserializable.md)
 * [Atomic Boolean, Integer, and Long equality checks compare their values](./atomicprimitiveequalsusesget.md)
@@ -122,7 +123,7 @@ _Format and cleanup Java code to ensure a consistent style is used._
 * [Use diamond operator](./usediamondoperator.md)
 * [Use explicit types on lambda arguments](./explicitlambdaargumenttypes.md)
 * [Use `indexOf(String, int)`](./indexofchecksshoulduseastartposition.md)
-* [Use lambdas where possible](./uselambdaforfunctionalinterface.md)
+* [Use lambdas expression to replace anonymous class where possible](./uselambdaforfunctionalinterface.md)
 * [Use method references in lambda](./replacelambdawithmethodreference.md)
 * [Use primitive wrapper `valueOf` method](./primitivewrapperclassconstructortovalueof.md)
 * [Use the builder pattern where possible](./useasbuilder.md)

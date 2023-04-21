@@ -1,16 +1,16 @@
-# Find language composition
+# Add imports for fully qualified references to types
 
-**org.openrewrite.search.FindLanguageComposition**
+**org.openrewrite.java.cleanup.ShortenFullyQualifiedTypeReferences**
 
-_Produce a table of files and their language composition._
+_Any fully qualified references to Java types will be replaced with corresponding simple names and import statements, provided that it doesn't result in any conflicts with other imports or types declared in the local compilation unit._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/search/FindLanguageComposition.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/7.39.1/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/ShortenFullyQualifiedTypeReferences.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.0/jar)
 
 * groupId: org.openrewrite
-* artifactId: rewrite-core
-* version: 7.39.1
+* artifactId: rewrite-java
+* version: 7.40.0
 
 
 ## Usage
@@ -22,11 +22,11 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.39.0")
+    id("org.openrewrite.rewrite") version("5.40.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.search.FindLanguageComposition")
+    activeRecipe("org.openrewrite.java.cleanup.ShortenFullyQualifiedTypeReferences")
 }
 
 repositories {
@@ -46,10 +46,10 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.43.0</version>
+        <version>4.44.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.search.FindLanguageComposition</recipe>
+            <recipe>org.openrewrite.java.cleanup.ShortenFullyQualifiedTypeReferences</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -66,7 +66,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 {% code title="shell" %}
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.activeRecipes=org.openrewrite.search.FindLanguageComposition
+  -Drewrite.activeRecipes=org.openrewrite.java.cleanup.ShortenFullyQualifiedTypeReferences
 ```
 {% endcode %}
 {% endtab %}
@@ -75,7 +75,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.search.FindLanguageComposition)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.ShortenFullyQualifiedTypeReferences)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

@@ -11,23 +11,23 @@ _Migrate applications to the latest Spring Security 6.0 release. This recipe wil
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-60.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.35.0/jar)
+[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-60.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.35.0
+* version: 4.36.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.35.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.39.0")
+    id("org.openrewrite.rewrite") version("5.40.0")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.35.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
 }
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.43.0</version>
+        <version>4.44.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0</recipe>
@@ -64,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.35.0</version>
+            <version>4.36.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -93,6 +93,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Migrate to Spring Security 5.8](../../../java/spring/security5/upgradespringsecurity_5_8.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.security`
   * artifactId: `*`
@@ -101,6 +102,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](../../../java/spring/security6/usesha256inrememberme.md)
 * [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](../../../java/spring/security6/propagateauthenticationserviceexceptions.md)
 * [Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in](../../../java/spring/security6/requireexplicitsavingofsecuritycontextrepository.md)
+* [Remove unneeded `oauth2Login` config when upgrading to Spring Security 6](../../../java/spring/security6/removeoauth2loginconfig.md)
+* [Keep the default RequestCache querying behavior in Spring Security 5](../../../java/spring/security6/updaterequestcache.md)
+* [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](../../../java/spring/security6/removeuseauthorizationmanager.md)
+* [Remove the `useAuthorizationManager=true` attribute from `@EnableReactiveMethodSecurity`](../../../java/spring/security6/updateenablereactivemethodsecurity.md)
+* [Remove unnecessary `filterSecurityInterceptorOncePerRequest(false)` when upgrading to Spring Security 6](../../../java/spring/security6/removefiltersecurityinterceptoronceperrequest.md)
 
 {% endtab %}
 
@@ -116,6 +122,7 @@ tags:
   - spring
   - security
 recipeList:
+  - org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_8
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: org.springframework.security
       artifactId: *
@@ -124,6 +131,11 @@ recipeList:
   - org.openrewrite.java.spring.security6.UseSha256InRememberMe
   - org.openrewrite.java.spring.security6.PropagateAuthenticationServiceExceptions
   - org.openrewrite.java.spring.security6.RequireExplicitSavingOfSecurityContextRepository
+  - org.openrewrite.java.spring.security6.RemoveOauth2LoginConfig
+  - org.openrewrite.java.spring.security6.UpdateRequestCache
+  - org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager
+  - org.openrewrite.java.spring.security6.UpdateEnableReactiveMethodSecurity
+  - org.openrewrite.java.spring.security6.RemoveFilterSecurityInterceptorOncePerRequest
 
 ```
 {% endtab %}

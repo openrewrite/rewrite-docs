@@ -6,11 +6,11 @@ _Alters XML Attribute value within specified element._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/7.39.1/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/7.40.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.39.1
+* version: 7.40.0
 
 ## Options
 
@@ -18,7 +18,7 @@ _Alters XML Attribute value within specified element._
 | -- | -- | -- |
 | `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. |
 | `String` | attributeName | The name of the attribute whose value is to be changed. |
-| `String` | newValue | The new value to be used for key specified by `attributeName`. |
+| `String` | newValue | The new value to be used for key specified by `attributeName`, Set to null if you want to remove the attribute. |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
 | `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. |
 
@@ -52,7 +52,7 @@ Now that `com.yourorg.ChangeTagAttributeExample` has been defined activate it in
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.39.0")
+    id("org.openrewrite.rewrite") version("5.40.0")
 }
 
 rewrite {
@@ -76,7 +76,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.43.0</version>
+        <version>4.44.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTagAttributeExample</recipe>
