@@ -1,0 +1,18 @@
+## Running Recipes
+
+* [Quickstart: Setting up your project and running recipes](running-recipes/getting-started.md)
+* [Running Rewrite on a Gradle project without modifying the build](running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build.md)
+* [Running Rewrite on a Maven project without modifying the build](running-recipes/running-rewrite-on-a-maven-project-without-modifying-the-build.md)
+* [Running Rewrite without build tool plugins](running-recipes/running-rewrite-without-build-tool-plugins.md)
+* [Popular recipe guides](running-recipes/popular-recipe-guides/README.md)
+    * [Common static analysis issue remediation](running-recipes/popular-recipe-guides/common-static-analysis-issue-remediation.md)
+    * [Automatically fix Checkstyle violations](running-recipes/popular-recipe-guides/automatically-fix-checkstyle-violations.md)
+    * [Migrate to Java 17](running-recipes/popular-recipe-guides/migrate-to-java-17.md)
+    * [Migrate to JUnit 5 from JUnit 4](running-recipes/popular-recipe-guides/migrate-from-junit-4-to-junit-5.md)
+    * [Migrate to Spring Boot 2 from Spring Boot 1](running-recipes/popular-recipe-guides/spring-boot-2.x-migration-from-spring-boot-1.x.md)
+    * [Migrate to Quarkus 2 from Quarkus 1](running-recipes/popular-recipe-guides/quarkus-2.x-migration-from-quarkus-1.x.md)
+    * [Migrate to Micronaut 3 from Micronaut 2](running-recipes/popular-recipe-guides/migrate-to-micronaut-3-from-micronaut-2.md)
+    * [Migrate to SLF4J from Log4J](running-recipes/popular-recipe-guides/migrate-to-slf4j-from-log4j.md)
+    * [Use SLF4J parameterized logging](running-recipes/popular-recipe-guides/slf4j-parameterized-logging.md)
+    * [Refactoring with declarative YAML recipes](running-recipes/popular-recipe-guides/authoring-declarative-yaml-recipes.md)
+    * [Automating Maven dependency management](running-recipes/popular-recipe-guides/automating-maven-dependency-management.md)
