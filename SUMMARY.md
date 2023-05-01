@@ -1162,7 +1162,7 @@
   * [7.34.0 Release (2022-12-09)](changelog/7-34-0-Release.md)
   * [7.33.0 Release (2022-11-16)](changelog/7-33-0-Release.md)
 * [Reference](reference.md)
-  *[Latest versions of every OpenRewrite module](reference/latest-versions-of-every-openrewrite-module.md)
+  * [Latest versions of every OpenRewrite module](reference/latest-versions-of-every-openrewrite-module.md)
   * [Maven plugin configuration](reference/rewrite-maven-plugin.md)
   * [Gradle plugin configuration](reference/gradle-plugin-configuration.md)
   * [Snapshot versions](reference/snapshot-instructions.md)
