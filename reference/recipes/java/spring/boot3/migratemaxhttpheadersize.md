@@ -1,8 +1,8 @@
-# Rename `server.max-http-header-size` to `server.max-http-request-header-size`
+# Rename server.max-http-header-size to server.max-http-request-header-size
 
 **org.openrewrite.java.spring.boot3.MigrateMaxHttpHeaderSize**
 
-_Previously, the server.max-http-header-size was treated inconsistently across the four supported embedded web servers. When using Jetty, Netty, or Undertow it would configure the max HTTP request header size. When using Tomcat it would configure the max HTTP request and response header sizes. The renamed property is used to configure the http request header size in Spring Boot 3.0. **To limit the max header size of an HTTP response on Tomcat or Jetty (the only two servers that support such a setting), use a `WebServerFactoryCustomizer`**._
+_Previously, the server.max-http-header-size was treated inconsistently across the four supported embedded web servers. When using Jetty, Netty, or Undertow it would configure the max HTTP request header size. When using Tomcat it would configure the max HTTP request and response header sizes. The renamed property is used to configure the http request header size in Spring Boot 3.0. **To limit the max header size of an HTTP response on Tomcat or Jetty (the only two servers that support such a setting), use a**** ****`WebServerFactoryCustomizer`**._
 
 ### Tags
 
@@ -17,10 +17,9 @@ _Previously, the server.max-http-header-size was treated inconsistently across t
 * artifactId: rewrite-spring
 * version: 4.36.0
 
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed):
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -77,8 +76,6 @@ dependencies {
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE \
@@ -88,15 +85,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtab %}
 {% endtabs %}
 
-
 ## Definition
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+* [Change the key of a spring application property](../changespringpropertykey.md)
   * oldPropertyKey: `server.max-http-header-size`
   * newPropertyKey: `server.max-http-request-header-size`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -121,7 +116,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.spring.boot3.MigrateMaxHttpHeaderSize)
+[![Moderne Link Image](../../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.spring.boot3.MigrateMaxHttpHeaderSize)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

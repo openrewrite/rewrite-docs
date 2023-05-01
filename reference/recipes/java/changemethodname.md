@@ -14,18 +14,16 @@ _Rename a method._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. |
-| `String` | newMethodName | The method name that will replace the existing name. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
-
+| Type      | Name             | Description                                                                                                                                                              |
+| --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `String`  | methodPattern    | A [method pattern](broken-reference) that is used to find matching method declarations/invocations.                                                                      |
+| `String`  | newMethodName    | The method name that will replace the existing name.                                                                                                                     |
+| `Boolean` | matchOverrides   | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference).                                                                     |
+| `Boolean` | ignoreDefinition | _Optional_. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodNameExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeMethodNameExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -41,7 +39,6 @@ recipeList:
       ignoreDefinition: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it in your build file:
 
@@ -89,10 +86,9 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.ChangeMethodName)
+[![Moderne Link Image](../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.ChangeMethodName)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

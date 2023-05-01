@@ -18,10 +18,9 @@ _Find methods with empty bodies and single public no arg constructors._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-
+| Type      | Name           | Description                                                                                          |
+| --------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference). |
 
 ## Usage
 
@@ -82,10 +81,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.search.FindEmptyMethods)
+[![Moderne Link Image](../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.search.FindEmptyMethods)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

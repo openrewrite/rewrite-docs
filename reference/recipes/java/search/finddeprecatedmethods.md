@@ -14,11 +14,10 @@ _Find uses of deprecated methods in any API._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | *Optional*. A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
-| `Boolean` | ignoreDeprecatedScopes | *Optional*. When set to `true` deprecated methods used within deprecated methods or classes will be ignored. |
-
+| Type      | Name                   | Description                                                                                                  |
+| --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `String`  | methodPattern          | _Optional_. A [method pattern](broken-reference) that is used to find matching method invocations.           |
+| `Boolean` | ignoreDeprecatedScopes | _Optional_. When set to `true` deprecated methods used within deprecated methods or classes will be ignored. |
 
 ## Usage
 
@@ -79,10 +78,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.search.FindDeprecatedMethods)
+[![Moderne Link Image](../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.search.FindDeprecatedMethods)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

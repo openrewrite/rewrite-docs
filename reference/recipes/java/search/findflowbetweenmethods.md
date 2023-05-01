@@ -14,20 +14,18 @@ _Takes two patterns for the start/end methods to find flow between._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | startMethodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching the start point's method invocations. |
-| `Boolean` | startMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-| `String` | endMethodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching the end point's method invocations. |
-| `Boolean` | endMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-| `String` | target | The part of the method flow should traverse to |
-| `String` | flow | When enabled, show the data or taint flow of the method invocation. |
-
+| Type      | Name                | Description                                                                                              |
+| --------- | ------------------- | -------------------------------------------------------------------------------------------------------- |
+| `String`  | startMethodPattern  | A [method pattern](broken-reference) that is used to find matching the start point's method invocations. |
+| `Boolean` | startMatchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference).     |
+| `String`  | endMethodPattern    | A [method pattern](broken-reference) that is used to find matching the end point's method invocations.   |
+| `Boolean` | endMatchOverrides   | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference).     |
+| `String`  | target              | The part of the method flow should traverse to                                                           |
+| `String`  | flow                | When enabled, show the data or taint flow of the method invocation.                                      |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindFlowBetweenMethodsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindFlowBetweenMethodsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -45,7 +43,6 @@ recipeList:
       flow: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined activate it in your build file:
 
@@ -93,10 +90,9 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.search.FindFlowBetweenMethods)
+[![Moderne Link Image](../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.search.FindFlowBetweenMethods)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

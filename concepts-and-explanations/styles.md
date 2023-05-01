@@ -45,40 +45,16 @@ styleConfigs:
       indentsRelativeToExpressionStart: false
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Property</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left"><code>specs.openrewrite.org./v1beta/style</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">name</td>
-      <td style="text-align:left">A name-spaced unique name you are giving to the style</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">styleConfigs</td>
-      <td style="text-align:left">
-        <p>A list of configurations.</p>
-        <p>Each list entry is the fully-qualified class name of a <code>Style</code> implementation.
-          The value is itself a map of key-value pairs that invoke setters on the
-          style.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Property     | Description                                                                                                                                                                                                     |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type         | `specs.openrewrite.org./v1beta/style`                                                                                                                                                                           |
+| name         | A name-spaced unique name you are giving to the style                                                                                                                                                           |
+| styleConfigs | <p>A list of configurations.</p><p>Each list entry is the fully-qualified class name of a <code>Style</code> implementation. The value is itself a map of key-value pairs that invoke setters on the style.</p> |
 
 {% hint style="info" %}
-For more information on how to work with and use declarative styles, please read our [Declarative YAML guide](/reference/yaml-format-reference.md#styles).
+For more information on how to work with and use declarative styles, please read our [Declarative YAML guide](broken-reference).
 {% endhint %}
 
 ## Next Steps
 
 In [Environment](environment.md), we'll see how these styles are activated and applied to the parsers that consume code. It will also show how to discover and activate recipes of visitors.
-

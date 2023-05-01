@@ -42,19 +42,19 @@ All recipe names, descriptions, and parameters should follow our [recipe naming 
 
 By following these conventions, you'll ensure that:
 
-* The [documentation](/reference/recipes/) generated for your recipe is valid and clear to others
+* The [documentation](../reference/recipes/) generated for your recipe is valid and clear to others
 * The [Moderne Saas](https://public.moderne.io/) can accurately filter and display your recipe and its parameters
 
 ### If it can be declarative, it should be declarative
 
-Before you begin writing a new recipe, take the time to examine existing recipes. You may find that what you want to do can be done by combining existing recipes without writing any code. You can achieve this by creating a [declarative YAML](../reference/yaml-format-reference.md) file.
+Before you begin writing a new recipe, take the time to examine existing recipes. You may find that what you want to do can be done by combining existing recipes without writing any code. You can achieve this by creating a [declarative YAML](broken-reference) file.
 
 For instance, let's say you wanted to create a recipe that combines the functionality of numerous other static analysis recipes. You _could_ [imperatively code](https://gist.github.com/mike-solomon/a57a7f685bf8213d98162d57406cf8ae) a new recipe that calls one recipe after the next. However, that approach is strongly discouraged. Instead, you should [declaratively list out](https://gist.github.com/mike-solomon/95fa160b2ee07baf2256d57884321621) each recipe you want to run in a YAML file. In doing so, you will not only save time, but you will also substantially reduce the number of potential errors.
 
 If your recipe can be declarative, it should be.
 
 {% hint style="info" %}
-For more information on imperative and declarative recipes, please read the [Recipe documentation](../concepts-and-explanations/recipes.md). Or if you want to learn how to configure a declarative YAML file, please read our [declarative YAML format doc](../reference/yaml-format-reference.md).
+For more information on imperative and declarative recipes, please read the [Recipe documentation](../concepts-and-explanations/recipes.md). Or if you want to learn how to configure a declarative YAML file, please read our [declarative YAML format doc](broken-reference).
 {% endhint %}
 
 ### Be deliberate about LST traversal

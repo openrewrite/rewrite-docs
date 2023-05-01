@@ -90,7 +90,7 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-At this point, you're able to run any of the Maven goals or Gradle tasks provided by the Rewrite plugin. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) or [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options.
+At this point, you're able to run any of the Maven goals or Gradle tasks provided by the Rewrite plugin. See [Maven Plugin Configuration](broken-reference) or [Gradle Plugin Configuration](broken-reference) for the full set of options.
 
 From the command line, try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a list of all the recipes available for execution. Initially, this will list only the recipes built-in to OpenRewrite.
 
@@ -353,6 +353,6 @@ Before making any recipes or configuring any plugins, please [ensure your recipe
 {% endhint %}
 
 * [Writing a Java refactoring recipe](../authoring-recipes/writing-a-java-refactoring-recipe.md)
-* [Maven plugin configuration](../reference/rewrite-maven-plugin.md)
-* [Gradle plugin configuration](../reference/gradle-plugin-configuration.md)
-* [Declarative YAML format](../reference/yaml-format-reference.md)
+* [Maven plugin configuration](broken-reference)
+* [Gradle plugin configuration](broken-reference)
+* [Declarative YAML format](broken-reference)

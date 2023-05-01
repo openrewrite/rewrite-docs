@@ -2,7 +2,7 @@
 description: Compose powerful refactoring operations out of building blocks
 ---
 
-# Refactoring with Declarative YAML Recipes
+# Refactoring with declarative YAML recipes
 
 Not every refactoring operation requires a brand new imperative [Recipe](../../concepts-and-explanations/recipes.md) to be authored in code. With declarative YAML Recipes many powerful transformations can be achieved without writing any code. In this tutorial we'll use declarative YAML recipes to rename a package relocation and update downstream projects to reflect the updated package names.
 
@@ -152,5 +152,5 @@ Recipes will never be applied just because they exist on the classpath. A Recipe
 
 ## Next Steps
 
-* [Declarative YAML Format](../../reference/yaml-format-reference.md)
+* [Declarative YAML Format](broken-reference)
 * [Writing a Java Refactoring Recipe](../../authoring-recipes/writing-a-java-refactoring-recipe.md)

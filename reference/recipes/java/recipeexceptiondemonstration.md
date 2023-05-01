@@ -14,16 +14,15 @@ _Show how recipe exceptions are rendered in various forms of OpenRewrite tooling
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | throwOnMethodPattern | *Optional*. A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. |
-| `Boolean` | throwOnVisitAll | *Optional*.  |
-| `Boolean` | throwOnVisitAllVisitor | *Optional*.  |
-| `Boolean` | throwOnApplicableTest | *Optional*.  |
-| `Boolean` | throwOnApplicableTestVisitor | *Optional*.  |
-| `Boolean` | throwOnSingleSourceApplicableTest | *Optional*.  |
-| `Boolean` | throwOnSingleSourceApplicableTestVisitor | *Optional*.  |
-
+| Type      | Name                                     | Description                                                                                                     |
+| --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `String`  | throwOnMethodPattern                     | _Optional_. A [method pattern](broken-reference) that is used to find matching method declarations/invocations. |
+| `Boolean` | throwOnVisitAll                          | _Optional_.                                                                                                     |
+| `Boolean` | throwOnVisitAllVisitor                   | _Optional_.                                                                                                     |
+| `Boolean` | throwOnApplicableTest                    | _Optional_.                                                                                                     |
+| `Boolean` | throwOnApplicableTestVisitor             | _Optional_.                                                                                                     |
+| `Boolean` | throwOnSingleSourceApplicableTest        | _Optional_.                                                                                                     |
+| `Boolean` | throwOnSingleSourceApplicableTestVisitor | _Optional_.                                                                                                     |
 
 ## Usage
 
@@ -84,10 +83,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.RecipeExceptionDemonstration)
+[![Moderne Link Image](../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.RecipeExceptionDemonstration)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 

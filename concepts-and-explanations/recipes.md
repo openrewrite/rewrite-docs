@@ -6,7 +6,7 @@ description: >-
 
 # Recipes
 
-A recipe represents a group of search and refactoring operations that can be applied to a [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md). A recipe can represent a single, stand-alone operation or it can be linked together with other recipes to accomplish a larger goal such as a framework migration.
+A recipe represents a group of search and refactoring operations that can be applied to a [Lossless Semantic Tree](lossless-semantic-trees.md). A recipe can represent a single, stand-alone operation or it can be linked together with other recipes to accomplish a larger goal such as a framework migration.
 
 OpenRewrite provides a managed environment for discovering, instantiating and configuring recipes. To implement a search or refactoring operation, a recipe delegates to a [visitor](visitors.md) which handles the LST traversal and manipulation.
 
@@ -103,7 +103,7 @@ recipeList:
 ```
 
 {% hint style="info" %}
-For more information on how to work with and use declarative recipes, please read our [Declarative YAML guide](/reference/yaml-format-reference.md).
+For more information on how to work with and use declarative recipes, please read our [Declarative YAML guide](broken-reference).
 {% endhint %}
 
 ## Recipe Configuration & Validation
@@ -118,7 +118,7 @@ In the event that a recipe requires custom validation rules different from the d
 
 ### Recipe Descriptors
 
-OpenRewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name (via `Recipe.getDisplayName`) and its description (via `Recipe.getDescription`) to provide basic information about the recipe. Additionally, OpenRewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields. Collectively, this metadata is used in automated documentation. 
+OpenRewrite provides facilities for documenting a recipe and its configurable properties via a contract on the Recipe class. A recipe author may document the name (via `Recipe.getDisplayName`) and its description (via `Recipe.getDescription`) to provide basic information about the recipe. Additionally, OpenRewrite provides an annotation, `org.openrewrite.Option` , that can be applied to the recipe's fields. Collectively, this metadata is used in automated documentation.
 
 The following is an example of how to properly define the metadata on a recipe:
 

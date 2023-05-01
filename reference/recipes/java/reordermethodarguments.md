@@ -14,18 +14,16 @@ _Reorder method arguments into the specified order._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
-| `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. |
-| `String[]` | oldParameterNames | *Optional*. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. |
-| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
-
+| Type       | Name              | Description                                                                                                                                                              |
+| ---------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `String`   | methodPattern     | A [method pattern](broken-reference) that is used to find matching method invocations.                                                                                   |
+| `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged.                                                                    |
+| `String[]` | oldParameterNames | _Optional_. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged.    |
+| `Boolean`  | ignoreDefinition  | _Optional_. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReorderMethodArgumentsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReorderMethodArgumentsExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -41,7 +39,6 @@ recipeList:
       ignoreDefinition: null
 ```
 {% endcode %}
-
 
 Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined activate it in your build file:
 
@@ -89,10 +86,9 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.ReorderMethodArguments)
+[![Moderne Link Image](../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.ReorderMethodArguments)
 
 The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
 
