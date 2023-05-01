@@ -4,18 +4,20 @@
 
 _Recipe created for the following Refaster template:_
 
-  public class UseStringIsEmpty {
-      
-      @BeforeTemplate
-      boolean before(String s) {
-          return s.length() > 0;
-      }
-      
-      @AfterTemplate
-      boolean after(String s) {
-          return !s.isEmpty();
-      }
-  }
+```java
+public class UseStringIsEmpty {
+    
+    @BeforeTemplate
+    boolean before(String s) {
+        return s.length() > 0;
+    }
+    
+    @AfterTemplate
+    boolean after(String s) {
+        return !s.isEmpty();
+    }
+}
+```
 
 ## Source
 
