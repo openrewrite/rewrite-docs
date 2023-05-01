@@ -16,8 +16,8 @@ _Find method usages by pattern._
 
 | Type      | Name           | Description                                                                                          |
 | --------- | -------------- | ---------------------------------------------------------------------------------------------------- |
-| `String`  | methodPattern  | A [method pattern](broken-reference) that is used to find matching method invocations.               |
-| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference). |
+| `String`  | methodPattern  | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations.               |
+| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 | `String`  | flow           | _Optional_. When enabled, show the data or taint flow of the method invocation.                      |
 
 ## Usage

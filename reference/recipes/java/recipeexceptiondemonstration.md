@@ -16,7 +16,7 @@ _Show how recipe exceptions are rendered in various forms of OpenRewrite tooling
 
 | Type      | Name                                     | Description                                                                                                     |
 | --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `String`  | throwOnMethodPattern                     | _Optional_. A [method pattern](broken-reference) that is used to find matching method declarations/invocations. |
+| `String`  | throwOnMethodPattern                     | _Optional_. A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. |
 | `Boolean` | throwOnVisitAll                          | _Optional_.                                                                                                     |
 | `Boolean` | throwOnVisitAllVisitor                   | _Optional_.                                                                                                     |
 | `Boolean` | throwOnApplicableTest                    | _Optional_.                                                                                                     |

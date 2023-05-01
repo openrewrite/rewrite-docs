@@ -16,9 +16,9 @@ _Change the access level (public, protected, private, package private) of a meth
 
 | Type      | Name           | Description                                                                                          |
 | --------- | -------------- | ---------------------------------------------------------------------------------------------------- |
-| `String`  | methodPattern  | A [method pattern](broken-reference) that is used to find matching method declarations/invocations.  |
+| `String`  | methodPattern  | A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations.  |
 | `String`  | newAccessLevel | New method access level to apply to the method.                                                      |
-| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference). |
+| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 
 ## Usage
 

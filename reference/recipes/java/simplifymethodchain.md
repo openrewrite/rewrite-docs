@@ -16,7 +16,7 @@ _Simplify `a.b().c()` to `a.d()`._
 
 | Type     | Name               | Description                                                                                                                                            |
 | -------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `List`   | methodPatternChain | A list of [method patterns](broken-reference) that are called in sequence                                                                              |
+| `List`   | methodPatternChain | A list of [method patterns](/reference/method-patterns.md) that are called in sequence                                                                              |
 | `String` | newMethodName      | The method name that will replace the existing name. The new method name target is assumed to have the same arguments as the last method in the chain. |
 
 ## Usage

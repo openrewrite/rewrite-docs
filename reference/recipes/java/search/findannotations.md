@@ -16,7 +16,7 @@ _Find all annotations matching the annotation pattern._
 
 | Type      | Name                 | Description                                                                      |
 | --------- | -------------------- | -------------------------------------------------------------------------------- |
-| `String`  | annotationPattern    | An annotation pattern, expressed as a [method pattern](broken-reference).        |
+| `String`  | annotationPattern    | An annotation pattern, expressed as a [method pattern](/reference/method-patterns.md).        |
 | `Boolean` | matchMetaAnnotations | _Optional_. When enabled, matches on meta annotations of the annotation pattern. |
 
 ## Usage

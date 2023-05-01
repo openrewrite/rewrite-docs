@@ -16,10 +16,10 @@ _Takes two patterns for the start/end methods to find flow between._
 
 | Type      | Name                | Description                                                                                              |
 | --------- | ------------------- | -------------------------------------------------------------------------------------------------------- |
-| `String`  | startMethodPattern  | A [method pattern](broken-reference) that is used to find matching the start point's method invocations. |
-| `Boolean` | startMatchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference).     |
-| `String`  | endMethodPattern    | A [method pattern](broken-reference) that is used to find matching the end point's method invocations.   |
-| `Boolean` | endMatchOverrides   | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference).     |
+| `String`  | startMethodPattern  | A [method pattern](/reference/method-patterns.md) that is used to find matching the start point's method invocations. |
+| `Boolean` | startMatchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md).     |
+| `String`  | endMethodPattern    | A [method pattern](/reference/method-patterns.md) that is used to find matching the end point's method invocations.   |
+| `Boolean` | endMatchOverrides   | _Optional_. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md).     |
 | `String`  | target              | The part of the method flow should traverse to                                                           |
 | `String`  | flow                | When enabled, show the data or taint flow of the method invocation.                                      |
 

@@ -16,7 +16,7 @@ _Remove matching annotations wherever they occur._
 
 | Type     | Name              | Description                                                               |
 | -------- | ----------------- | ------------------------------------------------------------------------- |
-| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](broken-reference). |
+| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns.md). |
 
 ## Usage
 

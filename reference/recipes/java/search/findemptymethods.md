@@ -20,7 +20,7 @@ _Find methods with empty bodies and single public no arg constructors._
 
 | Type      | Name           | Description                                                                                          |
 | --------- | -------------- | ---------------------------------------------------------------------------------------------------- |
-| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference). |
+| `Boolean` | matchOverrides | _Optional_. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 
 ## Usage
 

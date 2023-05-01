@@ -16,7 +16,7 @@ _Removes unnecessary receiver types from static method invocations. For example,
 
 | Type     | Name          | Description                                                                            |
 | -------- | ------------- | -------------------------------------------------------------------------------------- |
-| `String` | methodPattern | A [method pattern](broken-reference) that is used to find matching method invocations. |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
 
 ## Usage
 

@@ -16,9 +16,9 @@ _Rename a method._
 
 | Type      | Name             | Description                                                                                                                                                              |
 | --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `String`  | methodPattern    | A [method pattern](broken-reference) that is used to find matching method declarations/invocations.                                                                      |
+| `String`  | methodPattern    | A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations.                                                                      |
 | `String`  | newMethodName    | The method name that will replace the existing name.                                                                                                                     |
-| `Boolean` | matchOverrides   | _Optional_. When enabled, find methods that are overrides of the [method pattern](broken-reference).                                                                     |
+| `Boolean` | matchOverrides   | _Optional_. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md).                                                                     |
 | `Boolean` | ignoreDefinition | _Optional_. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
 
 ## Usage
