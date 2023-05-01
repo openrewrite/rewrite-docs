@@ -4,7 +4,6 @@
 
 _Recipe created for the following Refaster template:_
 
-  ```java
   public class UseStringIsEmpty {
       
       @BeforeTemplate
@@ -16,7 +15,7 @@ _Recipe created for the following Refaster template:_
       boolean after(String s) {
           return !s.isEmpty();
       }
-  }```
+  }
 
 ## Source
 
