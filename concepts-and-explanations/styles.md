@@ -52,7 +52,7 @@ styleConfigs:
 | styleConfigs | <p>A list of configurations.</p><p>Each list entry is the fully-qualified class name of a <code>Style</code> implementation. The value is itself a map of key-value pairs that invoke setters on the style.</p> |
 
 {% hint style="info" %}
-For more information on how to work with and use declarative styles, please read our [Declarative YAML guide](broken-reference).
+For more information on how to work with and use declarative styles, please read our [Declarative YAML guide](/reference/yaml-format-reference.md#styles).
 {% endhint %}
 
 ## Next Steps

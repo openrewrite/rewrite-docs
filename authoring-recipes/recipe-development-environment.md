@@ -245,7 +245,7 @@ Having configured the project per these recommendations, you're now able to begi
 
 * `src/main/java` - Recipe implementations
 * `src/test/java` - Recipe tests
-* (optional) `src/main/resources/META-INF/rewrite` - YAML files for defining [declarative OpenRewrite Recipes](broken-reference)
+* (optional) `src/main/resources/META-INF/rewrite` - YAML files for defining [declarative OpenRewrite Recipes](/reference/yaml-format-reference.md)
 
 With all of that done, your project setup is complete! You are now ready to [create a Recipe](writing-a-java-refactoring-recipe.md).
 
@@ -365,5 +365,5 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 ## Next steps
 
 * [Writing a Java Refactoring Recipe](writing-a-java-refactoring-recipe.md)
-* [Maven Plugin Configuration](broken-reference)
-* [Gradle Plugin Configuration](broken-reference)
+* [Maven Plugin Configuration](/reference/rewrite-maven-plugin.md)
+* [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md)

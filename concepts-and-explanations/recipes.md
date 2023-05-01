@@ -103,7 +103,7 @@ recipeList:
 ```
 
 {% hint style="info" %}
-For more information on how to work with and use declarative recipes, please read our [Declarative YAML guide](broken-reference).
+For more information on how to work with and use declarative recipes, please read our [Declarative YAML guide](/reference/yaml-format-reference.md).
 {% endhint %}
 
 ## Recipe Configuration & Validation

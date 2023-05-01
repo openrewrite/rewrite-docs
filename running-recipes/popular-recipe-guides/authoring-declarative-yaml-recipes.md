@@ -152,5 +152,5 @@ Recipes will never be applied just because they exist on the classpath. A Recipe
 
 ## Next Steps
 
-* [Declarative YAML Format](broken-reference)
+* [Declarative YAML Format](/reference/yaml-format-reference.md)
 * [Writing a Java Refactoring Recipe](../../authoring-recipes/writing-a-java-refactoring-recipe.md)
