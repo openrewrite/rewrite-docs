@@ -2,21 +2,21 @@
 
 **org.openrewrite.java.migrate.lang.UseStringIsEmptyRecipe**
 
-_Recipe created for the following Refaster template:
-```java
-public class UseStringIsEmpty {
-    
-    @BeforeTemplate
-    boolean before(String s) {
-        return s.length() > 0;
-    }
-    
-    @AfterTemplate
-    boolean after(String s) {
-        return !s.isEmpty();
-    }
-}
-```._
+_Recipe created for the following Refaster template:_
+
+  ```java
+  public class UseStringIsEmpty {
+      
+      @BeforeTemplate
+      boolean before(String s) {
+          return s.length() > 0;
+      }
+      
+      @AfterTemplate
+      boolean after(String s) {
+          return !s.isEmpty();
+      }
+  }```
 
 ## Source
 
