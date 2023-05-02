@@ -13,5 +13,6 @@ jobs:
         uses: actions/checkout@v3
       - name: Find broken references
         run: |
-          grep -r --exclude-dir=.github "broken-reference" .
-          if [ $? -eq 0 ]; then exit 1; fi
+          if grep -r --exclude-dir=.github "broken-reference" . ; then
+            exit 1
+          fi
