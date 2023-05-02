@@ -1,5 +1,7 @@
 # Table of contents
 
+* [test](broken-reference)
+
 * [Introduction to OpenRewrite](introduction.md)
 * [Running Recipes](running-recipes.md)
   * [Quickstart: Setting up your project and running recipes](running-recipes/getting-started.md)
