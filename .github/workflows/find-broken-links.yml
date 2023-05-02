@@ -1,0 +1,17 @@
+name: Check for broken references
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Find broken references
+        run: |
+          grep -r "broken reference" .
+          if [$? -eq 0]; then exit 1; fi
