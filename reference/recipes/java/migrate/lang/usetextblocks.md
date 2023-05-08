@@ -12,6 +12,100 @@ _Text blocks are easier to read than concatenated strings._
 * artifactId: rewrite-migrate-java
 * version: 1.21.1
 
+## Examples
+* Example 1:
+
+{% code title="Test.java" %}
+#### Before
+```java
+class Test {
+    String query = "SELECT * FROM\n" +
+            "my_table\n" +
+            "WHERE something = 1;";
+}
+
+```
+
+#### After
+```java
+class Test {
+    String query = """
+            SELECT * FROM
+            my_table
+            WHERE something = 1;\
+            """;
+}
+
+```
+{% endcode %}
+---
+* Example 2:
+
+{% code title="A.java" %}
+#### Before
+```java
+class A {
+    void welcome() {
+        log("\n========================================================="
+            + "\n                                                         "
+            + "\n          Welcome to Spring Integration!                 "
+            + "\n                                                         "
+            + "\n    For more information please visit:                   "
+            + "\n    https://www.springsource.org/spring-integration      "
+            + "\n                                                         "
+            + "\n=========================================================");
+    }
+    void log(String s) {}
+}
+
+```
+
+#### After
+```java
+class A {
+    void welcome() {
+        log("""
+            
+            =========================================================
+                                                                    \s
+                      Welcome to Spring Integration!                \s
+                                                                    \s
+                For more information please visit:                  \s
+                https://www.springsource.org/spring-integration     \s
+                                                                    \s
+            =========================================================\
+            """);
+    }
+    void log(String s) {}
+}
+
+```
+{% endcode %}
+---
+* Example 3:
+
+{% code title="Test.java" %}
+#### Before
+```java
+class Test {
+    String eightQuotes = "\"\"\"\"\"\"\"\"" +
+                   "after 8 quotes";
+}
+
+```
+
+#### After
+```java
+class Test {
+    String eightQuotes = """
+                   ""\"""\"""\
+                   after 8 quotes\
+                   """;
+}
+
+```
+{% endcode %}
+
 ## Contributors
 * [Kun Li](kun@moderne.io)
 * [Jonathan Schneider](jkschneider@gmail.com)
