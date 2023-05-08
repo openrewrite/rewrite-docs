@@ -1,6 +1,6 @@
 # Testing
 
-## Subcategories
+## Categories
 
 * [AssertJ](/reference/recipes/java/testing/assertj)
 * [Cleanup](/reference/recipes/java/testing/cleanup)

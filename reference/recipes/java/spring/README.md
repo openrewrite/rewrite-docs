@@ -1,5 +1,18 @@
 # Spring
 
+## Categories
+
+* [Cloud2022](/reference/recipes/java/spring/cloud2022)
+* [Http](/reference/recipes/java/spring/http)
+* [Search](/reference/recipes/java/spring/search)
+* [Security5](/reference/recipes/java/spring/security5)
+* [Security6](/reference/recipes/java/spring/security6)
+* [Spring Batch](/reference/recipes/java/spring/batch)
+* [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
+* [Spring Boot 3.x](/reference/recipes/java/spring/boot3)
+* [Spring Data](/reference/recipes/java/spring/data)
+* [Spring Framework](/reference/recipes/java/spring/framework)
+
 ## Recipes
 
 * [Add a spring configuration property](./addspringproperty.md)
@@ -16,18 +29,5 @@
 * [Rename bean](./renamebean.md)
 * [Separate application YAML by profile](./separateapplicationyamlbyprofile.md)
 * [Update the API manifest](./updateapimanifest.md)
-
-## Subcategories
-
-* [Cloud2022](/reference/recipes/java/spring/cloud2022)
-* [Http](/reference/recipes/java/spring/http)
-* [Search](/reference/recipes/java/spring/search)
-* [Security5](/reference/recipes/java/spring/security5)
-* [Security6](/reference/recipes/java/spring/security6)
-* [Spring Batch](/reference/recipes/java/spring/batch)
-* [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
-* [Spring Boot 3.x](/reference/recipes/java/spring/boot3)
-* [Spring Data](/reference/recipes/java/spring/data)
-* [Spring Framework](/reference/recipes/java/spring/framework)
 
 

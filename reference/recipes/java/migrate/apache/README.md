@@ -1,6 +1,6 @@
 # Apache
 
-## Subcategories
+## Categories
 
 * [Commons](/reference/recipes/java/migrate/apache/commons)
 

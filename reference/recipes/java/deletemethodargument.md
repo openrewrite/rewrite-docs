@@ -6,22 +6,30 @@ _Delete an argument from method invocations._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/DeleteMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/DeleteMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.0
+* version: 7.40.6
+
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Greg Adams](greg@moderne.io)
+* [Sam Snyder](sam@moderne.io)
 
 ## Options
 
-| Type     | Name          | Description                                                                                  |
-| -------- | ------------- | -------------------------------------------------------------------------------------------- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations.       |
-| `int`    | argumentIndex | A zero-based index that indicates which argument will be removed from the method invocation. |
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
+| `int` | argumentIndex | A zero-based index that indicates which argument will be removed from the method invocation. |
+
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteMethodArgumentExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteMethodArgumentExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -37,13 +45,12 @@ recipeList:
 {% endcode %}
 
 Now that `com.yourorg.DeleteMethodArgumentExample` has been defined activate it in your build file:
-
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.0")
+    id("org.openrewrite.rewrite") version("5.40.4")
 }
 
 rewrite {
@@ -53,11 +60,9 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
@@ -67,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.44.0</version>
+        <version>4.45.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeleteMethodArgumentExample</recipe>
@@ -84,8 +89,8 @@ repositories {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.DeleteMethodArgument)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.DeleteMethodArgument)
 
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

@@ -12,6 +12,15 @@ _Some JUnit 4 `@RunWith` annotations do not require replacement with an equivale
 * artifactId: rewrite-testing-frameworks
 * version: 1.37.0
 
+## Contributors
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Michael Keppler](bananeweizen@gmx.de)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+
 ## Options
 
 | Type | Name | Description |
@@ -37,13 +46,12 @@ recipeList:
 {% endcode %}
 
 Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0 in your build file:
-
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.0")
+    id("org.openrewrite.rewrite") version("5.40.4")
 }
 
 rewrite {
@@ -60,7 +68,6 @@ dependencies {
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
@@ -70,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.44.0</version>
+        <version>4.45.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveObsoleteRunnersExample</recipe>
@@ -92,11 +99,10 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.testing.junit5.RemoveObsoleteRunners)
 
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

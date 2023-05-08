@@ -6,23 +6,25 @@ _Replace `org.apache.commons.lang3.Validate.notNull(..)` with `Objects.requireNo
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/java-best-practices.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/java-best-practices.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.0
+* version: 7.40.6
+
+## Contributors
+* [srmalkan](smitmalkan99@gmail.com)
 
 
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
-
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.0")
+    id("org.openrewrite.rewrite") version("5.40.4")
 }
 
 rewrite {
@@ -36,7 +38,6 @@ repositories {
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
@@ -46,7 +47,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.44.0</version>
+        <version>4.45.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull</recipe>
@@ -62,7 +63,6 @@ repositories {
 
 {% tab title="Maven Command Line" %}
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
 {% code title="shell" %}
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
@@ -71,7 +71,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
 
 ## Definition
 
@@ -101,6 +100,6 @@ recipeList:
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull)
 
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

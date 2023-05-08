@@ -24,13 +24,12 @@ You can still use the `server.error.include-message` property if you want messag
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
-
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.0")
+    id("org.openrewrite.rewrite") version("5.40.4")
 }
 
 rewrite {
@@ -47,7 +46,6 @@ dependencies {
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
@@ -57,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.44.0</version>
+        <version>4.45.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView</recipe>
@@ -90,7 +88,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
 
 ## Definition
 
@@ -135,6 +132,6 @@ recipeList:
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView)
 
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

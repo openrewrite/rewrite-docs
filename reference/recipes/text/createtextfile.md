@@ -6,16 +6,17 @@ _Creates a new plain text file._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/CreateTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/7.41.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/CreateTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/7.40.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.41.0-SNAPSHOT
+* version: 7.40.6
 
 ## Contributors
-<span style="display: inline-block; width: 50px; height: 50px; border-radius: 50%; background-color: #555; color: #fff; text-align: center; line-height: 50px; font-size: 24px; text-transform: uppercase;" title="Scott Jungling(scott.jungling@gmail.com)">SJ</span>
-<span style="display: inline-block; width: 50px; height: 50px; border-radius: 50%; background-color: #555; color: #fff; text-align: center; line-height: 50px; font-size: 24px; text-transform: uppercase;" title="Jonathan Schnéider(jkschneider@gmail.com)">JS</span>
-<span style="display: inline-block; width: 50px; height: 50px; border-radius: 50%; background-color: #555; color: #fff; text-align: center; line-height: 50px; font-size: 24px; text-transform: uppercase;" title="Tyler Van Gorder(1878529+tkvangorder@users.noreply.github.com)">TVG</span>
+* [Scott Jungling](scott.jungling@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Tyler Van Gorder](1878529+tkvangorder@users.noreply.github.com)
+
 ## Options
 
 | Type | Name | Description |
@@ -44,9 +45,7 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.CreateTextFileExample` has been defined activate it in your build file:
-
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -62,11 +61,9 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
@@ -91,11 +88,10 @@ repositories {
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.text.CreateTextFile)
 
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

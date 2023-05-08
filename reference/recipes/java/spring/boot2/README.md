@@ -1,5 +1,9 @@
 # Spring Boot 2.x
 
+## Categories
+
+* [Search](/reference/recipes/java/spring/boot2/search)
+
 ## Recipes
 
 * [Add missing `@Configuration` annotation](./addconfigurationannotationifbeanspresent.md)
@@ -61,9 +65,5 @@
 * [Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`](./migratespringbootservletinitializerpackagename.md)
 * [Use `setEagerFilterInit(boolean)`](./migrateundertowservletwebserverfactoryseteagerinitfilters.md)
 * [Use `spring-boot.run.agents` configuration key in `spring-boot-maven-plugin`](./springbootmavenpluginmigrateagenttoagents.md)
-
-## Subcategories
-
-* [Search](/reference/recipes/java/spring/boot2/search)
 
 

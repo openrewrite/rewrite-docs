@@ -1,16 +1,20 @@
-# Upgrade Gradle dependencies who use a fixed literal version
+# Upgrade Gradle literal dependency versions
 
 **org.openrewrite.gradle.UpgradeLiteralDependencyVersion**
 
-_A fixed literal version is a version that is not a variable or property or supplied indirectly by platform BOMs or similar means. For example, `com.google.guava:guava:29.0-jre`._
+_Deprecated form of `UpgradeDependencyVersion`. Use that instead._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeLiteralDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.0/jar)
+[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeLiteralDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.40.0
+* version: 7.40.6
+
+## Contributors
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
 
 ## Options
 
@@ -32,7 +36,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UpgradeLiteralDependencyVersionExample
-displayName: Upgrade Gradle dependencies who use a fixed literal version example
+displayName: Upgrade Gradle literal dependency versions example
 recipeList:
   - org.openrewrite.gradle.UpgradeLiteralDependencyVersion:
       groupId: com.fasterxml.jackson*
@@ -42,15 +46,13 @@ recipeList:
 ```
 {% endcode %}
 
-
 Now that `com.yourorg.UpgradeLiteralDependencyVersionExample` has been defined activate it in your build file:
-
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.0")
+    id("org.openrewrite.rewrite") version("5.40.4")
 }
 
 rewrite {
@@ -60,40 +62,54 @@ rewrite {
 repositories {
     mavenCentral()
 }
-
 ```
 {% endcode %}
 {% endtab %}
 
-{% tab title="Maven" %}
-{% code title="pom.xml" %}
-```markup
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.44.0</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>com.yourorg.UpgradeLiteralDependencyVersionExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-{% endtab %}
 {% endtabs %}
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Upgrade Gradle dependency versions](../gradle/upgradedependencyversion.md)
+  * groupId: ``
+  * artifactId: ``
+  * newVersion: ``
+  * versionPattern: ``
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.gradle.UpgradeLiteralDependencyVersion
+displayName: Upgrade Gradle literal dependency versions
+description: Deprecated form of `UpgradeDependencyVersion`. Use that instead.
+groupId: 
+
+artifactId: 
+
+newVersion: 
+
+versionPattern: 
+
+recipeList:
+  - org.openrewrite.gradle.UpgradeDependencyVersion:
+      groupId: 
+      artifactId: 
+      newVersion: 
+      versionPattern: 
+
+```
+{% endtab %}
+{% endtabs %}
 
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.gradle.UpgradeLiteralDependencyVersion)
 
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

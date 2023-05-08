@@ -2,6 +2,22 @@
 
 _Basic building blocks for transforming Java code._
 
+## Categories
+
+* [Common static analysis issues cleanup](/reference/recipes/java/cleanup)
+* [Controlflow](/reference/recipes/java/controlflow)
+* [Dependencies](/reference/recipes/java/dependencies)
+* [Format](/reference/recipes/java/format)
+* [JHipster](/reference/recipes/java/jhipster)
+* [Logging](/reference/recipes/java/logging)
+* [Micronaut](/reference/recipes/java/micronaut)
+* [Modernize](/reference/recipes/java/migrate)
+* [OpenRewrite best practices](/reference/recipes/java/recipes)
+* [Search](/reference/recipes/java/search)
+* [Security](/reference/recipes/java/security)
+* [Spring](/reference/recipes/java/spring)
+* [Testing](/reference/recipes/java/testing)
+
 ## Recipes
 
 * [Add ASLv2 license header](./addapache2licenseheader.md)
@@ -32,21 +48,5 @@ _Basic building blocks for transforming Java code._
 * [Update source positions](./updatesourcepositions.md)
 * [Use static import](./usestaticimport.md)
 * [Uses `@RewriteSkip` annotation](./doesnotuserewriteskip.md)
-
-## Subcategories
-
-* [Cleanup](/reference/recipes/java/cleanup)
-* [Controlflow](/reference/recipes/java/controlflow)
-* [Dependencies](/reference/recipes/java/dependencies)
-* [Format](/reference/recipes/java/format)
-* [JHipster](/reference/recipes/java/jhipster)
-* [Logging](/reference/recipes/java/logging)
-* [Micronaut](/reference/recipes/java/micronaut)
-* [Modernize](/reference/recipes/java/migrate)
-* [OpenRewrite best practices](/reference/recipes/java/recipes)
-* [Search](/reference/recipes/java/search)
-* [Security](/reference/recipes/java/security)
-* [Spring](/reference/recipes/java/spring)
-* [Testing](/reference/recipes/java/testing)
 
 

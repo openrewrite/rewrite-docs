@@ -2,6 +2,13 @@
 
 _Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration tasks._
 
+## Categories
+
+* [RBAC](/reference/recipes/kubernetes/rbac)
+* [Resource](/reference/recipes/kubernetes/resource)
+* [Search](/reference/recipes/kubernetes/search)
+* [Services](/reference/recipes/kubernetes/services)
+
 ## Recipes
 
 * [Add Kubernetes configuration](./addconfiguration.md)
@@ -23,12 +30,5 @@ _Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration t
 * [No root containers](./norootcontainers.md)
 * [Read-only root filesystem](./readonlyrootfilesystem.md)
 * [Update image name](./updatecontainerimagename.md)
-
-## Subcategories
-
-* [RBAC](/reference/recipes/kubernetes/rbac)
-* [Resource](/reference/recipes/kubernetes/resource)
-* [Search](/reference/recipes/kubernetes/search)
-* [Services](/reference/recipes/kubernetes/services)
 
 

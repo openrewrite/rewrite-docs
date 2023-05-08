@@ -1,6 +1,6 @@
 # Groovy
 
-## Subcategories
+## Categories
 
 * [Format](/reference/recipes/groovy/format)
 

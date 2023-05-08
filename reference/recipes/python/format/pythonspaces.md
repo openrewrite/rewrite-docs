@@ -6,19 +6,19 @@ _Standardizes spaces in Python code. Currently limited to formatting method argu
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/format/PythonSpaces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/0.5.0-SNAPSHOT/jar)
+[Github](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/format/PythonSpaces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/0.4.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-python
-* version: 0.5.0-SNAPSHOT
+* version: 0.4.0
 
 ## Contributors
-<span style="display: inline-block; width: 50px; height: 50px; border-radius: 50%; background-color: #555; color: #fff; text-align: center; line-height: 50px; font-size: 24px; text-transform: uppercase;" title="traceyyoshima(tracey.yoshima@gmail.com)">T</span>
+* [traceyyoshima](tracey.yoshima@gmail.com)
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-python:0.5.0-SNAPSHOT` in your build file or by running a shell command (in which case no build changes are needed): 
-
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-python:0.4.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -36,12 +36,11 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-python:0.5.0-SNAPSHOT")
+    rewrite("org.openrewrite:rewrite-python:0.4.0")
 }
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
@@ -61,7 +60,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-python</artifactId>
-            <version>0.5.0-SNAPSHOT</version>
+            <version>0.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,11 +84,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtab %}
 {% endtabs %}
 
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.python.format.PythonSpaces)
 
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

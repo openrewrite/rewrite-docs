@@ -2,20 +2,7 @@
 
 _Modernize your code to best use the project's current JDK version. Take advantage of newly available APIs and reduce the dependency of your code on third party dependencies where there is equivalent functionality in the Java standard library._
 
-## Recipes
-
-* [Add `JDeprScan` Maven Plug-in](./addjdeprscanplugin.md)
-* [Add Maven Jar Plugin to suppress Illegal Reflection Warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
-* [Change Maven Java version property values to 11](./javaversion11.md)
-* [Change Maven Java version property values to 17](./javaversion17.md)
-* [Change Maven Java version property values to 20](./javaversion20.md)
-* [Migrate to Java 11](./java8tojava11.md)
-* [Migrate to Java 17](./upgradetojava17.md)
-* [Migrate to Java 20](./upgradetojava20.md)
-* [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
-* [Upgrade Java version](./upgradejavaversion.md)
-
-## Subcategories
+## Categories
 
 * [Apache](/reference/recipes/java/migrate/apache)
 * [Cobertura](/reference/recipes/java/migrate/cobertura)
@@ -35,5 +22,18 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [java.util.concurrent APIs](/reference/recipes/java/migrate/concurrent)
 * [java.util.logging APIs](/reference/recipes/java/migrate/logging)
 * [javax APIs](/reference/recipes/java/migrate/javax)
+
+## Recipes
+
+* [Add `JDeprScan` Maven Plug-in](./addjdeprscanplugin.md)
+* [Add Maven Jar Plugin to suppress Illegal Reflection Warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
+* [Change Maven Java version property values to 11](./javaversion11.md)
+* [Change Maven Java version property values to 17](./javaversion17.md)
+* [Change Maven Java version property values to 20](./javaversion20.md)
+* [Migrate to Java 11](./java8tojava11.md)
+* [Migrate to Java 17](./upgradetojava17.md)
+* [Migrate to Java 20](./upgradetojava20.md)
+* [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
+* [Upgrade Java version](./upgradejavaversion.md)
 
 

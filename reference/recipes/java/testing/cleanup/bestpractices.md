@@ -16,17 +16,23 @@ _Applies best practices to tests._
 * artifactId: rewrite-testing-frameworks
 * version: 1.37.0
 
+## Contributors
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Patrick](patway99@gmail.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Michael Keppler](bananeweizen@gmx.de)
+
 
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
-
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.0")
+    id("org.openrewrite.rewrite") version("5.40.4")
 }
 
 rewrite {
@@ -43,7 +49,6 @@ dependencies {
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
@@ -53,7 +58,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.44.0</version>
+        <version>4.45.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.cleanup.BestPractices</recipe>
@@ -87,7 +92,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtab %}
 {% endtabs %}
 
-
 ## Definition
 
 {% tabs %}
@@ -120,6 +124,6 @@ recipeList:
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.testing.cleanup.BestPractices)
 
-The Moderne public SaaS instance enables you to easily run recipes across thousands of open-source repositories.
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

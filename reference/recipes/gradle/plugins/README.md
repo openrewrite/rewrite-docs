@@ -4,6 +4,7 @@
 
 * [Add a Gradle build plugin](./addbuildplugin.md)
 * [Add a Gradle settings plugin](./addsettingsplugin.md)
+* [Add a Gradle settings repository](./addsettingspluginrepository.md)
 * [Add the Gradle Enterprise plugin](./addgradleenterprise.md)
 * [Remove plugin from `build.gradle(.kts)`](./removebuildplugin.md)
 * [Remove plugin from `settings.gradle(.kts)`](./removesettingsplugin.md)

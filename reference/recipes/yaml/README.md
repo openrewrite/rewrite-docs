@@ -2,6 +2,12 @@
 
 _Basic building blocks for transforming YAML._
 
+## Categories
+
+* [Cleanup](/reference/recipes/yaml/cleanup)
+* [Format](/reference/recipes/yaml/format)
+* [Search](/reference/recipes/yaml/search)
+
 ## Recipes
 
 * [Append to sequence](./appendtosequence.md)
@@ -14,11 +20,5 @@ _Basic building blocks for transforming YAML._
 * [Delete key](./deletekey.md)
 * [Delete property](./deleteproperty.md)
 * [Merge YAML snippet](./mergeyaml.md)
-
-## Subcategories
-
-* [Cleanup](/reference/recipes/yaml/cleanup)
-* [Format](/reference/recipes/yaml/format)
-* [Search](/reference/recipes/yaml/search)
 
 

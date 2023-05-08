@@ -1,6 +1,6 @@
-# Cleanup
+# Common static analysis issues cleanup
 
-_Format and cleanup Java code to ensure a consistent style is used._
+_Resolve common static analysis issues discovered, apply best practices, format and cleanup Java code to ensure a consistent style is used._
 
 ## Recipes
 
