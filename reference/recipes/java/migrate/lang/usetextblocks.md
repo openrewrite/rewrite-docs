@@ -15,18 +15,19 @@ _Text blocks are easier to read than concatenated strings._
 ## Examples
 * Example 1:
 
-{% code title="Test.java" %}
 #### Before
+{% code title="Test.java" %}
 ```java
 class Test {
     String query = "SELECT * FROM\n" +
             "my_table\n" +
             "WHERE something = 1;";
 }
-
 ```
+{% endcode %}
 
 #### After
+{% code title="Test.java" %}
 ```java
 class Test {
     String query = """
@@ -35,14 +36,14 @@ class Test {
             WHERE something = 1;\
             """;
 }
-
 ```
 {% endcode %}
+
 ---
 * Example 2:
 
-{% code title="A.java" %}
 #### Before
+{% code title="A.java" %}
 ```java
 class A {
     void welcome() {
@@ -57,9 +58,10 @@ class A {
     }
     void log(String s) {}
 }
-
 ```
+{% endcode %}
 
+{% code title="A.java" %}
 #### After
 ```java
 class A {
@@ -78,23 +80,24 @@ class A {
     }
     void log(String s) {}
 }
-
 ```
 {% endcode %}
+
 ---
 * Example 3:
-
-{% code title="Test.java" %}
+* 
 #### Before
+{% code title="Test.java" %}
 ```java
 class Test {
     String eightQuotes = "\"\"\"\"\"\"\"\"" +
                    "after 8 quotes";
 }
-
 ```
+{% endcode %}
 
 #### After
+{% code title="Test.java" %}
 ```java
 class Test {
     String eightQuotes = """
