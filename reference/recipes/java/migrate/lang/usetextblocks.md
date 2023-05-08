@@ -13,10 +13,9 @@ _Text blocks are easier to read than concatenated strings._
 * version: 1.21.1
 
 ## Examples
-* Example 1:
-
-#### Before
-{% code title="Test.java" %}
+##### Example 1:
+###### Before
+{% code title="A.java" %}
 ```java
 class Test {
     String query = "SELECT * FROM\n" +
@@ -26,8 +25,9 @@ class Test {
 ```
 {% endcode %}
 
-#### After
-{% code title="Test.java" %}
+
+###### After
+{% code title="A.java" %}
 ```java
 class Test {
     String query = """
@@ -38,11 +38,9 @@ class Test {
 }
 ```
 {% endcode %}
-
 ---
-* Example 2:
-
-#### Before
+##### Example 2:
+###### Before
 {% code title="A.java" %}
 ```java
 class A {
@@ -61,8 +59,9 @@ class A {
 ```
 {% endcode %}
 
+
+###### After
 {% code title="A.java" %}
-#### After
 ```java
 class A {
     void welcome() {
@@ -84,9 +83,8 @@ class A {
 {% endcode %}
 
 ---
-* Example 3:
-* 
-#### Before
+##### Example 3:
+###### Before
 {% code title="Test.java" %}
 ```java
 class Test {
@@ -96,7 +94,7 @@ class Test {
 ```
 {% endcode %}
 
-#### After
+###### After
 {% code title="Test.java" %}
 ```java
 class Test {
