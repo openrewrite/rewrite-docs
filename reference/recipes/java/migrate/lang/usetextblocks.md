@@ -37,7 +37,7 @@ Example layout Style 1
 >>> """;
 >>> }
 >>> ```
->
+> ---
 >> ***Test2.java***
 >>> *Before*
 >>> ```java
@@ -57,6 +57,28 @@ Example layout Style 1
 >>> """;
 >>> }
 >>> ```
+> ---
+> - **Example 2**
+>> ***Test2.java***
+>>> *Before*
+>>> ```java
+>>> class Test2 {
+>>>     String query = "SELECT * FROM\n" +
+>>>             "my_table\n" +
+>>>             "WHERE something = 1;";
+>>> }
+>>> ```
+>>> *After*
+>>> ```java
+>>> class Test2 {
+>>>    String query = """
+>>>           SELECT * FROM
+>>>           my_table
+>>>           WHERE something = 1;\
+>>> """;
+>>> }
+>>> ```
+>
 
 ---
 
