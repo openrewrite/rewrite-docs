@@ -14,11 +14,12 @@ _Text blocks are easier to read than concatenated strings._
 
 ## Examples
 
-Style 1 
 
-> Example 1 : SQL query
->> Test.java
->>> Before
+Example layout Style 1
+
+> - **Example 1 : SQL query**
+>> ***Test.java***
+>>> *Before*
 >>> ```java
 >>> class Test {
 >>>     String query = "SELECT * FROM\n" +
@@ -26,7 +27,7 @@ Style 1
 >>>             "WHERE something = 1;";
 >>> }
 >>> ```
->>> After
+>>> *After*
 >>> ```java
 >>> class Test {
 >>>    String query = """
@@ -36,8 +37,9 @@ Style 1
 >>> """;
 >>> }
 >>> ```
->> Test2.java
->>> Before
+>
+>> ***Test2.java***
+>>> *Before*
 >>> ```java
 >>> class Test2 {
 >>>     String query = "SELECT * FROM\n" +
@@ -45,7 +47,7 @@ Style 1
 >>>             "WHERE something = 1;";
 >>> }
 >>> ```
->>> After
+>>> *After*
 >>> ```java
 >>> class Test2 {
 >>>    String query = """
@@ -58,8 +60,7 @@ Style 1
 
 ---
 
----
-Style 2
+Example layout Style 2
 
 ##### - Example 1:
 ###### - Before
