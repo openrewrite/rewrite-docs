@@ -17,68 +17,49 @@ _Text blocks are easier to read than concatenated strings._
 Style 1 
 
 > Example 1 : SQL query
-> - Before  
-> {% code title="Test.java" %}
-> ```java
-> class Test {
->     String query = "SELECT * FROM\n" +
->             "my_table\n" +
->             "WHERE something = 1;";
-> }
-> ```
-> {% endcode %}
-> - After  
-> {% code title="Test.java" %}
-> ```java
-> class Test {
->    String query = """
->           SELECT * FROM
->           my_table
->           WHERE something = 1;\
-> """;
-> }
-> ```
-> {% endcode %}
+>> Test.java
+>>> Before
+>>> ```java
+>>> class Test {
+>>>     String query = "SELECT * FROM\n" +
+>>>             "my_table\n" +
+>>>             "WHERE something = 1;";
+>>> }
+>>> ```
+>>> After
+>>> ```java
+>>> class Test {
+>>>    String query = """
+>>>           SELECT * FROM
+>>>           my_table
+>>>           WHERE something = 1;\
+>>> """;
+>>> }
+>>> ```
+>> Test2.java
+>>> Before
+>>> ```java
+>>> class Test2 {
+>>>     String query = "SELECT * FROM\n" +
+>>>             "my_table\n" +
+>>>             "WHERE something = 1;";
+>>> }
+>>> ```
+>>> After
+>>> ```java
+>>> class Test2 {
+>>>    String query = """
+>>>           SELECT * FROM
+>>>           my_table
+>>>           WHERE something = 1;\
+>>> """;
+>>> }
+>>> ```
 
 ---
 
+---
 Style 2
-
-{% code title="Example 1: SQL query" %}
-
-{% code title="Before" %}
-
-{% code title="Test.java" %}
-```java
-class Test {
-    String query = "SELECT * FROM\n" +
-            "my_table\n" +
-            "WHERE something = 1;";
-}
-```
-{% endcode %}
-
-{% endcode %}
-
-{% code title="After" %}
-
-{% code title="Test.java" %}
-```java
-class Test {
-    String query = """
-            SELECT * FROM
-            my_table
-            WHERE something = 1;\
-            """;
-}
-```
-{% endcode %}
-
-{% endcode %}
-
-{% endcode %}
-
----
 
 ##### - Example 1:
 ###### - Before
