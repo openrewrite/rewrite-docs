@@ -13,8 +13,75 @@ _Text blocks are easier to read than concatenated strings._
 * version: 1.21.1
 
 ## Examples
-##### Example 1:
-###### Before
+
+Style 1 
+
+> Example 1 : SQL query
+> - Before  
+> {% code title="Test.java" %}
+> ```java
+> class Test {
+>     String query = "SELECT * FROM\n" +
+>             "my_table\n" +
+>             "WHERE something = 1;";
+> }
+> ```
+> {% endcode %}
+> - After  
+> {% code title="Test.java" %}
+> ```java
+> class Test {
+>    String query = """
+>           SELECT * FROM
+>           my_table
+>           WHERE something = 1;\
+> """;
+> }
+> ```
+> {% endcode %}
+
+---
+
+Style 2
+
+{% code title="Example 1: SQL query" %}
+
+{% code title="Before" %}
+
+{% code title="Test.java" %}
+```java
+class Test {
+    String query = "SELECT * FROM\n" +
+            "my_table\n" +
+            "WHERE something = 1;";
+}
+```
+{% endcode %}
+
+{% endcode %}
+
+{% code title="After" %}
+
+{% code title="Test.java" %}
+```java
+class Test {
+    String query = """
+            SELECT * FROM
+            my_table
+            WHERE something = 1;\
+            """;
+}
+```
+{% endcode %}
+
+{% endcode %}
+
+{% endcode %}
+
+---
+
+##### - Example 1:
+###### - Before
 {% code title="A.java" %}
 ```java
 class Test {
