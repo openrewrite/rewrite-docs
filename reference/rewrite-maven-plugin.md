@@ -122,11 +122,11 @@ To find out what recipes a rewrite module provides, see its documentation and th
 
 Execute `mvn rewrite:run` to run the active recipes and apply the changes. This will write changes locally to your source files on disk. Afterward, review the changes, and when you are comfortable with the changes, commit them. The `run` goal generates warnings in the build log wherever it makes changes to source files.
 
-![Warnings showing which files were changed and by what visitors](<../.gitbook/assets/image (5).png>)
+![Warnings showing which files were changed and by what visitors](<../.gitbook/assets/file-change-warning.png>)
 
 After the goal finishes executing, run `git diff` to see what changes were made, review, and commit them.
 
-![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:run goal](<../.gitbook/assets/image (7).png>)
+![An example of changes made to spring-cloud/spring-cloud-sleuth the rewrite:run goal](<../.gitbook/assets/spring-cloud-example.png>)
 
 ## The "dryRun" goal
 
@@ -134,7 +134,7 @@ Execute `mvn rewrite:dryRun` to dry-run the active recipes and print which visit
 
 `rewrite:dryRun` outputs a report in the form of a `patch` file, by default under `target/site/rewrite/rewrite.patch`, containing changes that would be made if you were to run `rewrite:run`. This file can be used with `git` or `diff` to view or apply the potential changes. For example, `git diff . target/site/rewrite/rewrite.patch`.
 
-![Example rewrite.patch file produced by dryRun](<../.gitbook/assets/image (22).png>)
+![Example rewrite.patch file produced by dryRun](<../.gitbook/assets/dry-run-example.png>)
 
 `dryRun` can be used as a "gate" in a continuous integration environment by failing the build if `dryRun` detects changes to be made and `failOnDryRunResults` is set to `true`:
 
@@ -173,17 +173,17 @@ If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases.
 
 Execute `mvn rewrite:discover` to list the recipes that the OpenRewrite Maven plugin has found on your classpath and the recipes that you have activated in your plugin configuration.
 
-![The beginning of rewrite:discover output, showing activated and available Recipes](<../.gitbook/assets/image (18).png>)
+![The beginning of rewrite:discover output, showing activated and available Recipes](<../.gitbook/assets/discover-output.png>)
 
 The discover goal will produce additional details (including recipe configuration options) when setting the `details` flag:  `mvn rewrite:discover -Ddetail=true`
 
-![Recipes showing their configurable parameters. "!" means a parameter is required.](<../.gitbook/assets/image (17).png>)
+![Recipes showing their configurable parameters. "!" means a parameter is required.](<../.gitbook/assets/configurable-param.png>)
 
 ## The "CycloneDx" goal
 
 Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org) bill of materials (BOM) outlining all of the project's dependencies, including transitive dependencies. The BOM will be written to target/\<module name>-\<version>-cyclonedx.xml.
 
-![Excerpt from OpenRewrite-generated CycloneDx BOM](<../.gitbook/assets/image (19).png>)
+![Excerpt from OpenRewrite-generated CycloneDx BOM](<../.gitbook/assets/cyclone-bom.png>)
 
 ## Rewrite's pom cache
 

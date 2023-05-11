@@ -128,7 +128,7 @@ class JavaVisitor<P> extends TreeVisitor<J, P> {
 
 An important concept to understand is what happens when the generic `TreeBuilder.visit(T, P)` method is called and how that is mapped into its language-specific counterpart. Let's visualize how a Java `CompilationUnit` is passed from a client to a visitor:
 
-![Example of Visitor Navigation](<../.gitbook/assets/image (16).png>)
+![Example of Visitor Navigation](<../.gitbook/assets/visitor-example.png>)
 
 The most obvious observation is that calling the generic form of `visit()` will result in having the compilation unit's `accept()` method executed. The `accept()` method will then cast the visitor to the language-specific variant and then call the appropriate, language-specific `visitCompilationUnit()` method.
 

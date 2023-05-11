@@ -6,7 +6,7 @@ In this tutorial, we will apply a Rewrite recipe to a source code repository bui
 
 To have a reproducible example, we'll start with a repository generated from [Spring Initializr](https://start.spring.io). Select the "Gradle Project" option, click Generate, and extract the resultant zip file.
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/spring-init.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Create a Gradle init script.
 

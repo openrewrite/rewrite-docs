@@ -165,7 +165,7 @@ Each recipe will, in turn, will be executed as a step within the pipeline and st
 
 Using the same "Migrate JUnit 5" recipe as an example, the flow through the pipeline looks as follows:
 
-![Execution Pipeline for "Migrate JUnit 5"](<../.gitbook/assets/image (13).png>)
+![Execution Pipeline for "Migrate JUnit 5"](<../.gitbook/assets/junit5pipeline.png>)
 
 ### Execution Context
 

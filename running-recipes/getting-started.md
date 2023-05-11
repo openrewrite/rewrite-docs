@@ -155,11 +155,11 @@ Now that you've activated the `AutoFormat` recipe, you can run it by executing t
 
 After running it, you will be notified of all of the files that have been changed:
 
-![Console output from running ./mvnw rewrite:run with AutoFormat set as an active recipe on spring-petclinic-migration](<../.gitbook/assets/image (11).png>)
+![Console output from running ./mvnw rewrite:run with AutoFormat set as an active recipe on spring-petclinic-migration](<../.gitbook/assets/petclinic-example.png>)
 
 To see what has changed in the code, run `git diff` or use your preferred IDE's diff viewer:
 
-![Sample of formatting changes made to spring-petclinic-migration by AutoFormat](../.gitbook/assets/image.png)
+![Sample of formatting changes made to spring-petclinic-migration by AutoFormat](../.gitbook/assets/format-example.png)
 
 From there, you can commit the changes or add additional recipes based on your needs.
 
@@ -242,7 +242,7 @@ Once this recipe has been added to your active recipes, you can run either `./mv
 * References such as import statements have been updated to reflect the new name
 * All of the files have been formatted according to the previously defined AutoFormat rules
 
-![Git diff showing updated import statements](<../.gitbook/assets/image (10).png>)
+![Git diff showing updated import statements](<../.gitbook/assets/update-import.png>)
 
 From there, you can confirm that everything still builds and passes its tests by running `./mvnw clean install` or `./gradlew build`.
 
