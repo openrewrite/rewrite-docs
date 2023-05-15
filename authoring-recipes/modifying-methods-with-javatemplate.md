@@ -493,7 +493,7 @@ public class ExpandCustomerInfo extends Recipe {
                         .filter(modifier -> modifier.getType() != Type.Abstract)
                         .collect(Collectors.toList()));
 
-                // Add two parameters to the method declaration by inserting them in from of the first argument
+                // Add two parameters to the method declaration by inserting them in front of the first argument
                 methodDeclaration = methodDeclaration.withTemplate(addMethodParametersTemplate,
                         methodDeclaration.getCoordinates().replaceParameters(),
                         methodDeclaration.getParameters().get(0));
