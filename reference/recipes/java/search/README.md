@@ -2,6 +2,7 @@
 
 ## Recipes
 
+* [Build call graph](./findcallgraph.md)
 * [Find annotations](./findannotations.md)
 * [Find class declarations implementing an interface](./findimplementations.md)
 * [Find empty classes](./findemptyclasses.md)

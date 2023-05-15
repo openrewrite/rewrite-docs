@@ -3,6 +3,7 @@
 ## Recipes
 
 * [Prefer `String#formatted(Object...)`](./stringformatted.md)
+* [Refaster template `UseStringIsEmpty`](./usestringisemptyrecipe.md)
 * [Use `Character#isJavaIdentifierPart(char)`](./migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
 * [Use `Character#isJavaIdentifierStart(char)`](./migratecharacterisjavalettertoisjavaidentifierstart.md)
 * [Use `Character#isWhitespace(char)`](./migratecharacterisspacetoiswhitespace.md)
