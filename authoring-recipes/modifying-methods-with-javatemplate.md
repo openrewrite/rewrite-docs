@@ -291,7 +291,7 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
         public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
             // ...
 
-            // Add two parameters to the method declaration by inserting them in from of the first argument
+            // Add two parameters to the method declaration by inserting them in front of the first argument
             methodDeclaration = methodDeclaration.withTemplate(addMethodParametersTemplate,
                     methodDeclaration.getCoordinates().replaceParameters(),
                     methodDeclaration.getParameters().get(0));
