@@ -109,7 +109,7 @@ dependencies {
 </dependencyManagement>
 
 <dependencies>
-    <!-- rewrite-java depedencies only necessary for Java Recipe development -->
+    <!-- rewrite-java dependencies only necessary for Java Recipe development -->
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
