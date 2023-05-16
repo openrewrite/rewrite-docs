@@ -174,7 +174,7 @@
       * [Redundant file creation](reference/recipes/java/cleanup/redundantfilecreation.md)
       * [Reformat local variable names to camelCase](reference/recipes/java/cleanup/renamelocalvariablestocamelcase.md)
       * [Reformat private field names to camelCase](reference/recipes/java/cleanup/renameprivatefieldstocamelcase.md)
-      * [Remove JavaDoc @params, @return, and @throws with no description](reference/recipes/java/cleanup/removeemptyjavadocparameters.md)
+      * [Remove JavaDoc @param, @return, and @throws with no description](reference/recipes/java/cleanup/removeemptyjavadocparameters.md)
       * [Remove Nullable and CheckForNull annotations from primitives](reference/recipes/java/cleanup/unnecessaryprimitiveannotations.md)
       * [Remove Object.finalize() invocations](reference/recipes/java/cleanup/removecallstoobjectfinalize.md)
       * [Remove System.out#println statements](reference/recipes/java/cleanup/removesystemoutprintln.md)
