@@ -180,7 +180,7 @@ public class Order {
 | Unsupported Functionality                                                            | Issue                                                             |
 | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
 | Maybe add RxJava2 dependencies                                                       | [#26](https://github.com/openrewrite/rewrite-micronaut/issues/26) |
-| Non-Inherited annotations from super-class method are not copied to overriden method | [#13](https://github.com/openrewrite/rewrite-micronaut/issues/13) |
+| Non-Inherited annotations from super-class method are not copied to overridden method | [#13](https://github.com/openrewrite/rewrite-micronaut/issues/13) |
 | DefaultContext doCreateBean deprecated                                               | [#23](https://github.com/openrewrite/rewrite-micronaut/issues/23) |
 | DefaultHttpHostResolver constructor arg Provider to BeanProvider                     | [#22](https://github.com/openrewrite/rewrite-micronaut/issues/22) |
 | Change io.micronaut.core.beans.PropertyDescriptor to BeanProperty                    | [#21](https://github.com/openrewrite/rewrite-micronaut/issues/21) |
