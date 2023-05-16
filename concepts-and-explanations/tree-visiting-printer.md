@@ -81,7 +81,7 @@ public class SomeRecipe extends Recipe {
         return new JavaIsoVisitor<ExecutionContext>() {
             @Override
             public J.CompilationUnit visitCompilationUnit(J.CompilationUnit compUnit, ExecutionContext executionContext) {
-                // This next line could be ommitted in favor of a breakpoint
+                // This next line could be omitted in favor of a breakpoint
                 // if you'd prefer to use the debugger instead.
                 System.out.println(TreeVisitingPrinter.printTree(getCursor()));
                 return super.visitCompilationUnit(compUnit, executionContext);
