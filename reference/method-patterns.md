@@ -21,7 +21,7 @@ com.yourorg.ReceiverFullyQualifiedType methodName(argType1, argType2)
 There are two kinds of wildcard symbols:
 
 * `*` - Matches any one thing. Applicable to receiver type, method name, and arguments.
-* `..` - Matches zero or more. Applicable to  receiver type and arguments.
+* `..` - Matches zero or more. Applicable to receiver type and arguments.
 
 {% hint style="warning" %}
 The return type of a method is _not_ represented in method patterns. Methods in Java \(and similar languages\) can be uniquely identified by receiver type, name, and argument types alone.
