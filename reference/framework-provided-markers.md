@@ -49,7 +49,7 @@ Available on all LSTs produced from a supported CI environment.
 Supported CI environments:
 
 * [Jenkins](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/JenkinsBuildEnvironment.java)
-* [Gitlab](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/GitlabBuildEnvironment.java)
+* [GitLab](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/GitlabBuildEnvironment.java)
 * [GithubActions](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/GithubActionsBuildEnvironment.java)
 * [Drone](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/DroneBuildEnvironment.java)
 * [CircleCi](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/CircleCiBuildEnvironment.java)
