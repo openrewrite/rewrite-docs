@@ -148,7 +148,7 @@ repositories {
     mavenCentral() // rewrite is published to Maven Central
 }
 
-// In older versions of gradle, use tasks.get() instead instead of tasks.named()
+// In older versions of gradle, use tasks.get() instead of tasks.named()
 def rewriteRunTask = tasks.named("rewriteRun")
 
 // In a kotlin build script, use tasks.withType<Checkstyle>() 
