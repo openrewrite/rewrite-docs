@@ -15,7 +15,7 @@ A pointcut method expression can identify one or more method definitions or invo
 * Method Argument types
 
 ```text
-com.yourorg.RecieverFullyQualifiedType methodName(argType1, argType2)
+com.yourorg.ReceiverFullyQualifiedType methodName(argType1, argType2)
 ```
 
 There are two kinds of wildcard symbols:
