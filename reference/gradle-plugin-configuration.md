@@ -176,6 +176,6 @@ Execute `gradle rewriteDiscover` to list the recipes available on your classpath
 
 ## Links
 
-* [Github project](https://github.com/openrewrite/rewrite-gradle-plugin)
+* [GitHub project](https://github.com/openrewrite/rewrite-gradle-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-gradle-plugin/issues)
 * [Gradle Plugin Portal Listing](https://plugins.gradle.org/plugin/org.openrewrite.rewrite)

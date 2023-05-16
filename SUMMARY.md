@@ -76,7 +76,7 @@
     * [Search](reference/recipes/concourse/search/README.md)
       * [Find pinned resources by type](reference/recipes/concourse/search/findpinnedresource.md)
       * [Find privileged resource_type definitions.](reference/recipes/concourse/search/findprivilegedresourcetype.md)
-  * [Github Actions](reference/recipes/github/README.md)
+  * [GitHub Actions](reference/recipes/github/README.md)
     * [Add cron workflow trigger](reference/recipes/github/addcrontrigger.md)
     * [Add manual workflow trigger](reference/recipes/github/addmanualtrigger.md)
     * [Cancel in-progress workflow when it is triggered again](reference/recipes/github/autocancelinprogressworkflow.md)
