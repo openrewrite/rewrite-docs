@@ -201,5 +201,5 @@ In the very rare cases where the Maven plugin is unable to write to its on-disk 
 
 ## Links
 
-* [Github project](https://github.com/openrewrite/rewrite-maven-plugin)
+* [GitHub project](https://github.com/openrewrite/rewrite-maven-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-maven-plugin/issues)

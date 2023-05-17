@@ -4,7 +4,7 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration from J
 
 This recipe covers the following themes:
 
-* Applications that use any of the Java EE specifications will have those dependencies migrated to Jakarta EE 8. Additionally, the migration to Jakarta EE 8 will also add explicit runtime dependencies on those projects that have transitive dependencies on the Jakrata EE APIs. Currently, only Maven-based build files are supported.
+* Applications that use any of the Java EE specifications will have those dependencies migrated to Jakarta EE 8. Additionally, the migration to Jakarta EE 8 will also add explicit runtime dependencies on those projects that have transitive dependencies on the Jakarta EE APIs. Currently, only Maven-based build files are supported.
 * Any deprecated APIs in the earlier versions of Java that have a well-defined migration path will be automatically applied to an application's sources. The remediation included with this recipe were originally identified using a build plugin called Jdeprscan.
 * Illegal Reflective Access warnings will be logged when an application attempts to use an API that has not been publically exported via the module system. This recipe will upgrade well-known, third-party libraries if they provide a version that is compliant with the Java module system.
 

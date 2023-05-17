@@ -238,7 +238,7 @@ Now, let's work through each of those TODOs.
 
 #### Filtering out classes that don't match the fully qualified name
 
-All of our logic lives inside of the `visitClassDeclaration` method. To filter out classes that don't match the fully qualified class name, we need to do grab some information from the `type` field in `ClassDecalaration`:
+All of our logic lives inside of the `visitClassDeclaration` method. To filter out classes that don't match the fully qualified class name, we need to do grab some information from the `type` field in `ClassDeclaration`:
 
 ```java
 // ...

@@ -109,7 +109,7 @@ dependencies {
 </dependencyManagement>
 
 <dependencies>
-    <!-- rewrite-java depedencies only necessary for Java Recipe development -->
+    <!-- rewrite-java dependencies only necessary for Java Recipe development -->
     <dependency>
         <groupId>org.openrewrite</groupId>
         <artifactId>rewrite-java</artifactId>
@@ -195,7 +195,7 @@ rewrite-test uses [JUnit 5](https://junit.org/junit5/).
 {% endhint %}
 
 {% hint style="success" %}
-rewite-java-17, rewrite-java-11 and rewrite-java-8 can happily coexist on the same classpath. At runtime, the appropriate module for the current JDK will be selected.
+rewrite-java-17, rewrite-java-11 and rewrite-java-8 can happily coexist on the same classpath. At runtime, the appropriate module for the current JDK will be selected.
 {% endhint %}
 
 ### Set Language Level and Bytecode Level

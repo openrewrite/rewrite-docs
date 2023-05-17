@@ -33,7 +33,7 @@ The `Tree` interface has the following characteristics:
 
 All of OpenRewrite's visitors extend the abstract class `TreeVisitor<T extends Tree, P>`. It is this class that provides the generic, parameterized `visit(T, P)` method that drives a visitor's polymorphic navigation, cursoring, and life cycle.
 
-The parameterized type `T` represents the type of LSTs upon which the visitor will navigate and transform. The second paramter, `P`, is an additional, shared context that is passed to all visit methods as a visitor navigates a given LST (See [sharing data between visitors](visitors.md#sharing-data-between-visitors) for more information).
+The parameterized type `T` represents the type of LSTs upon which the visitor will navigate and transform. The second parameter, `P`, is an additional, shared context that is passed to all visit methods as a visitor navigates a given LST (See [sharing data between visitors](visitors.md#sharing-data-between-visitors) for more information).
 
 ### Cursoring
 
