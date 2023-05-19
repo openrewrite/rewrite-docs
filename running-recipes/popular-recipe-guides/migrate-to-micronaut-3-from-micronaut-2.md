@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.18.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.19.0"))
     rewrite("org.openrewrite.recipe:rewrite-micronaut")
 }
 ```
