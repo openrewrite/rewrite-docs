@@ -227,7 +227,6 @@ spring.datasource.schema=classpath*:db/${database}/schema.sql
 spring.datasource.data=classpath*:db/${database}/data.sql
 
 management.contextPath=/manage
-
 ```
 
 #### After
