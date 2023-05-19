@@ -5,7 +5,7 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration from S
 
 ## Example Configuration
 
-The Spring 3 migration recipe can be applied by including OpenRewrite's plugin to your project and including a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring):
+The [Spring 3 migration recipe](/reference/recipes/java/spring/boot3/upgradespringboot_3_0.md) can be applied by including OpenRewrite's plugin to your project and including a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring):
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -61,6 +61,16 @@ The Spring 3 migration recipe can be applied by including OpenRewrite's plugin t
 ```
 {% endcode %}
 {% endtab %}
+{% tab title="Maven Command Line" %}
+{% code title="shell" %}
+```sh
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
+  -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
+```
+{% endcode %}
+{% endtab %}
+
 {% endtabs %}
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration, you can inspect the results by running `git diff`. As with all recipes, please take some time to look over the results and fix anything that wasn't able to be migrated automatically. Once you're confident in the changes, you can then commit the results.
