@@ -13,6 +13,7 @@ _Upgrade to Spring Boot 2.7_
 * version: 4.36.0
 
 ## Contributors
+
 * [Alex Boyko](aboyko@vmware.com)
 * [Jonathan Schnéider](jkschneider@gmail.com)
 * [Nick McKinney](mckinneynichoals@gmail.com)
@@ -21,10 +22,10 @@ _Upgrade to Spring Boot 2.7_
 * [Patrick](patway99@gmail.com)
 * [Knut Wannheden](knut@moderne.io)
 
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed):
+
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -47,6 +48,7 @@ dependencies {
 ```
 {% endcode %}
 {% endtab %}
+
 {% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
@@ -79,8 +81,6 @@ dependencies {
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE \
@@ -94,7 +94,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate to Spring Boot 2.6](../../../java/spring/boot2/upgradespringboot_2_6.md)
+* [Migrate to Spring Boot 2.6](upgradespringboot\_2\_6.md)
 * [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -106,24 +106,23 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.7.x`
   * retainVersions: `[mysql:mysql-connector-java]`
-* [Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean](../../../java/spring/boot2/websecurityconfigureradapter.md)
-* [Change type](../../../java/changetype.md)
+* [Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean](broken-reference)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.server.LocalServerPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.server.LocalServerPort`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.autoconfigure.web.server.LocalManagementPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.server.LocalManagementPort`
-* [Change type](../../../java/changetype.md)
+* [Change type](../../changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.rsocket.context.LocalRSocketServerPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.rsocket.server.LocalRSocketServerPort`
-* [Migrate Spring Boot properties to 2.7](../../../java/spring/boot2/springbootproperties_2_7.md)
+* [Migrate Spring Boot properties to 2.7](springbootproperties\_2\_7.md)
 * [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
   * oldGroupId: `mysql`
   * oldArtifactId: `mysql-connector-java`
   * newGroupId: `com.mysql`
   * newArtifactId: `mysql-connector-j`
   * newVersion: `8.0.x`
-
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -170,7 +169,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7)
+[![Moderne Link Image](../../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.spring.boot2.UpgradeSpringBoot\_2\_7)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

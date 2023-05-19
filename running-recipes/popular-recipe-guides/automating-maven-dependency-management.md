@@ -2,7 +2,7 @@
 description: Search, Organize, and Refactor your Maven poms
 ---
 
-# Automating Maven Dependency Management
+# Automating Maven dependency management
 
 Dependency management is a complex and often frustrating part of software development. Sometimes a transitive dependency you'd never expect makes it onto your runtime classpath. Sometimes your build tool resolves a conflict between requested dependency versions in an unexpected way. Despite the headaches, it wouldn't make sense for most projects to forgo dependencies.
 
@@ -69,7 +69,7 @@ Run 'mvn rewrite:run' to apply the recipes.
 
 Use your preferred diff viewer to inspect the `rewrite.patch` file, which reveals all of the dependencies that transitively depend on logback.
 
-![](<../../.gitbook/assets/pom-example.png>)
+![](../../.gitbook/assets/dry-run-example.png)
 
 At this point, you have all of the information you need to manually exclude logback-classic from those other dependencies and add a dependency on your preferred slf4j implementation. But that wouldn't prevent logback-classic from being added back in the future. There is an easier, future-proof way to do it.
 
@@ -116,9 +116,9 @@ And set the `com.yourorg.UseSlf4jSimple` recipe as active in your pom.xml:
 
 You can now run `mvn rewrite:dryRun` again to preview the changes that will be made and `mvn rewrite:run` to apply the changes.
 
-![Exclusions for logback-classic added everywhere it was being brought in transitively](<../../.gitbook/assets/logback-classic.png>)
+![Exclusions for logback-classic added everywhere it was being brought in transitively](../../.gitbook/assets/logback-classic.png)
 
-![New dependency on slf4j-simple](<../../.gitbook/assets/slf4j-example.png>)
+![New dependency on slf4j-simple](../../.gitbook/assets/slf4j-example.png)
 
 {% hint style="info" %}
 No explicit version number is added for slf4j-simple because an appropriate version is set by the project's parent pom. AddDependency is smart enough not to add the unnecessary version number.

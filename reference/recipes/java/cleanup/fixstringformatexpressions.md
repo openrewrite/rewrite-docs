@@ -1,8 +1,8 @@
-# Fix `String#format` and `String#formatted` expressions
+# Fix String#format and String#formatted expressions
 
 **org.openrewrite.java.cleanup.FixStringFormatExpressions**
 
-_Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index._
+_Fix `String#format` and `String#formatted` expressions by replacing  newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index._
 
 ### Tags
 
@@ -17,13 +17,14 @@ _Fix `String#format` and `String#formatted` expressions by replacing `\n` newlin
 * version: 7.40.6
 
 ## Contributors
+
 * [Patrick Way](pway99@users.noreply.github.com)
 * [Patrick](patway99@gmail.com)
-
 
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
+
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -43,6 +44,7 @@ repositories {
 ```
 {% endcode %}
 {% endtab %}
+
 {% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
@@ -68,6 +70,7 @@ repositories {
 
 {% tab title="Maven Command Line" %}
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
 {% code title="shell" %}
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
@@ -79,7 +82,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.FixStringFormatExpressions)
+[![Moderne Link Image](../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.FixStringFormatExpressions)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

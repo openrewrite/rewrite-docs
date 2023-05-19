@@ -1,11 +1,10 @@
-# Migrate from Spring Boot 2.x to Spring 3.0
-
+# Migrate to Spring Boot 3 from Spring Boot 2
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from Spring Boot 2.x to Spring Boot 3.
 
 ## Example Configuration
 
-The [Spring 3 migration recipe](/reference/recipes/java/spring/boot3/upgradespringboot_3_0.md) can be applied by including OpenRewrite's plugin to your project and including a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring):
+The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgradespringboot\_3\_0.md) can be applied by adding OpenRewrite's plugin to your project and adding a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring):
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -61,6 +60,7 @@ The [Spring 3 migration recipe](/reference/recipes/java/spring/boot3/upgradespri
 ```
 {% endcode %}
 {% endtab %}
+
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
 ```sh
@@ -70,16 +70,16 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ```
 {% endcode %}
 {% endtab %}
-
 {% endtabs %}
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration, you can inspect the results by running `git diff`. As with all recipes, please take some time to look over the results and fix anything that wasn't able to be migrated automatically. Once you're confident in the changes, you can then commit the results.
 
 ## Before and After
 
-For the full list of changes this recipe will make, see its [reference page](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot_3_0).
+For the full list of changes this recipe will make, see its [reference page](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot\_3\_0).
 
-### Example Java Class 
+### Example Java Class
+
 #### Before
 
 ```java
@@ -268,7 +268,6 @@ management.server.base-path=/manage
     </dependency>
 </dependencies>
 ```
-
 
 #### After
 

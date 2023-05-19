@@ -2,7 +2,7 @@
 
 **org.openrewrite.java.migrate.javax.AddJaxbRuntime**
 
-_Update maven build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.  The recipe will add a JAXB run-time, in `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
+_Update maven build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the**** ****`javax`**** ****namespace, despite the move to the Jakarta artifact**._
 
 ### Tags
 
@@ -22,20 +22,19 @@ _Update maven build files to use the latest JAXB runtime from Jakarta EE 8 to ma
 * version: 1.21.1
 
 ## Contributors
+
 * [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
 * [Jonathan Schneider](jkschneider@gmail.com)
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
+| Type     | Name    | Description                                                                                                                      |
+| -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `String` | runtime | Which implementation of the JAXB run-time that will be added to maven projects that have transitive dependencies on the JAXB API |
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddJaxbRuntimeExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddJaxbRuntimeExample`. Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
@@ -50,6 +49,7 @@ recipeList:
 {% endcode %}
 
 Now that `com.yourorg.AddJaxbRuntimeExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:1.21.1 in your build file:
+
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -72,6 +72,7 @@ dependencies {
 ```
 {% endcode %}
 {% endtab %}
+
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
 ```markup
@@ -105,7 +106,7 @@ dependencies {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.javax.AddJaxbRuntime)
+[![Moderne Link Image](../../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.javax.AddJaxbRuntime)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
