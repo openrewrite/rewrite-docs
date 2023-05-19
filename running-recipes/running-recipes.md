@@ -9,6 +9,7 @@
   * [Automatically fix Checkstyle violations](/running-recipes/popular-recipe-guides/automatically-fix-checkstyle-violations.md)
   * [Migrate to Java 17](/running-recipes/popular-recipe-guides/migrate-to-java-17.md)
   * [Migrate to JUnit 5 from JUnit 4](/running-recipes/popular-recipe-guides/migrate-from-junit-4-to-junit-5.md)
+  * [Migrate to Spring Boot 3 from Spring Boot 2](/running-recipes/popular-recipe-guides/migrate-to-spring-3.md)
   * [Migrate to Spring Boot 2 from Spring Boot 1](/running-recipes/popular-recipe-guides/spring-boot-2.x-migration-from-spring-boot-1.x.md)
   * [Migrate to Quarkus 2 from Quarkus 1](/running-recipes/popular-recipe-guides/quarkus-2.x-migration-from-quarkus-1.x.md)
   * [Migrate to Micronaut 3 from Micronaut 2](/running-recipes/popular-recipe-guides/migrate-to-micronaut-3-from-micronaut-2.md)

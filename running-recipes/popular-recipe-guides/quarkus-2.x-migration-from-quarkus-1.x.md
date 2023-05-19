@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.18.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:1.19.0"))
     rewrite("org.openrewrite.recipe:rewrite-quarkus")
 }
 ```
@@ -49,7 +49,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>1.18.0</version>
+            <version>1.19.0</version>
           </dependency>
         </dependencies>
       </plugin>
