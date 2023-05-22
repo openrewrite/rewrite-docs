@@ -14,7 +14,7 @@
 * [Use `javax.lang.model.util.SimpleElementVisitor9`](./migratesimpleelementvisitor6to9.md)
 * [Use `javax.lang.model.util.SimpleTypeVisitor9`](./migratesimpletypevisitor6to9.md)
 * [Use `javax.lang.model.util.TypeKindVisitor9`](./migratetypekindvisitor6to9.md)
-* [Use `javax.management.monitor.CounterMonitor#setInitThreshold`](./migratecountermonitorsetthreshholdtosetinitthreshold.md)
+* [Use `javax.management.monitor.CounterMonitor#setInitThreshold`](./migratecountermonitorsetthresholdtosetinitthreshold.md)
 * [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](./migratexmleventfactorynewinstancetonewfactory.md)
 * [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](./migratexmlinputfactorynewinstancetonewfactory.md)
 * [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](./migratexmloutputfactorynewinstancetonewfactory.md)
