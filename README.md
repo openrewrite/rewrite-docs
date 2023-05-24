@@ -14,7 +14,7 @@ You can find the auto-generated recipe docs in the [reference/recipes directory]
 
 We encourage you to contribute to our docs! Please feel free to create an issue or open a PR if you find any issues.
 
-We use [GitBook](https://www.gitbook.com/) to manage our documentation. When any changes are merged into this directory, a build is kicked off to update the GitBook docs.
+We use [GitBook](https://www.gitbook.com/) to manage our documentation. When any changes are merged into this directory, a build is kicked off to update the GitBook docs. Please see the [contributing guide](https://github.com/openrewrite/.github/blob/main/CONTRIBUTING.md) for detailed instructions on how to get started.
 
 ## Standards
 
