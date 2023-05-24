@@ -15,7 +15,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>4.44.0</version>
+      <version>4.46.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>

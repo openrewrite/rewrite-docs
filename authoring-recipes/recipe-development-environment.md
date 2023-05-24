@@ -323,7 +323,7 @@ Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDry
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.44.0</version>
+                <version>4.46.0</version>
                 <configuration>
                     <activeRecipes>
                         <recipe> [your recipe name] </recipe>
