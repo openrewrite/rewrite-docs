@@ -80,7 +80,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.44.0</version>
+        <version>4.46.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.Spring</recipe>
