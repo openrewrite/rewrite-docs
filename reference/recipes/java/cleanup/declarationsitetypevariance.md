@@ -24,6 +24,44 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 | `List` | excludedBounds | *Optional*. A list of bounds that should not receive explicit variance. Globs supported. |
 | `Boolean` | excludeFinalClasses | *Optional*. If true, do not add `? extends` variance to final classes. `? super` variance will be added regardless of finality. |
 
+## Example
+###### Parameters
+| variantTypes | excludedBounds | excludeFinalClasses |
+| -- | -- | -- |
+| List.of("java.util.function.Function<IN, OUT>") | List.of("java.lang.*") | true |
+###### Unchanged
+{% code title="In.java" %}
+```java
+interface In {}
+interface Out {}
+```
+{% endcode %}
+
+---
+
+
+###### Before
+{% code title="Test.java" %}
+```java
+import java.util.function.Function;
+class Test {
+    void test(Function<In, Out> f) {
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import java.util.function.Function;
+class Test {
+    void test(Function<? super In, ? extends Out> f) {
+    }
+}
+```
+{% endcode %}
+
 
 ## Usage
 

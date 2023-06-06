@@ -12,6 +12,66 @@ _String concatenation within calls to `StringBuilder.append()` causes unnecessar
 * artifactId: rewrite-java
 * version: 7.40.6
 
+
+## Examples
+##### Example 1: Chain `StringBuilder.append()` calls instead of the '+' operator to efficiently concatenate strings and numbers.
+
+###### Before
+{% code title="A.java" %}
+```java
+class A {
+    void method1() {
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+        sb.append("A" + op + "B");
+        sb.append(1 + op + 2);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="A.java" %}
+```java
+class A {
+    void method1() {
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+        sb.append("A").append(op).append("B");
+        sb.append(1).append(op).append(2);
+    }
+}
+```
+{% endcode %}
+---
+##### Example 2: Grouping concatenation.
+
+###### Before
+{% code title="A.java" %}
+```java
+class A {
+    void method1() {
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+        sb.append("A" + "B" + "C" + op + "D" + "E");
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="A.java" %}
+```java
+class A {
+    void method1() {
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+        sb.append("A" + "B" + "C").append(op).append("D" + "E");
+    }
+}
+```
+{% endcode %}
+
 ## Contributors
 * [Kun Li](kun@moderne.io)
 
