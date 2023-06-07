@@ -82,13 +82,6 @@ tags:
   - tag2
 estimatedEffortPerOccurrence: PT15M
 causesAnotherCycle: true
-applicability:
-  singleSource:
-    - org.openrewrite.FindSourceFiles:
-      filePattern: '**/hello.txt'
-  anySource:
-    - org.openrewrite.gradle.search.FindPlugins:
-      pluginId: com.gradle.build-scan
 recipeList:
   - com.yourorg.RecipeB:
       exampleConfig1: foo
