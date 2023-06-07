@@ -101,7 +101,7 @@ public class OwnerController {
 
     @RequestMapping(value = "/owners/what")
     public String getWhat() {
-        return "multipe method types omg";
+        return "multiple method types omg";
     }
 
     @ModelAttribute("owner")
@@ -142,7 +142,7 @@ public class OwnerController {
 
     @GetMapping("/owners/what")
     public String getWhat() {
-        return "multipe method types omg";
+        return "multiple method types omg";
     }
 
     @ModelAttribute("owner")
