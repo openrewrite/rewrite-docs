@@ -39,7 +39,7 @@ interface Out {}
 ```
 {% endcode %}
 
----
+------
 
 
 ###### Before
