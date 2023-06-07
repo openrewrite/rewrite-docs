@@ -811,7 +811,7 @@
         * [Use MatcherAssert#assertThat(..)](reference/recipes/java/testing/junit5/usehamcrestassertthat.md)
         * [Use Mockito JUnit Jupiter extension](reference/recipes/java/testing/junit5/usemockitoextension.md)
         * [Use OkHttp 3 MockWebServer for JUnit 5](reference/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md)
-        * [Use Vertx JUnit 5 Extension](reference/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
+        * [Use Vert.x JUnit 5 Extension](reference/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
         * [Use wiremock extension](reference/recipes/java/testing/junit5/usewiremockextension.md)
         * [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](reference/recipes/java/testing/junit5/updatemockwebserver.md)
       * [Mockito](reference/recipes/java/testing/mockito/README.md)
