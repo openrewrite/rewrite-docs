@@ -14,7 +14,8 @@ _String concatenation within calls to `StringBuilder.append()` causes unnecessar
 
 
 ## Examples
-##### Example 1: Chain `StringBuilder.append()` calls instead of the '+' operator to efficiently concatenate strings and numbers.
+##### Example 1
+Chain `StringBuilder.append()` calls instead of the '+' operator to efficiently concatenate strings and numbers.
 
 ###### Before
 {% code title="A.java" %}
@@ -44,7 +45,8 @@ class A {
 ```
 {% endcode %}
 ---
-##### Example 2: Grouping concatenation.
+##### Example 2
+Grouping concatenation.
 
 ###### Before
 {% code title="A.java" %}

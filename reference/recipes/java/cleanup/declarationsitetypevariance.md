@@ -25,10 +25,12 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 | `Boolean` | excludeFinalClasses | *Optional*. If true, do not add `? extends` variance to final classes. `? super` variance will be added regardless of finality. |
 
 ## Example
+
 ###### Parameters
 | variantTypes | excludedBounds | excludeFinalClasses |
 | -- | -- | -- |
 | List.of("java.util.function.Function<IN, OUT>") | List.of("java.lang.*") | true |
+
 ###### Unchanged
 {% code title="In.java" %}
 ```java
