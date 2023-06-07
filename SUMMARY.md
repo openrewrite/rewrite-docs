@@ -822,7 +822,7 @@
         * [Replace Mockito 1.x any(Class) and anyString() with nullable(Class)](reference/recipes/java/testing/mockito/anytonullable.md)
         * [Replace Mockito 1.x anyString() with nullable(String.class)](reference/recipes/java/testing/mockito/anystringtonullable.md)
         * [Replace PowerMock.mockStatic() with Mockito.mockStatic()](reference/recipes/java/testing/mockito/powermockitomockstatictomockito.md)
-        * [Replace Powermock with raw Mockito](reference/recipes/java/testing/mockito/replacepowermockito.md)
+        * [Replace PowerMock with raw Mockito](reference/recipes/java/testing/mockito/replacepowermockito.md)
         * [Use static form of Mockito MockUtil](reference/recipes/java/testing/mockito/mockutilstostatic.md)
         * [Uses Mockito all from v1.x](reference/recipes/java/testing/mockito/usesmockitoall.md)
   * [Kubernetes](reference/recipes/kubernetes/README.md)
