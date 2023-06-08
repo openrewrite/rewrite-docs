@@ -31,7 +31,7 @@
 * [org.openrewrite.java.spring.search.FindSpringComponents](https://docs.openrewrite.org/reference/recipes/java/spring/search/findspringcomponents): Find Spring components, including controllers, services, repositories, return types of `@Bean` annotated methods, etc. 
 * [org.openrewrite.java.testing.assertj.UseExplicitSize](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/useexplicitsize): Convert `assertThat(collection.size()).isEqualTo(Y)` with AssertJ's `assertThat(collection).hasSize()`. 
 * [org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito](https://docs.openrewrite.org/reference/recipes/java/testing/mockito/powermockitomockstatictomockito): Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`. Removes the `@PrepareForTest` annotation. 
-* [org.openrewrite.java.testing.mockito.ReplacePowerMockito](https://docs.openrewrite.org/reference/recipes/java/testing/mockito/replacepowermockito): Replace Powermock with raw Mockito. 
+* [org.openrewrite.java.testing.mockito.ReplacePowerMockito](https://docs.openrewrite.org/reference/recipes/java/testing/mockito/replacepowermockito): Replace PowerMock with raw Mockito. 
 * [org.openrewrite.search.FindLanguageComposition](https://docs.openrewrite.org/reference/recipes/search/findlanguagecomposition): Produce a table of files and their language composition. 
 
 ## Removed Recipes
