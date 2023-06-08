@@ -1216,3 +1216,4 @@
   * [Markers](concepts-and-explanations/markers.md)
   * [JavaTemplate](concepts-and-explanations/javatemplate.md)
   * [Pointcut expressions](concepts-and-explanations/pointcut-expressions.md)
+  * [Quarks](concepts-and-explanations/quarks.md)
