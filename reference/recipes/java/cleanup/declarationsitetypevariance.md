@@ -30,7 +30,9 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 ###### Parameters
 | Parameter | Value |
 | -- | -- |
-|variantTypes|List.of("java.util.function.Function<IN, OUT>")||excludedBounds|List.of("java.lang.*")||excludeFinalClasses|true|
+|variantTypes|List.of("java.util.function.Function<IN, OUT>")|
+|excludedBounds|List.of("java.lang.*")|
+|excludeFinalClasses|true|
 
 ###### Unchanged
 {% code title="In.java" %}
