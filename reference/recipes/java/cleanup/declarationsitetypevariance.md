@@ -64,6 +64,19 @@ class Test {
 ```
 {% endcode %}
 
+###### Diff
+
+```diff
+--- Test.java
++++ Test.java
+@@ -2,6 +2,6 @@
+ import java.util.function.Function;
+ class Test {
+-    void test(Function<In, Out> f) {
++    void test(Function<? super In, ? extends Out> f) {
+     }
+ }
+```
 
 ## Usage
 
