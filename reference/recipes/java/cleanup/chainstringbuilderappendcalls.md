@@ -17,6 +17,7 @@ _String concatenation within calls to `StringBuilder.append()` causes unnecessar
 ##### Example 1
 Chain `StringBuilder.append()` calls instead of the '+' operator to efficiently concatenate strings and numbers.
 
+
 ###### Before
 {% code title="A.java" %}
 ```java
@@ -44,9 +45,21 @@ class A {
 }
 ```
 {% endcode %}
+
+###### Diff
+```diff
+--- A.java
++++ A.java
+@@ -5,2 +5,2 @@
+-        sb.append("A" + op + "B");
+        sb.append(1 + op + 2);
++        sb.append("A").append(op).append("B");
+        sb.append(1).append(op).append(2);
+```
 ---
 ##### Example 2
 Grouping concatenation.
+
 
 ###### Before
 {% code title="A.java" %}
@@ -73,6 +86,16 @@ class A {
 }
 ```
 {% endcode %}
+
+###### Diff
+```diff
+--- A.java
++++ A.java
+@@ -5,1 +5,1 @@
+-        sb.append("A" + "B" + "C" + op + "D" + "E");
++        sb.append("A" + "B" + "C").append(op).append("D" + "E");
+```
+
 
 ## Contributors
 * [Kun Li](kun@moderne.io)

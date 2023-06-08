@@ -12,81 +12,23 @@ _Text blocks are easier to read than concatenated strings._
 * artifactId: rewrite-migrate-java
 * version: 1.21.1
 
+## Contributors
+* [Kun Li](kun@moderne.io)
+* [Jonathan Schneider](jkschneider@gmail.com)
+
+## Options
+
+| Type | Name | Description |
+| -- | -- | -- |
+| `boolean` | convertStringsWithoutNewlines | *Optional*. Whether or not strings without newlines should be converted to text block when processing code. The default value is true. |
+
+
 ## Examples
+##### Example 1
 
 
-Example layout Style 1
-
-> - **Example 1 : SQL query**
->> ***Test.java***
->>> *Before*
->>> ```java
->>> class Test {
->>>     String query = "SELECT * FROM\n" +
->>>             "my_table\n" +
->>>             "WHERE something = 1;";
->>> }
->>> ```
->>> *After*
->>> ```java
->>> class Test {
->>>    String query = """
->>>           SELECT * FROM
->>>           my_table
->>>           WHERE something = 1;\
->>> """;
->>> }
->>> ```
-> ---
->> ***Test2.java***
->>> *Before*
->>> ```java
->>> class Test2 {
->>>     String query = "SELECT * FROM\n" +
->>>             "my_table\n" +
->>>             "WHERE something = 1;";
->>> }
->>> ```
->>> *After*
->>> ```java
->>> class Test2 {
->>>    String query = """
->>>           SELECT * FROM
->>>           my_table
->>>           WHERE something = 1;\
->>> """;
->>> }
->>> ```
-> ---
-> - **Example 2**
->> ***Test2.java***
->>> *Before*
->>> ```java
->>> class Test2 {
->>>     String query = "SELECT * FROM\n" +
->>>             "my_table\n" +
->>>             "WHERE something = 1;";
->>> }
->>> ```
->>> *After*
->>> ```java
->>> class Test2 {
->>>    String query = """
->>>           SELECT * FROM
->>>           my_table
->>>           WHERE something = 1;\
->>> """;
->>> }
->>> ```
->
-
----
-
-Example layout Style 2
-
-##### - Example 1:
-###### - Before
-{% code title="A.java" %}
+###### Before
+{% code title="Test.java" %}
 ```java
 class Test {
     String query = "SELECT * FROM\n" +
@@ -96,9 +38,8 @@ class Test {
 ```
 {% endcode %}
 
-
 ###### After
-{% code title="A.java" %}
+{% code title="Test.java" %}
 ```java
 class Test {
     String query = """
@@ -109,8 +50,25 @@ class Test {
 }
 ```
 {% endcode %}
+
+###### Diff
+```diff
+--- Test.java
++++ Test.java
+@@ -2,3 +2,5 @@
+-    String query = "SELECT * FROM\n" +
+            "my_table\n" +
+            "WHERE something = 1;";
++    String query = """
+            SELECT * FROM
+            my_table
+            WHERE something = 1;\
+            """;
+```
 ---
-##### Example 2:
+##### Example 2
+
+
 ###### Before
 {% code title="A.java" %}
 ```java
@@ -129,7 +87,6 @@ class A {
 }
 ```
 {% endcode %}
-
 
 ###### After
 {% code title="A.java" %}
@@ -153,8 +110,81 @@ class A {
 ```
 {% endcode %}
 
+###### Diff
+```diff
+--- A.java
++++ A.java
+@@ -3,8 +3,11 @@
+-        log("\n========================================================="
+            + "\n                                                         "
+            + "\n          Welcome to Spring Integration!                 "
+            + "\n                                                         "
+            + "\n    For more information please visit:                   "
+            + "\n    https://www.springsource.org/spring-integration      "
+            + "\n                                                         "
+            + "\n=========================================================");
++        log("""
+            
+            =========================================================
+                                                                    \s
+                      Welcome to Spring Integration!                \s
+                                                                    \s
+                For more information please visit:                  \s
+                https://www.springsource.org/spring-integration     \s
+                                                                    \s
+            =========================================================\
+            """);
+```
 ---
-##### Example 3:
+##### Example 3
+
+
+###### Before
+{% code title="Test.java" %}
+```java
+class Test {
+    String myFaceInASCII = "\"\"\"\"\"\"\"\"\n" +
+                           "| o  o |\n" +
+                           "|  ==  |\n" +
+                           "\\------/\n";
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+class Test {
+    String myFaceInASCII = """
+                           ""\"""\"""
+ o  o |
+  ==  |
+                           \\------/
+                           """;
+}
+```
+{% endcode %}
+
+###### Diff
+```diff
+--- Test.java
++++ Test.java
+@@ -2,4 +2,6 @@
+-    String myFaceInASCII = "\"\"\"\"\"\"\"\"\n" +
+                           "| o  o |\n" +
+                           "|  ==  |\n" +
+                           "\\------/\n";
++    String myFaceInASCII = """
+                           ""\"""\"""
+ o  o |
+  ==  |
+                           \\------/
+                           """;
+```
+---
+##### Example 4
+
+
 ###### Before
 {% code title="Test.java" %}
 ```java
@@ -174,19 +204,21 @@ class Test {
                    after 8 quotes\
                    """;
 }
-
 ```
 {% endcode %}
 
-## Contributors
-* [Kun Li](kun@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-
-## Options
-
-| Type | Name | Description |
-| -- | -- | -- |
-| `boolean` | convertStringsWithoutNewlines | *Optional*. Whether or not strings without newlines should be converted to text block when processing code. The default value is true. |
+###### Diff
+```diff
+--- Test.java
++++ Test.java
+@@ -2,2 +2,4 @@
+-    String eightQuotes = "\"\"\"\"\"\"\"\"" +
+                   "after 8 quotes";
++    String eightQuotes = """
+                   ""\"""\"""\
+                   after 8 quotes\
+                   """;
+```
 
 
 ## Usage
