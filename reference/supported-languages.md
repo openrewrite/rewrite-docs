@@ -30,3 +30,7 @@ Many different frameworks are supported such as (but not limited to):
 * Jakarta
 
 You can find all of the frameworks in the [recipe catalog](https://docs.openrewrite.org/recipes).
+
+## Want to contribute?
+
+We welcome all types of contributions to OpenRewrite – whether that be questions and feature requests or new recipes or even support for new frameworks. Check out our [contributing guide](https://github.com/openrewrite/.github/blob/main/CONTRIBUTING.md) to get started.
