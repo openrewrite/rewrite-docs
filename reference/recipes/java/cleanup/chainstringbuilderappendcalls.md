@@ -1,4 +1,4 @@
-# Chain StringBuilder.append() calls
+# Chain `StringBuilder.append()` calls
 
 **org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls**
 
@@ -12,31 +12,13 @@ _String concatenation within calls to `StringBuilder.append()` causes unnecessar
 * artifactId: rewrite-java
 * version: 7.40.6
 
+
 ## Examples
-
-**Example 1**
-
+##### Example 1
 Chain `StringBuilder.append()` calls instead of the '+' operator to efficiently concatenate strings and numbers.
 
-<details>
 
-<summary>A.java</summary>
-
-```java
-class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
-        sb.append("A" + op + "B");
-        sb.append(1 + op + 2);
-    }
-}
-```
-
-</details>
-
-**Before**
-
+###### Before
 {% code title="A.java" %}
 ```java
 class A {
@@ -50,8 +32,7 @@ class A {
 ```
 {% endcode %}
 
-**After**
-
+###### After
 {% code title="A.java" %}
 ```java
 class A {
@@ -65,10 +46,7 @@ class A {
 ```
 {% endcode %}
 
-<details>
-
-<summary>Diff</summary>
-
+###### Diff
 ```diff
 --- A.java
 +++ A.java
@@ -78,29 +56,12 @@ class A {
 +        sb.append("A").append(op).append("B");
         sb.append(1).append(op).append(2);
 ```
-
-</details>
-
-**Diff**
-
-```diff
---- A.java
-+++ A.java
-@@ -5,2 +5,2 @@
--        sb.append("A" + op + "B");
-        sb.append(1 + op + 2);
-+        sb.append("A").append(op).append("B");
-        sb.append(1).append(op).append(2);
-```
-
-***
-
-**Example 2**
-
+---
+##### Example 2
 Grouping concatenation.
 
-**Before**
 
+###### Before
 {% code title="A.java" %}
 ```java
 class A {
@@ -113,8 +74,7 @@ class A {
 ```
 {% endcode %}
 
-**After**
-
+###### After
 {% code title="A.java" %}
 ```java
 class A {
@@ -127,8 +87,7 @@ class A {
 ```
 {% endcode %}
 
-**Diff**
-
+###### Diff
 ```diff
 --- A.java
 +++ A.java
@@ -137,14 +96,14 @@ class A {
 +        sb.append("A" + "B" + "C").append(op).append("D" + "E");
 ```
 
-## Contributors
 
+## Contributors
 * [Kun Li](kun@moderne.io)
+
 
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
-
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -164,7 +123,6 @@ repositories {
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Maven POM" %}
 {% code title="pom.xml" %}
 ```markup
@@ -190,7 +148,6 @@ repositories {
 
 {% tab title="Maven Command Line" %}
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
 {% code title="shell" %}
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
@@ -202,7 +159,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](../../../../.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.cleanup.ChainStringBuilderAppendCalls)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
