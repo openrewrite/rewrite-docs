@@ -20,7 +20,7 @@ OpenRewrite is continuously adding support for new languages and formats. As of 
 
 ## Frameworks
 
-Framework developers have created recipes to help migrate and support their frameworks. These include:
+Framework migration recipes are developed and maintained in collaboration of the team behind OpenRewrite at Moderne, the original framework authors, and the wider OSS community. Individual recipes list the contributing authors. Support includes, but is not limited to:
 
 * Spring
 * Quarkus
