@@ -81,67 +81,10 @@ class Test {
 {% endtab %}
 {% endtabs %}
 
+
 ## Style2
 
-{% expandable %}
-This is some text is expandable
-line2
-line3
-{% endexpandable %}
-
-{% expandable"%}
-###### Unchanged
-{% code title="In.java" %}
-```java
-interface In {}
-interface Out {}
-```
-{% endcode %}
-{% endexpandable %}
-
-
-{% expandable%}
-###### Before
-{% code title="Test.java" %}
-```java
-import java.util.function.Function;
-class Test {
-    void test(Function<In, Out> f) {
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.util.function.Function;
-class Test {
-    void test(Function<? super In, ? extends Out> f) {
-    }
-}
-```
-{% endcode %}
-{% endexpandable %}
-
-{% expandable %}
-###### Diff
-```diff
---- Test.java
-+++ Test.java
-@@ -3,1 +3,1 @@
--    void test(Function<In, Out> f) {
-+    void test(Function<? super In, ? extends Out> f) {
-```
-{% endexpandable %}
-
-
-## Style3
-
-<details>
-
-<summary>Unchanged File `In.java`</summary>
-
+###### UnChanged
 {% code title="In.java" %}
 ```java
 interface In {}
@@ -149,11 +92,6 @@ interface Out {}
 ```
 {% endcode %}
 
-</details>
-
-<details>
-
-<summary>Changed File `Test.java`</summary>
 
 ###### Before
 {% code title="Test.java" %}
@@ -176,15 +114,11 @@ class Test {
 }
 ```
 {% endcode %}
-
-</details>
-
 
 <details>
 
 <summary>Diff</summary>
 
-###### Diff
 ```diff
 --- Test.java
 +++ Test.java
