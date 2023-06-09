@@ -34,8 +34,7 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 |excludedBounds|List.of("java.lang.*")|
 |excludeFinalClasses|true|
 
-{% tabs %}
-{% tab title="Before and After" %}
+## Style1
 
 ###### Unchanged
 {% code title="In.java" %}
@@ -45,6 +44,8 @@ interface Out {}
 ```
 {% endcode %}
 
+{% tabs %}
+{% tab title="Before and After" %}
 ###### Before
 {% code title="Test.java" %}
 ```java
@@ -79,6 +80,54 @@ class Test {
 ```
 {% endtab %}
 {% endtabs %}
+
+## Style2
+
+{% expandable title="In.java"%}
+###### Unchanged
+{% code title="In.java" %}
+```java
+interface In {}
+interface Out {}
+```
+{% endcode %}
+{% endexpandable %}
+
+
+{% expandable title="Test.java"%}
+###### Before
+{% code title="Test.java" %}
+```java
+import java.util.function.Function;
+class Test {
+    void test(Function<In, Out> f) {
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import java.util.function.Function;
+class Test {
+    void test(Function<? super In, ? extends Out> f) {
+    }
+}
+```
+{% endcode %}
+{% endexpandable %}
+
+{% expandable %}
+###### Diff
+```diff
+--- Test.java
++++ Test.java
+@@ -3,1 +3,1 @@
+-    void test(Function<In, Out> f) {
++    void test(Function<? super In, ? extends Out> f) {
+```
+{% endexpandable %}
 
 ## Usage
 
