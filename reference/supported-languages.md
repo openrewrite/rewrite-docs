@@ -5,8 +5,8 @@ OpenRewrite is continuously adding support for new languages and formats. As of 
 ## Programming languages
 
 * Java
-* Groovy/Gradle 
 * Kotlin
+* Groovy
 * COBOL (open-source, but not free for commercial use)
 
 ## Data formats
