@@ -28,4 +28,4 @@ Framework migration recipes are developed and maintained in collaboration of the
 * Jakarta
 * Kubernetes
 
-You can find all of the frameworks in the [community marketplace](https://public.moderne.io/marketplace).
+You can find all of the frameworks in the [recipe catalog](https://docs.openrewrite.org/recipes).
