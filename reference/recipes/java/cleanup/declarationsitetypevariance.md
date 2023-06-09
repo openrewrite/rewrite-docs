@@ -83,7 +83,13 @@ class Test {
 
 ## Style2
 
-{% expandable title="In.java"%}
+{% expandable %}
+This is some text is expandable
+line2
+line3
+{% endexpandable %}
+
+{% expandable"%}
 ###### Unchanged
 {% code title="In.java" %}
 ```java
@@ -94,7 +100,7 @@ interface Out {}
 {% endexpandable %}
 
 
-{% expandable title="Test.java"%}
+{% expandable%}
 ###### Before
 {% code title="Test.java" %}
 ```java
