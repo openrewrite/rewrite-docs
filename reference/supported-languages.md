@@ -25,6 +25,7 @@ Framework migration recipes are developed and maintained in collaboration of the
 * Spring
 * Quarkus
 * Micronaut
+* Jakarta
 * Kubernetes
 
 You can find all of the frameworks in the [community marketplace](https://public.moderne.io/marketplace).
