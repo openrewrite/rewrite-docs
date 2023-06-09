@@ -16,7 +16,10 @@ OpenRewrite is continuously adding support for new languages and formats. As of 
 * YAML
 * JSON
 * Protobuf
-* Maven POMs (with dependency management)
+
+## Build tools
+* Maven
+* Gradle
 
 ## Frameworks
 
