@@ -157,6 +157,7 @@ Sonatype
 sourcespecs
 Springbatch
 springframework
+staticanalysis 
 Stewjon
 supertypes
 temurin
