@@ -24,6 +24,7 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 | `List` | excludedBounds | *Optional*. A list of bounds that should not receive explicit variance. Globs supported. |
 | `Boolean` | excludeFinalClasses | *Optional*. If true, do not add `? extends` variance to final classes. `? super` variance will be added regardless of finality. |
 
+## Style1
 
 ## Example
 
@@ -33,8 +34,6 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 |variantTypes|List.of("java.util.function.Function<IN, OUT>")|
 |excludedBounds|List.of("java.lang.*")|
 |excludeFinalClasses|true|
-
-## Style1
 
 ###### Unchanged
 {% code title="In.java" %}
@@ -84,13 +83,28 @@ class Test {
 
 ## Style2
 
-###### UnChanged
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|variantTypes|List.of("java.util.function.Function<IN, OUT>")|
+|excludedBounds|List.of("java.lang.*")|
+|excludeFinalClasses|true|
+
+
+<details>
+<summary>In.java (Unchanged)</summary>
 {% code title="In.java" %}
 ```java
 interface In {}
 interface Out {}
 ```
 {% endcode %}
+</details>
+
+---
 
 
 ###### Before
@@ -116,9 +130,7 @@ class Test {
 {% endcode %}
 
 <details>
-
 <summary>Diff</summary>
-
 ```diff
 --- Test.java
 +++ Test.java
@@ -126,8 +138,8 @@ class Test {
 -    void test(Function<In, Out> f) {
 +    void test(Function<? super In, ? extends Out> f) {
 ```
-
 </details>
+
 
 ## Usage
 

@@ -46,7 +46,8 @@ class A {
 ```
 {% endcode %}
 
-###### Diff
+<details>
+<summary>Diff</summary>
 ```diff
 --- A.java
 +++ A.java
@@ -56,6 +57,7 @@ class A {
 +        sb.append("A").append(op).append("B");
         sb.append(1).append(op).append(2);
 ```
+</details>
 ---
 ##### Example 2
 Grouping concatenation.
@@ -87,7 +89,8 @@ class A {
 ```
 {% endcode %}
 
-###### Diff
+<details>
+<summary>Diff</summary>
 ```diff
 --- A.java
 +++ A.java
@@ -95,6 +98,7 @@ class A {
 -        sb.append("A" + "B" + "C" + op + "D" + "E");
 +        sb.append("A" + "B" + "C").append(op).append("D" + "E");
 ```
+</details>
 
 
 ## Contributors
