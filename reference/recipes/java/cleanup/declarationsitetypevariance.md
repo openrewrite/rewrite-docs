@@ -135,6 +135,66 @@ class Test {
 ```
 {% endexpandable %}
 
+
+## Style3
+
+<details>
+
+<summary>Unchanged File `In.java`</summary>
+
+{% code title="In.java" %}
+```java
+interface In {}
+interface Out {}
+```
+{% endcode %}
+
+</details>
+
+<details>
+
+<summary>Changed File `Test.java`</summary>
+
+###### Before
+{% code title="Test.java" %}
+```java
+import java.util.function.Function;
+class Test {
+    void test(Function<In, Out> f) {
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import java.util.function.Function;
+class Test {
+    void test(Function<? super In, ? extends Out> f) {
+    }
+}
+```
+{% endcode %}
+
+</details>
+
+
+<details>
+
+<summary>Diff</summary>
+
+###### Diff
+```diff
+--- Test.java
++++ Test.java
+@@ -3,1 +3,1 @@
+-    void test(Function<In, Out> f) {
++    void test(Function<? super In, ? extends Out> f) {
+```
+
+</details>
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeclarationSiteTypeVarianceExample`.
