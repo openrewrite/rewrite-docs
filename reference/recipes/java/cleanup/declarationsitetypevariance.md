@@ -34,6 +34,9 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 |excludedBounds|List.of("java.lang.*")|
 |excludeFinalClasses|true|
 
+{% tabs %}
+{% tab title="Before and After" %}
+
 ###### Unchanged
 {% code title="In.java" %}
 ```java
@@ -41,9 +44,6 @@ interface In {}
 interface Out {}
 ```
 {% endcode %}
-
----
-
 
 ###### Before
 {% code title="Test.java" %}
@@ -66,7 +66,9 @@ class Test {
 }
 ```
 {% endcode %}
+{% endtab %}
 
+{% tab title="Diff" %}
 ###### Diff
 ```diff
 --- Test.java
@@ -75,6 +77,8 @@ class Test {
 -    void test(Function<In, Out> f) {
 +    void test(Function<? super In, ? extends Out> f) {
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Usage
 
@@ -96,6 +100,7 @@ recipeList:
 {% endcode %}
 
 Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined activate it in your build file:
+
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
