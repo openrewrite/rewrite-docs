@@ -1,4 +1,4 @@
-# Languages/Formats OpenRewrite supports
+# Supported languages
 
 OpenRewrite is continuously adding support for new languages and formats. As of June 2023, OpenRewrite supports:
 
@@ -8,6 +8,8 @@ OpenRewrite is continuously adding support for new languages and formats. As of 
 * Kotlin
 * Groovy
 * COBOL (open-source, but not free for commercial use)
+* Python ([LST](../concepts-and-explanations/lossless-semantic-trees.md) support)
+* TypeScript ([LST](../concepts-and-explanations/lossless-semantic-trees.md) support)
 
 ## Data formats
 
@@ -18,6 +20,7 @@ OpenRewrite is continuously adding support for new languages and formats. As of 
 * Protobuf
 
 ## Build tools
+
 * Maven
 * Gradle
 
