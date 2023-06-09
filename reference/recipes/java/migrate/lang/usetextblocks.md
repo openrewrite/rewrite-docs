@@ -26,6 +26,8 @@ _Text blocks are easier to read than concatenated strings._
 ## Examples
 ##### Example 1
 
+{% tabs %}
+{% tab title="Test.java" %}
 
 ###### Before
 {% code title="Test.java" %}
@@ -51,7 +53,9 @@ class Test {
 ```
 {% endcode %}
 
-###### Diff
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
 ```diff
 --- Test.java
 +++ Test.java
@@ -65,9 +69,15 @@ class Test {
             WHERE something = 1;\
             """;
 ```
+{% endcode %}
+{% endtabs %}
+
 ---
+
 ##### Example 2
 
+{% tabs %}
+{% tab title="A.java" %}
 
 ###### Before
 {% code title="A.java" %}
@@ -110,7 +120,9 @@ class A {
 ```
 {% endcode %}
 
-###### Diff
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
 ```diff
 --- A.java
 +++ A.java
@@ -135,9 +147,15 @@ class A {
             =========================================================\
             """);
 ```
+{% endcode %}
+{% endtabs %}
+
 ---
+
 ##### Example 3
 
+{% tabs %}
+{% tab title="Test.java" %}
 
 ###### Before
 {% code title="Test.java" %}
@@ -165,7 +183,9 @@ class Test {
 ```
 {% endcode %}
 
-###### Diff
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
 ```diff
 --- Test.java
 +++ Test.java
@@ -176,14 +196,20 @@ class Test {
                            "\\------/\n";
 +    String myFaceInASCII = """
                            ""\"""\"""
- o  o |
-  ==  |
+                             o  o |
+                              ==  |
                            \\------/
                            """;
 ```
+{% endcode %}
+{% endtabs %}
+
 ---
+
 ##### Example 4
 
+{% tabs %}
+{% tab title="Test.java" %}
 
 ###### Before
 {% code title="Test.java" %}
@@ -207,7 +233,9 @@ class Test {
 ```
 {% endcode %}
 
-###### Diff
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
 ```diff
 --- Test.java
 +++ Test.java
@@ -219,6 +247,8 @@ class Test {
                    after 8 quotes\
                    """;
 ```
+{% endcode %}
+{% endtabs %}
 
 
 ## Usage

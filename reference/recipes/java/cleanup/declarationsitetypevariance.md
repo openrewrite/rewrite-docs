@@ -35,6 +35,7 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 |excludedBounds|`List.of("java.lang.*")`|
 |excludeFinalClasses|`true`|
 
+
 ###### Unchanged
 {% code title="In.java" %}
 ```java
@@ -44,7 +45,8 @@ interface Out {}
 {% endcode %}
 
 {% tabs %}
-{% tab title="Before and After" %}
+{% tab title="Test.java" %}
+
 ###### Before
 {% code title="Test.java" %}
 ```java
@@ -66,10 +68,10 @@ class Test {
 }
 ```
 {% endcode %}
-{% endtab %}
 
+{% endtab %}
 {% tab title="Diff" %}
-###### Diff
+{% code %}
 ```diff
 --- Test.java
 +++ Test.java
@@ -77,7 +79,7 @@ class Test {
 -    void test(Function<In, Out> f) {
 +    void test(Function<? super In, ? extends Out> f) {
 ```
-{% endtab %}
+{% endcode %}
 {% endtabs %}
 
 
