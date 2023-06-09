@@ -91,6 +91,7 @@ class A {
 
 <details>
 <summary>Diff</summary>
+{% code %}
 ```diff
 --- A.java
 +++ A.java
@@ -98,6 +99,7 @@ class A {
 -        sb.append("A" + "B" + "C" + op + "D" + "E");
 +        sb.append("A" + "B" + "C").append(op).append("D" + "E");
 ```
+{% endcode %}
 </details>
 
 

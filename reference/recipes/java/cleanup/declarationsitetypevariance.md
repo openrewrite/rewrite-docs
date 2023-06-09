@@ -104,9 +104,6 @@ interface Out {}
 {% endcode %}
 </details>
 
----
-
-
 ###### Before
 {% code title="Test.java" %}
 ```java
@@ -130,7 +127,9 @@ class Test {
 {% endcode %}
 
 <details>
+
 <summary>Diff</summary>
+
 ```diff
 --- Test.java
 +++ Test.java
@@ -138,6 +137,7 @@ class Test {
 -    void test(Function<In, Out> f) {
 +    void test(Function<? super In, ? extends Out> f) {
 ```
+
 </details>
 
 
