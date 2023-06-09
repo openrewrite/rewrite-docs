@@ -1197,6 +1197,7 @@
   * [Latest versions of every OpenRewrite module](reference/latest-versions-of-every-openrewrite-module.md)
   * [Maven plugin configuration](reference/rewrite-maven-plugin.md)
   * [Gradle plugin configuration](reference/gradle-plugin-configuration.md)
+  * [Supported languages](reference/supported-languages.md)
   * [Snapshot versions](reference/snapshot-instructions.md)
   * [JsonPath and JsonPathMatcher](reference/jsonpath-and-jsonpathmatcher-reference.md)
   * [Declarative YAML format](reference/yaml-format-reference.md)
