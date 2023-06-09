@@ -80,6 +80,7 @@ class Test {
 +    void test(Function<? super In, ? extends Out> f) {
 ```
 {% endcode %}
+{% endtab %}
 {% endtabs %}
 
 

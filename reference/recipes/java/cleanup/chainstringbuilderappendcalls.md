@@ -61,6 +61,7 @@ class A {
         sb.append(1).append(op).append(2);
 ```
 {% endcode %}
+{% endtab %}
 {% endtabs %}
 
 ---
@@ -108,6 +109,7 @@ class A {
 +        sb.append("A" + "B" + "C").append(op).append("D" + "E");
 ```
 {% endcode %}
+{% endtab %}
 {% endtabs %}
 
 
