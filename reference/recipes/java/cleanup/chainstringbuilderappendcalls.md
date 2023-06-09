@@ -60,7 +60,9 @@ class A {
 ```
 {% endcode %}
 </details>
+
 ---
+
 ##### Example 2
 Grouping concatenation.
 
