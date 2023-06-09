@@ -7,7 +7,7 @@ OpenRewrite is continuously adding support for new languages and formats. As of 
 * Java
 * Groovy/Gradle 
 * Kotlin
-* COBOL (open source, but not free for commercial use)
+* COBOL (open-source, but not free for commercial use)
 
 ## Data formats
 
@@ -20,12 +20,13 @@ OpenRewrite is continuously adding support for new languages and formats. As of 
 
 ## Frameworks
 
-Framework migration recipes are developed and maintained in collaboration of the team behind OpenRewrite at Moderne, the original framework authors, and the wider OSS community. Individual recipes list the contributing authors. Support includes, but is not limited to:
+Framework migration recipes are developed through collaboration between the team behind OpenRewrite at Moderne, the original framework authors, and the wider OSS community. Each recipe in our [recipe catalog](https://docs.openrewrite.org/recipes) includes a list of contributing authors.
+
+Many different frameworks are supported such as (but not limited to):
 
 * Spring
 * Quarkus
 * Micronaut
 * Jakarta
-* Kubernetes
 
 You can find all of the frameworks in the [recipe catalog](https://docs.openrewrite.org/recipes).
