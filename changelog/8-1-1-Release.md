@@ -150,9 +150,13 @@ The context-free templates also benefit the first use case of LST substitution, 
 
 To support this new functionality, **we've had to redesign the `JavaTemplate` API**. New methods, such as `matches()` and `matcher()`, have been introduced for templating matching (similar to Java's regex functionality). Furthermore, the builder now produces context-free templates by default. If a template requires context sensitivity, the `contextSensitive()` method of the builder must be invoked.
 
-**You will need to update all references to `JavaTemplate` in your recipes.** The [migration recipe](#migrating-your-recipes) should help you get started with this.
+**You will need to update all references to `JavaTemplate` in your recipes.** You will need to:
 
-TODO: We need a better explanation for what needs to change. The below example doesn't provide enough of an explanation for how someone would know this.
+1. Double-check whether or not `contextSensitive()` makes sense for your recipe. It is added by defualt – but if your recipe doesn't refer to the surrounding code and, instead, only refers to template parameters or statically available elements like classes and static methods, you can remove it.
+
+2. Determine what type of `Cursor` should go into the `JavaTemplate.apply()` method. Typically this should be `getCursor()`. However, if the `J` instance is updated in the method, the cursor on this visitor will need to be updated. In that case, you should use [updateCursor](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/TreeVisitor.java#L158-L169) instead.
+
+The [migration recipe](#migrating-your-recipes) will help you get started with this. 
 
 **Example**:
 
