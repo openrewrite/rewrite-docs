@@ -17,6 +17,7 @@ _String concatenation within calls to `StringBuilder.append()` causes unnecessar
 ##### Example 1
 Chain `StringBuilder.append()` calls instead of the '+' operator to efficiently concatenate strings and numbers.
 
+
 {% tabs %}
 {% tab title="A.java" %}
 
@@ -55,10 +56,14 @@ class A {
 --- A.java
 +++ A.java
 @@ -5,2 +5,2 @@
--        sb.append("A" + op + "B");
-        sb.append(1 + op + 2);
-+        sb.append("A").append(op).append("B");
-        sb.append(1).append(op).append(2);
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+-       sb.append("A" + op + "B");
+-       sb.append(1 + op + 2);
++       sb.append("A").append(op).append("B");
++       sb.append(1).append(op).append(2);
+    }
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -68,6 +73,7 @@ class A {
 
 ##### Example 2
 Grouping concatenation.
+
 
 {% tabs %}
 {% tab title="A.java" %}
@@ -104,33 +110,17 @@ class A {
 ```diff
 --- A.java
 +++ A.java
-@@ -1,4 +1,4 @@
--class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
-+class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
 @@ -5,1 +5,1 @@
--        sb.append("A" + "B" + "C" + op + "D" + "E");
-+        sb.append("A" + "B" + "C").append(op).append("D" + "E");
-@@ -6,3 +6,3 @@
--    }
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+-       sb.append("A" + "B" + "C" + op + "D" + "E");
++       sb.append("A" + "B" + "C").append(op).append("D" + "E");
+    }
 }
-
-+    }
-}
-
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-
-## Contributors
-* [Kun Li](kun@moderne.io)
 
 
 ## Usage
@@ -179,7 +169,6 @@ repositories {
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
