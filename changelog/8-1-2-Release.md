@@ -1,4 +1,4 @@
-# 8.1.1 Release
+# 8.1.2 Release
 
 Rewrite 8 makes some substantial changes in order to support large monorepos that can not fit into memory. All recipes will need to be [migrated](#migrating-your-recipes) in order for them to keep working.
 
