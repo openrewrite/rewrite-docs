@@ -465,31 +465,60 @@ Please feel free to reach out in the [community Slack](https://join.slack.com/t/
 
 ## New recipes
 
-* [org.openrewrite.analysis.controlflow.ControlFlowVisualization](https://docs.openrewrite.org/reference/recipes/analysis/controlflow/controlflowvisualization): Visualize the control flow of a Java program.
-* [org.openrewrite.analysis.search.FindFlowBetweenMethods](https://docs.openrewrite.org/reference/recipes/analysis/search/findflowbetweenmethods): Takes two patterns for the start/end methods to find flow between.
-* [org.openrewrite.analysis.search.FindMethods](https://docs.openrewrite.org/reference/recipes/analysis/search/findmethods): Find method usages by pattern.
-* [org.openrewrite.analysis.search.UriCreatedWithHttpScheme](https://docs.openrewrite.org/reference/recipes/analysis/search/uricreatedwithhttpscheme): This is a sample recipe demonstrating a simple application of local data flow analysis.
 * [org.openrewrite.FindCollidingSourceFiles](https://docs.openrewrite.org/reference/recipes/findcollidingsourcefiles): Finds source files which share a path with another source file. There should always be exactly one source file per path within a repository. This is a diagnostic for finding problems in OpenRewrite parsers/build plugins. 
+* [org.openrewrite.analysis.controlflow.ControlFlowVisualization](https://docs.openrewrite.org/reference/recipes/analysis/controlflow/controlflowvisualization): Visualize the control flow of a Java program. 
+* [org.openrewrite.analysis.search.FindFlowBetweenMethods](https://docs.openrewrite.org/reference/recipes/analysis/search/findflowbetweenmethods): Takes two patterns for the start/end methods to find flow between. 
+* [org.openrewrite.analysis.search.FindMethods](https://docs.openrewrite.org/reference/recipes/analysis/search/findmethods): Find method usages by pattern. 
+* [org.openrewrite.analysis.search.UriCreatedWithHttpScheme](https://docs.openrewrite.org/reference/recipes/analysis/search/uricreatedwithhttpscheme): This is a sample recipe demonstrating a simple application of local data flow analysis. 
+* [org.openrewrite.cucumber.jvm.CucumberAnnotationToSuite](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/cucumberannotationtosuite): Replace @Cucumber with @Suite and @SelectClasspathResource("cucumber/annotated/class/package"). 
+* [org.openrewrite.cucumber.jvm.CucumberJava8HookDefinitionToCucumberJava](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/cucumberjava8hookdefinitiontocucumberjava): Replace LambdaGlue hook definitions with new annotated methods with the same body. 
+* [org.openrewrite.cucumber.jvm.CucumberJava8StepDefinitionToCucumberJava](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/cucumberjava8stepdefinitiontocucumberjava): Replace StepDefinitionBody methods with StepDefinitionAnnotations on new methods with the same body. 
+* [org.openrewrite.cucumber.jvm.CucumberJava8ToJava](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/cucumberjava8tojava): Migrates Cucumber-Java8 step definitions and LambdaGlue hooks to Cucumber-Java annotated methods. 
+* [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/cucumbertojunitplatformsuite): Migrates Cucumber tests to JUnit Test Suites. 
+* [org.openrewrite.cucumber.jvm.DropSummaryPrinter](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/dropsummaryprinter): Replace SummaryPrinter with Plugin, if not already present. 
+* [org.openrewrite.cucumber.jvm.RegexToCucumberExpression](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/regextocucumberexpression): Strip regex prefix and suffix from step annotation expressions arguments where possible. 
+* [org.openrewrite.cucumber.jvm.UpgradeCucumber2x](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/upgradecucumber2x): Upgrade to Cucumber-JVM 2.x from any previous version. 
+* [org.openrewrite.cucumber.jvm.UpgradeCucumber5x](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/upgradecucumber5x): Upgrade to Cucumber-JVM 5.x from any previous version. 
+* [org.openrewrite.cucumber.jvm.UpgradeCucumber7x](https://docs.openrewrite.org/reference/recipes/cucumber/jvm/upgradecucumber7x): Upgrade to Cucumber-JVM 7.x from any previous version. 
 * [org.openrewrite.github.SetupJavaAdoptOpenJDKToTemurin](https://docs.openrewrite.org/reference/recipes/github/setupjavaadoptopenjdktotemurin): Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is highly recommended to migrate workflows from adopt to temurin to keep receiving software and security updates. See more details in the [Good-bye AdoptOpenJDK post](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/). 
 * [org.openrewrite.github.SetupJavaAdoptOpenj9ToSemeru](https://docs.openrewrite.org/reference/recipes/github/setupjavaadoptopenj9tosemeru): Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is highly recommended to migrate workflows from adopt-openj9 to IBM semeru to keep receiving software and security updates. See more details in the [Good-bye AdoptOpenJDK post](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/). 
 * [org.openrewrite.gradle.ChangeDependency](https://docs.openrewrite.org/reference/recipes/gradle/changedependency): Change a Gradle dependency coordinates. 
 * [org.openrewrite.gradle.RemoveDependency](https://docs.openrewrite.org/reference/recipes/gradle/removedependency): Removes a single dependency from the dependencies section of the `build.gradle`. 
 * [org.openrewrite.gradle.UpdateJavaCompatibility](https://docs.openrewrite.org/reference/recipes/gradle/updatejavacompatibility): Find and updates the Java compatibility for the Gradle project. 
+* [org.openrewrite.hibernate.MigrateToHibernate61](https://docs.openrewrite.org/reference/recipes/hibernate/migratetohibernate61): This recipe will apply changes commonly needed when migrating to Hibernate 6.1.x. The hibernate dependencies will   be updated to use the new org.hibernate.orm group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0. 
+* [org.openrewrite.hibernate.MigrateToHibernateDependencies61](https://docs.openrewrite.org/reference/recipes/hibernate/migratetohibernatedependencies61): This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.1.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies. 
+* [org.openrewrite.hibernate.TypeDescriptorToType](https://docs.openrewrite.org/reference/recipes/hibernate/typedescriptortotype): Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system 
 * [org.openrewrite.java.ShortenFullyQualifiedTypeReferences](https://docs.openrewrite.org/reference/recipes/java/shortenfullyqualifiedtypereferences): Any fully qualified references to Java types will be replaced with corresponding simple names and import statements, provided that it doesn't result in any conflicts with other imports or types declared in the local compilation unit. 
 * [org.openrewrite.java.dependencies.AddDependency](https://docs.openrewrite.org/reference/recipes/java/dependencies/adddependency): For a Gradle project, add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. Or For a maven project, Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used. 
 * [org.openrewrite.java.dependencies.ChangeDependency](https://docs.openrewrite.org/reference/recipes/java/dependencies/changedependency): Change the groupId, artifactId and/or the version of a specified Gradle or Maven dependency. 
 * [org.openrewrite.java.dependencies.RemoveDependency](https://docs.openrewrite.org/reference/recipes/java/dependencies/removedependency): For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the <dependencies> section of the pom.xml. 
 * [org.openrewrite.java.dependencies.UpgradeDependencyVersion](https://docs.openrewrite.org/reference/recipes/java/dependencies/upgradedependencyversion): For Gradle projects, upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:
   * `String` notation: `"group:artifact:version"` 
-  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
-  Can update version numbers which are defined earlier in the same file in variable declarations.
-  For Maven projects, Upgrade the version of a dependency by specifying a group and (optionally) an artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases. 
+  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`. Can update version numbers which are defined earlier in the same file in variable declarations. 
+  * For Maven projects, upgrade the version of a dependency by specifying a group and (optionally) an artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases. 
 * [org.openrewrite.java.format.MethodParamPad](https://docs.openrewrite.org/reference/recipes/java/format/methodparampad): Fixes whitespace padding between the identifier of a method definition or method invocation and the left parenthesis of the parameter list. For example, when configured to remove spacing, `someMethodInvocation (x);` becomes `someMethodInvocation(x)`. 
 * [org.openrewrite.java.format.NoWhitespaceAfter](https://docs.openrewrite.org/reference/recipes/java/format/nowhitespaceafter): Removes unnecessary whitespace appearing after a token. A linebreak after a token is allowed unless `allowLineBreaks` is set to `false`, in which case it will be removed. 
 * [org.openrewrite.java.format.NoWhitespaceBefore](https://docs.openrewrite.org/reference/recipes/java/format/nowhitespacebefore): Removes unnecessary whitespace preceding a token. A linebreak before a token will be removed unless `allowLineBreaks` is set to `true`. 
 * [org.openrewrite.java.format.OperatorWrap](https://docs.openrewrite.org/reference/recipes/java/format/operatorwrap): Fixes line wrapping policies on operators. 
 * [org.openrewrite.java.format.PadEmptyForLoopComponents](https://docs.openrewrite.org/reference/recipes/java/format/pademptyforloopcomponents): Fixes padding on empty `for` loop iterators and initializers to match Checkstyle policies. 
 * [org.openrewrite.java.format.TypecastParenPad](https://docs.openrewrite.org/reference/recipes/java/format/typecastparenpad): Fixes whitespace padding between a typecast type identifier and the enclosing left and right parenthesis. For example, when configured to remove spacing, `( int ) 0L;` becomes `(int) 0L;`. 
+* [org.openrewrite.java.micronaut.AddMicronautRetryDependencyIfNeeded](https://docs.openrewrite.org/reference/recipes/java/micronaut/addmicronautretrydependencyifneeded): This recipe will add the explicit Micronaut Retry dependency if needed 
+* [org.openrewrite.java.micronaut.AddMicronautWebsocketDependencyIfNeeded](https://docs.openrewrite.org/reference/recipes/java/micronaut/addmicronautwebsocketdependencyifneeded): This recipe will add the explicit Micronaut Websocket dependency if needed 
+* [org.openrewrite.java.micronaut.AddSnakeYamlDependencyIfNeeded](https://docs.openrewrite.org/reference/recipes/java/micronaut/addsnakeyamldependencyifneeded): This recipe will add the `snakeyaml` dependency to a Micronaut 4 application that uses yaml configuration. 
+* [org.openrewrite.java.micronaut.ChangeAnnotationProcessorPath](https://docs.openrewrite.org/reference/recipes/java/micronaut/changeannotationprocessorpath): Change the groupId, artifactId, and version of a Maven annotation processor path. 
+* [org.openrewrite.java.micronaut.FindPropertiesConfig](https://docs.openrewrite.org/reference/recipes/java/micronaut/findpropertiesconfig): Find Micronaut properties configuration files. 
+* [org.openrewrite.java.micronaut.FindYamlConfig](https://docs.openrewrite.org/reference/recipes/java/micronaut/findyamlconfig): Find Micronaut yaml configuration files. 
+* [org.openrewrite.java.micronaut.Micronaut3to4Migration](https://docs.openrewrite.org/reference/recipes/java/micronaut/micronaut3to4migration): This recipe will apply changes required for migrating from Micronaut 3 to Micronaut 4. 
+* [org.openrewrite.java.micronaut.UpdateBuildPlugins](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatebuildplugins): This recipe will update the shadow jar plugin to 8.x and the Micronaut build plugins to 4.x for a Gradle build. 
+* [org.openrewrite.java.micronaut.UpdateBuildToMicronaut4Version](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatebuildtomicronaut4version): This recipe will update the Micronaut version to 4.x for a Gradle or Maven build. 
+* [org.openrewrite.java.micronaut.UpdateJakartaAnnotations](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatejakartaannotations): This recipe will remove jakarta annotations dependency as it is a transitive dependency of micronaut-inject, and migrate from javax.annotation if needed. 
+* [org.openrewrite.java.micronaut.UpdateMicronautEmail](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatemicronautemail): This recipe will migrate from javax.validation if needed, and update packages in for the Postmark integration if needed. 
+* [org.openrewrite.java.micronaut.UpdateMicronautPlatformBom](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatemicronautplatformbom): This recipe will update a Gradle or Maven build to reference the Micronaut 4 platform BOM. 
+* [org.openrewrite.java.micronaut.UpdateMicronautSecurity](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatemicronautsecurity): This recipe will update imports for relocated classes and update configuration files with renamed keys. 
+* [org.openrewrite.java.micronaut.UpdateMicronautSession](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatemicronautsession): This recipe will update the Micronaut Session dependency if needed 
+* [org.openrewrite.java.micronaut.UpdateMicronautValidation](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatemicronautvalidation): This recipe will add jakarta validation dependency if needed, migrate from javax.validation if needed, and update micronaut validation dependencies. 
+* [org.openrewrite.java.micronaut.UpdateSecurityPropertiesIfNeeded](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatesecuritypropertiesifneeded): This recipe will update relocated security config keys in Micronaut configuration property files. 
+* [org.openrewrite.java.micronaut.UpdateSecurityYamlIfNeeded](https://docs.openrewrite.org/reference/recipes/java/micronaut/updatesecurityyamlifneeded): This recipe will update relocated security config keys in Micronaut configuration yaml files. 
 * [org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThresholdToSetInitThreshold](https://docs.openrewrite.org/reference/recipes/java/migrate/javax/migratecountermonitorsetthresholdtosetinitthreshold): Use `javax.management.monitor.CounterMonitor#setInitThreshold` instead of the deprecated `javax.management.monitor.CounterMonitor#setThreshold` in JMX 1.2 or higher. 
 * [org.openrewrite.java.migrate.lang.UseStringIsEmptyRecipe](https://docs.openrewrite.org/reference/recipes/java/migrate/lang/usestringisemptyrecipe): Recipe created for the following Refaster template:
   ```java
@@ -505,29 +534,40 @@ Please feel free to reach out in the [community Slack](https://join.slack.com/t/
           return !s.isEmpty();
       }
   }
-  ``` 
+  ```. 
+* [org.openrewrite.java.recipes.MigrateJavaTemplateToRewrite8](https://docs.openrewrite.org/reference/recipes/java/recipes/migratejavatemplatetorewrite8): Migrate `JavaTemplate` to accommodate Rewrite 8, due to wide open-ended usage of JavaTemplate, this recipe just apply most of common changes to pass compile and will leave some comments to require human's review. 
 * [org.openrewrite.java.recipes.MigrateMarkersSearchResult](https://docs.openrewrite.org/reference/recipes/java/recipes/migratemarkerssearchresult): Methods of `org.openrewrite.marker.Markers#SearchResult(..)` are deprecated and removed in rewrite 8, use `SearchResult.found()` instead. 
 * [org.openrewrite.java.recipes.MigrateRecipeToRewrite8](https://docs.openrewrite.org/reference/recipes/java/recipes/migraterecipetorewrite8): Rewrite Recipe Migration to version 8. While most parts can be automatically migrated, there are some complex and open-ended scenarios that require manual attention. In those cases, this recipe will add a comment to the code and request a human to review and handle it manually. 
 * [org.openrewrite.java.recipes.MigrateTestToRewrite8](https://docs.openrewrite.org/reference/recipes/java/recipes/migratetesttorewrite8): Since the method `Recipe::doNext(..)` is deprecated, For unit test, change usage like `RecipeSpec.recipe(X.doNext(Y))` to `RecipeSpec.recipes(X, Y)`. 
 * [org.openrewrite.java.recipes.RemoveApplicabilityTestFromYamlRecipe](https://docs.openrewrite.org/reference/recipes/java/recipes/removeapplicabilitytestfromyamlrecipe): Remove the applicability test from the YAML recipe when migrating from Rewrite 7 to 8, as it is no longer supported and may require migrating the recipe to Java code. 
+* [org.openrewrite.java.recipes.UpdateMovedPackageClassName](https://docs.openrewrite.org/reference/recipes/java/recipes/updatemovedpackageclassname): When a class moved from package A to B, update the fully qualified className accordingly. 
+* [org.openrewrite.java.recipes.UpdateMovedRecipe](https://docs.openrewrite.org/reference/recipes/java/recipes/updatemovedrecipe): Update moved package recipe. 
+* [org.openrewrite.java.recipes.UpdateMovedRecipesYaml](https://docs.openrewrite.org/reference/recipes/java/recipes/updatemovedrecipesyaml): Update moved package recipe. 
 * [org.openrewrite.java.search.FindCallGraph](https://docs.openrewrite.org/reference/recipes/java/search/findcallgraph): Produce the call graph describing the relationships between methods. 
 * [org.openrewrite.java.spring.amqp.UseTlsAmqpConnectionString](https://docs.openrewrite.org/reference/recipes/java/spring/amqp/usetlsamqpconnectionstring): Use TLS for AMQP connection strings. 
 * [org.openrewrite.java.spring.boot2.MigrateApplicationHealthIndicatorToPingHealthIndicator](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/migrateapplicationhealthindicatortopinghealthindicator): `org.springframework.boot.actuate.health.ApplicationHealthIndicator` was deprecated in 2.2. 
 * [org.openrewrite.java.spring.boot2.MigrateHibernateConstraintsToJavax](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/migratehibernateconstraintstojavax): Use `javax.validation.constraints` instead of the deprecated `org.hibernate.validator.constraints` in Spring Boot 2.0 or higher. 
+* [org.openrewrite.java.spring.boot3.MavenPomUpgrade_3_1](https://docs.openrewrite.org/reference/recipes/java/spring/boot3/mavenpomupgrade_3_1): Upgrade Maven POM to Spring Boot 3.1 from prior 3.0 version. 
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_0](https://docs.openrewrite.org/reference/recipes/java/spring/boot3/springbootproperties_3_0): Migrate properties found in `application.properties` and `application.yml`. 
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_1](https://docs.openrewrite.org/reference/recipes/java/spring/boot3/springbootproperties_3_1): Migrate properties found in `application.properties` and `application.yml`. 
+* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1](https://docs.openrewrite.org/reference/recipes/java/spring/boot3/upgradespringboot_3_1): Upgrade to Spring Boot 3.1 
+* [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](https://docs.openrewrite.org/reference/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth): Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set. 
 * [org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName](https://docs.openrewrite.org/reference/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename): Rename the package name from `com.nimbusds.jose.shaded.json.JSONObject` to `net.minidev.json.JSONObject`. 
 * [org.openrewrite.java.spring.security5.WebSecurityConfigurerAdapter](https://docs.openrewrite.org/reference/recipes/java/spring/security5/websecurityconfigureradapter): The Spring Security `WebSecurityConfigurerAdapter` was deprecated 5.7, this recipe will transform `WebSecurityConfigurerAdapter` classes by using a component based approach. Check out the [spring-security-without-the-websecurityconfigureradapter](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter) blog for more details. 
 * [org.openrewrite.java.testing.assertj.UseExplicitIsEmpty](https://docs.openrewrite.org/reference/recipes/java/testing/assertj/useexplicitisempty): Convert AssertJ `assertThat(collection.isEmpty()).isTrue()` to `assertThat(collection).isEmpty()` and `assertThat(collection.isEmpty()).isFalse()` to `assertThat(collection).isNotEmpty()`. 
 * [org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable](https://docs.openrewrite.org/reference/recipes/java/testing/junit5/throwingrunnabletoexecutable): Migrates JUnit 4.x `ThrowingRunnable` to JUnit Jupiter `Executable`. 
-* [org.openrewrite.java.upgrade.MigrateToRewrite8](https://docs.openrewrite.org/reference/recipes/java/upgrade/migratetorewrite8): Migrate rewrite recipe and test from version 7 to version 8.
-While most parts can be automatically migrated, there are some complex and open-ended scenarios that require manual attention.
-In those cases, this recipe will add a comment to the code and request a human to review and handle it manually.
-Reference : Migration guide (URL to be written). 
+* [org.openrewrite.java.upgrade.MigrateToRewrite8](https://docs.openrewrite.org/reference/recipes/java/upgrade/migratetorewrite8): Migrate rewrite recipe and test from version 7 to version 8. While most parts can be automatically migrated, there are some complex and open-ended scenarios that require manual attention. In those cases, this recipe will add a comment to the code and request a human to review and handle it manually. Reference : Migration guide (URL to be written). 
+* [org.openrewrite.java.upgrade.UpdateStaticAnalysisPackage](https://docs.openrewrite.org/reference/recipes/java/upgrade/updatestaticanalysispackage): Some recipes have been moved from `rewrite` to `rewrite-static-analysis`, so any referencing places should update the class package name accordingly. 
 * [org.openrewrite.kotlin.RenameTypeAlias](https://docs.openrewrite.org/reference/recipes/kotlin/renametypealias): Change the name of a given type alias. 
 * [org.openrewrite.kotlin.StaticAnalysis](https://docs.openrewrite.org/reference/recipes/kotlin/staticanalysis): Static analysis fixes for Kotlin sources. 
 * [org.openrewrite.maven.AddProfile](https://docs.openrewrite.org/reference/recipes/maven/addprofile): Add a maven profile to a `pom.xml` file. 
 * [org.openrewrite.python.cleanup.CommonStaticAnalysis](https://docs.openrewrite.org/reference/recipes/python/cleanup/commonstaticanalysis): Resolve common static analysis issues discovered through 3rd party tools. 
+* [org.openrewrite.recommendations.CodeHealth](https://docs.openrewrite.org/reference/recipes/recommendations/codehealth): Used for Code Health metric on moderne radar. 
+* [org.openrewrite.recommendations.CodeStyle](https://docs.openrewrite.org/reference/recipes/recommendations/codestyle): Used for Code Style metric on moderne radar. 
+* [org.openrewrite.recommendations.DependencyManagement](https://docs.openrewrite.org/reference/recipes/recommendations/dependencymanagement): Used for Dependency Management metric on moderne radar. 
+* [org.openrewrite.recommendations.InfrastructureAsCode](https://docs.openrewrite.org/reference/recipes/recommendations/infrastructureascode): Used for Infrastructure As Code metric on moderne radar. 
+* [org.openrewrite.sql.FindSql](https://docs.openrewrite.org/reference/recipes/sql/findsql): Find SQL in code (e.g. in string literals) and in resources like those ending with `.sql`. 
+* [org.openrewrite.sql.FormatSql](https://docs.openrewrite.org/reference/recipes/sql/formatsql): Checks whether a text block may contain SQL, and if so, formats the text accordingly. 
 * [org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable](https://docs.openrewrite.org/reference/recipes/staticanalysis/addserialversionuidtoserializable): A `serialVersionUID` field is strongly recommended in all `Serializable` classes. If this is not defined on a `Serializable` class, the compiler will generate this value. If a change is later made to the class, the generated value will change and attempts to deserialize the class will fail. 
 * [org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet](https://docs.openrewrite.org/reference/recipes/staticanalysis/atomicprimitiveequalsusesget): `AtomicBoolean#equals(Object)`, `AtomicInteger#equals(Object)` and `AtomicLong#equals(Object)` are only equal to their instance. This recipe converts `a.equals(b)` to `a.get() == b.get()`. 
 * [org.openrewrite.staticanalysis.AvoidBoxedBooleanExpressions](https://docs.openrewrite.org/reference/recipes/staticanalysis/avoidboxedbooleanexpressions): Under certain conditions the `java.lang.Boolean` type is used as an expression, and it may throw a `NullPointerException` if the value is null. 
@@ -573,6 +613,8 @@ Reference : Migration guide (URL to be written).
 * [org.openrewrite.staticanalysis.IsEmptyCallOnCollections](https://docs.openrewrite.org/reference/recipes/staticanalysis/isemptycalloncollections): Also check for _not_ `isEmpty()` when testing for not equal to zero size. 
 * [org.openrewrite.staticanalysis.JavaApiBestPractices](https://docs.openrewrite.org/reference/recipes/staticanalysis/javaapibestpractices): Use the Java standard library in a way that is most idiomatic. 
 * [org.openrewrite.staticanalysis.LambdaBlockToExpression](https://docs.openrewrite.org/reference/recipes/staticanalysis/lambdablocktoexpression): Single-line statement lambdas returning a value can be replaced with expression lambdas. 
+* [org.openrewrite.staticanalysis.LowercasePackage](https://docs.openrewrite.org/reference/recipes/staticanalysis/lowercasepackage): By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase. 
+* [org.openrewrite.staticanalysis.MethodNameCasing](https://docs.openrewrite.org/reference/recipes/staticanalysis/methodnamecasing): Method names should comply with a naming convention. 
 * [org.openrewrite.staticanalysis.MinimumSwitchCases](https://docs.openrewrite.org/reference/recipes/staticanalysis/minimumswitchcases): `switch` statements are useful when many code paths branch depending on the value of a single expression. For just one or two code paths, the code will be more readable with `if` statements. 
 * [org.openrewrite.staticanalysis.MissingOverrideAnnotation](https://docs.openrewrite.org/reference/recipes/staticanalysis/missingoverrideannotation): Adds `@Override` to methods overriding superclass methods or implementing interface methods. Annotating methods improves readability by showing the author's intent to override. Additionally, when annotated, the compiler will emit an error when a signature of the overridden method does not match the superclass method. 
 * [org.openrewrite.staticanalysis.ModifierOrder](https://docs.openrewrite.org/reference/recipes/staticanalysis/modifierorder): Modifiers should be declared in the correct order as recommended by the JLS. 
@@ -615,6 +657,7 @@ Reference : Migration guide (URL to be written).
 * [org.openrewrite.staticanalysis.ReplaceDeprecatedRuntimeExecMethods](https://docs.openrewrite.org/reference/recipes/staticanalysis/replacedeprecatedruntimeexecmethods): Replace `Runtime.exec(String)` methods to use `exec(String[])` instead because the former is deprecated after Java 18 and is no longer recommended for use by the Java documentation. 
 * [org.openrewrite.staticanalysis.ReplaceDuplicateStringLiterals](https://docs.openrewrite.org/reference/recipes/staticanalysis/replaceduplicatestringliterals): Replaces `String` literals with a length of 5 or greater repeated a minimum of 3 times. Qualified `String` literals include final Strings, method invocations, and new class invocations. Adds a new `private static final String` or uses an existing equivalent class field. A new variable name will be generated based on the literal value if an existing field does not exist. The generated name will append a numeric value to the variable name if a name already exists in the compilation unit. 
 * [org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference](https://docs.openrewrite.org/reference/recipes/staticanalysis/replacelambdawithmethodreference): Replaces the single statement lambdas `o -> o instanceOf X`, `o -> (A) o`, `o -> System.out.println(o)`, `o -> o != null`, `o -> o == null` with the equivalent method reference. 
+* [org.openrewrite.staticanalysis.ReplaceOptionalIsPresentWithIfPresent](https://docs.openrewrite.org/reference/recipes/staticanalysis/replaceoptionalispresentwithifpresent): Replace `Optional#isPresent()` with `Optional#ifPresent()`. Please note that this recipe is only suitable for if-blocks that lack an Else-block and have a single condition applied. 
 * [org.openrewrite.staticanalysis.ReplaceRedundantFormatWithPrintf](https://docs.openrewrite.org/reference/recipes/staticanalysis/replaceredundantformatwithprintf): Replaces `PrintStream.print(String.format(format, ...args))` with `PrintStream.printf(format, ...args)` (and for `println`, appends a newline to the format string). 
 * [org.openrewrite.staticanalysis.ReplaceStackWithDeque](https://docs.openrewrite.org/reference/recipes/staticanalysis/replacestackwithdeque): From the Javadoc of `Stack`:
   > A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class. 
@@ -661,19 +704,14 @@ Reference : Migration guide (URL to be written).
 
 ## Removed recipes
 
-* **org.openrewrite.concourse.ChangeValue**: Change every value matching the key pattern. 
 * **org.openrewrite.github.ActionsSetupJavaAdoptOpenJDKToTemurin**: Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is highly recommended to migrate workflows from adopt to temurin to keep receiving software and security updates. See more details in the [Good-bye AdoptOpenJDK post](https://blog.adoptopenjdk.net/2021/08/goodbye-adoptopenjdk-hello-adoptium/). 
 * **org.openrewrite.gradle.ActivateStyle**: Sets the specified style as active. Once the style has been set, future recipes will use the specified style for any changes they make. This recipe does not reformat anything on its own. Prefers to set the `activeStyle()` method in the `rewrite` DSL in a build.gradle.If no `rewrite` DSL can be found to update, will instead place a "systemProp.rewrite.activeStyles" entry within the project's gradle.properties. Styles can be provided by rewrite itself, defined in a rewrite.yml, or provided by recipe modules. 
 * **org.openrewrite.gradle.AddDelegatesToGradleApi**: The Gradle API has methods which accept `groovy.lang.Closure`. Typically, there is an overload which accepts an `org.gradle.api.Action`.This recipe takes the type declared as the receiver of the `Action` overload and adds an appropriate `@groovy.lang.DelegatesTo` annotation to the `Closure` overload. 
-* **org.openrewrite.gradle.AddDependency**: Add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. 
 * **org.openrewrite.gradle.AddGradleWrapper**: Add a Gradle wrapper where one does not exist. 
-* **org.openrewrite.gradle.AddProperty**: Add a property to the `gradle.properties` file. 
 * **org.openrewrite.gradle.ChangeDependencyVersion**: Change a version of a specified dependency. The new version must be an exact version number. 
 * **org.openrewrite.gradle.ChangeJavaCompatibility**: Find and updates the Java compatibility for the Gradle project. 
 * **org.openrewrite.gradle.RemoveGradleDependency**: Removes a single dependency from the dependencies section of the `build.gradle`. 
-* **org.openrewrite.gradle.UpdateGradleWrapper**: Update the version of Gradle used in an existing Gradle wrapper. 
 * **org.openrewrite.gradle.UpgradeLiteralDependencyVersion**: Deprecated form of `UpgradeDependencyVersion`. Use that instead. 
-* **org.openrewrite.hcl.MoveContentToFile**: Move content to another HCL file, deleting it in the original file. 
 * **org.openrewrite.java.DoesNotUseRewriteSkip**: The annotation provides a mechanism to skip a whole source file from consideration 
 * **org.openrewrite.java.RecipeExceptionDemonstration**: Show how recipe exceptions are rendered in various forms of OpenRewrite tooling. 
 * **org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable**: A `serialVersionUID` field is strongly recommended in all `Serializable` classes. If this is not defined on a `Serializable` class, the compiler will generate this value. If a change is later made to the class, the generated value will change and attempts to deserialize the class will fail. 
@@ -704,7 +742,7 @@ Reference : Migration guide (URL to be written).
 * **org.openrewrite.java.cleanup.FinalizeLocalVariables**: Adds the `final` modifier keyword to local variables which are not reassigned. 
 * **org.openrewrite.java.cleanup.FinalizeMethodArguments**: Adds the `final` modifier keyword to method parameters. 
 * **org.openrewrite.java.cleanup.FinalizePrivateFields**: Adds the `final` modifier keyword to private instance variables which are not reassigned. 
-* **org.openrewrite.java.cleanup.FixSerializableFields**: The fields of a class that implements `Serializable` must also implement `Serializable` or be marked as `transient`...
+* **org.openrewrite.java.cleanup.FixSerializableFields**: The fields of a class that implements `Serializable` must also implement `Serializable` or be marked as `transient`.
 * **org.openrewrite.java.cleanup.FixStringFormatExpressions**: Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index. 
 * **org.openrewrite.java.cleanup.ForLoopControlVariablePostfixOperators**: Replace `for` loop control variables using pre-increment (`++i`) or pre-decrement (`--i`) operators with their post-increment (`i++`) or post-decrement (`i++`) notation equivalents. 
 * **org.openrewrite.java.cleanup.ForLoopIncrementInUpdate**: The increment should be moved to the loop's increment clause if possible. 
@@ -767,8 +805,7 @@ Reference : Migration guide (URL to be written).
 * **org.openrewrite.java.cleanup.ReplaceDuplicateStringLiterals**: Replaces `String` literals with a length of 5 or greater repeated a minimum of 3 times. Qualified `String` literals include final Strings, method invocations, and new class invocations. Adds a new `private static final String` or uses an existing equivalent class field. A new variable name will be generated based on the literal value if an existing field does not exist. The generated name will append a numeric value to the variable name if a name already exists in the compilation unit. 
 * **org.openrewrite.java.cleanup.ReplaceLambdaWithMethodReference**: Replaces the single statement lambdas `o -> o instanceOf X`, `o -> (A) o`, `o -> System.out.println(o)`, `o -> o != null`, `o -> o == null` with the equivalent method reference. 
 * **org.openrewrite.java.cleanup.ReplaceRedundantFormatWithPrintf**: Replaces `PrintStream.print(String.format(format, ...args))` with `PrintStream.printf(format, ...args)` (and for `println`, appends a newline to the format string). 
-* **org.openrewrite.java.cleanup.ReplaceStackWithDeque**: From the Javadoc of `Stack`:
-  > A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class. 
+* **org.openrewrite.java.cleanup.ReplaceStackWithDeque**: From the Javadoc of `Stack` ...
 * **org.openrewrite.java.cleanup.ReplaceStreamToListWithCollect**: Replace Java 16 `Stream.toList()` with Java 11 `Stream.collect(Collectors.toList())`. 
 * **org.openrewrite.java.cleanup.ReplaceStringBuilderWithString**: Replace `StringBuilder.append()` with String if you are only concatenating a small number of strings and the code is simple and easy to read, as the compiler can optimize simple string concatenation expressions into a single String object, which can be more efficient than using StringBuilder. 
 * **org.openrewrite.java.cleanup.ReplaceTextBlockWithString**: Replace text block with a regular multi-line string. 
@@ -787,7 +824,7 @@ Reference : Migration guide (URL to be written).
 * **org.openrewrite.java.cleanup.UnnecessaryCloseInTryWithResources**: Remove unnecessary `AutoCloseable#close()` statements in try-with-resources. 
 * **org.openrewrite.java.cleanup.UnnecessaryExplicitTypeArguments**: When explicit type arguments are inferrable by the compiler, they may be removed. 
 * **org.openrewrite.java.cleanup.UnnecessaryPrimitiveAnnotations**: Remove `@Nullable` and `@CheckForNull` annotations from primitives since they can't be null. 
-* **org.openrewrite.java.cleanup.UnnecessaryThrows**: Remove unnecessary `throws` declarations...
+* **org.openrewrite.java.cleanup.UnnecessaryThrows**: Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exception if ...
 * **org.openrewrite.java.cleanup.UnwrapRepeatableAnnotations**: Java 8 introduced the concept of `@Repeatable` annotations, making the wrapper annotation unnecessary. 
 * **org.openrewrite.java.cleanup.UpperCaseLiteralSuffixes**: Using upper case literal suffixes for declaring literals is less ambiguous, e.g., `1l` versus `1L`. 
 * **org.openrewrite.java.cleanup.UseAsBuilder**: When an API has been designed as a builder, use it that way rather than as a series of setter calls. 
@@ -805,40 +842,18 @@ Reference : Migration guide (URL to be written).
 * **org.openrewrite.java.cleanup.WhileInsteadOfFor**: When only the condition expression is defined in a for loop, and the initialization and increment expressions are missing, a while loop should be used instead to increase readability. 
 * **org.openrewrite.java.cleanup.WriteOctalValuesAsDecimal**: Developers may not recognize octal values as such, mistaking them instead for decimal values. 
 * **org.openrewrite.java.controlflow.ControlFlowVisualization**: Visualize the control flow of a Java program. 
-* **org.openrewrite.java.dependencies.DependencyLicenseCheck**: Locates and reports on all licenses in use. 
-* **org.openrewrite.java.dependencies.DependencyVulnerabilityCheck**: This is a software composition analysis (SCA) tool which detects publicly disclosed vulnerabilities. If vulnerabilities are found, it will generate a report linking to the associated CVE entries. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. 
 * **org.openrewrite.java.logging.slf4j.ConvertLogMessageMessageOnlyToLogMessageAndThrowable**: Convert `Logger#error|warn(throwable#message)` to `Logger#error|warn(<log-message>, e)` invocations having only the error's message as the parameter, to a log statement with message and throwable. 
-* **org.openrewrite.java.micronaut.CopyNonInheritedAnnotations**: As of Micronaut 3.x only [annotations](https://github.com/micronaut-projects/micronaut-core/blob/3.0.x/src/main/docs/guide/appendix/breaks.adoc#annotation-inheritance) that are explicitly meta-annotated with `@Inherited` are inherited from parent classes and interfaces. 
-* **org.openrewrite.java.micronaut.TypeRequiresIntrospection**: In Micronaut 2.x a reflection-based strategy was used to retrieve that information if the class was not annotated with `@Introspected`. As of Micronaut 3.x it is required to annotate classes with `@Introspected` that are used in this way. 
 * **org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThreshholdToSetInitThreshold**: Use `javax.management.monitor.CounterMonitor#setInitThreshold` instead of the deprecated `javax.management.monitor.CounterMonitor#setThreshhold` in JMX 1.2 or higher. 
-* **org.openrewrite.java.migrate.search.AboutJavaVersion**: A diagnostic for studying the distribution of Java language version levels (both source and target compatibility across files and source sets). 
 * **org.openrewrite.java.recipes.PublicGetVisitor**: It would be a breaking API change to increase the visibility of the method by default, but any recipe can increase visibility of the `Recipe` class. Making them public makes recipes easier to use in other recipes in unexpected ways. 
 * **org.openrewrite.java.search.FindFlowBetweenMethods**: Takes two patterns for the start/end methods to find flow between. 
 * **org.openrewrite.java.search.PotentiallyDeadCode**: Method definitions that are defined in this project and aren't used. 
 * **org.openrewrite.java.search.UriCreatedWithHttpScheme**: This is a sample recipe demonstrating a simple application of local data flow analysis. 
-* **org.openrewrite.java.security.ZipSlip**: Zip slip is an arbitrary file overwrite critical vulnerability, which typically results in remote command execution. A fuller description of this vulnerability is available in the [Snyk documentation](https://snyk.io/research/zip-slip-vulnerability) on it. 
-* **org.openrewrite.java.security.spring.CsrfProtection**: Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malicious web site, email, blog, instant message, or program causes a user's web browser to perform an unwanted action on a trusted site when the user is authenticated. See the full [OWASP cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html). 
-* **org.openrewrite.java.security.spring.PreventClickjacking**: The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP response header to indicate whether or not a browser should be allowed to render a page in a `<frame>` or `<iframe>`. Sites can use this to avoid Clickjacking attacks by ensuring that their content is not embedded into other sites. 
-* **org.openrewrite.java.spring.SeparateApplicationYamlByProfile**: The Spring team's recommendation is to separate profile properties into their own YAML files now. 
-* **org.openrewrite.java.spring.UpdateApiManifest**: Keep a consolidated manifest of the API endpoints that this application exposes up-to-date. 
-* **org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml**: In Spring Boot 2.4, support for `bootstrap.yml` was removed. It's properties should be merged with `application.yml`. 
 * **org.openrewrite.java.spring.boot2.MigrateAbstractHealthIndicatorToPingHealthIndicator**: `org.springframework.boot.actuate.health.AbstractHealthIndicator` was deprecated in 2.2. 
 * **org.openrewrite.java.spring.boot2.MigrateHibernateContraintsToJavax**: Use `javax.validation.constraints` instead of the deprecated `org.hibernate.validator.constraints` in Spring Boot 2.0 or higher. 
-* **org.openrewrite.java.spring.boot2.MoveAutoConfigurationToImportsFile**: Use `AutoConfiguration#imports` instead of the deprecated entry `EnableAutoConfiguration` in `spring.factories` when defining autoconfiguration classes. 
 * **org.openrewrite.java.spring.boot2.WebSecurityConfigurerAdapter**: The Spring Security `WebSecurityConfigurerAdapter` was deprecated 5.7, this recipe will transform `WebSecurityConfigurerAdapter` classes by using a component based approach. Check out the [spring-security-without-the-websecurityconfigureradapter](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter) blog for more details. 
-* **org.openrewrite.java.spring.boot2.search.IntegrationSchedulerPoolRecipe**: Spring Integration now reuses an available `TaskScheduler` rather than configuring its own. In a typical application setup relying on the auto-configuration, this means that Spring Integration uses the auto-configured task scheduler that has a pool size of 1. To restore Spring Integration’s default of 10 threads, use the `spring.task.scheduling.pool.size` property. 
-* **org.openrewrite.java.spring.boot2.search.LoggingShutdownHooks**: Spring Boot registers a logging shutdown hook by default for JAR-based applications to ensure that logging resources are released when the JVM exits. If your application is deployed as a WAR then the shutdown hook is not registered since the servlet container usually handles logging concerns.
-* **org.openrewrite.java.spring.boot3.MaintainTrailingSlashURLMappings**: This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default value set to false. This means that previously, a controller `@GetMapping("/some/greeting")` would match both `GET /some/greeting` and `GET /some/greeting/`, but it doesn't match `GET /some/greeting/` anymore by default and will result in an HTTP 404 error. This recipe is to maintain trailing slash in all HTTP url mappings. 
 * **org.openrewrite.java.spring.boot3.SpringBootProperties_3_0_0**: Migrate properties found in `application.properties` and `application.yml`. 
-* **org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants**: Replace String literals with `org.springframework.http.HttpHeaders` constants. 
-* **org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants**: Replace String literals with `org.springframework.http.MediaType` constants. 
 * **org.openrewrite.kotlin.ChangeTypeAlias**: Change a given type alias to another. 
-* **org.openrewrite.maven.AddDependency**: Add a maven dependency to a `pom.xml` file in the correct scope based on where it is used. 
-* **org.openrewrite.maven.AddGradleEnterpriseMavenExtension**: To integrate gradle enterprise maven extension into maven projects, ensure that the `gradle-enterprise-maven-extension` is added to the `.mvn/extensions.xml` file if not already present. Additionally, configure the extension by adding the `.mvn/gradle-enterprise.xml` configuration file. 
-* **org.openrewrite.maven.AddManagedDependency**: Add a managed maven dependency to a pom.xml file. 
-* **org.openrewrite.maven.ManageDependencies**: Make existing dependencies managed by moving their version to be specified in the dependencyManagement section of the POM. 
-* **org.openrewrite.maven.UpgradeDependencyVersion**: Upgrade the version of a dependency by specifying a group and (optionally) an artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases. 
-* **org.openrewrite.maven.utilities.ListDependencies**: List all the dependencies in a scope and add to a text file. 
+* **org.openrewrite.maven.utilities.ListDependencies**: List all the dependencies in a scope and add to a text file.
 
 ## Changes recipes
 
@@ -870,6 +885,36 @@ Reference : Migration guide (URL to be written).
     * `find: { type: String, required: true }`
     * `regex: { type: Boolean, required: false }`
     * `replace: { type: String, required: true }`
+* [org.openrewrite.gradle.AddDependency](https://docs.openrewrite.org/reference/recipes/gradle/adddependency) was changed:
+  * Old Options:
+    * `artifactId: { type: String, required: true }`
+    * `classifier: { type: String, required: false }`
+    * `configuration: { type: String, required: false }`
+    * `extension: { type: String, required: false }`
+    * `familyPattern: { type: String, required: false }`
+    * `groupId: { type: String, required: true }`
+    * `onlyIfUsing: { type: String, required: true }`
+    * `version: { type: String, required: true }`
+    * `versionPattern: { type: String, required: false }`
+  * New Options:
+    * `acceptTransitive: { type: Boolean, required: false }`
+    * `artifactId: { type: String, required: true }`
+    * `classifier: { type: String, required: false }`
+    * `configuration: { type: String, required: false }`
+    * `extension: { type: String, required: false }`
+    * `familyPattern: { type: String, required: false }`
+    * `groupId: { type: String, required: true }`
+    * `onlyIfUsing: { type: String, required: true }`
+    * `version: { type: String, required: false }`
+    * `versionPattern: { type: String, required: false }`
+* [org.openrewrite.gradle.UpdateGradleWrapper](https://docs.openrewrite.org/reference/recipes/gradle/updategradlewrapper) was changed:
+  * Old Options:
+    * `distribution: { type: String, required: false }`
+    * `version: { type: String, required: true }`
+  * New Options:
+    * `distribution: { type: String, required: false }`
+    * `repositoryUrl: { type: String, required: true }`
+    * `version: { type: String, required: true }`
 * [org.openrewrite.java.search.FindMethods](https://docs.openrewrite.org/reference/recipes/java/search/findmethods) was changed:
   * Old Options:
     * `flow: { type: String, required: false }`
@@ -900,6 +945,18 @@ Reference : Migration guide (URL to be written).
     * `keyPath: { type: String, required: true }`
   * New Options:
     * `keyPath: { type: String, required: true }`
+* [org.openrewrite.maven.AddGradleEnterpriseMavenExtension](https://docs.openrewrite.org/reference/recipes/maven/addgradleenterprisemavenextension) was changed:
+  * Old Options:
+    * `allowUntrustedServer: { type: Boolean, required: false }`
+    * `server: { type: String, required: true }`
+    * `version: { type: String, required: true }`
+  * New Options:
+    * `allowUntrustedServer: { type: Boolean, required: false }`
+    * `captureGoalInputFiles: { type: Boolean, required: false }`
+    * `publishCriteria: { type: PublishCriteria, required: false }`
+    * `server: { type: String, required: true }`
+    * `uploadInBackground: { type: Boolean, required: false }`
+    * `version: { type: String, required: true }`
 * [org.openrewrite.properties.AddProperty](https://docs.openrewrite.org/reference/recipes/properties/addproperty) was changed:
   * Old Options:
     * `delimiter: { type: String, required: false }`
