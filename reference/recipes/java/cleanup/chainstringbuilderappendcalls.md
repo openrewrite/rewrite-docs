@@ -104,9 +104,25 @@ class A {
 ```diff
 --- A.java
 +++ A.java
+@@ -1,4 +1,4 @@
+-class A {
+    void method1() {
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
++class A {
+    void method1() {
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
 @@ -5,1 +5,1 @@
 -        sb.append("A" + "B" + "C" + op + "D" + "E");
 +        sb.append("A" + "B" + "C").append(op).append("D" + "E");
+@@ -6,3 +6,3 @@
+-    }
+}
+
++    }
+}
+
 ```
 {% endcode %}
 {% endtab %}
