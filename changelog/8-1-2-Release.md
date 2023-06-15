@@ -358,7 +358,7 @@ To support this new functionality, **we've had to redesign the `JavaTemplate` AP
 
 **You will need to update all references to `JavaTemplate` in your recipes.** You will need to:
 
-1. Double-check whether or not `contextSensitive()` makes sense for your recipe. It is added by defualt – but if your recipe doesn't refer to the surrounding code and, instead, only refers to template parameters or statically available elements like classes and static methods, you can remove it.
+1. Double-check whether or not `contextSensitive()` makes sense for your recipe. It is added by default – but if your recipe doesn't refer to the surrounding code and, instead, only refers to template parameters or statically available elements like classes and static methods, you can remove it.
 
 2. Determine what type of `Cursor` should go into the `JavaTemplate.apply()` method. Typically this should be `getCursor()`. However, if the `J` instance is updated in the method, the cursor on this visitor will need to be updated. In that case, you should use [updateCursor](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/TreeVisitor.java#L158-L169) instead.
 
