@@ -1203,6 +1203,7 @@
   * [Dependency version selectors](reference/dependency-version-selectors.md)
   * [Framework provided markers](reference/framework-provided-markers.md)
   * [Building OpenRewrite from source](reference/building-openrewrite-from-source.md)
+  * [Frequently asked questions](reference/faq.md)
 * [Concepts & explanations](concepts-and-explanations/concepts-explanations.md)
   * [Lossless Semantic Trees (LST)](concepts-and-explanations/lossless-semantic-trees.md)
   * [Java LST examples](concepts-and-explanations/lst-examples.md)
