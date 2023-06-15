@@ -138,7 +138,213 @@ Scanning recipes have three phases:
 2. An _optional_ generating phase where new files are created (if any are needed). In this phase, the `accumulator` can be accessed to determine whether or not a file should be created.
 3. An editing phase where the recipe makes changes (as it would before). Like the generating phase, an `accumulator` can be accessed to make changes – but you **can not** randomly access other source code or files.
 
-TODO: We need an example for this. Right now, the migration recipe links to nothing: https://github.com/openrewrite/rewrite/blob/main/rewrite-java-test/src/test/java/org/openrewrite/java/recipes/MigrateRecipeToRewrite8Test.java#L542 
+#### Example
+
+As converting a `Recipe` to a `ScanningRecipe` is a substantial change, the migration recipe is not able to automate this. You will need to rewrite your recipes that need to be `ScanningRecipes` on your own.
+
+Below is an example of what a recipe might look like before/after this change. You can find the converted recipe in it's entirety [here](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java).
+
+{% tabs %}
+{% tab title="Before" %}
+```java
+// imports
+
+@Value
+@EqualsAndHashCode(callSuper = true)
+public class AddManagedDependency extends Recipe {
+  // Standard methods such as displayName and description
+
+  @Override
+  protected List<SourceFile> visit(List<SourceFile> before, ExecutionContext ctx) {
+      List<SourceFile> rootPoms = new ArrayList<>();
+      for (SourceFile source : before) {
+          source.getMarkers().findFirst(MavenResolutionResult.class).ifPresent(mavenResolutionResult -> {
+              if (mavenResolutionResult.getParent() == null) {
+                  rootPoms.add(source);
+              }
+          });
+      }
+
+      return ListUtils.map(before, s -> s.getMarkers().findFirst(MavenResolutionResult.class)
+              .map(javaProject -> (Tree) new MavenVisitor<ExecutionContext>() {
+                  @Override
+                  public Xml visitDocument(Xml.Document document, ExecutionContext executionContext) {
+                      Xml maven = super.visitDocument(document, executionContext);
+
+                      if (!Boolean.TRUE.equals(addToRootPom) || rootPoms.contains(document)) {
+                          Validated versionValidation = Semver.validate(version, versionPattern);
+                          if (versionValidation.isValid()) {
+                              VersionComparator versionComparator = requireNonNull(versionValidation.getValue());
+                              try {
+                                  String versionToUse = findVersionToUse(versionComparator, ctx);
+                                  if (!Objects.equals(versionToUse, existingManagedDependencyVersion())) {
+                                      doAfterVisit(new AddManagedDependencyVisitor(groupId, artifactId,
+                                              versionToUse, scope, type, classifier));
+                                      maybeUpdateModel();
+                                  }
+                              } catch (MavenDownloadingException e) {
+                                  return e.warn(document);
+                              }
+                          }
+                      }
+
+                      return maven;
+                  }
+
+                  @Nullable
+                  private String existingManagedDependencyVersion() {
+                      return getResolutionResult().getPom().getDependencyManagement().stream()
+                              .map(resolvedManagedDep -> {
+                                  if (resolvedManagedDep.matches(groupId, artifactId, type, classifier)) {
+                                      return resolvedManagedDep.getGav().getVersion();
+                                  } else if (resolvedManagedDep.getRequestedBom() != null
+                                              && resolvedManagedDep.getRequestedBom().getGroupId().equals(groupId)
+                                              && resolvedManagedDep.getRequestedBom().getArtifactId().equals(artifactId)) {
+                                      return resolvedManagedDep.getRequestedBom().getVersion();
+                                  }
+                                  return null;
+                              })
+                              .filter(Objects::nonNull)
+                              .findFirst().orElse(null);
+                  }
+
+                  @Nullable
+                  private String findVersionToUse(VersionComparator versionComparator, ExecutionContext ctx) throws MavenDownloadingException {
+                      MavenMetadata mavenMetadata = metadataFailures.insertRows(ctx, () -> downloadMetadata(groupId, artifactId, ctx));
+                      LatestRelease latest = new LatestRelease(versionPattern);
+                      return mavenMetadata.getVersioning().getVersions().stream()
+                              .filter(v -> versionComparator.isValid(null, v))
+                              .filter(v -> !Boolean.TRUE.equals(releasesOnly) || latest.isValid(null, v))
+                              .max((v1, v2) -> versionComparator.compare(null, v1, v2))
+                              .orElse(null);
+                  }
+              }.visit(s, ctx))
+              .map(SourceFile.class::cast)
+              .orElse(s)
+      );
+  }
+}
+```
+{% endtab %}
+
+{% tab title="After" %}
+```java
+// imports
+
+@Value
+@EqualsAndHashCode(callSuper = true)
+public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Scanned> {
+  // Standard methods such as displayName and description
+
+  static class Scanned {
+      boolean usingType;
+      List<SourceFile> rootPoms = new ArrayList<>();
+  }
+
+  @Override
+  public Scanned getInitialValue(ExecutionContext ctx) {
+      Scanned scanned = new Scanned();
+      scanned.usingType = onlyIfUsing == null;
+      return scanned;
+  }
+
+  @Override
+  public TreeVisitor<?, ExecutionContext> getScanner(Scanned acc) {
+      return Preconditions.check(acc.usingType || (!StringUtils.isNullOrEmpty(onlyIfUsing) && onlyIfUsing.contains(":")), new MavenIsoVisitor<ExecutionContext>() {
+          @Override
+          public Xml.Document visitDocument(Xml.Document document, ExecutionContext ctx) {
+              document.getMarkers().findFirst(MavenResolutionResult.class).ifPresent(mavenResolutionResult -> {
+                  if (mavenResolutionResult.getParent() == null) {
+                      acc.rootPoms.add(document);
+                  }
+              });
+              if(acc.usingType) {
+                  return SearchResult.found(document);
+              }
+
+              return super.visitDocument(document, ctx);
+          }
+
+          @Override
+          public Xml.Tag visitTag(Xml.Tag tag, ExecutionContext ctx) {
+              Xml.Tag t = super.visitTag(tag, ctx);
+
+              if (isDependencyTag()) {
+                  ResolvedDependency dependency = findDependency(t, null);
+                  if (dependency != null) {
+                      String[] ga = requireNonNull(onlyIfUsing).split(":");
+                      ResolvedDependency match = dependency.findDependency(ga[0], ga[1]);
+                      if (match != null) {
+                          acc.usingType = true;
+                      }
+                  }
+              }
+
+              return t;
+          }
+      });
+  }
+
+  @Override
+  public TreeVisitor<?, ExecutionContext> getVisitor(Scanned acc) {
+      return Preconditions.check(acc.usingType, new MavenVisitor<ExecutionContext>() {
+          @Override
+          public Xml visitDocument(Xml.Document document, ExecutionContext ctx) {
+              Xml maven = super.visitDocument(document, ctx);
+
+              if (!Boolean.TRUE.equals(addToRootPom) || acc.rootPoms.contains(document)) {
+                  Validated versionValidation = Semver.validate(version, versionPattern);
+                  if (versionValidation.isValid()) {
+                      VersionComparator versionComparator = requireNonNull(versionValidation.getValue());
+                      try {
+                          String versionToUse = findVersionToUse(versionComparator, ctx);
+                          if (!Objects.equals(versionToUse, existingManagedDependencyVersion())) {
+                              doAfterVisit(new AddManagedDependencyVisitor(groupId, artifactId,
+                                      versionToUse, scope, type, classifier));
+                              maybeUpdateModel();
+                          }
+                      } catch (MavenDownloadingException e) {
+                          return e.warn(document);
+                      }
+                  }
+              }
+
+              return maven;
+          }
+
+          @Nullable
+          private String existingManagedDependencyVersion() {
+              return getResolutionResult().getPom().getDependencyManagement().stream()
+                      .map(resolvedManagedDep -> {
+                          if (resolvedManagedDep.matches(groupId, artifactId, type, classifier)) {
+                              return resolvedManagedDep.getGav().getVersion();
+                          } else if (resolvedManagedDep.getRequestedBom() != null
+                                      && resolvedManagedDep.getRequestedBom().getGroupId().equals(groupId)
+                                      && resolvedManagedDep.getRequestedBom().getArtifactId().equals(artifactId)) {
+                              return resolvedManagedDep.getRequestedBom().getVersion();
+                          }
+                          return null;
+                      })
+                      .filter(Objects::nonNull)
+                      .findFirst().orElse(null);
+          }
+
+          @Nullable
+          private String findVersionToUse(VersionComparator versionComparator, ExecutionContext ctx) throws MavenDownloadingException {
+              MavenMetadata mavenMetadata = metadataFailures.insertRows(ctx, () -> downloadMetadata(groupId, artifactId, ctx));
+              LatestRelease latest = new LatestRelease(versionPattern);
+              return mavenMetadata.getVersioning().getVersions().stream()
+                      .filter(v -> versionComparator.isValid(null, v))
+                      .filter(v -> !Boolean.TRUE.equals(releasesOnly) || latest.isValid(null, v))
+                      .max((v1, v2) -> versionComparator.compare(null, v1, v2))
+                      .orElse(null);
+          }
+      });
+  }
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### JavaTemplate API has been updated
 
