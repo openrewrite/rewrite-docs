@@ -29,6 +29,7 @@ Configurer
 contextualized
 Contraints
 Controlflow
+controlflow
 corba
 cursoring
 cus
@@ -77,6 +78,7 @@ jedi
 jhipster
 Jks
 JLeft
+JLS
 jni
 Johnzon
 Jpa
@@ -92,6 +94,7 @@ Kilburn
 kotlin
 ksh
 kts
+linebreak
 liquibase
 logback
 lombok
@@ -152,12 +155,13 @@ Skywalker
 slf
 smallrye
 smushed
+snakeyaml
 Snyk
 Sonatype
 sourcespecs
 Springbatch
 springframework
-staticanalysis 
+staticanalysis
 Stewjon
 supertypes
 temurin
