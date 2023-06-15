@@ -85,6 +85,7 @@ jre
 JRight
 jsonpathmatcher
 jsontype
+jvmargs
 jws
 JWTs
 Kenobi
