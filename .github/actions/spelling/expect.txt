@@ -140,6 +140,7 @@ rebranded
 Recile
 recipespec
 Refaster
+regexes
 relyingparty
 rewritetest
 roadmap
