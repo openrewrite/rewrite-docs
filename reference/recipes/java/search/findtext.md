@@ -6,22 +6,82 @@ _Find occurrences of regular expression based patterns in comments and literals.
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindText.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindText.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Aaron Gershman](aegershman@gmail.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `List` | patterns | A list of regular expressions to search for. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|patterns|`Arrays.asList("test", "12.*")`|
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+// not this one
+// test
+// not this one, either
+// comment 123
+class Test {
+    int n = 123;
+    String s = "test";
+    String s = "mytest";
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+// not this one
+/*~~>*/// test
+// not this one, either
+/*~~>*/// comment 123
+class Test {
+    int n = /*~~>*/123;
+    String s = /*~~>*/"test";
+    String s = /*~~>*/"mytest";
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -2,1 +2,1 @@
+-// test
++/*~~>*/// test
+@@ -4,1 +4,1 @@
+-// comment 123
++/*~~>*/// comment 123
+@@ -6,3 +6,3 @@
+-    int n = 123;
+    String s = "test";
+    String s = "mytest";
++    int n = /*~~>*/123;
+    String s = /*~~>*/"test";
+    String s = /*~~>*/"mytest";
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -47,7 +107,7 @@ Now that `com.yourorg.FindTextExample` has been defined activate it in your buil
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -69,7 +129,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindTextExample</recipe>
@@ -83,6 +143,12 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

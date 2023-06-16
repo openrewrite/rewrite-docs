@@ -6,17 +6,11 @@ _Set the parent pom version number according to a node-style semver selector or 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -27,6 +21,69 @@ _Set the parent pom version number according to a node-style semver selector or 
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `List` | retainVersions | *Optional*. Accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management in the new parent pom, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`*`|
+|artifactId|`*`|
+|newVersion|`latest.patch`|
+|versionPattern|`null`|
+|retainVersions|`null`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <parent>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>credentials</artifactId>
+      <version>2.3.0</version>
+  </parent>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
+https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>credentials</artifactId>
+      <version>2.3.0</version>
+  </parent>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -2,1 +2,2 @@
+-  <parent>
++  <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
+https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -62,7 +119,7 @@ Now that `com.yourorg.UpgradeParentVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeParentVersionExample</recipe>
@@ -76,6 +133,11 @@ Now that `com.yourorg.UpgradeParentVersionExample` has been defined activate it 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

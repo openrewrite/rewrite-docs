@@ -6,20 +6,11 @@ _Find method usages by pattern._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Knut Wannheden](knut.wannheden@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -27,7 +18,70 @@ _Find method usages by pattern._
 | -- | -- | -- |
 | `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-| `String` | flow | *Optional*. When enabled, show the data or taint flow of the method invocation. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Method calls
+
+_The text of matching method invocations._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file that the method call occurred in. |
+| Method call | The text of the method call. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|methodPattern|`A <constructor>(String)`|
+|matchOverrides|`false`|
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+class Test {
+    A a = new A("test");
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+class Test {
+    A a = /*~~>*/new A("test");
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -2,1 +2,1 @@
+-    A a = new A("test");
++    A a = /*~~>*/new A("test");
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+###### Unchanged
+{% code title="A.java" %}
+```java
+class A {
+    public A(String s) {}
+}
+```
+{% endcode %}
 
 
 ## Usage
@@ -45,7 +99,6 @@ recipeList:
   - org.openrewrite.java.search.FindMethods:
       methodPattern: java.util.List add(..)
       matchOverrides: null
-      flow: null
 ```
 {% endcode %}
 
@@ -55,7 +108,7 @@ Now that `com.yourorg.FindMethodsExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -77,7 +130,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindMethodsExample</recipe>
@@ -91,6 +144,14 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

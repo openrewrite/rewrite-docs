@@ -11,37 +11,22 @@ _Applies best practices to Spring Boot 2 applications._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Kevin McCarpenter](kevin@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Patrick](patway99@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [nbruno](nbruno@users.noreply.github.com)
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -53,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -67,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2BestPractices</recipe>
@@ -77,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -109,7 +94,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Remove implicit web annotation names](../../../java/spring/implicitwebannotationnames.md)
 * [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
 * [Remove the `@Autowired` annotation on inferred constructor](../../../java/spring/noautowiredonconstructor.md)
-* [Migrate multi-condition `@ConditionalOnBean` annotations](../../../java/spring/boot2/conditionalonbeananynestedcondition.md)
 * [Migrate `RestTemplateBuilder`](../../../java/spring/boot2/resttemplatebuilderrequestfactory.md)
 * [Replace `EnvironmentTestUtils` with `TestPropertyValues`](../../../java/spring/boot2/replacedeprecatedenvironmenttestutils.md)
 
@@ -130,13 +114,27 @@ recipeList:
   - org.openrewrite.java.spring.ImplicitWebAnnotationNames
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
   - org.openrewrite.java.spring.NoAutowiredOnConstructor
-  - org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition
   - org.openrewrite.java.spring.boot2.RestTemplateBuilderRequestFactory
   - org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils
 
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Kevin McCarpenter](kevin@moderne.io)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Patrick](patway99@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [nbruno](nbruno@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

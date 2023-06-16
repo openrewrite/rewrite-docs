@@ -10,29 +10,22 @@ _Using an immutable root filesystem and a verified boot mechanism prevents again
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/resources/META-INF/rewrite/kubernetes.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.30.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/resources/META-INF/rewrite/kubernetes.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.30.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tyler Van Gorder](1878529+tkvangorder@users.noreply.github.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Jon Brisbin](jon@jbrisbin.com)
+* version: 2.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:1.30.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -44,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
 }
 ```
 {% endcode %}
@@ -58,7 +51,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kubernetes.ReadOnlyRootFilesystem</recipe>
@@ -68,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.30.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -123,6 +116,13 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Tyler Van Gorder](1878529+tkvangorder@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Jon Brisbin](jon@jbrisbin.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

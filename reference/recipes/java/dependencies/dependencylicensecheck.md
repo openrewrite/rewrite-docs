@@ -6,15 +6,11 @@ _Locates and reports on all licenses in use._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyLicenseCheck.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/0.4.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyLicenseCheck.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 0.4.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Kun Li](kun@moderne.io)
+* version: 1.0.1
 
 ## Options
 
@@ -22,6 +18,20 @@ _Locates and reports on all licenses in use._
 | -- | -- | -- |
 | `String` | scope | Match dependencies with the specified scope |
 | `Boolean` | addMarkers | *Optional*. Report each license transitively used by a dependency in search results. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### License report
+
+_Contains a license report of third-party dependencies._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| License name | The actual name of the license as written in the third-party dependency. |
+| License type | The license in use, based on the category of license inferred from the name. |
 
 
 ## Usage
@@ -42,13 +52,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.DependencyLicenseCheckExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:0.4.0 in your build file:
+Now that `com.yourorg.DependencyLicenseCheckExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -60,7 +70,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:0.4.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.1")
 }
 ```
 {% endcode %}
@@ -74,7 +84,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DependencyLicenseCheckExample</recipe>
@@ -84,7 +94,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>0.4.0</version>
+            <version>1.0.1</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,26 +6,67 @@ _Some JUnit 4 `@RunWith` annotations do not require replacement with an equivale
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveObsoleteRunners.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveObsoleteRunners.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
-
-## Contributors
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Michael Keppler](bananeweizen@gmx.de)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
+* version: 2.0.1
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `List` | obsoleteRunners | The fully qualified class names of the JUnit 4 runners to be removed. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|obsoleteRunners|`List.of(
+              "org.junit.runners.JUnit4",
+              "org.junit.runners.BlockJUnit4ClassRunner"
+            )`|
+
+
+{% tabs %}
+{% tab title="Foo.java" %}
+
+###### Before
+{% code title="Foo.java" %}
+```java
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class Foo {
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Foo.java" %}
+```java
+public class Foo {
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Foo.java
++++ Foo.java
+@@ -1,4 +1,0 @@
+-import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -45,13 +86,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0 in your build file:
+Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -63,7 +104,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -77,7 +118,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveObsoleteRunnersExample</recipe>
@@ -87,7 +128,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -98,6 +139,15 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Michael Keppler](bananeweizen@gmx.de)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

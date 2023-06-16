@@ -6,17 +6,11 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddOrUpdateAnnotationAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddOrUpdateAnnotationAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Patrick](patway99@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -24,7 +18,7 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 | -- | -- | -- |
 | `String` | annotationType | The fully qualified name of the annotation. |
 | `String` | attributeName | *Optional*. The name of attribute to change. If omitted defaults to 'value'. |
-| `String` | attributeValue | The value to set the attribute to. |
+| `String` | attributeValue | The value to set the attribute to. Set to `null` to remove the attribute. |
 | `Boolean` | addOnly | When set to `true` will not change existing annotation attribute values. |
 
 
@@ -54,7 +48,7 @@ Now that `com.yourorg.AddOrUpdateAnnotationAttributeExample` has been defined ac
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -76,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddOrUpdateAnnotationAttributeExample</recipe>
@@ -90,6 +84,11 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Kun Li](kun@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -11,30 +11,22 @@ _Migrate applications to the latest Spring Security 5.8 release. This recipe wil
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Knut Wannheden](knut@moderne.io)
-* [Kun Li](kun@moderne.io)
-* [Johannes Jank](johannes.wengert@googlemail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Nick McKinney](mckinneynichoals@gmail.com)
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -46,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -60,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_8</recipe>
@@ -70,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -98,11 +90,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.security`
   * artifactId: `*`
   * newVersion: `5.8.x`
-  * overrideManagedVersion: `true`
+  * overrideManagedVersion: `false`
 * [Use the new `requestMatchers` methods](../../../java/spring/security5/usenewrequestmatchers.md)
 * [Use the new `securityMatcher()` method](../../../java/spring/security5/usenewsecuritymatchers.md)
 * [Use new `Pbkdf2PasswordEncoder` factory methods](../../../java/spring/security5/updatepbkdf2passwordencoder.md)
@@ -110,6 +102,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Use new `Argon2PasswordEncoder` factory methods](../../../java/spring/security5/updateargon2passwordencoder.md)
 * [Replace global method security with method security](../../../java/spring/security5/replaceglobalmethodsecuritywithmethodsecurity.md)
 * [Replace global method security with method security](../../../java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
+* [Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean](../../../java/spring/security5/websecurityconfigureradapter.md)
 
 {% endtab %}
 
@@ -125,11 +118,11 @@ tags:
   - spring
   - security
 recipeList:
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.security
       artifactId: *
       newVersion: 5.8.x
-      overrideManagedVersion: true
+      overrideManagedVersion: false
   - org.openrewrite.java.spring.security5.UseNewRequestMatchers
   - org.openrewrite.java.spring.security5.UseNewSecurityMatchers
   - org.openrewrite.java.spring.security5.UpdatePbkdf2PasswordEncoder
@@ -137,10 +130,24 @@ recipeList:
   - org.openrewrite.java.spring.security5.UpdateArgon2PasswordEncoder
   - org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurity
   - org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurityXml
+  - org.openrewrite.java.spring.security5.WebSecurityConfigurerAdapter
 
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Knut Wannheden](knut@moderne.io)
+* [Alex Boyko](aboyko@vmware.com)
+* [Johannes Jank](johannes.wengert@googlemail.com)
+* [Kun Li](kun@moderne.io)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Nick McKinney](mckinneynichoals@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

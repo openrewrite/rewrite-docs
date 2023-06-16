@@ -6,14 +6,11 @@ _Change spring application property values existing in either Properties or Yaml
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeSpringPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeSpringPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
+* version: 5.0.1
 
 ## Options
 
@@ -22,8 +19,47 @@ _Change spring application property values existing in either Properties or Yaml
 | `String` | propertyKey | The name of the property key whose value is to be changed. |
 | `String` | newValue | The new value to be used for key specified by `propertyKey`. |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
-| `Boolean` | regex | *Optional*. Default false. If enabled, `oldValue` will be interepreted as a Regular Expression, and capture group contents will be available in `newValue` |
+| `Boolean` | regex | *Optional*. Default false. If enabled, `oldValue` will be interpreted as a Regular Expression, and capture group contents will be available in `newValue` |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false` to use exact matching. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|propertyKey|`server.port`|
+|newValue|`8081`|
+|oldValue|`null`|
+|regex|`null`|
+|relaxedBinding|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```properties
+server.port=8080```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```properties
+server.port=8081```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-server.port=8080
++server.port=8081
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -47,13 +83,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeSpringPropertyValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.36.0 in your build file:
+Now that `com.yourorg.ChangeSpringPropertyValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -65,7 +101,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -79,7 +115,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeSpringPropertyValueExample</recipe>
@@ -89,7 +125,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -100,6 +136,11 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,30 +6,72 @@ _`ErrorProperties#IncludeStacktrace.ON_TRACE_PARAM` was deprecated in 2.3.x and 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateErrorPropertiesIncludeStackTraceConstants.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateErrorPropertiesIncludeStackTraceConstants.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="org/test/Test.java" %}
+
+###### Before
+{% code title="org/test/Test.java" %}
+```java
+package org.test;
+
+import org.springframework.boot.autoconfigure.web.ErrorProperties;
+
+class Test {
+    void methodA() {
+        ErrorProperties.IncludeStacktrace value = ErrorProperties.IncludeStacktrace.ON_TRACE_PARAM;
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="org/test/Test.java" %}
+```java
+package org.test;
+
+import org.springframework.boot.autoconfigure.web.ErrorProperties;
+
+class Test {
+    void methodA() {
+        ErrorProperties.IncludeStacktrace value = ErrorProperties.IncludeStacktrace.ON_PARAM;
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- org/test/Test.java
++++ org/test/Test.java
+@@ -7,1 +7,1 @@
+-        ErrorProperties.IncludeStacktrace value = ErrorProperties.IncludeStacktrace.ON_TRACE_PARAM;
++        ErrorProperties.IncludeStacktrace value = ErrorProperties.IncludeStacktrace.ON_PARAM;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -41,7 +83,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -55,7 +97,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.MigrateErrorPropertiesIncludeStackTraceConstants</recipe>
@@ -65,7 +107,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -88,6 +130,14 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

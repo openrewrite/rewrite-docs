@@ -6,16 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.40.6
-
-## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tim te Beek](tim@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -24,6 +19,84 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. |
 | `String` | configuration | *Optional*. Match dependencies with the specified scope. If not specified, all configurations will be searched. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Dependencies in use
+
+_Direct and transitive dependencies in use._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Project name | The name of the project that contains the dependency. |
+| Source set | The source set that contains the dependency. |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
+| Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
+| Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupIdPattern|`com.google.guava`|
+|artifactIdPattern|`failureaccess`|
+|configuration|`null`|
+
+
+{% tabs %}
+{% tab title="build.gradle" %}
+
+###### Before
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+```
+{% endcode %}
+
+###### After
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    /*~~(com.google.guava:failureaccess:1.0.1)~~>*/implementation 'com.google.guava:guava:31.1-jre'
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,1 +10,1 @@
+-    implementation 'com.google.guava:guava:31.1-jre'
++    /*~~(com.google.guava:failureaccess:1.0.1)~~>*/implementation 'com.google.guava:guava:31.1-jre'
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -51,7 +124,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -66,6 +139,11 @@ repositories {
 {% endtab %}
 
 {% endtabs %}
+## Contributors
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Tim te Beek](tim@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

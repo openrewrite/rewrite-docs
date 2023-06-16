@@ -10,22 +10,11 @@ _For tests not having any assertions, wrap the statements with JUnit Jupiter's `
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/TestsShouldIncludeAssertions.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/TestsShouldIncludeAssertions.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
-
-## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Michael Keppler](bananeweizen@gmx.de)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
+* version: 2.0.1
 
 ## Options
 
@@ -33,16 +22,82 @@ _For tests not having any assertions, wrap the statements with JUnit Jupiter's `
 | -- | -- | -- |
 | `String` | additionalAsserts | *Optional*. A comma delimited list of packages and/or classes that will be identified as assertions. I.E. a common assertion utility `org.foo.TestUtil`. |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|additionalAsserts|`null`|
+
+
+{% tabs %}
+{% tab title="AaTest.java" %}
+
+###### Before
+{% code title="AaTest.java" %}
+```java
+import org.junit.jupiter.api.Test;
+public class AaTest {
+    @Test
+    public void methodTest() {
+        Integer it = Integer.valueOf("2");
+        System.out.println(it);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="AaTest.java" %}
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
+public class AaTest {
+    @Test
+    public void methodTest() {
+        assertDoesNotThrow(() -> {
+            Integer it = Integer.valueOf("2");
+            System.out.println(it);
+        });
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- AaTest.java
++++ AaTest.java
+@@ -2,0 +2,3 @@
++
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+
+@@ -5,2 +8,4 @@
+-        Integer it = Integer.valueOf("2");
+        System.out.println(it);
++        assertDoesNotThrow(() -> {
+            Integer it = Integer.valueOf("2");
+            System.out.println(it);
+        });
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -54,7 +109,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -68,7 +123,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions</recipe>
@@ -78,7 +133,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -101,6 +156,16 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Knut Wannheden](knut@moderne.io)
+* [Michael Keppler](bananeweizen@gmx.de)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

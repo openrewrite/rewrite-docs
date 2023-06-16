@@ -1,20 +1,16 @@
-# Tabs and indents
+# Stylize Groovy code to omit parentheses
 
 **org.openrewrite.groovy.format.OmitParenthesesFormat**
 
-_Format tabs and indents in Java code._
+_Omit parentheses for last argument lambdas in Groovy code._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-groovy
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Knut Wannheden](knut.wannheden@gmail.com)
+* version: 8.1.2
 
 
 ## Usage
@@ -25,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -48,7 +44,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.groovy.format.OmitParenthesesFormat</recipe>
@@ -72,6 +68,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,17 +6,11 @@ _Find uses of a field._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindFields.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindFields.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -24,6 +18,50 @@ _Find uses of a field._
 | -- | -- | -- |
 | `String` | fullyQualifiedTypeName | A fully-qualified Java type name, that is used to find matching fields. |
 | `String` | fieldName | The name of a field on the type. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|fullyQualifiedTypeName|`java.nio.charset.StandardCharsets`|
+|fieldName|`UTF_8`|
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+class Test {
+    Object o = java.nio.charset.StandardCharsets.UTF_8;
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+class Test {
+    Object o = /*~~>*/java.nio.charset.StandardCharsets.UTF_8;
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -2,1 +2,1 @@
+-    Object o = java.nio.charset.StandardCharsets.UTF_8;
++    Object o = /*~~>*/java.nio.charset.StandardCharsets.UTF_8;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -50,7 +88,7 @@ Now that `com.yourorg.FindFieldsExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -72,7 +110,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindFieldsExample</recipe>
@@ -86,6 +124,12 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

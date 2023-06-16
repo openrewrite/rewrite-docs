@@ -10,31 +10,122 @@ _Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/NoRequestMappingAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/NoRequestMappingAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="UsersController.java" %}
+
+###### Before
+{% code title="UsersController.java" %}
+```java
+import java.util.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
+
+@RestController
+@RequestMapping("/users")
+public class UsersController {
+    @RequestMapping(method = HEAD)
+    public ResponseEntity<List<String>> getUsersHead() {
+        return null;
+    }
+
+    @RequestMapping(method = GET)
+    public ResponseEntity<List<String>> getUsers() {
+        return null;
+    }
+
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<String> getUser(@PathVariable("id") Long id) {
+        return null;
+    }
+
+    @RequestMapping
+    public ResponseEntity<List<String>> getUsersNoRequestMethod() {
+        return null;
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="UsersController.java" %}
+```java
+import java.util.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
+
+@RestController
+@RequestMapping("/users")
+public class UsersController {
+    @RequestMapping(method = HEAD)
+    public ResponseEntity<List<String>> getUsersHead() {
+        return null;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<String>> getUsers() {
+        return null;
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<String> getUser(@PathVariable("id") Long id) {
+        return null;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<String>> getUsersNoRequestMethod() {
+        return null;
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- UsersController.java
++++ UsersController.java
+@@ -3,0 +3,1 @@
++import org.springframework.web.bind.annotation.GetMapping;
+@@ -4,1 +5,0 @@
+-import static org.springframework.web.bind.annotation.RequestMethod.GET;
+@@ -15,1 +15,1 @@
+-    @RequestMapping(method = GET)
++    @GetMapping
+@@ -20,1 +20,1 @@
+-    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
++    @GetMapping("/{id}")
+@@ -25,1 +25,1 @@
+-    @RequestMapping
++    @GetMapping
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -46,7 +137,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -60,7 +151,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.NoRequestMappingAnnotation</recipe>
@@ -70,7 +161,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -93,6 +184,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

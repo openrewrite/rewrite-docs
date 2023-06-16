@@ -6,15 +6,103 @@ _Java 8 introduced the concept of `@Repeatable` annotations._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindRepeatableAnnotations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindRepeatableAnnotations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
+* version: 8.1.2
 
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Patrick](patway99@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import org.mapstruct.*;
+class Test {
+    @ValueMappings({
+            @ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
+            @ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
+    })
+    void test() {
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import org.mapstruct.*;
+class Test {
+    @ValueMappings({
+            /*~~>*/@ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
+            /*~~>*/@ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
+    })
+    void test() {
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -4,2 +4,2 @@
+-            @ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
+            @ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
++            /*~~>*/@ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
+            /*~~>*/@ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+###### Unchanged
+{% code title="org/mapstruct/ValueMapping.java" %}
+```java
+package org.mapstruct;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Repeatable(ValueMappings.class)
+@Retention(RetentionPolicy.CLASS)
+@Target(ElementType.METHOD)
+public @interface ValueMapping {
+    String source();
+
+    String target();
+}
+```
+{% endcode %}
+
+###### Unchanged
+{% code title="org/mapstruct/ValueMappings.java" %}
+```java
+package org.mapstruct;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target({ElementType.METHOD})
+@Retention(RetentionPolicy.CLASS)
+public @interface ValueMappings {
+    ValueMapping[] value();
+}
+```
+{% endcode %}
 
 
 ## Usage
@@ -25,7 +113,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -48,7 +136,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindRepeatableAnnotations</recipe>
@@ -72,6 +160,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Patrick](patway99@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

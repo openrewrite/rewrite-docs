@@ -11,13 +11,14 @@
 ## Recipes
 
 * [Add Gradle Enterprise Maven Extension to maven projects](./addgradleenterprisemavenextension.md)
-* [Add Managed Maven Dependency](./addmanageddependency.md)
 * [Add Maven dependency](./adddependency.md)
 * [Add Maven plugin](./addplugin.md)
 * [Add Maven plugin dependencies](./addplugindependency.md)
+* [Add Maven profile](./addprofile.md)
 * [Add Maven project property](./addproperty.md)
 * [Add Repository](./addrepository.md)
 * [Add a comment to a `Maven` dependency](./addcommenttomavendependency.md)
+* [Add managed Maven dependency](./addmanageddependency.md)
 * [Change Maven Parent Pom](./changeparentpom.md)
 * [Change Maven dependency classifier](./changedependencyclassifier.md)
 * [Change Maven dependency groupId, artifactId and/or the version](./changedependencygroupidandartifactid.md)

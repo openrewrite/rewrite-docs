@@ -6,26 +6,98 @@ _`JobBuilderFactory` was deprecated in spring-batch 5.x. It is replaced by `JobB
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/MigrateJobBuilderFactory.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/MigrateJobBuilderFactory.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [pdesprez](35764353+desprez@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="MyJobConfig.java" %}
+
+###### Before
+{% code title="MyJobConfig.java" %}
+```java
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+
+public class MyJobConfig {
+
+    @Autowired
+    private JobBuilderFactory jobBuilderFactory;
+
+    @Bean
+    Job myJob(Step step) {
+        return this.jobBuilderFactory.get("myJob")
+            .start(step)
+            .build();
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="MyJobConfig.java" %}
+```java
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.context.annotation.Bean;
+
+public class MyJobConfig {
+
+    @Bean
+    Job myJob(Step step, JobRepository jobRepository) {
+        return new JobBuilder("myJob", jobRepository)
+            .start(step)
+            .build();
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- MyJobConfig.java
++++ MyJobConfig.java
+@@ -3,2 +3,2 @@
+-import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.batch.core.job.builder.JobBuilder;
+import org.springframework.batch.core.repository.JobRepository;
+@@ -9,3 +9,0 @@
+-    @Autowired
+    private JobBuilderFactory jobBuilderFactory;
+
+@@ -13,2 +10,2 @@
+-    Job myJob(Step step) {
+        return this.jobBuilderFactory.get("myJob")
++    Job myJob(Step step, JobRepository jobRepository) {
+        return new JobBuilder("myJob", jobRepository)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -37,7 +109,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -51,7 +123,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.batch.MigrateJobBuilderFactory</recipe>
@@ -61,7 +133,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -84,6 +156,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [pdesprez](35764353+desprez@users.noreply.github.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Tim te Beek](tim@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

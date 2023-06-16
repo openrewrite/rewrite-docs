@@ -1,8 +1,8 @@
-# Replace Powermock with raw Mockito
+# Replace PowerMock with raw Mockito
 
 **org.openrewrite.java.testing.mockito.ReplacePowerMockito**
 
-_Replace Powermock with raw Mockito._
+_Replace PowerMock with raw Mockito._
 
 ### Tags
 
@@ -11,27 +11,307 @@ _Replace Powermock with raw Mockito._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
+* version: 2.0.1
 
-## Contributors
-* [Matthias Klauer](matthias.klauer@sap.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+## Examples
+##### Example 1
+
+
+{% tabs %}
+{% tab title="StaticMethodTest.java" %}
+
+###### Before
+{% code title="StaticMethodTest.java" %}
+```java
+import static org.testng.Assert.assertEquals;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
+
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+@PrepareForTest(value = {Calendar.class, Currency.class})
+public class StaticMethodTest {
+
+    private Calendar calendarMock;
+
+    @BeforeClass
+    void setUp() {
+        calendarMock = Mockito.mock(Calendar.class);
+    }
+
+    @Test
+    void testWithCalendar() {
+        PowerMockito.mockStatic(Calendar.class);
+        PowerMockito.mockStatic(Currency.class);
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+        Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="StaticMethodTest.java" %}
+```java
+import static org.testng.Assert.assertEquals;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
+
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class StaticMethodTest {
+
+    private MockedStatic<Currency> mockedCurrency;
+
+    private MockedStatic<Calendar> mockedCalendar;
+
+    private Calendar calendarMock;
+
+    @BeforeClass
+    void setUp() {
+        calendarMock = Mockito.mock(Calendar.class);
+    }
+
+    @BeforeMethod
+    void setUpStaticMocks() {
+        mockedCurrency = Mockito.mockStatic(Currency.class);
+        mockedCalendar = Mockito.mockStatic(Calendar.class);
+    }
+
+    @AfterMethod(alwaysRun = true)
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+        mockedCurrency.closeOnDemand();
+    }
+
+    @Test
+    void testWithCalendar() {
+        mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+        mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- StaticMethodTest.java
++++ StaticMethodTest.java
+@@ -7,0 +7,1 @@
++import org.mockito.MockedStatic;
+@@ -8,2 +9,1 @@
+-import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.testng.annotations.AfterMethod;
+@@ -11,0 +11,1 @@
++import org.testng.annotations.BeforeMethod;
+@@ -13,1 +14,0 @@
+-@PrepareForTest(value = {Calendar.class, Currency.class})
+@@ -16,0 +16,4 @@
++    private MockedStatic<Currency> mockedCurrency;
+
+    private MockedStatic<Calendar> mockedCalendar;
+
+@@ -23,0 +27,12 @@
++    @BeforeMethod
+    void setUpStaticMocks() {
+        mockedCurrency = Mockito.mockStatic(Currency.class);
+        mockedCalendar = Mockito.mockStatic(Calendar.class);
+    }
+
+    @AfterMethod(alwaysRun = true)
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+        mockedCurrency.closeOnDemand();
+    }
+
+@@ -25,3 +41,1 @@
+-        PowerMockito.mockStatic(Calendar.class);
+        PowerMockito.mockStatic(Currency.class);
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
++        mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+@@ -29,1 +43,1 @@
+-        Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
++        mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+
+{% tabs %}
+{% tab title="StaticMethodTest.java" %}
+
+###### Before
+{% code title="StaticMethodTest.java" %}
+```java
+import static org.testng.Assert.assertEquals;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
+
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+@PrepareForTest(value = {Calendar.class, Currency.class})
+public class StaticMethodTest {
+
+    private Calendar calendarMock;
+
+    @BeforeClass
+    void setUp() {
+        calendarMock = Mockito.mock(Calendar.class);
+    }
+
+    @Test
+    void testWithCalendar() {
+        PowerMockito.mockStatic(Calendar.class);
+        PowerMockito.mockStatic(Currency.class);
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+        Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="StaticMethodTest.java" %}
+```java
+import static org.testng.Assert.assertEquals;
+
+import java.util.Calendar;
+import java.util.Currency;
+import java.util.Locale;
+
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class StaticMethodTest {
+
+    private MockedStatic<Currency> mockedCurrency;
+
+    private MockedStatic<Calendar> mockedCalendar;
+
+    private Calendar calendarMock;
+
+    @BeforeClass
+    void setUp() {
+        calendarMock = Mockito.mock(Calendar.class);
+    }
+
+    @BeforeMethod
+    void setUpStaticMocks() {
+        mockedCurrency = Mockito.mockStatic(Currency.class);
+        mockedCalendar = Mockito.mockStatic(Calendar.class);
+    }
+
+    @AfterMethod(alwaysRun = true)
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+        mockedCurrency.closeOnDemand();
+    }
+
+    @Test
+    void testWithCalendar() {
+        mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+        mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- StaticMethodTest.java
++++ StaticMethodTest.java
+@@ -7,0 +7,1 @@
++import org.mockito.MockedStatic;
+@@ -8,2 +9,1 @@
+-import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.testng.annotations.AfterMethod;
+@@ -11,0 +11,1 @@
++import org.testng.annotations.BeforeMethod;
+@@ -13,1 +14,0 @@
+-@PrepareForTest(value = {Calendar.class, Currency.class})
+@@ -16,0 +16,4 @@
++    private MockedStatic<Currency> mockedCurrency;
+
+    private MockedStatic<Calendar> mockedCalendar;
+
+@@ -23,0 +27,12 @@
++    @BeforeMethod
+    void setUpStaticMocks() {
+        mockedCurrency = Mockito.mockStatic(Currency.class);
+        mockedCalendar = Mockito.mockStatic(Calendar.class);
+    }
+
+    @AfterMethod(alwaysRun = true)
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+        mockedCurrency.closeOnDemand();
+    }
+
+@@ -25,3 +41,1 @@
+-        PowerMockito.mockStatic(Calendar.class);
+        PowerMockito.mockStatic(Currency.class);
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
++        mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+@@ -29,1 +43,1 @@
+-        Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
++        mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -43,7 +323,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -57,7 +337,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.ReplacePowerMockito</recipe>
@@ -67,7 +347,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -122,8 +402,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.mockito.ReplacePowerMockito
-displayName: Replace Powermock with raw Mockito
-description: Replace Powermock with raw Mockito.
+displayName: Replace PowerMock with raw Mockito
+description: Replace PowerMock with raw Mockito.
 tags:
   - testing
   - mockito
@@ -151,6 +431,12 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Matthias Klauer](matthias.klauer@sap.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

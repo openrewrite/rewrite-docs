@@ -6,24 +6,65 @@ _Prior to Spring Security 6, `@EnableXXXSecurity` implicitly had `@Configuration
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/ConfigurationOverEnableSecurity.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/ConfigurationOverEnableSecurity.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Alex Boyko](aboyko@vmware.com)
-* [Sam Snyder](sam@moderne.io)
-* [Kun Li](kun@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
+* version: 5.0.1
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `boolean` | forceAddConfiguration | Force add `@Configuration` regardless current Boot version. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|forceAddConfiguration|`false`|
+
+
+{% tabs %}
+{% tab title="A.java" %}
+
+###### Before
+{% code title="A.java" %}
+```java
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+@EnableWebSecurity
+class A {}
+```
+{% endcode %}
+
+###### After
+{% code title="A.java" %}
+```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+@Configuration
+@EnableWebSecurity
+class A {}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- A.java
++++ A.java
+@@ -1,0 +1,1 @@
++import org.springframework.context.annotation.Configuration;
+@@ -3,0 +4,1 @@
++@Configuration
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -43,13 +84,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ConfigurationOverEnableSecurityExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.36.0 in your build file:
+Now that `com.yourorg.ConfigurationOverEnableSecurityExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -61,7 +102,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -75,7 +116,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ConfigurationOverEnableSecurityExample</recipe>
@@ -85,7 +126,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,6 +137,12 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Alex Boyko](aboyko@vmware.com)
+* [Sam Snyder](sam@moderne.io)
+* [Knut Wannheden](knut@moderne.io)
+* [Kun Li](kun@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

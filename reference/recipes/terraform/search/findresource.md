@@ -6,15 +6,11 @@ _Find a Terraform resource by resource type._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/search/FindResource.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/1.19.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/search/FindResource.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 1.19.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
+* version: 2.0.1
 
 ## Options
 
@@ -40,13 +36,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindResourceExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:1.19.0 in your build file:
+Now that `com.yourorg.FindResourceExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -58,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:1.19.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.1")
 }
 ```
 {% endcode %}
@@ -72,7 +68,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindResourceExample</recipe>
@@ -82,7 +78,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>1.19.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -93,6 +89,11 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,18 +6,11 @@ _Set the maven micronaut.version property according to a node-style semver selec
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/1.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 1.24.0
-
-## Contributors
-* [Patrick](patway99@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* version: 2.0.1
 
 ## Options
 
@@ -39,17 +32,17 @@ name: com.yourorg.UpgradeMicronautMavenPropertyVersionExample
 displayName: Upgrade `micronaut.version` Maven property example
 recipeList:
   - org.openrewrite.java.micronaut.UpgradeMicronautMavenPropertyVersion:
-      newVersion: 3.x
+      newVersion: 4.x
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:1.24.0 in your build file:
+Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -61,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.24.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.0.1")
 }
 ```
 {% endcode %}
@@ -75,7 +68,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeMicronautMavenPropertyVersionExample</recipe>
@@ -85,7 +78,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>1.24.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,6 +89,15 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick](patway99@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Knut Wannheden](knut@moderne.io)
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jeremy Grelle](grellej@unityfoundation.io)
+* [Tim te Beek](tim@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

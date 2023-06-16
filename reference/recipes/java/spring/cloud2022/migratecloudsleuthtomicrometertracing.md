@@ -14,28 +14,141 @@ _Spring Cloud Sleuth has been discontinued and only compatible with Spring Boot 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-cloud-2022.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-cloud-2022.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Kyle Scully](scullykns@gmail.com)
+## Examples
+##### Example 1
+
+
+{% tabs %}
+{% tab title="SessionInfoOperator.java" %}
+
+###### Before
+{% code title="SessionInfoOperator.java" %}
+```java
+import org.springframework.cloud.sleuth.Tracer;
+
+public class SessionInfoOperator {
+    private Tracer tracer;
+
+    public SessionInfoOperator(Tracer tracer) {
+        this.tracer = tracer;
+    }
+
+    public boolean getSessionInfo(String key) {
+        return tracer.currentSpan().isNoop();
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="SessionInfoOperator.java" %}
+```java
+import io.micrometer.tracing.Tracer;
+
+public class SessionInfoOperator {
+    private Tracer tracer;
+
+    public SessionInfoOperator(Tracer tracer) {
+        this.tracer = tracer;
+    }
+
+    public boolean getSessionInfo(String key) {
+        return tracer.currentSpan().isNoop();
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- SessionInfoOperator.java
++++ SessionInfoOperator.java
+@@ -1,1 +1,1 @@
+-import org.springframework.cloud.sleuth.Tracer;
++import io.micrometer.tracing.Tracer;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+
+{% tabs %}
+{% tab title="SessionInfoOperator.java" %}
+
+###### Before
+{% code title="SessionInfoOperator.java" %}
+```java
+import org.springframework.cloud.sleuth.Tracer;
+
+public class SessionInfoOperator {
+    private Tracer tracer;
+
+    public SessionInfoOperator(Tracer tracer) {
+        this.tracer = tracer;
+    }
+
+    public boolean getSessionInfo(String key) {
+        return tracer.currentSpan().isNoop();
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="SessionInfoOperator.java" %}
+```java
+import io.micrometer.tracing.Tracer;
+
+public class SessionInfoOperator {
+    private Tracer tracer;
+
+    public SessionInfoOperator(Tracer tracer) {
+        this.tracer = tracer;
+    }
+
+    public boolean getSessionInfo(String key) {
+        return tracer.currentSpan().isNoop();
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- SessionInfoOperator.java
++++ SessionInfoOperator.java
+@@ -1,1 +1,1 @@
+-import org.springframework.cloud.sleuth.Tracer;
++import io.micrometer.tracing.Tracer;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -47,7 +160,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -61,7 +174,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.cloud2022.MigrateCloudSleuthToMicrometerTracing</recipe>
@@ -71,7 +184,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -99,6 +212,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Add logging.pattern.level for traceId and spanId](../../../java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
 * [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-starter-sleuth`
@@ -133,31 +247,34 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `io.zipkin.reporter2`
   * newArtifactId: `zipkin-reporter-brave`
   * newVersion: `2.16.x`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-actuator`
   * version: `3.0.x`
-  * scope: `compile`
   * onlyIfUsing: `org.springframework.cloud.sleuth..*`
   * acceptTransitive: `true`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `io.micrometer`
   * artifactId: `micrometer-tracing`
   * version: `1.0.x`
   * onlyIfUsing: `org.springframework.cloud.sleuth.annotation.*`
   * acceptTransitive: `true`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-aop`
   * version: `3.0.x`
   * onlyIfUsing: `org.springframework.cloud.sleuth.annotation.*`
   * acceptTransitive: `true`
-* [Remove Maven dependency](../../../maven/removedependency.md)
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-sleuth-*`
 * [Remove Maven managed dependency](../../../maven/removemanageddependency.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-sleuth-*`
+* [Remove redundant explicit dependency versions](../../../maven/removeredundantdependencyversions.md)
+  * groupPattern: `io.micrometer`
+  * artifactPattern: `micrometer-tracing*`
+  * onlyIfVersionsMatch: `false`
 * [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.cloud.sleuth.exporter.SpanFilter`
   * newFullyQualifiedTypeName: `io.micrometer.tracing.exporter.SpanExportingPredicate`
@@ -219,6 +336,7 @@ tags:
   - sleuth
   - micrometer
 recipeList:
+  - org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth
   - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-starter-sleuth
@@ -253,31 +371,34 @@ recipeList:
       newGroupId: io.zipkin.reporter2
       newArtifactId: zipkin-reporter-brave
       newVersion: 2.16.x
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-actuator
       version: 3.0.x
-      scope: compile
       onlyIfUsing: org.springframework.cloud.sleuth..*
       acceptTransitive: true
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.micrometer
       artifactId: micrometer-tracing
       version: 1.0.x
       onlyIfUsing: org.springframework.cloud.sleuth.annotation.*
       acceptTransitive: true
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-aop
       version: 3.0.x
       onlyIfUsing: org.springframework.cloud.sleuth.annotation.*
       acceptTransitive: true
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-sleuth-*
   - org.openrewrite.maven.RemoveManagedDependency:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-sleuth-*
+  - org.openrewrite.maven.RemoveRedundantDependencyVersions:
+      groupPattern: io.micrometer
+      artifactPattern: micrometer-tracing*
+      onlyIfVersionsMatch: false
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.cloud.sleuth.exporter.SpanFilter
       newFullyQualifiedTypeName: io.micrometer.tracing.exporter.SpanExportingPredicate
@@ -326,6 +447,14 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Nick McKinney](mckinneynichoals@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Kyle Scully](scullykns@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

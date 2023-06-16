@@ -6,11 +6,11 @@ _Replaces the runners of a given job._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ReplaceRunners.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/1.20.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ReplaceRunners.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 1.20.0
+* version: 2.0.1
 
 ## Options
 
@@ -38,13 +38,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ReplaceRunnersExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:1.20.0 in your build file:
+Now that `com.yourorg.ReplaceRunnersExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:1.20.0")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.1")
 }
 ```
 {% endcode %}
@@ -70,7 +70,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceRunnersExample</recipe>
@@ -80,7 +80,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>1.20.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,38 +89,6 @@ dependencies {
 </project>
 ```
 {% endcode %}
-{% endtab %}
-{% endtabs %}
-
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Change value](../yaml/changevalue.md)
-  * oldKeyPath: `$.jobs..runs-on`
-  * value: `[]`
-  * fileMatcher: `.github/workflows/*.yml`
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.github.ReplaceRunners
-displayName: Replace runners for a job
-description: Replaces the runners of a given job.
-jobName: 
-
-runners: []
-
-recipeList:
-  - org.openrewrite.yaml.ChangeValue:
-      oldKeyPath: $.jobs..runs-on
-      value: []
-      fileMatcher: .github/workflows/*.yml
-
-```
 {% endtab %}
 {% endtabs %}
 

@@ -6,17 +6,11 @@ _Find labels that optionally match a given regex._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindMissingOrInvalidLabel.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.30.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindMissingOrInvalidLabel.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.30.0
-
-## Contributors
-* [Jon Brisbin](jon@moderne.io)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* version: 2.0.1
 
 ## Options
 
@@ -25,6 +19,100 @@ _Find labels that optionally match a given regex._
 | `String` | labelName | The name of the label to search for the existence of. |
 | `String` | value | *Optional*. An optional regex that will validate values that match. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|labelName|`mylabel`|
+|value|`null`|
+|fileMatcher|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod1
+  labels:
+    something: "hasvalue"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod2
+  labels:
+    mylabel: "novalue"
+---
+apiVersion: apps/v1
+kind: Deployment
+spec:
+    template:
+        spec:
+            metadata:
+                labels:
+                    something: "hasvalue"
+            containers:
+            - name: app
+              image: repo/app:latest
+            - name: sidecar
+              image: repo/sidecar:dev
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod1
+  ~~(missing:mylabel)~~>labels:
+    something: "hasvalue"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod2
+  labels:
+    mylabel: "novalue"
+---
+apiVersion: apps/v1
+kind: Deployment
+spec:
+    template:
+        spec:
+            metadata:
+                ~~(missing:mylabel)~~>labels:
+                    something: "hasvalue"
+            containers:
+            - name: app
+              image: repo/app:latest
+            - name: sidecar
+              image: repo/sidecar:dev
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -5,1 +5,1 @@
+-  labels:
++  ~~(missing:mylabel)~~>labels:
+@@ -21,1 +21,1 @@
+-                labels:
++                ~~(missing:mylabel)~~>labels:
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -46,13 +134,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindMissingOrInvalidLabelExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.30.0 in your build file:
+Now that `com.yourorg.FindMissingOrInvalidLabelExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -64,7 +152,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
 }
 ```
 {% endcode %}
@@ -78,7 +166,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindMissingOrInvalidLabelExample</recipe>
@@ -88,7 +176,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.30.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -99,6 +187,13 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jon Brisbin](jon@moderne.io)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

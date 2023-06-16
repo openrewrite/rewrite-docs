@@ -6,18 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and scope. 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -27,6 +20,87 @@ _Find direct and transitive dependencies matching a group, artifact, and scope. 
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. |
 | `String` | scope | Match dependencies with the specified scope |
 | `Boolean` | onlyDirect | *Optional*. Default false. If enabled, transitive dependencies will not be considered. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Dependencies in use
+
+_Direct and transitive dependencies in use._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Project name | The name of the project that contains the dependency. |
+| Source set | The source set that contains the dependency. |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
+| Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
+| Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupIdPattern|`*guava*`|
+|artifactIdPattern|`*`|
+|scope|`compile`|
+|onlyDirect|`null`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <dependencies>
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>29.0-jre</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <dependencies>
+    <!--~~>--><dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>29.0-jre</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,1 +6,1 @@
+-    <dependency>
++    <!--~~>--><dependency>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -61,7 +135,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DependencyInsightExample</recipe>
@@ -75,6 +149,14 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,23 +6,11 @@ _Update the version of Gradle used in an existing Gradle wrapper._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.40.6
-
-## Example
-* Example 1: 
-
-## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Alexis Tual](alexis.tual@gmail.com)
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Nate Danner](nate@moderne.io)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -30,6 +18,60 @@ _Update the version of Gradle used in an existing Gradle wrapper._
 | -- | -- | -- |
 | `String` | version | An exact version number or node-style semver selector used to select the version number. |
 | `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. Defaults to "bin". |
+| `String` | repositoryUrl | The URL of the repository to download the Gradle distribution from. Currently only supports repositories like services.gradle.org, not arbitrary maven or ivy repositories. Defaults to `https://services.gradle.org/versions/all`. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|version|`7.4.2`|
+|distribution|`null`|
+|repositoryUrl|`null`|
+
+
+{% tabs %}
+{% tab title="gradle/wrapper/gradle-wrapper.properties" %}
+
+###### Before
+{% code title="gradle/wrapper/gradle-wrapper.properties" %}
+```properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-all.zip
+distributionSha256Sum=cd5c2958a107ee7f0722004a12d0f8559b4564c34daad7df06cffd4d12a426d0
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+```
+{% endcode %}
+
+###### After
+{% code title="gradle/wrapper/gradle-wrapper.properties" %}
+```properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- gradle/wrapper/gradle-wrapper.properties
++++ gradle/wrapper/gradle-wrapper.properties
+@@ -3,2 +3,2 @@
+-distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-all.zip
+distributionSha256Sum=cd5c2958a107ee7f0722004a12d0f8559b4564c34daad7df06cffd4d12a426d0
++distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -47,6 +89,7 @@ recipeList:
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: 7.x
       distribution: null
+      repositoryUrl: https://services.gradle.org/versions/all
 ```
 {% endcode %}
 
@@ -56,7 +99,7 @@ Now that `com.yourorg.UpdateGradleWrapperExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {

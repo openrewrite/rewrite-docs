@@ -6,15 +6,11 @@ _Append item to YAML sequence._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/AppendToSequence.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/AppendToSequence.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.40.6
-
-## Contributors
-* [sullis](github@seansullivan.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -23,8 +19,53 @@ _Append item to YAML sequence._
 | `String` | sequencePath | A JsonPath expression to locate a YAML sequence. |
 | `String` | value | The new value to be appended to the sequence. |
 | `List` | existingSequenceValues | *Optional*. Recipe appends to sequence only when existing sequence values match |
-| `String` | matchExistingSequenceValuesInAnyOrder | *Optional*. match existing sequence values in any order |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+| `Boolean` | matchExistingSequenceValuesInAnyOrder | *Optional*. match existing sequence values in any order |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|sequencePath|`$.things.fruit`|
+|value|`strawberry`|
+|existingSequenceValues|`null`|
+|matchExistingSequenceValuesInAnyOrder|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+    things:
+      fruit:
+        - apple
+        - blueberry
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+    things:
+      fruit:
+        - apple
+        - blueberry
+        - strawberry
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -5,0 +5,1 @@
++        - strawberry
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -44,7 +85,6 @@ recipeList:
       value: earth
       existingSequenceValues: existingValue1
       matchExistingSequenceValuesInAnyOrder: true
-      fileMatcher: '**/application-*.yml'
 ```
 {% endcode %}
 
@@ -54,7 +94,7 @@ Now that `com.yourorg.AppendToSequenceExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -76,7 +116,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AppendToSequenceExample</recipe>
@@ -90,6 +130,11 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [sullis](github@seansullivan.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

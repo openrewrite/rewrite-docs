@@ -2,20 +2,15 @@
 
 **org.openrewrite.text.AppendToTextFile**
 
-_Appends content to a plaintext file. Multiple instances of this recipe in the same execution context can all contribute._
+_Appends or replaces content of an existing plain text file, or creates a new one if it doesn't already exist._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/AppendToTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/AppendToTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.40.6
-
-## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Knut Wannheden](knut.wannheden@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -23,9 +18,9 @@ _Appends content to a plaintext file. Multiple instances of this recipe in the s
 | -- | -- | -- |
 | `String` | relativeFileName | File name, using a relative path. If a non-plaintext file already exists at this location, then this recipe will do nothing. |
 | `String` | content | Multiline text content to be appended to the file. |
-| `String` | preamble | *Optional*. If creating this file fresh, then this content will be included at the beginning. Default nothing. |
+| `String` | preamble | *Optional*. If a new file is created, this content will be included at the beginning. |
 | `Boolean` | appendNewline | *Optional*. Print a newline automatically after the content (and preamble). Default true. |
-                        | `String` | existingFileStrategy | *Optional*. Determines behavior if a file exists at this location prior to Rewrite execution.
+                        | `Strategy` | existingFileStrategy | *Optional*. Determines behavior if a file exists at this location prior to Rewrite execution.
 
 - `continue`: append new content to existing file contents. If existing file is not plaintext, recipe does nothing.
 - `replace`: remove existing content from file.
@@ -62,7 +57,7 @@ Now that `com.yourorg.AppendToTextFileExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -84,7 +79,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AppendToTextFileExample</recipe>
@@ -98,6 +93,12 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

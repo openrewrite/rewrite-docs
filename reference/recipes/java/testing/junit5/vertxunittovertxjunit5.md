@@ -1,8 +1,8 @@
-# Use Vertx JUnit 5 Extension
+# Use Vert.x JUnit 5 Extension
 
 **org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5**
 
-_Migrates Vertx `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`._
+_Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`._
 
 ### Tags
 
@@ -11,35 +11,22 @@ _Migrates Vertx `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` 
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Greg Adams](greg@moderne.io)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Tim te Beek](tim.te.beek@jdriven.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Michael Keppler](bananeweizen@gmx.de)
+* version: 2.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -51,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -65,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5</recipe>
@@ -75,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -106,7 +93,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension.md)
   * runners: `[org.vertx.testtools.VertxUnitRunner]`
   * extension: `org.vertx.testtools.VertxExtension`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `io.vertx`
   * artifactId: `vertx-junit5`
   * version: `4.x`
@@ -120,8 +107,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5
-displayName: Use Vertx JUnit 5 Extension
-description: Migrates Vertx `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`.
+displayName: Use Vert.x JUnit 5 Extension
+description: Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`.
 tags:
   - junit
   - testing
@@ -129,7 +116,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.RunnerToExtension:
       runners: [org.vertx.testtools.VertxUnitRunner]
       extension: org.vertx.testtools.VertxExtension
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.vertx
       artifactId: vertx-junit5
       version: 4.x
@@ -139,6 +126,19 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Sam Snyder](sam@moderne.io)
+* [Knut Wannheden](knut@moderne.io)
+* [Scott Jungling](scott.jungling@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Patrick](patway99@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Michael Keppler](bananeweizen@gmx.de)
+
 
 ## See how this recipe works across multiple open-source repositories
 

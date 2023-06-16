@@ -6,34 +6,115 @@ _The Spring Security `WebSecurityConfigurerAdapter` was deprecated 5.7, this rec
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security5/WebSecurityConfigurerAdapter.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.37.0-SNAPSHOT/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security5/WebSecurityConfigurerAdapter.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.37.0-SNAPSHOT
+* version: 5.0.1
 
 ## Example
 
-## Contributors
-* [Alex Boyko](aboyko@vmware.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Kun Li](122563761+kunli2@users.noreply.github.com)
+
+{% tabs %}
+{% tab title="com/example/websecuritydemo/SecurityConfiguration.java" %}
+
+###### Before
+{% code title="com/example/websecuritydemo/SecurityConfiguration.java" %}
+```java
+package com.example.websecuritydemo;
+
+import static org.springframework.security.config.Customizer.withDefaults;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
+@Configuration
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests((authz) -> authz
+                .anyRequest().authenticated()
+            )
+            .httpBasic(withDefaults());
+    }
+
+    void someMethod() {}
+
+}
+```
+{% endcode %}
+
+###### After
+{% code title="com/example/websecuritydemo/SecurityConfiguration.java" %}
+```java
+package com.example.websecuritydemo;
+
+import static org.springframework.security.config.Customizer.withDefaults;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfiguration {
+
+    @Bean
+    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests((authz) -> authz
+                .anyRequest().authenticated()
+            )
+            .httpBasic(withDefaults());
+        return http.build();
+    }
+
+    void someMethod() {}
+
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- com/example/websecuritydemo/SecurityConfiguration.java
++++ com/example/websecuritydemo/SecurityConfiguration.java
+@@ -4,0 +4,2 @@
++
+import org.springframework.context.annotation.Bean;
+@@ -5,1 +7,0 @@
+-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+@@ -7,0 +8,1 @@
++import org.springframework.security.web.SecurityFilterChain;
+@@ -9,1 +11,1 @@
+-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
++public class SecurityConfiguration {
+@@ -11,2 +13,2 @@
+-    @Override
+    protected void configure(HttpSecurity http) throws Exception {
++    @Bean
+    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+@@ -18,0 +20,1 @@
++        return http.build();
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.37.0-SNAPSHOT` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.5")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -45,7 +126,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.37.0-SNAPSHOT")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -59,7 +140,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.3</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.security5.WebSecurityConfigurerAdapter</recipe>
@@ -69,7 +150,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.37.0-SNAPSHOT</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -92,6 +173,17 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Alex Boyko](aboyko@vmware.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Nick McKinney](mckinneynichoals@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

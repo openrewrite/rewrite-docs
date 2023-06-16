@@ -6,22 +6,18 @@ _An applicability test which returns false if visiting a Maven pom which include
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DoesNotIncludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DoesNotIncludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob. |
-| `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob. |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. |
 | `Boolean` | onlyDirect | *Optional*. Default false. If enabled, transitive dependencies will not be considered. |
 | `String` | scope | *Optional*. Default any. If specified, only the requested scope's classpaths will be checked. |
 
@@ -58,7 +54,7 @@ Now that `com.yourorg.DoesNotIncludeDependencyExample` has been defined activate
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DoesNotIncludeDependencyExample</recipe>
@@ -72,6 +68,11 @@ Now that `com.yourorg.DoesNotIncludeDependencyExample` has been defined activate
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

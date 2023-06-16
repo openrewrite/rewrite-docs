@@ -6,17 +6,11 @@ _Change the groupId and/or the artifactId of a specified Maven plugin._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Example
-* Example 1: 
-
-## Contributors
-* [George Gastaldi](gegastaldi@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -26,6 +20,85 @@ _Change the groupId and/or the artifactId of a specified Maven plugin._
 | `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
 | `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. |
 | `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Maven metadata failures
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldGroupId|`io.quarkus`|
+|oldArtifactId|`quarkus-bootstrap-maven-plugin`|
+|newGroupId|`null`|
+|newArtifactId|`quarkus-extension-maven-plugin`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
+                <version>3.0.0.Beta1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-extension-maven-plugin</artifactId>
+                <version>3.0.0.Beta1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,1 @@
+-                <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
++                <artifactId>quarkus-extension-maven-plugin</artifactId>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -60,7 +133,7 @@ Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePluginGroupIdAndArtifactIdExample</recipe>
@@ -74,6 +147,10 @@ Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [George Gastaldi](gegastaldi@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,14 +6,11 @@ _To integrate gradle enterprise maven extension into maven projects, ensure that
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddGradleEnterpriseMavenExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddGradleEnterpriseMavenExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* version: 8.1.2
 
 ## Options
 
@@ -22,6 +19,94 @@ _To integrate gradle enterprise maven extension into maven projects, ensure that
 | `String` | version | An exact version number or node-style semver selector used to select the gradle-enterprise-maven-extension version. |
 | `String` | server | The URL of the Gradle Enterprise server. |
 | `Boolean` | allowUntrustedServer | *Optional*. When set to `true` the plugin will be configured to allow unencrypted http connections with the server. If set to `false` or omitted, the plugin will refuse to communicate without transport layer security enabled. |
+| `Boolean` | captureGoalInputFiles | *Optional*. When set to `true` the extension will capture additional information about the inputs to Maven goals. This increases the size of build scans, but is useful for diagnosing issues with goal caching.  |
+| `Boolean` | uploadInBackground | *Optional*. When set to `false` the extension will not upload build scan in the background. By default, build scans are uploaded in the background after the build has finished to avoid blocking the build process. |
+| `PublishCriteria` | publishCriteria | *Optional*. When set to `always` the extension will publish build scans of every single build. This is the default behavior when omitted.When set to `failure` the extension will only publish build scans when the build fails. When set to `demand` the extension will only publish build scans when explicitly requested. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|version|`1.17`|
+|server|`https://foo`|
+|allowUntrustedServer|`null`|
+|captureGoalInputFiles|`null`|
+|uploadInBackground|`null`|
+|publishCriteria|`null`|
+
+
+###### Unchanged
+{% code title="pom.xml" %}
+```xml
+<project>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+</project>
+```
+{% endcode %}
+
+{% tabs %}
+{% tab title=".mvn/extensions.xml" %}
+
+###### Before
+{% code title=".mvn/extensions.xml" %}
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+</extensions>
+```
+{% endcode %}
+
+###### After
+{% code title=".mvn/extensions.xml" %}
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
+  <extension>
+    <groupId>com.gradle</groupId>
+    <artifactId>gradle-enterprise-maven-extension</artifactId>
+    <version>1.17</version>
+  </extension>
+</extensions>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- .mvn/extensions.xml
++++ .mvn/extensions.xml
+@@ -3,0 +3,5 @@
++  <extension>
+    <groupId>com.gradle</groupId>
+    <artifactId>gradle-enterprise-maven-extension</artifactId>
+    <version>1.17</version>
+  </extension>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+###### Before
+{% code title=".mvn/gradle-enterprise.xml" %}
+```xml
+null```
+{% endcode %}
+
+###### New file
+{% code title=".mvn/gradle-enterprise.xml" %}
+```xml
+<gradleEnterprise>
+  <server>
+    <url>https://foo</url>
+  </server>
+</gradleEnterprise>
+```
+{% endcode %}
+
 
 
 ## Usage
@@ -40,6 +125,9 @@ recipeList:
       version: 1.x
       server: https://scans.gradle.com/
       allowUntrustedServer: true
+      captureGoalInputFiles: true
+      uploadInBackground: false
+      publishCriteria: true
 ```
 {% endcode %}
 
@@ -55,7 +143,7 @@ Now that `com.yourorg.AddGradleEnterpriseMavenExtensionExample` has been defined
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddGradleEnterpriseMavenExtensionExample</recipe>

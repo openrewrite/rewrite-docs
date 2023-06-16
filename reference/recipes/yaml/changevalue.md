@@ -6,18 +6,11 @@ _Change a YAML mapping entry value leaving the key intact._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aurélien Mino](aurelien.mino@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -25,7 +18,50 @@ _Change a YAML mapping entry value leaving the key intact._
 | -- | -- | -- |
 | `String` | oldKeyPath | A JsonPath expression to locate a YAML entry. |
 | `String` | value | The new value to set for the key identified by oldKeyPath. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldKeyPath|`$.metadata.name`|
+|value|`monitoring`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+    apiVersion: v1
+    metadata:
+      name: monitoring-tools
+      namespace: monitoring-tools
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+    apiVersion: v1
+    metadata:
+      name: monitoring
+      namespace: monitoring-tools
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -3,1 +3,1 @@
+-      name: monitoring-tools
++      name: monitoring
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -43,7 +79,6 @@ recipeList:
   - org.openrewrite.yaml.ChangeValue:
       oldKeyPath: $.subjects.kind
       value: Deployment
-      fileMatcher: '**/application-*.yml'
 ```
 {% endcode %}
 
@@ -53,7 +88,7 @@ Now that `com.yourorg.ChangeValueExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -75,7 +110,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeValueExample</recipe>
@@ -89,6 +124,12 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

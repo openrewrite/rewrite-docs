@@ -6,17 +6,11 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -27,6 +21,90 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `Boolean` | trustParent | *Optional*. Even if the parent suggests a version that is older than what we are trying to upgrade to, trust it anyway. Useful when you want to wait for the parent to catch up before upgrading. The parent is not trusted by default. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Maven metadata failures
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`io.quarkus`|
+|artifactId|`quarkus-maven-plugin`|
+|newVersion|`1.13.5.Final`|
+|versionPattern|`null`|
+|trustParent|`null`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.openrewrite.example</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-maven-plugin</artifactId>
+        <version>1.13.3.Final</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.openrewrite.example</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-maven-plugin</artifactId>
+        <version>1.13.5.Final</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -13,1 +13,1 @@
+-        <version>1.13.3.Final</version>
++        <version>1.13.5.Final</version>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -62,7 +140,7 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradePluginVersionExample</recipe>
@@ -76,6 +154,13 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined activate it 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

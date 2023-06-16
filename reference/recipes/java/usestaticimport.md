@@ -6,20 +6,82 @@ _Removes unnecessary receiver types from static method invocations. For example,
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/UseStaticImport.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/UseStaticImport.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|methodPattern|`org.junit.jupiter.api.Assertions assert*(..)`|
+
+
+{% tabs %}
+{% tab title="org/openrewrite/SampleTest.java" %}
+
+###### Before
+{% code title="org/openrewrite/SampleTest.java" %}
+```java
+package org.openrewrite;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
+class SampleTest {
+    @Test
+    void sample() {
+        Assertions.assertEquals(42, 21*2);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="org/openrewrite/SampleTest.java" %}
+```java
+package org.openrewrite;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class SampleTest {
+    @Test
+    void sample() {
+        assertEquals(42, 21*2);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- org/openrewrite/SampleTest.java
++++ org/openrewrite/SampleTest.java
+@@ -4,1 +4,0 @@
+-import org.junit.jupiter.api.Assertions;
+@@ -6,0 +5,2 @@
++import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@@ -9,1 +10,1 @@
+-        Assertions.assertEquals(42, 21*2);
++        assertEquals(42, 21*2);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -45,7 +107,7 @@ Now that `com.yourorg.UseStaticImportExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -67,7 +129,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseStaticImportExample</recipe>
@@ -81,6 +143,10 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

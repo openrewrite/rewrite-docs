@@ -2,19 +2,36 @@
 
 **org.openrewrite.FindParseFailures**
 
-_This recipe explores parse failures after an AST is produced for classifying the types of failures that can occur and prioritizing fixes according to the most common problems._
+_This recipe explores parse failures after an LST is produced for classifying the types of failures that can occur and prioritizing fixes according to the most common problems._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.40.6
+* version: 8.1.2
 
-## Contributors
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
+## Options
+
+| Type | Name | Description |
+| -- | -- | -- |
+| `Integer` | maxSnippetLength | *Optional*. When the failure occurs on a granular tree element, its source code will be included as a column in the data table up to this maximum snippet length. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Parser failures
+
+_A list of files that failed to parse along with stack traces of their failures._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Parser | The parser implementation that failed. |
+| Source path | The file that failed to parse. |
+| Exception type | The class name of the exception that produce the parse failure. |
+| Tree type | The type of the tree element that was being parsed when the failure occurred. This can refer either to the intended target OpenRewrite Tree type or a parser or compiler internal tree type that we couldn't determine how to map. |
+| Snippet | The code snippet that the failure occurred on. Omitted when the parser fails on the whole file. |
+| Stack trace | The stack trace of the failure. |
 
 
 ## Usage
@@ -25,7 +42,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -48,7 +65,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.FindParseFailures</recipe>
@@ -72,6 +89,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Shannon Pamperl](shanman190@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Mike Solomon](mike@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -14,33 +14,22 @@ _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUni
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [nbruno](nbruno@users.noreply.github.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -52,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -66,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -76,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,7 +99,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
 * [Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`](../../../java/spring/boot2/replaceextendwithandcontextconfiguration.md)
 * [Remove obsolete Spring JUnit runners](../../../java/spring/boot2/removeobsoletespringrunners.md)
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-tools`
   * version: `2.x`
@@ -139,7 +128,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
   - org.openrewrite.java.spring.boot2.ReplaceExtendWithAndContextConfiguration
   - org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-tools
       version: 2.x
@@ -148,6 +137,35 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Greg Adams](gadams@gmail.com)
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Yeikel](yeikel@users.noreply.github.com)
+* [Greg Adams](greg@moderne.io)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Tim te Beek](tim@moderne.io)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Matthias Klauer](matthias.klauer@sap.com)
+* [nbruno](nbruno@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Sofia Britto Schwartz](sofia.b.schwartz@gmail.com)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Michael Keppler](bananeweizen@gmx.de)
+* [Scott Jungling](scott.jungling@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Ties van de Ven](1215166+vandeven@users.noreply.github.com)
+* [Tim te Beek](timtebeek@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Kun Li](kun@moderne.io)
+* [Kyle Scully](scullykns@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

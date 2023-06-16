@@ -6,27 +6,86 @@ _Replaces `@ExtendWith(SpringRunner.class)` and `@ContextConfiguration` with `@S
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/ReplaceExtendWithAndContextConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/ReplaceExtendWithAndContextConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [nbruno](nbruno@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="org/example/ExampleClass.java" %}
+
+###### Before
+{% code title="org/example/ExampleClass.java" %}
+```java
+package org.example;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = ExampleClass.ExampleConfiguration.class)
+public class ExampleClass {
+    @Configuration
+    static class ExampleConfiguration {
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="org/example/ExampleClass.java" %}
+```java
+package org.example;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+@SpringJUnitConfig(classes = ExampleClass.ExampleConfiguration.class)
+public class ExampleClass {
+    @Configuration
+    static class ExampleConfiguration {
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- org/example/ExampleClass.java
++++ org/example/ExampleClass.java
+@@ -3,1 +3,0 @@
+-import org.junit.jupiter.api.extension.ExtendWith;
+@@ -5,2 +4,1 @@
+-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
++import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+@@ -8,2 +6,1 @@
+-@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = ExampleClass.ExampleConfiguration.class)
++@SpringJUnitConfig(classes = ExampleClass.ExampleConfiguration.class)
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -38,7 +97,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -52,7 +111,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.ReplaceExtendWithAndContextConfiguration</recipe>
@@ -62,7 +121,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,28 +144,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [nbruno](nbruno@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
 
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension.md)
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.spring.boot2.ReplaceExtendWithAndContextConfiguration
-displayName: Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`
-description: Replaces `@ExtendWith(SpringRunner.class)` and `@ContextConfiguration` with `@SpringJunitConfig`, preserving attributes on `@ContextConfiguration`, unless `@ContextConfiguration(loader = ...)` is used.
-recipeList:
-  - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
-
-```
-{% endtab %}
-{% endtabs %}
 
 ## See how this recipe works across multiple open-source repositories
 

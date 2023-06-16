@@ -6,30 +6,22 @@ _Upgrade to Spring Boot 2.5 from any prior 2.x version._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Fabian Krüger](56278322+fabapp2@users.noreply.github.com)
-* [Patrick](patway99@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Kyle Scully](scullykns@gmail.com)
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -41,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -55,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5</recipe>
@@ -65,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -95,11 +87,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tab title="Recipe List" %}
 * [Migrate to Spring Boot 2.4](../../../java/spring/boot2/upgradespringboot_2_4.md)
 * [Migrate to Spring Data 2.5](../../../java/spring/data/upgradespringdata_2_5.md)
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
   * newVersion: `2.5.x`
-  * overrideManagedVersion: `true`
+  * overrideManagedVersion: `false`
 * [Upgrade Maven parent project version](../../../maven/upgradeparentversion.md)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
@@ -127,11 +119,11 @@ description: Upgrade to Spring Boot 2.5 from any prior 2.x version.
 recipeList:
   - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4
   - org.openrewrite.java.spring.data.UpgradeSpringData_2_5
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: *
       newVersion: 2.5.x
-      overrideManagedVersion: true
+      overrideManagedVersion: false
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
@@ -150,6 +142,38 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Nick McKinney](mckinneynichoals@gmail.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Greg Adams](gadams@gmail.com)
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Yeikel](yeikel@users.noreply.github.com)
+* [Greg Adams](greg@moderne.io)
+* [Kyle Scully](scullykns@gmail.com)
+* [Tim te Beek](tim@moderne.io)
+* [Kevin McCarpenter](kevin@moderne.io)
+* [Matthias Klauer](matthias.klauer@sap.com)
+* [Fabian Krüger](56278322+fabapp2@users.noreply.github.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [nbruno](nbruno@users.noreply.github.com)
+* [Sofia Britto Schwartz](sofia.b.schwartz@gmail.com)
+* [Kun Li](kun@moderne.io)
+* [Michael Keppler](bananeweizen@gmx.de)
+* [Scott Jungling](scott.jungling@gmail.com)
+* [Ties van de Ven](1215166+vandeven@users.noreply.github.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Tim te Beek](timtebeek@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

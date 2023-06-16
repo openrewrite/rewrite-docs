@@ -6,28 +6,22 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-23.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-23.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Kyle Scully](scullykns@gmail.com)
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -39,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -53,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBootProperties_2_3</recipe>
@@ -63,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -154,6 +148,18 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.http.log-request-details`
   * newPropertyKey: `spring.mvc.log-request-details`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.health.probes.enabled`
+  * newPropertyKey: `management.endpoint.health.probes.enabled`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.web.client.requests-metric-name`
+  * newPropertyKey: `management.metrics.web.client.request.metric-name`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.web.server.auto-time-requests`
+  * newPropertyKey: `management.metrics.web.server.request.autotime.enabled`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.web.server.requests-metric-name`
+  * newPropertyKey: `management.metrics.web.server.request.metric-name`
 
 {% endtab %}
 
@@ -228,10 +234,29 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.http.log-request-details
       newPropertyKey: spring.mvc.log-request-details
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.health.probes.enabled
+      newPropertyKey: management.endpoint.health.probes.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.client.requests-metric-name
+      newPropertyKey: management.metrics.web.client.request.metric-name
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.server.auto-time-requests
+      newPropertyKey: management.metrics.web.server.request.autotime.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.server.requests-metric-name
+      newPropertyKey: management.metrics.web.server.request.metric-name
 
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Nick McKinney](mckinneynichoals@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Kyle Scully](scullykns@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

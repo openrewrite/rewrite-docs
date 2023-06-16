@@ -6,18 +6,61 @@ _Simplify nested map hierarchies into their simplest dot separated property form
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CoalesceProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CoalesceProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.40.6
+* version: 8.1.2
 
 ## Example
-* Example 1: 
 
-## Contributors
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+    management:
+        metrics:
+            enable.process.files: true
+        endpoint:
+            health:
+                show-components: always
+                show-details: always
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+    management:
+        metrics.enable.process.files: true
+        endpoint.health:
+            show-components: always
+            show-details: always
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -2,6 +2,4 @@
+-        metrics:
+            enable.process.files: true
+        endpoint:
+            health:
+                show-components: always
+                show-details: always
++        metrics.enable.process.files: true
+        endpoint.health:
+            show-components: always
+            show-details: always
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -28,7 +71,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -51,7 +94,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.yaml.CoalesceProperties</recipe>
@@ -75,6 +118,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,16 +6,11 @@ _A diagnostic for studying the distribution of Java language version levels (bot
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/search/AboutJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.21.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/search/AboutJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.21.1
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Tim te Beek](tim@moderne.io)
+* version: 2.0.1
 
 ## Options
 
@@ -23,16 +18,87 @@ _A diagnostic for studying the distribution of Java language version levels (bot
 | -- | -- | -- |
 | `String` | whenUsesType | *Optional*. Only mark the Java version when this type is in use. |
 
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Java versions by file
+
+_A per-file view of Java version in use._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Project name | The module name (useful especially for multi-module repositories). |
+| Source set name | The source set, e.g. `main` or `test`. |
+| Created by | The JDK release that was used to compile the source file. |
+| VM vendor | The vendor of the JVM that was used to compile the source file. |
+| Source compatibility | The source compatibility of the source file. |
+| Major version source compatibility | The major version. |
+| Target compatibility | The target compatibility or `--release` version of the source file. |
+
+### Java versions by source set
+
+_A per-source set view of Java version in use._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Project name | The module name (useful especially for multi-module repositories). |
+| Source set name | The source set, e.g. `main` or `test`. |
+| Created by | The JDK release that was used to compile the source file. |
+| VM vendor | The vendor of the JVM that was used to compile the source file. |
+| Source compatibility | The source compatibility of the source file. |
+| Major version source compatibility | The major version. |
+| Target compatibility | The target compatibility or `--release` version of the source file. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|whenUsesType|`null`|
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+class Test {
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+/*~~(Java version: 11)~~>*/class Test {
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -1,1 +1,1 @@
+-class Test {
++/*~~(Java version: 11)~~>*/class Test {
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.21.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -44,7 +110,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.21.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
 }
 ```
 {% endcode %}
@@ -58,7 +124,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.search.AboutJavaVersion</recipe>
@@ -68,7 +134,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.21.1</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>

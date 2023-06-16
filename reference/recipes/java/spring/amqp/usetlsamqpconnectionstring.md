@@ -6,11 +6,11 @@ _Use TLS for AMQP connection strings._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/amqp/UseTlsAmqpConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.37.0-SNAPSHOT/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/amqp/UseTlsAmqpConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.37.0-SNAPSHOT
+* version: 5.0.1
 
 ## Options
 
@@ -21,9 +21,6 @@ _Use TLS for AMQP connection strings._
 | `Integer` | port | The TLS-enabled port to use. |
 | `String` | tlsPropertyKey | The Spring property key to enable default TLS mode against. If this value is specified, the specified property will be used when updating the default TLS mode, otherwise a default of `spring.rabbitmq.ssl.enabled` will be used instead. |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yml", and "**/application.properties". |
-
-## Contributors
-* [Shannon Pamperl](shanman190@gmail.com)
 
 
 ## Usage
@@ -47,13 +44,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseTlsAmqpConnectionStringExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.37.0-SNAPSHOT in your build file:
+Now that `com.yourorg.UseTlsAmqpConnectionStringExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.5")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -65,7 +62,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.37.0-SNAPSHOT")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -79,7 +76,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.3</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseTlsAmqpConnectionStringExample</recipe>
@@ -89,7 +86,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.37.0-SNAPSHOT</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -100,6 +97,11 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Shannon Pamperl](shanman190@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

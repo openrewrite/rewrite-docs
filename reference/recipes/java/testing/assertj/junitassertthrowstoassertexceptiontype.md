@@ -6,29 +6,75 @@ _Convert `JUnit#AssertThrows` to `AssertJ#assertThatExceptionOfType` to allow fo
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/JUnitAssertThrowsToAssertExceptionType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/JUnitAssertThrowsToAssertExceptionType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
+* version: 2.0.1
 
-## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jeroen Meijer](jjgmeijer@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Tim te Beek](timtebeek@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="SimpleExpectedExceptionTest.java" %}
+
+###### Before
+{% code title="SimpleExpectedExceptionTest.java" %}
+```java
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+public class SimpleExpectedExceptionTest {
+    public void throwsExceptionWithSpecificType() {
+        assertThrows(NullPointerException.class, () -> {
+            throw new NullPointerException();
+        });
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="SimpleExpectedExceptionTest.java" %}
+```java
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
+
+public class SimpleExpectedExceptionTest {
+    public void throwsExceptionWithSpecificType() {
+        assertThatExceptionOfType(NullPointerException.class).isThrownBy(() -> {
+            throw new NullPointerException();
+        });
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- SimpleExpectedExceptionTest.java
++++ SimpleExpectedExceptionTest.java
+@@ -1,1 +1,1 @@
+-import static org.junit.jupiter.api.Assertions.assertThrows;
++import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
+@@ -5,1 +5,1 @@
+-        assertThrows(NullPointerException.class, () -> {
++        assertThatExceptionOfType(NullPointerException.class).isThrownBy(() -> {
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -40,7 +86,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -54,7 +100,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.JUnitAssertThrowsToAssertExceptionType</recipe>
@@ -64,7 +110,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -87,6 +133,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jeroen Meijer](jjgmeijer@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

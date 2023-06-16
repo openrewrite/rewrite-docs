@@ -6,16 +6,11 @@ _Replace String literal with constant, adding import on class if needed._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceStringLiteralWithConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceStringLiteralWithConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [AlexanderSkrock](alexanderskrock@gmx.de)
-* [srmalkan](smitmalkan99@gmail.com)
-* [Tim te Beek](tim@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -23,6 +18,54 @@ _Replace String literal with constant, adding import on class if needed._
 | -- | -- | -- |
 | `String` | literalValue | *Optional*. The literal that is to be replaced. If not configured, the value of the specified constant will be used by default. |
 | `String` | fullyQualifiedConstantName |  |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|literalValue|`EXAMPLE_STRING_CONSTANT`|
+|fullyQualifiedConstantName|`EXAMPLE_STRING_FQN`|
+
+
+{% tabs %}
+{% tab title="org/openrewrite/java/Test.java" %}
+
+###### Before
+{% code title="org/openrewrite/java/Test.java" %}
+```java
+package org.openrewrite.java;
+
+class Test {
+    Object o = "Hello World!";
+}
+```
+{% endcode %}
+
+###### After
+{% code title="org/openrewrite/java/Test.java" %}
+```java
+package org.openrewrite.java;
+
+class Test {
+    Object o = ReplaceStringLiteralWithConstantTest.EXAMPLE_STRING_CONSTANT;
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- org/openrewrite/java/Test.java
++++ org/openrewrite/java/Test.java
+@@ -4,1 +4,1 @@
+-    Object o = "Hello World!";
++    Object o = ReplaceStringLiteralWithConstantTest.EXAMPLE_STRING_CONSTANT;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -49,7 +92,7 @@ Now that `com.yourorg.ReplaceStringLiteralWithConstantExample` has been defined 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -71,7 +114,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceStringLiteralWithConstantExample</recipe>
@@ -85,6 +128,12 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [AlexanderSkrock](alexanderskrock@gmx.de)
+* [srmalkan](smitmalkan99@gmail.com)
+* [Tim te Beek](tim@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

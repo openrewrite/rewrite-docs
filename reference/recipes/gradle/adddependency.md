@@ -6,16 +6,11 @@ _Add a gradle dependency to a `build.gradle` file in the correct configuration b
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.40.6
-
-## Contributors
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Nick McKinney](mckinneynicholas@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -23,13 +18,23 @@ _Add a gradle dependency to a `build.gradle` file in the correct configuration b
 | -- | -- | -- |
 | `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION' |
-| `String` | version | An exact version number or node-style semver selector used to select the version number. |
+| `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example, Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `String` | configuration | *Optional*. A configuration to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a new as of yet unused dependency. |
 | `String` | onlyIfUsing | Used to determine if the dependency will be added and in which scope it should be placed. |
 | `String` | classifier | *Optional*. A classifier to add. Commonly used to select variants of a library. |
 | `String` | extension | *Optional*. The extension of the dependency to add. If omitted Gradle defaults to assuming the type is "jar". |
 | `String` | familyPattern | *Optional*. A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. |
+| `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Maven metadata failures
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
 
 
 ## Usage
@@ -54,6 +59,7 @@ recipeList:
       classifier: test
       extension: jar
       familyPattern: com.fasterxml.jackson*
+      acceptTransitive: true
 ```
 {% endcode %}
 
@@ -63,7 +69,7 @@ Now that `com.yourorg.AddDependencyExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {

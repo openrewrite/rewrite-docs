@@ -11,37 +11,22 @@ _AssertJ provides a rich set of assertions, truly helpful error messages, improv
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
-
-## Contributors
-* [Greg Adams](greg@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Jeroen Meijer](jjgmeijer@gmail.com)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [Michael Keppler](bananeweizen@gmx.de)
+* version: 2.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -53,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -67,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.JUnitToAssertj</recipe>
@@ -77,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -115,7 +100,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [JUnit `assertTrue` to AssertJ](../../../java/testing/assertj/junitasserttruetoassertthat.md)
 * [JUnit fail to AssertJ](../../../java/testing/assertj/junitfailtoassertjfail.md)
 * [JUnit AssertThrows to AssertJ exceptionType](../../../java/testing/assertj/junitassertthrowstoassertexceptiontype.md)
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.assertj`
   * artifactId: `assertj-core`
   * version: `3.x`
@@ -145,7 +130,7 @@ recipeList:
   - org.openrewrite.java.testing.assertj.JUnitAssertTrueToAssertThat
   - org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail
   - org.openrewrite.java.testing.assertj.JUnitAssertThrowsToAssertExceptionType
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.assertj
       artifactId: assertj-core
       version: 3.x
@@ -155,6 +140,19 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Greg Adams](greg@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Sam Snyder](sam@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Jeroen Meijer](jjgmeijer@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Tim te Beek](timtebeek@gmail.com)
+* [Scott Jungling](scott.jungling@gmail.com)
+* [Michael Keppler](bananeweizen@gmx.de)
+
 
 ## See how this recipe works across multiple open-source repositories
 

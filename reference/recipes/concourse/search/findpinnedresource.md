@@ -6,14 +6,11 @@ _Find resources of a particular type that have pinned versions._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/search/FindPinnedResource.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/1.19.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/search/FindPinnedResource.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 1.19.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
+* version: 2.0.1
 
 ## Options
 
@@ -21,16 +18,72 @@ _Find resources of a particular type that have pinned versions._
 | -- | -- | -- |
 | `String` | resourceType | *Optional*. The resource type to search for. Leave empty to find all pins. |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|resourceType|`git`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+resources:
+- name: git-repo
+  type: git
+  version: 1.0
+- name: git-repo2
+  type: git
+  version: 2.0
+- name: git-repo3
+  type: git
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+resources:
+- name: git-repo
+  type: git
+  ~~>version: 1.0
+- name: git-repo2
+  type: git
+  ~~>version: 2.0
+- name: git-repo3
+  type: git
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -4,1 +4,1 @@
+-  version: 1.0
++  ~~>version: 1.0
+@@ -7,1 +7,1 @@
+-  version: 2.0
++  ~~>version: 2.0
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-concourse:1.19.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-concourse:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -42,7 +95,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:1.19.0")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:2.0.1")
 }
 ```
 {% endcode %}
@@ -56,7 +109,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.concourse.search.FindPinnedResource</recipe>
@@ -66,7 +119,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>1.19.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -115,6 +168,10 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,15 +6,11 @@ _Cap resource values that exceed a specific maximum._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/CapResourceValueToMaximum.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.30.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/CapResourceValueToMaximum.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.30.0
-
-## Contributors
-* [Jon Brisbin](jon@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
+* version: 2.0.1
 
 ## Options
 
@@ -24,6 +20,68 @@ _Cap resource values that exceed a specific maximum._
 | `String` | resourceType | The type of resource value to search for. |
 | `String` | resourceLimit | The resource maximum to search for to find resources that request more than the maximum. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|resourceValueType|`limits`|
+|resourceType|`memory`|
+|resourceLimit|`64Mi`|
+|fileMatcher|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: application
+spec:
+  containers:
+  - image: nginx:latest
+    resources:
+        limits:
+            cpu: "500Mi"
+            memory: "256M"
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: application
+spec:
+  containers:
+  - image: nginx:latest
+    resources:
+        limits:
+            cpu: "500Mi"
+            memory: "67M"
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -12,1 +12,1 @@
+-            memory: "256M"
++            memory: "67M"
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -46,13 +104,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.CapResourceValueToMaximumExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.30.0 in your build file:
+Now that `com.yourorg.CapResourceValueToMaximumExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -64,7 +122,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
 }
 ```
 {% endcode %}
@@ -78,7 +136,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CapResourceValueToMaximumExample</recipe>
@@ -88,7 +146,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.30.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -99,6 +157,11 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jon Brisbin](jon@moderne.io)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

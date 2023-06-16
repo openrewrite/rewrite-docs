@@ -2,25 +2,36 @@
 
 **org.openrewrite.FindBuildToolFailures**
 
-_This recipe explores build tool failures after an AST is produced for classifying the types of failures that can occur and prioritizing fixes according to the most common problems._
+_This recipe explores build tool failures after an LST is produced for classifying the types of failures that can occur and prioritizing fixes according to the most common problems._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindBuildToolFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindBuildToolFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.40.6
-
-## Contributors
-* [Tim te Beek](tim@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `Boolean` | suppressLogOutput | *Optional*. Default false. If true, the `logOutput` column will be empty in the output table. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Build tool failures
+
+_Log output of failed build tool runs along with exit code and further diagnostics._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Type | The type of build tool that failed. |
+| Version | The version of the build tool that failed, if available. |
+| Command | The command that was executed. |
+| Exit code | The exit code of the build tool run. |
+| Required Java version | The required Java version for the build, if detectable. |
+| Log output | The log output of the build tool run. |
 
 
 ## Usage
@@ -31,7 +42,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -54,7 +65,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.FindBuildToolFailures</recipe>
@@ -78,6 +89,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tim te Beek](tim@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Mike Solomon](mike@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

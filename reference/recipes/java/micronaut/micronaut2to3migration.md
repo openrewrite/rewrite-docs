@@ -6,33 +6,22 @@ _This recipe will apply changes required for migrating from Micronaut 2 to Micro
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut2-to-3.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/1.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut2-to-3.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 1.24.0
-
-## Contributors
-* [Patrick](patway99@gmail.com)
-* [Tyler Van Gorder](1878529+tkvangorder@users.noreply.github.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* version: 2.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:1.24.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -44,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:1.24.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.0.1")
 }
 ```
 {% endcode %}
@@ -58,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.Micronaut2to3Migration</recipe>
@@ -68,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>1.24.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -343,6 +332,19 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick](patway99@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jeremy Grelle](grellej@unityfoundation.io)
+* [Tim te Beek](tim@moderne.io)
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

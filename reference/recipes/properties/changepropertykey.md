@@ -6,20 +6,11 @@ _Change a property key leaving the value intact._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 7.40.6
-
-## Example
-* Example 1: 
-
-## Contributors
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -28,8 +19,45 @@ _Change a property key leaving the value intact._
 | `String` | oldPropertyKey | The property key to rename. |
 | `String` | newPropertyKey | The new name for the key identified by `oldPropertyKey`. |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-| `Boolean` | regex | *Optional*. Default false. If enabled, `oldPropertyKey` will be interepreted as a Regular Expression, and capture group contents will be available in `newPropertyKey` |
+| `Boolean` | regex | *Optional*. Default false. If enabled, `oldPropertyKey` will be interpreted as a Regular Expression, and capture group contents will be available in `newPropertyKey` |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPropertyKey|`management.metrics.binders.files.enabled`|
+|newPropertyKey|`management.metrics.enable.process.files`|
+|relaxedBinding|`null`|
+|regex|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```properties
+management.metrics.binders.files.enabled=true```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```properties
+management.metrics.enable.process.files=true```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-management.metrics.binders.files.enabled=true
++management.metrics.enable.process.files=true
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -48,7 +76,6 @@ recipeList:
       oldPropertyKey: management.metrics.binders.files.enabled
       newPropertyKey: management.metrics.enable.process.files
       relaxedBinding: null
-      fileMatcher: '**/application-*.properties'
       regex: null
 ```
 {% endcode %}
@@ -59,7 +86,7 @@ Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -81,7 +108,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyKeyExample</recipe>
@@ -95,6 +122,13 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,14 +6,11 @@ _Alters the value of XML tags matching the provided expression._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.40.6
-
-## Contributors
-* [Mark Brophy](36955467+m-brophy@users.noreply.github.com)
+* version: 8.1.2
 
 ## Options
 
@@ -22,7 +19,6 @@ _Alters the value of XML tags matching the provided expression._
 | `String` | elementName | The name of the element whose value is to be changed. Interpreted as an XPath Expression. |
 | `String` | oldValue | *Optional*. The old value of the tag. |
 | `String` | newValue | The new value for the tag. |
-| `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. |
 
 
 ## Usage
@@ -41,7 +37,6 @@ recipeList:
       elementName: /settings/servers/server/username
       oldValue: user
       newValue: user
-      fileMatcher: '**/application-*.xml'
 ```
 {% endcode %}
 
@@ -51,7 +46,7 @@ Now that `com.yourorg.ChangeTagValueExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -73,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTagValueExample</recipe>
@@ -87,6 +82,9 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Mark Brophy](36955467+m-brophy@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

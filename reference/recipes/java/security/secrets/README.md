@@ -13,7 +13,6 @@
 * [Find MailChimp secrets](./findmailchimpsecrets.md)
 * [Find Mailgun secrets](./findmailgunsecrets.md)
 * [Find NPM secrets](./findnpmsecrets.md)
-* [Find NPM secrets](./findnpmsecrets.md)
 * [Find PGP secrets](./findpgpsecrets.md)
 * [Find PayPal secrets](./findpaypalsecrets.md)
 * [Find Picatic secrets](./findpicaticsecrets.md)

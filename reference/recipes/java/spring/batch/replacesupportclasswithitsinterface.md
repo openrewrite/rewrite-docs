@@ -6,17 +6,11 @@ _As of Spring-Batch 5.0 Listeners has default methods (made possible by a Java 8
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/ReplaceSupportClassWithItsInterface.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/ReplaceSupportClassWithItsInterface.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [pdesprez](35764353+desprez@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
+* version: 5.0.1
 
 ## Options
 
@@ -24,6 +18,57 @@ _As of Spring-Batch 5.0 Listeners has default methods (made possible by a Java 8
 | -- | -- | -- |
 | `String` | fullyQualifiedClassName | A fully-qualified class name to be replaced. |
 | `String` | fullyQualifiedInterfaceName | A fully-qualified Interface name to replace by. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|fullyQualifiedClassName|`org.springframework.batch.core.listener.ChunkListenerSupport`|
+|fullyQualifiedInterfaceName|`org.springframework.batch.core.ChunkListener`|
+
+
+{% tabs %}
+{% tab title="MyClass.java" %}
+
+###### Before
+{% code title="MyClass.java" %}
+```java
+import org.springframework.batch.core.listener.ChunkListenerSupport;
+
+public class MyClass extends ChunkListenerSupport {
+
+}
+```
+{% endcode %}
+
+###### After
+{% code title="MyClass.java" %}
+```java
+import org.springframework.batch.core.ChunkListener;
+
+public class MyClass implements ChunkListener {
+
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- MyClass.java
++++ MyClass.java
+@@ -1,1 +1,1 @@
+-import org.springframework.batch.core.listener.ChunkListenerSupport;
++import org.springframework.batch.core.ChunkListener;
+@@ -3,1 +3,1 @@
+-public class MyClass extends ChunkListenerSupport {
++public class MyClass implements ChunkListener {
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -44,13 +89,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ReplaceSupportClassWithItsInterfaceExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.36.0 in your build file:
+Now that `com.yourorg.ReplaceSupportClassWithItsInterfaceExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -62,7 +107,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -76,7 +121,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceSupportClassWithItsInterfaceExample</recipe>
@@ -86,7 +131,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -97,6 +142,13 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [pdesprez](35764353+desprez@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

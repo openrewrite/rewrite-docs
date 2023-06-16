@@ -11,18 +11,97 @@ _Removes unnecessary parentheses from code where extra parentheses pairs are red
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/UnnecessaryParentheses.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/UnnecessaryParentheses.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
+* version: 8.1.2
 
-## Contributors
-* [Aaron Gershman](aegershman@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Greg Adams](greg@moderne.io)
-* [Patrick](patway99@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import java.util.*;
+
+class Test {
+    int square(int a, int b) {
+        int square = (a * b);
+
+        int sumOfSquares = 0;
+        for (int i = (0); i < 10; i++) {
+            sumOfSquares += (square(i * i, i));
+        }
+        double num = (10.0);
+
+        List<String> list = Arrays.asList("a1", "b1", "c1");
+        list.stream()
+                .filter((s) -> s.startsWith("c"))
+                .forEach(System.out::println);
+
+        return (square);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import java.util.*;
+
+class Test {
+    int square(int a, int b) {
+        int square = a * b;
+
+        int sumOfSquares = 0;
+        for (int i = 0; i < 10; i++) {
+            sumOfSquares += square(i * i, i);
+        }
+        double num = 10.0;
+
+        List<String> list = Arrays.asList("a1", "b1", "c1");
+        list.stream()
+                .filter(s -> s.startsWith("c"))
+                .forEach(System.out::println);
+
+        return square;
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -5,1 +5,1 @@
+-        int square = (a * b);
++        int square = a * b;
+@@ -8,2 +8,2 @@
+-        for (int i = (0); i < 10; i++) {
+            sumOfSquares += (square(i * i, i));
++        for (int i = 0; i < 10; i++) {
+            sumOfSquares += square(i * i, i);
+@@ -11,1 +11,1 @@
+-        double num = (10.0);
++        double num = 10.0;
+@@ -15,1 +15,1 @@
+-                .filter((s) -> s.startsWith("c"))
++                .filter(s -> s.startsWith("c"))
+@@ -18,1 +18,1 @@
+-        return (square);
++        return square;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -33,7 +112,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -56,7 +135,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.UnnecessaryParentheses</recipe>
@@ -80,6 +159,14 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

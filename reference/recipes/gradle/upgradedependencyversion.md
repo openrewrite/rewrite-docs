@@ -3,20 +3,17 @@
 **org.openrewrite.gradle.UpgradeDependencyVersion**
 
 _Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:
-* `String` notation:  `implementation "group:artifact:version"` 
-* `Map` notation: `implementation group: 'group', name: 'artifact', version: 'version'`
+* `String` notation: `"group:artifact:version"` 
+* `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
 Can update version numbers which are defined earlier in the same file in variable declarations._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.40.6
-
-## Contributors
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -26,6 +23,85 @@ Can update version numbers which are defined earlier in the same file in variabl
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Maven metadata failures
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`com.google.guava`|
+|artifactId|`guava`|
+|newVersion|`30.x`|
+|versionPattern|`-jre`|
+
+
+{% tabs %}
+{% tab title="build.gradle" %}
+
+###### Before
+{% code title="build.gradle" %}
+```groovy
+plugins {
+  id 'java-library'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly 'com.google.guava:guava:29.0-jre'
+  runtimeOnly ('com.google.guava:guava:29.0-jre') {
+      force = true
+  }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="build.gradle" %}
+```groovy
+plugins {
+  id 'java-library'
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly 'com.google.guava:guava:30.1.1-jre'
+  runtimeOnly ('com.google.guava:guava:30.1.1-jre') {
+      force = true
+  }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,2 +10,2 @@
+-  compileOnly 'com.google.guava:guava:29.0-jre'
+  runtimeOnly ('com.google.guava:guava:29.0-jre') {
++  compileOnly 'com.google.guava:guava:30.1.1-jre'
+  runtimeOnly ('com.google.guava:guava:30.1.1-jre') {
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -54,7 +130,7 @@ Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -69,6 +145,12 @@ repositories {
 {% endtab %}
 
 {% endtabs %}
+## Contributors
+* [Sam Snyder](sam@moderne.io)
+* [Geoffrey De Smet](gds.geoffrey.de.smet@gmail.com)
+* [Shannon Pamperl](shanman190@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 
