@@ -93,8 +93,11 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -10,1 +10,1 @@
--                <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
-+                <artifactId>quarkus-extension-maven-plugin</artifactId>
+            <plugin>
+                <groupId>io.quarkus</groupId>
+-               <artifactId>quarkus-bootstrap-maven-plugin</artifactId>
++               <artifactId>quarkus-extension-maven-plugin</artifactId>
+                <version>3.0.0.Beta1</version>
 ```
 {% endcode %}
 {% endtab %}

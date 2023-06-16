@@ -79,8 +79,11 @@ class SecurityConfig {
 --- com/example/SecurityConfig.java
 +++ com/example/SecurityConfig.java
 @@ -15,1 +15,1 @@
--                .antMatcher("/static/**")
-+                .securityMatcher("/static/**")
+    SecurityFilterChain securityFilterChain(HttpSecurity http) {
+        http
+-               .antMatcher("/static/**")
++               .securityMatcher("/static/**")
+                .authorizeHttpRequests((authz) -> authz
 ```
 {% endcode %}
 {% endtab %}

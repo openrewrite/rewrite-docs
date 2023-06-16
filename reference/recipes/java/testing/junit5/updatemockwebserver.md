@@ -56,19 +56,27 @@ class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -2,1 +2,4 @@
+import okhttp3.mockwebserver.MockWebServer;
 -import org.junit.Rule;
 +import org.junit.jupiter.api.AfterEach;
-
-import java.io.IOException;
-
-@@ -4,1 +7,0 @@
--    @Rule
-@@ -6,0 +8,5 @@
 +
-    @AfterEach
-    void afterEachTest() throws IOException {
-        server.close();
-    }
++import java.io.IOException;
++
+class MyTest {
+@@ -4,1 +7,0 @@
+import org.junit.Rule;
+class MyTest {
+-   @Rule
+    public MockWebServer server = new MockWebServer();
+@@ -6,0 +8,5 @@
+    @Rule
+    public MockWebServer server = new MockWebServer();
++
++   @AfterEach
++   void afterEachTest() throws IOException {
++       server.close();
++   }
+}
 ```
 {% endcode %}
 {% endtab %}

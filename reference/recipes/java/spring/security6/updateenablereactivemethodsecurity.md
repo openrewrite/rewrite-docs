@@ -47,8 +47,11 @@ class SecurityConfig {
 --- SecurityConfig.java
 +++ SecurityConfig.java
 @@ -3,1 +3,1 @@
+import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
+
 -@EnableReactiveMethodSecurity(useAuthorizationManager = true)
 +@EnableReactiveMethodSecurity
+class SecurityConfig {
 ```
 {% endcode %}
 {% endtab %}

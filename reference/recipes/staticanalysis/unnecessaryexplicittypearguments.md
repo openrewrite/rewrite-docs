@@ -59,11 +59,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        String s = this.<String>test();
-+        String s = this.test();
+class Test {
+    <T> T test() {
+-       String s = this.<String>test();
++       String s = this.test();
+        Object o = this.<String>test();
 @@ -5,1 +5,1 @@
--        return this.<T>test();
-+        return this.test();
+        String s = this.<String>test();
+        Object o = this.<String>test();
+-       return this.<T>test();
++       return this.test();
+    }
 ```
 {% endcode %}
 {% endtab %}

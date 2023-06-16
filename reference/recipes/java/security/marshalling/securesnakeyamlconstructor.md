@@ -48,10 +48,15 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,0 +2,1 @@
+import org.yaml.snakeyaml.Yaml;
 +import org.yaml.snakeyaml.constructor.SafeConstructor;
+
 @@ -4,1 +5,1 @@
--    Object o = new Yaml();
-+    Object o = new Yaml(new SafeConstructor());
+
+class Test {
+-   Object o = new Yaml();
++   Object o = new Yaml(new SafeConstructor());
+}
 ```
 {% endcode %}
 {% endtab %}

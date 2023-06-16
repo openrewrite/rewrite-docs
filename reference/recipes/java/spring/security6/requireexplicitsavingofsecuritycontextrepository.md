@@ -60,7 +60,10 @@ class T {
 --- T.java
 +++ T.java
 @@ -7,1 +7,0 @@
--                .requireExplicitSave(true)
+    public SecurityFilterChain chain(HttpSecurity http) {
+        http.securityContext((securityContext) -> securityContext
+-               .requireExplicitSave(true)
+                .requireExplicitSave(false)
 ```
 {% endcode %}
 {% endtab %}

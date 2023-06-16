@@ -77,8 +77,11 @@ class SecurityConfig {
 --- com/example/SecurityConfig.java
 +++ com/example/SecurityConfig.java
 @@ -16,1 +16,1 @@
--                        .mvcMatchers("/static/**").permitAll()
-+                        .requestMatchers("/static/**").permitAll()
+        http
+                .authorizeHttpRequests((authz) -> authz
+-                       .mvcMatchers("/static/**").permitAll()
++                       .requestMatchers("/static/**").permitAll()
+                );
 ```
 {% endcode %}
 {% endtab %}

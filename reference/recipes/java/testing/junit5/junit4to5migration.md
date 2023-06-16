@@ -103,16 +103,25 @@ public class MockitoTests {
 --- org/openrewrite/java/testing/junit5/MockitoTests.java
 +++ org/openrewrite/java/testing/junit5/MockitoTests.java
 @@ -3,2 +3,2 @@
+package org.openrewrite.java.testing.junit5;
+
 -import org.junit.Before;
-import org.junit.Test;
+-import org.junit.Test;
 +import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 @@ -16,1 +16,1 @@
--    @Before
-+    @BeforeEach
+    List<String> mockedList;
+
+-   @Before
++   @BeforeEach
+    public void initMocks() {
 @@ -22,1 +22,1 @@
--    public void usingAnnotationBasedMock() {
-+    void usingAnnotationBasedMock() {
+
+    @Test
+-   public void usingAnnotationBasedMock() {
++   void usingAnnotationBasedMock() {
+
 ```
 {% endcode %}
 {% endtab %}
@@ -205,16 +214,25 @@ public class MockitoTests {
 --- org/openrewrite/java/testing/junit5/MockitoTests.java
 +++ org/openrewrite/java/testing/junit5/MockitoTests.java
 @@ -3,2 +3,2 @@
+package org.openrewrite.java.testing.junit5;
+
 -import org.junit.Before;
-import org.junit.Test;
+-import org.junit.Test;
 +import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 @@ -16,1 +16,1 @@
--    @Before
-+    @BeforeEach
+    List<String> mockedList;
+
+-   @Before
++   @BeforeEach
+    public void initMocks() {
 @@ -22,1 +22,1 @@
--    public void usingAnnotationBasedMock() {
-+    void usingAnnotationBasedMock() {
+
+    @Test
+-   public void usingAnnotationBasedMock() {
++   void usingAnnotationBasedMock() {
+
 ```
 {% endcode %}
 {% endtab %}

@@ -88,12 +88,15 @@ _Removes a single dependency from the <dependencies> section of the pom.xml._
 --- pom.xml
 +++ pom.xml
 @@ -14,6 +14,0 @@
--    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
+      <version>29.0-jre</version>
     </dependency>
+-   <dependency>
+-     <groupId>junit</groupId>
+-     <artifactId>junit</artifactId>
+-     <version>4.13.1</version>
+-     <scope>test</scope>
+-   </dependency>
+  </dependencies>
 ```
 {% endcode %}
 {% endtab %}

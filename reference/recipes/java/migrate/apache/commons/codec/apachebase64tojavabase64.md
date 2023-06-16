@@ -88,24 +88,43 @@ class Test {
 @@ -1,1 +1,1 @@
 -import org.apache.commons.codec.binary.Base64;
 +import java.util.Base64;
+
 @@ -5,1 +5,1 @@
--        return Base64.decodeBase64(encodedBytes);
-+        return Base64.getDecoder().decode(encodedBytes);
+class Test {
+    static byte[] decodeBytes(byte[] encodedBytes) {
+-       return Base64.decodeBase64(encodedBytes);
++       return Base64.getDecoder().decode(encodedBytes);
+    }
 @@ -8,1 +8,1 @@
--        return Base64.decodeBase64(encodedString);
-+        return Base64.getDecoder().decode(encodedString);
+    }
+    static byte[] decodeToBytes(String encodedString) {
+-       return Base64.decodeBase64(encodedString);
++       return Base64.getDecoder().decode(encodedString);
+    }
 @@ -11,1 +11,1 @@
--        return Base64.encodeBase64String(decodedByteArr);
-+        return Base64.getEncoder().encodeToString(decodedByteArr);
+    }
+    static String encodeToString(byte[] decodedByteArr) {
+-       return Base64.encodeBase64String(decodedByteArr);
++       return Base64.getEncoder().encodeToString(decodedByteArr);
+    }
 @@ -14,1 +14,1 @@
--        return Base64.encodeBase64(binaryData);
-+        return Base64.getEncoder().encode(binaryData);
+    }
+    static byte[] encodeBase64(byte[] binaryData) {
+-       return Base64.encodeBase64(binaryData);
++       return Base64.getEncoder().encode(binaryData);
+    }
 @@ -17,1 +17,1 @@
--        return Base64.encodeBase64URLSafe(encodeBytes);
-+        return Base64.getUrlEncoder().withoutPadding().encode(encodeBytes);
+    }
+    static byte[] encodeBytesUrlSafe(byte [] encodeBytes) {
+-       return Base64.encodeBase64URLSafe(encodeBytes);
++       return Base64.getUrlEncoder().withoutPadding().encode(encodeBytes);
+    }
 @@ -20,1 +20,1 @@
--        return Base64.encodeBase64URLSafeString(encodeBytes);
-+        return Base64.getUrlEncoder().withoutPadding().encodeToString(encodeBytes);
+    }
+    static String encodeBytesUrlSafeString(byte [] encodeBytes) {
+-       return Base64.encodeBase64URLSafeString(encodeBytes);
++       return Base64.getUrlEncoder().withoutPadding().encodeToString(encodeBytes);
+    }
 ```
 {% endcode %}
 {% endtab %}

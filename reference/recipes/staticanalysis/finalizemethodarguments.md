@@ -53,8 +53,11 @@ _Adds the `final` modifier keyword to method parameters._
 --- TestClass.java
 +++ TestClass.java
 @@ -5,1 +5,1 @@
--        private void getAccaCouponData(String responsiveRequestConfig, String card) {
-+        private void getAccaCouponData(final String responsiveRequestConfig, final String card) {
+    class TestClass {
+
+-       private void getAccaCouponData(String responsiveRequestConfig, String card) {
++       private void getAccaCouponData(final String responsiveRequestConfig, final String card) {
+
 ```
 {% endcode %}
 {% endtab %}

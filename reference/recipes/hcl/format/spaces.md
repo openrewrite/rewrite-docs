@@ -43,10 +43,12 @@ resource "aws_ebs_volume" {
 {% code %}
 ```diff
 @@ -2,2 +2,2 @@
--  size =1
-  encrypted =true
-+  size      = 1
-  encrypted = true
+resource "aws_ebs_volume" {
+- size =1
+- encrypted =true
++ size      = 1
++ encrypted = true
+}
 ```
 {% endcode %}
 {% endtab %}

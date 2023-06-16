@@ -71,14 +71,23 @@ class A {
 --- A.java
 +++ A.java
 @@ -7,1 +7,1 @@
--        return i1.equals(i2);
-+        return i1.get() == i2.get();
+class A {
+    boolean areEqual(AtomicInteger i1, AtomicInteger i2) {
+-       return i1.equals(i2);
++       return i1.get() == i2.get();
+    }
 @@ -10,1 +10,1 @@
--        return l1.equals(l2);
-+        return l1.get() == l2.get();
+    }
+    boolean areEqual(AtomicLong l1, AtomicLong l2) {
+-       return l1.equals(l2);
++       return l1.get() == l2.get();
+    }
 @@ -13,1 +13,1 @@
--        return b1.equals(b2);
-+        return b1.get() == b2.get();
+    }
+    boolean areEqual(AtomicBoolean b1, AtomicBoolean b2) {
+-       return b1.equals(b2);
++       return b1.get() == b2.get();
+    }
 ```
 {% endcode %}
 {% endtab %}

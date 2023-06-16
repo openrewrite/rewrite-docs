@@ -52,12 +52,16 @@ class Test {
 +++ Test.java
 @@ -1,1 +1,0 @@
 -import java.util.HashMap;
+import java.util.Map;
 @@ -5,4 +4,1 @@
--    Map<String, String> m = new HashMap<>() {{
-        put("stru", "menta");
-        put("mod", "erne");
-    }};
-+    Map<String, String> m = Map.of("stru", "menta", "mod", "erne");
+
+class Test {
+-   Map<String, String> m = new HashMap<>() {{
+-       put("stru", "menta");
+-       put("mod", "erne");
+-   }};
++   Map<String, String> m = Map.of("stru", "menta", "mod", "erne");
+}
 ```
 {% endcode %}
 {% endtab %}

@@ -51,8 +51,11 @@ class A {
 --- A.java
 +++ A.java
 @@ -5,1 +5,1 @@
--        EmbeddedDatabaseConnection edbc = EmbeddedDatabaseConnection.HSQL;
-+        EmbeddedDatabaseConnection edbc = EmbeddedDatabaseConnection.HSQLDB;
+class A {
+    void method() {
+-       EmbeddedDatabaseConnection edbc = EmbeddedDatabaseConnection.HSQL;
++       EmbeddedDatabaseConnection edbc = EmbeddedDatabaseConnection.HSQLDB;
+    }
 ```
 {% endcode %}
 {% endtab %}

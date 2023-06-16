@@ -88,12 +88,15 @@ _Apply the specified executions to a Maven plugin. Will not add the plugin if it
 --- pom.xml
 +++ pom.xml
 @@ -12,6 +12,0 @@
--                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals><goal>dryRun</goal></goals>
-                    </execution>
-                </executions>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>4.1.5</version>
+-               <executions>
+-                   <execution>
+-                       <phase>validate</phase>
+-                       <goals><goal>dryRun</goal></goals>
+-                   </execution>
+-               </executions>
+            </plugin>
 ```
 {% endcode %}
 {% endtab %}

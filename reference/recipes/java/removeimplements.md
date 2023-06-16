@@ -57,9 +57,10 @@ class A {
 +++ A.java
 @@ -1,3 +1,1 @@
 -import java.io.Serializable;
-
-class A implements Serializable {
+-
+-class A implements Serializable {
 +class A {
+}
 ```
 {% endcode %}
 {% endtab %}

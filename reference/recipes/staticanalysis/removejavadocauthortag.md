@@ -48,7 +48,10 @@ class Test {}
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,0 @@
-- * @author fname.lname, fname.lname
+ * Java doc text.
+ *
+-* @author fname.lname, fname.lname
+ */
 ```
 {% endcode %}
 {% endtab %}

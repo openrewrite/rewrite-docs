@@ -80,7 +80,10 @@ _Jetty does not yet support Servlet 6.0. This recipe will detect the presence of
 --- pom.xml
 +++ pom.xml
 @@ -9,0 +9,1 @@
-+    <jakarta-servlet.version>5.0.0</jakarta-servlet.version>
+  <description>Demo project for Spring Boot</description>
+  <properties>
++   <jakarta-servlet.version>5.0.0</jakarta-servlet.version>
+    <java.version>17</java.version>
 ```
 {% endcode %}
 {% endtab %}

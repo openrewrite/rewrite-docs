@@ -87,11 +87,14 @@ _Removes a single managed dependency from the <dependencyManagement><dependencie
 --- pom.xml
 +++ pom.xml
 @@ -9,5 +9,0 @@
--                <groupId>javax.activation</groupId>
-                <artifactId>javax.activation-api</artifactId>
-                <version>1.2.0</version>
-            </dependency>
+        <dependencies>
             <dependency>
+-               <groupId>javax.activation</groupId>
+-               <artifactId>javax.activation-api</artifactId>
+-               <version>1.2.0</version>
+-           </dependency>
+-           <dependency>
+                <groupId>jakarta.activation</groupId>
 ```
 {% endcode %}
 {% endtab %}

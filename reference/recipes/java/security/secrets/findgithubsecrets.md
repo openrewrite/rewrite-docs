@@ -54,8 +54,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        String secret = "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";
-+        String secret = /*~~(GitHub)~~>*/"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";
+class Test {
+    void githubTest() {
+-       String secret = "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";
++       String secret = /*~~(GitHub)~~>*/"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";
+        String notSecret = "foo_wWPw5k4aXcaT4fNP0UcnZwJUVFk6LO0pINUx";
 ```
 {% endcode %}
 {% endtab %}
@@ -100,8 +103,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        String secret = "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";
-+        String secret = /*~~(GitHub)~~>*/"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";
+class Test {
+    void githubTest() {
+-       String secret = "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";
++       String secret = /*~~(GitHub)~~>*/"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";
+        String notSecret = "foo_wWPw5k4aXcaT4fNP0UcnZwJUVFk6LO0pINUx";
 ```
 {% endcode %}
 {% endtab %}

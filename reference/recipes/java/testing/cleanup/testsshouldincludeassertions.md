@@ -73,16 +73,21 @@ public class AaTest {
 --- AaTest.java
 +++ AaTest.java
 @@ -2,0 +2,3 @@
+import org.junit.jupiter.api.Test;
 +
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-
++import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
++
+public class AaTest {
 @@ -5,2 +8,4 @@
--        Integer it = Integer.valueOf("2");
-        System.out.println(it);
-+        assertDoesNotThrow(() -> {
-            Integer it = Integer.valueOf("2");
-            System.out.println(it);
-        });
+    @Test
+    public void methodTest() {
+-       Integer it = Integer.valueOf("2");
+-       System.out.println(it);
++       assertDoesNotThrow(() -> {
++           Integer it = Integer.valueOf("2");
++           System.out.println(it);
++       });
+    }
 ```
 {% endcode %}
 {% endtab %}

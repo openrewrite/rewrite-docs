@@ -59,13 +59,17 @@ class Example {
 @@ -1,1 +1,1 @@
 -import org.junit.Before;
 +import org.junit.jupiter.api.BeforeEach;
+
 @@ -3,3 +3,3 @@
+import org.junit.Before;
+
 -public class Example {
-    @Before
-    public void initialize() {
+-   @Before
+-   public void initialize() {
 +class Example {
-    @BeforeEach
-    void initialize() {
++   @BeforeEach
++   void initialize() {
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -114,13 +118,17 @@ class Example {
 @@ -1,1 +1,1 @@
 -import org.junit.Before;
 +import org.junit.jupiter.api.BeforeEach;
+
 @@ -3,3 +3,3 @@
+import org.junit.Before;
+
 -public class Example {
-    @Before
-    public void initialize() {
+-   @Before
+-   public void initialize() {
 +class Example {
-    @BeforeEach
-    void initialize() {
++   @BeforeEach
++   void initialize() {
+    }
 ```
 {% endcode %}
 {% endtab %}

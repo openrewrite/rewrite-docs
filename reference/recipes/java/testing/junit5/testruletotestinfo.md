@@ -75,30 +75,43 @@ public class SomeTest {
 +++ SomeTest.java
 @@ -1,2 +1,2 @@
 -import org.junit.Rule;
-import org.junit.rules.TestName;
+-import org.junit.rules.TestName;
 +import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.TestInfo;
-@@ -4,0 +4,3 @@
-+import java.lang.reflect.Method;
-import java.util.Optional;
++import org.junit.jupiter.api.TestInfo;
 
-@@ -5,2 +8,2 @@
--    @Rule
-    public TestName name = new TestName();
-+    
-    public String name;
-@@ -8,1 +11,1 @@
--        return name.getMethodName();
-+        return name;
-@@ -13,0 +16,8 @@
+@@ -4,0 +4,3 @@
+import org.junit.rules.TestName;
+
++import java.lang.reflect.Method;
++import java.util.Optional;
 +
-    @BeforeEach
-    public void setup(TestInfo testInfo) {
-        Optional<Method> testMethod = testInfo.getTestMethod();
-        if (testMethod.isPresent()) {
-            this.name = testMethod.get().getName();
-        }
+public class SomeTest {
+@@ -5,2 +8,2 @@
+
+public class SomeTest {
+-   @Rule
+-   public TestName name = new TestName();
++   
++   public String name;
+    protected String randomName() {
+@@ -8,1 +11,1 @@
+    public TestName name = new TestName();
+    protected String randomName() {
+-       return name.getMethodName();
++       return name;
     }
+@@ -13,0 +16,8 @@
+    private static class SomeInnerClass {
+    }
++
++   @BeforeEach
++   public void setup(TestInfo testInfo) {
++       Optional<Method> testMethod = testInfo.getTestMethod();
++       if (testMethod.isPresent()) {
++           this.name = testMethod.get().getName();
++       }
++   }
+}
 ```
 {% endcode %}
 {% endtab %}

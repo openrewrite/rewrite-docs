@@ -68,7 +68,10 @@ public class A {
 --- A.java
 +++ A.java
 @@ -12,1 +12,0 @@
--            a.finalize();
+            A a = new A();
+            System.out.println("Clean object");
+-           a.finalize();
+        }
 ```
 {% endcode %}
 {% endtab %}

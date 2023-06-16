@@ -55,11 +55,15 @@ class Test {
 +++ Test.java
 @@ -1,2 +1,1 @@
 -import com.google.common.collect.*;
-
+-
 +import java.util.HashSet;
+import java.util.Set;
 @@ -6,1 +5,1 @@
--    Set<Integer> cardinalsWorldSeries = Sets.newHashSet();
-+    Set<Integer> cardinalsWorldSeries = new HashSet<>();
+
+class Test {
+-   Set<Integer> cardinalsWorldSeries = Sets.newHashSet();
++   Set<Integer> cardinalsWorldSeries = new HashSet<>();
+}
 ```
 {% endcode %}
 {% endtab %}

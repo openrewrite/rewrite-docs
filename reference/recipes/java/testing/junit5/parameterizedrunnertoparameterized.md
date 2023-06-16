@@ -108,25 +108,38 @@ public class VetTests {
 +++ VetTests.java
 @@ -1,4 +1,2 @@
 -import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+-import org.junit.runner.RunWith;
+-import org.junit.runners.Parameterized;
+-import org.junit.runners.Parameterized.Parameters;
 +import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
++import org.junit.jupiter.params.provider.MethodSource;
+
 @@ -9,1 +7,0 @@
+import java.util.List;
+
 -@RunWith(Parameterized.class)
+public class VetTests {
 @@ -16,1 +13,1 @@
--    public VetTests(String firstName, String lastName, Integer id) {
-+    public void initVetTests(String firstName, String lastName, Integer id) {
+    private Integer id;
+
+-   public VetTests(String firstName, String lastName, Integer id) {
++   public void initVetTests(String firstName, String lastName, Integer id) {
+        this.firstName = firstName;
 @@ -22,2 +19,4 @@
--    @Test
-    public void testSerialization() {
-+    @MethodSource("parameters")
-    @ParameterizedTest
-    public void testSerialization(String firstName, String lastName, Integer id) {
-        initVetTests(firstName, lastName, id);
+    }
+
+-   @Test
+-   public void testSerialization() {
++   @MethodSource("parameters")
++   @ParameterizedTest
++   public void testSerialization(String firstName, String lastName, Integer id) {
++       initVetTests(firstName, lastName, id);
+        Vet vet = new Vet();
 @@ -30,1 +29,0 @@
--    @Parameters
+    }
+
+-   @Parameters
+    public static List<Object[]> parameters() {
 ```
 {% endcode %}
 {% endtab %}

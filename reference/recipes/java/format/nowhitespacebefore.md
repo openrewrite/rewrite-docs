@@ -54,11 +54,14 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -5,3 +5,2 @@
--        new Test()
-                .m = 2;
-        new Test() .m = 2;
-+        new Test().m = 2;
-        new Test().m = 2;
+
+    static void method() {
+-       new Test()
+-               .m = 2;
+-       new Test() .m = 2;
++       new Test().m = 2;
++       new Test().m = 2;
+    }
 ```
 {% endcode %}
 {% endtab %}

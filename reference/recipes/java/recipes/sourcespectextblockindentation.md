@@ -77,19 +77,25 @@ class MyRecipeTest implements RewriteTest {
 --- MyRecipeTest.java
 +++ MyRecipeTest.java
 @@ -9,1 +9,1 @@
--               class Test {
-+             class Test {
+         text(
+           """
+-              class Test {
++            class Test {
+ 
 @@ -11,5 +11,5 @@
--                   
-                   void test() {
-                       System.out.println("Hello, world!");
-                   }
-               }
-+                 
-                 void test() {
-                     System.out.println("Hello, world!");
-                 }
-             }
+               class Test {
+ 
+-                  
+-                  void test() {
+-                      System.out.println("Hello, world!");
+-                  }
+-              }
++                
++                void test() {
++                    System.out.println("Hello, world!");
++                }
++            }
+             """
 ```
 {% endcode %}
 {% endtab %}

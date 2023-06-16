@@ -50,9 +50,13 @@ _These files are used to suppress false positives in OWASP [Dependency Check](ht
 --- suppressions.xml
 +++ suppressions.xml
 @@ -2,1 +2,1 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 -<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
 +<!--~~(Found it)~~>--><suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress>
 @@ -8,0 +8,1 @@
+    </suppress>
+</suppressions>
 +
 ```
 {% endcode %}

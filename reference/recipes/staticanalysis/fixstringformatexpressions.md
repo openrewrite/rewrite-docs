@@ -53,10 +53,13 @@ class T {
 --- T.java
 +++ T.java
 @@ -3,2 +3,2 @@
--        String s = String.format("hello world\n%s", "again");
-        String s2 = "hello world\n%s".formatted("again");
-+        String s = String.format("hello world%n%s", "again");
-        String s2 = "hello world%n%s".formatted("again");
+class T {
+    static {
+-       String s = String.format("hello world\n%s", "again");
+-       String s2 = "hello world\n%s".formatted("again");
++       String s = String.format("hello world%n%s", "again");
++       String s2 = "hello world%n%s".formatted("again");
+    }
 ```
 {% endcode %}
 {% endtab %}

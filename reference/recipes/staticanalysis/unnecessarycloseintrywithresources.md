@@ -62,7 +62,10 @@ class A {
 --- A.java
 +++ A.java
 @@ -8,1 +8,0 @@
--            scanner.close();
+        try (FileWriter fileWriter = new FileWriter("test"); Scanner scanner = new Scanner("abc")) {
+            fileWriter.write('c');
+-           scanner.close();
+        }
 ```
 {% endcode %}
 {% endtab %}

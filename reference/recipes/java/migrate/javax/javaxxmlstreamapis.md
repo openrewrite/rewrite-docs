@@ -52,8 +52,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -5,1 +5,1 @@
--        XMLEventFactory eventFactory = XMLEventFactory.newInstance("test", Test.class.getClassLoader());
-+        XMLEventFactory eventFactory = XMLEventFactory.newFactory("test", Test.class.getClassLoader());
+public class Test {
+    public void method() {
+-       XMLEventFactory eventFactory = XMLEventFactory.newInstance("test", Test.class.getClassLoader());
++       XMLEventFactory eventFactory = XMLEventFactory.newFactory("test", Test.class.getClassLoader());
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -100,8 +103,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -5,1 +5,1 @@
--        XMLEventFactory eventFactory = XMLEventFactory.newInstance("test", Test.class.getClassLoader());
-+        XMLEventFactory eventFactory = XMLEventFactory.newFactory("test", Test.class.getClassLoader());
+public class Test {
+    public void method() {
+-       XMLEventFactory eventFactory = XMLEventFactory.newInstance("test", Test.class.getClassLoader());
++       XMLEventFactory eventFactory = XMLEventFactory.newFactory("test", Test.class.getClassLoader());
+    }
 ```
 {% endcode %}
 {% endtab %}

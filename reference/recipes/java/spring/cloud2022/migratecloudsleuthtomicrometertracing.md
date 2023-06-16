@@ -74,6 +74,7 @@ public class SessionInfoOperator {
 @@ -1,1 +1,1 @@
 -import org.springframework.cloud.sleuth.Tracer;
 +import io.micrometer.tracing.Tracer;
+
 ```
 {% endcode %}
 {% endtab %}
@@ -134,6 +135,7 @@ public class SessionInfoOperator {
 @@ -1,1 +1,1 @@
 -import org.springframework.cloud.sleuth.Tracer;
 +import io.micrometer.tracing.Tracer;
+
 ```
 {% endcode %}
 {% endtab %}

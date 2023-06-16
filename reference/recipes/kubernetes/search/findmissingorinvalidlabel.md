@@ -104,11 +104,17 @@ spec:
 {% code %}
 ```diff
 @@ -5,1 +5,1 @@
--  labels:
-+  ~~(missing:mylabel)~~>labels:
+metadata:
+  name: mypod1
+- labels:
++ ~~(missing:mylabel)~~>labels:
+    something: "hasvalue"
 @@ -21,1 +21,1 @@
--                labels:
-+                ~~(missing:mylabel)~~>labels:
+        spec:
+            metadata:
+-               labels:
++               ~~(missing:mylabel)~~>labels:
+                    something: "hasvalue"
 ```
 {% endcode %}
 {% endtab %}

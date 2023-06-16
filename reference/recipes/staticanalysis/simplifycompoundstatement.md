@@ -48,7 +48,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,0 @@
--        b &= true;
+    void test() {
+        boolean b = true;
+-       b &= true;
+    }
 ```
 {% endcode %}
 {% endtab %}

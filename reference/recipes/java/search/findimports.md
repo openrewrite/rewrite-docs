@@ -56,6 +56,7 @@ class Test {
 @@ -1,1 +1,1 @@
 -import java.util.concurrent.atomic.AtomicBoolean;
 +/*~~>*/import java.util.concurrent.atomic.AtomicBoolean;
+class Test {
 ```
 {% endcode %}
 {% endtab %}

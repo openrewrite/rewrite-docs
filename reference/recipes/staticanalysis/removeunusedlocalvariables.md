@@ -65,7 +65,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,0 @@
--        int b = 0;
+    static int method(int x) {
+        int a = 0;
+-       int b = 0;
+        return a;
 ```
 {% endcode %}
 {% endtab %}

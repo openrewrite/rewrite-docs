@@ -57,8 +57,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -6,2 +6,0 @@
--        r.setSeed(System.currentTimeMillis());
-        r.setSeed(System.nanoTime());
+    void test(byte[] bytes) {
+        SecureRandom r = new SecureRandom();
+-       r.setSeed(System.currentTimeMillis());
+-       r.setSeed(System.nanoTime());
+    }
 ```
 {% endcode %}
 {% endtab %}

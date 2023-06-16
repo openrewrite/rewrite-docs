@@ -55,8 +55,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -4,1 +4,1 @@
--        if(true == a) {
-+        if(a) {
+    boolean a;
+    {
+-       if(true == a) {
++       if(a) {
+        }
 ```
 {% endcode %}
 {% endtab %}

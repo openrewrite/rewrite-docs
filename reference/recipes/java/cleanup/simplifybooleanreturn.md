@@ -69,19 +69,25 @@ public class A {
 --- A.java
 +++ A.java
 @@ -3,4 +3,1 @@
--        if (isOddMillis()) {
-            return true;
-        }
-        return false;
-+        return isOddMillis();
+public class A {
+    boolean ifNoElse() {
+-       if (isOddMillis()) {
+-           return true;
+-       }
+-       return false;
++       return isOddMillis();
+    }
 @@ -11,6 +8,1 @@
--        if (even == true) {
-            return false;
-        }
-        else {
-            return true;
-        }
-+        return !(even == true);
+    static boolean isOddMillis() {
+        boolean even = System.currentTimeMillis() % 2 == 0;
+-       if (even == true) {
+-           return false;
+-       }
+-       else {
+-           return true;
+-       }
++       return !(even == true);
+    }
 ```
 {% endcode %}
 {% endtab %}

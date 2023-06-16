@@ -56,14 +56,16 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,3 +2,5 @@
--    String query = "SELECT * FROM\n" +
-            "my_table\n" +
-            "WHERE something = 1;";
-+    String query = """
-            SELECT * FROM
-            my_table
-            WHERE something = 1;\
-            """;
+class Test {
+-   String query = "SELECT * FROM\n" +
+-           "my_table\n" +
+-           "WHERE something = 1;";
++   String query = """
++           SELECT * FROM
++           my_table
++           WHERE something = 1;\
++           """;
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -125,25 +127,28 @@ class A {
 --- A.java
 +++ A.java
 @@ -3,8 +3,11 @@
--        log("\n========================================================="
-            + "\n                                                         "
-            + "\n          Welcome to Spring Integration!                 "
-            + "\n                                                         "
-            + "\n    For more information please visit:                   "
-            + "\n    https://www.springsource.org/spring-integration      "
-            + "\n                                                         "
-            + "\n=========================================================");
-+        log("""
-            
-            =========================================================
-                                                                    \s
-                      Welcome to Spring Integration!                \s
-                                                                    \s
-                For more information please visit:                  \s
-                https://www.springsource.org/spring-integration     \s
-                                                                    \s
-            =========================================================\
-            """);
+class A {
+    void welcome() {
+-       log("\n========================================================="
+-           + "\n                                                         "
+-           + "\n          Welcome to Spring Integration!                 "
+-           + "\n                                                         "
+-           + "\n    For more information please visit:                   "
+-           + "\n    https://www.springsource.org/spring-integration      "
+-           + "\n                                                         "
+-           + "\n=========================================================");
++       log("""
++           
++           =========================================================
++                                                                   \s
++                     Welcome to Spring Integration!                \s
++                                                                   \s
++               For more information please visit:                  \s
++               https://www.springsource.org/spring-integration     \s
++                                                                   \s
++           =========================================================\
++           """);
+    }
 ```
 {% endcode %}
 {% endtab %}

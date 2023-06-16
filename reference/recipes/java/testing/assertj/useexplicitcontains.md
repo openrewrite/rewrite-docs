@@ -69,8 +69,11 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -14,1 +14,1 @@
--        assertThat(collection.contains("3")).isTrue();
-+        assertThat(collection).contains("3");
+        Collection<String> collection = new ArrayList<>();
+        collection.add("3");
+-       assertThat(collection.contains("3")).isTrue();
++       assertThat(collection).contains("3");
+    }
 ```
 {% endcode %}
 {% endtab %}

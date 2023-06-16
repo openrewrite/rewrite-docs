@@ -44,7 +44,10 @@ class A {}```
 +++ A.java
 @@ -1,1 +1,0 @@
 -import java.util.List;
+class A {}
 @@ -3,1 +2,0 @@
+import java.util.List;
+class A {}
 -
 ```
 {% endcode %}

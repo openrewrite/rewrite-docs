@@ -51,8 +51,10 @@ class A {
 --- A.java
 +++ A.java
 @@ -2,1 +2,1 @@
--    private String name = "ABC";
-+    private final String name = "ABC";
+class A {
+-   private String name = "ABC";
++   private final String name = "ABC";
+
 ```
 {% endcode %}
 {% endtab %}

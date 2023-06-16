@@ -49,6 +49,7 @@ _Lists the Maven repositories that would be used for dependency resolution, in o
 @@ -1,1 +1,1 @@
 -<project>
 +<!--~~(https://repo.maven.apache.org/maven2)~~>--><project>
+  <groupId>org.openrewrite.example</groupId>
 ```
 {% endcode %}
 {% endtab %}

@@ -55,8 +55,11 @@ _Variables are all referenced by the prefix `project.`. You may also see referen
 --- pom.xml
 +++ pom.xml
 @@ -7,1 +7,1 @@
--      <name>${artifactId}</name>
-+      <name>${project.artifactId}</name>
+  <version>1</version>
+  <properties>
+-     <name>${artifactId}</name>
++     <name>${project.artifactId}</name>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}

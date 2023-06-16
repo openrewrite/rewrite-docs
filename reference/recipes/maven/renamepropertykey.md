@@ -88,11 +88,17 @@ _Rename the specified Maven project property key leaving the value unchanged._
 --- pom.xml
 +++ pom.xml
 @@ -5,1 +5,1 @@
--    <guava.version>29.0-jre</guava.version>
-+    <version.com.google.guava>29.0-jre</version.com.google.guava>
+
+  <properties>
+-   <guava.version>29.0-jre</guava.version>
++   <version.com.google.guava>29.0-jre</version.com.google.guava>
+  </properties>
 @@ -16,1 +16,1 @@
--      <version>${guava.version}</version>
-+      <version>${version.com.google.guava}</version>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+-     <version>${guava.version}</version>
++     <version>${version.com.google.guava}</version>
+    </dependency>
 ```
 {% endcode %}
 {% endtab %}

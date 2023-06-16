@@ -62,15 +62,24 @@ public class ExampleClass {
 --- org/example/ExampleClass.java
 +++ org/example/ExampleClass.java
 @@ -3,1 +3,0 @@
+package org.example;
+
 -import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.context.annotation.Configuration;
 @@ -5,2 +4,1 @@
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.context.annotation.Configuration;
 -import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+-import org.springframework.test.context.junit.jupiter.SpringExtension;
 +import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
 @@ -8,2 +6,1 @@
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 -@ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = ExampleClass.ExampleConfiguration.class)
+-@ContextConfiguration(classes = ExampleClass.ExampleConfiguration.class)
 +@SpringJUnitConfig(classes = ExampleClass.ExampleConfiguration.class)
+public class ExampleClass {
 ```
 {% endcode %}
 {% endtab %}

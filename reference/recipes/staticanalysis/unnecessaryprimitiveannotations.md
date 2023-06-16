@@ -56,12 +56,16 @@ class A {
 +++ A.java
 @@ -1,2 +1,0 @@
 -import javax.annotation.CheckForNull;
-import javax.annotation.Nullable;
+-import javax.annotation.Nullable;
+class A {
 @@ -4,2 +2,2 @@
--    @CheckForNull
-    public int getCount(@Nullable int val) {
+import javax.annotation.Nullable;
+class A {
+-   @CheckForNull
+-   public int getCount(@Nullable int val) {
 +
-    public int getCount(int val) {
++   public int getCount(int val) {
+        return val;
 ```
 {% endcode %}
 {% endtab %}

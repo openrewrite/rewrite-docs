@@ -45,6 +45,7 @@ public class MyTest {}
 +++ MyTest.java
 @@ -1,1 +1,0 @@
 -import org.mockito.Mock;
+import java.util.Arrays;
 ```
 {% endcode %}
 {% endtab %}

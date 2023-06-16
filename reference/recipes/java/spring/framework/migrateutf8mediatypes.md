@@ -57,14 +57,17 @@ class A {
 --- A.java
 +++ A.java
 @@ -5,4 +5,4 @@
--        MediaType valueA = MediaType.APPLICATION_JSON_UTF8;
-        String valueB = MediaType.APPLICATION_JSON_UTF8_VALUE;
-        MediaType valueC = MediaType.APPLICATION_PROBLEM_JSON_UTF8;
-        String valueD = MediaType.APPLICATION_PROBLEM_JSON_UTF8_VALUE;
-+        MediaType valueA = MediaType.APPLICATION_JSON;
-        String valueB = MediaType.APPLICATION_JSON_VALUE;
-        MediaType valueC = MediaType.APPLICATION_PROBLEM_JSON;
-        String valueD = MediaType.APPLICATION_PROBLEM_JSON_VALUE;
+class A {
+    void method() {
+-       MediaType valueA = MediaType.APPLICATION_JSON_UTF8;
+-       String valueB = MediaType.APPLICATION_JSON_UTF8_VALUE;
+-       MediaType valueC = MediaType.APPLICATION_PROBLEM_JSON_UTF8;
+-       String valueD = MediaType.APPLICATION_PROBLEM_JSON_UTF8_VALUE;
++       MediaType valueA = MediaType.APPLICATION_JSON;
++       String valueB = MediaType.APPLICATION_JSON_VALUE;
++       MediaType valueC = MediaType.APPLICATION_PROBLEM_JSON;
++       String valueD = MediaType.APPLICATION_PROBLEM_JSON_VALUE;
+    }
 ```
 {% endcode %}
 {% endtab %}

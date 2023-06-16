@@ -84,22 +84,40 @@ public class SecurityConfiguration {
 --- com/example/websecuritydemo/SecurityConfiguration.java
 +++ com/example/websecuritydemo/SecurityConfiguration.java
 @@ -4,0 +4,2 @@
+
+import static org.springframework.security.config.Customizer.withDefaults;
 +
-import org.springframework.context.annotation.Bean;
++import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 @@ -5,1 +7,0 @@
+import static org.springframework.security.config.Customizer.withDefaults;
+import org.springframework.context.annotation.Configuration;
 -import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 @@ -7,0 +8,1 @@
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 +import org.springframework.security.web.SecurityFilterChain;
+
 @@ -9,1 +11,1 @@
+
+@Configuration
 -public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 +public class SecurityConfiguration {
+
 @@ -11,2 +13,2 @@
--    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-+    @Bean
-    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+-   @Override
+-   protected void configure(HttpSecurity http) throws Exception {
++   @Bean
++   SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
 @@ -18,0 +20,1 @@
-+        return http.build();
+            )
+            .httpBasic(withDefaults());
++       return http.build();
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -67,10 +67,16 @@ resources:
 {% code %}
 ```diff
 @@ -4,1 +4,1 @@
--    version: 1.0
-+    version: 2.0
+  - name: git-repo
+    type: git
+-   version: 1.0
++   version: 2.0
+  - name: git-repo2
 @@ -10,0 +10,1 @@
-+    version: 2.0
+  - name: git-repo3
+    type: git
++   version: 2.0
+
 ```
 {% endcode %}
 {% endtab %}

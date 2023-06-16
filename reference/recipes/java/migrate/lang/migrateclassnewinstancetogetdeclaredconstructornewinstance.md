@@ -57,8 +57,11 @@ class A {
 --- com/abc/A.java
 +++ com/abc/A.java
 @@ -6,1 +6,1 @@
--       class_.newInstance();
-+       class_.getDeclaredConstructor().newInstance();
+   public void test() throws Throwable {
+       Class<?> class_ = Class.forName("org.openrewrite.Test");
+-      class_.newInstance();
++      class_.getDeclaredConstructor().newInstance();
+   }
 ```
 {% endcode %}
 {% endtab %}

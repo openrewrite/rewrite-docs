@@ -97,12 +97,15 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -9,3 +9,3 @@
--                <groupId>javax.activation</groupId>
-                <artifactId>javax.activation-api</artifactId>
-                <version>1.2.0</version>
-+                <groupId>jakarta.activation</groupId>
-                <artifactId>jakarta.activation-api</artifactId>
-                <version>2.1.0</version>
+        <dependencies>
+            <dependency>
+-               <groupId>javax.activation</groupId>
+-               <artifactId>javax.activation-api</artifactId>
+-               <version>1.2.0</version>
++               <groupId>jakarta.activation</groupId>
++               <artifactId>jakarta.activation-api</artifactId>
++               <version>2.1.0</version>
+            </dependency>
 ```
 {% endcode %}
 {% endtab %}

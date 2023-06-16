@@ -76,11 +76,17 @@ metadata:
 {% code %}
 ```diff
 @@ -6,1 +6,1 @@
--    mycompany.io/annotation: "hasvalue"
-+    ~~(found:mycompany.io/annotation)~~>mycompany.io/annotation: "hasvalue"
+  name: mypod1
+  annotations:
+-   mycompany.io/annotation: "hasvalue"
++   ~~(found:mycompany.io/annotation)~~>mycompany.io/annotation: "hasvalue"
+---
 @@ -13,1 +13,1 @@
--    mycompany.io/annotation: "novalue"
-+    ~~(found:mycompany.io/annotation)~~>mycompany.io/annotation: "novalue"
+  name: mypod2
+  annotations:
+-   mycompany.io/annotation: "novalue"
++   ~~(found:mycompany.io/annotation)~~>mycompany.io/annotation: "novalue"
+
 ```
 {% endcode %}
 {% endtab %}

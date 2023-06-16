@@ -51,8 +51,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--    static /* comment */ public strictfp @Nullable transient Integer test() {
-+    public /* comment */ static transient @Nullable strictfp Integer test() {
+import org.openrewrite.internal.lang.Nullable;
+class Test {
+-   static /* comment */ public strictfp @Nullable transient Integer test() {
++   public /* comment */ static transient @Nullable strictfp Integer test() {
+    }
 ```
 {% endcode %}
 {% endtab %}

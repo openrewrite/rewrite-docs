@@ -65,14 +65,18 @@ public class AnExample {
 +++ AnExample.java
 @@ -1,2 +1,0 @@
 -import java.io.IOException;
-
+-
+public class AnExample {
 @@ -5,5 +3,1 @@
--        try {
-            java.util.Base64.getDecoder().decode("abc".getBytes());
-        } catch (IOException e) {
-            System.out.println("an exception!");
-        }
-+        java.util.Base64.getDecoder().decode("abc".getBytes());
+public class AnExample {
+    public void method() {
+-       try {
+-           java.util.Base64.getDecoder().decode("abc".getBytes());
+-       } catch (IOException e) {
+-           System.out.println("an exception!");
+-       }
++       java.util.Base64.getDecoder().decode("abc".getBytes());
+    }
 ```
 {% endcode %}
 {% endtab %}

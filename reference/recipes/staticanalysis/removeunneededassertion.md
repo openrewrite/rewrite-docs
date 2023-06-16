@@ -50,7 +50,10 @@ public class A {
 --- A.java
 +++ A.java
 @@ -4,1 +4,0 @@
--        assert true;
+    public void m() {
+        System.out.println("Hello");
+-       assert true;
+        System.out.println("World");
 ```
 {% endcode %}
 {% endtab %}

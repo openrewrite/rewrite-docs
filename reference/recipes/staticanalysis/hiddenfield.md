@@ -53,8 +53,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -4,1 +4,1 @@
--    public A(String field) {
-+    public A(String field1) {
+    private String field;
+
+-   public A(String field) {
++   public A(String field1) {
+    }
 ```
 {% endcode %}
 {% endtab %}

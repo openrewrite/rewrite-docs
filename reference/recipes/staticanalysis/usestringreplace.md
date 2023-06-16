@@ -53,8 +53,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--        String newText = someText.replaceAll("Bob is", "It's");
-+        String newText = someText.replace("Bob is", "It's");
+    public void method() {
+        String someText = "Bob is a Bird... Bob is a Plane... Bob is Superman!";
+-       String newText = someText.replaceAll("Bob is", "It's");
++       String newText = someText.replace("Bob is", "It's");
+    }
 ```
 {% endcode %}
 {% endtab %}

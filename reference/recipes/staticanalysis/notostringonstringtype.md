@@ -51,8 +51,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        return "hello".toString();
-+        return "hello";
+class Test {
+    static String method() {
+-       return "hello".toString();
++       return "hello";
+    }
 ```
 {% endcode %}
 {% endtab %}

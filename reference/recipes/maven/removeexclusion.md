@@ -86,12 +86,15 @@ _Remove any matching exclusion from any matching dependency._
 --- pom.xml
 +++ pom.xml
 @@ -10,6 +10,0 @@
--      <exclusions>
-        <exclusion>
-          <groupId>commons-lang</groupId>
-          <artifactId>commons-lang</artifactId>
-        </exclusion>
-      </exclusions>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+-     <exclusions>
+-       <exclusion>
+-         <groupId>commons-lang</groupId>
+-         <artifactId>commons-lang</artifactId>
+-       </exclusion>
+-     </exclusions>
+    </dependency>
 ```
 {% endcode %}
 {% endtab %}

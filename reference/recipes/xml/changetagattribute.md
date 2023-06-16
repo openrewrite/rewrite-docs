@@ -60,8 +60,10 @@ _Alters XML Attribute value within specified element._
 {% code %}
 ```diff
 @@ -2,1 +2,1 @@
--    <bean id='myBean.subpackage.subpackage2'/>
-+    <bean id='myBean2.subpackage.subpackage2'/>
+<beans>
+-   <bean id='myBean.subpackage.subpackage2'/>
++   <bean id='myBean2.subpackage.subpackage2'/>
+    <other id='myBean.subpackage.subpackage2'/>
 ```
 {% endcode %}
 {% endtab %}

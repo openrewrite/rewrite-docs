@@ -56,8 +56,10 @@ _Find XML tags by XPath expression._
 {% code %}
 ```diff
 @@ -2,1 +2,1 @@
--    <dependency>
-+    <!--~~>--><dependency>
+<dependencies>
+-   <dependency>
++   <!--~~>--><dependency>
+        <artifactId scope="compile">org.openrewrite</artifactId>
 ```
 {% endcode %}
 {% endtab %}

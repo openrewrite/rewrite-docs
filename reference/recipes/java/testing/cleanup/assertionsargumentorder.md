@@ -65,10 +65,13 @@ class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -5,2 +5,2 @@
--        assertEquals(result(), "result");
-        assertEquals(result(), "result", "message");
-+        assertEquals("result", result());
-        assertEquals("result", result(), "message");
+class MyTest {
+    void someMethod() {
+-       assertEquals(result(), "result");
+-       assertEquals(result(), "result", "message");
++       assertEquals("result", result());
++       assertEquals("result", result(), "message");
+        assertEquals(0L, 1L);
 ```
 {% endcode %}
 {% endtab %}

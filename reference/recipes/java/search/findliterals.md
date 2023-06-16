@@ -54,8 +54,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
--    String s = "Hello Jonathan";
-+    String s = /*~~>*/"Hello Jonathan";
+class Test {
+-   String s = "Hello Jonathan";
++   String s = /*~~>*/"Hello Jonathan";
+}
 ```
 {% endcode %}
 {% endtab %}

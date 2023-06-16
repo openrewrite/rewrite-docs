@@ -107,11 +107,14 @@ _Removes a dependency from the <dependencies> section of a plugin in the pom.xml
 --- pom.xml
 +++ pom.xml
 @@ -16,5 +16,0 @@
--            <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit47</artifactId>
-            <version>2.22.0</version>
-          </dependency>
+        <dependencies>
           <dependency>
+-           <groupId>org.apache.maven.surefire</groupId>
+-           <artifactId>surefire-junit47</artifactId>
+-           <version>2.22.0</version>
+-         </dependency>
+-         <dependency>
+            <groupId>org.antlr</groupId>
 ```
 {% endcode %}
 {% endtab %}

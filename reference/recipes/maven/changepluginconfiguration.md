@@ -87,11 +87,14 @@ _Apply the specified configuration to a Maven plugin. Will not add the plugin if
 --- pom.xml
 +++ pom.xml
 @@ -12,5 +12,0 @@
--                <configuration>
-                    <activeRecipes>
-                        <recipe>org.openrewrite.java.cleanup.UnnecessaryThrows</recipe>
-                    </activeRecipes>
-                </configuration>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>4.1.5</version>
+-               <configuration>
+-                   <activeRecipes>
+-                       <recipe>org.openrewrite.java.cleanup.UnnecessaryThrows</recipe>
+-                   </activeRecipes>
+-               </configuration>
+            </plugin>
 ```
 {% endcode %}
 {% endtab %}

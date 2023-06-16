@@ -51,8 +51,11 @@ class T {
 --- T.java
 +++ T.java
 @@ -5,1 +5,1 @@
--        Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder();
-+        Pbkdf2PasswordEncoder encoder = Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
+class T {
+    void encoderWithDefaults() {
+-       Pbkdf2PasswordEncoder encoder = new Pbkdf2PasswordEncoder();
++       Pbkdf2PasswordEncoder encoder = Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
+    }
 ```
 {% endcode %}
 {% endtab %}

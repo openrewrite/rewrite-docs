@@ -61,8 +61,11 @@ class PersistenceConfiguration {
 --- PersistenceConfiguration.java
 +++ PersistenceConfiguration.java
 @@ -8,1 +8,1 @@
--    @Bean
-+    /*~~>*/@Bean
+class PersistenceConfiguration {
+
+-   @Bean
++   /*~~>*/@Bean
+    Settings settings() {
 ```
 {% endcode %}
 {% endtab %}

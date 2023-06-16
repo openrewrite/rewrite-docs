@@ -121,10 +121,13 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -8,2 +8,2 @@
--            <groupId>javax.activation</groupId>
-            <artifactId>javax.activation-api</artifactId>
-+            <groupId>jakarta.activation</groupId>
-            <artifactId>jakarta.activation-api</artifactId>
+    <dependencies>
+        <dependency>
+-           <groupId>javax.activation</groupId>
+-           <artifactId>javax.activation-api</artifactId>
++           <groupId>jakarta.activation</groupId>
++           <artifactId>jakarta.activation-api</artifactId>
+        </dependency>
 ```
 {% endcode %}
 {% endtab %}

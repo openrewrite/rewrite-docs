@@ -70,10 +70,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,2 +4,2 @@
--        new File("dir").mkdirs();
-        new File("dir").mkdir();
-+        /*~~>*/new File("dir").mkdirs();
-        /*~~>*/new File("dir").mkdir();
+class Test {
+    void test() {
+-       new File("dir").mkdirs();
+-       new File("dir").mkdir();
++       /*~~>*/new File("dir").mkdirs();
++       /*~~>*/new File("dir").mkdir();
+        boolean b1 = new File("dir").mkdirs();
 ```
 {% endcode %}
 {% endtab %}

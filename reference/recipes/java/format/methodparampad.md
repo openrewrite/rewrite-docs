@@ -71,20 +71,28 @@ class A extends B {
 --- E.java
 +++ E.java
 @@ -2,1 +2,1 @@
--    E1()
-+    E1 ()
+enum E {
+-   E1()
++   E1 ()
+}
 @@ -9,2 +9,2 @@
--    A() {
-        super();
-+    A () {
-        super ();
+
+class A extends B {
+-   A() {
+-       super();
++   A () {
++       super ();
+    }
 @@ -13,3 +13,3 @@
--    static void method(int x, int y) {
-        A a = new A();
-        method(0, 1);
-+    static void method (int x, int y) {
-        A a = new A ();
-        method (0, 1);
+    }
+
+-   static void method(int x, int y) {
+-       A a = new A();
+-       method(0, 1);
++   static void method (int x, int y) {
++       A a = new A ();
++       method (0, 1);
+    }
 ```
 {% endcode %}
 {% endtab %}

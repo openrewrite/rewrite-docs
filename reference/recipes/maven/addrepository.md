@@ -82,12 +82,15 @@ _Adds a new Maven Repository or Update a matching repository._
 --- pom.xml
 +++ pom.xml
 @@ -5,0 +5,6 @@
-+  <repositories>
-    <repository>
-      <id>myRepo</id>
-      <url>http://myrepo.maven.com/repo</url>
-    </repository>
-  </repositories>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <repositories>
++   <repository>
++     <id>myRepo</id>
++     <url>http://myrepo.maven.com/repo</url>
++   </repository>
++ </repositories>
+</project>
 ```
 {% endcode %}
 {% endtab %}

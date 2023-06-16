@@ -79,10 +79,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,3 +4,1 @@
--    ChangeListener listener = (o, oldVal, newVal) -> {
-        onChange(o, oldVal, newVal);
-    };
-+    ChangeListener listener = this::onChange;
+class Test {
+
+-   ChangeListener listener = (o, oldVal, newVal) -> {
+-       onChange(o, oldVal, newVal);
+-   };
++   ChangeListener listener = this::onChange;
+
 ```
 {% endcode %}
 {% endtab %}

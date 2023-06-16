@@ -62,8 +62,11 @@ public class Test {
 --- org/openrewrite/example/Test.java
 +++ org/openrewrite/example/Test.java
 @@ -8,1 +8,1 @@
--        s.getTTL();
-+        s.getTimeToLive();
+    public static void method() {
+        MulticastSocket s = new MulticastSocket(0);
+-       s.getTTL();
++       s.getTimeToLive();
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -116,8 +119,11 @@ public class Test {
 --- org/openrewrite/example/Test.java
 +++ org/openrewrite/example/Test.java
 @@ -8,1 +8,1 @@
--        s.getTTL();
-+        s.getTimeToLive();
+    public static void method() {
+        MulticastSocket s = new MulticastSocket(0);
+-       s.getTTL();
++       s.getTimeToLive();
+    }
 ```
 {% endcode %}
 {% endtab %}

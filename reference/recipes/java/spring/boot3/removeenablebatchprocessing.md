@@ -50,7 +50,10 @@ public class Application {
 --- Application.java
 +++ Application.java
 @@ -5,1 +5,0 @@
+
+@SpringBootApplication
 -@EnableBatchProcessing
+public class Application {
 ```
 {% endcode %}
 {% endtab %}

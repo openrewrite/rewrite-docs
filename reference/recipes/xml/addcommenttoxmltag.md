@@ -89,7 +89,10 @@ _Adds a comment as the first element in a `XML` tag._
 --- pom.xml
 +++ pom.xml
 @@ -7,0 +7,1 @@
-+    <!-- Comment text -->
+  <version>1</version>
+  <dependencies>
++   <!-- Comment text -->
+    <dependency>
 ```
 {% endcode %}
 {% endtab %}

@@ -52,6 +52,7 @@ provider {
 @@ -1,1 +1,1 @@
 -provider {
 +/*~~>*/provider {
+}
 ```
 {% endcode %}
 {% endtab %}

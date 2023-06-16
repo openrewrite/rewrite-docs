@@ -53,8 +53,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -4,2 +4,0 @@
--        switch(i) {
-        }
+    {
+        int i = 0;
+-       switch(i) {
+-       }
+    }
 ```
 {% endcode %}
 {% endtab %}

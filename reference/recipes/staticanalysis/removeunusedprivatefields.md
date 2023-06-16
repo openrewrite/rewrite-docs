@@ -46,7 +46,9 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,0 @@
--    private String notUsed;
+public class Test {
+-   private String notUsed;
+}
 ```
 {% endcode %}
 {% endtab %}

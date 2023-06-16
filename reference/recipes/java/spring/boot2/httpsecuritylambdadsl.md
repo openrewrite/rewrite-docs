@@ -67,12 +67,15 @@ public class ConventionalSecurityConfig extends WebSecurityConfigurerAdapter {
 --- ConventionalSecurityConfig.java
 +++ ConventionalSecurityConfig.java
 @@ -11,3 +11,3 @@
--            .authorizeRequests()
-                .antMatchers("/blog/**").permitAll()
-                .anyRequest().authenticated();
-+                .authorizeRequests(requests -> requests
-                        .antMatchers("/blog/**").permitAll()
-                        .anyRequest().authenticated());
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+-           .authorizeRequests()
+-               .antMatchers("/blog/**").permitAll()
+-               .anyRequest().authenticated();
++               .authorizeRequests(requests -> requests
++                       .antMatchers("/blog/**").permitAll()
++                       .anyRequest().authenticated());
+    }
 ```
 {% endcode %}
 {% endtab %}

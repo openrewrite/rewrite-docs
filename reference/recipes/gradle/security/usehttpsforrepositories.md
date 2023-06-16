@@ -47,8 +47,10 @@ repositories {
 --- build.gradle
 +++ build.gradle
 @@ -2,1 +2,1 @@
--    maven { url 'http://repo.spring.example.com/libs-release-local' }
-+    maven { url 'https://repo.spring.example.com/libs-release-local' }
+repositories {
+-   maven { url 'http://repo.spring.example.com/libs-release-local' }
++   maven { url 'https://repo.spring.example.com/libs-release-local' }
+}
 ```
 {% endcode %}
 {% endtab %}

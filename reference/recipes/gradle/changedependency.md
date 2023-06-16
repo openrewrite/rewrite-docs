@@ -80,8 +80,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    implementation "commons-lang:commons-lang:2.6"
-+    implementation "org.apache.commons:commons-lang3:3.11"
+
+dependencies {
+-   implementation "commons-lang:commons-lang:2.6"
++   implementation "org.apache.commons:commons-lang3:3.11"
+}
 ```
 {% endcode %}
 {% endtab %}

@@ -68,18 +68,23 @@ class A {
 --- A.java
 +++ A.java
 @@ -2,0 +2,1 @@
+import java.math.BigDecimal;
 +import java.math.RoundingMode;
+
 @@ -7,5 +8,5 @@
--        BigDecimal bd3 = bd.divide(bd2, BigDecimal.ROUND_DOWN);
-        bd.divide(bd2, 1);
-        bd.divide(bd2, 1, BigDecimal.ROUND_CEILING);
-        bd.divide(bd2, 1, 1);
-        bd.setScale(2, 1);
-+        BigDecimal bd3 = bd.divide(bd2, RoundingMode.DOWN);
-        bd.divide(bd2, RoundingMode.DOWN);
-        bd.divide(bd2, 1, RoundingMode.CEILING);
-        bd.divide(bd2, 1, RoundingMode.DOWN);
-        bd.setScale(2, RoundingMode.DOWN);
+        BigDecimal bd = BigDecimal.valueOf(10);
+        BigDecimal bd2 = BigDecimal.valueOf(2);
+-       BigDecimal bd3 = bd.divide(bd2, BigDecimal.ROUND_DOWN);
+-       bd.divide(bd2, 1);
+-       bd.divide(bd2, 1, BigDecimal.ROUND_CEILING);
+-       bd.divide(bd2, 1, 1);
+-       bd.setScale(2, 1);
++       BigDecimal bd3 = bd.divide(bd2, RoundingMode.DOWN);
++       bd.divide(bd2, RoundingMode.DOWN);
++       bd.divide(bd2, 1, RoundingMode.CEILING);
++       bd.divide(bd2, 1, RoundingMode.DOWN);
++       bd.setScale(2, RoundingMode.DOWN);
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -54,9 +54,13 @@ class Test {
 @@ -1,1 +1,1 @@
 -import org.apache.commons.lang3.Validate;
 +import java.util.Objects;
+
 @@ -5,1 +5,1 @@
--        Validate.notNull(obj);
-+        Objects.requireNonNull(obj);
+class Test {
+    void test(Object obj) {
+-       Validate.notNull(obj);
++       Objects.requireNonNull(obj);
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -105,9 +109,13 @@ class Test {
 @@ -1,1 +1,1 @@
 -import org.apache.commons.lang3.Validate;
 +import java.util.Objects;
+
 @@ -5,1 +5,1 @@
--        Validate.notNull(obj);
-+        Objects.requireNonNull(obj);
+class Test {
+    void test(Object obj) {
+-       Validate.notNull(obj);
++       Objects.requireNonNull(obj);
+    }
 ```
 {% endcode %}
 {% endtab %}

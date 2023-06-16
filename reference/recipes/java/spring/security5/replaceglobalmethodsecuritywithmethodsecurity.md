@@ -49,9 +49,13 @@ public class config {
 @@ -1,1 +1,1 @@
 -import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 +import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+
 @@ -3,1 +3,1 @@
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+
 -@EnableGlobalMethodSecurity(prePostEnabled = true)
 +@EnableMethodSecurity
+public class config {
 ```
 {% endcode %}
 {% endtab %}

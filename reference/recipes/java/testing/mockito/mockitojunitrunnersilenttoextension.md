@@ -53,15 +53,19 @@ public class ExternalAPIServiceTest {
 +++ ExternalAPIServiceTest.java
 @@ -1,2 +1,4 @@
 -import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
+-import org.mockito.junit.MockitoJUnitRunner;
 +import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.junit.jupiter.MockitoSettings;
-import org.mockito.quality.Strictness;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
+
 @@ -4,1 +6,2 @@
+import org.mockito.junit.MockitoJUnitRunner;
+
 -@RunWith(MockitoJUnitRunner.Silent.class)
 +@MockitoSettings(strictness = Strictness.LENIENT)
-@ExtendWith(MockitoExtension.class)
++@ExtendWith(MockitoExtension.class)
+public class ExternalAPIServiceTest {
 ```
 {% endcode %}
 {% endtab %}

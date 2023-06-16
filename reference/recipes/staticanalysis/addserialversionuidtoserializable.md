@@ -54,7 +54,10 @@ public class Example implements Serializable {
 --- Example.java
 +++ Example.java
 @@ -4,0 +4,1 @@
-+    private static final long serialVersionUID = 1;
+
+public class Example implements Serializable {
++   private static final long serialVersionUID = 1;
+    private String fred;
 ```
 {% endcode %}
 {% endtab %}

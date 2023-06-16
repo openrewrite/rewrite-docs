@@ -58,20 +58,25 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,0 +2,1 @@
+import java.nio.charset.Charset;
 +import java.nio.charset.StandardCharsets;
+
 @@ -4,6 +5,6 @@
--    Charset US_ASCII = Charset.forName("US-ASCII");
-    Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
-    Charset UTF_8 = Charset.forName("UTF-8");
-    Charset UTF_16 = Charset.forName("UTF-16");
-    Charset UTF_16BE = Charset.forName("UTF-16BE");
-    Charset UTF_16LE = Charset.forName("UTF-16LE");
-+    Charset US_ASCII = StandardCharsets.US_ASCII;
-    Charset ISO_8859_1 = StandardCharsets.ISO_8859_1;
-    Charset UTF_8 = StandardCharsets.UTF_8;
-    Charset UTF_16 = StandardCharsets.UTF_16;
-    Charset UTF_16BE = StandardCharsets.UTF_16BE;
-    Charset UTF_16LE = StandardCharsets.UTF_16LE;
+
+class Test {
+-   Charset US_ASCII = Charset.forName("US-ASCII");
+-   Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
+-   Charset UTF_8 = Charset.forName("UTF-8");
+-   Charset UTF_16 = Charset.forName("UTF-16");
+-   Charset UTF_16BE = Charset.forName("UTF-16BE");
+-   Charset UTF_16LE = Charset.forName("UTF-16LE");
++   Charset US_ASCII = StandardCharsets.US_ASCII;
++   Charset ISO_8859_1 = StandardCharsets.ISO_8859_1;
++   Charset UTF_8 = StandardCharsets.UTF_8;
++   Charset UTF_16 = StandardCharsets.UTF_16;
++   Charset UTF_16BE = StandardCharsets.UTF_16BE;
++   Charset UTF_16LE = StandardCharsets.UTF_16LE;
+}
 ```
 {% endcode %}
 {% endtab %}

@@ -88,17 +88,23 @@ _Make existing dependencies managed by moving their version to be specified in t
 --- pom.xml
 +++ pom.xml
 @@ -5,0 +5,9 @@
-+    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>5.6.2</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
++   <dependencyManagement>
++       <dependencies>
++           <dependency>
++               <groupId>org.junit.jupiter</groupId>
++               <artifactId>junit-jupiter-api</artifactId>
++               <version>5.6.2</version>
++           </dependency>
++       </dependencies>
++   </dependencyManagement>
+    <dependencies>
 @@ -9,1 +18,0 @@
--            <version>5.6.2</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+-           <version>5.6.2</version>
+            <scope>test</scope>
 ```
 {% endcode %}
 {% endtab %}

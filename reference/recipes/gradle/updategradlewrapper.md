@@ -64,10 +64,13 @@ zipStorePath=wrapper/dists
 --- gradle/wrapper/gradle-wrapper.properties
 +++ gradle/wrapper/gradle-wrapper.properties
 @@ -3,2 +3,2 @@
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
 -distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-all.zip
-distributionSha256Sum=cd5c2958a107ee7f0722004a12d0f8559b4564c34daad7df06cffd4d12a426d0
+-distributionSha256Sum=cd5c2958a107ee7f0722004a12d0f8559b4564c34daad7df06cffd4d12a426d0
 +distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
-distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
++distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
+zipStoreBase=GRADLE_USER_HOME
 ```
 {% endcode %}
 {% endtab %}

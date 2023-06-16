@@ -103,15 +103,21 @@ class Test implements RewriteTest {
 --- org/openrewrite/java/migrate/Test.java
 +++ org/openrewrite/java/migrate/Test.java
 @@ -14,1 +14,1 @@
--        spec.recipe(new ChangeText("foo").doNext(new ChangeText("bar")))
-+        spec.recipes(new ChangeText("foo"), new ChangeText("bar"))
+    @Override
+    public void defaults(RecipeSpec spec) {
+-       spec.recipe(new ChangeText("foo").doNext(new ChangeText("bar")))
++       spec.recipes(new ChangeText("foo"), new ChangeText("bar"))
+          .parser(JavaParser.fromJavaVersion()
 @@ -23,5 +23,1 @@
--          spec -> spec.expectedCyclesThatMakeChanges(2)
-            .recipe(new ChangeText("foo")
-              .doNext(new ChangeText("bar"))
-              .doNext(new ChangeText("baz"))
-            ),
-+          spec -> spec.expectedCyclesThatMakeChanges(2).recipes(new ChangeText("foo"), new ChangeText("bar"), new ChangeText("baz")),
+    void changeText() {
+        rewriteRun(
+-         spec -> spec.expectedCyclesThatMakeChanges(2)
+-           .recipe(new ChangeText("foo")
+-             .doNext(new ChangeText("bar"))
+-             .doNext(new ChangeText("baz"))
+-           ),
++         spec -> spec.expectedCyclesThatMakeChanges(2).recipes(new ChangeText("foo"), new ChangeText("bar"), new ChangeText("baz")),
+          text(
 ```
 {% endcode %}
 {% endtab %}

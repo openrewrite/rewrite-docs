@@ -65,8 +65,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -8,1 +8,1 @@
--        run((a, b) -> {
-+        run((String a, Object b) -> {
+
+    static void method() {
+-       run((a, b) -> {
++       run((String a, Object b) -> {
+            return a.isEmpty();
 ```
 {% endcode %}
 {% endtab %}

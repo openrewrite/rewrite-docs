@@ -71,13 +71,22 @@ class SampleTest {
 --- org/openrewrite/SampleTest.java
 +++ org/openrewrite/SampleTest.java
 @@ -4,1 +4,0 @@
--import org.junit.jupiter.api.Assertions;
-@@ -6,0 +5,2 @@
-+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
+-import org.junit.jupiter.api.Assertions;
+
+@@ -6,0 +5,2 @@
+import org.junit.jupiter.api.Assertions;
+
++import static org.junit.jupiter.api.Assertions.assertEquals;
++
+class SampleTest {
 @@ -9,1 +10,1 @@
--        Assertions.assertEquals(42, 21*2);
-+        assertEquals(42, 21*2);
+    @Test
+    void sample() {
+-       Assertions.assertEquals(42, 21*2);
++       assertEquals(42, 21*2);
+    }
 ```
 {% endcode %}
 {% endtab %}

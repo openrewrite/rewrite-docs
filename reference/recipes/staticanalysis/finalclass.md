@@ -57,6 +57,7 @@ public final class A {
 @@ -1,1 +1,1 @@
 -public class A {
 +public final class A {
+    private A(String s) {
 ```
 {% endcode %}
 {% endtab %}

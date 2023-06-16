@@ -70,14 +70,23 @@ class A {
 --- A.java
 +++ A.java
 @@ -3,1 +3,1 @@
+import java.io.File;
+import java.io.IOException;
 -import com.google.common.io.Files;
 +import java.nio.file.Files;
+
 @@ -7,1 +7,1 @@
--        File dir = Files.createTempDir();
-+        File dir = Files.createTempDirectory(null).toFile();
+class A {
+    void doSomething() throws IOException {
+-       File dir = Files.createTempDir();
++       File dir = Files.createTempDirectory(null).toFile();
+        dir.createNewFile();
 @@ -11,1 +11,1 @@
--        File dir = Files.createTempDir();
-+        File dir = Files.createTempDirectory(null).toFile();
+    }
+    void doSomethingElse() throws Exception {
+-       File dir = Files.createTempDir();
++       File dir = Files.createTempDirectory(null).toFile();
+        dir.createNewFile();
 ```
 {% endcode %}
 {% endtab %}

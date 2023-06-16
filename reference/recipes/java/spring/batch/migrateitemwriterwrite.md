@@ -63,9 +63,13 @@ public class ConsoleItemWriter<T> implements ItemWriter<T> {
 @@ -1,1 +1,1 @@
 -import java.util.List;
 +import org.springframework.batch.item.Chunk;
+import org.springframework.batch.item.ItemWriter;
 @@ -7,1 +7,1 @@
--    public void write(final List<? extends T> items) throws Exception {
-+    public void write(final Chunk<? extends T> items) throws Exception {
+
+    @Override
+-   public void write(final List<? extends T> items) throws Exception {
++   public void write(final Chunk<? extends T> items) throws Exception {
+        for (final T item : items) {
 ```
 {% endcode %}
 {% endtab %}

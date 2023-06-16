@@ -61,11 +61,17 @@ class A {
 --- A.java
 +++ A.java
 @@ -3,1 +3,1 @@
--    static enum ABC {
-+    enum ABC {
+class A {
+
+-   static enum ABC {
++   enum ABC {
+        A, B, C
 @@ -7,1 +7,1 @@
--    private static enum DEF {
-+    private enum DEF {
+    }
+
+-   private static enum DEF {
++   private enum DEF {
+        D, E, F
 ```
 {% endcode %}
 {% endtab %}

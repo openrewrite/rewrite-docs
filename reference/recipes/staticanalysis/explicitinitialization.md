@@ -85,24 +85,38 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,3 +2,3 @@
--    private int a = 0;
-    private long b = 0L;
-    private short c = 0;
-+    private int a;
-    private long b;
-    private short c;
+class Test {
+-   private int a = 0;
+-   private long b = 0L;
+-   private short c = 0;
++   private int a;
++   private long b;
++   private short c;
+    private int d = 1;
 @@ -8,1 +8,1 @@
--    private char g = '\0';
-+    private char g;
+    private long e = 2L;
+    private int f;
+-   private char g = '\0';
++   private char g;
+
 @@ -10,1 +10,1 @@
--    private boolean h = false;
-+    private boolean h;
+    private char g = '\0';
+
+-   private boolean h = false;
++   private boolean h;
+    private boolean i = true;
 @@ -14,1 +14,1 @@
--    private Object k = null;
-+    private Object k;
+
+    private Object j = new Object();
+-   private Object k = null;
++   private Object k;
+
 @@ -16,1 +16,1 @@
--    int[] l = null;
-+    int[] l;
+    private Object k = null;
+
+-   int[] l = null;
++   int[] l;
+    int[] m = new int[0];
 ```
 {% endcode %}
 {% endtab %}

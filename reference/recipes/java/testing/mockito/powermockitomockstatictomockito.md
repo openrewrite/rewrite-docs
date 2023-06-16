@@ -79,28 +79,43 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -5,0 +5,2 @@
+import java.util.Calendar;
+
 +import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 @@ -6,1 +8,1 @@
+
+import org.junit.jupiter.api.Test;
 -import org.powermock.core.classloader.annotations.PrepareForTest;
 +import org.mockito.MockedStatic;
+
 @@ -8,1 +10,0 @@
+import org.powermock.core.classloader.annotations.PrepareForTest;
+
 -@PrepareForTest({Calendar.class})
+public class MyTest {
 @@ -11,0 +12,12 @@
-+    private MockedStatic<Calendar> mockedCalendar;
+public class MyTest {
 
-    @BeforeEach
-    void setUpStaticMocks() {
-        mockedCalendar = mockStatic(Calendar.class);
-    }
-
-    @AfterEach
-    void tearDownStaticMocks() {
-        mockedCalendar.closeOnDemand();
-    }
-
++   private MockedStatic<Calendar> mockedCalendar;
++
++   @BeforeEach
++   void setUpStaticMocks() {
++       mockedCalendar = mockStatic(Calendar.class);
++   }
++
++   @AfterEach
++   void tearDownStaticMocks() {
++       mockedCalendar.closeOnDemand();
++   }
++
+    @Test
 @@ -13,1 +26,0 @@
--        mockStatic(Calendar.class);
+    @Test
+    void testStaticMethod() {
+-       mockStatic(Calendar.class);
+    }
 ```
 {% endcode %}
 {% endtab %}

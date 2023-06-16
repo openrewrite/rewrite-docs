@@ -137,6 +137,7 @@ spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
 @@ -1,1 +1,1 @@
 -spring.profiles.group.prod: proddb,prodmq,prodmetrics
 +spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
+
 ```
 {% endcode %}
 {% endtab %}
@@ -190,10 +191,16 @@ spring:
 {% code %}
 ```diff
 @@ -5,1 +5,0 @@
--    foo: bar
+    active: allEnvs
+    include: baseProfile
+-   foo: bar
+    group:
 @@ -8,0 +7,2 @@
-+  config.activate.on-profile:
-    foo: bar
+    group:
+      prod: proddb,prodmq,prodmetrics
++ config.activate.on-profile:
++   foo: bar
+
 ```
 {% endcode %}
 {% endtab %}

@@ -57,8 +57,11 @@ class A {
 --- A.java
 +++ A.java
 @@ -5,1 +5,1 @@
--            System.out.println("You are an admin.");
-+            System.out./*~~(Found text-direction altering unicode control characters: LRI,RLO,PDI)~~>*/println("You are an admin.");
+        boolean isAdmin = false;
+        /*‮ } ⁦ if(isAdmin) ⁩ ⁦ begin admins only */
+-           System.out.println("You are an admin.");
++           System.out./*~~(Found text-direction altering unicode control characters: LRI,RLO,PDI)~~>*/println("You are an admin.");
+        /* end admins only ‮ { ⁦ */
 ```
 {% endcode %}
 {% endtab %}

@@ -63,10 +63,13 @@ class T {
 --- T.java
 +++ T.java
 @@ -4,2 +4,2 @@
--    public void test(final String s) {
-        final int n = 0;
-+    public void test(String s) {
-        int n = 0;
+class T {
+    final int field = 0;
+-   public void test(final String s) {
+-       final int n = 0;
++   public void test(String s) {
++       int n = 0;
+        new Supplier<>() {
 ```
 {% endcode %}
 {% endtab %}

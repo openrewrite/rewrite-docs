@@ -76,8 +76,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    api 'org.openrewrite:rewrite-gradle:latest.release'
-+    implementation 'org.openrewrite:rewrite-gradle:latest.release'
+
+dependencies {
+-   api 'org.openrewrite:rewrite-gradle:latest.release'
++   implementation 'org.openrewrite:rewrite-gradle:latest.release'
+}
 ```
 {% endcode %}
 {% endtab %}

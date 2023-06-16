@@ -90,17 +90,29 @@ class A {
 --- com/abc/A.java
 +++ com/abc/A.java
 @@ -5,1 +5,1 @@
--    public void aMethod(String s) {
-+    private void aMethod(String s) {
+class A {
+    @SuppressWarnings("ALL") // comment
+-   public void aMethod(String s) {
++   private void aMethod(String s) {
+    }
 @@ -10,1 +10,1 @@
--    public void aMethod() {
-+    private void aMethod() {
+    // comment
+    @SuppressWarnings("ALL")
+-   public void aMethod() {
++   private void aMethod() {
+    }
 @@ -14,1 +14,1 @@
--    public void aMethod(Integer i) {
-+    private void aMethod(Integer i) {
+
+    // comment
+-   public void aMethod(Integer i) {
++   private void aMethod(Integer i) {
+    }
 @@ -17,1 +17,1 @@
--    public void aMethod(Double i) {
-+    private void aMethod(Double i) {
+    }
+
+-   public void aMethod(Double i) {
++   private void aMethod(Double i) {
+    }
 ```
 {% endcode %}
 {% endtab %}

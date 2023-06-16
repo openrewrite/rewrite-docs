@@ -71,11 +71,17 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -3,1 +3,1 @@
+import org.junit.Test;
+
 -import static org.junit.Assert.assertFalse;
 +import static org.junit.jupiter.api.Assertions.assertFalse;
+
 @@ -9,1 +9,1 @@
--        assertFalse(t.getName(), MyTest.class.isAssignableFrom(t.getClass()));
-+        assertFalse(MyTest.class.isAssignableFrom(t.getClass()), t.getName());
+    @Test
+    public void test() {
+-       assertFalse(t.getName(), MyTest.class.isAssignableFrom(t.getClass()));
++       assertFalse(MyTest.class.isAssignableFrom(t.getClass()), t.getName());
+    }
 ```
 {% endcode %}
 {% endtab %}

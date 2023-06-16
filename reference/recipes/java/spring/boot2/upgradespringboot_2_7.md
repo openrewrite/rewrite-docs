@@ -66,12 +66,15 @@ _Upgrade to Spring Boot 2.7_
 --- pom.xml
 +++ pom.xml
 @@ -8,3 +8,3 @@
--      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.30</version>
-+      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>8.0.33</version>
+  <dependencies>
+    <dependency>
+-     <groupId>mysql</groupId>
+-     <artifactId>mysql-connector-java</artifactId>
+-     <version>8.0.30</version>
++     <groupId>com.mysql</groupId>
++     <artifactId>mysql-connector-j</artifactId>
++     <version>8.0.33</version>
+      <scope>runtime</scope>
 ```
 {% endcode %}
 {% endtab %}
@@ -126,8 +129,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    runtimeOnly 'mysql:mysql-connector-java:8.0.30'
-+    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+
+dependencies {
+-   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
++   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -188,12 +194,15 @@ dependencies {
 --- pom.xml
 +++ pom.xml
 @@ -8,3 +8,3 @@
--      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.30</version>
-+      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>8.0.33</version>
+  <dependencies>
+    <dependency>
+-     <groupId>mysql</groupId>
+-     <artifactId>mysql-connector-java</artifactId>
+-     <version>8.0.30</version>
++     <groupId>com.mysql</groupId>
++     <artifactId>mysql-connector-j</artifactId>
++     <version>8.0.33</version>
+      <scope>runtime</scope>
 ```
 {% endcode %}
 {% endtab %}
@@ -248,8 +257,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    runtimeOnly 'mysql:mysql-connector-java:8.0.30'
-+    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+
+dependencies {
+-   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
++   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+}
 ```
 {% endcode %}
 {% endtab %}

@@ -61,27 +61,31 @@ public class RootTest {
 +++ RootTest.java
 @@ -1,3 +1,2 @@
 -import org.junit.Test;
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
-+ import org.junit.Test;
- import org.junit.jupiter.api.Nested;
+-import org.junit.experimental.runners.Enclosed;
+-import org.junit.runner.RunWith;
++import org.junit.Test;
++import org.junit.jupiter.api.Nested;
+
 @@ -5,7 +4,9 @@
+import org.junit.runner.RunWith;
+
 -@RunWith(Enclosed.class)
-public class RootTest {
-    public static class InnerTest {
-        @Test
-        public void test() {}
-    }
-}
-+ 
- 
- public class RootTest {
-     @Nested
-     public class InnerTest {
-         @Test
-         public void test() {}
-     }
- }
+-public class RootTest {
+-   public static class InnerTest {
+-       @Test
+-       public void test() {}
+-   }
+-}
++
++
++public class RootTest {
++    @Nested
++    public class InnerTest {
++        @Test
++        public void test() {}
++    }
++}
+
 ```
 {% endcode %}
 {% endtab %}

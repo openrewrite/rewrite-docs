@@ -58,9 +58,13 @@ class Test {
 @@ -1,1 +1,1 @@
 -import java.util.logging.LoggingMXBean;
 +import java.lang.management.PlatformLoggingMXBean;
+
 @@ -5,1 +5,1 @@
--        LoggingMXBean loggingBean = null;
-+        PlatformLoggingMXBean loggingBean = null;
+class Test {
+    static void method() {
+-       LoggingMXBean loggingBean = null;
++       PlatformLoggingMXBean loggingBean = null;
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -109,9 +113,13 @@ class Test {
 @@ -1,1 +1,1 @@
 -import java.util.logging.LoggingMXBean;
 +import java.lang.management.PlatformLoggingMXBean;
+
 @@ -5,1 +5,1 @@
--        LoggingMXBean loggingBean = null;
-+        PlatformLoggingMXBean loggingBean = null;
+class Test {
+    static void method() {
+-       LoggingMXBean loggingBean = null;
++       PlatformLoggingMXBean loggingBean = null;
+    }
 ```
 {% endcode %}
 {% endtab %}

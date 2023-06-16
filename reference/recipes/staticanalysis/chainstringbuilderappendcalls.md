@@ -55,10 +55,13 @@ class A {
 --- A.java
 +++ A.java
 @@ -5,2 +5,2 @@
--        sb.append("A" + op + "B");
-        sb.append(1 + op + 2);
-+        sb.append("A").append(op).append("B");
-        sb.append(1).append(op).append(2);
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+-       sb.append("A" + op + "B");
+-       sb.append(1 + op + 2);
++       sb.append("A").append(op).append("B");
++       sb.append(1).append(op).append(2);
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -106,8 +109,11 @@ class A {
 --- A.java
 +++ A.java
 @@ -5,1 +5,1 @@
--        sb.append("A" + "B" + "C" + op + "D" + "E");
-+        sb.append("A" + "B" + "C").append(op).append("D" + "E");
+        StringBuilder sb = new StringBuilder();
+        String op = "+";
+-       sb.append("A" + "B" + "C" + op + "D" + "E");
++       sb.append("A" + "B" + "C").append(op).append("D" + "E");
+    }
 ```
 {% endcode %}
 {% endtab %}

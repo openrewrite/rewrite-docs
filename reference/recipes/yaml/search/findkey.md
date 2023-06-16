@@ -54,8 +54,11 @@ _Find YAML entries by JsonPath expression._
 {% code %}
 ```diff
 @@ -3,1 +3,1 @@
--      name: monitoring-tools
-+      ~~>name: monitoring-tools
+    apiVersion: v1
+    metadata:
+-     name: monitoring-tools
++     ~~>name: monitoring-tools
+      namespace: monitoring-tools
 ```
 {% endcode %}
 {% endtab %}

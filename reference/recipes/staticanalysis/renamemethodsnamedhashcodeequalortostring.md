@@ -83,23 +83,40 @@ class Test {
 --- ITest.java
 +++ ITest.java
 @@ -2,1 +2,1 @@
--    int HASHcoDE();
-+    int hashCode();
+interface ITest {
+-   int HASHcoDE();
++   int hashCode();
+
 @@ -4,1 +4,1 @@
--    boolean equal(Object obj);
-+    boolean equals(Object obj);
+    int HASHcoDE();
+
+-   boolean equal(Object obj);
++   boolean equals(Object obj);
+
 @@ -6,1 +6,1 @@
--    String tostring();
-+    String toString();
+    boolean equal(Object obj);
+
+-   String tostring();
++   String toString();
+}
 @@ -10,1 +10,1 @@
--    public int hashcode() {
-+    public int hashCode() {
+
+class Test {
+-   public int hashcode() {
++   public int hashCode() {
+        return 0;
 @@ -14,1 +14,1 @@
--    public boolean equal(Object obj) {
-+    public boolean equals(Object obj) {
+    }
+
+-   public boolean equal(Object obj) {
++   public boolean equals(Object obj) {
+        return false;
 @@ -18,1 +18,1 @@
--    public String tostring() {
-+    public String toString() {
+    }
+
+-   public String tostring() {
++   public String toString() {
+        return "";
 ```
 {% endcode %}
 {% endtab %}

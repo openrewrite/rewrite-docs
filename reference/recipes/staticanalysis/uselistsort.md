@@ -58,12 +58,18 @@ class T {
 --- T.java
 +++ T.java
 @@ -4,1 +4,0 @@
+import java.util.Comparator;
+import java.util.List;
 -import java.util.Collections;
+
 @@ -8,2 +7,2 @@
--        Collections.sort(names);
-        Collections.sort(names, Comparator.naturalOrder());
-+        names.sort(null);
-        names.sort(Comparator.naturalOrder());
+class T {
+    public void sortUsersById(List<String> names) {
+-       Collections.sort(names);
+-       Collections.sort(names, Comparator.naturalOrder());
++       names.sort(null);
++       names.sort(Comparator.naturalOrder());
+    }
 ```
 {% endcode %}
 {% endtab %}

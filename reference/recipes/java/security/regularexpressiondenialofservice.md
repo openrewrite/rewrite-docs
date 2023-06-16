@@ -45,8 +45,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--    private static final Pattern testRe = Pattern.compile("(\\?.)*");
-+    private static final Pattern testRe = Pattern.compile(".*");
+import java.util.regex.Pattern;
+class Test {
+-   private static final Pattern testRe = Pattern.compile("(\\?.)*");
++   private static final Pattern testRe = Pattern.compile(".*");
+}
 ```
 {% endcode %}
 {% endtab %}

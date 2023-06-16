@@ -62,8 +62,11 @@ zipStorePath=wrapper/dists
 --- gradle/wrapper/gradle-wrapper.properties
 +++ gradle/wrapper/gradle-wrapper.properties
 @@ -3,1 +3,1 @@
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
 -distributionUrl=https\\://services.gradle.org/distributions/gradle-7.4-all.zip
 +~~>distributionUrl=https\\://services.gradle.org/distributions/gradle-7.4-all.zip
+zipStoreBase=GRADLE_USER_HOME
 ```
 {% endcode %}
 {% endtab %}

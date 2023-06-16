@@ -64,15 +64,23 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,0 +2,1 @@
+import org.springframework.boot.actuate.system.DiskSpaceHealthIndicator;
 +import org.springframework.util.unit.DataSize;
+
 @@ -5,2 +6,2 @@
--        DiskSpaceHealthIndicator literal = new DiskSpaceHealthIndicator(null, 1L);
-        DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, value());
-+        DiskSpaceHealthIndicator literal = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(1L));
-        DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(value()));
+class Test {
+    void method() {
+-       DiskSpaceHealthIndicator literal = new DiskSpaceHealthIndicator(null, 1L);
+-       DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, value());
++       DiskSpaceHealthIndicator literal = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(1L));
++       DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(value()));
+        Long arg = 10L;
 @@ -8,1 +9,1 @@
--        DiskSpaceHealthIndicator variable = new DiskSpaceHealthIndicator(null, arg);
-+        DiskSpaceHealthIndicator variable = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(arg));
+        DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, value());
+        Long arg = 10L;
+-       DiskSpaceHealthIndicator variable = new DiskSpaceHealthIndicator(null, arg);
++       DiskSpaceHealthIndicator variable = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(arg));
+    }
 ```
 {% endcode %}
 {% endtab %}

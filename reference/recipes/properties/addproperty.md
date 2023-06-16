@@ -53,7 +53,9 @@ management.metrics.enable.process.files=true
 {% code %}
 ```diff
 @@ -2,0 +2,1 @@
+management=true
 +management.metrics.enable.process.files=true
+
 ```
 {% endcode %}
 {% endtab %}

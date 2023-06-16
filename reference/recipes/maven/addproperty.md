@@ -73,9 +73,12 @@ _Add a new property to the Maven project property._
 --- pom.xml
 +++ pom.xml
 @@ -5,0 +5,3 @@
-+  <properties>
-    <key>value</key>
-  </properties>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <properties>
++   <key>value</key>
++ </properties>
+
 ```
 {% endcode %}
 {% endtab %}

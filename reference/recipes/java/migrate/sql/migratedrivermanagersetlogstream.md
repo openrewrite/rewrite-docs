@@ -59,8 +59,11 @@ class Test {
 --- org/openrewrite/Test.java
 +++ org/openrewrite/Test.java
 @@ -7,1 +7,1 @@
--        DriverManager.setLogStream(System.out);
-+        DriverManager.setLogWriter(new java.io.PrintWriter(System.out));
+class Test {
+    public void method() {
+-       DriverManager.setLogStream(System.out);
++       DriverManager.setLogWriter(new java.io.PrintWriter(System.out));
+    }
 ```
 {% endcode %}
 {% endtab %}

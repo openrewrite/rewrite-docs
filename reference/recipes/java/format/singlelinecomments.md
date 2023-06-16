@@ -45,6 +45,7 @@ class Test {
 @@ -1,1 +1,1 @@
 -//hi
 +// hi
+class Test {
 ```
 {% endcode %}
 {% endtab %}

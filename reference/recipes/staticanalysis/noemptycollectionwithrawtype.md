@@ -51,8 +51,11 @@ import java.util.List;
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--    List<Integer> l = java.util.Collections.EMPTY_LIST;
-+    List<Integer> l = java.util.Collections.emptyList();
+
+              class Test {
+-   List<Integer> l = java.util.Collections.EMPTY_LIST;
++   List<Integer> l = java.util.Collections.emptyList();
+}
 ```
 {% endcode %}
 {% endtab %}

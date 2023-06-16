@@ -61,8 +61,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--        if (b) {
-+        if (Boolean.TRUE.equals(b)) {
+    Boolean b;
+    int test() {
+-       if (b) {
++       if (Boolean.TRUE.equals(b)) {
+            return 1;
 ```
 {% endcode %}
 {% endtab %}

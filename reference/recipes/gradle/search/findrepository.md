@@ -82,23 +82,29 @@ repositories {
 --- build.gradle
 +++ build.gradle
 @@ -3,4 +3,4 @@
--    maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-    maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-    maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-    maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
-+    /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-    /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-    /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-    /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+buildscript {
+  repositories {
+-   maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+-   maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+-   maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+-   maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
++   /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
++   /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
++   /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
++   /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+  }
 @@ -11,4 +11,4 @@
--  maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-  maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-  maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-  maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
-+  /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-  /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
-  /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
-  /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+
+repositories {
+- maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+- maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
+- maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
+- maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
++ /*~~>*/maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
++ /*~~>*/maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
++ /*~~>*/maven { setUrl("https://oss.sonatype.org/content/repositories/snapshots") }
++ /*~~>*/maven { setUrl(uri("https://oss.sonatype.org/content/repositories/snapshots")) }
+}
 ```
 {% endcode %}
 {% endtab %}

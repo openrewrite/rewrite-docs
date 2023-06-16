@@ -55,13 +55,19 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,3 +4,1 @@
--        int n = (int) m;
-        n = ( int) m;
-        n = (int ) m;
-+        int n = ( int ) m;
-@@ -8,0 +6,2 @@
-+        n = ( int ) m;
+    static void method() {
+        long m = 0L;
+-       int n = (int) m;
+-       n = ( int) m;
+-       n = (int ) m;
++       int n = ( int ) m;
         n = ( int ) m;
+@@ -8,0 +6,2 @@
+        n = (int ) m;
+        n = ( int ) m;
++       n = ( int ) m;
++       n = ( int ) m;
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -65,8 +65,11 @@ class Test {
 --- org/openrewrite/Test.java
 +++ org/openrewrite/Test.java
 @@ -10,1 +10,1 @@
--        new SecurityManager().checkMulticast(maddr, b);
-+        new SecurityManager().checkMulticast(maddr);
+        InetAddress maddr = InetAddress.getByName("127.0.0.1");
+        byte b = 100;
+-       new SecurityManager().checkMulticast(maddr, b);
++       new SecurityManager().checkMulticast(maddr);
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -69,8 +69,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
--    A a = new A("test");
-+    A a = /*~~>*/new A("test");
+class Test {
+-   A a = new A("test");
++   A a = /*~~>*/new A("test");
+}
 ```
 {% endcode %}
 {% endtab %}

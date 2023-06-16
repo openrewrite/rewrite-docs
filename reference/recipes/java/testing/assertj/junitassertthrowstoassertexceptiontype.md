@@ -57,9 +57,13 @@ public class SimpleExpectedExceptionTest {
 @@ -1,1 +1,1 @@
 -import static org.junit.jupiter.api.Assertions.assertThrows;
 +import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
+
 @@ -5,1 +5,1 @@
--        assertThrows(NullPointerException.class, () -> {
-+        assertThatExceptionOfType(NullPointerException.class).isThrownBy(() -> {
+public class SimpleExpectedExceptionTest {
+    public void throwsExceptionWithSpecificType() {
+-       assertThrows(NullPointerException.class, () -> {
++       assertThatExceptionOfType(NullPointerException.class).isThrownBy(() -> {
+            throw new NullPointerException();
 ```
 {% endcode %}
 {% endtab %}

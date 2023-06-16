@@ -46,7 +46,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,0 @@
--          System.out.println("Hello, world!");
+class Test {
+    void test() {
+-         System.out.println("Hello, world!");
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -63,8 +63,11 @@ public class UsersController {
 --- UsersController.java
 +++ UsersController.java
 @@ -8,1 +8,1 @@
--    public ResponseEntity<String> getUser(@PathVariable("id") Long id,
-+    public ResponseEntity<String> getUser(@PathVariable Long id,
+public class UsersController {
+    @GetMapping("/{id}")
+-   public ResponseEntity<String> getUser(@PathVariable("id") Long id,
++   public ResponseEntity<String> getUser(@PathVariable Long id,
+                                          @PathVariable(required = false) Long p2,
 ```
 {% endcode %}
 {% endtab %}

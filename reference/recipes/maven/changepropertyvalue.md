@@ -76,8 +76,11 @@ _Changes the specified Maven project property value leaving the key intact._
 --- pom.xml
 +++ pom.xml
 @@ -5,1 +5,1 @@
--    <guava.version>28.2-jre</guava.version>
-+    <guava.version>29.0-jre</guava.version>
+
+  <properties>
+-   <guava.version>28.2-jre</guava.version>
++   <guava.version>29.0-jre</guava.version>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}

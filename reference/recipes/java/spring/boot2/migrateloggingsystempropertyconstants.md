@@ -63,19 +63,25 @@ class Test {
 --- org/test/Test.java
 +++ org/test/Test.java
 @@ -3,1 +3,1 @@
+package org.test;
+
 -import org.springframework.boot.logging.LoggingSystemProperties;
 +import org.springframework.boot.logging.logback.LogbackLoggingSystemProperties;
+
 @@ -7,5 +7,5 @@
--        String valueA = LoggingSystemProperties.FILE_CLEAN_HISTORY_ON_START;
-        String valueB = LoggingSystemProperties.FILE_MAX_HISTORY;
-        String valueC = LoggingSystemProperties.FILE_MAX_SIZE;
-        String valueD = LoggingSystemProperties.FILE_TOTAL_SIZE_CAP;
-        String valueE = LoggingSystemProperties.ROLLING_FILE_NAME_PATTERN;
-+        String valueA = LogbackLoggingSystemProperties.ROLLINGPOLICY_CLEAN_HISTORY_ON_START;
-        String valueB = LogbackLoggingSystemProperties.ROLLINGPOLICY_MAX_HISTORY;
-        String valueC = LogbackLoggingSystemProperties.ROLLINGPOLICY_MAX_FILE_SIZE;
-        String valueD = LogbackLoggingSystemProperties.ROLLINGPOLICY_TOTAL_SIZE_CAP;
-        String valueE = LogbackLoggingSystemProperties.ROLLINGPOLICY_FILE_NAME_PATTERN;
+class Test {
+    void method() {
+-       String valueA = LoggingSystemProperties.FILE_CLEAN_HISTORY_ON_START;
+-       String valueB = LoggingSystemProperties.FILE_MAX_HISTORY;
+-       String valueC = LoggingSystemProperties.FILE_MAX_SIZE;
+-       String valueD = LoggingSystemProperties.FILE_TOTAL_SIZE_CAP;
+-       String valueE = LoggingSystemProperties.ROLLING_FILE_NAME_PATTERN;
++       String valueA = LogbackLoggingSystemProperties.ROLLINGPOLICY_CLEAN_HISTORY_ON_START;
++       String valueB = LogbackLoggingSystemProperties.ROLLINGPOLICY_MAX_HISTORY;
++       String valueC = LogbackLoggingSystemProperties.ROLLINGPOLICY_MAX_FILE_SIZE;
++       String valueD = LogbackLoggingSystemProperties.ROLLINGPOLICY_TOTAL_SIZE_CAP;
++       String valueE = LogbackLoggingSystemProperties.ROLLINGPOLICY_FILE_NAME_PATTERN;
+    }
 ```
 {% endcode %}
 {% endtab %}

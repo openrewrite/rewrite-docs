@@ -64,8 +64,11 @@ _Use HTTPS for repository urls._
 --- pom.xml
 +++ pom.xml
 @@ -8,1 +8,1 @@
--      <url>http://repo.example.com/repo</url>
-+      <url>https://repo.example.com/repo</url>
+    <repository>
+      <id>my-repo</id>
+-     <url>http://repo.example.com/repo</url>
++     <url>https://repo.example.com/repo</url>
+    </repository>
 ```
 {% endcode %}
 {% endtab %}

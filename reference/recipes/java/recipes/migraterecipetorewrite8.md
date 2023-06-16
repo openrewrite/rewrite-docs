@@ -140,41 +140,56 @@ public class RenamePrivateFieldsToCamelCase extends Recipe {
 --- org/openrewrite/staticanalysis/RenamePrivateFieldsToCamelCase.java
 +++ org/openrewrite/staticanalysis/RenamePrivateFieldsToCamelCase.java
 @@ -4,0 +4,1 @@
+
+import org.openrewrite.*;
 +import org.openrewrite.internal.lang.Nullable;
+import org.openrewrite.java.JavaIsoVisitor;
 @@ -28,0 +29,1 @@
+
+    private static class RenameNonCompliantNames extends JavaIsoVisitor<ExecutionContext> {
 +
+        @Override
 @@ -29,3 +31,5 @@
--        public JavaSourceFile visitJavaSourceFile(JavaSourceFile cu, ExecutionContext ctx) {
-            Map<J.VariableDeclarations.NamedVariable, String> renameVariablesMap = new LinkedHashMap<>();
-            Set<String> hasNameSet = new HashSet<>();
-+        public  @Nullable J visit(@Nullable Tree tree, ExecutionContext ctx) {
-            if (tree instanceof JavaSourceFile) {
-                JavaSourceFile cu = (JavaSourceFile) tree;
-                Map<J.VariableDeclarations.NamedVariable, String> renameVariablesMap = new LinkedHashMap<>();
-                Set<String> hasNameSet = new HashSet<>();
+    private static class RenameNonCompliantNames extends JavaIsoVisitor<ExecutionContext> {
+        @Override
+-       public JavaSourceFile visitJavaSourceFile(JavaSourceFile cu, ExecutionContext ctx) {
+-           Map<J.VariableDeclarations.NamedVariable, String> renameVariablesMap = new LinkedHashMap<>();
+-           Set<String> hasNameSet = new HashSet<>();
++       public  @Nullable J visit(@Nullable Tree tree, ExecutionContext ctx) {
++           if (tree instanceof JavaSourceFile) {
++               JavaSourceFile cu = (JavaSourceFile) tree;
++               Map<J.VariableDeclarations.NamedVariable, String> renameVariablesMap = new LinkedHashMap<>();
++               Set<String> hasNameSet = new HashSet<>();
+
 @@ -33,3 +37,3 @@
--            getCursor().putMessage("RENAME_VARIABLES_KEY", renameVariablesMap);
-            getCursor().putMessage("HAS_NAME_KEY", hasNameSet);
-            super.visitJavaSourceFile(cu, ctx);
-+                getCursor().putMessage("RENAME_VARIABLES_KEY", renameVariablesMap);
-                getCursor().putMessage("HAS_NAME_KEY", hasNameSet);
-                super.visit(cu, ctx);
+            Set<String> hasNameSet = new HashSet<>();
+
+-           getCursor().putMessage("RENAME_VARIABLES_KEY", renameVariablesMap);
+-           getCursor().putMessage("HAS_NAME_KEY", hasNameSet);
+-           super.visitJavaSourceFile(cu, ctx);
++               getCursor().putMessage("RENAME_VARIABLES_KEY", renameVariablesMap);
++               getCursor().putMessage("HAS_NAME_KEY", hasNameSet);
++               super.visit(cu, ctx);
+
 @@ -37,7 +41,8 @@
--            renameVariablesMap.forEach((key, value) -> {
-                if (!hasNameSet.contains(value) && !hasNameSet.contains(key.getSimpleName())) {
-                    doAfterVisit(new RenameVariable<>(key, value));
-                    hasNameSet.add(value);
-                }
-            });
-            return cu;
-+                renameVariablesMap.forEach((key, value) -> {
-                    if (!hasNameSet.contains(value) && !hasNameSet.contains(key.getSimpleName())) {
-                        doAfterVisit(new RenameVariable<>(key, value));
-                        hasNameSet.add(value);
-                    }
-                });
-            }
-            return super.visit(tree, ctx);
+            super.visitJavaSourceFile(cu, ctx);
+
+-           renameVariablesMap.forEach((key, value) -> {
+-               if (!hasNameSet.contains(value) && !hasNameSet.contains(key.getSimpleName())) {
+-                   doAfterVisit(new RenameVariable<>(key, value));
+-                   hasNameSet.add(value);
+-               }
+-           });
+-           return cu;
++               renameVariablesMap.forEach((key, value) -> {
++                   if (!hasNameSet.contains(value) && !hasNameSet.contains(key.getSimpleName())) {
++                       doAfterVisit(new RenameVariable<>(key, value));
++                       hasNameSet.add(value);
++                   }
++               });
++           }
++           return super.visit(tree, ctx);
+        }
 ```
 {% endcode %}
 {% endtab %}
@@ -277,39 +292,48 @@ public class ChainStringBuilderAppendCalls extends Recipe {
 --- org/openrewrite/java/cleanup/ChainStringBuilderAppendCalls.java
 +++ org/openrewrite/java/cleanup/ChainStringBuilderAppendCalls.java
 @@ -3,4 +3,1 @@
+package org.openrewrite.java.cleanup;
+
 -import org.openrewrite.Applicability;
-import org.openrewrite.ExecutionContext;
-import org.openrewrite.Recipe;
-import org.openrewrite.TreeVisitor;
+-import org.openrewrite.ExecutionContext;
+-import org.openrewrite.Recipe;
+-import org.openrewrite.TreeVisitor;
 +import org.openrewrite.*;
+import org.openrewrite.internal.lang.Nullable;
 @@ -22,3 +19,11 @@
--    protected @Nullable TreeVisitor<?, ExecutionContext> getSingleSourceApplicableTest() {
-        return Applicability.or(new UsesMethod<>(STRING_BUILDER_APPEND),
-            new UsesMethod<>(STRING_BUILDER_APPEND));
-+    public TreeVisitor<?, ExecutionContext> getVisitor() {
-        return Preconditions.check(
-                Preconditions.or(new UsesMethod<>(STRING_BUILDER_APPEND),
-                        new UsesMethod<>(STRING_BUILDER_APPEND)), new JavaIsoVisitor<ExecutionContext>() {
-                    @Override
-                    public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
-                        J.MethodInvocation m = super.visitMethodInvocation(method, ctx);
-                        // do something
-                        return m;
-                    }
-                });
-@@ -26,12 +31,0 @@
--
+
     @Override
-    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
-        return new JavaIsoVisitor<ExecutionContext>() {
-            @Override
-            public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
-                J.MethodInvocation m = super.visitMethodInvocation(method, ctx);
-                // do something
-                return m;
-            }
-        };
+-   protected @Nullable TreeVisitor<?, ExecutionContext> getSingleSourceApplicableTest() {
+-       return Applicability.or(new UsesMethod<>(STRING_BUILDER_APPEND),
+-           new UsesMethod<>(STRING_BUILDER_APPEND));
++   public TreeVisitor<?, ExecutionContext> getVisitor() {
++       return Preconditions.check(
++               Preconditions.or(new UsesMethod<>(STRING_BUILDER_APPEND),
++                       new UsesMethod<>(STRING_BUILDER_APPEND)), new JavaIsoVisitor<ExecutionContext>() {
++                   @Override
++                   public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
++                       J.MethodInvocation m = super.visitMethodInvocation(method, ctx);
++                       // do something
++                       return m;
++                   }
++               });
     }
+@@ -26,12 +31,0 @@
+            new UsesMethod<>(STRING_BUILDER_APPEND));
+    }
+-
+-   @Override
+-   protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+-       return new JavaIsoVisitor<ExecutionContext>() {
+-           @Override
+-           public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
+-               J.MethodInvocation m = super.visitMethodInvocation(method, ctx);
+-               // do something
+-               return m;
+-           }
+-       };
+-   }
+}
 ```
 {% endcode %}
 {% endtab %}

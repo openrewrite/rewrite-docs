@@ -53,11 +53,15 @@ class T {
 @@ -1,1 +1,1 @@
 -import org.springframework.boot.actuate.endpoint.http.ActuatorMediaType;
 +import org.springframework.boot.actuate.endpoint.ApiVersion;
+import org.springframework.http.MediaType;
 @@ -5,2 +5,2 @@
--    private static final MediaType actuatorMediaType2 = MediaType.parseMediaType(ActuatorMediaType.V2_JSON);
-    private static final MediaType actuatorMediaType3 = MediaType.parseMediaType(ActuatorMediaType.V3_JSON);
-+    private static final MediaType actuatorMediaType2 = MediaType.asMediaType(ApiVersion.V2.getProducedMimeType());
-    private static final MediaType actuatorMediaType3 = MediaType.asMediaType(ApiVersion.V3.getProducedMimeType());
+
+class T {
+-   private static final MediaType actuatorMediaType2 = MediaType.parseMediaType(ActuatorMediaType.V2_JSON);
+-   private static final MediaType actuatorMediaType3 = MediaType.parseMediaType(ActuatorMediaType.V3_JSON);
++   private static final MediaType actuatorMediaType2 = MediaType.asMediaType(ApiVersion.V2.getProducedMimeType());
++   private static final MediaType actuatorMediaType3 = MediaType.asMediaType(ApiVersion.V3.getProducedMimeType());
+}
 ```
 {% endcode %}
 {% endtab %}

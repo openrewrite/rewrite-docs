@@ -76,8 +76,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
-+    implementation 'org.newboot:spring-boot-starter:2.5.4'
+
+dependencies {
+-   implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
++   implementation 'org.newboot:spring-boot-starter:2.5.4'
+}
 ```
 {% endcode %}
 {% endtab %}

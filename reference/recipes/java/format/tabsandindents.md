@@ -65,8 +65,11 @@ class Test {{
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--    doTheThing();
-+        doTheThing();
+class Test {{
+    if (true == false)
+-   doTheThing();
++       doTheThing();
+
 ```
 {% endcode %}
 {% endtab %}

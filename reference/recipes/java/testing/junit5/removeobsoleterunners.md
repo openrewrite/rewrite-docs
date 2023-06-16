@@ -60,9 +60,10 @@ public class Foo {
 +++ Foo.java
 @@ -1,4 +1,0 @@
 -import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
-@RunWith(JUnit4.class)
+-import org.junit.runners.JUnit4;
+-
+-@RunWith(JUnit4.class)
+public class Foo {
 ```
 {% endcode %}
 {% endtab %}

@@ -84,6 +84,7 @@ class Test {
 @@ -1,1 +1,1 @@
 -class Test {
 +/*~~(Java version: 11)~~>*/class Test {
+}
 ```
 {% endcode %}
 {% endtab %}

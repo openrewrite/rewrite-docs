@@ -59,12 +59,15 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,5 @@
--    public boolean equals(Test tee) {
-+    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Test tee = (Test) obj;
+    int n;
+
+-   public boolean equals(Test tee) {
++   @Override
++   public boolean equals(Object obj) {
++       if (obj == this) return true;
++       if (obj == null || getClass() != obj.getClass()) return false;
++       Test tee = (Test) obj;
+        return n == tee.n;
 ```
 {% endcode %}
 {% endtab %}

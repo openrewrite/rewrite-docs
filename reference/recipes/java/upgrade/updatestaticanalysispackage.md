@@ -113,12 +113,21 @@ public class UseJavaUtilBase64 extends Recipe {
 --- org/openrewrite/java/migrate/UseJavaUtilBase64.java
 +++ org/openrewrite/java/migrate/UseJavaUtilBase64.java
 @@ -8,1 +8,0 @@
+import org.openrewrite.java.JavaVisitor;
+import org.openrewrite.java.cleanup.SimplifyBooleanExpression;
 -import org.openrewrite.java.cleanup.UnnecessaryCatch;
+import org.openrewrite.java.tree.J;
 @@ -10,0 +9,1 @@
+import org.openrewrite.java.cleanup.UnnecessaryCatch;
+import org.openrewrite.java.tree.J;
 +import org.openrewrite.staticanalysis.UnnecessaryCatch;
+
 @@ -28,1 +28,1 @@
--                org.openrewrite.java.cleanup.UnnecessaryCatch v1 = new org.openrewrite.java.cleanup.UnnecessaryCatch(true);
-+                org.openrewrite.staticanalysis.UnnecessaryCatch v1 = new org.openrewrite.staticanalysis.UnnecessaryCatch(true);
+                // expect to change
+                doAfterVisit(new UnnecessaryCatch(false).getVisitor());
+-               org.openrewrite.java.cleanup.UnnecessaryCatch v1 = new org.openrewrite.java.cleanup.UnnecessaryCatch(true);
++               org.openrewrite.staticanalysis.UnnecessaryCatch v1 = new org.openrewrite.staticanalysis.UnnecessaryCatch(true);
+
 ```
 {% endcode %}
 {% endtab %}
@@ -162,8 +171,11 @@ recipeList:
 {% code %}
 ```diff
 @@ -6,1 +6,1 @@
--  - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable
-+  - org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable
+description: org.example.bank.Internal
+recipeList:
+- - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable
++ - org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable
+
 ```
 {% endcode %}
 {% endtab %}
@@ -228,9 +240,14 @@ Update referencing places in pom.xml.
 --- pom.xml
 +++ pom.xml
 @@ -10,1 +10,1 @@
--            <recipe>org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable</recipe>
-+            <recipe>org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable</recipe>
+        <configuration>
+          <activeRecipes>
+-           <recipe>org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable</recipe>
++           <recipe>org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable</recipe>
+          </activeRecipes>
 @@ -17,1 +17,0 @@
+  </build>
+</project>
 -
 ```
 {% endcode %}

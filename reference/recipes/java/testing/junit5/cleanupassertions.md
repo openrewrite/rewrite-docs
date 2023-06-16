@@ -61,8 +61,11 @@ class ExampleTest {
 --- ExampleTest.java
 +++ ExampleTest.java
 @@ -7,1 +7,1 @@
--        Assertions.assertTrue("" == null);
-+        Assertions.assertNull("");
+    @Test
+    void test() {
+-       Assertions.assertTrue("" == null);
++       Assertions.assertNull("");
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -113,8 +116,11 @@ class ExampleTest {
 --- ExampleTest.java
 +++ ExampleTest.java
 @@ -7,1 +7,1 @@
--        Assertions.assertTrue("" == null);
-+        Assertions.assertNull("");
+    @Test
+    void test() {
+-       Assertions.assertTrue("" == null);
++       Assertions.assertNull("");
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -91,8 +91,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    implementation 'com.google.guava:guava:31.1-jre'
-+    /*~~(com.google.guava:failureaccess:1.0.1)~~>*/implementation 'com.google.guava:guava:31.1-jre'
+
+dependencies {
+-   implementation 'com.google.guava:guava:31.1-jre'
++   /*~~(com.google.guava:failureaccess:1.0.1)~~>*/implementation 'com.google.guava:guava:31.1-jre'
+}
 ```
 {% endcode %}
 {% endtab %}

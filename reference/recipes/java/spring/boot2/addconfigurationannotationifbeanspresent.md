@@ -53,9 +53,14 @@ class A {
 --- A.java
 +++ A.java
 @@ -2,0 +2,1 @@
+import org.springframework.context.annotation.Bean;
 +import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 @@ -4,0 +5,1 @@
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
 +@Configuration
+@EnableWebSecurity
 ```
 {% endcode %}
 {% endtab %}

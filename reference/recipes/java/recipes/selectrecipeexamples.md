@@ -127,9 +127,15 @@ class UnnecessaryParenthesesTest implements RewriteTest {
 --- org/openrewrite/java/cleanup/UnnecessaryParenthesesTest.java
 +++ org/openrewrite/java/cleanup/UnnecessaryParenthesesTest.java
 @@ -4,0 +4,1 @@
+
+import org.junit.jupiter.api.Test;
 +import org.openrewrite.DocumentExample;
+import org.openrewrite.Recipe;
 @@ -17,0 +18,1 @@
-+    @DocumentExample
+    }
+
++   @DocumentExample
+    @Test
 ```
 {% endcode %}
 {% endtab %}

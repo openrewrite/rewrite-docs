@@ -79,8 +79,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 --- SecurityConfig.java
 +++ SecurityConfig.java
 @@ -11,1 +11,1 @@
--            .authorizeRequests()
-+            .authorizeHttpRequests()
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+-           .authorizeRequests()
++           .authorizeHttpRequests()
+                .antMatchers("/blog/**").permitAll()
 ```
 {% endcode %}
 {% endtab %}

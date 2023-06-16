@@ -70,19 +70,28 @@ public class MyJobConfig {
 --- MyJobConfig.java
 +++ MyJobConfig.java
 @@ -3,2 +3,2 @@
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.Step;
 -import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.beans.factory.annotation.Autowired;
 +import org.springframework.batch.core.job.builder.JobBuilder;
-import org.springframework.batch.core.repository.JobRepository;
++import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.context.annotation.Bean;
 @@ -9,3 +9,0 @@
--    @Autowired
-    private JobBuilderFactory jobBuilderFactory;
+public class MyJobConfig {
 
+-   @Autowired
+-   private JobBuilderFactory jobBuilderFactory;
+-
+    @Bean
 @@ -13,2 +10,2 @@
--    Job myJob(Step step) {
-        return this.jobBuilderFactory.get("myJob")
-+    Job myJob(Step step, JobRepository jobRepository) {
-        return new JobBuilder("myJob", jobRepository)
+
+    @Bean
+-   Job myJob(Step step) {
+-       return this.jobBuilderFactory.get("myJob")
++   Job myJob(Step step, JobRepository jobRepository) {
++       return new JobBuilder("myJob", jobRepository)
+            .start(step)
 ```
 {% endcode %}
 {% endtab %}

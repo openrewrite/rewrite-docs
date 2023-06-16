@@ -75,7 +75,10 @@ class Test {
 --- com/example/Test.java
 +++ com/example/Test.java
 @@ -7,0 +7,1 @@
-+            @Override
+        //noinspection all
+        Runnable t = new Runnable() {
++           @Override
+            public void run() {
 ```
 {% endcode %}
 {% endtab %}

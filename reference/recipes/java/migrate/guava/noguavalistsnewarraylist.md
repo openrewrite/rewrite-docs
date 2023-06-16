@@ -55,11 +55,15 @@ class Test {
 +++ Test.java
 @@ -1,2 +1,1 @@
 -import com.google.common.collect.*;
-
+-
 +import java.util.ArrayList;
+import java.util.List;
 @@ -6,1 +5,1 @@
--    List<Integer> cardinalsWorldSeries = Lists.newArrayList();
-+    List<Integer> cardinalsWorldSeries = new ArrayList<>();
+
+class Test {
+-   List<Integer> cardinalsWorldSeries = Lists.newArrayList();
++   List<Integer> cardinalsWorldSeries = new ArrayList<>();
+}
 ```
 {% endcode %}
 {% endtab %}

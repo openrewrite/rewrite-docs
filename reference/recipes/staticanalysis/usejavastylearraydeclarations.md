@@ -57,15 +57,20 @@ class A {
 --- A.java
 +++ A.java
 @@ -2,3 +2,3 @@
--    int i[];
-    int j[][];
-    int c[], d[];
-+    int[] i;
-    int[][] j;
-    int[] c, d;
+class A {
+-   int i[];
+-   int j[][];
+-   int c[], d[];
++   int[] i;
++   int[][] j;
++   int[] c, d;
+
 @@ -6,1 +6,1 @@
--    void someMethod(int i[]) {
-+    void someMethod(int[] i) {
+    int c[], d[];
+
+-   void someMethod(int i[]) {
++   void someMethod(int[] i) {
+    }
 ```
 {% endcode %}
 {% endtab %}

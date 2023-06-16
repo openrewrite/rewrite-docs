@@ -57,14 +57,23 @@ class MyInterceptor implements HandlerInterceptor {
 --- MyInterceptor.java
 +++ MyInterceptor.java
 @@ -3,1 +3,1 @@
+import javax.servlet.http.*;
+
 -import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 +import org.springframework.web.servlet.HandlerInterceptor;
+
 @@ -5,1 +5,1 @@
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
 -class MyInterceptor extends HandlerInterceptorAdapter {
 +class MyInterceptor implements HandlerInterceptor {
+    @Override
 @@ -8,1 +8,1 @@
--        return super.preHandle(request, response, handler);
-+        return HandlerInterceptor.super.preHandle(request, response, handler);
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+-       return super.preHandle(request, response, handler);
++       return HandlerInterceptor.super.preHandle(request, response, handler);
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -56,14 +56,18 @@ class Test {
 +++ Test.java
 @@ -1,2 +1,2 @@
 -import com.github.tomakehurst.wiremock.junit.WireMockRule;
-import org.junit.Rule;
+-import org.junit.Rule;
 +import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
-import org.junit.jupiter.api.extension.RegisterExtension;
++import org.junit.jupiter.api.extension.RegisterExtension;
+
 @@ -7,2 +7,2 @@
--    @Rule
-    public WireMockRule wm = new WireMockRule(options().dynamicHttpsPort());
-+    @RegisterExtension
-    public WireMockExtension wm = WireMockExtension.newInstance().options(options().dynamicHttpsPort()).build();
+
+class Test {
+-   @Rule
+-   public WireMockRule wm = new WireMockRule(options().dynamicHttpsPort());
++   @RegisterExtension
++   public WireMockExtension wm = WireMockExtension.newInstance().options(options().dynamicHttpsPort()).build();
+}
 ```
 {% endcode %}
 {% endtab %}

@@ -47,8 +47,10 @@ server.max-http-request-header-size=10KB
 --- src/main/resources/application.properties
 +++ src/main/resources/application.properties
 @@ -2,1 +2,1 @@
+# application.properties
 -server.max-http-header-size=10KB
 +server.max-http-request-header-size=10KB
+
 ```
 {% endcode %}
 {% endtab %}
@@ -80,8 +82,10 @@ server.max-http-request-header-size=10KB
 --- src/main/resources/application.yml
 +++ src/main/resources/application.yml
 @@ -2,1 +2,1 @@
--      max-http-header-size: 10KB
-+      max-http-request-header-size: 10KB
+    server:
+-     max-http-header-size: 10KB
++     max-http-request-header-size: 10KB
+
 ```
 {% endcode %}
 {% endtab %}
@@ -118,8 +122,10 @@ server.max-http-request-header-size=10KB
 --- src/main/resources/application.properties
 +++ src/main/resources/application.properties
 @@ -2,1 +2,1 @@
+# application.properties
 -server.max-http-header-size=10KB
 +server.max-http-request-header-size=10KB
+
 ```
 {% endcode %}
 {% endtab %}
@@ -151,8 +157,10 @@ server.max-http-request-header-size=10KB
 --- src/main/resources/application.yml
 +++ src/main/resources/application.yml
 @@ -2,1 +2,1 @@
--      max-http-header-size: 10KB
-+      max-http-request-header-size: 10KB
+    server:
+-     max-http-header-size: 10KB
++     max-http-request-header-size: 10KB
+
 ```
 {% endcode %}
 {% endtab %}

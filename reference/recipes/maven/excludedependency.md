@@ -104,12 +104,15 @@ _Exclude specified dependency from any dependency that transitively includes it.
 --- pom.xml
 +++ pom.xml
 @@ -21,0 +21,6 @@
-+      <exclusions>
-        <exclusion>
-          <groupId>org.junit.vintage</groupId>
-          <artifactId>junit-vintage-engine</artifactId>
-        </exclusion>
-      </exclusions>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
++     <exclusions>
++       <exclusion>
++         <groupId>org.junit.vintage</groupId>
++         <artifactId>junit-vintage-engine</artifactId>
++       </exclusion>
++     </exclusions>
+    </dependency>
 ```
 {% endcode %}
 {% endtab %}

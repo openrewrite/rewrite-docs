@@ -69,7 +69,10 @@ spec:
 {% code %}
 ```diff
 @@ -9,0 +9,1 @@
-+  privileged: false
+    - name: nginx
+      image: nginx
++ privileged: false
+
 ```
 {% endcode %}
 {% endtab %}

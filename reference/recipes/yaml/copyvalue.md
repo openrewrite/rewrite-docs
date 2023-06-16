@@ -54,8 +54,11 @@ destination:   password
 {% code %}
 ```diff
 @@ -3,1 +3,1 @@
+id: something
+source:   password
 -destination: whatever
 +destination:   password
+
 ```
 {% endcode %}
 {% endtab %}

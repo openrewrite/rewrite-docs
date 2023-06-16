@@ -58,9 +58,13 @@ class A {
 @@ -1,1 +1,1 @@
 -import com.google.common.base.Optional;
 +import java.util.Optional;
+
 @@ -5,1 +5,1 @@
--        return Optional.absent();
-+        return Optional.empty();
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -117,9 +121,13 @@ class A {
 @@ -1,1 +1,1 @@
 -import com.google.common.base.Optional;
 +import java.util.Optional;
+
 @@ -7,1 +7,1 @@
--        } catch (IllegalStateException e) {
-+        } catch (NoSuchElementException e) {
+        try {
+            return optional.get();
+-       } catch (IllegalStateException e) {
++       } catch (NoSuchElementException e) {
+            return "";
 ```
 {% endcode %}
 {% endtab %}
@@ -168,9 +176,13 @@ class A {
 @@ -1,1 +1,1 @@
 -import com.google.common.base.Optional;
 +import java.util.Optional;
+
 @@ -5,1 +5,1 @@
--        return Optional.absent();
-+        return Optional.empty();
+class A {
+    Optional<String> foo() {
+-       return Optional.absent();
++       return Optional.empty();
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -227,9 +239,13 @@ class A {
 @@ -1,1 +1,1 @@
 -import com.google.common.base.Optional;
 +import java.util.Optional;
+
 @@ -7,1 +7,1 @@
--        } catch (IllegalStateException e) {
-+        } catch (NoSuchElementException e) {
+        try {
+            return optional.get();
+-       } catch (IllegalStateException e) {
++       } catch (NoSuchElementException e) {
+            return "";
 ```
 {% endcode %}
 {% endtab %}

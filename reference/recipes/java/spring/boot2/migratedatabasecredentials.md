@@ -43,12 +43,13 @@ spring.liquibase:
 ```diff
 @@ -1,3 +1,4 @@
 -spring:
-  liquibase:
-    url: host
+- liquibase:
+-   url: host
 +spring.liquibase:
-  url: host
-  username: ${spring.datasource.username}
-  password: ${spring.datasource.password}
++ url: host
++ username: ${spring.datasource.username}
++ password: ${spring.datasource.password}
+
 ```
 {% endcode %}
 {% endtab %}

@@ -66,10 +66,16 @@ public class Test {
 --- org/openrewrite/example/Test.java
 +++ org/openrewrite/example/Test.java
 @@ -3,0 +3,1 @@
+package org.openrewrite.example;
+
 +import java.util.ResourceBundle;
+import java.util.logging.Level;
 @@ -10,1 +11,1 @@
--        logger.logrb(Level.parse("0"), "sourceClass", "sourceMethod", "bundleName", "msg");
-+        logger.logrb(Level.parse("0"), "sourceClass", "sourceMethod", ResourceBundle.getBundle("bundleName"), "msg");
+
+    public void method() {
+-       logger.logrb(Level.parse("0"), "sourceClass", "sourceMethod", "bundleName", "msg");
++       logger.logrb(Level.parse("0"), "sourceClass", "sourceMethod", ResourceBundle.getBundle("bundleName"), "msg");
+    }
 ```
 {% endcode %}
 {% endtab %}

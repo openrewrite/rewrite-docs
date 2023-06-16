@@ -63,10 +63,13 @@ public class A {
 --- A.java
 +++ A.java
 @@ -8,4 +8,0 @@
--        System.gc();
-        if (1 > 0) {
-            System.gc();
-        }
+    public static void main(String[] args) {
+        gc();
+-       System.gc();
+-       if (1 > 0) {
+-           System.gc();
+-       }
+    }
 ```
 {% endcode %}
 {% endtab %}

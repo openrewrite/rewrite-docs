@@ -59,17 +59,22 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,4 +2,4 @@
--    long lp = 1l;
-    Long l = 100l;
-    Double d = 100.0d;
-    Float f = 100f;
-+    long lp = 1L;
-    Long l = 100L;
-    Double d = 100.0D;
-    Float f = 100F;
+class Test {
+-   long lp = 1l;
+-   Long l = 100l;
+-   Double d = 100.0d;
+-   Float f = 100f;
++   long lp = 1L;
++   Long l = 100L;
++   Double d = 100.0D;
++   Float f = 100F;
+    Integer i = 0;
 @@ -7,1 +7,1 @@
--    Long l2 = 0x100000000l;
-+    Long l2 = 0x100000000L;
+    Float f = 100f;
+    Integer i = 0;
+-   Long l2 = 0x100000000l;
++   Long l2 = 0x100000000L;
+    String s = "hello";
 ```
 {% endcode %}
 {% endtab %}

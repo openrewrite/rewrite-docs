@@ -54,10 +54,16 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,0 +3,1 @@
+import java.io.File;
+import java.io.IOException;
 +import java.nio.file.Files;
+
 @@ -6,1 +7,1 @@
--        File tempDir = File.createTempFile("hello", "world");
-+        File tempDir = Files.createTempFile("hello", "world").toFile();
+class Test {
+    static void method() throws IOException {
+-       File tempDir = File.createTempFile("hello", "world");
++       File tempDir = Files.createTempFile("hello", "world").toFile();
+    }
 ```
 {% endcode %}
 {% endtab %}

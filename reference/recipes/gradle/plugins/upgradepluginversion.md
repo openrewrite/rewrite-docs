@@ -60,8 +60,10 @@ plugins {
 --- build.gradle
 +++ build.gradle
 @@ -2,1 +2,1 @@
--    id 'com.jfrog.bintray' version '1.7.1'
-+    id 'com.jfrog.bintray' version '1.7.3'
+plugins {
+-   id 'com.jfrog.bintray' version '1.7.1'
++   id 'com.jfrog.bintray' version '1.7.3'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
 ```
 {% endcode %}
 {% endtab %}

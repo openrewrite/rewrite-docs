@@ -56,9 +56,12 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,2 +4,1 @@
--        for (int i = 0; i < 10; h++, j++) {
-            i++;
-+        for (int i = 0; i < 10; h++, i++, j++) {
+    void test() {
+        int h, j;
+-       for (int i = 0; i < 10; h++, j++) {
+-           i++;
++       for (int i = 0; i < 10; h++, i++, j++) {
+        }
 ```
 {% endcode %}
 {% endtab %}

@@ -70,11 +70,14 @@ spec:
 {% code %}
 ```diff
 @@ -5,0 +5,5 @@
-+    lifecycleRule:
-        - action:
-              type: Delete
-          condition:
-              age: 7
+spec:
+    bucketPolicyOnly: true
++   lifecycleRule:
++       - action:
++             type: Delete
++         condition:
++             age: 7
+
 ```
 {% endcode %}
 {% endtab %}

@@ -61,7 +61,10 @@ _Append item to YAML sequence._
 {% code %}
 ```diff
 @@ -5,0 +5,1 @@
-+        - strawberry
+        - apple
+        - blueberry
++       - strawberry
+
 ```
 {% endcode %}
 {% endtab %}

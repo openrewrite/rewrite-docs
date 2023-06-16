@@ -76,8 +76,11 @@ spec:
 {% code %}
 ```diff
 @@ -12,1 +12,1 @@
--            memory: "256M"
-+            memory: "67M"
+        limits:
+            cpu: "500Mi"
+-           memory: "256M"
++           memory: "67M"
+
 ```
 {% endcode %}
 {% endtab %}

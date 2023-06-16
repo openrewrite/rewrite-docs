@@ -55,8 +55,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -7,1 +7,1 @@
--        JpaSort onlyAttr = new JpaSort(attr);
-+        JpaSort onlyAttr = JpaSort.of(attr);
+    Attribute<?, ?> attr;
+    void test() {
+-       JpaSort onlyAttr = new JpaSort(attr);
++       JpaSort onlyAttr = JpaSort.of(attr);
+    }
 ```
 {% endcode %}
 {% endtab %}

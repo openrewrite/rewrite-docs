@@ -55,10 +55,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,2 +4,2 @@
--            @ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
-            @ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
-+            /*~~>*/@ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
-            /*~~>*/@ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
+class Test {
+    @ValueMappings({
+-           @ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
+-           @ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
++           /*~~>*/@ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
++           /*~~>*/@ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
+    })
 ```
 {% endcode %}
 {% endtab %}

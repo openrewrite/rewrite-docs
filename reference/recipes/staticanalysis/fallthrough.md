@@ -64,7 +64,10 @@ public class A {
 --- A.java
 +++ A.java
 @@ -7,0 +7,1 @@
-+            break;
+        case 0:
+            i++;
++           break;
+        case 99:
 ```
 {% endcode %}
 {% endtab %}

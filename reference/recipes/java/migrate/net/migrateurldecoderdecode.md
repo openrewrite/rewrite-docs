@@ -60,10 +60,16 @@ class Test {
 --- org/openrewrite/example/Test.java
 +++ org/openrewrite/example/Test.java
 @@ -4,0 +4,1 @@
+
+import java.net.URLDecoder;
 +import java.nio.charset.StandardCharsets;
+
 @@ -7,1 +8,1 @@
--        String message = URLDecoder.decode(url);
-+        String message = URLDecoder.decode(url, StandardCharsets.UTF_8);
+class Test {
+    public static void method(String url) {
+-       String message = URLDecoder.decode(url);
++       String message = URLDecoder.decode(url, StandardCharsets.UTF_8);
+    }
 ```
 {% endcode %}
 {% endtab %}

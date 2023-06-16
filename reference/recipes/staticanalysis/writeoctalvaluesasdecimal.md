@@ -67,10 +67,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,2 +3,2 @@
--        int m = 010;
-        short m2 = 010;
-+        int m = 8;
-        short m2 = 8;
+class Test {
+    void test() {
+-       int m = 010;
+-       short m2 = 010;
++       int m = 8;
++       short m2 = 8;
+        int n = 0x01;
 ```
 {% endcode %}
 {% endtab %}

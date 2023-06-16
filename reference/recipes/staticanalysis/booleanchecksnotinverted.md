@@ -59,11 +59,17 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -5,1 +5,1 @@
--        if ( !(a == 2)) {
-+        if ( a != 2) {
+    int a;
+    void test() {
+-       if ( !(a == 2)) {
++       if ( a != 2) {
+        }
 @@ -7,1 +7,1 @@
--        boolean b = !(i < 10);
-+        boolean b = i >= 10;
+        if ( !(a == 2)) {
+        }
+-       boolean b = !(i < 10);
++       boolean b = i >= 10;
+    }
 ```
 {% endcode %}
 {% endtab %}

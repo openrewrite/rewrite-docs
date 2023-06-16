@@ -60,8 +60,11 @@ class Test {
 --- org/openrewrite/java/Test.java
 +++ org/openrewrite/java/Test.java
 @@ -4,1 +4,1 @@
--    Object o = "Hello World!";
-+    Object o = ReplaceStringLiteralWithConstantTest.EXAMPLE_STRING_CONSTANT;
+
+class Test {
+-   Object o = "Hello World!";
++   Object o = ReplaceStringLiteralWithConstantTest.EXAMPLE_STRING_CONSTANT;
+}
 ```
 {% endcode %}
 {% endtab %}

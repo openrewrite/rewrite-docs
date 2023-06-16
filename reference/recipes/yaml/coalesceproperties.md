@@ -47,16 +47,18 @@ _Simplify nested map hierarchies into their simplest dot separated property form
 {% code %}
 ```diff
 @@ -2,6 +2,4 @@
--        metrics:
-            enable.process.files: true
-        endpoint:
-            health:
-                show-components: always
-                show-details: always
-+        metrics.enable.process.files: true
-        endpoint.health:
-            show-components: always
-            show-details: always
+    management:
+-       metrics:
+-           enable.process.files: true
+-       endpoint:
+-           health:
+-               show-components: always
+-               show-details: always
++       metrics.enable.process.files: true
++       endpoint.health:
++           show-components: always
++           show-details: always
+
 ```
 {% endcode %}
 {% endtab %}

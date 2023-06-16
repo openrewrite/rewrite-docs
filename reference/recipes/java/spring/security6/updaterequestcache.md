@@ -94,7 +94,10 @@ public class SecurityConfig {
 --- SecurityConfig.java
 +++ SecurityConfig.java
 @@ -16,0 +16,1 @@
-+        requestCache.setMatchingRequestParameterName("continue");
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        HttpSessionRequestCache requestCache = new HttpSessionRequestCache();
++       requestCache.setMatchingRequestParameterName("continue");
+
 ```
 {% endcode %}
 {% endtab %}

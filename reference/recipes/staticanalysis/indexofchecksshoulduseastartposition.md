@@ -51,8 +51,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        return str.indexOf("x") > 2;
-+        return str.indexOf("x", 2) > -1;
+class Test {
+    boolean hasIndex(String str) {
+-       return str.indexOf("x") > 2;
++       return str.indexOf("x", 2) > -1;
+    }
 ```
 {% endcode %}
 {% endtab %}

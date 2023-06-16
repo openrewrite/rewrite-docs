@@ -57,11 +57,17 @@ class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -3,1 +3,0 @@
+import org.junit.Rule;
+import org.junit.rules.TemporaryFolder;
 -import org.junit.rules.ExpectedException;
+
 @@ -9,3 +8,0 @@
--
     @Rule
-    ExpectedException thrown = ExpectedException.none();
+    TemporaryFolder tempDir = new TemporaryFolder();
+-
+-   @Rule
+-   ExpectedException thrown = ExpectedException.none();
+}
 ```
 {% endcode %}
 {% endtab %}

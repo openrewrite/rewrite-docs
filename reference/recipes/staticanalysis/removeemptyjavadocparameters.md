@@ -47,8 +47,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
--    /**@param arg0*/
-+    /***/
+class Test {
+-   /**@param arg0*/
++   /***/
+    void method(int arg0) {
 ```
 {% endcode %}
 {% endtab %}

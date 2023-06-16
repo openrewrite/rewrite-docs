@@ -51,10 +51,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,2 +3,2 @@
--        int [] [] a;
-        int [] b;
-+        int[][] a;
-        int[] b;
+class Test {
+    static void method() {
+-       int [] [] a;
+-       int [] b;
++       int[][] a;
++       int[] b;
+        int c, d = 0;
 ```
 {% endcode %}
 {% endtab %}

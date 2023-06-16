@@ -97,26 +97,27 @@ _The DOT language format is specified [here](https://graphviz.org/doc/info/lang.
 @@ -1,1 +1,21 @@
 -<project>
 +<!--~~(digraph main {
-0 [label="com.mycompany.app:my-app:1"];
-1 [label="org.yaml:snakeyaml:1.27"];
-2 [label="org.junit.jupiter:junit-jupiter:5.7.0"];
-3 [label="org.junit.jupiter:junit-jupiter-api:5.7.0"];
-4 [label="org.junit.jupiter:junit-jupiter-params:5.7.0"];
-5 [label="org.junit.jupiter:junit-jupiter-engine:5.7.0"];
-6 [label="org.apiguardian:apiguardian-api:1.1.0"];
-7 [label="org.opentest4j:opentest4j:1.2.0"];
-8 [label="org.junit.platform:junit-platform-commons:1.7.0"];
-9 [label="org.junit.platform:junit-platform-engine:1.7.0"];
-0 -> 1 [taillabel="Compile"];
-0 -> 2 [taillabel="Test"];
-2 -> 3 [taillabel="Test"];
-3 -> 6 [taillabel="Test"];
-3 -> 7 [taillabel="Test"];
-3 -> 8 [taillabel="Test"];
-2 -> 4 [taillabel="Test"];
-2 -> 5 [taillabel="Test"];
-5 -> 9 [taillabel="Test"];
-})~~>--><project>
++0 [label="com.mycompany.app:my-app:1"];
++1 [label="org.yaml:snakeyaml:1.27"];
++2 [label="org.junit.jupiter:junit-jupiter:5.7.0"];
++3 [label="org.junit.jupiter:junit-jupiter-api:5.7.0"];
++4 [label="org.junit.jupiter:junit-jupiter-params:5.7.0"];
++5 [label="org.junit.jupiter:junit-jupiter-engine:5.7.0"];
++6 [label="org.apiguardian:apiguardian-api:1.1.0"];
++7 [label="org.opentest4j:opentest4j:1.2.0"];
++8 [label="org.junit.platform:junit-platform-commons:1.7.0"];
++9 [label="org.junit.platform:junit-platform-engine:1.7.0"];
++0 -> 1 [taillabel="Compile"];
++0 -> 2 [taillabel="Test"];
++2 -> 3 [taillabel="Test"];
++3 -> 6 [taillabel="Test"];
++3 -> 7 [taillabel="Test"];
++3 -> 8 [taillabel="Test"];
++2 -> 4 [taillabel="Test"];
++2 -> 5 [taillabel="Test"];
++5 -> 9 [taillabel="Test"];
++})~~>--><project>
+  <groupId>com.mycompany.app</groupId>
 ```
 {% endcode %}
 {% endtab %}

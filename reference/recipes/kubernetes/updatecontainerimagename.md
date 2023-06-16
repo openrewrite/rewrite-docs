@@ -86,8 +86,11 @@ spec:
 {% code %}
 ```diff
 @@ -5,1 +5,1 @@
--    - image: nginx
-+    - image: gcr.io/myaccount/myrepo/nginx-custom:latest
+spec:
+    containers:
+-   - image: nginx
++   - image: gcr.io/myaccount/myrepo/nginx-custom:latest
+---
 ```
 {% endcode %}
 {% endtab %}

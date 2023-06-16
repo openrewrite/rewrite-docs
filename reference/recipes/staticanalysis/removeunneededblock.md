@@ -49,10 +49,13 @@ public class A {
 --- A.java
 +++ A.java
 @@ -3,3 +3,1 @@
--        {
-            System.out.println("hello!");
-        }
-+        System.out.println("hello!");
+public class A {
+    void test() {
+-       {
+-           System.out.println("hello!");
+-       }
++       System.out.println("hello!");
+    }
 ```
 {% endcode %}
 {% endtab %}

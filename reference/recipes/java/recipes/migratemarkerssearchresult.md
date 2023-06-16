@@ -96,10 +96,16 @@ public class FindExceedsResourceRatio extends Recipe {
 --- org/openrewrite/kubernetes/resource/FindExceedsResourceRatio.java
 +++ org/openrewrite/kubernetes/resource/FindExceedsResourceRatio.java
 @@ -6,0 +6,1 @@
+import lombok.Value;
+import org.openrewrite.*;
 +import org.openrewrite.marker.SearchResult;
+import org.openrewrite.yaml.YamlIsoVisitor;
 @@ -23,1 +24,1 @@
--                return e.withMarkers(e.getMarkers().searchResult("foo"));
-+                return SearchResult.found(e, "foo");
+            public Yaml.Mapping.Entry visitMappingEntry(Yaml.Mapping.Entry entry, ExecutionContext ctx) {
+                Yaml.Mapping.Entry e = super.visitMappingEntry(entry, ctx);
+-               return e.withMarkers(e.getMarkers().searchResult("foo"));
++               return SearchResult.found(e, "foo");
+            }
 ```
 {% endcode %}
 {% endtab %}

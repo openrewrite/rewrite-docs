@@ -55,12 +55,19 @@ class Test {
 +++ Test.java
 @@ -1,2 +1,0 @@
 -import com.google.common.collect.*;
-
+-
+import java.util.List;
 @@ -4,0 +2,1 @@
+
+import java.util.List;
 +import java.util.concurrent.CopyOnWriteArrayList;
+
 @@ -6,1 +5,1 @@
--    List<Integer> cardinalsWorldSeries = Lists.newCopyOnWriteArrayList();
-+    List<Integer> cardinalsWorldSeries = new CopyOnWriteArrayList<>();
+
+class Test {
+-   List<Integer> cardinalsWorldSeries = Lists.newCopyOnWriteArrayList();
++   List<Integer> cardinalsWorldSeries = new CopyOnWriteArrayList<>();
+}
 ```
 {% endcode %}
 {% endtab %}

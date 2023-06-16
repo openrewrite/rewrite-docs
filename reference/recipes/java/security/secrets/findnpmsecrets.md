@@ -74,14 +74,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,4 +4,4 @@
--            "//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
-            "//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
-            "//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
-            "//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
-+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
-            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
-            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
-            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+    void npmTest() {
+        String[] npmSecrets = {
+-           "//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+-           "//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+-           "//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+-           "//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
++           /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
++           /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
++           /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
++           /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+        String[] notNmpSecrets = {
 ```
 {% endcode %}
 {% endtab %}
@@ -146,14 +149,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,4 +4,4 @@
--            "//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
-            "//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
-            "//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
-            "//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
-+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
-            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
-            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
-            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+    void npmTest() {
+        String[] npmSecrets = {
+-           "//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+-           "//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+-           "//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+-           "//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
++           /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
++           /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
++           /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
++           /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+        String[] notNmpSecrets = {
 ```
 {% endcode %}
 {% endtab %}

@@ -58,8 +58,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--    @Nullable String name;
-+    /*~~>*/@Nullable String name;
+import org.openrewrite.internal.lang.Nullable;
+public class Test {
+-   @Nullable String name;
++   /*~~>*/@Nullable String name;
+}
 ```
 {% endcode %}
 {% endtab %}

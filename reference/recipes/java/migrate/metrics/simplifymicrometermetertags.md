@@ -53,8 +53,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--        .tags(new String[] { "key", "value" })
-+        .tag("key", "value")
+class Test {
+    Counter c = Counter.builder("counter")
+-       .tags(new String[] { "key", "value" })
++       .tag("key", "value")
+        .register(Metrics.globalRegistry);
 ```
 {% endcode %}
 {% endtab %}

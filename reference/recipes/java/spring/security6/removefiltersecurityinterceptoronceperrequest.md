@@ -78,7 +78,10 @@ public class SecurityConfig {
 --- SecurityConfig.java
 +++ SecurityConfig.java
 @@ -15,1 +15,0 @@
--                .filterSecurityInterceptorOncePerRequest(false)
+        http
+            .authorizeRequests((authorize) -> authorize
+-               .filterSecurityInterceptorOncePerRequest(false)
+                .requestMatchers(HttpMethod.GET, "/static/**")
 ```
 {% endcode %}
 {% endtab %}

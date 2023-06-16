@@ -55,8 +55,11 @@ public class Test {
 --- org/openrewrite/example/Test.java
 +++ org/openrewrite/example/Test.java
 @@ -7,1 +7,1 @@
--        Logger logger = Logger.global;
-+        Logger logger = Logger.getGlobal();
+public class Test {
+    public static void method() {
+-       Logger logger = Logger.global;
++       Logger logger = Logger.getGlobal();
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -48,9 +48,12 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,2 @@
+import com.example.*;
+
 -@Annotations({@Annotation, @Annotation})
 +@Annotation
-@Annotation
++@Annotation
+class Test {
 ```
 {% endcode %}
 {% endtab %}

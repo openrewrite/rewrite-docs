@@ -61,8 +61,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--        String s = "http://test";
-+        String s = "https://test";
+class Test {
+    void test() {
+-       String s = "http://test";
++       String s = "https://test";
+        String t = s;
 ```
 {% endcode %}
 {% endtab %}

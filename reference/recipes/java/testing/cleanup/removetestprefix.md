@@ -89,17 +89,29 @@ class ATest {
 --- ATest.java
 +++ ATest.java
 @@ -6,1 +6,1 @@
--    void testMethod() {
-+    void method() {
+class ATest {
+    @Test
+-   void testMethod() {
++   void method() {
+    }
 @@ -10,1 +10,1 @@
--    void test_snake_case() {
-+    void snake_case() {
+
+    @Test
+-   void test_snake_case() {
++   void snake_case() {
+    }
 @@ -16,1 +16,1 @@
--        void testAnotherTestMethod() {
-+        void anotherTestMethod() {
+    class NestedTestClass {
+        @Test
+-       void testAnotherTestMethod() {
++       void anotherTestMethod() {
+        }
 @@ -23,1 +23,1 @@
--        void testYetAnotherTestMethod() {
-+        void yetAnotherTestMethod() {
+    class AnotherNestedTestClass {
+        @Test
+-       void testYetAnotherTestMethod() {
++       void yetAnotherTestMethod() {
+        }
 ```
 {% endcode %}
 {% endtab %}

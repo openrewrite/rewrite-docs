@@ -54,8 +54,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -6,1 +6,1 @@
--        monitor.setThreshold(10);
-+        monitor.setInitThreshold(10);
+    public void method() {
+        CounterMonitor monitor = new CounterMonitor();
+-       monitor.setThreshold(10);
++       monitor.setInitThreshold(10);
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -104,8 +107,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -6,1 +6,1 @@
--        monitor.setThreshold(10);
-+        monitor.setInitThreshold(10);
+    public void method() {
+        CounterMonitor monitor = new CounterMonitor();
+-       monitor.setThreshold(10);
++       monitor.setInitThreshold(10);
+    }
 ```
 {% endcode %}
 {% endtab %}

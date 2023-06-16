@@ -51,10 +51,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,3 +3,1 @@
--        int x = 1;
-        x++;
-        x *= 2;
-+        int x = (1 + 1) * 2;
+class Test {
+    int test() {
+-       int x = 1;
+-       x++;
+-       x *= 2;
++       int x = (1 + 1) * 2;
+        return x;
 ```
 {% endcode %}
 {% endtab %}

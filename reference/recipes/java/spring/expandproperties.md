@@ -52,13 +52,15 @@ spring:
 --- application.yml
 +++ application.yml
 @@ -2,3 +2,4 @@
+management: test
 -spring.application:
-  name: main
-  description: a description
+- name: main
+- description: a description
 +spring:
-  application:
-    name: main
-    description: a description
++ application:
++   name: main
++   description: a description
+
 ```
 {% endcode %}
 {% endtab %}

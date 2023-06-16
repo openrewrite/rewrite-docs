@@ -77,9 +77,11 @@ https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
 --- pom.xml
 +++ pom.xml
 @@ -2,1 +2,2 @@
--  <parent>
-+  <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
-https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
+<project>
+- <parent>
++ <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
++https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
+      <groupId>org.jenkins-ci.plugins</groupId>
 ```
 {% endcode %}
 {% endtab %}

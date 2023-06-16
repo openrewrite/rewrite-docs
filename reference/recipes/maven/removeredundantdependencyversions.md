@@ -95,7 +95,10 @@ _Remove explicitly-specified dependency versions when a parent POM's dependencyM
 --- pom.xml
 +++ pom.xml
 @@ -18,1 +18,0 @@
--            <version>30.0-jre</version>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+-           <version>30.0-jre</version>
+        </dependency>
 ```
 {% endcode %}
 {% endtab %}

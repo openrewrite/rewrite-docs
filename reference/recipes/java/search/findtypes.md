@@ -54,8 +54,10 @@ public class B extends /*~~>*/A1 {}
 --- B.java
 +++ B.java
 @@ -2,1 +2,1 @@
+import a.A1;
 -public class B extends A1 {}
 +public class B extends /*~~>*/A1 {}
+
 ```
 {% endcode %}
 {% endtab %}

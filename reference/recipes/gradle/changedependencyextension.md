@@ -76,8 +76,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    api 'org.openrewrite:rewrite-gradle:latest.integration@jar'
-+    api 'org.openrewrite:rewrite-gradle:latest.integration@war'
+
+dependencies {
+-   api 'org.openrewrite:rewrite-gradle:latest.integration@jar'
++   api 'org.openrewrite:rewrite-gradle:latest.integration@war'
+}
 ```
 {% endcode %}
 {% endtab %}

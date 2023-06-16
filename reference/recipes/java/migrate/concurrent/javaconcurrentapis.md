@@ -52,8 +52,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -5,1 +5,1 @@
--        return value.weakCompareAndSet(true, true);
-+        return value.weakCompareAndSetPlain(true, true);
+    public boolean method() {
+        AtomicBoolean value = new AtomicBoolean();
+-       return value.weakCompareAndSet(true, true);
++       return value.weakCompareAndSetPlain(true, true);
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -100,8 +103,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -5,1 +5,1 @@
--        return value.weakCompareAndSet(true, true);
-+        return value.weakCompareAndSetPlain(true, true);
+    public boolean method() {
+        AtomicBoolean value = new AtomicBoolean();
+-       return value.weakCompareAndSet(true, true);
++       return value.weakCompareAndSetPlain(true, true);
+    }
 ```
 {% endcode %}
 {% endtab %}

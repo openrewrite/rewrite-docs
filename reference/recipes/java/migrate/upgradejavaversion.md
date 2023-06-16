@@ -74,12 +74,15 @@ _Upgrade build plugin configuration to use the specified Java version. This reci
 --- pom.xml
 +++ pom.xml
 @@ -5,3 +5,3 @@
--    <java.version>1.8</java.version>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-+    <java.version>17</java.version>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+
+  <properties>
+-   <java.version>1.8</java.version>
+-   <maven.compiler.source>1.8</maven.compiler.source>
+-   <maven.compiler.target>1.8</maven.compiler.target>
++   <java.version>17</java.version>
++   <maven.compiler.source>17</maven.compiler.source>
++   <maven.compiler.target>17</maven.compiler.target>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}

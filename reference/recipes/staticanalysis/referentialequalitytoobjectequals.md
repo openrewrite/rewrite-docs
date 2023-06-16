@@ -63,8 +63,11 @@ class T {
 --- T.java
 +++ T.java
 @@ -5,1 +5,1 @@
--        if (a1 == a2) {}
-+        if (a1.equals(a2)) {}
+        A a1 = new A();
+        A a2 = new A();
+-       if (a1 == a2) {}
++       if (a1.equals(a2)) {}
+    }
 ```
 {% endcode %}
 {% endtab %}

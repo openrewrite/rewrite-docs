@@ -104,11 +104,17 @@ spec:
 {% code %}
 ```diff
 @@ -5,1 +5,1 @@
--  annotations:
-+  ~~(missing:mycompany.io/annotation)~~>annotations:
+metadata:
+  name: mypod1
+- annotations:
++ ~~(missing:mycompany.io/annotation)~~>annotations:
+    mycompany.io/something: "hasvalue"
 @@ -21,1 +21,1 @@
--                annotations:
-+                ~~(missing:mycompany.io/annotation)~~>annotations:
+        spec:
+            metadata:
+-               annotations:
++               ~~(missing:mycompany.io/annotation)~~>annotations:
+                    mycompany.io/something: "hasvalue"
 ```
 {% endcode %}
 {% endtab %}

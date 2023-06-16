@@ -66,8 +66,11 @@ _Updates the expiration date for OWASP suppressions having a matching cve tag. F
 --- suppressions.xml
 +++ suppressions.xml
 @@ -3,1 +3,1 @@
--    <suppress until="2020-01-01Z">
-+    <suppress until="2020-02-01Z">
+<?xml version="1.0" encoding="UTF-8" ?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+-   <suppress until="2020-01-01Z">
++   <suppress until="2020-02-01Z">
+        <notes>
 ```
 {% endcode %}
 {% endtab %}

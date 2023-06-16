@@ -63,11 +63,17 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -3,1 +3,1 @@
+import org.junit.jupiter.api.Test;
+
 -import static org.junit.jupiter.api.Assertions.assertTrue;
 +import static org.assertj.core.api.Assertions.assertThat;
+
 @@ -8,1 +8,1 @@
--        assertTrue(notification() != null && notification() > 0);
-+        assertThat(notification() != null && notification() > 0).isTrue();
+    @Test
+    public void test() {
+-       assertTrue(notification() != null && notification() > 0);
++       assertThat(notification() != null && notification() > 0).isTrue();
+    }
 ```
 {% endcode %}
 {% endtab %}

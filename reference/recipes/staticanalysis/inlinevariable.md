@@ -100,17 +100,26 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -6,2 +6,1 @@
--        int n = 0;
-        return n;
-+        return 0;
+class Test {
+    int test() {
+-       int n = 0;
+-       return n;
++       return 0;
+    }
 @@ -20,2 +19,1 @@
--            IllegalArgumentException e = new IllegalArgumentException("arg should not be empty or null");
-            throw e;
-+            throw new IllegalArgumentException("arg should not be empty or null");
+    void test4(String arg) throws IllegalArgumentException {
+        if (arg == null || arg.isEmpty()) {
+-           IllegalArgumentException e = new IllegalArgumentException("arg should not be empty or null");
+-           throw e;
++           throw new IllegalArgumentException("arg should not be empty or null");
+        }
 @@ -27,2 +25,1 @@
--            String un = n.toLowerCase();
-            return un;
-+            return n.toLowerCase();
+    List<String> testLambda(List<String> names) {
+        return names.stream().map(n -> {
+-           String un = n.toLowerCase();
+-           return un;
++           return n.toLowerCase();
+        }).collect(Collectors.toList());
 ```
 {% endcode %}
 {% endtab %}

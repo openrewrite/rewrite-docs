@@ -69,8 +69,11 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -14,1 +14,1 @@
--        assertThat(collection.size()).isEqualTo(1);
-+        assertThat(collection).hasSize(1);
+        Collection<String> collection = new ArrayList<>();
+        collection.add("3");
+-       assertThat(collection.size()).isEqualTo(1);
++       assertThat(collection).hasSize(1);
+    }
 ```
 {% endcode %}
 {% endtab %}

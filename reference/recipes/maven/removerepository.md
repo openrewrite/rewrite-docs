@@ -96,10 +96,13 @@ _Removes a matching Maven repository._
 --- pom.xml
 +++ pom.xml
 @@ -7,4 +7,0 @@
--      <id>myRepo</id>
-      <url>https://myrepo.maven.com/repo</url>
-    </repository>
+  <repositories>
     <repository>
+-     <id>myRepo</id>
+-     <url>https://myrepo.maven.com/repo</url>
+-   </repository>
+-   <repository>
+      <id>same_repo_different_id</id>
 ```
 {% endcode %}
 {% endtab %}

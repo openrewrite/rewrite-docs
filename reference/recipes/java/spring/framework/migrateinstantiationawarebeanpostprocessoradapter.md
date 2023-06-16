@@ -47,9 +47,13 @@ class A implements SmartInstantiationAwareBeanPostProcessor {
 @@ -1,1 +1,1 @@
 -import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter;
 +import org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor;
+
 @@ -3,1 +3,1 @@
+import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter;
+
 -class A extends InstantiationAwareBeanPostProcessorAdapter {
 +class A implements SmartInstantiationAwareBeanPostProcessor {
+}
 ```
 {% endcode %}
 {% endtab %}

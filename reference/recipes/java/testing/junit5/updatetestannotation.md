@@ -61,18 +61,25 @@ public class MyTest {
 @@ -1,1 +1,1 @@
 -import org.junit.Test;
 +import org.junit.jupiter.api.Test;
-@@ -3,0 +3,2 @@
-+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+@@ -3,0 +3,2 @@
+import org.junit.Test;
+
++import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
++
+public class MyTest {
 @@ -5,3 +7,5 @@
--    @Test(expected = Test.None.class)
-    public void test_printLine() {
-        int arr = new int[]{0}[0];
-+    @Test
-    void test_printLine() {
-        assertDoesNotThrow(() -> {
-            int arr = new int[]{0}[0];
-        });
+public class MyTest {
+
+-   @Test(expected = Test.None.class)
+-   public void test_printLine() {
+-       int arr = new int[]{0}[0];
++   @Test
++   void test_printLine() {
++       assertDoesNotThrow(() -> {
++           int arr = new int[]{0}[0];
++       });
+    }
 ```
 {% endcode %}
 {% endtab %}

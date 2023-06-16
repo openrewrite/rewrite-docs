@@ -55,8 +55,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -7,1 +7,1 @@
--        Assertions.assertTrue(a == b, "a does not equal b");
-+        Assertions.assertEquals(a, b, "a does not equal b");
+        int a = 1;
+        int b = 1;
+-       Assertions.assertTrue(a == b, "a does not equal b");
++       Assertions.assertEquals(a, b, "a does not equal b");
+    }
 ```
 {% endcode %}
 {% endtab %}

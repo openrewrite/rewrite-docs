@@ -57,8 +57,11 @@ public class ExampleController {
 --- ExampleController.java
 +++ ExampleController.java
 @@ -6,1 +6,1 @@
--    @GetMapping("/get")
-+    @GetMapping({"/get", "/get/"})
+public class ExampleController {
+
+-   @GetMapping("/get")
++   @GetMapping({"/get", "/get/"})
+    public String getExample() {
 ```
 {% endcode %}
 {% endtab %}

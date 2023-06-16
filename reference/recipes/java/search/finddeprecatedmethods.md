@@ -66,8 +66,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -5,1 +5,1 @@
--            test(n + 1);
-+            /*~~>*/test(n + 1);
+    void test(int n) {
+        if(n == 1) {
+-           test(n + 1);
++           /*~~>*/test(n + 1);
+        }
 ```
 {% endcode %}
 {% endtab %}

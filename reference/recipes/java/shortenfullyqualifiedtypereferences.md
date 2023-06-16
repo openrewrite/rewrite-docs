@@ -47,8 +47,11 @@ class T {
 --- T.java
 +++ T.java
 @@ -4,1 +4,1 @@
--    java.util.List<String> list;
-+    List<String> list;
+
+class T {
+-   java.util.List<String> list;
++   List<String> list;
+}
 ```
 {% endcode %}
 {% endtab %}

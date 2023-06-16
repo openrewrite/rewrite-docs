@@ -62,9 +62,13 @@ public class MyClass implements ChunkListener {
 @@ -1,1 +1,1 @@
 -import org.springframework.batch.core.listener.ChunkListenerSupport;
 +import org.springframework.batch.core.ChunkListener;
+
 @@ -3,1 +3,1 @@
+import org.springframework.batch.core.listener.ChunkListenerSupport;
+
 -public class MyClass extends ChunkListenerSupport {
 +public class MyClass implements ChunkListener {
+
 ```
 {% endcode %}
 {% endtab %}

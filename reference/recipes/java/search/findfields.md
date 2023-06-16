@@ -56,8 +56,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
--    Object o = java.nio.charset.StandardCharsets.UTF_8;
-+    Object o = /*~~>*/java.nio.charset.StandardCharsets.UTF_8;
+class Test {
+-   Object o = java.nio.charset.StandardCharsets.UTF_8;
++   Object o = /*~~>*/java.nio.charset.StandardCharsets.UTF_8;
+}
 ```
 {% endcode %}
 {% endtab %}

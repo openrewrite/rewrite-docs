@@ -69,8 +69,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -13,1 +13,1 @@
--        } catch (Exception ex) {
-+        } catch (Exception ignored3) {
+        try {
+            int ignored6 = 0; // scope does not apply.
+-       } catch (Exception ex) {
++       } catch (Exception ignored3) {
+        }
 ```
 {% endcode %}
 {% endtab %}

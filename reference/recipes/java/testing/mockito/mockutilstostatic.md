@@ -55,8 +55,11 @@ public class MockitoMockUtils {
 --- mockito/example/MockitoMockUtils.java
 +++ mockito/example/MockitoMockUtils.java
 @@ -7,1 +7,1 @@
--        new MockUtil().isMock("I am a real String");
-+        MockUtil.isMock("I am a real String");
+public class MockitoMockUtils {
+    public void isMockExample() {
+-       new MockUtil().isMock("I am a real String");
++       MockUtil.isMock("I am a real String");
+    }
 ```
 {% endcode %}
 {% endtab %}

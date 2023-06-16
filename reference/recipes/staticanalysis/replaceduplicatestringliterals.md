@@ -65,13 +65,16 @@ class A {
 --- org/foo/A.java
 +++ org/foo/A.java
 @@ -3,3 +3,4 @@
--    final String val1 = "value";
-    final String val2 = "value";
-    final String val3 = "value";
-+    private static final String VALUE = "value";
-    final String val1 = VALUE;
-    final String val2 = VALUE;
-    final String val3 = VALUE;
+package org.foo;
+class A {
+-   final String val1 = "value";
+-   final String val2 = "value";
+-   final String val3 = "value";
++   private static final String VALUE = "value";
++   final String val1 = VALUE;
++   final String val2 = VALUE;
++   final String val3 = VALUE;
+}
 ```
 {% endcode %}
 {% endtab %}

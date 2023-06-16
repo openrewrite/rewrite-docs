@@ -64,10 +64,16 @@ public class Test {
 --- org/openrewrite/example/Test.java
 +++ org/openrewrite/example/Test.java
 @@ -3,0 +3,1 @@
+package org.openrewrite.example;
+
 +import java.time.Instant;
+import java.util.logging.Level;
 @@ -9,1 +10,1 @@
--        logRecord.setMillis(millis);
-+        logRecord.setInstant(Instant.ofEpochMilli(millis));
+    public static void method(long millis) {
+        LogRecord logRecord = new LogRecord(Level.parse("0"), "msg");
+-       logRecord.setMillis(millis);
++       logRecord.setInstant(Instant.ofEpochMilli(millis));
+    }
 ```
 {% endcode %}
 {% endtab %}

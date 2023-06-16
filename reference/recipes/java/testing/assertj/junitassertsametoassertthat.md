@@ -65,11 +65,17 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -3,1 +3,1 @@
+import org.junit.jupiter.api.Test;
+
 -import static org.junit.jupiter.api.Assertions.assertSame;
 +import static org.assertj.core.api.Assertions.assertThat;
+
 @@ -9,1 +9,1 @@
--        assertSame(notification(), str);
-+        assertThat(str).isSameAs(notification());
+    public void test() {
+        String str = "String";
+-       assertSame(notification(), str);
++       assertThat(str).isSameAs(notification());
+    }
 ```
 {% endcode %}
 {% endtab %}

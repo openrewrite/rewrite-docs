@@ -49,10 +49,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,2 +3,2 @@
--        String s = "aaa" +
-                "b" + "c";
-+        String s = "aaa"
-                + "b" + "c";
+class Test {
+    static void method() {
+-       String s = "aaa" +
+-               "b" + "c";
++       String s = "aaa"
++               + "b" + "c";
+    }
 ```
 {% endcode %}
 {% endtab %}

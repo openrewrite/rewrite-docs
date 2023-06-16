@@ -57,7 +57,9 @@ _Removes XML tags matching the provided expression._
 --- my/project/beans.xml
 +++ my/project/beans.xml
 @@ -2,1 +2,0 @@
--    <bean id='myBean.subpackage.subpackage2'/>
+<beans>
+-   <bean id='myBean.subpackage.subpackage2'/>
+    <other id='myBean.subpackage.subpackage2'/>
 ```
 {% endcode %}
 {% endtab %}

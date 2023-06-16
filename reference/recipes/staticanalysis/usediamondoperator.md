@@ -61,10 +61,13 @@ class Test<X, Y> {
 --- Test.java
 +++ Test.java
 @@ -5,2 +5,2 @@
--        List<String> ls = new ArrayList<String>();
-        Map<X,Y> map = new HashMap<X,Y>();
-+        List<String> ls = new ArrayList<>();
-        Map<X,Y> map = new HashMap<>();
+class Test<X, Y> {
+    void test() {
+-       List<String> ls = new ArrayList<String>();
+-       Map<X,Y> map = new HashMap<X,Y>();
++       List<String> ls = new ArrayList<>();
++       Map<X,Y> map = new HashMap<>();
+        List<String> ls2 = new ArrayList<String>() {
 ```
 {% endcode %}
 {% endtab %}

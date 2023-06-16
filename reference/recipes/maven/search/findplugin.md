@@ -96,11 +96,17 @@ _Finds a Maven plugin within a pom.xml._
 --- pom.xml
 +++ pom.xml
 @@ -7,1 +7,1 @@
--      <plugin>
-+      <!--~~>--><plugin>
+  <build>
+    <plugins>
+-     <plugin>
++     <!--~~>--><plugin>
+        <groupId>org.openrewrite.maven</groupId>
 @@ -16,1 +16,1 @@
--      <plugin>
-+      <!--~~>--><plugin>
+  <reporting>
+    <plugins>
+-     <plugin>
++     <!--~~>--><plugin>
+        <groupId>org.openrewrite.maven</groupId>
 ```
 {% endcode %}
 {% endtab %}

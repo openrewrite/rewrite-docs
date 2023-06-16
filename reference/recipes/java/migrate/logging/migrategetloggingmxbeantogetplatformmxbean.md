@@ -58,12 +58,16 @@ class Test {
 +++ Test.java
 @@ -1,2 +1,2 @@
 -import java.util.logging.LoggingMXBean;
-import java.util.logging.LogManager;
+-import java.util.logging.LogManager;
 +import java.lang.management.ManagementFactory;
-import java.lang.management.PlatformLoggingMXBean;
++import java.lang.management.PlatformLoggingMXBean;
+
 @@ -6,1 +6,1 @@
--        LoggingMXBean loggingBean = LogManager.getLoggingMXBean();
-+        PlatformLoggingMXBean loggingBean = ManagementFactory.getPlatformMXBean(PlatformLoggingMXBean.class);
+class Test {
+    static void method() {
+-       LoggingMXBean loggingBean = LogManager.getLoggingMXBean();
++       PlatformLoggingMXBean loggingBean = ManagementFactory.getPlatformMXBean(PlatformLoggingMXBean.class);
+    }
 ```
 {% endcode %}
 {% endtab %}

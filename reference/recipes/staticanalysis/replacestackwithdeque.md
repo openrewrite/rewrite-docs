@@ -59,10 +59,14 @@ class Test {
 +++ Test.java
 @@ -1,0 +1,2 @@
 +import java.util.ArrayDeque;
-import java.util.Deque;
++import java.util.Deque;
+import java.util.Stack;
 @@ -5,1 +7,1 @@
--        Stack<Integer> stack = new Stack<>();
-+        Deque<Integer> stack = new ArrayDeque<>();
+class Test {
+    void test() {
+-       Stack<Integer> stack = new Stack<>();
++       Deque<Integer> stack = new ArrayDeque<>();
+        stack.add(1);
 ```
 {% endcode %}
 {% endtab %}

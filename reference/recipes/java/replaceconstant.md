@@ -60,9 +60,13 @@ class Test {
 +++ Test.java
 @@ -1,1 +1,0 @@
 -import com.google.common.base.Charsets;
+class Test {
 @@ -3,1 +2,1 @@
--    Object o = Charsets.UTF_8;
-+    Object o = "UTF_8";
+import com.google.common.base.Charsets;
+class Test {
+-   Object o = Charsets.UTF_8;
++   Object o = "UTF_8";
+}
 ```
 {% endcode %}
 {% endtab %}

@@ -53,9 +53,14 @@ class A {
 --- A.java
 +++ A.java
 @@ -2,1 +2,0 @@
+import org.springframework.boot.context.properties.ConfigurationProperties;
 -import org.springframework.boot.context.properties.ConstructorBinding;
+
 @@ -5,1 +4,0 @@
+
+@ConfigurationProperties
 -@ConstructorBinding
+class A {
 ```
 {% endcode %}
 {% endtab %}

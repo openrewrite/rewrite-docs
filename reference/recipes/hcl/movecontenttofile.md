@@ -58,8 +58,11 @@ after {
 --- from.tf
 +++ from.tf
 @@ -3,2 +3,0 @@
--before {
+after {
 }
+-before {
+-}
+
 ```
 {% endcode %}
 {% endtab %}

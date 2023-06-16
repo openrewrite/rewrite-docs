@@ -61,13 +61,19 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
+import javax.persistence.EntityManager;
+import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 -import org.springframework.data.jpa.repository.support.QuerydslJpaRepository;
 +import org.springframework.data.jpa.repository.support.QuerydslJpaPredicateExecutor;
+import org.springframework.data.querydsl.SimpleEntityPathResolver;
 @@ -10,2 +10,2 @@
--    QuerydslJpaRepository<String, Long> declWith2Args = new QuerydslJpaRepository(entityInformation, entityManager);
-    QuerydslJpaRepository<String, Long> declWith3Args = new QuerydslJpaRepository(entityInformation, entityManager, resolver);
-+    QuerydslJpaPredicateExecutor<String> declWith2Args = new QuerydslJpaPredicateExecutor(entityInformation, entityManager, SimpleEntityPathResolver.INSTANCE, null);
-    QuerydslJpaPredicateExecutor<String> declWith3Args = new QuerydslJpaPredicateExecutor(entityInformation, entityManager, resolver, null);
+    EntityManager entityManager;
+    SimpleEntityPathResolver resolver;
+-   QuerydslJpaRepository<String, Long> declWith2Args = new QuerydslJpaRepository(entityInformation, entityManager);
+-   QuerydslJpaRepository<String, Long> declWith3Args = new QuerydslJpaRepository(entityInformation, entityManager, resolver);
++   QuerydslJpaPredicateExecutor<String> declWith2Args = new QuerydslJpaPredicateExecutor(entityInformation, entityManager, SimpleEntityPathResolver.INSTANCE, null);
++   QuerydslJpaPredicateExecutor<String> declWith3Args = new QuerydslJpaPredicateExecutor(entityInformation, entityManager, resolver, null);
+}
 ```
 {% endcode %}
 {% endtab %}

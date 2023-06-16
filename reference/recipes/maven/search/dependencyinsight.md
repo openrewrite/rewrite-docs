@@ -95,8 +95,11 @@ _Direct and transitive dependencies in use._
 --- pom.xml
 +++ pom.xml
 @@ -6,1 +6,1 @@
--    <dependency>
-+    <!--~~>--><dependency>
+  <version>1</version>
+  <dependencies>
+-   <dependency>
++   <!--~~>--><dependency>
+        <groupId>com.google.guava</groupId>
 ```
 {% endcode %}
 {% endtab %}

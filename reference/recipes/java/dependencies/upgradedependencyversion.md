@@ -93,10 +93,13 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,2 +10,2 @@
--  compileOnly 'com.google.guava:guava:29.0-jre'
-  runtimeOnly ('com.google.guava:guava:29.0-jre') {
-+  compileOnly 'com.google.guava:guava:30.1.1-jre'
-  runtimeOnly ('com.google.guava:guava:30.1.1-jre') {
+
+dependencies {
+- compileOnly 'com.google.guava:guava:29.0-jre'
+- runtimeOnly ('com.google.guava:guava:29.0-jre') {
++ compileOnly 'com.google.guava:guava:30.1.1-jre'
++ runtimeOnly ('com.google.guava:guava:30.1.1-jre') {
+      force = true
 ```
 {% endcode %}
 {% endtab %}
@@ -170,8 +173,11 @@ Upgrade maven dependency version
 --- pom.xml
 +++ pom.xml
 @@ -10,1 +10,1 @@
--                <version>5.6.2</version>
-+                <version>5.7.2</version>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+-               <version>5.6.2</version>
++               <version>5.7.2</version>
+                <scope>test</scope>
 ```
 {% endcode %}
 {% endtab %}

@@ -73,13 +73,19 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -9,3 +9,0 @@
--            default:
-                System.out.println("default");
+            case 2:
                 break;
+-           default:
+-               System.out.println("default");
+-               break;
+            case 3:
 @@ -14,0 +11,3 @@
-+                break;
-            default:
-                System.out.println("default");
+            case 3:
+                System.out.println("case3");
++               break;
++           default:
++               System.out.println("default");
+        }
 ```
 {% endcode %}
 {% endtab %}

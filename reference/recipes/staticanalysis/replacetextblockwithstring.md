@@ -50,9 +50,12 @@ public class Test {
 --- com/example/Test.java
 +++ com/example/Test.java
 @@ -5,2 +5,1 @@
--            """
-            """;
-+            "\n";
+public class Test {
+    String str =
+-           """
+-           """;
++           "\n";
+}
 ```
 {% endcode %}
 {% endtab %}

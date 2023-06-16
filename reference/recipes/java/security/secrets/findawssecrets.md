@@ -52,8 +52,10 @@ evn3:
 {% code %}
 ```diff
 @@ -2,1 +2,1 @@
--  aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-+  ~~(AWS access key)~~>aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+env1:
+- aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
++ ~~(AWS access key)~~>aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+env2:
 ```
 {% endcode %}
 {% endtab %}
@@ -95,8 +97,11 @@ class T {
 --- T.java
 +++ T.java
 @@ -3,1 +3,1 @@
--        "AKIAZZZZZZZZZZZZZZZZ",
-+        /*~~(AWS access key)~~>*/"AKIAZZZZZZZZZZZZZZZZ",
+class T {
+    String[] awsSecrets = {
+-       "AKIAZZZZZZZZZZZZZZZZ",
++       /*~~(AWS access key)~~>*/"AKIAZZZZZZZZZZZZZZZZ",
+        "akiazzzzzzzzzzzzzzzz",
 ```
 {% endcode %}
 {% endtab %}
@@ -139,8 +144,10 @@ evn3:
 {% code %}
 ```diff
 @@ -2,1 +2,1 @@
--  aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-+  ~~(AWS access key)~~>aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+env1:
+- aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
++ ~~(AWS access key)~~>aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+env2:
 ```
 {% endcode %}
 {% endtab %}
@@ -182,8 +189,11 @@ class T {
 --- T.java
 +++ T.java
 @@ -3,1 +3,1 @@
--        "AKIAZZZZZZZZZZZZZZZZ",
-+        /*~~(AWS access key)~~>*/"AKIAZZZZZZZZZZZZZZZZ",
+class T {
+    String[] awsSecrets = {
+-       "AKIAZZZZZZZZZZZZZZZZ",
++       /*~~(AWS access key)~~>*/"AKIAZZZZZZZZZZZZZZZZ",
+        "akiazzzzzzzzzzzzzzzz",
 ```
 {% endcode %}
 {% endtab %}

@@ -39,8 +39,10 @@ slack:
 {% code %}
 ```diff
 @@ -2,1 +2,1 @@
--  webhook: "https://hooks.slack.com/services/Txxxxxxxx/Bxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxxx"
-+  ~~(Slack)~~>webhook: "https://hooks.slack.com/services/Txxxxxxxx/Bxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxxx"
+slack:
+- webhook: "https://hooks.slack.com/services/Txxxxxxxx/Bxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxxx"
++ ~~(Slack)~~>webhook: "https://hooks.slack.com/services/Txxxxxxxx/Bxxxxxxxx/xxxxxxxxxxxxxxxxxxxxxxxx"
+
 ```
 {% endcode %}
 {% endtab %}

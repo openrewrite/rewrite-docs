@@ -63,11 +63,17 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -3,1 +3,1 @@
+import org.junit.jupiter.api.Test;
+
 -import static org.junit.jupiter.api.Assertions.assertEquals;
 +import static org.assertj.core.api.Assertions.assertThat;
+
 @@ -8,1 +8,1 @@
--        assertEquals(1, notification());
-+        assertThat(notification()).isEqualTo(1);
+    @Test
+    public void test() {
+-       assertEquals(1, notification());
++       assertThat(notification()).isEqualTo(1);
+    }
 ```
 {% endcode %}
 {% endtab %}

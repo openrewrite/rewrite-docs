@@ -60,8 +60,12 @@ public class RootTest {
 +++ RootTest.java
 @@ -1,0 +1,1 @@
 +import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 @@ -4,0 +5,1 @@
-+    @Nested
+
+public class RootTest {
++   @Nested
+    public class InnerTest {
 ```
 {% endcode %}
 {% endtab %}

@@ -92,8 +92,11 @@ spec:
 {% code %}
 ```diff
 @@ -19,1 +19,1 @@
--    - image: repo.id/account/bucket/image:v1.2.3@digest
-+    - image: ~~(repo.id/account/bucket/image:v1.2.3)~~>repo.id/account/bucket/image:v1.2.3@digest
+spec:
+    containers:
+-   - image: repo.id/account/bucket/image:v1.2.3@digest
++   - image: ~~(repo.id/account/bucket/image:v1.2.3)~~>repo.id/account/bucket/image:v1.2.3@digest
+
 ```
 {% endcode %}
 {% endtab %}

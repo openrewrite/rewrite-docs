@@ -55,9 +55,13 @@ class Test {
 @@ -1,1 +1,1 @@
 -import org.junit.Before;
 +import org.junit.jupiter.api.BeforeEach;
+
 @@ -5,1 +5,1 @@
--    @Before
-+    @BeforeEach
+class Test {
+
+-   @Before
++   @BeforeEach
+    void before() {
 ```
 {% endcode %}
 {% endtab %}

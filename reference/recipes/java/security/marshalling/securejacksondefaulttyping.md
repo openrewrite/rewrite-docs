@@ -50,12 +50,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,0 +2,1 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 +import com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
+
 @@ -4,2 +5,2 @@
--    ObjectMapper o = new ObjectMapper().enableDefaultTyping();
-    ObjectMapper o2 = new ObjectMapper().enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-+    ObjectMapper o = new ObjectMapper().activateDefaultTyping(BasicPolymorphicTypeValidator.builder().build());
-    ObjectMapper o2 = new ObjectMapper().activateDefaultTyping(BasicPolymorphicTypeValidator.builder().build(), ObjectMapper.DefaultTyping.NON_FINAL);
+
+class Test {
+-   ObjectMapper o = new ObjectMapper().enableDefaultTyping();
+-   ObjectMapper o2 = new ObjectMapper().enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
++   ObjectMapper o = new ObjectMapper().activateDefaultTyping(BasicPolymorphicTypeValidator.builder().build());
++   ObjectMapper o2 = new ObjectMapper().activateDefaultTyping(BasicPolymorphicTypeValidator.builder().build(), ObjectMapper.DefaultTyping.NON_FINAL);
+}
 ```
 {% endcode %}
 {% endtab %}

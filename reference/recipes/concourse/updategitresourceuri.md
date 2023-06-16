@@ -68,8 +68,11 @@ resources:
 {% code %}
 ```diff
 @@ -5,1 +5,1 @@
--    uri: https://github.com/openrewrite/rewrite0
-+    uri: git@github.com:openrewrite/rewrite1.git
+  type: git
+  source:
+-   uri: https://github.com/openrewrite/rewrite0
++   uri: git@github.com:openrewrite/rewrite1.git
+- name: custom
 ```
 {% endcode %}
 {% endtab %}

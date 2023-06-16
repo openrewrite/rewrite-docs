@@ -47,8 +47,11 @@ class A {
 --- A.java
 +++ A.java
 @@ -3,1 +3,1 @@
--        String s = new StringBuilder().append("A").append("B").toString();
-+        String s = "A" + "B";
+class A {
+    void foo() {
+-       String s = new StringBuilder().append("A").append("B").toString();
++       String s = "A" + "B";
+    }
 ```
 {% endcode %}
 {% endtab %}

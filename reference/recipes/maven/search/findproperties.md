@@ -80,11 +80,17 @@ _Finds the specified Maven project properties within a pom.xml._
 --- pom.xml
 +++ pom.xml
 @@ -4,1 +4,1 @@
--    <guava.version>28.2-jre</guava.version>
-+    <!--~~>--><guava.version>28.2-jre</guava.version>
+  <properties>
+    <someNullProp/>
+-   <guava.version>28.2-jre</guava.version>
++   <!--~~>--><guava.version>28.2-jre</guava.version>
+  </properties>
 @@ -13,1 +13,1 @@
--        <version>${guava.version}</version>
-+        <version><!--~~(28.2-jre)~~>-->${guava.version}</version>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+-       <version>${guava.version}</version>
++       <version><!--~~(28.2-jre)~~>-->${guava.version}</version>
+    </dependency>
 ```
 {% endcode %}
 {% endtab %}

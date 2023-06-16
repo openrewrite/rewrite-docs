@@ -84,16 +84,25 @@ _Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Ehcach
 --- pom.xml
 +++ pom.xml
 @@ -9,1 +9,2 @@
--            <version>3.9.10</version>
-+            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+-           <version>3.9.10</version>
++           <version>3.10.8</version>
++           <classifier>jakarta</classifier>
+        </dependency>
 @@ -14,1 +15,1 @@
--            <version>3.9.10</version>
-+            <version>3.10.8</version>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache-clustered</artifactId>
+-           <version>3.9.10</version>
++           <version>3.10.8</version>
+        </dependency>
 @@ -19,1 +20,2 @@
--            <version>3.9.10</version>
-+            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache-transactions</artifactId>
+-           <version>3.9.10</version>
++           <version>3.10.8</version>
++           <classifier>jakarta</classifier>
+        </dependency>
 ```
 {% endcode %}
 {% endtab %}
@@ -172,16 +181,25 @@ _Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Ehcach
 --- pom.xml
 +++ pom.xml
 @@ -9,1 +9,2 @@
--            <version>3.9.10</version>
-+            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+-           <version>3.9.10</version>
++           <version>3.10.8</version>
++           <classifier>jakarta</classifier>
+        </dependency>
 @@ -14,1 +15,1 @@
--            <version>3.9.10</version>
-+            <version>3.10.8</version>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache-clustered</artifactId>
+-           <version>3.9.10</version>
++           <version>3.10.8</version>
+        </dependency>
 @@ -19,1 +20,2 @@
--            <version>3.9.10</version>
-+            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache-transactions</artifactId>
+-           <version>3.9.10</version>
++           <version>3.10.8</version>
++           <classifier>jakarta</classifier>
+        </dependency>
 ```
 {% endcode %}
 {% endtab %}

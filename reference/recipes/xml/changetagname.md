@@ -58,8 +58,11 @@ _Alters the name of XML tags matching the provided expression._
 {% code %}
 ```diff
 @@ -3,1 +3,1 @@
--        <whitelist-pattern>^[a-zA-Z]+${'$'}</whitelist-pattern>
-+        <allowlist-pattern>^[a-zA-Z]+${'$'}</allowlist-pattern>
+<virtual-patches>
+    <enhanced-virtual-patch id="evp-name" path="/[request-path]" variable="request.parameters.[paramName]" message="alphabet validation failed" enableAntisamy="false">
+-       <whitelist-pattern>^[a-zA-Z]+${'$'}</whitelist-pattern>
++       <allowlist-pattern>^[a-zA-Z]+${'$'}</allowlist-pattern>
+    </enhanced-virtual-patch>
 ```
 {% endcode %}
 {% endtab %}

@@ -51,8 +51,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        for (int i = 0; i < n; ++i) {
-+        for (int i = 0; i < n; i++) {
+class Test {
+    static void method(int n) {
+-       for (int i = 0; i < n; ++i) {
++       for (int i = 0; i < n; i++) {
+            // empty
 ```
 {% endcode %}
 {% endtab %}

@@ -63,12 +63,15 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,3 +4,3 @@
--    Object o = (List<String>) method();
-    Object o2 = (List<? extends String>) method();
-    Object o3 = (List<? super String>) method();
-+    Object o = method();
-    Object o2 = method();
-    Object o3 = method();
+
+class Test {
+-   Object o = (List<String>) method();
+-   Object o2 = (List<? extends String>) method();
+-   Object o3 = (List<? super String>) method();
++   Object o = method();
++   Object o2 = method();
++   Object o3 = method();
+
 ```
 {% endcode %}
 {% endtab %}

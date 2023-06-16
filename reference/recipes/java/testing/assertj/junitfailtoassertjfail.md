@@ -57,11 +57,17 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -3,1 +3,1 @@
+import org.junit.jupiter.api.Test;
+
 -import static org.junit.jupiter.api.Assertions.fail;
 +import static org.assertj.core.api.Assertions.fail;
+
 @@ -8,1 +8,1 @@
--        fail();
-+        fail("");
+    @Test
+    public void test() {
+-       fail();
++       fail("");
+    }
 ```
 {% endcode %}
 {% endtab %}

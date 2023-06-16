@@ -51,8 +51,11 @@ class A {
 --- A.java
 +++ A.java
 @@ -3,1 +3,1 @@
--        return arg1.equalsIgnoreCase(arg2.toLowerCase());
-+        return arg1.equalsIgnoreCase(arg2);
+class A {
+    boolean isSame(String arg1, String arg2) {
+-       return arg1.equalsIgnoreCase(arg2.toLowerCase());
++       return arg1.equalsIgnoreCase(arg2);
+    }
 ```
 {% endcode %}
 {% endtab %}

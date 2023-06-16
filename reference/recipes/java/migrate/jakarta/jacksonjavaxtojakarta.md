@@ -132,55 +132,79 @@ _Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackso
 --- pom.xml
 +++ pom.xml
 @@ -8,2 +8,2 @@
--            <artifactId>jackson-module-jaxb-annotations</artifactId>
-            <version>2.12.1</version>
-+            <artifactId>jackson-module-jakarta-xmlbind-annotations</artifactId>
-            <version>2.13.5</version>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+-           <artifactId>jackson-module-jaxb-annotations</artifactId>
+-           <version>2.12.1</version>
++           <artifactId>jackson-module-jakarta-xmlbind-annotations</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -12,3 +12,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-cbor-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-cbor-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-cbor-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-cbor-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -17,3 +17,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-json-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-json-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-json-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-json-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -22,3 +22,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-smile-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-smile-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-smile-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-smile-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -27,3 +27,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-xml-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-xml-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-xml-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-xml-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -32,3 +32,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-yaml-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-yaml-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-yaml-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-yaml-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -38,2 +38,2 @@
--            <artifactId>jackson-datatype-jsr353</artifactId>
-            <version>2.12.1</version>
-+            <artifactId>jackson-datatype-jakarta-jsonp</artifactId>
-            <version>2.13.5</version>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+-           <artifactId>jackson-datatype-jsr353</artifactId>
+-           <version>2.12.1</version>
++           <artifactId>jackson-datatype-jakarta-jsonp</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -43,2 +43,2 @@
--            <artifactId>javax.json</artifactId>
-            <version>1.1.4</version>
-+            <artifactId>jakarta.json</artifactId>
-            <version>2.0.1</version>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+-           <artifactId>javax.json</artifactId>
+-           <version>1.1.4</version>
++           <artifactId>jakarta.json</artifactId>
++           <version>2.0.1</version>
+        </dependency>
 ```
 {% endcode %}
 {% endtab %}
@@ -307,55 +331,79 @@ _Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackso
 --- pom.xml
 +++ pom.xml
 @@ -8,2 +8,2 @@
--            <artifactId>jackson-module-jaxb-annotations</artifactId>
-            <version>2.12.1</version>
-+            <artifactId>jackson-module-jakarta-xmlbind-annotations</artifactId>
-            <version>2.13.5</version>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+-           <artifactId>jackson-module-jaxb-annotations</artifactId>
+-           <version>2.12.1</version>
++           <artifactId>jackson-module-jakarta-xmlbind-annotations</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -12,3 +12,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-cbor-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-cbor-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-cbor-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-cbor-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -17,3 +17,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-json-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-json-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-json-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-json-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -22,3 +22,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-smile-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-smile-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-smile-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-smile-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -27,3 +27,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-xml-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-xml-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-xml-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-xml-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -32,3 +32,3 @@
--            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-yaml-provider</artifactId>
-            <version>2.12.1</version>
-+            <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
-            <artifactId>jackson-jakarta-rs-yaml-provider</artifactId>
-            <version>2.13.5</version>
+        </dependency>
+        <dependency>
+-           <groupId>com.fasterxml.jackson.jaxrs</groupId>
+-           <artifactId>jackson-jaxrs-yaml-provider</artifactId>
+-           <version>2.12.1</version>
++           <groupId>com.fasterxml.jackson.jakarta.rs</groupId>
++           <artifactId>jackson-jakarta-rs-yaml-provider</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -38,2 +38,2 @@
--            <artifactId>jackson-datatype-jsr353</artifactId>
-            <version>2.12.1</version>
-+            <artifactId>jackson-datatype-jakarta-jsonp</artifactId>
-            <version>2.13.5</version>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+-           <artifactId>jackson-datatype-jsr353</artifactId>
+-           <version>2.12.1</version>
++           <artifactId>jackson-datatype-jakarta-jsonp</artifactId>
++           <version>2.13.5</version>
+        </dependency>
 @@ -43,2 +43,2 @@
--            <artifactId>javax.json</artifactId>
-            <version>1.1.4</version>
-+            <artifactId>jakarta.json</artifactId>
-            <version>2.0.1</version>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+-           <artifactId>javax.json</artifactId>
+-           <version>1.1.4</version>
++           <artifactId>jakarta.json</artifactId>
++           <version>2.0.1</version>
+        </dependency>
 ```
 {% endcode %}
 {% endtab %}

@@ -55,8 +55,11 @@ class Test {
 --- org/test/Test.java
 +++ org/test/Test.java
 @@ -7,1 +7,1 @@
--        ErrorProperties.IncludeStacktrace value = ErrorProperties.IncludeStacktrace.ON_TRACE_PARAM;
-+        ErrorProperties.IncludeStacktrace value = ErrorProperties.IncludeStacktrace.ON_PARAM;
+class Test {
+    void methodA() {
+-       ErrorProperties.IncludeStacktrace value = ErrorProperties.IncludeStacktrace.ON_TRACE_PARAM;
++       ErrorProperties.IncludeStacktrace value = ErrorProperties.IncludeStacktrace.ON_PARAM;
+    }
 ```
 {% endcode %}
 {% endtab %}

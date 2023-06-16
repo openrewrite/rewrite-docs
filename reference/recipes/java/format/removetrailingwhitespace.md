@@ -47,12 +47,15 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,3 +3,3 @@
--    public void method(Test t) {  
-    }  
-}  
-+    public void method(Test t) {
-    }
-}
+class Test {
+
+-   public void method(Test t) {  
+-   }  
+-}  
++   public void method(Test t) {
++   }
++}
+
 ```
 {% endcode %}
 {% endtab %}

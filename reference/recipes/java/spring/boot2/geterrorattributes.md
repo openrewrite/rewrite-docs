@@ -71,9 +71,13 @@ class Test {
 +++ Test.java
 @@ -1,0 +1,1 @@
 +import org.springframework.boot.web.error.ErrorAttributeOptions;
+import org.springframework.boot.web.servlet.error.ErrorAttributes;
 @@ -14,1 +15,1 @@
--        return this.errorAttributes.getErrorAttributes(webRequest, true);
-+        return this.errorAttributes.getErrorAttributes(webRequest, ErrorAttributeOptions.defaults().including(ErrorAttributeOptions.Include.STACK_TRACE));
+
+    private Map<String, Object> getErrorAttributes(WebRequest webRequest) {
+-       return this.errorAttributes.getErrorAttributes(webRequest, true);
++       return this.errorAttributes.getErrorAttributes(webRequest, ErrorAttributeOptions.defaults().including(ErrorAttributeOptions.Include.STACK_TRACE));
+    }
 ```
 {% endcode %}
 {% endtab %}

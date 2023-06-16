@@ -59,6 +59,7 @@ class newFile {
 @@ -1,1 +1,1 @@
 -class file {
 +class newFile {
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -104,6 +105,7 @@ class newFile {
 @@ -1,1 +1,1 @@
 -class file {
 +class newFile {
+}
 ```
 {% endcode %}
 {% endtab %}

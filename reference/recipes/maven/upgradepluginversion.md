@@ -99,8 +99,11 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -13,1 +13,1 @@
--        <version>1.13.3.Final</version>
-+        <version>1.13.5.Final</version>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-maven-plugin</artifactId>
+-       <version>1.13.3.Final</version>
++       <version>1.13.5.Final</version>
+      </plugin>
 ```
 {% endcode %}
 {% endtab %}

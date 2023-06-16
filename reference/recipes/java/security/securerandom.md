@@ -59,9 +59,13 @@ public class A {
 +++ A.java
 @@ -1,0 +1,1 @@
 +import java.security.SecureRandom;
+import java.util.Random;
 @@ -5,1 +6,1 @@
--        Random r = new Random();
-+        Random r = new SecureRandom();
+public class A {
+    String generateSecretToken() {
+-       Random r = new Random();
++       Random r = new SecureRandom();
+        return Long.toHexString(r.nextLong());
 ```
 {% endcode %}
 {% endtab %}

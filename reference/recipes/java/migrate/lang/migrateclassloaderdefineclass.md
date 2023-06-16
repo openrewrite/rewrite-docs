@@ -57,8 +57,11 @@ class Test extends ClassLoader {
 --- org/openrewrite/Test.java
 +++ org/openrewrite/Test.java
 @@ -6,1 +6,1 @@
--        super.defineClass(b, 10, 10);
-+        super.defineClass(null, b, 10, 10);
+    public void method() {
+        byte[] b = new byte[]{};
+-       super.defineClass(b, 10, 10);
++       super.defineClass(null, b, 10, 10);
+    }
 ```
 {% endcode %}
 {% endtab %}

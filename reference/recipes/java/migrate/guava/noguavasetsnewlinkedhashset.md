@@ -55,11 +55,15 @@ class Test {
 +++ Test.java
 @@ -1,2 +1,1 @@
 -import com.google.common.collect.*;
-
+-
 +import java.util.LinkedHashSet;
+import java.util.Set;
 @@ -6,1 +5,1 @@
--    Set<Integer> cardinalsWorldSeries = Sets.newLinkedHashSet();
-+    Set<Integer> cardinalsWorldSeries = new LinkedHashSet<>();
+
+class Test {
+-   Set<Integer> cardinalsWorldSeries = Sets.newLinkedHashSet();
++   Set<Integer> cardinalsWorldSeries = new LinkedHashSet<>();
+}
 ```
 {% endcode %}
 {% endtab %}

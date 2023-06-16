@@ -64,12 +64,18 @@ class A {
 --- A.java
 +++ A.java
 @@ -3,0 +3,1 @@
+import java.io.File;
+import java.io.IOException;
 +import java.nio.file.Files;
+
 @@ -7,3 +8,1 @@
--        tempDir = File.createTempFile("OverridesTest", "dir");
-        tempDir.delete();
-        tempDir.mkdir();
-+        tempDir = Files.createTempDirectory("OverridesTest" + "dir").toFile();
+    void b() throws IOException {
+        File tempDir;
+-       tempDir = File.createTempFile("OverridesTest", "dir");
+-       tempDir.delete();
+-       tempDir.mkdir();
++       tempDir = Files.createTempDirectory("OverridesTest" + "dir").toFile();
+        System.out.println(tempDir.getAbsolutePath());
 ```
 {% endcode %}
 {% endtab %}

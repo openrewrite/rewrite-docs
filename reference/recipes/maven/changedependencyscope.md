@@ -83,7 +83,10 @@ _Add or alter the scope of the specified dependency._
 --- pom.xml
 +++ pom.xml
 @@ -13,0 +13,1 @@
-+      <scope>test</scope>
+      <artifactId>guava</artifactId>
+      <version>28.2-jre</version>
++     <scope>test</scope>
+    </dependency>
 ```
 {% endcode %}
 {% endtab %}

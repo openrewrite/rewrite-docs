@@ -60,8 +60,11 @@ _Adds an expiration date to all OWASP suppressions in order to ensure that they 
 --- suppressions.xml
 +++ suppressions.xml
 @@ -3,1 +3,1 @@
--    <suppress>
-+    <suppress until="2020-01-01Z">
+<?xml version="1.0" encoding="UTF-8" ?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+-   <suppress>
++   <suppress until="2020-01-01Z">
+        <notes>
 ```
 {% endcode %}
 {% endtab %}

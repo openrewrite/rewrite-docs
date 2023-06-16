@@ -69,10 +69,15 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,0 @@
+import java.io.FileInputStream;
 -import java.io.FileNotFoundException;
+import java.io.IOException;
 @@ -6,1 +5,1 @@
--    private void test() throws FileNotFoundException, UncheckedIOException {
-+    private void test() throws UncheckedIOException {
+import java.io.UncheckedIOException;
+class Test {
+-   private void test() throws FileNotFoundException, UncheckedIOException {
++   private void test() throws UncheckedIOException {
+    }
 ```
 {% endcode %}
 {% endtab %}

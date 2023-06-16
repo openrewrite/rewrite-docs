@@ -49,8 +49,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--        System.out.print(String.format(formatString, arg));
-+        System.out.printf(formatString, arg);
+    void test(String arg) {
+        String formatString = "hello %s%n";
+-       System.out.print(String.format(formatString, arg));
++       System.out.printf(formatString, arg);
+    }
 ```
 {% endcode %}
 {% endtab %}

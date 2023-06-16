@@ -64,13 +64,16 @@ recipeList:
 {% code %}
 ```diff
 @@ -7,3 +7,4 @@
+tags:
+  - testing
 -applicability:
-  anySource:
-    - org.openrewrite.java.testing.mockito.UsesMockitoAll
+- anySource:
+-   - org.openrewrite.java.testing.mockito.UsesMockitoAll
 +# Applicability tests are no longer supported for yaml recipes, please remove or require migrating the recipe to Java code
-# applicability:
-#   anySource:
-#     - org.openrewrite.java.testing.mockito.UsesMockitoAll
++# applicability:
++#   anySource:
++#     - org.openrewrite.java.testing.mockito.UsesMockitoAll
+recipeList:
 ```
 {% endcode %}
 {% endtab %}

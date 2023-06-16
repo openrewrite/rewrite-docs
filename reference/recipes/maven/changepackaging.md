@@ -63,7 +63,10 @@ _Sets the packaging type of Maven projects. Either adds the packaging tag if it 
 --- pom.xml
 +++ pom.xml
 @@ -5,0 +5,1 @@
-+    <packaging>pom</packaging>
+    <artifactId>foo</artifactId>
+    <version>1.0</version>
++   <packaging>pom</packaging>
+</project>
 ```
 {% endcode %}
 {% endtab %}

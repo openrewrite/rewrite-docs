@@ -51,8 +51,11 @@ class A {
 --- A.java
 +++ A.java
 @@ -3,1 +3,1 @@
--        int n = 1;
-+        final int n = 1;
+class A {
+    public void test() {
+-       int n = 1;
++       final int n = 1;
+        for(int i = 0; i < n; i++) {
 ```
 {% endcode %}
 {% endtab %}

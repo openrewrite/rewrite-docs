@@ -99,18 +99,33 @@ public class UsersController {
 --- UsersController.java
 +++ UsersController.java
 @@ -3,0 +3,1 @@
+import java.util.*;
+import org.springframework.http.ResponseEntity;
 +import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 @@ -4,1 +5,0 @@
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 -import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.HEAD;
 @@ -15,1 +15,1 @@
--    @RequestMapping(method = GET)
-+    @GetMapping
+    }
+
+-   @RequestMapping(method = GET)
++   @GetMapping
+    public ResponseEntity<List<String>> getUsers() {
 @@ -20,1 +20,1 @@
--    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-+    @GetMapping("/{id}")
+    }
+
+-   @RequestMapping(path = "/{id}", method = RequestMethod.GET)
++   @GetMapping("/{id}")
+    public ResponseEntity<String> getUser(@PathVariable("id") Long id) {
 @@ -25,1 +25,1 @@
--    @RequestMapping
-+    @GetMapping
+    }
+
+-   @RequestMapping
++   @GetMapping
+    public ResponseEntity<List<String>> getUsersNoRequestMethod() {
 ```
 {% endcode %}
 {% endtab %}

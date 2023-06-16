@@ -52,10 +52,14 @@ class Test {
 @@ -1,1 +1,2 @@
 -import org.apache.commons.lang3.Validate;
 +import java.util.Objects;
-
++
+class Test {
 @@ -4,1 +5,1 @@
--        Validate.notNull(obj, "Object should not be null");
-+        Objects.requireNonNull(obj, "Object should not be null");
+class Test {
+    void test(Object obj) {
+-       Validate.notNull(obj, "Object should not be null");
++       Objects.requireNonNull(obj, "Object should not be null");
+    }
 ```
 {% endcode %}
 {% endtab %}

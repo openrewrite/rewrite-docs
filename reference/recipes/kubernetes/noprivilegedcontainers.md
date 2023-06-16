@@ -55,7 +55,10 @@ spec:
 {% code %}
 ```diff
 @@ -8,0 +8,1 @@
-+  privileged: false
+  seLinux:
+    rule: RunAsAny
++ privileged: false
+
 ```
 {% endcode %}
 {% endtab %}
@@ -101,7 +104,10 @@ spec:
 {% code %}
 ```diff
 @@ -8,0 +8,1 @@
-+  privileged: false
+  seLinux:
+    rule: RunAsAny
++ privileged: false
+
 ```
 {% endcode %}
 {% endtab %}

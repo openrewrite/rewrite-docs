@@ -61,8 +61,11 @@ public class Test {
 --- org/openrewrite/example/Test.java
 +++ org/openrewrite/example/Test.java
 @@ -8,1 +8,1 @@
--        s.setTTL((byte) 1);
-+        s.setTimeToLive(Byte.valueOf((byte) 1).intValue());
+    public static void method() {
+        MulticastSocket s = new MulticastSocket(0);
+-       s.setTTL((byte) 1);
++       s.setTimeToLive(Byte.valueOf((byte) 1).intValue());
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -61,12 +61,15 @@ class A {
 --- A.java
 +++ A.java
 @@ -6,5 +6,1 @@
--        try {
-            new FileReader("").read();
-        } catch (IOException e) {
-            throw e;
-        }
-+        new FileReader("").read();
+class A {
+    void foo() throws IOException {
+-       try {
+-           new FileReader("").read();
+-       } catch (IOException e) {
+-           throw e;
+-       }
++       new FileReader("").read();
+    }
 ```
 {% endcode %}
 {% endtab %}

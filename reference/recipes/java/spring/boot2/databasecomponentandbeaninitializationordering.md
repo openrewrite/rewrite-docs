@@ -83,9 +83,14 @@ class PersistenceConfiguration {
 --- PersistenceConfiguration.java
 +++ PersistenceConfiguration.java
 @@ -2,0 +2,1 @@
+import org.jooq.impl.DSL;
 +import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
+import org.jooq.DSLContext;
 @@ -19,0 +20,1 @@
-+    @DependsOnDatabaseInitialization
+
+    @Bean
++   @DependsOnDatabaseInitialization
+    A a() {
 ```
 {% endcode %}
 {% endtab %}

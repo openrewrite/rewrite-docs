@@ -79,14 +79,18 @@ public class ZipTest {
 +++ ZipTest.java
 @@ -1,4 +1,1 @@
 -import java.io.File;
-import java.io.FileOutputStream;
-import java.io.RandomAccessFile;
-import java.io.FileWriter;
+-import java.io.FileOutputStream;
+-import java.io.RandomAccessFile;
+-import java.io.FileWriter;
 +import java.io.*;
+import java.util.zip.ZipEntry;
 @@ -11,0 +8,3 @@
-+        if (!file.toPath().normalize().startsWith(dir.toPath().normalize())) {
-            throw new IOException("Bad zip entry");
-        }
+        String name = entry.getName();
+        File file = new File(dir, name);
++       if (!file.toPath().normalize().startsWith(dir.toPath().normalize())) {
++           throw new IOException("Bad zip entry");
++       }
+        FileOutputStream os = new FileOutputStream(file); // ZipSlip
 ```
 {% endcode %}
 {% endtab %}

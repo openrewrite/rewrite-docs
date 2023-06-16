@@ -47,8 +47,11 @@ class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -4,1 +4,1 @@
--      .javaParser(() -> JavaParser.fromJavaVersion().build());
-+      .javaParser(JavaParser.fromJavaVersion());
+class MyTest {
+    Object o = JavaTemplate.builder(() -> null, "")
+-     .javaParser(() -> JavaParser.fromJavaVersion().build());
++     .javaParser(JavaParser.fromJavaVersion());
+}
 ```
 {% endcode %}
 {% endtab %}

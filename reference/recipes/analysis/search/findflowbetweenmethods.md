@@ -76,14 +76,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,4 +4,4 @@
--        LinkedList<Integer> l = new LinkedList<>();
-        l.add(5);
-        System.out.println(l);
-        l.remove();
-+        LinkedList<Integer> l = /*~~>*/new LinkedList<>();
-        /*~~>*/l.add(5);
-        System.out.println(/*~~>*/l);
-        /*~~>*/l.remove();
+class Test {
+    void test() {
+-       LinkedList<Integer> l = new LinkedList<>();
+-       l.add(5);
+-       System.out.println(l);
+-       l.remove();
++       LinkedList<Integer> l = /*~~>*/new LinkedList<>();
++       /*~~>*/l.add(5);
++       System.out.println(/*~~>*/l);
++       /*~~>*/l.remove();
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -112,14 +112,23 @@ class ATest {
 --- ATest.java
 +++ ATest.java
 @@ -4,1 +4,1 @@
+import org.junit.jupiter.api.Test;
+
 -public class ATest {
 +class ATest {
+
 @@ -11,1 +11,1 @@
--    public class NestedTestClass {
-+    class NestedTestClass {
+
+    @Nested
+-   public class NestedTestClass {
++   class NestedTestClass {
+
 @@ -19,1 +19,1 @@
--    public class AnotherNestedTestClass {
-+    class AnotherNestedTestClass {
+
+    @Nested
+-   public class AnotherNestedTestClass {
++   class AnotherNestedTestClass {
+
 ```
 {% endcode %}
 {% endtab %}

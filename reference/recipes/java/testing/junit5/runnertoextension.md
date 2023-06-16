@@ -63,12 +63,16 @@ public class MyTest {
 +++ MyTest.java
 @@ -1,2 +1,2 @@
 -import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+-import org.mockito.runners.MockitoJUnitRunner;
 +import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
++import org.mockito.junit.jupiter.MockitoExtension;
+
 @@ -4,1 +4,1 @@
+import org.mockito.runners.MockitoJUnitRunner;
+
 -@RunWith(MockitoJUnitRunner.class)
 +@ExtendWith(MockitoExtension.class)
+public class MyTest {
 ```
 {% endcode %}
 {% endtab %}

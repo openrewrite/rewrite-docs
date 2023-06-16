@@ -52,8 +52,11 @@ class A {
 --- com/abc/A.java
 +++ com/abc/A.java
 @@ -5,1 +5,1 @@
--       boolean result = Character.isJavaLetter('b');
-+       boolean result = Character.isJavaIdentifierStart('b');
+class A {
+   public void test() {
+-      boolean result = Character.isJavaLetter('b');
++      boolean result = Character.isJavaIdentifierStart('b');
+   }
 ```
 {% endcode %}
 {% endtab %}
@@ -100,8 +103,11 @@ class A {
 --- com/abc/A.java
 +++ com/abc/A.java
 @@ -5,1 +5,1 @@
--       boolean result = Character.isJavaLetter('b');
-+       boolean result = Character.isJavaIdentifierStart('b');
+class A {
+   public void test() {
+-      boolean result = Character.isJavaLetter('b');
++      boolean result = Character.isJavaIdentifierStart('b');
+   }
 ```
 {% endcode %}
 {% endtab %}

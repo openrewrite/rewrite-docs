@@ -78,20 +78,23 @@ _Add a maven profile to a `pom.xml` file._
 --- pom.xml
 +++ pom.xml
 @@ -5,0 +5,14 @@
-+  <profiles>
-    <profile>
-      <id>myprofile</id>
-      <activation>
-        <foo>foo</foo>
-      </activation>
-      <properties>
-        <bar>bar</bar>
-      </properties>
-      <build>
-        <param>value</param>
-      </build>
-    </profile>
-  </profiles>
+  <artifactId>artifact</artifactId>
+  <version>1</version>
++ <profiles>
++   <profile>
++     <id>myprofile</id>
++     <activation>
++       <foo>foo</foo>
++     </activation>
++     <properties>
++       <bar>bar</bar>
++     </properties>
++     <build>
++       <param>value</param>
++     </build>
++   </profile>
++ </profiles>
+</project>
 ```
 {% endcode %}
 {% endtab %}

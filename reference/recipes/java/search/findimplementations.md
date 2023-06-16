@@ -49,6 +49,7 @@ class Test implements Runnable {
 @@ -1,1 +1,1 @@
 -class Test implements Runnable {
 +/*~~>*/class Test implements Runnable {
+    @Override
 ```
 {% endcode %}
 {% endtab %}

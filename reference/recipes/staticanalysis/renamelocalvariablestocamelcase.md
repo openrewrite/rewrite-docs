@@ -51,8 +51,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        String ID;
-+        String id;
+class Test {
+    void test() {
+-       String ID;
++       String id;
+    }
 ```
 {% endcode %}
 {% endtab %}

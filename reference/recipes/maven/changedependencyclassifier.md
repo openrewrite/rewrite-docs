@@ -83,7 +83,10 @@ _Add or alter the classifier of the specified dependency._
 --- pom.xml
 +++ pom.xml
 @@ -13,0 +13,1 @@
-+      <classifier>jakarta</classifier>
+      <artifactId>ehcache</artifactId>
+      <version>3.10.0</version>
++     <classifier>jakarta</classifier>
+    </dependency>
 ```
 {% endcode %}
 {% endtab %}

@@ -91,23 +91,29 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -8,7 +8,7 @@
--        if (str == "test") ;
-        if ("test" == str) ;
-        if ("test" == "test") ;
-        if ("test" == new String("test")) ;
-        if ("test" == getString());
-        boolean flag = (str == "test");
-        while ("test" == str) {
-+        if ("test".equals(str)) ;
-        if ("test".equals(str)) ;
-        if ("test".equals("test")) ;
-        if ("test".equals(new String("test"))) ;
-        if ("test".equals(getString()));
-        boolean flag = ("test".equals(str));
-        while ("test".equals(str)) {
+
+    public void method(String str) {
+-       if (str == "test") ;
+-       if ("test" == str) ;
+-       if ("test" == "test") ;
+-       if ("test" == new String("test")) ;
+-       if ("test" == getString());
+-       boolean flag = (str == "test");
+-       while ("test" == str) {
++       if ("test".equals(str)) ;
++       if ("test".equals(str)) ;
++       if ("test".equals("test")) ;
++       if ("test".equals(new String("test"))) ;
++       if ("test".equals(getString()));
++       boolean flag = ("test".equals(str));
++       while ("test".equals(str)) {
+        }
 @@ -19,1 +19,1 @@
--        friends.stream().filter(e -> e.name == "peter");
-+        friends.stream().filter(e -> "peter".equals(e.name));
+
+    public void findPeter(List<Friend> friends) {
+-       friends.stream().filter(e -> e.name == "peter");
++       friends.stream().filter(e -> "peter".equals(e.name));
+    }
 ```
 {% endcode %}
 {% endtab %}

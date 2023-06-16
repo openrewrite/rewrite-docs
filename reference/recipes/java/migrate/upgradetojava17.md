@@ -78,17 +78,26 @@ class A {
 --- pom.xml
 +++ pom.xml
 @@ -3,1 +3,0 @@
+package com.abc;
+
 -import java.util.Collections;
+import java.util.List;
 @@ -9,1 +8,1 @@
--   private static final List<String> staticList = Collections.singletonList("0");
-+   private static final List<String> staticList = List.of("0");
+
+class A {
+-  private static final List<String> staticList = Collections.singletonList("0");
++  private static final List<String> staticList = List.of("0");
+
 @@ -14,3 +13,3 @@
--       Set<String> stringSet = Collections.singleton("aaa");
-       List<String> stringList = Collections.singletonList("bbb");
-       Map<String, Object> stringMap = Collections.singletonMap("a-key", "a-value");
-+       Set<String> stringSet = Set.of("aaa");
-       List<String> stringList = List.of("bbb");
-       Map<String, Object> stringMap = Map.of("a-key", "a-value");
+   public void test() {
+       // This is a comment
+-      Set<String> stringSet = Collections.singleton("aaa");
+-      List<String> stringList = Collections.singletonList("bbb");
+-      Map<String, Object> stringMap = Collections.singletonMap("a-key", "a-value");
++      Set<String> stringSet = Set.of("aaa");
++      List<String> stringList = List.of("bbb");
++      Map<String, Object> stringMap = Map.of("a-key", "a-value");
+   }
 ```
 {% endcode %}
 {% endtab %}
@@ -156,17 +165,26 @@ class A {
 --- pom.xml
 +++ pom.xml
 @@ -3,1 +3,0 @@
+package com.abc;
+
 -import java.util.Collections;
+import java.util.List;
 @@ -9,1 +8,1 @@
--   private static final List<String> staticList = Collections.singletonList("0");
-+   private static final List<String> staticList = List.of("0");
+
+class A {
+-  private static final List<String> staticList = Collections.singletonList("0");
++  private static final List<String> staticList = List.of("0");
+
 @@ -14,3 +13,3 @@
--       Set<String> stringSet = Collections.singleton("aaa");
-       List<String> stringList = Collections.singletonList("bbb");
-       Map<String, Object> stringMap = Collections.singletonMap("a-key", "a-value");
-+       Set<String> stringSet = Set.of("aaa");
-       List<String> stringList = List.of("bbb");
-       Map<String, Object> stringMap = Map.of("a-key", "a-value");
+   public void test() {
+       // This is a comment
+-      Set<String> stringSet = Collections.singleton("aaa");
+-      List<String> stringList = Collections.singletonList("bbb");
+-      Map<String, Object> stringMap = Collections.singletonMap("a-key", "a-value");
++      Set<String> stringSet = Set.of("aaa");
++      List<String> stringList = List.of("bbb");
++      Map<String, Object> stringMap = Map.of("a-key", "a-value");
+   }
 ```
 {% endcode %}
 {% endtab %}

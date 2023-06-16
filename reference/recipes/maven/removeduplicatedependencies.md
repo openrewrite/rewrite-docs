@@ -84,11 +84,14 @@ _Removes duplicated dependencies in the `<dependencies>` and `<dependencyManagem
 --- pom.xml
 +++ pom.xml
 @@ -20,5 +20,0 @@
--    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
+      <scope>test</scope>
     </dependency>
+-   <dependency>
+-     <groupId>com.google.guava</groupId>
+-     <artifactId>guava</artifactId>
+-     <version>29.0-jre</version>
+-   </dependency>
+  </dependencies>
 ```
 {% endcode %}
 {% endtab %}

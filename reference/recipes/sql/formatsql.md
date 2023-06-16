@@ -63,11 +63,14 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,4 @@
--            SELECT * FROM my_table
-+            SELECT
-              *
-            FROM
-              my_table
+class Test {
+    String query = """
+-           SELECT * FROM my_table
++           SELECT
++             *
++           FROM
++             my_table
+            WHERE
 ```
 {% endcode %}
 {% endtab %}

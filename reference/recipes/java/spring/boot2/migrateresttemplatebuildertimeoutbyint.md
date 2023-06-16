@@ -57,13 +57,19 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,0 +4,2 @@
-+import java.time.Duration;
+import org.springframework.web.client.RestTemplate;
 
++import java.time.Duration;
++
+class Test {
 @@ -6,2 +8,2 @@
--            .setConnectTimeout(1)
-            .setReadTimeout(1)
-+            .setConnectTimeout(Duration.ofMillis(1))
-            .setReadTimeout(Duration.ofMillis(1))
+class Test {
+    RestTemplate template = new RestTemplateBuilder()
+-           .setConnectTimeout(1)
+-           .setReadTimeout(1)
++           .setConnectTimeout(Duration.ofMillis(1))
++           .setReadTimeout(Duration.ofMillis(1))
+            .build();
 ```
 {% endcode %}
 {% endtab %}

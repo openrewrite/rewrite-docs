@@ -67,6 +67,7 @@ spec:
 @@ -1,1 +1,1 @@
 -apiVersion: extensions/v1beta1
 +~~(missing TLS)~~>~~(missing disallow http)~~>apiVersion: extensions/v1beta1
+kind: Ingress
 ```
 {% endcode %}
 {% endtab %}

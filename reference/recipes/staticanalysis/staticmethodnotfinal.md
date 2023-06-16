@@ -49,8 +49,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
--    public static final void main(String[] args) {
-+    public static void main(String[] args) {
+class Test {
+-   public static final void main(String[] args) {
++   public static void main(String[] args) {
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -69,8 +69,11 @@ _Convert AssertJ `assertThat(collection.isEmpty()).isTrue()` to `assertThat(coll
 --- MyTest.java
 +++ MyTest.java
 @@ -14,1 +14,1 @@
--          assertThat(collection.isEmpty()).isTrue();
-+          assertThat(collection).isEmpty();
+          Collection<String> collection = new ArrayList<>();
+          collection.add("3");
+-         assertThat(collection.isEmpty()).isTrue();
++         assertThat(collection).isEmpty();
+      }
 ```
 {% endcode %}
 {% endtab %}

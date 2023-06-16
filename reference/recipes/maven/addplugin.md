@@ -86,20 +86,23 @@ _Add the specified Maven plugin to the pom.xml._
 --- pom.xml
 +++ pom.xml
 @@ -5,0 +5,14 @@
-+  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>100.0</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>io.moderne.FindTest</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <build>
++   <plugins>
++     <plugin>
++       <groupId>org.openrewrite.maven</groupId>
++       <artifactId>rewrite-maven-plugin</artifactId>
++       <version>100.0</version>
++       <configuration>
++         <activeRecipes>
++           <recipe>io.moderne.FindTest</recipe>
++         </activeRecipes>
++       </configuration>
++     </plugin>
++   </plugins>
++ </build>
+</project>
 ```
 {% endcode %}
 {% endtab %}

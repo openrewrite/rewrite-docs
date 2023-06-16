@@ -59,11 +59,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--    private static final int ERROR = HttpURLConnection.HTTP_SERVER_ERROR;
-+    private static final int ERROR = HttpURLConnection.HTTP_INTERNAL_ERROR;
+
+class Test {
+-   private static final int ERROR = HttpURLConnection.HTTP_SERVER_ERROR;
++   private static final int ERROR = HttpURLConnection.HTTP_INTERNAL_ERROR;
+
 @@ -7,1 +7,1 @@
--        return HttpURLConnection.HTTP_SERVER_ERROR;
-+        return HttpURLConnection.HTTP_INTERNAL_ERROR;
+
+    public static int method() {
+-       return HttpURLConnection.HTTP_SERVER_ERROR;
++       return HttpURLConnection.HTTP_INTERNAL_ERROR;
+    }
 ```
 {% endcode %}
 {% endtab %}

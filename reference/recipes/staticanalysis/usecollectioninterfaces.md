@@ -56,10 +56,15 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,0 +2,1 @@
+import java.util.HashSet;
 +import java.util.Set;
+
 @@ -4,1 +5,1 @@
--    public HashSet method() {
-+    public Set method() {
+
+class Test {
+-   public HashSet method() {
++   public Set method() {
+        return new HashSet<>();
 ```
 {% endcode %}
 {% endtab %}

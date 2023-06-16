@@ -58,13 +58,22 @@ public class CustomMvcConfigurer implements WebMvcConfigurer {
 --- a/b/c/CustomMvcConfigurer.java
 +++ a/b/c/CustomMvcConfigurer.java
 @@ -3,1 +3,1 @@
+package a.b.c;
+
 -import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 +import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
 @@ -5,1 +5,1 @@
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
 -public class CustomMvcConfigurer extends WebMvcConfigurerAdapter {
 +public class CustomMvcConfigurer implements WebMvcConfigurer {
+    private final String someArg;
 @@ -8,1 +8,0 @@
--        super();
+    private final String someArg;
+    public CustomMvcConfigurer(String someArg) {
+-       super();
+        this.someArg = someArg;
 ```
 {% endcode %}
 {% endtab %}

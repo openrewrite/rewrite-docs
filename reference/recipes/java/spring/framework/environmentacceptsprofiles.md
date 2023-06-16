@@ -52,10 +52,15 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,0 +2,1 @@
+import org.springframework.core.env.Environment;
 +import org.springframework.core.env.Profiles;
+
 @@ -5,1 +6,1 @@
--        return env.acceptsProfiles("production");
-+        return env.acceptsProfiles(Profiles.of("production"));
+class Test {
+    static boolean method(Environment env) {
+-       return env.acceptsProfiles("production");
++       return env.acceptsProfiles(Profiles.of("production"));
+    }
 ```
 {% endcode %}
 {% endtab %}

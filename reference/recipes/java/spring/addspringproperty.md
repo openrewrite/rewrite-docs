@@ -55,7 +55,9 @@ server.servlet.path=/tmp/my-server-path
 {% code %}
 ```diff
 @@ -2,0 +2,1 @@
+server.port=8080
 +server.servlet.path=/tmp/my-server-path
+
 ```
 {% endcode %}
 {% endtab %}
@@ -87,8 +89,11 @@ server.servlet.path=/tmp/my-server-path
 {% code %}
 ```diff
 @@ -3,0 +3,2 @@
-+      servlet:
-        path: /tmp/my-server-path
+    server:
+      port: 8080
++     servlet:
++       path: /tmp/my-server-path
+
 ```
 {% endcode %}
 {% endtab %}

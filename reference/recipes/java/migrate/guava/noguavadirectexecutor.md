@@ -52,10 +52,15 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,0 @@
+import java.util.concurrent.Executor;
 -import com.google.common.util.concurrent.MoreExecutors;
+
 @@ -5,1 +4,1 @@
--    Executor executor = MoreExecutors.directExecutor();
-+    Executor executor = Runnable::run;
+
+class Test {
+-   Executor executor = MoreExecutors.directExecutor();
++   Executor executor = Runnable::run;
+}
 ```
 {% endcode %}
 {% endtab %}

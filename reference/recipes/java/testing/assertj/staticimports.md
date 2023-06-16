@@ -71,19 +71,30 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -2,4 +2,0 @@
+import java.util.List;
 -import org.assertj.core.api.AssertionsForClassTypes;
-import org.assertj.core.api.AssertionsForInterfaceTypes;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-@@ -7,0 +3,2 @@
-+import static org.assertj.core.api.Assertions.assertThat;
+-import org.assertj.core.api.AssertionsForInterfaceTypes;
+-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
+@@ -7,0 +3,2 @@
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
+
++import static org.assertj.core.api.Assertions.assertThat;
++
+public class Test {
 @@ -10,2 +8,1 @@
--        AssertionsForInterfaceTypes.assertThat(exampleList).hasSize(0);
-        AssertionsForClassTypes.assertThat(true).isTrue();
-+        assertThat(exampleList).hasSize(0);
+    List<String> exampleList;
+    void method() {
+-       AssertionsForInterfaceTypes.assertThat(exampleList).hasSize(0);
+-       AssertionsForClassTypes.assertThat(true).isTrue();
++       assertThat(exampleList).hasSize(0);
+        assertThat(true).isTrue();
 @@ -13,0 +10,1 @@
-+        assertThat(true).isTrue();
+        AssertionsForClassTypes.assertThat(true).isTrue();
+        assertThat(true).isTrue();
++       assertThat(true).isTrue();
+        assertThat(exampleList).hasSize(0);
 ```
 {% endcode %}
 {% endtab %}
@@ -144,19 +155,30 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -2,4 +2,0 @@
+import java.util.List;
 -import org.assertj.core.api.AssertionsForClassTypes;
-import org.assertj.core.api.AssertionsForInterfaceTypes;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-@@ -7,0 +3,2 @@
-+import static org.assertj.core.api.Assertions.assertThat;
+-import org.assertj.core.api.AssertionsForInterfaceTypes;
+-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
+@@ -7,0 +3,2 @@
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
+
++import static org.assertj.core.api.Assertions.assertThat;
++
+public class Test {
 @@ -10,2 +8,1 @@
--        AssertionsForInterfaceTypes.assertThat(exampleList).hasSize(0);
-        AssertionsForClassTypes.assertThat(true).isTrue();
-+        assertThat(exampleList).hasSize(0);
+    List<String> exampleList;
+    void method() {
+-       AssertionsForInterfaceTypes.assertThat(exampleList).hasSize(0);
+-       AssertionsForClassTypes.assertThat(true).isTrue();
++       assertThat(exampleList).hasSize(0);
+        assertThat(true).isTrue();
 @@ -13,0 +10,1 @@
-+        assertThat(true).isTrue();
+        AssertionsForClassTypes.assertThat(true).isTrue();
+        assertThat(true).isTrue();
++       assertThat(true).isTrue();
+        assertThat(exampleList).hasSize(0);
 ```
 {% endcode %}
 {% endtab %}

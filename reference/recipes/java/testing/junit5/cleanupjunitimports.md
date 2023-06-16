@@ -42,7 +42,8 @@ public class MyTest {}
 +++ MyTest.java
 @@ -1,2 +1,0 @@
 -import org.junit.Test;
-
+-
+public class MyTest {}
 ```
 {% endcode %}
 {% endtab %}

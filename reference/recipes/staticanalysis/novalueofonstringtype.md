@@ -63,11 +63,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        String str = String.valueOf("changeMe");
-+        String str = "changeMe";
+class Test {
+    static void method(char[] data) {
+-       String str = String.valueOf("changeMe");
++       String str = "changeMe";
+        str = String.valueOf(0);
 @@ -5,1 +5,1 @@
--        str = "changeMe" + String.valueOf(0);
-+        str = "changeMe" + 0;
+        String str = String.valueOf("changeMe");
+        str = String.valueOf(0);
+-       str = "changeMe" + String.valueOf(0);
++       str = "changeMe" + 0;
+        str = String.valueOf(data);
 ```
 {% endcode %}
 {% endtab %}

@@ -56,10 +56,15 @@ class A {
 --- A.java
 +++ A.java
 @@ -2,1 +2,0 @@
+import org.springframework.context.annotation.Bean;
 -import java.util.List;
+import java.util.ArrayList;
 @@ -7,1 +6,1 @@
--    List bean1() {
-+    ArrayList bean1() {
+class A {
+    @Bean
+-   List bean1() {
++   ArrayList bean1() {
+        return new ArrayList();
 ```
 {% endcode %}
 {% endtab %}

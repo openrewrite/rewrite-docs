@@ -66,8 +66,11 @@ class Test implements Collection<String> {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--    @Override
-+    /*~~>*/@Override
+
+class Test implements Collection<String> {
+-   @Override
++   /*~~>*/@Override
+    public boolean isEmpty() {
 ```
 {% endcode %}
 {% endtab %}

@@ -64,20 +64,25 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,0 +2,1 @@
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 +import org.springframework.util.unit.DataSize;
+
 @@ -6,6 +7,6 @@
--        factory.setMaxFileSize(1);
-        factory.setMaxFileSize("1");
-        factory.setMaxRequestSize(1);
-        factory.setMaxRequestSize("1");
-        factory.setFileSizeThreshold(1);
-        factory.setFileSizeThreshold("1");
-+        factory.setMaxFileSize(DataSize.ofBytes(1));
-        factory.setMaxFileSize(DataSize.parse("1"));
-        factory.setMaxRequestSize(DataSize.ofBytes(1));
-        factory.setMaxRequestSize(DataSize.parse("1"));
-        factory.setFileSizeThreshold(DataSize.ofBytes(1));
-        factory.setFileSizeThreshold(DataSize.parse("1"));
+    void method() {
+        MultipartConfigFactory factory = new MultipartConfigFactory();
+-       factory.setMaxFileSize(1);
+-       factory.setMaxFileSize("1");
+-       factory.setMaxRequestSize(1);
+-       factory.setMaxRequestSize("1");
+-       factory.setFileSizeThreshold(1);
+-       factory.setFileSizeThreshold("1");
++       factory.setMaxFileSize(DataSize.ofBytes(1));
++       factory.setMaxFileSize(DataSize.parse("1"));
++       factory.setMaxRequestSize(DataSize.ofBytes(1));
++       factory.setMaxRequestSize(DataSize.parse("1"));
++       factory.setFileSizeThreshold(DataSize.ofBytes(1));
++       factory.setFileSizeThreshold(DataSize.parse("1"));
+    }
 ```
 {% endcode %}
 {% endtab %}

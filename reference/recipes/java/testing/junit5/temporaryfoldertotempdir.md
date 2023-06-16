@@ -61,15 +61,21 @@ class AbstractIntegrationTest {
 {% code %}
 ```diff
 @@ -5,2 +5,2 @@
--    @Rule
-    TemporaryFolder temporaryFolder = new TemporaryFolder()
-+    @TempDir
-    File temporaryFolder
+
+class AbstractIntegrationTest {
+-   @Rule
+-   TemporaryFolder temporaryFolder = new TemporaryFolder()
++   @TempDir
++   File temporaryFolder
+
 @@ -10,2 +10,2 @@
--        buildFile = temporaryFolder.newFile('build.gradle')
-        settingsFile = temporaryFolder.newFile('settings.gradle')
-+        buildFile = File.createTempFile('build.gradle', null, temporaryFolder)
-        settingsFile = File.createTempFile('settings.gradle', null, temporaryFolder)
+    def setup() {
+        projectDir = temporaryFolder.root
+-       buildFile = temporaryFolder.newFile('build.gradle')
+-       settingsFile = temporaryFolder.newFile('settings.gradle')
++       buildFile = File.createTempFile('build.gradle', null, temporaryFolder)
++       settingsFile = File.createTempFile('settings.gradle', null, temporaryFolder)
+    }
 ```
 {% endcode %}
 {% endtab %}

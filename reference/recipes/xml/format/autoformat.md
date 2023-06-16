@@ -65,12 +65,15 @@ _Indents XML using the most common indentation size and tabs or space choice in 
 {% code %}
 ```diff
 @@ -9,3 +9,3 @@
--  <groupId>org.junit.vintage</groupId>
-  <artifactId>junit-vintage-engine</artifactId>
-</exclusion>
-+          <groupId>org.junit.vintage</groupId>
-          <artifactId>junit-vintage-engine</artifactId>
-        </exclusion>
+      <exclusions>
+        <exclusion>
+- <groupId>org.junit.vintage</groupId>
+- <artifactId>junit-vintage-engine</artifactId>
+-</exclusion>
++         <groupId>org.junit.vintage</groupId>
++         <artifactId>junit-vintage-engine</artifactId>
++       </exclusion>
+      </exclusions>
 ```
 {% endcode %}
 {% endtab %}

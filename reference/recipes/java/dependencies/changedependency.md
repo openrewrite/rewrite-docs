@@ -84,8 +84,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    implementation "commons-lang:commons-lang:2.6"
-+    implementation "org.apache.commons:commons-lang3:3.11"
+
+dependencies {
+-   implementation "commons-lang:commons-lang:2.6"
++   implementation "org.apache.commons:commons-lang3:3.11"
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -154,12 +157,15 @@ Change Maven dependency
 --- pom.xml
 +++ pom.xml
 @@ -7,3 +7,3 @@
--            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-+            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
+    <dependencies>
+        <dependency>
+-           <groupId>commons-lang</groupId>
+-           <artifactId>commons-lang</artifactId>
+-           <version>2.6</version>
++           <groupId>org.apache.commons</groupId>
++           <artifactId>commons-lang3</artifactId>
++           <version>3.11</version>
+        </dependency>
 ```
 {% endcode %}
 {% endtab %}

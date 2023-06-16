@@ -73,10 +73,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -5,2 +5,2 @@
--        restTemplate.getForObject(base() + "/getThing", String.class);
-        restTemplate.postForEntity(base() + "/postThing", null, String.class);
-+        /*~~(GET base() + "/getThing")~~>*/restTemplate.getForObject(base() + "/getThing", String.class);
-        /*~~(POST base() + "/postThing")~~>*/restTemplate.postForEntity(base() + "/postThing", null, String.class);
+    RestTemplate restTemplate;
+    void test() {
+-       restTemplate.getForObject(base() + "/getThing", String.class);
+-       restTemplate.postForEntity(base() + "/postThing", null, String.class);
++       /*~~(GET base() + "/getThing")~~>*/restTemplate.getForObject(base() + "/getThing", String.class);
++       /*~~(POST base() + "/postThing")~~>*/restTemplate.postForEntity(base() + "/postThing", null, String.class);
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -54,6 +54,7 @@ server.servlet.path=/tmp/my-server-path
 @@ -1,1 +1,1 @@
 -server.servlet-path=/tmp/my-server-path
 +server.servlet.path=/tmp/my-server-path
+
 ```
 {% endcode %}
 {% endtab %}
@@ -83,8 +84,10 @@ server.servlet.path=/tmp/my-server-path
 {% code %}
 ```diff
 @@ -2,1 +2,1 @@
--      servlet-path: /tmp/my-server-path
-+      servlet.path: /tmp/my-server-path
+    server:
+-     servlet-path: /tmp/my-server-path
++     servlet.path: /tmp/my-server-path
+
 ```
 {% endcode %}
 {% endtab %}

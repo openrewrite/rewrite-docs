@@ -149,7 +149,10 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -38,0 +38,1 @@
-+            <version>4.2.9</version>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-annotation</artifactId>
++           <version>4.2.9</version>
+        </dependency>
 ```
 {% endcode %}
 {% endtab %}
@@ -246,8 +249,11 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -13,1 +13,1 @@
--        <version>3.1.2</version>
-+        <version>3.1.4</version>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-dependencies</artifactId>
+-       <version>3.1.2</version>
++       <version>3.1.4</version>
+        <type>pom</type>
 ```
 {% endcode %}
 {% endtab %}

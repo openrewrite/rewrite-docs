@@ -108,8 +108,11 @@ spec:
 {% code %}
 ```diff
 @@ -13,1 +13,1 @@
--  externalIPs:
-+  ~~(found ip)~~>externalIPs:
+      port: 80
+      targetPort: 9376
+- externalIPs:
++ ~~(found ip)~~>externalIPs:
+    - 192.168.0.1
 ```
 {% endcode %}
 {% endtab %}

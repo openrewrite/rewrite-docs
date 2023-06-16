@@ -51,7 +51,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,0 @@
--        ;
+class Test {
+    void test() {
+-       ;
+    }
 ```
 {% endcode %}
 {% endtab %}

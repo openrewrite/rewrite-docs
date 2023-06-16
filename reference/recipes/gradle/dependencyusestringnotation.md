@@ -53,10 +53,13 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -6,2 +6,2 @@
--    api(group: 'org.openrewrite', name: 'rewrite-core', version: 'latest.release')
-    implementation group: 'group', name: 'artifact', version: 'version'
-+    api("org.openrewrite:rewrite-core:latest.release")
-    implementation "group:artifact:version"
+
+dependencies {
+-   api(group: 'org.openrewrite', name: 'rewrite-core', version: 'latest.release')
+-   implementation group: 'group', name: 'artifact', version: 'version'
++   api("org.openrewrite:rewrite-core:latest.release")
++   implementation "group:artifact:version"
+}
 ```
 {% endcode %}
 {% endtab %}

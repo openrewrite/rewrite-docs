@@ -65,8 +65,11 @@ public class SecurityConfig {
 --- SecurityConfig.java
 +++ SecurityConfig.java
 @@ -11,1 +11,1 @@
--        http.authorizeExchange().pathMatchers("/blog/**").permitAll().anyExchange().authenticated();
-+        http.authorizeExchange(exchange -> exchange.pathMatchers("/blog/**").permitAll().anyExchange().authenticated());
+    @Bean
+    SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
+-       http.authorizeExchange().pathMatchers("/blog/**").permitAll().anyExchange().authenticated();
++       http.authorizeExchange(exchange -> exchange.pathMatchers("/blog/**").permitAll().anyExchange().authenticated());
+        return http.build();
 ```
 {% endcode %}
 {% endtab %}

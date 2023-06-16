@@ -50,9 +50,12 @@ class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -3,3 +3,0 @@
--    @Test
-    public void method() {
-    }
+import org.junit.Test;
+class MyTest {
+-   @Test
+-   public void method() {
+-   }
+}
 ```
 {% endcode %}
 {% endtab %}

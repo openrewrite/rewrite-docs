@@ -76,17 +76,28 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
--    private int DoChange = 10;
-+    private int doChange = 10;
+class Test {
+-   private int DoChange = 10;
++   private int doChange = 10;
+    public int DoNotChangePublicMember;
 @@ -7,1 +7,1 @@
--        return DoChange;
-+        return doChange;
+
+    public int getTen() {
+-       return DoChange;
++       return doChange;
+    }
 @@ -11,1 +11,1 @@
--        return this.DoChange * 2;
-+        return this.doChange * 2;
+
+    public int getTwenty() {
+-       return this.DoChange * 2;
++       return this.doChange * 2;
+    }
 @@ -15,1 +15,1 @@
--        return DoChange * 3;
-+        return doChange * 3;
+
+    public int getThirty() {
+-       return DoChange * 3;
++       return doChange * 3;
+    }
 ```
 {% endcode %}
 {% endtab %}

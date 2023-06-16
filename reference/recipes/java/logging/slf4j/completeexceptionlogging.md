@@ -91,15 +91,25 @@ class Test {
 +++ Test.java
 @@ -1,0 +1,1 @@
 +
+import org.slf4j.Logger;
 @@ -11,1 +12,1 @@
--            logger.error(e.getMessage());
-+            logger.error("", e);
+        } catch (NumberFormatException e) {
+            // TEST CASE #1:
+-           logger.error(e.getMessage());
++           logger.error("", e);
+
 @@ -14,1 +15,1 @@
--            logger.error("BEFORE MESSAGE " + e.getMessage());
-+            logger.error("BEFORE MESSAGE " + e.getMessage(), e);
+
+            // TEST CASE #2:
+-           logger.error("BEFORE MESSAGE " + e.getMessage());
++           logger.error("BEFORE MESSAGE " + e.getMessage(), e);
+
 @@ -17,1 +18,1 @@
--            logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE");
-+            logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE", e);
+
+            // TEST CASE #3:
+-           logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE");
++           logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE", e);
+
 ```
 {% endcode %}
 {% endtab %}

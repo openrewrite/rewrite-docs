@@ -51,8 +51,11 @@ class T {
 --- T.java
 +++ T.java
 @@ -5,1 +5,1 @@
--        SCryptPasswordEncoder encoder = new SCryptPasswordEncoder();
-+        SCryptPasswordEncoder encoder = SCryptPasswordEncoder.defaultsForSpringSecurity_v4_1();
+class T {
+    void encoderWithDefaults() {
+-       SCryptPasswordEncoder encoder = new SCryptPasswordEncoder();
++       SCryptPasswordEncoder encoder = SCryptPasswordEncoder.defaultsForSpringSecurity_v4_1();
+    }
 ```
 {% endcode %}
 {% endtab %}

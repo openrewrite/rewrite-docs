@@ -52,10 +52,14 @@ class Test {
 @@ -1,1 +1,2 @@
 -import java.io.*;
 +import java.io.FileInputStream;
-import java.io.IOException;
++import java.io.IOException;
+class Test {
 @@ -4,1 +5,1 @@
--        new FileInputStream(new File("test"));
-+        new FileInputStream("test");
+class Test {
+    void test() throws IOException {
+-       new FileInputStream(new File("test"));
++       new FileInputStream("test");
+    }
 ```
 {% endcode %}
 {% endtab %}

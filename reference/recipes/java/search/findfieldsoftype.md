@@ -58,8 +58,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -3,1 +3,1 @@
--   private List<?> list;
-+   /*~~>*/private List<?> list;
+import java.util.*;
+public class A {
+-  private List<?> list;
++  /*~~>*/private List<?> list;
+   private Set<?> set;
 ```
 {% endcode %}
 {% endtab %}

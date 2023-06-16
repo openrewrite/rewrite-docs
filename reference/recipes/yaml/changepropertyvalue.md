@@ -58,6 +58,7 @@ my.prop: bar
 @@ -1,1 +1,1 @@
 -my.prop: foo
 +my.prop: bar
+
 ```
 {% endcode %}
 {% endtab %}

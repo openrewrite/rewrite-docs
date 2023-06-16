@@ -55,8 +55,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        for (; 1 == 2 ;) {
-+        while (1 == 2) {
+class Test {
+    void test() {
+-       for (; 1 == 2 ;) {
++       while (1 == 2) {
+            System.out.println("i'm going to say hi a lot");
 ```
 {% endcode %}
 {% endtab %}

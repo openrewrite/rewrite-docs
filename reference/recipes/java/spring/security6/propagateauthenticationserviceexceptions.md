@@ -52,7 +52,10 @@ class T {
 --- T.java
 +++ T.java
 @@ -6,1 +6,0 @@
--        handler.setRethrowAuthenticationServiceException(true);
+    void m() {
+        AuthenticationEntryPointFailureHandler handler = null;
+-       handler.setRethrowAuthenticationServiceException(true);
+    }
 ```
 {% endcode %}
 {% endtab %}

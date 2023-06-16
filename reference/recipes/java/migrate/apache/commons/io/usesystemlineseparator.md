@@ -56,10 +56,14 @@ class A {
 +++ A.java
 @@ -1,2 +1,0 @@
 -import org.apache.commons.io.IOUtils;
-
+-
+class A {
 @@ -5,1 +3,1 @@
--        return IOUtils.LINE_SEPARATOR;
-+        return System.lineSeparator();
+class A {
+    static String lineSeparator() {
+-       return IOUtils.LINE_SEPARATOR;
++       return System.lineSeparator();
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -105,10 +109,14 @@ class A {
 +++ A.java
 @@ -1,2 +1,0 @@
 -import org.apache.commons.io.IOUtils;
-
+-
+class A {
 @@ -5,1 +3,1 @@
--        return IOUtils.LINE_SEPARATOR;
-+        return System.lineSeparator();
+class A {
+    static String lineSeparator() {
+-       return IOUtils.LINE_SEPARATOR;
++       return System.lineSeparator();
+    }
 ```
 {% endcode %}
 {% endtab %}

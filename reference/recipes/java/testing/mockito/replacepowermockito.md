@@ -119,41 +119,65 @@ public class StaticMethodTest {
 --- StaticMethodTest.java
 +++ StaticMethodTest.java
 @@ -7,0 +7,1 @@
+import java.util.Locale;
+
 +import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 @@ -8,2 +9,1 @@
+
+import org.mockito.Mockito;
 -import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
+-import org.powermock.core.classloader.annotations.PrepareForTest;
 +import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 @@ -11,0 +11,1 @@
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.testng.annotations.BeforeClass;
 +import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 @@ -13,1 +14,0 @@
+import org.testng.annotations.Test;
+
 -@PrepareForTest(value = {Calendar.class, Currency.class})
+public class StaticMethodTest {
 @@ -16,0 +16,4 @@
-+    private MockedStatic<Currency> mockedCurrency;
+public class StaticMethodTest {
 
-    private MockedStatic<Calendar> mockedCalendar;
-
++   private MockedStatic<Currency> mockedCurrency;
++
++   private MockedStatic<Calendar> mockedCalendar;
++
+    private Calendar calendarMock;
 @@ -23,0 +27,12 @@
-+    @BeforeMethod
-    void setUpStaticMocks() {
-        mockedCurrency = Mockito.mockStatic(Currency.class);
-        mockedCalendar = Mockito.mockStatic(Calendar.class);
     }
 
-    @AfterMethod(alwaysRun = true)
-    void tearDownStaticMocks() {
-        mockedCalendar.closeOnDemand();
-        mockedCurrency.closeOnDemand();
-    }
-
++   @BeforeMethod
++   void setUpStaticMocks() {
++       mockedCurrency = Mockito.mockStatic(Currency.class);
++       mockedCalendar = Mockito.mockStatic(Calendar.class);
++   }
++
++   @AfterMethod(alwaysRun = true)
++   void tearDownStaticMocks() {
++       mockedCalendar.closeOnDemand();
++       mockedCurrency.closeOnDemand();
++   }
++
+    @Test
 @@ -25,3 +41,1 @@
--        PowerMockito.mockStatic(Calendar.class);
-        PowerMockito.mockStatic(Currency.class);
-        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
-+        mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+    @Test
+    void testWithCalendar() {
+-       PowerMockito.mockStatic(Calendar.class);
+-       PowerMockito.mockStatic(Currency.class);
+-       Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
++       mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
 @@ -29,1 +43,1 @@
--        Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
-+        mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+-       Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
++       mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -262,41 +286,65 @@ public class StaticMethodTest {
 --- StaticMethodTest.java
 +++ StaticMethodTest.java
 @@ -7,0 +7,1 @@
+import java.util.Locale;
+
 +import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 @@ -8,2 +9,1 @@
+
+import org.mockito.Mockito;
 -import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
+-import org.powermock.core.classloader.annotations.PrepareForTest;
 +import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 @@ -11,0 +11,1 @@
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.testng.annotations.BeforeClass;
 +import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 @@ -13,1 +14,0 @@
+import org.testng.annotations.Test;
+
 -@PrepareForTest(value = {Calendar.class, Currency.class})
+public class StaticMethodTest {
 @@ -16,0 +16,4 @@
-+    private MockedStatic<Currency> mockedCurrency;
+public class StaticMethodTest {
 
-    private MockedStatic<Calendar> mockedCalendar;
-
++   private MockedStatic<Currency> mockedCurrency;
++
++   private MockedStatic<Calendar> mockedCalendar;
++
+    private Calendar calendarMock;
 @@ -23,0 +27,12 @@
-+    @BeforeMethod
-    void setUpStaticMocks() {
-        mockedCurrency = Mockito.mockStatic(Currency.class);
-        mockedCalendar = Mockito.mockStatic(Calendar.class);
     }
 
-    @AfterMethod(alwaysRun = true)
-    void tearDownStaticMocks() {
-        mockedCalendar.closeOnDemand();
-        mockedCurrency.closeOnDemand();
-    }
-
++   @BeforeMethod
++   void setUpStaticMocks() {
++       mockedCurrency = Mockito.mockStatic(Currency.class);
++       mockedCalendar = Mockito.mockStatic(Calendar.class);
++   }
++
++   @AfterMethod(alwaysRun = true)
++   void tearDownStaticMocks() {
++       mockedCalendar.closeOnDemand();
++       mockedCurrency.closeOnDemand();
++   }
++
+    @Test
 @@ -25,3 +41,1 @@
--        PowerMockito.mockStatic(Calendar.class);
-        PowerMockito.mockStatic(Currency.class);
-        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
-+        mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+    @Test
+    void testWithCalendar() {
+-       PowerMockito.mockStatic(Calendar.class);
+-       PowerMockito.mockStatic(Currency.class);
+-       Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
++       mockedCalendar.when(() -> Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
 @@ -29,1 +43,1 @@
--        Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
-+        mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+        Mockito.when(Calendar.getInstance(Locale.ENGLISH)).thenReturn(calendarMock);
+        assertEquals(Calendar.getInstance(Locale.ENGLISH), calendarMock);
+-       Mockito.verify(Currency.getAvailableCurrencies(), Mockito.never());
++       mockedCurrency.verify(Currency::getAvailableCurrencies, Mockito.never());
+    }
 ```
 {% endcode %}
 {% endtab %}

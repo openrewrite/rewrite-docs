@@ -76,8 +76,11 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,1 @@
--    api 'org.openrewrite:rewrite-gradle:latest.release:javadoc'
-+    api 'org.openrewrite:rewrite-gradle:latest.release:classified'
+
+dependencies {
+-   api 'org.openrewrite:rewrite-gradle:latest.release:javadoc'
++   api 'org.openrewrite:rewrite-gradle:latest.release:classified'
+}
 ```
 {% endcode %}
 {% endtab %}

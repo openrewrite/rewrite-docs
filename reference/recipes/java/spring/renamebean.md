@@ -60,8 +60,11 @@ class A {
 --- sample/A.java
 +++ sample/A.java
 @@ -8,1 +8,1 @@
--    public MyType foo() {
-+    public MyType bar() {
+class A {
+    @Bean
+-   public MyType foo() {
++   public MyType bar() {
+        return new MyType();
 ```
 {% endcode %}
 {% endtab %}
@@ -110,8 +113,11 @@ class Bar {
 --- sample/Foo.java
 +++ sample/Foo.java
 @@ -7,1 +7,1 @@
+
+@Configuration
 -class Foo {
 +class Bar {
+}
 ```
 {% endcode %}
 {% endtab %}
@@ -172,8 +178,11 @@ class A {
 --- sample/A.java
 +++ sample/A.java
 @@ -11,1 +11,1 @@
--    public String myBean(@Qualifier("foo") MyType myType) {
-+    public String myBean(@Qualifier("bar") MyType myType) {
+class A {
+    @Bean
+-   public String myBean(@Qualifier("foo") MyType myType) {
++   public String myBean(@Qualifier("bar") MyType myType) {
+        return "";
 ```
 {% endcode %}
 {% endtab %}

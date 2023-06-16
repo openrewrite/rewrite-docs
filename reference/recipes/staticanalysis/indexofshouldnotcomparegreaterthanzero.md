@@ -59,11 +59,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -5,1 +5,1 @@
--        if (strList.indexOf(str) > 0) {
-+        if (strList.indexOf(str) >= 1) {
+class Test {
+    static boolean hasIndex(List<String> strList, String str) {
+-       if (strList.indexOf(str) > 0) {
++       if (strList.indexOf(str) >= 1) {
+        }
 @@ -7,1 +7,1 @@
--        return strList.indexOf(str) > 0;
-+        return strList.indexOf(str) >= 1;
+        if (strList.indexOf(str) > 0) {
+        }
+-       return strList.indexOf(str) > 0;
++       return strList.indexOf(str) >= 1;
+    }
 ```
 {% endcode %}
 {% endtab %}

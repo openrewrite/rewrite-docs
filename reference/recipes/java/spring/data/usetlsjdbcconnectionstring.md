@@ -58,8 +58,11 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 {% code %}
 ```diff
 @@ -3,1 +3,1 @@
--        url: 'jdbc:db2://10.2.1.101:5021/DB2INST1:currentSchema=DEV;commandTimeout=30;'
-+        url: 'jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;commandTimeout=30;sslConnection=true;'
+  spring:
+      datasource:
+-       url: 'jdbc:db2://10.2.1.101:5021/DB2INST1:currentSchema=DEV;commandTimeout=30;'
++       url: 'jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;commandTimeout=30;sslConnection=true;'
+
 ```
 {% endcode %}
 {% endtab %}
@@ -89,6 +92,7 @@ spring.datasource.url=jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;com
 @@ -1,1 +1,1 @@
 -spring.datasource.url=jdbc:db2://10.2.1.101:5021/DB2INST1:currentSchema=DEV;commandTimeout=30;
 +spring.datasource.url=jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;commandTimeout=30;sslConnection=true;
+
 ```
 {% endcode %}
 {% endtab %}

@@ -59,15 +59,22 @@ public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableS
 +++ CustomContainer.java
 @@ -1,2 +1,2 @@
 -import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 +import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
++import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+
 @@ -4,1 +4,1 @@
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+
 -public class CustomContainer implements EmbeddedServletContainerCustomizer {
 +public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+    @Override
 @@ -6,1 +6,1 @@
--    public void customize(ConfigurableEmbeddedServletContainer container) {
-+    public void customize(ConfigurableServletWebServerFactory container) {
+public class CustomContainer implements EmbeddedServletContainerCustomizer {
+    @Override
+-   public void customize(ConfigurableEmbeddedServletContainer container) {
++   public void customize(ConfigurableServletWebServerFactory container) {
+        container.setPort(8080);
 ```
 {% endcode %}
 {% endtab %}
@@ -121,15 +128,22 @@ public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableS
 +++ CustomContainer.java
 @@ -1,2 +1,2 @@
 -import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 +import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
++import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+
 @@ -4,1 +4,1 @@
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+
 -public class CustomContainer implements EmbeddedServletContainerCustomizer {
 +public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+    @Override
 @@ -6,1 +6,1 @@
--    public void customize(ConfigurableEmbeddedServletContainer container) {
-+    public void customize(ConfigurableServletWebServerFactory container) {
+public class CustomContainer implements EmbeddedServletContainerCustomizer {
+    @Override
+-   public void customize(ConfigurableEmbeddedServletContainer container) {
++   public void customize(ConfigurableServletWebServerFactory container) {
+        container.setPort(8080);
 ```
 {% endcode %}
 {% endtab %}

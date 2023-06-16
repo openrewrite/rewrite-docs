@@ -58,8 +58,11 @@ _Change a JSON mapping entry key leaving the value intact._
 {% code %}
 ```diff
 @@ -3,1 +3,1 @@
--  "description": "desc",
-+  "newDescription": "desc",
+{
+  "id": "something",
+- "description": "desc",
++ "newDescription": "desc",
+  "other": "whatever"
 ```
 {% endcode %}
 {% endtab %}

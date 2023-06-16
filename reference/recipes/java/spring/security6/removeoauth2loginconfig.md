@@ -88,11 +88,14 @@ public class SecurityConfig {
 --- SecurityConfig.java
 +++ SecurityConfig.java
 @@ -18,4 +18,1 @@
--                .anyRequest().authenticated())
-            .oauth2Login()
-            .userInfoEndpoint()
-                .userAuthoritiesMapper(null);
-+                .anyRequest().authenticated());
+                .requestMatchers("/public", "/public/*").permitAll()
+                .requestMatchers("/login").permitAll()
+-               .anyRequest().authenticated())
+-           .oauth2Login()
+-           .userInfoEndpoint()
+-               .userAuthoritiesMapper(null);
++               .anyRequest().authenticated());
+        return http.build();
 ```
 {% endcode %}
 {% endtab %}

@@ -80,11 +80,14 @@ _To integrate gradle enterprise maven extension into maven projects, ensure that
 --- .mvn/extensions.xml
 +++ .mvn/extensions.xml
 @@ -3,0 +3,5 @@
-+  <extension>
-    <groupId>com.gradle</groupId>
-    <artifactId>gradle-enterprise-maven-extension</artifactId>
-    <version>1.17</version>
-  </extension>
+<?xml version="1.0" encoding="UTF-8"?>
+<extensions>
++ <extension>
++   <groupId>com.gradle</groupId>
++   <artifactId>gradle-enterprise-maven-extension</artifactId>
++   <version>1.17</version>
++ </extension>
+</extensions>
 ```
 {% endcode %}
 {% endtab %}

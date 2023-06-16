@@ -81,21 +81,36 @@ class A {
 --- A.java
 +++ A.java
 @@ -3,1 +3,2 @@
+import java.io.File;
+import java.nio.charset.Charset;
 -import org.apache.commons.io.FileUtils;
 +import java.nio.file.Files;
-
++
+import java.util.List;
 @@ -8,1 +9,1 @@
--        return FileUtils.readFileToByteArray(file);
-+        return Files.readAllBytes(file.toPath());
+class A {
+    byte[] readFileBytes(File file) {
+-       return FileUtils.readFileToByteArray(file);
++       return Files.readAllBytes(file.toPath());
+    }
 @@ -11,1 +12,1 @@
--        return FileUtils.readLines(file);
-+        return Files.readAllLines(file.toPath());
+    }
+    List<String> readLines(File file) {
+-       return FileUtils.readLines(file);
++       return Files.readAllLines(file.toPath());
+    }
 @@ -14,1 +15,1 @@
--        return FileUtils.readLines(file, charset);
-+        return Files.readAllLines(file.toPath(), charset);
+    }
+    List<String> readLinesWithCharset(File file, Charset charset) {
+-       return FileUtils.readLines(file, charset);
++       return Files.readAllLines(file.toPath(), charset);
+    }
 @@ -17,1 +18,1 @@
--        return FileUtils.readLines(file, "UTF_8");
-+        return Files.readAllLines(file.toPath(), Charset.forName("UTF_8"));
+    }
+    List<String> readLinesWithCharsetId(File file) {
+-       return FileUtils.readLines(file, "UTF_8");
++       return Files.readAllLines(file.toPath(), Charset.forName("UTF_8"));
+    }
 ```
 {% endcode %}
 {% endtab %}

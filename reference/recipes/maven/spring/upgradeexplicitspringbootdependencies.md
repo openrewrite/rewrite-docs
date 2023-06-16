@@ -104,11 +104,17 @@ _Upgrades un-managed spring-boot project dependencies according to the specified
 --- pom.xml
 +++ pom.xml
 @@ -18,1 +18,1 @@
--            <version>2.7.3</version>
-+            <version>3.0.0-M3</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+-           <version>2.7.3</version>
++           <version>3.0.0-M3</version>
+        </dependency>
 @@ -23,1 +23,1 @@
--            <version>2.7.3</version>
-+            <version>3.0.0-M3</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+-           <version>2.7.3</version>
++           <version>3.0.0-M3</version>
+            <scope>test</scope>
 ```
 {% endcode %}
 {% endtab %}

@@ -62,11 +62,14 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -5,5 +5,0 @@
--    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
     }
 
+-   @Override
+-   protected void finalize() throws Throwable {
+-       super.finalize();
+-   }
+-
+    protected void finalize(Object param) throws Throwable {
 ```
 {% endcode %}
 {% endtab %}

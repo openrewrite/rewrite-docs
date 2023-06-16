@@ -52,6 +52,7 @@ public class B {
 @@ -1,1 +1,1 @@
 -import javax.xml.bind.annotation.A;
 +import jakarta.xml.bind.annotation.A;
+public class B {
 ```
 {% endcode %}
 {% endtab %}
@@ -92,6 +93,7 @@ public class B {
 @@ -1,1 +1,1 @@
 -import javax.xml.bind.annotation.A;
 +import jakarta.xml.bind.annotation.A;
+public class B {
 ```
 {% endcode %}
 {% endtab %}

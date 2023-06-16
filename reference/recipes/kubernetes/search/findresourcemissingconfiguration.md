@@ -64,6 +64,7 @@ spec:
 @@ -1,1 +1,1 @@
 -apiVersion: v1
 +~~>apiVersion: v1
+kind: Pod
 ```
 {% endcode %}
 {% endtab %}

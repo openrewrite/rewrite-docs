@@ -82,22 +82,37 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -5,1 +5,1 @@
--        int square = (a * b);
-+        int square = a * b;
+class Test {
+    int square(int a, int b) {
+-       int square = (a * b);
++       int square = a * b;
+
 @@ -8,2 +8,2 @@
--        for (int i = (0); i < 10; i++) {
-            sumOfSquares += (square(i * i, i));
-+        for (int i = 0; i < 10; i++) {
-            sumOfSquares += square(i * i, i);
+
+        int sumOfSquares = 0;
+-       for (int i = (0); i < 10; i++) {
+-           sumOfSquares += (square(i * i, i));
++       for (int i = 0; i < 10; i++) {
++           sumOfSquares += square(i * i, i);
+        }
 @@ -11,1 +11,1 @@
--        double num = (10.0);
-+        double num = 10.0;
+            sumOfSquares += (square(i * i, i));
+        }
+-       double num = (10.0);
++       double num = 10.0;
+
 @@ -15,1 +15,1 @@
--                .filter((s) -> s.startsWith("c"))
-+                .filter(s -> s.startsWith("c"))
+        List<String> list = Arrays.asList("a1", "b1", "c1");
+        list.stream()
+-               .filter((s) -> s.startsWith("c"))
++               .filter(s -> s.startsWith("c"))
+                .forEach(System.out::println);
 @@ -18,1 +18,1 @@
--        return (square);
-+        return square;
+                .forEach(System.out::println);
+
+-       return (square);
++       return square;
+    }
 ```
 {% endcode %}
 {% endtab %}

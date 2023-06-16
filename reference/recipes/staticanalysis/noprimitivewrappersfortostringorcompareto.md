@@ -59,15 +59,20 @@ class T {
 --- T.java
 +++ T.java
 @@ -2,3 +2,3 @@
--     String a = new Integer(3).toString();
-     String b = Long.valueOf(3).toString();
-     String c = Double.valueOf(3.0).toString();
-+     String a = Integer.toString(3);
-     String b = Long.toString(3);
-     String c = Double.toString(3.0);
+class T {
+-    String a = new Integer(3).toString();
+-    String b = Long.valueOf(3).toString();
+-    String c = Double.valueOf(3.0).toString();
++    String a = Integer.toString(3);
++    String b = Long.toString(3);
++    String c = Double.toString(3.0);
+     String d = Float.valueOf("4").toString();
 @@ -7,1 +7,1 @@
--     String f = Boolean.valueOf(true).toString();
-+     String f = Boolean.toString(true);
+     String d = Float.valueOf("4").toString();
+     String e = new Float("3").toString();
+-    String f = Boolean.valueOf(true).toString();
++    String f = Boolean.toString(true);
+     String G = Boolean.valueOf("true").toString();
 ```
 {% endcode %}
 {% endtab %}

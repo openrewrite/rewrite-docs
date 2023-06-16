@@ -96,11 +96,17 @@ spec:
 {% code %}
 ```diff
 @@ -9,1 +9,1 @@
--    resources:
-+    ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
+  containers:
+  - image: nginx:latest
+-   resources:
++   ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
+        limits:
 @@ -17,1 +17,1 @@
--    resources:
-+    ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
+            memory: "64m"
+  - image: k8s.gcr.io/test-webserver
+-   resources:
++   ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
+        limits:
 ```
 {% endcode %}
 {% endtab %}

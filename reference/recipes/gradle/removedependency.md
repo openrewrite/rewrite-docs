@@ -75,7 +75,10 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,1 +10,0 @@
--    implementation "org.springframework.boot:spring-boot-starter-web:2.7.0"
+
+dependencies {
+-   implementation "org.springframework.boot:spring-boot-starter-web:2.7.0"
+    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
 ```
 {% endcode %}
 {% endtab %}

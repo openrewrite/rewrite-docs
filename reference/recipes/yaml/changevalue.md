@@ -56,8 +56,11 @@ _Change a YAML mapping entry value leaving the key intact._
 {% code %}
 ```diff
 @@ -3,1 +3,1 @@
--      name: monitoring-tools
-+      name: monitoring
+    apiVersion: v1
+    metadata:
+-     name: monitoring-tools
++     name: monitoring
+      namespace: monitoring-tools
 ```
 {% endcode %}
 {% endtab %}

@@ -65,15 +65,18 @@ class A {
 --- A.java
 +++ A.java
 @@ -6,5 +6,4 @@
--        final Set<Integer> keys = new LinkedHashSet<>(){{
-            for (int i = 0; i < CNT; i++) {
-                add(i);
-            }
-        }};
-+        final Set<Integer> keys = new LinkedHashSet<>();
-        for (int i = 0; i < CNT; i++) {
-            keys.add(i);
-        }
+    void a() {
+        Integer CNT = 10;
+-       final Set<Integer> keys = new LinkedHashSet<>(){{
+-           for (int i = 0; i < CNT; i++) {
+-               add(i);
+-           }
+-       }};
++       final Set<Integer> keys = new LinkedHashSet<>();
++       for (int i = 0; i < CNT; i++) {
++           keys.add(i);
++       }
+    }
 ```
 {% endcode %}
 {% endtab %}

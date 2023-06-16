@@ -45,10 +45,12 @@ _Add line breaks at appropriate places between XML syntax elements._
 {% code %}
 ```diff
 @@ -2,1 +2,3 @@
--  <dependencies><dependency></dependency><dependency/>
-+  <dependencies>
-<dependency></dependency>
-<dependency/>
+<project>
+- <dependencies><dependency></dependency><dependency/>
++ <dependencies>
++<dependency></dependency>
++<dependency/>
+  </dependencies>
 ```
 {% endcode %}
 {% endtab %}

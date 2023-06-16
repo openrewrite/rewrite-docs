@@ -56,13 +56,20 @@ class Test {
 +++ Test.java
 @@ -1,2 +1,1 @@
 -import com.google.common.collect.*;
-
+-
 +import java.util.Collections;
+import java.util.Set;
 @@ -4,0 +3,1 @@
+
+import java.util.Set;
 +import java.util.concurrent.ConcurrentHashMap;
+
 @@ -6,1 +6,1 @@
--    Set<Integer> cardinalsWorldSeries = Sets.newConcurrentHashSet();
-+    Set<Integer> cardinalsWorldSeries = Collections.newSetFromMap(new ConcurrentHashMap<>());
+
+class Test {
+-   Set<Integer> cardinalsWorldSeries = Sets.newConcurrentHashSet();
++   Set<Integer> cardinalsWorldSeries = Collections.newSetFromMap(new ConcurrentHashMap<>());
+}
 ```
 {% endcode %}
 {% endtab %}

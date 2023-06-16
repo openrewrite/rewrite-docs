@@ -47,6 +47,7 @@ class IsEmpty {
 @@ -1,1 +1,1 @@
 -class IsEmpty {
 +/*~~>*/class IsEmpty {
+}
 ```
 {% endcode %}
 {% endtab %}

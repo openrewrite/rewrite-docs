@@ -62,8 +62,11 @@ abstract class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--    void test() {
-+    void test() /*~~(BB: 1 CN: 0 EX: 1 | 1L)~~>*/{
+abstract class Test {
+    abstract int start();
+-   void test() {
++   void test() /*~~(BB: 1 CN: 0 EX: 1 | 1L)~~>*/{
+        int x = start();
 ```
 {% endcode %}
 {% endtab %}

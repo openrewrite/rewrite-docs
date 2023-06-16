@@ -80,11 +80,17 @@ spec:
 {% code %}
 ```diff
 @@ -7,1 +7,1 @@
--      - image: nginx:latest
-+      - image: ~~(disallowed tag: [latest])~~>nginx:latest
+    spec:
+      containers:
+-     - image: nginx:latest
++     - image: ~~(disallowed tag: [latest])~~>nginx:latest
+---
 @@ -15,1 +15,1 @@
--      - image: app:dev
-+      - image: ~~(disallowed tag: [dev])~~>app:dev
+    spec:
+      containers:
+-     - image: app:dev
++     - image: ~~(disallowed tag: [dev])~~>app:dev
+
 ```
 {% endcode %}
 {% endtab %}

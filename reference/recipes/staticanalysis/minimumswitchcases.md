@@ -68,15 +68,18 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,5 +4,4 @@
--        switch (variable) {
-          case 0:
-              return 0;
-          default:
-              doSomethingElse();
-+        if (variable == 0) {
-            return 0;
-        } else {
-            doSomethingElse();
+    int variable;
+    int test() {
+-       switch (variable) {
+-         case 0:
+-             return 0;
+-         default:
+-             doSomethingElse();
++       if (variable == 0) {
++           return 0;
++       } else {
++           doSomethingElse();
+        }
 ```
 {% endcode %}
 {% endtab %}

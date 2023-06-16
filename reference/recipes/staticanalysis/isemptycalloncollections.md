@@ -62,8 +62,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -6,1 +6,1 @@
--                return size() == 0;
-+                return isEmpty();
+        return new ArrayList<String>() {
+            boolean test() {
+-               return size() == 0;
++               return isEmpty();
+            }
 ```
 {% endcode %}
 {% endtab %}

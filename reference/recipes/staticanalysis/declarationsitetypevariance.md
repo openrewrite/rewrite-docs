@@ -70,8 +70,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--    void test(Function<In, Out> f) {
-+    void test(Function<? super In, ? extends Out> f) {
+import java.util.function.Function;
+class Test {
+-   void test(Function<In, Out> f) {
++   void test(Function<? super In, ? extends Out> f) {
+    }
 ```
 {% endcode %}
 {% endtab %}

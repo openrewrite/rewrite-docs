@@ -84,9 +84,12 @@ public class MyThing implements Externalizable {
 --- MyThing.java
 +++ MyThing.java
 @@ -10,0 +10,3 @@
-+    public MyThing() {
-    }
+    private String b;
 
++   public MyThing() {
++   }
++
+    public MyThing(String a, String b) {
 ```
 {% endcode %}
 {% endtab %}

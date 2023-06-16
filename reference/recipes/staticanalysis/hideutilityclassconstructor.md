@@ -55,8 +55,10 @@ public class A {
 --- A.java
 +++ A.java
 @@ -2,1 +2,1 @@
--    public A() {
-+    private A() {
+public class A {
+-   public A() {
++   private A() {
+    }
 ```
 {% endcode %}
 {% endtab %}

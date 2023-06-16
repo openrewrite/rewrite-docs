@@ -60,8 +60,11 @@ _Change maven.compiler.source and maven.compiler.target values to 11._
 --- pom.xml
 +++ pom.xml
 @@ -5,1 +5,1 @@
--    <java.version>1.8</java.version>
-+    <java.version>11</java.version>
+
+  <properties>
+-   <java.version>1.8</java.version>
++   <java.version>11</java.version>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}
@@ -116,8 +119,11 @@ _Change maven.compiler.source and maven.compiler.target values to 11._
 --- pom.xml
 +++ pom.xml
 @@ -5,1 +5,1 @@
--    <java.version>1.8</java.version>
-+    <java.version>11</java.version>
+
+  <properties>
+-   <java.version>1.8</java.version>
++   <java.version>11</java.version>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}

@@ -61,12 +61,21 @@ public class MyClass {
 --- com/mycompany/MyClass.java
 +++ com/mycompany/MyClass.java
 @@ -3,0 +3,1 @@
+package com.mycompany;
+
 +import org.springframework.boot.test.util.TestPropertyValues;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 @@ -4,1 +5,0 @@
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 -import static org.springframework.boot.test.util.EnvironmentTestUtils.addEnvironment;
+
 @@ -10,1 +10,1 @@
--        addEnvironment(context, pair);
-+        TestPropertyValues.of(pair).applyTo(context);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        String pair = "pair";
+-       addEnvironment(context, pair);
++       TestPropertyValues.of(pair).applyTo(context);
+    }
 ```
 {% endcode %}
 {% endtab %}

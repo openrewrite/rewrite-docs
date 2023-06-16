@@ -62,15 +62,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,3 +2,6 @@
--    int n = 0, m = 0;
-    int o = 0, p;
-    int s, t = 0;
-+    int n = 0;
-    int m = 0;
-    int o = 0;
-    int p;
-    int s;
-    int t = 0;
+class Test {
+-   int n = 0, m = 0;
+-   int o = 0, p;
+-   int s, t = 0;
++   int n = 0;
++   int m = 0;
++   int o = 0;
++   int p;
++   int s;
++   int t = 0;
+
 ```
 {% endcode %}
 {% endtab %}

@@ -53,9 +53,13 @@ class Test {
 @@ -1,1 +1,1 @@
 -import org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor;
 +import org.springframework.boot.context.properties.EnableConfigurationProperties;
+
 @@ -5,1 +5,1 @@
--        String value = ConfigurationPropertiesBindingPostProcessor.VALIDATOR_BEAN_NAME;
-+        String value = EnableConfigurationProperties.VALIDATOR_BEAN_NAME;
+class Test {
+    static void method() {
+-       String value = ConfigurationPropertiesBindingPostProcessor.VALIDATOR_BEAN_NAME;
++       String value = EnableConfigurationProperties.VALIDATOR_BEAN_NAME;
+    }
 ```
 {% endcode %}
 {% endtab %}

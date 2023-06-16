@@ -63,8 +63,11 @@ class A {
 --- A.java
 +++ A.java
 @@ -7,1 +7,1 @@
--            foo();
-+        foo();
+        } else
+            foo();
+-           foo();
++       foo();
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -96,30 +96,46 @@ public class MathTest {
 @@ -1,1 +1,3 @@
 -import junit.framework.TestCase;
 +import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
+
 @@ -3,1 +5,3 @@
+import junit.framework.TestCase;
+
 -public class MathTest extends TestCase {
 +import static org.junit.jupiter.api.Assertions.*;
-
-public class MathTest {
++
++public class MathTest {
+    protected long value1;
 @@ -7,3 +11,2 @@
--    @Override
-    protected void setUp() {
-        super.setUp();
-+    @BeforeEach
-    public void setUp() {
+    protected long value2;
+
+-   @Override
+-   protected void setUp() {
+-       super.setUp();
++   @BeforeEach
++   public void setUp() {
+        value1 = 2;
 @@ -14,0 +17,1 @@
-+    @Test
+    }
+
++   @Test
+    public void testAdd() {
 @@ -15,1 +19,1 @@
--        setName("primitive test");
-+        //setName("primitive test");
+
+    public void testAdd() {
+-       setName("primitive test");
++       //setName("primitive test");
+        long result = value1 + value2;
 @@ -21,3 +25,2 @@
--    @Override
-    protected void tearDown() {
-        super.tearDown();
-+    @AfterEach
-    public void tearDown() {
+    }
+
+-   @Override
+-   protected void tearDown() {
+-       super.tearDown();
++   @AfterEach
++   public void tearDown() {
+        value1 = 0;
 ```
 {% endcode %}
 {% endtab %}

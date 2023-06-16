@@ -66,18 +66,26 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
+// not this one
 -// test
 +/*~~>*/// test
+// not this one, either
 @@ -4,1 +4,1 @@
+// test
+// not this one, either
 -// comment 123
 +/*~~>*/// comment 123
+class Test {
 @@ -6,3 +6,3 @@
--    int n = 123;
-    String s = "test";
-    String s = "mytest";
-+    int n = /*~~>*/123;
-    String s = /*~~>*/"test";
-    String s = /*~~>*/"mytest";
+// comment 123
+class Test {
+-   int n = 123;
+-   String s = "test";
+-   String s = "mytest";
++   int n = /*~~>*/123;
++   String s = /*~~>*/"test";
++   String s = /*~~>*/"mytest";
+}
 ```
 {% endcode %}
 {% endtab %}

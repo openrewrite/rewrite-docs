@@ -56,8 +56,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -5,1 +5,1 @@
--       myThread.run();
-+       myThread.start();
+       Runnable r = ()-> System.out.println("Hello world");
+       Thread myThread = new Thread(r);
+-      myThread.run();
++      myThread.start();
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -104,8 +107,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -5,1 +5,1 @@
--       myThread.run();
-+       myThread.start();
+       Runnable r = ()-> System.out.println("Hello world");
+       Thread myThread = new Thread(r);
+-      myThread.run();
++      myThread.start();
+    }
 ```
 {% endcode %}
 {% endtab %}

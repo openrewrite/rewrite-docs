@@ -65,9 +65,12 @@ comment out a map entry
 {% code %}
 ```diff
 @@ -5,1 +5,2 @@
--        - propertyA: fieldA
-+        # Some comments
-        # propertyA: fieldA
+      sequence:
+        - name: name
+-       - propertyA: fieldA
++       # Some comments
++       # propertyA: fieldA
+        - propertyB: fieldB
 ```
 {% endcode %}
 {% endtab %}
@@ -120,15 +123,18 @@ foo:
 {% code %}
 ```diff
 @@ -3,4 +3,5 @@
--    sequence:
-      - name: name
-      - propertyA: fieldA
-      - propertyB: fieldB
-+    # Some comments
-    # sequence:
-    #   - name: name
-    #   - propertyA: fieldA
-    #   - propertyB: fieldB
+foo:
+  bar:
+-   sequence:
+-     - name: name
+-     - propertyA: fieldA
+-     - propertyB: fieldB
++   # Some comments
++   # sequence:
++   #   - name: name
++   #   - propertyA: fieldA
++   #   - propertyB: fieldB
+    scalar: value
 ```
 {% endcode %}
 {% endtab %}

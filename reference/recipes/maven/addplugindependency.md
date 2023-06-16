@@ -93,13 +93,16 @@ _Adds the specified dependencies to a Maven plugin. Will not add the plugin if i
 --- pom.xml
 +++ pom.xml
 @@ -12,0 +12,7 @@
-+                <dependencies>
-                    <dependency>
-                        <groupId>org.openrewrite.recipe</groupId>
-                        <artifactId>rewrite-spring</artifactId>
-                        <version>1.0.0</version>
-                    </dependency>
-                </dependencies>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>4.1.5</version>
++               <dependencies>
++                   <dependency>
++                       <groupId>org.openrewrite.recipe</groupId>
++                       <artifactId>rewrite-spring</artifactId>
++                       <version>1.0.0</version>
++                   </dependency>
++               </dependencies>
+            </plugin>
 ```
 {% endcode %}
 {% endtab %}

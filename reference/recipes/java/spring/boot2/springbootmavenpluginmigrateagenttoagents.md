@@ -71,8 +71,11 @@ _Migrate the `spring-boot.run.agent` Maven plugin configuration key to `spring-b
 --- pom.xml
 +++ pom.xml
 @@ -12,1 +12,1 @@
--                    <agent>some/directory/here.jar</agent>
-+                    <agents>some/directory/here.jar</agents>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+-                   <agent>some/directory/here.jar</agent>
++                   <agents>some/directory/here.jar</agents>
+                </configuration>
 ```
 {% endcode %}
 {% endtab %}

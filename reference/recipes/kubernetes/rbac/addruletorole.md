@@ -97,9 +97,12 @@ rules:
 {% code %}
 ```diff
 @@ -19,0 +19,3 @@
-+- apiGroups: [""]
   resources: ["pods"]
-  verbs: ["update"]
+  verbs: ["list"]
++- apiGroups: [""]
++ resources: ["pods"]
++ verbs: ["update"]
+
 ```
 {% endcode %}
 {% endtab %}

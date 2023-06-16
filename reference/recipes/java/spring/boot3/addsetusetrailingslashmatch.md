@@ -58,12 +58,18 @@ public class MyWebConfiguration implements WebMvcConfigurer {
 --- com/example/demo/MyWebConfiguration.java
 +++ com/example/demo/MyWebConfiguration.java
 @@ -4,0 +4,1 @@
+
+import org.springframework.context.annotation.Configuration;
 +import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @@ -8,0 +9,4 @@
-+    @Override
-    public void configurePathMatch(PathMatchConfigurer configurer) {
-        configurer.setUseTrailingSlashMatch(true);
-    }
+@Configuration
+public class MyWebConfiguration implements WebMvcConfigurer {
++   @Override
++   public void configurePathMatch(PathMatchConfigurer configurer) {
++       configurer.setUseTrailingSlashMatch(true);
++   }
+}
 ```
 {% endcode %}
 {% endtab %}

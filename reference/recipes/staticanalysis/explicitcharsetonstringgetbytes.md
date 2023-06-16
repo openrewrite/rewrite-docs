@@ -63,10 +63,14 @@ public class Test {
 +++ Test.java
 @@ -1,0 +1,2 @@
 +import java.nio.charset.StandardCharsets;
-
++
+public class Test {
 @@ -4,1 +6,1 @@
--        s.getBytes();
-+        s.getBytes(StandardCharsets.UTF_8);
+    void test() {
+        String s = "hi";
+-       s.getBytes();
++       s.getBytes(StandardCharsets.UTF_8);
+    }
 ```
 {% endcode %}
 {% endtab %}

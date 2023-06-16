@@ -41,8 +41,10 @@ _Remove YAML mapping and sequence keys that have no value._
 {% code %}
 ```diff
 @@ -2,2 +2,0 @@
--    a:
-      b:
+  root:
+-   a:
+-     b:
+    c: 0
 ```
 {% endcode %}
 {% endtab %}

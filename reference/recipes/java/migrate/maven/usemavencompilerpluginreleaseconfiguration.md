@@ -91,9 +91,12 @@ _Replaces any explicit `source` or `target` configuration (if present) on the ma
 --- pom.xml
 +++ pom.xml
 @@ -15,2 +15,1 @@
--          <source>1.8</source>
-          <target>1.8</target>
-+          <release>11</release>
+        <version>3.8.0</version>
+        <configuration>
+-         <source>1.8</source>
+-         <target>1.8</target>
++         <release>11</release>
+        </configuration>
 ```
 {% endcode %}
 {% endtab %}

@@ -97,31 +97,34 @@ _Remove the specified Maven plugin from the pom.xml._
 --- pom.xml
 +++ pom.xml
 @@ -11,25 +11,0 @@
+    <avro-maven-plugin.version>1.10.2</avro-maven-plugin.version>
+  </properties>
 -
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.avro</groupId>
-        <artifactId>avro-maven-plugin</artifactId>
-        <version>${avro-maven-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>schemas</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>schema</goal>
-              <goal>protocol</goal>
-              <goal>idl-protocol</goal>
-            </goals>
-            <configuration>
-              <sourceDirectory>${project.basedir}/src/main/resources/</sourceDirectory>
-              <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+- <build>
+-   <plugins>
+-     <plugin>
+-       <groupId>org.apache.avro</groupId>
+-       <artifactId>avro-maven-plugin</artifactId>
+-       <version>${avro-maven-plugin.version}</version>
+-       <executions>
+-         <execution>
+-           <id>schemas</id>
+-           <phase>generate-sources</phase>
+-           <goals>
+-             <goal>schema</goal>
+-             <goal>protocol</goal>
+-             <goal>idl-protocol</goal>
+-           </goals>
+-           <configuration>
+-             <sourceDirectory>${project.basedir}/src/main/resources/</sourceDirectory>
+-             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+-           </configuration>
+-         </execution>
+-       </executions>
+-     </plugin>
+-   </plugins>
+- </build>
+</project>
 ```
 {% endcode %}
 {% endtab %}

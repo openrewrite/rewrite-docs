@@ -74,11 +74,17 @@ spec:
 {% code %}
 ```diff
 @@ -5,1 +5,1 @@
--    - image: image
-+    - image: ~~(missing digest)~~>image
+spec:
+    containers:
+-   - image: image
++   - image: ~~(missing digest)~~>image
+---
 @@ -11,1 +11,1 @@
--    - image: app:v1.2.3
-+    - image: ~~(missing digest)~~>app:v1.2.3
+spec:
+    containers:
+-   - image: app:v1.2.3
++   - image: ~~(missing digest)~~>app:v1.2.3
+    initContainers:
 ```
 {% endcode %}
 {% endtab %}

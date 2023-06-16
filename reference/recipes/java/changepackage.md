@@ -57,6 +57,7 @@ class Original
 @@ -1,1 +1,1 @@
 -package a.b
 +package x.y
+class Original
 ```
 {% endcode %}
 {% endtab %}
@@ -94,6 +95,7 @@ class A {
 @@ -1,1 +1,1 @@
 -import a.b.Original
 +import x.y.Original
+
 ```
 {% endcode %}
 {% endtab %}
@@ -137,6 +139,7 @@ class Original {}
 @@ -1,1 +1,1 @@
 -package a.b
 +package x.y
+class Original {}
 ```
 {% endcode %}
 {% endtab %}
@@ -174,6 +177,7 @@ class A {
 @@ -1,1 +1,1 @@
 -import a.b.Original
 +import x.y.Original
+
 ```
 {% endcode %}
 {% endtab %}
@@ -221,6 +225,7 @@ class Test {
 @@ -1,1 +1,1 @@
 -import org.openrewrite.Foo;
 +import openrewrite.Foo;
+class Test {
 ```
 {% endcode %}
 {% endtab %}

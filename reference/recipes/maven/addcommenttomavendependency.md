@@ -97,7 +97,10 @@ _Adds a comment as the first element in a `Maven` dependency._
 --- pom.xml
 +++ pom.xml
 @@ -10,0 +10,1 @@
-+      <!-- Comment text -->
+  <dependencies>
+    <dependency>
++     <!-- Comment text -->
+      <groupId>com.google.guava</groupId>
 ```
 {% endcode %}
 {% endtab %}

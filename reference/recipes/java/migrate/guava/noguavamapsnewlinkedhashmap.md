@@ -55,11 +55,15 @@ class Test {
 +++ Test.java
 @@ -1,2 +1,1 @@
 -import com.google.common.collect.*;
-
+-
 +import java.util.LinkedHashMap;
+import java.util.Map;
 @@ -6,1 +5,1 @@
--    Map<Integer, Integer> cardinalsWorldSeries = Maps.newLinkedHashMap();
-+    Map<Integer, Integer> cardinalsWorldSeries = new LinkedHashMap<>();
+
+class Test {
+-   Map<Integer, Integer> cardinalsWorldSeries = Maps.newLinkedHashMap();
++   Map<Integer, Integer> cardinalsWorldSeries = new LinkedHashMap<>();
+}
 ```
 {% endcode %}
 {% endtab %}

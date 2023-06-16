@@ -67,11 +67,17 @@ public class MyTest {
 --- MyTest.java
 +++ MyTest.java
 @@ -3,1 +3,1 @@
+import org.junit.jupiter.api.Test;
+
 -import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 +import static org.assertj.core.api.Assertions.assertThat;
+
 @@ -10,1 +10,1 @@
--        assertArrayEquals(expected, notification());
-+        assertThat(notification()).containsExactly(expected);
+    public void test() {
+        Integer[] expected = new Integer[] {1, 2, 3};
+-       assertArrayEquals(expected, notification());
++       assertThat(notification()).containsExactly(expected);
+    }
 ```
 {% endcode %}
 {% endtab %}

@@ -80,8 +80,11 @@ class /*~~>*/MyRecipe extends Recipe {
 --- MyRecipe.java
 +++ MyRecipe.java
 @@ -5,1 +5,1 @@
+
+@NonNullApi
 -class MyRecipe extends Recipe {
 +class /*~~>*/MyRecipe extends Recipe {
+  @Override
 ```
 {% endcode %}
 {% endtab %}

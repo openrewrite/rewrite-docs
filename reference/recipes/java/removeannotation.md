@@ -64,12 +64,21 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,0 @@
+import java.util.List;
+
 -@Deprecated
+public class Test {
 @@ -5,1 +4,0 @@
--    @Deprecated
+@Deprecated
+public class Test {
+-   @Deprecated
+    void test() {
 @@ -7,1 +5,1 @@
--        @Deprecated int n;
-+        int n;
+    @Deprecated
+    void test() {
+-       @Deprecated int n;
++       int n;
+    }
 ```
 {% endcode %}
 {% endtab %}

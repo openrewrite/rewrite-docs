@@ -60,8 +60,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
+import static org.hamcrest.CoreMatchers.is;
 -import static org.junit.Assert.assertThat;
 +import static org.hamcrest.MatcherAssert.assertThat;
+
 ```
 {% endcode %}
 {% endtab %}
@@ -110,8 +112,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,1 +2,1 @@
+import static org.hamcrest.CoreMatchers.is;
 -import static org.junit.Assert.assertThat;
 +import static org.hamcrest.MatcherAssert.assertThat;
+
 ```
 {% endcode %}
 {% endtab %}

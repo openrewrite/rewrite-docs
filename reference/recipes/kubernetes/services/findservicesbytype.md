@@ -142,8 +142,11 @@ status:
 {% code %}
 ```diff
 @@ -22,1 +22,1 @@
+metadata:
+  name: my-service
 -spec:
 +~~(type:NodePort)~~>spec:
+  type: NodePort
 ```
 {% endcode %}
 {% endtab %}

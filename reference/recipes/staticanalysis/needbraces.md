@@ -121,48 +121,69 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,2 @@
--        while (true) ;
-+        while (true) {
-        }
+class Test {
+    static void addToWhile() {
+-       while (true) ;
++       while (true) {
++       }
+    }
 @@ -7,1 +8,3 @@
--        while (true) return;
-+        while (true) {
-            return;
-        }
+
+    static void addToWhileWithBody() {
+-       while (true) return;
++       while (true) {
++           return;
++       }
+    }
 @@ -11,1 +14,3 @@
--        if (n == 1) return;
-+        if (n == 1) {
-            return;
-        }
+
+    static void addToIf(int n) {
+-       if (n == 1) return;
++       if (n == 1) {
++           return;
++       }
+    }
 @@ -15,2 +20,5 @@
--        if (n == 1) return;
-        else return;
-+        if (n == 1) {
-            return;
-        } else {
-            return;
-        }
+
+    static void addToIfElse(int n) {
+-       if (n == 1) return;
+-       else return;
++       if (n == 1) {
++           return;
++       } else {
++           return;
++       }
+    }
 @@ -20,3 +28,7 @@
--        if (n == 1) return;
-        else if (n == 2) return;
-        else return;
-+        if (n == 1) {
-            return;
-        } else if (n == 2) {
-            return;
-        } else {
-            return;
-        }
+
+    static void addToIfElseIfElse(int n) {
+-       if (n == 1) return;
+-       else if (n == 2) return;
+-       else return;
++       if (n == 1) {
++           return;
++       } else if (n == 2) {
++           return;
++       } else {
++           return;
++       }
+    }
 @@ -26,1 +38,3 @@
--        do obj.notify(); while (true);
-+        do {
-            obj.notify();
-        } while (true);
+
+    static void addToDoWhile(Object obj) {
+-       do obj.notify(); while (true);
++       do {
++           obj.notify();
++       } while (true);
+    }
 @@ -30,1 +44,3 @@
--        for (int i = 0; ; ) obj.notify();
-+        for (int i = 0; ; ) {
-            obj.notify();
-        }
+
+    static void addToIterativeFor(Object obj) {
+-       for (int i = 0; ; ) obj.notify();
++       for (int i = 0; ; ) {
++           obj.notify();
++       }
+    }
 ```
 {% endcode %}
 {% endtab %}

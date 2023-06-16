@@ -61,8 +61,10 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -2,2 +2,0 @@
--    private void unused() {
-    }
+class Test {
+-   private void unused() {
+-   }
+
 ```
 {% endcode %}
 {% endtab %}

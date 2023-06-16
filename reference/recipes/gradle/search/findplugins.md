@@ -54,8 +54,10 @@ plugins {
 --- build.gradle
 +++ build.gradle
 @@ -2,1 +2,1 @@
--    id 'com.jfrog.bintray' version '1.8.5'
-+    /*~~>*/id 'com.jfrog.bintray' version '1.8.5'
+plugins {
+-   id 'com.jfrog.bintray' version '1.8.5'
++   /*~~>*/id 'com.jfrog.bintray' version '1.8.5'
+}
 ```
 {% endcode %}
 {% endtab %}

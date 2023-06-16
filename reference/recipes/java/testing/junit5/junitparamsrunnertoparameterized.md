@@ -87,29 +87,45 @@ public class PersonTests {
 +++ PersonTests.java
 @@ -1,4 +1,2 @@
 -import org.junit.Test;
-import org.junit.runner.RunWith;
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
+-import org.junit.runner.RunWith;
+-import junitparams.JUnitParamsRunner;
+-import junitparams.Parameters;
 +import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
++import org.junit.jupiter.params.provider.MethodSource;
+
 @@ -6,1 +4,0 @@
+import junitparams.Parameters;
+
 -@RunWith(JUnitParamsRunner.class)
+public class PersonTests {
 @@ -9,2 +6,2 @@
--    @Test
-    @Parameters
-+    @ParameterizedTest
-    @MethodSource("parametersForPersonIsAdult")
+public class PersonTests {
+
+-   @Test
+-   @Parameters
++   @ParameterizedTest
++   @MethodSource("parametersForPersonIsAdult")
+    public void personIsAdult(int age, boolean valid) {
 @@ -14,1 +11,1 @@
--    private Object[] parametersForPersonIsAdult() {
-+    private static Object[] parametersForPersonIsAdult() {
+    }
+
+-   private Object[] parametersForPersonIsAdult() {
++   private static Object[] parametersForPersonIsAdult() {
+        return new Object[]{new Object[]{13, false}, new Object[]{17, false}};
 @@ -18,2 +15,2 @@
--    @Test
-    @Parameters
-+    @ParameterizedTest
-    @MethodSource("parametersForPersonIsChild")
+    }
+
+-   @Test
+-   @Parameters
++   @ParameterizedTest
++   @MethodSource("parametersForPersonIsChild")
+    public void personIsChild(int age, boolean valid) {
 @@ -23,1 +20,1 @@
--    private Object[] parametersForPersonIsChild() {
-+    private static Object[] parametersForPersonIsChild() {
+    }
+
+-   private Object[] parametersForPersonIsChild() {
++   private static Object[] parametersForPersonIsChild() {
+        return new Object[]{new Object[]{3, false}, new Object[]{7, false}};
 ```
 {% endcode %}
 {% endtab %}

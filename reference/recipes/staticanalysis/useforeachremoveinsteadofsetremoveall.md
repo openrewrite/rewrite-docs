@@ -73,11 +73,17 @@ class T {
 --- T.java
 +++ T.java
 @@ -11,1 +11,1 @@
--        s.removeAll(l);
-+        l.forEach(s::remove);
+        Set<String> s = new HashSet<>();
+        List<String> l = Collections.singletonList("a");
+-       s.removeAll(l);
++       l.forEach(s::remove);
+    }
 @@ -15,1 +15,1 @@
--        s.removeAll(c);
-+        c.forEach(s::remove);
+
+    Set<String> removeFromSet(Set<String> s, Collection<String> c) {
+-       s.removeAll(c);
++       c.forEach(s::remove);
+        return s;
 ```
 {% endcode %}
 {% endtab %}

@@ -62,8 +62,11 @@ resources:
 {% code %}
 ```diff
 @@ -3,1 +3,1 @@
--  type: git
-+  ~~>type: git
+resources:
+- name: git-repo
+- type: git
++ ~~>type: git
+  icon: github
 ```
 {% endcode %}
 {% endtab %}

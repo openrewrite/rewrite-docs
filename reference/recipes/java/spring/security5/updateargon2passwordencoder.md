@@ -51,8 +51,11 @@ class T {
 --- T.java
 +++ T.java
 @@ -5,1 +5,1 @@
--        Argon2PasswordEncoder encoder = new Argon2PasswordEncoder();
-+        Argon2PasswordEncoder encoder = Argon2PasswordEncoder.defaultsForSpringSecurity_v5_2();
+class T {
+    void encoderWithDefaults() {
+-       Argon2PasswordEncoder encoder = new Argon2PasswordEncoder();
++       Argon2PasswordEncoder encoder = Argon2PasswordEncoder.defaultsForSpringSecurity_v5_2();
+    }
 ```
 {% endcode %}
 {% endtab %}

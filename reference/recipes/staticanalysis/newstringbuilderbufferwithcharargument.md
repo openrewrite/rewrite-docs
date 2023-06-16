@@ -53,13 +53,18 @@ class A {
 --- A.java
 +++ A.java
 @@ -2,2 +2,2 @@
--    StringBuffer buffer = new StringBuffer('a');
-    StringBuilder builder = new StringBuilder('a');
-+    StringBuffer buffer = new StringBuffer("a");
-    StringBuilder builder = new StringBuilder("a");
+class A {
+-   StringBuffer buffer = new StringBuffer('a');
+-   StringBuilder builder = new StringBuilder('a');
++   StringBuffer buffer = new StringBuffer("a");
++   StringBuilder builder = new StringBuilder("a");
+    char notALiteral = 'c';
 @@ -5,1 +5,1 @@
--    StringBuffer buffer = new StringBuffer(notALiteral);
-+    StringBuffer buffer = new StringBuffer(String.valueOf(notALiteral));
+    StringBuilder builder = new StringBuilder('a');
+    char notALiteral = 'c';
+-   StringBuffer buffer = new StringBuffer(notALiteral);
++   StringBuffer buffer = new StringBuffer(String.valueOf(notALiteral));
+}
 ```
 {% endcode %}
 {% endtab %}

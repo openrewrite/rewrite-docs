@@ -55,10 +55,13 @@ public class A {
 --- A.java
 +++ A.java
 @@ -4,2 +4,2 @@
--        if(s.equals("test")) {}
-        if(s.equalsIgnoreCase("test")) {}
-+        if("test".equals(s)) {}
-        if("test".equalsIgnoreCase(s)) {}
+    {
+        String s = null;
+-       if(s.equals("test")) {}
+-       if(s.equalsIgnoreCase("test")) {}
++       if("test".equals(s)) {}
++       if("test".equalsIgnoreCase(s)) {}
+    }
 ```
 {% endcode %}
 {% endtab %}

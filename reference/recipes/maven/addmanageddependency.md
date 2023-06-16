@@ -110,17 +110,20 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -5,0 +5,11 @@
-+  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-bom</artifactId>
-        <version>2.17.2</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <dependencyManagement>
++   <dependencies>
++     <dependency>
++       <groupId>org.apache.logging.log4j</groupId>
++       <artifactId>log4j-bom</artifactId>
++       <version>2.17.2</version>
++       <type>pom</type>
++       <scope>import</scope>
++     </dependency>
++   </dependencies>
++ </dependencyManagement>
+  <dependencies>
 ```
 {% endcode %}
 {% endtab %}

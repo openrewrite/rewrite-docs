@@ -47,10 +47,13 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,3 +3,1 @@
--    Function<Integer, Integer> f = n -> {
-        return n+1;
-    };
-+    Function<Integer, Integer> f = n -> n+1;
+import java.util.function.Function;
+class Test {
+-   Function<Integer, Integer> f = n -> {
+-       return n+1;
+-   };
++   Function<Integer, Integer> f = n -> n+1;
+}
 ```
 {% endcode %}
 {% endtab %}

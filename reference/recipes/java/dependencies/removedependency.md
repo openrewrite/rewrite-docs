@@ -82,9 +82,12 @@ dependencies {
 --- build.gradle
 +++ build.gradle
 @@ -10,3 +10,0 @@
--    implementation("org.springframework.boot:spring-boot-starter-web:2.7.0") {
-        exclude group: "junit"
-    }
+
+dependencies {
+-   implementation("org.springframework.boot:spring-boot-starter-web:2.7.0") {
+-       exclude group: "junit"
+-   }
+    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
 ```
 {% endcode %}
 {% endtab %}
@@ -162,12 +165,15 @@ Remove a Maven dependency
 --- pom.xml
 +++ pom.xml
 @@ -14,6 +14,0 @@
--    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
+      <version>29.0-jre</version>
     </dependency>
+-   <dependency>
+-     <groupId>junit</groupId>
+-     <artifactId>junit</artifactId>
+-     <version>4.13.1</version>
+-     <scope>test</scope>
+-   </dependency>
+  </dependencies>
 ```
 {% endcode %}
 {% endtab %}

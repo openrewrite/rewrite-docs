@@ -51,8 +51,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -5,1 +5,1 @@
--        for (; i < j; i++, j--) { }
-+        for ( ; i < j; i++, j--) { }
+        int i = 0;
+        int j = 10;
+-       for (; i < j; i++, j--) { }
++       for ( ; i < j; i++, j--) { }
+    }
 ```
 {% endcode %}
 {% endtab %}

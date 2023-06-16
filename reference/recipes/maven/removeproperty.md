@@ -71,7 +71,10 @@ _Removes the specified Maven project property from the pom.xml._
 --- pom.xml
 +++ pom.xml
 @@ -10,1 +10,0 @@
--    <bla.version>b</bla.version>
+  <properties>
+    <a.version>a</a.version>
+-   <bla.version>b</bla.version>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}

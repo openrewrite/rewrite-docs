@@ -58,7 +58,10 @@ class F {
 --- F.java
 +++ F.java
 @@ -7,0 +7,1 @@
-+        super.finalize();
+    protected void finalize() throws Throwable {
+        o = null;
++       super.finalize();
+    }
 ```
 {% endcode %}
 {% endtab %}

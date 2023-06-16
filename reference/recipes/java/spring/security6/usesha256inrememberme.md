@@ -93,17 +93,29 @@ class X {
 --- T.java
 +++ T.java
 @@ -9,1 +9,1 @@
--        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, RememberMeTokenAlgorithm.SHA256);
-+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+class T {
+    void qualifiedFieldAccess(UserDetailsService userDetailsService) {
+-       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, RememberMeTokenAlgorithm.SHA256);
++       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
 @@ -12,1 +12,1 @@
--        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, SHA256);
-+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+    void staticImport(UserDetailsService userDetailsService) {
+-       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, SHA256);
++       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
 @@ -16,1 +16,1 @@
--        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
-+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    void localVariable(UserDetailsService userDetailsService) {
+        final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
+-       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
++       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
 @@ -19,1 +19,1 @@
--        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
-+        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
+    void classField(UserDetailsService userDetailsService) {
+-       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
++       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
+    }
 ```
 {% endcode %}
 {% endtab %}

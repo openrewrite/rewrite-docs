@@ -46,9 +46,13 @@ abstract class Test extends AbstractAnnotationValueVisitor9 {}
 @@ -1,1 +1,1 @@
 -import javax.lang.model.util.AbstractAnnotationValueVisitor6;
 +import javax.lang.model.util.AbstractAnnotationValueVisitor9;
+
 @@ -3,1 +3,1 @@
+import javax.lang.model.util.AbstractAnnotationValueVisitor6;
+
 -abstract class Test extends AbstractAnnotationValueVisitor6 {}
 +abstract class Test extends AbstractAnnotationValueVisitor9 {}
+
 ```
 {% endcode %}
 {% endtab %}
@@ -89,9 +93,13 @@ abstract class Test extends AbstractAnnotationValueVisitor9 {}
 @@ -1,1 +1,1 @@
 -import javax.lang.model.util.AbstractAnnotationValueVisitor6;
 +import javax.lang.model.util.AbstractAnnotationValueVisitor9;
+
 @@ -3,1 +3,1 @@
+import javax.lang.model.util.AbstractAnnotationValueVisitor6;
+
 -abstract class Test extends AbstractAnnotationValueVisitor6 {}
 +abstract class Test extends AbstractAnnotationValueVisitor9 {}
+
 ```
 {% endcode %}
 {% endtab %}

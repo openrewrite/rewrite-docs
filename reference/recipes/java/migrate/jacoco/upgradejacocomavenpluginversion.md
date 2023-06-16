@@ -79,8 +79,11 @@ _This recipe will upgrade the JaCoCo Maven plugin to a more recent version compa
 --- pom.xml
 +++ pom.xml
 @@ -3,1 +3,1 @@
--    <jacoco.version>0.8.1</jacoco.version>
-+    <jacoco.version>0.8.8</jacoco.version>
+<project>
+  <properties>
+-   <jacoco.version>0.8.1</jacoco.version>
++   <jacoco.version>0.8.8</jacoco.version>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}
@@ -149,8 +152,11 @@ _This recipe will upgrade the JaCoCo Maven plugin to a more recent version compa
 --- pom.xml
 +++ pom.xml
 @@ -3,1 +3,1 @@
--    <jacoco.version>0.8.1</jacoco.version>
-+    <jacoco.version>0.8.8</jacoco.version>
+<project>
+  <properties>
+-   <jacoco.version>0.8.1</jacoco.version>
++   <jacoco.version>0.8.8</jacoco.version>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}

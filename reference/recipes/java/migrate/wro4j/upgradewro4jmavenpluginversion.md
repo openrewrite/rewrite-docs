@@ -77,8 +77,11 @@ _This recipe will upgrade Wro4j to a more recent version compatible with Java 11
 --- pom.xml
 +++ pom.xml
 @@ -3,1 +3,1 @@
--    <wro4j.version>1.8.0</wro4j.version>
-+    <wro4j.version>1.10.1</wro4j.version>
+<project>
+  <properties>
+-   <wro4j.version>1.8.0</wro4j.version>
++   <wro4j.version>1.10.1</wro4j.version>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}
@@ -145,8 +148,11 @@ _This recipe will upgrade Wro4j to a more recent version compatible with Java 11
 --- pom.xml
 +++ pom.xml
 @@ -3,1 +3,1 @@
--    <wro4j.version>1.8.0</wro4j.version>
-+    <wro4j.version>1.10.1</wro4j.version>
+<project>
+  <properties>
+-   <wro4j.version>1.8.0</wro4j.version>
++   <wro4j.version>1.10.1</wro4j.version>
+  </properties>
 ```
 {% endcode %}
 {% endtab %}

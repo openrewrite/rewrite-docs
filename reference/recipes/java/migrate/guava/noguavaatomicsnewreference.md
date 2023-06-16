@@ -55,11 +55,15 @@ class Test {
 @@ -1,1 +1,1 @@
 -import com.google.common.util.concurrent.Atomics;
 +import java.util.concurrent.atomic.AtomicReference;
+
 @@ -4,2 +4,2 @@
--    Object o1 = Atomics.newReference();
-    Object o2 = Atomics.newReference(0);
-+    Object o1 = new AtomicReference<>();
-    Object o2 = new AtomicReference<>(0);
+
+class Test {
+-   Object o1 = Atomics.newReference();
+-   Object o2 = Atomics.newReference(0);
++   Object o1 = new AtomicReference<>();
++   Object o2 = new AtomicReference<>(0);
+}
 ```
 {% endcode %}
 {% endtab %}

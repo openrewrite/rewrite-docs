@@ -55,11 +55,17 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--        if (str.indexOf("str") > -1) {
-+        if (str.contains("str")) {
+class Test {
+    static boolean hasIndex(String str) {
+-       if (str.indexOf("str") > -1) {
++       if (str.contains("str")) {
+        }
 @@ -5,1 +5,1 @@
--        return str.indexOf("str") >= 0;
-+        return str.contains("str");
+        if (str.indexOf("str") > -1) {
+        }
+-       return str.indexOf("str") >= 0;
++       return str.contains("str");
+    }
 ```
 {% endcode %}
 {% endtab %}

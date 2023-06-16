@@ -67,23 +67,29 @@ class Test {
 --- test/sun/misc/Test.java
 +++ test/sun/misc/Test.java
 @@ -3,3 +3,1 @@
+package test.sun.misc;
+
 -import test.sun.misc.BASE64Encoder;
-import test.sun.misc.BASE64Decoder;
-import java.io.IOException;
+-import test.sun.misc.BASE64Decoder;
+-import java.io.IOException;
 +import java.util.Base64;
+
 @@ -9,8 +7,4 @@
--        BASE64Encoder encoder = new BASE64Encoder();
-        String encoded = encoder.encode(bBytes);
-        encoded += encoder.encodeBuffer(bBytes);
-        try {
-            byte[] decoded = new BASE64Decoder().decodeBuffer(encoded);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-+        Base64.Encoder encoder = Base64.getEncoder();
-        String encoded = encoder.encodeToString(bBytes);
-        encoded += encoder.encodeToString(bBytes);
-        byte[] decoded = Base64.getDecoder().decode(encoded);
+class Test {
+    void test(byte[] bBytes) {
+-       BASE64Encoder encoder = new BASE64Encoder();
+-       String encoded = encoder.encode(bBytes);
+-       encoded += encoder.encodeBuffer(bBytes);
+-       try {
+-           byte[] decoded = new BASE64Decoder().decodeBuffer(encoded);
+-       } catch (IOException e) {
+-           e.printStackTrace();
+-       }
++       Base64.Encoder encoder = Base64.getEncoder();
++       String encoded = encoder.encodeToString(bBytes);
++       encoded += encoder.encodeToString(bBytes);
++       byte[] decoded = Base64.getDecoder().decode(encoded);
+    }
 ```
 {% endcode %}
 {% endtab %}

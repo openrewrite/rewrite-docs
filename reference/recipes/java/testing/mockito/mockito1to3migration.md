@@ -93,19 +93,25 @@ public class MockitoVarargMatcherTest {
 --- mockito/example/MockitoVarargMatcherTest.java
 +++ mockito/example/MockitoVarargMatcherTest.java
 @@ -7,3 +7,3 @@
+import java.util.Set;
+
 -import static org.mockito.ArgumentMatchers.anyListOf;
-import static org.mockito.ArgumentMatchers.anySetOf;
-import static org.mockito.ArgumentMatchers.anyMapOf;
+-import static org.mockito.ArgumentMatchers.anySetOf;
+-import static org.mockito.ArgumentMatchers.anyMapOf;
 +import static org.mockito.ArgumentMatchers.anyList;
-import static org.mockito.ArgumentMatchers.anySet;
-import static org.mockito.ArgumentMatchers.anyMap;
++import static org.mockito.ArgumentMatchers.anySet;
++import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
 @@ -21,3 +21,3 @@
--        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
-        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
-        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
-+        when(mockFoo.addList(anyList())).thenReturn(true);
-        when(mockFoo.addSet(anySet())).thenReturn(true);
-        when(mockFoo.addMap(anyMap())).thenReturn(true);
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+-       when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+-       when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+-       when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
++       when(mockFoo.addList(anyList())).thenReturn(true);
++       when(mockFoo.addSet(anySet())).thenReturn(true);
++       when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -188,19 +194,25 @@ public class MockitoVarargMatcherTest {
 --- mockito/example/MockitoVarargMatcherTest.java
 +++ mockito/example/MockitoVarargMatcherTest.java
 @@ -7,3 +7,3 @@
+import java.util.Set;
+
 -import static org.mockito.ArgumentMatchers.anyListOf;
-import static org.mockito.ArgumentMatchers.anySetOf;
-import static org.mockito.ArgumentMatchers.anyMapOf;
+-import static org.mockito.ArgumentMatchers.anySetOf;
+-import static org.mockito.ArgumentMatchers.anyMapOf;
 +import static org.mockito.ArgumentMatchers.anyList;
-import static org.mockito.ArgumentMatchers.anySet;
-import static org.mockito.ArgumentMatchers.anyMap;
++import static org.mockito.ArgumentMatchers.anySet;
++import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
 @@ -21,3 +21,3 @@
--        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
-        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
-        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
-+        when(mockFoo.addList(anyList())).thenReturn(true);
-        when(mockFoo.addSet(anySet())).thenReturn(true);
-        when(mockFoo.addMap(anyMap())).thenReturn(true);
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+-       when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+-       when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+-       when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
++       when(mockFoo.addList(anyList())).thenReturn(true);
++       when(mockFoo.addSet(anySet())).thenReturn(true);
++       when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
 ```
 {% endcode %}
 {% endtab %}

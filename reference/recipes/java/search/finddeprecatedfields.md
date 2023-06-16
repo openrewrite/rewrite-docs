@@ -62,8 +62,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--        System.out.println(D.FIELD);
-+        System.out.println(D./*~~>*/FIELD);
+class Test {
+    void test(int n) {
+-       System.out.println(D.FIELD);
++       System.out.println(D./*~~>*/FIELD);
+    }
 ```
 {% endcode %}
 {% endtab %}

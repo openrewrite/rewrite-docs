@@ -59,7 +59,10 @@ _Delete a JSON mapping entry key._
 {% code %}
 ```diff
 @@ -4,1 +4,0 @@
--    "name": "monitoring-tools",
+  "apiVersion": "v1",
+  "metadata": {
+-   "name": "monitoring-tools",
+    "namespace": "monitoring-tools"
 ```
 {% endcode %}
 {% endtab %}

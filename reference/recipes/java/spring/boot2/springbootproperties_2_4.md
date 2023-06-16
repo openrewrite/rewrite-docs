@@ -44,8 +44,11 @@ spring.config.activate.on-profile=dev
 --- src/main/resources/application.properties
 +++ src/main/resources/application.properties
 @@ -3,1 +3,1 @@
+# application.properties
+spring.profiles.active=production
 -spring.profiles=dev
 +spring.config.activate.on-profile=dev
+
 ```
 {% endcode %}
 {% endtab %}
@@ -87,8 +90,11 @@ spring.config.activate.on-profile=dev
 --- src/main/resources/application.yml
 +++ src/main/resources/application.yml
 @@ -7,1 +7,1 @@
--      profiles: prod
-+      config.activate.on-profile: prod
+    ---
+    spring:
+-     profiles: prod
++     config.activate.on-profile: prod
+
 ```
 {% endcode %}
 {% endtab %}
@@ -127,8 +133,11 @@ spring.config.activate.on-profile=dev
 --- src/main/resources/application.properties
 +++ src/main/resources/application.properties
 @@ -3,1 +3,1 @@
+# application.properties
+spring.profiles.active=production
 -spring.profiles=dev
 +spring.config.activate.on-profile=dev
+
 ```
 {% endcode %}
 {% endtab %}
@@ -170,8 +179,11 @@ spring.config.activate.on-profile=dev
 --- src/main/resources/application.yml
 +++ src/main/resources/application.yml
 @@ -7,1 +7,1 @@
--      profiles: prod
-+      config.activate.on-profile: prod
+    ---
+    spring:
+-     profiles: prod
++     config.activate.on-profile: prod
+
 ```
 {% endcode %}
 {% endtab %}

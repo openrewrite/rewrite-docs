@@ -49,8 +49,11 @@ class ATest {
 --- ATest.java
 +++ ATest.java
 @@ -4,1 +4,1 @@
--    @Test
-+    @/*~~(Identifier type is missing or malformed)~~>*/Test
+
+class ATest {
+-   @Test
++   @/*~~(Identifier type is missing or malformed)~~>*/Test
+    void foo() {}
 ```
 {% endcode %}
 {% endtab %}

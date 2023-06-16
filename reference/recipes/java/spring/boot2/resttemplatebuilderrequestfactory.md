@@ -55,8 +55,11 @@ public class A {
 --- A.java
 +++ A.java
 @@ -7,1 +7,1 @@
--                .requestFactory(new SimpleClientHttpRequestFactory());
-+                .requestFactory(() -> new SimpleClientHttpRequestFactory());
+    static {
+        RestTemplateBuilder builder = new RestTemplateBuilder()
+-               .requestFactory(new SimpleClientHttpRequestFactory());
++               .requestFactory(() -> new SimpleClientHttpRequestFactory());
+    }
 ```
 {% endcode %}
 {% endtab %}

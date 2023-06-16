@@ -54,8 +54,10 @@ repositories {
 --- build.gradle
 +++ build.gradle
 @@ -2,1 +2,1 @@
--    jcenter()
-+    
+repositories {
+-   jcenter()
++   
+}
 ```
 {% endcode %}
 {% endtab %}

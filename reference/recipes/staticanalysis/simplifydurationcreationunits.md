@@ -47,8 +47,11 @@ public class Test {
 --- Test.java
 +++ Test.java
 @@ -4,1 +4,1 @@
--    static Duration duration = Duration.ofMillis(5000);
-+    static Duration duration = Duration.ofSeconds(5);
+
+public class Test {
+-   static Duration duration = Duration.ofMillis(5000);
++   static Duration duration = Duration.ofSeconds(5);
+}
 ```
 {% endcode %}
 {% endtab %}

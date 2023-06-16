@@ -93,31 +93,47 @@ class ConfigClass {
 +++ ThingOne.java
 @@ -1,0 +1,1 @@
 +import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 @@ -3,0 +4,1 @@
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Bean;
 +import org.springframework.context.annotation.Conditional;
+
 @@ -10,1 +12,1 @@
--    @ConditionalOnBean({Aa.class, Bb.class})
-+    @Conditional(ConditionAaOrBb.class)
+class ConfigClass {
+    @Bean
+-   @ConditionalOnBean({Aa.class, Bb.class})
++   @Conditional(ConditionAaOrBb.class)
+    public ThingOne thingOne() {
 @@ -14,0 +16,1 @@
-+
-@@ -15,1 +18,1 @@
--    @ConditionalOnBean({Bb.class, Aa.class})
-+    @Conditional(ConditionAaOrBb.class)
-@@ -19,0 +22,14 @@
-+
-    private static class ConditionAaOrBb extends AnyNestedCondition {
-        ConditionAaOrBb() {
-            super(ConfigurationPhase.REGISTER_BEAN);
-        }
-
-        @ConditionalOnBean(Aa.class)
-        class AaCondition {
-        }
-
-        @ConditionalOnBean(Bb.class)
-        class BbCondition {
-        }
+        return new ThingOne();
     }
++
+    @Bean
+@@ -15,1 +18,1 @@
+    }
+    @Bean
+-   @ConditionalOnBean({Bb.class, Aa.class})
++   @Conditional(ConditionAaOrBb.class)
+    public ThingTwo thingTwo() {
+@@ -19,0 +22,14 @@
+        return new ThingTwo();
+    }
++
++   private static class ConditionAaOrBb extends AnyNestedCondition {
++       ConditionAaOrBb() {
++           super(ConfigurationPhase.REGISTER_BEAN);
++       }
++
++       @ConditionalOnBean(Aa.class)
++       class AaCondition {
++       }
++
++       @ConditionalOnBean(Bb.class)
++       class BbCondition {
++       }
++   }
+}
 ```
 {% endcode %}
 {% endtab %}

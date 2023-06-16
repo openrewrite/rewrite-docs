@@ -47,6 +47,7 @@ class A {}
 @@ -1,1 +1,1 @@
 -package com.UPPERCASE.CamelCase;
 +package com.uppercase.camelcase;
+class A {}
 ```
 {% endcode %}
 {% endtab %}

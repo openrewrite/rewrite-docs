@@ -46,8 +46,12 @@ public interface MyRepo extends org.springframework.data.repository.Repository {
 +++ MyRepo.java
 @@ -1,1 +1,0 @@
 -import org.springframework.stereotype.Repository;
+
 @@ -3,1 +2,0 @@
+import org.springframework.stereotype.Repository;
+
 -@Repository
+public interface MyRepo extends org.springframework.data.repository.Repository {
 ```
 {% endcode %}
 {% endtab %}

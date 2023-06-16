@@ -50,6 +50,7 @@ class A
 @@ -1,1 +1,1 @@
 -class A
 +/*~~>*/class A
+
 ```
 {% endcode %}
 {% endtab %}

@@ -53,7 +53,10 @@ _Delete a YAML mapping entry key._
 {% code %}
 ```diff
 @@ -3,1 +3,0 @@
--      name: monitoring-tools
+    apiVersion: v1
+    metadata:
+-     name: monitoring-tools
+      namespace: monitoring-tools
 ```
 {% endcode %}
 {% endtab %}

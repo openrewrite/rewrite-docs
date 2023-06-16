@@ -98,12 +98,15 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -5,3 +5,3 @@
--    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.12.RELEASE</version>
-+    <groupId>com.fasterxml.jackson</groupId>
-    <artifactId>jackson-parent</artifactId>
-    <version>2.12</version>
+
+  <parent>
+-   <groupId>org.springframework.boot</groupId>
+-   <artifactId>spring-boot-starter-parent</artifactId>
+-   <version>1.5.12.RELEASE</version>
++   <groupId>com.fasterxml.jackson</groupId>
++   <artifactId>jackson-parent</artifactId>
++   <version>2.12</version>
+  </parent>
 ```
 {% endcode %}
 {% endtab %}
@@ -190,8 +193,11 @@ _Attempts to resolve maven metadata that failed._
 --- pom.xml
 +++ pom.xml
 @@ -11,1 +11,1 @@
--    <version>3.1.2</version>
-+    <version>3.1.4</version>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-config-dependencies</artifactId>
+-   <version>3.1.2</version>
++   <version>3.1.4</version>
+  </parent>
 ```
 {% endcode %}
 {% endtab %}

@@ -62,8 +62,11 @@ _Change a JSON mapping entry value leaving the key intact._
 {% code %}
 ```diff
 @@ -4,1 +4,1 @@
--    "name": "monitoring-tools",
-+    "name": "monitoring",
+  "apiVersion": "v1",
+  "metadata": {
+-   "name": "monitoring-tools",
++   "name": "monitoring",
+    "namespace": "monitoring-tools"
 ```
 {% endcode %}
 {% endtab %}

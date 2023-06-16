@@ -60,8 +60,11 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -3,1 +3,1 @@
--    D d;
-+    /*~~>*/D d;
+import org.old.types.D;
+class Test {
+-   D d;
++   /*~~>*/D d;
+}
 ```
 {% endcode %}
 {% endtab %}

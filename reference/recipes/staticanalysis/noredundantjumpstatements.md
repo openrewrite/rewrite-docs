@@ -66,12 +66,18 @@ class Test {
 --- Test.java
 +++ Test.java
 @@ -6,3 +6,1 @@
--            if (condition2) {
-                continue;
-            } else {
-+            if (!condition2) {
+    void test() {
+        while (condition1) {
+-           if (condition2) {
+-               continue;
+-           } else {
++           if (!condition2) {
+                System.out.println();
 @@ -12,1 +10,0 @@
--        return;
+            }
+        }
+-       return;
+    }
 ```
 {% endcode %}
 {% endtab %}
