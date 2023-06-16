@@ -51,7 +51,7 @@ Now that `com.yourorg.AddJaxbRuntimeExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -131,6 +131,7 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Shannon Pamperl](shanman190@gmail.com)
 * [Tyler Van Gorder](tkvangorder@users.noreply.github.com)

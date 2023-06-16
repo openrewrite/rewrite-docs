@@ -128,6 +128,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Aurélien Mino](aurelien.mino@gmail.com)
 * [Jonathan Schneider](jkschneider@gmail.com)

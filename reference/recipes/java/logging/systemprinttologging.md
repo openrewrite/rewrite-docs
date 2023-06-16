@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -136,6 +136,7 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Knut Wannheden](knut@moderne.io)

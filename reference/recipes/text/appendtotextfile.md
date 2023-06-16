@@ -57,7 +57,7 @@ Now that `com.yourorg.AppendToTextFileExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -93,6 +93,7 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schnéider](jkschneider@gmail.com)
 * [Nick McKinney](mckinneynicholas@gmail.com)

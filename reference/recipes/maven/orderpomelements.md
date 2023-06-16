@@ -55,6 +55,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Patrick Way](pway99@users.noreply.github.com)
 * [traceyyoshima](tracey.yoshima@gmail.com)

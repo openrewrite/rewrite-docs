@@ -25,7 +25,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -122,6 +122,7 @@ limitations under the License.
 ```
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Sam Snyder](sam@moderne.io)

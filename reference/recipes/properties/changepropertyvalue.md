@@ -89,7 +89,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -125,6 +125,7 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Nick McKinney](mckinneynicholas@gmail.com)

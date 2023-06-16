@@ -147,6 +147,7 @@ Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [George Gastaldi](gegastaldi@gmail.com)
 * [Jonathan Schnéider](jkschneider@gmail.com)

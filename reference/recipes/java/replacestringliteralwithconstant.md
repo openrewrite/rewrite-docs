@@ -92,7 +92,7 @@ Now that `com.yourorg.ReplaceStringLiteralWithConstantExample` has been defined 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -128,6 +128,7 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [AlexanderSkrock](alexanderskrock@gmx.de)
 * [srmalkan](smitmalkan99@gmail.com)

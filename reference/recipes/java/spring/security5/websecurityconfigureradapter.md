@@ -114,7 +114,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -173,6 +173,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Alex Boyko](aboyko@vmware.com)
 * [Kun Li](122563761+kunli2@users.noreply.github.com)

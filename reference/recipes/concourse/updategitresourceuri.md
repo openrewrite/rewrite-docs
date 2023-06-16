@@ -101,7 +101,7 @@ Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -184,6 +184,7 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Kun Li](122563761+kunli2@users.noreply.github.com)

@@ -26,7 +26,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -128,6 +128,7 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Tim te Beek](tim@moderne.io)
 * [renovate[bot]](29139614+renovate[bot]@users.noreply.github.com)

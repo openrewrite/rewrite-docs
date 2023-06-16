@@ -90,7 +90,7 @@ Now that `com.yourorg.ConfigurationOverEnableSecurityExample` has been defined a
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -137,6 +137,7 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Alex Boyko](aboyko@vmware.com)
 * [Sam Snyder](sam@moderne.io)

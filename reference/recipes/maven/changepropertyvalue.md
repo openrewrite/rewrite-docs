@@ -130,6 +130,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Jonathan Schneider](jkschneider@gmail.com)

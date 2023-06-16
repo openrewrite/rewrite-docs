@@ -110,6 +110,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Jonathan Schneider](jkschneider@gmail.com)

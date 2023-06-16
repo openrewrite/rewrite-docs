@@ -161,6 +161,7 @@ Now that `com.yourorg.ExcludeDependencyExample` has been defined activate it in 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Greg Adams](greg@moderne.io)

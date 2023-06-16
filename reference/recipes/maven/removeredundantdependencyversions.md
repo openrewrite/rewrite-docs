@@ -140,6 +140,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Nick McKinney](mckinneynicholas@gmail.com)
 * [Kevin McCarpenter](kevin@moderne.io)

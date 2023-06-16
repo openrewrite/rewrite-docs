@@ -46,7 +46,7 @@ Now that `com.yourorg.AddSettingsPluginExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -61,6 +61,7 @@ repositories {
 {% endtab %}
 
 {% endtabs %}
+
 ## Contributors
 * [Shannon Pamperl](shanman190@gmail.com)
 * [Sam Snyder](sam@moderne.io)

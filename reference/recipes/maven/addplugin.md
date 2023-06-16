@@ -154,6 +154,7 @@ Now that `com.yourorg.AddPluginExample` has been defined activate it in your bui
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Sam Snyder](sam@moderne.io)

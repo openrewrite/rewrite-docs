@@ -133,6 +133,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Knut Wannheden](knut.wannheden@mobi.ch)
 * [Jonathan Schnéider](jkschneider@gmail.com)

@@ -115,6 +115,7 @@ Now that `com.yourorg.ChangePackagingExample` has been defined activate it in yo
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Sam Snyder](sam@moderne.io)
 * [Jonathan Schnéider](jkschneider@gmail.com)

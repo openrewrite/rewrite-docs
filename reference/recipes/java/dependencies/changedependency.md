@@ -195,7 +195,7 @@ Now that `com.yourorg.ChangeDependencyExample` has been defined activate it and 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -303,6 +303,7 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Shannon Pamperl](shanman190@gmail.com)
 

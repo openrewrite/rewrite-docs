@@ -157,6 +157,7 @@ Now that `com.yourorg.ChangeManagedDependencyGroupIdAndArtifactIdExample` has be
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Tyler Van Gorder](tkvangorder@users.noreply.github.com)

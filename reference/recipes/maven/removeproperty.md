@@ -121,6 +121,7 @@ Now that `com.yourorg.RemovePropertyExample` has been defined activate it in you
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Patrick Way](pway99@users.noreply.github.com)
 * [Aaron Gershman](aegershman@gmail.com)

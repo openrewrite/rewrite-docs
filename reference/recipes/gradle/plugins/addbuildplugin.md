@@ -72,7 +72,7 @@ Now that `com.yourorg.AddBuildPluginExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -87,6 +87,7 @@ repositories {
 {% endtab %}
 
 {% endtabs %}
+
 ## Contributors
 * [Shannon Pamperl](shanman190@gmail.com)
 * [Sam Snyder](sam@moderne.io)

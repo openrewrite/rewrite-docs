@@ -135,6 +135,7 @@ Now that `com.yourorg.ChangeDependencyScopeExample` has been defined activate it
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Jonathan Schnéider](jkschneider@gmail.com)

@@ -68,6 +68,7 @@ Now that `com.yourorg.DoesNotIncludeDependencyExample` has been defined activate
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Nick McKinney](mckinneynicholas@gmail.com)
 * [Jonathan Schnéider](jkschneider@gmail.com)

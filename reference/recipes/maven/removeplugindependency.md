@@ -164,6 +164,7 @@ Now that `com.yourorg.RemovePluginDependencyExample` has been defined activate i
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Nick McKinney](mckinneynicholas@gmail.com)
 

@@ -143,6 +143,7 @@ Now that `com.yourorg.RenamePropertyKeyExample` has been defined activate it in 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Geoffrey De Smet](gds.geoffrey.de.smet@gmail.com)
 * [Sam Snyder](sam@moderne.io)

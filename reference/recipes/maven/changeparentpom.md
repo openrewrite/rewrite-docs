@@ -248,6 +248,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Sam Snyder](sam@moderne.io)
 * [Jonathan Schneider](jkschneider@gmail.com)

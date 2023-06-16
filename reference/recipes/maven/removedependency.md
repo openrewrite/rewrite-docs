@@ -145,6 +145,7 @@ Now that `com.yourorg.RemoveDependencyExample` has been defined activate it in y
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Greg Adams](greg@moderne.io)

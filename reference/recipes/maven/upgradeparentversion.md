@@ -133,6 +133,7 @@ Now that `com.yourorg.UpgradeParentVersionExample` has been defined activate it 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Jonathan Schneider](jkschneider@gmail.com)

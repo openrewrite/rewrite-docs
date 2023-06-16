@@ -145,6 +145,7 @@ Now that `com.yourorg.ChangePluginExecutionsExample` has been defined activate i
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Sam Snyder](sam@moderne.io)
 * [Jonathan Schnéider](jkschneider@gmail.com)

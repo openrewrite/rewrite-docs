@@ -61,7 +61,7 @@ Now that `com.yourorg.DependencyListExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -108,6 +108,7 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Sam Snyder](sam@moderne.io)
 * [Kun Li](kun@moderne.io)

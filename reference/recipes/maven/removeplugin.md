@@ -172,6 +172,7 @@ Now that `com.yourorg.RemovePluginExample` has been defined activate it in your 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
 * [Jonathan Schnéider](jkschneider@gmail.com)

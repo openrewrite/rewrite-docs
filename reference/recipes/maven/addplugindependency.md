@@ -153,6 +153,7 @@ Now that `com.yourorg.AddPluginDependencyExample` has been defined activate it i
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Sam Snyder](sam@moderne.io)
 * [Jonathan Schnéider](jkschneider@gmail.com)

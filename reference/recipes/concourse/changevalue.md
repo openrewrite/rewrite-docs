@@ -104,7 +104,7 @@ Now that `com.yourorg.ChangeValueExample` has been defined activate it and take 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {

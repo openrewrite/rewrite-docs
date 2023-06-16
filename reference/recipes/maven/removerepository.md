@@ -150,6 +150,7 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined activate it in y
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [smehta23](47726705+smehta23@users.noreply.github.com)
 * [Yeikel](email@yeikel.com)

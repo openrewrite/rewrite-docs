@@ -154,6 +154,7 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined activate it 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
 * [Jonathan Schneider](jkschneider@gmail.com)

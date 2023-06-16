@@ -151,6 +151,7 @@ Now that `com.yourorg.FindPluginExample` has been defined activate it in your bu
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
 * [Jonathan Schnéider](jkschneider@gmail.com)

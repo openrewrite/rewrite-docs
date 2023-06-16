@@ -135,7 +135,7 @@ Now that `com.yourorg.AddRuleToRoleExample` has been defined activate it and tak
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -182,6 +182,7 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jon Brisbin](jon@jbrisbin.com)
 * [Tracey Yoshima](tracey.yoshima@gmail.com)

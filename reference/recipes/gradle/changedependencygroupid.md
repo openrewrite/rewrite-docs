@@ -110,7 +110,7 @@ Now that `com.yourorg.ChangeDependencyGroupIdExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -125,6 +125,7 @@ repositories {
 {% endtab %}
 
 {% endtabs %}
+
 ## Contributors
 * [Sam Snyder](sam@moderne.io)
 * [Shannon Pamperl](shanman190@gmail.com)

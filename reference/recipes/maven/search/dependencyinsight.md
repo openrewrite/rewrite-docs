@@ -149,6 +149,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Greg Adams](greg@moderne.io)

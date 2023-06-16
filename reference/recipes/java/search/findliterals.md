@@ -85,7 +85,7 @@ Now that `com.yourorg.FindLiteralsExample` has been defined activate it in your 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -121,6 +121,7 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)

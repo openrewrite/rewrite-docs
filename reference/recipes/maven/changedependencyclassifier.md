@@ -135,6 +135,7 @@ Now that `com.yourorg.ChangeDependencyClassifierExample` has been defined activa
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Alex Boyko](aboyko@pivotal.io)
 * [Tyler Van Gorder](tkvangorder@users.noreply.github.com)

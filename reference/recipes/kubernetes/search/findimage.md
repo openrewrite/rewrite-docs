@@ -127,7 +127,7 @@ Now that `com.yourorg.FindImageExample` has been defined activate it and take a 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -174,6 +174,7 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jon Brisbin](jon@jbrisbin.com)
 * [Knut Wannheden](knut.wannheden@gmail.com)

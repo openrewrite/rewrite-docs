@@ -101,6 +101,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Aleksandar A Simpson](alek@asu.me)
 * [traceyyoshima](tracey.yoshima@gmail.com)

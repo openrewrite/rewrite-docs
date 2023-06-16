@@ -150,6 +150,7 @@ Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activ
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Tracey Yoshima](tracey.yoshima@gmail.com)
 * [Jonathan Schnéider](jkschneider@gmail.com)

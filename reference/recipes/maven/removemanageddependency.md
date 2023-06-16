@@ -143,6 +143,7 @@ Now that `com.yourorg.RemoveManagedDependencyExample` has been defined activate 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Guillaume Smet](guillaume.smet@gmail.com)
 * [Jonathan Schnéider](jkschneider@gmail.com)

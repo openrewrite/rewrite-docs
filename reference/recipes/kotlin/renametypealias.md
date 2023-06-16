@@ -46,7 +46,7 @@ Now that `com.yourorg.RenameTypeAliasExample` has been defined activate it and t
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -93,6 +93,7 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Sam Snyder](sam@moderne.io)
 * [traceyyoshima](tracey.yoshima@gmail.com)

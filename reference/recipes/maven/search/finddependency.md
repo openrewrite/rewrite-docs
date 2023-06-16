@@ -64,6 +64,7 @@ Now that `com.yourorg.FindDependencyExample` has been defined activate it in you
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Greg Adams](greg@moderne.io)

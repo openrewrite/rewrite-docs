@@ -42,7 +42,7 @@ Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defi
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -89,6 +89,7 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Patrick](patway99@gmail.com)
 * [Tyler Van Gorder](tkvangorder@users.noreply.github.com)

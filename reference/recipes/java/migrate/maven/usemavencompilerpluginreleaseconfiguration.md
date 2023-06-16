@@ -150,6 +150,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Nick McKinney](mckinneynicholas@gmail.com)
 * [Sam Snyder](sam@moderne.io)

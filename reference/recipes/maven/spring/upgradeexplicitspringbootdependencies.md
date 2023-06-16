@@ -166,6 +166,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Andrei Shakirin](andrei.shakirin@gmail.com)
 * [Patrick Way](pway99@users.noreply.github.com)

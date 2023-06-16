@@ -112,7 +112,7 @@ Now that `com.yourorg.FindAnnotationExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.2")
+    id("org.openrewrite.rewrite") version("6.1.3")
 }
 
 rewrite {
@@ -159,6 +159,7 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jon Brisbin](jon@jbrisbin.com)
 * [Aaron Gershman](5619476+aegershman@users.noreply.github.com)

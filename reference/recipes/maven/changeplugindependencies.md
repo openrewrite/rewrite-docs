@@ -147,6 +147,7 @@ Now that `com.yourorg.ChangePluginDependenciesExample` has been defined activate
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Sam Snyder](sam@moderne.io)
 * [Jonathan Schnéider](jkschneider@gmail.com)

@@ -134,6 +134,7 @@ Now that `com.yourorg.FindPropertiesExample` has been defined activate it in you
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
 * [Nick McKinney](mckinneynicholas@gmail.com)

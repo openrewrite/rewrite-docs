@@ -180,6 +180,7 @@ Now that `com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample` has been defi
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Tyler Van Gorder](tkvangorder@users.noreply.github.com)

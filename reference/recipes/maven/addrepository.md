@@ -146,6 +146,7 @@ Now that `com.yourorg.AddRepositoryExample` has been defined activate it in your
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## Contributors
 * [Alex Boyko](aboyko@vmware.com)
 * [Patrick Way](pway99@users.noreply.github.com)
