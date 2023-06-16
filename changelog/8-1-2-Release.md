@@ -669,6 +669,8 @@ Similarly, the `doAfterVisit(Recipe)` method has been removed in favor of `doAft
 
 We've created a [migration recipe](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/MigrateRecipeToRewrite8.java) that will assist you with migrating your recipes to the latest version. You should run this recipe against all of your existing recipes. If the migration recipe is not able to fully migrate your recipe, comments will be added to the code to request a human to review it.
 
+You can find some examples of how this migration recipe works in the [Migrate Rewrite recipes from 7 to 8 recipe page](/reference/recipes/java/recipes/migraterecipetorewrite8.md)
+
 Please feel free to reach out in the [community Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA) if you have any questions.
 
 ## New recipes

@@ -27,7 +27,7 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | [org.openrewrite.recipe:rewrite-circleci](https://github.com/openrewrite/rewrite-circleci)                     | 2.0.1     |
 | [org.openrewrite.recipe:rewrite-concourse](https://github.com/openrewrite/rewrite-concourse)                   | 2.0.1     |
 | [org.openrewrite.recipe:rewrite-github-actions](https://github.com/openrewrite/rewrite-github-actions)         | 2.0.1     |
-| [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies)   | 1.0.1      |
+| [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies)   | 1.0.1     |
 | [org.openrewrite.recipe:rewrite-java-security](https://github.com/openrewrite/rewrite-java-security)           | 2.0.1     |
 | [org.openrewrite.recipe:rewrite-jhipster](https://github.com/openrewrite/rewrite-jhipster)                     | 2.0.1     |
 | [org.openrewrite.recipe:rewrite-kubernetes](https://github.com/openrewrite/rewrite-kubernetes)                 | 2.0.1     |
