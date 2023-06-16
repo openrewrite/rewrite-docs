@@ -6,30 +6,133 @@ _Migrate multi-condition `@ConditionalOnBean` annotations to `AnyNestedCondition
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/ConditionalOnBeanAnyNestedCondition.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/ConditionalOnBeanAnyNestedCondition.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Sam Snyder](sam@moderne.io)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="ThingOne.java" %}
+
+###### Before
+{% code title="ThingOne.java" %}
+```java
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Bean;
+
+class ThingOne {}
+
+class ThingTwo {}
+
+class ConfigClass {
+    @Bean
+    @ConditionalOnBean({Aa.class, Bb.class})
+    public ThingOne thingOne() {
+        return new ThingOne();
+    }
+    @Bean
+    @ConditionalOnBean({Bb.class, Aa.class})
+    public ThingTwo thingTwo() {
+        return new ThingTwo();
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="ThingOne.java" %}
+```java
+import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
+
+class ThingOne {}
+
+class ThingTwo {}
+
+class ConfigClass {
+    @Bean
+    @Conditional(ConditionAaOrBb.class)
+    public ThingOne thingOne() {
+        return new ThingOne();
+    }
+
+    @Bean
+    @Conditional(ConditionAaOrBb.class)
+    public ThingTwo thingTwo() {
+        return new ThingTwo();
+    }
+
+    private static class ConditionAaOrBb extends AnyNestedCondition {
+        ConditionAaOrBb() {
+            super(ConfigurationPhase.REGISTER_BEAN);
+        }
+
+        @ConditionalOnBean(Aa.class)
+        class AaCondition {
+        }
+
+        @ConditionalOnBean(Bb.class)
+        class BbCondition {
+        }
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- ThingOne.java
++++ ThingOne.java
+@@ -1,0 +1,1 @@
++import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
+@@ -3,0 +4,1 @@
++import org.springframework.context.annotation.Conditional;
+@@ -10,1 +12,1 @@
+-    @ConditionalOnBean({Aa.class, Bb.class})
++    @Conditional(ConditionAaOrBb.class)
+@@ -14,0 +16,1 @@
++
+@@ -15,1 +18,1 @@
+-    @ConditionalOnBean({Bb.class, Aa.class})
++    @Conditional(ConditionAaOrBb.class)
+@@ -19,0 +22,14 @@
++
+    private static class ConditionAaOrBb extends AnyNestedCondition {
+        ConditionAaOrBb() {
+            super(ConfigurationPhase.REGISTER_BEAN);
+        }
+
+        @ConditionalOnBean(Aa.class)
+        class AaCondition {
+        }
+
+        @ConditionalOnBean(Bb.class)
+        class BbCondition {
+        }
+    }
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -41,7 +144,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -55,7 +158,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition</recipe>
@@ -65,7 +168,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -88,6 +191,14 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Sam Snyder](sam@moderne.io)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

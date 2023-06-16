@@ -11,29 +11,22 @@ _Update Lombok dependency to a version that is compatible with Java 17 and migra
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/lombok.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.21.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/lombok.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.21.1
-
-## Contributors
-* [Tim te Beek](tim.te.beek@jdriven.com)
-* [Patrick](patway99@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 2.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.21.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -45,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.21.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
 }
 ```
 {% endcode %}
@@ -59,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.lombok.UpdateLombokToJava17</recipe>
@@ -69,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.21.1</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -97,7 +90,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.projectlombok`
   * artifactId: `lombok`
   * newVersion: `1.18.*`
@@ -131,7 +124,7 @@ tags:
   - java17
   - lombok
 recipeList:
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.projectlombok
       artifactId: lombok
       newVersion: 1.18.*
@@ -155,6 +148,14 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Patrick](patway99@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -659,9 +659,11 @@ public class FindExceedsResourceRatio extends Recipe {
 
 ### The doNext method has been removed
 
-The [org.openrewrite.Recipe doNext(..)](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L306-L313) method has been removed. If a recipe won't make any changes, this should be replaced with a [ScanningRecipe](#new-approach-to-recipe-visiting). If it does make changes, it should use [TreeVisitor#doAfterVisit()](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-core/src/main/java/org/openrewrite/TreeVisitor.java#L146).
+The [org.openrewrite.Recipe doNext(..)](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L306-L313) method has been removed. In most situations, it should be replaced with [TreeVisitor#doAfterVisit(Visitor)](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/TreeVisitor.java#L136).
 
-TODO: This migration recipe does not provide enough context. It links to a non-existant guide: https://github.com/openrewrite/rewrite/blob/main/rewrite-java-test/src/test/java/org/openrewrite/java/recipes/MigrateRecipeToRewrite8Test.java#L485
+However, as the `doAfterVisit` method only changes the current source file, if your recipe needs to change other files, it will need to be rewritten as a [ScanningRecipe](#new-approach-to-recipe-visiting).
+
+Similarly, the `doAfterVisit(Recipe)` method has been removed in favor of `doAfterVisit(Visitor)`. 
 
 ## Migrating your recipes
 

@@ -6,14 +6,11 @@ _Emits a data table detailing all Gradle and Maven dependencies.This recipe make
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/0.4.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 0.4.0
-
-## Contributors
-* [Sam Snyder](sam@moderne.io)
+* version: 1.0.1
 
 ## Options
 
@@ -21,6 +18,23 @@ _Emits a data table detailing all Gradle and Maven dependencies.This recipe make
 | -- | -- | -- |
 | `Scope` | scope | The scope of the dependencies to include in the report. |
 | `boolean` | includeTransitive | Whether or not to include transitive dependencies in the report. Defaults to including only direct dependencies. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Dependency report
+
+_Lists all Gradle and Maven dependencies_
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Build tool | The build tool used to manage dependencies (Gradle or Maven). |
+| Group id | The Group ID of the Gradle project or Maven module requesting the dependency. |
+| Artifact id | The Artifact ID of the Gradle project or Maven module requesting the dependency. |
+| Version | The version of Gradle project or Maven module requesting the dependency. |
+| Dependency group id | The Group ID of the dependency. |
+| Dependency artifact id | The Artifact ID of the dependency. |
+| Dependency version | The version of the dependency. |
+| Direct Dependency | When `true` the project directly depends on the dependency. When `false` the project depends on the dependency transitively through at least one direct dependency. |
 
 
 ## Usage
@@ -41,13 +55,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.DependencyListExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:0.4.0 in your build file:
+Now that `com.yourorg.DependencyListExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -59,7 +73,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:0.4.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.1")
 }
 ```
 {% endcode %}
@@ -73,7 +87,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DependencyListExample</recipe>
@@ -83,7 +97,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>0.4.0</version>
+            <version>1.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -94,6 +108,10 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Sam Snyder](sam@moderne.io)
+* [Kun Li](kun@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,17 +6,11 @@ _Change spring application property keys existing in either Properties or Yaml f
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeSpringPropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeSpringPropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Kyle Scully](scullykns@gmail.com)
+* version: 5.0.1
 
 ## Options
 
@@ -25,6 +19,76 @@ _Change spring application property keys existing in either Properties or Yaml f
 | `String` | oldPropertyKey | The property key to rename. Supports glob |
 | `String` | newPropertyKey | The new name for the property key. |
 | `List` | except | *Optional*. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPropertyKey|`server.servlet-path`|
+|newPropertyKey|`server.servlet.path`|
+|except|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```properties
+server.servlet-path=/tmp/my-server-path
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```properties
+server.servlet.path=/tmp/my-server-path
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-server.servlet-path=/tmp/my-server-path
++server.servlet.path=/tmp/my-server-path
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+    server:
+      servlet-path: /tmp/my-server-path
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+    server:
+      servlet.path: /tmp/my-server-path
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -2,1 +2,1 @@
+-      servlet-path: /tmp/my-server-path
++      servlet.path: /tmp/my-server-path
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -46,13 +110,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeSpringPropertyKeyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.36.0 in your build file:
+Now that `com.yourorg.ChangeSpringPropertyKeyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -64,7 +128,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -78,7 +142,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeSpringPropertyKeyExample</recipe>
@@ -88,7 +152,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -99,6 +163,13 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Nick McKinney](mckinneynichoals@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Kyle Scully](scullykns@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

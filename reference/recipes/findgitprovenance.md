@@ -6,18 +6,25 @@ _List out the contents of each unique `GitProvenance` marker in the set of sourc
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindGitProvenance.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindGitProvenance.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.40.6
+* version: 8.1.2
 
-## Example
-* Example 1: 
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
 
-## Contributors
-* [Kevin McCarpenter™️](kevin@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
+### Distinct Git Provenance
+
+_List out the contents of each unique `GitProvenance` marker in the set of source files. When everything is working correctly, exactly one such marker should be printed as all source files are expected to come from the same repository / branch / commit hash._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Origin | The URL of the git remote. |
+| Branch | The branch that was checked out at the time the source file was parsed. |
+| Changeset | The commit hash of the changeset that was checked out. |
+| AutoCRLF | The value of the `core.autocrlf` git config setting. |
+| EOL | The value of the `core.eol` git config setting. |
 
 
 ## Usage
@@ -28,7 +35,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -51,7 +58,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.FindGitProvenance</recipe>
@@ -75,6 +82,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Kevin McCarpenter™️](kevin@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

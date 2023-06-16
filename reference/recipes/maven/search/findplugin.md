@@ -6,15 +6,11 @@ _Finds a Maven plugin within a pom.xml._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -22,6 +18,93 @@ _Finds a Maven plugin within a pom.xml._
 | -- | -- | -- |
 | `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`org.openrewrite.maven`|
+|artifactId|`rewrite-maven-plugin`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <groupId>org.openrewrite.example</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>4.0.0</version>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>4.0.0</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <groupId>org.openrewrite.example</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <build>
+    <plugins>
+      <!--~~>--><plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>4.0.0</version>
+      </plugin>
+    </plugins>
+  </build>
+  <reporting>
+    <plugins>
+      <!--~~>--><plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>4.0.0</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,1 +7,1 @@
+-      <plugin>
++      <!--~~>--><plugin>
+@@ -16,1 +16,1 @@
+-      <plugin>
++      <!--~~>--><plugin>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -54,7 +137,7 @@ Now that `com.yourorg.FindPluginExample` has been defined activate it in your bu
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindPluginExample</recipe>
@@ -68,6 +151,10 @@ Now that `com.yourorg.FindPluginExample` has been defined activate it in your bu
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

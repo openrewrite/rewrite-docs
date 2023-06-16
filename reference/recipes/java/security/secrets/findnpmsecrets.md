@@ -10,25 +10,165 @@ _Locates NPM secrets stored in plain text in code._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/1.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 1.25.0
+* version: 2.0.1
 
-## Contributors
-* [Jonathan Schnéider](jkschneider@gmail.com)
+## Examples
+##### Example 1
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+class Test {
+    void npmTest() {
+        String[] npmSecrets = {
+            "//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+            "//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+            "//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+        String[] notNmpSecrets = {
+            "//registry.npmjs.org:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "///:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "foo",
+            "//registry.npmjs.org/:_authToken=${NPM_TOKEN}"};
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+class Test {
+    void npmTest() {
+        String[] npmSecrets = {
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+        String[] notNmpSecrets = {
+            "//registry.npmjs.org:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "///:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "foo",
+            "//registry.npmjs.org/:_authToken=${NPM_TOKEN}"};
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -4,4 +4,4 @@
+-            "//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+            "//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+            "//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
++            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+class Test {
+    void npmTest() {
+        String[] npmSecrets = {
+            "//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+            "//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+            "//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+        String[] notNmpSecrets = {
+            "//registry.npmjs.org:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "///:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "foo",
+            "//registry.npmjs.org/:_authToken=${NPM_TOKEN}"};
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+class Test {
+    void npmTest() {
+        String[] npmSecrets = {
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+        String[] notNmpSecrets = {
+            "//registry.npmjs.org:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "///:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "foo",
+            "//registry.npmjs.org/:_authToken=${NPM_TOKEN}"};
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -4,4 +4,4 @@
+-            "//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            "//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+            "//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+            "//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
++            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=743b294a-cd03-11ec-9d64-0242ac120002",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=346a14f2-a672-4668-a892-956a462ab56e",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken= 743b294a-cd03-11ec-9d64-0242ac120002",
+            /*~~(NPM)~~>*/"//registry.npmjs.org/:_authToken=npm_xxxxxxxxxxx"};
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:1.25.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -40,7 +180,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:1.25.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.1")
 }
 ```
 {% endcode %}
@@ -54,7 +194,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.security.secrets.FindNpmSecrets</recipe>
@@ -64,7 +204,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>1.25.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -93,11 +233,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
-  * secretName: `Facebook access token`
-  * valuePattern: `EAACEdEose0cBA[0-9A-Za-z]+`
-* [Find secrets with regular expressions](../../../java/security/secrets/findsecretsbypattern.md)
-  * secretName: `Facebook OAuth`
-  * valuePattern: `[fF][aA][cC][eE][bB][oO][oO][kK].*['|"][0-9a-f]{32}['|"]`
+  * secretName: `NPM`
+  * valuePattern: `//.+/:_authToken=\s*((npm_.+)|([A-Fa-f0-9-]{36})).*`
 
 {% endtab %}
 
@@ -112,15 +249,16 @@ tags:
   - security
 recipeList:
   - org.openrewrite.java.security.secrets.FindSecretsByPattern:
-      secretName: Facebook access token
-      valuePattern: EAACEdEose0cBA[0-9A-Za-z]+
-  - org.openrewrite.java.security.secrets.FindSecretsByPattern:
-      secretName: Facebook OAuth
-      valuePattern: [fF][aA][cC][eE][bB][oO][oO][kK].*['|"][0-9a-f]{32}['|"]
+      secretName: NPM
+      valuePattern: //.+/:_authToken=\s*((npm_.+)|([A-Fa-f0-9-]{36})).*
 
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

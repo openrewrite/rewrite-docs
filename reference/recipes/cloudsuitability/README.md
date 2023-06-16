@@ -18,7 +18,6 @@ _Locating many of the same patterns that [Cloud Suitability Analyzer](https://gi
 * [Find uses of JCache](./findjcache.md)
 * [Find uses of JNI](./findjni.md)
 * [Find uses of Java file IO](./findfileio.md)
-* [Find uses of Java file IO](./findfileio.md)
 * [Find uses of Jersey](./findjersey.md)
 * [Find uses of Jetty](./findjetty.md)
 * [Find uses of `file://` scheme in string literals](./findfilescheme.md)

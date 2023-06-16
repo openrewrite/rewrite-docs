@@ -9,7 +9,7 @@
 * [Migrate to Spring Framework 5.1](./upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](./upgradespringframework_5_2.md)
 * [Migrate to Spring Framework 5.3](./upgradespringframework_5_3.md)
-* [Transform classes that extend `WebMvcConfigurerAdapter` to implement the `WebMvcConfigurer` interface instead](./migratewebmvcconfigureradapter.md)
+* [Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`](./migratewebmvcconfigureradapter.md)
 * [Upgrade spring-framework Maven dependencies](./upgradespringframeworkdependencies.md)
 * [Use `Environment#acceptsProfiles(Profiles)`](./environmentacceptsprofiles.md)
 * [Use `ObjectUtils#isEmpty(Object)`](./useobjectutilsisempty.md)

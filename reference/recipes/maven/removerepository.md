@@ -6,15 +6,11 @@ _Removes a matching Maven repository._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [smehta23](47726705+smehta23@users.noreply.github.com)
-* [Yeikel](email@yeikel.com)
+* version: 8.1.2
 
 ## Options
 
@@ -22,6 +18,92 @@ _Removes a matching Maven repository._
 | -- | -- | -- |
 | `String` | id | *Optional*. Repository id |
 | `String` | url | Repository URL |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|id|`myRepo`|
+|url|`https://myrepo.maven.com/repo`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <repositories>
+    <repository>
+      <id>myRepo</id>
+      <url>https://myrepo.maven.com/repo</url>
+    </repository>
+    <repository>
+      <id>same_repo_different_id</id>
+      <url>https://myrepo.maven.com/repo</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>myRepo</id>
+      <url>https://someOtherUrl</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>identicalRepo</id>
+      <url>https://myrepo.maven.com/repo</url>
+    </pluginRepository>
+  </pluginRepositories>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <repositories>
+    <repository>
+      <id>same_repo_different_id</id>
+      <url>https://myrepo.maven.com/repo</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>myRepo</id>
+      <url>https://someOtherUrl</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>identicalRepo</id>
+      <url>https://myrepo.maven.com/repo</url>
+    </pluginRepository>
+  </pluginRepositories>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,4 +7,0 @@
+-      <id>myRepo</id>
+      <url>https://myrepo.maven.com/repo</url>
+    </repository>
+    <repository>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -54,7 +136,7 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined activate it in y
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveRepositoryExample</recipe>
@@ -68,6 +150,11 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined activate it in y
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [smehta23](47726705+smehta23@users.noreply.github.com)
+* [Yeikel](email@yeikel.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

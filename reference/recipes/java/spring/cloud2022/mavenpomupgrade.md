@@ -11,22 +11,22 @@ _Upgrade Maven POM to Spring Cloud 2022 from prior 2021.x version._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-cloud-2022.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-cloud-2022.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.cloud2022.MavenPomUpgrade</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -90,11 +90,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `*`
   * newVersion: `4.0.x`
-  * overrideManagedVersion: `true`
+  * overrideManagedVersion: `false`
 * [Upgrade Maven parent project version](../../../maven/upgradeparentversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-starter-parent`
@@ -103,41 +103,41 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * oldGroupId: `org.springframework.cloud`
   * oldArtifactId: `spring-cloud-starter-feign`
   * newArtifactId: `spring-cloud-starter-openfeign`
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-dependencies`
   * newVersion: `2022.0.x`
-  * overrideManagedVersion: `true`
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-starter-circuitbreaker-*`
   * newVersion: `3.0.x`
-  * overrideManagedVersion: `true`
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-circuitbreaker-*`
   * newVersion: `3.0.x`
-  * overrideManagedVersion: `true`
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-starter-kubernetes-*`
   * newVersion: `3.0.x`
-  * overrideManagedVersion: `true`
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-kubernetes-*`
   * newVersion: `3.0.x`
-  * overrideManagedVersion: `true`
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-starter-task-*`
   * newVersion: `3.0.x`
-  * overrideManagedVersion: `true`
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-task-*`
   * newVersion: `3.0.x`
-  * overrideManagedVersion: `true`
+  * overrideManagedVersion: `false`
 
 {% endtab %}
 
@@ -152,11 +152,11 @@ tags:
   - spring
   - cloud
 recipeList:
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: *
       newVersion: 4.0.x
-      overrideManagedVersion: true
+      overrideManagedVersion: false
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-starter-parent
@@ -165,41 +165,41 @@ recipeList:
       oldGroupId: org.springframework.cloud
       oldArtifactId: spring-cloud-starter-feign
       newArtifactId: spring-cloud-starter-openfeign
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-dependencies
       newVersion: 2022.0.x
-      overrideManagedVersion: true
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-starter-circuitbreaker-*
       newVersion: 3.0.x
-      overrideManagedVersion: true
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-circuitbreaker-*
       newVersion: 3.0.x
-      overrideManagedVersion: true
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-starter-kubernetes-*
       newVersion: 3.0.x
-      overrideManagedVersion: true
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-kubernetes-*
       newVersion: 3.0.x
-      overrideManagedVersion: true
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-starter-task-*
       newVersion: 3.0.x
-      overrideManagedVersion: true
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-task-*
       newVersion: 3.0.x
-      overrideManagedVersion: true
+      overrideManagedVersion: false
 
 ```
 {% endtab %}

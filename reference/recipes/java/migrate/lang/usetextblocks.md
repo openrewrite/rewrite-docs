@@ -6,15 +6,11 @@ _Text blocks are easier to read than concatenated strings._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/UseTextBlocks.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.21.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/UseTextBlocks.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.21.1
-
-## Contributors
-* [Kun Li](kun@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
+* version: 2.0.1
 
 ## Options
 
@@ -22,9 +18,9 @@ _Text blocks are easier to read than concatenated strings._
 | -- | -- | -- |
 | `boolean` | convertStringsWithoutNewlines | *Optional*. Whether or not strings without newlines should be converted to text block when processing code. The default value is true. |
 
-
 ## Examples
 ##### Example 1
+
 
 {% tabs %}
 {% tab title="Test.java" %}
@@ -70,11 +66,13 @@ class Test {
             """;
 ```
 {% endcode %}
+{% endtab %}
 {% endtabs %}
 
 ---
 
 ##### Example 2
+
 
 {% tabs %}
 {% tab title="A.java" %}
@@ -148,118 +146,19 @@ class A {
             """);
 ```
 {% endcode %}
-{% endtabs %}
-
----
-
-##### Example 3
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    String myFaceInASCII = "\"\"\"\"\"\"\"\"\n" +
-                           "| o  o |\n" +
-                           "|  ==  |\n" +
-                           "\\------/\n";
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    String myFaceInASCII = """
-                           ""\"""\"""
- o  o |
-  ==  |
-                           \\------/
-                           """;
-}
-```
-{% endcode %}
-
 {% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -2,4 +2,6 @@
--    String myFaceInASCII = "\"\"\"\"\"\"\"\"\n" +
-                           "| o  o |\n" +
-                           "|  ==  |\n" +
-                           "\\------/\n";
-+    String myFaceInASCII = """
-                           ""\"""\"""
-                             o  o |
-                              ==  |
-                           \\------/
-                           """;
-```
-{% endcode %}
-{% endtabs %}
-
----
-
-##### Example 4
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    String eightQuotes = "\"\"\"\"\"\"\"\"" +
-                   "after 8 quotes";
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    String eightQuotes = """
-                   ""\"""\"""\
-                   after 8 quotes\
-                   """;
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -2,2 +2,4 @@
--    String eightQuotes = "\"\"\"\"\"\"\"\"" +
-                   "after 8 quotes";
-+    String eightQuotes = """
-                   ""\"""\"""\
-                   after 8 quotes\
-                   """;
-```
-{% endcode %}
 {% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.21.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -271,7 +170,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.21.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
 }
 ```
 {% endcode %}
@@ -285,7 +184,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.lang.UseTextBlocks</recipe>
@@ -295,7 +194,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.21.1</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -318,6 +217,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Kun Li](kun@moderne.io)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Aakarshit Uppal](26065812+aksh1618@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

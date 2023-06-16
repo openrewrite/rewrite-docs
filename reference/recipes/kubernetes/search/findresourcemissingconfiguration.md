@@ -6,16 +6,11 @@ _Find Kubernetes resources with missing configuration._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindResourceMissingConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.30.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindResourceMissingConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.30.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Jon Brisbin](jon@moderne.io)
-* [Aaron Gershman](aegershman@gmail.com)
+* version: 2.0.1
 
 ## Options
 
@@ -24,6 +19,55 @@ _Find Kubernetes resources with missing configuration._
 | `String` | resourceKind | *Optional*. The Kubernetes resource type to search on. |
 | `String` | configurationPath | A JsonPath expression to locate Kubernetes configuration. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|resourceKind|`Pod`|
+|configurationPath|`$.spec.containers[*].livenessProbe`|
+|fileMatcher|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: <container name>
+    image: <image>
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+~~>apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: <container name>
+    image: <image>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-apiVersion: v1
++~~>apiVersion: v1
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -45,13 +89,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindResourceMissingConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.30.0 in your build file:
+Now that `com.yourorg.FindResourceMissingConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -63,7 +107,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
 }
 ```
 {% endcode %}
@@ -77,7 +121,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindResourceMissingConfigurationExample</recipe>
@@ -87,7 +131,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.30.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -98,6 +142,12 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jon Brisbin](jon@moderne.io)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

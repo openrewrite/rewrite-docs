@@ -6,22 +6,74 @@ _Remove matching annotations wherever they occur._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Aaron Gershman](aegershman@gmail.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns.md). |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|annotationPattern|`@java.lang.Deprecated`|
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import java.util.List;
+
+@Deprecated
+public class Test {
+    @Deprecated
+    void test() {
+        @Deprecated int n;
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import java.util.List;
+
+public class Test {
+    void test() {
+        int n;
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -3,1 +3,0 @@
+-@Deprecated
+@@ -5,1 +4,0 @@
+-    @Deprecated
+@@ -7,1 +5,1 @@
+-        @Deprecated int n;
++        int n;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -47,7 +99,7 @@ Now that `com.yourorg.RemoveAnnotationExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -69,7 +121,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveAnnotationExample</recipe>
@@ -83,6 +135,11 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

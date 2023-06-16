@@ -6,22 +6,22 @@ _Remove obsolete classpath runners._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners</recipe>
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -106,6 +106,33 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Yeikel](yeikel@users.noreply.github.com)
+* [Greg Adams](gadams@gmail.com)
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Tim te Beek](tim@moderne.io)
+* [Matthias Klauer](matthias.klauer@sap.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sofia Britto Schwartz](sofia.b.schwartz@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Michael Keppler](bananeweizen@gmx.de)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Ties van de Ven](1215166+vandeven@users.noreply.github.com)
+* [Scott Jungling](scott.jungling@gmail.com)
+* [Tim te Beek](timtebeek@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Kun Li](kun@moderne.io)
+* [Kyle Scully](scullykns@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

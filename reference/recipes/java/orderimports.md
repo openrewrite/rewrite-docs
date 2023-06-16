@@ -6,25 +6,67 @@ _Group and order imports._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Knut Wannheden](knut.wannheden@gmail.com)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `Boolean` | removeUnused | *Optional*. Remove unnecessary imports. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|removeUnused|`false`|
+
+
+{% tabs %}
+{% tab title="475137499430.java" %}
+
+###### Before
+{% code title="475137499430.java" %}
+```java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import java.util.Objects;
+import java.util.Set;
+import java.util.Map;
+```
+{% endcode %}
+
+###### After
+{% code title="475137499430.java" %}
+```java
+import java.util.*;
+import java.util.regex.Pattern;
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- 475137499430.java
++++ 475137499430.java
+@@ -1,2 +1,1 @@
+-import java.util.List;
+import java.util.ArrayList;
++import java.util.*;
+@@ -4,3 +3,0 @@
+-import java.util.Objects;
+import java.util.Set;
+import java.util.Map;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -35,7 +77,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -58,7 +100,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.OrderImports</recipe>
@@ -82,6 +124,14 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

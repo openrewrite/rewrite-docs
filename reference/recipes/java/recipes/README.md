@@ -6,9 +6,16 @@ _Apply best practices to OpenRewrite recipes._
 
 * [Automatically select recipe examples from the unit test cases of a recipe](./selectrecipeexamples.md)
 * [Find OpenRewrite recipes](./findrecipes.md)
-* [Make all `Recipe#getVisitor()` methods public](./publicgetvisitor.md)
+* [Migrate `JavaTemplate` to accommodate Rewrite 8](./migratejavatemplatetorewrite8.md)
+* [Migrate Rewrite recipes from version 7 to 8](./migraterecipetorewrite8.md)
+* [Migrate deprecated `org.openrewrite.marker.Markers#SearchResult(..)`](./migratemarkerssearchresult.md)
+* [Migrate rewrite unit test from version 7 to 8](./migratetesttorewrite8.md)
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)
+* [Remove applicability test from Yaml recipe](./removeapplicabilitytestfromyamlrecipe.md)
 * [Set default estimated effort](./setdefaultestimatedeffortperoccurrence.md)
+* [Update moved package class name](./updatemovedpackageclassname.md)
+* [Update moved package recipe](./updatemovedrecipe.md)
+* [Update moved package recipe](./updatemovedrecipesyaml.md)
 * [Use `JavaParser.Builder` when constructing `JavaTemplate`](./usejavaparserbuilderinjavatemplate.md)
 * [Use a standard name for `ExecutionContext`](./executioncontextparametername.md)
 

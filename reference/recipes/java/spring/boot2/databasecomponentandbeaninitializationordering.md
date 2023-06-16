@@ -6,28 +6,101 @@ _Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so t
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/DatabaseComponentAndBeanInitializationOrdering.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/DatabaseComponentAndBeanInitializationOrdering.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [Fabian Krüger](56278322+fabapp2@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Patrick](patway99@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="PersistenceConfiguration.java" %}
+
+###### Before
+{% code title="PersistenceConfiguration.java" %}
+```java
+import org.jooq.impl.DSL;
+import org.jooq.DSLContext;
+import org.jooq.SQLDialect;
+import javax.sql.DataSource;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
+
+@Configuration
+class PersistenceConfiguration {
+
+    public static class A { private DataSource ds;}
+
+    @Bean
+    DSLContext dslContext(DataSource ds) {
+        return DSL.using(ds, SQLDialect.SQLITE);
+    }
+
+    @Bean
+    A a() {
+        return new A();
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="PersistenceConfiguration.java" %}
+```java
+import org.jooq.impl.DSL;
+import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
+import org.jooq.DSLContext;
+import org.jooq.SQLDialect;
+import javax.sql.DataSource;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
+
+@Configuration
+class PersistenceConfiguration {
+
+    public static class A { private DataSource ds;}
+
+    @Bean
+    DSLContext dslContext(DataSource ds) {
+        return DSL.using(ds, SQLDialect.SQLITE);
+    }
+
+    @Bean
+    @DependsOnDatabaseInitialization
+    A a() {
+        return new A();
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- PersistenceConfiguration.java
++++ PersistenceConfiguration.java
+@@ -2,0 +2,1 @@
++import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
+@@ -19,0 +20,1 @@
++    @DependsOnDatabaseInitialization
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -39,7 +112,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -53,7 +126,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering</recipe>
@@ -63,7 +136,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -86,6 +159,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Fabian Krüger](56278322+fabapp2@users.noreply.github.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schneider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -10,27 +10,81 @@ _Use `Files#createTempDirectory` when the sequence `File#createTempFile(..)`->`F
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/UseFilesCreateTempDirectory.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/1.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/UseFilesCreateTempDirectory.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 1.25.0
+* version: 2.0.1
 
-## Contributors
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="A.java" %}
+
+###### Before
+{% code title="A.java" %}
+```java
+import java.io.File;
+import java.io.IOException;
+
+class A {
+    void b() throws IOException {
+        File tempDir;
+        tempDir = File.createTempFile("OverridesTest", "dir");
+        tempDir.delete();
+        tempDir.mkdir();
+        System.out.println(tempDir.getAbsolutePath());
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="A.java" %}
+```java
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
+class A {
+    void b() throws IOException {
+        File tempDir;
+        tempDir = Files.createTempDirectory("OverridesTest" + "dir").toFile();
+        System.out.println(tempDir.getAbsolutePath());
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- A.java
++++ A.java
+@@ -3,0 +3,1 @@
++import java.nio.file.Files;
+@@ -7,3 +8,1 @@
+-        tempDir = File.createTempFile("OverridesTest", "dir");
+        tempDir.delete();
+        tempDir.mkdir();
++        tempDir = Files.createTempDirectory("OverridesTest" + "dir").toFile();
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:1.25.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -42,7 +96,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:1.25.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.1")
 }
 ```
 {% endcode %}
@@ -56,7 +110,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.security.UseFilesCreateTempDirectory</recipe>
@@ -66,7 +120,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>1.25.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,6 +143,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

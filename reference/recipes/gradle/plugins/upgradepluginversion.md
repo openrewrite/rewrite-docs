@@ -6,15 +6,11 @@ _Update a Gradle plugin by id to a later version._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -23,6 +19,53 @@ _Update a Gradle plugin by id to a later version._
 | `String` | pluginIdPattern | The `ID` part of `plugin { ID }`, as a glob expression. |
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|pluginIdPattern|`com.jfrog.bintray`|
+|newVersion|`latest.patch`|
+|versionPattern|`null`|
+
+
+{% tabs %}
+{% tab title="build.gradle" %}
+
+###### Before
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id 'com.jfrog.bintray' version '1.7.1'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+```
+{% endcode %}
+
+###### After
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id 'com.jfrog.bintray' version '1.7.3'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- build.gradle
++++ build.gradle
+@@ -2,1 +2,1 @@
+-    id 'com.jfrog.bintray' version '1.7.1'
++    id 'com.jfrog.bintray' version '1.7.3'
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -50,7 +93,7 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -65,6 +108,11 @@ repositories {
 {% endtab %}
 
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

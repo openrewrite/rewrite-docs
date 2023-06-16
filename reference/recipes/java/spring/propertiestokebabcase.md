@@ -2,30 +2,26 @@
 
 **org.openrewrite.java.spring.PropertiesToKebabCase**
 
-_Normalize Spring properties to use lowercase and hyphen-separated syntax. For example, changing `spring.main.showBanner` to `spring.main.show-banner`. With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding), `kebab-case` may be used in properties files and still be converted to configuration beans. Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value("${anExampleValue}")` will not match `an-example-value`. [The Spring reference documentation recommends using `kebab-case` for properties where possible.](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding)._
+_Normalize Spring properties to use lowercase and hyphen-separated syntax. For example, changing `spring.main.showBanner` to `spring.main.show-banner`. With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding), `kebab-case` may be used in properties files and still be converted to configuration beans. Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value("${anExampleValue}")` will not match `an-example-value`. [The Spring reference documentation recommends using `kebab-case` for properties where possible](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding)._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/PropertiesToKebabCase.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/PropertiesToKebabCase.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -37,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -51,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.PropertiesToKebabCase</recipe>
@@ -61,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -100,7 +96,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.PropertiesToKebabCase
 displayName: Normalize Spring properties to kebab-case
-description: Normalize Spring properties to use lowercase and hyphen-separated syntax. For example, changing `spring.main.showBanner` to `spring.main.show-banner`. With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding), `kebab-case` may be used in properties files and still be converted to configuration beans. Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value("${anExampleValue}")` will not match `an-example-value`. [The Spring reference documentation recommends using `kebab-case` for properties where possible.](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding).
+description: Normalize Spring properties to use lowercase and hyphen-separated syntax. For example, changing `spring.main.showBanner` to `spring.main.show-banner`. With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding), `kebab-case` may be used in properties files and still be converted to configuration beans. Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value("${anExampleValue}")` will not match `an-example-value`. [The Spring reference documentation recommends using `kebab-case` for properties where possible](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding).
 recipeList:
   - org.openrewrite.java.spring.PropertiesToKebabCase$PropertiesToKebabCaseYaml
   - org.openrewrite.java.spring.PropertiesToKebabCase$PropertiesToKebabCaseProperties
@@ -108,6 +104,11 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Shannon Pamperl](shanman190@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

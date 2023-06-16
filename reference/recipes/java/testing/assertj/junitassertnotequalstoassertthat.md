@@ -6,33 +6,83 @@ _Convert JUnit-style `assertNotEquals()` to AssertJ's `assertThat().isNotEqualTo
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/JUnitAssertNotEqualsToAssertThat.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/JUnitAssertNotEqualsToAssertThat.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
+* version: 2.0.1
 
-## Contributors
-* [Greg Adams](greg@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="MyTest.java" %}
+
+###### Before
+{% code title="MyTest.java" %}
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+public class MyTest {
+    @Test
+    public void test() {
+        assertNotEquals(1, notification());
+    }
+    private Integer notification() {
+        return 2;
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="MyTest.java" %}
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class MyTest {
+    @Test
+    public void test() {
+        assertThat(notification()).isNotEqualTo(1);
+    }
+    private Integer notification() {
+        return 2;
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- MyTest.java
++++ MyTest.java
+@@ -3,1 +3,1 @@
+-import static org.junit.jupiter.api.Assertions.assertNotEquals;
++import static org.assertj.core.api.Assertions.assertThat;
+@@ -8,1 +8,1 @@
+-        assertNotEquals(1, notification());
++        assertThat(notification()).isNotEqualTo(1);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -44,7 +94,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -58,7 +108,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.JUnitAssertNotEqualsToAssertThat</recipe>
@@ -68,7 +118,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -91,6 +141,16 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Greg Adams](greg@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Tim te Beek](timtebeek@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

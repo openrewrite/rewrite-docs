@@ -2,6 +2,7 @@
 
 ## Categories
 
+* [Amqp](/reference/recipes/java/spring/amqp)
 * [Cloud2022](/reference/recipes/java/spring/cloud2022)
 * [Http](/reference/recipes/java/spring/http)
 * [Search](/reference/recipes/java/spring/search)

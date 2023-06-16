@@ -6,17 +6,11 @@ _Find a YAML property. Nested YAML mappings are interpreted as dot separated pro
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/search/FindProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/search/FindProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -24,6 +18,42 @@ _Find a YAML property. Nested YAML mappings are interpreted as dot separated pro
 | -- | -- | -- |
 | `String` | propertyKey | The key to look for. Glob is supported. |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|propertyKey|`management.metrics.binders.files.enabled`|
+|relaxedBinding|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+management.metrics.binders.files.enabled: true```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+management.metrics.binders.files.enabled: ~~>true```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-management.metrics.binders.files.enabled: true
++management.metrics.binders.files.enabled: ~~>true
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -50,7 +80,7 @@ Now that `com.yourorg.FindPropertyExample` has been defined activate it in your 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -72,7 +102,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindPropertyExample</recipe>
@@ -86,6 +116,12 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -6,14 +6,11 @@ _Alters the name of XML tags matching the provided expression._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.40.6
-
-## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -21,7 +18,52 @@ _Alters the name of XML tags matching the provided expression._
 | -- | -- | -- |
 | `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. |
 | `String` | newName | The new name for the tag. |
-| `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|elementName|`/virtual-patches/enhanced-virtual-patch/whitelist-pattern`|
+|newName|`allowlist-pattern`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```xml
+<virtual-patches>
+    <enhanced-virtual-patch id="evp-name" path="/[request-path]" variable="request.parameters.[paramName]" message="alphabet validation failed" enableAntisamy="false">
+        <whitelist-pattern>^[a-zA-Z]+${'$'}</whitelist-pattern>
+    </enhanced-virtual-patch>
+</virtual-patches>
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```xml
+<virtual-patches>
+    <enhanced-virtual-patch id="evp-name" path="/[request-path]" variable="request.parameters.[paramName]" message="alphabet validation failed" enableAntisamy="false">
+        <allowlist-pattern>^[a-zA-Z]+${'$'}</allowlist-pattern>
+    </enhanced-virtual-patch>
+</virtual-patches>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -3,1 +3,1 @@
+-        <whitelist-pattern>^[a-zA-Z]+${'$'}</whitelist-pattern>
++        <allowlist-pattern>^[a-zA-Z]+${'$'}</allowlist-pattern>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -39,7 +81,6 @@ recipeList:
   - org.openrewrite.xml.ChangeTagName:
       elementName: /settings/servers/server/username
       newName: user
-      fileMatcher: '**/application-*.xml'
 ```
 {% endcode %}
 
@@ -49,7 +90,7 @@ Now that `com.yourorg.ChangeTagNameExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -71,7 +112,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTagNameExample</recipe>
@@ -85,6 +126,9 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Nick McKinney](mckinneynicholas@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

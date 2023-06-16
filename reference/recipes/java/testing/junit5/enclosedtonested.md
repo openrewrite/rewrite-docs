@@ -6,29 +6,97 @@ _Removes the `Enclosed` specification from a class, and adds `Nested` to its inn
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/EnclosedToNested.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/EnclosedToNested.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
+* version: 2.0.1
 
-## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Kyle Scully](scullykns@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="RootTest.java" %}
+
+###### Before
+{% code title="RootTest.java" %}
+```java
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+
+@RunWith(Enclosed.class)
+public class RootTest {
+    public static class InnerTest {
+        @Test
+        public void test() {}
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="RootTest.java" %}
+```java
+ import org.junit.Test;
+ import org.junit.jupiter.api.Nested;
+
+ 
+ 
+ public class RootTest {
+     @Nested
+     public class InnerTest {
+         @Test
+         public void test() {}
+     }
+ }
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- RootTest.java
++++ RootTest.java
+@@ -1,3 +1,2 @@
+-import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
++ import org.junit.Test;
+ import org.junit.jupiter.api.Nested;
+@@ -5,7 +4,9 @@
+-@RunWith(Enclosed.class)
+public class RootTest {
+    public static class InnerTest {
+        @Test
+        public void test() {}
+    }
+}
++ 
+ 
+ public class RootTest {
+     @Nested
+     public class InnerTest {
+         @Test
+         public void test() {}
+     }
+ }
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -40,7 +108,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -54,7 +122,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.EnclosedToNested</recipe>
@@ -64,7 +132,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -87,6 +155,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Kyle Scully](scullykns@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

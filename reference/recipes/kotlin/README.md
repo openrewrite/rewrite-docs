@@ -4,7 +4,9 @@ _Recipes to search and transform Kotlin._
 
 ## Recipes
 
-* [Change type alias](./changetypealias.md)
 * [Find Kotlin sources and collect data metrics](./findkotlinsources.md)
+* [Kotlin Common Static Analysis](./staticanalysis.md)
+* [Kotlin Common Static Analysis](./staticanalysis.md)
+* [Rename type alias](./renametypealias.md)
 
 

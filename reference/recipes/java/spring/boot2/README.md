@@ -50,7 +50,7 @@
 * [Use `ErrorAttributes#getErrorAttributes(WebRequest, ErrorAttributeOptions)`](./geterrorattributes.md)
 * [Use `ErrorProperties#IncludeStacktrace.ON_PARAM`](./migrateerrorpropertiesincludestacktraceconstants.md)
 * [Use `MultipartConfigFactory` with `DataSize` arguments](./migratemultipartconfigfactory.md)
-* [Use `PingHealthIndicator`](./migrateabstracthealthindicatortopinghealthindicator.md)
+* [Use `PingHealthIndicator`](./migrateapplicationhealthindicatortopinghealthindicator.md)
 * [Use `RestClientBuilderCustomizer`](./migraterestclientbuildercustomizerpackagename.md)
 * [Use `RestTemplateBuilder#basicAuthentication`](./migrateresttemplatebuilderbasicauthorization.md)
 * [Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`](./migrateresttemplatebuildertimeoutbyint.md)

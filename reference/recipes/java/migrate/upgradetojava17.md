@@ -11,31 +11,177 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.21.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.21.1
+* version: 2.0.1
 
-## Contributors
-* [Tim te Beek](tim.te.beek@jdriven.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Kun Li](kun@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+## Examples
+##### Example 1
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```java
+package com.abc;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+class A {
+   private static final List<String> staticList = Collections.singletonList("0");
+
+   /* This is a comment */
+   public void test() {
+       // This is a comment
+       Set<String> stringSet = Collections.singleton("aaa");
+       List<String> stringList = Collections.singletonList("bbb");
+       Map<String, Object> stringMap = Collections.singletonMap("a-key", "a-value");
+   }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```java
+package com.abc;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+class A {
+   private static final List<String> staticList = List.of("0");
+
+   /* This is a comment */
+   public void test() {
+       // This is a comment
+       Set<String> stringSet = Set.of("aaa");
+       List<String> stringList = List.of("bbb");
+       Map<String, Object> stringMap = Map.of("a-key", "a-value");
+   }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -3,1 +3,0 @@
+-import java.util.Collections;
+@@ -9,1 +8,1 @@
+-   private static final List<String> staticList = Collections.singletonList("0");
++   private static final List<String> staticList = List.of("0");
+@@ -14,3 +13,3 @@
+-       Set<String> stringSet = Collections.singleton("aaa");
+       List<String> stringList = Collections.singletonList("bbb");
+       Map<String, Object> stringMap = Collections.singletonMap("a-key", "a-value");
++       Set<String> stringSet = Set.of("aaa");
+       List<String> stringList = List.of("bbb");
+       Map<String, Object> stringMap = Map.of("a-key", "a-value");
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```java
+package com.abc;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+class A {
+   private static final List<String> staticList = Collections.singletonList("0");
+
+   /* This is a comment */
+   public void test() {
+       // This is a comment
+       Set<String> stringSet = Collections.singleton("aaa");
+       List<String> stringList = Collections.singletonList("bbb");
+       Map<String, Object> stringMap = Collections.singletonMap("a-key", "a-value");
+   }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```java
+package com.abc;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+class A {
+   private static final List<String> staticList = List.of("0");
+
+   /* This is a comment */
+   public void test() {
+       // This is a comment
+       Set<String> stringSet = Set.of("aaa");
+       List<String> stringList = List.of("bbb");
+       Map<String, Object> stringMap = Map.of("a-key", "a-value");
+   }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -3,1 +3,0 @@
+-import java.util.Collections;
+@@ -9,1 +8,1 @@
+-   private static final List<String> staticList = Collections.singletonList("0");
++   private static final List<String> staticList = List.of("0");
+@@ -14,3 +13,3 @@
+-       Set<String> stringSet = Collections.singleton("aaa");
+       List<String> stringList = Collections.singletonList("bbb");
+       Map<String, Object> stringMap = Collections.singletonMap("a-key", "a-value");
++       Set<String> stringSet = Set.of("aaa");
+       List<String> stringList = List.of("bbb");
+       Map<String, Object> stringMap = Map.of("a-key", "a-value");
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.21.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -47,7 +193,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.21.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
 }
 ```
 {% endcode %}
@@ -61,7 +207,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
@@ -71,7 +217,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.21.1</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -104,7 +250,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Prefer `String#formatted(Object...)`](../../java/migrate/lang/stringformatted.md)
 * [Migrate Lombok to a Java 17 compatible version](../../java/migrate/lombok/updatelomboktojava17.md)
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion.md)
-* [Changes code to use Java 17's `instanceof` pattern matching](../../java/cleanup/instanceofpatternmatch.md)
+* [Changes code to use Java 17's `instanceof` pattern matching](../../staticanalysis/instanceofpatternmatch.md)
 * [Use text blocks](../../java/migrate/lang/usetextblocks.md)
   * convertStringsWithoutNewlines: `true`
 
@@ -127,13 +273,35 @@ recipeList:
   - org.openrewrite.java.migrate.lang.StringFormatted
   - org.openrewrite.java.migrate.lombok.UpdateLombokToJava17
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
-  - org.openrewrite.java.cleanup.InstanceOfPatternMatch
+  - org.openrewrite.staticanalysis.InstanceOfPatternMatch
   - org.openrewrite.java.migrate.lang.UseTextBlocks:
       convertStringsWithoutNewlines: true
 
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Shannon Pamperl](shanman190@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Yeikel](yeikel@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Kun Li](kun@moderne.io)
+* [Aakarshit Uppal](26065812+aksh1618@users.noreply.github.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Tim te Beek](tim@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

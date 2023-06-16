@@ -11,43 +11,225 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
+* version: 2.0.1
 
-## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Tim te Beek](tim.te.beek@jdriven.com)
-* [Greg Adams](gadams@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sofia Britto Schwartz](sofia.b.schwartz@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [Michael Keppler](bananeweizen@gmx.de)
-* [Knut Wannheden](knut@moderne.io)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Kyle Scully](scullykns@gmail.com)
+## Examples
+##### Example 1
+
+
+{% tabs %}
+{% tab title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
+
+###### Before
+{% code title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    @Mock
+    List<String> mockedList;
+
+    @Before
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    @Mock
+    List<String> mockedList;
+
+    @BeforeEach
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- org/openrewrite/java/testing/junit5/MockitoTests.java
++++ org/openrewrite/java/testing/junit5/MockitoTests.java
+@@ -3,2 +3,2 @@
+-import org.junit.Before;
+import org.junit.Test;
++import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+@@ -16,1 +16,1 @@
+-    @Before
++    @BeforeEach
+@@ -22,1 +22,1 @@
+-    public void usingAnnotationBasedMock() {
++    void usingAnnotationBasedMock() {
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+
+{% tabs %}
+{% tab title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
+
+###### Before
+{% code title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    @Mock
+    List<String> mockedList;
+
+    @Before
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
+```java
+package org.openrewrite.java.testing.junit5;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.List;
+
+import static org.mockito.Mockito.verify;
+
+public class MockitoTests {
+    @Mock
+    List<String> mockedList;
+
+    @BeforeEach
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    void usingAnnotationBasedMock() {
+
+        mockedList.add("one");
+        mockedList.clear();
+
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- org/openrewrite/java/testing/junit5/MockitoTests.java
++++ org/openrewrite/java/testing/junit5/MockitoTests.java
+@@ -3,2 +3,2 @@
+-import org.junit.Before;
+import org.junit.Test;
++import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+@@ -16,1 +16,1 @@
+-    @Before
++    @BeforeEach
+@@ -22,1 +22,1 @@
+-    public void usingAnnotationBasedMock() {
++    void usingAnnotationBasedMock() {
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -59,7 +241,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -73,7 +255,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit4to5Migration</recipe>
@@ -83,7 +265,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -113,6 +295,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tab title="Recipe List" %}
 * [Use wiremock extension](../../../java/testing/junit5/usewiremockextension.md)
 * [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled.md)
+* [Use JUnit Jupiter `Executable`](../../../java/testing/junit5/throwingrunnabletoexecutable.md)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners.md)
   * obsoleteRunners: `[org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]`
 * [Remove Maven plugin dependency](../../../maven/removeplugindependency.md)
@@ -137,31 +320,31 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [JUnit 4 `@RunWith(Parameterized.class)` to JUnit Jupiter parameterized tests](../../../java/testing/junit5/parameterizedrunnertoparameterized.md)
 * [Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests](../../../java/testing/junit5/junitparamsrunnertoparameterized.md)
 * [JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`](../../../java/testing/junit5/expectedexceptiontoassertthrows.md)
-* [okhttp3 3.x MockWebserver @Rule To 4.x MockWebServer](../../../java/testing/junit5/updatemockwebserver.md)
-* [Use Vertx JUnit 5 Extension](../../../java/testing/junit5/vertxunittovertxjunit5.md)
+* [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](../../../java/testing/junit5/updatemockwebserver.md)
+* [Use Vert.x JUnit 5 Extension](../../../java/testing/junit5/vertxunittovertxjunit5.md)
 * [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](../../../java/testing/junit5/enclosedtonested.md)
 * [JUnit 5 inner test classes should be annotated with `@Nested`](../../../java/testing/junit5/addmissingnested.md)
 * [Add `org.hamcrest:hamcrest` if it is used.](../../../java/testing/hamcrest/addhamcrestifused.md)
 * [Use OkHttp 3 MockWebServer for JUnit 5](../../../java/testing/junit5/upgradeokhttpmockwebserver.md)
-* [Remove Maven dependency](../../../maven/removedependency.md)
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `junit`
   * artifactId: `junit`
 * [Exclude Maven dependency](../../../maven/excludedependency.md)
   * groupId: `junit`
   * artifactId: `junit`
-* [Remove Maven dependency](../../../maven/removedependency.md)
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `org.junit.vintage`
   * artifactId: `junit-vintage-engine`
 * [Exclude Maven dependency](../../../maven/excludedependency.md)
   * groupId: `org.junit.vintage`
   * artifactId: `junit-vintage-engine`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter`
   * version: `5.x`
   * onlyIfUsing: `org.junit.jupiter.api.Test`
   * acceptTransitive: `true`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter-params`
   * version: `5.x`
@@ -191,6 +374,7 @@ tags:
 recipeList:
   - org.openrewrite.java.testing.junit5.UseWiremockExtension
   - org.openrewrite.java.testing.junit5.IgnoreToDisabled
+  - org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable
   - org.openrewrite.java.testing.junit5.RemoveObsoleteRunners:
       obsoleteRunners: [org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]
   - org.openrewrite.maven.RemovePluginDependency:
@@ -221,25 +405,25 @@ recipeList:
   - org.openrewrite.java.testing.junit5.AddMissingNested
   - org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
   - org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: junit
       artifactId: junit
   - org.openrewrite.maven.ExcludeDependency:
       groupId: junit
       artifactId: junit
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.junit.vintage
       artifactId: junit-vintage-engine
   - org.openrewrite.maven.ExcludeDependency:
       groupId: org.junit.vintage
       artifactId: junit-vintage-engine
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter
       version: 5.x
       onlyIfUsing: org.junit.jupiter.api.Test
       acceptTransitive: true
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter-params
       version: 5.x
@@ -257,6 +441,31 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Greg Adams](gadams@gmail.com)
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Tim te Beek](tim@moderne.io)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Matthias Klauer](matthias.klauer@sap.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sofia Britto Schwartz](sofia.b.schwartz@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Michael Keppler](bananeweizen@gmx.de)
+* [Scott Jungling](scott.jungling@gmail.com)
+* [Tim te Beek](timtebeek@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Kun Li](kun@moderne.io)
+* [Kyle Scully](scullykns@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

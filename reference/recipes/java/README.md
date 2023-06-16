@@ -4,8 +4,7 @@ _Basic building blocks for transforming Java code._
 
 ## Categories
 
-* [Common static analysis issues cleanup](/reference/recipes/java/cleanup)
-* [Controlflow](/reference/recipes/java/controlflow)
+* [Cleanup](/reference/recipes/java/cleanup)
 * [Dependencies](/reference/recipes/java/dependencies)
 * [Format](/reference/recipes/java/format)
 * [JHipster](/reference/recipes/java/jhipster)
@@ -17,10 +16,12 @@ _Basic building blocks for transforming Java code._
 * [Security](/reference/recipes/java/security)
 * [Spring](/reference/recipes/java/spring)
 * [Testing](/reference/recipes/java/testing)
+* [Upgrade](/reference/recipes/java/upgrade)
 
 ## Recipes
 
 * [Add ASLv2 license header](./addapache2licenseheader.md)
+* [Add imports for fully qualified references to types](./shortenfullyqualifiedtypereferences.md)
 * [Add license header](./addlicenseheader.md)
 * [Add or update annotation attribute](./addorupdateannotationattribute.md)
 * [Change method access level](./changemethodaccesslevel.md)
@@ -31,7 +32,6 @@ _Basic building blocks for transforming Java code._
 * [Change type](./changetype.md)
 * [Delete method argument](./deletemethodargument.md)
 * [Demonstrate rendering of `Markup` markers](./recipemarkupdemonstration.md)
-* [Demonstrate rendering of recipe exceptions](./recipeexceptiondemonstration.md)
 * [Order imports](./orderimports.md)
 * [Randomize tree IDs](./randomizeid.md)
 * [Remove annotation](./removeannotation.md)
@@ -47,6 +47,5 @@ _Basic building blocks for transforming Java code._
 * [Transform calls to `Objects.isNull(..)` and `Objects.nonNull(..)`](./removeobjectsisnull.md)
 * [Update source positions](./updatesourcepositions.md)
 * [Use static import](./usestaticimport.md)
-* [Uses `@RewriteSkip` annotation](./doesnotuserewriteskip.md)
 
 

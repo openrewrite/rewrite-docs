@@ -2,20 +2,15 @@
 
 **org.openrewrite.java.ReplaceConstantWithAnotherConstant**
 
-_Replace constant with another constant, adding/removing import on class if needed._
+_Replace a constant with another constant, adding/removing import on class if needed._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceConstantWithAnotherConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceConstantWithAnotherConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [srmalkan](smitmalkan99@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Nick McKinney](mckinneynicholas@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -49,7 +44,7 @@ Now that `com.yourorg.ReplaceConstantWithAnotherConstantExample` has been define
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -71,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceConstantWithAnotherConstantExample</recipe>
@@ -85,6 +80,11 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [srmalkan](smitmalkan99@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

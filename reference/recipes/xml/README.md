@@ -14,6 +14,7 @@ _Basic building blocks for transforming XML._
 * [Change XML Attribute](./changetagattribute.md)
 * [Change XML Tag Name](./changetagname.md)
 * [Change XML tag value](./changetagvalue.md)
+* [Remove XML Tag](./removexmltag.md)
 * [Remove trailing whitespace](./removetrailingwhitespace.md)
 
 

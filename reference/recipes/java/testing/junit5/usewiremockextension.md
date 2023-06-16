@@ -2,34 +2,83 @@
 
 **org.openrewrite.java.testing.junit5.UseWiremockExtension**
 
-_As of 2.31.0, wiremock [supports JUnit 5](http://wiremock.org/docs/junit-jupiter/) via an extension._
+_As of 2.31.0, wiremock [supports JUnit 5](https://wiremock.org/docs/junit-jupiter/) via an extension._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UseWiremockExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UseWiremockExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
+* version: 2.0.1
 
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import org.junit.Rule;
+
+import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
+
+class Test {
+    @Rule
+    public WireMockRule wm = new WireMockRule(options().dynamicHttpsPort());
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
+import org.junit.jupiter.api.extension.RegisterExtension;
+
+import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
+
+class Test {
+    @RegisterExtension
+    public WireMockExtension wm = WireMockExtension.newInstance().options(options().dynamicHttpsPort()).build();
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -1,2 +1,2 @@
+-import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import org.junit.Rule;
++import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
+import org.junit.jupiter.api.extension.RegisterExtension;
+@@ -7,2 +7,2 @@
+-    @Rule
+    public WireMockRule wm = new WireMockRule(options().dynamicHttpsPort());
++    @RegisterExtension
+    public WireMockExtension wm = WireMockExtension.newInstance().options(options().dynamicHttpsPort()).build();
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -41,7 +90,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -55,7 +104,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.UseWiremockExtension</recipe>
@@ -65,7 +114,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -88,6 +137,45 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `com.github.tomakehurst`
+  * artifactId: `wiremock*`
+  * newVersion: `2.x`
+  * overrideManagedVersion: `true`
+  * retainVersions: `[]`
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.testing.junit5.UseWiremockExtension
+displayName: Use wiremock extension
+description: As of 2.31.0, wiremock [supports JUnit 5](https://wiremock.org/docs/junit-jupiter/) via an extension.
+recipeList:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.github.tomakehurst
+      artifactId: wiremock*
+      newVersion: 2.x
+      overrideManagedVersion: true
+      retainVersions: []
+
+```
+{% endtab %}
+{% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Kun Li](kun@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

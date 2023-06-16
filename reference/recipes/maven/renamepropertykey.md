@@ -6,15 +6,11 @@ _Rename the specified Maven project property key leaving the value unchanged._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RenamePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RenamePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Geoffrey De Smet](gds.geoffrey.de.smet@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -22,6 +18,85 @@ _Rename the specified Maven project property key leaving the value unchanged._
 | -- | -- | -- |
 | `String` | oldKey | The old name of the property key to be replaced. |
 | `String` | newKey | The new property name to use. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldKey|`guava.version`|
+|newKey|`version.com.google.guava`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <guava.version>29.0-jre</guava.version>
+  </properties>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <version.com.google.guava>29.0-jre</version.com.google.guava>
+  </properties>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${version.com.google.guava}</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,1 +5,1 @@
+-    <guava.version>29.0-jre</guava.version>
++    <version.com.google.guava>29.0-jre</version.com.google.guava>
+@@ -16,1 +16,1 @@
+-      <version>${guava.version}</version>
++      <version>${version.com.google.guava}</version>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -54,7 +129,7 @@ Now that `com.yourorg.RenamePropertyKeyExample` has been defined activate it in 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RenamePropertyKeyExample</recipe>
@@ -68,6 +143,11 @@ Now that `com.yourorg.RenamePropertyKeyExample` has been defined activate it in 
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Geoffrey De Smet](gds.geoffrey.de.smet@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

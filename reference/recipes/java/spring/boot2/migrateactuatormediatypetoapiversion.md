@@ -6,26 +6,73 @@ _Spring Boot `ActuatorMediaType` was deprecated in 2.5 in favor of `ApiVersion#g
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateActuatorMediaTypeToApiVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateActuatorMediaTypeToApiVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [Patrick](patway99@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="T.java" %}
+
+###### Before
+{% code title="T.java" %}
+```java
+import org.springframework.boot.actuate.endpoint.http.ActuatorMediaType;
+import org.springframework.http.MediaType;
+
+class T {
+    private static final MediaType actuatorMediaType2 = MediaType.parseMediaType(ActuatorMediaType.V2_JSON);
+    private static final MediaType actuatorMediaType3 = MediaType.parseMediaType(ActuatorMediaType.V3_JSON);
+}
+```
+{% endcode %}
+
+###### After
+{% code title="T.java" %}
+```java
+import org.springframework.boot.actuate.endpoint.ApiVersion;
+import org.springframework.http.MediaType;
+
+class T {
+    private static final MediaType actuatorMediaType2 = MediaType.asMediaType(ApiVersion.V2.getProducedMimeType());
+    private static final MediaType actuatorMediaType3 = MediaType.asMediaType(ApiVersion.V3.getProducedMimeType());
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- T.java
++++ T.java
+@@ -1,1 +1,1 @@
+-import org.springframework.boot.actuate.endpoint.http.ActuatorMediaType;
++import org.springframework.boot.actuate.endpoint.ApiVersion;
+@@ -5,2 +5,2 @@
+-    private static final MediaType actuatorMediaType2 = MediaType.parseMediaType(ActuatorMediaType.V2_JSON);
+    private static final MediaType actuatorMediaType3 = MediaType.parseMediaType(ActuatorMediaType.V3_JSON);
++    private static final MediaType actuatorMediaType2 = MediaType.asMediaType(ApiVersion.V2.getProducedMimeType());
+    private static final MediaType actuatorMediaType3 = MediaType.asMediaType(ApiVersion.V3.getProducedMimeType());
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -37,7 +84,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -51,7 +98,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.MigrateActuatorMediaTypeToApiVersion</recipe>
@@ -61,7 +108,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -84,6 +131,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick](patway99@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

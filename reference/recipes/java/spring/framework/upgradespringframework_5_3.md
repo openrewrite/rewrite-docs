@@ -6,30 +6,22 @@ _Migrate applications to the latest Spring Framework 5.3 release._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-framework-53.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-framework-53.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Patrick](patway99@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -41,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -55,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3</recipe>
@@ -65,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -99,18 +91,18 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Use `ObjectUtils#isEmpty(Object)`](../../../java/spring/framework/useobjectutilsisempty.md)
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](../../../java/spring/framework/migrateinstantiationawarebeanpostprocessoradapter.md)
 * [Use varargs equivalents for deprecated JdbcTemplate signatures](../../../java/spring/framework/jdbctemplateobjectarrayargtovarargs.md)
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.hibernate`
   * artifactId: `hibernate-search-orm`
   * newVersion: `5.11.x`
-  * overrideManagedVersion: `true`
-* [Remove Maven dependency](../../../maven/removedependency.md)
+  * overrideManagedVersion: `false`
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `org.aspectj`
   * artifactId: `aspectjrt`
-* [Remove Maven dependency](../../../maven/removedependency.md)
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `aopalliance`
   * artifactId: `aopalliance`
-* [Remove Maven dependency](../../../maven/removedependency.md)
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `cglib`
   * artifactId: `cglib`
 
@@ -130,24 +122,36 @@ recipeList:
   - org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty
   - org.openrewrite.java.spring.framework.MigrateInstantiationAwareBeanPostProcessorAdapter
   - org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.hibernate
       artifactId: hibernate-search-orm
       newVersion: 5.11.x
-      overrideManagedVersion: true
-  - org.openrewrite.maven.RemoveDependency:
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.aspectj
       artifactId: aspectjrt
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: aopalliance
       artifactId: aopalliance
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: cglib
       artifactId: cglib
 
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick](patway99@gmail.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Kun Li](kun@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

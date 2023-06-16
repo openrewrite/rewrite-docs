@@ -6,24 +6,76 @@ _Removes the specified Maven project property from the pom.xml._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Greg Adams](greg@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | propertyName | Key name of the property to remove. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|propertyName|`bla.version`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <properties>
+    <a.version>a</a.version>
+    <bla.version>b</bla.version>
+  </properties>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <properties>
+    <a.version>a</a.version>
+  </properties>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -10,1 +10,0 @@
+-    <bla.version>b</bla.version>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -55,7 +107,7 @@ Now that `com.yourorg.RemovePropertyExample` has been defined activate it in you
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemovePropertyExample</recipe>
@@ -69,6 +121,13 @@ Now that `com.yourorg.RemovePropertyExample` has been defined activate it in you
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Greg Adams](greg@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

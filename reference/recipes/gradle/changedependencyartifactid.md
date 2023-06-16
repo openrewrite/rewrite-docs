@@ -6,18 +6,11 @@ _Change the artifact of a specified Gradle dependency._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.40.6
-
-## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Patrick](patway99@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -27,6 +20,68 @@ _Change the artifact of a specified Gradle dependency._
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | newArtifactId | The new artifactId to use. |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`org.springframework.boot`|
+|artifactId|`spring-boot-starter`|
+|newArtifactId|`new-starter`|
+|configuration|``|
+
+
+{% tabs %}
+{% tab title="build.gradle" %}
+
+###### Before
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
+}
+```
+{% endcode %}
+
+###### After
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:new-starter:2.5.4'
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,1 +10,1 @@
+-    implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
++    implementation 'org.springframework.boot:new-starter:2.5.4'
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -55,7 +110,7 @@ Now that `com.yourorg.ChangeDependencyArtifactIdExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -70,6 +125,14 @@ repositories {
 {% endtab %}
 
 {% endtabs %}
+## Contributors
+* [Sam Snyder](sam@moderne.io)
+* [Shannon Pamperl](shanman190@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Geoffrey De Smet](gds.geoffrey.de.smet@gmail.com)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Patrick](patway99@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

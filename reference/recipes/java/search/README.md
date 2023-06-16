@@ -25,9 +25,6 @@
 * [Find uses of deprecated classes, methods, and fields](./finddeprecateduses.md)
 * [Find uses of deprecated fields](./finddeprecatedfields.md)
 * [Find uses of deprecated methods](./finddeprecatedmethods.md)
-* [Finds flow between two methods](./findflowbetweenmethods.md)
-* [List potentially dead code by declared method](./potentiallydeadcode.md)
 * [Result of method call ignored](./resultofmethodcallignored.md)
-* [URIs created with an HTTP scheme](./uricreatedwithhttpscheme.md)
 
 

@@ -6,18 +6,58 @@ _These files are used to suppress false positives in OWASP [Dependency Check](ht
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/IsOwaspSuppressionsFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/IsOwaspSuppressionsFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.40.6
+* version: 8.1.2
 
 ## Example
-* Example 1: 
 
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Kevin McCarpenter™️](kevin@moderne.io)
+
+{% tabs %}
+{% tab title="suppressions.xml" %}
+
+###### Before
+{% code title="suppressions.xml" %}
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress>
+        <notes>
+        </notes>
+    </suppress>
+</suppressions>```
+{% endcode %}
+
+###### After
+{% code title="suppressions.xml" %}
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--~~(Found it)~~>--><suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress>
+        <notes>
+        </notes>
+    </suppress>
+</suppressions>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- suppressions.xml
++++ suppressions.xml
+@@ -2,1 +2,1 @@
+-<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
++<!--~~(Found it)~~>--><suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+@@ -8,0 +8,1 @@
++
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -28,7 +68,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -51,7 +91,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.xml.security.IsOwaspSuppressionsFile</recipe>
@@ -75,6 +115,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Kevin McCarpenter™️](kevin@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

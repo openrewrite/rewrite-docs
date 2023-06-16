@@ -6,18 +6,11 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Knut Wannheden](knut@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -31,6 +24,178 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `Boolean` | allowVersionDowngrades | *Optional*. If the new parent has the same group/artifact, this flag can be used to only upgrade the version if the target version is newer than the current. |
 | `List` | retainVersions | *Optional*. Accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management in the new parent pom, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Maven metadata failures
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+
+## Examples
+##### Example 1
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldGroupId|`org.springframework.boot`|
+|newGroupId|`com.fasterxml.jackson`|
+|oldArtifactId|`spring-boot-starter-parent`|
+|newArtifactId|`jackson-parent`|
+|newVersion|`2.12`|
+|versionPattern|`null`|
+|allowVersionDowngrades|`false`|
+|retainVersions|`null`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.12.RELEASE</version>
+  </parent>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.fasterxml.jackson</groupId>
+    <artifactId>jackson-parent</artifactId>
+    <version>2.12</version>
+  </parent>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,3 +5,3 @@
+-    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.12.RELEASE</version>
++    <groupId>com.fasterxml.jackson</groupId>
+    <artifactId>jackson-parent</artifactId>
+    <version>2.12</version>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldGroupId|`org.springframework.cloud`|
+|newGroupId|`null`|
+|oldArtifactId|`spring-cloud-config-dependencies`|
+|newArtifactId|`null`|
+|newVersion|`3.1.4`|
+|versionPattern|`null`|
+|allowVersionDowngrades|`null`|
+|retainVersions|`List.of("com.jcraft:jsch")`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sample</groupId>
+  <artifactId>sample</artifactId>
+  <version>1.0.0</version>
+
+  <parent>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-config-dependencies</artifactId>
+    <version>3.1.2</version>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jsch</artifactId>
+      <version>0.1.55</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sample</groupId>
+  <artifactId>sample</artifactId>
+  <version>1.0.0</version>
+
+  <parent>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-config-dependencies</artifactId>
+    <version>3.1.4</version>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.jcraft</groupId>
+      <artifactId>jsch</artifactId>
+      <version>0.1.55</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -11,1 +11,1 @@
+-    <version>3.1.2</version>
++    <version>3.1.4</version>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -69,7 +234,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeParentPomExample</recipe>
@@ -83,6 +248,14 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

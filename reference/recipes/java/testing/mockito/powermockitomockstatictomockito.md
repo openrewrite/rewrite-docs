@@ -6,27 +6,116 @@ _Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`. Removes the `@P
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/PowerMockitoMockStaticToMockito.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/PowerMockitoMockStaticToMockito.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
+* version: 2.0.1
 
-## Contributors
-* [Matthias Klauer](matthias.klauer@sap.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+## Example
+
+
+{% tabs %}
+{% tab title="MyTest.java" %}
+
+###### Before
+{% code title="MyTest.java" %}
+```java
+import static org.mockito.Mockito.mockStatic;
+
+import java.util.Calendar;
+
+import org.junit.jupiter.api.Test;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+
+@PrepareForTest({Calendar.class})
+public class MyTest {
+
+    @Test
+    void testStaticMethod() {
+        mockStatic(Calendar.class);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="MyTest.java" %}
+```java
+import static org.mockito.Mockito.mockStatic;
+
+import java.util.Calendar;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+
+public class MyTest {
+
+    private MockedStatic<Calendar> mockedCalendar;
+
+    @BeforeEach
+    void setUpStaticMocks() {
+        mockedCalendar = mockStatic(Calendar.class);
+    }
+
+    @AfterEach
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+    }
+
+    @Test
+    void testStaticMethod() {
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- MyTest.java
++++ MyTest.java
+@@ -5,0 +5,2 @@
++import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+@@ -6,1 +8,1 @@
+-import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.mockito.MockedStatic;
+@@ -8,1 +10,0 @@
+-@PrepareForTest({Calendar.class})
+@@ -11,0 +12,12 @@
++    private MockedStatic<Calendar> mockedCalendar;
+
+    @BeforeEach
+    void setUpStaticMocks() {
+        mockedCalendar = mockStatic(Calendar.class);
+    }
+
+    @AfterEach
+    void tearDownStaticMocks() {
+        mockedCalendar.closeOnDemand();
+    }
+
+@@ -13,1 +26,0 @@
+-        mockStatic(Calendar.class);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -38,7 +127,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -52,7 +141,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito</recipe>
@@ -62,7 +151,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,6 +174,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Matthias Klauer](matthias.klauer@sap.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

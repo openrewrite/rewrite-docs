@@ -6,21 +6,60 @@ _Find a Gradle plugin by id._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindPlugins.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindPlugins.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Shannon Pamperl](shanman190@gmail.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | pluginId | The `ID` part of `plugin { ID }`. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|pluginId|`com.jfrog.bintray`|
+
+
+{% tabs %}
+{% tab title="build.gradle" %}
+
+###### Before
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id 'com.jfrog.bintray' version '1.8.5'
+}
+```
+{% endcode %}
+
+###### After
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    /*~~>*/id 'com.jfrog.bintray' version '1.8.5'
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- build.gradle
++++ build.gradle
+@@ -2,1 +2,1 @@
+-    id 'com.jfrog.bintray' version '1.8.5'
++    /*~~>*/id 'com.jfrog.bintray' version '1.8.5'
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -46,7 +85,7 @@ Now that `com.yourorg.FindPluginsExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -61,6 +100,10 @@ repositories {
 {% endtab %}
 
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Shannon Pamperl](shanman190@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

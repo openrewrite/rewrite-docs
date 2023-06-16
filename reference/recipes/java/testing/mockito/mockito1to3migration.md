@@ -11,36 +11,211 @@ _Upgrade Mockito from 1.x to 3.x._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/1.37.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 1.37.0
+* version: 2.0.1
 
-## Contributors
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Greg Adams](gadams@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tim te Beek](tim@moderne.io)
-* [Greg Adams](greg@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Michael Keppler](bananeweizen@gmx.de)
+## Examples
+##### Example 1
+
+
+{% tabs %}
+{% tab title="mockito/example/MockitoVarargMatcherTest.java" %}
+
+###### Before
+{% code title="mockito/example/MockitoVarargMatcherTest.java" %}
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyListOf;
+import static org.mockito.ArgumentMatchers.anySetOf;
+import static org.mockito.ArgumentMatchers.anyMapOf;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="mockito/example/MockitoVarargMatcherTest.java" %}
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anySet;
+import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyList())).thenReturn(true);
+        when(mockFoo.addSet(anySet())).thenReturn(true);
+        when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- mockito/example/MockitoVarargMatcherTest.java
++++ mockito/example/MockitoVarargMatcherTest.java
+@@ -7,3 +7,3 @@
+-import static org.mockito.ArgumentMatchers.anyListOf;
+import static org.mockito.ArgumentMatchers.anySetOf;
+import static org.mockito.ArgumentMatchers.anyMapOf;
++import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anySet;
+import static org.mockito.ArgumentMatchers.anyMap;
+@@ -21,3 +21,3 @@
+-        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
++        when(mockFoo.addList(anyList())).thenReturn(true);
+        when(mockFoo.addSet(anySet())).thenReturn(true);
+        when(mockFoo.addMap(anyMap())).thenReturn(true);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+
+{% tabs %}
+{% tab title="mockito/example/MockitoVarargMatcherTest.java" %}
+
+###### Before
+{% code title="mockito/example/MockitoVarargMatcherTest.java" %}
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyListOf;
+import static org.mockito.ArgumentMatchers.anySetOf;
+import static org.mockito.ArgumentMatchers.anyMapOf;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="mockito/example/MockitoVarargMatcherTest.java" %}
+```java
+package mockito.example;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anySet;
+import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+public class MockitoVarargMatcherTest {
+    public static class Foo {
+        public boolean addList(List<String> strings) { return true; }
+        public boolean addSet(Set<String> strings) { return true; }
+        public boolean addMap(Map<String, String> stringStringMap) { return true; }
+    }
+    public void usesVarargMatcher() {
+        Foo mockFoo = mock(Foo.class);
+        when(mockFoo.addList(anyList())).thenReturn(true);
+        when(mockFoo.addSet(anySet())).thenReturn(true);
+        when(mockFoo.addMap(anyMap())).thenReturn(true);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- mockito/example/MockitoVarargMatcherTest.java
++++ mockito/example/MockitoVarargMatcherTest.java
+@@ -7,3 +7,3 @@
+-import static org.mockito.ArgumentMatchers.anyListOf;
+import static org.mockito.ArgumentMatchers.anySetOf;
+import static org.mockito.ArgumentMatchers.anyMapOf;
++import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anySet;
+import static org.mockito.ArgumentMatchers.anyMap;
+@@ -21,3 +21,3 @@
+-        when(mockFoo.addList(anyListOf(String.class))).thenReturn(true);
+        when(mockFoo.addSet(anySetOf(String.class))).thenReturn(true);
+        when(mockFoo.addMap(anyMapOf(String.class, String.class))).thenReturn(true);
++        when(mockFoo.addList(anyList())).thenReturn(true);
+        when(mockFoo.addSet(anySet())).thenReturn(true);
+        when(mockFoo.addMap(anyMap())).thenReturn(true);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -52,7 +227,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:1.37.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
 }
 ```
 {% endcode %}
@@ -66,7 +241,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.Mockito1to3Migration</recipe>
@@ -76,7 +251,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>1.37.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -175,13 +350,14 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports.md)
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic.md)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension.md)
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.mockito`
   * artifactId: `mockito-junit-jupiter`
   * version: `3.x`
   * onlyIfUsing: `org.mockito.junit.jupiter.MockitoExtension`
   * acceptTransitive: `true`
-* [Upgrade Maven dependency version](../../../maven/upgradedependencyversion.md)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.mockito`
   * artifactId: `*`
   * newVersion: `3.x`
@@ -270,13 +446,14 @@ recipeList:
   - org.openrewrite.java.testing.mockito.CleanupMockitoImports
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.testing.mockito.ReplacePowerMockito
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.mockito
       artifactId: mockito-junit-jupiter
       version: 3.x
       onlyIfUsing: org.mockito.junit.jupiter.MockitoExtension
       acceptTransitive: true
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
       artifactId: *
       newVersion: 3.x
@@ -284,6 +461,22 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Tim te Beek](tim@moderne.io)
+* [Matthias Klauer](matthias.klauer@sap.com)
+* [Greg Adams](gadams@gmail.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Tim te Beek](timtebeek@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -10,17 +10,57 @@ _Checks for over-complicated boolean expressions. Finds code like `if (b == true
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/SimplifyBooleanExpression.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/SimplifyBooleanExpression.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
+* version: 8.1.2
 
-## Contributors
-* [Aaron Gershman](aegershman@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Sam Snyder](sam@moderne.io)
+## Example
+
+
+{% tabs %}
+{% tab title="A.java" %}
+
+###### Before
+{% code title="A.java" %}
+```java
+public class A {
+    boolean a;
+    {
+        if(true == a) {
+        }
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="A.java" %}
+```java
+public class A {
+    boolean a;
+    {
+        if(a) {
+        }
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- A.java
++++ A.java
+@@ -4,1 +4,1 @@
+-        if(true == a) {
++        if(a) {
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -31,7 +71,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -54,7 +94,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.cleanup.SimplifyBooleanExpression</recipe>
@@ -78,6 +118,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

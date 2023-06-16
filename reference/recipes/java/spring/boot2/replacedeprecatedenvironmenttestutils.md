@@ -6,30 +6,82 @@ _Replaces any references to the deprecated `EnvironmentTestUtils` with `TestProp
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/ReplaceDeprecatedEnvironmentTestUtils.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/ReplaceDeprecatedEnvironmentTestUtils.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
+* version: 5.0.1
 
-## Contributors
-* [Kevin McCarpenter](kevin@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Nick McKinney](mckinneynichoals@gmail.com)
+## Example
+
+
+{% tabs %}
+{% tab title="com/mycompany/MyClass.java" %}
+
+###### Before
+{% code title="com/mycompany/MyClass.java" %}
+```java
+package com.mycompany;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import static org.springframework.boot.test.util.EnvironmentTestUtils.addEnvironment;
+
+public class MyClass {
+    public void myMethod() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        String pair = "pair";
+        addEnvironment(context, pair);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="com/mycompany/MyClass.java" %}
+```java
+package com.mycompany;
+
+import org.springframework.boot.test.util.TestPropertyValues;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class MyClass {
+    public void myMethod() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        String pair = "pair";
+        TestPropertyValues.of(pair).applyTo(context);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- com/mycompany/MyClass.java
++++ com/mycompany/MyClass.java
+@@ -3,0 +3,1 @@
++import org.springframework.boot.test.util.TestPropertyValues;
+@@ -4,1 +5,0 @@
+-import static org.springframework.boot.test.util.EnvironmentTestUtils.addEnvironment;
+@@ -10,1 +10,1 @@
+-        addEnvironment(context, pair);
++        TestPropertyValues.of(pair).applyTo(context);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -41,7 +93,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -55,7 +107,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils</recipe>
@@ -65,7 +117,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -88,6 +140,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Kevin McCarpenter](kevin@moderne.io)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Patrick](patway99@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

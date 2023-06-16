@@ -2,30 +2,22 @@
 
 **org.openrewrite.maven.AddDependency**
 
-_Add a maven dependency to a `pom.xml` file in the correct scope based on where it is used._
+_Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Thomas Zub](thomas.zub@outlook.de)
-* [Tyler Van Gorder](1878529+tkvangorder@users.noreply.github.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
 | `String` | version | An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `String` | scope | *Optional*. A scope to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a runtime, provided, or import dependency. |
@@ -36,6 +28,15 @@ _Add a maven dependency to a `pom.xml` file in the correct scope based on where 
 | `Boolean` | optional | *Optional*. Set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |
 | `String` | familyPattern | *Optional*. A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. |
 | `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. |
+
+## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+
+### Maven metadata failures
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
 
 
 ## Usage
@@ -78,7 +79,7 @@ Now that `com.yourorg.AddDependencyExample` has been defined activate it in your
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddDependencyExample</recipe>

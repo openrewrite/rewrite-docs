@@ -1,6 +1,6 @@
-# Github Actions
+# GitHub Actions
 
-_Recipes to perform [Github Actions](https://docs.github.com/en/actions) hygiene and migration tasks._
+_Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene and migration tasks._
 
 ## Recipes
 

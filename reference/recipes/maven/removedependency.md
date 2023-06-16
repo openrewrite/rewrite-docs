@@ -6,26 +6,98 @@ _Removes a single dependency from the <dependencies> section of the pom.xml._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 7.40.6
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Sam Snyder](sam@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Patrick Way](pway99@users.noreply.github.com)
+* version: 8.1.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'com.google.guava:guava:VERSION'. |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
 | `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|groupId|`junit`|
+|artifactId|`junit`|
+|scope|`null`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -14,6 +14,0 @@
+-    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -59,7 +131,7 @@ Now that `com.yourorg.RemoveDependencyExample` has been defined activate it in y
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveDependencyExample</recipe>
@@ -73,6 +145,14 @@ Now that `com.yourorg.RemoveDependencyExample` has been defined activate it in y
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Greg Adams](greg@moderne.io)
+* [Sam Snyder](sam@moderne.io)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

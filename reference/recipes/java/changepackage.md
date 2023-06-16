@@ -6,23 +6,11 @@ _A recipe that will rename a package name in package statements, imports, and fu
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Example
-* Example 1: 
-
-## Contributors
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Roberto Cortez](radcortez@yahoo.com)
+* version: 8.1.2
 
 ## Options
 
@@ -31,6 +19,212 @@ _A recipe that will rename a package name in package statements, imports, and fu
 | `String` | oldPackageName | The package name to replace. |
 | `String` | newPackageName | New package name to replace the old package name with. |
 | `Boolean` | recursive | *Optional*. Recursively change subpackage names |
+
+## Examples
+##### Example 1
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPackageName|`a.b`|
+|newPackageName|`x.y`|
+|recursive|`false`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```kotlin
+package a.b
+class Original
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```kotlin
+package x.y
+class Original
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-package a.b
++package x.y
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```kotlin
+import a.b.Original
+
+class A {
+    val type = Original()
+}
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```kotlin
+import x.y.Original
+
+class A {
+    val type = Original()
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-import a.b.Original
++import x.y.Original
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPackageName|`a.b`|
+|newPackageName|`x.y`|
+|recursive|`false`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```groovy
+package a.b
+class Original {}
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```groovy
+package x.y
+class Original {}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-package a.b
++package x.y
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```groovy
+import a.b.Original
+
+class A {
+    Original type
+}
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```groovy
+import x.y.Original
+
+class A {
+    Original type
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -1,1 +1,1 @@
+-import a.b.Original
++import x.y.Original
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 3
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldPackageName|`org.openrewrite`|
+|newPackageName|`openrewrite`|
+|recursive|`false`|
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import org.openrewrite.Foo;
+class Test {
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import openrewrite.Foo;
+class Test {
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -1,1 +1,1 @@
+-import org.openrewrite.Foo;
++import openrewrite.Foo;
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -58,7 +252,7 @@ Now that `com.yourorg.ChangePackageExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -80,7 +274,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePackageExample</recipe>
@@ -94,6 +288,15 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Roberto Cortez](radcortez@yahoo.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

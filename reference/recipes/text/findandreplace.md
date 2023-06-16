@@ -6,17 +6,11 @@ _Simple text find and replace. When the original source file is a language-speci
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/FindAndReplace.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/FindAndReplace.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 7.40.6
-
-## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -25,7 +19,45 @@ _Simple text find and replace. When the original source file is a language-speci
 | `String` | find | The text to find (and replace). |
 | `String` | replace | The replacement text for `find`. |
 | `Boolean` | regex | *Optional*. Default false. If true, `find` will be interpreted as a Regular Expression, and capture group contents will be available in `replace`. |
-| `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|find|`Test`|
+|replace|`Replaced`|
+|regex|`null`|
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+class Test {}```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+class Replaced {}```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -1,1 +1,1 @@
+-class Test {}
++class Replaced {}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -44,7 +76,6 @@ recipeList:
       find: blacklist
       replace: denylist
       regex: null
-      fileMatcher: foo/bar/baz.txt
 ```
 {% endcode %}
 
@@ -54,7 +85,7 @@ Now that `com.yourorg.FindAndReplaceExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -76,7 +107,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindAndReplaceExample</recipe>
@@ -90,6 +121,11 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

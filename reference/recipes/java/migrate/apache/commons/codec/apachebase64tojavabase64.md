@@ -11,28 +11,116 @@ _Prefer the Java standard library's `java.util.Base64` over third-party usage of
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/codec/ApacheBase64ToJavaBase64.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.21.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/codec/ApacheBase64ToJavaBase64.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.21.1
+* version: 2.0.1
 
-## Contributors
-* [Patrick](patway99@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+## Example
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import org.apache.commons.codec.binary.Base64;
+
+class Test {
+    static byte[] decodeBytes(byte[] encodedBytes) {
+        return Base64.decodeBase64(encodedBytes);
+    }
+    static byte[] decodeToBytes(String encodedString) {
+        return Base64.decodeBase64(encodedString);
+    }
+    static String encodeToString(byte[] decodedByteArr) {
+        return Base64.encodeBase64String(decodedByteArr);
+    }
+    static byte[] encodeBase64(byte[] binaryData) {
+        return Base64.encodeBase64(binaryData);
+    }
+    static byte[] encodeBytesUrlSafe(byte [] encodeBytes) {
+        return Base64.encodeBase64URLSafe(encodeBytes);
+    }
+    static String encodeBytesUrlSafeString(byte [] encodeBytes) {
+        return Base64.encodeBase64URLSafeString(encodeBytes);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import java.util.Base64;
+
+class Test {
+    static byte[] decodeBytes(byte[] encodedBytes) {
+        return Base64.getDecoder().decode(encodedBytes);
+    }
+    static byte[] decodeToBytes(String encodedString) {
+        return Base64.getDecoder().decode(encodedString);
+    }
+    static String encodeToString(byte[] decodedByteArr) {
+        return Base64.getEncoder().encodeToString(decodedByteArr);
+    }
+    static byte[] encodeBase64(byte[] binaryData) {
+        return Base64.getEncoder().encode(binaryData);
+    }
+    static byte[] encodeBytesUrlSafe(byte [] encodeBytes) {
+        return Base64.getUrlEncoder().withoutPadding().encode(encodeBytes);
+    }
+    static String encodeBytesUrlSafeString(byte [] encodeBytes) {
+        return Base64.getUrlEncoder().withoutPadding().encodeToString(encodeBytes);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -1,1 +1,1 @@
+-import org.apache.commons.codec.binary.Base64;
++import java.util.Base64;
+@@ -5,1 +5,1 @@
+-        return Base64.decodeBase64(encodedBytes);
++        return Base64.getDecoder().decode(encodedBytes);
+@@ -8,1 +8,1 @@
+-        return Base64.decodeBase64(encodedString);
++        return Base64.getDecoder().decode(encodedString);
+@@ -11,1 +11,1 @@
+-        return Base64.encodeBase64String(decodedByteArr);
++        return Base64.getEncoder().encodeToString(decodedByteArr);
+@@ -14,1 +14,1 @@
+-        return Base64.encodeBase64(binaryData);
++        return Base64.getEncoder().encode(binaryData);
+@@ -17,1 +17,1 @@
+-        return Base64.encodeBase64URLSafe(encodeBytes);
++        return Base64.getUrlEncoder().withoutPadding().encode(encodeBytes);
+@@ -20,1 +20,1 @@
+-        return Base64.encodeBase64URLSafeString(encodeBytes);
++        return Base64.getUrlEncoder().withoutPadding().encodeToString(encodeBytes);
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.21.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -44,7 +132,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.21.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
 }
 ```
 {% endcode %}
@@ -58,7 +146,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.apache.commons.codec.ApacheBase64ToJavaBase64</recipe>
@@ -68,7 +156,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.21.1</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -91,6 +179,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Patrick](patway99@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

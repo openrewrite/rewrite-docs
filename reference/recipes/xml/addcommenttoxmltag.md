@@ -6,15 +6,11 @@ _Adds a comment as the first element in a `XML` tag._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddCommentToXmlTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddCommentToXmlTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 7.40.6
-
-## Contributors
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* version: 8.1.2
 
 ## Options
 
@@ -22,6 +18,82 @@ _Adds a comment as the first element in a `XML` tag._
 | -- | -- | -- |
 | `String` | xPath | An XPath expression used to find matching tags. |
 | `String` | commentText | The text to add as a comment.. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|xPath|`/project/dependencies/`|
+|commentText|` Comment text `|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <dependencies>
+    <!-- Comment text -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,0 +7,1 @@
++    <!-- Comment text -->
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -48,7 +120,7 @@ Now that `com.yourorg.AddCommentToXmlTagExample` has been defined activate it in
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -70,7 +142,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCommentToXmlTagExample</recipe>
@@ -84,6 +156,11 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

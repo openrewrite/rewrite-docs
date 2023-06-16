@@ -16,6 +16,7 @@ _Basic building blocks for transforming YAML._
 * [Change property key](./changepropertykey.md)
 * [Change value](./changevalue.md)
 * [Coalesce YAML properties](./coalesceproperties.md)
+* [Comment out property](./commentoutproperty.md)
 * [Copy YAML value](./copyvalue.md)
 * [Delete key](./deletekey.md)
 * [Delete property](./deleteproperty.md)

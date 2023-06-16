@@ -6,15 +6,11 @@ _Removes `implements` clauses from classes implementing the specified interface.
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveImplements.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/7.40.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveImplements.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 7.40.6
-
-## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
+* version: 8.1.2
 
 ## Options
 
@@ -22,6 +18,52 @@ _Removes `implements` clauses from classes implementing the specified interface.
 | -- | -- | -- |
 | `String` | interfaceType | The fully qualified name of the interface to remove. |
 | `String` | filter | Only apply the interface removal to classes with fully qualified names that begin with this filter. `null` or empty matches all classes. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|interfaceType|`java.io.Serializable`|
+|filter|`null`|
+
+
+{% tabs %}
+{% tab title="A.java" %}
+
+###### Before
+{% code title="A.java" %}
+```java
+import java.io.Serializable;
+
+class A implements Serializable {
+}
+```
+{% endcode %}
+
+###### After
+{% code title="A.java" %}
+```java
+class A {
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- A.java
++++ A.java
+@@ -1,3 +1,1 @@
+-import java.io.Serializable;
+
+class A implements Serializable {
++class A {
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -48,7 +90,7 @@ Now that `com.yourorg.RemoveImplementsExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -70,7 +112,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveImplementsExample</recipe>
@@ -84,6 +126,10 @@ repositories {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

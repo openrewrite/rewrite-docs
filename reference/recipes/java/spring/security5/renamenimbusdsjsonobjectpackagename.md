@@ -11,22 +11,22 @@ _Rename the package name from `com.nimbusds.jose.shaded.json.JSONObject` to `net
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.37.0-SNAPSHOT/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.37.0-SNAPSHOT
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.37.0-SNAPSHOT` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.6")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.37.0-SNAPSHOT")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.46.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.37.0-SNAPSHOT</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -94,7 +94,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * oldPackageName: `com.nimbusds.jose.shaded.json`
   * newPackageName: `net.minidev.json`
   * recursive: `false`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `net.minidev`
   * artifactId: `json-smart`
   * version: `2.x`
@@ -117,7 +117,7 @@ recipeList:
       oldPackageName: com.nimbusds.jose.shaded.json
       newPackageName: net.minidev.json
       recursive: false
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: net.minidev
       artifactId: json-smart
       version: 2.x

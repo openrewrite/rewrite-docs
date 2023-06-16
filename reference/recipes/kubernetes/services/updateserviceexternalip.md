@@ -6,16 +6,11 @@ _Swap out an IP address with another one in `Service` `externalIP` settings._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/UpdateServiceExternalIP.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/1.30.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/UpdateServiceExternalIP.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 1.30.0
-
-## Contributors
-* [Jon Brisbin](jon@jbrisbin.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
+* version: 2.0.1
 
 ## Options
 
@@ -24,6 +19,71 @@ _Swap out an IP address with another one in `Service` `externalIP` settings._
 | `String` | ipToFind | An `externalIP` address to find in the service's external IPs. |
 | `String` | ipToUpdate | An `externalIP` address to update to in the service's external IPs. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|ipToFind|`192.168.0.1`|
+|ipToUpdate|`10.10.0.1`|
+|fileMatcher|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: MyApp
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 9376
+  externalIPs:
+    - 192.168.0.1
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: MyApp
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 9376
+  externalIPs:
+    - 10.10.0.1
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -14,1 +14,1 @@
+-    - 192.168.0.1
++    - 10.10.0.1
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -45,13 +105,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateServiceExternalIPExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:1.30.0 in your build file:
+Now that `com.yourorg.UpdateServiceExternalIPExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -63,7 +123,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:1.30.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
 }
 ```
 {% endcode %}
@@ -77,7 +137,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateServiceExternalIPExample</recipe>
@@ -87,7 +147,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>1.30.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -98,6 +158,12 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jon Brisbin](jon@jbrisbin.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

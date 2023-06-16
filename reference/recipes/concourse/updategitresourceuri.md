@@ -6,15 +6,11 @@ _Update git resource `source.uri` URI values to point to a new URI value._
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/UpdateGitResourceUri.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/1.19.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/UpdateGitResourceUri.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 1.19.0
-
-## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
+* version: 2.0.1
 
 ## Options
 
@@ -23,6 +19,61 @@ _Update git resource `source.uri` URI values to point to a new URI value._
 | `String` | oldURIPattern | *Optional*. The old URI value to replace. This can be a regex pattern. If left empty, replace all occurrences. |
 | `String` | newURI | New URI value to replace the old URI value with. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|oldURIPattern|`https://github.com/openrewrite/rewrite0`|
+|newURI|`git@github.com:openrewrite/rewrite1.git`|
+|fileMatcher|`null`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+resources:
+- name: git-repo
+  type: git
+  source:
+    uri: https://github.com/openrewrite/rewrite0
+- name: custom
+  type: custom-type
+  source:
+    uri: https://github.com/openrewrite/rewrite0
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+resources:
+- name: git-repo
+  type: git
+  source:
+    uri: git@github.com:openrewrite/rewrite1.git
+- name: custom
+  type: custom-type
+  source:
+    uri: https://github.com/openrewrite/rewrite0
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -5,1 +5,1 @@
+-    uri: https://github.com/openrewrite/rewrite0
++    uri: git@github.com:openrewrite/rewrite1.git
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -44,13 +95,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:1.19.0 in your build file:
+Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -62,7 +113,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:1.19.0")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:2.0.1")
 }
 ```
 {% endcode %}
@@ -76,7 +127,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateGitResourceUriExample</recipe>
@@ -86,7 +137,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>1.19.0</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,6 +184,11 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

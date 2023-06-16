@@ -14,31 +14,22 @@ _This recipe will apply changes commonly needed when upgrading to Java 11. Speci
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.21.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.21.1
-
-## Contributors
-* [Tim te Beek](tim.te.beek@jdriven.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Patrick](patway99@gmail.com)
+* version: 2.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.21.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -50,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.21.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
 }
 ```
 {% endcode %}
@@ -64,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
@@ -74,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.21.1</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -106,8 +97,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Add explicit JAXB dependencies](../../java/migrate/javax/addjaxbdependencies.md)
 * [Add explicit JAX-WS dependencies](../../java/migrate/javax/addjaxwsdependencies.md)
 * [Add explicit Inject dependencies](../../java/migrate/javax/addinjectdependencies.md)
-* [`BigDecimal` rounding constants to `RoundingMode` enums](../../java/cleanup/bigdecimalroundingconstantstoenums.md)
-* [Use primitive wrapper `valueOf` method](../../java/cleanup/primitivewrapperclassconstructortovalueof.md)
+* [`BigDecimal` rounding constants to `RoundingMode` enums](../../staticanalysis/bigdecimalroundingconstantstoenums.md)
+* [Use primitive wrapper `valueOf` method](../../staticanalysis/primitivewrapperclassconstructortovalueof.md)
 * [Use modernized `java.util.concurrent` APIs](../../java/migrate/concurrent/javaconcurrentapis.md)
 * [Use modernized `java.lang` APIs](../../java/migrate/lang/javalangapis.md)
 * [Use modernized `java.util.logging` APIs](../../java/migrate/logging/javaloggingapis.md)
@@ -147,8 +138,8 @@ recipeList:
   - org.openrewrite.java.migrate.javax.AddJaxbDependencies
   - org.openrewrite.java.migrate.javax.AddJaxwsDependencies
   - org.openrewrite.java.migrate.javax.AddInjectDependencies
-  - org.openrewrite.java.cleanup.BigDecimalRoundingConstantsToEnums
-  - org.openrewrite.java.cleanup.PrimitiveWrapperClassConstructorToValueOf
+  - org.openrewrite.staticanalysis.BigDecimalRoundingConstantsToEnums
+  - org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf
   - org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs
   - org.openrewrite.java.migrate.lang.JavaLangAPIs
   - org.openrewrite.java.migrate.logging.JavaLoggingAPIs
@@ -170,6 +161,26 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Shannon Pamperl](shanman190@gmail.com)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Sam Snyder](sam@moderne.io)
+* [Knut Wannheden](knut@moderne.io)
+* [Yeikel](yeikel@users.noreply.github.com)
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Patrick](patway99@gmail.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Tim te Beek](tim@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

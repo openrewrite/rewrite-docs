@@ -2,8 +2,7 @@
 
 **org.openrewrite.java.spring.boot3.UpgradeSpringBoot\_3\_0**
 
-_Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
-Migrating a Spring Boot application across major versions can be a complex task. Not every part of the  process can be automated, and not everything that possibly could be automated is. We recommend first running each of the minor version upgrades individually, making any manual changes which may be required. When you  have a working spring-boot 2.7.x application, then run this recipe to migrate to 3.0._
+_Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7._
 
 ### Tags
 
@@ -12,31 +11,22 @@ Migrating a Spring Boot application across major versions can be a complex task.
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Tyler Van Gorder](1878529+tkvangorder@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [BoykoAlex](aboyko@pivotal.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Nick McKinney](mckinneynichoals@gmail.com)
+* version: 5.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:4.36.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -48,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -62,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
@@ -72,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -112,7 +102,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Downgrade Jakarta Servlet API to 5.0 when using Jetty](../../../java/spring/boot3/downgradeservletapiwhenusingjetty.md)
 * [Add `@Configuration` to classes with `@EnableXXXSecurity` annotations](../../../java/spring/boot3/configurationoverenablesecurity.md)
   * forceAddConfiguration: `false`
-* [Migrate Spring Boot properties to 3.0](../../../java/spring/boot3/springbootproperties_3_0_0.md)
+* [Migrate Spring Boot properties to 3.0](../../../java/spring/boot3/springbootproperties_3_0.md)
 * [Migrate thymeleaf dependencies to Spring Boot 3.0.x](../../../java/spring/boot3/migratethymeleafdependencies.md)
 * [Migrate to Spring Security 6.0](../../../java/spring/security6/upgradespringsecurity_6_0.md)
 * [Migrate to Spring Cloud 2022](../../../java/spring/cloud2022/upgradespringcloud_2022.md)
@@ -121,12 +111,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tab title="Yaml Recipe List" %}
 ```yaml
-        ---
-        type: specs.openrewrite.org/v1beta/recipe
-        name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
-        displayName: Migrate to Spring Boot 3.0
-        description: Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
-Migrating a Spring Boot application across major versions can be a complex task. Not every part of the  process can be automated, and not everything that possibly could be automated is. We recommend first running each of the minor version upgrades individually, making any manual changes which may be required. When you  have a working spring-boot 2.7.x application, then run this recipe to migrate to 3.0.
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
+displayName: Migrate to Spring Boot 3.0
+description: Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
 
 tags:
   - spring
@@ -144,7 +133,7 @@ recipeList:
   - org.openrewrite.java.spring.boot3.DowngradeServletApiWhenUsingJetty
   - org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity:
       forceAddConfiguration: false
-  - org.openrewrite.java.spring.boot3.SpringBootProperties_3_0_0
+  - org.openrewrite.java.spring.boot3.SpringBootProperties_3_0
   - org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies
   - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0
   - org.openrewrite.java.spring.cloud2022.UpgradeSpringCloud_2022
@@ -152,6 +141,46 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Nick McKinney](mckinneynichoals@gmail.com)
+* [Patrick](patway99@gmail.com)
+* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](jkschneider@gmail.com)
+* [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Tim te Beek](tim.te.beek@jdriven.com)
+* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Kyle Scully](scullykns@gmail.com)
+* [Yeikel](yeikel@users.noreply.github.com)
+* [Aaron Gershman](aegershman@gmail.com)
+* [Greg Adams](gadams@gmail.com)
+* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Shannon Pamperl](shanman190@gmail.com)
+* [Alex Boyko](aboyko@vmware.com)
+* [Greg Adams](greg@moderne.io)
+* [Tim te Beek](tim@moderne.io)
+* [Kevin McCarpenter](kevin@moderne.io)
+* [Matthias Klauer](matthias.klauer@sap.com)
+* [Kun Li](kun@moderne.io)
+* [Fabian Krüger](56278322+fabapp2@users.noreply.github.com)
+* [Johannes Jank](johannes.wengert@googlemail.com)
+* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [nbruno](nbruno@users.noreply.github.com)
+* [Sofia Britto Schwartz](sofia.b.schwartz@gmail.com)
+* [Sandeep Nagaraj](59915704+sanagaraj-pivotal@users.noreply.github.com)
+* [BoykoAlex](aboyko@pivotal.io)
+* [Michael Keppler](bananeweizen@gmx.de)
+* [Scott Jungling](scott.jungling@gmail.com)
+* [Aakarshit Uppal](26065812+aksh1618@users.noreply.github.com)
+* [Ties van de Ven](1215166+vandeven@users.noreply.github.com)
+* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Tim te Beek](timtebeek@gmail.com)
+* [Knut Wannheden](knut.wannheden@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 

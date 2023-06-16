@@ -6,22 +6,22 @@ _This recipe will migrate any existing dependencies on Hibernate 5.x to the late
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/1.21.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 1.21.1
+* version: 2.0.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:1.21.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:1.21.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
 }
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.hibernate.MigrateToHibernateDependencies61</recipe>
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>1.21.1</version>
+            <version>2.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,13 +85,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-agroal`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-agroal`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-agroal-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -109,13 +109,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-agroal`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-c3p0`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-c3p0`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-c3p0-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -133,13 +133,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-c3p0`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-community-dialects`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-community-dialects`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-community-dialects-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -157,13 +157,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-community-dialects`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-core`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-core`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-core-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -181,13 +181,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-core`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-envers`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-envers`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-envers-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -205,13 +205,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-envers`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-graalvm`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-graalvm`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-graalvm-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -229,13 +229,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-graalvm`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-hikaricp`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-hikaricp`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-hikaricp-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -253,13 +253,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-hikaricp`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-jcache`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-jcache`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-jcache-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -277,13 +277,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-jcache`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-jpamodelgen`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-jpamodelgen`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-jpamodelgen-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -301,13 +301,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-jpamodelgen`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-micrometer`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-micrometer`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-micrometer-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -325,13 +325,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-micrometer`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-proxool`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-proxool`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-proxool-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -349,13 +349,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-proxool`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-spatial`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-spatial`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-spatial-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -373,13 +373,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-spatial`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-testing`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-testing`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-testing-jakarta`
   * newGroupId: `org.hibernate.orm`
@@ -397,19 +397,19 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-testing`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-testing`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-testing`
   * newVersion: `6.1.x`
-* [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-testing-jakarta`
   * newGroupId: `org.hibernate.orm`
   * newArtifactId: `hibernate-testing`
   * newVersion: `6.1.x`
-* [Remove Maven dependency](../../../maven/removedependency.md)
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `org.hibernate`
   * artifactId: `hibernate-entitymanager`
 
@@ -424,13 +424,13 @@ displayName: Migrate Hibernate dependencies to 6.1.x
 description: This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.1.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
 
 recipeList:
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-agroal
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-agroal
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-agroal-jakarta
       newGroupId: org.hibernate.orm
@@ -448,13 +448,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-agroal
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-c3p0
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-c3p0
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-c3p0-jakarta
       newGroupId: org.hibernate.orm
@@ -472,13 +472,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-c3p0
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-community-dialects
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-community-dialects
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-community-dialects-jakarta
       newGroupId: org.hibernate.orm
@@ -496,13 +496,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-community-dialects
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-core
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-core
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-core-jakarta
       newGroupId: org.hibernate.orm
@@ -520,13 +520,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-core
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-envers
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-envers
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-envers-jakarta
       newGroupId: org.hibernate.orm
@@ -544,13 +544,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-envers
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-graalvm
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-graalvm
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-graalvm-jakarta
       newGroupId: org.hibernate.orm
@@ -568,13 +568,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-graalvm
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-hikaricp
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-hikaricp
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-hikaricp-jakarta
       newGroupId: org.hibernate.orm
@@ -592,13 +592,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-hikaricp
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-jcache
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-jcache
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-jcache-jakarta
       newGroupId: org.hibernate.orm
@@ -616,13 +616,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-jcache
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-jpamodelgen
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-jpamodelgen
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-jpamodelgen-jakarta
       newGroupId: org.hibernate.orm
@@ -640,13 +640,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-jpamodelgen
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-micrometer
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-micrometer
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-micrometer-jakarta
       newGroupId: org.hibernate.orm
@@ -664,13 +664,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-micrometer
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-proxool
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-proxool
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-proxool-jakarta
       newGroupId: org.hibernate.orm
@@ -688,13 +688,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-proxool
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-spatial
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-spatial
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-spatial-jakarta
       newGroupId: org.hibernate.orm
@@ -712,13 +712,13 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-spatial
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-testing
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-testing
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-testing-jakarta
       newGroupId: org.hibernate.orm
@@ -736,19 +736,19 @@ recipeList:
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-testing
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-testing
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-testing
       newVersion: 6.1.x
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-testing-jakarta
       newGroupId: org.hibernate.orm
       newArtifactId: hibernate-testing
       newVersion: 6.1.x
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.hibernate
       artifactId: hibernate-entitymanager
 

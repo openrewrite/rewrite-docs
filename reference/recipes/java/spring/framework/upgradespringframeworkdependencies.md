@@ -6,15 +6,11 @@ _Upgrade spring-framework 5.x Maven dependencies using a Node Semver advanced ra
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/UpgradeSpringFrameworkDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/UpgradeSpringFrameworkDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Patrick](patway99@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
+* version: 5.0.1
 
 ## Options
 
@@ -40,13 +36,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeSpringFrameworkDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.36.0 in your build file:
+Now that `com.yourorg.UpgradeSpringFrameworkDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -58,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -72,7 +68,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeSpringFrameworkDependenciesExample</recipe>
@@ -82,7 +78,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -93,6 +89,254 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-bom`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-aop`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-aspects`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-beans`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-context`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-context-indexer`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-context-support`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-core`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-expression`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-instrument`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-jcl`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-jdbc`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-jms`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-messaging`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-orm`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-oxm`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-test`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-tx`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-web`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-webflux`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-webmvc`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework`
+  * artifactId: `spring-websocket`
+  * newVersion: ``
+  * overrideManagedVersion: `false`
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.framework.UpgradeSpringFrameworkDependencies
+displayName: Upgrade spring-framework Maven dependencies
+description: Upgrade spring-framework 5.x Maven dependencies using a Node Semver advanced range selector.
+newVersion: 
+
+recipeList:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-bom
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-aop
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-aspects
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-beans
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-context
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-context-indexer
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-context-support
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-core
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-expression
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-instrument
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-jcl
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-jdbc
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-jms
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-messaging
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-orm
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-oxm
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-test
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-tx
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-web
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-webflux
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-webmvc
+      newVersion: 
+      overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework
+      artifactId: spring-websocket
+      newVersion: 
+      overrideManagedVersion: false
+
+```
+{% endtab %}
+{% endtabs %}
+## Contributors
+* [Patrick](patway99@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Kun Li](kun@moderne.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

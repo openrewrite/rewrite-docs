@@ -6,16 +6,11 @@ _Add a spring configuration property to a configuration file if it does not alre
 
 ## Source
 
-[Github](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/4.36.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 4.36.0
-
-## Contributors
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Patrick](patway99@gmail.com)
-* [Kyle Scully](scullykns@gmail.com)
+* version: 5.0.1
 
 ## Options
 
@@ -25,6 +20,79 @@ _Add a spring configuration property to a configuration file if it does not alre
 | `String` | value | The value of the new property key. |
 | `String` | comment | *Optional*. A comment that will be added to the new property. |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yml", and "**/application.properties". |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|property|`server.servlet.path`|
+|value|`/tmp/my-server-path`|
+|comment|`null`|
+|pathExpressions|`List.of("*")`|
+
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```properties
+server.port=8080
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```properties
+server.port=8080
+server.servlet.path=/tmp/my-server-path
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -2,0 +2,1 @@
++server.servlet.path=/tmp/my-server-path
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="null" %}
+
+###### Before
+{% code title="null" %}
+```yaml
+    server:
+      port: 8080
+```
+{% endcode %}
+
+###### After
+{% code title="null" %}
+```yaml
+    server:
+      port: 8080
+      servlet:
+        path: /tmp/my-server-path
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+@@ -3,0 +3,2 @@
++      servlet:
+        path: /tmp/my-server-path
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -47,13 +115,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:4.36.0 in your build file:
+Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("5.40.4")
+    id("org.openrewrite.rewrite") version("6.1.2")
 }
 
 rewrite {
@@ -65,7 +133,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:4.36.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
 }
 ```
 {% endcode %}
@@ -79,7 +147,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
+        <version>5.2.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddSpringPropertyExample</recipe>
@@ -89,7 +157,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>4.36.0</version>
+            <version>5.0.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -100,6 +168,13 @@ dependencies {
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+## Contributors
+* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Knut Wannheden](knut@moderne.io)
+* [Patrick](patway99@gmail.com)
+* [Kyle Scully](scullykns@gmail.com)
+* [Shannon Pamperl](shanman190@gmail.com)
+
 
 ## See how this recipe works across multiple open-source repositories
 
