@@ -33,7 +33,8 @@ class A {}
 ###### After
 {% code title="A.java" %}
 ```java
-class A {}```
+class A {}
+```
 {% endcode %}
 
 {% endtab %}
