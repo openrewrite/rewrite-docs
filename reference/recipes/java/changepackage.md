@@ -32,7 +32,7 @@ _A recipe that will rename a package name in package statements, imports, and fu
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="kotlin" %}
 
 ###### Before
 {% code title="null" %}
@@ -64,7 +64,7 @@ class Original
 {% endtabs %}
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="kotlin" %}
 
 ###### Before
 {% code title="null" %}
@@ -114,7 +114,7 @@ class A {
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="groovy" %}
 
 ###### Before
 {% code title="null" %}
@@ -146,7 +146,7 @@ class Original {}
 {% endtabs %}
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="groovy" %}
 
 ###### Before
 {% code title="null" %}
