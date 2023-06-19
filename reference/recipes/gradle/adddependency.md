@@ -27,7 +27,7 @@ _Add a gradle dependency to a `build.gradle` file in the correct configuration b
 | `String` | familyPattern | *Optional*. A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. |
 | `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Maven metadata failures
 
@@ -87,7 +87,7 @@ repositories {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.gradle.AddDependency)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.gradle.AddDependency)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

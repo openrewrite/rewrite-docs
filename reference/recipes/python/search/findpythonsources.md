@@ -12,7 +12,7 @@ _Use data table to collect source files types and counts of files with extension
 * artifactId: rewrite-python
 * version: 1.0.1
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Python source files
 
@@ -100,7 +100,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.python.search.FindPythonSources)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.python.search.FindPythonSources)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

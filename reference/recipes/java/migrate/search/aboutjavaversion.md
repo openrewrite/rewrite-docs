@@ -18,7 +18,7 @@ _A diagnostic for studying the distribution of Java language version levels (bot
 | -- | -- | -- |
 | `String` | whenUsesType | *Optional*. Only mark the Java version when this type is in use. |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Java versions by file
 
@@ -161,7 +161,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.migrate.search.AboutJavaVersion)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.search.AboutJavaVersion)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -12,7 +12,7 @@ _A diagnostic utility which emits the runtime classpath to a data table._
 * artifactId: rewrite-core
 * version: 8.1.2
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Classpath report
 
@@ -87,7 +87,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.ListRuntimeClasspath)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.ListRuntimeClasspath)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

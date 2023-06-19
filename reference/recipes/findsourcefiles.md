@@ -18,7 +18,7 @@ _Find files by source path._
 | -- | -- | -- |
 | `String` | filePattern | A glob expression representing a file path to search for (relative to the project root). |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Source files that matched
 
@@ -97,7 +97,7 @@ repositories {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.FindSourceFiles)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.FindSourceFiles)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

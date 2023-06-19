@@ -23,7 +23,7 @@ _Upgrade the version of a dependency by specifying a group and (optionally) an a
 | `Boolean` | overrideManagedVersion | *Optional*. This flag can be set to explicitly override a managed dependency's version. The default for this flag is `false`. |
 | `List` | retainVersions | *Optional*. Accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management after the changes from this recipe, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Maven metadata failures
 
@@ -311,7 +311,7 @@ Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.maven.UpgradeDependencyVersion)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.UpgradeDependencyVersion)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

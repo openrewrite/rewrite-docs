@@ -20,7 +20,7 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. |
 | `String` | configuration | *Optional*. Match dependencies with the specified scope. If not specified, all configurations will be searched. |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Dependencies in use
 
@@ -151,7 +151,7 @@ repositories {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.gradle.search.DependencyInsight)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.gradle.search.DependencyInsight)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

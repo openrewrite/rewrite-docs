@@ -21,7 +21,7 @@ _Change the groupId and/or the artifactId of a specified Maven plugin._
 | `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. |
 | `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Maven metadata failures
 
@@ -158,7 +158,7 @@ Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined 
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.maven.ChangePluginGroupIdAndArtifactId)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.ChangePluginGroupIdAndArtifactId)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

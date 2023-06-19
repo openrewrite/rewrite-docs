@@ -27,7 +27,7 @@ _Add a managed Maven dependency to a `pom.xml` file._
 | `String` | onlyIfUsing | *Optional*. Only add managed dependencies to projects having a dependency matching the expression. |
 | `Boolean` | addToRootPom | *Optional*. Add to the root pom where root is the eldest parent of the pom within the source set. |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Maven metadata failures
 
@@ -185,7 +185,7 @@ Now that `com.yourorg.AddManagedDependencyExample` has been defined activate it 
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.maven.AddManagedDependency)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.AddManagedDependency)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -43,7 +43,7 @@ All recipe names, descriptions, and parameters should follow our [recipe naming 
 By following these conventions, you'll ensure that:
 
 * The [documentation](../reference/recipes/) generated for your recipe is valid and clear to others
-* The [Moderne Saas](https://public.moderne.io/) can accurately filter and display your recipe and its parameters
+* The [Moderne Saas](https://app.moderne.io/) can accurately filter and display your recipe and its parameters
 
 ### If it can be declarative, it should be declarative
 

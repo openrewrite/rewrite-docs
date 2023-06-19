@@ -19,7 +19,7 @@ _Emits a data table detailing all Gradle and Maven dependencies.This recipe make
 | `Scope` | scope | The scope of the dependencies to include in the report. |
 | `boolean` | includeTransitive | Whether or not to include transitive dependencies in the report. Defaults to including only direct dependencies. |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Dependency report
 
@@ -116,7 +116,7 @@ dependencies {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.dependencies.DependencyList)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.dependencies.DependencyList)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

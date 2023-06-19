@@ -12,7 +12,7 @@ _Find SQL in code (e.g. in string literals) and in resources like those ending w
 * artifactId: rewrite-sql
 * version: 1.0.1
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Database columns used
 
@@ -101,7 +101,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.sql.FindSql)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.sql.FindSql)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

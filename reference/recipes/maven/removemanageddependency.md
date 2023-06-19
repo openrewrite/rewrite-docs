@@ -156,7 +156,7 @@ Now that `com.yourorg.RemoveManagedDependencyExample` has been defined activate 
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.maven.RemoveManagedDependency)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.RemoveManagedDependency)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

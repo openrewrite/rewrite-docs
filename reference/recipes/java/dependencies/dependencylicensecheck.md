@@ -19,7 +19,7 @@ _Locates and reports on all licenses in use._
 | `String` | scope | Match dependencies with the specified scope |
 | `Boolean` | addMarkers | *Optional*. Report each license transitively used by a dependency in search results. |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### License report
 
@@ -108,7 +108,7 @@ dependencies {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.java.dependencies.DependencyLicenseCheck)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.dependencies.DependencyLicenseCheck)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

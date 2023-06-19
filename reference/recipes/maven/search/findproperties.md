@@ -151,7 +151,7 @@ Now that `com.yourorg.FindPropertiesExample` has been defined activate it in you
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.maven.search.FindProperties)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.search.FindProperties)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

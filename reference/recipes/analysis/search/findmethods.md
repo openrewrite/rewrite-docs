@@ -20,7 +20,7 @@ _Find method usages by pattern._
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 | `String` | flow | *Optional*. When enabled, show the data or taint flow of the method invocation. |
 
-## Data Tables (Only available on the [Moderne platform](https://public.moderne.io/))
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Method calls
 
@@ -168,7 +168,7 @@ dependencies {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://public.moderne.io/recipes/org.openrewrite.analysis.search.FindMethods)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.analysis.search.FindMethods)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
