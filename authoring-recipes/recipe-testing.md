@@ -119,6 +119,7 @@ package com.yourorg;
 
 import org.openrewrite.ExecutionContext;
 import org.openrewrite.Recipe;
+import org.openrewrite.TreeVisitor;
 import org.openrewrite.internal.lang.Nullable;
 import org.openrewrite.java.ChangePackage;
 import org.openrewrite.java.JavaIsoVisitor;
@@ -151,7 +152,7 @@ public class LowercasePackage extends Recipe {
     }
 
     @Override
-    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
         return new JavaIsoVisitor<ExecutionContext>() {
             @Override
             public J.Package visitPackage(J.Package pkg, ExecutionContext executionContext) {
@@ -160,7 +161,7 @@ public class LowercasePackage extends Recipe {
                 String lowerCase = packageText.toLowerCase();
 
                 if(!packageText.equals(lowerCase)) {
-                    doNext(new ChangePackage(packageText, lowerCase, true));
+                    doAfterVisit(new ChangePackage(packageText, lowerCase, true).getVisitor());
                 }
 
                 return pkg;
