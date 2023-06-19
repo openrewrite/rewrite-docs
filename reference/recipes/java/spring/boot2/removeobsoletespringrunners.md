@@ -21,7 +21,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners</recipe>
@@ -109,28 +109,26 @@ recipeList:
 
 ## Contributors
 * [Patrick Way](pway99@users.noreply.github.com)
-* [Knut Wannheden](knut@moderne.io)
 * [Patrick](patway99@gmail.com)
 * [Jonathan Schneider](jkschneider@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Knut Wannheden](knut@moderne.io)
 * [Sam Snyder](sam@moderne.io)
 * [Yeikel](yeikel@users.noreply.github.com)
+* [Jonathan Schnéider](jkschneider@gmail.com)
 * [Greg Adams](gadams@gmail.com)
 * [Tim te Beek](tim.te.beek@jdriven.com)
 * [Tracey Yoshima](tracey.yoshima@gmail.com)
 * [Greg Adams](greg@moderne.io)
 * [Nick McKinney](mckinneynicholas@gmail.com)
 * [Tim te Beek](tim@moderne.io)
-* [Matthias Klauer](matthias.klauer@sap.com)
 * [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
 * [Sofia Britto Schwartz](sofia.b.schwartz@gmail.com)
 * [Aaron Gershman](aegershman@gmail.com)
-* [Michael Keppler](bananeweizen@gmx.de)
 * [traceyyoshima](tracey.yoshima@gmail.com)
+* [Michael Keppler](bananeweizen@gmx.de)
 * [Ties van de Ven](1215166+vandeven@users.noreply.github.com)
 * [Scott Jungling](scott.jungling@gmail.com)
 * [Tim te Beek](timtebeek@gmail.com)
-* [Josh Soref](2119212+jsoref@users.noreply.github.com)
 * [Kun Li](kun@moderne.io)
 * [Kyle Scully](scullykns@gmail.com)
 

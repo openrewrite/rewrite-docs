@@ -104,7 +104,7 @@ Now that `com.yourorg.ChangePackagingExample` has been defined activate it in yo
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePackagingExample</recipe>

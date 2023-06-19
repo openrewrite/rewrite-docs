@@ -150,7 +150,7 @@ Now that `com.yourorg.ExcludeDependencyExample` has been defined activate it in 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ExcludeDependencyExample</recipe>

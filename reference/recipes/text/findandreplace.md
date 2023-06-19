@@ -36,13 +36,15 @@ _Simple text find and replace. When the original source file is a language-speci
 ###### Before
 {% code title="Test.java" %}
 ```java
-class Test {}```
+class Test {}
+```
 {% endcode %}
 
 ###### After
 {% code title="Test.java" %}
 ```java
-class Replaced {}```
+class Replaced {}
+```
 {% endcode %}
 
 {% endtab %}
@@ -85,7 +87,7 @@ Now that `com.yourorg.FindAndReplaceExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -107,7 +109,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindAndReplaceExample</recipe>

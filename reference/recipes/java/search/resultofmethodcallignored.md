@@ -106,7 +106,7 @@ Now that `com.yourorg.ResultOfMethodCallIgnoredExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -128,7 +128,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ResultOfMethodCallIgnoredExample</recipe>

@@ -29,10 +29,10 @@ _Alters the name of XML tags matching the provided expression._
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="xml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```xml
 <virtual-patches>
     <enhanced-virtual-patch id="evp-name" path="/[request-path]" variable="request.parameters.[paramName]" message="alphabet validation failed" enableAntisamy="false">
@@ -43,7 +43,7 @@ _Alters the name of XML tags matching the provided expression._
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```xml
 <virtual-patches>
     <enhanced-virtual-patch id="evp-name" path="/[request-path]" variable="request.parameters.[paramName]" message="alphabet validation failed" enableAntisamy="false">
@@ -93,7 +93,7 @@ Now that `com.yourorg.ChangeTagNameExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -115,7 +115,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTagNameExample</recipe>

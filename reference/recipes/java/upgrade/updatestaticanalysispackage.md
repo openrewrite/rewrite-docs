@@ -140,10 +140,10 @@ Update referencing places in yaml file.
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
 type: specs.openrewrite.org/v1beta/recipe
 name: org.example.bank.Internal
@@ -155,7 +155,7 @@ recipeList:
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
 type: specs.openrewrite.org/v1beta/recipe
 name: org.example.bank.Internal
@@ -230,7 +230,8 @@ Update referencing places in pom.xml.
       </plugin>
     </plugins>
   </build>
-</project>```
+</project>
+```
 {% endcode %}
 
 {% endtab %}
@@ -263,7 +264,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -286,7 +287,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.upgrade.UpdateStaticAnalysisPackage</recipe>

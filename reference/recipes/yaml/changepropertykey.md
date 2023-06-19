@@ -34,18 +34,20 @@ _Change a YAML property key leaving the value intact. Nested YAML mappings are i
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
-management.metrics.binders.files.enabled: true```
+management.metrics.binders.files.enabled: true
+```
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
-management.metrics.enable.process.files: true```
+management.metrics.enable.process.files: true
+```
 {% endcode %}
 
 {% endtab %}
@@ -74,18 +76,20 @@ management.metrics.enable.process.files: true```
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
-a.b.c.d: true```
+a.b.c.d: true
+```
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
-a.b.c: true```
+a.b.c: true
+```
 {% endcode %}
 
 {% endtab %}
@@ -114,17 +118,17 @@ a.b.c: true```
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
 spring.profiles.group.prod: proddb,prodmq,prodmetrics
 ```
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
 spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
 ```
@@ -157,10 +161,10 @@ spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
 spring:
   profiles:
@@ -173,7 +177,7 @@ spring:
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
 spring:
   profiles:
@@ -233,7 +237,7 @@ Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -255,7 +259,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyKeyExample</recipe>

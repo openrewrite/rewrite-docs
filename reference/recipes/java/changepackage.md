@@ -35,7 +35,7 @@ _A recipe that will rename a package name in package statements, imports, and fu
 {% tab title="kotlin" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```kotlin
 package a.b
 class Original
@@ -43,7 +43,7 @@ class Original
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```kotlin
 package x.y
 class Original
@@ -67,7 +67,7 @@ class Original
 {% tab title="kotlin" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```kotlin
 import a.b.Original
 
@@ -78,7 +78,7 @@ class A {
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```kotlin
 import x.y.Original
 
@@ -117,7 +117,7 @@ class A {
 {% tab title="groovy" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```groovy
 package a.b
 class Original {}
@@ -125,7 +125,7 @@ class Original {}
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```groovy
 package x.y
 class Original {}
@@ -149,7 +149,7 @@ class Original {}
 {% tab title="groovy" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```groovy
 import a.b.Original
 
@@ -160,7 +160,7 @@ class A {
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```groovy
 import x.y.Original
 
@@ -257,7 +257,7 @@ Now that `com.yourorg.ChangePackageExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -279,7 +279,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePackageExample</recipe>

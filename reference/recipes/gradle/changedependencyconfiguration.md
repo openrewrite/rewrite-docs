@@ -113,7 +113,7 @@ Now that `com.yourorg.ChangeDependencyConfigurationExample` has been defined act
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {

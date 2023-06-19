@@ -39,10 +39,10 @@ _Add RBAC rules to ClusterRoles or namespaced Roles._
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -66,7 +66,7 @@ rules:
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -138,7 +138,7 @@ Now that `com.yourorg.AddRuleToRoleExample` has been defined activate it and tak
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -164,7 +164,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddRuleToRoleExample</recipe>

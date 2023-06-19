@@ -31,10 +31,10 @@ _Update git resource `source.uri` URI values to point to a new URI value._
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
 resources:
 - name: git-repo
@@ -49,7 +49,7 @@ resources:
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
 resources:
 - name: git-repo
@@ -104,7 +104,7 @@ Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -130,7 +130,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateGitResourceUriExample</recipe>

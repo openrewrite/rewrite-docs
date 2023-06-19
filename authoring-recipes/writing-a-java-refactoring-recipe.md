@@ -215,7 +215,7 @@ public class SayHelloRecipe extends Recipe {
     // ...
 
     @Override
-    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    public JavaIsoVisitor<ExecutionContext> getVisitor() {
         // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
         return new SayHelloVisitor();
     }

@@ -12,11 +12,11 @@ _JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and rem
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.1
+* version: 2.0.2
 
 ## Examples
 ##### Example 1
@@ -124,13 +124,13 @@ import static org.hamcrest.CoreMatchers.is;
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -142,7 +142,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.2")
 }
 ```
 {% endcode %}
@@ -156,7 +156,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.UseHamcrestAssertThat</recipe>
@@ -166,7 +166,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>

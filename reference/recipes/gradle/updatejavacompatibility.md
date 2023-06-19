@@ -46,7 +46,7 @@ Now that `com.yourorg.UpdateJavaCompatibilityExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {

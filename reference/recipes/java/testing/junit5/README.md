@@ -4,6 +4,7 @@ _Best practices for JUnit Jupiter tests._
 
 ## Recipes
 
+* [Add missing @ParameterizedTest annotation when @ValueSource is used or replace @Test with @ParameterizedTest](./addparameterizedtestannotation.md)
 * [Clean Up Assertions](./cleanupassertions.md)
 * [Cleanup JUnit imports](./cleanupjunitimports.md)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](./categorytotag.md)
@@ -26,6 +27,7 @@ _Best practices for JUnit Jupiter tests._
 * [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](./updatemockwebserver.md)
 * [Pragmatists @RunWith(JUnitParamsRunner.class) to JUnit Jupiter Parameterized Tests](./junitparamsrunnertoparameterized.md)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](./removeobsoleterunners.md)
+* [Remove duplicates uses of @TestTemplate implementations for a single method](./removeduplicatetesttemplates.md)
 * [Statically import JUnit Jupiter assertions](./staticimports.md)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](./migrateassumptions.md)
 * [Use JUnit Jupiter `@Disabled`](./ignoretodisabled.md)

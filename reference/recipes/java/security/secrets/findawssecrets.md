@@ -21,10 +21,10 @@ _Locates AWS secrets stored in plain text in code._
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
 env1:
   aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -36,7 +36,7 @@ evn3:
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
 env1:
   ~~(AWS access key)~~>aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -113,10 +113,10 @@ class T {
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
 env1:
   aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -128,7 +128,7 @@ evn3:
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
 env1:
   ~~(AWS access key)~~>aws_access_key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -208,7 +208,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -234,7 +234,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.security.secrets.FindAwsSecrets</recipe>

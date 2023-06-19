@@ -31,17 +31,17 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="properties" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```properties
 management=true
 ```
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```properties
 management=true
 management.metrics.enable.process.files=true
@@ -87,7 +87,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -109,7 +109,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPropertyExample</recipe>

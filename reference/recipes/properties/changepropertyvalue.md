@@ -35,18 +35,20 @@ _Change a property value leaving the key intact._
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="properties" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```properties
-management.metrics.binders.files.enabled=true```
+management.metrics.binders.files.enabled=true
+```
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```properties
-management.metrics.binders.files.enabled=false```
+management.metrics.binders.files.enabled=false
+```
 {% endcode %}
 
 {% endtab %}
@@ -89,7 +91,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -111,7 +113,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>

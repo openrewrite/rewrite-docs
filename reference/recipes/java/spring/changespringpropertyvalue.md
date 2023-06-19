@@ -35,18 +35,20 @@ _Change spring application property values existing in either Properties or Yaml
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="properties" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```properties
-server.port=8080```
+server.port=8080
+```
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```properties
-server.port=8081```
+server.port=8081
+```
 {% endcode %}
 
 {% endtab %}
@@ -89,7 +91,7 @@ Now that `com.yourorg.ChangeSpringPropertyValueExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -115,7 +117,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeSpringPropertyValueExample</recipe>

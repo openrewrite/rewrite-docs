@@ -33,10 +33,10 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
   spring:
       datasource:
@@ -45,7 +45,7 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
   spring:
       datasource:
@@ -69,17 +69,17 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 {% endtabs %}
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="properties" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```properties
 spring.datasource.url=jdbc:db2://10.2.1.101:5021/DB2INST1:currentSchema=DEV;commandTimeout=30;
 ```
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```properties
 spring.datasource.url=jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;commandTimeout=30;sslConnection=true;
 ```
@@ -125,7 +125,7 @@ Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -151,7 +151,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseTlsJdbcConnectionStringExample</recipe>

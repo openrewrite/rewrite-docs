@@ -276,7 +276,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -302,7 +302,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7</recipe>
@@ -425,8 +425,8 @@ recipeList:
 * [Nick McKinney](mckinneynichoals@gmail.com)
 * [Patrick Way](pway99@users.noreply.github.com)
 * [Jonathan Schneider](jkschneider@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
 * [Sam Snyder](sam@moderne.io)
+* [Jonathan Schnéider](jkschneider@gmail.com)
 * [traceyyoshima](tracey.yoshima@gmail.com)
 * [Greg Adams](gadams@gmail.com)
 * [Nick McKinney](mckinneynicholas@gmail.com)
@@ -438,7 +438,6 @@ recipeList:
 * [Kyle Scully](scullykns@gmail.com)
 * [Tim te Beek](tim@moderne.io)
 * [Kevin McCarpenter](kevin@moderne.io)
-* [Matthias Klauer](matthias.klauer@sap.com)
 * [Fabian Krüger](56278322+fabapp2@users.noreply.github.com)
 * [Kun Li](122563761+kunli2@users.noreply.github.com)
 * [nbruno](nbruno@users.noreply.github.com)

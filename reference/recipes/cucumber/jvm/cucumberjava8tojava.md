@@ -11,22 +11,359 @@ _Migrates Cucumber-Java8 step definitions and LambdaGlue hooks to Cucumber-Java 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cucumber-jvm
-* version: 1.0.1
+* version: 1.0.2
+
+## Examples
+##### Example 1
+
+
+{% tabs %}
+{% tab title="com/example/app/CucumberJava8Definitions.java" %}
+
+###### Before
+{% code title="com/example/app/CucumberJava8Definitions.java" %}
+```java
+package com.example.app;
+
+import io.cucumber.java8.En;
+import io.cucumber.java8.Scenario;
+import io.cucumber.java8.Status;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class CucumberJava8Definitions implements En {
+
+    private int a;
+
+    public CucumberJava8Definitions() {
+        Before(() -> {
+            a = 0;
+        });
+        When("I add {int}", (Integer b) -> {
+            a += b;
+        });
+        Then("I expect {int}", (Integer c) -> assertEquals(c, a));
+
+        After((Scenario scn) -> {
+            if (scn.getStatus() == Status.FAILED) {
+                scn.log("failed");
+            }
+        });
+
+    }
+
+}
+```
+{% endcode %}
+
+###### After
+{% code title="com/example/app/CucumberJava8Definitions.java" %}
+```java
+package com.example.app;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.Status;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class CucumberJava8Definitions {
+
+    private int a;
+
+    @Before
+    public void before() {
+        a = 0;
+    }
+
+    @After
+    public void after(io.cucumber.java.Scenario scn) {
+        if (scn.getStatus() == Status.FAILED) {
+            scn.log("failed");
+        }
+    }
+
+    @When("I add {int}")
+    public void i_add_int(Integer b) {
+        a += b;
+    }
+
+    @Then("I expect {int}")
+    public void i_expect_int(Integer c) {
+        assertEquals(c, a);
+    }
+
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- com/example/app/CucumberJava8Definitions.java
++++ com/example/app/CucumberJava8Definitions.java
+@@ -3,3 +3,6 @@
+package com.example.app;
+
+-import io.cucumber.java8.En;
+-import io.cucumber.java8.Scenario;
+-import io.cucumber.java8.Status;
++import io.cucumber.java.After;
++import io.cucumber.java.Before;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
++import io.cucumber.java.Scenario;
++import io.cucumber.java.Status;
+
+@@ -9,1 +12,1 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+-public class CucumberJava8Definitions implements En {
++public class CucumberJava8Definitions {
+
+@@ -13,8 +16,4 @@
+    private int a;
+
+-   public CucumberJava8Definitions() {
+-       Before(() -> {
+-           a = 0;
+-       });
+-       When("I add {int}", (Integer b) -> {
+-           a += b;
+-       });
+-       Then("I expect {int}", (Integer c) -> assertEquals(c, a));
++   @Before
++   public void before() {
++       a = 0;
++   }
+
+@@ -22,5 +21,6 @@
+        Then("I expect {int}", (Integer c) -> assertEquals(c, a));
+
+-       After((Scenario scn) -> {
+-           if (scn.getStatus() == Status.FAILED) {
+-               scn.log("failed");
+-           }
+-       });
++   @After
++   public void after(io.cucumber.java.Scenario scn) {
++       if (scn.getStatus() == Status.FAILED) {
++           scn.log("failed");
++       }
++   }
+
+@@ -28,0 +28,3 @@
+        });
+
++   @When("I add {int}")
++   public void i_add_int(Integer b) {
++       a += b;
+    }
+@@ -30,0 +33,5 @@
+    }
+
++   @Then("I expect {int}")
++   public void i_expect_int(Integer c) {
++       assertEquals(c, a);
++   }
++
+}
+@@ -31,0 +39,1 @@
+
+}
++
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+
+{% tabs %}
+{% tab title="com/example/app/CucumberJava8Definitions.java" %}
+
+###### Before
+{% code title="com/example/app/CucumberJava8Definitions.java" %}
+```java
+package com.example.app;
+
+import io.cucumber.java8.En;
+import io.cucumber.java8.Scenario;
+import io.cucumber.java8.Status;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class CucumberJava8Definitions implements En {
+
+    private int a;
+
+    public CucumberJava8Definitions() {
+        Before(() -> {
+            a = 0;
+        });
+        When("I add {int}", (Integer b) -> {
+            a += b;
+        });
+        Then("I expect {int}", (Integer c) -> assertEquals(c, a));
+
+        After((Scenario scn) -> {
+            if (scn.getStatus() == Status.FAILED) {
+                scn.log("failed");
+            }
+        });
+
+    }
+
+}
+```
+{% endcode %}
+
+###### After
+{% code title="com/example/app/CucumberJava8Definitions.java" %}
+```java
+package com.example.app;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.Status;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class CucumberJava8Definitions {
+
+    private int a;
+
+    @Before
+    public void before() {
+        a = 0;
+    }
+
+    @After
+    public void after(io.cucumber.java.Scenario scn) {
+        if (scn.getStatus() == Status.FAILED) {
+            scn.log("failed");
+        }
+    }
+
+    @When("I add {int}")
+    public void i_add_int(Integer b) {
+        a += b;
+    }
+
+    @Then("I expect {int}")
+    public void i_expect_int(Integer c) {
+        assertEquals(c, a);
+    }
+
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- com/example/app/CucumberJava8Definitions.java
++++ com/example/app/CucumberJava8Definitions.java
+@@ -3,3 +3,6 @@
+package com.example.app;
+
+-import io.cucumber.java8.En;
+-import io.cucumber.java8.Scenario;
+-import io.cucumber.java8.Status;
++import io.cucumber.java.After;
++import io.cucumber.java.Before;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
++import io.cucumber.java.Scenario;
++import io.cucumber.java.Status;
+
+@@ -9,1 +12,1 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+-public class CucumberJava8Definitions implements En {
++public class CucumberJava8Definitions {
+
+@@ -13,8 +16,4 @@
+    private int a;
+
+-   public CucumberJava8Definitions() {
+-       Before(() -> {
+-           a = 0;
+-       });
+-       When("I add {int}", (Integer b) -> {
+-           a += b;
+-       });
+-       Then("I expect {int}", (Integer c) -> assertEquals(c, a));
++   @Before
++   public void before() {
++       a = 0;
++   }
+
+@@ -22,5 +21,6 @@
+        Then("I expect {int}", (Integer c) -> assertEquals(c, a));
+
+-       After((Scenario scn) -> {
+-           if (scn.getStatus() == Status.FAILED) {
+-               scn.log("failed");
+-           }
+-       });
++   @After
++   public void after(io.cucumber.java.Scenario scn) {
++       if (scn.getStatus() == Status.FAILED) {
++           scn.log("failed");
++       }
++   }
+
+@@ -28,0 +28,3 @@
+        });
+
++   @When("I add {int}")
++   public void i_add_int(Integer b) {
++       a += b;
+    }
+@@ -30,0 +33,5 @@
+    }
+
++   @Then("I expect {int}")
++   public void i_expect_int(Integer c) {
++       assertEquals(c, a);
++   }
++
+}
+@@ -31,0 +39,1 @@
+
+}
++
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -38,7 +375,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.2")
 }
 ```
 {% endcode %}
@@ -52,7 +389,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.cucumber.jvm.CucumberJava8ToJava</recipe>
@@ -62,7 +399,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
           </dependency>
         </dependencies>
       </plugin>

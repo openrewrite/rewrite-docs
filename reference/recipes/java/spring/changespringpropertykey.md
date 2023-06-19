@@ -31,17 +31,17 @@ _Change spring application property keys existing in either Properties or Yaml f
 
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="properties" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```properties
 server.servlet-path=/tmp/my-server-path
 ```
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```properties
 server.servlet.path=/tmp/my-server-path
 ```
@@ -61,10 +61,10 @@ server.servlet.path=/tmp/my-server-path
 {% endtabs %}
 
 {% tabs %}
-{% tab title="null" %}
+{% tab title="yaml" %}
 
 ###### Before
-{% code title="null" %}
+{% code %}
 ```yaml
     server:
       servlet-path: /tmp/my-server-path
@@ -72,7 +72,7 @@ server.servlet.path=/tmp/my-server-path
 {% endcode %}
 
 ###### After
-{% code title="null" %}
+{% code %}
 ```yaml
     server:
       servlet.path: /tmp/my-server-path
@@ -119,7 +119,7 @@ Now that `com.yourorg.ChangeSpringPropertyKeyExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.3")
+    id("org.openrewrite.rewrite") version("6.1.4")
 }
 
 rewrite {
@@ -145,7 +145,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.1</version>
+        <version>5.2.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeSpringPropertyKeyExample</recipe>
