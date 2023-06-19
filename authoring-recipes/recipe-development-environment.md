@@ -200,7 +200,7 @@ rewrite-java-17, rewrite-java-11 and rewrite-java-8 can happily coexist on the s
 
 ### Set Language Level and Bytecode Level
 
-"To enable running on the widest possible range of JDK versions, configure the Java compiler to target Java Language and Bytecode level 1.8:"
+To enable running on the widest possible range of JDK versions, configure the Java compiler to target Java Language and Bytecode level 1.8:
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -251,7 +251,7 @@ With all of that done, your project setup is complete! You are now ready to [cre
 
 ## Recipe distribution
 
-For your recipes to be usable by the OpenRewrite build plugins or on [app.moderne.io](https://app.moderne.io) they have to be published to an artifact repository.
+In order for your recipes to be usable by the OpenRewrite build plugins or on [app.moderne.io](https://app.moderne.io), they have to be published to an artifact repository.
 
 ### Local publishing for testing
 
