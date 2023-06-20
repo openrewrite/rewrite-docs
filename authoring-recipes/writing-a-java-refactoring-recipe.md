@@ -50,8 +50,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
-import org.openrewrite.Option;
-import org.openrewrite.Recipe;
+import org.openrewrite.*;
 import org.openrewrite.internal.lang.NonNull;
 
 // Making your recipe immutable helps make them idempotent and eliminates a variety of possible bugs.
@@ -215,7 +214,7 @@ public class SayHelloRecipe extends Recipe {
     // ...
 
     @Override
-    public JavaIsoVisitor<ExecutionContext> getVisitor() {
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
         // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
         return new SayHelloVisitor();
     }
@@ -312,7 +311,7 @@ public class SayHelloRecipe extends Recipe {
 
     public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
         private final JavaTemplate helloTemplate =
-                JavaTemplate.builder(this::getCursor, "public String hello() { return \"Hello from #{}!\"; }")
+                JavaTemplate.builder( "public String hello() { return \"Hello from #{}!\"; }")
                         .build();
 
         @Override
@@ -332,7 +331,7 @@ public class SayHelloRecipe extends Recipe {
 
     public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
         private final JavaTemplate helloTemplate =
-                JavaTemplate.builder(this::getCursor, "public String hello() { return \"Hello from #{}!\"; }")
+                JavaTemplate.builder( "public String hello() { return \"Hello from #{}!\"; }")
                         .build();
 
         @Override
@@ -354,12 +353,9 @@ public class SayHelloRecipe extends Recipe {
             }
 
             // Interpolate the fullyQualifiedClassName into the template and use the resulting LST to update the class body
-            classDecl = classDecl.withBody(
-                    classDecl.getBody().withTemplate(
-                            helloTemplate,
-                            classDecl.getBody().getCoordinates().lastStatement(),
-                            fullyQualifiedClassName
-                    ));
+            classDecl = classDecl.withBody( helloTemplate.apply(new Cursor(getCursor(), classDecl.getBody()),
+                    classDecl.getBody().getCoordinates().lastStatement(),
+                    fullyQualifiedClassName ));
 
             return classDecl;
         }
@@ -374,11 +370,11 @@ With all of that done, the complete `SayHelloRecipe` looks like this:
 ```java
 package com.yourorg;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
-import org.openrewrite.ExecutionContext;
-import org.openrewrite.Option;
-import org.openrewrite.Recipe;
+import org.openrewrite.*;
 import org.openrewrite.internal.lang.NonNull;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.JavaTemplate;
@@ -396,6 +392,12 @@ public class SayHelloRecipe extends Recipe {
     @NonNull
     String fullyQualifiedClassName;
 
+    // All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
+    @JsonCreator
+    public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
+        this.fullyQualifiedClassName = fullyQualifiedClassName;
+    }
+
     @Override
     public String getDisplayName() {
         return "Say Hello";
@@ -407,14 +409,14 @@ public class SayHelloRecipe extends Recipe {
     }
 
     @Override
-    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
         // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
         return new SayHelloVisitor();
     }
 
     public class SayHelloVisitor extends JavaIsoVisitor<ExecutionContext> {
         private final JavaTemplate helloTemplate =
-                JavaTemplate.builder(this::getCursor, "public String hello() { return \"Hello from #{}!\"; }")
+                JavaTemplate.builder( "public String hello() { return \"Hello from #{}!\"; }")
                         .build();
 
         @Override
@@ -436,12 +438,9 @@ public class SayHelloRecipe extends Recipe {
             }
 
             // Interpolate the fullyQualifiedClassName into the template and use the resulting LST to update the class body
-            classDecl = classDecl.withBody(
-                    classDecl.getBody().withTemplate(
-                            helloTemplate,
-                            classDecl.getBody().getCoordinates().lastStatement(),
-                            fullyQualifiedClassName
-                    ));
+            classDecl = classDecl.withBody( helloTemplate.apply(new Cursor(getCursor(), classDecl.getBody()),
+                    classDecl.getBody().getCoordinates().lastStatement(),
+                    fullyQualifiedClassName ));
 
             return classDecl;
         }
