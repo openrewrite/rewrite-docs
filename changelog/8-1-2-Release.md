@@ -1,6 +1,6 @@
 # 8.1.2 Release
 
-Rewrite 8 makes some substantial changes in order to support large monorepos that can not fit into memory. All recipes will need to be [migrated](#migrating-your-recipes) in order for them to keep working. Specific migration instructions can be found in the [migrating your recipes section](#migrating-your-recipes).
+OpenRewrite 8 makes some substantial changes in order to support large monorepos that can not fit into memory. All recipes will need to be [migrated](#migrating-your-recipes) in order for them to keep working. Specific migration instructions can be found in the [migrating your recipes section](#migrating-your-recipes).
 
 Below, we'll detail the [key changes](#key-changes) being made and provide guidance for how you can update your recipes to ensure they keep working. [At the bottom](#new-recipes) you'll find the standard new/changed/deleted recipe list.
 
@@ -10,9 +10,9 @@ Below, we'll detail the [key changes](#key-changes) being made and provide guida
 
 [Recipe](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/Recipe.java) no longer exposes a [getSingleSourceApplicableTest](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L241) or a [getApplicableTest](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L203) method. Recipe authors should, instead, use [Preconditions.check(TreeVisitor check, TreeVisitor visitor)](https://github.com/openrewrite/rewrite/blob/v8.0.0/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L30) to conditionally apply the visitor only if the check makes sense.
 
-As this is semantically equivalent to the rewrite 7 single source applicability test, recipe authors will generally just have to copy the body of their old applicability test method into the first argument of the call to `Preconditions.check()`.
+As this is semantically equivalent to the OpenRewrite 7 single source applicability test, recipe authors will generally just have to copy the body of their old applicability test method into the first argument of the call to `Preconditions.check()`.
 
-In rewrite 7, `Recipe.getApplicabilityTest()` was rarely used as it was confusing to most users. If your recipe uses it, you will need to convert your recipe to a [ScanningRecipe](#new-approach-to-recipe-visiting).
+In OpenRewrite 7, `Recipe.getApplicabilityTest()` was rarely used as it was confusing to most users. If your recipe uses it, you will need to convert your recipe to a [ScanningRecipe](#new-approach-to-recipe-visiting).
 
 {% hint style="warning" %}
 There is, unfortunately, no way for a YAML recipe to use `Preconditions`. We hope to support such a feature for them eventually, though.
@@ -121,7 +121,7 @@ public class ChainStringBuilderAppendCalls extends Recipe {
 
 ### New approach to recipe visiting
 
-In the previous version of Rewrite, developers could use [Recipe.visit(List<SourceFile> ...)](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L477-L479) to randomly access different files when their recipes needed them. Unfortunately, this random access took a considerable amount of time and was not scalable for large source sets. To address that problem, Rewrite 8 introduces a new type of recipe that separates the run functionality into three, scalable, phases.
+In the previous version of OpenRewrite, developers could use [Recipe.visit(List<SourceFile> ...)](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L477-L479) to randomly access different files when their recipes needed them. Unfortunately, this random access took a considerable amount of time and was not scalable for large source sets. To address that problem, OpenRewrite 8 introduces a new type of recipe that separates the run functionality into three, scalable, phases.
 
 For recipes that only change a single source file, you won't need to use the new recipe type. Instead, you will need to update the `Recipe.getVisitor()` method to be `public` instead of `protected`.
 
@@ -348,7 +348,7 @@ public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Sc
 
 ### JavaTemplate API has been updated
 
-Up until now, `JavaTemplate` has had a single purpose: for creating LST subtrees based on template code and input parameters. In rewrite 8, however, a second use case has been added – `JavaTemplate` can now be defined as a pattern that matches against an LST subtree, similar to a regular expression (regexp). To make this work, the template needs to be context-free, meaning it doesn't refer to surrounding code but, instead, only to template parameters and statically available elements like classes and static members.
+Up until now, `JavaTemplate` has had a single purpose: for creating LST subtrees based on template code and input parameters. In OpenRewrite 8, however, a second use case has been added – `JavaTemplate` can now be defined as a pattern that matches against an LST subtree, similar to a regular expression (regexp). To make this work, the template needs to be context-free, meaning it doesn't refer to surrounding code but, instead, only to template parameters and statically available elements like classes and static members.
 
 This context-free nature allows us to embed the template into a skeleton Java class, compile it once to an LST, and then compare it with other LSTs to determine if they match. The template parameters in the LST act as wildcards in a regexp-like manner. This approach significantly improves efficiency compared to replacing each subtree separately.
 
@@ -669,7 +669,7 @@ Similarly, the `doAfterVisit(Recipe)` method has been removed in favor of `doAft
 
 We've created a [migration recipe](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml) that will assist you with migrating your recipes to the latest version. You should run this recipe against all of your existing recipes. If the migration recipe is not able to fully migrate your recipe, comments will be added to the code to request a human to review it.
 
-**Do not attempt to bump the version of rewrite or any of your dependencies before running this recipe**. The flow for the upgrade should look like this:
+**Do not attempt to bump the version of OpenRewrite or any of your dependencies before running this recipe**. The flow for the upgrade should look like this:
 
 1. Go to the [MigrateToRewrite8 recipe doc](https://docs.openrewrite.org/recipes/java/upgrade/migratetorewrite8). In the [usage section](https://docs.openrewrite.org/recipes/java/upgrade/migratetorewrite8#usage), there are instructions for how to add this recipe to your repository. Either add it directly to your Maven or Gradle project or use the Maven command line.
 2. Run the recipe.
