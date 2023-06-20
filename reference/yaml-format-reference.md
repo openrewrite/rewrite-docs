@@ -40,24 +40,11 @@ You can find the full recipe schema [here](https://github.com/openrewrite/rewrit
 | tags                                               | array of strings                                                                                            | A list of strings that help categorize this recipe                                              |
 | estimatedEffortPerOccurence                        | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something                         |
 | causesAnotherCycle                                 | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)                          |
-| applicability                                      | object                                                                                                      | The list of [applicability tests](yaml-format-reference.md#applicability-tests) for this recipe |
-| ↪ singleSource                                     | array of recipes                                                                                            | See [applicability tests](yaml-format-reference.md#applicability-tests)                         |
-| ↪ anySource                                        | array of recipes                                                                                            | See [applicability tests](yaml-format-reference.md#applicability-tests)                         |
 | [recipeList](yaml-format-reference.md#recipe-list) | array of recipes                                                                                            | The list of recipes which comprise this recipe                                                  |
 
-### Applicability tests
+### Preconditions
 
-As mentioned in our [best practices guide](../authoring-recipes/recipe-conventions-and-best-practices.md#use-applicability-tests), it's a good idea to add applicability tests to your recipes. These tests limit where your recipe is run so that it can be run faster and so it's clearer to others what it does.
-
-While most of the recipes that comprise a declarative recipe have their own applicability tests, you can add a new layer of applicability tests on top of those. These tests will be run before any individual recipe runs its applicability tests. If any of these top-level tests fail, the recipes in the `recipeList` will not run. If these top-level tests pass, then the declarative recipe will begin iterating through the recipes in the `recipeList`. Each recipe in that list will run its own applicability tests before performing any refactoring.
-
-To create these top-level applicability tests, you'll need to add the `applicability` object to your file. This object has two pieces: `singleSource` and `anySource`. Each of those is composed of one or more recipes (formatted the same way as the [recipeList](yaml-format-reference.md#recipe-list)).
-
-If the `singleSource` list is specified, OpenRewrite will grab a file from the repository the recipe is being run on. It will then run each recipe in the `singleSource` section on that file. If _all_ of those recipes result in a change to that file, then the declarative recipe is considered "applicable" for that file and the recipes specified in the `recipeList` will be run on said file. Once that's done, the process will be repeated for the next file in the repository.
-
-If the `anySource` list is specified, OpenRewrite will run every recipe in the `anySource` list on every file in the repository the recipe is being run on. If _any_ of those recipes result in a change to at least one file, then the declarative recipe is considered "applicable" for that repository and the recipes specified in the `recipeList` will be run on every file in the repository.
-
-You can specify both `singleSource` and `anySource` applicability tests in a declarative recipe.
+Declarative YAML recipes do not support preconditions (formerly named applicability tests) as of [OpenRewrite 8](https://docs.openrewrite.org/changelog/8-1-2-release#applicability-tests-have-been-replaced). If your recipe needs that functionality, it should be defined in an [imperative manner](/concepts-and-explanations/recipes.md#imperative-recipes) instead.
 
 ### Recipe list
 
