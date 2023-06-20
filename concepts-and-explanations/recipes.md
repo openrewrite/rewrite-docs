@@ -33,7 +33,7 @@ public class ChangeType extends Recipe {
     }
 
     @Override
-    protected JavaVisitor<ExecutionContext> getVisitor() {
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
         // Construct an instance of a visitor that will operate over the LSTs.
         return new ChangeTypeVisitor(oldFullyQualifiedTypeName, newFullyQualifiedTypeName);
     }
@@ -58,7 +58,7 @@ Consider this non-exhaustive list of steps required to migrate a project from JU
 * Remove public visibility from test classes and methods that no longer need to be `public` in JUnit 5
 * Modify the Maven `pom.xml` to include dependencies on JUnit 5, and remove dependencies on JUnit 4
 
-No one recipe should be responsible for implementing all of these different responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes add other recipes to the execution pipeline via the `doNext()` method.
+No one recipe should be responsible for implementing all of these different responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes add other recipes to the execution pipeline via the `doAfterVisit()` method.
 
 In our above example, the "Migrate to JUnit 5" recipe could look similar to the following:
 
@@ -70,14 +70,14 @@ import org.openrewrite.java.ChangeType;
 public class JUnit5Migration extends Recipe {
 
     public JUnit5Migration(boolean addJunit5Dependencies) {
-        // Add nested recipes to the execution pipeline via doNext()
-        doNext(new ChangeType("org.junit.Test", "org.junit.jupiter.api.Test"));
-        doNext(new AssertToAssertions());
-        doNext(new RemovePublicTestModifiers());
+        // Add nested recipes to the execution pipeline via doAfterVisit()
+        doAfterVisit(new ChangeType("org.junit.Test", "org.junit.jupiter.api.Test").getVisitor());
+        doAfterVisit(new AssertToAssertions().getVisitor());
+        doAfterVisit(new RemovePublicTestModifiers().getVisitor());
 
         // Recipe can be optionally configured to add the JUnit 5 dependencies
         if (addJUnitDependencies) {
-            doNext(new AddJUnit5Dependencies());
+            doAfterVisit(new AddJUnit5Dependencies().getVisitor());
         }
     }
 }
@@ -193,7 +193,7 @@ recipeList:
 ```
 
 {% hint style="success" %}
-Calling `Recipe.doNext()` during the execution of a recipe/visitor schedules that recipe to execute immediately after the current recipe during the current cycle. `Recipe.doNext()` does not cause an extra cycle to execute or be required.
+Calling `Recipe.doAfterVisit()` during the execution of a recipe/visitor schedules that recipe to execute immediately after the current recipe during the current cycle. `Recipe.doAfterVisit()` does not cause an extra cycle to execute or be required.
 {% endhint %}
 
 ### Result Set
