@@ -671,7 +671,7 @@ We've created a [migration recipe](https://github.com/openrewrite/rewrite/blob/v
 
 **Do not attempt to bump the version of rewrite or any of your dependencies before running this recipe**. The flow for the upgrade should look like this:
 
-1. Add the `org.openrewrite.java.upgrade.MigrateToRewrite8` recipe to your list of active recipes in the repository where the recipe you want to update is defined.
+1. Go to the [MigrateToRewrite8 recipe doc](https://docs.openrewrite.org/recipes/java/upgrade/migratetorewrite8). In the [usage section](https://docs.openrewrite.org/recipes/java/upgrade/migratetorewrite8#usage), there are instructions for how to add this recipe to your repository. Either add it directly to your Maven or Gradle project or use the Maven command line.
 2. Run the recipe.
 3. Look over the recipe. Some pieces may have been directly changed whereas other parts may have just had comments added.
 4. Bump your dependencies to the latest version and attempt to address the comments.
