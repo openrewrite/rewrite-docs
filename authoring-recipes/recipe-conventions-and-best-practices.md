@@ -20,7 +20,7 @@ To get the most use out of this document, it would be beneficial for you to:
 
 One of the most important conventions to keep in mind when creating recipes is the concept of "Do no harm". If your recipe cannot determine that a change is safe, **it should make no changes rather than making a potentially wrong change**.
 
-For example, in the [RenameLocalVariableToCamelCase recipe](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/RenameLocalVariablesToCamelCase.java), we prevent the recipe from renaming variables to a name that _could_ be a namespace conflict. Likewise, we opt out of renaming class fields since they _might_ be in use by some downstream API. We favor making fewer changes over making wrong changes.
+For example, in the [RenameLocalVariableToCamelCase recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RenameLocalVariablesToCamelCase.java), we prevent the recipe from renaming variables to a name that _could_ be a namespace conflict. Likewise, we opt out of renaming class fields since they _might_ be in use by some downstream API. We favor making fewer changes over making wrong changes.
 
 Relatedly, when making changes, always strive to make the most minimal, least invasive version of that change. For instance, in the [NoGuavaImmutableSetOf recipe](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaImmutableSetOf.java), we restrict the recipe from changing any code that does not use at least Java 9.
 
@@ -43,7 +43,7 @@ All recipe names, descriptions, and parameters should follow our [recipe naming 
 By following these conventions, you'll ensure that:
 
 * The [documentation](../reference/recipes/) generated for your recipe is valid and clear to others
-* The [Moderne Saas](https://app.moderne.io/) can accurately filter and display your recipe and its parameters
+* The [Moderne platform](https://app.moderne.io/) can accurately filter and display your recipe and its parameters
 
 ### If it can be declarative, it should be declarative
 
@@ -69,24 +69,20 @@ By not calling `super.visitSomeLstElement()`, you will often improve the perform
 If you do decide to include `super.visitSomeLstElement()`, it is often most convenient to do so at the beginning of each `visit` method you override.
 {% endhint %}
 
-### Use applicability tests
+### Use preconditions
 
 Most recipes are not universally applicable to every source file. For instance, a recipe that makes changes to a method introduced in Java 17 would not be useful to run on Java 8 code. Likewise, a recipe that works with ArrayLists would not apply to a file that does not contain an ArrayList.
 
 Instead of running your recipe on every file, you can have your recipe provide some context on when it should be run. By doing so, you'll not only make it so your recipe can be run on more files more quickly, but you'll also enhance the readability of your recipe. That, in turn, simplifies debugging and maintenance and leads to better recipes.
 
-To do this, you'll want to override either the [Recipe.getApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L203) or the [Recipe.getSingleSourceApplicableTest() method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L241). Both of these methods expect a [visitor](../concepts-and-explanations/visitors.md) to be returned from the method. This visitor **is not** the same visitor that is used by your recipe to make changes to the source code. Instead, this visitor should make a change to the LST if the recipe applies to a particular file.
+To do this, you'll want to utilize the [Preconditions.check() method](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L30).
 
-{% hint style="info" %}
-`Recipe.getApplicableTest()` runs on every file in a repository. If _any_ of the files result in a change to the LST, then that signifies the recipe applies to _all_ files in that repository. `Recipe.getSingleSourceApplicableTest()` is much narrower in scope. Instead of determining whether or not a recipe applies to the entire repository, it determines whether or not the recipe applies to a specific file. For most recipes, `Recipe.getSingleSourceApplicableTest()` is the preferred method to override.
-{% endhint %}
+For instance, in the [MigrateCollectionsSingletonSet recipe](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.1/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java#L44-L45), we add a check that ensures the Java version is 9 and that the file contains a `singleton` method. We can be confident that this recipe won't make changes if those preconditions do not apply.
 
-For instance, in the [MigrateCollectionsSingletonSet recipe](https://github.com/openrewrite/rewrite-migrate-java/blob/v1.15.0/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java#L51-L52), we return a visitor that makes a change if the Java version is 9 and if the file contains the specified `singleton` method. If a change is made by this visitor, we know that the recipe "applies" to this file and, therefore, should be run on it. If the visitor did not make a change, then we know that this file can be safely ignored by this recipe.
-
-You can use `Applicability.and()`, `Applicability.or()`, and `Applicability.not()` to create more complex applicability criteria from simple building blocks.
+You can use [Preconditions.and(), Preconditions.or(), and Preconditions.not()](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L79-L123) to create more complex applicability criteria from simple building blocks.
 
 {% hint style="success" %}
-Applicability tests are most worthwhile when they can cheaply prevent a visitor from running unnecessarily.
+Preconditions are most worthwhile when they can cheaply prevent a visitor from running unnecessarily.
 {% endhint %}
 
 ### Recipe and LST immutability
