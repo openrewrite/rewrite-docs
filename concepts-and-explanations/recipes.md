@@ -206,3 +206,4 @@ The successful completion of a recipe's execution pipeline produces a collection
 | `getAfter()`                  | The modified `SourceFile`, or null if the change represents a file deletion.    |
 | `getRecipesThatMadeChanges()` | The recipe names that made the changes to the source file.                      |
 | `diff()`/`diff(Path)`         | A git-style diff (with an optional path to relativize file paths in the output) |
+ 
