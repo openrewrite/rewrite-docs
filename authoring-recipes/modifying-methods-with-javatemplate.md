@@ -365,7 +365,7 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
         // ...
 
         // Template used to add a method body to "setCustomerInfo()" method declaration
-        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder( " ").build();
+        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(" ").build();
 
         @Override
         public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
