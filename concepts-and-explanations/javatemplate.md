@@ -1,6 +1,6 @@
 # JavaTemplate
 
-More advanced refactoring recipes often require the construction of complex [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md) (LST) elements. Manually constructing complex LST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into LST elements ready for use in a [visitor](visitors.md).
+More advanced refactoring recipes often require the construction of complex [Lossless Semantic Tree](lossless-semantic-trees.md) (LST) elements. Manually constructing complex LST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into LST elements ready for use in a [visitor](visitors.md).
 
 {% hint style="success" %}
 `JavaTemplate` produces LSTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion.
@@ -13,11 +13,12 @@ More advanced refactoring recipes often require the construction of complex [Los
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
     private final JavaTemplate template =
-        JavaTemplate.builder("withString(#{any(java.lang.String)}).length()")   // Code Snippet
-            .javaParser(
-                JavaParser.fromJavaVersion()                                    // Parser
-                    .classpath("example-utils"))                                // Classpath lookup
-            .staticImports("org.example.StringUtils.withString")                // Additional import
+        JavaTemplate.builder(this::getCursor, "withString(#{any(java.lang.String)}).length()") // Code Snippet
+            .javaParser(JavaParser.fromJavaVersion()             // Parser 
+                .classpath("example-utils")                      // Classpath lookup
+                .build()
+             )
+            .staticImports("org.example.StringUtils.withString") // Additional import
             .build();
 }
 ```
@@ -26,7 +27,7 @@ public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
 
 A template is always constructed from a `String` code snippet. The snippet must be syntactically correct code for the context it is being inserted into. Snippets may reference variables, functions, and other symbols visible within the lexical scope of the insertion point.
 
-Snippets may include parameter substitution indicators. Parameter substitution indicators are positional. There are two kinds of parameter substitution indicator, typed and untyped.&#x20;
+Snippets may include parameter substitution indicators. Parameter substitution indicators are positional. There are two kinds of parameter substitution indicator, typed and untyped.
 
 The substitution of these indicators with their actual values happens when the template is applied via `withTemplate()`. See [Usage](javatemplate.md#usage).
 
@@ -46,7 +47,7 @@ It is unnecessary to provide a typed substitution indicator if you're providing 
 {% endhint %}
 
 {% hint style="warning" %}
-If the recipe test harness fails because of missing type information when you've used templates double-check that you're providing accurate types and imports to the template. While correct source can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
+If the recipe test harness fails because of missing type information when you've used templates double-check that you're providing accurate types and imports to the template. While correct source can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.
 {% endhint %}
 
 #### Untyped Substitution Indicators
@@ -61,13 +62,13 @@ It is correct to use the untyped substitution indicator `#{}` when providing a n
 If a snippet of code is introducing a type that might be new to the insertion scope, `JavaTemplate` has to be informed using the method `JavaTemplate.Builder.imports()`. For static imports, use `JavaTemplate.Builder.staticImports()`. For example:
 
 ```java
-JavaTemplate.builder("new SecureRandom()")
+JavaTemplate.builder(this::getCursor, "new SecureRandom()")
         .imports("java.security.SecureRandom")
-        .build();
+        .build()
 ```
 
 {% hint style="warning" %}
-Failing to declare required imports results in `JavaTemplate` producing LST elements missing type attribution, or failing outright with an exception. While correct source can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
+Failing to declare required imports results in `JavaTemplate` producing LST elements missing type attribution, or failing outright with an exception. While correct source can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -83,11 +84,12 @@ Declaring an import to `JavaTemplate` does not automatically add a corresponding
 The function `JavaParser.Builder.classpath(`) can be used to look up libraries by artifactId from the runtime classpath. In this example, the `template` snippet references a symbol of type `BasicPolymorphicTypeValidator`, which is provided by the jackson-databind library:
 
 ```java
-JavaTemplate.builder(template.toString())
-    .imports("com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator")
-    .javaParser(JavaParser.fromJavaVersion()
-        .classpath("jackson-databind"))
-    .build();
+JavaTemplate.builder(this::getCursor, template.toString())
+        .imports("com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator")
+        .javaParser(() -> JavaParser.fromJavaVersion()
+                .classpath("jackson-databind")
+                .build())
+        .build()
 ```
 
 {% hint style="warning" %}
@@ -99,17 +101,17 @@ It isn't always possible to include all the libraries a Recipe may want to refer
 Whenever a symbol you want to reference is not, or cannot, be looked up from the runtime classpath a stub providing all of the relevant type information can be provided instead. Stubs are provided with `JavaParser.Builder.dependsOn()`. Stubs must be valid Java source files, but only methods that are used in the template must exist in the stub, and those methods can be implemented with the bare minimum to be syntactically valid method declarations.
 
 ```java
-JavaTemplate.builder("Duration.ofMillis(#{any(int)})")
-    .imports("java.time.Duration")
-    .javaParser(JavaParser.fromJavaVersion()
-        .dependsOn(
-            "package org.springframework.boot.web.client;" +
-            "import java.time.Duration;" +
-            "public class RestTemplateBuilder {" +
-            "public RestTemplateBuilder setConnectTimeout(java.time.Duration) { return null; }" +
-            "public RestTemplateBuilder setReadTimeout(java.time.Duration) { return null; }" +
-            "}"))
-    .build();
+JavaTemplate.builder(this::getCursor,"Duration.ofMillis(#{any(int)})")
+        .imports("java.time.Duration")
+        .javaParser(() -> JavaParser.fromJavaVersion()
+                .dependsOn("package org.springframework.boot.web.client;" +
+                           "import java.time.Duration;" +
+                           "public class RestTemplateBuilder {" +
+                           "public RestTemplateBuilder setConnectTimeout(java.time.Duration) { return null; }" +
+                           "public RestTemplateBuilder setReadTimeout(java.time.Duration) { return null; }" +
+                           "}")
+                .build())
+        .build()
 ```
 
 {% hint style="info" %}
@@ -122,16 +124,15 @@ Once an instance of the template has been created it can be applied to an LST el
 
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
-    private final JavaTemplate template = JavaTemplate.builder("withString(#{any(java.lang.String)}).length()")
-        .javaParser(JavaParser.fromJavaVersion().classpath("example-utils"))
+    private final JavaTemplate template = JavaTemplate.builder(this::getCursor, "withString(#{any(java.lang.String)}).length()")
+        .javaParser(() -> JavaParser.fromJavaVersion().classpath("example-utils").build())
         .staticImports("org.example.StringUtils.withString")
         .build();
 
     public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext p) {
         J.MethodInvocation m = super.visitMethodInvocation(method, p);
         if (m.getSimpleName().equals("countLetters")) {
-
-            m = template.apply(getCursor(), m.getCoordinates().replace(), m.getArguments().get(0)); //Template Invocation
+            m = m.withTemplate(template, m.getCoordinates().replace(), m.getArguments().get(0)); //Template Invocation 
             maybeAddImport("org.example.StringUtils", "withString");
         }
         return m;
@@ -139,7 +140,7 @@ public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
 }
 ```
 
-Invoking `JavaTemplate#apply()` requires the specification of coordinates and the values to be filled in for any substitution indicators.
+Invoking `J.withTemplate()` requires the specification of coordinates and the values to be filled in for any substitution indicators.
 
 {% hint style="warning" %}
 Don't forget to use `JavaVisitor.maybeAddImport()` to add imports for any new types your template might be introducing!
