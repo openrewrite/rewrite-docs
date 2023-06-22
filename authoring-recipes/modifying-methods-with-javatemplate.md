@@ -333,10 +333,7 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
             // ...
 
             // Add a method body
-            methodDeclaration = maybeAutoFormat(
-                    methodDeclaration, addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody()),
-                    executionContext
-            );
+            addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody());
 
             return methodDeclaration;
         }
