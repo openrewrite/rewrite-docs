@@ -164,8 +164,6 @@ There are some cases, though, where you may want to share other types of informa
 
 In those cases, you can specify a different, mutable type for your visitor such as in this visitor which counts the number of method invocations in a Java LST:
 
-TODO: This does not work for me. I get errors about `static` declarations not being allowed in inner classes and also that the visitor can't be referenced from a static context.
-
 ```java
 public class MethodCountVisitor extends JavaIsoVisitor<AtomicInteger> {
     @Override
