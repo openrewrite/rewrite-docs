@@ -45,7 +45,7 @@ As an example of how the `Cursor` can be helpful, imagine a visitor that is task
 
 ```java
 @Override
-public J visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext context) {
+public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext context) {
     // The base class provides the language-specific navigation of sub-elements
     // Without this invocation, sub-elements such as inner classes will never be visited
     J.ClassDeclaration classDeclaration = (J.ClassDeclaration) super.visitClassDeclaration(cd, context);
@@ -80,9 +80,9 @@ Each `Cursor` within the stack has a `Map` into which arbitrary data may be read
 For example, imagine you wanted to make a visitor which needs to change to a class declaration based on something it finds within a method declaration. You could freely add information to the cursor without worry that this would affect any other visitors or recipes:
 
 ```java
-public class ChangesClassBasedOnMethod extends JavaVisitor<ExecutionContext> {
+public class ChangesClassBasedOnMethod extends JavaIsoVisitor<ExecutionContext> {
     @Override
-    public J visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext ctx) {
+    public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext ctx) {
         // Traverses down into sub-elements of the current class declaration
         J.ClassDeclaration classDeclaration = (J.ClassDeclaration) super.visitClassDeclaration(cd, ctx);
 
@@ -95,7 +95,7 @@ public class ChangesClassBasedOnMethod extends JavaVisitor<ExecutionContext> {
     }
 
     @Override
-    public J visitMethodDeclaration(J.MethodDeclaration methodDeclaration, ExecutionContext ctx) {
+    public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration methodDeclaration, ExecutionContext ctx) {
         if (/* methodDeclaration meets some criteria */) {
             // Puts the message on the cursor corresponding to the element this message will be read from
             getCursor().putMessageOnFirstEnclosing(J.ClassDeclaration.class, "FOUND_METHOD", methodDeclaration);
