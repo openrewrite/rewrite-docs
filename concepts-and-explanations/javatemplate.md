@@ -13,12 +13,11 @@ More advanced refactoring recipes often require the construction of complex [Los
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
     private final JavaTemplate template =
-        JavaTemplate.builder(this::getCursor, "withString(#{any(java.lang.String)}).length()") // Code Snippet
-            .javaParser(JavaParser.fromJavaVersion()             // Parser 
-                .classpath("example-utils")                      // Classpath lookup
-                .build()
-             )
-            .staticImports("org.example.StringUtils.withString") // Additional import
+        JavaTemplate.builder("withString(#{any(java.lang.String)}).length()")   // Code Snippet
+            .javaParser(
+                JavaParser.fromJavaVersion()                                    // Parser
+                    .classpath("example-utils"))                                // Classpath lookup
+            .staticImports("org.example.StringUtils.withString")                // Additional import
             .build();
 }
 ```
@@ -62,9 +61,9 @@ It is correct to use the untyped substitution indicator `#{}` when providing a n
 If a snippet of code is introducing a type that might be new to the insertion scope, `JavaTemplate` has to be informed using the method `JavaTemplate.Builder.imports()`. For static imports, use `JavaTemplate.Builder.staticImports()`. For example:
 
 ```java
-JavaTemplate.builder(this::getCursor, "new SecureRandom()")
+JavaTemplate.builder("new SecureRandom()")
         .imports("java.security.SecureRandom")
-        .build()
+        .build();
 ```
 
 {% hint style="warning" %}
@@ -84,12 +83,11 @@ Declaring an import to `JavaTemplate` does not automatically add a corresponding
 The function `JavaParser.Builder.classpath(`) can be used to look up libraries by artifactId from the runtime classpath. In this example, the `template` snippet references a symbol of type `BasicPolymorphicTypeValidator`, which is provided by the jackson-databind library:
 
 ```java
-JavaTemplate.builder(this::getCursor, template.toString())
-        .imports("com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator")
-        .javaParser(() -> JavaParser.fromJavaVersion()
-                .classpath("jackson-databind")
-                .build())
-        .build()
+JavaTemplate.builder(template.toString())
+    .imports("com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator")
+    .javaParser(JavaParser.fromJavaVersion()
+        .classpath("jackson-databind"))
+    .build();
 ```
 
 {% hint style="warning" %}
@@ -101,17 +99,17 @@ It isn't always possible to include all the libraries a Recipe may want to refer
 Whenever a symbol you want to reference is not, or cannot, be looked up from the runtime classpath a stub providing all of the relevant type information can be provided instead. Stubs are provided with `JavaParser.Builder.dependsOn()`. Stubs must be valid Java source files, but only methods that are used in the template must exist in the stub, and those methods can be implemented with the bare minimum to be syntactically valid method declarations.
 
 ```java
-JavaTemplate.builder(this::getCursor,"Duration.ofMillis(#{any(int)})")
-        .imports("java.time.Duration")
-        .javaParser(() -> JavaParser.fromJavaVersion()
-                .dependsOn("package org.springframework.boot.web.client;" +
-                           "import java.time.Duration;" +
-                           "public class RestTemplateBuilder {" +
-                           "public RestTemplateBuilder setConnectTimeout(java.time.Duration) { return null; }" +
-                           "public RestTemplateBuilder setReadTimeout(java.time.Duration) { return null; }" +
-                           "}")
-                .build())
-        .build()
+JavaTemplate.builder("Duration.ofMillis(#{any(int)})")
+    .imports("java.time.Duration")
+    .javaParser(JavaParser.fromJavaVersion()
+        .dependsOn(
+            "package org.springframework.boot.web.client;" +
+            "import java.time.Duration;" +
+            "public class RestTemplateBuilder {" +
+            "public RestTemplateBuilder setConnectTimeout(java.time.Duration) { return null; }" +
+            "public RestTemplateBuilder setReadTimeout(java.time.Duration) { return null; }" +
+            "}"))
+    .build();
 ```
 
 {% hint style="info" %}
@@ -124,15 +122,16 @@ Once an instance of the template has been created it can be applied to an LST el
 
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
-    private final JavaTemplate template = JavaTemplate.builder(this::getCursor, "withString(#{any(java.lang.String)}).length()")
-        .javaParser(() -> JavaParser.fromJavaVersion().classpath("example-utils").build())
+    private final JavaTemplate template = JavaTemplate.builder("withString(#{any(java.lang.String)}).length()")
+        .javaParser(JavaParser.fromJavaVersion().classpath("example-utils"))
         .staticImports("org.example.StringUtils.withString")
         .build();
 
     public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext p) {
         J.MethodInvocation m = super.visitMethodInvocation(method, p);
         if (m.getSimpleName().equals("countLetters")) {
-            m = m.withTemplate(template, m.getCoordinates().replace(), m.getArguments().get(0)); //Template Invocation 
+
+            m = template.apply(getCursor(), m.getCoordinates().replace(), m.getArguments().get(0)); //Template Invocation
             maybeAddImport("org.example.StringUtils", "withString");
         }
         return m;
@@ -140,7 +139,7 @@ public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
 }
 ```
 
-Invoking `J.withTemplate()` requires the specification of coordinates and the values to be filled in for any substitution indicators.
+Invoking `JavaTemplate#apply()` requires the specification of coordinates and the values to be filled in for any substitution indicators.
 
 {% hint style="warning" %}
 Don't forget to use `JavaVisitor.maybeAddImport()` to add imports for any new types your template might be introducing!
