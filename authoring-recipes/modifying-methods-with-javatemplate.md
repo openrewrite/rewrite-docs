@@ -190,13 +190,13 @@ When making a visitor, one of the first things you should do is ensure that your
 We can make a [MethodMatcher](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/MethodMatcher.java) that looks for a method like that. Once that's made, we can override the `visitMethodDeclaration()` function to check if any method matches the one we want. If the match fails, we should return the method as is:
 
 ```java
-protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+public JavaIsoVisitor<ExecutionContext> getVisitor() {
     return new JavaIsoVisitor<ExecutionContext>() {
         // Used to identify the method declaration that will be refactored
         private final MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
 
         @Override
-        public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+        public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
             if (!methodMatcher.matches(methodDeclaration.getMethodType())) {
                 return methodDeclaration;
             }
@@ -218,7 +218,7 @@ If you need help deciding what [LST](../concepts-and-explanations/lossless-seman
 Next up on our list of tasks is to remove the `abstract` modifier from our `setCustomerInfo()` method. [MethodDeclarations](../concepts-and-explanations/lst-examples.md#methoddeclaration) have a list of `Modifiers` in them. We can use a Java stream and the `filter` function to remove the `abstract` modifier:
 
 ```java
-protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+public JavaIsoVisitor<ExecutionContext> getVisitor() {
     return new JavaIsoVisitor<ExecutionContext>() {
        // ...
 
@@ -228,7 +228,7 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 
             // Remove the abstract modifier from the method
             methodDeclaration = methodDeclaration.withModifiers(methodDeclaration.getModifiers().stream()
-                    .filter(modifier -> modifier.getType() != Type.Abstract)
+                    .filter(modifier -> modifier.getType() != J.Modifier.Type.Abstract)
                     .collect(Collectors.toList()));
 
             // ...
@@ -257,12 +257,12 @@ As mentioned in our [best practice guide](recipe-conventions-and-best-practices.
 Worth noting is that these templates will completely replace the existing data unless we specify otherwise. While we technically could write a template that specifies three new parameters, let's write one that utilizes the existing `lastName` parameter so you can see what that looks like. To do that, we will use an interpolation marker (`#{}`). When we are visiting the method later, we can replace it with the existing argument.
 
 ```java
-protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+public JavaIsoVisitor<ExecutionContext> getVisitor() {
     return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
         // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
-        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
+        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder( "Date dateOfBirth, String firstName, #{}")
                 .imports("java.util.Date")
                 .build();
 
@@ -275,15 +275,17 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 Note: When building a template, if you use a type that's not a base Java type, you will need to specify what package that type comes from. In our case, since we're adding a `Date` to the `MethodDeclaration`, we need to specify that this is a `java.util.Date` and not some other type of date. You can do that by adding an `imports` function with the packages for the types used in the template.
 {% endhint %}
 
-With that template defined, we can now use it to replace the existing parameters via the `withTemplate()` function. This function takes in a `JavaTemplate`, some coordinates (where our template should be applied), and then 0 or more optional parameters (which will replace the interpolation marker we specified earlier):
+With that template defined, we can now use it to replace the existing parameters via the `apply()` function. The `apply` function expects a cursor, some coordinates (where our template should be applied), and then 0 or more optional parameters (which will replace the interpolation marker we specified earlier).
+
+The cursor parameter will either need to be `new Cursor(...)` or `updateCursor(...)` depending on whether or not the visitor has changed the `J` class anywhere. In our case, we removed the `abstract` modifier and will continue to make changes to where the cursor currently is – so we will need to update the cursor accordingly rather than making a new one.
 
 ```java
-protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+public JavaIsoVisitor<ExecutionContext> getVisitor() {
     return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
         // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
-        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
+        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder( "Date dateOfBirth, String firstName, #{}")
                 .imports("java.util.Date")
                 .build();
 
@@ -292,7 +294,8 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
             // ...
 
             // Add two parameters to the method declaration by inserting them in front of the first argument
-            methodDeclaration = methodDeclaration.withTemplate(addMethodParametersTemplate,
+            methodDeclaration =
+                    addMethodParametersTemplate.apply(updateCursor(methodDeclaration),
                     methodDeclaration.getCoordinates().replaceParameters(),
                     methodDeclaration.getParameters().get(0));
 
@@ -317,19 +320,23 @@ For this recipe, we want to add a `MethodBody` to our `setCustomerInfo()` method
 Let's define a `JavaTemplate` that we can use to create the empty method body and then use it to replace the null body that currently exists in our method:
 
 ```java
-protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+public JavaIsoVisitor<ExecutionContext> getVisitor() {
     return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
         // Template used to add a method body to the "setCustomerInfo()" method declaration
-        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, "").build();
+        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(" ").build();
+
 
         @Override
         public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
             // ...
 
             // Add a method body
-            methodDeclaration = methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody());
+            methodDeclaration = maybeAutoFormat(
+                    methodDeclaration, addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody()),
+                    executionContext
+            );
 
             return methodDeclaration;
         }
@@ -348,17 +355,17 @@ public void setCustomerInfo(Date dateOfBirth, String firstName, String lastName)
 
 When making changes in a recipe, OpenRewrite tries to keep the existing styles as much as possible. However, there are times when that styling either doesn't exist (such as in our case) or when the style doesn't match what you want.
 
-To address this, you can use the [maybeAutoFormat function](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L66-L79). This function takes in a before and after state as well as the execution context. The before state is the current `methodDeclaration` and the after state is what we already defined above with the template.
+To address this, you can use the [maybeAutoFormat function](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L69-L82). This function takes in a before and after state as well as the execution context. The before state is the current `methodDeclaration` and the after state is what we already defined above with the template.
 
 Using that function, we can change our visitor to fix the formatting of the body:
 
 ```java
-protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+public JavaIsoVisitor<ExecutionContext> getVisitor() {
     return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
         // Template used to add a method body to "setCustomerInfo()" method declaration
-        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, "").build();
+        private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder( " ").build();
 
         @Override
         public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
@@ -366,8 +373,7 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 
             // Add a method body and format it
             methodDeclaration = maybeAutoFormat(
-                    methodDeclaration,
-                    methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody()),
+                    methodDeclaration, addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody()),
                     executionContext
             );
 
@@ -386,18 +392,23 @@ public void setCustomerInfo(Date dateOfBirth, String firstName, String lastName)
 
 ### Add additional statements to `setCustomerInfo()`
 
-All that's left to do now is add the assignment statements to the method body. As before, we'll make a `JavaTemplate` that creates these statements:
+All that's left to do now is add the assignment statements to the method body. As before, we'll make a `JavaTemplate` that creates these statements.
+
+Please note that this template is different from the other ones we've made so far. This one has "context". A template is considered to be `contextSensitive` if the meaning of the code changes depending on where you put it. For instance, adding an `import` statement is **not** context-sensitive as it doesn't matter where in the imports section you put it - it will still function the same way. On the other hand, the parameters we are defining in this template **are** context-sensitive because if we put them elsewhere they would function entirely differently.
+
+Because of that, we need to ensure that we specify `contextSensitive` when we build the template:
 
 ```java
-protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+public JavaIsoVisitor<ExecutionContext> getVisitor() {
     return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
         // Template used to add statements to the method body of the "setCustomerInfo()" method
-        private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(this::getCursor,
+        private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(
                 "this.dateOfBirth = dateOfBirth;\n" +
                         "this.firstName = firstName;\n" +
                         "this.lastName = lastName;\n")
+                .contextSensitive()
                 .build();
 
         // ...
@@ -405,10 +416,10 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
 }
 ```
 
-We can then use this `JavaTemplate` in our visitor to add statements to the `setCustomerInfo()` method body:
+We can then use this `JavaTemplate` in our visitor to add statements to the `setCustomerInfo()` method body as we would with any other template:
 
 ```java
-protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+public JavaIsoVisitor<ExecutionContext> getVisitor() {
     return new JavaIsoVisitor<ExecutionContext>() {
         // ...
 
@@ -420,7 +431,7 @@ protected JavaIsoVisitor<ExecutionContext> getVisitor() {
             assert methodDeclaration.getBody() != null;
 
             // Add the assignment statements to the "setCustomerInfo()" method body
-            methodDeclaration = methodDeclaration.withTemplate(addStatementsTemplate, methodDeclaration.getBody().getCoordinates().lastStatement());
+            methodDeclaration = addStatementsTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getBody().getCoordinates().lastStatement());
 
             return methodDeclaration;
         }
@@ -439,6 +450,7 @@ package com.yourorg;
 
 import org.openrewrite.ExecutionContext;
 import org.openrewrite.Recipe;
+import org.openrewrite.TreeVisitor;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.MethodMatcher;
@@ -462,24 +474,26 @@ public class ExpandCustomerInfo extends Recipe {
     // OpenRewrite provides a managed environment in which it discovers, instantiates, and wires configuration into Recipes.
     // This recipe has no configuration and delegates to its visitor when it is run.
     @Override
-    protected JavaIsoVisitor<ExecutionContext> getVisitor() {
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
         return new JavaIsoVisitor<ExecutionContext>() {
             // Used to identify the method declaration that will be refactored
             private final MethodMatcher methodMatcher = new MethodMatcher("com.yourorg.Customer setCustomerInfo(String)");
 
             // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
-            private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder(this::getCursor, "Date dateOfBirth, String firstName, #{}")
+            private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder( "Date dateOfBirth, String firstName, #{}")
                     .imports("java.util.Date")
+                    .contextSensitive()
                     .build();
 
             // Template used to add a method body to the "setCustomerInfo()" method declaration
-            private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(this::getCursor, " ").build();
+            private final JavaTemplate addMethodBodyTemplate = JavaTemplate.builder(" ").build();
 
             // Template used to add statements to the method body of the "setCustomerInfo()" method
-            private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(this::getCursor,
-                            "this.dateOfBirth = dateOfBirth;\n" +
-                                    "this.firstName = firstName;\n" +
-                                    "this.lastName = lastName;\n")
+            private final JavaTemplate addStatementsTemplate = JavaTemplate.builder(
+                    "this.dateOfBirth = dateOfBirth;\n" +
+                            "this.firstName = firstName;\n" +
+                            "this.lastName = lastName;\n")
+                    .contextSensitive()
                     .build();
 
             @Override
@@ -494,14 +508,14 @@ public class ExpandCustomerInfo extends Recipe {
                         .collect(Collectors.toList()));
 
                 // Add two parameters to the method declaration by inserting them in front of the first argument
-                methodDeclaration = methodDeclaration.withTemplate(addMethodParametersTemplate,
+                methodDeclaration =
+                        addMethodParametersTemplate.apply(updateCursor(methodDeclaration),
                         methodDeclaration.getCoordinates().replaceParameters(),
                         methodDeclaration.getParameters().get(0));
 
                 // Add a method body and format it
                 methodDeclaration = maybeAutoFormat(
-                        methodDeclaration,
-                        methodDeclaration.withTemplate(addMethodBodyTemplate, methodDeclaration.getCoordinates().replaceBody()),
+                        methodDeclaration, addMethodBodyTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getCoordinates().replaceBody()),
                         executionContext
                 );
 
@@ -509,7 +523,7 @@ public class ExpandCustomerInfo extends Recipe {
                 assert methodDeclaration.getBody() != null;
 
                 // Add the assignment statements to the "setCustomerInfo()" method body
-                methodDeclaration = methodDeclaration.withTemplate(addStatementsTemplate, methodDeclaration.getBody().getCoordinates().lastStatement());
+                methodDeclaration = addStatementsTemplate.apply(updateCursor(methodDeclaration), methodDeclaration.getBody().getCoordinates().lastStatement());
 
                 return methodDeclaration;
             }
