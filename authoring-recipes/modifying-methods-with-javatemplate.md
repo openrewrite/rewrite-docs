@@ -285,7 +285,7 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
         // ...
 
         // Template used to insert two additional parameters into the "setCustomerInfo()" method declaration
-        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder( "Date dateOfBirth, String firstName, #{}")
+        private final JavaTemplate addMethodParametersTemplate = JavaTemplate.builder("Date dateOfBirth, String firstName, #{}")
                 .imports("java.util.Date")
                 .build();
 
