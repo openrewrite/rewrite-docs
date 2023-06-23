@@ -10,11 +10,11 @@ _Rewrite Recipe Migration to version 8. While most parts can be automatically mi
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/MigrateRecipeToRewrite8.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/MigrateRecipeToRewrite8.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.2
+* version: 8.1.3
 
 ## Examples
 ##### Example 1
@@ -109,7 +109,7 @@ public class RenamePrivateFieldsToCamelCase extends Recipe {
     private static class RenameNonCompliantNames extends JavaIsoVisitor<ExecutionContext> {
 
         @Override
-        public  @Nullable J visit(@Nullable Tree tree, ExecutionContext ctx) {
+        public @Nullable J visit(@Nullable Tree tree, ExecutionContext ctx) {
             if (tree instanceof JavaSourceFile) {
                 JavaSourceFile cu = (JavaSourceFile) tree;
                 Map<J.VariableDeclarations.NamedVariable, String> renameVariablesMap = new LinkedHashMap<>();
@@ -155,7 +155,7 @@ import org.openrewrite.java.JavaIsoVisitor;
 -       public JavaSourceFile visitJavaSourceFile(JavaSourceFile cu, ExecutionContext ctx) {
 -           Map<J.VariableDeclarations.NamedVariable, String> renameVariablesMap = new LinkedHashMap<>();
 -           Set<String> hasNameSet = new HashSet<>();
-+       public  @Nullable J visit(@Nullable Tree tree, ExecutionContext ctx) {
++       public @Nullable J visit(@Nullable Tree tree, ExecutionContext ctx) {
 +           if (tree instanceof JavaSourceFile) {
 +               JavaSourceFile cu = (JavaSourceFile) tree;
 +               Map<J.VariableDeclarations.NamedVariable, String> renameVariablesMap = new LinkedHashMap<>();

@@ -18,13 +18,13 @@
 * [Find plain text secrets](./findsecrets.md)
 * [Find source files with imports](./findimports.md)
 * [Find sources that are likely tests](./islikelytest.md)
-* [Find text](./findtext.md)
 * [Find types](./findtypes.md)
 * [Find uses of `@Repeatable` annotations](./findrepeatableannotations.md)
 * [Find uses of deprecated classes](./finddeprecatedclasses.md)
 * [Find uses of deprecated classes, methods, and fields](./finddeprecateduses.md)
 * [Find uses of deprecated fields](./finddeprecatedfields.md)
 * [Find uses of deprecated methods](./finddeprecatedmethods.md)
+* [Find within comments and literals](./findcomments.md)
 * [Result of method call ignored](./resultofmethodcallignored.md)
 
 

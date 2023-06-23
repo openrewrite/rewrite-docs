@@ -6,11 +6,11 @@ _This is a diagnostic recipe to highlight where ASTs are missing type attributio
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMissingTypes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMissingTypes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.2
+* version: 8.1.3
 
 ## Example
 
@@ -119,8 +119,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ## Contributors
 * [Patrick Way](pway99@users.noreply.github.com)
 * [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
 * [Knut Wannheden](knut@moderne.io)
+* [Sam Snyder](sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

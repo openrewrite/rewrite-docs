@@ -6,11 +6,11 @@ _Set the parent pom version number according to a node-style semver selector or 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.2
+* version: 8.1.3
 
 ## Options
 
@@ -27,9 +27,9 @@ _Set the parent pom version number according to a node-style semver selector or 
 ###### Parameters
 | Parameter | Value |
 | -- | -- |
-|groupId|`*`|
-|artifactId|`*`|
-|newVersion|`latest.patch`|
+|groupId|`org.jenkins-ci.plugins`|
+|artifactId|`plugin`|
+|newVersion|`4.40`|
 |versionPattern|`null`|
 |retainVersions|`null`|
 
@@ -41,14 +41,13 @@ _Set the parent pom version number according to a node-style semver selector or 
 {% code title="pom.xml" %}
 ```xml
 <project>
-  <parent>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>credentials</artifactId>
-      <version>2.3.0</version>
-  </parent>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.33</version>
+    </parent>
+    <artifactId>antisamy-markup-formatter</artifactId>
+    <version>1.0.0</version>
 </project>
 ```
 {% endcode %}
@@ -57,15 +56,13 @@ _Set the parent pom version number according to a node-style semver selector or 
 {% code title="pom.xml" %}
 ```xml
 <project>
-  <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
-https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>credentials</artifactId>
-      <version>2.3.0</version>
-  </parent>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>4.40</version>
+    </parent>
+    <artifactId>antisamy-markup-formatter</artifactId>
+    <version>1.0.0</version>
 </project>
 ```
 {% endcode %}
@@ -76,12 +73,12 @@ https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -2,1 +2,2 @@
-<project>
-- <parent>
-+ <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
-+https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
-      <groupId>org.jenkins-ci.plugins</groupId>
+@@ -5,1 +5,1 @@
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+-       <version>4.33</version>
++       <version>4.40</version>
+    </parent>
 ```
 {% endcode %}
 {% endtab %}

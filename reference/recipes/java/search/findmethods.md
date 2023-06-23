@@ -6,11 +6,11 @@ _Find method usages by pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.2
+* version: 8.1.3
 
 ## Options
 
@@ -149,10 +149,10 @@ repositories {
 
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Greg Adams](greg@moderne.io)
 * [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
 * [Sam Snyder](sam@moderne.io)
+* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 * [Aaron Gershman](aegershman@gmail.com)
 
 

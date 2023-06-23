@@ -1,16 +1,16 @@
-# Update moved package recipe
+# Update moved package recipe in yaml file
 
-**org.openrewrite.java.recipes.UpdateMovedRecipesYaml**
+**org.openrewrite.java.recipes.UpdateMovedRecipeYaml**
 
-_Update moved package recipe._
+_Update moved package recipe in yaml file._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/UpdateMovedRecipesYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/UpdateMovedRecipeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.2
+* version: 8.1.3
 
 ## Options
 
@@ -22,23 +22,23 @@ _Update moved package recipe._
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateMovedRecipesYamlExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateMovedRecipeYamlExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 
 {% code title="rewrite.yml" %}
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.UpdateMovedRecipesYamlExample
-displayName: Update moved package recipe example
+name: com.yourorg.UpdateMovedRecipeYamlExample
+displayName: Update moved package recipe in yaml file example
 recipeList:
-  - org.openrewrite.java.recipes.UpdateMovedRecipesYaml:
+  - org.openrewrite.java.recipes.UpdateMovedRecipeYaml:
       oldRecipeFullyQualifiedClassName: org.openrewrite.java.cleanup.UnnecessaryCatch
       newRecipeFullyQualifiedClassName: org.openrewrite.staticanalysis.UnnecessaryCatch
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateMovedRecipesYamlExample` has been defined activate it in your build file:
+Now that `com.yourorg.UpdateMovedRecipeYamlExample` has been defined activate it in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -48,7 +48,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.UpdateMovedRecipesYamlExample")
+    activeRecipe("com.yourorg.UpdateMovedRecipeYamlExample")
 }
 
 repositories {
@@ -69,7 +69,7 @@ repositories {
         <version>5.2.2</version>
         <configuration>
           <activeRecipes>
-            <recipe>com.yourorg.UpdateMovedRecipesYamlExample</recipe>
+            <recipe>com.yourorg.UpdateMovedRecipeYamlExample</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -87,7 +87,7 @@ repositories {
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.recipes.UpdateMovedRecipesYaml)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.recipes.UpdateMovedRecipeYaml)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

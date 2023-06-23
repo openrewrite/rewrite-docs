@@ -6,11 +6,11 @@ _Update a Gradle plugin by id to a later version._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.2
+* version: 8.1.3
 
 ## Options
 
@@ -20,12 +20,21 @@ _Update a Gradle plugin by id to a later version._
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+
+### Maven metadata failures
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+
 ## Example
 
 ###### Parameters
 | Parameter | Value |
 | -- | -- |
-|pluginIdPattern|`com.jfrog.bintray`|
+|pluginIdPattern|`org.openrewrite.rewrite`|
 |newVersion|`latest.patch`|
 |versionPattern|`null`|
 
@@ -37,7 +46,7 @@ _Update a Gradle plugin by id to a later version._
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id 'com.jfrog.bintray' version '1.7.1'
+    id 'org.openrewrite.rewrite' version '5.40.0'
     id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 ```
@@ -47,7 +56,7 @@ plugins {
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id 'com.jfrog.bintray' version '1.7.3'
+    id 'org.openrewrite.rewrite' version '5.40.6'
     id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 ```
@@ -61,8 +70,8 @@ plugins {
 +++ build.gradle
 @@ -2,1 +2,1 @@
 plugins {
--   id 'com.jfrog.bintray' version '1.7.1'
-+   id 'com.jfrog.bintray' version '1.7.3'
+-   id 'org.openrewrite.rewrite' version '5.40.0'
++   id 'org.openrewrite.rewrite' version '5.40.6'
     id 'com.github.johnrengelman.shadow' version '6.1.0'
 ```
 {% endcode %}
@@ -113,6 +122,7 @@ repositories {
 
 ## Contributors
 * [Jonathan Schneider](jkschneider@gmail.com)
+* [Shannon Pamperl](shanman190@gmail.com)
 * [Sam Snyder](sam@moderne.io)
 * [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
 

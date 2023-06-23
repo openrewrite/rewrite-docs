@@ -6,11 +6,11 @@ _Format HCL code using a standard comprehensive set of HCL formatting recipes._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 8.1.2
+* version: 8.1.3
 
 ## Example
 
@@ -21,17 +21,23 @@ _Format HCL code using a standard comprehensive set of HCL formatting recipes._
 ###### Before
 {% code %}
 ```hcl
-resource "aws_ebs_volume"    {    size      = 1
-encrypted = true   }
+locals {
+  object = {
+         string_attr = "value1"
+         int_attr    = 2
+  }
+}
 ```
 {% endcode %}
 
 ###### After
 {% code %}
 ```hcl
-resource "aws_ebs_volume" {
-  size      = 1
-  encrypted = true
+locals {
+  object = {
+    string_attr = "value1"
+    int_attr    = 2
+  }
 }
 ```
 {% endcode %}
@@ -40,14 +46,14 @@ resource "aws_ebs_volume" {
 {% tab title="Diff" %}
 {% code %}
 ```diff
-@@ -1,2 +1,4 @@
--resource "aws_ebs_volume"    {    size      = 1
--encrypted = true   }
-+resource "aws_ebs_volume" {
-+ size      = 1
-+ encrypted = true
-+}
-
+@@ -3,2 +3,2 @@
+locals {
+  object = {
+-        string_attr = "value1"
+-        int_attr    = 2
++   string_attr = "value1"
++   int_attr    = 2
+  }
 ```
 {% endcode %}
 {% endtab %}

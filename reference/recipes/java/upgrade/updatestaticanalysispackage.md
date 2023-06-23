@@ -6,11 +6,11 @@ _Some recipes have been moved from `rewrite` to `rewrite-static-analysis`, so an
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.2
+* version: 8.1.3
 
 ## Examples
 ##### Example 1
@@ -194,6 +194,9 @@ Update referencing places in pom.xml.
 {% code title="pom.xml" %}
 ```xml
 <project>
+  <groupId>org.example</groupId>
+  <artifactId>foo</artifactId>
+  <version>1.0</version>
   <build>
     <plugins>
       <plugin>
@@ -216,6 +219,9 @@ Update referencing places in pom.xml.
 {% code title="pom.xml" %}
 ```xml
 <project>
+  <groupId>org.example</groupId>
+  <artifactId>foo</artifactId>
+  <version>1.0</version>
   <build>
     <plugins>
       <plugin>
@@ -240,13 +246,13 @@ Update referencing places in pom.xml.
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -10,1 +10,1 @@
+@@ -13,1 +13,1 @@
         <configuration>
           <activeRecipes>
 -           <recipe>org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable</recipe>
 +           <recipe>org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable</recipe>
           </activeRecipes>
-@@ -17,1 +17,0 @@
+@@ -20,1 +20,0 @@
   </build>
 </project>
 -

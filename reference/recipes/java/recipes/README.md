@@ -15,7 +15,8 @@ _Apply best practices to OpenRewrite recipes._
 * [Set default estimated effort](./setdefaultestimatedeffortperoccurrence.md)
 * [Update moved package class name](./updatemovedpackageclassname.md)
 * [Update moved package recipe](./updatemovedrecipe.md)
-* [Update moved package recipe](./updatemovedrecipesyaml.md)
+* [Update moved package recipe in pom.xml](./updatemovedrecipexml.md)
+* [Update moved package recipe in yaml file](./updatemovedrecipeyaml.md)
 * [Use `JavaParser.Builder` when constructing `JavaTemplate`](./usejavaparserbuilderinjavatemplate.md)
 * [Use a standard name for `ExecutionContext`](./executioncontextparametername.md)
 

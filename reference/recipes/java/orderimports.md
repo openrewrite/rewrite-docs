@@ -6,11 +6,11 @@ _Group and order imports._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.2
+* version: 8.1.3
 
 ## Options
 
@@ -27,10 +27,10 @@ _Group and order imports._
 
 
 {% tabs %}
-{% tab title="475137499430.java" %}
+{% tab title="660606438982.java" %}
 
 ###### Before
-{% code title="475137499430.java" %}
+{% code title="660606438982.java" %}
 ```java
 import java.util.List;
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ import java.util.Map;
 {% endcode %}
 
 ###### After
-{% code title="475137499430.java" %}
+{% code title="660606438982.java" %}
 ```java
 import java.util.*;
 import java.util.regex.Pattern;
@@ -53,8 +53,8 @@ import java.util.regex.Pattern;
 {% tab title="Diff" %}
 {% code %}
 ```diff
---- 475137499430.java
-+++ 475137499430.java
+--- 660606438982.java
++++ 660606438982.java
 @@ -1,2 +1,1 @@
 -import java.util.List;
 -import java.util.ArrayList;
