@@ -275,9 +275,18 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
 Note: When building a template, if you use a type that's not a base Java type, you will need to specify what package that type comes from. In our case, since we're adding a `Date` to the `MethodDeclaration`, we need to specify that this is a `java.util.Date` and not some other type of date. You can do that by adding an `imports` function with the packages for the types used in the template.
 {% endhint %}
 
-With that template defined, we can now use it to replace the existing parameters via the `apply()` function. The `apply` function expects a cursor, some coordinates (where our template should be applied), and then 0 or more optional parameters (which will replace the interpolation marker we specified earlier).
+With that template defined, we can now use it to replace the existing parameters via the `apply()` function. The `apply` function expects a [cursor](/concepts-and-explanations/visitors.md#cursoring), some coordinates (where our template should be applied), and then 0 or more optional parameters (which will replace the interpolation marker we specified earlier).
 
-The cursor parameter will either need to be `new Cursor(...)` or `updateCursor(...)` depending on whether or not the visitor has changed the `J` class anywhere. In our case, we removed the `abstract` modifier and will continue to make changes to where the cursor currently is – so we will need to update the cursor accordingly rather than making a new one.
+There are three options for the cursor parameter:
+
+1. Use the existing cursor (`getCursor()`)
+    * The most common use case. Used when no changes have been made to the cursor in the visitor and when you want to access exactly what the cursor is pointing at.
+2. Make a new cursor (`new Cursor(getCursor(), ...)`)
+    * Used in situations where the existing cursor is pointing to something that doesn't match what you want to change. For example, if you wanted to add a new method to a class, you would `visitClassDeclaration` and the cursor would point to said `J.ClassDeclaration`. However, you would want to apply the template to the `J.Block` inside of the `ClassDeclaration` rather than the `ClassDeclaration` itself.
+3. Update the existing cursor (`updateCursor(...)`)
+    * Used in situations where the existing cursor no longer applies. For instance, in the current recipe we're working on, we removed the `abstract` modifier from the method and, if we called `getCursor()` now, it would not have those changes. Anytime the `J` class is modified and you want to continue making changes, you'll need to use `updateCursor()`.
+
+Here is what applying the above template looks like for the recipe we're writing:
 
 ```java
 public JavaIsoVisitor<ExecutionContext> getVisitor() {
@@ -291,6 +300,7 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
 
         @Override
         public MethodDeclaration visitMethodDeclaration(MethodDeclaration methodDeclaration, ExecutionContext executionContext) {
+            // Remove the abstract modifier from the method
             // ...
 
             // Add two parameters to the method declaration by inserting them in front of the first argument
