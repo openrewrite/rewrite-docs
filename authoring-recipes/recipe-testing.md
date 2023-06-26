@@ -356,6 +356,27 @@ public void defaults(RecipeSpec spec) {
 
 ([Recipe example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.2/src/test/java/org/openrewrite/java/migrate/lang/UseTextBlocksTest.java#L41))
 
+You can also specify the version on an individual test basis [like so](https://github.com/openrewrite/rewrite-migrate-java/blob/927b01de8e8fd8f1ab68bc934a860043e0eba441/src/test/java/org/openrewrite/java/migrate/util/RemoveFinalizerFromZipTest.java#L259-L270):
+
+```java
+@Test
+void noChangeOnJava11() {
+    //language=java
+    rewriteRun(version(java("""
+        import java.util.zip.ZipFile;
+
+        class FooBar extends ZipFile {
+            FooBar(){
+                super("");
+            }
+            public void test() {
+                finalize();
+            }
+        }
+        """), 11));
+}
+```
+
 ## Next steps
 
 Now that you're familiar with writing tests, consider reading over the [best practice guide for making recipes](recipe-conventions-and-best-practices.md). You could also check out [the guide that expands on JavaTemplates](modifying-methods-with-javatemplate.md) if you'd like to learn even more about creating recipes.
