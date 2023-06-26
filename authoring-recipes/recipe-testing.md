@@ -342,6 +342,20 @@ void propertiesChangeTest() {
 You'll need to add `org.openrewrite:rewrite-properties` as a test dependency for `properties` to be available in your tests.
 {% endhint %}
 
+### Specifying Java versions
+
+When writing recipes that change the version of Java (such as a migration from 11 to 17), you may want to have tests that run on a different version of Java. To do this, you can use the `RecipeSpec.allSources()` method to configure a default Java version for the sources:
+
+```java
+@Override
+public void defaults(RecipeSpec spec) {
+    spec.recipe(new UseTextBlocks())
+        .allSources(s -> s.markers(javaVersion(17)));
+}
+```
+
+([Recipe example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.2/src/test/java/org/openrewrite/java/migrate/lang/UseTextBlocksTest.java#L41))
+
 ## Next steps
 
 Now that you're familiar with writing tests, consider reading over the [best practice guide for making recipes](recipe-conventions-and-best-practices.md). You could also check out [the guide that expands on JavaTemplates](modifying-methods-with-javatemplate.md) if you'd like to learn even more about creating recipes.
