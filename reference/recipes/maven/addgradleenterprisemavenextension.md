@@ -23,6 +23,7 @@ _To integrate gradle enterprise maven extension into maven projects, ensure that
 | `Boolean` | uploadInBackground | *Optional*. When set to `false` the extension will not upload build scan in the background. By default, build scans are uploaded in the background after the build has finished to avoid blocking the build process. |
 | `PublishCriteria` | publishCriteria | *Optional*. When set to `always` the extension will publish build scans of every single build. This is the default behavior when omitted.When set to `failure` the extension will only publish build scans when the build fails. When set to `demand` the extension will only publish build scans when explicitly requested. |
 
+
 ## Example
 
 ###### Parameters
@@ -93,11 +94,6 @@ _To integrate gradle enterprise maven extension into maven projects, ensure that
 {% endtab %}
 {% endtabs %}
 
-###### Before
-{% code title=".mvn/gradle-enterprise.xml" %}
-```xml
-null```
-{% endcode %}
 
 ###### New file
 {% code title=".mvn/gradle-enterprise.xml" %}
