@@ -68,11 +68,6 @@ after {
 {% endtab %}
 {% endtabs %}
 
-###### Before
-{% code title="to.tf" %}
-```hcl
-null```
-{% endcode %}
 
 ###### New file
 {% code title="to.tf" %}
