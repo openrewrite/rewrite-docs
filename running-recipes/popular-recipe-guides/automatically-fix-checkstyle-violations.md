@@ -4,37 +4,46 @@ Most programmers agree that having consistent formatting across a code base make
 
 ## Example Configuration
 
-How you configure Checkstyle integration depends on whether or not your build also applies a Checkstyle plugin. For Gradle builds this means the built-in plugin named [Checkstyle Plugin](https://docs.gradle.org/current/userguide/checkstyle\_plugin.html). For Maven builds this means [maven-checkstyle-plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/).
+How you configure Checkstyle integration depends on whether or not your build also applies a Checkstyle plugin. For Gradle builds this means the built-in plugin named [Checkstyle Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html). For Maven builds this means [maven-checkstyle-plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/).
 
 ### With Checkstyle Plugin
 
-If your build uses either the Gradle or Maven checkstyle plugins, then good news, the rewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup ](automatically-fix-checkstyle-violations.md)recipe. Activating that recipe in your build file and running rewrite is all you need to do to begin auto-remediating Checkstyle policy violations.
+If your build uses either the Gradle or Maven checkstyle plugins, then good news, the OpenRewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup](/reference/recipes/staticanalysis/codecleanup.md) recipe:
 
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
-  <plugins>
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.2.2</version>
-      <configuration>
-        <activeRecipes>
-          <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
-        </activeRecipes>
-      </configuration>
-    </plugin>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-checkstyle-plugin</artifactId>
-      <version>3.1.2</version>
-      <configuration>
-        <configLocation>checkstyle.xml</configLocation>
-      </configuration>
-    </plugin>
-  </plugins>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.2.4</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-static-analysis</artifactId>
+            <version>1.0.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <configLocation>checkstyle.xml</configLocation>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
 ```
 {% endcode %}
@@ -46,15 +55,19 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("6.1.5")
+    id("org.openrewrite.rewrite") version("6.1.8")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.cleanup.Cleanup")
+    activeRecipe("org.openrewrite.staticanalysis.CodeCleanup")
 }
 
 repositories {
     mavenCentral() // rewrite is published to Maven Central
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.2")
 }
 ```
 {% endcode %}
@@ -69,26 +82,35 @@ OpenRewrite can be configured to use different checkstyle policies than your Che
 
 ### No Checkstyle Plugin
 
-If your build does not use either of the Gradle or Maven Checkstyle plugins, you can still configure the rewrite build plugins to use a checkstyle xml configuration file.
+If your build does not use either of the Gradle or Maven Checkstyle plugins, you can still configure the rewrite build plugins to use a checkstyle xml configuration file:
 
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
-  <plugins>
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.2.2</version>
-      <configuration>
-        <activeRecipes>
-          <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
-        </activeRecipes>
-        <checkstyleConfigFile>checkstyle.xml</checkstyleConfigFile>
-      </configuration>
-    </plugin>
-  </plugins>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.2.4</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
+          </activeRecipes>
+          <checkstyleConfigFile>checkstyle.xml</checkstyleConfigFile>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-static-analysis</artifactId>
+            <version>1.0.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
 </project>
 ```
 {% endcode %}
@@ -99,16 +121,20 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.1.5")
+    id("org.openrewrite.rewrite") version("6.1.8")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.cleanup.Cleanup")
+    activeRecipe("org.openrewrite.staticanalysis.CodeCleanup")
     checkstyleConfigFile = file("checkstyle.xml")
 }
 
 repositories {
     mavenCentral() // rewrite is published to Maven Central
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.2")
 }
 ```
 {% endcode %}
@@ -127,7 +153,7 @@ With this configuration, rewrite refactoring will be run as part of any build th
 
 ### Gradle
 
-In Gradle, [Task.dependsOn()](https://docs.gradle.org/current/javadoc/org/gradle/api/Task.html#dependsOn-java.lang.Object...-) can be used to ensure that invoking one task always causes another task to run first. That means making all tasks of type `org.gradle.api.plugins.quality.Checkstyle` depend on the rewriteRun task provided by the OpenRewrite plugin.
+In Gradle, [Task.dependsOn()](https://docs.gradle.org/current/javadoc/org/gradle/api/Task.html#dependsOn-java.lang.Object...-) can be used to ensure that invoking one task always causes another task to run first. That means making all tasks of type `org.gradle.api.plugins.quality.Checkstyle` depend on the `rewriteRun` task provided by the OpenRewrite plugin.
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -136,16 +162,20 @@ In Gradle, [Task.dependsOn()](https://docs.gradle.org/current/javadoc/org/gradle
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("6.1.5")
+    id("org.openrewrite.rewrite") version("6.1.8")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.cleanup.Cleanup")
+    activeRecipe("org.openrewrite.staticanalysis.CodeCleanup")
     checkstyleConfigFile = file("checkstyle.xml")
 }
 
 repositories {
     mavenCentral() // rewrite is published to Maven Central
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.2")
 }
 
 // In older versions of gradle, use tasks.get() instead of tasks.named()
@@ -167,46 +197,55 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
-  <plugins>
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.2.2</version>
-      <configuration>
-        <activeRecipes>
-          <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
-        </activeRecipes>
-      </configuration>
-      <executions>
-        <execution>
-          <id>validate</id>
-          <phase>validate</phase>
-          <goals>
-            <goal>run</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-checkstyle-plugin</artifactId>
-      <version>3.1.2</version>
-      <configuration>
-        <configLocation>checkstyle.xml</configLocation>
-      </configuration>
-      <executions>
-        <execution>
-          <id>validate</id>
-          <phase>validate</phase>
-          <goals>
-            <goal>check</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-  </plugins>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.2.4</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
+          </activeRecipes>
+        </configuration>
+        <executions>
+          <execution>
+            <id>validate</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-static-analysis</artifactId>
+            <version>1.0.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <configLocation>checkstyle.xml</configLocation>
+        </configuration>
+        <executions>
+          <execution>
+            <id>validate</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
 ```
 {% endcode %}
