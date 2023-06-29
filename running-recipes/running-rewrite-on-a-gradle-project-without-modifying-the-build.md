@@ -23,32 +23,18 @@ initscript {
     }
 }
 
-addListener(new BuildInfoPluginListener())
-
-allprojects {
-    project.afterEvaluate {
-        if (!project.plugins.hasPlugin(org.openrewrite.gradle.RewritePlugin)) {
-            project.plugins.apply(org.openrewrite.gradle.RewritePlugin)
-        }
-    }
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
       rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-      configFile = project.getRootProject().file("rewrite.yml")
       activeRecipe("org.openrewrite.FindSpringUses")
     }
-}
-
-class BuildInfoPluginListener extends BuildAdapter {
-
-    def void projectsLoaded(Gradle gradle) {
-        Project root = gradle.getRootProject()
-        if (!"buildSrc".equals(root.name)) {
-            root.allprojects {
-                apply {
-                    apply plugin: org.openrewrite.gradle.RewritePlugin
-                }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
             }
         }
     }
