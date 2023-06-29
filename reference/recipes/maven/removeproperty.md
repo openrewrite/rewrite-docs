@@ -110,7 +110,7 @@ Now that `com.yourorg.RemovePropertyExample` has been defined activate it in you
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.2</version>
+        <version>5.2.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemovePropertyExample</recipe>

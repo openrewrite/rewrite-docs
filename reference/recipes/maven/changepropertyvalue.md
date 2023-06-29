@@ -119,7 +119,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.2</version>
+        <version>5.2.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>

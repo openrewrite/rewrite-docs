@@ -77,7 +77,7 @@ Instead of running your recipe on every file, you can have your recipe provide s
 
 To do this, you'll want to utilize the [Preconditions.check() method](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L30).
 
-For instance, in the [MigrateCollectionsSingletonSet recipe](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.1/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java#L44-L45), we add a check that ensures the Java version is 9 and that the file contains a `singleton` method. We can be confident that this recipe won't make changes if those preconditions do not apply.
+For instance, in the [MigrateCollectionsSingletonSet recipe](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.4/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java#L44-L45), we add a check that ensures the Java version is 9 and that the file contains a `singleton` method. We can be confident that this recipe won't make changes if those preconditions do not apply.
 
 You can use [Preconditions.and(), Preconditions.or(), and Preconditions.not()](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L79-L123) to create more complex applicability criteria from simple building blocks.
 

@@ -148,7 +148,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.2</version>
+        <version>5.2.4</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs</recipe>

@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.2</version>
+        <version>5.2.4</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1</recipe>
