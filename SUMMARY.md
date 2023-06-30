@@ -149,7 +149,7 @@
     * [Dependencies](reference/recipes/java/dependencies/README.md)
       * [Add Gradle or Maven dependency](reference/recipes/java/dependencies/adddependency.md)
       * [Change Gradle or Maven dependency](reference/recipes/java/dependencies/changedependency.md)
-      * [Check for dependency vulnerabilities](reference/recipes/java/dependencies/dependencyvulnerabilitycheck.md)
+      * [Find and fix vulnerable dependencies](reference/recipes/java/dependencies/dependencyvulnerabilitycheck.md)
       * [Dependency report](reference/recipes/java/dependencies/dependencylist.md)
       * [Find licenses in use in third-party dependencies](reference/recipes/java/dependencies/dependencylicensecheck.md)
       * [Remove a Gradle or Maven dependency](reference/recipes/java/dependencies/removedependency.md)
