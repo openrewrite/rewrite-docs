@@ -53,7 +53,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
   
   dependencies {
       rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.0.4"))
-      rewrite("org.openrewrite.recipe:rewrite-migrate-java")
+      rewrite("org.openrewrite.recipe:rewrite-spring")
   
       // Other project dependencies
   }
