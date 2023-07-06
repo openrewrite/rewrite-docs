@@ -12,6 +12,8 @@ _Visualize the control flow of a Java program._
 * artifactId: rewrite-analysis
 * version: 2.0.2
 
+TEST TEST
+
 ## Options
 
 | Type | Name | Description |
