@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Check for updates in /reference/recipes
         run: |
+          git fetch origin master:master
+
           CHANGED_FILES=$(git diff --name-only ${{ github.base_ref }} ${{ github.head_ref }})
           
           for FILE in $CHANGED_FILES; do
