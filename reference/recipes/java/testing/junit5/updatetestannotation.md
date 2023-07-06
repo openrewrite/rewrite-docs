@@ -6,11 +6,11 @@ _Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit 5's `org.junit
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UpdateTestAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UpdateTestAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.2
+* version: 2.0.6
 
 ## Example
 
@@ -88,13 +88,13 @@ public class MyTest {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -106,7 +106,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.6")
 }
 ```
 {% endcode %}
@@ -120,7 +120,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.UpdateTestAnnotation</recipe>
@@ -130,7 +130,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -155,18 +155,19 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [Michael Keppler](bananeweizen@gmx.de)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Tim te Beek](timtebeek@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Greg Adams](mailto:greg@moderne.io)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
+* [Scott Jungling](mailto:scott.jungling@gmail.com)
+* [joanvr](mailto:joan@moderne.io)
+* [Michael Keppler](mailto:bananeweizen@gmx.de)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* Patrick Way
+* [Tim te Beek](mailto:timtebeek@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -6,11 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -36,70 +36,6 @@ _Direct and transitive dependencies in use._
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupIdPattern|`com.google.guava`|
-|artifactIdPattern|`failureaccess`|
-|configuration|`null`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'com.google.guava:guava:31.1-jre'
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    /*~~(com.google.guava:failureaccess:1.0.1)~~>*/implementation 'com.google.guava:guava:31.1-jre'
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   implementation 'com.google.guava:guava:31.1-jre'
-+   /*~~(com.google.guava:failureaccess:1.0.1)~~>*/implementation 'com.google.guava:guava:31.1-jre'
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -127,7 +63,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -144,9 +80,9 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Tim te Beek](tim@moderne.io)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

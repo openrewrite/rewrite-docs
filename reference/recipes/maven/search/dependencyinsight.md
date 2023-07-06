@@ -6,11 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and scope. 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -37,73 +37,6 @@ _Direct and transitive dependencies in use._
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupIdPattern|`*guava*`|
-|artifactIdPattern|`*`|
-|scope|`compile`|
-|onlyDirect|`null`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <dependencies>
-    <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>29.0-jre</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <dependencies>
-    <!--~~>--><dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>29.0-jre</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -6,1 +6,1 @@
-  <version>1</version>
-  <dependencies>
--   <dependency>
-+   <!--~~>--><dependency>
-        <groupId>com.google.guava</groupId>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -138,7 +71,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DependencyInsightExample</recipe>
@@ -154,12 +87,12 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Greg Adams](mailto:greg@moderne.io)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

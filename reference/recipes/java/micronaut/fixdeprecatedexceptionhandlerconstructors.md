@@ -21,7 +21,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors</recipe>
@@ -82,12 +82,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Patrick](patway99@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Jeremy Grelle](grellej@unityfoundation.io)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Tim te Beek](tim@moderne.io)
+* [Patrick](mailto:patway99@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Jeremy Grelle](mailto:grellej@unityfoundation.io)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

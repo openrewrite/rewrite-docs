@@ -6,22 +6,115 @@ _Migrates custom Log4j 2.x Layout components to `logback-classic`. This recipe o
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jLayoutToLogback.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jLayoutToLogback.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.1
+* version: 2.0.2
+
+## Example
+
+
+{% tabs %}
+{% tab title="TrivialLayout.java" %}
+
+###### Before
+{% code title="TrivialLayout.java" %}
+```java
+import org.apache.log4j.Layout;
+import org.apache.log4j.spi.LoggingEvent;
+
+class TrivialLayout extends Layout {
+
+    @Override
+    public void activateOptions() {
+        // there are no options to activate
+    }
+
+    @Override
+    public String format(LoggingEvent loggingEvent) {
+        return loggingEvent.getRenderedMessage();
+    }
+
+    @Override
+    public boolean ignoresThrowable() {
+        return true;
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="TrivialLayout.java" %}
+```java
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.LayoutBase;
+
+class TrivialLayout extends LayoutBase<ILoggingEvent> {
+
+    @Override
+    public String doLayout(ILoggingEvent loggingEvent) {
+        return loggingEvent.getMessage();
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- TrivialLayout.java
++++ TrivialLayout.java
+@@ -1,2 +1,2 @@
+-import org.apache.log4j.Layout;
+-import org.apache.log4j.spi.LoggingEvent;
++import ch.qos.logback.classic.spi.ILoggingEvent;
++import ch.qos.logback.core.LayoutBase;
+
+@@ -4,1 +4,1 @@
+import org.apache.log4j.spi.LoggingEvent;
+
+-class TrivialLayout extends Layout {
++class TrivialLayout extends LayoutBase<ILoggingEvent> {
+
+@@ -7,2 +7,2 @@
+
+    @Override
+-   public void activateOptions() {
+-       // there are no options to activate
++   public String doLayout(ILoggingEvent loggingEvent) {
++       return loggingEvent.getMessage();
+    }
+@@ -10,10 +10,0 @@
+        // there are no options to activate
+    }
+-
+-   @Override
+-   public String format(LoggingEvent loggingEvent) {
+-       return loggingEvent.getRenderedMessage();
+-   }
+-
+-   @Override
+-   public boolean ignoresThrowable() {
+-       return true;
+-   }
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -33,7 +126,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2")
 }
 ```
 {% endcode %}
@@ -47,7 +140,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.logback.Log4jLayoutToLogback</recipe>
@@ -57,7 +150,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -82,10 +175,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Patrick Way](pway99@users.noreply.github.com)
+* Aaron Gershman
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* Patrick Way
 
 
 ## See how this recipe works across multiple open-source repositories

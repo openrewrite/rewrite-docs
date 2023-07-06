@@ -6,11 +6,11 @@ _Replaces any explicit `source` or `target` configuration (if present) on the ma
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.1
+* version: 2.0.6
 
 ## Options
 
@@ -120,7 +120,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.0.1 in your build file:
+Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.0.6 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -132,7 +132,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample</recipe>
@@ -142,7 +142,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -155,10 +155,10 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
 {% endtabs %}
 
 ## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

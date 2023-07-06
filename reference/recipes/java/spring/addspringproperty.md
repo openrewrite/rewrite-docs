@@ -6,11 +6,11 @@ _Add a spring configuration property to a configuration file if it does not alre
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.1
+* version: 5.0.5
 
 ## Options
 
@@ -69,18 +69,18 @@ server.port=8080
 ###### Before
 {% code %}
 ```yaml
-    server:
-      port: 8080
+server:
+  port: 8080
 ```
 {% endcode %}
 
 ###### After
 {% code %}
 ```yaml
-    server:
-      port: 8080
-      servlet:
-        path: /tmp/my-server-path
+server:
+  port: 8080
+  servlet:
+    path: /tmp/my-server-path
 ```
 {% endcode %}
 
@@ -89,10 +89,10 @@ server.port=8080
 {% code %}
 ```diff
 @@ -3,0 +3,2 @@
-    server:
-      port: 8080
-+     servlet:
-+       path: /tmp/my-server-path
+server:
+  port: 8080
++ servlet:
++   path: /tmp/my-server-path
 
 ```
 {% endcode %}
@@ -116,17 +116,17 @@ recipeList:
       property: management.metrics.enable.process.files
       value: true
       comment: This is a comment
-      pathExpressions: ["**/application.yml"]
+      pathExpressions: [**/application.yml]
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
+Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.5 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -138,7 +138,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.5")
 }
 ```
 {% endcode %}
@@ -152,7 +152,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddSpringPropertyExample</recipe>
@@ -162,7 +162,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.1</version>
+            <version>5.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -175,11 +175,12 @@ dependencies {
 {% endtabs %}
 
 ## Contributors
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Kyle Scully](scullykns@gmail.com)
-* [Shannon Pamperl](shanman190@gmail.com)
+* Tyler Van Gorder
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Patrick](mailto:patway99@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Kyle Scully](mailto:scullykns@gmail.com)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

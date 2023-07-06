@@ -6,11 +6,11 @@ _Add a maven profile to a `pom.xml` file._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddProfile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddProfile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,85 +20,6 @@ _Add a maven profile to a `pom.xml` file._
 | `String` | activation | *Optional*. activation details of a maven profile, provided as raw XML. |
 | `String` | properties | *Optional*. properties of a maven profile, provided as raw XML. |
 | `String` | build | *Optional*. build details of a maven profile, provided as raw XML. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|id|`myprofile`|
-|activation|`<activation><foo>foo</foo></activation>`|
-|properties|`<properties><bar>bar</bar></properties>`|
-|build|`<build><param>value</param></build>`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>group</groupId>
-  <artifactId>artifact</artifactId>
-  <version>1</version>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>group</groupId>
-  <artifactId>artifact</artifactId>
-  <version>1</version>
-  <profiles>
-    <profile>
-      <id>myprofile</id>
-      <activation>
-        <foo>foo</foo>
-      </activation>
-      <properties>
-        <bar>bar</bar>
-      </properties>
-      <build>
-        <param>value</param>
-      </build>
-    </profile>
-  </profiles>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -5,0 +5,14 @@
-  <artifactId>artifact</artifactId>
-  <version>1</version>
-+ <profiles>
-+   <profile>
-+     <id>myprofile</id>
-+     <activation>
-+       <foo>foo</foo>
-+     </activation>
-+     <properties>
-+       <bar>bar</bar>
-+     </properties>
-+     <build>
-+       <param>value</param>
-+     </build>
-+   </profile>
-+ </profiles>
-</project>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -133,7 +54,7 @@ Now that `com.yourorg.AddProfileExample` has been defined activate it in your bu
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddProfileExample</recipe>
@@ -149,7 +70,7 @@ Now that `com.yourorg.AddProfileExample` has been defined activate it in your bu
 {% endtabs %}
 
 ## Contributors
-* [Mark Brophy](36955467+m-brophy@users.noreply.github.com)
+* Mark Brophy
 
 
 ## See how this recipe works across multiple open-source repositories

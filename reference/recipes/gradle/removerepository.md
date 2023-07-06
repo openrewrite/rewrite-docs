@@ -6,62 +6,17 @@ _Removes a repository from Gradle build scripts. Named repositories include "jce
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | repository | The name of the repository to remove |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|repository|`jcenter`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-repositories {
-    jcenter()
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-repositories {
-    
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -2,1 +2,1 @@
-repositories {
--   jcenter()
-+   
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -87,7 +42,7 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -104,9 +59,9 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Patrick](patway99@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

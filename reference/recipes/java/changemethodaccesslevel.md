@@ -6,11 +6,11 @@ _Change the access level (public, protected, private, package private) of a meth
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodAccessLevel.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodAccessLevel.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -19,104 +19,6 @@ _Change the access level (public, protected, private, package private) of a meth
 | `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. |
 | `String` | newAccessLevel | New method access level to apply to the method. |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|methodPattern|`com.abc.A aMethod(..)`|
-|newAccessLevel|`private`|
-|matchOverrides|`null`|
-
-
-{% tabs %}
-{% tab title="com/abc/A.java" %}
-
-###### Before
-{% code title="com/abc/A.java" %}
-```java
-package com.abc;
-
-class A {
-    @SuppressWarnings("ALL") // comment
-    public void aMethod(String s) {
-    }
-
-    // comment
-    @SuppressWarnings("ALL")
-    public void aMethod() {
-    }
-
-    // comment
-    public void aMethod(Integer i) {
-    }
-
-    public void aMethod(Double i) {
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="com/abc/A.java" %}
-```java
-package com.abc;
-
-class A {
-    @SuppressWarnings("ALL") // comment
-    private void aMethod(String s) {
-    }
-
-    // comment
-    @SuppressWarnings("ALL")
-    private void aMethod() {
-    }
-
-    // comment
-    private void aMethod(Integer i) {
-    }
-
-    private void aMethod(Double i) {
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- com/abc/A.java
-+++ com/abc/A.java
-@@ -5,1 +5,1 @@
-class A {
-    @SuppressWarnings("ALL") // comment
--   public void aMethod(String s) {
-+   private void aMethod(String s) {
-    }
-@@ -10,1 +10,1 @@
-    // comment
-    @SuppressWarnings("ALL")
--   public void aMethod() {
-+   private void aMethod() {
-    }
-@@ -14,1 +14,1 @@
-
-    // comment
--   public void aMethod(Integer i) {
-+   private void aMethod(Integer i) {
-    }
-@@ -17,1 +17,1 @@
-    }
-
--   public void aMethod(Double i) {
-+   private void aMethod(Double i) {
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -144,7 +46,7 @@ Now that `com.yourorg.ChangeMethodAccessLevelExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -166,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodAccessLevelExample</recipe>
@@ -182,8 +84,8 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

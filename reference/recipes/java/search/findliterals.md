@@ -6,62 +6,17 @@ _Find literals matching a pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindLiterals.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindLiterals.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | pattern | A regular expression pattern to match literals against. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|pattern|`Hello.*`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    String s = "Hello Jonathan";
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    String s = /*~~>*/"Hello Jonathan";
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -2,1 +2,1 @@
-class Test {
--   String s = "Hello Jonathan";
-+   String s = /*~~>*/"Hello Jonathan";
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -87,7 +42,7 @@ Now that `com.yourorg.FindLiteralsExample` has been defined activate it in your 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -109,7 +64,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindLiteralsExample</recipe>
@@ -125,8 +80,8 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

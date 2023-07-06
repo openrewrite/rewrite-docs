@@ -6,11 +6,11 @@ _A recipe that will rename a package name in package statements, imports, and fu
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,8 +20,7 @@ _A recipe that will rename a package name in package statements, imports, and fu
 | `String` | newPackageName | New package name to replace the old package name with. |
 | `Boolean` | recursive | *Optional*. Recursively change subpackage names |
 
-## Examples
-##### Example 1
+## Example
 
 ###### Parameters
 | Parameter | Value |
@@ -96,136 +95,6 @@ class A {
 -import a.b.Original
 +import x.y.Original
 
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldPackageName|`a.b`|
-|newPackageName|`x.y`|
-|recursive|`false`|
-
-
-{% tabs %}
-{% tab title="groovy" %}
-
-###### Before
-{% code %}
-```groovy
-package a.b
-class Original {}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```groovy
-package x.y
-class Original {}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--package a.b
-+package x.y
-class Original {}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="groovy" %}
-
-###### Before
-{% code %}
-```groovy
-import a.b.Original
-
-class A {
-    Original type
-}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```groovy
-import x.y.Original
-
-class A {
-    Original type
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--import a.b.Original
-+import x.y.Original
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 3
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldPackageName|`org.openrewrite`|
-|newPackageName|`openrewrite`|
-|recursive|`false`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.openrewrite.Foo;
-class Test {
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import openrewrite.Foo;
-class Test {
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -1,1 +1,1 @@
--import org.openrewrite.Foo;
-+import openrewrite.Foo;
-class Test {
 ```
 {% endcode %}
 {% endtab %}
@@ -257,7 +126,7 @@ Now that `com.yourorg.ChangePackageExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -279,7 +148,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePackageExample</recipe>
@@ -295,13 +164,13 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Roberto Cortez](radcortez@yahoo.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Patrick](mailto:patway99@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* Patrick Way
+* [Roberto Cortez](mailto:radcortez@yahoo.com)
 
 
 ## See how this recipe works across multiple open-source repositories

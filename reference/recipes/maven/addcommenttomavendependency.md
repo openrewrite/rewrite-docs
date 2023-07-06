@@ -6,11 +6,11 @@ _Adds a comment as the first element in a `Maven` dependency._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddCommentToMavenDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddCommentToMavenDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,91 +20,6 @@ _Adds a comment as the first element in a `Maven` dependency._
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
 | `String` | commentText | The text to add as a comment.. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|xPath|`/project/dependencies/dependency`|
-|groupId|`com.google.guava`|
-|artifactId|`guava`|
-|commentText|` Comment text `|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-
-  <dependencies>
-    <dependency>
-      <!-- Comment text -->
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -10,0 +10,1 @@
-  <dependencies>
-    <dependency>
-+     <!-- Comment text -->
-      <groupId>com.google.guava</groupId>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -139,7 +54,7 @@ Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activ
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCommentToMavenDependencyExample</recipe>
@@ -155,8 +70,8 @@ Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activ
 {% endtabs %}
 
 ## Contributors
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

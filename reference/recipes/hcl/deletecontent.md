@@ -6,61 +6,17 @@ _Delete HCL content by path._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/DeleteContent.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/DeleteContent.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | contentPath | A JSONPath expression specifying the block to delete. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|contentPath|`$.before`|
-
-
-{% tabs %}
-{% tab title="hcl" %}
-
-###### Before
-{% code %}
-```hcl
-after {
-}
-before {
-}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```hcl
-after {
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,2 +3,0 @@
-after {
-}
--before {
--}
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -86,7 +42,7 @@ Now that `com.yourorg.DeleteContentExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -108,7 +64,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeleteContentExample</recipe>
@@ -124,7 +80,7 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

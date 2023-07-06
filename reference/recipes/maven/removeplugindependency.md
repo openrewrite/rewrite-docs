@@ -6,11 +6,11 @@ _Removes a dependency from the <dependencies> section of a plugin in the pom.xml
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemovePluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemovePluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,105 +20,6 @@ _Removes a dependency from the <dependencies> section of a plugin in the pom.xml
 | `String` | pluginArtifactId | ArtifactId of the plugin from which the dependency will be removed. Supports glob.The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
 | `String` | groupId | The first part of a plugin dependency coordinate. Supports glob. |
 | `String` | artifactId | The second part of a plugin dependency coordinate. Supports glob. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|pluginGroupId|`org.apache.maven.plugins`|
-|pluginArtifactId|`maven-surefire-plugin`|
-|groupId|`org.apache.maven.surefire`|
-|artifactId|`surefire-junit*`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.sample</groupId>
-  <artifactId>sample</artifactId>
-  <version>1.0.0</version>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.0</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit47</artifactId>
-            <version>2.22.0</version>
-          </dependency>
-          <dependency>
-            <groupId>org.antlr</groupId>
-            <artifactId>antlr4</artifactId>
-            <version>4.9.3</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.sample</groupId>
-  <artifactId>sample</artifactId>
-  <version>1.0.0</version>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.0</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.antlr</groupId>
-            <artifactId>antlr4</artifactId>
-            <version>4.9.3</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -16,5 +16,0 @@
-        <dependencies>
-          <dependency>
--           <groupId>org.apache.maven.surefire</groupId>
--           <artifactId>surefire-junit47</artifactId>
--           <version>2.22.0</version>
--         </dependency>
--         <dependency>
-            <groupId>org.antlr</groupId>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -153,7 +54,7 @@ Now that `com.yourorg.RemovePluginDependencyExample` has been defined activate i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemovePluginDependencyExample</recipe>
@@ -169,7 +70,7 @@ Now that `com.yourorg.RemovePluginDependencyExample` has been defined activate i
 {% endtabs %}
 
 ## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

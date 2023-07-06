@@ -6,11 +6,11 @@ _Replace `HttpSecurity.authorizeRequests(...)` deprecated in Spring Security 6 w
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/AuthorizeHttpRequests.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/AuthorizeHttpRequests.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.1
+* version: 5.0.5
 
 ## Example
 
@@ -92,13 +92,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -110,7 +110,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.5")
 }
 ```
 {% endcode %}
@@ -124,7 +124,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.AuthorizeHttpRequests</recipe>
@@ -134,7 +134,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.1</version>
+            <version>5.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -159,9 +159,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Alex Boyko](aboyko@vmware.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Alex Boyko](mailto:aboyko@vmware.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

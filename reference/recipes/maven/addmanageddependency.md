@@ -6,11 +6,11 @@ _Add a managed Maven dependency to a `pom.xml` file._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -35,99 +35,6 @@ _Attempts to resolve maven metadata that failed._
 
 | Column Name | Description |
 | ----------- | ----------- |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.apache.logging.log4j`|
-|artifactId|`log4j-bom`|
-|version|`2.17.2`|
-|scope|`import`|
-|type|`pom`|
-|classifier|`null`|
-|versionPattern|`null`|
-|releasesOnly|`null`|
-|onlyIfUsing|`org.apache.logging.log4j:*`|
-|addToRootPom|`false`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>2.17.2</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-bom</artifactId>
-        <version>2.17.2</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>2.17.2</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -5,0 +5,11 @@
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-+ <dependencyManagement>
-+   <dependencies>
-+     <dependency>
-+       <groupId>org.apache.logging.log4j</groupId>
-+       <artifactId>log4j-bom</artifactId>
-+       <version>2.17.2</version>
-+       <type>pom</type>
-+       <scope>import</scope>
-+     </dependency>
-+   </dependencies>
-+ </dependencyManagement>
-  <dependencies>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -168,7 +75,7 @@ Now that `com.yourorg.AddManagedDependencyExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddManagedDependencyExample</recipe>

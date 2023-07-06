@@ -6,61 +6,17 @@ _Delete a YAML mapping entry key._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/DeleteKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/DeleteKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | keyPath | A JsonPath expression to locate a YAML entry. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|keyPath|`$.metadata.name`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-    apiVersion: v1
-    metadata:
-      name: monitoring-tools
-      namespace: monitoring-tools
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-    apiVersion: v1
-    metadata:
-      namespace: monitoring-tools
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,1 +3,0 @@
-    apiVersion: v1
-    metadata:
--     name: monitoring-tools
-      namespace: monitoring-tools
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -86,7 +42,7 @@ Now that `com.yourorg.DeleteKeyExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -108,7 +64,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeleteKeyExample</recipe>
@@ -124,10 +80,10 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

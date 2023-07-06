@@ -1,6 +1,8 @@
 # javax APIs
 
-## Recipes
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
 
 * [Add explicit Inject dependencies](./addinjectdependencies.md)
 * [Add explicit JAX-WS dependencies](./addjaxwsdependencies.md)

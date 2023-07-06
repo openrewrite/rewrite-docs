@@ -6,62 +6,11 @@ _Removes unnecessary whitespace appearing after a token. A linebreak after a tok
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/NoWhitespaceAfter.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/NoWhitespaceAfter.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    static void method() {
-        int [] [] a;
-        int [] b;
-        int c, d = 0;
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    static void method() {
-        int[][] a;
-        int[] b;
-        int c, d = 0;
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -3,2 +3,2 @@
-class Test {
-    static void method() {
--       int [] [] a;
--       int [] b;
-+       int[][] a;
-+       int[] b;
-        int c, d = 0;
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 8.1.6
 
 
 ## Usage
@@ -72,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -95,7 +44,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.format.NoWhitespaceAfter</recipe>
@@ -121,9 +70,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* Aaron Gershman
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

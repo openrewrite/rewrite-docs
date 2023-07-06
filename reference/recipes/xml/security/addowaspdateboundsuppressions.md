@@ -6,71 +6,17 @@ _Adds an expiration date to all OWASP suppressions in order to ensure that they 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/AddOwaspDateBoundSuppressions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/AddOwaspDateBoundSuppressions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|untilDate|`2020-01-01`|
-
-
-{% tabs %}
-{% tab title="suppressions.xml" %}
-
-###### Before
-{% code title="suppressions.xml" %}
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
-    <suppress>
-        <notes>
-        </notes>
-    </suppress>
-</suppressions>
-```
-{% endcode %}
-
-###### After
-{% code title="suppressions.xml" %}
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
-    <suppress until="2020-01-01Z">
-        <notes>
-        </notes>
-    </suppress>
-</suppressions>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- suppressions.xml
-+++ suppressions.xml
-@@ -3,1 +3,1 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
--   <suppress>
-+   <suppress until="2020-01-01Z">
-        <notes>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -81,7 +27,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -104,7 +50,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.xml.security.AddOwaspDateBoundSuppressions</recipe>
@@ -130,10 +76,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Kevin McCarpenter™️](kevin@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Patrick](patway99@gmail.com)
+* [Kevin McCarpenter™️](mailto:kevin@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

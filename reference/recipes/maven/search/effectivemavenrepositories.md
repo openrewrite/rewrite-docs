@@ -6,54 +6,11 @@ _Lists the Maven repositories that would be used for dependency resolution, in o
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveMavenRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveMavenRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
-
-## Example
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>org.openrewrite.example</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<!--~~(https://repo.maven.apache.org/maven2)~~>--><project>
-  <groupId>org.openrewrite.example</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -1,1 +1,1 @@
--<project>
-+<!--~~(https://repo.maven.apache.org/maven2)~~>--><project>
-  <groupId>org.openrewrite.example</groupId>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 8.1.6
 
 
 ## Usage
@@ -70,7 +27,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.search.EffectiveMavenRepositories</recipe>
@@ -96,8 +53,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Mike Solomon](mike@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Mike Solomon](mailto:mike@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

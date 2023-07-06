@@ -6,11 +6,11 @@ _Finds source files which share a path with another source file. There should al
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindCollidingSourceFiles.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindCollidingSourceFiles.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.1.3
+* version: 8.1.6
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -32,7 +32,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -55,7 +55,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.FindCollidingSourceFiles</recipe>
@@ -81,8 +81,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Knut Wannheden](mailto:knut@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

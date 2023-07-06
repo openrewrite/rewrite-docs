@@ -6,11 +6,11 @@ _Find all annotations matching the annotation pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -18,55 +18,6 @@ _Find all annotations matching the annotation pattern._
 | -- | -- | -- |
 | `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns.md). |
 | `Boolean` | matchMetaAnnotations | *Optional*. When enabled, matches on meta annotations of the annotation pattern. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|annotationPattern|`@javax.annotation.Nonnull`|
-|matchMetaAnnotations|`true`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.openrewrite.internal.lang.Nullable;
-public class Test {
-    @Nullable String name;
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import org.openrewrite.internal.lang.Nullable;
-public class Test {
-    /*~~>*/@Nullable String name;
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -3,1 +3,1 @@
-import org.openrewrite.internal.lang.Nullable;
-public class Test {
--   @Nullable String name;
-+   /*~~>*/@Nullable String name;
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -93,7 +44,7 @@ Now that `com.yourorg.FindAnnotationsExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -115,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindAnnotationsExample</recipe>
@@ -131,11 +82,11 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick Way](pway99@users.noreply.github.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Greg Adams](mailto:greg@moderne.io)
+* Tyler Van Gorder
+* [Sam Snyder](mailto:sam@moderne.io)
+* Patrick Way
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -6,11 +6,11 @@ _Removes a single dependency from the dependencies section of the `build.gradle`
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -19,70 +19,6 @@ _Removes a single dependency from the dependencies section of the `build.gradle`
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | configuration | *Optional*. The dependency configuration to remove from. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.springframework.boot`|
-|artifactId|`spring-boot*`|
-|configuration|`null`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation "org.springframework.boot:spring-boot-starter-web:2.7.0"
-    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,0 @@
-
-dependencies {
--   implementation "org.springframework.boot:spring-boot-starter-web:2.7.0"
-    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -110,7 +46,7 @@ Now that `com.yourorg.RemoveDependencyExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -127,9 +63,9 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* Josh Soref
 
 
 ## See how this recipe works across multiple open-source repositories

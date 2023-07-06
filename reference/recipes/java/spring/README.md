@@ -14,6 +14,12 @@
 * [Spring Data](/reference/recipes/java/spring/data)
 * [Spring Framework](/reference/recipes/java/spring/framework)
 
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Normalize Spring properties to kebab-case](./propertiestokebabcase.md)
+
 ## Recipes
 
 * [Add a spring configuration property](./addspringproperty.md)
@@ -21,7 +27,6 @@
 * [Change the value of a spring application property](./changespringpropertyvalue.md)
 * [Delete a spring configuration property](./deletespringproperty.md)
 * [Expand Spring YAML properties](./expandproperties.md)
-* [Normalize Spring properties to kebab-case](./propertiestokebabcase.md)
 * [Remove `@RequestMapping` annotations](./norequestmappingannotation.md)
 * [Remove implicit web annotation names](./implicitwebannotationnames.md)
 * [Remove `public` from `@Bean` methods](./beanmethodsnotpublic.md)

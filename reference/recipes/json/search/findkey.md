@@ -6,69 +6,17 @@ _Find JSON object members by JsonPath expression._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/search/FindKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/search/FindKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-json
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | key | A JsonPath expression used to find matching keys. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|key|`$.metadata.name`|
-
-
-{% tabs %}
-{% tab title="json" %}
-
-###### Before
-{% code %}
-```json
-{
-  "apiVersion": "v1",
-  "metadata": {
-    "name": "monitoring-tools",
-    "namespace": "monitoring-tools"
-  }
-}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```json
-{
-  "apiVersion": "v1",
-  "metadata": {
-    /*~~>*/"name": "monitoring-tools",
-    "namespace": "monitoring-tools"
-  }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -4,1 +4,1 @@
-  "apiVersion": "v1",
-  "metadata": {
--   "name": "monitoring-tools",
-+   /*~~>*/"name": "monitoring-tools",
-    "namespace": "monitoring-tools"
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -94,7 +42,7 @@ Now that `com.yourorg.FindKeyExample` has been defined activate it in your build
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -116,7 +64,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindKeyExample</recipe>
@@ -132,9 +80,9 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* Aaron Gershman
 
 
 ## See how this recipe works across multiple open-source repositories

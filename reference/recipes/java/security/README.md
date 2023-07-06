@@ -9,10 +9,15 @@ _Recipes that find and eliminate vulnerable patterns in Java code._
 * [Secrets](/reference/recipes/java/security/secrets)
 * [Spring](/reference/recipes/java/security/spring)
 
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Java security best practices](./javasecuritybestpractices.md)
+
 ## Recipes
 
 * [Find text-direction changes](./findtextdirectionchanges.md)
-* [Java security best practices](./javasecuritybestpractices.md)
 * [Partial path traversal vulnerability](./partialpathtraversalvulnerability.md)
 * [Regular Expression Denial of Service (ReDOS)](./regularexpressiondenialofservice.md)
 * [Secure random](./securerandom.md)

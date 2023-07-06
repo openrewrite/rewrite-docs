@@ -6,95 +6,17 @@ _Finds the specified Maven project properties within a pom.xml._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | propertyPattern | Regular expression pattern used to match property tag names. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|propertyPattern|`guava*`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <properties>
-    <someNullProp/>
-    <guava.version>28.2-jre</guava.version>
-  </properties>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <dependencies>
-    <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <properties>
-    <someNullProp/>
-    <!--~~>--><guava.version>28.2-jre</guava.version>
-  </properties>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <dependencies>
-    <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version><!--~~(28.2-jre)~~>-->${guava.version}</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -4,1 +4,1 @@
-  <properties>
-    <someNullProp/>
--   <guava.version>28.2-jre</guava.version>
-+   <!--~~>--><guava.version>28.2-jre</guava.version>
-  </properties>
-@@ -13,1 +13,1 @@
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
--       <version>${guava.version}</version>
-+       <version><!--~~(28.2-jre)~~>-->${guava.version}</version>
-    </dependency>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -126,7 +48,7 @@ Now that `com.yourorg.FindPropertiesExample` has been defined activate it in you
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindPropertiesExample</recipe>
@@ -142,11 +64,11 @@ Now that `com.yourorg.FindPropertiesExample` has been defined activate it in you
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Sam Snyder](sam@moderne.io)
-* [Aaron Gershman](aegershman@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Greg Adams](mailto:greg@moderne.io)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

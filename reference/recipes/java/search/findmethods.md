@@ -6,11 +6,11 @@ _Find method usages by pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -29,61 +29,6 @@ _The text of matching method invocations._
 | ----------- | ----------- |
 | Source file | The source file that the method call occurred in. |
 | Method call | The text of the method call. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|methodPattern|`A <constructor>(String)`|
-|matchOverrides|`false`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    A a = new A("test");
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    A a = /*~~>*/new A("test");
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -2,1 +2,1 @@
-class Test {
--   A a = new A("test");
-+   A a = /*~~>*/new A("test");
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-###### Unchanged
-{% code title="A.java" %}
-```java
-class A {
-    public A(String s) {}
-}
-```
-{% endcode %}
 
 
 ## Usage
@@ -110,7 +55,7 @@ Now that `com.yourorg.FindMethodsExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -132,7 +77,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindMethodsExample</recipe>
@@ -148,12 +93,12 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Greg Adams](mailto:greg@moderne.io)
+* Tyler Van Gorder
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

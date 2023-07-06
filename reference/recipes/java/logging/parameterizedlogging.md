@@ -11,11 +11,11 @@ _Transform logging statements using concatenation for messages and variables int
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.1
+* version: 2.0.2
 
 ## Options
 
@@ -23,6 +23,61 @@ _Transform logging statements using concatenation for messages and variables int
 | -- | -- | -- |
 | `String` | methodPattern | A method used to find matching statements to parameterize. |
 | `Boolean` | removeToString | *Optional*. Optionally remove `toString(`) method invocations from Object parameters. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|methodPattern|`org.slf4j.Logger info(..)`|
+|removeToString|`false`|
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import org.slf4j.Logger;
+
+class Test {
+    static void method(Logger logger, String name) {
+        logger.info("Hello " + name + ", nice to meet you " + name);
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import org.slf4j.Logger;
+
+class Test {
+    static void method(Logger logger, String name) {
+        logger.info("Hello {}, nice to meet you {}", name, name);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -5,1 +5,1 @@
+class Test {
+    static void method(Logger logger, String name) {
+-       logger.info("Hello " + name + ", nice to meet you " + name);
++       logger.info("Hello {}, nice to meet you {}", name, name);
+    }
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -43,13 +98,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ParameterizedLoggingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:2.0.1 in your build file:
+Now that `com.yourorg.ParameterizedLoggingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -61,7 +116,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2")
 }
 ```
 {% endcode %}
@@ -75,7 +130,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ParameterizedLoggingExample</recipe>
@@ -85,7 +140,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -98,10 +153,10 @@ dependencies {
 {% endtabs %}
 
 ## Contributors
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Patrick](patway99@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* Aaron Gershman
+* [Patrick](mailto:patway99@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

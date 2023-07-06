@@ -6,11 +6,11 @@ _Move content to another HCL file, deleting it in the original file._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/MoveContentToFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/MoveContentToFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -19,64 +19,6 @@ _Move content to another HCL file, deleting it in the original file._
 | `String` | contentPath | A JSONPath expression specifying the block to move. |
 | `String` | fromPath | The source path of the file from which content is being moved. |
 | `String` | destinationPath | The source path of the file to move the content to. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|contentPath|`$.before`|
-|fromPath|`from.tf`|
-|destinationPath|`to.tf`|
-
-
-{% tabs %}
-{% tab title="from.tf" %}
-
-###### Before
-{% code title="from.tf" %}
-```hcl
-after {
-}
-before {
-}
-```
-{% endcode %}
-
-###### After
-{% code title="from.tf" %}
-```hcl
-after {
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- from.tf
-+++ from.tf
-@@ -3,2 +3,0 @@
-after {
-}
--before {
--}
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-
-###### New file
-{% code title="to.tf" %}
-```hcl
-before {
-}
-```
-{% endcode %}
-
 
 
 ## Usage
@@ -104,7 +46,7 @@ Now that `com.yourorg.MoveContentToFileExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -126,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.MoveContentToFileExample</recipe>

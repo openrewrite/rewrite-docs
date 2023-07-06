@@ -6,97 +6,11 @@ _Fixes whitespace padding between the identifier of a method definition or metho
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/MethodParamPad.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/MethodParamPad.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
-
-## Example
-
-
-{% tabs %}
-{% tab title="E.java" %}
-
-###### Before
-{% code title="E.java" %}
-```java
-enum E {
-    E1()
-}
-
-class B {
-}
-
-class A extends B {
-    A() {
-        super();
-    }
-
-    static void method(int x, int y) {
-        A a = new A();
-        method(0, 1);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="E.java" %}
-```java
-enum E {
-    E1 ()
-}
-
-class B {
-}
-
-class A extends B {
-    A () {
-        super ();
-    }
-
-    static void method (int x, int y) {
-        A a = new A ();
-        method (0, 1);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- E.java
-+++ E.java
-@@ -2,1 +2,1 @@
-enum E {
--   E1()
-+   E1 ()
-}
-@@ -9,2 +9,2 @@
-
-class A extends B {
--   A() {
--       super();
-+   A () {
-+       super ();
-    }
-@@ -13,3 +13,3 @@
-    }
-
--   static void method(int x, int y) {
--       A a = new A();
--       method(0, 1);
-+   static void method (int x, int y) {
-+       A a = new A ();
-+       method (0, 1);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 8.1.6
 
 
 ## Usage
@@ -107,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -130,7 +44,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.format.MethodParamPad</recipe>
@@ -156,9 +70,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

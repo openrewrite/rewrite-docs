@@ -6,11 +6,11 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -19,47 +19,6 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 | `String` | property | The property key to add. |
 | `String` | value | The value of the new property key. |
 | `String` | delimiter | *Optional*. Property entries support different delimiters (`=`, `:`, or whitespace). The default value is `=` unless provided the delimiter of the new property entry. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|property|`management.metrics.enable.process.files`|
-|value|`true`|
-|delimiter|`null`|
-
-
-{% tabs %}
-{% tab title="properties" %}
-
-###### Before
-{% code %}
-```properties
-management=true
-```
-{% endcode %}
-
-###### After
-{% code %}
-```properties
-management=true
-management.metrics.enable.process.files=true
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -2,0 +2,1 @@
-management=true
-+management.metrics.enable.process.files=true
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -87,7 +46,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -109,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPropertyExample</recipe>
@@ -125,9 +84,11 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Aaron Gershman
 
 
 ## See how this recipe works across multiple open-source repositories

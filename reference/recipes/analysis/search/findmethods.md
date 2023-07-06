@@ -6,11 +6,11 @@ _Find method usages by pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.2/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.0.1
+* version: 2.0.2
 
 ## Options
 
@@ -30,62 +30,6 @@ _The text of matching method invocations._
 | ----------- | ----------- |
 | Source file | The source file that the method call occurred in. |
 | Method call | The text of the method call. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|methodPattern|`A <constructor>(String)`|
-|matchOverrides|`false`|
-|flow|`null`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    A a = new A("test");
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    A a = /*~~>*/new A("test");
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -2,1 +2,1 @@
-class Test {
--   A a = new A("test");
-+   A a = /*~~>*/new A("test");
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-###### Unchanged
-{% code title="A.java" %}
-```java
-class A {
-    public A(String s) {}
-}
-```
-{% endcode %}
 
 
 ## Usage
@@ -107,13 +51,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindMethodsExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.1 in your build file:
+Now that `com.yourorg.FindMethodsExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.2 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -125,7 +69,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.1")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.2")
 }
 ```
 {% endcode %}
@@ -139,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindMethodsExample</recipe>
@@ -149,7 +93,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -162,8 +106,9 @@ dependencies {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Leitschuh](Jonathan.Leitschuh@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com)
+* [aaronist](mailto:aaronmblume@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

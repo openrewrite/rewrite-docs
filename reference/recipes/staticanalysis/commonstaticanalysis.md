@@ -6,22 +6,22 @@ _Resolve common static analysis issues discovered through 3rd party tools._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.1
+* version: 1.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.3")
 }
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -228,35 +228,36 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Kun Li](kun@moderne.io)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Knut Wannheden](knut.wannheden@mobi.ch)
-* [Kun Li](122563761+kunli2@users.noreply.github.com)
-* [Guliver](Guliver@users.noreply.github.com)
-* [Tyler Van Gorder](1878529+tkvangorder@users.noreply.github.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Peter Streef](p.streef@gmail.com)
-* [Josh Soref](2119212+jsoref@users.noreply.github.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Knut Wannheden](knut.wannheden@gmail.com)
-* [Grzegorz Olędzki](grzegon@poczta.onet.pl)
-* [xshen053](shenxiaxi26@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [pstreef](p.streef@gmail.com)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [mrbitrary](84456251+mrbitrary@users.noreply.github.com)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Martin Panzer](postremus1996@googlemail.com)
-* [Mike Solomon](mike@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Patrick Way
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Patrick](mailto:patway99@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Kun Li](mailto:kun@moderne.io)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* Kun Li
+* Guliver
+* Tyler Van Gorder
+* Tyler Van Gorder
+* [Peter Streef](mailto:p.streef@gmail.com)
+* Josh Soref
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Knut Wannheden](mailto:knut.wannheden@mobi.ch)
+* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+* [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl)
+* [xshen053](mailto:shenxiaxi26@gmail.com)
+* [Greg Adams](mailto:greg@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [pstreef](mailto:p.streef@gmail.com)
+* mrbitrary
+* [Tim te Beek](mailto:timtebeek@gmail.com)
+* [Rick Ossendrijver](mailto:rick.ossendrijver@gmail.com)
+* [Scott Jungling](mailto:scott.jungling@gmail.com)
+* [Martin Panzer](mailto:postremus1996@googlemail.com)
+* [Mike Solomon](mailto:mike@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

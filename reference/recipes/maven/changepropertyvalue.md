@@ -6,11 +6,11 @@ _Changes the specified Maven project property value leaving the key intact._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,71 +20,6 @@ _Changes the specified Maven project property value leaving the key intact._
 | `String` | newValue | Value to apply to the matching property. |
 | `Boolean` | addIfMissing | *Optional*. Add the property if it is missing from the pom file. |
 | `Boolean` | trustParent | *Optional*. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|key|`guava.version`|
-|newValue|`29.0-jre`|
-|addIfMissing|`false`|
-|trustParent|`false`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <properties>
-    <guava.version>28.2-jre</guava.version>
-  </properties>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <properties>
-    <guava.version>29.0-jre</guava.version>
-  </properties>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -5,1 +5,1 @@
-
-  <properties>
--   <guava.version>28.2-jre</guava.version>
-+   <guava.version>29.0-jre</guava.version>
-  </properties>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -119,7 +54,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>
@@ -135,9 +70,9 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aurélien Mino](aurelien.mino@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Aurélien Mino](mailto:aurelien.mino@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

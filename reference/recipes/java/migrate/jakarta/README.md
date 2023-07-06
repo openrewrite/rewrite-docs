@@ -1,6 +1,8 @@
 # Jakarta
 
-## Recipes
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
 
 * [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
 * [Migrate Ehcache from javax to jakarta namespace](./ehcachejavaxtojakarta.md)

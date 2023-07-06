@@ -6,11 +6,11 @@ _Change method invocations to static method calls._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToStatic.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToStatic.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.ChangeMethodTargetToStaticExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -72,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodTargetToStaticExample</recipe>
@@ -88,13 +88,13 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Aaron Gershman](aegershman@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Greg Adams](mailto:greg@moderne.io)
+* Tyler Van Gorder
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

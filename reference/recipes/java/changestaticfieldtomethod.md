@@ -6,11 +6,11 @@ _Migrate accesses to a static field to invocations of a static method._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.ChangeStaticFieldToMethodExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -72,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeStaticFieldToMethodExample</recipe>
@@ -88,13 +88,13 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Christian Semrau](csemrau@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Knut Wannheden](knut.wannheden@gmail.com)
-* [Thomas Zub](thomas.zub@outlook.de)
-* [Aaron Gershman](aegershman@gmail.com)
+* Christian Semrau
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* Tyler Van Gorder
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+* [Thomas Zub](mailto:thomas.zub@outlook.de)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

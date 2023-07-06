@@ -9,11 +9,11 @@ Can update version numbers which are defined earlier in the same file in variabl
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -32,79 +32,6 @@ _Attempts to resolve maven metadata that failed._
 
 | Column Name | Description |
 | ----------- | ----------- |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`com.google.guava`|
-|artifactId|`guava`|
-|newVersion|`30.x`|
-|versionPattern|`-jre`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-  id 'java-library'
-}
-
-repositories {
-  mavenCentral()
-}
-
-dependencies {
-  compileOnly 'com.google.guava:guava:29.0-jre'
-  runtimeOnly ('com.google.guava:guava:29.0-jre') {
-      force = true
-  }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-  id 'java-library'
-}
-
-repositories {
-  mavenCentral()
-}
-
-dependencies {
-  compileOnly 'com.google.guava:guava:30.1.1-jre'
-  runtimeOnly ('com.google.guava:guava:30.1.1-jre') {
-      force = true
-  }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,2 +10,2 @@
-
-dependencies {
-- compileOnly 'com.google.guava:guava:29.0-jre'
-- runtimeOnly ('com.google.guava:guava:29.0-jre') {
-+ compileOnly 'com.google.guava:guava:30.1.1-jre'
-+ runtimeOnly ('com.google.guava:guava:30.1.1-jre') {
-      force = true
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -133,7 +60,7 @@ Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -150,10 +77,10 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Geoffrey De Smet](gds.geoffrey.de.smet@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

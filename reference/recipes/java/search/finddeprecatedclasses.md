@@ -6,11 +6,11 @@ _Find uses of deprecated classes, optionally ignoring those classes that are ins
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindDeprecatedClasses.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindDeprecatedClasses.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -19,56 +19,6 @@ _Find uses of deprecated classes, optionally ignoring those classes that are ins
 | `String` | typePattern | *Optional*. A type pattern that is used to find matching classes. |
 | `Boolean` | matchInherited | *Optional*. When enabled, find types that inherit from a deprecated type. |
 | `Boolean` | ignoreDeprecatedScopes | *Optional*. When a deprecated type is used in a deprecated method or class, ignore it. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|typePattern|`org.old..*`|
-|matchInherited|`false`|
-|ignoreDeprecatedScopes|`true`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.old.types.D;
-class Test {
-    D d;
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import org.old.types.D;
-class Test {
-    /*~~>*/D d;
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -3,1 +3,1 @@
-import org.old.types.D;
-class Test {
--   D d;
-+   /*~~>*/D d;
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -79,7 +29,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -102,7 +52,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindDeprecatedClasses</recipe>
@@ -128,7 +78,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -6,11 +6,11 @@ _Change a YAML property key leaving the value intact. Nested YAML mappings are i
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,195 +20,6 @@ _Change a YAML property key leaving the value intact. Nested YAML mappings are i
 | `String` | newPropertyKey | The new name for the property key. |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
 | `List` | except | *Optional*. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. |
-
-## Examples
-##### Example 1
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldPropertyKey|`management.metrics.binders.*.enabled`|
-|newPropertyKey|`management.metrics.enable.process.files`|
-|relaxedBinding|`null`|
-|except|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-management.metrics.binders.files.enabled: true
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-management.metrics.enable.process.files: true
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--management.metrics.binders.files.enabled: true
-+management.metrics.enable.process.files: true
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldPropertyKey|`a.b.c.d`|
-|newPropertyKey|`a.b.c`|
-|relaxedBinding|`null`|
-|except|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-a.b.c.d: true
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-a.b.c: true
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--a.b.c.d: true
-+a.b.c: true
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 3
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldPropertyKey|`spring.profiles`|
-|newPropertyKey|`spring.config.activate.on-profile`|
-|relaxedBinding|`null`|
-|except|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-spring.profiles.group.prod: proddb,prodmq,prodmetrics
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--spring.profiles.group.prod: proddb,prodmq,prodmetrics
-+spring.config.activate.on-profile.group.prod: proddb,prodmq,prodmetrics
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 4
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldPropertyKey|`spring.profiles`|
-|newPropertyKey|`spring.config.activate.on-profile`|
-|relaxedBinding|`null`|
-|except|`List.of("group", "active", "include")`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-spring:
-  profiles:
-    active: allEnvs
-    include: baseProfile
-    foo: bar
-    group:
-      prod: proddb,prodmq,prodmetrics
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-spring:
-  profiles:
-    active: allEnvs
-    include: baseProfile
-    group:
-      prod: proddb,prodmq,prodmetrics
-  config.activate.on-profile:
-    foo: bar
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,1 +5,0 @@
-    active: allEnvs
-    include: baseProfile
--   foo: bar
-    group:
-@@ -8,0 +7,2 @@
-    group:
-      prod: proddb,prodmq,prodmetrics
-+ config.activate.on-profile:
-+   foo: bar
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -237,7 +48,7 @@ Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -259,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyKeyExample</recipe>
@@ -275,13 +86,13 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Thomas Zub](thomas.zub@outlook.de)
-* [Sandeep Nagaraj](59915704+sanagaraj-pivotal@users.noreply.github.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Thomas Zub](mailto:thomas.zub@outlook.de)
+* Sandeep Nagaraj
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -6,11 +6,11 @@ _Change the group of a specified Gradle dependency._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyGroupId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyGroupId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,71 +20,6 @@ _Change the group of a specified Gradle dependency._
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | newGroupId | The new groupId to use. |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.springframework.boot`|
-|artifactId|`spring-boot-starter`|
-|newGroupId|`org.newboot`|
-|configuration|``|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'org.newboot:spring-boot-starter:2.5.4'
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   implementation 'org.springframework.boot:spring-boot-starter:2.5.4'
-+   implementation 'org.newboot:spring-boot-starter:2.5.4'
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -113,7 +48,7 @@ Now that `com.yourorg.ChangeDependencyGroupIdExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -130,11 +65,11 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Geoffrey De Smet](gds.geoffrey.de.smet@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -11,11 +11,11 @@ _Finds dependencies declared in `build.gradle` files. See the [reference](https:
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -24,70 +24,6 @@ _Finds dependencies declared in `build.gradle` files. See the [reference](https:
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. If omitted then all configurations will be searched. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.openrewrite`|
-|artifactId|`rewrite-core`|
-|configuration|`api`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    api 'org.openrewrite:rewrite-core:latest.release'
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    /*~~>*/api 'org.openrewrite:rewrite-core:latest.release'
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   api 'org.openrewrite:rewrite-core:latest.release'
-+   /*~~>*/api 'org.openrewrite:rewrite-core:latest.release'
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -115,7 +51,7 @@ Now that `com.yourorg.FindDependencyExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -132,9 +68,9 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Patrick](patway99@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Patrick](mailto:patway99@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

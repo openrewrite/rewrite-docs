@@ -6,11 +6,11 @@ _Change a JSON mapping entry key leaving the value intact._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/ChangeKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/ChangeKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-json
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -18,55 +18,6 @@ _Change a JSON mapping entry key leaving the value intact._
 | -- | -- | -- |
 | `String` | oldKeyPath | A JsonPath expression to locate a JSON entry. |
 | `String` | newKey | The new name for the key selected by oldKeyPath. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldKeyPath|`$.description`|
-|newKey|`"newDescription"`|
-
-
-{% tabs %}
-{% tab title="json" %}
-
-###### Before
-{% code %}
-```json
-{
-  "id": "something",
-  "description": "desc",
-  "other": "whatever"
-}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```json
-{
-  "id": "something",
-  "newDescription": "desc",
-  "other": "whatever"
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,1 +3,1 @@
-{
-  "id": "something",
-- "description": "desc",
-+ "newDescription": "desc",
-  "other": "whatever"
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -93,7 +44,7 @@ Now that `com.yourorg.ChangeKeyExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -115,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeKeyExample</recipe>
@@ -131,8 +82,8 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Aaron Gershman
 
 
 ## See how this recipe works across multiple open-source repositories

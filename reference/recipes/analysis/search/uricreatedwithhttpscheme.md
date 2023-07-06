@@ -6,81 +6,22 @@ _This is a sample recipe demonstrating a simple application of local data flow a
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/UriCreatedWithHttpScheme.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/UriCreatedWithHttpScheme.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.2/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.0.1
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import java.net.URI;
-class Test {
-    void test() {
-        String s = "http://test";
-        String t = s;
-        if(System.currentTimeMillis() > 0) {
-            System.out.println(URI.create(t));
-        } else {
-            System.out.println(URI.create(t));
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.net.URI;
-class Test {
-    void test() {
-        String s = "https://test";
-        String t = s;
-        if(System.currentTimeMillis() > 0) {
-            System.out.println(URI.create(t));
-        } else {
-            System.out.println(URI.create(t));
-        }
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -4,1 +4,1 @@
-class Test {
-    void test() {
--       String s = "http://test";
-+       String s = "https://test";
-        String t = s;
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.2
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.meta:rewrite-analysis:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.meta:rewrite-analysis:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -92,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.1")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.2")
 }
 ```
 {% endcode %}
@@ -106,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.analysis.search.UriCreatedWithHttpScheme</recipe>
@@ -116,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -141,8 +82,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Leitschuh](Jonathan.Leitschuh@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com)
+* [aaronist](mailto:aaronmblume@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

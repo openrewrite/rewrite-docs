@@ -9,9 +9,10 @@ _Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration t
 * [Search](/reference/recipes/kubernetes/search)
 * [Services](/reference/recipes/kubernetes/services)
 
-## Recipes
+## Composite Recipes
 
-* [Add Kubernetes configuration](./addconfiguration.md)
+_Recipes that include further recipes, often including the individual recipes below._
+
 * [Ensure CPU limits are set](./missingcpulimits.md)
 * [Ensure CPU request is set](./missingcpurequest.md)
 * [Ensure image pull policy is `Always`](./imagepullpolicyalways.md)
@@ -29,6 +30,10 @@ _Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration t
 * [No privileged containers](./noprivilegedcontainers.md)
 * [No root containers](./norootcontainers.md)
 * [Read-only root filesystem](./readonlyrootfilesystem.md)
+
+## Recipes
+
+* [Add Kubernetes configuration](./addconfiguration.md)
 * [Update image name](./updatecontainerimagename.md)
 
 

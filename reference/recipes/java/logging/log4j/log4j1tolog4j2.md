@@ -11,22 +11,127 @@ _Migrates Log4j 1.x to Log4j 2.x._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.1
+* version: 2.0.2
+
+## Examples
+##### Example 1
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import org.apache.log4j.Logger;
+
+class Test {
+    Logger logger = Logger.getLogger(Test.class);
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+class Test {
+    Logger logger = LogManager.getLogger(Test.class);
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -1,1 +1,2 @@
+-import org.apache.log4j.Logger;
++import org.apache.logging.log4j.LogManager;
++import org.apache.logging.log4j.Logger;
+
+@@ -4,1 +5,1 @@
+
+class Test {
+-   Logger logger = Logger.getLogger(Test.class);
++   Logger logger = LogManager.getLogger(Test.class);
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 2
+
+
+{% tabs %}
+{% tab title="Test.java" %}
+
+###### Before
+{% code title="Test.java" %}
+```java
+import org.apache.log4j.Logger;
+
+class Test {
+    Logger logger = Logger.getLogger(Test.class);
+}
+```
+{% endcode %}
+
+###### After
+{% code title="Test.java" %}
+```java
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+class Test {
+    Logger logger = LogManager.getLogger(Test.class);
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- Test.java
++++ Test.java
+@@ -1,1 +1,2 @@
+-import org.apache.log4j.Logger;
++import org.apache.logging.log4j.LogManager;
++import org.apache.logging.log4j.Logger;
+
+@@ -4,1 +5,1 @@
+
+class Test {
+-   Logger logger = Logger.getLogger(Test.class);
++   Logger logger = LogManager.getLogger(Test.class);
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -38,7 +143,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2")
 }
 ```
 {% endcode %}
@@ -52,7 +157,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.log4j.Log4j1ToLog4j2</recipe>
@@ -62,7 +167,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -212,10 +317,10 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Patrick](patway99@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* Aaron Gershman
+* [Patrick](mailto:patway99@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

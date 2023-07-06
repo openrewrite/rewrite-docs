@@ -6,260 +6,11 @@ _Some recipes have been moved from `rewrite` to `rewrite-static-analysis`, so an
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
-
-## Examples
-##### Example 1
-Update referencing places in java file.
-
-
-{% tabs %}
-{% tab title="org/openrewrite/java/migrate/UseJavaUtilBase64.java" %}
-
-###### Before
-{% code title="org/openrewrite/java/migrate/UseJavaUtilBase64.java" %}
-```java
-package org.openrewrite.java.migrate;
-
-import org.openrewrite.ExecutionContext;
-import org.openrewrite.Recipe;
-import org.openrewrite.TreeVisitor;
-import org.openrewrite.java.JavaVisitor;
-import org.openrewrite.java.cleanup.SimplifyBooleanExpression;
-import org.openrewrite.java.cleanup.UnnecessaryCatch;
-import org.openrewrite.java.tree.J;
-
-public class UseJavaUtilBase64 extends Recipe {
-
-    @Override
-    public String getDisplayName() {return "Prefer `java.util.Base64` instead of `sun.misc`";}
-
-    @Override
-    public String getDescription() {return "Prefer `java.util.Base64` instead of `sun.misc`.";}
-
-    @Override
-    public TreeVisitor<?, ExecutionContext> getVisitor() {
-        return new JavaVisitor<ExecutionContext>() {
-            @Override
-            public J visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
-                J.MethodInvocation m = (J.MethodInvocation) super.visitMethodInvocation(method, ctx);
-
-                // expect to change
-                doAfterVisit(new UnnecessaryCatch(false).getVisitor());
-                org.openrewrite.java.cleanup.UnnecessaryCatch v1 = new org.openrewrite.java.cleanup.UnnecessaryCatch(true);
-
-                // expect no change
-                doAfterVisit(new SimplifyBooleanExpression().getVisitor());
-                org.openrewrite.java.cleanup.SimplifyBooleanExpression v2 = new org.openrewrite.java.cleanup.SimplifyBooleanExpression();
-                return m;
-            }
-        };
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="org/openrewrite/java/migrate/UseJavaUtilBase64.java" %}
-```java
-package org.openrewrite.java.migrate;
-
-import org.openrewrite.ExecutionContext;
-import org.openrewrite.Recipe;
-import org.openrewrite.TreeVisitor;
-import org.openrewrite.java.JavaVisitor;
-import org.openrewrite.java.cleanup.SimplifyBooleanExpression;
-import org.openrewrite.java.tree.J;
-import org.openrewrite.staticanalysis.UnnecessaryCatch;
-
-public class UseJavaUtilBase64 extends Recipe {
-
-    @Override
-    public String getDisplayName() {return "Prefer `java.util.Base64` instead of `sun.misc`";}
-
-    @Override
-    public String getDescription() {return "Prefer `java.util.Base64` instead of `sun.misc`.";}
-
-    @Override
-    public TreeVisitor<?, ExecutionContext> getVisitor() {
-        return new JavaVisitor<ExecutionContext>() {
-            @Override
-            public J visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
-                J.MethodInvocation m = (J.MethodInvocation) super.visitMethodInvocation(method, ctx);
-
-                // expect to change
-                doAfterVisit(new UnnecessaryCatch(false).getVisitor());
-                org.openrewrite.staticanalysis.UnnecessaryCatch v1 = new org.openrewrite.staticanalysis.UnnecessaryCatch(true);
-
-                // expect no change
-                doAfterVisit(new SimplifyBooleanExpression().getVisitor());
-                org.openrewrite.java.cleanup.SimplifyBooleanExpression v2 = new org.openrewrite.java.cleanup.SimplifyBooleanExpression();
-                return m;
-            }
-        };
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- org/openrewrite/java/migrate/UseJavaUtilBase64.java
-+++ org/openrewrite/java/migrate/UseJavaUtilBase64.java
-@@ -8,1 +8,0 @@
-import org.openrewrite.java.JavaVisitor;
-import org.openrewrite.java.cleanup.SimplifyBooleanExpression;
--import org.openrewrite.java.cleanup.UnnecessaryCatch;
-import org.openrewrite.java.tree.J;
-@@ -10,0 +9,1 @@
-import org.openrewrite.java.cleanup.UnnecessaryCatch;
-import org.openrewrite.java.tree.J;
-+import org.openrewrite.staticanalysis.UnnecessaryCatch;
-
-@@ -28,1 +28,1 @@
-                // expect to change
-                doAfterVisit(new UnnecessaryCatch(false).getVisitor());
--               org.openrewrite.java.cleanup.UnnecessaryCatch v1 = new org.openrewrite.java.cleanup.UnnecessaryCatch(true);
-+               org.openrewrite.staticanalysis.UnnecessaryCatch v1 = new org.openrewrite.staticanalysis.UnnecessaryCatch(true);
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-Update referencing places in yaml file.
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-type: specs.openrewrite.org/v1beta/recipe
-name: org.example.bank.Internal
-displayName: org.example.bank.Internal
-description: org.example.bank.Internal
-recipeList:
-  - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-type: specs.openrewrite.org/v1beta/recipe
-name: org.example.bank.Internal
-displayName: org.example.bank.Internal
-description: org.example.bank.Internal
-recipeList:
-  - org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -6,1 +6,1 @@
-description: org.example.bank.Internal
-recipeList:
-- - org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable
-+ - org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 3
-Update referencing places in pom.xml.
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>org.example</groupId>
-  <artifactId>foo</artifactId>
-  <version>1.0</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <groupId>org.example</groupId>
-  <artifactId>foo</artifactId>
-  <version>1.0</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>4.45.0</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -13,1 +13,1 @@
-        <configuration>
-          <activeRecipes>
--           <recipe>org.openrewrite.java.cleanup.AddSerialVersionUidToSerializable</recipe>
-+           <recipe>org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable</recipe>
-          </activeRecipes>
-@@ -20,1 +20,0 @@
-  </build>
-</project>
--
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 8.1.6
 
 
 ## Usage
@@ -270,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -293,7 +44,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.upgrade.UpdateStaticAnalysisPackage</recipe>
@@ -1018,7 +769,7 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [Kun Li](kun@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

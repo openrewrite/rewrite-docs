@@ -10,11 +10,11 @@ _Use `java.net.MulticastSocket#setTimeToLive(int)` instead of the deprecated `ja
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/MigrateMulticastSocketSetTTLToSetTimeToLive.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/MigrateMulticastSocketSetTTLToSetTimeToLive.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.1
+* version: 2.0.6
 
 ## Example
 
@@ -74,13 +74,13 @@ public class Test {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -92,7 +92,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.6")
 }
 ```
 {% endcode %}
@@ -106,7 +106,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive</recipe>
@@ -116,7 +116,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -141,11 +141,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Aaron Gershman](aegershman@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* Tyler Van Gorder
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

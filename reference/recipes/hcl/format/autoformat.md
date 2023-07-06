@@ -6,58 +6,11 @@ _Format HCL code using a standard comprehensive set of HCL formatting recipes._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 8.1.3
-
-## Example
-
-
-{% tabs %}
-{% tab title="hcl" %}
-
-###### Before
-{% code %}
-```hcl
-locals {
-  object = {
-         string_attr = "value1"
-         int_attr    = 2
-  }
-}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```hcl
-locals {
-  object = {
-    string_attr = "value1"
-    int_attr    = 2
-  }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,2 +3,2 @@
-locals {
-  object = {
--        string_attr = "value1"
--        int_attr    = 2
-+   string_attr = "value1"
-+   int_attr    = 2
-  }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 8.1.6
 
 
 ## Usage
@@ -68,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -91,7 +44,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.hcl.format.AutoFormat</recipe>
@@ -117,8 +70,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

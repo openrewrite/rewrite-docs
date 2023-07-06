@@ -10,11 +10,11 @@ _Guava filled in important gaps in the Java standard library and still does. But
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.1
+* version: 2.0.6
 
 ## Examples
 ##### Example 1
@@ -254,13 +254,13 @@ class A {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -272,7 +272,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.6")
 }
 ```
 {% endcode %}
@@ -286,7 +286,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.guava.NoGuava</recipe>
@@ -296,7 +296,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -332,12 +332,14 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Prefer `new HashSet<>()`](../../../java/migrate/guava/noguavasetsnewhashset.md)
 * [Prefer `new ConcurrentHashMap<>()`](../../../java/migrate/guava/noguavasetsnewconcurrenthashset.md)
 * [Prefer `new LinkedHashSet<>()`](../../../java/migrate/guava/noguavasetsnewlinkedhashset.md)
+* [Prefer `java.nio.charset.StandardCharsets`](../../../java/migrate/guava/preferjavaniocharsetstandardcharsets.md)
 * [Prefer `java.util.Optional`](../../../java/migrate/guava/preferjavautiloptional.md)
 * [Prefer `java.util.function.Function`](../../../java/migrate/guava/preferjavautilfunction.md)
 * [Prefer `java.util.function.Predicate`](../../../java/migrate/guava/preferjavautilpredicate.md)
 * [Prefer `java.util.function.Supplier`](../../../java/migrate/guava/preferjavautilsupplier.md)
 * [Prefer `java.util.Objects#equals`](../../../java/migrate/guava/preferjavautilobjectsequals.md)
 * [Prefer `java.util.Objects#hash`](../../../java/migrate/guava/preferjavautilobjectshashcode.md)
+* [Prefer `java.util.Objects#requireNonNull`](../../../java/migrate/guava/preferjavautilobjectsrequirenonnull.md)
 * [Prefer `java.util.Collections#unmodifiableNavigableMap`](../../../java/migrate/guava/preferjavautilcollectionsunmodifiablenavigablemap.md)
 * [Prefer `java.util.Collections#synchronizedNavigableMap`](../../../java/migrate/guava/preferjavautilcollectionssynchronizednavigablemap.md)
 * [Prefer `java.lang.Char#compare`](../../../java/migrate/guava/prefercharcompare.md)
@@ -380,12 +382,14 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet
   - org.openrewrite.java.migrate.guava.NoGuavaSetsNewLinkedHashSet
+  - org.openrewrite.java.migrate.guava.PreferJavaNioCharsetStandardCharsets
   - org.openrewrite.java.migrate.guava.PreferJavaUtilOptional
   - org.openrewrite.java.migrate.guava.PreferJavaUtilFunction
   - org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate
   - org.openrewrite.java.migrate.guava.PreferJavaUtilSupplier
   - org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsEquals
   - org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsHashCode
+  - org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsRequireNonNull
   - org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsUnmodifiableNavigableMap
   - org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsSynchronizedNavigableMap
   - org.openrewrite.java.migrate.guava.PreferCharCompare
@@ -412,19 +416,19 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Tim te Beek](tim@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
-* [Sam Snyder](sam@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Scott Jungling](scott.jungling@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Sam Snyder](mailto:sam@moderne.io)
+* Tyler Van Gorder
+* Patrick Way
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
+* Aaron Gershman
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* [Scott Jungling](mailto:scott.jungling@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

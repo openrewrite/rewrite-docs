@@ -6,11 +6,11 @@ _Apply the specified executions to a Maven plugin. Will not add the plugin if it
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginExecutions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginExecutions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -19,88 +19,6 @@ _Apply the specified executions to a Maven plugin. Will not add the plugin if it
 | `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
 | `String` | executions | *Optional*. Plugin goal executions provided as raw XML. Supplying `null` will remove any existing executions. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.openrewrite.maven`|
-|artifactId|`rewrite-maven-plugin`|
-|executions|`null`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>org.example</groupId>
-    <artifactId>foo</artifactId>
-    <version>1.0</version>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.openrewrite.maven</groupId>
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.1.5</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals><goal>dryRun</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>org.example</groupId>
-    <artifactId>foo</artifactId>
-    <version>1.0</version>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.openrewrite.maven</groupId>
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.1.5</version>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,6 +12,0 @@
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.1.5</version>
--               <executions>
--                   <execution>
--                       <phase>validate</phase>
--                       <goals><goal>dryRun</goal></goals>
--                   </execution>
--               </executions>
-            </plugin>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -134,7 +52,7 @@ Now that `com.yourorg.ChangePluginExecutionsExample` has been defined activate i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePluginExecutionsExample</recipe>
@@ -150,8 +68,8 @@ Now that `com.yourorg.ChangePluginExecutionsExample` has been defined activate i
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

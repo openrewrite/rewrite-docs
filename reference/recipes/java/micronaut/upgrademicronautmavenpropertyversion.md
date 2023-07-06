@@ -42,7 +42,7 @@ Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defi
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -68,7 +68,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeMicronautMavenPropertyVersionExample</recipe>
@@ -91,13 +91,13 @@ dependencies {
 {% endtabs %}
 
 ## Contributors
-* [Patrick](patway99@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Jeremy Grelle](grellej@unityfoundation.io)
-* [Tim te Beek](tim@moderne.io)
+* [Patrick](mailto:patway99@gmail.com)
+* Tyler Van Gorder
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* Aaron Gershman
+* [Jeremy Grelle](mailto:grellej@unityfoundation.io)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

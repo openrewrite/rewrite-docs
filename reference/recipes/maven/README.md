@@ -44,6 +44,7 @@
 * [Remove repository](./removerepository.md)
 * [Rename Maven property key](./renamepropertykey.md)
 * [Set Maven project packaging](./changepackaging.md)
+* [Update Maven wrapper](./updatemavenwrapper.md)
 * [Upgrade Maven dependency version](./upgradedependencyversion.md)
 * [Upgrade Maven parent project version](./upgradeparentversion.md)
 * [Upgrade Maven plugin version](./upgradepluginversion.md)

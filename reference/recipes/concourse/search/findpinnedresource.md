@@ -89,7 +89,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -115,7 +115,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.concourse.search.FindPinnedResource</recipe>
@@ -176,8 +176,8 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Kun Li](122563761+kunli2@users.noreply.github.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Kun Li
 
 
 ## See how this recipe works across multiple open-source repositories

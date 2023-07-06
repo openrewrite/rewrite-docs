@@ -1,4 +1,4 @@
-# Migrate thymeleaf dependencies to Spring Boot 3.0.x
+# Migrate thymeleaf dependencies to Spring Boot 3.x
 
 **org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies**
 
@@ -12,22 +12,22 @@ _Migrate thymeleaf dependencies to the new artifactId, since these are changed w
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.1
+* version: 5.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.5")
 }
 ```
 {% endcode %}
@@ -53,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies</recipe>
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.1</version>
+            <version>5.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -91,6 +91,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Rename package name](../../../java/changepackage.md)
+  * oldPackageName: `org.thymeleaf.spring5`
+  * newPackageName: `org.thymeleaf.spring6`
 * [Change Maven dependency groupId, artifactId and/or the version](../../../maven/changedependencygroupidandartifactid.md)
   * oldGroupId: `org.thymeleaf`
   * oldArtifactId: `thymeleaf-spring5`
@@ -107,13 +110,16 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies
-displayName: Migrate thymeleaf dependencies to Spring Boot 3.0.x
+displayName: Migrate thymeleaf dependencies to Spring Boot 3.x
 description: Migrate thymeleaf dependencies to the new artifactId, since these are changed with Spring Boot 3.
 tags:
   - spring
   - thymeleaf
   - boot
 recipeList:
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.thymeleaf.spring5
+      newPackageName: org.thymeleaf.spring6
   - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
       oldGroupId: org.thymeleaf
       oldArtifactId: thymeleaf-spring5

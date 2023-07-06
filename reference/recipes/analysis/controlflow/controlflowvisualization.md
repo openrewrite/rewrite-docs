@@ -6,71 +6,17 @@ _Visualize the control flow of a Java program._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.2/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.0.1
+* version: 2.0.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `boolean` | includeDotfile | Also output with a Dotfile which can be then later visualized by Graphviz. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|includeDotfile|`false`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-abstract class Test {
-    abstract int start();
-    void test() {
-        int x = start();
-        x++;
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-abstract class Test {
-    abstract int start();
-    void test() /*~~(BB: 1 CN: 0 EX: 1 | 1L)~~>*/{
-        int x = start();
-        x++;
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -3,1 +3,1 @@
-abstract class Test {
-    abstract int start();
--   void test() {
-+   void test() /*~~(BB: 1 CN: 0 EX: 1 | 1L)~~>*/{
-        int x = start();
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -90,13 +36,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ControlFlowVisualizationExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.1 in your build file:
+Now that `com.yourorg.ControlFlowVisualizationExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.2 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -108,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.1")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.2")
 }
 ```
 {% endcode %}
@@ -122,7 +68,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ControlFlowVisualizationExample</recipe>
@@ -132,7 +78,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -145,8 +91,8 @@ dependencies {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Leitschuh](Jonathan.Leitschuh@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com)
+* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

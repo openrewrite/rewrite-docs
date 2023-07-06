@@ -6,11 +6,11 @@ _Takes two patterns for the start/end methods to find flow between._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.2/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.0.1
+* version: 2.0.2
 
 ## Options
 
@@ -22,75 +22,6 @@ _Takes two patterns for the start/end methods to find flow between._
 | `Boolean` | endMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 | `String` | target | The part of the method flow should traverse to |
 | `String` | flow | When enabled, show the data or taint flow of the method invocation. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|startMethodPattern|`java.util.LinkedList <constructor>()`|
-|startMatchOverrides|`true`|
-|endMethodPattern|`java.util.LinkedList remove()`|
-|endMatchOverrides|`true`|
-|target|`Select`|
-|flow|`Taint`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import java.util.LinkedList;
-class Test {
-    void test() {
-        LinkedList<Integer> l = new LinkedList<>();
-        l.add(5);
-        System.out.println(l);
-        l.remove();
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.util.LinkedList;
-class Test {
-    void test() {
-        LinkedList<Integer> l = /*~~>*/new LinkedList<>();
-        /*~~>*/l.add(5);
-        System.out.println(/*~~>*/l);
-        /*~~>*/l.remove();
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -4,4 +4,4 @@
-class Test {
-    void test() {
--       LinkedList<Integer> l = new LinkedList<>();
--       l.add(5);
--       System.out.println(l);
--       l.remove();
-+       LinkedList<Integer> l = /*~~>*/new LinkedList<>();
-+       /*~~>*/l.add(5);
-+       System.out.println(/*~~>*/l);
-+       /*~~>*/l.remove();
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -115,13 +46,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.1 in your build file:
+Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.2 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -133,7 +64,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.1")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.2")
 }
 ```
 {% endcode %}
@@ -147,7 +78,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindFlowBetweenMethodsExample</recipe>
@@ -157,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -170,8 +101,9 @@ dependencies {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Leitschuh](Jonathan.Leitschuh@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com)
+* [aaronist](mailto:aaronmblume@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

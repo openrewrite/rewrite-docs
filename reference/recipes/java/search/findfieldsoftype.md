@@ -6,67 +6,17 @@ _Finds declared fields matching a particular class name._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindFieldsOfType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindFieldsOfType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | fullyQualifiedTypeName | A fully-qualified Java type name, that is used to find matching fields. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|fullyQualifiedTypeName|`java.util.List`|
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import java.util.*;
-public class A {
-   private List<?> list;
-   private Set<?> set;
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import java.util.*;
-public class A {
-   /*~~>*/private List<?> list;
-   private Set<?> set;
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -3,1 +3,1 @@
-import java.util.*;
-public class A {
--  private List<?> list;
-+  /*~~>*/private List<?> list;
-   private Set<?> set;
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -92,7 +42,7 @@ Now that `com.yourorg.FindFieldsOfTypeExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -114,7 +64,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindFieldsOfTypeExample</recipe>
@@ -130,10 +80,10 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
-* [Knut Wannheden](knut.wannheden@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Tyler Van Gorder
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

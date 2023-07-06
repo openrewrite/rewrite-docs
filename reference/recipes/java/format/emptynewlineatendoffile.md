@@ -10,11 +10,11 @@ _Some tools work better when files end with an empty line._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/EmptyNewlineAtEndOfFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/EmptyNewlineAtEndOfFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 
 ## Usage
@@ -25,7 +25,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.format.EmptyNewlineAtEndOfFile</recipe>
@@ -74,10 +74,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Scott Jungling](mailto:scott.jungling@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

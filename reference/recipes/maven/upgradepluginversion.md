@@ -6,11 +6,11 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -30,84 +30,6 @@ _Attempts to resolve maven metadata that failed._
 
 | Column Name | Description |
 | ----------- | ----------- |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`io.quarkus`|
-|artifactId|`quarkus-maven-plugin`|
-|newVersion|`1.13.5.Final`|
-|versionPattern|`null`|
-|trustParent|`null`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.openrewrite.example</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-maven-plugin</artifactId>
-        <version>1.13.3.Final</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>org.openrewrite.example</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-maven-plugin</artifactId>
-        <version>1.13.5.Final</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -13,1 +13,1 @@
-        <groupId>io.quarkus</groupId>
-        <artifactId>quarkus-maven-plugin</artifactId>
--       <version>1.13.3.Final</version>
-+       <version>1.13.5.Final</version>
-      </plugin>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -143,7 +65,7 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradePluginVersionExample</recipe>
@@ -159,11 +81,11 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined activate it 
 {% endtabs %}
 
 ## Contributors
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Sam Snyder](sam@moderne.io)
+* Aaron Gershman
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Tyler Van Gorder
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

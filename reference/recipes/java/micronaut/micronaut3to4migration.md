@@ -21,7 +21,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.Micronaut3to4Migration</recipe>
@@ -132,19 +132,19 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [Jeremy Grelle](grellej@unityfoundation.io)
-* [Patrick](patway99@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Kun Li](122563761+kunli2@users.noreply.github.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Tim te Beek](tim@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
+* [Jeremy Grelle](mailto:grellej@unityfoundation.io)
+* [Patrick](mailto:patway99@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* Kun Li
+* Tyler Van Gorder
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Aaron Gershman
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

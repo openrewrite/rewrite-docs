@@ -11,40 +11,40 @@ _Applies best practices to tests._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.2
+* version: 2.0.6
 
 ## Examples
 ##### Example 1
 
 
 {% tabs %}
-{% tab title="Test.java" %}
+{% tab title="Example.java" %}
 
 ###### Before
-{% code title="Test.java" %}
+{% code title="Example.java" %}
 ```java
-import org.junit.jupiter.api.Assertions;
+import org.junit.Before;
 
-public class Test {
-    void method() {
-        Assertions.assertTrue(true);
+public class Example {
+    @Before
+    public void initialize() {
     }
 }
 ```
 {% endcode %}
 
 ###### After
-{% code title="Test.java" %}
+{% code title="Example.java" %}
 ```java
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
 
-public class Test {
-    void method() {
-        assertTrue(true);
+class Example {
+    @BeforeEach
+    void initialize() {
     }
 }
 ```
@@ -54,17 +54,21 @@ public class Test {
 {% tab title="Diff" %}
 {% code %}
 ```diff
---- Test.java
-+++ Test.java
+--- Example.java
++++ Example.java
 @@ -1,1 +1,1 @@
--import org.junit.jupiter.api.Assertions;
-+import static org.junit.jupiter.api.Assertions.assertTrue;
+-import org.junit.Before;
++import org.junit.jupiter.api.BeforeEach;
 
-@@ -5,1 +5,1 @@
-public class Test {
-    void method() {
--       Assertions.assertTrue(true);
-+       assertTrue(true);
+@@ -3,3 +3,3 @@
+import org.junit.Before;
+
+-public class Example {
+-   @Before
+-   public void initialize() {
++class Example {
++   @BeforeEach
++   void initialize() {
     }
 ```
 {% endcode %}
@@ -77,29 +81,29 @@ public class Test {
 
 
 {% tabs %}
-{% tab title="Test.java" %}
+{% tab title="Example.java" %}
 
 ###### Before
-{% code title="Test.java" %}
+{% code title="Example.java" %}
 ```java
-import org.junit.jupiter.api.Assertions;
+import org.junit.Before;
 
-public class Test {
-    void method() {
-        Assertions.assertTrue(true);
+public class Example {
+    @Before
+    public void initialize() {
     }
 }
 ```
 {% endcode %}
 
 ###### After
-{% code title="Test.java" %}
+{% code title="Example.java" %}
 ```java
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
 
-public class Test {
-    void method() {
-        assertTrue(true);
+class Example {
+    @BeforeEach
+    void initialize() {
     }
 }
 ```
@@ -109,17 +113,21 @@ public class Test {
 {% tab title="Diff" %}
 {% code %}
 ```diff
---- Test.java
-+++ Test.java
+--- Example.java
++++ Example.java
 @@ -1,1 +1,1 @@
--import org.junit.jupiter.api.Assertions;
-+import static org.junit.jupiter.api.Assertions.assertTrue;
+-import org.junit.Before;
++import org.junit.jupiter.api.BeforeEach;
 
-@@ -5,1 +5,1 @@
-public class Test {
-    void method() {
--       Assertions.assertTrue(true);
-+       assertTrue(true);
+@@ -3,3 +3,3 @@
+import org.junit.Before;
+
+-public class Example {
+-   @Before
+-   public void initialize() {
++class Example {
++   @BeforeEach
++   void initialize() {
     }
 ```
 {% endcode %}
@@ -129,13 +137,13 @@ public class Test {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -147,7 +155,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.6")
 }
 ```
 {% endcode %}
@@ -161,7 +169,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -171,7 +179,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -203,6 +211,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [JUnit Jupiter migration from JUnit 4.x](../../../java/testing/junit5/junit4to5migration.md)
 * [Clean Up Assertions](../../../java/testing/junit5/cleanupassertions.md)
 * [Remove `public` visibility of JUnit 5 tests](../../../java/testing/cleanup/testsshouldnotbepublic.md)
+* [Add missing @ParameterizedTest annotation when @ValueSource is used or replace @Test with @ParameterizedTest](../../../java/testing/junit5/addparameterizedtestannotation.md)
+* [Remove duplicates uses of @TestTemplate implementations for a single method](../../../java/testing/junit5/removeduplicatetesttemplates.md)
 
 {% endtab %}
 
@@ -221,35 +231,39 @@ recipeList:
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
   - org.openrewrite.java.testing.junit5.CleanupAssertions
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic:
+  - org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation
+  - org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates
 
 ```
 {% endtab %}
 {% endtabs %}
 
 ## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Patrick](patway99@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Sam Snyder](sam@moderne.io)
-* [Yeikel](yeikel@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Greg Adams](gadams@gmail.com)
-* [Tim te Beek](tim.te.beek@jdriven.com)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Greg Adams](greg@moderne.io)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Tim te Beek](tim@moderne.io)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Sofia Britto Schwartz](sofia.b.schwartz@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Michael Keppler](bananeweizen@gmx.de)
-* [Ties van de Ven](1215166+vandeven@users.noreply.github.com)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Kun Li](kun@moderne.io)
-* [Kyle Scully](scullykns@gmail.com)
+* Patrick Way
+* [Patrick](mailto:patway99@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Sam Snyder](mailto:sam@moderne.io)
+* Yeikel
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Greg Adams](mailto:gadams@gmail.com)
+* [Tim te Beek](mailto:tim.te.beek@jdriven.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Greg Adams](mailto:greg@moderne.io)
+* [Aleksandar A Simpson](mailto:alek@asu.me)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
+* Tyler Van Gorder
+* [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Michael Keppler](mailto:bananeweizen@gmx.de)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* Ties van de Ven
+* [Scott Jungling](mailto:scott.jungling@gmail.com)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
+* [joanvr](mailto:joan@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
+* [Kyle Scully](mailto:scullykns@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

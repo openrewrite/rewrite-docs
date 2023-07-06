@@ -6,58 +6,11 @@ _This is a diagnostic recipe to highlight where ASTs are missing type attributio
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMissingTypes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMissingTypes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
-
-## Example
-
-
-{% tabs %}
-{% tab title="ATest.java" %}
-
-###### Before
-{% code title="ATest.java" %}
-```java
-import org.junit.Test;
-
-class ATest {
-    @Test
-    void foo() {}
-}
-```
-{% endcode %}
-
-###### After
-{% code title="ATest.java" %}
-```java
-import org.junit.Test;
-
-class ATest {
-    @/*~~(Identifier type is missing or malformed)~~>*/Test
-    void foo() {}
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- ATest.java
-+++ ATest.java
-@@ -4,1 +4,1 @@
-
-class ATest {
--   @Test
-+   @/*~~(Identifier type is missing or malformed)~~>*/Test
-    void foo() {}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 8.1.6
 
 
 ## Usage
@@ -68,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -91,7 +44,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindMissingTypes</recipe>
@@ -117,10 +70,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Sam Snyder](sam@moderne.io)
+* Patrick Way
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

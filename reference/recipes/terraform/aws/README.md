@@ -1,6 +1,8 @@
 # AWS
 
-## Recipes
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
 
 * [Best practices for AWS](./awsbestpractices.md)
 * [Disable Instance Metadata Service version 1](./disableinstancemetadataservicev1.md)

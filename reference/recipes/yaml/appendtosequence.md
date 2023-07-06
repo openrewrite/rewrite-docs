@@ -6,11 +6,11 @@ _Append item to YAML sequence._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/AppendToSequence.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/AppendToSequence.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,55 +20,6 @@ _Append item to YAML sequence._
 | `String` | value | The new value to be appended to the sequence. |
 | `List` | existingSequenceValues | *Optional*. Recipe appends to sequence only when existing sequence values match |
 | `Boolean` | matchExistingSequenceValuesInAnyOrder | *Optional*. match existing sequence values in any order |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|sequencePath|`$.things.fruit`|
-|value|`strawberry`|
-|existingSequenceValues|`null`|
-|matchExistingSequenceValuesInAnyOrder|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-    things:
-      fruit:
-        - apple
-        - blueberry
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-    things:
-      fruit:
-        - apple
-        - blueberry
-        - strawberry
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,0 +5,1 @@
-        - apple
-        - blueberry
-+       - strawberry
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -97,7 +48,7 @@ Now that `com.yourorg.AppendToSequenceExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -119,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AppendToSequenceExample</recipe>
@@ -135,9 +86,9 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [sullis](github@seansullivan.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [sullis](mailto:github@seansullivan.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

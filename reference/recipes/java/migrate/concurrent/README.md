@@ -1,6 +1,8 @@
 # java.util.concurrent APIs
 
-## Recipes
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
 
 * [Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`](./migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
 * [Use `AtomicInteger#weakCompareAndSetPlain(int, int)`](./migrateatomicintegerweakcompareandsettoweakcompareandsetplain.md)

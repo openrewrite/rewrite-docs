@@ -11,22 +11,22 @@ _Migrate applications to the latest Spring Boot 2.7 release. This recipe will mo
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-27.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-27.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.1
+* version: 5.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.5")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBootProperties_2_7</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.1</version>
+            <version>5.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -229,16 +229,16 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Sandeep Nagaraj](59915704+sanagaraj-pivotal@users.noreply.github.com)
-* [Kyle Scully](scullykns@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Tim te Beek](timtebeek@gmail.com)
-* [Josh Soref](2119212+jsoref@users.noreply.github.com)
+* Tyler Van Gorder
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Nick McKinney](mailto:mckinneynichoals@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* Sandeep Nagaraj
+* [Kyle Scully](mailto:scullykns@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
+* Josh Soref
 
 
 ## See how this recipe works across multiple open-source repositories

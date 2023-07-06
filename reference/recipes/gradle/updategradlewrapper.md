@@ -6,115 +6,41 @@ _Update the version of Gradle used in an existing Gradle wrapper._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | version | An exact version number or node-style semver selector used to select the version number. |
+| `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. Defaults to the latest release if not specified. |
 | `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. Defaults to "bin". |
 | `String` | repositoryUrl | *Optional*. The URL of the repository to download the Gradle distribution from. Currently only supports repositories like services.gradle.org, not arbitrary maven or ivy repositories. Defaults to `https://services.gradle.org/versions/all`. |
 | `Boolean` | addIfMissing | *Optional*. Add a Gradle wrapper, if it's missing. Defaults to `true`. |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|version|`7.4.2`|
-|distribution|`null`|
-|repositoryUrl|`null`|
-|addIfMissing|`null`|
-
-
-{% tabs %}
-{% tab title="gradle/wrapper/gradle-wrapper.properties" %}
-
-###### Before
-{% code title="gradle/wrapper/gradle-wrapper.properties" %}
-```properties
-distributionBase=GRADLE_USER_HOME
-distributionPath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-all.zip
-distributionSha256Sum=cd5c2958a107ee7f0722004a12d0f8559b4564c34daad7df06cffd4d12a426d0
-zipStoreBase=GRADLE_USER_HOME
-zipStorePath=wrapper/dists
-```
-{% endcode %}
-
-###### After
-{% code title="gradle/wrapper/gradle-wrapper.properties" %}
-```properties
-distributionBase=GRADLE_USER_HOME
-distributionPath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
-distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
-zipStoreBase=GRADLE_USER_HOME
-zipStorePath=wrapper/dists
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- gradle/wrapper/gradle-wrapper.properties
-+++ gradle/wrapper/gradle-wrapper.properties
-@@ -3,2 +3,2 @@
-distributionBase=GRADLE_USER_HOME
-distributionPath=wrapper/dists
--distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-all.zip
--distributionSha256Sum=cd5c2958a107ee7f0722004a12d0f8559b4564c34daad7df06cffd4d12a426d0
-+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
-+distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
-zipStoreBase=GRADLE_USER_HOME
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateGradleWrapperExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.UpdateGradleWrapperExample
-displayName: Update Gradle wrapper example
-recipeList:
-  - org.openrewrite.gradle.UpdateGradleWrapper:
-      version: 7.x
-      distribution: null
-      repositoryUrl: https://services.gradle.org/versions/all
-      addIfMissing: null
-```
-{% endcode %}
-
-Now that `com.yourorg.UpdateGradleWrapperExample` has been defined activate it in your build file:
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.UpdateGradleWrapperExample")
+    activeRecipe("org.openrewrite.gradle.UpdateGradleWrapper")
 }
 
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 {% endtab %}

@@ -113,7 +113,7 @@ Now that `com.yourorg.FindExceedsResourceValueExample` has been defined activate
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -139,7 +139,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindExceedsResourceValueExample</recipe>
@@ -162,10 +162,10 @@ dependencies {
 {% endtabs %}
 
 ## Contributors
-* [Jon Brisbin](jon@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Knut Wannheden](knut.wannheden@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jon Brisbin](mailto:jon@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+* Aaron Gershman
 
 
 ## See how this recipe works across multiple open-source repositories

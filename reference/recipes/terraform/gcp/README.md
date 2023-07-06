@@ -1,6 +1,8 @@
 # GCP
 
-## Recipes
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
 
 * [Best practices for GCP](./gcpbestpractices.md)
 * [Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters](./enablepodsecuritypolicycontrollerongkeclusters.md)

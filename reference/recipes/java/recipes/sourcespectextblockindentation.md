@@ -6,100 +6,11 @@ _Text blocks that assert before and after source code should have minimal indent
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/SourceSpecTextBlockIndentation.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/SourceSpecTextBlockIndentation.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
-
-## Example
-
-
-{% tabs %}
-{% tab title="MyRecipeTest.java" %}
-
-###### Before
-{% code title="MyRecipeTest.java" %}
-```java
-import org.openrewrite.test.RewriteTest;
-import static org.openrewrite.test.SourceSpecs.text;
-
-class MyRecipeTest implements RewriteTest {
-    void test() {
-      rewriteRun(
-         text(
-           """
-               class Test {
- 
-                   
-                   void test() {
-                       System.out.println("Hello, world!");
-                   }
-               }
-             """
-         )
-      );
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="MyRecipeTest.java" %}
-```java
-import org.openrewrite.test.RewriteTest;
-import static org.openrewrite.test.SourceSpecs.text;
-
-class MyRecipeTest implements RewriteTest {
-    void test() {
-      rewriteRun(
-         text(
-           """
-             class Test {
- 
-                 
-                 void test() {
-                     System.out.println("Hello, world!");
-                 }
-             }
-             """
-         )
-      );
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- MyRecipeTest.java
-+++ MyRecipeTest.java
-@@ -9,1 +9,1 @@
-         text(
-           """
--              class Test {
-+            class Test {
- 
-@@ -11,5 +11,5 @@
-               class Test {
- 
--                  
--                  void test() {
--                      System.out.println("Hello, world!");
--                  }
--              }
-+                
-+                void test() {
-+                    System.out.println("Hello, world!");
-+                }
-+            }
-             """
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 8.1.6
 
 
 ## Usage
@@ -110,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -133,7 +44,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.recipes.SourceSpecTextBlockIndentation</recipe>
@@ -159,7 +70,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

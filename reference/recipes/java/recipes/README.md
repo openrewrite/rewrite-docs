@@ -2,6 +2,12 @@
 
 _Apply best practices to OpenRewrite recipes._
 
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Update moved package recipe](./updatemovedrecipe.md)
+
 ## Recipes
 
 * [Automatically select recipe examples from the unit test cases of a recipe](./selectrecipeexamples.md)
@@ -14,7 +20,6 @@ _Apply best practices to OpenRewrite recipes._
 * [Remove applicability test from Yaml recipe](./removeapplicabilitytestfromyamlrecipe.md)
 * [Set default estimated effort](./setdefaultestimatedeffortperoccurrence.md)
 * [Update moved package class name](./updatemovedpackageclassname.md)
-* [Update moved package recipe](./updatemovedrecipe.md)
 * [Update moved package recipe in pom.xml](./updatemovedrecipexml.md)
 * [Update moved package recipe in yaml file](./updatemovedrecipeyaml.md)
 * [Use `JavaParser.Builder` when constructing `JavaTemplate`](./usejavaparserbuilderinjavatemplate.md)

@@ -2,6 +2,19 @@
 
 _Remediations for issues identified by SAST tools._
 
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Code cleanup](./codecleanup.md)
+* [Common static analysis issues](./commonstaticanalysis.md)
+* [Java API best practices](./javaapibestpractices.md)
+* [Properly use declaration-site type variance for well-known types](./commondeclarationsitetypevariances.md)
+* [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
+* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
+* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
+* [Use `Map#containsKey`](./usemapcontainskey.md)
+
 ## Recipes
 
 * [Add missing `@Override` to overriding and implementing methods](./missingoverrideannotation.md)
@@ -15,9 +28,7 @@ _Remediations for issues identified by SAST tools._
 * [Chain `StringBuilder.append()` calls](./chainstringbuilderappendcalls.md)
 * [Change `StringBuilder` and `StringBuffer` character constructor argument to `String`](./newstringbuilderbufferwithcharargument.md)
 * [Changes code to use Java 17's `instanceof` pattern matching](./instanceofpatternmatch.md)
-* [Code cleanup](./codecleanup.md)
 * [Combine semantically equal catch blocks](./combinesemanticallyequalcatchblocks.md)
-* [Common static analysis issues](./commonstaticanalysis.md)
 * [Control flow statement indentation](./controlflowindentation.md)
 * [Covariant equals](./covariantequals.md)
 * [Default comes last](./defaultcomeslast.md)
@@ -36,7 +47,6 @@ _Remediations for issues identified by SAST tools._
 * [Hidden field](./hiddenfield.md)
 * [Hide utility class constructor](./hideutilityclassconstructor.md)
 * [Inline variable](./inlinevariable.md)
-* [Java API best practices](./javaapibestpractices.md)
 * [Jump statements should not be redundant](./noredundantjumpstatements.md)
 * [Method name casing](./methodnamecasing.md)
 * [Modifier order](./modifierorder.md)
@@ -48,7 +58,6 @@ _Remediations for issues identified by SAST tools._
 * [Operator wrapping](./operatorwrap.md)
 * [Prefer `while` over `for` loops](./whileinsteadoffor.md)
 * [Properly use declaration-site type variance](./declarationsitetypevariance.md)
-* [Properly use declaration-site type variance for well-known types](./commondeclarationsitetypevariances.md)
 * [Redundant file creation](./redundantfilecreation.md)
 * [Reformat local variable names to camelCase](./renamelocalvariablestocamelcase.md)
 * [Reformat private field names to camelCase](./renameprivatefieldstocamelcase.md)
@@ -64,6 +73,7 @@ _Remediations for issues identified by SAST tools._
 * [Remove `finalize()` method](./nofinalizer.md)
 * [Remove garbage collection invocations](./removecallstosystemgc.md)
 * [Remove redundant casts](./removeredundanttypecast.md)
+* [Remove `toString()` calls on arrays](./removetostringcallsfromarrayinstances.md)
 * [Remove unneeded block](./removeunneededblock.md)
 * [Remove unused local variables](./removeunusedlocalvariables.md)
 * [Remove unused private fields](./removeunusedprivatefields.md)
@@ -75,15 +85,12 @@ _Remediations for issues identified by SAST tools._
 * [Replace `Optional#isPresent()` with `Optional#ifPresent()`](./replaceoptionalispresentwithifpresent.md)
 * [Replace Stream.toList() with Stream.collect(Collectors.toList())](./replacestreamtolistwithcollect.md)
 * [Replace StringBuilder.append() with String](./replacestringbuilderwithstring.md)
-* [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
 * [Replace deprecated Runtime.Exec() methods](./replacedeprecatedruntimeexecmethods.md)
 * [Replace duplicate `String` literals](./replaceduplicatestringliterals.md)
 * [Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`](./uselistsort.md)
 * [Replace `java.util.Set#removeAll(java.util.Collection)` with `java.util.Collection#forEach(Set::remove)`](./useforeachremoveinsteadofsetremoveall.md)
 * [Replace `java.util.Stack` with `java.util.Deque`](./replacestackwithdeque.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingvarargswithobjectsrequirenonnull.md)
-* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
-* [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
 * [Replace redundant String format invocations that are wrapped with PrintStream operations](./replaceredundantformatwithprintf.md)
 * [Replace referential equality operators with Object equals method invocations when the operands both override `Object.equals(Object obj)`](./referentialequalitytoobjectequals.md)
 * [Replace text block with regular string](./replacetextblockwithstring.md)
@@ -106,8 +113,8 @@ _Remediations for issues identified by SAST tools._
 * [Use `Collection` interfaces](./usecollectioninterfaces.md)
 * [Use `Collection#isEmpty()` instead of comparing `size()`](./isemptycalloncollections.md)
 * [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](./noemptycollectionwithrawtype.md)
-* [Use `Map#containsKey`](./usemapcontainskey.md)
 * [Use `StandardCharset` constants](./usestandardcharset.md)
+* [Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`](./equalstocontentequals.md)
 * [Use `String.equals()` on String literals](./stringliteralequality.md)
 * [Use `String::replace()` when fist parameter is not a real regular expression](./usestringreplace.md)
 * [Use `System.lineSeparator()`](./usesystemlineseparator.md)
@@ -123,6 +130,7 @@ _Remediations for issues identified by SAST tools._
 * [`finalize()` calls super](./objectfinalizecallssuper.md)
 * [`for` loop counters incremented in update](./forloopincrementinupdate.md)
 * [`for` loop counters should use postfix operators](./forloopcontrolvariablepostfixoperators.md)
+* [`hashCode()` should not be called on array instances](./removehashcodecallsfromarrayinstances.md)
 * [`indexOf` should not compare greater than zero](./indexofshouldnotcomparegreaterthanzero.md)
 * [`indexOf()` replaceable by `contains()`](./indexofreplaceablebycontains.md)
 * [`switch` statements should have at least 3 `case` clauses](./minimumswitchcases.md)

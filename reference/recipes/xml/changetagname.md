@@ -6,11 +6,11 @@ _Alters the name of XML tags matching the provided expression._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -18,55 +18,6 @@ _Alters the name of XML tags matching the provided expression._
 | -- | -- | -- |
 | `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. |
 | `String` | newName | The new name for the tag. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|elementName|`/virtual-patches/enhanced-virtual-patch/whitelist-pattern`|
-|newName|`allowlist-pattern`|
-
-
-{% tabs %}
-{% tab title="xml" %}
-
-###### Before
-{% code %}
-```xml
-<virtual-patches>
-    <enhanced-virtual-patch id="evp-name" path="/[request-path]" variable="request.parameters.[paramName]" message="alphabet validation failed" enableAntisamy="false">
-        <whitelist-pattern>^[a-zA-Z]+${'$'}</whitelist-pattern>
-    </enhanced-virtual-patch>
-</virtual-patches>
-```
-{% endcode %}
-
-###### After
-{% code %}
-```xml
-<virtual-patches>
-    <enhanced-virtual-patch id="evp-name" path="/[request-path]" variable="request.parameters.[paramName]" message="alphabet validation failed" enableAntisamy="false">
-        <allowlist-pattern>^[a-zA-Z]+${'$'}</allowlist-pattern>
-    </enhanced-virtual-patch>
-</virtual-patches>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,1 +3,1 @@
-<virtual-patches>
-    <enhanced-virtual-patch id="evp-name" path="/[request-path]" variable="request.parameters.[paramName]" message="alphabet validation failed" enableAntisamy="false">
--       <whitelist-pattern>^[a-zA-Z]+${'$'}</whitelist-pattern>
-+       <allowlist-pattern>^[a-zA-Z]+${'$'}</allowlist-pattern>
-    </enhanced-virtual-patch>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -93,7 +44,7 @@ Now that `com.yourorg.ChangeTagNameExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -115,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTagNameExample</recipe>
@@ -131,7 +82,7 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Nick McKinney](mckinneynicholas@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

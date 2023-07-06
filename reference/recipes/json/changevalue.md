@@ -6,11 +6,11 @@ _Change a JSON mapping entry value leaving the key intact._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-json
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -18,59 +18,6 @@ _Change a JSON mapping entry value leaving the key intact._
 | -- | -- | -- |
 | `String` | oldKeyPath | A JsonPath expression to locate a JSON entry. |
 | `String` | value | The new value to set for the key identified by oldKeyPath. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldKeyPath|`$.metadata.name`|
-|value|`"monitoring"`|
-
-
-{% tabs %}
-{% tab title="json" %}
-
-###### Before
-{% code %}
-```json
-{
-  "apiVersion": "v1",
-  "metadata": {
-    "name": "monitoring-tools",
-    "namespace": "monitoring-tools"
-  }
-}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```json
-{
-  "apiVersion": "v1",
-  "metadata": {
-    "name": "monitoring",
-    "namespace": "monitoring-tools"
-  }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -4,1 +4,1 @@
-  "apiVersion": "v1",
-  "metadata": {
--   "name": "monitoring-tools",
-+   "name": "monitoring",
-    "namespace": "monitoring-tools"
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -97,7 +44,7 @@ Now that `com.yourorg.ChangeValueExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -119,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeValueExample</recipe>
@@ -135,8 +82,8 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Aaron Gershman
 
 
 ## See how this recipe works across multiple open-source repositories

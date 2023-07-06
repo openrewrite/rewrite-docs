@@ -6,22 +6,115 @@ _Migrates custom Log4j 2.x Appender components to `logback-classic`. This recipe
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jAppenderToLogback.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jAppenderToLogback.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.1
+* version: 2.0.2
+
+## Example
+
+
+{% tabs %}
+{% tab title="TrivialAppender.java" %}
+
+###### Before
+{% code title="TrivialAppender.java" %}
+```java
+import org.apache.log4j.AppenderSkeleton;
+import org.apache.log4j.spi.LoggingEvent;
+
+class TrivialAppender extends AppenderSkeleton {
+    @Override
+    protected void append(LoggingEvent loggingEvent) {
+        String s = this.layout.format(loggingEvent);
+        System.out.println(s);
+    }
+
+    @Override
+    public void close() {
+        // nothing to do
+    }
+
+    @Override
+    public boolean requiresLayout() {
+        return true;
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="TrivialAppender.java" %}
+```java
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.AppenderBase;
+
+class TrivialAppender extends AppenderBase<ILoggingEvent> {
+    @Override
+    protected void append(ILoggingEvent loggingEvent) {
+        String s = this.layout.doLayout(loggingEvent);
+        System.out.println(s);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- TrivialAppender.java
++++ TrivialAppender.java
+@@ -1,2 +1,2 @@
+-import org.apache.log4j.AppenderSkeleton;
+-import org.apache.log4j.spi.LoggingEvent;
++import ch.qos.logback.classic.spi.ILoggingEvent;
++import ch.qos.logback.core.AppenderBase;
+
+@@ -4,1 +4,1 @@
+import org.apache.log4j.spi.LoggingEvent;
+
+-class TrivialAppender extends AppenderSkeleton {
++class TrivialAppender extends AppenderBase<ILoggingEvent> {
+    @Override
+@@ -6,2 +6,2 @@
+class TrivialAppender extends AppenderSkeleton {
+    @Override
+-   protected void append(LoggingEvent loggingEvent) {
+-       String s = this.layout.format(loggingEvent);
++   protected void append(ILoggingEvent loggingEvent) {
++       String s = this.layout.doLayout(loggingEvent);
+        System.out.println(s);
+@@ -10,10 +10,0 @@
+        System.out.println(s);
+    }
+-
+-   @Override
+-   public void close() {
+-       // nothing to do
+-   }
+-
+-   @Override
+-   public boolean requiresLayout() {
+-       return true;
+-   }
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -33,7 +126,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2")
 }
 ```
 {% endcode %}
@@ -47,7 +140,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.logback.Log4jAppenderToLogback</recipe>
@@ -57,7 +150,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -82,9 +175,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Aaron Gershman](aegershman@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Patrick Way](pway99@users.noreply.github.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* Patrick Way
 
 
 ## See how this recipe works across multiple open-source repositories

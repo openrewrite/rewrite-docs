@@ -6,11 +6,11 @@ _Replace @Cucumber with @Suite and @SelectClasspathResource("cucumber/annotated/
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/CucumberAnnotationToSuite.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/CucumberAnnotationToSuite.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cucumber-jvm
-* version: 1.0.2
+* version: 1.0.3
 
 ## Example
 
@@ -74,13 +74,13 @@ public class CucumberJava8Definitions {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -92,7 +92,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.3")
 }
 ```
 {% endcode %}
@@ -106,7 +106,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.cucumber.jvm.CucumberAnnotationToSuite</recipe>
@@ -116,7 +116,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -141,7 +141,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Tim te Beek](timtebeek@gmail.com)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

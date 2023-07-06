@@ -6,81 +6,17 @@ _Find locations where the result of the method call is being ignored._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/ResultOfMethodCallIgnored.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/ResultOfMethodCallIgnored.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|methodPattern|`java.io.File mkdir*()`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import java.io.File;
-class Test {
-    void test() {
-        new File("dir").mkdirs();
-        new File("dir").mkdir();
-        boolean b1 = new File("dir").mkdirs();
-        if(!new File("dir").mkdirs()) {
-            throw new IllegalStateException("oops");
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.io.File;
-class Test {
-    void test() {
-        /*~~>*/new File("dir").mkdirs();
-        /*~~>*/new File("dir").mkdir();
-        boolean b1 = new File("dir").mkdirs();
-        if(!new File("dir").mkdirs()) {
-            throw new IllegalStateException("oops");
-        }
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -4,2 +4,2 @@
-class Test {
-    void test() {
--       new File("dir").mkdirs();
--       new File("dir").mkdir();
-+       /*~~>*/new File("dir").mkdirs();
-+       /*~~>*/new File("dir").mkdir();
-        boolean b1 = new File("dir").mkdirs();
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -106,7 +42,7 @@ Now that `com.yourorg.ResultOfMethodCallIgnoredExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -128,7 +64,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ResultOfMethodCallIgnoredExample</recipe>
@@ -144,9 +80,9 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Aaron Gershman](aegershman@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

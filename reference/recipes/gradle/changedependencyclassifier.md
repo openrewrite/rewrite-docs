@@ -6,11 +6,11 @@ _Finds dependencies declared in `build.gradle` files._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyClassifier.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyClassifier.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,71 +20,6 @@ _Finds dependencies declared in `build.gradle` files._
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | newClassifier | A qualification classifier for the dependency. |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.openrewrite`|
-|artifactId|`*`|
-|newClassifier|`classified`|
-|configuration|``|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    api 'org.openrewrite:rewrite-gradle:latest.release:javadoc'
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    api 'org.openrewrite:rewrite-gradle:latest.release:classified'
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   api 'org.openrewrite:rewrite-gradle:latest.release:javadoc'
-+   api 'org.openrewrite:rewrite-gradle:latest.release:classified'
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -113,7 +48,7 @@ Now that `com.yourorg.ChangeDependencyClassifierExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -130,10 +65,10 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

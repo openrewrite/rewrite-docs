@@ -6,11 +6,11 @@ _Upgrades un-managed spring-boot project dependencies according to the specified
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.1
+* version: 5.0.5
 
 ## Options
 
@@ -139,7 +139,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.1 in your build file:
+Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.5 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -151,7 +151,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeExplicitSpringBootDependenciesExample</recipe>
@@ -161,7 +161,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.1</version>
+            <version>5.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -174,14 +174,14 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
 {% endtabs %}
 
 ## Contributors
-* [Andrei Shakirin](andrei.shakirin@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Patrick](patway99@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Kun Li](122563761+kunli2@users.noreply.github.com)
-* [Kyle Scully](scullykns@gmail.com)
+* [Andrei Shakirin](mailto:andrei.shakirin@gmail.com)
+* Patrick Way
+* [Patrick](mailto:patway99@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Kun Li
+* [Kyle Scully](mailto:scullykns@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

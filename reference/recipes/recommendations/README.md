@@ -2,7 +2,9 @@
 
 _Collections of recommended recipes._
 
-## Recipes
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
 
 * [Code Health](./codehealth.md)
 * [Code Style](./codestyle.md)

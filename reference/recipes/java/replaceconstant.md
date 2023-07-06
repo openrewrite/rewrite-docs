@@ -6,11 +6,11 @@ _Replace a named constant with a literal value when you wish to remove the old c
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -19,58 +19,6 @@ _Replace a named constant with a literal value when you wish to remove the old c
 | `String` | owningType | The target type in which the constant to be replaced is defined. |
 | `String` | constantName | The name of the constant field to replace. |
 | `String` | literalValue | The literal value to replace. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|owningType|`com.google.common.base.Charsets`|
-|constantName|`UTF_8`|
-|literalValue|`"UTF_8"`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import com.google.common.base.Charsets;
-class Test {
-    Object o = Charsets.UTF_8;
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    Object o = "UTF_8";
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -1,1 +1,0 @@
--import com.google.common.base.Charsets;
-class Test {
-@@ -3,1 +2,1 @@
-import com.google.common.base.Charsets;
-class Test {
--   Object o = Charsets.UTF_8;
-+   Object o = "UTF_8";
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -98,7 +46,7 @@ Now that `com.yourorg.ReplaceConstantExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -120,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceConstantExample</recipe>
@@ -136,10 +84,10 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Knut Wannheden](knut.wannheden@mobi.ch)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Knut Wannheden](mailto:knut.wannheden@mobi.ch)
+* Tyler Van Gorder
 
 
 ## See how this recipe works across multiple open-source repositories

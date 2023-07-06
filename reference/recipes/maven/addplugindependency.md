@@ -6,11 +6,11 @@ _Adds the specified dependencies to a Maven plugin. Will not add the plugin if i
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddPluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddPluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -21,92 +21,6 @@ _Adds the specified dependencies to a Maven plugin. Will not add the plugin if i
 | `String` | groupId | The GroupId of the dependency to add. |
 | `String` | artifactId | The ArtifactId of the dependency to add. |
 | `String` | version | The Version of the dependency to add. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|pluginGroupId|`org.openrewrite.maven`|
-|pluginArtifactId|`rewrite-maven-plugin`|
-|groupId|`org.openrewrite.recipe`|
-|artifactId|`rewrite-spring`|
-|version|`1.0.0`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>org.example</groupId>
-    <artifactId>foo</artifactId>
-    <version>1.0</version>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.openrewrite.maven</groupId>
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.1.5</version>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>org.example</groupId>
-    <artifactId>foo</artifactId>
-    <version>1.0</version>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.openrewrite.maven</groupId>
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.1.5</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.openrewrite.recipe</groupId>
-                        <artifactId>rewrite-spring</artifactId>
-                        <version>1.0.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -12,0 +12,7 @@
-                <artifactId>rewrite-maven-plugin</artifactId>
-                <version>4.1.5</version>
-+               <dependencies>
-+                   <dependency>
-+                       <groupId>org.openrewrite.recipe</groupId>
-+                       <artifactId>rewrite-spring</artifactId>
-+                       <version>1.0.0</version>
-+                   </dependency>
-+               </dependencies>
-            </plugin>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -142,7 +56,7 @@ Now that `com.yourorg.AddPluginDependencyExample` has been defined activate it i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPluginDependencyExample</recipe>
@@ -158,8 +72,8 @@ Now that `com.yourorg.AddPluginDependencyExample` has been defined activate it i
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](sam@moderne.io)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

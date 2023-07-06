@@ -6,11 +6,11 @@ _Comment out a YAML property and add a comment in front._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CommentOutProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CommentOutProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -18,127 +18,6 @@ _Comment out a YAML property and add a comment in front._
 | -- | -- | -- |
 | `String` | propertyKey | The key to be commented out. |
 | `String` | commentText | comment text to be added. |
-
-## Examples
-##### Example 1
-comment out a map entry
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|propertyKey|`foo.bar.sequence.propertyA`|
-|commentText|`Some comments`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-  foo:
-    bar:
-      sequence:
-        - name: name
-        - propertyA: fieldA
-        - propertyB: fieldB
-      scalar: value
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-  foo:
-    bar:
-      sequence:
-        - name: name
-        # Some comments
-        # propertyA: fieldA
-        - propertyB: fieldB
-      scalar: value
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,1 +5,2 @@
-      sequence:
-        - name: name
--       - propertyA: fieldA
-+       # Some comments
-+       # propertyA: fieldA
-        - propertyB: fieldB
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-comment out entire sequence
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|propertyKey|`foo.bar.sequence`|
-|commentText|`Some comments`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-foo:
-  bar:
-    sequence:
-      - name: name
-      - propertyA: fieldA
-      - propertyB: fieldB
-    scalar: value
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-foo:
-  bar:
-    # Some comments
-    # sequence:
-    #   - name: name
-    #   - propertyA: fieldA
-    #   - propertyB: fieldB
-    scalar: value
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,4 +3,5 @@
-foo:
-  bar:
--   sequence:
--     - name: name
--     - propertyA: fieldA
--     - propertyB: fieldB
-+   # Some comments
-+   # sequence:
-+   #   - name: name
-+   #   - propertyA: fieldA
-+   #   - propertyB: fieldB
-    scalar: value
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -165,7 +44,7 @@ Now that `com.yourorg.CommentOutPropertyExample` has been defined activate it in
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -187,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CommentOutPropertyExample</recipe>
@@ -203,7 +82,7 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Kun Li](kun@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

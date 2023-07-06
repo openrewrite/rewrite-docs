@@ -10,11 +10,11 @@ _The diamond operator (`<>`) should be used. Java 7 introduced the diamond opera
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseDiamondOperator.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseDiamondOperator.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.1
+* version: 1.0.3
 
 ## Example
 
@@ -26,13 +26,10 @@ _The diamond operator (`<>`) should be used. Java 7 introduced the diamond opera
 {% code title="Test.java" %}
 ```java
 import java.util.*;
-
-class Test<X, Y> {
+class Test {
     void test() {
-        List<String> ls = new ArrayList<String>();
-        Map<X,Y> map = new HashMap<X,Y>();
-        List<String> ls2 = new ArrayList<String>() {
-        };
+        var ls1 = new ArrayList<String>();
+        List<String> ls2 = new ArrayList<String>();
     }
 }
 ```
@@ -42,13 +39,10 @@ class Test<X, Y> {
 {% code title="Test.java" %}
 ```java
 import java.util.*;
-
-class Test<X, Y> {
+class Test {
     void test() {
-        List<String> ls = new ArrayList<>();
-        Map<X,Y> map = new HashMap<>();
-        List<String> ls2 = new ArrayList<String>() {
-        };
+        var ls1 = new ArrayList<String>();
+        List<String> ls2 = new ArrayList<>();
     }
 }
 ```
@@ -60,14 +54,12 @@ class Test<X, Y> {
 ```diff
 --- Test.java
 +++ Test.java
-@@ -5,2 +5,2 @@
-class Test<X, Y> {
+@@ -5,1 +5,1 @@
     void test() {
--       List<String> ls = new ArrayList<String>();
--       Map<X,Y> map = new HashMap<X,Y>();
-+       List<String> ls = new ArrayList<>();
-+       Map<X,Y> map = new HashMap<>();
-        List<String> ls2 = new ArrayList<String>() {
+        var ls1 = new ArrayList<String>();
+-       List<String> ls2 = new ArrayList<String>();
++       List<String> ls2 = new ArrayList<>();
+    }
 ```
 {% endcode %}
 {% endtab %}
@@ -76,13 +68,13 @@ class Test<X, Y> {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -94,7 +86,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.3")
 }
 ```
 {% endcode %}
@@ -108,7 +100,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.UseDiamondOperator</recipe>
@@ -118,7 +110,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -143,15 +135,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Kun Li](kun@moderne.io)
-* [Patrick](patway99@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Josh Soref](2119212+jsoref@users.noreply.github.com)
-* [Sam Snyder](sam@moderne.io)
+* Patrick Way
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
+* [Patrick](mailto:patway99@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* Tyler Van Gorder
+* Josh Soref
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

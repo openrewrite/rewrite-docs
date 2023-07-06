@@ -10,71 +10,17 @@ _Find methods with empty bodies and single public no arg constructors._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindEmptyMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindEmptyMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|matchOverrides|`true`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import java.util.Collection;
-
-class Test implements Collection<String> {
-    @Override
-    public boolean isEmpty() {
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.util.Collection;
-
-class Test implements Collection<String> {
-    /*~~>*/@Override
-    public boolean isEmpty() {
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -4,1 +4,1 @@
-
-class Test implements Collection<String> {
--   @Override
-+   /*~~>*/@Override
-    public boolean isEmpty() {
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -85,7 +31,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -108,7 +54,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindEmptyMethods</recipe>
@@ -134,9 +80,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

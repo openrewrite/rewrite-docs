@@ -6,11 +6,11 @@ _If the configuration has a different value, leave it alone. If it is missing, a
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 2.0.1
+* version: 2.0.2
 
 ## Options
 
@@ -38,13 +38,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.0.1 in your build file:
+Now that `com.yourorg.AddConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.0.2 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.2")
 }
 ```
 {% endcode %}
@@ -70,7 +70,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddConfigurationExample</recipe>
@@ -80,7 +80,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -93,11 +93,11 @@ dependencies {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [pocan101](jcortesd@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Knut Wannheden](knut@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [pocan101](mailto:jcortesd@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Knut Wannheden](mailto:knut@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -6,11 +6,11 @@ _This recipe finds all OpenRewrite recipes, primarily to produce a data table th
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/FindRecipes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/FindRecipes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
+* version: 8.1.6
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -25,71 +25,6 @@ _This table contains the source code of recipes along with their metadata for us
 | Recipe type | Differentiate between Java and YAML recipes, as they may be two independent data sets used in LLM fine-tuning. |
 | Recipe source code | The full source code of the recipe. |
 
-## Example
-
-
-{% tabs %}
-{% tab title="MyRecipe.java" %}
-
-###### Before
-{% code title="MyRecipe.java" %}
-```java
-import org.openrewrite.internal.lang.NonNullApi;
-import org.openrewrite.Recipe;
-
-@NonNullApi
-class MyRecipe extends Recipe {
-  @Override
-  public String getDisplayName() {
-      return "My recipe";
-  }
-
-  @Override
-  public String getDescription() {
-      return "This is my recipe.";
-  }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="MyRecipe.java" %}
-```java
-import org.openrewrite.internal.lang.NonNullApi;
-import org.openrewrite.Recipe;
-
-@NonNullApi
-class /*~~>*/MyRecipe extends Recipe {
-  @Override
-  public String getDisplayName() {
-      return "My recipe";
-  }
-
-  @Override
-  public String getDescription() {
-      return "This is my recipe.";
-  }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- MyRecipe.java
-+++ MyRecipe.java
-@@ -5,1 +5,1 @@
-
-@NonNullApi
--class MyRecipe extends Recipe {
-+class /*~~>*/MyRecipe extends Recipe {
-  @Override
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
@@ -99,7 +34,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -122,7 +57,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.recipes.FindRecipes</recipe>
@@ -148,7 +83,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

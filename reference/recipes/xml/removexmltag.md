@@ -6,11 +6,11 @@ _Removes XML tags matching the provided expression._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/RemoveXmlTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/RemoveXmlTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -18,52 +18,6 @@ _Removes XML tags matching the provided expression._
 | -- | -- | -- |
 | `String` | xPath | An XPath expression used to find matching tags. |
 | `String` | fileMatcher | *Optional*. If provided only matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|xPath|`//bean`|
-|fileMatcher|`**/beans.xml`|
-
-
-{% tabs %}
-{% tab title="my/project/beans.xml" %}
-
-###### Before
-{% code title="my/project/beans.xml" %}
-```xml
-<beans>
-    <bean id='myBean.subpackage.subpackage2'/>
-    <other id='myBean.subpackage.subpackage2'/>
-</beans>
-```
-{% endcode %}
-
-###### After
-{% code title="my/project/beans.xml" %}
-```xml
-<beans>
-    <other id='myBean.subpackage.subpackage2'/>
-</beans>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- my/project/beans.xml
-+++ my/project/beans.xml
-@@ -2,1 +2,0 @@
-<beans>
--   <bean id='myBean.subpackage.subpackage2'/>
-    <other id='myBean.subpackage.subpackage2'/>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -90,7 +44,7 @@ Now that `com.yourorg.RemoveXmlTagExample` has been defined activate it in your 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -112,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveXmlTagExample</recipe>
@@ -128,8 +82,8 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Mark Brophy](36955467+m-brophy@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* Mark Brophy
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

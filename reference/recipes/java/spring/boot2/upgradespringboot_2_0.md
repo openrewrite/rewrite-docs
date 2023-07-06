@@ -11,22 +11,22 @@ _Migrate applications to the latest Spring Boot 2.0 release. This recipe will mo
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.1
+* version: 5.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.5")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.1</version>
+            <version>5.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -99,6 +99,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `2.0.x`
+* [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion.md)
+  * pluginIdPattern: `org.springframework.boot`
+  * newVersion: `2.0.x`
+* [Add `io.spring.dependency-management` plugin, if in use](../../../gradle/spring/addspringdependencymanagementplugin.md)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.mockito`
   * artifactId: `*`
@@ -142,6 +146,10 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 2.0.x
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: org.springframework.boot
+      newVersion: 2.0.x
+  - org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
       artifactId: *
@@ -167,24 +175,25 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Nick McKinney](mckinneynichoals@gmail.com)
-* [Patrick](patway99@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [Kevin McCarpenter](kevin@moderne.io)
-* [Kyle Scully](scullykns@gmail.com)
-* [Nick McKinney](mckinneynicholas@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Tracey Yoshima](tracey.yoshima@gmail.com)
-* [Kun Li](122563761+kunli2@users.noreply.github.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Kun Li](kun@moderne.io)
-* [Josh Soref](2119212+jsoref@users.noreply.github.com)
-* [nbruno](nbruno@users.noreply.github.com)
+* Tyler Van Gorder
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Nick McKinney](mailto:mckinneynichoals@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
+* Patrick Way
+* [Kevin McCarpenter](mailto:kevin@moderne.io)
+* [Kyle Scully](mailto:scullykns@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* Kun Li
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Kun Li](mailto:kun@moderne.io)
+* Josh Soref
+* nbruno
 
 
 ## See how this recipe works across multiple open-source repositories

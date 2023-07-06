@@ -5,6 +5,14 @@
 * [Plugins](/reference/recipes/gradle/plugins)
 * [Search](/reference/recipes/gradle/search)
 * [Security](/reference/recipes/gradle/security)
+* [Spring](/reference/recipes/gradle/spring)
+
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Enable Gradle build cache](./enablegradlebuildcache.md)
+* [Enable Gradle parallel execution](./enablegradleparallelexecution.md)
 
 ## Recipes
 
@@ -16,8 +24,6 @@
 * [Change a Gradle dependency classifier](./changedependencyclassifier.md)
 * [Change a Gradle dependency configuration](./changedependencyconfiguration.md)
 * [Change a Gradle dependency extension](./changedependencyextension.md)
-* [Enable Gradle build cache](./enablegradlebuildcache.md)
-* [Enable Gradle parallel execution](./enablegradleparallelexecution.md)
 * [Remove a Gradle dependency](./removedependency.md)
 * [Remove repository](./removerepository.md)
 * [Update Gradle project Java compatibility](./updatejavacompatibility.md)

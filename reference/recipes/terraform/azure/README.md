@@ -1,6 +1,8 @@
 # Azure
 
-## Recipes
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
 
 * [Best practices for Azure](./azurebestpractices.md)
 * [Disable Kubernetes dashboard](./disablekubernetesdashboard.md)

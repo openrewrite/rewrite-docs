@@ -2,7 +2,9 @@
 
 _Locating many of the same patterns that [Cloud Suitability Analyzer](https://github.com/vmware-tanzu/cloud-suitability-analyzer/blob/master/rules/java-batch.yaml) does, but with type safety._
 
-## Recipes
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
 
 * [Find EJB message-driven beans (MDBs)](./findejbmdb.md)
 * [Find EJB stateful beans](./findejbstateful.md)
@@ -16,7 +18,6 @@ _Locating many of the same patterns that [Cloud Suitability Analyzer](https://gi
 * [Find use of JavaFX](./findjavafx.md)
 * [Find uses of JCA](./findjcaannotations.md)
 * [Find uses of JCache](./findjcache.md)
-* [Find uses of JNI](./findjni.md)
 * [Find uses of Java file IO](./findfileio.md)
 * [Find uses of Jersey](./findjersey.md)
 * [Find uses of Jetty](./findjetty.md)
@@ -28,5 +29,9 @@ _Locating many of the same patterns that [Cloud Suitability Analyzer](https://gi
 * [Uses of caches](./findcacheuses.md)
 * [Uses of distributed caches](./finddistributedcacheuses.md)
 * [Uses of ehcache](./findehcache.md)
+
+## Recipes
+
+* [Find uses of JNI](./findjni.md)
 
 

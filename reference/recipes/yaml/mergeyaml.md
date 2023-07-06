@@ -6,11 +6,11 @@ _Merge a YAML snippet with an existing YAML document._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -20,68 +20,6 @@ _Merge a YAML snippet with an existing YAML document._
 | `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. |
 | `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |
 | `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|key|`$.spec`|
-|yaml|`lifecycleRule:
-    - action:
-          type: Delete
-      condition:
-          age: 7
-`|
-|acceptTheirs|`false`|
-|objectIdentifyingProperty|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: storage.cnrm.cloud.google.com/v1beta1
-kind: StorageBucket
-spec:
-    bucketPolicyOnly: true
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: storage.cnrm.cloud.google.com/v1beta1
-kind: StorageBucket
-spec:
-    bucketPolicyOnly: true
-    lifecycleRule:
-        - action:
-              type: Delete
-          condition:
-              age: 7
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,0 +5,5 @@
-spec:
-    bucketPolicyOnly: true
-+   lifecycleRule:
-+       - action:
-+             type: Delete
-+         condition:
-+             age: 7
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -111,7 +49,7 @@ Now that `com.yourorg.MergeYamlExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -133,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.MergeYamlExample</recipe>
@@ -149,11 +87,11 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Jon Brisbin](jon@jbrisbin.com)
-* [Dmitry Belyaev](47196712+dmbelyaev@users.noreply.github.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Jon Brisbin](mailto:jon@jbrisbin.com)
+* Dmitry Belyaev
+* Aaron Gershman
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

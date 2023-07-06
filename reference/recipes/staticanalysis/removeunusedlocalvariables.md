@@ -10,11 +10,11 @@ _If a local variable is declared but not used, it is dead code and should be rem
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveUnusedLocalVariables.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveUnusedLocalVariables.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.1
+* version: 1.0.3
 
 ## Options
 
@@ -27,7 +27,7 @@ _If a local variable is declared but not used, it is dead code and should be rem
 ###### Parameters
 | Parameter | Value |
 | -- | -- |
-|ignoreVariablesNamed|`J.NewArray(padding=org.openrewrite.java.tree.J$NewArray$Padding@4c6e9944, id=45fb5365-8609-4b0d-bfd3-6b23571b8ebb, prefix=Space(comments=<0 comments>, whitespace=''), markers=Markers(id=4cd773d2-5882-4532-add7-99fd79e77dea, markers=[]), typeExpression=String, dimensions=[[0]], initializer=null, type=java.lang.String[])`|
+|ignoreVariablesNamed|`J.NewArray(padding=org.openrewrite.java.tree.J$NewArray$Padding@313e9d89, id=25464524-22aa-4bcf-8351-f378e54c6502, prefix=Space(comments=<0 comments>, whitespace=''), markers=Markers(id=8c776673-ea7d-46a0-b8e4-e9fea2fd05ab, markers=[]), typeExpression=String, dimensions=[[0]], initializer=null, type=java.lang.String[])`|
 
 
 {% tabs %}
@@ -77,13 +77,13 @@ class Test {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -95,7 +95,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.3")
 }
 ```
 {% endcode %}
@@ -109,7 +109,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.RemoveUnusedLocalVariables</recipe>
@@ -119,7 +119,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -144,13 +144,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Aaron Gershman](aegershman@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Knut Wannheden](knut@moderne.io)
-* [Jonathan Leitschuh](jonathan.leitschuh@gmail.com)
-* [Shannon Pamperl](shanman190@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

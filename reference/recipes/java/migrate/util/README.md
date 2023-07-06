@@ -1,5 +1,11 @@
 # java.util APIs
 
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Use modernized `java.util` APIs](./javautilapis.md)
+
 ## Recipes
 
 * [Prefer `EnumSet of(..)`](./useenumsetof.md)
@@ -12,6 +18,6 @@
 * [Prefer `Optional.isPresent()`](./optionalnotemptytoispresent.md)
 * [Prefer `Set.of(..)`](./migratecollectionssingletonset.md)
 * [Prefer `Set.of(..)`](./migratecollectionsunmodifiableset.md)
-* [Use modernized `java.util` APIs](./javautilapis.md)
+* [Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile ](./removefinalizerfromzip.md)
 
 

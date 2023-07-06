@@ -6,22 +6,22 @@ _Resolve common static analysis issues discovered through 3rd party tools._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/resources/META-INF/rewrite/static-analysis-cleanup.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/resources/META-INF/rewrite/static-analysis-cleanup.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.0.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-python
-* version: 1.0.1
+* version: 1.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-python:1.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-python:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-python:1.0.1")
+    rewrite("org.openrewrite:rewrite-python:1.0.3")
 }
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.python.cleanup.CommonStaticAnalysis</recipe>
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-python</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,34 +6,17 @@ _Remove plugin from `build.gradle(.kts)`._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/RemoveBuildPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/RemoveBuildPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | pluginId | The plugin id to remove. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|pluginId|`com.jfrog.bintray`|
-
-
-###### Unchanged
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id "com.jfrog.bintray" version "1.0"
-}
-```
-{% endcode %}
 
 
 ## Usage
@@ -59,7 +42,7 @@ Now that `com.yourorg.RemoveBuildPluginExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -76,8 +59,8 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Jonathan Schnéider](jkschneider@gmail.com)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -10,50 +10,11 @@ _Remove imports for types that are not referenced._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.3
-
-## Example
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import java.util.List;
-class A {}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-class A {}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -1,1 +1,0 @@
--import java.util.List;
-class A {}
-@@ -3,1 +2,0 @@
-import java.util.List;
-class A {}
--
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 8.1.6
 
 
 ## Usage
@@ -64,7 +25,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -87,7 +48,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.RemoveUnusedImports</recipe>
@@ -113,18 +74,18 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Thomas Zub](thomas.zub@outlook.de)
-* [Greg Adams](greg@moderne.io)
-* [traceyyoshima](tracey.yoshima@gmail.com)
-* [Patrick Way](pway99@users.noreply.github.com)
-* [tclayton-newr](87031785+tclayton-newr@users.noreply.github.com)
-* [Patrick](patway99@gmail.com)
-* [Tyler Van Gorder](tkvangorder@users.noreply.github.com)
-* [Scott Jungling](scott.jungling@gmail.com)
-* [Aaron Gershman](aegershman@gmail.com)
-* [Sam Snyder](sam@moderne.io)
-* [Kun Li](kun@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Thomas Zub](mailto:thomas.zub@outlook.de)
+* tclayton-newr
+* [Greg Adams](mailto:greg@moderne.io)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* Patrick Way
+* [Patrick](mailto:patway99@gmail.com)
+* Tyler Van Gorder
+* [Scott Jungling](mailto:scott.jungling@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

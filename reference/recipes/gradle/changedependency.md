@@ -6,11 +6,11 @@ _Change a Gradle dependency coordinates._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -22,73 +22,6 @@ _Change a Gradle dependency coordinates._
 | `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
 | `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldGroupId|`commons-lang`|
-|oldArtifactId|`commons-lang`|
-|newGroupId|`org.apache.commons`|
-|newArtifactId|`commons-lang3`|
-|newVersion|`3.11.x`|
-|versionPattern|`null`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id "java-library"
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation "commons-lang:commons-lang:2.6"
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id "java-library"
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation "org.apache.commons:commons-lang3:3.11"
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   implementation "commons-lang:commons-lang:2.6"
-+   implementation "org.apache.commons:commons-lang3:3.11"
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -119,7 +52,7 @@ Now that `com.yourorg.ChangeDependencyExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -136,8 +69,8 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Shannon Pamperl](shanman190@gmail.com)
-* [Jonathan Schneider](jkschneider@gmail.com)
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -6,11 +6,11 @@ _Copies a YAML value from one key to another. The existing key/value pair remain
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.6/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.3
+* version: 8.1.6
 
 ## Options
 
@@ -18,51 +18,6 @@ _Copies a YAML value from one key to another. The existing key/value pair remain
 | -- | -- | -- |
 | `String` | oldKeyPath | A JsonPath expression to locate a YAML key/value pair to copy. |
 | `String` | newKey | A JsonPath expression for where the new value should be copied to. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldKeyPath|`.source`|
-|newKey|`.destination`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-id: something
-source:   password
-destination: whatever
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-id: something
-source:   password
-destination:   password
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,1 +3,1 @@
-id: something
-source:   password
--destination: whatever
-+destination:   password
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -89,7 +44,7 @@ Now that `com.yourorg.CopyValueExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.4")
+    id("org.openrewrite.rewrite") version("6.1.11")
 }
 
 rewrite {
@@ -111,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.4</version>
+        <version>5.2.6</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CopyValueExample</recipe>
@@ -127,8 +82,8 @@ repositories {
 {% endtabs %}
 
 ## Contributors
-* [Jonathan Schneider](jkschneider@gmail.com)
-* [Aaron Gershman](5619476+aegershman@users.noreply.github.com)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Aaron Gershman
 
 
 ## See how this recipe works across multiple open-source repositories
