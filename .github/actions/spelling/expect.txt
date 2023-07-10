@@ -12,6 +12,7 @@ autoconfigure
 avro
 awt
 azzert
+Bazel
 bfa
 BOMs
 camelcase
@@ -145,6 +146,7 @@ relyingparty
 rewritetest
 roadmap
 Saas
+SAST
 scanningrecipe
 scryptpasswordencoder
 SDKMAN
