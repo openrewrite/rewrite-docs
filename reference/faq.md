@@ -30,3 +30,12 @@ Yes. Take a look at the [getting started with data tables guide](https://docs.mo
 ## I want to exclude a single recipe from a collection of recipes.
 
 This is not possible right now and doing so would be quite complicated. For a detailed explanation as to why, check out [this post](https://github.com/openrewrite/rewrite-maven-plugin/pull/569#issuecomment-1576793092).
+
+## Is it possible to pass arguments to a recipe from the command line? I want to programmatically configure complex recipes.
+
+Not right now. This is a particularly difficult problem to address for a couple of reasons:
+
+* Some recipes can be composed of other recipes which could then include other recipes composed of other recipes and so on.
+* Some recipes can be used multiple times in one recipe with different parameters such as in [this example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.6/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml#L140-L160).
+
+There is an [open issue](https://github.com/openrewrite/rewrite-maven-plugin/issues/345) for this request that you can +1 or provide feedback on.
