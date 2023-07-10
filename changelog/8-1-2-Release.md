@@ -680,6 +680,15 @@ We've created a [migration recipe](https://github.com/openrewrite/rewrite/blob/v
 
 You can find some examples of how this migration recipe works in the [Migrate Rewrite recipes from 7 to 8 recipe page](/reference/recipes/java/recipes/migraterecipetorewrite8.md)
 
+## New Artifacts
+
+* rewrite-analysis
+* rewrite-cucumber-jvm
+* rewrite-hibernate
+* rewrite-recommendations
+* rewrite-sql
+* rewrite-static-analysis
+
 ## New recipes
 
 * [org.openrewrite.FindCollidingSourceFiles](https://docs.openrewrite.org/reference/recipes/findcollidingsourcefiles): Finds source files which share a path with another source file. There should always be exactly one source file per path within a repository. This is a diagnostic for finding problems in OpenRewrite parsers/build plugins. 
