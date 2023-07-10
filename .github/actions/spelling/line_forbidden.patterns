@@ -20,6 +20,9 @@
 # s.b. JavaScript
 \bJavascript\b
 
+# s.b. TypeScript
+\bTypescript\b
+
 # s.b. Microsoft
 \bMicroSoft\b
 
