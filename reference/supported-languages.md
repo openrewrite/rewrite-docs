@@ -37,6 +37,29 @@ Many different frameworks are supported such as (but not limited to):
 
 You can find all of the frameworks in the [recipe catalog](https://docs.openrewrite.org/recipes).
 
+## Future plans
+
+There are three stages we track as we add support for new languages. These are:
+
+* **Parser** - This is the first stage of any new language. In this stage, a parser is created so that the new language's code can be parsed into a [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md) (LST). Once that happens, a simple recipe can be run on it to produce a style-preserving diff. Please note, though, that these recipes will _still be written in Java_ regardless of what language is being added.
+
+* **Recipe catalog** - In this stage, the goal is to build useful recipes specific to the language being added. These could include things such as migrations, CVE patches, static application security tests (SAST), or even language-specific build tools. Work on this stage can happen at the same time as the subsequent stage (native developer experience).
+
+* **Native developer experience** - In this stage, the goal is to make it so recipes can be developed in the same language they're being run on (e.g., a Typescript recipe would be written in Typescript rather than in Java). This means that the open-source community for this language can more easily participate in recipe development rather than having to learn Java. Work on this stage can happen at the same time as the previous stage (recipe catalog).
+
+Below you can find a table of languages, which stages are currently done, and which stages are left to do. Please note that this is a **tentative** timeline. Anything below is subject to change.
+
+| **Language**                 | **Parser**                              | **Recipe catalog**     | **Native devex**       |
+|------------------------------|-----------------------------------------|------------------------|------------------------|
+| Java                         | Available                               | Available              | Available              |
+| Python                       | Q4 2023 (partially available right now) | Gradually from Q4 2024 | Gradually from Q4 2024 |
+| Typescript                   | Available                               | Gradually from Q4 2024 | Gradually from Q4 2024 |
+| COBOL                        | Available                               | Nov 2023               | No plans to support    |
+| Kotlin                       | Available                               | Q3 2023                | Q3 2023                |
+| Gradle dependency management | Q1 2023                                 | Q3 2023                | Q3 2023                |
+| Bazel                        | Q3 2023                                 | Q3 2023                | Q3 2023                |
+| C#                           | Q4 2023                                 | Gradually from Q4 2024 | No plans to support    |
+
 ## Want to contribute?
 
 We welcome all types of contributions to OpenRewrite – whether that be questions and feature requests or new recipes or even support for new frameworks. Check out our [contributing guide](https://github.com/openrewrite/.github/blob/main/CONTRIBUTING.md) to get started.
