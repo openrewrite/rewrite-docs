@@ -3,12 +3,12 @@
 More advanced refactoring recipes often require the construction of complex [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md) (LST) elements. Manually constructing complex LST elements can be tedious and unfamiliar to developers accustomed to authoring code as text. OpenRewrite addresses this need with `JavaTemplate`, which parses textual code snippets into LST elements ready for use in a [visitor](visitors.md).
 
 {% hint style="success" %}
-`JavaTemplate` produces LSTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion.
+`JavaTemplates` produces LSTs that are correctly formatted, fully type-attributed, and able to reference symbols from the lexical scope of insertion.
 {% endhint %}
 
 ## Construction
 
-`JavaTemplate` are constructed within a `JavaVisitor` by calling `JavaTemplate.builder()`:
+`JavaTemplates` are constructed within a `JavaVisitor` by calling `JavaTemplate.builder()`:
 
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
@@ -26,7 +26,7 @@ public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
 
 A template is always constructed from a `String` code snippet. The snippet must be syntactically correct code for the context it is being inserted into. Snippets may reference variables, functions, and other symbols visible within the lexical scope of the insertion point.
 
-Snippets may include parameter substitution indicators. Parameter substitution indicators are positional. There are two kinds of parameter substitution indicator, typed and untyped.&#x20;
+Snippets may include parameter substitution indicators. Parameter substitution indicators are positional. There are two kinds of parameter substitution indicators: typed and untyped.
 
 The substitution of these indicators with their actual values happens when the template is applied via `withTemplate()`. See [Usage](javatemplate.md#usage).
 
@@ -34,7 +34,7 @@ The substitution of these indicators with their actual values happens when the t
 
 In order for the LST resulting from templating to be correctly type-attributed, substitutions of LST elements into a typed insertion point must indicate that type. Whether an insertion point is typed or not depends on the Java language grammar.
 
-Typed substitution indicators take the form `#{any(<type>)}` where \<type> is the expected type of the parameter. If any type is permissible then the shortest form `#{any()}` should be used. When substituting an array type use `#{anyArray()}`. Examples of snippets with typed substitution indicators:
+Typed substitution indicators take the form `#{any(<type>)}` where `<type>` is the expected type of the parameter. If any type is permissible, then the shortest form `#{any()}` should be used. When substituting an array type, use `#{anyArray()}`. Here are some examples of snippets with typed substitution indicators:
 
 * `Object o = #{any()};`
 * `boolean b = #{any(boolean)};`
@@ -46,12 +46,12 @@ It is unnecessary to provide a typed substitution indicator if you're providing 
 {% endhint %}
 
 {% hint style="warning" %}
-If the recipe test harness fails because of missing type information when you've used templates double-check that you're providing accurate types and imports to the template. While correct source can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
+If the recipe test harness fails because of missing type information when you've used templates, double-check that you're providing accurate types and imports to the template. While correct source code can sometimes be produced from LSTs with missing or inaccurate types, it severely compromises interoperability with other recipes.
 {% endhint %}
 
 #### Untyped Substitution Indicators
 
-It is correct to use the untyped substitution indicator `#{}` when providing a non-LST element like a `String` as template substitution argument. When providing an LST element, like a `J.Identifier`, into a context where the concept of type is nonsensical first convert them to an appropriate `String`. Examples of untyped insertion points include the text of a comment, the name of a class in a class declaration, and keywords like `if` or `while`. Examples of snippets with untyped substitution indicators:
+You should use the untyped substitution indicator `#{}` when providing a non-LST element like a `String` as a template substitution argument. When providing an LST element, like a `J.Identifier`, into a context where the concept of type is nonsensical, you should begin by converting them to an appropriate `String`. Examples of untyped insertion points include the text of a comment, the name of a class in a class declaration, and keywords like `if` or `while`. Examples of snippets with untyped substitution indicators:
 
 * `//TODO: Fix bug #{}`
 * `public class #{} { }`
@@ -67,7 +67,7 @@ JavaTemplate.builder("new SecureRandom()")
 ```
 
 {% hint style="warning" %}
-Failing to declare required imports results in `JavaTemplate` producing LST elements missing type attribution, or failing outright with an exception. While correct source can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.&#x20;
+Failing to declare required imports results in `JavaTemplate` producing LST elements missing type attribution, or failing outright with an exception. While correct source code can sometimes be produced from LSTs with missing or inaccurate types it severely compromises interoperability with other recipes.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -80,7 +80,7 @@ Declaring an import to `JavaTemplate` does not automatically add a corresponding
 
 #### From the runtime classpath
 
-The function `JavaParser.Builder.classpath(`) can be used to look up libraries by artifactId from the runtime classpath. In this example, the `template` snippet references a symbol of type `BasicPolymorphicTypeValidator`, which is provided by the jackson-databind library:
+The function `JavaParser.Builder.classpath(`) can be used to look up libraries by artifactId from the runtime classpath. In this example, the `template` snippet references a symbol of type `BasicPolymorphicTypeValidator`, which is provided by the `jackson-databind` library:
 
 ```java
 JavaTemplate.builder(template.toString())
