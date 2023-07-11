@@ -26,3 +26,5 @@ In the meantime, one way to work around this is to add a profile on the parent P
   </build>
 </profile>
 ```
+
+You can then run OpenRewrite from any submodule using this command: `mvn -Popenrewrite rewrite:run`. 
