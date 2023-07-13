@@ -3,7 +3,6 @@
 * [Latest versions of every OpenRewrite module](latest-versions-of-every-openrewrite-module.md)
 * [Maven plugin configuration](rewrite-maven-plugin.md)
 * [Gradle plugin configuration](gradle-plugin-configuration.md)
-* [Supported languages](supported-languages.md)
 * [Snapshot versions](snapshot-instructions.md)
 * [JsonPath and JsonPathMatcher](jsonpath-and-jsonpathmatcher-reference.md)
 * [Declarative YAML format](yaml-format-reference.md)
