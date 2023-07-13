@@ -116,7 +116,7 @@ recipeList:
       property: management.metrics.enable.process.files
       value: true
       comment: This is a comment
-      pathExpressions: [**/application.yml]
+      pathExpressions: **/application.yml
 ```
 {% endcode %}
 
@@ -126,7 +126,7 @@ Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.11")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {

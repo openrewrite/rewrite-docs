@@ -9,11 +9,11 @@ Can update version numbers which are defined earlier in the same file in variabl
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.8/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.6
+* version: 8.1.8
 
 ## Options
 
@@ -21,8 +21,8 @@ Can update version numbers which are defined earlier in the same file in variabl
 | -- | -- | -- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
-| `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
+| `String` | newVersion | An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'newVersion' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -60,7 +60,7 @@ Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.11")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {
@@ -81,6 +81,7 @@ repositories {
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Joan Viladrosa](mailto:joan@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

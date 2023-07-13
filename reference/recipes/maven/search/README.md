@@ -8,5 +8,6 @@
 * [Find Maven project properties](./findproperties.md)
 * [List effective Maven repositories](./effectivemavenrepositories.md)
 * [Maven dependency insight](./dependencyinsight.md)
+* [Maven repository order](./findrepositoryorder.md)
 
 

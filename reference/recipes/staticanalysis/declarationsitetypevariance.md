@@ -106,7 +106,7 @@ Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined activ
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.11")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {

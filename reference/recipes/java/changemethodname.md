@@ -6,11 +6,11 @@ _Rename a method._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.8/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.6
+* version: 8.1.8
 
 ## Options
 
@@ -48,7 +48,7 @@ Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.11")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {

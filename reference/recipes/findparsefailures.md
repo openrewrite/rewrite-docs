@@ -6,17 +6,19 @@ _This recipe explores parse failures after an LST is produced for classifying th
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.8/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.1.6
+* version: 8.1.8
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `Integer` | maxSnippetLength | *Optional*. When the failure occurs on a granular tree element, its source code will be included as a column in the data table up to this maximum snippet length. |
+| `String` | parserType | *Optional*. Only display specified parser failures. |
+| `String` | stackTrace | *Optional*. Only mark specified stack traces. |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -42,7 +44,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.11")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {
@@ -93,6 +95,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ## Contributors
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * [Mike Solomon](mailto:mike@moderne.io)
 
 

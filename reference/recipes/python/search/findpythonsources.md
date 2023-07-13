@@ -6,11 +6,11 @@ _Use data table to collect source files types and counts of files with extension
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/search/FindPythonSources.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/search/FindPythonSources.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.0.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-python
-* version: 1.0.3
+* version: 1.0.4
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -27,13 +27,13 @@ _Python sources present in LSTs on the SAAS._
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-python:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-python:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.11")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-python:1.0.3")
+    rewrite("org.openrewrite:rewrite-python:1.0.4")
 }
 ```
 {% endcode %}
@@ -69,7 +69,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-python</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
           </dependency>
         </dependencies>
       </plugin>
