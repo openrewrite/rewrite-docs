@@ -1280,6 +1280,7 @@
       * [Find YAML entries](reference/recipes/yaml/search/findkey.md)
       * [Find YAML properties](reference/recipes/yaml/search/findproperty.md)
 * [Changelog](changelog/changelog.md)
+  * [8.1.8 Release (2023-07-13)](changelog/8-1-8-Release.md)
   * [8.1.6 Release (2023-07-06)](changelog/8-1-6-Release.md)
   * [8.1.3 Release (2023-06-23)](changelog/8-1-3-Release.md)
   * [8.1.2 Release (2023-06-13)](changelog/8-1-2-Release.md)

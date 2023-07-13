@@ -11,7 +11,7 @@ The [Quarkus1to2Migration](https://github.com/openrewrite/rewrite-docs/tree/b187
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.9")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {

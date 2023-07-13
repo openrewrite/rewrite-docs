@@ -55,7 +55,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("6.1.9")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {
@@ -121,7 +121,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.1.9")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {
@@ -162,7 +162,7 @@ In Gradle, [Task.dependsOn()](https://docs.gradle.org/current/javadoc/org/gradle
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("6.1.9")
+    id("org.openrewrite.rewrite") version("6.1.15")
 }
 
 rewrite {
