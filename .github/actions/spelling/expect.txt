@@ -74,6 +74,8 @@ jdeprscan
 JDKs
 JDKTo
 jedi
+jenkins
+Jenkinsfile
 jhipster
 Jks
 JLeft
@@ -161,6 +163,7 @@ snakeyaml
 Snyk
 Sonatype
 sourcespecs
+Spotbugs
 Springbatch
 springframework
 staticanalysis
