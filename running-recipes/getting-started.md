@@ -96,19 +96,19 @@ From the command line, try running `./mvnw rewrite:discover` or `./gradlew rewri
 
 ## Step 3: Activate a recipe
 
-Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.format.AutoFormat](https://docs.openrewrite.org/reference/recipes/java/format/autoformat) recipe as an example (which will format your code according to IntelliJ's default Java style). To activate this recipe, please modify your `pom.xml` or `build.gradle` file so that the sections you modified earlier look like the below example:
+Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.OrderImports](https://docs.openrewrite.org/recipes/java/orderimports) recipe as an example (which will ensure your imports follow a standard order). To activate this recipe, please modify your `pom.xml` or `build.gradle` file so that the sections you modified earlier look like the below example:
 
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
   <version>5.2.6</version>
   <configuration>
     <activeRecipes>
-      <recipe>org.openrewrite.java.format.AutoFormat</recipe>
+      <recipe>org.openrewrite.java.OrderImports</recipe>
     </activeRecipes>
   </configuration>
 </plugin>
@@ -127,7 +127,7 @@ plugins {
 
 rewrite {
     activeRecipe(
-        'org.openrewrite.java.format.AutoFormat',
+        'org.openrewrite.java.OrderImports',
     )
 }
 ```
@@ -137,17 +137,17 @@ rewrite {
 
 ## Step 4: Run a simple refactoring recipe
 
-Now that you've activated the `AutoFormat` recipe, you can run it by executing the command:
+Now that you've activated the `OrderImports` recipe, you can run it by executing the command:
 
 {% tabs %}
 {% tab title="Maven" %}
-```markup
+```sh
 ./mvnw rewrite:run
 ```
 {% endtab %}
 
 {% tab title="Gradle" %}
-```
+```sh
 ./gradlew rewriteRun
 ```
 {% endtab %}
@@ -155,17 +155,17 @@ Now that you've activated the `AutoFormat` recipe, you can run it by executing t
 
 After running it, you will be notified of all of the files that have been changed:
 
-![Console output from running ./mvnw rewrite:run with AutoFormat set as an active recipe on spring-petclinic-migration](<../.gitbook/assets/petclinic-example.png>)
+![Console output from running ./mvnw rewrite:run with OrderImports set as an active recipe on spring-petclinic-migration](/.gitbook/assets/order-imports-run.png)
 
 To see what has changed in the code, run `git diff` or use your preferred IDE's diff viewer:
 
-![Sample of formatting changes made to spring-petclinic-migration by AutoFormat](../.gitbook/assets/format-example.png)
+![Sample of formatting changes made to spring-petclinic-migration by OrderImports](/.gitbook/assets/order-imports-2.png)
 
 From there, you can commit the changes or add additional recipes based on your needs.
 
 ## Step 5: Run a recipe with YAML configuration
 
-Some recipes are more complex than `AutoFormat` and require configuration (in a `rewrite.yml` file) to run them. For instance, the built-in recipe [org.openrewrite.java.ChangePackage](https://docs.openrewrite.org/reference/recipes/java/changepackage) has three options that need to be configured:
+Some recipes are more complex than `OrderImports` and require configuration (in a `rewrite.yml` file) to run them. For instance, the built-in recipe [org.openrewrite.java.ChangePackage](https://docs.openrewrite.org/reference/recipes/java/changepackage) has three options that need to be configured:
 
 | Type      | Name           | Description                                                        |
 | --------- | -------------- | ------------------------------------------------------------------ |
@@ -196,7 +196,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <build>
   <plugins>
     <plugin>
@@ -205,7 +205,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
       <version>5.2.6</version>
       <configuration>
         <activeRecipes>
-          <recipe>org.openrewrite.java.format.AutoFormat</recipe>
+          <recipe>org.openrewrite.java.OrderImports</recipe>
           <recipe>com.yourorg.VetToVeterinary</recipe>
         </activeRecipes>
       </configuration>
@@ -227,7 +227,7 @@ plugins {
 
 rewrite {
     activeRecipe(
-        'org.openrewrite.java.format.AutoFormat',
+        'org.openrewrite.java.OrderImports',
         'com.yourorg.VetToVeterinary'
     )
 }
@@ -240,7 +240,7 @@ Once this recipe has been added to your active recipes, you can run either `./mv
 
 * The source files in the `vet` package have been moved to the newly created `veterinary` package
 * References such as import statements have been updated to reflect the new name
-* All of the files have been formatted according to the previously defined AutoFormat rules
+* All of the files have been formatted according to the previously defined `OrderImports` rules
 
 ![Git diff showing updated import statements](<../.gitbook/assets/update-import.png>)
 
@@ -269,7 +269,7 @@ For Maven projects, you'll need to:
 After doing that, your `pom.xml` file should look similar to this:
 
 {% code title="pom.xml" %}
-```markup
+```xml
 <build>
   <plugins>
       <plugin>
@@ -278,7 +278,7 @@ After doing that, your `pom.xml` file should look similar to this:
         <version>5.2.6</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.format.AutoFormat</recipe>
+            <recipe>org.openrewrite.java.OrderImports</recipe>
             <recipe>com.yourorg.VetToVeterinary</recipe>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
           </activeRecipes>
@@ -321,7 +321,7 @@ plugins {
 
 rewrite {
     activeRecipe(
-        'org.openrewrite.java.format.AutoFormat',
+        'org.openrewrite.java.OrderImports',
         'com.yourorg.VetToVeterinary',
         'org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration'
     )
