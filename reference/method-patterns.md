@@ -29,6 +29,10 @@ The return type of a method is _not_ represented in method patterns. Methods in 
 
 ### Examples
 
+{% hint style="info" %}
+Check out the [Moderne introduction to type-aware code searches](https://docs.moderne.io/user-documentation/introduction-to-type-aware-code-search#using-a-search-recipe) for an example of how method patterns can be used.
+{% endhint %}
+
 The below table shows some more examples of method patterns and the methods they match.
 
 | Method Pattern                              | Matches                                                                                                                                                                                                         |
