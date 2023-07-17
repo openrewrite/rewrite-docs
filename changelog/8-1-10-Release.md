@@ -16,9 +16,7 @@
 
 ## Removed Recipes
 
-* **org.openrewrite.github.AddCronTrigger**: The `schedule` [event](https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events) allows you to trigger a workflow at a scheduled time. 
 * **org.openrewrite.gradle.plugins.AddGradleEnterprise**: Add the Gradle Enterprise plugin to settings.gradle files. 
-* **org.openrewrite.java.spring.framework.UpgradeSpringFrameworkDependencies**: Upgrade spring-framework 5.x Maven dependencies using a Node Semver advanced range selector. 
 * **org.openrewrite.java.testing.mockito.UsesMockitoAll**: Finds projects that depend on `mockito-all` through Maven or Gradle. 
 
 ## Changed Recipes
