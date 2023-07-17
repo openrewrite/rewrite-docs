@@ -6,22 +6,22 @@ _This recipe will add jakarta validation dependency if needed, migrate from java
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.0.1
+* version: 2.1.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
 }
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.UpdateMicronautValidation</recipe>
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.0.1</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,33 +85,29 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate deprecated `javax.validation` packages to `jakarta.validation`](../../java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
-* [Change Gradle dependency group](../../gradle/changedependencygroupid.md)
+* [Rename package name](../../java/changepackage.md)
+  * oldPackageName: `javax.validation`
+  * newPackageName: `jakarta.validation`
+  * recursive: `true`
+* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency.md)
   * groupId: `io.micronaut`
   * artifactId: `micronaut-validation`
-  * newGroupId: `io.micronaut.validation`
-  * configuration: `implementation`
-* [Change Gradle dependency group](../../gradle/changedependencygroupid.md)
-  * groupId: `io.micronaut`
-  * artifactId: `micronaut-http-validation`
-  * newGroupId: `io.micronaut.validation`
-  * configuration: `annotationProcessor`
-* [Change Gradle dependency artifact](../../gradle/changedependencyartifactid.md)
+* [Add Gradle or Maven dependency](../../java/dependencies/adddependency.md)
   * groupId: `io.micronaut.validation`
-  * artifactId: `micronaut-http-validation`
-  * newArtifactId: `micronaut-validation-processor`
+  * artifactId: `micronaut-validation`
+  * onlyIfUsing: `jakarta.validation.constraints.*`
+  * configuration: `implementation`
+  * scope: `compile`
+* [Add Gradle dependency](../../gradle/adddependency.md)
+  * groupId: `io.micronaut.validation`
+  * artifactId: `micronaut-validation-processor`
   * configuration: `annotationProcessor`
-* [Change Maven dependency groupId, artifactId and/or the version](../../maven/changedependencygroupidandartifactid.md)
-  * oldGroupId: `io.micronaut`
-  * oldArtifactId: `micronaut-validation`
-  * newGroupId: `io.micronaut.validation`
-  * newVersion: `LATEST`
-* [Change Maven annotation processor path](../../java/micronaut/changeannotationprocessorpath.md)
-  * oldGroupId: `io.micronaut`
-  * oldArtifactId: `micronaut-http-validation`
-  * newGroupId: `io.micronaut.validation`
-  * newArtifactId: `micronaut-validation-processor`
-  * newVersion: `${micronaut.validation.version}`
+  * onlyIfUsing: `jakarta.validation.constraints.*`
+* [Add Maven annotation processor path](../../java/micronaut/addannotationprocessorpath.md)
+  * groupId: `io.micronaut.validation`
+  * artifactId: `micronaut-validation-processor`
+  * version: `${micronaut.validation.version}`
+  * onlyIfUsing: `jakarta.validation.constraints.*`
   * exclusions: `[io.micronaut:micronaut-inject]`
 
 {% endtab %}
@@ -124,43 +120,34 @@ name: org.openrewrite.java.micronaut.UpdateMicronautValidation
 displayName: Update to Micronaut Validation 4.x
 description: This recipe will add jakarta validation dependency if needed, migrate from javax.validation if needed, and update micronaut validation dependencies.
 recipeList:
-  - org.openrewrite.java.migrate.jakarta.JavaxValidationMigrationToJakartaValidation
-  - org.openrewrite.gradle.ChangeDependencyGroupId:
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: javax.validation
+      newPackageName: jakarta.validation
+      recursive: true
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: io.micronaut
       artifactId: micronaut-validation
-      newGroupId: io.micronaut.validation
-      configuration: implementation
-  - org.openrewrite.gradle.ChangeDependencyGroupId:
-      groupId: io.micronaut
-      artifactId: micronaut-http-validation
-      newGroupId: io.micronaut.validation
-      configuration: annotationProcessor
-  - org.openrewrite.gradle.ChangeDependencyArtifactId:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.micronaut.validation
-      artifactId: micronaut-http-validation
-      newArtifactId: micronaut-validation-processor
+      artifactId: micronaut-validation
+      onlyIfUsing: jakarta.validation.constraints.*
+      configuration: implementation
+      scope: compile
+  - org.openrewrite.gradle.AddDependency:
+      groupId: io.micronaut.validation
+      artifactId: micronaut-validation-processor
       configuration: annotationProcessor
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
-      oldGroupId: io.micronaut
-      oldArtifactId: micronaut-validation
-      newGroupId: io.micronaut.validation
-      newVersion: LATEST
-  - org.openrewrite.java.micronaut.ChangeAnnotationProcessorPath:
-      oldGroupId: io.micronaut
-      oldArtifactId: micronaut-http-validation
-      newGroupId: io.micronaut.validation
-      newArtifactId: micronaut-validation-processor
-      newVersion: ${micronaut.validation.version}
+      onlyIfUsing: jakarta.validation.constraints.*
+  - org.openrewrite.java.micronaut.AddAnnotationProcessorPath:
+      groupId: io.micronaut.validation
+      artifactId: micronaut-validation-processor
+      version: ${micronaut.validation.version}
+      onlyIfUsing: jakarta.validation.constraints.*
       exclusions: [io.micronaut:micronaut-inject]
 
 ```
 {% endtab %}
 {% endtabs %}
-
-## Contributors
-* [Jeremy Grelle](mailto:grellej@unityfoundation.io)
-* [Tim te Beek](mailto:tim@moderne.io)
-
 
 ## See how this recipe works across multiple open-source repositories
 

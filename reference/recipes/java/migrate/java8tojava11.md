@@ -14,22 +14,22 @@ _This recipe will apply changes commonly needed when upgrading to Java 11. Speci
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.7/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.6
+* version: 2.0.7
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.6")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.7")
 }
 ```
 {% endcode %}
@@ -55,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
@@ -65,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.6</version>
+            <version>2.0.7</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -111,7 +111,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Upgrade Wro4j plugin version](../../java/migrate/wro4j/upgradewro4jmavenpluginversion.md)
 * [Upgrade JaCoCo Maven plugin version](../../java/migrate/jacoco/upgradejacocomavenpluginversion.md)
 * [Change Maven Java version property values to 11](../../java/migrate/javaversion11.md)
-* [Use modernized `java.util` APIs](../../java/migrate/util/javautilapis.md)
 * [Prefer `Optional.isEmpty()`](../../java/migrate/util/optionalnotpresenttoisempty.md)
 * [Prefer `Optional.isPresent()`](../../java/migrate/util/optionalnotemptytoispresent.md)
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion.md)
@@ -152,7 +151,6 @@ recipeList:
   - org.openrewrite.java.migrate.wro4j.UpgradeWro4jMavenPluginVersion
   - org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion
   - org.openrewrite.java.migrate.JavaVersion11
-  - org.openrewrite.java.migrate.util.JavaUtilAPIs
   - org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty
   - org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
@@ -164,12 +162,11 @@ recipeList:
 
 ## Contributors
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * Tyler Van Gorder
 * [Sam Snyder](mailto:sam@moderne.io)
-* [Knut Wannheden](mailto:knut@moderne.io)
-* Yeikel
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Tim te Beek](mailto:tim.te.beek@jdriven.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * Aaron Gershman
 * [Patrick](mailto:patway99@gmail.com)
@@ -177,8 +174,6 @@ recipeList:
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * Kun Li
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
-* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 * Josh Soref
 * [Tim te Beek](mailto:tim@moderne.io)
 

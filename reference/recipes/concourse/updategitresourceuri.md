@@ -104,7 +104,7 @@ Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -130,7 +130,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateGitResourceUriExample</recipe>
@@ -158,9 +158,6 @@ dependencies {
 {% tab title="Recipe List" %}
 * [Change Concourse value](../concourse/changevalue.md)
   * keyPath: `$.resources[?(@.type == 'git')].source.uri`
-  * oldValue: ``
-  * newValue: ``
-  * fileMatcher: ``
 
 {% endtab %}
 
@@ -171,18 +168,12 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.concourse.UpdateGitResourceUri
 displayName: Update git resource `source.uri` references
 description: Update git resource `source.uri` URI values to point to a new URI value.
-oldURIPattern: 
 
-newURI: 
 
-fileMatcher: 
 
 recipeList:
   - org.openrewrite.concourse.ChangeValue:
       keyPath: $.resources[?(@.type == 'git')].source.uri
-      oldValue: 
-      newValue: 
-      fileMatcher: 
 
 ```
 {% endtab %}

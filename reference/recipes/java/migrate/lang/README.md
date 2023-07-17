@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Prefer `String#formatted(Object...)`](./stringformatted.md)
 * [Refaster template `UseStringIsEmpty`](./usestringisemptyrecipe.md)
+* [Remove deprecated `Thread.destroy()`](./removethreaddestroymethod.md)
 * [Use `Class#getDeclaredConstructor().newInstance()`](./migrateclassnewinstancetogetdeclaredconstructornewinstance.md)
 * [Use `ClassLoader#defineClass(String, byte[], int, int)`](./migrateclassloaderdefineclass.md)
 * [Use `SecurityManager#checkMulticast(InetAddress)`](./migratesecuritymanagermulticast.md)

@@ -206,7 +206,7 @@ Now that `com.yourorg.RemoveDependencyExample` has been defined activate it and 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -232,7 +232,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveDependencyExample</recipe>
@@ -259,13 +259,7 @@ dependencies {
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Remove a Gradle dependency](../../gradle/removedependency.md)
-  * groupId: ``
-  * artifactId: ``
-  * configuration: ``
 * [Remove Maven dependency](../../maven/removedependency.md)
-  * groupId: ``
-  * artifactId: ``
-  * scope: ``
 
 {% endtab %}
 
@@ -277,23 +271,13 @@ dependencies {
         displayName: Remove a Gradle or Maven dependency
         description: For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`.
 For Maven project, removes a single dependency from the <dependencies> section of the pom.xml.
-groupId: 
 
-artifactId: 
 
-configuration: 
 
-scope: 
 
 recipeList:
   - org.openrewrite.gradle.RemoveDependency:
-      groupId: 
-      artifactId: 
-      configuration: 
   - org.openrewrite.maven.RemoveDependency:
-      groupId: 
-      artifactId: 
-      scope: 
 
 ```
 {% endtab %}

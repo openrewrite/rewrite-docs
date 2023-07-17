@@ -26,4 +26,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use modernized `javax.xml.stream` APIs](./javaxxmlstreamapis.md)
 * [Use the latest JAX-WS API and runtime for Jakarta EE 8](./addjaxwsruntime.md)
 
+## Recipes
+
+* [Add scope annotation to injected classes](./addscopetoinjectedclass.md)
+
 

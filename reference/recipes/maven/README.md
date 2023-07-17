@@ -10,7 +10,7 @@
 
 ## Recipes
 
-* [Add Gradle Enterprise Maven Extension to maven projects](./addgradleenterprisemavenextension.md)
+* [Add Gradle Enterprise Maven extension to maven projects](./addgradleenterprisemavenextension.md)
 * [Add Maven dependency](./adddependency.md)
 * [Add Maven plugin](./addplugin.md)
 * [Add Maven plugin dependencies](./addplugindependency.md)

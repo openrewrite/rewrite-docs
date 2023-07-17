@@ -12,7 +12,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Add cron workflow trigger](./addcrontrigger.md)
 * [Cancel in-progress workflow when it is triggered again](./autocancelinprogressworkflow.md)
 * [Change dependabot schedule interval](./changedependabotscheduleinterval.md)
 * [Remove all cron triggers](./removeallcrontriggers.md)

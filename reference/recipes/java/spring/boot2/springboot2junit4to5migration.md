@@ -29,7 +29,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -55,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -151,8 +151,8 @@ recipeList:
 * Yeikel
 * [Greg Adams](mailto:greg@moderne.io)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
 * Tyler Van Gorder
+* [Tim te Beek](mailto:tim@moderne.io)
 * nbruno
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
@@ -162,7 +162,7 @@ recipeList:
 * Kun Li
 * Ties van de Ven
 * [Tim te Beek](mailto:timtebeek@gmail.com)
-* [joanvr](mailto:joan@moderne.io)
+* [Joan Viladrosa](mailto:joan@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
 * [Kyle Scully](mailto:scullykns@gmail.com)
 

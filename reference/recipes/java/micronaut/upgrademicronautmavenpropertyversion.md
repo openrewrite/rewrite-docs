@@ -6,17 +6,75 @@ _Set the maven micronaut.version property according to a node-style semver selec
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.0.1
+* version: 2.1.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | newVersion | An exact version number, or node-style semver selector used to select the version number. |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| -- | -- |
+|newVersion|`~2.1`|
+
+
+{% tabs %}
+{% tab title="pom.xml" %}
+
+###### Before
+{% code title="pom.xml" %}
+```xml
+    <project>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.mycompany.app</groupId>
+        <artifactId>my-app</artifactId>
+        <version>1</version>
+        <properties>
+            <micronaut.version>2.0.3</micronaut.version>
+        </properties>
+    </project>
+```
+{% endcode %}
+
+###### After
+{% code title="pom.xml" %}
+```xml
+    <project>
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.mycompany.app</groupId>
+        <artifactId>my-app</artifactId>
+        <version>1</version>
+        <properties>
+            <micronaut.version>2.1.4</micronaut.version>
+        </properties>
+    </project>
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,1 +7,1 @@
+        <version>1</version>
+        <properties>
+-           <micronaut.version>2.0.3</micronaut.version>
++           <micronaut.version>2.1.4</micronaut.version>
+        </properties>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
@@ -36,13 +94,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.0.1 in your build file:
+Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.1.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -54,7 +112,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
 }
 ```
 {% endcode %}
@@ -68,7 +126,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeMicronautMavenPropertyVersionExample</recipe>
@@ -78,7 +136,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.0.1</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -95,9 +153,8 @@ dependencies {
 * Tyler Van Gorder
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Knut Wannheden](mailto:knut@moderne.io)
-* Aaron Gershman
 * [Jeremy Grelle](mailto:grellej@unityfoundation.io)
-* [Tim te Beek](mailto:tim@moderne.io)
+* Aaron Gershman
 
 
 ## See how this recipe works across multiple open-source repositories

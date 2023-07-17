@@ -4,7 +4,6 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
 * [Migrate Ehcache from javax to jakarta namespace](./ehcachejavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](./jacksonjavaxtojakarta.md)
 * [Migrate Johnzon from javax to jakarta namespace](./johnzonjavaxtojakarta.md)
@@ -42,5 +41,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](./javaxxmlwsmigrationtojakartaxmlws.md)
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
 * [Migrate xmlns entries in `persistence.xml` files](./javaxpersistencexmltojakartapersistencexml.md)
+
+## Recipes
+
+* [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
 
 

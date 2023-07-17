@@ -26,7 +26,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1</recipe>
@@ -145,23 +145,23 @@ recipeList:
 * Patrick Way
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 * [Tim te Beek](mailto:tim.te.beek@jdriven.com)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * Kun Li
 * [Kyle Scully](mailto:scullykns@gmail.com)
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
-* Yeikel
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Greg Adams](mailto:gadams@gmail.com)
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * [Alex Boyko](mailto:aboyko@vmware.com)
+* Yeikel
 * [Greg Adams](mailto:greg@moderne.io)
-* [Tim te Beek](mailto:tim@moderne.io)
 * [Kevin McCarpenter](mailto:kevin@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
 * Fabian Krüger
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Johannes Jank](mailto:johannes.wengert@googlemail.com)
 * Aaron Gershman
 * nbruno
@@ -174,8 +174,7 @@ recipeList:
 * Ties van de Ven
 * Josh Soref
 * [Tim te Beek](mailto:timtebeek@gmail.com)
-* [joanvr](mailto:joan@moderne.io)
-* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+* [Joan Viladrosa](mailto:joan@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

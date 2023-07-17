@@ -8,7 +8,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Framework 5.1](./upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](./upgradespringframework_5_2.md)
 * [Migrate to Spring Framework 5.3](./upgradespringframework_5_3.md)
-* [Upgrade spring-framework Maven dependencies](./upgradespringframeworkdependencies.md)
 * [Use `ObjectUtils#isEmpty(Object)`](./useobjectutilsisempty.md)
 
 ## Recipes

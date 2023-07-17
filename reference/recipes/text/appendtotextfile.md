@@ -6,11 +6,11 @@ _Appends or replaces content of an existing plain text file, or creates a new on
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/AppendToTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/AppendToTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.10/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.1.8
+* version: 8.1.10
 
 ## Options
 
@@ -22,9 +22,9 @@ _Appends or replaces content of an existing plain text file, or creates a new on
 | `Boolean` | appendNewline | *Optional*. Print a newline automatically after the content (and preamble). Default true. |
                         | `Strategy` | existingFileStrategy | *Optional*. Determines behavior if a file exists at this location prior to Rewrite execution.
 
-- `continue`: append new content to existing file contents. If existing file is not plaintext, recipe does nothing.
-- `replace`: remove existing content from file.
-- `leave`: *(default)* do nothing. Existing file is fully preserved.
+- `Continue`: append new content to existing file contents. If existing file is not plaintext, recipe does nothing.
+- `Replace`: remove existing content from file.
+- `Leave`: *(default)* do nothing. Existing file is fully preserved.
 
 Note: this only affects the first interaction with the specified file per Rewrite execution.
 Subsequent instances of this recipe in the same Rewrite execution will always append. |
@@ -57,7 +57,7 @@ Now that `com.yourorg.AppendToTextFileExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -79,7 +79,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AppendToTextFileExample</recipe>

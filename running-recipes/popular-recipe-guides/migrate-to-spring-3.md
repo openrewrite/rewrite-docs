@@ -15,7 +15,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.2.6</version>
+      <version>5.3.1</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1</recipe>
@@ -287,7 +287,7 @@ management.server.base-path=/manage
     <dependency>
        <groupId>jakarta.inject</groupId>
        <artifactId>jakarta.inject-api</artifactId>
-       <version>2.0.5.MR</version>
+       <version>2.0.7.MR</version>
     </dependency>
 
     <dependency>

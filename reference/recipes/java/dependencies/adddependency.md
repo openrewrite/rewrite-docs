@@ -68,7 +68,7 @@ Now that `com.yourorg.AddDependencyExample` has been defined activate it and tak
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -94,7 +94,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddDependencyExample</recipe>
@@ -121,25 +121,8 @@ dependencies {
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Add Gradle dependency](../../gradle/adddependency.md)
-  * groupId: ``
-  * artifactId: ``
-  * version: ``
-  * versionPattern: ``
-  * configuration: ``
-  * onlyIfUsing: ``
-  * classifier: ``
-  * extension: ``
-  * familyPattern: ``
 * [Add Maven dependency](../../maven/adddependency.md)
-  * groupId: ``
-  * artifactId: ``
-  * version: ``
-  * versionPattern: ``
-  * scope: ``
-  * onlyIfUsing: ``
-  * type: ``
-  * classifier: ``
-  * familyPattern: ``
+  * version: `latest.release`
 
 {% endtab %}
 
@@ -150,52 +133,24 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.dependencies.AddDependency
 displayName: Add Gradle or Maven dependency
 description: For a Gradle project, add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. Or For a maven project, Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used.
-groupId: 
-
-artifactId: 
-
-version: 
-
-versionPattern: 
-
-onlyIfUsing: 
-
-classifier: 
-
-familyPattern: 
-
-extension: 
-
-configuration: 
-
-scope: 
 
 
-type: 
+
+
+
+
+
+
+
+
+
 
 
 
 recipeList:
   - org.openrewrite.gradle.AddDependency:
-      groupId: 
-      artifactId: 
-      version: 
-      versionPattern: 
-      configuration: 
-      onlyIfUsing: 
-      classifier: 
-      extension: 
-      familyPattern: 
   - org.openrewrite.maven.AddDependency:
-      groupId: 
-      artifactId: 
-      version: 
-      versionPattern: 
-      scope: 
-      onlyIfUsing: 
-      type: 
-      classifier: 
-      familyPattern: 
+      version: latest.release
 
 ```
 {% endtab %}

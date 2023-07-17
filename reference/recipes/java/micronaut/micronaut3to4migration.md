@@ -6,22 +6,22 @@ _This recipe will apply changes required for migrating from Micronaut 3 to Micro
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.0.1
+* version: 2.1.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
 }
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.Micronaut3to4Migration</recipe>
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.0.1</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -87,7 +87,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tab title="Recipe List" %}
 * [Change Maven Java version property values to 17](../../java/migrate/javaversion17.md)
 * [Update Gradle wrapper](../../gradle/updategradlewrapper.md)
-  * version: `8.x`
+  * version: `8.1.x`
+  * addIfMissing: `false`
 * [Update the Micronaut version to 4.x](../../java/micronaut/updatebuildtomicronaut4version.md)
 * [Update to Micronaut 4.x platform BOM](../../java/micronaut/updatemicronautplatformbom.md)
 * [Add Micronaut build plugins to 4.x](../../java/micronaut/updatebuildplugins.md)
@@ -95,11 +96,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Update jakarta annotations dependency](../../java/micronaut/updatejakartaannotations.md)
 * [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](../../java/migrate/jakarta/javaxpersistencetojakartapersistence.md)
 * [Update to Micronaut Validation 4.x](../../java/micronaut/updatemicronautvalidation.md)
-* [Update to Micronaut Validation 4.x](../../java/micronaut/updatemicronautemail.md)
+* [Update to Micronaut Email 2.x](../../java/micronaut/updatemicronautemail.md)
 * [Update the Micronaut Websocket support](../../java/micronaut/addmicronautwebsocketdependencyifneeded.md)
 * [Update the Micronaut Session support](../../java/micronaut/updatemicronautsession.md)
 * [Update the Micronaut Retry support](../../java/micronaut/addmicronautretrydependencyifneeded.md)
 * [Update the Micronaut Security library](../../java/micronaut/updatemicronautsecurity.md)
+* [Update the Micronaut Data library](../../java/micronaut/updatemicronautdata.md)
+* [Remove withJansi Logback configuration](../../java/micronaut/removewithjansilogbackconfiguration.md)
 
 {% endtab %}
 
@@ -113,7 +116,8 @@ description: This recipe will apply changes required for migrating from Micronau
 recipeList:
   - org.openrewrite.java.migrate.JavaVersion17
   - org.openrewrite.gradle.UpdateGradleWrapper:
-      version: 8.x
+      version: 8.1.x
+      addIfMissing: false
   - org.openrewrite.java.micronaut.UpdateBuildToMicronaut4Version
   - org.openrewrite.java.micronaut.UpdateMicronautPlatformBom
   - org.openrewrite.java.micronaut.UpdateBuildPlugins
@@ -126,6 +130,8 @@ recipeList:
   - org.openrewrite.java.micronaut.UpdateMicronautSession
   - org.openrewrite.java.micronaut.AddMicronautRetryDependencyIfNeeded
   - org.openrewrite.java.micronaut.UpdateMicronautSecurity
+  - org.openrewrite.java.micronaut.UpdateMicronautData
+  - org.openrewrite.java.micronaut.RemoveWithJansiLogbackConfiguration
 
 ```
 {% endtab %}
@@ -139,12 +145,12 @@ recipeList:
 * Kun Li
 * Tyler Van Gorder
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * Aaron Gershman
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

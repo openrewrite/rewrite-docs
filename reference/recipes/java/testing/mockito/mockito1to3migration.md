@@ -11,11 +11,11 @@ _Upgrade Mockito from 1.x to 3.x._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.7/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.6
+* version: 2.0.7
 
 ## Examples
 ##### Example 1
@@ -221,13 +221,13 @@ import static org.mockito.Mockito.mock;
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -239,7 +239,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.6")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7")
 }
 ```
 {% endcode %}
@@ -253,7 +253,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.Mockito1to3Migration</recipe>
@@ -263,7 +263,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.6</version>
+            <version>2.0.7</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -294,7 +294,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.MockitoAnnotations.Mock`
   * newFullyQualifiedTypeName: `org.mockito.Mock`
-* [Replace Mockito 1.x `any(Class)` and `anyString()` with `nullable(Class)`](../../../java/testing/mockito/anytonullable.md)
 * [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.mockito.Matchers`
   * newFullyQualifiedTypeName: `org.mockito.ArgumentMatchers`
@@ -389,7 +388,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.mockito.MockitoAnnotations.Mock
       newFullyQualifiedTypeName: org.mockito.Mock
-  - org.openrewrite.java.testing.mockito.AnyToNullable
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.mockito.Matchers
       newFullyQualifiedTypeName: org.mockito.ArgumentMatchers
@@ -474,17 +472,16 @@ recipeList:
 
 ## Contributors
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
 * [Greg Adams](mailto:gadams@gmail.com)
-* [Knut Wannheden](mailto:knut@moderne.io)
+* [Tim te Beek](mailto:tim@moderne.io)
 * Patrick Way
+* [Knut Wannheden](mailto:knut@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Greg Adams](mailto:greg@moderne.io)
 * [Patrick](mailto:patway99@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Tim te Beek](mailto:timtebeek@gmail.com)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

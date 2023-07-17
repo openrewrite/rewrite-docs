@@ -6,22 +6,91 @@ _Adds `ErrorResponseProcessor` argument to deprecated no-arg `ExceptionHandler` 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/FixDeprecatedExceptionHandlerConstructors.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/FixDeprecatedExceptionHandlerConstructors.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.0.1
+* version: 2.1.0
+
+## Example
+
+
+{% tabs %}
+{% tab title="ApiClientValidationExceptionHandler.java" %}
+
+###### Before
+{% code title="ApiClientValidationExceptionHandler.java" %}
+```java
+    package abc;
+
+    import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
+
+    public class ApiClientValidationExceptionHandler extends ConstraintExceptionHandler {
+        private void someMethod(){}
+    }
+```
+{% endcode %}
+
+###### After
+{% code title="ApiClientValidationExceptionHandler.java" %}
+```java
+    package abc;
+
+    import io.micronaut.http.server.exceptions.response.ErrorResponseProcessor;
+    import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
+    import jakarta.inject.Inject;
+
+    public class ApiClientValidationExceptionHandler extends ConstraintExceptionHandler {
+
+        @Inject
+        public ApiClientValidationExceptionHandler(ErrorResponseProcessor errorResponseProcessor) {
+            super(errorResponseProcessor);
+        }
+        private void someMethod(){}
+    }
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- ApiClientValidationExceptionHandler.java
++++ ApiClientValidationExceptionHandler.java
+@@ -3,0 +3,1 @@
+    package abc;
+
++   import io.micronaut.http.server.exceptions.response.ErrorResponseProcessor;
+    import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
+@@ -4,0 +5,1 @@
+
+    import io.micronaut.validation.exceptions.ConstraintExceptionHandler;
++   import jakarta.inject.Inject;
+
+@@ -6,0 +8,5 @@
+
+    public class ApiClientValidationExceptionHandler extends ConstraintExceptionHandler {
++
++       @Inject
++       public ApiClientValidationExceptionHandler(ErrorResponseProcessor errorResponseProcessor) {
++           super(errorResponseProcessor);
++       }
+        private void someMethod(){}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -33,7 +102,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
 }
 ```
 {% endcode %}
@@ -47,7 +116,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors</recipe>
@@ -57,7 +126,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.0.1</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -84,10 +153,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ## Contributors
 * [Patrick](mailto:patway99@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
 * [Jeremy Grelle](mailto:grellej@unityfoundation.io)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

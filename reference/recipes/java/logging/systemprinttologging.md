@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.SystemPrintToLogging</recipe>
@@ -95,15 +95,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Use logger instead of system print statements](../../java/logging/systemerrtologging.md)
-  * loggerName: ``
-  * loggingFramework: ``
 * [Use logger instead of system print statements](../../java/logging/systemouttologging.md)
-  * loggerName: ``
-  * loggingFramework: ``
-  * level: ``
 * [Use logger instead of `printStackTrace()`](../../java/logging/printstacktracetologerror.md)
-  * loggerName: ``
-  * loggingFramework: ``
 
 {% endtab %}
 
@@ -115,23 +108,13 @@ name: org.openrewrite.java.logging.SystemPrintToLogging
 displayName: Use logger instead of system print statements
 description: Replace `System.out` and `System.err` print statements with a logger.
 
-loggerName: 
 
-loggingFramework: 
 
-level: 
 
 recipeList:
   - org.openrewrite.java.logging.SystemErrToLogging:
-      loggerName: 
-      loggingFramework: 
   - org.openrewrite.java.logging.SystemOutToLogging:
-      loggerName: 
-      loggingFramework: 
-      level: 
   - org.openrewrite.java.logging.PrintStackTraceToLogError:
-      loggerName: 
-      loggingFramework: 
 
 ```
 {% endtab %}

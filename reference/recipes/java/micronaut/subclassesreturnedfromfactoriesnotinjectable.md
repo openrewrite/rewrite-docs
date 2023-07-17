@@ -6,22 +6,86 @@ _As of Micronaut 3.x It is no longer possible to inject the internal implementat
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/SubclassesReturnedFromFactoriesNotInjectable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/SubclassesReturnedFromFactoriesNotInjectable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.0.1
+* version: 2.1.0
+
+## Example
+
+
+{% tabs %}
+{% tab title="ExecutorFactory.java" %}
+
+###### Before
+{% code title="ExecutorFactory.java" %}
+```java
+    import java.util.concurrent.ForkJoinPool;
+    import java.util.concurrent.ExecutorService;
+    import javax.inject.Singleton;
+    import io.micronaut.context.annotation.Factory;
+
+    @Factory
+    public class ExecutorFactory {
+
+        @Singleton
+        public ExecutorService executorService() {
+            return ForkJoinPool.commonPool();
+        }
+    }
+```
+{% endcode %}
+
+###### After
+{% code title="ExecutorFactory.java" %}
+```java
+    import java.util.concurrent.ForkJoinPool;
+    import javax.inject.Singleton;
+    import io.micronaut.context.annotation.Factory;
+
+    @Factory
+    public class ExecutorFactory {
+
+        @Singleton
+        public ForkJoinPool executorService() {
+            return ForkJoinPool.commonPool();
+        }
+    }
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- ExecutorFactory.java
++++ ExecutorFactory.java
+@@ -2,1 +2,0 @@
+    import java.util.concurrent.ForkJoinPool;
+-   import java.util.concurrent.ExecutorService;
+    import javax.inject.Singleton;
+@@ -10,1 +9,1 @@
+
+        @Singleton
+-       public ExecutorService executorService() {
++       public ForkJoinPool executorService() {
+            return ForkJoinPool.commonPool();
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.15")
+    id("org.openrewrite.rewrite") version("6.1.16")
 }
 
 rewrite {
@@ -33,7 +97,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
 }
 ```
 {% endcode %}
@@ -47,7 +111,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.2.6</version>
+        <version>5.3.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.SubclassesReturnedFromFactoriesNotInjectable</recipe>
@@ -57,7 +121,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.0.1</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
