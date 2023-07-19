@@ -151,6 +151,137 @@ There are a few recommended best practices when defining metadata for a recipe:
 * Use back-ticks (\`\`) around terms representing code as these will be rendered in Markdown in any context where rich text is available
 * Ensure the description ends with a period
 
+## Scanning Recipes
+
+A recipe should be a `ScanningRecipe` if it needs to change many source files. A `ScanningRecipe` extends the normal `Recipe` and adds two key objects: an [accumulator](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L88-L90) and a [scanner](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L53). The `accumulator` object is a custom data structure defined by the recipe itself to store any information the recipe needs to function. The `scanner` object is a `visitor` which populates the `accumulator` with data.
+
+Scanning recipes have three phases:
+
+1. A scanning phase that collects information while making no new code changes. In this phase, the `scanner` is called for each source file and information is added to the `accumulator` that the recipe will need for future steps.
+    * For example, a recipe might want to detect whether a project is a Maven project or not. The `scanner` could detect a `pom.xml` file and add a flag to the `accumulator` so that future steps know this.
+2. An _optional_ generating phase where new files are created (if any are needed). In this phase, the `accumulator` can be accessed to determine whether or not a file should be created.
+3. An editing phase where the recipe makes changes (as it would before). Like the generating phase, an `accumulator` can be accessed to make changes – but you **can not** randomly access other source code or files.
+
+### Example
+
+[AddManagedDependency code](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java)
+
+```java
+// imports
+
+@Value
+@EqualsAndHashCode(callSuper = true)
+public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Scanned> {
+  // Standard methods such as displayName and description
+
+  static class Scanned {
+      boolean usingType;
+      List<SourceFile> rootPoms = new ArrayList<>();
+  }
+
+  @Override
+  public Scanned getInitialValue(ExecutionContext ctx) {
+      Scanned scanned = new Scanned();
+      scanned.usingType = onlyIfUsing == null;
+      return scanned;
+  }
+
+  @Override
+  public TreeVisitor<?, ExecutionContext> getScanner(Scanned acc) {
+      return Preconditions.check(acc.usingType || (!StringUtils.isNullOrEmpty(onlyIfUsing) && onlyIfUsing.contains(":")), new MavenIsoVisitor<ExecutionContext>() {
+          @Override
+          public Xml.Document visitDocument(Xml.Document document, ExecutionContext ctx) {
+              document.getMarkers().findFirst(MavenResolutionResult.class).ifPresent(mavenResolutionResult -> {
+                  if (mavenResolutionResult.getParent() == null) {
+                      acc.rootPoms.add(document);
+                  }
+              });
+              if(acc.usingType) {
+                  return SearchResult.found(document);
+              }
+
+              return super.visitDocument(document, ctx);
+          }
+
+          @Override
+          public Xml.Tag visitTag(Xml.Tag tag, ExecutionContext ctx) {
+              Xml.Tag t = super.visitTag(tag, ctx);
+
+              if (isDependencyTag()) {
+                  ResolvedDependency dependency = findDependency(t, null);
+                  if (dependency != null) {
+                      String[] ga = requireNonNull(onlyIfUsing).split(":");
+                      ResolvedDependency match = dependency.findDependency(ga[0], ga[1]);
+                      if (match != null) {
+                          acc.usingType = true;
+                      }
+                  }
+              }
+
+              return t;
+          }
+      });
+  }
+
+  @Override
+  public TreeVisitor<?, ExecutionContext> getVisitor(Scanned acc) {
+      return Preconditions.check(acc.usingType, new MavenVisitor<ExecutionContext>() {
+          @Override
+          public Xml visitDocument(Xml.Document document, ExecutionContext ctx) {
+              Xml maven = super.visitDocument(document, ctx);
+
+              if (!Boolean.TRUE.equals(addToRootPom) || acc.rootPoms.contains(document)) {
+                  Validated versionValidation = Semver.validate(version, versionPattern);
+                  if (versionValidation.isValid()) {
+                      VersionComparator versionComparator = requireNonNull(versionValidation.getValue());
+                      try {
+                          String versionToUse = findVersionToUse(versionComparator, ctx);
+                          if (!Objects.equals(versionToUse, existingManagedDependencyVersion())) {
+                              doAfterVisit(new AddManagedDependencyVisitor(groupId, artifactId,
+                                      versionToUse, scope, type, classifier));
+                              maybeUpdateModel();
+                          }
+                      } catch (MavenDownloadingException e) {
+                          return e.warn(document);
+                      }
+                  }
+              }
+
+              return maven;
+          }
+
+          @Nullable
+          private String existingManagedDependencyVersion() {
+              return getResolutionResult().getPom().getDependencyManagement().stream()
+                      .map(resolvedManagedDep -> {
+                          if (resolvedManagedDep.matches(groupId, artifactId, type, classifier)) {
+                              return resolvedManagedDep.getGav().getVersion();
+                          } else if (resolvedManagedDep.getRequestedBom() != null
+                                      && resolvedManagedDep.getRequestedBom().getGroupId().equals(groupId)
+                                      && resolvedManagedDep.getRequestedBom().getArtifactId().equals(artifactId)) {
+                              return resolvedManagedDep.getRequestedBom().getVersion();
+                          }
+                          return null;
+                      })
+                      .filter(Objects::nonNull)
+                      .findFirst().orElse(null);
+          }
+
+          @Nullable
+          private String findVersionToUse(VersionComparator versionComparator, ExecutionContext ctx) throws MavenDownloadingException {
+              MavenMetadata mavenMetadata = metadataFailures.insertRows(ctx, () -> downloadMetadata(groupId, artifactId, ctx));
+              LatestRelease latest = new LatestRelease(versionPattern);
+              return mavenMetadata.getVersioning().getVersions().stream()
+                      .filter(v -> versionComparator.isValid(null, v))
+                      .filter(v -> !Boolean.TRUE.equals(releasesOnly) || latest.isValid(null, v))
+                      .max((v1, v2) -> versionComparator.compare(null, v1, v2))
+                      .orElse(null);
+          }
+      });
+  }
+}
+```
+
 ## Recipe Execution Pipeline
 
 The execution pipeline dictates how a recipe is applied to a set of source files to perform a transformational task. A transformation is initiated by calling a recipe's `run()` method and passing to it the set of source files that will be passed through the pipeline. The execution pipeline maintains and manages the intermediate state of the source files as they are passed to visitors and nested recipes.
