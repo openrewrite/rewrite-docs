@@ -6,17 +6,17 @@ _Merge a YAML snippet with an existing YAML document._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.11/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.10
+* version: 8.1.11
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | key | A JsonPath expression used to find matching keys. |
+| `String` | key | A [JsonPath](https://github.com/json-path/JsonPath) expression used to find matching keys. |
 | `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. |
 | `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |
 | `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. |
@@ -49,7 +49,7 @@ Now that `com.yourorg.MergeYamlExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.16")
+    id("org.openrewrite.rewrite") version("6.1.18")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.MergeYamlExample</recipe>
@@ -91,6 +91,7 @@ repositories {
 * [Jon Brisbin](mailto:jon@jbrisbin.com)
 * Dmitry Belyaev
 * Aaron Gershman
+* [Mike Solomon](mailto:mike@moderne.io)
 * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 
 

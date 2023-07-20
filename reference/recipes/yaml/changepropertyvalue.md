@@ -2,24 +2,24 @@
 
 **org.openrewrite.yaml.ChangePropertyValue**
 
-_Change a YAML property. Nested YAML mappings are interpreted as dot separated property names, i.e.  as Spring Boot interprets `application.yml` files._
+_Change a YAML property. Expects dot notation for nested YAML mappings, similar to how Spring Boot interprets `application.yml` files._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.11/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.10
+* version: 8.1.11
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | propertyKey | The key to look for. Glob is supported. |
+| `String` | propertyKey | The key to look for. Supports glob patterns. |
 | `String` | newValue | The new value to be used for key specified by `propertyKey`. |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
-| `Boolean` | regex | *Optional*. Default false. If enabled, `oldValue` will be interpreted as a Regular Expression, and capture group contents will be available in `newValue` |
+| `Boolean` | regex | *Optional*. Defaults to `false`. If enabled, `oldValue` will be interpreted as a regular expression, and the capture group contents will be available in `newValue` |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
 
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.16")
+    id("org.openrewrite.rewrite") version("6.1.18")
 }
 
 rewrite {
@@ -72,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>
@@ -89,8 +89,8 @@ repositories {
 
 ## Contributors
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* [Mike Solomon](mailto:mike@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* Josh Soref
 
 
 ## See how this recipe works across multiple open-source repositories

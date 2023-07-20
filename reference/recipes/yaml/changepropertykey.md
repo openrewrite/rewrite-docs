@@ -2,23 +2,23 @@
 
 **org.openrewrite.yaml.ChangePropertyKey**
 
-_Change a YAML property key leaving the value intact. Nested YAML mappings are interpreted as dot separated property names, i.e. as Spring Boot interprets application.yml files._
+_Change a YAML property key while leaving the value intact. Expects dot notation for nested YAML mappings, similar to how Spring Boot interprets `application.yml` files._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.1.11/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.1.10
+* version: 8.1.11
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | oldPropertyKey | The property key to rename. Supports glob |
+| `String` | oldPropertyKey | The property key to rename. Supports glob patterns. |
 | `String` | newPropertyKey | The new name for the property key. |
-| `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
+| `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |
 | `List` | except | *Optional*. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. |
 
 
@@ -48,7 +48,7 @@ Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.16")
+    id("org.openrewrite.rewrite") version("6.1.18")
 }
 
 rewrite {
@@ -70,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyKeyExample</recipe>
@@ -91,6 +91,7 @@ repositories {
 * [Patrick](mailto:patway99@gmail.com)
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Mike Solomon](mailto:mike@moderne.io)
 * [Thomas Zub](mailto:thomas.zub@outlook.de)
 * Sandeep Nagaraj
 

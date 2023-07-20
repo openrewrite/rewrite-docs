@@ -125,7 +125,7 @@ Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.16")
+    id("org.openrewrite.rewrite") version("6.1.18")
 }
 
 rewrite {
@@ -151,7 +151,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseTlsJdbcConnectionStringExample</recipe>

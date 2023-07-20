@@ -151,7 +151,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeExplicitSpringBootDependenciesExample</recipe>

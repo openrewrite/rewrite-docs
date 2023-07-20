@@ -6,17 +6,18 @@ _Find locations where the result of the method call is being ignored._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/ResultOfMethodCallIgnored.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/ResultOfMethodCallIgnored.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.11/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.10
+* version: 8.1.11
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 
 
 ## Usage
@@ -33,6 +34,7 @@ displayName: Result of method call ignored example
 recipeList:
   - org.openrewrite.java.search.ResultOfMethodCallIgnored:
       methodPattern: java.io.File mkdir*()
+      matchOverrides: null
 ```
 {% endcode %}
 
@@ -42,7 +44,7 @@ Now that `com.yourorg.ResultOfMethodCallIgnoredExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.16")
+    id("org.openrewrite.rewrite") version("6.1.18")
 }
 
 rewrite {
@@ -64,7 +66,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ResultOfMethodCallIgnoredExample</recipe>

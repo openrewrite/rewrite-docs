@@ -6,11 +6,11 @@ _Reorder method arguments into the specified order._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.11/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.10
+* version: 8.1.11
 
 ## Options
 
@@ -20,6 +20,7 @@ _Reorder method arguments into the specified order._
 | `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. |
 | `String[]` | oldParameterNames | *Optional*. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. |
 | `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
 
 
 ## Usage
@@ -39,6 +40,7 @@ recipeList:
       newParameterNames: [foo, bar, baz]
       oldParameterNames: [baz, bar, foo]
       ignoreDefinition: null
+      matchOverrides: null
 ```
 {% endcode %}
 
@@ -48,7 +50,7 @@ Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined activate i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.16")
+    id("org.openrewrite.rewrite") version("6.1.18")
 }
 
 rewrite {
@@ -70,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReorderMethodArgumentsExample</recipe>
