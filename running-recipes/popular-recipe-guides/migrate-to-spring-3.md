@@ -40,7 +40,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
 ```groovy
   plugins {
       id("java")
-      id("org.openrewrite.rewrite") version("6.1.18")
+      id("org.openrewrite.rewrite") version("6.1.19")
   }
   
   rewrite {
