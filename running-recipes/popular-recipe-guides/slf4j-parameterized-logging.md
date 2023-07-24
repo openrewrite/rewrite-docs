@@ -32,7 +32,7 @@ dependencies {
 
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
   <project>
   <build>
     <plugins>

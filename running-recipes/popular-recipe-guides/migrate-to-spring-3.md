@@ -9,7 +9,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <build>
   <plugins>
     <plugin>

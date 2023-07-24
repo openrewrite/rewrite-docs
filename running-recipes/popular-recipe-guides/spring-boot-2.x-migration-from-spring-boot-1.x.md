@@ -32,7 +32,7 @@ dependencies {
 
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>  
   <build>
     <plugins>
@@ -49,7 +49,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.1</version>
+            <version>5.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -201,7 +201,7 @@ class OwnerController {
 
 {% tabs %}
 {% tab title="Before: ConditionalOnBean" %}
-```
+```java
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -228,7 +228,7 @@ public class SchoolConfig {
 {% endtab %}
 
 {% tab title="After:  AnyNestedCondition" %}
-```
+```java
 import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;

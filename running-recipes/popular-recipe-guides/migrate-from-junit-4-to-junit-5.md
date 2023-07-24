@@ -9,7 +9,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <build>
   <plugins>
     <plugin>
@@ -71,7 +71,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <build>
   <plugins>
     <plugin>
@@ -87,7 +87,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>1.36.0</version>
+          <version>2.0.7</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -299,7 +299,7 @@ public class ExampleJunitTestClass {
 
 {% tabs %}
 {% tab title="Maven pom (Before)" %}
-```markup
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -331,7 +331,7 @@ public class ExampleJunitTestClass {
 {% endtab %}
 
 {% tab title="Maven pom (After)" %}
-```markup
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 

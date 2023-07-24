@@ -15,7 +15,7 @@ The Java 17 migration recipe can be applied by including OpenRewrite's plug-in t
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```markup
+```xml
 <build>
   <plugins>
     <plugin>
@@ -144,7 +144,8 @@ The above example class demonstrates the two most common code migration tasks wh
 ### Maven pom
 
 #### Before
-```markup
+
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -181,8 +182,10 @@ The above example class demonstrates the two most common code migration tasks wh
     </dependencies>
 </project>
 ```
+
 #### After
-```markup
+
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -242,8 +245,6 @@ Dependency management for Gradle is not currently available but this feature is 
 {% endhint %}
 
 ### Known Limitations
-
-
 
 The following is a list of known limitations/issues:
 

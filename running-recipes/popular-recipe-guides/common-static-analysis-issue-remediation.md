@@ -9,7 +9,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
 {% tabs %}
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```
+```xml
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
@@ -26,7 +26,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
 
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
-```
+```groovy
 plugins {
     id("java")
     id("org.openrewrite.rewrite") version("6.1.19")

@@ -24,7 +24,7 @@ The first step in changing your dependencies is knowing what they are. Let's fin
 Add the rewrite-maven-plugin to the pom.xml:
 
 {% code title="pom.xml" %}
-```markup
+```xml
 <!-- inside of project/build/plugins -->
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
@@ -99,7 +99,7 @@ recipeList:
 And set the `com.yourorg.UseSlf4jSimple` recipe as active in your pom.xml:
 
 {% code title="pom.xml" %}
-```markup
+```xml
 <!-- inside of project/build/plugins -->
 <plugin>
     <groupId>org.openrewrite.maven</groupId>

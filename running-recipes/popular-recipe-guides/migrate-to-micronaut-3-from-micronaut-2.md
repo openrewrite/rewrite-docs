@@ -7,7 +7,7 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
-```
+```groovy
 plugins {
     id("org.openrewrite.rewrite") version("6.1.19")
 }
@@ -30,7 +30,7 @@ dependencies {
 
 {% tab title="Maven" %}
 {% code title="pom.xml" %}
-```
+```xml
 <project>
   <build>
     <plugins>
@@ -47,7 +47,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>1.24.0</version>
+            <version>2.1.1</version>
           </dependency>
         </dependencies>
       </plugin>

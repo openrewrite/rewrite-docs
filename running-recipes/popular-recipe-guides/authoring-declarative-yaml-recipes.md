@@ -49,7 +49,7 @@ rewrite {
 
 {% tab title="Maven" %}
 {% code title="A/pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -115,7 +115,7 @@ rewrite {
 
 {% tab title="Maven" %}
 {% code title="B/pom.xml" %}
-```markup
+```xml
 <project>
   <dependencies>
     <dependency>
