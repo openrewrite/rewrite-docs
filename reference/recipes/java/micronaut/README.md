@@ -7,10 +7,12 @@ _Recipes for upgrading and patching [Micronaut](https://micronaut.io/) applicati
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Add Micronaut build plugins to 4.x](./updatebuildplugins.md)
+* [Add Test Resources Client dependency if needed](./addtestresourcesclientdependencyifneeded.md)
 * [Add `snakeyaml` dependency if needed](./addsnakeyamldependencyifneeded.md)
 * [Migrate from Micronaut 2.x to 3.x](./micronaut2to3migration.md)
 * [Migrate from Micronaut 3.x to 4.x](./micronaut3to4migration.md)
 * [Migrate the use of TaskExecutors with blocking IO](./updateblockingtaskexecutors.md)
+* [Remove unnecessary dependencies](./removeunnecessarydependencies.md)
 * [Remove withJansi Logback configuration](./removewithjansilogbackconfiguration.md)
 * [Update jakarta annotations dependency](./updatejakartaannotations.md)
 * [Update relocated Micronaut Security config properties](./updatesecuritypropertiesifneeded.md)
@@ -21,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Update the Micronaut Session support](./updatemicronautsession.md)
 * [Update the Micronaut Websocket support](./addmicronautwebsocketdependencyifneeded.md)
 * [Update the Micronaut version to 4.x](./updatebuildtomicronaut4version.md)
+* [Update the version of core annotation processors](./updatemavenannotationprocessors.md)
 * [Update to Micronaut 4.x platform BOM](./updatemicronautplatformbom.md)
 * [Update to Micronaut Email 2.x](./updatemicronautemail.md)
 * [Update to Micronaut Validation 4.x](./updatemicronautvalidation.md)
@@ -28,6 +31,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `@Introspected` to classes requiring a map representation](./typerequiresintrospection.md)
+* [Add `HttpRequest` type parameter for implemented interfaces](./addhttprequesttypeparameter.md)
 * [Add Maven annotation processor path](./addannotationprocessorpath.md)
 * [Change Maven annotation processor path](./changeannotationprocessorpath.md)
 * [Change factory method return types to reflect their resolved return type](./subclassesreturnedfromfactoriesnotinjectable.md)
@@ -38,6 +42,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find Micronaut yaml config](./findyamlconfig.md)
 * [Fix deprecated no-arg `ExceptionHandler` constructors](./fixdeprecatedexceptionhandlerconstructors.md)
 * [`Provider` implementation beans to Micronaut `@Factory`](./providerimplementationstomicronautfactories.md)
+* [Remove Maven annotation processor path](./removeannotationprocessorpath.md)
 * [Upgrade gradle.properties Micronaut version](./upgrademicronautgradlepropertiesversion.md)
 * [Upgrade `micronaut.version` Maven property](./upgrademicronautmavenpropertyversion.md)
 

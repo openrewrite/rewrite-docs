@@ -26,7 +26,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -96,7 +96,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Wrapping and braces](../java/format/wrappingandbraces.md)
 * [No C-style array declarations](../staticanalysis/usejavastylearraydeclarations.md)
 * [Format HCL code](../hcl/format/autoformat.md)
-* [Remove unnecessary parentheses](../java/cleanup/unnecessaryparentheses.md)
 * [Remove extra semicolons](../staticanalysis/removeextrasemicolons.md)
 
 {% endtab %}
@@ -118,7 +117,6 @@ recipeList:
   - org.openrewrite.java.format.WrappingAndBraces
   - org.openrewrite.staticanalysis.UseJavaStyleArrayDeclarations
   - org.openrewrite.hcl.format.AutoFormat
-  - org.openrewrite.java.cleanup.UnnecessaryParentheses
   - org.openrewrite.staticanalysis.RemoveExtraSemicolons
 
 ```

@@ -6,11 +6,11 @@ _Change a Gradle dependency coordinates._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.12/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.11
+* version: 8.1.12
 
 ## Options
 
@@ -20,7 +20,7 @@ _Change a Gradle dependency coordinates._
 | `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
 | `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. |
 | `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
-| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. |
+| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 
 
@@ -52,7 +52,7 @@ Now that `com.yourorg.ChangeDependencyExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -70,7 +70,7 @@ repositories {
 
 ## Contributors
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

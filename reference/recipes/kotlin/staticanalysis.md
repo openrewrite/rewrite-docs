@@ -21,7 +21,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -131,8 +131,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Rename methods named `hashcode`, `equal`, or `tostring`](../staticanalysis/renamemethodsnamedhashcodeequalortostring.md)
 * [Reformat private field names to camelCase](../staticanalysis/renameprivatefieldstocamelcase.md)
 * [Replace StringBuilder.append() with String](../staticanalysis/replacestringbuilderwithstring.md)
-* [Simplify boolean expression](../java/cleanup/simplifybooleanexpression.md)
-* [Simplify boolean return](../java/cleanup/simplifybooleanreturn.md)
 * [Static methods not final](../staticanalysis/staticmethodnotfinal.md)
 * [Use `String.equals()` on String literals](../staticanalysis/stringliteralequality.md)
 * [Unnecessary close in try-with-resources](../staticanalysis/unnecessarycloseintrywithresources.md)
@@ -200,8 +198,6 @@ recipeList:
   - org.openrewrite.staticanalysis.RenameMethodsNamedHashcodeEqualOrTostring
   - org.openrewrite.staticanalysis.RenamePrivateFieldsToCamelCase
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
-  - org.openrewrite.java.cleanup.SimplifyBooleanExpression
-  - org.openrewrite.java.cleanup.SimplifyBooleanReturn
   - org.openrewrite.staticanalysis.StaticMethodNotFinal
   - org.openrewrite.staticanalysis.StringLiteralEquality
   - org.openrewrite.staticanalysis.UnnecessaryCloseInTryWithResources

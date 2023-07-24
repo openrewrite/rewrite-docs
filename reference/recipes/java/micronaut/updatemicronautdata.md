@@ -6,22 +6,22 @@ _This recipe will make the necessary updates for using Micronaut Data with Micro
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.0
+* version: 2.1.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.1")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,7 +85,13 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](../../java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
+* [Remove XML Tag](../../xml/removexmltag.md)
+  * xPath: `/project/properties/micronaut.data.version`
+  * fileMatcher: `**/pom.xml`
+* [Rename package name](../../java/changepackage.md)
+  * oldPackageName: `javax.transaction`
+  * newPackageName: `jakarta.transaction`
+  * recursive: `true`
 * [Change type](../../java/changetype.md)
   * oldFullyQualifiedTypeName: `io.micronaut.data.jdbc.annotation.ColumnTransformer`
   * newFullyQualifiedTypeName: `io.micronaut.data.annotation.sql.ColumnTransformer`
@@ -112,7 +118,13 @@ name: org.openrewrite.java.micronaut.UpdateMicronautData
 displayName: Update the Micronaut Data library
 description: This recipe will make the necessary updates for using Micronaut Data with Micronaut Framework 4.
 recipeList:
-  - org.openrewrite.java.migrate.jakarta.JavaxTransactionMigrationToJakartaTransaction
+  - org.openrewrite.xml.RemoveXmlTag:
+      xPath: /project/properties/micronaut.data.version
+      fileMatcher: **/pom.xml
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: javax.transaction
+      newPackageName: jakarta.transaction
+      recursive: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.micronaut.data.jdbc.annotation.ColumnTransformer
       newFullyQualifiedTypeName: io.micronaut.data.annotation.sql.ColumnTransformer

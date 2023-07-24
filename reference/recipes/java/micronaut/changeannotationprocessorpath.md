@@ -6,11 +6,11 @@ _Change the groupId, artifactId, and version of a Maven annotation processor pat
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ChangeAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ChangeAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.0
+* version: 2.1.1
 
 ## Options
 
@@ -20,7 +20,7 @@ _Change the groupId, artifactId, and version of a Maven annotation processor pat
 | `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
 | `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. |
 | `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
-| `String` | newVersion | *Optional*. An exact version string for the annotation processor path. |
+| `String` | newVersion | *Optional*. An version string for the annotation processor path. Version strings that start with 'micronaut.' will be treated specially.  |
 | `List` | exclusions | *Optional*. A list of exclusions to apply to the annotation processor path in the format groupId:artifactId |
 
 
@@ -41,18 +41,18 @@ recipeList:
       oldArtifactId: my-deprecated-annotation-processor
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-annotation-processor
-      newVersion: ${micronaut.validation}
+      newVersion: micronaut.validation
       exclusions: io.micronaut:micronaut-inject
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeAnnotationProcessorPathExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.1.0 in your build file:
+Now that `com.yourorg.ChangeAnnotationProcessorPathExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.1.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -64,7 +64,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.1")
 }
 ```
 {% endcode %}
@@ -88,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.1</version>
           </dependency>
         </dependencies>
       </plugin>

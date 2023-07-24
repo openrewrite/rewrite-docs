@@ -21,7 +21,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -101,7 +101,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Hide utility class constructor](../staticanalysis/hideutilityclassconstructor.md)
 * [Fix missing braces](../staticanalysis/needbraces.md)
 * [Operator wrapping](../staticanalysis/operatorwrap.md)
-* [Remove unnecessary parentheses](../java/cleanup/unnecessaryparentheses.md)
 * [Replace calls to `Thread.run()` with `Thread.start()`](../staticanalysis/replacethreadrunwiththreadstart.md)
 * [Chain `StringBuilder.append()` calls](../staticanalysis/chainstringbuilderappendcalls.md)
 * [Replace StringBuilder.append() with String](../staticanalysis/replacestringbuilderwithstring.md)
@@ -133,7 +132,6 @@ recipeList:
   - org.openrewrite.staticanalysis.HideUtilityClassConstructor
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.OperatorWrap
-  - org.openrewrite.java.cleanup.UnnecessaryParentheses
   - org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart
   - org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString

@@ -6,11 +6,11 @@ _Change the name of a given type alias._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.1.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.2.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-kotlin
-* version: 1.1.9
+* version: 1.2.0
 
 ## Options
 
@@ -40,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RenameTypeAliasExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-kotlin:1.1.9 in your build file:
+Now that `com.yourorg.RenameTypeAliasExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-kotlin:1.2.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:1.1.9")
+    rewrite("org.openrewrite:rewrite-kotlin:1.2.0")
 }
 ```
 {% endcode %}
@@ -82,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-kotlin</artifactId>
-            <version>1.1.9</version>
+            <version>1.2.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,22 +6,22 @@ _This recipe will apply changes required for migrating from Micronaut 3 to Micro
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.0
+* version: 2.1.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.1")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -103,6 +103,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Update the Micronaut Security library](../../java/micronaut/updatemicronautsecurity.md)
 * [Update the Micronaut Data library](../../java/micronaut/updatemicronautdata.md)
 * [Remove withJansi Logback configuration](../../java/micronaut/removewithjansilogbackconfiguration.md)
+* [Remove unnecessary dependencies](../../java/micronaut/removeunnecessarydependencies.md)
+* [Add `HttpRequest` type parameter for implemented interfaces](../../java/micronaut/addhttprequesttypeparameter.md)
+* [Update the version of core annotation processors](../../java/micronaut/updatemavenannotationprocessors.md)
+* [Add Test Resources Client dependency if needed](../../java/micronaut/addtestresourcesclientdependencyifneeded.md)
 
 {% endtab %}
 
@@ -132,6 +136,10 @@ recipeList:
   - org.openrewrite.java.micronaut.UpdateMicronautSecurity
   - org.openrewrite.java.micronaut.UpdateMicronautData
   - org.openrewrite.java.micronaut.RemoveWithJansiLogbackConfiguration
+  - org.openrewrite.java.micronaut.RemoveUnnecessaryDependencies
+  - org.openrewrite.java.micronaut.AddHttpRequestTypeParameter
+  - org.openrewrite.java.micronaut.UpdateMavenAnnotationProcessors
+  - org.openrewrite.java.micronaut.AddTestResourcesClientDependencyIfNeeded
 
 ```
 {% endtab %}

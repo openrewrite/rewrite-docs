@@ -6,22 +6,22 @@ _This recipe will add jakarta validation dependency if needed, migrate from java
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.0
+* version: 2.1.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.1")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -90,6 +90,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newPackageName: `jakarta.validation`
   * recursive: `true`
 * [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency.md)
+  * groupId: `io.micronaut`
+  * artifactId: `micronaut-validation`
+* [Remove Maven annotation processor path](../../java/micronaut/removeannotationprocessorpath.md)
   * groupId: `io.micronaut`
   * artifactId: `micronaut-validation`
 * [Add Gradle or Maven dependency](../../java/dependencies/adddependency.md)
@@ -127,6 +130,9 @@ recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: io.micronaut
       artifactId: micronaut-validation
+  - org.openrewrite.java.micronaut.RemoveAnnotationProcessorPath:
+      groupId: io.micronaut
+      artifactId: micronaut-validation
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.micronaut.validation
       artifactId: micronaut-validation
@@ -148,6 +154,10 @@ recipeList:
 ```
 {% endtab %}
 {% endtabs %}
+
+## Contributors
+* [Jeremy Grelle](mailto:grellej@unityfoundation.io)
+
 
 ## See how this recipe works across multiple open-source repositories
 

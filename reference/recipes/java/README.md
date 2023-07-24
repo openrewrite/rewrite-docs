@@ -4,7 +4,6 @@ _Basic building blocks for transforming Java code._
 
 ## Categories
 
-* [Cleanup](/reference/recipes/java/cleanup)
 * [Dependencies](/reference/recipes/java/dependencies)
 * [Format](/reference/recipes/java/format)
 * [JHipster](/reference/recipes/java/jhipster)

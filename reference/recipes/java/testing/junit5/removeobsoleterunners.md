@@ -93,7 +93,7 @@ Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined activate it
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {

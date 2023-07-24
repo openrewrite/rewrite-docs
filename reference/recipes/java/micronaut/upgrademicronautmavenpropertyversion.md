@@ -6,11 +6,11 @@ _Set the maven micronaut.version property according to a node-style semver selec
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.0
+* version: 2.1.1
 
 ## Options
 
@@ -23,13 +23,10 @@ _Set the maven micronaut.version property according to a node-style semver selec
 ###### Parameters
 | Parameter | Value |
 | -- | -- |
-|newVersion|`~2.1`|
+|newVersion|`2.x`|
 
 
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
+###### Unchanged
 {% code title="pom.xml" %}
 ```xml
     <project>
@@ -43,38 +40,6 @@ _Set the maven micronaut.version property according to a node-style semver selec
     </project>
 ```
 {% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-    <project>
-        <modelVersion>4.0.0</modelVersion>
-        <groupId>com.mycompany.app</groupId>
-        <artifactId>my-app</artifactId>
-        <version>1</version>
-        <properties>
-            <micronaut.version>2.1.4</micronaut.version>
-        </properties>
-    </project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -7,1 +7,1 @@
-        <version>1</version>
-        <properties>
--           <micronaut.version>2.0.3</micronaut.version>
-+           <micronaut.version>2.1.4</micronaut.version>
-        </properties>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -94,13 +59,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.1.0 in your build file:
+Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.1.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -112,7 +77,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.1")
 }
 ```
 {% endcode %}
@@ -136,7 +101,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.1</version>
           </dependency>
         </dependencies>
       </plugin>

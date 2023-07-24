@@ -21,7 +21,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -132,7 +132,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Reformat private field names to camelCase](../../staticanalysis/renameprivatefieldstocamelcase.md)
 * [Use method references in lambda](../../staticanalysis/replacelambdawithmethodreference.md)
 * [Replace StringBuilder.append() with String](../../staticanalysis/replacestringbuilderwithstring.md)
-* [Simplify boolean expression](../../java/cleanup/simplifybooleanexpression.md)
 * [Static methods not final](../../staticanalysis/staticmethodnotfinal.md)
 * [Use `String.equals()` on String literals](../../staticanalysis/stringliteralequality.md)
 * [Unnecessary close in try-with-resources](../../staticanalysis/unnecessarycloseintrywithresources.md)
@@ -202,7 +201,6 @@ recipeList:
   - org.openrewrite.staticanalysis.RenamePrivateFieldsToCamelCase
   - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
-  - org.openrewrite.java.cleanup.SimplifyBooleanExpression
   - org.openrewrite.staticanalysis.StaticMethodNotFinal
   - org.openrewrite.staticanalysis.StringLiteralEquality
   - org.openrewrite.staticanalysis.UnnecessaryCloseInTryWithResources

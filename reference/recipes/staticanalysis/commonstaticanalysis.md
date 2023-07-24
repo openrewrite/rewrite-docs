@@ -21,7 +21,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.18")
+    id("org.openrewrite.rewrite") version("6.1.19")
 }
 
 rewrite {
@@ -134,13 +134,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Reformat private field names to camelCase](../staticanalysis/renameprivatefieldstocamelcase.md)
 * [Use method references in lambda](../staticanalysis/replacelambdawithmethodreference.md)
 * [Replace StringBuilder.append() with String](../staticanalysis/replacestringbuilderwithstring.md)
-* [Simplify boolean expression](../java/cleanup/simplifybooleanexpression.md)
-* [Simplify boolean return](../java/cleanup/simplifybooleanreturn.md)
 * [Static methods not final](../staticanalysis/staticmethodnotfinal.md)
 * [Use `String.equals()` on String literals](../staticanalysis/stringliteralequality.md)
 * [Unnecessary close in try-with-resources](../staticanalysis/unnecessarycloseintrywithresources.md)
 * [Unnecessary explicit type arguments](../staticanalysis/unnecessaryexplicittypearguments.md)
-* [Remove unnecessary parentheses](../java/cleanup/unnecessaryparentheses.md)
 * [Remove Nullable and CheckForNull annotations from primitives](../staticanalysis/unnecessaryprimitiveannotations.md)
 * [Upper case literal suffixes](../staticanalysis/uppercaseliteralsuffixes.md)
 * [Use diamond operator](../staticanalysis/usediamondoperator.md)
@@ -208,13 +205,10 @@ recipeList:
   - org.openrewrite.staticanalysis.RenamePrivateFieldsToCamelCase
   - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
-  - org.openrewrite.java.cleanup.SimplifyBooleanExpression
-  - org.openrewrite.java.cleanup.SimplifyBooleanReturn
   - org.openrewrite.staticanalysis.StaticMethodNotFinal
   - org.openrewrite.staticanalysis.StringLiteralEquality
   - org.openrewrite.staticanalysis.UnnecessaryCloseInTryWithResources
   - org.openrewrite.staticanalysis.UnnecessaryExplicitTypeArguments
-  - org.openrewrite.java.cleanup.UnnecessaryParentheses
   - org.openrewrite.staticanalysis.UnnecessaryPrimitiveAnnotations
   - org.openrewrite.staticanalysis.UpperCaseLiteralSuffixes
   - org.openrewrite.staticanalysis.UseDiamondOperator
