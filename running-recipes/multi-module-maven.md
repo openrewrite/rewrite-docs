@@ -6,6 +6,7 @@ There is currently an [open issue](https://github.com/openrewrite/rewrite-maven-
 
 In the meantime, one way to work around this is to add a profile on the parent POM:
 
+{% code title="pom.xml" %}
 ```xml
 <profile>
   <id>openrewrite</id>
@@ -26,5 +27,6 @@ In the meantime, one way to work around this is to add a profile on the parent P
   </build>
 </profile>
 ```
+{% endcode %}
 
 You can then run OpenRewrite from any submodule using this command: `mvn -Popenrewrite rewrite:run`. 
