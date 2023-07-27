@@ -124,10 +124,11 @@ recipeList:
 * [Tim te Beek](mailto:tim@moderne.io)
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
 * Ties van de Ven
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
+* Peter Puškár
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * [Joan Viladrosa](mailto:joan@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)

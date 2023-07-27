@@ -6,11 +6,11 @@ _List out the contents of each unique `GitProvenance` marker in the set of sourc
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindGitProvenance.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindGitProvenance.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.13/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.1.12
+* version: 8.1.13
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 

@@ -203,6 +203,7 @@ recipeList:
 * [Kun Li](mailto:kun@moderne.io)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * Ties van de Ven
+* Peter Puškár
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * [Joan Viladrosa](mailto:joan@moderne.io)
 * Josh Soref

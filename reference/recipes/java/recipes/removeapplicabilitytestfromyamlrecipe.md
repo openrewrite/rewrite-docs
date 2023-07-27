@@ -10,11 +10,11 @@ _Remove the applicability test from the YAML recipe when migrating from Rewrite 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/RemoveApplicabilityTestFromYamlRecipe.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/RemoveApplicabilityTestFromYamlRecipe.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.13/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.12
+* version: 8.1.13
 
 
 ## Usage

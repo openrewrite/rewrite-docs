@@ -6,11 +6,11 @@ _Visualize the control flow of a Java program._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.3/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.0.2
+* version: 2.0.3
 
 ## Options
 
@@ -36,7 +36,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ControlFlowVisualizationExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.2 in your build file:
+Now that `com.yourorg.ControlFlowVisualizationExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.2")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.3")
 }
 ```
 {% endcode %}
@@ -78,7 +78,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,11 +6,11 @@ _Updates the expiration date for OWASP suppressions having a matching cve tag. F
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.1.13/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.1.12
+* version: 8.1.13
 
 ## Options
 

@@ -11,11 +11,11 @@ _Applies best practices to tests._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.7
+* version: 2.0.8
 
 ## Examples
 ##### Example 1
@@ -137,7 +137,7 @@ import org.junit.Before;
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -155,7 +155,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
 }
 ```
 {% endcode %}
@@ -179,7 +179,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.7</version>
+            <version>2.0.8</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -213,6 +213,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Remove `public` visibility of JUnit 5 tests](../../../java/testing/cleanup/testsshouldnotbepublic.md)
 * [Add missing @ParameterizedTest annotation when @ValueSource is used or replace @Test with @ParameterizedTest](../../../java/testing/junit5/addparameterizedtestannotation.md)
 * [Remove duplicates uses of @TestTemplate implementations for a single method](../../../java/testing/junit5/removeduplicatetesttemplates.md)
+* [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -> { ... })`](../../../java/testing/junit5/removetrycatchfailblocks.md)
 
 {% endtab %}
 
@@ -233,6 +234,7 @@ recipeList:
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic:
   - org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation
   - org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates
+  - org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks
 
 ```
 {% endtab %}
@@ -246,20 +248,21 @@ recipeList:
 * [Sam Snyder](mailto:sam@moderne.io)
 * Yeikel
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Aleksandar A Simpson](mailto:alek@asu.me)
 * [Greg Adams](mailto:gadams@gmail.com)
 * [Tim te Beek](mailto:tim.te.beek@jdriven.com)
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * [Greg Adams](mailto:greg@moderne.io)
-* [Aleksandar A Simpson](mailto:alek@asu.me)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * Tyler Van Gorder
 * [Tim te Beek](mailto:tim@moderne.io)
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * Ties van de Ven
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
+* Peter Puškár
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * [Joan Viladrosa](mailto:joan@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)

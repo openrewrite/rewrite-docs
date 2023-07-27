@@ -18,6 +18,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use Mockito JUnit Jupiter extension](./usemockitoextension.md)
 * [Use OkHttp 3 MockWebServer for JUnit 5](./upgradeokhttpmockwebserver.md)
 * [Use Vert.x JUnit 5 Extension](./vertxunittovertxjunit5.md)
+* [Use XMLUnit Legacy for JUnit 5](./usexmlunitlegacy.md)
 * [Use wiremock extension](./usewiremockextension.md)
 
 ## Recipes

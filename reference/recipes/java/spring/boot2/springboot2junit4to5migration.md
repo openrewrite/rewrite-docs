@@ -156,11 +156,12 @@ recipeList:
 * nbruno
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * Kun Li
 * Ties van de Ven
+* Peter Puškár
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * [Joan Viladrosa](mailto:joan@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)

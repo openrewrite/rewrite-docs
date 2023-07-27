@@ -6,11 +6,11 @@ _Change a Gradle dependency coordinates._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.13/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.12
+* version: 8.1.13
 
 ## Options
 
@@ -22,6 +22,7 @@ _Change a Gradle dependency coordinates._
 | `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
 | `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
+| `Boolean` | overrideManagedVersion | *Optional*. If the old dependency has a managed version, this flag can be used to explicitly set the version on the new dependency. WARNING: No check is done on the NEW dependency to verify if it is managed, it relies on whether the OLD dependency had a managed version. The default for this flag is `false`. |
 
 
 ## Usage
@@ -43,6 +44,7 @@ recipeList:
       newArtifactId: rewrite-testing-frameworks
       newVersion: 29.X
       versionPattern: '-jre'
+      overrideManagedVersion: null
 ```
 {% endcode %}
 
@@ -70,6 +72,7 @@ repositories {
 
 ## Contributors
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Joan Viladrosa](mailto:joan@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 

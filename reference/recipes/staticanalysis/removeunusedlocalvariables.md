@@ -10,11 +10,11 @@ _If a local variable is declared but not used, it is dead code and should be rem
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveUnusedLocalVariables.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveUnusedLocalVariables.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.3
+* version: 1.0.4
 
 ## Options
 
@@ -27,7 +27,7 @@ _If a local variable is declared but not used, it is dead code and should be rem
 ###### Parameters
 | Parameter | Value |
 | -- | -- |
-|ignoreVariablesNamed|`J.NewArray(padding=org.openrewrite.java.tree.J$NewArray$Padding@313e9d89, id=25464524-22aa-4bcf-8351-f378e54c6502, prefix=Space(comments=<0 comments>, whitespace=''), markers=Markers(id=8c776673-ea7d-46a0-b8e4-e9fea2fd05ab, markers=[]), typeExpression=String, dimensions=[[0]], initializer=null, type=java.lang.String[])`|
+|ignoreVariablesNamed|`J.NewArray(padding=org.openrewrite.java.tree.J$NewArray$Padding@464db881, id=3eb308f0-25e7-467f-b2b5-36e427fce27d, prefix=Space(comments=<0 comments>, whitespace=''), markers=Markers(id=b5e7edb4-5453-424e-901f-970a70cfed33, markers=[]), typeExpression=String, dimensions=[[0]], initializer=null, type=java.lang.String[])`|
 
 
 {% tabs %}
@@ -77,7 +77,7 @@ class Test {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -95,7 +95,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.3")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
 }
 ```
 {% endcode %}
@@ -119,7 +119,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
           </dependency>
         </dependencies>
       </plugin>

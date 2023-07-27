@@ -10,11 +10,11 @@ _Primitive wrappers should not be instantiated only for `#toString()` or `#compa
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/NoPrimitiveWrappersForToStringOrCompareTo.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/NoPrimitiveWrappersForToStringOrCompareTo.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.3
+* version: 1.0.4
 
 ## Example
 
@@ -81,7 +81,7 @@ class T {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -99,7 +99,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.3")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
 }
 ```
 {% endcode %}
@@ -123,7 +123,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -153,6 +153,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

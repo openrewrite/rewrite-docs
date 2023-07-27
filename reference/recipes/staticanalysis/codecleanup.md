@@ -6,16 +6,16 @@ _Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expre
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.3
+* version: 1.0.4
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.3")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -101,6 +101,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Hide utility class constructor](../staticanalysis/hideutilityclassconstructor.md)
 * [Fix missing braces](../staticanalysis/needbraces.md)
 * [Operator wrapping](../staticanalysis/operatorwrap.md)
+* [Remove unnecessary parentheses](../staticanalysis/unnecessaryparentheses.md)
 * [Replace calls to `Thread.run()` with `Thread.start()`](../staticanalysis/replacethreadrunwiththreadstart.md)
 * [Chain `StringBuilder.append()` calls](../staticanalysis/chainstringbuilderappendcalls.md)
 * [Replace StringBuilder.append() with String](../staticanalysis/replacestringbuilderwithstring.md)
@@ -132,6 +133,7 @@ recipeList:
   - org.openrewrite.staticanalysis.HideUtilityClassConstructor
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.OperatorWrap
+  - org.openrewrite.staticanalysis.UnnecessaryParentheses
   - org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart
   - org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
@@ -143,12 +145,13 @@ recipeList:
 
 ## Contributors
 * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+* [Kun Li](mailto:kun@moderne.io)
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
-* [Kun Li](mailto:kun@moderne.io)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Knut Wannheden](mailto:knut.wannheden@mobi.ch)
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Greg Adams](mailto:greg@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 * Josh Soref

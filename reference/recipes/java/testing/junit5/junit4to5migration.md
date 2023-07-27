@@ -11,11 +11,11 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.7
+* version: 2.0.8
 
 ## Examples
 ##### Example 1
@@ -241,7 +241,7 @@ import org.mockito.Mock;
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -259,7 +259,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
 }
 ```
 {% endcode %}
@@ -283,7 +283,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.7</version>
+            <version>2.0.8</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -326,6 +326,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension.md)
 * [Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`](../../../java/testing/junit5/usetestmethodorder.md)
 * [Migrate JUnit 4 `TestCase` to JUnit Jupiter](../../../java/testing/junit5/migratejunittestcase.md)
+* [Change method name](../../../java/changemethodname.md)
+  * methodPattern: `org.junit.Assert assertEquals(.., Object[], Object[])`
+  * newMethodName: `assertArrayEquals`
 * [JUnit 4 `Assert` To JUnit Jupiter `Assertions`](../../../java/testing/junit5/asserttoassertions.md)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](../../../java/testing/junit5/categorytotag.md)
 * [Cleanup JUnit imports](../../../java/testing/junit5/cleanupjunitimports.md)
@@ -344,6 +347,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [JUnit 5 inner test classes should be annotated with `@Nested`](../../../java/testing/junit5/addmissingnested.md)
 * [Add `org.hamcrest:hamcrest` if it is used.](../../../java/testing/hamcrest/addhamcrestifused.md)
 * [Use OkHttp 3 MockWebServer for JUnit 5](../../../java/testing/junit5/upgradeokhttpmockwebserver.md)
+* [Use XMLUnit Legacy for JUnit 5](../../../java/testing/junit5/usexmlunitlegacy.md)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `junit`
   * artifactId: `junit`
@@ -405,6 +409,9 @@ recipeList:
   - org.openrewrite.java.testing.junit5.UseMockitoExtension
   - org.openrewrite.java.testing.junit5.UseTestMethodOrder
   - org.openrewrite.java.testing.junit5.MigrateJUnitTestCase
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.junit.Assert assertEquals(.., Object[], Object[])
+      newMethodName: assertArrayEquals
   - org.openrewrite.java.testing.junit5.AssertToAssertions
   - org.openrewrite.java.testing.junit5.CategoryToTag
   - org.openrewrite.java.testing.junit5.CleanupJUnitImports
@@ -423,6 +430,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.AddMissingNested
   - org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
   - org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer
+  - org.openrewrite.java.testing.junit5.UseXMLUnitLegacy
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: junit
       artifactId: junit
@@ -476,9 +484,10 @@ recipeList:
 * [Tim te Beek](mailto:tim@moderne.io)
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
+* Peter Puškár
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * [Joan Viladrosa](mailto:joan@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)

@@ -2,7 +2,7 @@
 
 **org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks**
 
-_Replace `try-catch` blocks where `catch` merely contains a `fail(..)` statement with `Assertions.assertDoesNotThrow(() -> { ... })`._
+_Replace `try-catch` blocks where `catch` merely contains a `fail()` for `fail(String)` statement with `Assertions.assertDoesNotThrow(() -> { ... })`._
 
 ### Tags
 
@@ -10,11 +10,11 @@ _Replace `try-catch` blocks where `catch` merely contains a `fail(..)` statement
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveTryCatchFailBlocks.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveTryCatchFailBlocks.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.7
+* version: 2.0.8
 
 ## Example
 
@@ -33,7 +33,7 @@ class MyTest {
     public void testMethod() {
         try {
             int divide = 50 / 0;
-        }catch (ArithmeticException e) {
+        } catch (ArithmeticException e) {
             Assertions.fail(e.getMessage());
         }
     }
@@ -73,7 +73,7 @@ class MyTest {
 @@ -9,3 +9,1 @@
         try {
             int divide = 50 / 0;
--       }catch (ArithmeticException e) {
+-       } catch (ArithmeticException e) {
 -           Assertions.fail(e.getMessage());
 -       }
 +       });
@@ -86,7 +86,7 @@ class MyTest {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -104,7 +104,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
 }
 ```
 {% endcode %}
@@ -128,7 +128,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.7</version>
+            <version>2.0.8</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -153,8 +153,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
-* [AlekSimpson](mailto:alek@asu.me)
-* [Tim te Beek](mailto:tim@moderne.io)
+* [Aleksandar A Simpson](mailto:alek@asu.me)
 
 
 ## See how this recipe works across multiple open-source repositories

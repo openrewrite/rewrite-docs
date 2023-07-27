@@ -6,16 +6,16 @@ _Resolve common static analysis issues discovered through 3rd party tools._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.3
+* version: 1.0.4
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.3")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.3</version>
+            <version>1.0.4</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -85,7 +85,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add `serialVersionUID` to a `Serializable` class when missing](../staticanalysis/addserialversionuidtoserializable.md)
 * [Atomic Boolean, Integer, and Long equality checks compare their values](../staticanalysis/atomicprimitiveequalsusesget.md)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](../staticanalysis/bigdecimalroundingconstantstoenums.md)
 * [Boolean checks should not be inverted](../staticanalysis/booleanchecksnotinverted.md)
@@ -134,15 +133,17 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Reformat private field names to camelCase](../staticanalysis/renameprivatefieldstocamelcase.md)
 * [Use method references in lambda](../staticanalysis/replacelambdawithmethodreference.md)
 * [Replace StringBuilder.append() with String](../staticanalysis/replacestringbuilderwithstring.md)
+* [Simplify boolean expression](../staticanalysis/simplifybooleanexpression.md)
+* [Simplify boolean return](../staticanalysis/simplifybooleanreturn.md)
 * [Static methods not final](../staticanalysis/staticmethodnotfinal.md)
 * [Use `String.equals()` on String literals](../staticanalysis/stringliteralequality.md)
 * [Unnecessary close in try-with-resources](../staticanalysis/unnecessarycloseintrywithresources.md)
 * [Unnecessary explicit type arguments](../staticanalysis/unnecessaryexplicittypearguments.md)
+* [Remove unnecessary parentheses](../staticanalysis/unnecessaryparentheses.md)
 * [Remove Nullable and CheckForNull annotations from primitives](../staticanalysis/unnecessaryprimitiveannotations.md)
 * [Upper case literal suffixes](../staticanalysis/uppercaseliteralsuffixes.md)
 * [Use diamond operator](../staticanalysis/usediamondoperator.md)
 * [No C-style array declarations](../staticanalysis/usejavastylearraydeclarations.md)
-* [Use lambda expressions instead of anonymous classes](../staticanalysis/uselambdaforfunctionalinterface.md)
 * [Prefer `while` over `for` loops](../staticanalysis/whileinsteadoffor.md)
 * [Write octal values as decimal](../staticanalysis/writeoctalvaluesasdecimal.md)
 
@@ -156,7 +157,6 @@ name: org.openrewrite.staticanalysis.CommonStaticAnalysis
 displayName: Common static analysis issues
 description: Resolve common static analysis issues discovered through 3rd party tools.
 recipeList:
-  - org.openrewrite.staticanalysis.AddSerialVersionUidToSerializable
   - org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet
   - org.openrewrite.staticanalysis.BigDecimalRoundingConstantsToEnums
   - org.openrewrite.staticanalysis.BooleanChecksNotInverted
@@ -205,15 +205,17 @@ recipeList:
   - org.openrewrite.staticanalysis.RenamePrivateFieldsToCamelCase
   - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
+  - org.openrewrite.staticanalysis.SimplifyBooleanExpression
+  - org.openrewrite.staticanalysis.SimplifyBooleanReturn
   - org.openrewrite.staticanalysis.StaticMethodNotFinal
   - org.openrewrite.staticanalysis.StringLiteralEquality
   - org.openrewrite.staticanalysis.UnnecessaryCloseInTryWithResources
   - org.openrewrite.staticanalysis.UnnecessaryExplicitTypeArguments
+  - org.openrewrite.staticanalysis.UnnecessaryParentheses
   - org.openrewrite.staticanalysis.UnnecessaryPrimitiveAnnotations
   - org.openrewrite.staticanalysis.UpperCaseLiteralSuffixes
   - org.openrewrite.staticanalysis.UseDiamondOperator
   - org.openrewrite.staticanalysis.UseJavaStyleArrayDeclarations
-  - org.openrewrite.staticanalysis.UseLambdaForFunctionalInterface
   - org.openrewrite.staticanalysis.WhileInsteadOfFor
   - org.openrewrite.staticanalysis.WriteOctalValuesAsDecimal
 
@@ -225,28 +227,27 @@ recipeList:
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * Patrick Way
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 * [Patrick](mailto:patway99@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
-* [Kun Li](mailto:kun@moderne.io)
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
-* Kun Li
 * Guliver
-* Tyler Van Gorder
-* Tyler Van Gorder
+* Kun Li
 * [Peter Streef](mailto:p.streef@gmail.com)
+* Tyler Van Gorder
 * Josh Soref
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* [Knut Wannheden](mailto:knut.wannheden@mobi.ch)
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 * [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl)
+* [Knut Wannheden](mailto:knut.wannheden@mobi.ch)
 * [xshen053](mailto:shenxiaxi26@gmail.com)
 * [Greg Adams](mailto:greg@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 * [pstreef](mailto:p.streef@gmail.com)
-* mrbitrary
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * [Rick Ossendrijver](mailto:rick.ossendrijver@gmail.com)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)

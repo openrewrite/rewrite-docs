@@ -6,11 +6,11 @@ _Find Gradle wrappers._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.1.13/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.1.12
+* version: 8.1.13
 
 ## Options
 
@@ -19,6 +19,17 @@ _Find Gradle wrappers._
 | `String` | version | *Optional*. A version expression representing the versions to search for |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `String` | distribution | *Optional*. The distribution of Gradle to find. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. |
+
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+
+### Gradle wrappers in use
+
+_Gradle wrappers in use._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Wrapper version | The version of the Gradle wrapper in use. |
+| Wrapper distribution | The distribution type of the Gradle wrapper in use. |
 
 
 ## Usage

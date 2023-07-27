@@ -9,8 +9,11 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Convert Hamcrest `allOf(Matcher...)` to individual `assertThat` statements](./flattenallof.md)
 * [Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ](./assertthatbooleantoassertj.md)
+* [Migrate Hamcrest `is(Object)` to AssertJ](./hamcrestismatchertoassertj.md)
 * [Migrate Hamcrest `not(Matcher)` to AssertJ](./hamcrestnotmatchertoassertj.md)
+* [Migrate `anyOf` Hamcrest Matcher to AssertJ](./hamcrestanyoftoassertj.md)
 * [Migrate from Hamcrest `Matcher` to AssertJ](./hamcrestmatchertoassertj.md)
 * [Remove Hamcrest `is(Matcher)`](./removeismatcher.md)
 

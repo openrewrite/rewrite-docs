@@ -6,11 +6,11 @@ _Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest e
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/JUnitParamsRunnerToParameterized.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/JUnitParamsRunnerToParameterized.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.7
+* version: 2.0.8
 
 ## Example
 
@@ -134,7 +134,7 @@ public class PersonTests {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -152,7 +152,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
 }
 ```
 {% endcode %}
@@ -176,7 +176,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.7</version>
+            <version>2.0.8</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -207,6 +207,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Patrick](mailto:patway99@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -12,11 +12,11 @@ _Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/hamcrest.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/hamcrest.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.7
+* version: 2.0.8
 
 ## Examples
 ##### Example 1
@@ -103,6 +103,81 @@ class ATest {
 {% code title="ATest.java" %}
 ```java
 import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasLength;
+
+class ATest {
+    @Test
+    void test() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertThat(str1, allOf(equalTo(str2), hasLength(12)));
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="ATest.java" %}
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class ATest {
+    @Test
+    void test() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertThat(str1).isEqualTo(str2);
+        assertThat(str1).hasSize(12);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- ATest.java
++++ ATest.java
+@@ -3,4 +3,1 @@
+import org.junit.jupiter.api.Test;
+
+-import static org.hamcrest.MatcherAssert.assertThat;
+-import static org.hamcrest.Matchers.allOf;
+-import static org.hamcrest.Matchers.equalTo;
+-import static org.hamcrest.Matchers.hasLength;
++import static org.assertj.core.api.Assertions.assertThat;
+
+@@ -13,1 +10,2 @@
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+-       assertThat(str1, allOf(equalTo(str2), hasLength(12)));
++       assertThat(str1).isEqualTo(str2);
++       assertThat(str1).hasSize(12);
+    }
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+---
+
+##### Example 3
+
+
+{% tabs %}
+{% tab title="ATest.java" %}
+
+###### Before
+{% code title="ATest.java" %}
+```java
+import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.equalTo;
@@ -165,10 +240,85 @@ class ATest {
 {% endtab %}
 {% endtabs %}
 
+---
+
+##### Example 4
+
+
+{% tabs %}
+{% tab title="ATest.java" %}
+
+###### Before
+{% code title="ATest.java" %}
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasLength;
+
+class ATest {
+    @Test
+    void test() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertThat(str1, allOf(equalTo(str2), hasLength(12)));
+    }
+}
+```
+{% endcode %}
+
+###### After
+{% code title="ATest.java" %}
+```java
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class ATest {
+    @Test
+    void test() {
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+        assertThat(str1).isEqualTo(str2);
+        assertThat(str1).hasSize(12);
+    }
+}
+```
+{% endcode %}
+
+{% endtab %}
+{% tab title="Diff" %}
+{% code %}
+```diff
+--- ATest.java
++++ ATest.java
+@@ -3,4 +3,1 @@
+import org.junit.jupiter.api.Test;
+
+-import static org.hamcrest.MatcherAssert.assertThat;
+-import static org.hamcrest.Matchers.allOf;
+-import static org.hamcrest.Matchers.equalTo;
+-import static org.hamcrest.Matchers.hasLength;
++import static org.assertj.core.api.Assertions.assertThat;
+
+@@ -13,1 +10,2 @@
+        String str1 = "Hello world!";
+        String str2 = "Hello world!";
+-       assertThat(str1, allOf(equalTo(str2), hasLength(12)));
++       assertThat(str1).isEqualTo(str2);
++       assertThat(str1).hasSize(12);
+    }
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -186,7 +336,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
 }
 ```
 {% endcode %}
@@ -210,7 +360,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.7</version>
+            <version>2.0.8</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -239,6 +389,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Remove Hamcrest `is(Matcher)`](../../../java/testing/hamcrest/removeismatcher.md)
+* [Migrate Hamcrest `is(Object)` to AssertJ](../../../java/testing/hamcrest/hamcrestismatchertoassertj.md)
+* [Convert Hamcrest `allOf(Matcher...)` to individual `assertThat` statements](../../../java/testing/hamcrest/flattenallof.md)
+* [Migrate `anyOf` Hamcrest Matcher to AssertJ](../../../java/testing/hamcrest/hamcrestanyoftoassertj.md)
 * [Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ](../../../java/testing/hamcrest/assertthatbooleantoassertj.md)
 * [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj.md)
   * matcher: `comparesEqualTo`
@@ -279,6 +432,21 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj.md)
   * matcher: `isA`
   * assertion: `isInstanceOf`
+* [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj.md)
+  * matcher: `arrayContaining`
+  * assertion: `containsExactly`
+* [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj.md)
+  * matcher: `arrayContainingInAnyOrder`
+  * assertion: `containsExactlyInAnyOrder`
+* [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj.md)
+  * matcher: `arrayWithSize`
+  * assertion: `hasSize`
+* [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj.md)
+  * matcher: `emptyArray`
+  * assertion: `isEmpty`
+* [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj.md)
+  * matcher: `hasItemInArray`
+  * assertion: `contains`
 * [Migrate from Hamcrest `Matcher` to AssertJ](../../../java/testing/hamcrest/hamcrestmatchertoassertj.md)
   * matcher: `blankString`
   * assertion: `isBlank`
@@ -442,6 +610,9 @@ tags:
   - hamcrest
 recipeList:
   - org.openrewrite.java.testing.hamcrest.RemoveIsMatcher
+  - org.openrewrite.java.testing.hamcrest.HamcrestIsMatcherToAssertJ
+  - org.openrewrite.java.testing.hamcrest.FlattenAllOf
+  - org.openrewrite.java.testing.hamcrest.HamcrestAnyOfToAssertJ
   - org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ
   - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
       matcher: comparesEqualTo
@@ -482,6 +653,21 @@ recipeList:
   - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
       matcher: isA
       assertion: isInstanceOf
+  - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
+      matcher: arrayContaining
+      assertion: containsExactly
+  - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
+      matcher: arrayContainingInAnyOrder
+      assertion: containsExactlyInAnyOrder
+  - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
+      matcher: arrayWithSize
+      assertion: hasSize
+  - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
+      matcher: emptyArray
+      assertion: isEmpty
+  - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
+      matcher: hasItemInArray
+      assertion: contains
   - org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ:
       matcher: blankString
       assertion: isBlank
@@ -636,8 +822,8 @@ recipeList:
 
 ## Contributors
 * [Tim te Beek](mailto:tim@moderne.io)
-* [Aleksandar A Simpson](mailto:alek@asu.me)
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [Aleksandar A Simpson](mailto:alek@asu.me)
 
 
 ## See how this recipe works across multiple open-source repositories

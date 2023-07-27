@@ -10,11 +10,11 @@ _Find secrets stored in plain text in code._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/find-plaintext-secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/find-plaintext-secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.13/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.12
+* version: 8.1.13
 
 
 ## Usage

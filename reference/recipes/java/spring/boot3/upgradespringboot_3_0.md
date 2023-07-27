@@ -209,6 +209,7 @@ recipeList:
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * Aakarshit Uppal
 * Ties van de Ven
+* Peter Puškár
 * Josh Soref
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * [Joan Viladrosa](mailto:joan@moderne.io)

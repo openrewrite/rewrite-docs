@@ -6,11 +6,11 @@ _Determine the order in which dependencies will be resolved for each `pom.xml` b
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindRepositoryOrder.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindRepositoryOrder.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.13/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.12
+* version: 8.1.13
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
