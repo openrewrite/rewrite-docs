@@ -309,8 +309,10 @@ If you choose to use the `rewrite-recipe-bom`, you won't have to worry about spe
 
 If you choose to not use `rewrite-recipe-bom`, you'll need to specify the version of each rewrite recipe module you use.
 
-Presuming you chose to use the `rewrite-recipe-bom`, your `build.gradle` file should look similar to this:
+Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should look similar to this:
 
+{% tabs %}
+{% tab title="Groovy" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -335,6 +337,34 @@ dependencies {
 }
 ```
 {% endcode %}
+{% endtab %}
+
+{% tab title="Kotlin" %}
+{% code title="build.gradle.kts" %}
+plugins {
+    `java-library`
+    `maven-publish`
+    id("org.openrewrite.rewrite") version "6.1.19"
+}
+
+rewrite {
+    activeRecipe(
+        "org.openrewrite.java.OrderImports",
+        "com.yourorg.VetToVeterinary",
+        "org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration"
+    )
+}
+
+dependencies {
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.1.0"))
+    rewrite("org.openrewrite.recipe:rewrite-spring")
+
+    // Other project dependencies
+}
+
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 To check that everything worked correctly, run the command `./gradlew rewriteRun`. You should see that the project has been upgraded to Spring Boot 2 and all of the test classes have been updated to JUnit 5.
 
