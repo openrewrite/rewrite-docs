@@ -341,6 +341,7 @@ dependencies {
 
 {% tab title="Kotlin" %}
 {% code title="build.gradle.kts" %}
+```kotlin
 plugins {
     `java-library`
     `maven-publish`
@@ -361,7 +362,7 @@ dependencies {
 
     // Other project dependencies
 }
-
+```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
