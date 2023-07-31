@@ -309,7 +309,7 @@ If you choose to use the `rewrite-recipe-bom`, you won't have to worry about spe
 
 If you choose to not use `rewrite-recipe-bom`, you'll need to specify the version of each rewrite recipe module you use.
 
-Presuming you chose to use the `rewrite-recipe-bom`, your gradle setup should look similar to this:
+Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should look similar to this:
 
 {% tabs %}
 {% tab title="Groovy" %}
