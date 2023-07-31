@@ -298,7 +298,7 @@ After doing that, your `pom.xml` file should look similar to this:
 
 To double-check that everything is working, run the command `./mvnw rewrite:run`. Your project should be upgraded to Spring Boot 2 and all of the test classes should be updated to JUnit 5. Your `pom.xml` file will also have had its Spring dependencies updated, the JUnit 4 dependency removed, and the JUnit 5 dependency added.
 
-__note__ here [bill of materials (BOM) dependency](https://docs.gradle.org/current/userguide/platforms.html#sub:bom\_import) is not mentioned for `dependencyManagement` as we can not use it to version control the OpenRewrite plugin dependencies, unlike with the Gradle setup below.
+__note__ here [bill of materials (BOM) dependency](https://docs.gradle.org/current/userguide/platforms.html#sub:bom\_import) is not mentioned for `dependencyManagement` as we cannot use it to version control the OpenRewrite plugin dependencies, unlike with the Gradle setup below.
 
 ### Gradle + external modules
 
