@@ -298,6 +298,10 @@ After doing that, your `pom.xml` file should look similar to this:
 
 To double-check that everything is working, run the command `./mvnw rewrite:run`. Your project should be upgraded to Spring Boot 2 and all of the test classes should be updated to JUnit 5. Your `pom.xml` file will also have had its Spring dependencies updated, the JUnit 4 dependency removed, and the JUnit 5 dependency added.
 
+{% hint style="info" %}
+Maven does not currently support using a bill of materials (BOM) to specify plugin versions or dependencies. This means that you will have to specify the versions of each plugin by hand, unlike in the Gradle section below.
+{% endhint %}
+
 ### Gradle + external modules
 
 Unlike Maven projects, Gradle projects have two options for specifying versions for recipes. You can:
