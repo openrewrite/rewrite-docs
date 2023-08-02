@@ -4,7 +4,7 @@ In this guide we'll look at using OpenRewrite to perform an automated remediatio
 
 ### Example Configuration
 
-The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recipes/java/cleanup/commonstaticanalysis) consists of more than 50 types of issues and can be applied by including OpenRewrite's plug-in to your project and configuring the recipe:
+The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/staticanalysis/commonstaticanalysis) consists of more than 50 types of issues and can be applied by including OpenRewrite's plug-in to your project and configuring the recipe:
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -16,7 +16,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/reference/recip
   <version>5.3.2</version>
   <configuration>
     <activeRecipes>
-      <recipe>org.openrewrite.java.cleanup.CommonStaticAnalysis</recipe>
+      <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
     </activeRecipes>
   </configuration>
 </plugin>
@@ -33,7 +33,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.cleanup.CommonStaticAnalysis")
+    activeRecipe("org.openrewrite.staticanalysis.CommonStaticAnalysis")
 }
 
 repositories {
@@ -48,7 +48,7 @@ At this point, you're ready to fix common static analysis issues by running `mvn
 
 ### Before and After
 
-For the full list of changes this recipe will make, see its [reference page](https://docs.openrewrite.org/reference/recipes/java/cleanup/commonstaticanalysis).
+For the full list of changes this recipe will make, see its [reference page](https://docs.openrewrite.org/recipes/staticanalysis/commonstaticanalysis).
 
 #### Use explicit types on lambda arguments
 
