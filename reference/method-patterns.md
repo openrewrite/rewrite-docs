@@ -4,54 +4,87 @@ description: A simple and powerful way of identifying method definitions and inv
 
 # Method patterns
 
-Many recipes operate on method declarations or invocations. Method patterns are a mechanism for configuring and developing such recipes. OpenRewrite's pointcut method expressions are derived from AspectJ. An OpenRewrite "method pattern" is comparable to an AspectJ's "Pointcut method expression".
+Traditionally, searching for or identifying methods was done by doing a simple text search for the name of the method or the parameters. You'd then look through all the results and ponder if this is _actually_ the method you wanted to find or not. When searching over a significant number of repositories, this becomes an impossible task, though. There could be hundreds of methods with the same name and it would be too much work to find or change just the ones you cared about.
+
+Fortunately, OpenRewrite offers a better alternative: method patterns. Method patterns provide a way to accurately and quickly identify one or more method definitions or invocations. These patterns can be used during the creation of recipes or by users when they run recipes.
+
+{% hint style="info" %}
+An OpenRewrite method pattern is comparable to an AspectJ ["pointcut expression"](https://www.baeldung.com/spring-aop-pointcut-tutorial).
+{% endhint %}
 
 ## Anatomy of a method pattern
 
-A pointcut method expression can identify one or more method definitions or invocations based on their:
+A method pattern can identify one or more method definitions or invocations based on:
 
-* Fully qualified receiver type
-* Method Name
-* Method Argument types
+* A fully qualified class name for where the method is defined or invoked (aka a fully qualified receiver type)
+* A method name
+* The method's argument types
 
-```text
-com.yourorg.ReceiverFullyQualifiedType methodName(argType1, argType2)
+For instance, let's say we have a class like this:
+
+```java
+package com.foo;
+
+class Bar {
+    void baz(String input1, int input2) {
+}
 ```
 
-There are two kinds of wildcard symbols:
+The three pieces of information we need to know to identify the method would be:
+
+* `com.foo.Bar` - the fully qualified class name where the method is defined
+* `baz` - the method name itself
+* `String, int` – the method's argument types
+
+Combining the three would make this method pattern:
+
+```java
+com.foo.Bar baz(String, int)
+```
+
+{% hint style="warning" %}
+You might be wondering, "What if `baz` returned an object instead of `void`? Isn't that missing in the method pattern?
+
+That information isn't actually needed as methods in Java (and similar languages) can be uniquely identified by the fully qualified receiver type, method name, and argument types alone.
+{% endhint %}
+
+Method patterns can also accept wildcard symbols if you want to search for or change many methods. There are two kinds of wildcard symbols:
 
 * `*` - Matches any one thing. Applicable to receiver type, method name, and arguments.
 * `..` - Matches zero or more. Applicable to receiver type and arguments.
 
-{% hint style="warning" %}
-The return type of a method is _not_ represented in method patterns. Methods in Java \(and similar languages\) can be uniquely identified by receiver type, name, and argument types alone.
-{% endhint %}
+In the following section, we will provide some examples of how to use these.
 
 ### Examples
 
 {% hint style="info" %}
-Check out the [Moderne introduction to type-aware code searches](https://docs.moderne.io/user-documentation/introduction-to-type-aware-code-search#using-a-search-recipe) for an example of how method patterns can be used.
+Check out the [Moderne introduction to type-aware code searches](https://docs.moderne.io/user-documentation/introduction-to-type-aware-code-search#using-a-search-recipe) for an example of how method patterns can be used by users running recipes.
 {% endhint %}
 
-The below table shows some more examples of method patterns and the methods they match.
+The below table shows some more examples of method patterns and the methods they match:
 
-| Method Pattern                              | Matches                                                                                                                                                                                                         |
-|:--------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `java.lang.String substring(int)`           | Exactly the [single argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int%29) of `String.substring(int beginIndex)`                             |
-| `java.lang.String substring(int, int)`      | Exactly the [two argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int,int%29) of `String.substring(int beginIndex, int endIndex)`              |
-| `java.lang.String substring(..)`            | Any overload of `String.substring()` with any number of arguments                                                                                                                                               |
-| `java.lang.String *(int)`                   | Any method on `String` that accepts a single argument of type `int`                                                                                                                                             |
-| `java.lang.String format(String, ..)`       | Exactly the [String.format(String format, Object... args)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) method with varargs |
-| `java.lang.String format(String, Object[])` | Exactly the [String.format(String format, Object... args)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) method with varargs |
-| `com.yourorg.Foo bar(int, String, ..)`      | Any method on `Foo` named `bar` accepting an `int`, a `String`, and zero or more other arguments of any type                                                                                                    |
-| `com.yourorg.Foo <constructor>(*, *, *)`    | Constructors of `Foo` accepting exactly three arguments of any type                                                                                                                                             |
-| `*..String *(..)`                           | Any method accepting any arguments on classes named "String" in any package                                                                                                                                     |
-| `*..* *(..)`                                | Any method accepting any arguments on any class                                                                                                                                                                 |
-| `org.example..* *(..)`                      | Any method on any class in the "org.example" package, or any sub-package of "org.example"                                                                                                                       |
+| Method Pattern                              | Matches                                                                                                                                                                                                          |
+|:--------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `java.lang.String substring(int)`           | Exactly the [single argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int%29) of `String.substring(int beginIndex)`.                             |
+| `java.lang.String substring(int, int)`      | Exactly the [two argument overload](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring%28int,int%29) of `String.substring(int beginIndex, int endIndex)`.              |
+| `java.lang.String substring(..)`            | Any overload of `String.substring()` with any number of arguments.                                                                                                                                               |
+| `java.lang.String *(int)`                   | Any method on `String` that accepts a single argument of type `int`.                                                                                                                                             |
+| `java.lang.String format(String, ..)`       | Exactly the [String.format(String format, Object... args)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) method with varargs. |
+| `java.lang.String format(String, Object[])` | Exactly the [String.format(String format, Object... args)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) method with varargs. |
+| `com.yourorg.Foo bar(int, String, ..)`      | Any method on `Foo` named `bar` accepting an `int`, a `String`, and zero or more other arguments of any type.                                                                                                    |
+| `com.yourorg.Foo <constructor>(*, *, *)`    | Constructors of `Foo` accepting exactly three arguments of any type.                                                                                                                                             |
+| `*..String *(..)`                           | Any method accepting any arguments on classes named "String" in any package.                                                                                                                                     |
+| `*..* *(..)`                                | Any method accepting any arguments on any class.                                                                                                                                                                 |
+| `*..* foo(..)       `                       | Any method named `foo` which accepts any number of arguments. This is the equivalent of doing a generic text search for methods named `foo`.                                                                     |
+| `org..* foo(..)`                            | Any method named `foo` in a package that starts with `org`. This could be `orgmeow` or it could be `org.meow.bark` or so on.                                                                                     |
+| `org.openrewrite.java.* foo(..)`            | Any method named `foo` in a package that starts with `org.openrewrite.java.`. Note that the `.*` after `java` means that the method _must_ be in this package rather than some subsequent subpackages.           |
+| `org.Foo bar(java.util.List)`               | Exactly the `bar` method in the `org.Foo` package that takes in a single `java.util.List` as an argument.                                                                                                        |
 
 {% hint style="info" %}
-Method patters match against a method's declaration. Varargs methods represent the variadic parameters as an array.
-So for example, the method pattern `String.format(String, Object[])` would match all of these method invocations, regardless of the number of varargs parameters actually passed:
+Method patterns match against a method's declaration. Methods that take in a variable number of arguments represent these variadic parameters as an array.
+
+For example, the method pattern `String.format(String, Object[])` would match all of these method invocations, regardless of the number of varargs passed:
+
 ```java
 String.format("Foo bar");
 String.format("%s bar", "Foo");
@@ -63,7 +96,7 @@ String.format("%s %s", "Foo", "bar");
 
 ### Configuring recipes
 
-Recipes which take method patterns as arguments take them as strings. In yaml that looks like this:
+Recipes that take in method patterns as arguments take them in as strings. In YAML that looks like this:
 
 ```yaml
 ---
@@ -72,14 +105,14 @@ name: com.yourorg.ChangeMethodNameExample
 displayName: Change method name example
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.Matchers anyVararg()
-      newMethodName: any
+      methodPattern: org.mockito.Matchers existingName()
+      newMethodName: someNewName
 ```
 
 Constructing a similarly configured instance of the same recipe in Java:
 
 ```java
-ChangeMethodName cmn = new ChangeMethodName("org.mockito.Matchers anyVararg()", "any");
+ChangeMethodName cmn = new ChangeMethodName("org.mockito.Matchers existingName()", "someNewName");
 ```
 
 ### Authoring recipes with MethodMatcher
@@ -87,15 +120,22 @@ ChangeMethodName cmn = new ChangeMethodName("org.mockito.Matchers anyVararg()", 
 `org.openrewrite.java.MethodMatcher` is the class that most recipes will use method patterns with. Instances are created by providing the method pattern to its constructor:
 
 ```java
-MethodMatcher mm = new MethodMatcher("org.mockito.Matchers anyVararg()");
+MethodMatcher mm = new MethodMatcher("org.mockito.Matchers existingName()");
 ```
 
 `MethodMatcher.matches()` has overloads that accept method declarations, method invocations, and constructor invocations. `matches()` returns `true` if the argument matches the method pattern the matcher was initialized with. They are frequently used by visitors to avoid making changes to LST elements other than those indicated by the method pattern.
 
 ```java
-// Adapted from org.openrewrite.java.ChangeMethodName for the sake of example
-// This is lacks the full functionality of the complete Recipe
+// Adapted from org.openrewrite.java.ChangeMethodName for the sake of an example
+// This lacks the full functionality of the complete Recipe
 class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
+    @Option(displayName = "New method name",
+            description = "The method name that will replace the existing name.",
+            example = "someNewName")
+    String newMethodName;
+
+    // More options ...
+
     private final MethodMatcher methodMatcher;
 
     private ChangeMethodNameVisitor(String pointcutExpression) {
@@ -106,34 +146,42 @@ class ChangeMethodNameVisitor extends JavaIsoVisitor<ExecutionContext> {
     public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration method, ExecutionContext ctx) {
         J.MethodDeclaration m = super.visitMethodDeclaration(method, ctx);
         J.ClassDeclaration classDecl = getCursor().firstEnclosingOrThrow(J.ClassDeclaration.class);
+
         // The enclosing class of a J.MethodDeclaration must be known for a MethodMatcher to match it
         if (methodMatcher.matches(method, classDecl)) {
             JavaType.Method type = m.getType();
+
             // Note that both the name and the type information on the declaration are updated together
             // Maintaining this consistency is important for maintaining the correct operation of other recipes
-            if(type != null) {
+            if (type != null) {
                 type = type.withName(newMethodName);
             }
+
             m = m.withName(m.getName().withName(newMethodName))
                     .withType(type);
         }
+
         return m;
     }
 
     @Override
     public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
         J.MethodInvocation m = super.visitMethodInvocation(method, ctx);
+
         // Type information stored in the J.MethodInvocation indicates the class so no second argument is necessary
         if (methodMatcher.matches(method)) {
             JavaType.Method type = m.getType();
+
             // Note that both the name and the type information on the invocation are updated together
             // Maintaining this consistency is important for maintaining the correct operation of other recipes
-            if(type != null) {
+            if (type != null) {
                 type = type.withName(newMethodName);
             }
+
             m = m.withName(m.getName().withName(newMethodName))
                     .withType(type);
         }
+
         return m;
     }
 
