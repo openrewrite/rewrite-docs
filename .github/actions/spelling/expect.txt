@@ -125,6 +125,7 @@ okhttp
 omg
 openj
 openrewrite
+orgmeow
 owasp
 passwordencoder
 Peristence
@@ -168,6 +169,7 @@ Springbatch
 springframework
 staticanalysis
 Stewjon
+subpackages
 supertypes
 temurin
 terraform
