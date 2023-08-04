@@ -4,9 +4,7 @@ description: A simple and powerful way of identifying method definitions and inv
 
 # Method patterns
 
-Traditionally, searching for or identifying methods was done by doing a simple text search for the name of the method or the parameters. You'd then look through all the results and ponder if this is _actually_ the method you wanted to find or not. When searching over a significant number of repositories, this becomes an impossible task, though. There could be hundreds of methods with the same name and it would be too much work to find or change just the ones you cared about.
-
-Fortunately, OpenRewrite offers a better alternative: method patterns. Method patterns provide a way to accurately and quickly identify one or more method definitions or invocations. These patterns can be used during the creation of recipes or by users when they run recipes.
+Method patterns provide a way to accurately and quickly identify one or more method definitions or invocations. Unlike traditional text-based searches that can result in thousands of irrelevant matches, method patterns are type-aware and will, therefore, only find relevant results.
 
 {% hint style="info" %}
 An OpenRewrite method pattern is comparable to an AspectJ ["pointcut expression"](https://www.baeldung.com/spring-aop-pointcut-tutorial).
@@ -20,10 +18,14 @@ A method pattern can identify one or more method definitions or invocations base
 * A method name
 * The method's argument types
 
+{% hint style="success" %}
+If you are using IntelliJ or Eclipse for development, you can right-click on a class name, select `Copy / Paste Special`, and then click on `Copy Reference`. This will copy the fully qualified class name that you can then use in your method pattern.
+{% endhint %}
+
 For instance, let's say we have a class like this:
 
 ```java
-package com.foo;
+package org.foo;
 
 class Bar {
     void baz(String input1, int input2) {
@@ -32,14 +34,14 @@ class Bar {
 
 The three pieces of information we need to know to identify the method would be:
 
-* `com.foo.Bar` - the fully qualified class name where the method is defined
+* `org.foo.Bar` - the fully qualified class name where the method is defined
 * `baz` - the method name itself
 * `String, int` – the method's argument types
 
 Combining the three would make this method pattern:
 
 ```java
-com.foo.Bar baz(String, int)
+org.foo.Bar baz(String, int)
 ```
 
 {% hint style="warning" %}
