@@ -305,7 +305,7 @@ If testing locally, your `rewrite` `dependency` should match the structure of yo
 
 and the jar in that folder is:
 
-* `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa.jar`
+* `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa`
 
 then the `rewrite` `dependency` should be:
 
@@ -313,6 +313,8 @@ then the `rewrite` `dependency` should be:
 {% endhint %}
 
 Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDryRun`
+
+If you run into errors when trying to publish and read your recipe locally, try deleting the jars that end with `uncommitted+<hash>`.
 {% endtab %}
 
 {% tab title="Maven" %}
