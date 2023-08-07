@@ -71,7 +71,7 @@ public class JUnit5Migration extends Recipe {
 
     public JUnit5Migration(boolean addJunit5Dependencies) {
         // Add nested recipes to the execution pipeline via doAfterVisit()
-        doAfterVisit(new ChangeType("org.junit.Test", "org.junit.jupiter.api.Test").getVisitor());
+        doAfterVisit(new ChangeType("org.junit.Test", "org.junit.jupiter.api.Test", false).getVisitor());
         doAfterVisit(new AssertToAssertions().getVisitor());
         doAfterVisit(new RemovePublicTestModifiers().getVisitor());
 
