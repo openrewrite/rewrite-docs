@@ -15,7 +15,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.3.2</version>
+      <version>5.4.1</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1</recipe>
@@ -25,7 +25,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-spring</artifactId>
-          <version>5.0.5</version>
+          <version>5.0.7</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -40,7 +40,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
 ```groovy
   plugins {
       id("java")
-      id("org.openrewrite.rewrite") version("6.1.19")
+      id("org.openrewrite.rewrite") version("6.1.22")
   }
   
   rewrite {

@@ -53,7 +53,7 @@ Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks lik
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>5.3.2</version>
+  <version>5.4.1</version>
 </plugin>
 ```
 {% endcode %}
@@ -71,7 +71,7 @@ Your file should look similar to:
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.1.19'
+    id 'org.openrewrite.rewrite' version '6.1.22'
 }
 
 repositories {
@@ -105,7 +105,7 @@ Before you can run any of the recipes, you will need to update the plugin config
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>5.3.2</version>
+  <version>5.4.1</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.OrderImports</recipe>
@@ -122,7 +122,7 @@ Before you can run any of the recipes, you will need to update the plugin config
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.1.19'
+    id 'org.openrewrite.rewrite' version '6.1.22'
 }
 
 rewrite {
@@ -202,7 +202,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.3.2</version>
+      <version>5.4.1</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.OrderImports</recipe>
@@ -222,7 +222,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.1.19'
+    id 'org.openrewrite.rewrite' version '6.1.22'
 }
 
 rewrite {
@@ -275,7 +275,7 @@ After doing that, your `pom.xml` file should look similar to this:
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.OrderImports</recipe>
@@ -287,7 +287,7 @@ After doing that, your `pom.xml` file should look similar to this:
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.5</version>
+            <version>5.0.7</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -322,7 +322,7 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.1.19'
+    id 'org.openrewrite.rewrite' version '6.1.22'
 }
 
 rewrite {
@@ -349,7 +349,7 @@ dependencies {
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.1.19"
+    id("org.openrewrite.rewrite") version "6.1.22"
 }
 
 rewrite {
