@@ -314,7 +314,7 @@ then the `rewrite` `dependency` should be:
 
 Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDryRun`
 
-If you run into errors when trying to publish and read your recipe locally, try deleting the jars that end with `uncommitted+<hash>`.
+If you run into errors when trying to publish and read your recipe locally, try deleting the jars that end with `uncommitted+<hash>` and then re-build them. Furthermore, if you're getting errors in your IDE when trying to build or run recipes, try restarting the IDE.
 {% endtab %}
 
 {% tab title="Maven" %}
