@@ -111,6 +111,19 @@ recipeList:
       newMethodName: someNewName
 ```
 
+or they can take in wildcards like this:
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.ChangeMethodNameExample
+displayName: Change method name example
+recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org..* existingName(..)
+      newMethodName: someNewName
+```
+
 Constructing a similarly configured instance of the same recipe in Java:
 
 ```java
