@@ -124,10 +124,16 @@ recipeList:
       newMethodName: someNewName
 ```
 
-Constructing a similarly configured instance of the same recipe in Java:
+Constructing a similarly configured instance of the same recipe in Java would look like:
 
 ```java
 ChangeMethodName cmn = new ChangeMethodName("org.mockito.Matchers existingName()", "someNewName");
+```
+
+or
+
+```java
+ChangeMethodName cmn = new ChangeMethodName("org..* existingName(..)", "someNewName");
 ```
 
 ### Authoring recipes with MethodMatcher
