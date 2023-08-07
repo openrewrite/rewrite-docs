@@ -6,141 +6,22 @@ _Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest e
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/JUnitParamsRunnerToParameterized.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/JUnitParamsRunnerToParameterized.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Example
-
-
-{% tabs %}
-{% tab title="PersonTests.java" %}
-
-###### Before
-{% code title="PersonTests.java" %}
-```java
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
-
-@RunWith(JUnitParamsRunner.class)
-public class PersonTests {
-
-    @Test
-    @Parameters
-    public void personIsAdult(int age, boolean valid) {
-    }
-
-    private Object[] parametersForPersonIsAdult() {
-        return new Object[]{new Object[]{13, false}, new Object[]{17, false}};
-    }
-
-    @Test
-    @Parameters
-    public void personIsChild(int age, boolean valid) {
-    }
-
-    private Object[] parametersForPersonIsChild() {
-        return new Object[]{new Object[]{3, false}, new Object[]{7, false}};
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="PersonTests.java" %}
-```java
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-
-public class PersonTests {
-
-    @ParameterizedTest
-    @MethodSource("parametersForPersonIsAdult")
-    public void personIsAdult(int age, boolean valid) {
-    }
-
-    private static Object[] parametersForPersonIsAdult() {
-        return new Object[]{new Object[]{13, false}, new Object[]{17, false}};
-    }
-
-    @ParameterizedTest
-    @MethodSource("parametersForPersonIsChild")
-    public void personIsChild(int age, boolean valid) {
-    }
-
-    private static Object[] parametersForPersonIsChild() {
-        return new Object[]{new Object[]{3, false}, new Object[]{7, false}};
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- PersonTests.java
-+++ PersonTests.java
-@@ -1,4 +1,2 @@
--import org.junit.Test;
--import org.junit.runner.RunWith;
--import junitparams.JUnitParamsRunner;
--import junitparams.Parameters;
-+import org.junit.jupiter.params.ParameterizedTest;
-+import org.junit.jupiter.params.provider.MethodSource;
-
-@@ -6,1 +4,0 @@
-import junitparams.Parameters;
-
--@RunWith(JUnitParamsRunner.class)
-public class PersonTests {
-@@ -9,2 +6,2 @@
-public class PersonTests {
-
--   @Test
--   @Parameters
-+   @ParameterizedTest
-+   @MethodSource("parametersForPersonIsAdult")
-    public void personIsAdult(int age, boolean valid) {
-@@ -14,1 +11,1 @@
-    }
-
--   private Object[] parametersForPersonIsAdult() {
-+   private static Object[] parametersForPersonIsAdult() {
-        return new Object[]{new Object[]{13, false}, new Object[]{17, false}};
-@@ -18,2 +15,2 @@
-    }
-
--   @Test
--   @Parameters
-+   @ParameterizedTest
-+   @MethodSource("parametersForPersonIsChild")
-    public void personIsChild(int age, boolean valid) {
-@@ -23,1 +20,1 @@
-    }
-
--   private Object[] parametersForPersonIsChild() {
-+   private static Object[] parametersForPersonIsChild() {
-        return new Object[]{new Object[]{3, false}, new Object[]{7, false}};
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -152,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -166,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized</recipe>
@@ -176,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

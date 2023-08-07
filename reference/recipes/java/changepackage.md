@@ -6,11 +6,11 @@ _A recipe that will rename a package name in package statements, imports, and fu
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.13/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.14/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.13
+* version: 8.1.14
 
 ## Options
 
@@ -19,86 +19,6 @@ _A recipe that will rename a package name in package statements, imports, and fu
 | `String` | oldPackageName | The package name to replace. |
 | `String` | newPackageName | New package name to replace the old package name with. |
 | `Boolean` | recursive | *Optional*. Recursively change subpackage names |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldPackageName|`a.b`|
-|newPackageName|`x.y`|
-|recursive|`false`|
-
-
-{% tabs %}
-{% tab title="kotlin" %}
-
-###### Before
-{% code %}
-```kotlin
-package a.b
-class Original
-```
-{% endcode %}
-
-###### After
-{% code %}
-```kotlin
-package x.y
-class Original
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--package a.b
-+package x.y
-class Original
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="kotlin" %}
-
-###### Before
-{% code %}
-```kotlin
-import a.b.Original
-
-class A {
-    val type = Original()
-}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```kotlin
-import x.y.Original
-
-class A {
-    val type = Original()
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--import a.b.Original
-+import x.y.Original
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -126,7 +46,7 @@ Now that `com.yourorg.ChangePackageExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -148,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePackageExample</recipe>

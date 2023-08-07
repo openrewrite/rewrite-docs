@@ -4,6 +4,7 @@ _Basic building blocks for transforming Java code._
 
 ## Categories
 
+* [Apache](/reference/recipes/java/apache)
 * [Dependencies](/reference/recipes/java/dependencies)
 * [Format](/reference/recipes/java/format)
 * [JHipster](/reference/recipes/java/jhipster)

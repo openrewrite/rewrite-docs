@@ -6,11 +6,11 @@ _Change a given type to another._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.13/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.1.14/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.1.13
+* version: 8.1.14
 
 ## Options
 
@@ -19,50 +19,6 @@ _Change a given type to another._
 | `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. |
 | `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. |
 | `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldFullyQualifiedTypeName|`file`|
-|newFullyQualifiedTypeName|`newFile`|
-|ignoreDefinition|`false`|
-
-
-{% tabs %}
-{% tab title="file.kt" %}
-
-###### Before
-{% code title="file.kt" %}
-```kotlin
-class file {
-}
-```
-{% endcode %}
-
-###### After
-{% code title="file.kt" %}
-```kotlin
-class newFile {
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- file.kt
-+++ file.kt
-@@ -1,1 +1,1 @@
--class file {
-+class newFile {
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -90,7 +46,7 @@ Now that `com.yourorg.ChangeTypeExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -112,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTypeExample</recipe>

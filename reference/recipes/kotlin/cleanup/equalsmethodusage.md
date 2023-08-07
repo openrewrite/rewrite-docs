@@ -12,60 +12,22 @@ The `==` and `!=` operators are a more concise and elegant way to test structura
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/EqualsMethodUsage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/EqualsMethodUsage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.3.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-kotlin
-* version: 1.2.0
-
-## Example
-
-
-{% tabs %}
-{% tab title="kotlin" %}
-
-###### Before
-{% code %}
-```kotlin
-fun isSame(obj1 : String, obj2: String) : Boolean {
-    val isSame = obj1.equals(obj2)
-}
-```
-{% endcode %}
-
-###### After
-{% code %}
-```kotlin
-fun isSame(obj1 : String, obj2: String) : Boolean {
-    val isSame = obj1 == obj2
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -2,1 +2,1 @@
-fun isSame(obj1 : String, obj2: String) : Boolean {
--   val isSame = obj1.equals(obj2)
-+   val isSame = obj1 == obj2
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.3.2
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-kotlin:1.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-kotlin:1.3.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -77,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:1.2.0")
+    rewrite("org.openrewrite:rewrite-kotlin:1.3.2")
 }
 ```
 {% endcode %}
@@ -91,7 +53,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kotlin.cleanup.EqualsMethodUsage</recipe>
@@ -101,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-kotlin</artifactId>
-            <version>1.2.0</version>
+            <version>1.3.2</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -11,243 +11,22 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
-
-###### Before
-{% code title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
-```java
-package org.openrewrite.java.testing.junit5;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-import java.util.List;
-
-import static org.mockito.Mockito.verify;
-
-public class MockitoTests {
-    @Mock
-    List<String> mockedList;
-
-    @Before
-    public void initMocks() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-    @Test
-    public void usingAnnotationBasedMock() {
-
-        mockedList.add("one");
-        mockedList.clear();
-
-        verify(mockedList).add("one");
-        verify(mockedList).clear();
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
-```java
-package org.openrewrite.java.testing.junit5;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-import java.util.List;
-
-import static org.mockito.Mockito.verify;
-
-public class MockitoTests {
-    @Mock
-    List<String> mockedList;
-
-    @BeforeEach
-    public void initMocks() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-    @Test
-    void usingAnnotationBasedMock() {
-
-        mockedList.add("one");
-        mockedList.clear();
-
-        verify(mockedList).add("one");
-        verify(mockedList).clear();
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- org/openrewrite/java/testing/junit5/MockitoTests.java
-+++ org/openrewrite/java/testing/junit5/MockitoTests.java
-@@ -3,2 +3,2 @@
-package org.openrewrite.java.testing.junit5;
-
--import org.junit.Before;
--import org.junit.Test;
-+import org.junit.jupiter.api.BeforeEach;
-+import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-@@ -16,1 +16,1 @@
-    List<String> mockedList;
-
--   @Before
-+   @BeforeEach
-    public void initMocks() {
-@@ -22,1 +22,1 @@
-
-    @Test
--   public void usingAnnotationBasedMock() {
-+   void usingAnnotationBasedMock() {
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
-
-###### Before
-{% code title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
-```java
-package org.openrewrite.java.testing.junit5;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-import java.util.List;
-
-import static org.mockito.Mockito.verify;
-
-public class MockitoTests {
-    @Mock
-    List<String> mockedList;
-
-    @Before
-    public void initMocks() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-    @Test
-    public void usingAnnotationBasedMock() {
-
-        mockedList.add("one");
-        mockedList.clear();
-
-        verify(mockedList).add("one");
-        verify(mockedList).clear();
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="org/openrewrite/java/testing/junit5/MockitoTests.java" %}
-```java
-package org.openrewrite.java.testing.junit5;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-import java.util.List;
-
-import static org.mockito.Mockito.verify;
-
-public class MockitoTests {
-    @Mock
-    List<String> mockedList;
-
-    @BeforeEach
-    public void initMocks() {
-        MockitoAnnotations.initMocks(this);
-    }
-
-    @Test
-    void usingAnnotationBasedMock() {
-
-        mockedList.add("one");
-        mockedList.clear();
-
-        verify(mockedList).add("one");
-        verify(mockedList).clear();
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- org/openrewrite/java/testing/junit5/MockitoTests.java
-+++ org/openrewrite/java/testing/junit5/MockitoTests.java
-@@ -3,2 +3,2 @@
-package org.openrewrite.java.testing.junit5;
-
--import org.junit.Before;
--import org.junit.Test;
-+import org.junit.jupiter.api.BeforeEach;
-+import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-@@ -16,1 +16,1 @@
-    List<String> mockedList;
-
--   @Before
-+   @BeforeEach
-    public void initMocks() {
-@@ -22,1 +22,1 @@
-
-    @Test
--   public void usingAnnotationBasedMock() {
-+   void usingAnnotationBasedMock() {
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -259,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -273,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit4to5Migration</recipe>
@@ -283,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -484,6 +263,7 @@ recipeList:
 * [Tim te Beek](mailto:tim@moderne.io)
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
+* John Burns
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)

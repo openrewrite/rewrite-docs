@@ -6,11 +6,11 @@ _Replace runners with the JUnit Jupiter extension equivalent._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RunnerToExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RunnerToExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
+* version: 2.0.9
 
 ## Options
 
@@ -18,65 +18,6 @@ _Replace runners with the JUnit Jupiter extension equivalent._
 | -- | -- | -- |
 | `List` | runners | The fully qualified class names of the JUnit 4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. |
 | `String` | extension | The fully qualified class names of the JUnit Jupiter extension. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|runners|`List.of("org.mockito.runners.MockitoJUnitRunner")`|
-|extension|`org.mockito.junit.jupiter.MockitoExtension`|
-
-
-{% tabs %}
-{% tab title="MyTest.java" %}
-
-###### Before
-{% code title="MyTest.java" %}
-```java
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
-
-@RunWith(MockitoJUnitRunner.class)
-public class MyTest {
-}
-```
-{% endcode %}
-
-###### After
-{% code title="MyTest.java" %}
-```java
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
-
-@ExtendWith(MockitoExtension.class)
-public class MyTest {
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- MyTest.java
-+++ MyTest.java
-@@ -1,2 +1,2 @@
--import org.junit.runner.RunWith;
--import org.mockito.runners.MockitoJUnitRunner;
-+import org.junit.jupiter.api.extension.ExtendWith;
-+import org.mockito.junit.jupiter.MockitoExtension;
-
-@@ -4,1 +4,1 @@
-import org.mockito.runners.MockitoJUnitRunner;
-
--@RunWith(MockitoJUnitRunner.class)
-+@ExtendWith(MockitoExtension.class)
-public class MyTest {
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -97,13 +38,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RunnerToExtensionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8 in your build file:
+Now that `com.yourorg.RunnerToExtensionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -115,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -129,7 +70,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RunnerToExtensionExample</recipe>
@@ -139,7 +80,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

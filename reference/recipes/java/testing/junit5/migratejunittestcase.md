@@ -6,151 +6,22 @@ _Convert JUnit 4 `TestCase` to JUnit Jupiter._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/MigrateJUnitTestCase.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/MigrateJUnitTestCase.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Example
-
-
-{% tabs %}
-{% tab title="MathTest.java" %}
-
-###### Before
-{% code title="MathTest.java" %}
-```java
-import junit.framework.TestCase;
-
-public class MathTest extends TestCase {
-    protected long value1;
-    protected long value2;
-
-    @Override
-    protected void setUp() {
-        super.setUp();
-        value1 = 2;
-        value2 = 3;
-    }
-
-    public void testAdd() {
-        setName("primitive test");
-        long result = value1 + value2;
-        assertEquals(5, result);
-        fail("some Failure message");
-    }
-
-    @Override
-    protected void tearDown() {
-        super.tearDown();
-        value1 = 0;
-        value2 = 0;
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="MathTest.java" %}
-```java
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-public class MathTest {
-    protected long value1;
-    protected long value2;
-
-    @BeforeEach
-    public void setUp() {
-        value1 = 2;
-        value2 = 3;
-    }
-
-    @Test
-    public void testAdd() {
-        //setName("primitive test");
-        long result = value1 + value2;
-        assertEquals(5, result);
-        fail("some Failure message");
-    }
-
-    @AfterEach
-    public void tearDown() {
-        value1 = 0;
-        value2 = 0;
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- MathTest.java
-+++ MathTest.java
-@@ -1,1 +1,3 @@
--import junit.framework.TestCase;
-+import org.junit.jupiter.api.AfterEach;
-+import org.junit.jupiter.api.BeforeEach;
-+import org.junit.jupiter.api.Test;
-
-@@ -3,1 +5,3 @@
-import junit.framework.TestCase;
-
--public class MathTest extends TestCase {
-+import static org.junit.jupiter.api.Assertions.*;
-+
-+public class MathTest {
-    protected long value1;
-@@ -7,3 +11,2 @@
-    protected long value2;
-
--   @Override
--   protected void setUp() {
--       super.setUp();
-+   @BeforeEach
-+   public void setUp() {
-        value1 = 2;
-@@ -14,0 +17,1 @@
-    }
-
-+   @Test
-    public void testAdd() {
-@@ -15,1 +19,1 @@
-
-    public void testAdd() {
--       setName("primitive test");
-+       //setName("primitive test");
-        long result = value1 + value2;
-@@ -21,3 +25,2 @@
-    }
-
--   @Override
--   protected void tearDown() {
--       super.tearDown();
-+   @AfterEach
-+   public void tearDown() {
-        value1 = 0;
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -162,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -176,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.MigrateJUnitTestCase</recipe>
@@ -186,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

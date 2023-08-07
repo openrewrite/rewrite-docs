@@ -7,6 +7,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Apache](/reference/recipes/java/migrate/apache)
 * [Cobertura](/reference/recipes/java/migrate/cobertura)
 * [Guava](/reference/recipes/java/migrate/guava)
+* [Io](/reference/recipes/java/migrate/io)
 * [JaCoCo](/reference/recipes/java/migrate/jacoco)
 * [Jakarta](/reference/recipes/java/migrate/jakarta)
 * [Lombok](/reference/recipes/java/migrate/lombok)

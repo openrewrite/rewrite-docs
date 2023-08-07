@@ -14,22 +14,22 @@ _This recipe will apply changes commonly needed when upgrading to Java 11. Speci
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-11.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.8
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
 }
 ```
 {% endcode %}
@@ -55,7 +55,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.Java8toJava11</recipe>
@@ -65,7 +65,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -102,6 +102,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Use modernized `java.util.concurrent` APIs](../../java/migrate/concurrent/javaconcurrentapis.md)
 * [Use modernized `java.lang` APIs](../../java/migrate/lang/javalangapis.md)
 * [Use modernized `java.util.logging` APIs](../../java/migrate/logging/javaloggingapis.md)
+* [Migrate Lombok to a Java 11 compatible version](../../java/migrate/lombok/updatelomboktojava11.md)
 * [Use modernized `java.net` APIs](../../java/migrate/net/javanetapis.md)
 * [Use modernized `java.sql` APIs](../../java/migrate/sql/javasqlapis.md)
 * [Use modernized `javax.lang.model.util` APIs](../../java/migrate/javax/javaxlangmodelutil.md)
@@ -142,6 +143,7 @@ recipeList:
   - org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs
   - org.openrewrite.java.migrate.lang.JavaLangAPIs
   - org.openrewrite.java.migrate.logging.JavaLoggingAPIs
+  - org.openrewrite.java.migrate.lombok.UpdateLombokToJava11
   - org.openrewrite.java.migrate.net.JavaNetAPIs
   - org.openrewrite.java.migrate.sql.JavaSqlAPIs
   - org.openrewrite.java.migrate.javax.JavaxLangModelUtil
@@ -164,8 +166,8 @@ recipeList:
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
 * Tyler Van Gorder
 * [Sam Snyder](mailto:sam@moderne.io)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Tim te Beek](mailto:tim.te.beek@jdriven.com)
+* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * Aaron Gershman

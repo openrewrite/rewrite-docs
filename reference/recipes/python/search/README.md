@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Find Python sources and collect data metrics](./findpythonsources.md)
+* [Find Python sources and collect metrics on them](./findpythonsources.md)
 
 

@@ -6,11 +6,11 @@ _As of Spring-Batch 5.0 Listeners has default methods (made possible by a Java 8
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/ReplaceSupportClassWithItsInterface.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/ReplaceSupportClassWithItsInterface.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.5
+* version: 5.0.7
 
 ## Options
 
@@ -93,13 +93,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ReplaceSupportClassWithItsInterfaceExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.5 in your build file:
+Now that `com.yourorg.ReplaceSupportClassWithItsInterfaceExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.7 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -111,7 +111,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
 }
 ```
 {% endcode %}
@@ -125,7 +125,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceSupportClassWithItsInterfaceExample</recipe>
@@ -135,7 +135,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.5</version>
+            <version>5.0.7</version>
           </dependency>
         </dependencies>
       </plugin>

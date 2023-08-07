@@ -11,11 +11,11 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.8
+* version: 2.0.9
 
 ## Examples
 ##### Example 1
@@ -121,13 +121,13 @@ class A {
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -139,7 +139,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
 }
 ```
 {% endcode %}
@@ -153,7 +153,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
@@ -163,7 +163,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -194,7 +194,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Migrate to Java 11](../../java/migrate/java8tojava11.md)
 * [Change Maven Java version property values to 17](../../java/migrate/javaversion17.md)
 * [Prefer `String#formatted(Object...)`](../../java/migrate/lang/stringformatted.md)
-* [Migrate Lombok to a Java 17 compatible version](../../java/migrate/lombok/updatelomboktojava17.md)
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion.md)
 * [Changes code to use Java 17's `instanceof` pattern matching](../../staticanalysis/instanceofpatternmatch.md)
 * [Use text blocks](../../java/migrate/lang/usetextblocks.md)
@@ -217,7 +216,6 @@ recipeList:
   - org.openrewrite.java.migrate.Java8toJava11
   - org.openrewrite.java.migrate.JavaVersion17
   - org.openrewrite.java.migrate.lang.StringFormatted
-  - org.openrewrite.java.migrate.lombok.UpdateLombokToJava17
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
   - org.openrewrite.staticanalysis.InstanceOfPatternMatch
   - org.openrewrite.java.migrate.lang.UseTextBlocks:

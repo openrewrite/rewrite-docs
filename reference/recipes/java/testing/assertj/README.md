@@ -6,6 +6,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [AssertJ best practices](./assertj.md)
 * [Migrate JUnit asserts to AssertJ](./junittoassertj.md)
+* [Simplify AssertJ chained assertions](./simplifychainedassertjassertions.md)
 * [Statically import AssertJ's `assertThat`](./staticimports.md)
 
 ## Recipes
@@ -20,8 +21,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [JUnit `assertSame` to AssertJ](./junitassertsametoassertthat.md)
 * [JUnit `assertTrue` to AssertJ](./junitasserttruetoassertthat.md)
 * [JUnit fail to AssertJ](./junitfailtoassertjfail.md)
-* [Use AssertJ `contains()` on collections](./useexplicitcontains.md)
-* [Use AssertJ `hasSize()` on collections](./useexplicitsize.md)
-* [Use AssertJ `isEmpty()` on collections](./useexplicitisempty.md)
+* [Simplify AssertJ chained assertions](./simplifychainedassertjassertion.md)
 
 

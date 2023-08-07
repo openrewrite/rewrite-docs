@@ -11,22 +11,22 @@ _Migrate applications to the latest Spring Boot 2.2 release. This recipe will mo
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.5
+* version: 5.0.7
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_2</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.5</version>
+            <version>5.0.7</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -107,6 +107,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion.md)
   * pluginIdPattern: `io.spring.dependency-management`
   * newVersion: `1.0.11.RELEASE`
+* [Update Gradle wrapper](../../../gradle/updategradlewrapper.md)
+  * version: `^4.10`
+  * addIfMissing: `false`
 * [Use `PingHealthIndicator`](../../../java/spring/boot2/migrateapplicationhealthindicatortopinghealthindicator.md)
 * [Use `WebTestClientBuilderCustomizer`](../../../java/spring/boot2/migratewebtestclientbuildercustomizerpackagename.md)
 * [Use `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`](../../../java/spring/boot2/migrateconfigurationpropertiesbindingpostprocessorvalidatorbeanname.md)
@@ -144,6 +147,9 @@ recipeList:
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: io.spring.dependency-management
       newVersion: 1.0.11.RELEASE
+  - org.openrewrite.gradle.UpdateGradleWrapper:
+      version: ^4.10
+      addIfMissing: false
   - org.openrewrite.java.spring.boot2.MigrateApplicationHealthIndicatorToPingHealthIndicator
   - org.openrewrite.java.spring.boot2.MigrateWebTestClientBuilderCustomizerPackageName
   - org.openrewrite.java.spring.boot2.MigrateConfigurationPropertiesBindingPostProcessorValidatorBeanName
@@ -171,6 +177,8 @@ recipeList:
 * Kun Li
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
+* [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
 * [Kun Li](mailto:kun@moderne.io)
 * Josh Soref
 * nbruno

@@ -10,6 +10,6 @@ _Recipes to search and transform Python._
 
 ## Recipes
 
-* [Example recipe to change a method name](./changemethodname.md)
+* [Change method name](./changemethodname.md)
 
 

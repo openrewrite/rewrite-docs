@@ -10,89 +10,22 @@ _Replace `try-catch` blocks where `catch` merely contains a `fail()` for `fail(S
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveTryCatchFailBlocks.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveTryCatchFailBlocks.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Example
-
-
-{% tabs %}
-{% tab title="MyTest.java" %}
-
-###### Before
-{% code title="MyTest.java" %}
-```java
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-class MyTest {
-    @Test
-    public void testMethod() {
-        try {
-            int divide = 50 / 0;
-        } catch (ArithmeticException e) {
-            Assertions.fail(e.getMessage());
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="MyTest.java" %}
-```java
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-class MyTest {
-    @Test
-    public void testMethod() {
-        Assertions.assertDoesNotThrow(() -> {
-            int divide = 50 / 0;
-        });
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- MyTest.java
-+++ MyTest.java
-@@ -7,1 +7,1 @@
-    @Test
-    public void testMethod() {
--       try {
-+       Assertions.assertDoesNotThrow(() -> {
-            int divide = 50 / 0;
-@@ -9,3 +9,1 @@
-        try {
-            int divide = 50 / 0;
--       } catch (ArithmeticException e) {
--           Assertions.fail(e.getMessage());
--       }
-+       });
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -104,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -118,7 +51,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks</recipe>
@@ -128,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,11 +6,11 @@ _To integrate Gradle Enterprise Maven extension into maven projects, ensure that
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddGradleEnterpriseMavenExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.13/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddGradleEnterpriseMavenExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.14/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.13
+* version: 8.1.14
 
 ## Options
 
@@ -21,7 +21,7 @@ _To integrate Gradle Enterprise Maven extension into maven projects, ensure that
 | `Boolean` | allowUntrustedServer | *Optional*. When set to `true` the extension will be configured to allow unencrypted http connections with the server. If set to `false` or omitted, the extension will refuse to communicate without transport layer security enabled. |
 | `Boolean` | captureGoalInputFiles | *Optional*. When set to `true` the extension will capture additional information about the inputs to Maven goals. This increases the size of build scans, but is useful for diagnosing issues with goal caching.  |
 | `Boolean` | uploadInBackground | *Optional*. When set to `false` the extension will not upload build scan in the background. By default, build scans are uploaded in the background after the build has finished to avoid blocking the build process. |
-| `PublishCriteria` | publishCriteria | *Optional*. When set to `always` the extension will publish build scans of every single build. This is the default behavior when omitted.When set to `failure` the extension will only publish build scans when the build fails. When set to `demand` the extension will only publish build scans when explicitly requested. |
+| `PublishCriteria` | publishCriteria | *Optional*. When set to `Always` the extension will publish build scans of every single build. This is the default behavior when omitted.When set to `Failure` the extension will only publish build scans when the build fails. When set to `Demand` the extension will only publish build scans when explicitly requested. |
 
 
 ## Usage
@@ -42,7 +42,7 @@ recipeList:
       allowUntrustedServer: true
       captureGoalInputFiles: true
       uploadInBackground: false
-      publishCriteria: true
+      publishCriteria: Always
 ```
 {% endcode %}
 
@@ -58,7 +58,7 @@ Now that `com.yourorg.AddGradleEnterpriseMavenExtensionExample` has been defined
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddGradleEnterpriseMavenExtensionExample</recipe>

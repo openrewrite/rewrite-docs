@@ -1,31 +1,31 @@
 # Migrate `anyOf` Hamcrest Matcher to AssertJ
 
-**org.openrewrite.java.testing.hamcrest.HamcrestAnyOfToAssertJ**
+**org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ**
 
 _Migrate the `anyOf` Hamcrest Matcher to AssertJ's `satisfiesAnyOf` assertion._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/HamcrestAnyOfToAssertJ.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/HamcrestOfMatchersToAssertJ.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestAnyOfToAssertJ")
+    activeRecipe("org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ")
 }
 
 repositories {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -47,17 +47,17 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.testing.hamcrest.HamcrestAnyOfToAssertJ</recipe>
+            <recipe>org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,7 +75,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.testing.hamcrest.HamcrestAnyOfToAssertJ
+  -Drewrite.activeRecipes=org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ
 ```
 {% endcode %}
 {% endtab %}
@@ -83,11 +83,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## Contributors
 * [Aleksandar A Simpson](mailto:alek@asu.me)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.testing.hamcrest.HamcrestAnyOfToAssertJ)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

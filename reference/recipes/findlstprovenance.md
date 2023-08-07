@@ -6,17 +6,17 @@ _Produces a data table showing what versions of OpenRewrite/Moderne tooling was 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindLstProvenance.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.13/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindLstProvenance.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.1.14/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.1.13
+* version: 8.1.14
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
-### Parser failures
+### LST Provenance
 
-_A list of files that failed to parse along with stack traces of their failures._
+_Table showing which tools were used to produce LSTs._
 
 | Column Name | Description |
 | ----------- | ----------- |
@@ -33,7 +33,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.FindLstProvenance</recipe>

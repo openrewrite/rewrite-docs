@@ -11,22 +11,22 @@ _Upgrade to Spring Boot 3.1_
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-31.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-31.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.5
+* version: 5.0.7
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.5</version>
+            <version>5.0.7</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -159,15 +159,17 @@ recipeList:
 * Yeikel
 * [Greg Adams](mailto:greg@moderne.io)
 * [Kevin McCarpenter](mailto:kevin@moderne.io)
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
 * Fabian Krüger
-* [Tim te Beek](mailto:tim@moderne.io)
-* [Johannes Jank](mailto:johannes.wengert@googlemail.com)
 * Aaron Gershman
 * nbruno
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
 * Sandeep Nagaraj
 * [BoykoAlex](mailto:aboyko@pivotal.io)
+* [Johannes Jank](mailto:johannes.wengert@googlemail.com)
+* John Burns
+* [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * Aakarshit Uppal

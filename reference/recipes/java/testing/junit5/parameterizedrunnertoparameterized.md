@@ -6,155 +6,22 @@ _Convert JUnit 4 parameterized runner the JUnit Jupiter parameterized test equiv
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/ParameterizedRunnerToParameterized.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/ParameterizedRunnerToParameterized.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Example
-
-
-{% tabs %}
-{% tab title="VetTests.java" %}
-
-###### Before
-{% code title="VetTests.java" %}
-```java
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
-
-import java.util.Arrays;
-import java.util.List;
-
-@RunWith(Parameterized.class)
-public class VetTests {
-
-    private String firstName;
-    private String lastName;
-    private Integer id;
-
-    public VetTests(String firstName, String lastName, Integer id) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.id = id;
-    }
-
-    @Test
-    public void testSerialization() {
-        Vet vet = new Vet();
-        vet.setFirstName(firstName);
-        vet.setLastName(lastName);
-        vet.setId(id);
-    }
-
-    @Parameters
-    public static List<Object[]> parameters() {
-        return Arrays.asList(
-            new Object[] { "Otis", "TheDog", 124 },
-            new Object[] { "Garfield", "TheBoss", 126 });
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="VetTests.java" %}
-```java
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.Arrays;
-import java.util.List;
-
-public class VetTests {
-
-    private String firstName;
-    private String lastName;
-    private Integer id;
-
-    public void initVetTests(String firstName, String lastName, Integer id) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.id = id;
-    }
-
-    @MethodSource("parameters")
-    @ParameterizedTest
-    public void testSerialization(String firstName, String lastName, Integer id) {
-        initVetTests(firstName, lastName, id);
-        Vet vet = new Vet();
-        vet.setFirstName(firstName);
-        vet.setLastName(lastName);
-        vet.setId(id);
-    }
-
-    public static List<Object[]> parameters() {
-        return Arrays.asList(
-            new Object[] { "Otis", "TheDog", 124 },
-            new Object[] { "Garfield", "TheBoss", 126 });
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- VetTests.java
-+++ VetTests.java
-@@ -1,4 +1,2 @@
--import org.junit.Test;
--import org.junit.runner.RunWith;
--import org.junit.runners.Parameterized;
--import org.junit.runners.Parameterized.Parameters;
-+import org.junit.jupiter.params.ParameterizedTest;
-+import org.junit.jupiter.params.provider.MethodSource;
-
-@@ -9,1 +7,0 @@
-import java.util.List;
-
--@RunWith(Parameterized.class)
-public class VetTests {
-@@ -16,1 +13,1 @@
-    private Integer id;
-
--   public VetTests(String firstName, String lastName, Integer id) {
-+   public void initVetTests(String firstName, String lastName, Integer id) {
-        this.firstName = firstName;
-@@ -22,2 +19,4 @@
-    }
-
--   @Test
--   public void testSerialization() {
-+   @MethodSource("parameters")
-+   @ParameterizedTest
-+   public void testSerialization(String firstName, String lastName, Integer id) {
-+       initVetTests(firstName, lastName, id);
-        Vet vet = new Vet();
-@@ -30,1 +29,0 @@
-    }
-
--   @Parameters
-    public static List<Object[]> parameters() {
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -166,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -180,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.ParameterizedRunnerToParameterized</recipe>
@@ -190,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

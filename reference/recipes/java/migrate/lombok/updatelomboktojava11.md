@@ -1,8 +1,8 @@
-# Migrate Lombok to a Java 17 compatible version
+# Migrate Lombok to a Java 11 compatible version
 
-**org.openrewrite.java.migrate.lombok.UpdateLombokToJava17**
+**org.openrewrite.java.migrate.lombok.UpdateLombokToJava11**
 
-_Update Lombok dependency to a version that is compatible with Java 17 and migrate experimental Lombok types that have been promoted._
+_Update Lombok dependency to a version that is compatible with Java 11 and migrate experimental Lombok types that have been promoted._
 
 ### Tags
 
@@ -11,26 +11,26 @@ _Update Lombok dependency to a version that is compatible with Java 17 and migra
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/lombok.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/lombok.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.8
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.lombok.UpdateLombokToJava17")
+    activeRecipe("org.openrewrite.java.migrate.lombok.UpdateLombokToJava11")
 }
 
 repositories {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
 }
 ```
 {% endcode %}
@@ -52,17 +52,17 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.lombok.UpdateLombokToJava17</recipe>
+            <recipe>org.openrewrite.java.migrate.lombok.UpdateLombokToJava11</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -80,7 +80,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.migrate.lombok.UpdateLombokToJava17
+  -Drewrite.activeRecipes=org.openrewrite.java.migrate.lombok.UpdateLombokToJava11
 ```
 {% endcode %}
 {% endtab %}
@@ -117,9 +117,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.lombok.UpdateLombokToJava17
-displayName: Migrate Lombok to a Java 17 compatible version
-description: Update Lombok dependency to a version that is compatible with Java 17 and migrate experimental Lombok types that have been promoted.
+name: org.openrewrite.java.migrate.lombok.UpdateLombokToJava11
+displayName: Migrate Lombok to a Java 11 compatible version
+description: Update Lombok dependency to a version that is compatible with Java 11 and migrate experimental Lombok types that have been promoted.
 tags:
   - java17
   - lombok
@@ -160,7 +160,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.lombok.UpdateLombokToJava17)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.lombok.UpdateLombokToJava11)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

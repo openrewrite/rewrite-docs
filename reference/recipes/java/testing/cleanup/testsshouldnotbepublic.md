@@ -10,11 +10,11 @@ _Remove `public` and optionally `protected` modifiers from methods with `@Test`,
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/TestsShouldNotBePublic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/TestsShouldNotBePublic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
+* version: 2.0.9
 
 ## Options
 
@@ -22,128 +22,16 @@ _Remove `public` and optionally `protected` modifiers from methods with `@Test`,
 | -- | -- | -- |
 | `Boolean` | removeProtectedModifiers | *Optional*. Also remove protected modifiers from test methods |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|removeProtectedModifiers|`false`|
-
-
-{% tabs %}
-{% tab title="ATest.java" %}
-
-###### Before
-{% code title="ATest.java" %}
-```java
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
-public class ATest {
-
-    @Test
-    void testMethod() {
-    }
-
-    @Nested
-    public class NestedTestClass {
-
-        @Test
-        void anotherTestMethod() {
-        }
-    }
-
-    @Nested
-    public class AnotherNestedTestClass {
-
-        private static final String CONSTANT = "foo";
-
-        private void setup() {
-        }
-
-        @Test
-        void anotherTestMethod() {
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="ATest.java" %}
-```java
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
-class ATest {
-
-    @Test
-    void testMethod() {
-    }
-
-    @Nested
-    class NestedTestClass {
-
-        @Test
-        void anotherTestMethod() {
-        }
-    }
-
-    @Nested
-    class AnotherNestedTestClass {
-
-        private static final String CONSTANT = "foo";
-
-        private void setup() {
-        }
-
-        @Test
-        void anotherTestMethod() {
-        }
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- ATest.java
-+++ ATest.java
-@@ -4,1 +4,1 @@
-import org.junit.jupiter.api.Test;
-
--public class ATest {
-+class ATest {
-
-@@ -11,1 +11,1 @@
-
-    @Nested
--   public class NestedTestClass {
-+   class NestedTestClass {
-
-@@ -19,1 +19,1 @@
-
-    @Nested
--   public class AnotherNestedTestClass {
-+   class AnotherNestedTestClass {
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -155,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -169,7 +57,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic</recipe>
@@ -179,7 +67,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

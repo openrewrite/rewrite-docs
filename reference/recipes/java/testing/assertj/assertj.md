@@ -11,22 +11,22 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.Assertj</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -92,9 +92,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tab title="Recipe List" %}
 * [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports.md)
 * [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj.md)
-* [Use AssertJ `contains()` on collections](../../../java/testing/assertj/useexplicitcontains.md)
-* [Use AssertJ `isEmpty()` on collections](../../../java/testing/assertj/useexplicitisempty.md)
-* [Use AssertJ `hasSize()` on collections](../../../java/testing/assertj/useexplicitsize.md)
+* [Migrate to AssertJ assertions](../../../java/testing/hamcrest/migratehamcresttoassertj.md)
+* [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions.md)
 
 {% endtab %}
 
@@ -111,19 +110,19 @@ tags:
 recipeList:
   - org.openrewrite.java.testing.assertj.StaticImports
   - org.openrewrite.java.testing.assertj.JUnitToAssertj
-  - org.openrewrite.java.testing.assertj.UseExplicitContains
-  - org.openrewrite.java.testing.assertj.UseExplicitIsEmpty
-  - org.openrewrite.java.testing.assertj.UseExplicitSize
+  - org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ
+  - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions
 
 ```
 {% endtab %}
 {% endtabs %}
 
 ## Contributors
+* [Tim te Beek](mailto:tim@moderne.io)
+* [Aleksandar A Simpson](mailto:alek@asu.me)
+* [Knut Wannheden](mailto:knut@moderne.io)
 * [Greg Adams](mailto:greg@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [Paolo Bizzarri](mailto:pibizza@gmail.com)
-* [Knut Wannheden](mailto:knut@moderne.io)
 * Patrick Way
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Patrick](mailto:patway99@gmail.com)

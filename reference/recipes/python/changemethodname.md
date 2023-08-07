@@ -1,4 +1,4 @@
-# Example recipe to change a method name
+# Change method name
 
 **org.openrewrite.python.ChangeMethodName**
 
@@ -6,11 +6,11 @@ _Renames a method._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.0.7/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-python
-* version: 1.0.4
+* version: 1.0.7
 
 ## Options
 
@@ -31,7 +31,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeMethodNameExample
-displayName: Example recipe to change a method name example
+displayName: Change method name example
 recipeList:
   - org.openrewrite.python.ChangeMethodName:
       oldMethodName: any
@@ -40,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-python:1.0.4 in your build file:
+Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-python:1.0.7 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-python:1.0.4")
+    rewrite("org.openrewrite:rewrite-python:1.0.7")
 }
 ```
 {% endcode %}
@@ -72,7 +72,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodNameExample</recipe>
@@ -82,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-python</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.7</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,6 +96,7 @@ dependencies {
 
 ## Contributors
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+* Mike Sol
 * [Knut Wannheden](mailto:knut@moderne.io)
 
 

@@ -4,7 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Migrate Lombok to a Java 17 compatible version](./updatelomboktojava17.md)
+* [Migrate Lombok to a Java 11 compatible version](./updatelomboktojava11.md)
 
 ## Recipes
 

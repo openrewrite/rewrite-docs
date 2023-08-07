@@ -6,81 +6,22 @@ _Replace `@RunWith(MockitoJUnitRunner.Silent.class)` with `@ExtendWith(MockitoEx
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/MockitoJUnitRunnerSilentToExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/MockitoJUnitRunnerSilentToExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Example
-
-
-{% tabs %}
-{% tab title="ExternalAPIServiceTest.java" %}
-
-###### Before
-{% code title="ExternalAPIServiceTest.java" %}
-```java
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
-
-@RunWith(MockitoJUnitRunner.Silent.class)
-public class ExternalAPIServiceTest {
-}
-```
-{% endcode %}
-
-###### After
-{% code title="ExternalAPIServiceTest.java" %}
-```java
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.junit.jupiter.MockitoSettings;
-import org.mockito.quality.Strictness;
-
-@MockitoSettings(strictness = Strictness.LENIENT)
-@ExtendWith(MockitoExtension.class)
-public class ExternalAPIServiceTest {
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- ExternalAPIServiceTest.java
-+++ ExternalAPIServiceTest.java
-@@ -1,2 +1,4 @@
--import org.junit.runner.RunWith;
--import org.mockito.junit.MockitoJUnitRunner;
-+import org.junit.jupiter.api.extension.ExtendWith;
-+import org.mockito.junit.jupiter.MockitoExtension;
-+import org.mockito.junit.jupiter.MockitoSettings;
-+import org.mockito.quality.Strictness;
-
-@@ -4,1 +6,2 @@
-import org.mockito.junit.MockitoJUnitRunner;
-
--@RunWith(MockitoJUnitRunner.Silent.class)
-+@MockitoSettings(strictness = Strictness.LENIENT)
-+@ExtendWith(MockitoExtension.class)
-public class ExternalAPIServiceTest {
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -92,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -106,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.MockitoJUnitRunnerSilentToExtension</recipe>
@@ -116,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,95 +6,22 @@ _Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit 5's `org.junit
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UpdateTestAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UpdateTestAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Example
-
-
-{% tabs %}
-{% tab title="MyTest.java" %}
-
-###### Before
-{% code title="MyTest.java" %}
-```java
-import org.junit.Test;
-
-public class MyTest {
-
-    @Test(expected = Test.None.class)
-    public void test_printLine() {
-        int arr = new int[]{0}[0];
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="MyTest.java" %}
-```java
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-
-public class MyTest {
-
-    @Test
-    void test_printLine() {
-        assertDoesNotThrow(() -> {
-            int arr = new int[]{0}[0];
-        });
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- MyTest.java
-+++ MyTest.java
-@@ -1,1 +1,1 @@
--import org.junit.Test;
-+import org.junit.jupiter.api.Test;
-
-@@ -3,0 +3,2 @@
-import org.junit.Test;
-
-+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-+
-public class MyTest {
-@@ -5,3 +7,5 @@
-public class MyTest {
-
--   @Test(expected = Test.None.class)
--   public void test_printLine() {
--       int arr = new int[]{0}[0];
-+   @Test
-+   void test_printLine() {
-+       assertDoesNotThrow(() -> {
-+           int arr = new int[]{0}[0];
-+       });
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -106,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -120,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.UpdateTestAnnotation</recipe>
@@ -130,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

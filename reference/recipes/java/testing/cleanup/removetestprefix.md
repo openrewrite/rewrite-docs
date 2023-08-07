@@ -6,127 +6,22 @@ _Remove `test` from methods with `@Test`, `@ParameterizedTest`, `@RepeatedTest` 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/RemoveTestPrefix.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/RemoveTestPrefix.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Example
-
-
-{% tabs %}
-{% tab title="ATest.java" %}
-
-###### Before
-{% code title="ATest.java" %}
-```java
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
-class ATest {
-    @Test
-    void testMethod() {
-    }
-
-    @Test
-    void test_snake_case() {
-    }
-
-    @Nested
-    class NestedTestClass {
-        @Test
-        void testAnotherTestMethod() {
-        }
-    }
-
-    @Nested
-    class AnotherNestedTestClass {
-        @Test
-        void testYetAnotherTestMethod() {
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="ATest.java" %}
-```java
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
-class ATest {
-    @Test
-    void method() {
-    }
-
-    @Test
-    void snake_case() {
-    }
-
-    @Nested
-    class NestedTestClass {
-        @Test
-        void anotherTestMethod() {
-        }
-    }
-
-    @Nested
-    class AnotherNestedTestClass {
-        @Test
-        void yetAnotherTestMethod() {
-        }
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- ATest.java
-+++ ATest.java
-@@ -6,1 +6,1 @@
-class ATest {
-    @Test
--   void testMethod() {
-+   void method() {
-    }
-@@ -10,1 +10,1 @@
-
-    @Test
--   void test_snake_case() {
-+   void snake_case() {
-    }
-@@ -16,1 +16,1 @@
-    class NestedTestClass {
-        @Test
--       void testAnotherTestMethod() {
-+       void anotherTestMethod() {
-        }
-@@ -23,1 +23,1 @@
-    class AnotherNestedTestClass {
-        @Test
--       void testYetAnotherTestMethod() {
-+       void yetAnotherTestMethod() {
-        }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -138,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -152,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.cleanup.RemoveTestPrefix</recipe>
@@ -162,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

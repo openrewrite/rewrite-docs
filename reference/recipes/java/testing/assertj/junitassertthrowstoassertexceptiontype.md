@@ -6,79 +6,22 @@ _Convert `JUnit#AssertThrows` to `AssertJ#assertThatExceptionOfType` to allow fo
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/JUnitAssertThrowsToAssertExceptionType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/JUnitAssertThrowsToAssertExceptionType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
-
-## Example
-
-
-{% tabs %}
-{% tab title="SimpleExpectedExceptionTest.java" %}
-
-###### Before
-{% code title="SimpleExpectedExceptionTest.java" %}
-```java
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-public class SimpleExpectedExceptionTest {
-    public void throwsExceptionWithSpecificType() {
-        assertThrows(NullPointerException.class, () -> {
-            throw new NullPointerException();
-        });
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="SimpleExpectedExceptionTest.java" %}
-```java
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
-
-public class SimpleExpectedExceptionTest {
-    public void throwsExceptionWithSpecificType() {
-        assertThatExceptionOfType(NullPointerException.class).isThrownBy(() -> {
-            throw new NullPointerException();
-        });
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- SimpleExpectedExceptionTest.java
-+++ SimpleExpectedExceptionTest.java
-@@ -1,1 +1,1 @@
--import static org.junit.jupiter.api.Assertions.assertThrows;
-+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
-
-@@ -5,1 +5,1 @@
-public class SimpleExpectedExceptionTest {
-    public void throwsExceptionWithSpecificType() {
--       assertThrows(NullPointerException.class, () -> {
-+       assertThatExceptionOfType(NullPointerException.class).isThrownBy(() -> {
-            throw new NullPointerException();
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -90,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -104,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.JUnitAssertThrowsToAssertExceptionType</recipe>
@@ -114,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

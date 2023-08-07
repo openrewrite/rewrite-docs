@@ -10,11 +10,11 @@ _For tests not having any assertions, wrap the statements with JUnit Jupiter's `
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/TestsShouldIncludeAssertions.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/TestsShouldIncludeAssertions.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.8
+* version: 2.0.9
 
 ## Options
 
@@ -22,87 +22,16 @@ _For tests not having any assertions, wrap the statements with JUnit Jupiter's `
 | -- | -- | -- |
 | `String` | additionalAsserts | *Optional*. A comma delimited list of packages and/or classes that will be identified as assertions. I.E. a common assertion utility `org.foo.TestUtil`. |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|additionalAsserts|`null`|
-
-
-{% tabs %}
-{% tab title="AaTest.java" %}
-
-###### Before
-{% code title="AaTest.java" %}
-```java
-import org.junit.jupiter.api.Test;
-public class AaTest {
-    @Test
-    public void methodTest() {
-        Integer it = Integer.valueOf("2");
-        System.out.println(it);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="AaTest.java" %}
-```java
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-
-public class AaTest {
-    @Test
-    public void methodTest() {
-        assertDoesNotThrow(() -> {
-            Integer it = Integer.valueOf("2");
-            System.out.println(it);
-        });
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- AaTest.java
-+++ AaTest.java
-@@ -2,0 +2,3 @@
-import org.junit.jupiter.api.Test;
-+
-+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-+
-public class AaTest {
-@@ -5,2 +8,4 @@
-    @Test
-    public void methodTest() {
--       Integer it = Integer.valueOf("2");
--       System.out.println(it);
-+       assertDoesNotThrow(() -> {
-+           Integer it = Integer.valueOf("2");
-+           System.out.println(it);
-+       });
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.19")
+    id("org.openrewrite.rewrite") version("6.1.22")
 }
 
 rewrite {
@@ -114,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
 }
 ```
 {% endcode %}
@@ -128,7 +57,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.3.2</version>
+        <version>5.4.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions</recipe>
@@ -138,7 +67,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.8</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
