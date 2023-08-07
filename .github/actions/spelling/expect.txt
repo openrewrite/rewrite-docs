@@ -56,6 +56,7 @@ gradlew
 hamcrest
 Heroku
 HSQL
+httpclient
 identityprovider
 IHzb
 Initializr
@@ -63,6 +64,7 @@ initscript
 Intelli
 intranode
 jacc
+jassertion
 javatemplate
 JAX
 jaxb
