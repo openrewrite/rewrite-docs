@@ -58,7 +58,7 @@ Consider this non-exhaustive list of steps required to migrate a project from JU
 * Remove public visibility from test classes and methods that no longer need to be `public` in JUnit 5
 * Modify the Maven `pom.xml` to include dependencies on JUnit 5, and remove dependencies on JUnit 4
 
-No one recipe should be responsible for implementing all of these different responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes add other recipes to the execution pipeline via the `doAfterVisit()` method.
+No one recipe should be responsible for implementing all of these different responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes can add other recipes to the execution pipeline by overriding the `List<Recipe> getRecipeList()` function and returning an array of recipes that should be run.
 
 In our above example, the "Migrate to JUnit 5" recipe could look similar to the following:
 
@@ -68,22 +68,26 @@ package org.example.testing;
 import org.openrewrite.java.ChangeType;
 
 public class JUnit5Migration extends Recipe {
+    // Standard recipes descriptions and names ...
 
-    public JUnit5Migration(boolean addJunit5Dependencies) {
-        // Add nested recipes to the execution pipeline via doAfterVisit()
-        doAfterVisit(new ChangeType("org.junit.Test", "org.junit.jupiter.api.Test", false).getVisitor());
-        doAfterVisit(new AssertToAssertions().getVisitor());
-        doAfterVisit(new RemovePublicTestModifiers().getVisitor());
-
-        // Recipe can be optionally configured to add the JUnit 5 dependencies
-        if (addJUnitDependencies) {
-            doAfterVisit(new AddJUnit5Dependencies().getVisitor());
-        }
+    @Override
+    public List<Recipe> getRecipeList() {
+        return Arrays.asList(
+            new ChangeType("org.junit.Test", "org.junit.jupiter.api.Test", false),
+            new AssertToAssertions(),
+            new RemovePublicTestModifiers()
+        );
     }
 }
 ```
 
-Note that this recipe does not have an associated visitor of its own, instead relying on a group of other recipes to achieve the desired result.
+Note that this recipe does not have an associated visitor of its own, instead relying on a group of other recipes to achieve the desired result. For a real recipe that uses this feature, check out the [UpdateMovedRecipe](https://github.com/openrewrite/rewrite/blob/v8.1.15/rewrite-java/src/main/java/org/openrewrite/java/recipes/UpdateMovedRecipe.java).
+
+{% hint style="info" %}
+If you have a recipe that makes changes and you want to call another recipe, you can use the `doAfterVisit` method inside of your visitor. This will schedule another visit on the _current_ source file being visited with the recipe you specified. This is particularly useful for things like adding imports (which are at the top of the file) when you are deep in the file editing some method body.
+
+For an example of a recipe that does this, check out the [AddManagedDependency recipe](https://github.com/openrewrite/rewrite/blob/v8.1.15/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java#L202).
+{% endhint %}
 
 ## Declarative Recipes
 
