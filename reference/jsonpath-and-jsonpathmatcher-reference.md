@@ -58,7 +58,7 @@ The supported operators of a filter expression are shown below:
 | Operator | Description |
 | :--- | :--- |
 | `==` | Equals to. String values should be enclosed in single quotes. For example, `[?(@.kind == 'Deployment')]`. |
-| `=~` | Matches a [JavaScript regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions). For example, `[?(@.uses =~ 'actions/setup-java@v2.*')]` matches items which `uses` starts with `actions/setup-java@v2`, and so would include `actions/setup-java@v2.1.0`. |
+| `=~` | Matches a [JavaScript regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions). For example, `[?(@.uses =~ 'actions/setup-java@v2.*')]` matches items which `uses` starts with `actions/setup-java@v2`, and so would include `actions/setup-java@v2.1.1`. |
 
 ## Configuring recipes using JsonPath expressions
 Recipes that take JsonPath expressions as arguments take them as strings. In YAML, that looks like this:

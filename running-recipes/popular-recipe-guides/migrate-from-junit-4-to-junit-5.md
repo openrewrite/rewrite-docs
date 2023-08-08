@@ -40,7 +40,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.1.22")
+        id("org.openrewrite.rewrite") version("6.1.23")
     }
     
     rewrite {
@@ -52,7 +52,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.1.0"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.1.1"))
         rewrite("org.openrewrite.recipe:rewrite-spring")
     
         // Other project dependencies
@@ -102,7 +102,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.1.22")
+        id("org.openrewrite.rewrite") version("6.1.23")
     }
     
     rewrite {
@@ -114,7 +114,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     }
     
     dependencies {
-        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.1.0"))
+        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.1.1"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies
