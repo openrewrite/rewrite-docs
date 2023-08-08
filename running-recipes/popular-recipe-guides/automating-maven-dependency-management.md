@@ -75,7 +75,7 @@ At this point, you have all of the information you need to manually exclude logb
 
 ## Switching SLF4J Implementations
 
-Use the rewrite recipes [ExcludeDependency](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/maven/excludedependency.md) and [AddDependency](https://github.com/openrewrite/rewrite-docs/tree/b187223ddcbf369a77a86efd6950e924fd91f00d/reference/recipes/maven/adddependency.md) to ensure that only your preferred slf4j dependency is used. If a new transitive dependency on logback-classic appears in the future, ExcludeDependency will detect and exclude it.
+Use the rewrite recipes [ExcludeDependency](/reference/recipes/maven/excludedependency.md) and [AddDependency](/reference/recipes/maven/adddependency.md) to ensure that only your preferred slf4j dependency is used. If a new transitive dependency on logback-classic appears in the future, ExcludeDependency will detect and exclude it.
 
 Add this to your rewrite.yml:
 
