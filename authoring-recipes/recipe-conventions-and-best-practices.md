@@ -131,7 +131,7 @@ If you need to pass state between functions in the **same** visitor, then you sh
 
 If you need to pass state between **different** visitors, then you should [override the visit function](recipe-conventions-and-best-practices.md#override-the-visit-method-if-you-need-pass-state-between-visitors).
 
-#### Use cursor messaging instead of execution context messaging
+### Use cursor messaging instead of execution context messaging
 
 When passing state between functions in the same visitor, there are two main options: cursor messaging and execution context messaging.
 
@@ -144,9 +144,3 @@ The `ExecutionContext` object, on the other hand, has a few key differences that
 Imagine one recipe author decided to write a `foo` object to the `ExecutionContext` so that the `bar` and `bash` functions could both interact with it. Now, let's imagine another recipe author, unaware of the fact that the other recipe wrote a `foo` object to the `ExecutionContext`, also decides that their recipe should read and write to a `foo` object. If those recipes get chained together, both of those recipes could break.
 
 Because of that, whenever shared state is needed within a single visitor or recipe, the cursor stack should be used instead of adding state to the execution context.
-
-#### Override the visit method if you need pass state between visitors
-
-If you need to pass state between different visitors in the same recipe, you should override the `Recile.visit(before, ExecutionContext)` function and create a variable whose scope is accessible to your visitors. For example, in the [AddDependency recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), we create a [scopeByProject Map](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L155) that is then shared between a [UsesTypes visitor](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L159-L164) and a [MavenVisitor](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L191).
-
-Unlike the `ExecutionContext` mentioned above, this state will not carry over between cycles and there is, therefore, no risk of harming other recipes.

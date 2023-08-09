@@ -126,7 +126,7 @@ class JavaVisitor<P> extends TreeVisitor<J, P> {
 }
 ```
 
-An important concept to understand is what happens when the generic `TreeBuilder.visit(T, P)` method is called and how that is mapped into its language-specific counterpart. Let's visualize how a Java `CompilationUnit` is passed from a client to a visitor:
+An important concept to understand is what happens when the generic `TreeVisitor.visit(T, P)` method is called and how that is mapped into its language-specific counterpart. Let's visualize how a Java `CompilationUnit` is passed from a client to a visitor:
 
 ![Example of Visitor Navigation](<../.gitbook/assets/visitor-example.png>)
 
@@ -137,7 +137,7 @@ Less obvious, in the above visualization, is that the base implementation also m
 {% hint style="danger" %}
 STRONG WARNING!
 
-A client may have a reference to the language-specific visitor and it may be tempting to call the language-specific visit methods directly. However, circumventing the generic `TreeBuilder.visit()` method will result in the `cursor` not working and key life-cycle management methods not being visited.
+A client may have a reference to the language-specific visitor and it may be tempting to call the language-specific visit methods directly. However, circumventing the generic `TreeVisitor.visit()` method will result in the `cursor` not working and key life-cycle management methods not being visited.
 {% endhint %}
 
 ## Isomorphic vs. non-isomorphic visitors
