@@ -273,6 +273,10 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
 
 {% hint style="info" %}
 Note: When building a template, if you use a type that's not a base Java type, you will need to specify what package that type comes from. In our case, since we're adding a `Date` to the `MethodDeclaration`, we need to specify that this is a `java.util.Date` and not some other type of date. You can do that by adding an `imports` function with the packages for the types used in the template.
+
+If your import is _not_ part of the JDK itself, you will need to specify a classpath so that the recipe will know where the function you're adding is coming from. You can do this via the `classpathFromResources` method such as in the [Migrate Hamcrest assertThat recipe](https://github.com/openrewrite/rewrite-testing-frameworks/blob/v2.0.9/src/main/java/org/openrewrite/java/testing/hamcrest/AssertThatBooleanToAssertJ.java#L55). 
+
+Please note that you'll need to update your `build.gradle` or `pom.xml` file as described in the [using multiple versions of a library in a project guide](/authoring-recipes/multiple-versions.md) to support this functionality.
 {% endhint %}
 
 With that template defined, we can now use it to replace the existing parameters via the `apply()` function. The `apply` function expects a [cursor](/concepts-and-explanations/visitors.md#cursoring), some coordinates (where our template should be applied), and then 0 or more optional parameters (which will replace the interpolation marker we specified earlier).
