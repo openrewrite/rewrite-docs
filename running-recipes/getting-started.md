@@ -6,9 +6,9 @@ description: >-
 
 # Quickstart: Setting up your project and running recipes
 
-To help orient you to OpenRewrite, let's walk through configuring a project to use the Maven or Gradle rewrite plugin. Then let's walk through running various types of recipes on said project and talk through the results.
+To help orient you to OpenRewrite, let's walk through configuring a project to use the Maven or Gradle OpenRewrite plugin. Then let's walk through running various types of recipes on said project and talk through the results.
 
-In this guide you will:
+In this guide, you will:
 
 * [Clone a sample project](getting-started.md#step-1-clone-sample-project)
 * [Add the rewrite-maven-plugin or rewrite-gradle-plugin to your project](getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project)
@@ -19,7 +19,7 @@ In this guide you will:
 
 ## Prerequisites
 
-This quick start guide assumes that you:
+This quickstart guide assumes that you:
 
 * Are somewhat familiar with Java
 * Have worked with a Maven or a Gradle project before
@@ -42,7 +42,7 @@ git clone https://github.com/openrewrite/spring-petclinic-migration.git
 
 ## Step 2: Add rewrite-maven-plugin or rewrite-gradle-plugin to your project
 
-Once you've checked out your project, the next step is to add the rewrite plugin to Maven or Gradle. Please follow the instructions in the Maven or Gradle tab to do that:
+Once you've checked out your project, the next step is to add the OpenRewrite plugin to Maven or Gradle. Please follow the instructions in the Maven or Gradle tab to do that:
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -60,7 +60,7 @@ Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks lik
 {% endtab %}
 
 {% tab title="Gradle" %}
-* Add the rewrite plugin to the `plugins` section of your `build.gradle` file
+* Add the OpenRewrite plugin to the `plugins` section of your `build.gradle` file
 * Make sure `mavenCentral()` is included in the `repositories` section
 * Add a `rewrite` section that will be filled in later
 
@@ -90,7 +90,7 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-At this point, you're able to run any of the Maven goals or Gradle tasks provided by the Rewrite plugin. See [Maven Plugin Configuration](/reference/rewrite-maven-plugin.md) or [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md) for the full set of options.
+At this point, you're able to run any of the Maven goals or Gradle tasks provided by the OpenRewrite plugin. See [Maven Plugin Configuration](/reference/rewrite-maven-plugin.md) or [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md) for the full set of options.
 
 From the command line, try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a list of all the recipes available for execution. Initially, this will list only the recipes built-in to OpenRewrite.
 
@@ -155,7 +155,7 @@ Now that you've activated the `OrderImports` recipe, you can run it by executing
 
 After running it, you will be notified of all of the files that have been changed:
 
-![Console output from running ./mvnw rewrite:run with OrderImports set as an active recipe on spring-petclinic-migration](/.gitbook/assets/order-imports-run.png)
+![Console output from running ./mvnw rewrite:run with OrderImports set as an active recipe in the spring-petclinic-migration repository](/.gitbook/assets/order-imports-run.png)
 
 To see what has changed in the code, run `git diff` or use your preferred IDE's diff viewer:
 
@@ -248,7 +248,7 @@ From there, you can confirm that everything still builds and passes its tests by
 
 ## Step 6: Running Recipes from External Modules
 
-At this point, you know how to configure and run any recipe included in Rewrite itself. However, many recipes are not bundled into the core library. For example, all of the Spring, Mockito, JUnit, and AssertJ-related recipes maintained by the Rewrite team live in the [rewrite-spring repository](https://github.com/openrewrite/rewrite-spring).
+At this point, you know how to configure and run any recipe included in OpenRewrite itself. However, many recipes are not bundled into the core library. For example, all of the Spring, Mockito, JUnit, and AssertJ-related recipes maintained by the OpenRewrite team live in the [rewrite-spring repository](https://github.com/openrewrite/rewrite-spring).
 
 {% hint style="info" %}
 You can search through all of the recipes in the [OpenRewrite docs](https://docs.openrewrite.org/reference/recipes). Each recipe page has instructions for how to import the recipe and what parameters (if any) need to be included.
@@ -263,7 +263,7 @@ Below, we'll walk through the [Maven](getting-started.md#maven--external-modules
 For Maven projects, you'll need to:
 
 * Add the recipe to the `activeRecipes` list
-* Add a dependency on `rewrite-spring` (where the JUnit 4 to 5 recipe lives)
+* Add a dependency on the library where the desired recipe lives (JUnit 4 to 5 lives in the ][rewrite-spring](https://github.com/openrewrite/rewrite-spring) repository)
 * Specify a version of `rewrite-spring` to use
 
 After doing that, your `pom.xml` file should look similar to this:
@@ -304,14 +304,14 @@ Maven does not currently support using a bill of materials (BOM) to specify plug
 
 ### Gradle + external modules
 
-Unlike Maven projects, Gradle projects have two options for specifying versions for recipes. You can:
+Unlike Maven projects, Gradle projects have two options for specifying recipe versions. You can:
 
 1. Add `rewrite-recipe-bom` as a [bill of materials (BOM) dependency](https://docs.gradle.org/current/userguide/platforms.html#sub:bom\_import)
-2. Add `rewrite-spring` as a dependency with a version specified
+2. Add the specific dependency and version that you want (in this case `rewrite-spring`)
 
-If you choose to use the `rewrite-recipe-bom`, you won't have to worry about specifying versions for your rewrite recipes as all of the recipes you include in your `dependencies` section will have an appropriate version specified in the bill of materials (BOM). For Gradle projects, this is the recommended approach.
+If you choose to use the `rewrite-recipe-bom`, you won't have to worry about specifying versions for your OpenRewrite recipes as all of the recipes you include in your `dependencies` section will have an appropriate version specified in the bill of materials (BOM). **For Gradle projects, this is the recommended approach.**
 
-If you choose to not use `rewrite-recipe-bom`, you'll need to specify the version of each rewrite recipe module you use.
+If you choose to not use `rewrite-recipe-bom`, you'll need to specify the version of each OpenRewrite recipe module you use.
 
 Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should look similar to this:
 
