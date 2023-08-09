@@ -377,6 +377,14 @@ void noChangeOnJava11() {
 }
 ```
 
+### Specifying the classpath for dependencies
+
+If your tests include code that is not part of the JDK itself, you will want to add a `classpath` or `classpathFromResources` to the test so that OpenRewrite can know where those dependencies are coming from.
+
+For instance, if you want to test that your recipe removes a `junit-jupiter-api` method, you would need to let the parser know that there is a dependency on that library such as in [the RemoveUnneededAssertionTest](https://github.com/openrewrite/rewrite-static-analysis/blob/v1.0.4/src/test/java/org/openrewrite/staticanalysis/RemoveUnneededAssertionTest.java#L105).
+
+If you want to test multiple versions of the same dependency, you'll want to use `classpathFromResources` instead which you can find documentation for in the [using multiple versions of a library guide](https://docs.openrewrite.org/authoring-recipes/multiple-versions).
+
 ## Next steps
 
 Now that you're familiar with writing tests, consider reading over the [best practice guide for making recipes](recipe-conventions-and-best-practices.md). You could also check out [the guide that expands on JavaTemplates](modifying-methods-with-javatemplate.md) if you'd like to learn even more about creating recipes.
