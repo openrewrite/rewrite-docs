@@ -10,7 +10,7 @@ To have a reproducible example, we'll start with a repository generated from [Sp
 
 ### Step 2: Create a Gradle init script.
 
-Save the following init script. It does not need to be in the project directory itself. In the `allprojects` block, we are specifying a dependency that contains Rewrite recipes (`rewrite-java`), and are also configuring a custom recipe YAML for use. For the full range of options, see [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md).
+Save the following init script. It does not need to be in the project directory itself. In the `allprojects` block, we are specifying a dependency that contains OpenRewrite recipes (`rewrite-java`), and are also configuring a custom recipe YAML for use. For the full range of options, see [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md).
 
 ```groovy
 initscript {
@@ -41,9 +41,11 @@ rootProject {
 }
 ```
 
-### Step 3 (optional): Create the custom recipe YAML
+### Step 3: Create the custom recipe YAML
 
 The init script as configured above depends on a `rewrite.yml` that exists in the root of the project directory.
+
+Here is what that might look like:
 
 ```yaml
 type: specs.openrewrite.org/v1beta/recipe
