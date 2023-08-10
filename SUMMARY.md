@@ -15,6 +15,7 @@
     * [Migrate to Spring Boot 3 from Spring Boot 2](running-recipes/popular-recipe-guides/migrate-to-spring-3.md)
     * [Migrate to Spring Boot 2 from Spring Boot 1](running-recipes/popular-recipe-guides/spring-boot-2.x-migration-from-spring-boot-1.x.md)
     * [Migrate to Quarkus 2 from Quarkus 1](running-recipes/popular-recipe-guides/quarkus-2.x-migration-from-quarkus-1.x.md)
+    * [Migrate to Micronaut 4 from Micronaut 3](running-recipes/popular-recipe-guides/migrate-to-micronaut-4-from-micronaut-3.md)
     * [Migrate to Micronaut 3 from Micronaut 2](running-recipes/popular-recipe-guides/migrate-to-micronaut-3-from-micronaut-2.md)
     * [Migrate to SLF4J from Log4J](running-recipes/popular-recipe-guides/migrate-to-slf4j-from-log4j.md)
     * [Use SLF4J parameterized logging](running-recipes/popular-recipe-guides/slf4j-parameterized-logging.md)
