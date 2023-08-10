@@ -141,6 +141,7 @@ protobuf
 quarkus
 Querydsl
 qute
+reactivestreams
 rebranded
 Recile
 recipespec
