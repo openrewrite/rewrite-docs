@@ -52,7 +52,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.1.1"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.0"))
         rewrite("org.openrewrite.recipe:rewrite-spring")
     
         // Other project dependencies
@@ -114,7 +114,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     }
     
     dependencies {
-        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.1.1"))
+        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.0"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies
