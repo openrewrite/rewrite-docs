@@ -11,7 +11,7 @@ The [org.openrewrite.java.logging.slf4j.Log4jToSlf4j](../../reference/recipes/ja
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.23")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
