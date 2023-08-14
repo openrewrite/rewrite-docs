@@ -6,99 +6,22 @@ _Using `java.util.Collection#forEach(Set::remove)` rather than `java.util.Set#re
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseForEachRemoveInsteadOfSetRemoveAll.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseForEachRemoveInsteadOfSetRemoveAll.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="T.java" %}
-
-###### Before
-{% code title="T.java" %}
-```java
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-class T {
-    static {
-        Set<String> s = new HashSet<>();
-        List<String> l = Collections.singletonList("a");
-        s.removeAll(l);
-    }
-
-    Set<String> removeFromSet(Set<String> s, Collection<String> c) {
-        s.removeAll(c);
-        return s;
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="T.java" %}
-```java
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-class T {
-    static {
-        Set<String> s = new HashSet<>();
-        List<String> l = Collections.singletonList("a");
-        l.forEach(s::remove);
-    }
-
-    Set<String> removeFromSet(Set<String> s, Collection<String> c) {
-        c.forEach(s::remove);
-        return s;
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- T.java
-+++ T.java
-@@ -11,1 +11,1 @@
-        Set<String> s = new HashSet<>();
-        List<String> l = Collections.singletonList("a");
--       s.removeAll(l);
-+       l.forEach(s::remove);
-    }
-@@ -15,1 +15,1 @@
-
-    Set<String> removeFromSet(Set<String> s, Collection<String> c) {
--       s.removeAll(c);
-+       c.forEach(s::remove);
-        return s;
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -110,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -134,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -10,71 +10,22 @@ _Fix `String#format` and `String#formatted` expressions by replacing `\n` newlin
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FixStringFormatExpressions.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FixStringFormatExpressions.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="T.java" %}
-
-###### Before
-{% code title="T.java" %}
-```java
-class T {
-    static {
-        String s = String.format("hello world\n%s", "again");
-        String s2 = "hello world\n%s".formatted("again");
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="T.java" %}
-```java
-class T {
-    static {
-        String s = String.format("hello world%n%s", "again");
-        String s2 = "hello world%n%s".formatted("again");
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- T.java
-+++ T.java
-@@ -3,2 +3,2 @@
-class T {
-    static {
--       String s = String.format("hello world\n%s", "again");
--       String s2 = "hello world\n%s".formatted("again");
-+       String s = String.format("hello world%n%s", "again");
-+       String s2 = "hello world%n%s".formatted("again");
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -86,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -110,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

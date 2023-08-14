@@ -1,7 +1,9 @@
 # Cucumber
 
+_Recipes for upgrading [Cucumber](https://cucumber.io/)._
+
 ## Categories
 
-* [Jvm](/reference/recipes/cucumber/jvm)
+* [Cucumber-JVM](/reference/recipes/cucumber/jvm)
 
 

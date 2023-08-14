@@ -10,195 +10,22 @@ _Adds missing braces around code such as single-line `if`, `for`, `while`, and `
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/NeedBraces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/NeedBraces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    static void addToWhile() {
-        while (true) ;
-    }
-
-    static void addToWhileWithBody() {
-        while (true) return;
-    }
-
-    static void addToIf(int n) {
-        if (n == 1) return;
-    }
-
-    static void addToIfElse(int n) {
-        if (n == 1) return;
-        else return;
-    }
-
-    static void addToIfElseIfElse(int n) {
-        if (n == 1) return;
-        else if (n == 2) return;
-        else return;
-    }
-
-    static void addToDoWhile(Object obj) {
-        do obj.notify(); while (true);
-    }
-
-    static void addToIterativeFor(Object obj) {
-        for (int i = 0; ; ) obj.notify();
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    static void addToWhile() {
-        while (true) {
-        }
-    }
-
-    static void addToWhileWithBody() {
-        while (true) {
-            return;
-        }
-    }
-
-    static void addToIf(int n) {
-        if (n == 1) {
-            return;
-        }
-    }
-
-    static void addToIfElse(int n) {
-        if (n == 1) {
-            return;
-        } else {
-            return;
-        }
-    }
-
-    static void addToIfElseIfElse(int n) {
-        if (n == 1) {
-            return;
-        } else if (n == 2) {
-            return;
-        } else {
-            return;
-        }
-    }
-
-    static void addToDoWhile(Object obj) {
-        do {
-            obj.notify();
-        } while (true);
-    }
-
-    static void addToIterativeFor(Object obj) {
-        for (int i = 0; ; ) {
-            obj.notify();
-        }
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -3,1 +3,2 @@
-class Test {
-    static void addToWhile() {
--       while (true) ;
-+       while (true) {
-+       }
-    }
-@@ -7,1 +8,3 @@
-
-    static void addToWhileWithBody() {
--       while (true) return;
-+       while (true) {
-+           return;
-+       }
-    }
-@@ -11,1 +14,3 @@
-
-    static void addToIf(int n) {
--       if (n == 1) return;
-+       if (n == 1) {
-+           return;
-+       }
-    }
-@@ -15,2 +20,5 @@
-
-    static void addToIfElse(int n) {
--       if (n == 1) return;
--       else return;
-+       if (n == 1) {
-+           return;
-+       } else {
-+           return;
-+       }
-    }
-@@ -20,3 +28,7 @@
-
-    static void addToIfElseIfElse(int n) {
--       if (n == 1) return;
--       else if (n == 2) return;
--       else return;
-+       if (n == 1) {
-+           return;
-+       } else if (n == 2) {
-+           return;
-+       } else {
-+           return;
-+       }
-    }
-@@ -26,1 +38,3 @@
-
-    static void addToDoWhile(Object obj) {
--       do obj.notify(); while (true);
-+       do {
-+           obj.notify();
-+       } while (true);
-    }
-@@ -30,1 +44,3 @@
-
-    static void addToIterativeFor(Object obj) {
--       for (int i = 0; ; ) obj.notify();
-+       for (int i = 0; ; ) {
-+           obj.notify();
-+       }
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -210,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -234,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,129 +6,22 @@ _String concatenation within calls to `StringBuilder.append()` causes unnecessar
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ChainStringBuilderAppendCalls.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ChainStringBuilderAppendCalls.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Examples
-##### Example 1
-Chain `StringBuilder.append()` calls instead of the '+' operator to efficiently concatenate strings and numbers.
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
-        sb.append("A" + op + "B");
-        sb.append(1 + op + 2);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
-        sb.append("A").append(op).append("B");
-        sb.append(1).append(op).append(2);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -5,2 +5,2 @@
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
--       sb.append("A" + op + "B");
--       sb.append(1 + op + 2);
-+       sb.append("A").append(op).append("B");
-+       sb.append(1).append(op).append(2);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-Grouping concatenation.
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
-        sb.append("A" + "B" + "C" + op + "D" + "E");
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-class A {
-    void method1() {
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
-        sb.append("A" + "B" + "C").append(op).append("D" + "E");
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -5,1 +5,1 @@
-        StringBuilder sb = new StringBuilder();
-        String op = "+";
--       sb.append("A" + "B" + "C" + op + "D" + "E");
-+       sb.append("A" + "B" + "C").append(op).append("D" + "E");
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -140,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -164,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

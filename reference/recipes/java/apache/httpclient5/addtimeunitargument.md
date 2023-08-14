@@ -44,7 +44,7 @@ Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined activate it a
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {

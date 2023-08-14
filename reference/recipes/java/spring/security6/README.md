@@ -5,7 +5,6 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrate to Spring Security 6.0](./upgradespringsecurity_6_0.md)
-* [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](./removeuseauthorizationmanager.md)
 
 ## Recipes
 
@@ -15,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`](./usesha256inrememberme.md)
 * [Remove the `useAuthorizationManager=true` attribute from `@EnableReactiveMethodSecurity`](./updateenablereactivemethodsecurity.md)
 * [Remove unnecessary `filterSecurityInterceptorOncePerRequest(false)` when upgrading to Spring Security 6](./removefiltersecurityinterceptoronceperrequest.md)
+* [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](./removeuseauthorizationmanager.md)
 * [Remove unneeded `oauth2Login` config when upgrading to Spring Security 6](./removeoauth2loginconfig.md)
 
 

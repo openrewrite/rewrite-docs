@@ -120,7 +120,7 @@ Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a de
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {

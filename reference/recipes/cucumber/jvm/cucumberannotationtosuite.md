@@ -1,86 +1,27 @@
-# Replace @Cucumber with @Suite
+# Replace `@Cucumber` with `@Suite`
 
 **org.openrewrite.cucumber.jvm.CucumberAnnotationToSuite**
 
-_Replace @Cucumber with @Suite and @SelectClasspathResource("cucumber/annotated/class/package")._
+_Replace `@Cucumber` with `@Suite` and `@SelectClasspathResource("cucumber/annotated/class/package")`._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/CucumberAnnotationToSuite.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/CucumberAnnotationToSuite.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cucumber-jvm
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="com/example/app/CucumberJava8Definitions.java" %}
-
-###### Before
-{% code title="com/example/app/CucumberJava8Definitions.java" %}
-```java
-package com.example.app;
-
-import io.cucumber.junit.platform.engine.Cucumber;
-
-@Cucumber
-public class CucumberJava8Definitions {
-}
-```
-{% endcode %}
-
-###### After
-{% code title="com/example/app/CucumberJava8Definitions.java" %}
-```java
-package com.example.app;
-
-import org.junit.platform.suite.api.SelectClasspathResource;
-import org.junit.platform.suite.api.Suite;
-
-@Suite
-@SelectClasspathResource("com/example/app")
-public class CucumberJava8Definitions {
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- com/example/app/CucumberJava8Definitions.java
-+++ com/example/app/CucumberJava8Definitions.java
-@@ -3,1 +3,2 @@
-package com.example.app;
-
--import io.cucumber.junit.platform.engine.Cucumber;
-+import org.junit.platform.suite.api.SelectClasspathResource;
-+import org.junit.platform.suite.api.Suite;
-
-@@ -5,1 +6,2 @@
-import io.cucumber.junit.platform.engine.Cucumber;
-
--@Cucumber
-+@Suite
-+@SelectClasspathResource("com/example/app")
-public class CucumberJava8Definitions {
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -92,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.5")
 }
 ```
 {% endcode %}
@@ -116,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

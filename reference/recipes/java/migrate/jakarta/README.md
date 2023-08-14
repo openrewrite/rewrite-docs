@@ -7,7 +7,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Ehcache from javax to jakarta namespace](./ehcachejavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](./jacksonjavaxtojakarta.md)
 * [Migrate Johnzon from javax to jakarta namespace](./johnzonjavaxtojakarta.md)
-* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](./javaxactivationmigrationtojakartaactivation.md)
 * [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](./javaxannotationmigrationtojakartaannotation.md)
 * [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](./changejavaxannotationtojakarta.md)
@@ -45,5 +44,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
+* [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
 
 

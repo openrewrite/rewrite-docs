@@ -5,6 +5,11 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Best practices for GCP](./gcpbestpractices.md)
+* [Ensure secure boot for shielded GKE nodes is enabled](./ensuresecurebootforshieldedgkenodesisenabled.md)
+* [Ensure the GKE metadata server is enabled](./ensurethegkemetadataserverisenabled.md)
+
+## Recipes
+
 * [Enable `PodSecurityPolicy` controller on Google Kubernetes Engine (GKE) clusters](./enablepodsecuritypolicycontrollerongkeclusters.md)
 * [Enable VPC Flow Logs for subnetworks](./enablevpcflowlogsforsubnetworks.md)
 * [Enable VPC flow logs and intranode visibility](./enablevpcflowlogsandintranodevisibility.md)
@@ -16,8 +21,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Ensure binary authorization is used](./ensurebinaryauthorizationisused.md)
 * [Ensure compute instances launch with shielded VM enabled](./ensurecomputeinstanceslaunchwithshieldedvmenabled.md)
 * [Ensure private cluster is enabled when creating Kubernetes clusters](./ensureprivateclusterisenabledwhencreatingkubernetesclusters.md)
-* [Ensure secure boot for shielded GKE nodes is enabled](./ensuresecurebootforshieldedgkenodesisenabled.md)
 * [Ensure shielded GKE nodes are enabled](./ensureshieldedgkenodesareenabled.md)
-* [Ensure the GKE metadata server is enabled](./ensurethegkemetadataserverisenabled.md)
 
 

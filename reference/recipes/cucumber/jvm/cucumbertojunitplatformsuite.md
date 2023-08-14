@@ -1,8 +1,8 @@
-# Cucumber to JUnit Test Suites
+# Cucumber to JUnit test `@Suite`
 
 **org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite**
 
-_Migrates Cucumber tests to JUnit Test Suites._
+_Migrates Cucumber tests to JUnit test `@Suite`._
 
 ### Tags
 
@@ -11,22 +11,22 @@ _Migrates Cucumber tests to JUnit Test Suites._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cucumber-jvm
-* version: 1.0.4
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.5")
 }
 ```
 {% endcode %}
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -90,8 +90,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Replace @Cucumber with @Suite](../../cucumber/jvm/cucumberannotationtosuite.md)
-* [Add Maven dependency](../../maven/adddependency.md)
+* [Replace `@Cucumber` with `@Suite`](../../cucumber/jvm/cucumberannotationtosuite.md)
+* [Add Gradle or Maven dependency](../../java/dependencies/adddependency.md)
   * groupId: `org.junit.platform`
   * artifactId: `junit-platform-suite`
   * version: `1.9.x`
@@ -105,14 +105,14 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite
-displayName: Cucumber to JUnit Test Suites
-description: Migrates Cucumber tests to JUnit Test Suites.
+displayName: Cucumber to JUnit test `@Suite`
+description: Migrates Cucumber tests to JUnit test `@Suite`.
 tags:
   - cucumber
   - testing
 recipeList:
   - org.openrewrite.cucumber.jvm.CucumberAnnotationToSuite
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.junit.platform
       artifactId: junit-platform-suite
       version: 1.9.x

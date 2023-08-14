@@ -6,11 +6,28 @@ _Lists the Maven repositories that would be used for dependency resolution, in o
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveMavenRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.1.14/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveMavenRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.2.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.1.14
+* version: 8.2.0
+
+## Options
+
+| Type | Name | Description |
+| -- | -- | -- |
+| `Boolean` | useMarkers | *Optional*. Whether to add markers for each effective Maven repository to the POM. Default `false`. |
+
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+
+### Effective Maven repositories
+
+_Table showing which Maven repositories were used in dependency resolution for this POM._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| POM path | The path to the POM file. |
+| Repository URI | The URI of the Maven repository. |
 
 
 ## Usage
@@ -54,6 +71,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 ## Contributors
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Kevin Carpenter™️](mailto:kevin@moderne.io)
 * [Mike Solomon](mailto:mike@moderne.io)
 
 

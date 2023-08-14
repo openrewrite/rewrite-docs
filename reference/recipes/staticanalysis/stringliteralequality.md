@@ -10,125 +10,22 @@ _`String.equals()` should be used when checking value equality on String literal
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/StringLiteralEquality.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/StringLiteralEquality.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import java.util.List;
-class Test {
-    public String getString() {
-        return "stringy";
-    }
-
-    public void method(String str) {
-        if (str.length() > 1 && str == "test") ;
-        if ("test" == str) ;
-        if ("test" == "test") ;
-        if ("test" == new String("test")) ;
-        if ("test" == getString());
-        boolean flag = (str == "test");
-        while ("test" == str) {
-        }
-    }
-
-    public void findPeter(List<Friend> friends) {
-        friends.stream().filter(e -> e.name == "peter");
-    }
-
-    class Friend {
-        String name;
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.util.List;
-class Test {
-    public String getString() {
-        return "stringy";
-    }
-
-    public void method(String str) {
-        if (str.length() > 1 && "test".equals(str)) ;
-        if ("test".equals(str)) ;
-        if ("test".equals("test")) ;
-        if ("test".equals(new String("test"))) ;
-        if ("test".equals(getString()));
-        boolean flag = ("test".equals(str));
-        while ("test".equals(str)) {
-        }
-    }
-
-    public void findPeter(List<Friend> friends) {
-        friends.stream().filter(e -> "peter".equals(e.name));
-    }
-
-    class Friend {
-        String name;
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -8,7 +8,7 @@
-
-    public void method(String str) {
--       if (str.length() > 1 && str == "test") ;
--       if ("test" == str) ;
--       if ("test" == "test") ;
--       if ("test" == new String("test")) ;
--       if ("test" == getString());
--       boolean flag = (str == "test");
--       while ("test" == str) {
-+       if (str.length() > 1 && "test".equals(str)) ;
-+       if ("test".equals(str)) ;
-+       if ("test".equals("test")) ;
-+       if ("test".equals(new String("test"))) ;
-+       if ("test".equals(getString()));
-+       boolean flag = ("test".equals(str));
-+       while ("test".equals(str)) {
-        }
-@@ -19,1 +19,1 @@
-
-    public void findPeter(List<Friend> friends) {
--       friends.stream().filter(e -> e.name == "peter");
-+       friends.stream().filter(e -> "peter".equals(e.name));
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -140,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -164,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -191,9 +88,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ## Contributors
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Patrick](mailto:patway99@gmail.com)
 

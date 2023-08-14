@@ -11,123 +11,22 @@ _Removes unnecessary parentheses from code where extra parentheses pairs are red
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UnnecessaryParentheses.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UnnecessaryParentheses.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import java.util.*;
-
-class Test {
-    int square(int a, int b) {
-        int square = (a * b);
-
-        int sumOfSquares = 0;
-        for (int i = (0); i < 10; i++) {
-            sumOfSquares += (square(i * i, i));
-        }
-        double num = (10.0);
-
-        List<String> list = Arrays.asList("a1", "b1", "c1");
-        list.stream()
-                .filter((s) -> s.startsWith("c"))
-                .forEach(System.out::println);
-
-        return (square);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.util.*;
-
-class Test {
-    int square(int a, int b) {
-        int square = a * b;
-
-        int sumOfSquares = 0;
-        for (int i = 0; i < 10; i++) {
-            sumOfSquares += square(i * i, i);
-        }
-        double num = 10.0;
-
-        List<String> list = Arrays.asList("a1", "b1", "c1");
-        list.stream()
-                .filter(s -> s.startsWith("c"))
-                .forEach(System.out::println);
-
-        return square;
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -5,1 +5,1 @@
-class Test {
-    int square(int a, int b) {
--       int square = (a * b);
-+       int square = a * b;
-
-@@ -8,2 +8,2 @@
-
-        int sumOfSquares = 0;
--       for (int i = (0); i < 10; i++) {
--           sumOfSquares += (square(i * i, i));
-+       for (int i = 0; i < 10; i++) {
-+           sumOfSquares += square(i * i, i);
-        }
-@@ -11,1 +11,1 @@
-            sumOfSquares += (square(i * i, i));
-        }
--       double num = (10.0);
-+       double num = 10.0;
-
-@@ -15,1 +15,1 @@
-        List<String> list = Arrays.asList("a1", "b1", "c1");
-        list.stream()
--               .filter((s) -> s.startsWith("c"))
-+               .filter(s -> s.startsWith("c"))
-                .forEach(System.out::println);
-@@ -18,1 +18,1 @@
-                .forEach(System.out::println);
-
--       return (square);
-+       return square;
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -139,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -163,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

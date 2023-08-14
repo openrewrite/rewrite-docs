@@ -10,99 +10,22 @@ _`AtomicBoolean#equals(Object)`, `AtomicInteger#equals(Object)` and `AtomicLong#
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/AtomicPrimitiveEqualsUsesGet.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/AtomicPrimitiveEqualsUsesGet.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-class A {
-    boolean areEqual(AtomicInteger i1, AtomicInteger i2) {
-        return i1.equals(i2);
-    }
-    boolean areEqual(AtomicLong l1, AtomicLong l2) {
-        return l1.equals(l2);
-    }
-    boolean areEqual(AtomicBoolean b1, AtomicBoolean b2) {
-        return b1.equals(b2);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-class A {
-    boolean areEqual(AtomicInteger i1, AtomicInteger i2) {
-        return i1.get() == i2.get();
-    }
-    boolean areEqual(AtomicLong l1, AtomicLong l2) {
-        return l1.get() == l2.get();
-    }
-    boolean areEqual(AtomicBoolean b1, AtomicBoolean b2) {
-        return b1.get() == b2.get();
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -7,1 +7,1 @@
-class A {
-    boolean areEqual(AtomicInteger i1, AtomicInteger i2) {
--       return i1.equals(i2);
-+       return i1.get() == i2.get();
-    }
-@@ -10,1 +10,1 @@
-    }
-    boolean areEqual(AtomicLong l1, AtomicLong l2) {
--       return l1.equals(l2);
-+       return l1.get() == l2.get();
-    }
-@@ -13,1 +13,1 @@
-    }
-    boolean areEqual(AtomicBoolean b1, AtomicBoolean b2) {
--       return b1.equals(b2);
-+       return b1.get() == b2.get();
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -114,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -138,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

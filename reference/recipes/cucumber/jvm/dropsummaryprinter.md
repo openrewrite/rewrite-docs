@@ -1,84 +1,27 @@
-# Drop SummaryPrinter
+# Drop `SummaryPrinter`
 
 **org.openrewrite.cucumber.jvm.DropSummaryPrinter**
 
-_Replace SummaryPrinter with Plugin, if not already present._
+_Replace `SummaryPrinter` with `Plugin`, if not already present._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/DropSummaryPrinter.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/DropSummaryPrinter.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cucumber-jvm
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="com/example/app/CucumberJava8Definitions.java" %}
-
-###### Before
-{% code title="com/example/app/CucumberJava8Definitions.java" %}
-```java
-package com.example.app;
-
-import io.cucumber.plugin.SummaryPrinter;
-
-public class CucumberJava8Definitions implements SummaryPrinter {
-}
-```
-{% endcode %}
-
-###### After
-{% code title="com/example/app/CucumberJava8Definitions.java" %}
-```java
-package com.example.app;
-
-import io.cucumber.plugin.Plugin;
-
-public class CucumberJava8Definitions implements Plugin {
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- com/example/app/CucumberJava8Definitions.java
-+++ com/example/app/CucumberJava8Definitions.java
-@@ -3,1 +3,1 @@
-package com.example.app;
-
--import io.cucumber.plugin.SummaryPrinter;
-+import io.cucumber.plugin.Plugin;
-
-@@ -5,1 +5,1 @@
-import io.cucumber.plugin.SummaryPrinter;
-
--public class CucumberJava8Definitions implements SummaryPrinter {
-+public class CucumberJava8Definitions implements Plugin {
-}
-@@ -7,0 +7,1 @@
-public class CucumberJava8Definitions implements SummaryPrinter {
-}
-+
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -90,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.5")
 }
 ```
 {% endcode %}
@@ -114,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

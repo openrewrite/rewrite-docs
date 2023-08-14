@@ -5,8 +5,14 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Best practices for Azure](./azurebestpractices.md)
-* [Disable Kubernetes dashboard](./disablekubernetesdashboard.md)
 * [Enable Azure Storage Account Trusted Microsoft Services access](./enableazurestorageaccounttrustedmicrosoftservicesaccess.md)
+* [Ensure Azure SQL server audit log retention is greater than 90 days](./ensureazuresqlserverauditlogretentionisgreaterthan90days.md)
+* [Ensure Azure key vault is recoverable](./ensureazurekeyvaultisrecoverable.md)
+* [Set Azure Storage Account default network access to deny](./setazurestorageaccountdefaultnetworkaccesstodeny.md)
+
+## Recipes
+
+* [Disable Kubernetes dashboard](./disablekubernetesdashboard.md)
 * [Enable Azure Storage secure transfer required](./enableazurestoragesecuretransferrequired.md)
 * [Enable geo-redundant backups on PostgreSQL server](./enablegeoredundantbackupsonpostgresqlserver.md)
 * [Encrypt Azure VM data disk with ADE/CMK](./encryptazurevmdatadiskwithadecmk.md)
@@ -16,10 +22,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Ensure Azure Network Watcher NSG flow logs retention is greater than 90 days](./ensureazurenetworkwatchernsgflowlogsretentionisgreaterthan90days.md)
 * [Ensure Azure PostgreSQL database server with SSL connection is enabled](./ensureazurepostgresqldatabaseserverwithsslconnectionisenabled.md)
 * [Ensure Azure SQL Server threat detection alerts are enabled for all threat types](./ensureazuresqlserverthreatdetectionalertsareenabledforallthreattypes.md)
-* [Ensure Azure SQL server audit log retention is greater than 90 days](./ensureazuresqlserverauditlogretentionisgreaterthan90days.md)
 * [Ensure Azure SQL server send alerts to field value is set](./ensureazuresqlserversendalertstofieldvalueisset.md)
 * [Ensure Azure application gateway has WAF enabled](./ensureazureapplicationgatewayhaswafenabled.md)
-* [Ensure Azure key vault is recoverable](./ensureazurekeyvaultisrecoverable.md)
 * [Ensure FTP Deployments are disabled](./ensureftpdeploymentsaredisabled.md)
 * [Ensure MSSQL servers have email service and co-administrators enabled](./ensuremssqlservershaveemailserviceandcoadministratorsenabled.md)
 * [Ensure MySQL is using the latest version of TLS encryption](./ensuremysqlisusingthelatestversionoftlsencryption.md)
@@ -52,6 +56,5 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Ensure standard pricing tier is selected](./ensurestandardpricingtierisselected.md)
 * [Ensure storage account uses latest TLS version](./ensurestorageaccountuseslatesttlsversion.md)
 * [Ensure the storage container storing activity logs is not publicly accessible](./ensurethestoragecontainerstoringactivitylogsisnotpubliclyaccessible.md)
-* [Set Azure Storage Account default network access to deny](./setazurestorageaccountdefaultnetworkaccesstodeny.md)
 
 

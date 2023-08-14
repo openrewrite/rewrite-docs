@@ -1,4 +1,4 @@
-# Replace Cucumber-Java step definition regexes with Cucumber expressions
+# Replace `cucumber-java` step definition regexes with Cucumber expressions
 
 **org.openrewrite.cucumber.jvm.RegexToCucumberExpression**
 
@@ -6,113 +6,22 @@ _Strip regex prefix and suffix from step annotation expressions arguments where 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/RegexToCucumberExpression.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/RegexToCucumberExpression.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cucumber-jvm
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="com/example/app/ExpressionDefinitions.java" %}
-
-###### Before
-{% code title="com/example/app/ExpressionDefinitions.java" %}
-```java
-package com.example.app;
-
-import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class ExpressionDefinitions {
-
-    private int a;
-
-    @Before
-    public void before() {
-        a = 0;
-    }
-
-    @Given("^five cukes$")
-    public void five_cukes() {
-        a = 5;
-    }
-
-    @Then("^I expect (\\d+)$")
-    public void i_expect_int(Integer c) {
-        assertEquals(c, a);
-    }
-
-}
-```
-{% endcode %}
-
-###### After
-{% code title="com/example/app/ExpressionDefinitions.java" %}
-```java
-package com.example.app;
-
-import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class ExpressionDefinitions {
-
-    private int a;
-
-    @Before
-    public void before() {
-        a = 0;
-    }
-
-    @Given("five cukes")
-    public void five_cukes() {
-        a = 5;
-    }
-
-    @Then("^I expect (\\d+)$")
-    public void i_expect_int(Integer c) {
-        assertEquals(c, a);
-    }
-
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- com/example/app/ExpressionDefinitions.java
-+++ com/example/app/ExpressionDefinitions.java
-@@ -18,1 +18,1 @@
-    }
-
--   @Given("^five cukes$")
-+   @Given("five cukes")
-    public void five_cukes() {
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -124,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.5")
 }
 ```
 {% endcode %}
@@ -148,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

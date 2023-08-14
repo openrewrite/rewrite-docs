@@ -10,100 +10,22 @@ _The constructor of all primitive types has been deprecated in favor of using th
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/PrimitiveWrapperClassConstructorToValueOf.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/PrimitiveWrapperClassConstructorToValueOf.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-class A {
-    Boolean bool = new Boolean(true);
-    Byte b = new Byte("1");
-    Character c = new Character('c');
-    Double d = new Double(1.0);
-    Float f = new Float(1.1f);
-    Long l = new Long(1);
-    Short sh = new Short("12");
-    short s3 = 3;
-    Short sh3 = new Short(s3);
-    Integer i = new Integer(1);
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-class A {
-    Boolean bool = Boolean.valueOf(true);
-    Byte b = Byte.valueOf("1");
-    Character c = Character.valueOf('c');
-    Double d = Double.valueOf(1.0);
-    Float f = Float.valueOf(1.1f);
-    Long l = Long.valueOf(1);
-    Short sh = Short.valueOf("12");
-    short s3 = 3;
-    Short sh3 = Short.valueOf(s3);
-    Integer i = Integer.valueOf(1);
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -2,7 +2,7 @@
-class A {
--   Boolean bool = new Boolean(true);
--   Byte b = new Byte("1");
--   Character c = new Character('c');
--   Double d = new Double(1.0);
--   Float f = new Float(1.1f);
--   Long l = new Long(1);
--   Short sh = new Short("12");
-+   Boolean bool = Boolean.valueOf(true);
-+   Byte b = Byte.valueOf("1");
-+   Character c = Character.valueOf('c');
-+   Double d = Double.valueOf(1.0);
-+   Float f = Float.valueOf(1.1f);
-+   Long l = Long.valueOf(1);
-+   Short sh = Short.valueOf("12");
-    short s3 = 3;
-@@ -10,2 +10,2 @@
-    Short sh = new Short("12");
-    short s3 = 3;
--   Short sh3 = new Short(s3);
--   Integer i = new Integer(1);
-+   Short sh3 = Short.valueOf(s3);
-+   Integer i = Integer.valueOf(1);
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -115,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -139,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

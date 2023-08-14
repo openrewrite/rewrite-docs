@@ -10,84 +10,22 @@ _Primitive wrappers should not be instantiated only for `#toString()` or `#compa
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/NoPrimitiveWrappersForToStringOrCompareTo.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/NoPrimitiveWrappersForToStringOrCompareTo.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="T.java" %}
-
-###### Before
-{% code title="T.java" %}
-```java
-class T {
-     String a = new Integer(3).toString();
-     String b = Long.valueOf(3).toString();
-     String c = Double.valueOf(3.0).toString();
-     String d = Float.valueOf("4").toString();
-     String e = new Float("3").toString();
-     String f = Boolean.valueOf(true).toString();
-     String G = Boolean.valueOf("true").toString();
-}
-```
-{% endcode %}
-
-###### After
-{% code title="T.java" %}
-```java
-class T {
-     String a = Integer.toString(3);
-     String b = Long.toString(3);
-     String c = Double.toString(3.0);
-     String d = Float.valueOf("4").toString();
-     String e = new Float("3").toString();
-     String f = Boolean.toString(true);
-     String G = Boolean.valueOf("true").toString();
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- T.java
-+++ T.java
-@@ -2,3 +2,3 @@
-class T {
--    String a = new Integer(3).toString();
--    String b = Long.valueOf(3).toString();
--    String c = Double.valueOf(3.0).toString();
-+    String a = Integer.toString(3);
-+    String b = Long.toString(3);
-+    String c = Double.toString(3.0);
-     String d = Float.valueOf("4").toString();
-@@ -7,1 +7,1 @@
-     String d = Float.valueOf("4").toString();
-     String e = new Float("3").toString();
--    String f = Boolean.valueOf(true).toString();
-+    String f = Boolean.toString(true);
-     String G = Boolean.valueOf("true").toString();
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -99,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -123,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

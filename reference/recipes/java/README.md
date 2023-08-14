@@ -18,14 +18,9 @@ _Basic building blocks for transforming Java code._
 * [Testing](/reference/recipes/java/testing)
 * [Upgrade](/reference/recipes/java/upgrade)
 
-## Composite Recipes
-
-_Recipes that include further recipes, often including the individual recipes below._
-
-* [Add ASLv2 license header](./addapache2licenseheader.md)
-
 ## Recipes
 
+* [Add ASLv2 license header](./addapache2licenseheader.md)
 * [Add imports for fully qualified references to types](./shortenfullyqualifiedtypereferences.md)
 * [Add license header](./addlicenseheader.md)
 * [Add or update annotation attribute](./addorupdateannotationattribute.md)

@@ -11,7 +11,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Boot 3.0](./upgradespringboot_3_0.md)
 * [Migrate to Spring Boot 3.1](./upgradespringboot_3_1.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](./actuatorendpointsanitization.md)
-* [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
 
 ## Recipes
 
@@ -23,5 +22,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Enable Spring Batch Annotation](./removeenablebatchprocessing.md)
 * [Maintain trailing slash URL mappings](./maintaintrailingslashurlmappings.md)
 * [Remove Unnecessary `@ConstructorBinding`](./removeconstructorbindingannotation.md)
+* [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
 
 

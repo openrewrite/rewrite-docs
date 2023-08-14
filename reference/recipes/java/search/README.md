@@ -4,7 +4,6 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Find plain text secrets](./findsecrets.md)
 * [Find uses of deprecated classes, methods, and fields](./finddeprecateduses.md)
 
 ## Recipes
@@ -22,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find method usages](./findmethods.md)
 * [Find methods with empty bodies](./findemptymethods.md)
 * [Find missing type information on Java ASTs](./findmissingtypes.md)
+* [Find plain text secrets](./findsecrets.md)
 * [Find source files with imports](./findimports.md)
 * [Find sources that are likely tests](./islikelytest.md)
 * [Find types](./findtypes.md)

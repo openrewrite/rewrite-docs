@@ -10,97 +10,22 @@ _Replaces the single statement lambdas `o -> o instanceOf X`, `o -> (A) o`, `o -
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceLambdaWithMethodReference.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceLambdaWithMethodReference.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import java.util.function.Function;
-class Test {
-
-    ChangeListener listener = (o, oldVal, newVal) -> {
-        onChange(o, oldVal, newVal);
-    };
-
-    protected void onChange(ObservableValue<?> o, Object oldVal, Object newVal) {
-        String strVal = newVal.toString();
-        System.out.println(strVal);
-    }
-
-    interface ObservableValue<T> {
-    }
-
-    @FunctionalInterface
-    interface ChangeListener<T> {
-        void changed(ObservableValue<? extends T> observable, T oldValue, T newValue);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.util.function.Function;
-class Test {
-
-    ChangeListener listener = this::onChange;
-
-    protected void onChange(ObservableValue<?> o, Object oldVal, Object newVal) {
-        String strVal = newVal.toString();
-        System.out.println(strVal);
-    }
-
-    interface ObservableValue<T> {
-    }
-
-    @FunctionalInterface
-    interface ChangeListener<T> {
-        void changed(ObservableValue<? extends T> observable, T oldValue, T newValue);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -4,3 +4,1 @@
-class Test {
-
--   ChangeListener listener = (o, oldVal, newVal) -> {
--       onChange(o, oldVal, newVal);
--   };
-+   ChangeListener listener = this::onChange;
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 1.0.5
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -112,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -136,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -161,14 +86,11 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
+* [SMIT MALKAN](mailto:smitmalkan99@gmail.com)
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
-* [Knut Wannheden](mailto:knut@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
+* [Knut Wannheden](mailto:knut@moderne.io)
 * Tyler Van Gorder
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* Josh Soref
-* [Rick Ossendrijver](mailto:rick.ossendrijver@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

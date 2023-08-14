@@ -10,11 +10,11 @@ _Adds `@Override` to methods overriding superclass methods or implementing inter
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/MissingOverrideAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/MissingOverrideAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.4
+* version: 1.0.5
 
 ## Options
 
@@ -22,78 +22,16 @@ _Adds `@Override` to methods overriding superclass methods or implementing inter
 | -- | -- | -- |
 | `Boolean` | ignoreAnonymousClassMethods | *Optional*. When enabled, ignore missing annotations on methods which override methods when the class definition is within an anonymous class. |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|ignoreAnonymousClassMethods|`false`|
-
-
-{% tabs %}
-{% tab title="com/example/Test.java" %}
-
-###### Before
-{% code title="com/example/Test.java" %}
-```java
-package com.example;
-
-class Test {
-    public void method() {
-        //noinspection all
-        Runnable t = new Runnable() {
-            public void run() {
-            }
-        };
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="com/example/Test.java" %}
-```java
-package com.example;
-
-class Test {
-    public void method() {
-        //noinspection all
-        Runnable t = new Runnable() {
-            @Override
-            public void run() {
-            }
-        };
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- com/example/Test.java
-+++ com/example/Test.java
-@@ -7,0 +7,1 @@
-        //noinspection all
-        Runnable t = new Runnable() {
-+           @Override
-            public void run() {
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {
@@ -105,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
 }
 ```
 {% endcode %}
@@ -129,7 +67,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
           </dependency>
         </dependencies>
       </plugin>

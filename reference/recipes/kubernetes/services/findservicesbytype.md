@@ -177,7 +177,7 @@ Now that `com.yourorg.FindServicesByTypeExample` has been defined activate it an
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.22")
+    id("org.openrewrite.rewrite") version("6.1.24")
 }
 
 rewrite {

@@ -8,12 +8,8 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Code cleanup](./codecleanup.md)
 * [Common static analysis issues](./commonstaticanalysis.md)
-* [Java API best practices](./javaapibestpractices.md)
-* [Properly use declaration-site type variance for well-known types](./commondeclarationsitetypevariances.md)
-* [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
-* [Use `Map#containsKey`](./usemapcontainskey.md)
 
 ## Recipes
 
@@ -47,6 +43,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Hidden field](./hiddenfield.md)
 * [Hide utility class constructor](./hideutilityclassconstructor.md)
 * [Inline variable](./inlinevariable.md)
+* [Java API best practices](./javaapibestpractices.md)
 * [Jump statements should not be redundant](./noredundantjumpstatements.md)
 * [Method name casing](./methodnamecasing.md)
 * [Modifier order](./modifierorder.md)
@@ -58,6 +55,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Operator wrapping](./operatorwrap.md)
 * [Prefer `while` over `for` loops](./whileinsteadoffor.md)
 * [Properly use declaration-site type variance](./declarationsitetypevariance.md)
+* [Properly use declaration-site type variance for well-known types](./commondeclarationsitetypevariances.md)
 * [Redundant file creation](./redundantfilecreation.md)
 * [Reformat local variable names to camelCase](./renamelocalvariablestocamelcase.md)
 * [Reformat private field names to camelCase](./renameprivatefieldstocamelcase.md)
@@ -86,6 +84,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `Optional#isPresent()` with `Optional#ifPresent()`](./replaceoptionalispresentwithifpresent.md)
 * [Replace Stream.toList() with Stream.collect(Collectors.toList())](./replacestreamtolistwithcollect.md)
 * [Replace StringBuilder.append() with String](./replacestringbuilderwithstring.md)
+* [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
 * [Replace deprecated Runtime.Exec() methods](./replacedeprecatedruntimeexecmethods.md)
 * [Replace duplicate `String` literals](./replaceduplicatestringliterals.md)
 * [Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`](./uselistsort.md)
@@ -117,6 +116,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `Collection` interfaces](./usecollectioninterfaces.md)
 * [Use `Collection#isEmpty()` instead of comparing `size()`](./isemptycalloncollections.md)
 * [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](./noemptycollectionwithrawtype.md)
+* [Use `Map#containsKey`](./usemapcontainskey.md)
 * [Use `StandardCharset` constants](./usestandardcharset.md)
 * [Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`](./equalstocontentequals.md)
 * [Use `String.equals()` on String literals](./stringliteralequality.md)

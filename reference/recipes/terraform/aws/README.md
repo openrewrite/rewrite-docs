@@ -5,6 +5,9 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Best practices for AWS](./awsbestpractices.md)
+
+## Recipes
+
 * [Disable Instance Metadata Service version 1](./disableinstancemetadataservicev1.md)
 * [Enable API gateway caching](./enableapigatewaycaching.md)
 * [Enable point-in-time recovery for DynamoDB](./enabledynamodbpitr.md)
