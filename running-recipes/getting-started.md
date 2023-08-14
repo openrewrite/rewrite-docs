@@ -2,6 +2,17 @@
 description: >-
   This guide covers configuring OpenRewrite with Maven or Gradle and using it to
   run refactoring recipes.
+layout:
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Quickstart: Setting up your project and running recipes
