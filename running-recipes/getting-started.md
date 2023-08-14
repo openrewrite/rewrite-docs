@@ -2,17 +2,6 @@
 description: >-
   This guide covers configuring OpenRewrite with Maven or Gradle and using it to
   run refactoring recipes.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Quickstart: Setting up your project and running recipes
@@ -101,7 +90,7 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-At this point, you're able to run any of the Maven goals or Gradle tasks provided by the OpenRewrite plugin. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) or [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options.
+At this point, you're able to run any of the Maven goals or Gradle tasks provided by the OpenRewrite plugin. See [Maven Plugin Configuration](/reference/rewrite-maven-plugin.md) or [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md) for the full set of options.
 
 From the command line, try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a list of all the recipes available for execution. Initially, this will list only the recipes built-in to OpenRewrite.
 
@@ -166,11 +155,11 @@ Now that you've activated the `OrderImports` recipe, you can run it by executing
 
 After running it, you will be notified of all of the files that have been changed:
 
-![Console output from running ./mvnw rewrite:run with OrderImports set as an active recipe in the spring-petclinic-migration repository](../.gitbook/assets/order-imports-run.png)
+![Console output from running ./mvnw rewrite:run with OrderImports set as an active recipe in the spring-petclinic-migration repository](/.gitbook/assets/order-imports-run.png)
 
 To see what has changed in the code, run `git diff` or use your preferred IDE's diff viewer:
 
-![Sample of formatting changes made to spring-petclinic-migration by OrderImports](../.gitbook/assets/order-imports-2.png)
+![Sample of formatting changes made to spring-petclinic-migration by OrderImports](/.gitbook/assets/order-imports-2.png)
 
 From there, you can commit the changes or add additional recipes based on your needs.
 
@@ -253,7 +242,7 @@ Once this recipe has been added to your active recipes, you can run either `./mv
 * References such as import statements have been updated to reflect the new name
 * All of the files have been formatted according to the previously defined `OrderImports` rules
 
-![Git diff showing updated import statements](../.gitbook/assets/update-import.png)
+![Git diff showing updated import statements](<../.gitbook/assets/update-import.png>)
 
 From there, you can confirm that everything still builds and passes its tests by running `./mvnw clean install` or `./gradlew build`.
 
@@ -399,6 +388,6 @@ Before making any recipes or configuring any plugins, please [ensure your recipe
 {% endhint %}
 
 * [Writing a Java refactoring recipe](../authoring-recipes/writing-a-java-refactoring-recipe.md)
-* [Maven plugin configuration](../reference/rewrite-maven-plugin.md)
-* [Gradle plugin configuration](../reference/gradle-plugin-configuration.md)
-* [Declarative YAML format](../reference/yaml-format-reference.md)
+* [Maven plugin configuration](/reference/rewrite-maven-plugin.md)
+* [Gradle plugin configuration](/reference/gradle-plugin-configuration.md)
+* [Declarative YAML format](/reference/yaml-format-reference.md)
