@@ -255,7 +255,7 @@ In order for your recipes to be usable by the OpenRewrite build plugins or on [a
 
 ### Local publishing for testing
 
-Before you publish your recipe module to an artifact repository, you may want to try it out locally. To do this, on the command line, run `./gradlew publishToMavenLocal` (or equivalently `./gradlew pTML`). This will publish to your local maven repository, typically under `~/.m2/repository`.
+Before you publish your recipe module to an artifact repository, you may want to try it out locally. To do this, on the command line, run `gradle publishToMavenLocal` (or equivalently `gradle pTML`). This will publish to your local maven repository, typically under `~/.m2/repository`.
 
 Once your artifact is published, you can test this recipe in a separate repository locally by following the instructions in the [running your recipes](recipe-development-environment.md#running-your-recipes) section.
 
@@ -312,7 +312,7 @@ then the `rewrite` `dependency` should be:
 * `rewrite("com.yourorg:rewrite-recipe-starter:0.1.0-dev.25.uncommitted+f58d7fa")`.
 {% endhint %}
 
-Now you can run your recipe with `./gradlew rewriteRun` or `./gradlew rewriteDryRun`
+Now you can run your recipe with `gradle rewriteRun` or `gradle rewriteDryRun`
 
 If you run into errors when trying to publish and read your recipe locally, try deleting the jars that end with `uncommitted+<hash>` and then re-build them. Furthermore, if you're getting errors in your IDE when trying to build or run recipes, try restarting the IDE.
 {% endtab %}

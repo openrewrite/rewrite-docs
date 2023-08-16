@@ -80,7 +80,7 @@ If you wanted to run this recipe (but not distribute it to others), you would:
 
 1. Copy the above YAML into a `rewrite.yml` file at the root of your project
 2. Configure the [Gradle plugin](gradle-plugin-configuration.md) or [Maven plugin](rewrite-maven-plugin.md) to have an active recipe of `com.yourorg.RecipeA`
-3. Run the `./mvnw rewrite:run` or the `./gradlew rewriteRun` command
+3. Run the `mvn rewrite:run` or the `gradle rewriteRun` command
 
 ## Styles
 

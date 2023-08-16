@@ -1,8 +1,8 @@
 # Building OpenRewrite from source
 
-OpenRewrite is built with [Gradle](https://gradle.org/). It is not typically necessary to manually install gradle, as invoking the `./gradlew` (Linux and Mac) or `gradlew.bat` (Windows) shell scripts will download the appropriate version of Gradle to your user directory.
+OpenRewrite is built with [Gradle](https://gradle.org/). It is not typically necessary to manually install Gradle, as invoking the `./gradlew` (Linux and Mac) or `gradlew.bat` (Windows) shell scripts will download the appropriate version of Gradle to your user directory.
 
-OpenRewrite requires several JDK versions to be installed on your system. If you are able to access [Adoptium](https://adoptium.net/) then Gradle will automatically download and install any needed JDKs which you may be missing. If your network configuration or security policies do not permit this, then you must manually install JDK versions 8, 11, and 17.
+OpenRewrite requires several JDK versions to be installed on your system. If you are able to access [Adoptium](https://adoptium.net/), then Gradle will automatically download and install any needed JDKs which you may be missing. If your network configuration or security policies do not permit this, then you must manually install JDK versions 8, 11, and 17.
 
 > **Note** If you are developing on a Mac M1 or M2 you must install the Java 1.8 JDK manually (for example using [SDKMAN!](https://sdkman.io/)), as there is no matching JDK available on Adoptium.
 

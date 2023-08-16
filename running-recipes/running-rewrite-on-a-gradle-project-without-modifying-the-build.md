@@ -62,5 +62,5 @@ recipeList:
 At this point, you are able to run the Rewrite gradle plugin as normal (with an additional `--init-gradle` argument). Note that we did not modify the project's build script. This same init script can then be used to apply this same recipe to a set of projects cloned locally without changing their contents.
 
 ```
-./gradlew --init-script init.gradle rewriteRun
+gradle --init-script init.gradle rewriteRun
 ```

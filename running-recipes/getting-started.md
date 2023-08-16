@@ -103,7 +103,7 @@ rewrite {
 
 At this point, you're able to run any of the Maven goals or Gradle tasks provided by the OpenRewrite plugin. See [Maven Plugin Configuration](/reference/rewrite-maven-plugin.md) or [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md) for the full set of options.
 
-From the command line, try running `./mvnw rewrite:discover` or `./gradlew rewriteDiscover` to see a list of all the recipes available for execution. Initially, this will list only the recipes built-in to OpenRewrite.
+From the command line, try running `mvn rewrite:discover` or `gradle rewriteDiscover` to see a list of all the recipes available for execution. Initially, this will list only the recipes built-in to OpenRewrite.
 
 ## Step 3: Activate a recipe
 
@@ -153,20 +153,20 @@ Now that you've activated the `OrderImports` recipe, you can run it by executing
 {% tabs %}
 {% tab title="Maven" %}
 ```sh
-./mvnw rewrite:run
+mvn rewrite:run
 ```
 {% endtab %}
 
 {% tab title="Gradle" %}
 ```sh
-./gradlew rewriteRun
+gradle rewriteRun
 ```
 {% endtab %}
 {% endtabs %}
 
 After running it, you will be notified of all of the files that have been changed:
 
-![Console output from running ./mvnw rewrite:run with OrderImports set as an active recipe in the spring-petclinic-migration repository](/.gitbook/assets/order-imports-run.png)
+![Console output from running mvn rewrite:run with OrderImports set as an active recipe in the spring-petclinic-migration repository](/.gitbook/assets/order-imports-run.png)
 
 To see what has changed in the code, run `git diff` or use your preferred IDE's diff viewer:
 
@@ -247,7 +247,7 @@ rewrite {
 {% endtab %}
 {% endtabs %}
 
-Once this recipe has been added to your active recipes, you can run either `./mvnw rewrite:run` or `./gradlew rewriteRun` to execute all of your active recipes. Afterward, you'll see that:
+Once this recipe has been added to your active recipes, you can run either `mvn rewrite:run` or `gradle rewriteRun` to execute all of your active recipes. Afterward, you'll see that:
 
 * The source files in the `vet` package have been moved to the newly created `veterinary` package
 * References such as import statements have been updated to reflect the new name
@@ -255,7 +255,7 @@ Once this recipe has been added to your active recipes, you can run either `./mv
 
 ![Git diff showing updated import statements](<../.gitbook/assets/update-import.png>)
 
-From there, you can confirm that everything still builds and passes its tests by running `./mvnw clean install` or `./gradlew build`.
+From there, you can confirm that everything still builds and passes its tests by running `mvn clean install` or `gradle build`.
 
 ## Step 6: Running Recipes from External Modules
 
@@ -307,7 +307,7 @@ After doing that, your `pom.xml` file should look similar to this:
 ```
 {% endcode %}
 
-To double-check that everything is working, run the command `./mvnw rewrite:run`. Your project should be upgraded to Spring Boot 2 and all of the test classes should be updated to JUnit 5. Your `pom.xml` file will also have had its Spring dependencies updated, the JUnit 4 dependency removed, and the JUnit 5 dependency added.
+To double-check that everything is working, run the command `mvn rewrite:run`. Your project should be upgraded to Spring Boot 2 and all of the test classes should be updated to JUnit 5. Your `pom.xml` file will also have had its Spring dependencies updated, the JUnit 4 dependency removed, and the JUnit 5 dependency added.
 
 {% hint style="info" %}
 Maven does not currently support using a bill of materials (BOM) to specify plugin versions or dependencies. This means that you will have to specify the versions of each plugin by hand, unlike in the Gradle section below.
@@ -382,7 +382,7 @@ dependencies {
 {% endtab %}
 {% endtabs %}
 
-To check that everything worked correctly, run the command `./gradlew rewriteRun`. You should see that the project has been upgraded to Spring Boot 2 and all of the test classes have been updated to JUnit 5.
+To check that everything worked correctly, run the command `gradle rewriteRun`. You should see that the project has been upgraded to Spring Boot 2 and all of the test classes have been updated to JUnit 5.
 
 Please note, though, that your `build.gradle` file _will not_ be updated as part of this. You will manually have to change the Spring and JUnit dependencies to reflect the appropriate versions.
 

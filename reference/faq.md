@@ -7,14 +7,14 @@ You can increase the size of the Java heap to see if that helps:
 {% tabs %}
 {% tab title="Gradle" %}
 ```shell
-./gradlew -Dorg.gradle.jvmargs=-Xmx8G rewrite:run
+gradle -Dorg.gradle.jvmargs=-Xmx8G rewrite:run
 ```
 {% endtab %}
 
 {% tab title="Maven" %}
 ```shell
 export MAVEN_OPTS="-Xmx8G"
-./mvnw rewrite:run
+mvn rewrite:run
 ```
 {% endtab %}
 {% endtabs %}
