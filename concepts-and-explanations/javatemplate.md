@@ -28,7 +28,7 @@ A template is always constructed from a `String` code snippet. The snippet must 
 
 Snippets may include parameter substitution indicators. Parameter substitution indicators are positional. There are two kinds of parameter substitution indicators: typed and untyped.
 
-The substitution of these indicators with their actual values happens when the template is applied via `withTemplate()`. See [Usage](javatemplate.md#usage).
+The substitution of these indicators with their actual values happens when the template is applied via `JavaTemplate apply(..)`. See [Usage](javatemplate.md#usage).
 
 #### Typed Substitution Indicators
 
@@ -118,7 +118,7 @@ There are many examples of `JavaTemplate` stubs in [rewrite-testing-frameworks](
 
 ## Usage
 
-Once an instance of the template has been created it can be applied to an LST element with the method `J.withTemplate()`. This example visitor uses a template to replace all method invocations of `countLetters(String)` with `withString(String).length()`:
+Once an instance of the template has been created it can be applied to an LST element with the method `JavaTemplate apply(..)`. This example visitor uses a template to replace all method invocations of `countLetters(String)` with `withString(String).length()`:
 
 ```java
 public class ChangeMethodInvocation extends JavaIsoVisitor<ExecutionContext> {
