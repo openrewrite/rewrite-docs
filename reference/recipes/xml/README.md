@@ -5,6 +5,7 @@ _Basic building blocks for transforming XML._
 ## Categories
 
 * [Format](/reference/recipes/xml/format)
+* [Liberty](/reference/recipes/xml/liberty)
 * [Search](/reference/recipes/xml/search)
 * [Security](/reference/recipes/xml/security)
 

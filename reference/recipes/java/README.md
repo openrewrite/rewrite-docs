@@ -8,6 +8,7 @@ _Basic building blocks for transforming Java code._
 * [Dependencies](/reference/recipes/java/dependencies)
 * [Format](/reference/recipes/java/format)
 * [JHipster](/reference/recipes/java/jhipster)
+* [Liberty](/reference/recipes/java/liberty)
 * [Logging](/reference/recipes/java/logging)
 * [Micronaut](/reference/recipes/java/micronaut)
 * [Modernize](/reference/recipes/java/migrate)
@@ -17,6 +18,12 @@ _Basic building blocks for transforming Java code._
 * [Spring](/reference/recipes/java/spring)
 * [Testing](/reference/recipes/java/testing)
 * [Upgrade](/reference/recipes/java/upgrade)
+
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Migrate from WebSphere traditional to Liberty](./liberty.md)
 
 ## Recipes
 
