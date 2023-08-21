@@ -6,16 +6,16 @@ _Use this category of rules to identify code changes needed when migrating  from
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.0.0-rc.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.0.0-rc.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-liberty
-* version: 1.0.0-rc.1
+* version: 1.0.0-rc.2
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.1")
+    rewrite("org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.2")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>1.0.0-rc.1</version>
+            <version>1.0.0-rc.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -121,9 +121,9 @@ recipeList:
 {% endtabs %}
 
 ## Contributors
-* [anuram](mailto:ranuradh@us.ibm.com)
 * [cjobinabo](mailto:chukaobinabo@gmail.com)
 * [Tim te Beek](mailto:tim@moderne.io)
+* [anuram](mailto:ranuradh@us.ibm.com)
 
 
 ## See how this recipe works across multiple open-source repositories

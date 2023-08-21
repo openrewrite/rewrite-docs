@@ -6,11 +6,11 @@ _Changes the value of a string literal._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/ChangeStringLiteral.java), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.0.0-rc.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/ChangeStringLiteral.java), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.0.0-rc.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-liberty
-* version: 1.0.0-rc.1
+* version: 1.0.0-rc.2
 
 ## Options
 
@@ -38,7 +38,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeStringLiteralExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.1 in your build file:
+Now that `com.yourorg.ChangeStringLiteralExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.2 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.1")
+    rewrite("org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.2")
 }
 ```
 {% endcode %}
@@ -80,7 +80,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>1.0.0-rc.1</version>
+            <version>1.0.0-rc.2</version>
           </dependency>
         </dependencies>
       </plugin>

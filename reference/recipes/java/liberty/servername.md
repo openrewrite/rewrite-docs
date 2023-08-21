@@ -2,20 +2,20 @@
 
 **org.openrewrite.java.liberty.ServerName**
 
-_The `getDisplayName()` is not available in Liberty._
+_`ServerName.getDisplayName()` is not available in Liberty._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.0.0-rc.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/ServerName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.0.0-rc.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-liberty
-* version: 1.0.0-rc.1
+* version: 1.0.0-rc.2
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.1")
+    rewrite("org.openrewrite.recipe:rewrite-liberty:1.0.0-rc.2")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>1.0.0-rc.1</version>
+            <version>1.0.0-rc.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -81,44 +81,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtab %}
 {% endtabs %}
 
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Change method invocation](../../java/liberty/changemethodinvocation.md)
-  * methodPattern: `com.ibm.websphere.runtime.ServerName getDisplayName()`
-  * newMethodPattern: `java.lang.System getProperty("wlp.server.name")`
-  * performStaticCall: `true`
-* [Change method invocation](../../java/liberty/changemethodinvocation.md)
-  * methodPattern: `com.ibm.websphere.runtime.ServerName getFullName()`
-  * newMethodPattern: `java.lang.System getProperty("wlp.server.name")`
-  * performStaticCall: `true`
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.liberty.ServerName
-displayName: Use `getProperty("wlp.server.name")`
-description: The `getDisplayName()` is not available in Liberty.
-recipeList:
-  - org.openrewrite.java.liberty.ChangeMethodInvocation:
-      methodPattern: com.ibm.websphere.runtime.ServerName getDisplayName()
-      newMethodPattern: java.lang.System getProperty("wlp.server.name")
-      performStaticCall: true
-  - org.openrewrite.java.liberty.ChangeMethodInvocation:
-      methodPattern: com.ibm.websphere.runtime.ServerName getFullName()
-      newMethodPattern: java.lang.System getProperty("wlp.server.name")
-      performStaticCall: true
-
-```
-{% endtab %}
-{% endtabs %}
-
 ## Contributors
-* [anuram](mailto:ranuradh@us.ibm.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

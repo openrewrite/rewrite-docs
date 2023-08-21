@@ -198,7 +198,6 @@
     * [JHipster](reference/recipes/java/jhipster/README.md)
       * [Fix CWE-338 with SecureRandom](reference/recipes/java/jhipster/fixcwe338.md)
     * [Liberty](reference/recipes/java/liberty/README.md)
-      * [Change method invocation](reference/recipes/java/liberty/changemethodinvocation.md)
       * [Change string literal](reference/recipes/java/liberty/changestringliteral.md)
       * [Removes invalid JNDI properties](reference/recipes/java/liberty/removewas2libertynonportablejndilookup.md)
       * [Replace revokeSSOCookies with logout](reference/recipes/java/liberty/websphereunavailablessocookiemethod.md)
