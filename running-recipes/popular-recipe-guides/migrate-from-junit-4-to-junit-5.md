@@ -40,7 +40,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.1.24")
+        id("org.openrewrite.rewrite") version("6.1.25")
     }
     
     rewrite {
@@ -102,7 +102,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.1.24")
+        id("org.openrewrite.rewrite") version("6.1.25")
     }
     
     rewrite {

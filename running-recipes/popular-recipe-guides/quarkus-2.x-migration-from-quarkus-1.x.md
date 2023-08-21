@@ -11,7 +11,7 @@ The [Quarkus1to2Migration](/reference/recipes/java/quarkus/quarkus2/quarkus1to2m
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.24")
+    id("org.openrewrite.rewrite") version("6.1.25")
 }
 
 rewrite {
