@@ -57,6 +57,7 @@ hamcrest
 Heroku
 HSQL
 httpclient
+hypersistence
 identityprovider
 IHzb
 Initializr
@@ -108,6 +109,7 @@ mav
 MDBs
 methoddeclaration
 micronaut
+Migratetohypersistenceutilshibernate6
 minidev
 mnt
 mockito
@@ -184,6 +186,7 @@ TODOs
 TVP
 Twilio
 variabledeclarations
+vladmihalcea
 Webflux
 websecurityconfigureradapter
 wiremock
