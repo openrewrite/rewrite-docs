@@ -6,11 +6,11 @@ _Find method usages by pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.3.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.2.0
+* version: 8.3.0
 
 ## Options
 
@@ -29,6 +29,9 @@ _The text of matching method invocations._
 | ----------- | ----------- |
 | Source file | The source file that the method call occurred in. |
 | Method call | The text of the method call. |
+| Class name | The class name of the method call. |
+| Method name | The method name of the method call. |
+| Argument types | The argument types of the method call. |
 
 
 ## Usage
@@ -55,7 +58,7 @@ Now that `com.yourorg.FindMethodsExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.24")
+    id("org.openrewrite.rewrite") version("6.1.25")
 }
 
 rewrite {
@@ -94,6 +97,7 @@ repositories {
 
 ## Contributors
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Greg Adams](mailto:greg@moderne.io)
 * Tyler Van Gorder
 * [Sam Snyder](mailto:sam@moderne.io)

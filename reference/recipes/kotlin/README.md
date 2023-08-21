@@ -5,6 +5,7 @@ _Recipes to search and transform Kotlin._
 ## Categories
 
 * [Cleanup](/reference/recipes/kotlin/cleanup)
+* [Format](/reference/recipes/kotlin/format)
 
 ## Composite Recipes
 

@@ -30,6 +30,9 @@ _The text of matching method invocations._
 | ----------- | ----------- |
 | Source file | The source file that the method call occurred in. |
 | Method call | The text of the method call. |
+| Class name | The class name of the method call. |
+| Method name | The method name of the method call. |
+| Argument types | The argument types of the method call. |
 
 
 ## Usage
@@ -57,7 +60,7 @@ Now that `com.yourorg.FindMethodsExample` has been defined activate it and take 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.24")
+    id("org.openrewrite.rewrite") version("6.1.25")
 }
 
 rewrite {

@@ -6,11 +6,11 @@ _Lists the Maven repositories that would be used for dependency resolution, in o
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveMavenRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveMavenRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.3.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.2.0
+* version: 8.3.0
 
 ## Options
 
@@ -72,6 +72,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ## Contributors
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Kevin Carpenter™️](mailto:kevin@moderne.io)
+* [Sam Snyder](mailto:sam@moderne.io)
 * [Mike Solomon](mailto:mike@moderne.io)
 
 

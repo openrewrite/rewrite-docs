@@ -6,11 +6,11 @@ _Reorder method arguments into the specified order._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.3.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.2.0
+* version: 8.3.0
 
 ## Options
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined activate i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.24")
+    id("org.openrewrite.rewrite") version("6.1.25")
 }
 
 rewrite {

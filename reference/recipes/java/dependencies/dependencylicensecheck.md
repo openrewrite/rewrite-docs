@@ -58,7 +58,7 @@ Now that `com.yourorg.DependencyLicenseCheckExample` has been defined activate i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.24")
+    id("org.openrewrite.rewrite") version("6.1.25")
 }
 
 rewrite {
