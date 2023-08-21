@@ -43,6 +43,7 @@ dsl
 Dto
 ehcache
 ejb
+EJBDD
 Elasti
 Encryptors
 endcode
@@ -83,6 +84,7 @@ jhipster
 Jks
 JLeft
 JLS
+Jndi
 jni
 Johnzon
 Jpa
@@ -104,11 +106,13 @@ liquibase
 logback
 lombok
 lsts
+LTPA
 Mailgun
 mav
 MDBs
 methoddeclaration
 micronaut
+Migratetohypersistenceutilshibernate
 Migratetohypersistenceutilshibernate6
 minidev
 mnt
@@ -189,6 +193,7 @@ variabledeclarations
 vladmihalcea
 Webflux
 websecurityconfigureradapter
+wlp
 wiremock
 xsi
 XXE
