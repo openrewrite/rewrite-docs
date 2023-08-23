@@ -4,11 +4,11 @@ OpenRewrite's modules are published to [Maven Central](https://search.maven.org/
 
 It is highly recommended that developers use the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-recipe-bom) to align the versions of Rewrite's modules to ensure compatibility. The use of the "bill of materials" means that a developer will only need to specify explicit versions of the BOM and the build plugins:
 
-| Module                                                                                                                          | Version    |
-| --------------------------------------------------------------------------------------------------------------------------------| ---------- |
+| Module                                                                                                                          | Version   |
+| --------------------------------------------------------------------------------------------------------------------------------| ----------|
 | [**org.openrewrite:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                                     | **2.2.0** |
 | [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                                 | **5.4.2** |
-| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.1.26** |
+| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.1.26**|
 | org.openrewrite:rewrite-groovy                                                                                                  | 8.4.0     |
 | org.openrewrite:rewrite-gradle                                                                                                  | 8.4.0     |
 | org.openrewrite:rewrite-core                                                                                                    | 8.4.0     |
@@ -29,7 +29,7 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | [org.openrewrite.recipe:rewrite-concourse](https://github.com/openrewrite/rewrite-concourse)                                    | 2.0.1     |
 | [org.openrewrite.recipe:rewrite-cucumber-jvm](https://github.com/openrewrite/rewrite-cucumber-jvm)                              | 1.0.5     |
 | [org.openrewrite.recipe:rewrite-github-actions](https://github.com/openrewrite/rewrite-github-actions)                          | 2.0.3     |
-| [org.openrewrite.recipe:rewrite-hibernate](https://github.com/openrewrite/rewrite-hibernate)                                    | 1.0.1     |
+| [org.openrewrite.recipe:rewrite-hibernate](https://github.com/openrewrite/rewrite-hibernate)                                    | 1.0.2     |
 | [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies)                    | 1.0.7     |
 | [org.openrewrite.recipe:rewrite-java-security](https://github.com/openrewrite/rewrite-java-security)                            | 2.0.2     |
 | [org.openrewrite.recipe:rewrite-jenkins](https://github.com/openrewrite/rewrite-jenkins)                                        | 0.2.0     |
