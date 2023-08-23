@@ -130,6 +130,7 @@ NSG
 nullability
 OIDC
 okhttp
+okio
 omg
 openj
 openrewrite
