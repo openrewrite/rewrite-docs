@@ -3,6 +3,8 @@
 ## Recipes
 
 * [Does not include Maven dependency](./doesnotincludedependency.md)
+* [Effective dependencies](./effectivedependencies.md)
+* [Effective dependencies](./effectivemanageddependencies.md)
 * [Find Maven dependency](./finddependency.md)
 * [Find Maven plugin](./findplugin.md)
 * [Find Maven project properties](./findproperties.md)

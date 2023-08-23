@@ -167,7 +167,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.25")
+    id("org.openrewrite.rewrite") version("6.1.26")
 }
 
 rewrite {
@@ -193,7 +193,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.1</version>
+        <version>5.4.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.wro4j.UpgradeWro4jMavenPluginVersion</recipe>

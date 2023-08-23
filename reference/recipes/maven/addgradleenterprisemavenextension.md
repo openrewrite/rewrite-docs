@@ -1,4 +1,4 @@
-# Add Gradle Enterprise Maven extension to maven projects
+# Add Gradle Enterprise Maven extension
 
 **org.openrewrite.maven.AddGradleEnterpriseMavenExtension**
 
@@ -6,11 +6,11 @@ _To integrate Gradle Enterprise Maven extension into maven projects, ensure that
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddGradleEnterpriseMavenExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddGradleEnterpriseMavenExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.4.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.3.0
+* version: 8.4.0
 
 ## Options
 
@@ -34,7 +34,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddGradleEnterpriseMavenExtensionExample
-displayName: Add Gradle Enterprise Maven extension to maven projects example
+displayName: Add Gradle Enterprise Maven extension example
 recipeList:
   - org.openrewrite.maven.AddGradleEnterpriseMavenExtension:
       version: 1.17.4
@@ -58,7 +58,7 @@ Now that `com.yourorg.AddGradleEnterpriseMavenExtensionExample` has been defined
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.1</version>
+        <version>5.4.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddGradleEnterpriseMavenExtensionExample</recipe>

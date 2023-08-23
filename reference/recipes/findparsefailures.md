@@ -6,19 +6,19 @@ _This recipe explores parse failures after an LST is produced for classifying th
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.4.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.3.0
+* version: 8.4.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `Integer` | maxSnippetLength | *Optional*. When the failure occurs on a granular tree element, its source code will be included as a column in the data table up to this maximum snippet length. |
-| `String` | parserType | *Optional*. Only display specified parser failures. |
-| `String` | stackTrace | *Optional*. Only mark specified stack traces. |
+| `String` | parserType | *Optional*. Only display failures from parsers with this fully qualified name. |
+| `String` | stackTrace | *Optional*. Only mark stack traces with a message containing this text. |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -44,7 +44,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.25")
+    id("org.openrewrite.rewrite") version("6.1.26")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.1</version>
+        <version>5.4.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.FindParseFailures</recipe>

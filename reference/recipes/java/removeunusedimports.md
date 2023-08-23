@@ -2,7 +2,7 @@
 
 **org.openrewrite.java.RemoveUnusedImports**
 
-_Remove imports for types that are not referenced._
+_Remove imports for types that are not referenced. As a precaution against incorrect changes no imports will be removed from any source where unknown types are referenced. The most common cause of unknown types is the use of annotation processors not supported by OpenRewrite, such as lombok._
 
 ### Tags
 
@@ -10,11 +10,11 @@ _Remove imports for types that are not referenced._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.4.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.3.0
+* version: 8.4.0
 
 
 ## Usage
@@ -25,7 +25,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.25")
+    id("org.openrewrite.rewrite") version("6.1.26")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.1</version>
+        <version>5.4.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.RemoveUnusedImports</recipe>
@@ -80,11 +80,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Greg Adams](mailto:greg@moderne.io)
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * Patrick Way
-* [Patrick](mailto:patway99@gmail.com)
 * Tyler Van Gorder
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
-* [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Kun Li](mailto:kun@moderne.io)
 
 

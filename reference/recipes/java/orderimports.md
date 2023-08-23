@@ -2,15 +2,15 @@
 
 **org.openrewrite.java.OrderImports**
 
-_Groups and orders import statements. If a [style has been defined](https://docs.openrewrite.org/concepts-explanations/styles), this recipe will order the imports according to that style. If no style is detected, this recipe will default to ordering imports in the same way that IntelliJ does._
+_Groups and orders import statements. If a [style has been defined](https://docs.openrewrite.org/concepts-explanations/styles), this recipe will order the imports according to that style. If no style is detected, this recipe will default to ordering imports in the same way that IntelliJ IDEA does._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.4.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.3.0
+* version: 8.4.0
 
 ## Options
 
@@ -27,7 +27,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.25")
+    id("org.openrewrite.rewrite") version("6.1.26")
 }
 
 rewrite {
@@ -50,7 +50,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.1</version>
+        <version>5.4.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.OrderImports</recipe>
@@ -81,6 +81,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * Tyler Van Gorder
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Mike Solomon](mailto:mike@moderne.io)
+* [Marit van Dijk](mailto:mlvandijk@gmail.com)
 * [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 

@@ -6,11 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.4.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.3.0
+* version: 8.4.0
 
 ## Options
 
@@ -36,17 +36,6 @@ _Direct and transitive dependencies in use._
 | Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
 | Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
 | Depth | How many levels removed from a direct dependency. This will be 0 for direct dependencies. |
-
-### Dependency graph
-
-_Relationships between dependencies._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Project name | The name of the project that contains the dependency. |
-| Source set | The source set that contains the dependency. |
-| From dependency | A dependency that depends on the 'to' dependency. |
-| From dependency | A dependency that depends on the 'to' dependency. |
 
 
 ## Usage
@@ -74,7 +63,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.25")
+    id("org.openrewrite.rewrite") version("6.1.26")
 }
 
 rewrite {
