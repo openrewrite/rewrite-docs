@@ -835,7 +835,7 @@
     * [Upgrade property's value to version](reference/recipes/jenkins/upgradeversionproperty.md)
     * [Use Jenkins API plugin instead of libraries](reference/recipes/jenkins/replacelibrarieswithapiplugin.md)
     * [Use commons-lang3 API Plugin](reference/recipes/jenkins/commonslang3toapiplugin.md)
-    * [Github](reference/recipes/jenkins/github/README.md)
+    * [GitHub](reference/recipes/jenkins/github/README.md)
       * [Add plugin developer team to CODEOWNERS](reference/recipes/jenkins/github/addteamtocodeowners.md)
     * [Migrate](reference/recipes/jenkins/migrate/README.md)
       * [Hudson](reference/recipes/jenkins/migrate/hudson/README.md)
