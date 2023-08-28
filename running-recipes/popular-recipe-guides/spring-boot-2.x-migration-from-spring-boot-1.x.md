@@ -11,7 +11,7 @@ The [UpgradeSpringBoot_2_7](/reference/recipes/java/spring/boot2/upgradespringbo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.1"))
     rewrite("org.openrewrite.recipe:rewrite-spring")
 }
 ```
@@ -49,7 +49,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.8</version>
           </dependency>
         </dependencies>
       </plugin>

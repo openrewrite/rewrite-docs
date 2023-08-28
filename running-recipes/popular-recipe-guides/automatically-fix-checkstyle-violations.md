@@ -30,7 +30,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -55,7 +55,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.6")
 }
 ```
 {% endcode %}
@@ -105,7 +105,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -121,7 +121,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -134,7 +134,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.6")
 }
 ```
 {% endcode %}
@@ -162,7 +162,7 @@ In Gradle, [Task.dependsOn()](https://docs.gradle.org/current/javadoc/org/gradle
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -175,7 +175,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.6")
 }
 
 // In older versions of gradle, use tasks.get() instead of tasks.named()
@@ -223,7 +223,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
           </dependency>
         </dependencies>
       </plugin>

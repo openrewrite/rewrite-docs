@@ -11,7 +11,7 @@ The [org.openrewrite.java.logging.slf4j.Log4jToSlf4j](../../reference/recipes/ja
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.1"))
     rewrite("org.openrewrite.recipe:rewrite-logging-frameworks")
 }
 ```
@@ -49,7 +49,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

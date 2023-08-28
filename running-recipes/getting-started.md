@@ -82,7 +82,7 @@ Your file should look similar to:
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.1.26'
+    id 'org.openrewrite.rewrite' version '6.2.4'
 }
 
 repositories {
@@ -133,7 +133,7 @@ Before you can run any of the recipes, you will need to update the plugin config
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.1.26'
+    id 'org.openrewrite.rewrite' version '6.2.4'
 }
 
 rewrite {
@@ -233,7 +233,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.1.26'
+    id 'org.openrewrite.rewrite' version '6.2.4'
 }
 
 rewrite {
@@ -298,7 +298,7 @@ After doing that, your `pom.xml` file should look similar to this:
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.8</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -333,7 +333,7 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.1.26'
+    id 'org.openrewrite.rewrite' version '6.2.4'
 }
 
 rewrite {
@@ -345,7 +345,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:2.2.0')
+    rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:2.2.1')
     rewrite('org.openrewrite.recipe:rewrite-spring')
 
     // Other project dependencies
@@ -360,7 +360,7 @@ dependencies {
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.1.26"
+    id("org.openrewrite.rewrite") version "6.2.4"
 }
 
 rewrite {
@@ -372,7 +372,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.1"))
     rewrite("org.openrewrite.recipe:rewrite-spring")
 
     // Other project dependencies
