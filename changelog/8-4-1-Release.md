@@ -2,7 +2,7 @@
 
 ## New Recipes
 
-* [org.openrewrite.java.logging.slf4j.ChangeLogLevel](https://docs.openrewrite.org/reference/recipes/java/logging/slf4j/changeloglevel): Change the log level of slf4j log statements. 
+* [org.openrewrite.java.logging.slf4j.ChangeLogLevel](https://docs.openrewrite.org/recipes/java/logging/slf4j/changeloglevel): Change the log level of slf4j log statements. 
 * [org.openrewrite.java.migrate.apache.commons.io.ApacheCommonsFileUtilsRecipes](https://docs.openrewrite.org/reference/recipes/java/migrate/apache/commons/io/apachecommonsfileutilsrecipes): Refaster template recipes for `org.openrewrite.java.migrate.apache.commons.io.ApacheCommonsFileUtils`. 
 * [org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes](https://docs.openrewrite.org/reference/recipes/java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes): Refaster template recipes for `org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtils`. 
 * [org.openrewrite.java.migrate.plexus.PlexusFileUtilsRecipes](https://docs.openrewrite.org/reference/recipes/java/migrate/plexus/plexusfileutilsrecipes): Refaster template recipes for `org.openrewrite.java.migrate.plexus.PlexusFileUtils`. 
