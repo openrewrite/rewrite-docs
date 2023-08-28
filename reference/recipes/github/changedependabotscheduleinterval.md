@@ -12,11 +12,11 @@ _Change the schedule interval for a given package-ecosystem in a `dependabot.yml
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeDependabotScheduleInterval.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeDependabotScheduleInterval.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 2.0.3
+* version: 2.0.4
 
 ## Options
 
@@ -44,13 +44,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:2.0.3 in your build file:
+Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:2.0.4 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -62,7 +62,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.3")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.4")
 }
 ```
 {% endcode %}
@@ -86,7 +86,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>2.0.3</version>
+            <version>2.0.4</version>
           </dependency>
         </dependencies>
       </plugin>

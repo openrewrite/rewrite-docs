@@ -6,11 +6,11 @@ _If the configuration has a different value, leave it alone. If it is missing, a
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 2.0.2
+* version: 2.0.3
 
 ## Options
 
@@ -38,13 +38,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.0.2 in your build file:
+Now that `com.yourorg.AddConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.3")
 }
 ```
 {% endcode %}
@@ -80,7 +80,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,6 +96,7 @@ dependencies {
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [pocan101](mailto:jcortesd@gmail.com)
+* [Kun Li](mailto:kun@moderne.io)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Knut Wannheden](mailto:knut@moderne.io)
 

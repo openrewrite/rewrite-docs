@@ -6,11 +6,11 @@ _A secret is a literal that matches any one of the provided patterns._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/secrets/FindSecretsByPattern.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/secrets/FindSecretsByPattern.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.2
+* version: 2.0.3
 
 ## Options
 
@@ -40,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindSecretsByPatternExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.0.2 in your build file:
+Now that `com.yourorg.FindSecretsByPatternExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.3")
 }
 ```
 {% endcode %}
@@ -82,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

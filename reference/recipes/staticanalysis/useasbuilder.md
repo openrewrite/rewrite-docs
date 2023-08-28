@@ -6,11 +6,11 @@ _When an API has been designed as a builder, use it that way rather than as a se
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.5
+* version: 1.0.6
 
 ## Options
 
@@ -40,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseAsBuilderExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.0.5 in your build file:
+Now that `com.yourorg.UseAsBuilderExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.0.6 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.6")
 }
 ```
 {% endcode %}
@@ -82,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
           </dependency>
         </dependencies>
       </plugin>

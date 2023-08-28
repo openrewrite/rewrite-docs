@@ -2,26 +2,26 @@
 
 **org.openrewrite.jenkins.CreateIndexJelly**
 
-_The Jenkins tooling has changed over the years to [enforce](https://github.com/jenkinsci/maven-hpi-plugin/pull/302) that a `src/main/resources/index.jelly` exists with a description. If you don't have this, the build fails._
+_Jenkins tooling [requires](https://github.com/jenkinsci/maven-hpi-plugin/pull/302) `src/main/resources/index.jelly` exists with a description._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/CreateIndexJelly.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/CreateIndexJelly.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.2.0
+* version: 0.2.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.2.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.2.1")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.2.0</version>
+            <version>0.2.1</version>
           </dependency>
         </dependencies>
       </plugin>

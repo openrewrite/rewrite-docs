@@ -6,11 +6,11 @@ _Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malici
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/spring/CsrfProtection.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/spring/CsrfProtection.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.2
+* version: 2.0.3
 
 ## Options
 
@@ -21,13 +21,13 @@ _Cross-Site Request Forgery (CSRF) is a type of attack that occurs when a malici
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.3")
 }
 ```
 {% endcode %}
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

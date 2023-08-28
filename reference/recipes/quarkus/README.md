@@ -1,5 +1,7 @@
 # Quarkus
 
+_Recipes for upgrading and patching [Quarkus](https://quarkus.io/) applications._
+
 ## Categories
 
 * [Quarkus 2.x](/reference/recipes/quarkus/quarkus2)

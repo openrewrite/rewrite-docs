@@ -6,11 +6,11 @@ _Find SQL in code (e.g. in string literals) and in resources like those ending w
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FindSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FindSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-sql
-* version: 1.0.1
+* version: 1.0.2
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -21,6 +21,8 @@ _Shows which database columns are read/written by a SQL statement._
 | Column Name | Description |
 | ----------- | ----------- |
 | Source path | The path to the source file. |
+| Line number | The line number the SQL operation appears at |
+| Commit hash | The commit hash. Used to generate a link to the source code. |
 | Operation | Whether the column is read, written, etc. |
 | Table | The table name. |
 | Column | The column name. In the case of a DELETE, column will be null. |
@@ -28,13 +30,13 @@ _Shows which database columns are read/written by a SQL statement._
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-sql:1.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-sql:1.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -46,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-sql:1.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-sql:1.0.2")
 }
 ```
 {% endcode %}
@@ -70,7 +72,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-sql</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -95,8 +97,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% endtabs %}
 
 ## Contributors
+* [Sam Snyder](mailto:sam@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

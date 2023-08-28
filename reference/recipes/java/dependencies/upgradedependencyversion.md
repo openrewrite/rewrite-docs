@@ -11,11 +11,11 @@ For Maven projects, upgrade the version of a dependency by specifying a group an
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.0.7
+* version: 1.0.8
 
 ## Options
 
@@ -27,161 +27,6 @@ For Maven projects, upgrade the version of a dependency by specifying a group an
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `Boolean` | overrideManagedVersion | *Optional*. For Maven project only, This flag can be set to explicitly override a managed dependency's version. The default for this flag is `false`. |
 | `List` | retainVersions | *Optional*. For Maven project only, Accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management after the changes from this recipe, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management |
-
-## Examples
-##### Example 1
-Upgrade gradle dependency
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`com.google.guava`|
-|artifactId|`guava`|
-|newVersion|`30.x`|
-|versionPattern|`-jre`|
-|overrideManagedVersion|`null`|
-|retainVersions|`null`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-  id 'java-library'
-}
-
-repositories {
-  mavenCentral()
-}
-
-dependencies {
-  compileOnly 'com.google.guava:guava:29.0-jre'
-  runtimeOnly ('com.google.guava:guava:29.0-jre') {
-      force = true
-  }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-  id 'java-library'
-}
-
-repositories {
-  mavenCentral()
-}
-
-dependencies {
-  compileOnly 'com.google.guava:guava:30.1.1-jre'
-  runtimeOnly ('com.google.guava:guava:30.1.1-jre') {
-      force = true
-  }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,2 +10,2 @@
-
-dependencies {
-- compileOnly 'com.google.guava:guava:29.0-jre'
-- runtimeOnly ('com.google.guava:guava:29.0-jre') {
-+ compileOnly 'com.google.guava:guava:30.1.1-jre'
-+ runtimeOnly ('com.google.guava:guava:30.1.1-jre') {
-      force = true
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-Upgrade maven dependency version
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.junit.jupiter`|
-|artifactId|`junit-jupiter-api`|
-|newVersion|`5.7.2`|
-|versionPattern|`null`|
-|overrideManagedVersion|`null`|
-|retainVersions|`null`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>5.6.2</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
-                <version>5.7.2</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -10,1 +10,1 @@
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-api</artifactId>
--               <version>5.6.2</version>
-+               <version>5.7.2</version>
-                <scope>test</scope>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -206,13 +51,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.7 in your build file:
+Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.8 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -224,7 +69,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.8")
 }
 ```
 {% endcode %}
@@ -248,7 +93,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.0.7</version>
+            <version>1.0.8</version>
           </dependency>
         </dependencies>
       </plugin>

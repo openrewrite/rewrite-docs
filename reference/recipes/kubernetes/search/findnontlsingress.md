@@ -6,11 +6,11 @@ _Find Ingress resources that don't disallow HTTP or don't have TLS configured._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindNonTlsIngress.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindNonTlsIngress.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -18,71 +18,16 @@ _Find Ingress resources that don't disallow HTTP or don't have TLS configured._
 | -- | -- | -- |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
 
-## Example
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: ingress-demo-disallowed
-spec:
-  rules:
-    - host: example-host.example.com
-      http:
-        paths:
-          - backend:
-              serviceName: nginx
-              servicePort: 80
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-~~(missing TLS)~~>~~(missing disallow http)~~>apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: ingress-demo-disallowed
-spec:
-  rules:
-    - host: example-host.example.com
-      http:
-        paths:
-          - backend:
-              serviceName: nginx
-              servicePort: 80
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--apiVersion: extensions/v1beta1
-+~~(missing TLS)~~>~~(missing disallow http)~~>apiVersion: extensions/v1beta1
-kind: Ingress
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -94,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -118,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

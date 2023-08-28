@@ -10,79 +10,22 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaListsNewCopyOnWriteArrayList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaListsNewCopyOnWriteArrayList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import com.google.common.collect.*;
-
-import java.util.List;
-
-class Test {
-    List<Integer> cardinalsWorldSeries = Lists.newCopyOnWriteArrayList();
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-class Test {
-    List<Integer> cardinalsWorldSeries = new CopyOnWriteArrayList<>();
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -1,2 +1,0 @@
--import com.google.common.collect.*;
--
-import java.util.List;
-@@ -4,0 +2,1 @@
-
-import java.util.List;
-+import java.util.concurrent.CopyOnWriteArrayList;
-
-@@ -6,1 +5,1 @@
-
-class Test {
--   List<Integer> cardinalsWorldSeries = Lists.newCopyOnWriteArrayList();
-+   List<Integer> cardinalsWorldSeries = new CopyOnWriteArrayList<>();
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -94,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -118,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

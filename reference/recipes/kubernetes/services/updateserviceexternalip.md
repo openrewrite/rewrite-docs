@@ -6,11 +6,11 @@ _Swap out an IP address with another one in `Service` `externalIP` settings._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/UpdateServiceExternalIP.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/UpdateServiceExternalIP.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -19,74 +19,6 @@ _Swap out an IP address with another one in `Service` `externalIP` settings._
 | `String` | ipToFind | An `externalIP` address to find in the service's external IPs. |
 | `String` | ipToUpdate | An `externalIP` address to update to in the service's external IPs. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|ipToFind|`192.168.0.1`|
-|ipToUpdate|`10.10.0.1`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: MyApp
-  ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 9376
-  externalIPs:
-    - 192.168.0.1
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: MyApp
-  ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 9376
-  externalIPs:
-    - 10.10.0.1
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -14,1 +14,1 @@
-      targetPort: 9376
-  externalIPs:
--   - 192.168.0.1
-+   - 10.10.0.1
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -108,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateServiceExternalIPExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.UpdateServiceExternalIPExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -126,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -150,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

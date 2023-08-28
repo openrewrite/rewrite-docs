@@ -11,163 +11,22 @@ _This recipe will upgrade Wro4j to a more recent version compatible with Java 11
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/wro4j-maven-plugin.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/wro4j-maven-plugin.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <properties>
-    <wro4j.version>1.8.0</wro4j.version>
-  </properties>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>ro.isdc.wro4j</groupId>
-        <artifactId>wro4j-maven-plugin</artifactId>
-        <version>${wro4j.version}</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <properties>
-    <wro4j.version>1.10.1</wro4j.version>
-  </properties>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>ro.isdc.wro4j</groupId>
-        <artifactId>wro4j-maven-plugin</artifactId>
-        <version>${wro4j.version}</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -3,1 +3,1 @@
-<project>
-  <properties>
--   <wro4j.version>1.8.0</wro4j.version>
-+   <wro4j.version>1.10.1</wro4j.version>
-  </properties>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <properties>
-    <wro4j.version>1.8.0</wro4j.version>
-  </properties>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>ro.isdc.wro4j</groupId>
-        <artifactId>wro4j-maven-plugin</artifactId>
-        <version>${wro4j.version}</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <properties>
-    <wro4j.version>1.10.1</wro4j.version>
-  </properties>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>ro.isdc.wro4j</groupId>
-        <artifactId>wro4j-maven-plugin</artifactId>
-        <version>${wro4j.version}</version>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -3,1 +3,1 @@
-<project>
-  <properties>
--   <wro4j.version>1.8.0</wro4j.version>
-+   <wro4j.version>1.10.1</wro4j.version>
-  </properties>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -179,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -203,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,11 +6,11 @@ _Add RBAC rules to ClusterRoles or namespaced Roles._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/rbac/AddRuleToRole.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/rbac/AddRuleToRole.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -23,90 +23,6 @@ _Add RBAC rules to ClusterRoles or namespaced Roles._
 | `Set` | resourceNames | *Optional*. Comma-separated list of names of Kubernetes resources to which this rule applies. |
 | `Set` | verbs | The API verbs to enable with this rule. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|rbacResourceType|`ClusterRole`|
-|rbacResourceName|`cluster-role`|
-|apiGroups|`Set.of("")`|
-|resources|`Set.of("pods")`|
-|resourceNames|`null`|
-|verbs|`Set.of("update")`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  namespace: default
-  name: namespaced-role
-rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get"]
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: cluster-role
-rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["list"]
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  namespace: default
-  name: namespaced-role
-rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get"]
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: cluster-role
-rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["list"]
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["update"]
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -19,0 +19,3 @@
-  resources: ["pods"]
-  verbs: ["list"]
-+- apiGroups: [""]
-+ resources: ["pods"]
-+ verbs: ["update"]
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -132,13 +48,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddRuleToRoleExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.AddRuleToRoleExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -150,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -174,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -192,6 +108,7 @@ dependencies {
 * Tyler Van Gorder
 * [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

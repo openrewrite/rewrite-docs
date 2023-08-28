@@ -6,11 +6,11 @@ _Checks whether a text block may contain SQL, and if so, formats the text accord
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FormatSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FormatSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.0.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-sql
-* version: 1.0.1
+* version: 1.0.2
 
 ## Options
 
@@ -21,71 +21,16 @@ _Checks whether a text block may contain SQL, and if so, formats the text accord
 | `Integer` | maxColumnLength | *Optional*. Defaults to 50. |
 | `Boolean` | uppercase | *Optional*. Defaults to false (not safe to use when SQL dialect has case-sensitive identifiers). |
 
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    String query = """
-            SELECT * FROM my_table
-            WHERE
-              something = 1;\
-            """;
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    String query = """
-            SELECT
-              *
-            FROM
-              my_table
-            WHERE
-              something = 1;\
-            """;
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -3,1 +3,4 @@
-class Test {
-    String query = """
--           SELECT * FROM my_table
-+           SELECT
-+             *
-+           FROM
-+             my_table
-            WHERE
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-sql:1.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-sql:1.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -97,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-sql:1.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-sql:1.0.2")
 }
 ```
 {% endcode %}
@@ -121,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-sql</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
           </dependency>
         </dependencies>
       </plugin>

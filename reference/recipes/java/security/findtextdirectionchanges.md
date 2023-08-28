@@ -10,73 +10,22 @@ _Finds unicode control characters which can change the direction text is display
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/FindTextDirectionChanges.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/FindTextDirectionChanges.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.2
-
-## Example
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-class A {
-    void foo() {
-        boolean isAdmin = false;
-        /*‮ } ⁦ if(isAdmin) ⁩ ⁦ begin admins only */
-            System.out.println("You are an admin.");
-        /* end admins only ‮ { ⁦ */
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-class A {
-    void foo() {
-        boolean isAdmin = false;
-        /*‮ } ⁦ if(isAdmin) ⁩ ⁦ begin admins only */
-            System.out./*~~(Found text-direction altering unicode control characters: LRI,RLO,PDI)~~>*/println("You are an admin.");
-        /* end admins only ‮ { ⁦ */
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -5,1 +5,1 @@
-        boolean isAdmin = false;
-        /*‮ } ⁦ if(isAdmin) ⁩ ⁦ begin admins only */
--           System.out.println("You are an admin.");
-+           System.out./*~~(Found text-direction altering unicode control characters: LRI,RLO,PDI)~~>*/println("You are an admin.");
-        /* end admins only ‮ { ⁦ */
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -88,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.3")
 }
 ```
 {% endcode %}
@@ -112,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -141,7 +90,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Kyle Scully](mailto:scullykns@gmail.com)
 * [Patrick](mailto:patway99@gmail.com)
-* [Knut Wannheden](mailto:knut@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

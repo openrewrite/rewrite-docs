@@ -6,11 +6,11 @@ _Find the dependency handler containing any number of dependency definitions._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.4.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.4.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.4.0
+* version: 8.4.1
 
 
 ## Usage
@@ -21,7 +21,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {

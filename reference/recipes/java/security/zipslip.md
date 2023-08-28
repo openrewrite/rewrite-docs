@@ -6,95 +6,17 @@ _Zip slip is an arbitrary file overwrite critical vulnerability, which typically
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/ZipSlip.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/ZipSlip.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.2
+* version: 2.0.3
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `boolean` | debug | Debug and output intermediate results. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|debug|`false`|
-
-
-{% tabs %}
-{% tab title="ZipTest.java" %}
-
-###### Before
-{% code title="ZipTest.java" %}
-```java
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.RandomAccessFile;
-import java.io.FileWriter;
-import java.util.zip.ZipEntry;
-
-public class ZipTest {
-    public void m1(ZipEntry entry, File dir) throws Exception {
-        String name = entry.getName();
-        File file = new File(dir, name);
-        FileOutputStream os = new FileOutputStream(file); // ZipSlip
-        RandomAccessFile raf = new RandomAccessFile(file, "rw"); // ZipSlip
-        FileWriter fw = new FileWriter(file); // ZipSlip
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="ZipTest.java" %}
-```java
-import java.io.*;
-import java.util.zip.ZipEntry;
-
-public class ZipTest {
-    public void m1(ZipEntry entry, File dir) throws Exception {
-        String name = entry.getName();
-        File file = new File(dir, name);
-        if (!file.toPath().normalize().startsWith(dir.toPath().normalize())) {
-            throw new IOException("Bad zip entry");
-        }
-        FileOutputStream os = new FileOutputStream(file); // ZipSlip
-        RandomAccessFile raf = new RandomAccessFile(file, "rw"); // ZipSlip
-        FileWriter fw = new FileWriter(file); // ZipSlip
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- ZipTest.java
-+++ ZipTest.java
-@@ -1,4 +1,1 @@
--import java.io.File;
--import java.io.FileOutputStream;
--import java.io.RandomAccessFile;
--import java.io.FileWriter;
-+import java.io.*;
-import java.util.zip.ZipEntry;
-@@ -11,0 +8,3 @@
-        String name = entry.getName();
-        File file = new File(dir, name);
-+       if (!file.toPath().normalize().startsWith(dir.toPath().normalize())) {
-+           throw new IOException("Bad zip entry");
-+       }
-        FileOutputStream os = new FileOutputStream(file); // ZipSlip
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -114,13 +36,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.0.2 in your build file:
+Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -132,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.3")
 }
 ```
 {% endcode %}
@@ -156,7 +78,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -172,6 +94,7 @@ dependencies {
 * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
 * [Patrick](mailto:patway99@gmail.com)
 
 

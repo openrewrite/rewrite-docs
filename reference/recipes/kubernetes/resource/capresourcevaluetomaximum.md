@@ -6,11 +6,11 @@ _Cap resource values that exceed a specific maximum._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/CapResourceValueToMaximum.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/CapResourceValueToMaximum.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -20,71 +20,6 @@ _Cap resource values that exceed a specific maximum._
 | `String` | resourceType | The type of resource value to search for. |
 | `String` | resourceLimit | The resource maximum to search for to find resources that request more than the maximum. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|resourceValueType|`limits`|
-|resourceType|`memory`|
-|resourceLimit|`64Mi`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    app: application
-spec:
-  containers:
-  - image: nginx:latest
-    resources:
-        limits:
-            cpu: "500Mi"
-            memory: "256M"
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    app: application
-spec:
-  containers:
-  - image: nginx:latest
-    resources:
-        limits:
-            cpu: "500Mi"
-            memory: "67M"
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -12,1 +12,1 @@
-        limits:
-            cpu: "500Mi"
--           memory: "256M"
-+           memory: "67M"
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -107,13 +42,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.CapResourceValueToMaximumExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.CapResourceValueToMaximumExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -125,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -149,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

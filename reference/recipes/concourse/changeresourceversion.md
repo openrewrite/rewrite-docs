@@ -6,11 +6,11 @@ _Pin or unpin a resource to a particular version._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeResourceVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeResourceVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -18,69 +18,6 @@ _Pin or unpin a resource to a particular version._
 | -- | -- | -- |
 | `String` | resourceType | Update any resources of this type |
 | `String` | version | *Optional*. If less than this version, update. If not provided, clears pins. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|resourceType|`git`|
-|version|`2.0`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-resources:
-  - name: git-repo
-    type: git
-    version: 1.0
-  - name: git-repo2
-    type: git
-    version: 2.0
-  - name: git-repo3
-    type: git
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-resources:
-  - name: git-repo
-    type: git
-    version: 2.0
-  - name: git-repo2
-    type: git
-    version: 2.0
-  - name: git-repo3
-    type: git
-    version: 2.0
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -4,1 +4,1 @@
-  - name: git-repo
-    type: git
--   version: 1.0
-+   version: 2.0
-  - name: git-repo2
-@@ -10,0 +10,1 @@
-  - name: git-repo3
-    type: git
-+   version: 2.0
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -101,13 +38,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeResourceVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.0.1 in your build file:
+Now that `com.yourorg.ChangeResourceVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -119,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:2.0.3")
 }
 ```
 {% endcode %}
@@ -143,7 +80,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -158,7 +95,7 @@ dependencies {
 ## Contributors
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
-* Kun Li
+* [Kun Li](mailto:kun@moderne.io)
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 

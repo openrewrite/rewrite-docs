@@ -6,115 +6,22 @@ _Certain `javax.lang.model.util` APIs have become deprecated and their usages ch
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/javax-lang-model-util.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/javax-lang-model-util.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import javax.lang.model.util.AbstractAnnotationValueVisitor6;
-
-abstract class Test extends AbstractAnnotationValueVisitor6 {}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import javax.lang.model.util.AbstractAnnotationValueVisitor9;
-
-abstract class Test extends AbstractAnnotationValueVisitor9 {}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -1,1 +1,1 @@
--import javax.lang.model.util.AbstractAnnotationValueVisitor6;
-+import javax.lang.model.util.AbstractAnnotationValueVisitor9;
-
-@@ -3,1 +3,1 @@
-import javax.lang.model.util.AbstractAnnotationValueVisitor6;
-
--abstract class Test extends AbstractAnnotationValueVisitor6 {}
-+abstract class Test extends AbstractAnnotationValueVisitor9 {}
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import javax.lang.model.util.AbstractAnnotationValueVisitor6;
-
-abstract class Test extends AbstractAnnotationValueVisitor6 {}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import javax.lang.model.util.AbstractAnnotationValueVisitor9;
-
-abstract class Test extends AbstractAnnotationValueVisitor9 {}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -1,1 +1,1 @@
--import javax.lang.model.util.AbstractAnnotationValueVisitor6;
-+import javax.lang.model.util.AbstractAnnotationValueVisitor9;
-
-@@ -3,1 +3,1 @@
-import javax.lang.model.util.AbstractAnnotationValueVisitor6;
-
--abstract class Test extends AbstractAnnotationValueVisitor6 {}
-+abstract class Test extends AbstractAnnotationValueVisitor9 {}
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -126,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -150,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,11 +6,11 @@ _Find resource manifests that have requests to limits ratios beyond a specific m
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/FindExceedsResourceRatio.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/FindExceedsResourceRatio.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -19,98 +19,6 @@ _Find resource manifests that have requests to limits ratios beyond a specific m
 | `String` | resourceType | The type of resource limit to search for. |
 | `String` | ratioLimit | The maximum ratio allowed between requests and limits. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|resourceType|`memory`|
-|ratioLimit|`2`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    app: application
-spec:
-  containers:
-  - image: nginx:latest
-    resources:
-        limits:
-            cpu: "2Gi"
-            memory: "1Gi"
-        requests:
-            cpu: "100Mi"
-            memory: "64m"
-  - image: k8s.gcr.io/test-webserver
-    resources:
-        limits:
-            cpu: "2Gi"
-            memory: "1Gi"
-        requests:
-            cpu: "100Mi"
-            memory: "64m"
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    app: application
-spec:
-  containers:
-  - image: nginx:latest
-    ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
-        limits:
-            cpu: "2Gi"
-            memory: "1Gi"
-        requests:
-            cpu: "100Mi"
-            memory: "64m"
-  - image: k8s.gcr.io/test-webserver
-    ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
-        limits:
-            cpu: "2Gi"
-            memory: "1Gi"
-        requests:
-            cpu: "100Mi"
-            memory: "64m"
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -9,1 +9,1 @@
-  containers:
-  - image: nginx:latest
--   resources:
-+   ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
-        limits:
-@@ -17,1 +17,1 @@
-            memory: "64m"
-  - image: k8s.gcr.io/test-webserver
--   resources:
-+   ~~(exceeds max memory limits/requests ratio of 2)~~>resources:
-        limits:
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -132,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindExceedsResourceRatioExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.FindExceedsResourceRatioExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -150,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -174,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,87 +6,22 @@ _As of Micronaut 3.x property names for getters like `getXForwarded()` are de-ca
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/BeanPropertyCapitalizationStrategy.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/BeanPropertyCapitalizationStrategy.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.1
-
-## Example
-
-
-{% tabs %}
-{% tab title="a/b/T.java" %}
-
-###### Before
-{% code title="a/b/T.java" %}
-```java
-package a.b;
-import io.micronaut.core.beans.BeanIntrospection;
-import io.micronaut.core.beans.BeanProperty;
-import org.checkerframework.checker.units.qual.C;
-
-class T {
-    void p() {
-        BeanIntrospection<C> introspection = BeanIntrospection.getIntrospection(C.class);
-        BeanProperty<C, String> p1 = introspection.getRequiredProperty("CName", String.class);
-        Optional<BeanProperty<C, String>> p2 = introspection.getProperty("CName", String.class);
-        Optional<BeanProperty<C, Object>> p3 = introspection.getProperty("CName");
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="a/b/T.java" %}
-```java
-package a.b;
-import io.micronaut.core.beans.BeanIntrospection;
-import io.micronaut.core.beans.BeanProperty;
-import org.checkerframework.checker.units.qual.C;
-
-class T {
-    void p() {
-        BeanIntrospection<C> introspection = BeanIntrospection.getIntrospection(C.class);
-        BeanProperty<C, String> p1 = introspection.getRequiredProperty("cName", String.class);
-        Optional<BeanProperty<C, String>> p2 = introspection.getProperty("cName", String.class);
-        Optional<BeanProperty<C, Object>> p3 = introspection.getProperty("cName");
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- a/b/T.java
-+++ a/b/T.java
-@@ -9,3 +9,3 @@
-    void p() {
-        BeanIntrospection<C> introspection = BeanIntrospection.getIntrospection(C.class);
--       BeanProperty<C, String> p1 = introspection.getRequiredProperty("CName", String.class);
--       Optional<BeanProperty<C, String>> p2 = introspection.getProperty("CName", String.class);
--       Optional<BeanProperty<C, Object>> p3 = introspection.getProperty("CName");
-+       BeanProperty<C, String> p1 = introspection.getRequiredProperty("cName", String.class);
-+       Optional<BeanProperty<C, String>> p2 = introspection.getProperty("cName", String.class);
-+       Optional<BeanProperty<C, Object>> p3 = introspection.getProperty("cName");
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.1.2
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -98,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.2")
 }
 ```
 {% endcode %}
@@ -122,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.1</version>
+            <version>2.1.2</version>
           </dependency>
         </dependencies>
       </plugin>

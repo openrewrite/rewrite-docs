@@ -6,11 +6,11 @@ _Find instances of a container name that fails to specify a digest._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindMissingDigest.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindMissingDigest.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -19,87 +19,16 @@ _Find instances of a container name that fails to specify a digest._
 | `boolean` | includeInitContainers | *Optional*. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|includeInitContainers|`true`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-spec:
-    containers:
-    - image: image
----
-apiVersion: v1
-kind: Pod
-spec:
-    containers:
-    - image: app:v1.2.3
-    initContainers:
-    - image: account/image:latest@digest
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-spec:
-    containers:
-    - image: ~~(missing digest)~~>image
----
-apiVersion: v1
-kind: Pod
-spec:
-    containers:
-    - image: ~~(missing digest)~~>app:v1.2.3
-    initContainers:
-    - image: account/image:latest@digest
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,1 +5,1 @@
-spec:
-    containers:
--   - image: image
-+   - image: ~~(missing digest)~~>image
----
-@@ -11,1 +11,1 @@
-spec:
-    containers:
--   - image: app:v1.2.3
-+   - image: ~~(missing digest)~~>app:v1.2.3
-    initContainers:
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -111,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -135,7 +64,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

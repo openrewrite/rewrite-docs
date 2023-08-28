@@ -12,119 +12,22 @@ _It is a common mistake to call `Exception.getMessage()` when passing an excepti
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/CompleteExceptionLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/CompleteExceptionLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.2
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-class Test {
-    Logger logger = LoggerFactory.getLogger(Test.class);
-    void doSomething() {
-        try {
-            Integer num = Integer.valueOf("a");
-        } catch (NumberFormatException e) {
-            // TEST CASE #1:
-            logger.error(e.getMessage());
-
-            // TEST CASE #2:
-            logger.error("BEFORE MESSAGE " + e.getMessage());
-
-            // TEST CASE #3:
-            logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE");
-
-            // TEST CASE #4: No Changes, since stack trace already being logged
-            logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE", e);
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-class Test {
-    Logger logger = LoggerFactory.getLogger(Test.class);
-    void doSomething() {
-        try {
-            Integer num = Integer.valueOf("a");
-        } catch (NumberFormatException e) {
-            // TEST CASE #1:
-            logger.error("", e);
-
-            // TEST CASE #2:
-            logger.error("BEFORE MESSAGE " + e.getMessage(), e);
-
-            // TEST CASE #3:
-            logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE", e);
-
-            // TEST CASE #4: No Changes, since stack trace already being logged
-            logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE", e);
-        }
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -1,0 +1,1 @@
-+
-import org.slf4j.Logger;
-@@ -11,1 +12,1 @@
-        } catch (NumberFormatException e) {
-            // TEST CASE #1:
--           logger.error(e.getMessage());
-+           logger.error("", e);
-
-@@ -14,1 +15,1 @@
-
-            // TEST CASE #2:
--           logger.error("BEFORE MESSAGE " + e.getMessage());
-+           logger.error("BEFORE MESSAGE " + e.getMessage(), e);
-
-@@ -17,1 +18,1 @@
-
-            // TEST CASE #3:
--           logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE");
-+           logger.error("BEFORE MESSAGE " + e.getMessage() + " AFTER MESSAGE", e);
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -136,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.3")
 }
 ```
 {% endcode %}
@@ -160,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

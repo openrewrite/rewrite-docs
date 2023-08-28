@@ -6,22 +6,22 @@ _In Micronaut 2.x a reflection-based strategy was used to retrieve that informat
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/TypeRequiresIntrospection.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/TypeRequiresIntrospection.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.1
+* version: 2.1.2
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.2")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.1</version>
+            <version>2.1.2</version>
           </dependency>
         </dependencies>
       </plugin>

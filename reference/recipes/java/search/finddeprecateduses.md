@@ -6,11 +6,11 @@ _Find deprecated uses of methods, fields, and types. Optionally ignore those cla
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindDeprecatedUses.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.4.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindDeprecatedUses.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.4.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.4.0
+* version: 8.4.1
 
 ## Options
 
@@ -29,7 +29,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {

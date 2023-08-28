@@ -6,11 +6,11 @@ _Change every value matching the key pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -20,65 +20,6 @@ _Change every value matching the key pattern._
 | `String` | oldValue | *Optional*. Only change if the existing value matches. |
 | `String` | newValue | New value to replace the old value with. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|keyPath|`$.resources[?(@.type == 'git')].source.uri`|
-|oldValue|`https://github.com/openrewrite/rewrite0`|
-|newValue|`git@github.com:openrewrite/rewrite1.git`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-resources:
-- name: git-repo
-  type: git
-  source:
-    uri: https://github.com/openrewrite/rewrite0
-- name: custom
-  type: custom-type
-  source:
-    uri: https://github.com/openrewrite/rewrite0
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-resources:
-- name: git-repo
-  type: git
-  source:
-    uri: git@github.com:openrewrite/rewrite1.git
-- name: custom
-  type: custom-type
-  source:
-    uri: https://github.com/openrewrite/rewrite0
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,1 +5,1 @@
-  type: git
-  source:
--   uri: https://github.com/openrewrite/rewrite0
-+   uri: git@github.com:openrewrite/rewrite1.git
-- name: custom
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -101,13 +42,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.0.1 in your build file:
+Now that `com.yourorg.ChangeValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -119,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:2.0.3")
 }
 ```
 {% endcode %}
@@ -143,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

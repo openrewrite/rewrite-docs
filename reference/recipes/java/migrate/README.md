@@ -13,6 +13,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Lombok](/reference/recipes/java/migrate/lombok)
 * [Maven](/reference/recipes/java/migrate/maven)
 * [Metrics](/reference/recipes/java/migrate/metrics)
+* [Plexus](/reference/recipes/java/migrate/plexus)
 * [Search](/reference/recipes/java/migrate/search)
 * [Wro4j](/reference/recipes/java/migrate/wro4j)
 * [java.lang APIs](/reference/recipes/java/migrate/lang)

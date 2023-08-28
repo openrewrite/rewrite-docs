@@ -2,7 +2,7 @@
 
 **org.openrewrite.staticanalysis.BooleanChecksNotInverted**
 
-_It is needlessly complex to invert the result of a boolean comparison. The opposite comparison should be made instead. Also double negation of boolean expressions should be avoided._
+_Ensures that boolean checks are not unnecessarily inverted. Also fixes double negative boolean expressions._
 
 ### Tags
 
@@ -10,22 +10,22 @@ _It is needlessly complex to invert the result of a boolean comparison. The oppo
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/BooleanChecksNotInverted.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/BooleanChecksNotInverted.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.5
+* version: 1.0.6
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.6")
 }
 ```
 {% endcode %}
@@ -61,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -89,6 +89,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Knut Wannheden](mailto:knut.wannheden@gmail.com)
+* Mike Sol
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -12,22 +12,22 @@ _Ensure FTP Deployments are disabled._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/azure.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/azure.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 2.0.2
+* version: 2.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-terraform:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-terraform:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.3")
 }
 ```
 {% endcode %}
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -121,8 +121,9 @@ recipeList:
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [pocan101](mailto:jcortesd@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

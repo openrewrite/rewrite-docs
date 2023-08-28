@@ -6,11 +6,11 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.0.7
+* version: 1.0.8
 
 ## Options
 
@@ -62,13 +62,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.7 in your build file:
+Now that `com.yourorg.AddDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.8 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -80,7 +80,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.8")
 }
 ```
 {% endcode %}
@@ -104,7 +104,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.0.7</version>
+            <version>1.0.8</version>
           </dependency>
         </dependencies>
       </plugin>

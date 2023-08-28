@@ -6,105 +6,22 @@ _Prefer `java.util.Base64` instead of using `sun.misc` in Java 8 or higher. `sun
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UseJavaUtilBase64.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UseJavaUtilBase64.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Example
-
-
-{% tabs %}
-{% tab title="test/sun/misc/Test.java" %}
-
-###### Before
-{% code title="test/sun/misc/Test.java" %}
-```java
-package test.sun.misc;
-
-import test.sun.misc.BASE64Encoder;
-import test.sun.misc.BASE64Decoder;
-import java.io.IOException;
-
-class Test {
-    void test(byte[] bBytes) {
-        BASE64Encoder encoder = new BASE64Encoder();
-        String encoded = encoder.encode(bBytes);
-        encoded += encoder.encodeBuffer(bBytes);
-        try {
-            byte[] decoded = new BASE64Decoder().decodeBuffer(encoded);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="test/sun/misc/Test.java" %}
-```java
-package test.sun.misc;
-
-import java.util.Base64;
-
-class Test {
-    void test(byte[] bBytes) {
-        Base64.Encoder encoder = Base64.getEncoder();
-        String encoded = encoder.encodeToString(bBytes);
-        encoded += encoder.encodeToString(bBytes);
-        byte[] decoded = Base64.getDecoder().decode(encoded);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- test/sun/misc/Test.java
-+++ test/sun/misc/Test.java
-@@ -3,3 +3,1 @@
-package test.sun.misc;
-
--import test.sun.misc.BASE64Encoder;
--import test.sun.misc.BASE64Decoder;
--import java.io.IOException;
-+import java.util.Base64;
-
-@@ -9,8 +7,4 @@
-class Test {
-    void test(byte[] bBytes) {
--       BASE64Encoder encoder = new BASE64Encoder();
--       String encoded = encoder.encode(bBytes);
--       encoded += encoder.encodeBuffer(bBytes);
--       try {
--           byte[] decoded = new BASE64Decoder().decodeBuffer(encoded);
--       } catch (IOException e) {
--           e.printStackTrace();
--       }
-+       Base64.Encoder encoder = Base64.getEncoder();
-+       String encoded = encoder.encodeToString(bBytes);
-+       encoded += encoder.encodeToString(bBytes);
-+       byte[] decoded = Base64.getDecoder().decode(encoded);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -116,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -140,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -169,6 +86,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Sam Snyder](mailto:sam@moderne.io)
 * Tyler Van Gorder
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

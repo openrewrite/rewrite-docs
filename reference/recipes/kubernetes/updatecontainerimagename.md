@@ -6,11 +6,11 @@ _Search for image names that match patterns and replace the components of the na
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/UpdateContainerImageName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/UpdateContainerImageName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -24,77 +24,6 @@ _Search for image names that match patterns and replace the components of the na
 | `String` | tagToUpdate | *Optional*. The tag part of the image name to update to in containers and initContainers. |
 | `boolean` | includeInitContainers | *Optional*. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|repoToFind|`null`|
-|imageToFind|`nginx`|
-|tagToFind|`null`|
-|repoToUpdate|`gcr.io/myaccount/myrepo`|
-|imageToUpdate|`nginx-custom`|
-|tagToUpdate|`latest`|
-|includeInitContainers|`false`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-spec:
-    containers:
-    - image: nginx
----
-apiVersion: v1
-kind: Pod
-spec:
-    containers:
-    - image: gcr.io/myaccount/myrepo/nginx
-    initContainers:
-    - image: gcr.io/myaccount/myrepo/myinit:latest
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-spec:
-    containers:
-    - image: gcr.io/myaccount/myrepo/nginx-custom:latest
----
-apiVersion: v1
-kind: Pod
-spec:
-    containers:
-    - image: gcr.io/myaccount/myrepo/nginx
-    initContainers:
-    - image: gcr.io/myaccount/myrepo/myinit:latest
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,1 +5,1 @@
-spec:
-    containers:
--   - image: nginx
-+   - image: gcr.io/myaccount/myrepo/nginx-custom:latest
----
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -121,13 +50,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateContainerImageNameExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.UpdateContainerImageNameExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -139,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -163,7 +92,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

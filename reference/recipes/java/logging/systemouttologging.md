@@ -6,11 +6,11 @@ _Replace `System.out` print statements with a logger._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/SystemOutToLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/SystemOutToLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.2
+* version: 2.0.3
 
 ## Options
 
@@ -21,77 +21,16 @@ _Replace `System.out` print statements with a logger._
 | `String` | loggingFramework | *Optional*. The logging framework to use. |
 | `String` | level | *Optional*. The logging level to turn `System.out` print statements into. |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|addLogger|`null`|
-|loggerName|`LOGGER`|
-|loggingFramework|`null`|
-|level|`debug`|
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.slf4j.Logger;
-class Test {
-    int n;
-    Logger logger;
-
-    void test() {
-        System.out.println("Oh " + n + " no");
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import org.slf4j.Logger;
-class Test {
-    int n;
-    Logger logger;
-
-    void test() {
-        logger.debug("Oh {} no", n);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -7,1 +7,1 @@
-
-    void test() {
--       System.out.println("Oh " + n + " no");
-+       logger.debug("Oh {} no", n);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -103,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.3")
 }
 ```
 {% endcode %}
@@ -127,7 +66,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

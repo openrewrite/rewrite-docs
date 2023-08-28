@@ -105,6 +105,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Simplify lambda blocks to expressions](./lambdablocktoexpression.md)
 * [Sorted set stream should be collected to LinkedHashSet](./sortedsetstreamtolinkedhashset.md)
 * [Static methods not final](./staticmethodnotfinal.md)
+* [Ternary operators should not be nested](./ternaryoperatorsshouldnotbenested.md)
 * [Typecast parenthesis padding](./typecastparenpad.md)
 * [Unnecessary String#toString()](./notostringonstringtype.md)
 * [Unnecessary String#valueOf(..)](./novalueofonstringtype.md)

@@ -6,11 +6,11 @@ _Change the groupId, artifactId and/or the version of a specified Gradle or Mave
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.0.7
+* version: 1.0.8
 
 ## Options
 
@@ -23,153 +23,6 @@ _Change the groupId, artifactId and/or the version of a specified Gradle or Mave
 | `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |
-
-## Examples
-##### Example 1
-Change Gradle dependency
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldGroupId|`commons-lang`|
-|oldArtifactId|`commons-lang`|
-|newGroupId|`org.apache.commons`|
-|newArtifactId|`commons-lang3`|
-|newVersion|`3.11.x`|
-|versionPattern|`null`|
-|overrideManagedVersion|`null`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id "java-library"
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation "commons-lang:commons-lang:2.6"
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id "java-library"
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation "org.apache.commons:commons-lang3:3.11"
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   implementation "commons-lang:commons-lang:2.6"
-+   implementation "org.apache.commons:commons-lang3:3.11"
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-Change Maven dependency
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldGroupId|`commons-lang`|
-|oldArtifactId|`commons-lang`|
-|newGroupId|`org.apache.commons`|
-|newArtifactId|`commons-lang3`|
-|newVersion|`3.11.x`|
-|versionPattern|`null`|
-|overrideManagedVersion|`null`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.example.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <dependencies>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.example.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -7,3 +7,3 @@
-    <dependencies>
-        <dependency>
--           <groupId>commons-lang</groupId>
--           <artifactId>commons-lang</artifactId>
--           <version>2.6</version>
-+           <groupId>org.apache.commons</groupId>
-+           <artifactId>commons-lang3</artifactId>
-+           <version>3.11</version>
-        </dependency>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -195,13 +48,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.7 in your build file:
+Now that `com.yourorg.ChangeDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.8 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -213,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.8")
 }
 ```
 {% endcode %}
@@ -237,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.0.7</version>
+            <version>1.0.8</version>
           </dependency>
         </dependencies>
       </plugin>

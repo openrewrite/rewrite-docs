@@ -11,121 +11,22 @@ _Prefer the Java standard library's `java.nio.file.Files` over third-party usage
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/io/ApacheFileUtilsToJavaFiles.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/io/ApacheFileUtilsToJavaFiles.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Example
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import java.io.File;
-import java.nio.charset.Charset;
-import org.apache.commons.io.FileUtils;
-import java.util.List;
-
-class A {
-    byte[] readFileBytes(File file) {
-        return FileUtils.readFileToByteArray(file);
-    }
-    List<String> readLines(File file) {
-        return FileUtils.readLines(file);
-    }
-    List<String> readLinesWithCharset(File file, Charset charset) {
-        return FileUtils.readLines(file, charset);
-    }
-    List<String> readLinesWithCharsetId(File file) {
-        return FileUtils.readLines(file, "UTF_8");
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import java.io.File;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-
-import java.util.List;
-
-class A {
-    byte[] readFileBytes(File file) {
-        return Files.readAllBytes(file.toPath());
-    }
-    List<String> readLines(File file) {
-        return Files.readAllLines(file.toPath());
-    }
-    List<String> readLinesWithCharset(File file, Charset charset) {
-        return Files.readAllLines(file.toPath(), charset);
-    }
-    List<String> readLinesWithCharsetId(File file) {
-        return Files.readAllLines(file.toPath(), Charset.forName("UTF_8"));
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -3,1 +3,2 @@
-import java.io.File;
-import java.nio.charset.Charset;
--import org.apache.commons.io.FileUtils;
-+import java.nio.file.Files;
-+
-import java.util.List;
-@@ -8,1 +9,1 @@
-class A {
-    byte[] readFileBytes(File file) {
--       return FileUtils.readFileToByteArray(file);
-+       return Files.readAllBytes(file.toPath());
-    }
-@@ -11,1 +12,1 @@
-    }
-    List<String> readLines(File file) {
--       return FileUtils.readLines(file);
-+       return Files.readAllLines(file.toPath());
-    }
-@@ -14,1 +15,1 @@
-    }
-    List<String> readLinesWithCharset(File file, Charset charset) {
--       return FileUtils.readLines(file, charset);
-+       return Files.readAllLines(file.toPath(), charset);
-    }
-@@ -17,1 +18,1 @@
-    }
-    List<String> readLinesWithCharsetId(File file) {
--       return FileUtils.readLines(file, "UTF_8");
-+       return Files.readAllLines(file.toPath(), Charset.forName("UTF_8"));
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -137,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -161,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

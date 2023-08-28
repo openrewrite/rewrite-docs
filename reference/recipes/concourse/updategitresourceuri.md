@@ -6,11 +6,11 @@ _Update git resource `source.uri` URI values to point to a new URI value._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/UpdateGitResourceUri.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/UpdateGitResourceUri.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -19,64 +19,6 @@ _Update git resource `source.uri` URI values to point to a new URI value._
 | `String` | oldURIPattern | *Optional*. The old URI value to replace. This can be a regex pattern. If left empty, replace all occurrences. |
 | `String` | newURI | New URI value to replace the old URI value with. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|oldURIPattern|`https://github.com/openrewrite/rewrite0`|
-|newURI|`git@github.com:openrewrite/rewrite1.git`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-resources:
-- name: git-repo
-  type: git
-  source:
-    uri: https://github.com/openrewrite/rewrite0
-- name: custom
-  type: custom-type
-  source:
-    uri: https://github.com/openrewrite/rewrite0
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-resources:
-- name: git-repo
-  type: git
-  source:
-    uri: git@github.com:openrewrite/rewrite1.git
-- name: custom
-  type: custom-type
-  source:
-    uri: https://github.com/openrewrite/rewrite0
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,1 +5,1 @@
-  type: git
-  source:
--   uri: https://github.com/openrewrite/rewrite0
-+   uri: git@github.com:openrewrite/rewrite1.git
-- name: custom
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -98,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.0.1 in your build file:
+Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -116,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:2.0.3")
 }
 ```
 {% endcode %}
@@ -140,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

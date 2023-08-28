@@ -6,127 +6,22 @@ _Certain `javax.management.monitor` APIs have become deprecated and their usages
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/javax-management-monitor-apis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/javax-management-monitor-apis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import javax.management.monitor.CounterMonitor;
-
-public class Test {
-    public void method() {
-        CounterMonitor monitor = new CounterMonitor();
-        monitor.setThreshold(10);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import javax.management.monitor.CounterMonitor;
-
-public class Test {
-    public void method() {
-        CounterMonitor monitor = new CounterMonitor();
-        monitor.setInitThreshold(10);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -6,1 +6,1 @@
-    public void method() {
-        CounterMonitor monitor = new CounterMonitor();
--       monitor.setThreshold(10);
-+       monitor.setInitThreshold(10);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import javax.management.monitor.CounterMonitor;
-
-public class Test {
-    public void method() {
-        CounterMonitor monitor = new CounterMonitor();
-        monitor.setThreshold(10);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import javax.management.monitor.CounterMonitor;
-
-public class Test {
-    public void method() {
-        CounterMonitor monitor = new CounterMonitor();
-        monitor.setInitThreshold(10);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -6,1 +6,1 @@
-    public void method() {
-        CounterMonitor monitor = new CounterMonitor();
--       monitor.setThreshold(10);
-+       monitor.setInitThreshold(10);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -138,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -162,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

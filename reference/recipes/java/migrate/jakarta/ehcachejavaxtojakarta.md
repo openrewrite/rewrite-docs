@@ -6,215 +6,22 @@ _Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Ehcach
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.example.ehcache</groupId>
-    <artifactId>ehcache-legacy</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>3.9.10</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
-            <version>3.9.10</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
-            <version>3.9.10</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.example.ehcache</groupId>
-    <artifactId>ehcache-legacy</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
-            <version>3.10.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
-            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
-        </dependency>
-    </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -9,1 +9,2 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-+           <classifier>jakarta</classifier>
-        </dependency>
-@@ -14,1 +15,1 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-        </dependency>
-@@ -19,1 +20,2 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-+           <classifier>jakarta</classifier>
-        </dependency>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.example.ehcache</groupId>
-    <artifactId>ehcache-legacy</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>3.9.10</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
-            <version>3.9.10</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
-            <version>3.9.10</version>
-        </dependency>
-    </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.example.ehcache</groupId>
-    <artifactId>ehcache-legacy</artifactId>
-    <version>1.0.0</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
-            <version>3.10.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
-            <version>3.10.8</version>
-            <classifier>jakarta</classifier>
-        </dependency>
-    </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -9,1 +9,2 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-+           <classifier>jakarta</classifier>
-        </dependency>
-@@ -14,1 +15,1 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-clustered</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-        </dependency>
-@@ -19,1 +20,2 @@
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache-transactions</artifactId>
--           <version>3.9.10</version>
-+           <version>3.10.8</version>
-+           <classifier>jakarta</classifier>
-        </dependency>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -226,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -250,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

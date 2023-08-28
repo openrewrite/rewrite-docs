@@ -6,11 +6,11 @@ _Install a CircleCI [orb](https://circleci.com/docs/2.0/orb-intro/) if it is not
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/InstallOrb.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/InstallOrb.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-circleci
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -38,13 +38,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.InstallOrbExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:2.0.1 in your build file:
+Now that `com.yourorg.InstallOrbExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-circleci:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-circleci:2.0.3")
 }
 ```
 {% endcode %}
@@ -80,7 +80,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-circleci</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

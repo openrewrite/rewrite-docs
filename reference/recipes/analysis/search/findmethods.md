@@ -6,11 +6,11 @@ _Find method usages by pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.0.4/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.0.3
+* version: 2.0.4
 
 ## Options
 
@@ -54,13 +54,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindMethodsExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.3 in your build file:
+Now that `com.yourorg.FindMethodsExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.0.4 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -72,7 +72,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.3")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.0.4")
 }
 ```
 {% endcode %}
@@ -96,7 +96,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.0.3</version>
+            <version>2.0.4</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,8 +110,9 @@ dependencies {
 
 ## Contributors
 * [Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com)
-* [aaronist](mailto:aaronmblume@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [aaronist](mailto:aaronmblume@gmail.com)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

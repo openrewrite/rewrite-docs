@@ -6,11 +6,11 @@ _Renames a method._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.0.9/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-python
-* version: 1.0.8
+* version: 1.0.9
 
 ## Options
 
@@ -40,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-python:1.0.8 in your build file:
+Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-python:1.0.9 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-python:1.0.8")
+    rewrite("org.openrewrite:rewrite-python:1.0.9")
 }
 ```
 {% endcode %}
@@ -82,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-python</artifactId>
-            <version>1.0.8</version>
+            <version>1.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

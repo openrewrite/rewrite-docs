@@ -11,183 +11,22 @@ _Applies best practices to logging with SLF4J._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/slf4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/slf4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.2
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-class Test {
-    Logger logger = LoggerFactory.getLogger(String.class);
-    void test() {
-        Object obj1 = new Object();
-        Object obj2 = new Object();
-        logger.info("Hello " + obj1 + ", " + obj2);
-        Exception e = new Exception();
-        logger.warn(String.valueOf(e));
-        logger.error(e.getMessage());
-        logger.error(e.getLocalizedMessage());
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-class Test {
-    Logger logger = LoggerFactory.getLogger(Test.class);
-    void test() {
-        Object obj1 = new Object();
-        Object obj2 = new Object();
-        logger.info("Hello {}, {}", obj1, obj2);
-        Exception e = new Exception();
-        logger.warn("Exception", e);
-        logger.error("", e);
-        logger.error("", e);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -4,1 +4,1 @@
-import org.slf4j.LoggerFactory;
-class Test {
--   Logger logger = LoggerFactory.getLogger(String.class);
-+   Logger logger = LoggerFactory.getLogger(Test.class);
-    void test() {
-@@ -8,1 +8,1 @@
-        Object obj1 = new Object();
-        Object obj2 = new Object();
--       logger.info("Hello " + obj1 + ", " + obj2);
-+       logger.info("Hello {}, {}", obj1, obj2);
-        Exception e = new Exception();
-@@ -10,3 +10,3 @@
-        logger.info("Hello " + obj1 + ", " + obj2);
-        Exception e = new Exception();
--       logger.warn(String.valueOf(e));
--       logger.error(e.getMessage());
--       logger.error(e.getLocalizedMessage());
-+       logger.warn("Exception", e);
-+       logger.error("", e);
-+       logger.error("", e);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-class Test {
-    Logger logger = LoggerFactory.getLogger(String.class);
-    void test() {
-        Object obj1 = new Object();
-        Object obj2 = new Object();
-        logger.info("Hello " + obj1 + ", " + obj2);
-        Exception e = new Exception();
-        logger.warn(String.valueOf(e));
-        logger.error(e.getMessage());
-        logger.error(e.getLocalizedMessage());
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-class Test {
-    Logger logger = LoggerFactory.getLogger(Test.class);
-    void test() {
-        Object obj1 = new Object();
-        Object obj2 = new Object();
-        logger.info("Hello {}, {}", obj1, obj2);
-        Exception e = new Exception();
-        logger.warn("Exception", e);
-        logger.error("", e);
-        logger.error("", e);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -4,1 +4,1 @@
-import org.slf4j.LoggerFactory;
-class Test {
--   Logger logger = LoggerFactory.getLogger(String.class);
-+   Logger logger = LoggerFactory.getLogger(Test.class);
-    void test() {
-@@ -8,1 +8,1 @@
-        Object obj1 = new Object();
-        Object obj2 = new Object();
--       logger.info("Hello " + obj1 + ", " + obj2);
-+       logger.info("Hello {}, {}", obj1, obj2);
-        Exception e = new Exception();
-@@ -10,3 +10,3 @@
-        logger.info("Hello " + obj1 + ", " + obj2);
-        Exception e = new Exception();
--       logger.warn(String.valueOf(e));
--       logger.error(e.getMessage());
--       logger.error(e.getLocalizedMessage());
-+       logger.warn("Exception", e);
-+       logger.error("", e);
-+       logger.error("", e);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -199,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.3")
 }
 ```
 {% endcode %}
@@ -223,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

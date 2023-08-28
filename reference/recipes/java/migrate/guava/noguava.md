@@ -10,257 +10,22 @@ _Guava filled in important gaps in the Java standard library and still does. But
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import com.google.common.base.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.absent();
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import java.util.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.empty();
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -1,1 +1,1 @@
--import com.google.common.base.Optional;
-+import java.util.Optional;
-
-@@ -5,1 +5,1 @@
-class A {
-    Optional<String> foo() {
--       return Optional.absent();
-+       return Optional.empty();
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import com.google.common.base.Optional;
-
-class A {
-    String foo(Optional<String> optional) {
-        try {
-            return optional.get();
-        } catch (IllegalStateException e) {
-            return "";
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import java.util.Optional;
-
-class A {
-    String foo(Optional<String> optional) {
-        try {
-            return optional.get();
-        } catch (NoSuchElementException e) {
-            return "";
-        }
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -1,1 +1,1 @@
--import com.google.common.base.Optional;
-+import java.util.Optional;
-
-@@ -7,1 +7,1 @@
-        try {
-            return optional.get();
--       } catch (IllegalStateException e) {
-+       } catch (NoSuchElementException e) {
-            return "";
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 3
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import com.google.common.base.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.absent();
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import java.util.Optional;
-
-class A {
-    Optional<String> foo() {
-        return Optional.empty();
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -1,1 +1,1 @@
--import com.google.common.base.Optional;
-+import java.util.Optional;
-
-@@ -5,1 +5,1 @@
-class A {
-    Optional<String> foo() {
--       return Optional.absent();
-+       return Optional.empty();
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 4
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import com.google.common.base.Optional;
-
-class A {
-    String foo(Optional<String> optional) {
-        try {
-            return optional.get();
-        } catch (IllegalStateException e) {
-            return "";
-        }
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import java.util.Optional;
-
-class A {
-    String foo(Optional<String> optional) {
-        try {
-            return optional.get();
-        } catch (NoSuchElementException e) {
-            return "";
-        }
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -1,1 +1,1 @@
--import com.google.common.base.Optional;
-+import java.util.Optional;
-
-@@ -7,1 +7,1 @@
-        try {
-            return optional.get();
--       } catch (IllegalStateException e) {
-+       } catch (NoSuchElementException e) {
-            return "";
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -272,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -296,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

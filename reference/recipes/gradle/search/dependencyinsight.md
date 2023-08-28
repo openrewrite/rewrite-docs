@@ -6,11 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.4.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.4.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.4.0
+* version: 8.4.1
 
 ## Options
 
@@ -63,7 +63,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {

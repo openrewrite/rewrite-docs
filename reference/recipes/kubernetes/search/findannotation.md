@@ -6,11 +6,11 @@ _Find annotations that optionally match a given regex._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -19,78 +19,6 @@ _Find annotations that optionally match a given regex._
 | `String` | annotationName | The name of the annotation to search for the existence of. |
 | `String` | value | *Optional*. An optional regex expression that will find values that match. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|annotationName|`mycompany.io/annotation`|
-|value|`null`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod1
-  annotations:
-    mycompany.io/annotation: "hasvalue"
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod2
-  annotations:
-    mycompany.io/annotation: "novalue"
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod1
-  annotations:
-    ~~(found:mycompany.io/annotation)~~>mycompany.io/annotation: "hasvalue"
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod2
-  annotations:
-    ~~(found:mycompany.io/annotation)~~>mycompany.io/annotation: "novalue"
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -6,1 +6,1 @@
-  name: mypod1
-  annotations:
--   mycompany.io/annotation: "hasvalue"
-+   ~~(found:mycompany.io/annotation)~~>mycompany.io/annotation: "hasvalue"
----
-@@ -13,1 +13,1 @@
-  name: mypod2
-  annotations:
--   mycompany.io/annotation: "novalue"
-+   ~~(found:mycompany.io/annotation)~~>mycompany.io/annotation: "novalue"
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -112,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindAnnotationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.FindAnnotationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -130,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -154,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

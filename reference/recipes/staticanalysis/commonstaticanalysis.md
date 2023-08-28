@@ -6,22 +6,22 @@ _Resolve common static analysis issues discovered through 3rd party tools._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.0.5
+* version: 1.0.6
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.0.6")
 }
 ```
 {% endcode %}
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -239,15 +239,16 @@ recipeList:
 * Kun Li
 * [Peter Streef](mailto:p.streef@gmail.com)
 * Tyler Van Gorder
+* [Tim te Beek](mailto:tim@moderne.io)
 * Josh Soref
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
-* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 * [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl)
+* [Knut Wannheden](mailto:knut.wannheden@gmail.com)
 * [Knut Wannheden](mailto:knut.wannheden@mobi.ch)
 * [xshen053](mailto:shenxiaxi26@gmail.com)
 * [Greg Adams](mailto:greg@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* Mike Sol
 * [pstreef](mailto:p.streef@gmail.com)
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)

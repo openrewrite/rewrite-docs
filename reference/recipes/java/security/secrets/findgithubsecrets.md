@@ -10,119 +10,22 @@ _Locates GitHub secrets stored in plain text in code._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.2
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    void githubTest() {
-        String secret = "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";
-        String notSecret = "foo_wWPw5k4aXcaT4fNP0UcnZwJUVFk6LO0pINUx";
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    void githubTest() {
-        String secret = /*~~(GitHub)~~>*/"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";
-        String notSecret = "foo_wWPw5k4aXcaT4fNP0UcnZwJUVFk6LO0pINUx";
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -3,1 +3,1 @@
-class Test {
-    void githubTest() {
--       String secret = "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";
-+       String secret = /*~~(GitHub)~~>*/"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";
-        String notSecret = "foo_wWPw5k4aXcaT4fNP0UcnZwJUVFk6LO0pINUx";
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-class Test {
-    void githubTest() {
-        String secret = "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";
-        String notSecret = "foo_wWPw5k4aXcaT4fNP0UcnZwJUVFk6LO0pINUx";
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-class Test {
-    void githubTest() {
-        String secret = /*~~(GitHub)~~>*/"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";
-        String notSecret = "foo_wWPw5k4aXcaT4fNP0UcnZwJUVFk6LO0pINUx";
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -3,1 +3,1 @@
-class Test {
-    void githubTest() {
--       String secret = "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";
-+       String secret = /*~~(GitHub)~~>*/"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";
-        String notSecret = "foo_wWPw5k4aXcaT4fNP0UcnZwJUVFk6LO0pINUx";
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -134,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.3")
 }
 ```
 {% endcode %}
@@ -158,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

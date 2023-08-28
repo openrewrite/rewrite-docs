@@ -7,11 +7,11 @@ For Maven project, removes a single dependency from the <dependencies> section o
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.0.7
+* version: 1.0.8
 
 ## Options
 
@@ -21,163 +21,6 @@ For Maven project, removes a single dependency from the <dependencies> section o
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. |
 | `String` | configuration | *Optional*. The dependency configuration to remove from. |
 | `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set |
-
-## Examples
-##### Example 1
-Remove a Gradle dependency
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`org.springframework.boot`|
-|artifactId|`spring-boot*`|
-|configuration|`null`|
-|scope|`null`|
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web:2.7.0") {
-        exclude group: "junit"
-    }
-    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,3 +10,0 @@
-
-dependencies {
--   implementation("org.springframework.boot:spring-boot-starter-web:2.7.0") {
--       exclude group: "junit"
--   }
-    testImplementation "org.junit.vintage:junit-vintage-engine:5.6.2"
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-Remove a Maven dependency
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|groupId|`junit`|
-|artifactId|`junit`|
-|configuration|`null`|
-|scope|`null`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -14,6 +14,0 @@
-      <version>29.0-jre</version>
-    </dependency>
--   <dependency>
--     <groupId>junit</groupId>
--     <artifactId>junit</artifactId>
--     <version>4.13.1</version>
--     <scope>test</scope>
--   </dependency>
-  </dependencies>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -200,13 +43,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RemoveDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.7 in your build file:
+Now that `com.yourorg.RemoveDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.8 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -218,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.8")
 }
 ```
 {% endcode %}
@@ -242,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.0.7</version>
+            <version>1.0.8</version>
           </dependency>
         </dependencies>
       </plugin>

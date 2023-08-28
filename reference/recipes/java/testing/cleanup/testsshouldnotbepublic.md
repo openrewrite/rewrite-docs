@@ -10,11 +10,11 @@ _Remove `public` and optionally `protected` modifiers from methods with `@Test`,
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/TestsShouldNotBePublic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/TestsShouldNotBePublic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.9
+* version: 2.0.10
 
 ## Options
 
@@ -25,13 +25,13 @@ _Remove `public` and optionally `protected` modifiers from methods with `@Test`,
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.10")
 }
 ```
 {% endcode %}
@@ -67,7 +67,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -97,8 +97,8 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
 * [sullis](mailto:github@seansullivan.com)
-* [Tim te Beek](mailto:tim@moderne.io)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)

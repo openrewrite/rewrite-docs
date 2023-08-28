@@ -14,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Change slf4j log level](./changeloglevel.md)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](./completeexceptionlogging.md)
 * [Loggers should be named for their enclosing classes](./loggersnamedforenclosingclass.md)
 * [SLF4J logging statements should begin with constants](./slf4jlogshouldbeconstant.md)

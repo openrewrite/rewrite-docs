@@ -6,17 +6,17 @@ _To integrate Gradle Enterprise Maven extension into maven projects, ensure that
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddGradleEnterpriseMavenExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.4.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddGradleEnterpriseMavenExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.4.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.4.0
+* version: 8.4.1
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | version | A maven-compatible version number to select the gradle-enterprise-maven-extension version. |
+| `String` | version | *Optional*. A maven-compatible version number to select the gradle-enterprise-maven-extension version. |
 | `String` | server | The URL of the Gradle Enterprise server. |
 | `Boolean` | allowUntrustedServer | *Optional*. When set to `true` the extension will be configured to allow unencrypted http connections with the server. If set to `false` or omitted, the extension will refuse to communicate without transport layer security enabled. |
 | `Boolean` | captureGoalInputFiles | *Optional*. When set to `true` the extension will capture additional information about the inputs to Maven goals. This increases the size of build scans, but is useful for diagnosing issues with goal caching.  |

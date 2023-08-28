@@ -6,11 +6,11 @@ _Find annotations that optionally match a given value._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindMissingOrInvalidAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindMissingOrInvalidAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -19,106 +19,6 @@ _Find annotations that optionally match a given value._
 | `String` | annotationName | The name of the annotation to search for the existence of. |
 | `String` | value | *Optional*. An optional regex that will validate values that match. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|annotationName|`mycompany.io/annotation`|
-|value|`null`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod1
-  annotations:
-    mycompany.io/something: "hasvalue"
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod2
-  annotations:
-    mycompany.io/annotation: "novalue"
----
-apiVersion: apps/v1
-kind: Deployment
-spec:
-    template:
-        spec:
-            metadata:
-                annotations:
-                    mycompany.io/something: "hasvalue"
-            containers:
-            - name: app
-              image: repo/app:latest
-            - name: sidecar
-              image: repo/sidecar:dev
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod1
-  ~~(missing:mycompany.io/annotation)~~>annotations:
-    mycompany.io/something: "hasvalue"
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mypod2
-  annotations:
-    mycompany.io/annotation: "novalue"
----
-apiVersion: apps/v1
-kind: Deployment
-spec:
-    template:
-        spec:
-            metadata:
-                ~~(missing:mycompany.io/annotation)~~>annotations:
-                    mycompany.io/something: "hasvalue"
-            containers:
-            - name: app
-              image: repo/app:latest
-            - name: sidecar
-              image: repo/sidecar:dev
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -5,1 +5,1 @@
-metadata:
-  name: mypod1
-- annotations:
-+ ~~(missing:mycompany.io/annotation)~~>annotations:
-    mycompany.io/something: "hasvalue"
-@@ -21,1 +21,1 @@
-        spec:
-            metadata:
--               annotations:
-+               ~~(missing:mycompany.io/annotation)~~>annotations:
-                    mycompany.io/something: "hasvalue"
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -140,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindMissingOrInvalidAnnotationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.FindMissingOrInvalidAnnotationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -158,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -182,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

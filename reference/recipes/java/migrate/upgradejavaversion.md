@@ -6,87 +6,17 @@ _Upgrade build plugin configuration to use the specified Java version. This reci
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
+* version: 2.0.10
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `Integer` | version | The Java version to upgrade to. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|version|`17`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <properties>
-    <java.version>1.8</java.version>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-
-  <properties>
-    <java.version>17</java.version>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-  </properties>
-
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -5,3 +5,3 @@
-
-  <properties>
--   <java.version>1.8</java.version>
--   <maven.compiler.source>1.8</maven.compiler.source>
--   <maven.compiler.target>1.8</maven.compiler.target>
-+   <java.version>17</java.version>
-+   <maven.compiler.source>17</maven.compiler.source>
-+   <maven.compiler.target>17</maven.compiler.target>
-  </properties>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -106,13 +36,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeJavaVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.0.9 in your build file:
+Now that `com.yourorg.UpgradeJavaVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.0.10 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -124,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -148,7 +78,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

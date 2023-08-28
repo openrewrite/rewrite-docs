@@ -6,72 +6,22 @@ _See the [paper](https://github.com/mbechler/marshalsec) on this subject._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/marshalling/SecureSnakeYamlConstructor.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/marshalling/SecureSnakeYamlConstructor.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.2
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.yaml.snakeyaml.Yaml;
-
-class Test {
-    Object o = new Yaml();
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import org.yaml.snakeyaml.Yaml;
-import org.yaml.snakeyaml.constructor.SafeConstructor;
-
-class Test {
-    Object o = new Yaml(new SafeConstructor());
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -2,0 +2,1 @@
-import org.yaml.snakeyaml.Yaml;
-+import org.yaml.snakeyaml.constructor.SafeConstructor;
-
-@@ -4,1 +5,1 @@
-
-class Test {
--   Object o = new Yaml();
-+   Object o = new Yaml(new SafeConstructor());
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -83,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.3")
 }
 ```
 {% endcode %}
@@ -107,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -135,7 +85,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 * [Sam Snyder](mailto:sam@moderne.io)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

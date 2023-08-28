@@ -6,101 +6,17 @@ _Replaces any explicit `source` or `target` configuration (if present) on the ma
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
+* version: 2.0.10
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | releaseVersion | The new value for the release configuration. This recipe prefers ${java.version} if defined. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|releaseVersion|`11`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.sample</groupId>
-  <artifactId>sample</artifactId>
-  <version>1.0.0</version>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.sample</groupId>
-  <artifactId>sample</artifactId>
-  <version>1.0.0</version>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
-        <configuration>
-          <release>11</release>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -15,2 +15,1 @@
-        <version>3.8.0</version>
-        <configuration>
--         <source>1.8</source>
--         <target>1.8</target>
-+         <release>11</release>
-        </configuration>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -120,7 +36,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.0.9 in your build file:
+Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.0.10 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -142,7 +58,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

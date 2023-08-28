@@ -42,7 +42,7 @@ Now that `com.yourorg.UpgradeSpringFrameworkDependenciesExample` has been define
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {

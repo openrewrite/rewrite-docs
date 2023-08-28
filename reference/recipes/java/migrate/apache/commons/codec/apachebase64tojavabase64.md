@@ -11,135 +11,22 @@ _Prefer the Java standard library's `java.util.Base64` over third-party usage of
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/codec/ApacheBase64ToJavaBase64.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/codec/ApacheBase64ToJavaBase64.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.9
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.apache.commons.codec.binary.Base64;
-
-class Test {
-    static byte[] decodeBytes(byte[] encodedBytes) {
-        return Base64.decodeBase64(encodedBytes);
-    }
-    static byte[] decodeToBytes(String encodedString) {
-        return Base64.decodeBase64(encodedString);
-    }
-    static String encodeToString(byte[] decodedByteArr) {
-        return Base64.encodeBase64String(decodedByteArr);
-    }
-    static byte[] encodeBase64(byte[] binaryData) {
-        return Base64.encodeBase64(binaryData);
-    }
-    static byte[] encodeBytesUrlSafe(byte [] encodeBytes) {
-        return Base64.encodeBase64URLSafe(encodeBytes);
-    }
-    static String encodeBytesUrlSafeString(byte [] encodeBytes) {
-        return Base64.encodeBase64URLSafeString(encodeBytes);
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import java.util.Base64;
-
-class Test {
-    static byte[] decodeBytes(byte[] encodedBytes) {
-        return Base64.getDecoder().decode(encodedBytes);
-    }
-    static byte[] decodeToBytes(String encodedString) {
-        return Base64.getDecoder().decode(encodedString);
-    }
-    static String encodeToString(byte[] decodedByteArr) {
-        return Base64.getEncoder().encodeToString(decodedByteArr);
-    }
-    static byte[] encodeBase64(byte[] binaryData) {
-        return Base64.getEncoder().encode(binaryData);
-    }
-    static byte[] encodeBytesUrlSafe(byte [] encodeBytes) {
-        return Base64.getUrlEncoder().withoutPadding().encode(encodeBytes);
-    }
-    static String encodeBytesUrlSafeString(byte [] encodeBytes) {
-        return Base64.getUrlEncoder().withoutPadding().encodeToString(encodeBytes);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -1,1 +1,1 @@
--import org.apache.commons.codec.binary.Base64;
-+import java.util.Base64;
-
-@@ -5,1 +5,1 @@
-class Test {
-    static byte[] decodeBytes(byte[] encodedBytes) {
--       return Base64.decodeBase64(encodedBytes);
-+       return Base64.getDecoder().decode(encodedBytes);
-    }
-@@ -8,1 +8,1 @@
-    }
-    static byte[] decodeToBytes(String encodedString) {
--       return Base64.decodeBase64(encodedString);
-+       return Base64.getDecoder().decode(encodedString);
-    }
-@@ -11,1 +11,1 @@
-    }
-    static String encodeToString(byte[] decodedByteArr) {
--       return Base64.encodeBase64String(decodedByteArr);
-+       return Base64.getEncoder().encodeToString(decodedByteArr);
-    }
-@@ -14,1 +14,1 @@
-    }
-    static byte[] encodeBase64(byte[] binaryData) {
--       return Base64.encodeBase64(binaryData);
-+       return Base64.getEncoder().encode(binaryData);
-    }
-@@ -17,1 +17,1 @@
-    }
-    static byte[] encodeBytesUrlSafe(byte [] encodeBytes) {
--       return Base64.encodeBase64URLSafe(encodeBytes);
-+       return Base64.getUrlEncoder().withoutPadding().encode(encodeBytes);
-    }
-@@ -20,1 +20,1 @@
-    }
-    static String encodeBytesUrlSafeString(byte [] encodeBytes) {
--       return Base64.encodeBase64URLSafeString(encodeBytes);
-+       return Base64.getUrlEncoder().withoutPadding().encodeToString(encodeBytes);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -151,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
 }
 ```
 {% endcode %}
@@ -175,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.9</version>
+            <version>2.0.10</version>
           </dependency>
         </dependencies>
       </plugin>

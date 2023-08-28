@@ -26,7 +26,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -168,8 +168,8 @@ recipeList:
 * [Kyle Scully](mailto:scullykns@gmail.com)
 * [Kevin McCarpenter](mailto:kevin@moderne.io)
 * Fabian Krüger
-* [Tim te Beek](mailto:tim@moderne.io)
 * Kun Li
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Alex Boyko](mailto:aboyko@vmware.com)
 * nbruno

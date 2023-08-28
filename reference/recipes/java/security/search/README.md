@@ -9,5 +9,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Find Jackson default type mapping enablement](./findjacksondefaulttypemapping.md)
+* [Find sensitive API endpoints](./findsensitiveapiendpoints.md)
 
 

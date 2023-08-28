@@ -6,11 +6,11 @@ _Type of Kubernetes `Service` to find._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/FindServicesByType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/FindServicesByType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -18,139 +18,6 @@ _Type of Kubernetes `Service` to find._
 | -- | -- | -- |
 | `String` | serviceType | Type of Kubernetes Service to find. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|serviceType|`NodePort`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: MyApp
-  ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 9376
-    - name: https
-      protocol: TCP
-      port: 443
-      targetPort: 9377
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  type: NodePort
-  selector:
-    app: MyApp
-  ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30007
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: MyApp
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 9376
-  clusterIP: 10.0.171.239
-  type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-    - ip: 192.0.2.127
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: MyApp
-  ports:
-    - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 9376
-    - name: https
-      protocol: TCP
-      port: 443
-      targetPort: 9377
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-~~(type:NodePort)~~>spec:
-  type: NodePort
-  selector:
-    app: MyApp
-  ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30007
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-service
-spec:
-  selector:
-    app: MyApp
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 9376
-  clusterIP: 10.0.171.239
-  type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-    - ip: 192.0.2.127
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -22,1 +22,1 @@
-metadata:
-  name: my-service
--spec:
-+~~(type:NodePort)~~>spec:
-  type: NodePort
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -171,13 +38,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindServicesByTypeExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.FindServicesByTypeExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -189,7 +56,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -213,7 +80,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

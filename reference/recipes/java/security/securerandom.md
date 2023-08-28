@@ -10,77 +10,22 @@ _Use cryptographically secure Pseudo Random Number Generation in the "main" sour
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/SecureRandom.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/SecureRandom.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.2
-
-## Example
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import java.util.Random;
-
-public class A {
-    String generateSecretToken() {
-        Random r = new Random();
-        return Long.toHexString(r.nextLong());
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import java.security.SecureRandom;
-import java.util.Random;
-
-public class A {
-    String generateSecretToken() {
-        Random r = new SecureRandom();
-        return Long.toHexString(r.nextLong());
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -1,0 +1,1 @@
-+import java.security.SecureRandom;
-import java.util.Random;
-@@ -5,1 +6,1 @@
-public class A {
-    String generateSecretToken() {
--       Random r = new Random();
-+       Random r = new SecureRandom();
-        return Long.toHexString(r.nextLong());
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -92,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.3")
 }
 ```
 {% endcode %}
@@ -116,7 +61,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

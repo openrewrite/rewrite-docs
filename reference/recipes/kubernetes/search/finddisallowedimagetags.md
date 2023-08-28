@@ -6,11 +6,11 @@ _The set of image tags to find which are considered disallowed._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindDisallowedImageTags.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindDisallowedImageTags.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.0.1
+* version: 2.0.3
 
 ## Options
 
@@ -19,82 +19,6 @@ _The set of image tags to find which are considered disallowed._
 | `String` | disallowedTags | The set of image tags to find which are considered disallowed. This is a comma-separated list of tags. |
 | `boolean` | includeInitContainers | *Optional*. Boolean to indicate whether or not to treat initContainers/image identically to containers/image. |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|disallowedTags|`latest, dev`|
-|includeInitContainers|`false`|
-|fileMatcher|`null`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-spec:
-  template:
-    spec:
-      containers:
-      - image: nginx:latest
----
-apiVersion: apps/v1
-kind: StatefulSet
-spec:
-  template:
-    spec:
-      containers:
-      - image: app:dev
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-spec:
-  template:
-    spec:
-      containers:
-      - image: ~~(disallowed tag: [latest])~~>nginx:latest
----
-apiVersion: apps/v1
-kind: StatefulSet
-spec:
-  template:
-    spec:
-      containers:
-      - image: ~~(disallowed tag: [dev])~~>app:dev
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -7,1 +7,1 @@
-    spec:
-      containers:
--     - image: nginx:latest
-+     - image: ~~(disallowed tag: [latest])~~>nginx:latest
----
-@@ -15,1 +15,1 @@
-    spec:
-      containers:
--     - image: app:dev
-+     - image: ~~(disallowed tag: [dev])~~>app:dev
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -116,13 +40,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindDisallowedImageTagsExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.1 in your build file:
+Now that `com.yourorg.FindDisallowedImageTagsExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.0.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -134,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.0.3")
 }
 ```
 {% endcode %}
@@ -158,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>

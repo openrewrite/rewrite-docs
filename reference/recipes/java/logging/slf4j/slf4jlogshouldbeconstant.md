@@ -11,71 +11,22 @@ _Logging statements shouldn't begin with `String#format`, calls to `toString()`,
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/Slf4jLogShouldBeConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/Slf4jLogShouldBeConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.2
-
-## Example
-
-
-{% tabs %}
-{% tab title="A.java" %}
-
-###### Before
-{% code title="A.java" %}
-```java
-import org.slf4j.Logger;
-class A {
-    Logger log;
-    void method() {
-        log.info(String.format("The first argument is '%d', and the second argument is '%.2f'.", 1, 2.3333));
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="A.java" %}
-```java
-import org.slf4j.Logger;
-class A {
-    Logger log;
-    void method() {
-        log.info("The first argument is '{}', and the second argument is '{}'.", 1, 2.3333);
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- A.java
-+++ A.java
-@@ -5,1 +5,1 @@
-    Logger log;
-    void method() {
--       log.info(String.format("The first argument is '%d', and the second argument is '%.2f'.", 1, 2.3333));
-+       log.info("The first argument is '{}', and the second argument is '{}'.", 1, 2.3333);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 2.0.3
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.1.26")
+    id("org.openrewrite.rewrite") version("6.2.4")
 }
 
 rewrite {
@@ -87,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.2")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.3")
 }
 ```
 {% endcode %}
@@ -111,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
