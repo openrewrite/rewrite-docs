@@ -23,6 +23,7 @@ cloudsuitability
 CMK
 cmn
 Cobertura
+codeowners
 compilationunit
 configprops
 Configurer
@@ -141,6 +142,7 @@ Peristence
 petclinic
 Pgp
 Picatic
+PII
 pointcut
 Postgre
 projectlombok
