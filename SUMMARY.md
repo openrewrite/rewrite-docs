@@ -21,6 +21,7 @@
     * [Use SLF4J parameterized logging](running-recipes/popular-recipe-guides/slf4j-parameterized-logging.md)
     * [Refactoring with declarative YAML recipes](running-recipes/popular-recipe-guides/authoring-declarative-yaml-recipes.md)
     * [Automating Maven dependency management](running-recipes/popular-recipe-guides/automating-maven-dependency-management.md)
+    * [Migrate Hamcrest to AssertJ](/running-recipes/popular-recipe-guides/hamcrest-to-assertj.md)
 * [Authoring Recipes](authoring-recipes/authoring-recipes.md)
   * [Recipe development environment](authoring-recipes/recipe-development-environment.md)
   * [Writing a Java refactoring recipe](authoring-recipes/writing-a-java-refactoring-recipe.md)
