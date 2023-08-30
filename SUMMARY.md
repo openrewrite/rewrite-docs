@@ -1403,6 +1403,7 @@
   * [Java LST examples](concepts-and-explanations/lst-examples.md)
   * [YAML LST examples](concepts-and-explanations/yaml-lst-examples.md)
   * [TreeVisitingPrinter](concepts-and-explanations/tree-visiting-printer.md)
+  * [How LSTs are handled locally](/concepts-and-explanations/build-plugin-lst.md)
   * [Recipes](concepts-and-explanations/recipes.md)
   * [Visitors](concepts-and-explanations/visitors.md)
   * [Styles](concepts-and-explanations/styles.md)

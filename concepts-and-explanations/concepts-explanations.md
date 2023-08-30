@@ -4,6 +4,7 @@
 * [Java LST examples](lst-examples.md)
 * [YAML LST examples](yaml-lst-examples.md)
 * [TreeVisitingPrinter](tree-visiting-printer.md)
+* [How LSTs are handled locally](build-plugin-lst.md)
 * [Recipes](recipes.md)
 * [Visitors](visitors.md)
 * [Styles](styles.md)
