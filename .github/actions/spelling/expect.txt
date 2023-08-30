@@ -54,6 +54,8 @@ fasterxml
 GAV
 gitbook
 googlecode
+gpg
+gpgsign
 gradlew
 hamcrest
 Heroku
@@ -81,6 +83,7 @@ JDKTo
 jedi
 jenkins
 Jenkinsfile
+JGit
 jhipster
 Jks
 JLeft
