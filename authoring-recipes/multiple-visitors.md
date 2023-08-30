@@ -393,7 +393,7 @@ public class FinalizeLocalVariables extends Recipe {
 
                 // TODO: Return if the varDec is an instance or class variable
 
-                // TODO: If none of the above apply, find all use cases for the variables and determine whether or not they're reassigned. If none have been, add the final modifier. If one ore more has, do nothing.
+                // TODO: If none of the above apply, find all use cases for the variables and determine whether or not they're reassigned. If none have been, add the final modifier. If one or more has, do nothing.
 
                 return variableDeclarations;
             }
