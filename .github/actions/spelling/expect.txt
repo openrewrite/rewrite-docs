@@ -54,6 +54,7 @@ fasterxml
 GAV
 gitbook
 googlecode
+gpg
 gradlew
 hamcrest
 Heroku
