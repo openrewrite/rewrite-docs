@@ -362,14 +362,14 @@ Using this printer, in combination with robust and thorough tests, can help ensu
 
 ### VariableDeclarations Visitor
 
-Now that we have some ideas of which LSTs we care about, it's time to get started with making the first visitor in our recipe. This visitor will be the one responsible for finding, and potentially modifying, variables.
+Now that we have some ideas of which LSTs we care about, it's time to get started with making the first visitor in our recipe. This visitor will be the one responsible for finding and potentially modifying variables.
 
 Generally, you want to start by restricting the scope of the visitor and returning quickly if the recipe should not make any changes.
 
 Let's outline what that would look like:
 
 {% hint style="note" %}
-The `VariableDeclarations` LST contains all the variables defined on one line of code. In most cases, this will just be a single variable, but it is possible for many to be defined. Our visitor will need to handle both cases.
+The `VariableDeclarations` LST contains all the variables defined in one line of code. In most cases, this will just be a single variable, but it is possible for many to be defined. Our visitor will need to handle both cases.
 {% endhint %}
 
 ```java
@@ -389,11 +389,11 @@ public class FinalizeLocalVariables extends Recipe {
 
                 // TODO: Return if any variables in the varDec are uninitialized
 
-                // TODO: Return if the varDec is in a for loop control
+                // TODO: Return if the varDec is in a for-loop control
 
                 // TODO: Return if the varDec is an instance or class variable
 
-                // TODO: If none of the above apply, find all use cases for the variables and determine whether or not they're reassigned. If none have been, add the final modifier. If one ore more has, do nothing.
+                // TODO: If none of the above apply, find all use cases for the variables and determine whether or not they're reassigned. If none have been, add the final modifier. If one or more has, do nothing.
 
                 return variableDeclarations;
             }
@@ -427,7 +427,7 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
                 return variableDeclarations;
             }
 
-            // TODO: Return if the varDec is in a for loop control
+            // TODO: Return if the varDec is in a for-loop control
 
             // TODO: Return if the varDec is an instance or class variable
 
@@ -453,7 +453,7 @@ public class FinalizeLocalVariables extends Recipe {
             public J.VariableDeclarations visitVariableDeclarations(J.VariableDeclarations varDec, ExecutionContext executionContext) {
                 // ...
 
-                // Variables that are in a for loop control should not be changed
+                // Variables that are in a for-loop control should not be changed
                 if (isDeclaredInForLoopControl(getCursor())) {
                     return variableDeclarations;
                 }
@@ -495,7 +495,7 @@ We need a visitor that:
 * Takes in and saves all of the necessary information to identify whether or not a variable it is visiting matches the one provided by the other visitor.
 * Takes in a tree to visit that is scoped to only the areas where the variable can be reassigned (to increase speed and to ensure we can accurately detect changes to a variable).
 * Keeps track of whether or not said variable has been reassigned. This state needs to be accessible and modifiable in all of the visit functions.
-* Provides a way for our other visitor to access the above state.
+* Provides a way for our other visitors to access the above state.
 
 To address these needs, let's create a `static` visitor that extends `JavaIsoVisitor` and uses an `AtomicBoolean` as its type. We can then add a final `J.VariableDeclarations.NamedVariable` object to this visitor. Lastly, we can create a `find` function that takes in the necessary information to set this up and returns a new instance of this visitor:
 
