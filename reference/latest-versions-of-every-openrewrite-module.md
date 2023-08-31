@@ -8,22 +8,22 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | --------------------------------------------------------------------------------------------------------------------------------| ----------|
 | [**org.openrewrite:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                                     | **2.2.1** |
 | [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                                 | **5.4.2** |
-| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.2.4**|
-| org.openrewrite:rewrite-groovy                                                                                                  | 8.4.1     |
-| org.openrewrite:rewrite-gradle                                                                                                  | 8.4.1     |
-| org.openrewrite:rewrite-core                                                                                                    | 8.4.1     |
-| org.openrewrite:rewrite-hcl                                                                                                     | 8.4.1     |
-| org.openrewrite:rewrite-java                                                                                                    | 8.4.1     |
-| org.openrewrite:rewrite-java-8                                                                                                  | 8.4.1     |
-| org.openrewrite:rewrite-java-11                                                                                                 | 8.4.1     |
-| org.openrewrite:rewrite-java-17                                                                                                 | 8.4.1     |
-| org.openrewrite:rewrite-json                                                                                                    | 8.4.1     |
-| org.openrewrite:rewrite-maven                                                                                                   | 8.4.1     |
-| org.openrewrite:rewrite-properties                                                                                              | 8.4.1     |
-| org.openrewrite:rewrite-protobuf                                                                                                | 8.4.1     |
-| org.openrewrite:rewrite-xml                                                                                                     | 8.4.1     |
-| org.openrewrite:rewrite-yaml                                                                                                    | 8.4.1     |
-| org.openrewrite:rewrite-test                                                                                                    | 8.4.1     |
+| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.3.0**|
+| org.openrewrite:rewrite-groovy                                                                                                  | 8.4.2     |
+| org.openrewrite:rewrite-gradle                                                                                                  | 8.4.2     |
+| org.openrewrite:rewrite-core                                                                                                    | 8.4.2     |
+| org.openrewrite:rewrite-hcl                                                                                                     | 8.4.2     |
+| org.openrewrite:rewrite-java                                                                                                    | 8.4.2     |
+| org.openrewrite:rewrite-java-8                                                                                                  | 8.4.2     |
+| org.openrewrite:rewrite-java-11                                                                                                 | 8.4.2     |
+| org.openrewrite:rewrite-java-17                                                                                                 | 8.4.2     |
+| org.openrewrite:rewrite-json                                                                                                    | 8.4.2     |
+| org.openrewrite:rewrite-maven                                                                                                   | 8.4.2     |
+| org.openrewrite:rewrite-properties                                                                                              | 8.4.2     |
+| org.openrewrite:rewrite-protobuf                                                                                                | 8.4.2     |
+| org.openrewrite:rewrite-xml                                                                                                     | 8.4.2     |
+| org.openrewrite:rewrite-yaml                                                                                                    | 8.4.2     |
+| org.openrewrite:rewrite-test                                                                                                    | 8.4.2     |
 | [org.openrewrite.recipe:rewrite-circleci](https://github.com/openrewrite/rewrite-circleci)                                      | 2.0.3     |
 | [org.openrewrite.recipe:rewrite-cloud-suitability-analyzer](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer)  | 2.0.3     |
 | [org.openrewrite.recipe:rewrite-concourse](https://github.com/openrewrite/rewrite-concourse)                                    | 2.0.3     |
