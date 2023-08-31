@@ -9,11 +9,11 @@ To help you confidently define recipes and styles in YAML, this guide will walk 
 There are two places where you can define an OpenRewrite YAML file:
 
 1. Within the `rewrite.yml` file of a project that applies rewrite recipes via the [rewrite-gradle-plugin](gradle-plugin-configuration.md) or [rewrite-maven-plugin](rewrite-maven-plugin.md)
-2. Inside the `META-INF/rewrite` folder of a jar (such as in the [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/master/src/main/resources/META-INF/rewrite))
+2. Inside the `META-INF/rewrite` folder of a JAR (such as in the [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks/tree/main/src/main/resources/META-INF/rewrite))
 
-If you define a recipe or style in the `rewrite.yml` file, they _will not_ be included in the jars published from your project.
+If you define a recipe or style in the `rewrite.yml` file, they _will not_ be included in the JARs published from your project.
 
-If you want to distribute a recipe or a style and apply them to other projects, you'll need to create them inside of the `META-INF/rewrite` folder of a jar.
+If you want to distribute a recipe or a style and apply them to other projects, you'll need to create them inside of the `META-INF/rewrite` folder of a JAR.
 
 ## Best practices
 
