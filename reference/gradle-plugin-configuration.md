@@ -32,7 +32,7 @@ With the plugin applied, the `rewrite` DSL is available for configuration.
 
 When applied to a multi-project build, plugin behavior differs depending on whether the plugin is applied to the root project or to a sub-project. Applied to the root project, the plugin will parse and refactor all sources from all projects. Applied to any project other than the root project, the plugin will parse and refactor only sources from that project.
 
-The rewrite gradle plugin resolves the rewrite core libraries and any recipe modules added to the `rewrite` configuration at runtime. It will attempt to resolve them from whatever repositories are available to the project. This is accomplished by adding Maven Central, or a mirror of it, to your project's repositories:
+The rewrite Gradle plugin resolves the rewrite core libraries and any recipe modules added to the `rewrite` configuration at runtime. It will attempt to resolve them from whatever repositories are available to the project. This is accomplished by adding Maven Central, or a mirror of it, to your project's repositories:
 
 ```groovy
 repositories {
@@ -46,9 +46,9 @@ The `rewrite` DSL exposes a few configuration options:
 
 * `activeRecipe` - Explicitly turns on recipes by name (the name given in the `specs.openrewrite.org/v1beta/recipe` resource). No recipe is run unless explicitly turned on with this setting.
 * `activeStyle` - Explicitly turns on a style by name (the name given in the `specs.openrewrite.org/v1beta/style` resource). No style is applied unless explicitly turned on with this setting.
-* `configFile` - Where to look for a OpenRewrite YML configuration file somewhere in the project directory (or really anywhere on disk). This file is not required to exist. If not specified otherwise, the default value is `<project directory>/rewrite.yml`.
-* `failOnDryRunResults` - Boolean flag toggling whether `rewriteDryRun` should throw an exception and non-zero exit code if changes are detected. Default is `false`.
-* `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. Default threshold is 10Mb.
+* `configFile` - Where to look for an OpenRewrite YML configuration file somewhere in the project directory (or really anywhere on disk). This file is not required to exist. If not specified otherwise, the default value is `<project directory>/rewrite.yml`.
+* `failOnDryRunResults` - Boolean flag toggling whether `rewriteDryRun` should throw an exception and non-zero exit code if changes are detected. The default is `false`.
+* `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. The default threshold is 10Mb.
 * `exclusion` - One or more paths, relative to the project the plugin is applied to, where non-Java sources are ignored during parsing. Supports [glob patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/FileSystem.html#getPathMatcher\(java.lang.String\)).
 *   `plainTextMasks` - A set of file masks to denote which files should be parsed as plain text. Evaluated as a [PathMatcher](https://docs.oracle.com/javase/8/docs/api/java/nio/file/PathMatcher.html) glob pattern, where "\*\*" matches any number of directories and "\*" matches a single directory or filename. **Exclusions take precedence over any plain text masks.** If this configuration is not explicitly defined the default masks are
 
@@ -145,7 +145,7 @@ After the goal finishes executing, run `git diff` (or your VCS system's equivale
 
 ## The "dryRun" task
 
-Execute `gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files to the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
+Execute `gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files in the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
 
 `rewriteDryRun` outputs a report in the form of a `patch` file, by default under `build/reports/rewrite/rewrite.patch`, containing changes that would be made if you were to run `rewriteRun`. This `patch` file can be used with `git` or `diff` to view or apply the potential changes. For example, `git diff . build/reports/rewrite/rewrite.patch`.
 
