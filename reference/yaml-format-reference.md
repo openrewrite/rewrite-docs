@@ -51,7 +51,7 @@ Declarative YAML recipes do not support preconditions (formerly named applicabil
 A declarative recipe can be made up of one or more recipes. The recipes in the list could be other declarative recipes defined in the same file or they can be imperative recipes created elsewhere. Like imperative recipes, each recipe in this list can potentially have configuration options that need to be specified.
 
 {% hint style="success" %}
-Order of recipe declaration is not important. A declarative recipe may include another declarative recipe declared later in the same file in its `recipeList`.
+Recipes in the `recipeList` will run in the order they are listed. That being said, a declarative recipe may include another declarative recipe declared later in the same `rewrite.yml` file.
 {% endhint %}
 
 ### Recipe example
