@@ -5,12 +5,12 @@ description: A tool and syntax for selecting elements within JSON-like structure
 # JsonPath and JsonPathMatcher reference
 
 {% hint style="info" %}
-Despite the name, `JsonPathMatcher` and `JsonPath` expressions may be used in other markup languages besides JSON which support it, such as YAML. When we refer to "JSON" keep in mind JsonPathMatcher and JsonPath expressions apply to markup languages which have a JsonPathMatcher implementation, such as YAML.
+Despite the name, `JsonPathMatcher` and `JsonPath` expressions may be used in other markup languages besides JSON that support it, such as YAML. When we refer to "JSON" keep in mind that `JsonPathMatcher` and `JsonPath` expressions apply to markup languages that have a `JsonPathMatcher` implementation, such as YAML.
 {% endhint %}
 
-`JsonPathMatcher` provides methods for matching the given cursor location using a provided `JsonPath` expression. "JsonPath" (sometimes stylized as JSONPath) is a query language for JSON, similar to how XPath is a query language for XML. Despite the name, JsonPathMatcher can be used on other languages besides JSON, such as YAML.
+`JsonPathMatcher` provides methods for matching the given cursor location using a provided `JsonPath` expression. "JsonPath" (sometimes stylized as JSONPath) is a query language for JSON, similar to how XPath is a query language for XML. Despite the name, JsonPathMatcher can be used in other languages besides JSON, such as YAML.
 
-JsonPathMatcher and JsonPath expressions go hand-in-hand. A JsonPath expression specifies a path to an element in the JSON or YAML structure. A JsonPathMatcher provides methods which visitors can use to make decisions about whether an LST element is a desired target.
+`JsonPathMatcher` and `JsonPath` expressions go hand-in-hand. A `JsonPath` expression specifies a path to an element in the JSON or YAML structure. A `JsonPathMatcher` provides methods that visitors can use to make decisions about whether an LST element is a desired target.
 
 ## JsonPath expression notation
 
@@ -120,7 +120,7 @@ JsonPathMatcher matcher = new JsonPathMatcher("$.spec.containers[?(@.name == 'ap
 
 Once you have constructed your JsonPathMatcher with a JsonPath expression as the "evaluation target", you can use the JsonPathMatcher to determine whether a given `Cursor` at a point within the tree matches what you're looking for.
 
-`JsonPathMatcher.matches(Cursor c)` returns `true` if the provided `Cursor` is a location within the document tree which _exactly_ matches the provided JsonPath expression. `JsonPathMatcher.encloses(Cursor c)` returns `true` if the provided `Cursor` is a location within the document tree which is _within the path_ of the provided JsonPath expression.
+`JsonPathMatcher.matches(Cursor c)` returns `true` if the provided `Cursor` is a location within the document tree that _exactly_ matches the provided JsonPath expression. `JsonPathMatcher.encloses(Cursor c)` returns `true` if the provided `Cursor` is a location within the document tree which is _within the path_ of the provided JsonPath expression.
 
 ```java
 class ActionsSetupJavaAdoptOpenJDKToTemurinVisitor extends YamlIsoVisitor<ExecutionContext> {
