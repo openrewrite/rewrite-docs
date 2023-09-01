@@ -17,7 +17,6 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-
     dependencies {
         classpath("org.openrewrite:plugin:latest.release")
     }
@@ -26,10 +25,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-      rewrite("org.openrewrite:rewrite-java")
+        rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-      activeRecipe("org.openrewrite.FindSpringUses")
+        activeRecipe("org.openrewrite.FindSpringUses")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
