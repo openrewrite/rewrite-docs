@@ -70,7 +70,7 @@ Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks lik
 {% endcode %}
 {% endtab %}
 
-{% tab title="Gradle" %}
+{% tab title="Gradle (Groovy)" %}
 * Add the OpenRewrite plugin to the `plugins` section of your `build.gradle` file
 * Make sure `mavenCentral()` is included in the `repositories` section
 * Add a `rewrite` section that will be filled in later
@@ -99,6 +99,34 @@ rewrite {
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Gradle (Kotlin)" %}
+* Add the OpenRewrite plugin to the `plugins` section of your `build.gradle.kts` file
+* Make sure `mavenCentral()` is included in the `repositories` section
+* Add a `rewrite` section that will be filled in later
+
+Your file should look similar to:
+
+{% code title="build.gradle.kts" %}
+```kotlin
+plugins {
+    `java-library`
+    `maven-publish`
+    id("org.openrewrite.rewrite") version "6.2.4"
+}
+
+repositories {
+  // The root project doesn't have to be a Java project, but this is necessary
+  // to resolve recipe artifacts.
+  mavenCentral()
+}
+
+rewrite {
+    // Will configure in subsequent steps
+}
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 At this point, you're able to run any of the Maven goals or Gradle tasks provided by the OpenRewrite plugin. See [Maven Plugin Configuration](/reference/rewrite-maven-plugin.md) or [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md) for the full set of options.
@@ -107,7 +135,7 @@ From the command line, try running `mvn rewrite:discover` or `gradle rewriteDisc
 
 ## Step 3: Activate a recipe
 
-Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.OrderImports](https://docs.openrewrite.org/recipes/java/orderimports) recipe as an example (which will ensure your imports follow a standard order). To activate this recipe, please modify your `pom.xml` or `build.gradle` file so that the sections you modified earlier look like the below example:
+Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.OrderImports](https://docs.openrewrite.org/recipes/java/orderimports) recipe as an example (which will ensure your imports follow a standard order). To activate this recipe, please modify your `pom.xml` or `build.gradle(.kts)` file so that the sections you modified earlier look like the below example:
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -127,7 +155,7 @@ Before you can run any of the recipes, you will need to update the plugin config
 {% endcode %}
 {% endtab %}
 
-{% tab title="Gradle" %}
+{% tab title="Gradle (Groovy)" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -139,6 +167,23 @@ plugins {
 rewrite {
     activeRecipe(
         'org.openrewrite.java.OrderImports',
+    )
+}
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Gradle (Kotlin)" %}
+{% code title="build.gradle.kts" %}
+```kotlin
+plugins {
+    `java-library`
+    `maven-publish`
+    id("org.openrewrite.rewrite") version "6.2.4"
+}
+
+rewrite {
+    activeRecipe(
+        "org.openrewrite.java.OrderImports",
     )
 }
 ```
@@ -227,7 +272,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
 {% endcode %}
 {% endtab %}
 
-{% tab title="Gradle" %}
+{% tab title="Gradle (Groovy)" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -245,6 +290,26 @@ rewrite {
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Gradle (Kotlin)" %}
+{% code title="build.gradle.kts" %}
+```kotlin
+plugins {
+    `java-library`
+    `maven-publish`
+    id("org.openrewrite.rewrite") version "6.2.4"
+}
+
+rewrite {
+    activeRecipe(
+        "org.openrewrite.java.OrderImports",
+        "com.yourorg.VetToVeterinary"
+    )
+}
+```
+{% endcode %}
+{% endtab %}
+
 {% endtabs %}
 
 Once this recipe has been added to your active recipes, you can run either `mvn rewrite:run` or `gradle rewriteRun` to execute all of your active recipes. Afterward, you'll see that:
@@ -265,7 +330,7 @@ At this point, you know how to configure and run any recipe included in OpenRewr
 You can search through all of the recipes in the [OpenRewrite docs](https://docs.openrewrite.org/reference/recipes). Each recipe page has instructions for how to import the recipe and what parameters (if any) need to be included.
 {% endhint %}
 
-Let's pretend that you want to migrate JUnit 4 to JUnit 5 in a Spring project you have. If you take a look at the [Usage section](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2junit4to5migration#usage) in the [JUnit 4 to 5 migration recipe](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2junit4to5migration), you'll see what you need to include in your `build.gradle` or `pom.xml` file in order to use this recipe.
+Let's pretend that you want to migrate JUnit 4 to JUnit 5 in a Spring project you have. If you take a look at the [Usage section](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2junit4to5migration#usage) in the [JUnit 4 to 5 migration recipe](https://docs.openrewrite.org/reference/recipes/java/spring/boot2/springboot2junit4to5migration), you'll see what you need to include in your `build.gradle(.kts)` or `pom.xml` file in order to use this recipe.
 
 Below, we'll walk through the [Maven](getting-started.md#maven--external-modules) and [Gradle](getting-started.md#gradle--external-modules) changes and provide some additional context around said changes.
 
@@ -384,7 +449,7 @@ dependencies {
 
 To check that everything worked correctly, run the command `gradle rewriteRun`. You should see that the project has been upgraded to Spring Boot 2 and all of the test classes have been updated to JUnit 5.
 
-Please note, though, that your `build.gradle` file _will not_ be updated as part of this. You will manually have to change the Spring and JUnit dependencies to reflect the appropriate versions.
+Please note, though, that your `build.gradle(.kts)` file _will not_ be updated as part of this. You will manually have to change the Spring and JUnit dependencies to reflect the appropriate versions.
 
 {% hint style="info" %}
 Dependency management for Gradle is not yet available but this feature is on OpenRewrite's roadmap.
