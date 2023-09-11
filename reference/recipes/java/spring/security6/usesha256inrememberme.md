@@ -6,131 +6,22 @@ _As of Spring Security 6.0 the SHA-256 algorithm is the default for the encoding
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/UseSha256InRememberMe.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/UseSha256InRememberMe.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
-
-## Example
-
-
-{% tabs %}
-{% tab title="T.java" %}
-
-###### Before
-{% code title="T.java" %}
-```java
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
-import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices.RememberMeTokenAlgorithm;
-
-import static org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices.RememberMeTokenAlgorithm.SHA256;
-
-class T {
-    void qualifiedFieldAccess(UserDetailsService userDetailsService) {
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, RememberMeTokenAlgorithm.SHA256);
-    }
-    void staticImport(UserDetailsService userDetailsService) {
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, SHA256);
-    }
-    void localVariable(UserDetailsService userDetailsService) {
-        final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
-    }
-    void classField(UserDetailsService userDetailsService) {
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
-    }
-    void constantInOtherClass(UserDetailsService userDetailsService) {
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, X.ALGORITHM);
-    }
-    final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
-}
-class X {
-    static final RememberMeTokenAlgorithm ALGORITHM = RememberMeTokenAlgorithm.SHA256;
-}
-```
-{% endcode %}
-
-###### After
-{% code title="T.java" %}
-```java
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices;
-import org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices.RememberMeTokenAlgorithm;
-
-import static org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices.RememberMeTokenAlgorithm.SHA256;
-
-class T {
-    void qualifiedFieldAccess(UserDetailsService userDetailsService) {
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
-    }
-    void staticImport(UserDetailsService userDetailsService) {
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
-    }
-    void localVariable(UserDetailsService userDetailsService) {
-        final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
-    }
-    void classField(UserDetailsService userDetailsService) {
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
-    }
-    void constantInOtherClass(UserDetailsService userDetailsService) {
-        TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, X.ALGORITHM);
-    }
-    final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
-}
-class X {
-    static final RememberMeTokenAlgorithm ALGORITHM = RememberMeTokenAlgorithm.SHA256;
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- T.java
-+++ T.java
-@@ -9,1 +9,1 @@
-class T {
-    void qualifiedFieldAccess(UserDetailsService userDetailsService) {
--       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, RememberMeTokenAlgorithm.SHA256);
-+       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
-    }
-@@ -12,1 +12,1 @@
-    }
-    void staticImport(UserDetailsService userDetailsService) {
--       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, SHA256);
-+       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
-    }
-@@ -16,1 +16,1 @@
-    void localVariable(UserDetailsService userDetailsService) {
-        final RememberMeTokenAlgorithm encodingAlgorithm = RememberMeTokenAlgorithm.SHA256;
--       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
-+       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
-    }
-@@ -19,1 +19,1 @@
-    }
-    void classField(UserDetailsService userDetailsService) {
--       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService, encodingAlgorithm);
-+       TokenBasedRememberMeServices rememberMe = new TokenBasedRememberMeServices("key", userDetailsService);
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -142,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -156,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.security6.UseSha256InRememberMe</recipe>
@@ -166,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

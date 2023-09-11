@@ -1,5 +1,7 @@
 # Spring
 
+_Recipes for upgrading and patching [Spring](https://spring.io/) applications._
+
 ## Categories
 
 * [Amqp](/reference/recipes/java/spring/amqp)

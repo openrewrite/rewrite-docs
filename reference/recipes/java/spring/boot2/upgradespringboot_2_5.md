@@ -6,22 +6,22 @@ _Upgrade to Spring Boot 2.5 from any prior 2.x version._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -33,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5</recipe>
@@ -57,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -101,7 +101,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * newVersion: `2.5.x`
 * [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion.md)
   * pluginIdPattern: `io.spring.dependency-management`
-  * newVersion: `1.0.15.RELEASE`
+  * newVersion: `1.0.x`
 * [Update Gradle wrapper](../../../gradle/updategradlewrapper.md)
   * version: `^6.8`
   * addIfMissing: `false`
@@ -142,7 +142,7 @@ recipeList:
       newVersion: 2.5.x
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: io.spring.dependency-management
-      newVersion: 1.0.15.RELEASE
+      newVersion: 1.0.x
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: ^6.8
       addIfMissing: false
@@ -183,19 +183,18 @@ recipeList:
 * Fabian Krüger
 * Kun Li
 * [Tim te Beek](mailto:tim@moderne.io)
-* [Shannon Pamperl](mailto:shanman190@gmail.com)
-* [Alex Boyko](mailto:aboyko@vmware.com)
 * nbruno
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
-* [Kun Li](mailto:kun@moderne.io)
 * John Burns
+* [Joan Viladrosa](mailto:joan@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 * [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * Ties van de Ven
 * Peter Puškár
 * [Tim te Beek](mailto:timtebeek@gmail.com)
-* [Joan Viladrosa](mailto:joan@moderne.io)
 * Josh Soref
 
 

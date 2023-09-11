@@ -6,11 +6,11 @@ _Add a spring configuration property to a configuration file if it does not alre
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
+* version: 5.0.9
 
 ## Options
 
@@ -20,84 +20,6 @@ _Add a spring configuration property to a configuration file if it does not alre
 | `String` | value | The value of the new property key. |
 | `String` | comment | *Optional*. A comment that will be added to the new property. |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yml", and "**/application.properties". |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|property|`server.servlet.path`|
-|value|`/tmp/my-server-path`|
-|comment|`null`|
-|pathExpressions|`List.of("*")`|
-
-
-{% tabs %}
-{% tab title="properties" %}
-
-###### Before
-{% code %}
-```properties
-server.port=8080
-```
-{% endcode %}
-
-###### After
-{% code %}
-```properties
-server.port=8080
-server.servlet.path=/tmp/my-server-path
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -2,0 +2,1 @@
-server.port=8080
-+server.servlet.path=/tmp/my-server-path
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-server:
-  port: 8080
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-server:
-  port: 8080
-  servlet:
-    path: /tmp/my-server-path
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,0 +3,2 @@
-server:
-  port: 8080
-+ servlet:
-+   path: /tmp/my-server-path
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -120,13 +42,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.7 in your build file:
+Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.9 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -138,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -152,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddSpringPropertyExample</recipe>
@@ -162,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

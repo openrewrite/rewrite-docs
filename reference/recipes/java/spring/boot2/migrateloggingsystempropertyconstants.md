@@ -6,97 +6,22 @@ _Replaces field and static access of deprecated fields in `LoggingSystemProperti
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateLoggingSystemPropertyConstants.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateLoggingSystemPropertyConstants.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
-
-## Example
-
-
-{% tabs %}
-{% tab title="org/test/Test.java" %}
-
-###### Before
-{% code title="org/test/Test.java" %}
-```java
-package org.test;
-
-import org.springframework.boot.logging.LoggingSystemProperties;
-
-class Test {
-    void method() {
-        String valueA = LoggingSystemProperties.FILE_CLEAN_HISTORY_ON_START;
-        String valueB = LoggingSystemProperties.FILE_MAX_HISTORY;
-        String valueC = LoggingSystemProperties.FILE_MAX_SIZE;
-        String valueD = LoggingSystemProperties.FILE_TOTAL_SIZE_CAP;
-        String valueE = LoggingSystemProperties.ROLLING_FILE_NAME_PATTERN;
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="org/test/Test.java" %}
-```java
-package org.test;
-
-import org.springframework.boot.logging.logback.LogbackLoggingSystemProperties;
-
-class Test {
-    void method() {
-        String valueA = LogbackLoggingSystemProperties.ROLLINGPOLICY_CLEAN_HISTORY_ON_START;
-        String valueB = LogbackLoggingSystemProperties.ROLLINGPOLICY_MAX_HISTORY;
-        String valueC = LogbackLoggingSystemProperties.ROLLINGPOLICY_MAX_FILE_SIZE;
-        String valueD = LogbackLoggingSystemProperties.ROLLINGPOLICY_TOTAL_SIZE_CAP;
-        String valueE = LogbackLoggingSystemProperties.ROLLINGPOLICY_FILE_NAME_PATTERN;
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- org/test/Test.java
-+++ org/test/Test.java
-@@ -3,1 +3,1 @@
-package org.test;
-
--import org.springframework.boot.logging.LoggingSystemProperties;
-+import org.springframework.boot.logging.logback.LogbackLoggingSystemProperties;
-
-@@ -7,5 +7,5 @@
-class Test {
-    void method() {
--       String valueA = LoggingSystemProperties.FILE_CLEAN_HISTORY_ON_START;
--       String valueB = LoggingSystemProperties.FILE_MAX_HISTORY;
--       String valueC = LoggingSystemProperties.FILE_MAX_SIZE;
--       String valueD = LoggingSystemProperties.FILE_TOTAL_SIZE_CAP;
--       String valueE = LoggingSystemProperties.ROLLING_FILE_NAME_PATTERN;
-+       String valueA = LogbackLoggingSystemProperties.ROLLINGPOLICY_CLEAN_HISTORY_ON_START;
-+       String valueB = LogbackLoggingSystemProperties.ROLLINGPOLICY_MAX_HISTORY;
-+       String valueC = LogbackLoggingSystemProperties.ROLLINGPOLICY_MAX_FILE_SIZE;
-+       String valueD = LogbackLoggingSystemProperties.ROLLINGPOLICY_TOTAL_SIZE_CAP;
-+       String valueE = LogbackLoggingSystemProperties.ROLLINGPOLICY_FILE_NAME_PATTERN;
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -108,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -122,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.MigrateLoggingSystemPropertyConstants</recipe>
@@ -132,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

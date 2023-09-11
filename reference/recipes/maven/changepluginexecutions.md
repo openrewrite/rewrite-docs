@@ -6,11 +6,11 @@ _Apply the specified executions to a Maven plugin. Will not add the plugin if it
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginExecutions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.4.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginExecutions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.4.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.4.1
+* version: 8.4.2
 
 ## Options
 
@@ -52,7 +52,7 @@ Now that `com.yourorg.ChangePluginExecutionsExample` has been defined activate i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePluginExecutionsExample</recipe>

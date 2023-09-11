@@ -6,277 +6,22 @@ _Upgrade to Spring Boot 2.7_
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-27.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-27.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.30</version>
-      <scope>runtime</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>8.0.33</version>
-      <scope>runtime</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -8,3 +8,3 @@
-  <dependencies>
-    <dependency>
--     <groupId>mysql</groupId>
--     <artifactId>mysql-connector-java</artifactId>
--     <version>8.0.30</version>
-+     <groupId>com.mysql</groupId>
-+     <artifactId>mysql-connector-j</artifactId>
-+     <version>8.0.33</version>
-      <scope>runtime</scope>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-  id 'java'
-}
-
-repositories {
-   mavenCentral()
-}
-
-dependencies {
-    runtimeOnly 'mysql:mysql-connector-java:8.0.30'
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-  id 'java'
-}
-
-repositories {
-   mavenCentral()
-}
-
-dependencies {
-    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
-+   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 3
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.30</version>
-      <scope>runtime</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>com.mysql</groupId>
-      <artifactId>mysql-connector-j</artifactId>
-      <version>8.0.33</version>
-      <scope>runtime</scope>
-    </dependency>
-  </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -8,3 +8,3 @@
-  <dependencies>
-    <dependency>
--     <groupId>mysql</groupId>
--     <artifactId>mysql-connector-java</artifactId>
--     <version>8.0.30</version>
-+     <groupId>com.mysql</groupId>
-+     <artifactId>mysql-connector-j</artifactId>
-+     <version>8.0.33</version>
-      <scope>runtime</scope>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 4
-
-
-{% tabs %}
-{% tab title="build.gradle" %}
-
-###### Before
-{% code title="build.gradle" %}
-```groovy
-plugins {
-  id 'java'
-}
-
-repositories {
-   mavenCentral()
-}
-
-dependencies {
-    runtimeOnly 'mysql:mysql-connector-java:8.0.30'
-}
-```
-{% endcode %}
-
-###### After
-{% code title="build.gradle" %}
-```groovy
-plugins {
-  id 'java'
-}
-
-repositories {
-   mavenCentral()
-}
-
-dependencies {
-    runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,1 +10,1 @@
-
-dependencies {
--   runtimeOnly 'mysql:mysql-connector-java:8.0.30'
-+   runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
-}
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -288,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -302,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7</recipe>
@@ -312,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -355,6 +100,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion.md)
   * pluginIdPattern: `org.springframework.boot`
   * newVersion: `2.7.x`
+* [Migrate to Spring Security 5.7](../../../java/spring/security5/upgradespringsecurity_5_7.md)
 * [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.server.LocalServerPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.server.LocalServerPort`
@@ -400,6 +146,7 @@ recipeList:
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: org.springframework.boot
       newVersion: 2.7.x
+  - org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_7
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.web.server.LocalServerPort
       newFullyQualifiedTypeName: org.springframework.boot.test.web.server.LocalServerPort
@@ -440,26 +187,26 @@ recipeList:
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * Yeikel
+* [Alex Boyko](mailto:aboyko@vmware.com)
 * [Greg Adams](mailto:greg@moderne.io)
 * [Kyle Scully](mailto:scullykns@gmail.com)
 * [Kevin McCarpenter](mailto:kevin@moderne.io)
-* Fabian Krüger
 * Kun Li
+* Fabian Krüger
 * [Tim te Beek](mailto:tim@moderne.io)
-* [Shannon Pamperl](mailto:shanman190@gmail.com)
-* [Alex Boyko](mailto:aboyko@vmware.com)
 * nbruno
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
 * Sandeep Nagaraj
-* [Kun Li](mailto:kun@moderne.io)
 * John Burns
+* [Joan Viladrosa](mailto:joan@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 * [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * Ties van de Ven
 * Peter Puškár
 * [Tim te Beek](mailto:timtebeek@gmail.com)
-* [Joan Viladrosa](mailto:joan@moderne.io)
 * Josh Soref
 
 

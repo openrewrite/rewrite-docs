@@ -6,96 +6,22 @@ _`DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Data 2.1 for re
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateDiskSpaceHealthIndicatorConstructor.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateDiskSpaceHealthIndicatorConstructor.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
-
-## Example
-
-
-{% tabs %}
-{% tab title="Test.java" %}
-
-###### Before
-{% code title="Test.java" %}
-```java
-import org.springframework.boot.actuate.system.DiskSpaceHealthIndicator;
-
-class Test {
-    void method() {
-        DiskSpaceHealthIndicator literal = new DiskSpaceHealthIndicator(null, 1L);
-        DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, value());
-        Long arg = 10L;
-        DiskSpaceHealthIndicator variable = new DiskSpaceHealthIndicator(null, arg);
-    }
-    long value() {
-        return 10L;
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="Test.java" %}
-```java
-import org.springframework.boot.actuate.system.DiskSpaceHealthIndicator;
-import org.springframework.util.unit.DataSize;
-
-class Test {
-    void method() {
-        DiskSpaceHealthIndicator literal = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(1L));
-        DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(value()));
-        Long arg = 10L;
-        DiskSpaceHealthIndicator variable = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(arg));
-    }
-    long value() {
-        return 10L;
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- Test.java
-+++ Test.java
-@@ -2,0 +2,1 @@
-import org.springframework.boot.actuate.system.DiskSpaceHealthIndicator;
-+import org.springframework.util.unit.DataSize;
-
-@@ -5,2 +6,2 @@
-class Test {
-    void method() {
--       DiskSpaceHealthIndicator literal = new DiskSpaceHealthIndicator(null, 1L);
--       DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, value());
-+       DiskSpaceHealthIndicator literal = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(1L));
-+       DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(value()));
-        Long arg = 10L;
-@@ -8,1 +9,1 @@
-        DiskSpaceHealthIndicator methodInvocation = new DiskSpaceHealthIndicator(null, value());
-        Long arg = 10L;
--       DiskSpaceHealthIndicator variable = new DiskSpaceHealthIndicator(null, arg);
-+       DiskSpaceHealthIndicator variable = new DiskSpaceHealthIndicator(null, DataSize.ofBytes(arg));
-    }
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -107,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -121,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor</recipe>
@@ -131,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

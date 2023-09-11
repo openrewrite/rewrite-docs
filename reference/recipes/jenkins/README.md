@@ -4,7 +4,7 @@ _Recipes to perform [Jenkins](https://www.jenkins.io/) plugin hygiene and migrat
 
 ## Categories
 
-* [Github](/reference/recipes/jenkins/github)
+* [GitHub](/reference/recipes/jenkins/github)
 * [Migrate](/reference/recipes/jenkins/migrate)
 
 ## Composite Recipes

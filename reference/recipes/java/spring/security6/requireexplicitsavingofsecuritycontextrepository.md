@@ -6,79 +6,22 @@ _Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in as
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/RequireExplicitSavingOfSecurityContextRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/RequireExplicitSavingOfSecurityContextRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
-
-## Example
-
-
-{% tabs %}
-{% tab title="T.java" %}
-
-###### Before
-{% code title="T.java" %}
-```java
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-
-class T {
-    public SecurityFilterChain chain(HttpSecurity http) {
-        http.securityContext((securityContext) -> securityContext
-                .requireExplicitSave(true)
-                .requireExplicitSave(false)
-            );
-        return http.build();
-    }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="T.java" %}
-```java
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-
-class T {
-    public SecurityFilterChain chain(HttpSecurity http) {
-        http.securityContext((securityContext) -> securityContext
-                .requireExplicitSave(false)
-            );
-        return http.build();
-    }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- T.java
-+++ T.java
-@@ -7,1 +7,0 @@
-    public SecurityFilterChain chain(HttpSecurity http) {
-        http.securityContext((securityContext) -> securityContext
--               .requireExplicitSave(true)
-                .requireExplicitSave(false)
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -90,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -104,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.security6.RequireExplicitSavingOfSecurityContextRepository</recipe>
@@ -114,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

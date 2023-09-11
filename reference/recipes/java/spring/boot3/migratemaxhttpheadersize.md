@@ -11,171 +11,22 @@ _Previously, the server.max-http-header-size was treated inconsistently across t
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="src/main/resources/application.properties" %}
-
-###### Before
-{% code title="src/main/resources/application.properties" %}
-```properties
-# application.properties
-server.max-http-header-size=10KB
-```
-{% endcode %}
-
-###### After
-{% code title="src/main/resources/application.properties" %}
-```properties
-# application.properties
-server.max-http-request-header-size=10KB
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- src/main/resources/application.properties
-+++ src/main/resources/application.properties
-@@ -2,1 +2,1 @@
-# application.properties
--server.max-http-header-size=10KB
-+server.max-http-request-header-size=10KB
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="src/main/resources/application.yml" %}
-
-###### Before
-{% code title="src/main/resources/application.yml" %}
-```yaml
-    server:
-      max-http-header-size: 10KB
-```
-{% endcode %}
-
-###### After
-{% code title="src/main/resources/application.yml" %}
-```yaml
-    server:
-      max-http-request-header-size: 10KB
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- src/main/resources/application.yml
-+++ src/main/resources/application.yml
-@@ -2,1 +2,1 @@
-    server:
--     max-http-header-size: 10KB
-+     max-http-request-header-size: 10KB
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="src/main/resources/application.properties" %}
-
-###### Before
-{% code title="src/main/resources/application.properties" %}
-```properties
-# application.properties
-server.max-http-header-size=10KB
-```
-{% endcode %}
-
-###### After
-{% code title="src/main/resources/application.properties" %}
-```properties
-# application.properties
-server.max-http-request-header-size=10KB
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- src/main/resources/application.properties
-+++ src/main/resources/application.properties
-@@ -2,1 +2,1 @@
-# application.properties
--server.max-http-header-size=10KB
-+server.max-http-request-header-size=10KB
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="src/main/resources/application.yml" %}
-
-###### Before
-{% code title="src/main/resources/application.yml" %}
-```yaml
-    server:
-      max-http-header-size: 10KB
-```
-{% endcode %}
-
-###### After
-{% code title="src/main/resources/application.yml" %}
-```yaml
-    server:
-      max-http-request-header-size: 10KB
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- src/main/resources/application.yml
-+++ src/main/resources/application.yml
-@@ -2,1 +2,1 @@
-    server:
--     max-http-header-size: 10KB
-+     max-http-request-header-size: 10KB
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -187,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -201,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.MigrateMaxHttpHeaderSize</recipe>
@@ -211,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

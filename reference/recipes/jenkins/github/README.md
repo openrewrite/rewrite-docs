@@ -1,4 +1,4 @@
-# Github
+# GitHub
 
 ## Recipes
 

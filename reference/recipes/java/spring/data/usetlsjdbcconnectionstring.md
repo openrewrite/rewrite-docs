@@ -6,11 +6,11 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/data/UseTlsJdbcConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/data/UseTlsJdbcConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
+* version: 5.0.9
 
 ## Options
 
@@ -20,83 +20,6 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 | `Integer` | oldPort | The non-TLS enabled port number to replace with the TLS-enabled port. If this value is specified, no changes will be made to jdbc connection strings which do not contain this port number.  |
 | `Integer` | port | The TLS-enabled port to use. |
 | `String` | attribute | A connection attribute, if any, indicating to the JDBC provider that this is a TLS connection. |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|propertyKey|`null`|
-|oldPort|`5021`|
-|port|`15021`|
-|attribute|`sslConnection=true;`|
-
-
-{% tabs %}
-{% tab title="yaml" %}
-
-###### Before
-{% code %}
-```yaml
-spring:
-  datasource:
-    url: 'jdbc:db2://10.2.1.101:5021/DB2INST1:currentSchema=DEV;commandTimeout=30;'
-```
-{% endcode %}
-
-###### After
-{% code %}
-```yaml
-spring:
-  datasource:
-    url: 'jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;commandTimeout=30;sslConnection=true;'
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -3,1 +3,1 @@
-spring:
-  datasource:
--   url: 'jdbc:db2://10.2.1.101:5021/DB2INST1:currentSchema=DEV;commandTimeout=30;'
-+   url: 'jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;commandTimeout=30;sslConnection=true;'
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="properties" %}
-
-###### Before
-{% code %}
-```properties
-spring.datasource.url=jdbc:db2://10.2.1.101:5021/DB2INST1:currentSchema=DEV;commandTimeout=30;
-```
-{% endcode %}
-
-###### After
-{% code %}
-```properties
-spring.datasource.url=jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;commandTimeout=30;sslConnection=true;
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
-@@ -1,1 +1,1 @@
--spring.datasource.url=jdbc:db2://10.2.1.101:5021/DB2INST1:currentSchema=DEV;commandTimeout=30;
-+spring.datasource.url=jdbc:db2://10.2.1.101:15021/DB2INST1:currentSchema=DEV;commandTimeout=30;sslConnection=true;
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -119,13 +42,13 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.7 in your build file:
+Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.9 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -137,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -151,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseTlsJdbcConnectionStringExample</recipe>
@@ -161,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

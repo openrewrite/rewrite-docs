@@ -1,10 +1,15 @@
 # Security6
 
+## Categories
+
+* [Oauth2](/reference/recipes/java/spring/security6/oauth2)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrate to Spring Security 6.0](./upgradespringsecurity_6_0.md)
+* [Migrate to Spring Security 6.1](./upgradespringsecurity_6_1.md)
 
 ## Recipes
 

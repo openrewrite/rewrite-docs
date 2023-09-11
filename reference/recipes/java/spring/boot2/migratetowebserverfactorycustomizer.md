@@ -6,159 +6,22 @@ _Use `WebServerFactoryCustomizer` instead of the deprecated `EmbeddedServletCont
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="CustomContainer.java" %}
-
-###### Before
-{% code title="CustomContainer.java" %}
-```java
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-
-public class CustomContainer implements EmbeddedServletContainerCustomizer {
-    @Override
-    public void customize(ConfigurableEmbeddedServletContainer container) {
-        container.setPort(8080);
-        container.setContextPath("");
-     }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="CustomContainer.java" %}
-```java
-import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
-
-public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
-    @Override
-    public void customize(ConfigurableServletWebServerFactory container) {
-        container.setPort(8080);
-        container.setContextPath("");
-     }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- CustomContainer.java
-+++ CustomContainer.java
-@@ -1,2 +1,2 @@
--import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
--import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
-
-@@ -4,1 +4,1 @@
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-
--public class CustomContainer implements EmbeddedServletContainerCustomizer {
-+public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
-    @Override
-@@ -6,1 +6,1 @@
-public class CustomContainer implements EmbeddedServletContainerCustomizer {
-    @Override
--   public void customize(ConfigurableEmbeddedServletContainer container) {
-+   public void customize(ConfigurableServletWebServerFactory container) {
-        container.setPort(8080);
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="CustomContainer.java" %}
-
-###### Before
-{% code title="CustomContainer.java" %}
-```java
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-
-public class CustomContainer implements EmbeddedServletContainerCustomizer {
-    @Override
-    public void customize(ConfigurableEmbeddedServletContainer container) {
-        container.setPort(8080);
-        container.setContextPath("");
-     }
-}
-```
-{% endcode %}
-
-###### After
-{% code title="CustomContainer.java" %}
-```java
-import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
-
-public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
-    @Override
-    public void customize(ConfigurableServletWebServerFactory container) {
-        container.setPort(8080);
-        container.setContextPath("");
-     }
-}
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- CustomContainer.java
-+++ CustomContainer.java
-@@ -1,2 +1,2 @@
--import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
--import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
-
-@@ -4,1 +4,1 @@
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-
--public class CustomContainer implements EmbeddedServletContainerCustomizer {
-+public class CustomContainer implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
-    @Override
-@@ -6,1 +6,1 @@
-public class CustomContainer implements EmbeddedServletContainerCustomizer {
-    @Override
--   public void customize(ConfigurableEmbeddedServletContainer container) {
-+   public void customize(ConfigurableServletWebServerFactory container) {
-        container.setPort(8080);
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -170,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -184,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.MigrateToWebServerFactoryCustomizer</recipe>
@@ -194,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

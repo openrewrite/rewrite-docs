@@ -6,199 +6,22 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
-
-## Examples
-##### Example 1
-
-
-{% tabs %}
-{% tab title="src/main/resources/application.properties" %}
-
-###### Before
-{% code title="src/main/resources/application.properties" %}
-```properties
-# application.properties
-spring.profiles.active=production
-spring.profiles=dev
-```
-{% endcode %}
-
-###### After
-{% code title="src/main/resources/application.properties" %}
-```properties
-# application.properties
-spring.profiles.active=production
-spring.config.activate.on-profile=dev
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- src/main/resources/application.properties
-+++ src/main/resources/application.properties
-@@ -3,1 +3,1 @@
-# application.properties
-spring.profiles.active=production
--spring.profiles=dev
-+spring.config.activate.on-profile=dev
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="src/main/resources/application.yml" %}
-
-###### Before
-{% code title="src/main/resources/application.yml" %}
-```yaml
-    ---
-    spring:
-      profiles:
-        active: dev
-    ---
-    spring:
-      profiles: prod
-```
-{% endcode %}
-
-###### After
-{% code title="src/main/resources/application.yml" %}
-```yaml
-    ---
-    spring:
-      profiles:
-        active: dev
-    ---
-    spring:
-      config.activate.on-profile: prod
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- src/main/resources/application.yml
-+++ src/main/resources/application.yml
-@@ -7,1 +7,1 @@
-    ---
-    spring:
--     profiles: prod
-+     config.activate.on-profile: prod
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
----
-
-##### Example 2
-
-
-{% tabs %}
-{% tab title="src/main/resources/application.properties" %}
-
-###### Before
-{% code title="src/main/resources/application.properties" %}
-```properties
-# application.properties
-spring.profiles.active=production
-spring.profiles=dev
-```
-{% endcode %}
-
-###### After
-{% code title="src/main/resources/application.properties" %}
-```properties
-# application.properties
-spring.profiles.active=production
-spring.config.activate.on-profile=dev
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- src/main/resources/application.properties
-+++ src/main/resources/application.properties
-@@ -3,1 +3,1 @@
-# application.properties
-spring.profiles.active=production
--spring.profiles=dev
-+spring.config.activate.on-profile=dev
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="src/main/resources/application.yml" %}
-
-###### Before
-{% code title="src/main/resources/application.yml" %}
-```yaml
-    ---
-    spring:
-      profiles:
-        active: dev
-    ---
-    spring:
-      profiles: prod
-```
-{% endcode %}
-
-###### After
-{% code title="src/main/resources/application.yml" %}
-```yaml
-    ---
-    spring:
-      profiles:
-        active: dev
-    ---
-    spring:
-      config.activate.on-profile: prod
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- src/main/resources/application.yml
-+++ src/main/resources/application.yml
-@@ -7,1 +7,1 @@
-    ---
-    spring:
--     profiles: prod
-+     config.activate.on-profile: prod
-
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -210,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -224,7 +47,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBootProperties_2_4</recipe>
@@ -234,7 +57,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

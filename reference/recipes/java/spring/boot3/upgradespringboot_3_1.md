@@ -11,22 +11,22 @@ _Upgrade to Spring Boot 3.1_
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-31.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-31.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
+* version: 5.0.9
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.7` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.2.4")
+    id("org.openrewrite.rewrite") version("6.3.5")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.7")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
 }
 ```
 {% endcode %}
@@ -52,7 +52,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1</recipe>
@@ -62,7 +62,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -103,7 +103,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion.md)
   * pluginIdPattern: `org.springframework.boot`
   * newVersion: `3.1.x`
+* [Migrate to Spring Security 6.1](../../../java/spring/security6/upgradespringsecurity_6_1.md)
 * [Migrate Spring Boot properties to 3.1](../../../java/spring/boot3/springbootproperties_3_1.md)
+* [Migrate to Hibernate 6.2.x](../../../hibernate/migratetohibernate62.md)
 
 {% endtab %}
 
@@ -131,7 +133,9 @@ recipeList:
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: org.springframework.boot
       newVersion: 3.1.x
+  - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_1
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_1
+  - org.openrewrite.hibernate.MigrateToHibernate62
 
 ```
 {% endtab %}
@@ -144,40 +148,40 @@ recipeList:
 * [Patrick](mailto:patway99@gmail.com)
 * Patrick Way
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Alex Boyko](mailto:aboyko@vmware.com)
 * [Sam Snyder](mailto:sam@moderne.io)
+* Kun Li
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [Tim te Beek](mailto:tim.te.beek@jdriven.com)
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* Kun Li
-* [Kyle Scully](mailto:scullykns@gmail.com)
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
+* [Tim te Beek](mailto:tim.te.beek@jdriven.com)
+* [Kyle Scully](mailto:scullykns@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Greg Adams](mailto:gadams@gmail.com)
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
-* [Alex Boyko](mailto:aboyko@vmware.com)
 * Yeikel
 * [Greg Adams](mailto:greg@moderne.io)
-* [Kevin McCarpenter](mailto:kevin@moderne.io)
 * [Tim te Beek](mailto:tim@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
+* [Kevin McCarpenter](mailto:kevin@moderne.io)
 * Fabian Krüger
+* [Johannes Jank](mailto:johannes.wengert@googlemail.com)
 * Aaron Gershman
 * nbruno
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
 * Sandeep Nagaraj
 * [BoykoAlex](mailto:aboyko@pivotal.io)
-* [Johannes Jank](mailto:johannes.wengert@googlemail.com)
-* John Burns
 * [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
+* John Burns
+* [Joan Viladrosa](mailto:joan@moderne.io)
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * Aakarshit Uppal
-* Ties van de Ven
-* [Tim te Beek](mailto:timtebeek@gmail.com)
-* Peter Puškár
 * Josh Soref
-* [Joan Viladrosa](mailto:joan@moderne.io)
+* [Tim te Beek](mailto:timtebeek@gmail.com)
+* Ties van de Ven
+* Peter Puškár
 
 
 ## See how this recipe works across multiple open-source repositories

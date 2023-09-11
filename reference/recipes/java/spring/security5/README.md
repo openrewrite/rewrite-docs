@@ -8,12 +8,14 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate to Spring Security 5.7](./upgradespringsecurity_5_7.md)
 * [Migrate to Spring Security 5.8](./upgradespringsecurity_5_8.md)
 * [Rename the package name from `com.nimbusds.jose.shaded.json.JSONObject` to `net.minidev.json.JSONObject`](./renamenimbusdsjsonobjectpackagename.md)
 * [Replace global method security with method security](./replaceglobalmethodsecuritywithmethodsecurityxml.md)
 
 ## Recipes
 
+* [Replace `HttpSecurity.authorizeRequests(...)` with `HttpSecurity.authorizeHttpRequests(...)` and `ExpressionUrlAuthorizationConfigurer`, `AbstractInterceptUrlConfigurer` with `AuthorizeHttpRequestsConfigurer`, etc](./authorizehttprequests.md)
 * [Replace global method security with method security](./replaceglobalmethodsecuritywithmethodsecurity.md)
 * [Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean](./websecurityconfigureradapter.md)
 * [Use new `Argon2PasswordEncoder` factory methods](./updateargon2passwordencoder.md)

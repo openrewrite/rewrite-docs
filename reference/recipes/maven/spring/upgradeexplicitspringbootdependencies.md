@@ -6,11 +6,11 @@ _Upgrades un-managed spring-boot project dependencies according to the specified
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.7
+* version: 5.0.9
 
 ## Options
 
@@ -18,107 +18,6 @@ _Upgrades un-managed spring-boot project dependencies according to the specified
 | -- | -- | -- |
 | `String` | fromVersion | XRage pattern for spring version used to limit which projects should be updated |
 | `String` | toVersion | Upgrade version of `org.springframework.boot` |
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| -- | -- |
-|fromVersion|`2.7.X`|
-|toVersion|`3.0.0-M3`|
-
-
-{% tabs %}
-{% tab title="pom.xml" %}
-
-###### Before
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.example</groupId>
-    <artifactId>explicit-deps-app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.7.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.7.3</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-</project>
-```
-{% endcode %}
-
-###### After
-{% code title="pom.xml" %}
-```xml
-<project>
-    <groupId>com.example</groupId>
-    <artifactId>explicit-deps-app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <repositories>
-        <repository>
-            <id>spring-milestone</id>
-            <url>https://repo.spring.io/milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>3.0.0-M3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>3.0.0-M3</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-</project>
-```
-{% endcode %}
-
-{% endtab %}
-{% tab title="Diff" %}
-{% code %}
-```diff
---- pom.xml
-+++ pom.xml
-@@ -18,1 +18,1 @@
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
--           <version>2.7.3</version>
-+           <version>3.0.0-M3</version>
-        </dependency>
-@@ -23,1 +23,1 @@
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
--           <version>2.7.3</version>
-+           <version>3.0.0-M3</version>
-            <scope>test</scope>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 
 ## Usage
@@ -139,7 +38,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.7 in your build file:
+Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.9 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -151,7 +50,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.4.2</version>
+        <version>5.5.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeExplicitSpringBootDependenciesExample</recipe>
@@ -161,7 +60,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.7</version>
+            <version>5.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
