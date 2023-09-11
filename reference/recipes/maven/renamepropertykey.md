@@ -42,8 +42,9 @@ Now that `com.yourorg.RenamePropertyKeyExample` has been defined activate it in 
 {% tabs %}
 
 {% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -62,6 +63,7 @@ Now that `com.yourorg.RenamePropertyKeyExample` has been defined activate it in 
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 {% endtabs %}
 

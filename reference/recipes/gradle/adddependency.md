@@ -66,6 +66,7 @@ recipeList:
 Now that `com.yourorg.AddDependencyExample` has been defined activate it in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -81,6 +82,7 @@ repositories {
 }
 ```
 {% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
 {% endtab %}
 
 {% endtabs %}

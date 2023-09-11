@@ -61,8 +61,9 @@ Now that `com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample` has been defi
 {% tabs %}
 
 {% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -81,6 +82,7 @@ Now that `com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample` has been defi
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 {% endtabs %}
 

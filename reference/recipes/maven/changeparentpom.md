@@ -63,8 +63,9 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
 {% tabs %}
 
 {% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -83,6 +84,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 {% endtabs %}
 

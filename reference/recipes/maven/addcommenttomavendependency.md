@@ -46,8 +46,9 @@ Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activ
 {% tabs %}
 
 {% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -66,6 +67,7 @@ Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activ
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 {% endtabs %}
 

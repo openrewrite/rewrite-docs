@@ -50,8 +50,9 @@ Now that `com.yourorg.AddGradleEnterpriseMavenExtensionExample` has been defined
 {% tabs %}
 
 {% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -70,6 +71,7 @@ Now that `com.yourorg.AddGradleEnterpriseMavenExtensionExample` has been defined
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 {% endtabs %}
 

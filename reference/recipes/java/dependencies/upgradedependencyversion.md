@@ -54,6 +54,7 @@ recipeList:
 Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.8 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -73,10 +74,12 @@ dependencies {
 }
 ```
 {% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
 {% endtab %}
 {% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -102,6 +105,7 @@ dependencies {
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 {% endtabs %}
 

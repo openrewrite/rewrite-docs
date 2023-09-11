@@ -18,6 +18,7 @@ _Some recipes have been moved from `rewrite` to `rewrite-static-analysis`, so an
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 {% tabs %}
 {% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -34,10 +35,43 @@ repositories {
 
 ```
 {% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
+{% endtab %}
+
+{% tab title="Gradle init script" %}
+1. Create a file named `init.gradle` in the root of your project.
+{% code title="init.gradle" %}
+```groovy
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:latest.release") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite:rewrite-java")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.upgrade.UpdateStaticAnalysisPackage")
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+{% endcode %}
+2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
 {% endtab %}
 {% tab title="Maven POM" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -56,6 +90,7 @@ repositories {
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 
 {% tab title="Maven Command Line" %}

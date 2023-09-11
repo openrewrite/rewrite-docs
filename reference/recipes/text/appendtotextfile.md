@@ -54,6 +54,7 @@ recipeList:
 Now that `com.yourorg.AppendToTextFileExample` has been defined activate it in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -69,10 +70,12 @@ repositories {
 }
 ```
 {% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
 {% endtab %}
 {% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -91,6 +94,7 @@ repositories {
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 {% endtabs %}
 

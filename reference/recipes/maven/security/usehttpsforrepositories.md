@@ -24,8 +24,9 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% tabs %}
 
 {% tab title="Maven POM" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -44,6 +45,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 
 {% tab title="Maven Command Line" %}

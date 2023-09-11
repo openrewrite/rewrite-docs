@@ -23,6 +23,7 @@ _Upgrade to Cucumber-JVM 7.x from any previous version._
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -42,10 +43,43 @@ dependencies {
 }
 ```
 {% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
+{% endtab %}
+
+{% tab title="Gradle init script" %}
+1. Create a file named `init.gradle` in the root of your project.
+{% code title="init.gradle" %}
+```groovy
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:6.3.5") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.6")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.cucumber.jvm.UpgradeCucumber7x")
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+{% endcode %}
+2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
 {% endtab %}
 {% tab title="Maven POM" %}
+1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -71,6 +105,7 @@ dependencies {
 </project>
 ```
 {% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
