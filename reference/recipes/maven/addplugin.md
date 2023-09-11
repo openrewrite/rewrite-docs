@@ -18,7 +18,7 @@ _Add the specified Maven plugin to the pom.xml._
 | -- | -- | -- |
 | `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
 | `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | version | A fixed version of the plugin to add. |
+| `String` | version | *Optional*. A fixed version of the plugin to add. |
 | `String` | configuration | *Optional*. Optional plugin configuration provided as raw XML |
 | `String` | dependencies | *Optional*. Optional plugin dependencies provided as raw XML. |
 | `String` | executions | *Optional*. Optional executions provided as raw XML. |
