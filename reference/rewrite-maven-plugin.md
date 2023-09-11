@@ -52,16 +52,25 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
 
     ```
     **/META-INF/services/**
-    **/.gitignore
-    **/.gitattributes
-    **/.java-version
-    **/.sdkmanrc
-    **/*.sh
+    **/META-INF/spring.factories
+    **/META-INF/spring/**
     **/*.bash
     **/*.bat
-    **/*.ksh
-    **/*.txt
+    **/CODEOWNERS
+    **/*.config
+    **/Dockerfile
+    **/.gitattributes
+    **/.gitignore
+    **/.java-version
+    **/Jenkinsfile
     **/*.jsp
+    **/*.ksh
+    **/*.md
+    **/*.qute.java
+    **/.sdkmanrc
+    **/*.sh
+    **/*.sql
+    **/*.txt
     ```
 * `pomCacheDirectory` - The directory where OpenRewrite will cache pom.xml and meta-data. The default value is `~/.rewrite-cache`
 * `pomCacheEnabled` - This flag determines if OpenRewrite will cache pom.xml and meta-data using an on-disk cache. The default is `true`
