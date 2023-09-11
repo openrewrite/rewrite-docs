@@ -7,8 +7,8 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | Module                                                                                                                          | Version   |
 | --------------------------------------------------------------------------------------------------------------------------------| ----------|
 | [**org.openrewrite:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                                     | **2.2.1** |
-| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                                 | **5.4.2** |
-| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.3.0**|
+| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                                 | **5.5.0** |
+| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.3.5**|
 | org.openrewrite:rewrite-groovy                                                                                                  | 8.4.2     |
 | org.openrewrite:rewrite-gradle                                                                                                  | 8.4.2     |
 | org.openrewrite:rewrite-core                                                                                                    | 8.4.2     |
@@ -41,7 +41,7 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | [org.openrewrite.recipe.rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java)                              | 2.0.10     |
 | [org.openrewrite.recipe.rewrite-ok-http](https://github.com/openrewrite/rewrite-okhttp)                                         | 0.0.1     |
 | [org.openrewrite.recipe:rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus)                                        | 2.0.3     |
-| [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring)                                          | 5.0.8     |
+| [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring)                                          | 5.0.9     |
 | [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis)                        | 1.0.6     |
 | [org.openrewrite.recipe:rewrite-sql](https://github.com/openrewrite/rewrite-sql)                                                | 1.0.2     |
 | [org.openrewrite.recipe:rewrite-terraform](https://github.com/openrewrite/rewrite-terraform)                                    | 2.0.3     |
