@@ -20,7 +20,7 @@ At a minimum for this example, you need the following dependencies:
       <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-recipe-bom</artifactId>
-          <version>2.2.1</version>
+          <version>2.3.0</version>
           <type>pom</type>
           <scope>import</scope>
       </dependency>
@@ -43,7 +43,7 @@ At a minimum for this example, you need the following dependencies:
 {% tab title="Gradle" %}
 ```kotlin
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.2.1"))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.3.0"))
     implementation("org.openrewrite:rewrite-java")
     runtimeOnly("org.openrewrite:rewrite-java-11")
 }
