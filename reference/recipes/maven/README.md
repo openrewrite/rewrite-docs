@@ -20,6 +20,7 @@
 * [Add a comment to a `Maven` dependency](./addcommenttomavendependency.md)
 * [Add managed Maven dependency](./addmanageddependency.md)
 * [Change Maven Parent Pom](./changeparentpom.md)
+* [Change Maven Project Version](./changeprojectversion.md)
 * [Change Maven dependency classifier](./changedependencyclassifier.md)
 * [Change Maven dependency groupId, artifactId and/or the version](./changedependencygroupidandartifactid.md)
 * [Change Maven dependency scope](./changedependencyscope.md)

@@ -6,18 +6,18 @@ _Add a Gradle settings repository to `settings.gradle(.kts)`._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddSettingsPluginRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.4.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddSettingsPluginRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.5.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.4.2
+* version: 8.5.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | type | The type of the artifact repository |
-| `String` | url | The url of the artifact repository |
+| `String` | url | *Optional*. The url of the artifact repository |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.AddSettingsPluginRepositoryExample` has been defined activ
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.5")
+    id("org.openrewrite.rewrite") version("6.3.6")
 }
 
 rewrite {
@@ -65,6 +65,7 @@ repositories {
 ## Contributors
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
 
 

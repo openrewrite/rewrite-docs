@@ -6,23 +6,23 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.10/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.9
+* version: 5.0.10
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.5")
+    id("org.openrewrite.rewrite") version("6.3.6")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.10")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.5") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.6") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.0.9")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.0.10")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.SpringBootProperties_2_2")
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.0</version>
+        <version>5.5.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBootProperties_2_2</recipe>
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.9</version>
+            <version>5.0.10</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -123,7 +123,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `logging.file`
   * newPropertyKey: `logging.file.name`
-  * except: `[path]`
+  * except: `[.+]`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `logging.path`
   * newPropertyKey: `logging.file.path`
@@ -164,12 +164,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   * oldPropertyKey: `spring.reactor.stacktrace-mode.enabled`
   * newPropertyKey: `spring.reactor.debug-agent.enabled`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `logging.file`
-  * newPropertyKey: `logging.file.name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `logging.path`
-  * newPropertyKey: `logging.file.path`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.endpoints.jmx.unique-names`
   * newPropertyKey: `spring.jmx.unique-names`
 
@@ -186,7 +180,7 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: logging.file
       newPropertyKey: logging.file.name
-      except: [path]
+      except: [.+]
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: logging.path
       newPropertyKey: logging.file.path
@@ -226,12 +220,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.reactor.stacktrace-mode.enabled
       newPropertyKey: spring.reactor.debug-agent.enabled
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: logging.file
-      newPropertyKey: logging.file.name
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: logging.path
-      newPropertyKey: logging.file.path
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.endpoints.jmx.unique-names
       newPropertyKey: spring.jmx.unique-names

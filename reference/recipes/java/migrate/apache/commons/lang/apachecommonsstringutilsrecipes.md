@@ -6,23 +6,23 @@ _Refaster template recipes for `org.openrewrite.java.migrate.apache.commons.lang
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/lang/ApacheCommonsStringUtilsRecipes.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.0.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/apache/commons/lang/ApacheCommonsStringUtilsRecipes.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.0.10
+* version: 2.1.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.5")
+    id("org.openrewrite.rewrite") version("6.3.6")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.0")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.5") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.6") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.0.10")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes")
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.0</version>
+        <version>5.5.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes</recipe>
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.0.10</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -127,9 +127,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Refaster template `ApacheCommonsStringUtils.DeleteWhitespace`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$deletewhitespacerecipe.md)
 * [Refaster template `ApacheCommonsStringUtils.EqualsIgnoreCase`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$equalsignorecaserecipe.md)
 * [Refaster template `ApacheCommonsStringUtils.Equals`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$equalsrecipe.md)
-* [Refaster template `ApacheCommonsStringUtils.IsAlphanumeric`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$isalphanumericrecipe.md)
-* [Refaster template `ApacheCommonsStringUtils.IsAlpha`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$isalpharecipe.md)
-* [Refaster template `ApacheCommonsStringUtils.IsEmpty`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$isemptyrecipe.md)
 * [Refaster template `ApacheCommonsStringUtils.Lowercase`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$lowercaserecipe.md)
 * [Refaster template `ApacheCommonsStringUtils.RemoveEnd`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$removeendrecipe.md)
 * [Refaster template `ApacheCommonsStringUtils.Replace`](../../../../../java/migrate/apache/commons/lang/apachecommonsstringutilsrecipes$replacerecipe.md)
@@ -158,9 +155,6 @@ recipeList:
   - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$DeleteWhitespaceRecipe
   - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$EqualsIgnoreCaseRecipe
   - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$EqualsRecipe
-  - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$IsAlphanumericRecipe
-  - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$IsAlphaRecipe
-  - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$IsEmptyRecipe
   - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$LowercaseRecipe
   - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$RemoveEndRecipe
   - org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$ReplaceRecipe

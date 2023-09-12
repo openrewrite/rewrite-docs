@@ -6,11 +6,11 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.4.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.5.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.4.2
+* version: 8.5.0
 
 ## Options
 
@@ -21,6 +21,8 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 | `String` | oldArtifactId | The artifactId of the maven parent pom to be changed away from. |
 | `String` | newArtifactId | *Optional*. The artifactId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldArtifactId`. |
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. |
+| `String` | oldRelativePath | *Optional*. The relativePath of the maven parent pom to be changed away from. |
+| `String` | newRelativePath | *Optional*. New relative path attribute for parent lookup. |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `Boolean` | allowVersionDowngrades | *Optional*. If the new parent has the same group/artifact, this flag can be used to only upgrade the version if the target version is newer than the current. |
 | `List` | retainVersions | *Optional*. Accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management in the new parent pom, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management |
@@ -53,6 +55,8 @@ recipeList:
       oldArtifactId: spring-boot-starter-parent
       newArtifactId: spring-boot-starter-parent
       newVersion: 29.X
+      oldRelativePath: ../../pom.xml
+      newRelativePath: ../pom.xml
       versionPattern: '-jre'
       allowVersionDowngrades: null
       retainVersions: com.jcraft:jsch
@@ -72,7 +76,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.0</version>
+        <version>5.5.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeParentPomExample</recipe>
@@ -91,6 +95,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
 ## Contributors
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Valentin Delaye
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * Tyler Van Gorder
 * [Knut Wannheden](mailto:knut@moderne.io)

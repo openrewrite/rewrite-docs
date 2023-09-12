@@ -6,11 +6,11 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.4.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.5.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 8.4.2
+* version: 8.5.0
 
 ## Options
 
@@ -47,7 +47,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.5")
+    id("org.openrewrite.rewrite") version("6.3.6")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.0</version>
+        <version>5.5.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPropertyExample</recipe>
@@ -89,6 +89,7 @@ repositories {
 
 ## Contributors
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Tim te Beek](mailto:tim@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)

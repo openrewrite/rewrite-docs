@@ -11,6 +11,7 @@
 
 * [Add Gradle dependency](./adddependency.md)
 * [Add Gradle property](./addproperty.md)
+* [Change Extra Property](./changeextraproperty.md)
 * [Change Gradle dependency](./changedependency.md)
 * [Change Gradle dependency artifact](./changedependencyartifactid.md)
 * [Change Gradle dependency group](./changedependencygroupid.md)

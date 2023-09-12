@@ -6,11 +6,11 @@ _Set the parent pom version number according to a node-style semver selector or 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.4.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.5.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.4.2
+* version: 8.5.0
 
 ## Options
 
@@ -57,7 +57,7 @@ Now that `com.yourorg.UpgradeParentVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.0</version>
+        <version>5.5.2</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeParentVersionExample</recipe>
@@ -77,6 +77,7 @@ Now that `com.yourorg.UpgradeParentVersionExample` has been defined activate it 
 * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
+* Valentin Delaye
 
 
 ## See how this recipe works across multiple open-source repositories

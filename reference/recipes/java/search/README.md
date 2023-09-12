@@ -8,7 +8,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Build call graph](./findcallgraph.md)
 * [Find annotations](./findannotations.md)
 * [Find class declarations implementing an interface](./findimplementations.md)
 * [Find empty classes](./findemptyclasses.md)
@@ -18,6 +17,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find files in a source set](./hassourceset.md)
 * [Find files that are likely not tests](./islikelynottest.md)
 * [Find literals](./findliterals.md)
+* [Find method declaration](./findmethoddeclaration.md)
 * [Find method usages](./findmethods.md)
 * [Find methods with empty bodies](./findemptymethods.md)
 * [Find missing type information on Java ASTs](./findmissingtypes.md)

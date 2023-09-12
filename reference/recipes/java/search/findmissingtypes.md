@@ -6,11 +6,11 @@ _This is a diagnostic recipe to highlight where ASTs are missing type attributio
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMissingTypes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.4.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMissingTypes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.5.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.4.2
+* version: 8.5.0
 
 
 ## Usage
@@ -22,7 +22,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.5")
+    id("org.openrewrite.rewrite") version("6.3.6")
 }
 
 rewrite {
@@ -78,7 +78,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.0</version>
+        <version>5.5.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindMissingTypes</recipe>
@@ -109,6 +109,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

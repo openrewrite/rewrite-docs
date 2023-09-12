@@ -9,7 +9,7 @@
 * [No whitespace after](./nowhitespaceafter.md)
 * [No whitespace before](./nowhitespacebefore.md)
 * [Normalize format](./normalizeformat.md)
-* [Normalize the line breaks](./normalizelinebreaks.md)
+* [Normalize line breaks](./normalizelinebreaks.md)
 * [Normalize to tabs or spaces](./normalizetabsorspaces.md)
 * [Operator wrapping](./operatorwrap.md)
 * [Pad empty `for` loop components](./pademptyforloopcomponents.md)
