@@ -7,7 +7,6 @@ As of September 2023, OpenRewrite supports:
 * Java
 * Kotlin
 * Groovy
-* COBOL
 
 ## Data formats
 
