@@ -182,6 +182,7 @@ sourcespecs
 Spotbugs
 Springbatch
 springframework
+SSRF
 staticanalysis
 Stewjon
 subpackages
