@@ -29,7 +29,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/statica
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.3.6")
+    id("org.openrewrite.rewrite") version("6.3.8")
 }
 
 rewrite {
