@@ -1407,7 +1407,7 @@
   * [8.1.6 Release (2023-07-06)](changelog/8-1-6-Release.md)
   * [8.1.3 Release (2023-06-23)](changelog/8-1-3-Release.md)
   * [Rewrite 7 to 8 migration. 8.1.2 Release (2023-06-13)](changelog/8-1-2-Release.md)
-  * [Rewrite 7 changelog](changelog/rewrite-7/rewrite-7.md)
+  * [Rewrite 7 changelogs](changelog/rewrite-7/rewrite-7.md)
     * [7.40.6 Release (2023-05-08)](/changelog/rewrite-7/7-40-6-Release.md)
     * [7.40.0 Release (2023-04-21)](/changelog/rewrite-7/7-40-0-Release.md)
     * [7.39.1 Release (2023-04-04)](/changelog/rewrite-7/7-39-1-Release.md)
