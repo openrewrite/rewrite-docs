@@ -31,6 +31,7 @@
 * [Change Maven plugin groupId and artifactId](./changeplugingroupidandartifactid.md)
 * [Change Maven project property value](./changepropertyvalue.md)
 * [Exclude Maven dependency](./excludedependency.md)
+* [Increment Maven Project Version](./incrementprojectversion.md)
 * [Manage dependencies](./managedependencies.md)
 * [Normalize Maven variables](./normalizemavenvariables.md)
 * [Order POM elements](./orderpomelements.md)

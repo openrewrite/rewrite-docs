@@ -6,11 +6,11 @@ _Move content to another HCL file, deleting it in the original file._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/MoveContentToFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/MoveContentToFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.5.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 8.5.0
+* version: 8.5.2
 
 ## Options
 
@@ -47,7 +47,7 @@ Now that `com.yourorg.MoveContentToFileExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.6")
+    id("org.openrewrite.rewrite") version("6.3.8")
 }
 
 rewrite {

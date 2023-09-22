@@ -1023,6 +1023,7 @@
     * [Change Maven plugin groupId and artifactId](reference/recipes/maven/changeplugingroupidandartifactid.md)
     * [Change Maven project property value](reference/recipes/maven/changepropertyvalue.md)
     * [Exclude Maven dependency](reference/recipes/maven/excludedependency.md)
+    * [Increment Maven Project Version](reference/recipes/maven/incrementprojectversion.md)
     * [Manage dependencies](reference/recipes/maven/managedependencies.md)
     * [Normalize Maven variables](reference/recipes/maven/normalizemavenvariables.md)
     * [Order POM elements](reference/recipes/maven/orderpomelements.md)

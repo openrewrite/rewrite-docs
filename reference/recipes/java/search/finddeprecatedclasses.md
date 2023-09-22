@@ -6,11 +6,11 @@ _Find uses of deprecated classes, optionally ignoring those classes that are ins
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindDeprecatedClasses.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindDeprecatedClasses.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.5.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.5.0
+* version: 8.5.2
 
 ## Options
 
@@ -30,7 +30,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.6")
+    id("org.openrewrite.rewrite") version("6.3.8")
 }
 
 rewrite {

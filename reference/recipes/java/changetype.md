@@ -6,11 +6,11 @@ _Change a given type to another._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.5.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.5.0
+* version: 8.5.2
 
 ## Options
 
@@ -47,7 +47,7 @@ Now that `com.yourorg.ChangeTypeExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.6")
+    id("org.openrewrite.rewrite") version("6.3.8")
 }
 
 rewrite {
@@ -90,6 +90,7 @@ repositories {
 ## Contributors
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Kun Li](mailto:kun@moderne.io)
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Greg Adams](mailto:greg@moderne.io)

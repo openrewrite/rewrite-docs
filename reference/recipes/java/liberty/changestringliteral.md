@@ -45,7 +45,7 @@ Now that `com.yourorg.ChangeStringLiteralExample` has been defined activate it a
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.6")
+    id("org.openrewrite.rewrite") version("6.3.8")
 }
 
 rewrite {

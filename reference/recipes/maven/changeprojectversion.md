@@ -6,20 +6,20 @@ _Change the project version of a Maven pom.xml. Identifies the project to be cha
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.5.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.5.0
+* version: 8.5.2
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | groupId | The groupId of the maven project to change it's version. This can be a glob expression. |
-| `String` | artifactId | The artifactId of the maven project to change it's version. This can be a glob expression. |
+| `String` | groupId | The groupId of the maven project to change its version. This can be a glob expression. |
+| `String` | artifactId | The artifactId of the maven project to change its version. This can be a glob expression. |
 | `String` | newVersion | The new version to replace the maven project version. |
-| `Boolean` | overrideParentVersion | *Optional*. This flag can be set to explicitly override the inherited parent version. The default for this flag is `false`. |
+| `Boolean` | overrideParentVersion | *Optional*. This flag can be set to explicitly override the inherited parent version. Default `false`. |
 
 
 ## Usage
@@ -36,7 +36,7 @@ displayName: Change Maven Project Version example
 recipeList:
   - org.openrewrite.maven.ChangeProjectVersion:
       groupId: org.openrewrite
-      artifactId: rewrite-maven
+      artifactId: '*'
       newVersion: 8.4.2
       overrideParentVersion: null
 ```
@@ -73,6 +73,7 @@ Now that `com.yourorg.ChangeProjectVersionExample` has been defined activate it 
 
 ## Contributors
 * [Joan Viladrosa](mailto:joan@moderne.io)
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories
