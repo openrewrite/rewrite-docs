@@ -79,3 +79,7 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
     </plugins>
 </build>
 ```
+
+* You can look up the latest snapshot versions at Sonatype OSS
+  - [Latest rewrite-maven-plugin version](https://oss.sonatype.org/#nexus-search;gav~org.openrewrite.maven~rewrite-maven-plugin~~~~kw,versionexpand)
+  - [Latest rewrite recipe modules versions](https://oss.sonatype.org/#nexus-search;gav~org.openrewrite.recipe~~~~)
