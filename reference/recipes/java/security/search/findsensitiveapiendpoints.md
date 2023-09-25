@@ -60,7 +60,7 @@ Now that `com.yourorg.FindSensitiveApiEndpointsExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.8")
+    id("org.openrewrite.rewrite") version("6.3.11")
 }
 
 rewrite {

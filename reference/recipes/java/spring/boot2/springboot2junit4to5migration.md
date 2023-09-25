@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.8")
+    id("org.openrewrite.rewrite") version("6.3.11")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.8") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.11") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)

@@ -43,7 +43,7 @@ Now that `com.yourorg.IsJenkinsPluginExample` has been defined activate it and t
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.8")
+    id("org.openrewrite.rewrite") version("6.3.11")
 }
 
 rewrite {

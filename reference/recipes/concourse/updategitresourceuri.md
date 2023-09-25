@@ -47,7 +47,7 @@ Now that `com.yourorg.UpdateGitResourceUriExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.8")
+    id("org.openrewrite.rewrite") version("6.3.11")
 }
 
 rewrite {
