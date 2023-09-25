@@ -62,7 +62,6 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
     **/.gitattributes
     **/.gitignore
     **/.java-version
-    **/Jenkinsfile
     **/*.jsp
     **/*.ksh
     **/*.md
