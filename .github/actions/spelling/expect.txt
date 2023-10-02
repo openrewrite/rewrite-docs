@@ -119,6 +119,7 @@ micronaut
 Migratetohypersistenceutilshibernate
 Migratetohypersistenceutilshibernate6
 minidev
+MNG
 mnt
 mockito
 multimodule
@@ -148,6 +149,7 @@ Picatic
 PII
 pointcut
 Postgre
+prefixless
 projectlombok
 protobuf
 quarkus
