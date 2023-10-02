@@ -28,7 +28,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.11")
+    id("org.openrewrite.rewrite") version("6.3.16")
 }
 
 rewrite {
@@ -55,7 +55,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.11") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.16") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -87,7 +87,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.2</version>
+        <version>5.7.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.azure.EnsureAzureSQLServerAuditLogRetentionIsGreaterThan90Days</recipe>

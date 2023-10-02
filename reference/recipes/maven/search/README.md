@@ -11,6 +11,7 @@
 * [Find effective maven settings](./findmavensettings.md)
 * [List effective Maven repositories](./effectivemavenrepositories.md)
 * [Maven dependency insight](./dependencyinsight.md)
+* [Maven parent insight](./parentpominsight.md)
 * [Maven repository order](./findrepositoryorder.md)
 
 

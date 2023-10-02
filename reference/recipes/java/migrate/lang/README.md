@@ -8,14 +8,12 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [`StringRules` Refaster recipes](./stringrulesrecipes.md)
 * [Use local variable type inference](./usevar.md)
 * [Use modernized `java.lang` APIs](./javalangapis.md)
 
 ## Recipes
 
 * [Prefer `String#formatted(Object...)`](./stringformatted.md)
-* [Refaster template `UseStringIsEmpty`](./usestringisemptyrecipe.md)
 * [Remove deprecated `Thread.destroy()`](./removethreaddestroymethod.md)
 * [Use `Character#isJavaIdentifierPart(char)`](./migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
 * [Use `Character#isJavaIdentifierStart(char)`](./migratecharacterisjavalettertoisjavaidentifierstart.md)

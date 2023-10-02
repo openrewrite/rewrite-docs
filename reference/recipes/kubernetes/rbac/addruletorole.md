@@ -55,7 +55,7 @@ Now that `com.yourorg.AddRuleToRoleExample` has been defined activate it and tak
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.11")
+    id("org.openrewrite.rewrite") version("6.3.16")
 }
 
 rewrite {
@@ -83,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.2</version>
+        <version>5.7.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddRuleToRoleExample</recipe>

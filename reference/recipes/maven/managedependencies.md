@@ -6,11 +6,11 @@ _Make existing dependencies managed by moving their version to be specified in t
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ManageDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.6.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ManageDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.7.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.6.0
+* version: 8.7.0
 
 ## Options
 
@@ -55,7 +55,7 @@ Now that `com.yourorg.ManageDependenciesExample` has been defined activate it in
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.5.2</version>
+        <version>5.7.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ManageDependenciesExample</recipe>

@@ -8,6 +8,12 @@
 * [Spring](/reference/recipes/maven/spring)
 * [Utilities](/reference/recipes/maven/utilities)
 
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Apache Maven best practices](./bestpractices.md)
+
 ## Recipes
 
 * [Add Gradle Enterprise Maven extension](./addgradleenterprisemavenextension.md)
