@@ -13,7 +13,7 @@ Apply the org.openrewrite.rewrite plugin to your build.
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.3.8")
+    id("org.openrewrite.rewrite") version("6.3.16")
 }
 
 rewrite {
@@ -70,7 +70,7 @@ The `rewrite` DSL exposes a few configuration options:
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.3.8")
+    id("org.openrewrite.rewrite") version("6.3.16")
 }
 
 repositories {
@@ -115,7 +115,7 @@ Once a pre-packaged recipe has been added to the `rewrite` dependency configurat
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.3.8")
+    id("org.openrewrite.rewrite") version("6.3.16")
 }
 
 repositories {
