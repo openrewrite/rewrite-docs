@@ -9,7 +9,7 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.16")
+    id("org.openrewrite.rewrite") version("6.3.17")
 }
 
 rewrite {
