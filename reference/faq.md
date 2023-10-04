@@ -43,3 +43,47 @@ Not right now. This is a particularly difficult problem to address for a couple 
 * Some recipes can be used multiple times in one recipe with different parameters such as in [this example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.6/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml#L140-L160).
 
 There is an [open issue](https://github.com/openrewrite/rewrite-maven-plugin/issues/345) for this request that you can +1 or provide feedback on.
+
+## What order do recipes run in?
+
+Recipes are run in the order they are activated.
+
+Let's take this example snippet of a `build.gradle` file:
+
+```groovy
+rewrite {
+    activeRecipe(
+        'com.yourorg.Foo',
+        'com.yourorg.RecipeA'
+    )
+}
+```
+
+and this example of a `rewrite.yml` file:
+
+```yml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.RecipeA
+displayName: Recipe A
+description: Applies Recipe B.
+recipeList:
+  - com.yourorg.RecipeB
+  - com.yourorg.RecipeC
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.Foo
+...
+recipeList:
+  - com.yourorg.bar
+  - com.yourorg.bash
+```
+
+In this example, the recipes would be run in this order:
+
+1. `com.yourorg.Foo`
+2. `com.yourorg.bar`
+3. `com.yourorg.bash`
+4. `com.yourorg.RecipeA`
+5. `com.yourorg.RecipeB`
+6. `com.yourorg.RecipeC`
