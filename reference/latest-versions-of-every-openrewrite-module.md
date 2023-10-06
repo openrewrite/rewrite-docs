@@ -6,9 +6,9 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 
 | Module                                                                                                                          | Version   |
 | --------------------------------------------------------------------------------------------------------------------------------| ----------|
-| [**org.openrewrite:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                                     | **2.3.0** |
-| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                                 | **5.7.1** |
-| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.3.17** |
+| [**org.openrewrite:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                                     | **2.3.1** |
+| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                                 | **5.7.2** |
+| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.3.18** |
 | org.openrewrite:rewrite-groovy                                                                                                  | 8.7.2     |
 | org.openrewrite:rewrite-gradle                                                                                                  | 8.7.2     |
 | org.openrewrite:rewrite-core                                                                                                    | 8.7.2     |
