@@ -85,7 +85,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace Stream.toList() with Stream.collect(Collectors.toList())](./replacestreamtolistwithcollect.md)
 * [Replace StringBuilder.append() with String](./replacestringbuilderwithstring.md)
 * [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
-* [Replace deprecated Runtime.Exec() methods](./replacedeprecatedruntimeexecmethods.md)
+* [Replace deprecated `Runtime#exec()` methods](./replacedeprecatedruntimeexecmethods.md)
 * [Replace duplicate `String` literals](./replaceduplicatestringliterals.md)
 * [Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`](./uselistsort.md)
 * [Replace `java.util.Set#removeAll(java.util.Collection)` with `java.util.Collection#forEach(Set::remove)`](./useforeachremoveinsteadofsetremoveall.md)

@@ -1,36 +1,36 @@
-# Migrate to Java 20
+# Migrate to Java 21
 
-**org.openrewrite.java.migrate.UpgradeToJava20**
+**org.openrewrite.java.migrate.UpgradeToJava21**
 
-_This recipe will apply changes commonly needed when migrating to Java 20. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 20 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 20._
+_This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21._
 
 ### Tags
 
-* java20
+* java21
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-21.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.1.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.1.0
+* version: 2.1.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.16")
+    id("org.openrewrite.rewrite") version("6.3.18")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.UpgradeToJava20")
+    activeRecipe("org.openrewrite.java.migrate.UpgradeToJava21")
 }
 
 repositories {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.1")
 }
 ```
 {% endcode %}
@@ -53,15 +53,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.16") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.18") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.1")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.UpgradeToJava20")
+        activeRecipe("org.openrewrite.java.migrate.UpgradeToJava21")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -85,17 +85,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.UpgradeToJava20</recipe>
+            <recipe>org.openrewrite.java.migrate.UpgradeToJava21</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -114,7 +114,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpgradeToJava20
+  -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpgradeToJava21
 ```
 {% endcode %}
 {% endtab %}
@@ -125,9 +125,10 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Migrate to Java 17](../../java/migrate/upgradetojava17.md)
-* [Change Maven Java version property values to 20](../../java/migrate/javaversion20.md)
+* [Change Maven Java version property values to 21](../../java/migrate/javaversion21.md)
 * [Prefer `Locale.of(..)` over `new Locale(..)`](../../java/migrate/util/uselocaleof.md)
-* [Replace deprecated Runtime.Exec() methods](../../staticanalysis/replacedeprecatedruntimeexecmethods.md)
+* [Replace deprecated `Runtime#exec()` methods](../../staticanalysis/replacedeprecatedruntimeexecmethods.md)
+* [Adopt `SequencedCollection`](../../java/migrate/util/sequencedcollection.md)
 
 {% endtab %}
 
@@ -135,17 +136,18 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.UpgradeToJava20
-displayName: Migrate to Java 20
-description: This recipe will apply changes commonly needed when migrating to Java 20. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 20 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 20.
+name: org.openrewrite.java.migrate.UpgradeToJava21
+displayName: Migrate to Java 21
+description: This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
 
 tags:
-  - java20
+  - java21
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava17
-  - org.openrewrite.java.migrate.JavaVersion20
+  - org.openrewrite.java.migrate.JavaVersion21
   - org.openrewrite.java.migrate.util.UseLocaleOf
   - org.openrewrite.staticanalysis.ReplaceDeprecatedRuntimeExecMethods
+  - org.openrewrite.java.migrate.util.SequencedCollection
 
 ```
 {% endtab %}
@@ -153,11 +155,12 @@ recipeList:
 
 ## Contributors
 * [Sam Snyder](mailto:sam@moderne.io)
-* [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* Tyler Van Gorder
+* [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Tim te Beek](mailto:tim.te.beek@jdriven.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
+* Tyler Van Gorder
+* Chuka Obinabo
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * Kun Li
@@ -168,13 +171,13 @@ recipeList:
 * [Kun Li](mailto:kun@moderne.io)
 * [Tim te Beek](mailto:tim@moderne.io)
 * Aakarshit Uppal
-* Josh Soref
 * [Tim te Beek](mailto:timtebeek@gmail.com)
+* Josh Soref
 
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpgradeToJava20)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpgradeToJava21)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -6,11 +6,11 @@ _Replace a constant with another constant, adding/removing import on class if ne
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceConstantWithAnotherConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.7.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReplaceConstantWithAnotherConstant.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.7.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.7.0
+* version: 8.7.3
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.ReplaceConstantWithAnotherConstantExample` has been define
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.16")
+    id("org.openrewrite.rewrite") version("6.3.18")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceConstantWithAnotherConstantExample</recipe>

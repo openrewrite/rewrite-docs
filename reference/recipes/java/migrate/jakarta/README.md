@@ -38,12 +38,16 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `javax.ws` packages to `jakarta.ws`](./javaxwstojakartaws.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](./javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](./javaxxmlwsmigrationtojakartaxmlws.md)
+* [Migrate to Jakarta EE 10](./jakartaee10.md)
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
 * [Migrate xmlns entries in `persistence.xml` files](./javaxpersistencexmltojakartapersistencexml.md)
+* [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](./wswsocservercontainerdeprecation.md)
+* [Use `jakarta.xml.soap.SOAPFactory to create SOAPElements`](./removedsoapelementfactory.md)
 
 ## Recipes
 
 * [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
+* [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)
 
 

@@ -6,11 +6,11 @@ _Updates the expiration date for OWASP suppressions having a matching cve tag. F
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.7.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.7.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.7.0
+* version: 8.7.3
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.UpdateOwaspSuppressionDateExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.16")
+    id("org.openrewrite.rewrite") version("6.3.18")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateOwaspSuppressionDateExample</recipe>

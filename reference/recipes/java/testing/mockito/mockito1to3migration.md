@@ -11,23 +11,23 @@ _Upgrade Mockito from 1.x to 3.x._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/mockito.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.12/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.11
+* version: 2.0.12
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.11` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.16")
+    id("org.openrewrite.rewrite") version("6.3.18")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.11")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12")
 }
 ```
 {% endcode %}
@@ -54,12 +54,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.16") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.18") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.11")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.mockito.Mockito1to3Migration")
@@ -86,7 +86,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.mockito.Mockito1to3Migration</recipe>
@@ -96,7 +96,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.11</version>
+            <version>2.0.12</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -196,6 +196,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports.md)
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic.md)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension.md)
+* [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito.md)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.mockito`
   * artifactId: `mockito-junit-jupiter`
@@ -291,6 +292,7 @@ recipeList:
   - org.openrewrite.java.testing.mockito.CleanupMockitoImports
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
+  - org.openrewrite.java.testing.mockito.ReplacePowerMockito
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.mockito
       artifactId: mockito-junit-jupiter
@@ -308,17 +310,21 @@ recipeList:
 
 ## Contributors
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Knut Wannheden](mailto:knut@moderne.io)
+* [Matthias Klauer](mailto:matthias.klauer@sap.com)
 * [Greg Adams](mailto:gadams@gmail.com)
 * [Tim te Beek](mailto:tim@moderne.io)
 * Patrick Way
-* [Knut Wannheden](mailto:knut@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Greg Adams](mailto:greg@moderne.io)
 * John Burns
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * [Patrick](mailto:patway99@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Tim te Beek](mailto:timtebeek@gmail.com)
+* Josh Soref
 
 
 ## See how this recipe works across multiple open-source repositories

@@ -14,7 +14,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `java.util.Objects#equals`](./preferjavautilobjectsequals.md)
 * [Prefer `java.util.Objects#hash`](./preferjavautilobjectshashcode.md)
 * [Prefer `java.util.Objects#requireNonNull`](./preferjavautilobjectsrequirenonnull.md)
+* [Prefer `java.util.Objects#requireNonNullElse`](./preferjavautilobjectsrequirenonnullelse.md)
 * [Prefer `java.util.Optional`](./preferjavautiloptional.md)
+* [Prefer the Java 11 standard library instead of Guava](./noguavajava11.md)
 * [Prefer the Java standard library instead of Guava](./noguava.md)
 
 ## Recipes

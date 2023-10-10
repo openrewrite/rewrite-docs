@@ -11,6 +11,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Adopt AssertJ Duration assertions](./adoptassertjdurationassertions.md)
 * [JUnit AssertThrows to AssertJ exceptionType](./junitassertthrowstoassertexceptiontype.md)
 * [JUnit `assertArrayEquals` To AssertJ](./junitassertarrayequalstoassertthat.md)
 * [JUnit `assertEquals` to AssertJ](./junitassertequalstoassertthat.md)

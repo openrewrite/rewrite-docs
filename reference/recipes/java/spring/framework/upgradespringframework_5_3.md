@@ -6,23 +6,23 @@ _Migrate applications to the latest Spring Framework 5.3 release._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-framework-53.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-framework-53.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.11/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.10
+* version: 5.0.11
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.11` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.16")
+    id("org.openrewrite.rewrite") version("6.3.18")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.10")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.11")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.16") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.18") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.0.10")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.0.11")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3")
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3</recipe>
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.10</version>
+            <version>5.0.11</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -124,6 +124,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 * [Upgrade spring-framework Maven dependencies](../../../java/spring/framework/upgradespringframeworkdependencies.md)
   * newVersion: `5.3.x`
 * [Use `ObjectUtils#isEmpty(Object)`](../../../java/spring/framework/useobjectutilsisempty.md)
+* [Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`](../../../java/spring/framework/migratehandlerinterceptor.md)
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](../../../java/spring/framework/migrateinstantiationawarebeanpostprocessoradapter.md)
 * [Use varargs equivalents for deprecated JdbcTemplate signatures](../../../java/spring/framework/jdbctemplateobjectarrayargtovarargs.md)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
@@ -155,6 +156,7 @@ recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFrameworkDependencies:
       newVersion: 5.3.x
   - org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty
+  - org.openrewrite.java.spring.framework.MigrateHandlerInterceptor
   - org.openrewrite.java.spring.framework.MigrateInstantiationAwareBeanPostProcessorAdapter
   - org.openrewrite.java.spring.framework.JdbcTemplateObjectArrayArgToVarArgs
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
@@ -179,8 +181,8 @@ recipeList:
 ## Contributors
 * [Patrick](mailto:patway99@gmail.com)
 * Patrick Way
-* [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
 * Kun Li
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)

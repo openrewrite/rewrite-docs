@@ -11,23 +11,23 @@ _Applies best practices to tests._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.12/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.11
+* version: 2.0.12
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.11` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.16")
+    id("org.openrewrite.rewrite") version("6.3.18")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.11")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12")
 }
 ```
 {% endcode %}
@@ -54,12 +54,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.16") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.18") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.11")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
@@ -86,7 +86,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -96,7 +96,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.11</version>
+            <version>2.0.12</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -161,11 +161,11 @@ recipeList:
 ## Contributors
 * Patrick Way
 * [Patrick](mailto:patway99@gmail.com)
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
+* [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
 * Yeikel
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 * [Aleksandar A Simpson](mailto:alek@asu.me)
 * [Greg Adams](mailto:gadams@gmail.com)
 * [Tim te Beek](mailto:tim.te.beek@jdriven.com)
@@ -173,6 +173,7 @@ recipeList:
 * [Greg Adams](mailto:greg@moderne.io)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * [Aurélien Mino](mailto:aurelien.mino@gmail.com)
+* [Matthias Klauer](mailto:matthias.klauer@sap.com)
 * Tyler Van Gorder
 * [Tim te Beek](mailto:tim@moderne.io)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
@@ -185,9 +186,11 @@ recipeList:
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * Peter Puškár
 * [sullis](mailto:github@seansullivan.com)
+* Josh Soref
 * [Joan Viladrosa](mailto:joan@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
 * [Kyle Scully](mailto:scullykns@gmail.com)
+* [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

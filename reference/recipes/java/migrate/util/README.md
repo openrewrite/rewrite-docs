@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Adopt `SequencedCollection`](./sequencedcollection.md)
 * [Use modernized `java.util` APIs](./javautilapis.md)
 
 ## Recipes
@@ -19,5 +20,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Set.of(..)`](./migratecollectionssingletonset.md)
 * [Prefer `Set.of(..)`](./migratecollectionsunmodifiableset.md)
 * [Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile ](./removefinalizerfromzip.md)
+* [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](./replacestreamcollectwithtolist.md)
 
 

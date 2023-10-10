@@ -29,5 +29,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](./migratexmlinputfactorynewinstancetonewfactory.md)
 * [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](./migratexmloutputfactorynewinstancetonewfactory.md)
 * [Use modernized `javax.management.monitor` APIs](./javaxmanagementmonitorapis.md)
+* [Use the latest JAX-WS API and runtime for Jakarta EE 8](./addjaxwsruntime$addjaxwsruntimegradle.md)
+* [Use the latest JAX-WS API and runtime for Jakarta EE 8](./addjaxwsruntime$addjaxwsruntimemaven.md)
 
 

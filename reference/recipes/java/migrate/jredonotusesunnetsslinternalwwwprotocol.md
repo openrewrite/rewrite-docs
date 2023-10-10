@@ -1,37 +1,36 @@
-# Change Maven Java version property values to 20
+# Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`
 
-**org.openrewrite.java.migrate.JavaVersion20**
+**org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol**
 
-_Change maven.compiler.source and maven.compiler.target values to 20._
+_Do not use the `com.sun.net.ssl.internal.www.protocol` package._
 
 ### Tags
 
-* compiler
-* java20
+* java11
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/ibm-java.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.1.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.1.0
+* version: 2.1.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.16")
+    id("org.openrewrite.rewrite") version("6.3.18")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.JavaVersion20")
+    activeRecipe("org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol")
 }
 
 repositories {
@@ -39,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.1")
 }
 ```
 {% endcode %}
@@ -54,15 +53,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.3.16") }
+    dependencies { classpath("org.openrewrite:plugin:6.3.18") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.1")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.JavaVersion20")
+        activeRecipe("org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -86,17 +85,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.JavaVersion20</recipe>
+            <recipe>org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -115,7 +114,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.migrate.JavaVersion20
+  -Drewrite.activeRecipes=org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol
 ```
 {% endcode %}
 {% endtab %}
@@ -125,10 +124,9 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade Java version](../../java/migrate/upgradejavaversion.md)
-  * version: `20`
-* [Use Maven Compiler Plugin Release Configuration](../../java/migrate/maven/usemavencompilerpluginreleaseconfiguration.md)
-  * releaseVersion: `20`
+* [Replace `String` literal](../../java/migrate/replacestringliteralvalue.md)
+  * oldLiteralValue: `com.sun.net.ssl.internal.www.protocol`
+  * newLiteralValue: `com.ibm.net.ssl.www2.protocol`
 
 {% endtab %}
 
@@ -136,36 +134,27 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.JavaVersion20
-displayName: Change Maven Java version property values to 20
-description: Change maven.compiler.source and maven.compiler.target values to 20.
+name: org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol
+displayName: Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`
+description: Do not use the `com.sun.net.ssl.internal.www.protocol` package.
 tags:
-  - compiler
-  - java20
+  - java11
 recipeList:
-  - org.openrewrite.java.migrate.UpgradeJavaVersion:
-      version: 20
-  - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration:
-      releaseVersion: 20
+  - org.openrewrite.java.migrate.ReplaceStringLiteralValue:
+      oldLiteralValue: com.sun.net.ssl.internal.www.protocol
+      newLiteralValue: com.ibm.net.ssl.www2.protocol
 
 ```
 {% endtab %}
 {% endtabs %}
 
 ## Contributors
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* Kun Li
-* [Shannon Pamperl](mailto:shanman190@gmail.com)
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
+* Chuka Obinabo
 
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.JavaVersion20)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

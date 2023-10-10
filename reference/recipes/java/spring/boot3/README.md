@@ -11,6 +11,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Boot 3.0](./upgradespringboot_3_0.md)
 * [Migrate to Spring Boot 3.1](./upgradespringboot_3_1.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](./actuatorendpointsanitization.md)
+* [Upgrade to springdoc-openapi 2](./upgradespringdoc_2.md)
 
 ## Recipes
 

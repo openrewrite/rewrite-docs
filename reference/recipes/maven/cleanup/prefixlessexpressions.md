@@ -6,11 +6,11 @@ _MNG-7404 drops support for prefixless in POMs. This recipe will add the `projec
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.7.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.7.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.7.0
+* version: 8.7.3
 
 
 ## Usage
@@ -28,7 +28,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.1</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.cleanup.PrefixlessExpressions</recipe>
@@ -59,6 +59,18 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Rename Maven property key](../../maven/renamepropertykey.md)
+  * oldKey: `basedir`
+  * newKey: `project.basedir`
+* [Rename Maven property key](../../maven/renamepropertykey.md)
+  * oldKey: `build.timestamp`
+  * newKey: `project.build.timestamp`
+* [Rename Maven property key](../../maven/renamepropertykey.md)
+  * oldKey: `groupId`
+  * newKey: `project.groupId`
+* [Rename Maven property key](../../maven/renamepropertykey.md)
+  * oldKey: `artifactId`
+  * newKey: `project.artifactId`
+* [Rename Maven property key](../../maven/renamepropertykey.md)
   * oldKey: `version`
   * newKey: `project.version`
 * [Rename Maven property key](../../maven/renamepropertykey.md)
@@ -76,6 +88,18 @@ displayName: Drop prefixless expressions in POM
 description: MNG-7404 drops support for prefixless in POMs. This recipe will add the `project.` prefix where missing.
 recipeList:
   - org.openrewrite.maven.RenamePropertyKey:
+      oldKey: basedir
+      newKey: project.basedir
+  - org.openrewrite.maven.RenamePropertyKey:
+      oldKey: build.timestamp
+      newKey: project.build.timestamp
+  - org.openrewrite.maven.RenamePropertyKey:
+      oldKey: groupId
+      newKey: project.groupId
+  - org.openrewrite.maven.RenamePropertyKey:
+      oldKey: artifactId
+      newKey: project.artifactId
+  - org.openrewrite.maven.RenamePropertyKey:
       oldKey: version
       newKey: project.version
   - org.openrewrite.maven.RenamePropertyKey:
@@ -90,6 +114,7 @@ recipeList:
 * [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories
