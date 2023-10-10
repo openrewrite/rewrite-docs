@@ -363,7 +363,7 @@ After doing that, your `pom.xml` file should look similar to this:
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.10</version>
+            <version>5.0.11</version>
           </dependency>
         </dependencies>
       </plugin>
