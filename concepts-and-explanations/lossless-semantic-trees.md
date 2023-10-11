@@ -30,7 +30,7 @@ When you run an OpenRewrite recipe locally:
 1. An LST is created and stored in memory.
 2. The recipe will read this LST from memory and begin making transformations on it. This could be adding a search marker (`~~>`) if the recipe is a search recipe -- or it could be more significant code changes.
 3. Once the recipe finishes running, the LST is converted back to text which then is used to overwrite any existing files that have changed.
-4. After all of the files have been overwritten, the LST is thrown away. 
+4. After all of the files have been overwritten, all of the artifacts are thrown away. _Nothing is stored between recipe runs_. 
 5. If you go to run another recipe after the first one is done, a new LST will be generated at that time.
 6. If the previous recipe made changes and those changes exist locally, then the newly generated LST will have all of those changes. If the previous recipe made no changes, then the LST will effectively be the same one as before (but regenerated as the previous one was deleted).
 
