@@ -17,8 +17,10 @@ Type attribution is necessary for the accurate matching of patterns. For example
 logger.info("Hi");
 ```
 
+[Moderne](https://docs.moderne.io/) adds additional functionality to support large-scale mass refactoring on LSTs.
+
 {% hint style="info" %}
-If you want to see specific examples of Java LSTs, please read our [Java LST Examples doc](lst-examples.md).&#x20;
+If you want to see specific examples of OpenRewrite Java LSTs, please read our [Java LST Examples doc](lst-examples.md).&#x20;
 {% endhint %}
 
 ## LST lifecycle
