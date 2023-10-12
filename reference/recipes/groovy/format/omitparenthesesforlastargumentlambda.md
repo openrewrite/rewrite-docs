@@ -6,11 +6,11 @@ _Groovy allows a shorthand syntax that allows a closure to be placed outside of 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesForLastArgumentLambda.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/8.7.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesForLastArgumentLambda.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/8.7.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-groovy
-* version: 8.7.3
+* version: 8.7.4
 
 
 ## Usage
@@ -99,6 +99,15 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.activeRecipes=org.openrewrite.groovy.format.OmitParenthesesForLastArgumentLambda
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.groovy.format.OmitParenthesesForLastArgumentLambda
 ```
 {% endcode %}
 {% endtab %}

@@ -72,6 +72,15 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
 {% endcode %}
 2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 ## Contributors

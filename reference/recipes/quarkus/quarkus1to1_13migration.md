@@ -114,6 +114,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ```
 {% endcode %}
 {% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.quarkus.Quarkus1to1_13Migration
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 ## Definition

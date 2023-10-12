@@ -9,11 +9,11 @@ Reference : Migration guide (URL to be written)._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.7.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.7.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.7.3
+* version: 8.7.4
 
 
 ## Usage
@@ -102,6 +102,15 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.activeRecipes=org.openrewrite.java.upgrade.MigrateToRewrite8
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.java.upgrade.MigrateToRewrite8
 ```
 {% endcode %}
 {% endtab %}

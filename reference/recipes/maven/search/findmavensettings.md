@@ -6,11 +6,11 @@ _List the effective maven settings file for the current project._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindMavenSettings.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.7.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindMavenSettings.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.7.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.7.3
+* version: 8.7.4
 
 ## Options
 
@@ -66,6 +66,15 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.activeRecipes=org.openrewrite.maven.search.FindMavenSettings
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.maven.search.FindMavenSettings
 ```
 {% endcode %}
 {% endtab %}

@@ -6,11 +6,11 @@ _Format HCL code using a standard comprehensive set of HCL formatting recipes._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.7.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.7.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 8.7.3
+* version: 8.7.4
 
 
 ## Usage
@@ -99,6 +99,15 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.activeRecipes=org.openrewrite.hcl.format.AutoFormat
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.hcl.format.AutoFormat
 ```
 {% endcode %}
 {% endtab %}

@@ -6,11 +6,11 @@ _Change a YAML property. Expects dot notation for nested YAML mappings, similar 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.7.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.7.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.7.3
+* version: 8.7.4
 
 ## Options
 
@@ -88,6 +88,15 @@ repositories {
 ```
 {% endcode %}
 2. Run `mvn rewrite:run` to run the recipe.
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.yaml.ChangePropertyValue
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 

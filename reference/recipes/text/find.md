@@ -6,11 +6,11 @@ _Search for text, treating all textual sources as plain text._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/Find.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.7.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/Find.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.7.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.7.3
+* version: 8.7.4
 
 ## Options
 
@@ -90,6 +90,15 @@ repositories {
 ```
 {% endcode %}
 2. Run `mvn rewrite:run` to run the recipe.
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.text.Find
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 

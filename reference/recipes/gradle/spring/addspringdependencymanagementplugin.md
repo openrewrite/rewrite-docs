@@ -72,6 +72,15 @@ rootProject {
 2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
 {% endtab %}
 
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 ## Contributors

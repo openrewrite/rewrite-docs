@@ -6,11 +6,11 @@ _Find a Gradle repository by url._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.7.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.7.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.7.3
+* version: 8.7.4
 
 ## Options
 
@@ -77,6 +77,15 @@ rootProject {
 2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
 {% endtab %}
 
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run <PATH> --recipe org.openrewrite.gradle.search.FindRepository
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 ## Contributors
