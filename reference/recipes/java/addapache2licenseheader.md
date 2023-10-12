@@ -111,7 +111,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.AddApache2LicenseHeader
+mod run <PATH> --recipe AddApache2LicenseHeader
 ```
 {% endcode %}
 {% endtab %}

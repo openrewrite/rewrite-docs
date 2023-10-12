@@ -123,7 +123,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.UpgradeToJava21
+mod run <PATH> --recipe UpgradeToJava21
 ```
 {% endcode %}
 {% endtab %}

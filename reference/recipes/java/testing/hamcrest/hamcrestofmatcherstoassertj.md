@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ
+mod run <PATH> --recipe HamcrestOfMatchersToAssertJ
 ```
 {% endcode %}
 {% endtab %}

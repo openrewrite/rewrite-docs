@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.testing.cleanup.RemoveTestPrefix
+mod run <PATH> --recipe RemoveTestPrefix
 ```
 {% endcode %}
 {% endtab %}

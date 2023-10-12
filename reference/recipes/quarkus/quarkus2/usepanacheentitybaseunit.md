@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.quarkus.quarkus2.UsePanacheEntityBaseUniT
+mod run <PATH> --recipe UsePanacheEntityBaseUniT
 ```
 {% endcode %}
 {% endtab %}

@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.apache.commons.lang.ApacheCommonsStringUtilsRecipes$CapitalizeRecipe
+mod run <PATH> --recipe ApacheCommonsStringUtilsRecipes$CapitalizeRecipe
 ```
 {% endcode %}
 {% endtab %}

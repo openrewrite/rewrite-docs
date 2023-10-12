@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.UseJavaUtilBase64
+mod run <PATH> --recipe UseJavaUtilBase64
 ```
 {% endcode %}
 {% endtab %}

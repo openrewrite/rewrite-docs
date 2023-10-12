@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta
+mod run <PATH> --recipe JohnzonJavaxToJakarta
 ```
 {% endcode %}
 {% endtab %}

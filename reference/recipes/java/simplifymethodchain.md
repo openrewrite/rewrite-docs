@@ -90,7 +90,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.SimplifyMethodChain
+mod run <PATH> --recipe SimplifyMethodChain
 ```
 {% endcode %}
 {% endtab %}

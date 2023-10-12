@@ -109,7 +109,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.dependencies.ChangeDependency
+mod run <PATH> --recipe ChangeDependency
 ```
 {% endcode %}
 {% endtab %}

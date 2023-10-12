@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.micronaut.UpdateBuildToMicronaut4Version
+mod run <PATH> --recipe UpdateBuildToMicronaut4Version
 ```
 {% endcode %}
 {% endtab %}

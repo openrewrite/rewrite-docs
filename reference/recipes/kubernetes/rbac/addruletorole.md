@@ -109,7 +109,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.kubernetes.rbac.AddRuleToRole
+mod run <PATH> --recipe AddRuleToRole
 ```
 {% endcode %}
 {% endtab %}

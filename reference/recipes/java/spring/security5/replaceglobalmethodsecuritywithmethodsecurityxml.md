@@ -124,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurityXml
+mod run <PATH> --recipe ReplaceGlobalMethodSecurityWithMethodSecurityXml
 ```
 {% endcode %}
 {% endtab %}

@@ -88,7 +88,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.properties.DeleteProperty
+mod run <PATH> --recipe DeleteProperty
 ```
 {% endcode %}
 {% endtab %}

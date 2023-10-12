@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.hibernate.MigrateToHibernate62
+mod run <PATH> --recipe MigrateToHibernate62
 ```
 {% endcode %}
 {% endtab %}

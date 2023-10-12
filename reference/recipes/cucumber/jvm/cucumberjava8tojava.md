@@ -124,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.cucumber.jvm.CucumberJava8ToJava
+mod run <PATH> --recipe CucumberJava8ToJava
 ```
 {% endcode %}
 {% endtab %}

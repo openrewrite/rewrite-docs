@@ -126,7 +126,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily
+mod run <PATH> --recipe DependabotCheckForGithubActionsUpdatesDaily
 ```
 {% endcode %}
 {% endtab %}

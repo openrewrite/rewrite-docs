@@ -125,7 +125,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.terraform.azure.EnableAzureStorageSecureTransferRequired
+mod run <PATH> --recipe EnableAzureStorageSecureTransferRequired
 ```
 {% endcode %}
 {% endtab %}

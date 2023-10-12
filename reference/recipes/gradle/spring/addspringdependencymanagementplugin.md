@@ -77,7 +77,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin
+mod run <PATH> --recipe AddSpringDependencyManagementPlugin
 ```
 {% endcode %}
 {% endtab %}

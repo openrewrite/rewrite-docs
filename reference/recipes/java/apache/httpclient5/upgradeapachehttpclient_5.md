@@ -124,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.apache.httpclient5.UpgradeApacheHttpClient_5
+mod run <PATH> --recipe UpgradeApacheHttpClient_5
 ```
 {% endcode %}
 {% endtab %}

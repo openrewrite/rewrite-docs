@@ -125,7 +125,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.concourse.search.FindPinnedResource
+mod run <PATH> --recipe FindPinnedResource
 ```
 {% endcode %}
 {% endtab %}

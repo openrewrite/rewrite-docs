@@ -123,7 +123,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.cloudsuitability.FindJcaAnnotations
+mod run <PATH> --recipe FindJcaAnnotations
 ```
 {% endcode %}
 {% endtab %}

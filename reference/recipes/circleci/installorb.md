@@ -99,7 +99,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.circleci.InstallOrb
+mod run <PATH> --recipe InstallOrb
 ```
 {% endcode %}
 {% endtab %}

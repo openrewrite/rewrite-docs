@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.boot2.SpringBootProperties_2_5
+mod run <PATH> --recipe SpringBootProperties_2_5
 ```
 {% endcode %}
 {% endtab %}

@@ -127,7 +127,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration
+mod run <PATH> --recipe SpringBoot2JUnit4to5Migration
 ```
 {% endcode %}
 {% endtab %}

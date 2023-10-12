@@ -125,7 +125,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.terraform.azure.EnsureAzureNetworkWatcherNSGFlowLogsRetentionIsGreaterThan90Days
+mod run <PATH> --recipe EnsureAzureNetworkWatcherNSGFlowLogsRetentionIsGreaterThan90Days
 ```
 {% endcode %}
 {% endtab %}

@@ -88,7 +88,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.xml.security.UpdateOwaspSuppressionDate
+mod run <PATH> --recipe UpdateOwaspSuppressionDate
 ```
 {% endcode %}
 {% endtab %}

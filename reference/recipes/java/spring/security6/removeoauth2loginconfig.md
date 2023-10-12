@@ -125,7 +125,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.security6.RemoveOauth2LoginConfig
+mod run <PATH> --recipe RemoveOauth2LoginConfig
 ```
 {% endcode %}
 {% endtab %}

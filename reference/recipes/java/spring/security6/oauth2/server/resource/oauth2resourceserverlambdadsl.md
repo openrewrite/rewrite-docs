@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.security6.oauth2.server.resource.OAuth2ResourceServerLambdaDsl
+mod run <PATH> --recipe OAuth2ResourceServerLambdaDsl
 ```
 {% endcode %}
 {% endtab %}

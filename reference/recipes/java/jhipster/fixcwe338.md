@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.jhipster.FixCwe338
+mod run <PATH> --recipe FixCwe338
 ```
 {% endcode %}
 {% endtab %}

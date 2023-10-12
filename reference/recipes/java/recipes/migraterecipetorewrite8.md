@@ -111,7 +111,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.recipes.MigrateRecipeToRewrite8
+mod run <PATH> --recipe MigrateRecipeToRewrite8
 ```
 {% endcode %}
 {% endtab %}

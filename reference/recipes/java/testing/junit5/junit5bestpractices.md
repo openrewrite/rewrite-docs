@@ -124,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.testing.junit5.JUnit5BestPractices
+mod run <PATH> --recipe JUnit5BestPractices
 ```
 {% endcode %}
 {% endtab %}

@@ -123,7 +123,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.staticanalysis.UseLambdaForFunctionalInterface
+mod run <PATH> --recipe UseLambdaForFunctionalInterface
 ```
 {% endcode %}
 {% endtab %}

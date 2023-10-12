@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.security6.UpdateEnableReactiveMethodSecurity
+mod run <PATH> --recipe UpdateEnableReactiveMethodSecurity
 ```
 {% endcode %}
 {% endtab %}

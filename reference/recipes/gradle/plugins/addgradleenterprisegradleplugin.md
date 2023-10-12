@@ -94,7 +94,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.gradle.plugins.AddGradleEnterpriseGradlePlugin
+mod run <PATH> --recipe AddGradleEnterpriseGradlePlugin
 ```
 {% endcode %}
 {% endtab %}

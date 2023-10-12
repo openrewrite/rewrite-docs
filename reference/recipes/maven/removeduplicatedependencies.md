@@ -57,7 +57,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.maven.RemoveDuplicateDependencies
+mod run <PATH> --recipe RemoveDuplicateDependencies
 ```
 {% endcode %}
 {% endtab %}

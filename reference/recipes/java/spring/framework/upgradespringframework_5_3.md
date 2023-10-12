@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3
+mod run <PATH> --recipe UpgradeSpringFramework_5_3
 ```
 {% endcode %}
 {% endtab %}

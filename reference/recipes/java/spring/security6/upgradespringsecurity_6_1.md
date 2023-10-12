@@ -124,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_1
+mod run <PATH> --recipe UpgradeSpringSecurity_6_1
 ```
 {% endcode %}
 {% endtab %}

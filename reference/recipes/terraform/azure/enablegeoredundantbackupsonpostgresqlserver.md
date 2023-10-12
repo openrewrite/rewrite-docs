@@ -125,7 +125,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.terraform.azure.EnableGeoRedundantBackupsOnPostgreSQLServer
+mod run <PATH> --recipe EnableGeoRedundantBackupsOnPostgreSQLServer
 ```
 {% endcode %}
 {% endtab %}

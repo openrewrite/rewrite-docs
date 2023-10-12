@@ -123,7 +123,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.staticanalysis.ObjectFinalizeCallsSuper
+mod run <PATH> --recipe ObjectFinalizeCallsSuper
 ```
 {% endcode %}
 {% endtab %}

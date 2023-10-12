@@ -124,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.UpgradeToJava17
+mod run <PATH> --recipe UpgradeToJava17
 ```
 {% endcode %}
 {% endtab %}

@@ -107,7 +107,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.xml.format.NormalizeFormat
+mod run <PATH> --recipe NormalizeFormat
 ```
 {% endcode %}
 {% endtab %}

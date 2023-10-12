@@ -125,7 +125,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.logging.slf4j.CompleteExceptionLogging
+mod run <PATH> --recipe CompleteExceptionLogging
 ```
 {% endcode %}
 {% endtab %}

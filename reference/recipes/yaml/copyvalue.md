@@ -88,7 +88,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.yaml.CopyValue
+mod run <PATH> --recipe CopyValue
 ```
 {% endcode %}
 {% endtab %}

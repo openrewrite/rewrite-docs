@@ -125,7 +125,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.terraform.azure.EnableAzureStorageAccountTrustedMicrosoftServicesAccess
+mod run <PATH> --recipe EnableAzureStorageAccountTrustedMicrosoftServicesAccess
 ```
 {% endcode %}
 {% endtab %}

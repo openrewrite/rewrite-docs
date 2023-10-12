@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.javax.MigrateSimpleElementVisitor6To9
+mod run <PATH> --recipe MigrateSimpleElementVisitor6To9
 ```
 {% endcode %}
 {% endtab %}

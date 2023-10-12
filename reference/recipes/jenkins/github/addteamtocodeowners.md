@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.jenkins.github.AddTeamToCodeowners
+mod run <PATH> --recipe AddTeamToCodeowners
 ```
 {% endcode %}
 {% endtab %}

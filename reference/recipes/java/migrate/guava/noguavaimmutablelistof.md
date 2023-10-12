@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.guava.NoGuavaImmutableListOf
+mod run <PATH> --recipe NoGuavaImmutableListOf
 ```
 {% endcode %}
 {% endtab %}

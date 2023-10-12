@@ -123,7 +123,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.kotlin.cleanup.ImplicitParameterInLambda
+mod run <PATH> --recipe ImplicitParameterInLambda
 ```
 {% endcode %}
 {% endtab %}

@@ -86,7 +86,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.search.FindComments
+mod run <PATH> --recipe FindComments
 ```
 {% endcode %}
 {% endtab %}

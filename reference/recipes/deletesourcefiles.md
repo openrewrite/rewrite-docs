@@ -86,7 +86,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.DeleteSourceFiles
+mod run <PATH> --recipe DeleteSourceFiles
 ```
 {% endcode %}
 {% endtab %}

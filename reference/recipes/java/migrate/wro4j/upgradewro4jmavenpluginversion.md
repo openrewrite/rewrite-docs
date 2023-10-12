@@ -124,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.wro4j.UpgradeWro4jMavenPluginVersion
+mod run <PATH> --recipe UpgradeWro4jMavenPluginVersion
 ```
 {% endcode %}
 {% endtab %}

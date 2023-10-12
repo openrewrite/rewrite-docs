@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.quarkus.quarkus2.RemoveAvroMavenPlugin
+mod run <PATH> --recipe RemoveAvroMavenPlugin
 ```
 {% endcode %}
 {% endtab %}

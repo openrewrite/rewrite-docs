@@ -124,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.logging.log4j.Log4j1ToLog4j2
+mod run <PATH> --recipe Log4j1ToLog4j2
 ```
 {% endcode %}
 {% endtab %}

@@ -107,7 +107,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.yaml.cleanup.RemoveUnused
+mod run <PATH> --recipe RemoveUnused
 ```
 {% endcode %}
 {% endtab %}

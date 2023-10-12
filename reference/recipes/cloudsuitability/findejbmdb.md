@@ -123,7 +123,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.cloudsuitability.FindEjbMdb
+mod run <PATH> --recipe FindEjbMdb
 ```
 {% endcode %}
 {% endtab %}

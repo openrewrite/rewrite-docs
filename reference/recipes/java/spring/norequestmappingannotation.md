@@ -123,7 +123,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.NoRequestMappingAnnotation
+mod run <PATH> --recipe NoRequestMappingAnnotation
 ```
 {% endcode %}
 {% endtab %}

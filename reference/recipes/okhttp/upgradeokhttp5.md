@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.okhttp.UpgradeOkHttp5
+mod run <PATH> --recipe UpgradeOkHttp5
 ```
 {% endcode %}
 {% endtab %}

@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.plexus.PlexusStringUtilsRecipes$ReplaceRecipe
+mod run <PATH> --recipe PlexusStringUtilsRecipes$ReplaceRecipe
 ```
 {% endcode %}
 {% endtab %}

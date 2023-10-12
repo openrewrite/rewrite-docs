@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.spring.security6.UseSha256InRememberMe
+mod run <PATH> --recipe UseSha256InRememberMe
 ```
 {% endcode %}
 {% endtab %}

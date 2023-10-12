@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.apache.httpclient5.StatusLine
+mod run <PATH> --recipe StatusLine
 ```
 {% endcode %}
 {% endtab %}

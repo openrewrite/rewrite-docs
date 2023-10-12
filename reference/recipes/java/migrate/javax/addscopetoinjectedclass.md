@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe org.openrewrite.java.migrate.javax.AddScopeToInjectedClass
+mod run <PATH> --recipe AddScopeToInjectedClass
 ```
 {% endcode %}
 {% endtab %}
