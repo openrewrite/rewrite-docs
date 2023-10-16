@@ -16,7 +16,7 @@ In order to run the migration recipe, you will need to update your project with 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.7.2</version>
+        <version>5.8.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.Assertj</recipe>

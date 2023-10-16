@@ -325,7 +325,7 @@ If you run into errors when trying to publish and read your recipe locally, try 
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>5.7.2</version>
+                <version>5.8.1</version>
                 <configuration>
                     <activeRecipes>
                         <recipe> [your recipe name] </recipe>
