@@ -6,7 +6,9 @@
 
 ## I'm getting `java.lang.OutOfMemoryError: Java heap space` when running OpenRewrite. 
 
-You can increase the size of the Java heap to see if that helps:
+You can either increase the size of the Java heap or build and run recipes with the [Moderne CLI](https://docs.moderne.io/).
+
+**Java heap instructions**
 
 {% tabs %}
 {% tab title="Gradle" %}
@@ -22,6 +24,10 @@ mvn rewrite:run
 ```
 {% endtab %}
 {% endtabs %}
+
+**Moderne CLI**
+
+The Moderne CLI builds the LST artifacts for your repository in pieces if the repository can't fit into memory entirely. It also allows you to run recipes against multiple repositories at once.
 
 ## My recipe appears to hang when running. What's happening? Is there a progress report?
 
