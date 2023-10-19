@@ -162,7 +162,6 @@ openj
 openrewrite
 orgmeow
 owasp
-Parmeters
 passwordencoder
 Peristence
 petclinic
