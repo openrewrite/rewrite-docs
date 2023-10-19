@@ -69,3 +69,4 @@
 
 # Due to us misspelling parmeters in a recipe: https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml
 \bisParmetersProvided\b
+\bisparmetersprovidedmethod\b
