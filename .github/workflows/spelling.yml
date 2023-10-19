@@ -93,33 +93,26 @@ jobs:
     steps:
     - name: check-spelling
       id: spelling
-      uses: check-spelling/check-spelling@v0.0.21
+      uses: check-spelling/check-spelling@v0.0.22
       with:
-        suppress_push_for_open_pull_request: 1
+        suppress_push_for_open_pull_request: ${{ github.actor != 'dependabot[bot]' && 1 }}
         checkout: true
         check_file_names: 1
         spell_check_this: openrewrite/rewrite-docs@master
         post_comment: 0
         use_magic_file: 1
+        warnings: bad-regex,binary-file,deprecated-feature,ignored-expect-variant,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check
         experimental_apply_changes_via_bot: ${{ github.repository_owner != 'openrewrite' && 1 }}
         use_sarif: ${{ (!github.event.pull_request || (github.event.pull_request.head.repo.full_name == github.repository)) && 1 }}
         extra_dictionary_limit: 10
-        dictionary_source_prefixes: |
-          {"cspell": "https://raw.githubusercontent.com/check-spelling/cspell-dicts/v20220816/dictionaries/", "cspell1": "https://raw.githubusercontent.com/check-spelling/cspell-dicts/v20230509/dictionaries/"}
         check_extra_dictionaries: ''
         extra_dictionaries:
-          cspell1:software-terms/dict/softwareTerms.txt
-          cspell1:aws/aws.txt
-          cspell1:npm/dict/npm.txt
-          cspell1:java/src/java.txt
-          cspell1:k8s/dict/k8s.txt
-          cspell1:typescript/dict/typescript.txt
-          cspell1:filetypes/filetypes.txt
-          cspell1:fullstack/dict/fullstack.txt
-          cspell1:python/src/python/python-lib.txt
-          cspell1:scala/dict/scala.txt
-          cspell1:php/dict/php.txt
-          cspell1:node/dict/node.txt
+          cspell:software-terms/dict/softwareTerms.txt
+          cspell:java/src/java.txt
+          cspell:filetypes/filetypes.txt
+          cspell:k8s/dict/k8s.txt
+          cspell:npm/dict/npm.txt
+          cspell:typescript/dict/typescript.txt
 
   update:
     name: Update PR
@@ -140,7 +133,7 @@ jobs:
       cancel-in-progress: false
     steps:
     - name: apply spelling updates
-      uses: check-spelling/check-spelling@v0.0.21
+      uses: check-spelling/check-spelling@v0.0.22
       with:
         experimental_apply_changes_via_bot: 1
         checkout: true

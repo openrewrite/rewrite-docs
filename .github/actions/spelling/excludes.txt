@@ -17,6 +17,7 @@
 \.cer$
 \.class$
 \.coveragerc$
+\.crl$
 \.crt$
 \.csr$
 \.dll$
@@ -24,6 +25,7 @@
 \.drawio$
 \.DS_Store$
 \.eot$
+\.eps$
 \.exe$
 \.gif$
 \.git-blame-ignore-revs$
@@ -59,17 +61,21 @@
 \.pylintrc$
 \.qm$
 \.s$
+\.sig$
 \.so$
 \.svgz?$
 \.sys$
 \.tar$
+\.tgz$
 \.tiff?$
 \.ttf$
 \.wav$
 \.webm$
 \.webp$
 \.woff2?$
+\.xcf$
 \.xlsx?$
+\.xpm$
 \.xz$
 \.zip$
 ^\.github/actions/spelling/
