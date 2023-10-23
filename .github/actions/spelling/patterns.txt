@@ -67,5 +67,5 @@
 # ignore long runs of a single character:
 \b([A-Za-z])\g{-1}{3,}\b
 
-# Due to us misspelling parmeters in a recipe: https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml
+# Due to us misspelling parameters in a recipe: https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml
 [Ii]s[Pp]armeters[Pp]rovided
