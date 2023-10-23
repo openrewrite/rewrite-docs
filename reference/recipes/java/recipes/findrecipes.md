@@ -6,11 +6,11 @@ _This recipe finds all OpenRewrite recipes, primarily to produce a data table th
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/FindRecipes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.7.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/FindRecipes.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.7.4
+* version: 8.8.0
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -36,7 +36,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.18")
+    id("org.openrewrite.rewrite") version("6.4.0")
 }
 
 rewrite {
@@ -92,7 +92,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.8.1</version>
+        <version>5.9.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.recipes.FindRecipes</recipe>

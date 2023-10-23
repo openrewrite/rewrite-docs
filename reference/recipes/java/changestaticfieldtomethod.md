@@ -6,11 +6,11 @@ _Migrate accesses to a static field to invocations of a static method._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.7.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.7.4
+* version: 8.8.0
 
 ## Options
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.ChangeStaticFieldToMethodExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.18")
+    id("org.openrewrite.rewrite") version("6.4.0")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.8.1</version>
+        <version>5.9.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeStaticFieldToMethodExample</recipe>

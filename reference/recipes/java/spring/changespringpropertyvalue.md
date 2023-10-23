@@ -51,7 +51,7 @@ Now that `com.yourorg.ChangeSpringPropertyValueExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.18")
+    id("org.openrewrite.rewrite") version("6.4.0")
 }
 
 rewrite {
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.8.1</version>
+        <version>5.9.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeSpringPropertyValueExample</recipe>

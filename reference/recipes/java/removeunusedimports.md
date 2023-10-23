@@ -10,11 +10,11 @@ _Remove imports for types that are not referenced. As a precaution against incor
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.7.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.7.4
+* version: 8.8.0
 
 
 ## Usage
@@ -26,7 +26,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.18")
+    id("org.openrewrite.rewrite") version("6.4.0")
 }
 
 rewrite {
@@ -82,7 +82,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.8.1</version>
+        <version>5.9.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.RemoveUnusedImports</recipe>
@@ -119,6 +119,7 @@ mod run <PATH> --recipe RemoveUnusedImports
 
 ## Contributors
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Thomas Zub](mailto:thomas.zub@outlook.de)
 * tclayton-newr
 * [Greg Adams](mailto:greg@moderne.io)
@@ -129,7 +130,6 @@ mod run <PATH> --recipe RemoveUnusedImports
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
-* [Kun Li](mailto:kun@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

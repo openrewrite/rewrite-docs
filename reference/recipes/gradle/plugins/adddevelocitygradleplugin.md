@@ -1,23 +1,23 @@
-# Add the Gradle Enterprise Gradle plugin
+# Add the Develocity Gradle plugin
 
-**org.openrewrite.gradle.plugins.AddGradleEnterpriseGradlePlugin**
+**org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin**
 
-_Add the Gradle Enterprise Gradle plugin to settings.gradle files._
+_Add the Develocity Gradle plugin to settings.gradle files._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddGradleEnterpriseGradlePlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.7.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddDevelocityGradlePlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.8.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.7.4
+* version: 8.8.0
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). Defaults to `latest.release`. |
-| `String` | server | *Optional*. The URL of the Gradle Enterprise server. If omitted the recipe will set no URL and Gradle will direct scans to https://scans.gradle.com/ |
+| `String` | server | *Optional*. The URL of the Develocity server. If omitted the recipe will set no URL and Gradle will direct scans to https://scans.gradle.com/ |
 | `Boolean` | allowUntrustedServer | *Optional*. When set to `true` the plugin will be configured to allow unencrypted http connections with the server. If set to `false` or omitted, the plugin will refuse to communicate without transport layer security enabled. |
 | `Boolean` | captureTaskInputFiles | *Optional*. When set to `true` the plugin will capture additional information about the inputs to Gradle tasks. This increases the size of build scans, but is useful for diagnosing issues with task caching.  |
 | `Boolean` | uploadInBackground | *Optional*. When set to `true` the plugin will capture additional information about the outputs of Gradle tasks. This increases the size of build scans, but is useful for diagnosing issues with task caching.  |
@@ -42,11 +42,11 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.18")
+    id("org.openrewrite.rewrite") version("6.4.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.gradle.plugins.AddGradleEnterpriseGradlePlugin")
+    activeRecipe("org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin")
 }
 
 repositories {
@@ -74,7 +74,7 @@ rootProject {
         rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.gradle.plugins.AddGradleEnterpriseGradlePlugin")
+        activeRecipe("org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -94,7 +94,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe AddGradleEnterpriseGradlePlugin
+mod run <PATH> --recipe AddDevelocityGradlePlugin
 ```
 {% endcode %}
 {% endtab %}
@@ -110,7 +110,7 @@ mod run <PATH> --recipe AddGradleEnterpriseGradlePlugin
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.gradle.plugins.AddGradleEnterpriseGradlePlugin)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

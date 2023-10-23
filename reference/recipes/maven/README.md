@@ -16,7 +16,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Add Gradle Enterprise Maven extension](./addgradleenterprisemavenextension.md)
 * [Add Maven dependency](./adddependency.md)
 * [Add Maven plugin](./addplugin.md)
 * [Add Maven plugin dependencies](./addplugindependency.md)
@@ -25,6 +24,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add Repository](./addrepository.md)
 * [Add a comment to a `Maven` dependency](./addcommenttomavendependency.md)
 * [Add managed Maven dependency](./addmanageddependency.md)
+* [Add the Develocity Maven extension](./adddevelocitymavenextension.md)
 * [Change Maven Parent Pom](./changeparentpom.md)
 * [Change Maven Project Version](./changeprojectversion.md)
 * [Change Maven dependency classifier](./changedependencyclassifier.md)
