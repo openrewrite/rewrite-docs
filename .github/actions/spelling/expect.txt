@@ -49,6 +49,7 @@ defaultstringrecipe
 deletedirectoryfilerecipe
 deletedirectorystringrecipe
 deletewhitespacerecipe
+Develocity
 diffs
 dsl
 Dto
