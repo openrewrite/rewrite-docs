@@ -37,7 +37,7 @@ Now that a recipe named "com.yourorg.FooToBar" has been created set that recipe 
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.3.18")
+    id("org.openrewrite.rewrite") version("6.4.0")
 }
 
 rewrite {
@@ -56,7 +56,7 @@ rewrite {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.8.1</version>
+        <version>5.9.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FooToBar</recipe>
@@ -99,7 +99,7 @@ Now when the next version of A is published its jar will include this recipe. As
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.3.18")
+    id("org.openrewrite.rewrite") version("6.4.0")
 }
 
 dependencies {
@@ -129,7 +129,7 @@ rewrite {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.8.1</version>
+        <version>5.9.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FooToBar</recipe>

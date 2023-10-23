@@ -11,7 +11,7 @@ If you want to learn more about the process that went into developing these reci
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.3.18")
+    id("org.openrewrite.rewrite") version("6.4.0")
 }
 
 rewrite {
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.3.1"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.4.0"))
     rewrite("org.openrewrite.recipe:rewrite-micronaut")
 }
 ```
@@ -39,7 +39,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.8.1</version>
+        <version>5.9.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.Micronaut3to4Migration</recipe>

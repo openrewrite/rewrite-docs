@@ -29,7 +29,7 @@ Add the rewrite-maven-plugin to the pom.xml:
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>5.8.1</version>
+    <version>5.9.1</version>
     <configuration>
         <activeRecipes>
             <recipe>com.yourorg.LogbackInsight</recipe>
@@ -104,7 +104,7 @@ And set the `com.yourorg.UseSlf4jSimple` recipe as active in your pom.xml:
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>5.8.1</version>
+    <version>5.9.1</version>
     <configuration>
         <activeRecipes>
             <recipe>com.yourorg.UseSlf4jSimple</recipe>
