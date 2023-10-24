@@ -11,20 +11,26 @@
 # s.b. anymore
 \bany more[,.]
 
+# s.b. cannot
+\b[Cc]an not\b
+
 # s.b. GitHub
-\bGithub\b
+(?<![&*.]|// |\btype )\bGithub\b(?![{)])
 
 # s.b. GitLab
-\bGitlab\b
+(?<![&*.]|// |\btype )\bGitlab\b(?![{)])
 
 # s.b. JavaScript
 \bJavascript\b
 
-# s.b. TypeScript
-\bTypescript\b
+# s.b. macOS or Mac OS X or ...
+\bMacOS\b
 
 # s.b. Microsoft
 \bMicroSoft\b
+
+# s.b. TypeScript
+\bTypescript\b
 
 # s.b. another
 \ban[- ]other\b
@@ -41,10 +47,13 @@
 # s.b. into
 # when not phrasal and when `in order to` would be wrong:
 # https://thewritepractice.com/into-vs-in-to/
-\sin to\s
+\sin to\s(?!if\b)
 
 # s.b. is obsolete
 \bis obsolescent\b
+
+# s.b. it's or its
+\bits['’]
 
 # s.b. opt-in
 (?<!\sfor)\sopt in\s
@@ -52,16 +61,21 @@
 # s.b. less than
 \bless then\b
 
+# s.b. one of
+\bon of\b
+
 # s.b. otherwise
 \bother[- ]wise\b
+
+# s.b. or (more|less)
+\bore (?:more|less)\b
 
 # s.b. nonexistent
 \bnon existing\b
 \b[Nn]o[nt][- ]existent\b
 
-# -- disabled because of a reference to `removeemptyjavadocparameters`
 # s.b. brief / details/ param / return / retval
-#[\\@](?:breif|(?:detail|detials)|(?:params|prama?)|ret(?:uns?|urns)|retvl)\b
+#(?:^\s*|(?:\*|//|/*)\s+`)[\\@](?:breif|(?:detail|detials)|(?:params(?!\.)|prama?)|ret(?:uns?)|retvl)\b
 
 # s.b. preexisting
 [Pp]re[- ]existing
@@ -93,5 +107,16 @@
 # s.b. (coarse|fine)-grained
 \b(?:coarse|fine) grained\b
 
-# Reject duplicate words
+# s.b. neither/nor -- or reword
+\bnot\b[^.?!"/(]+\bnor\b
+
+# probably a double negative
+# s.b. neither/nor (plus rewording the beginning)
+\bnot\b[^.?!"/]*\bneither\b[^.?!"/(]*\bnor\b
+
+# In English, it is generally wrong to have the same word twice in a row without punctuation.
+# Duplicated words are generally mistakes.
+# There are a few exceptions where it is acceptable (e.g. "that that").
+# If the highlighted doubled word pair is in a code snippet, you can write a pattern to mask it.
+# If the highlighted doubled word pair is in prose, have someone read the English before you dismiss this error.
 \s([A-Z]{3,}|[A-Z][a-z]{2,}|[a-z]{3,})\s\g{-1}\s

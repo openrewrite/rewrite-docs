@@ -1,6 +1,6 @@
 # 8.1.2 Release
 
-OpenRewrite 8 makes some substantial changes in order to support large monorepos that can not fit into memory. All recipes will need to be [migrated](#migrating-your-recipes) in order for them to keep working. Specific migration instructions can be found in the [migrating your recipes section](#migrating-your-recipes).
+OpenRewrite 8 makes some substantial changes in order to support large monorepos that cannot fit into memory. All recipes will need to be [migrated](#migrating-your-recipes) in order for them to keep working. Specific migration instructions can be found in the [migrating your recipes section](#migrating-your-recipes).
 
 Below, we'll detail the [key changes](#key-changes) being made and provide guidance for how you can update your recipes to ensure they keep working. [At the bottom](#new-recipes) you'll find the standard new/changed/deleted recipe list.
 
@@ -136,7 +136,7 @@ Scanning recipes have three phases:
 1. A scanning phase that collects information while making no new code changes. In this phase, the `scanner` is called for each source file and information is added to the `accumulator` that the recipe will need for future steps.
     * For example, a recipe might want to detect whether a project is a Maven project or not. The `scanner` could detect a `pom.xml` file and add a flag to the `accumulator` so that future steps know this.
 2. An _optional_ generating phase where new files are created (if any are needed). In this phase, the `accumulator` can be accessed to determine whether or not a file should be created.
-3. An editing phase where the recipe makes changes (as it would before). Like the generating phase, an `accumulator` can be accessed to make changes – but you **can not** randomly access other source code or files.
+3. An editing phase where the recipe makes changes (as it would before). Like the generating phase, an `accumulator` can be accessed to make changes – but you **cannot** randomly access other source code or files.
 
 #### Example
 

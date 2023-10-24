@@ -1,7 +1,7 @@
 abbreviaterecipe
+ACollection
 addjaxwsruntimegradle
 addjaxwsruntimemaven
-ACollection
 admins
 Adoptium
 AKV
@@ -15,6 +15,7 @@ autoconfigure
 avro
 awt
 azzert
+baz
 bfa
 BOMs
 camelcase
@@ -24,6 +25,7 @@ checkstyle
 circleci
 classdeclaration
 clickjacking
+Cloudfront
 cloudsuitability
 CMK
 cmn
@@ -33,9 +35,9 @@ compilationunit
 configprops
 Configurer
 contextualized
-Contraints
 controlflow
 corba
+ctx
 cursoring
 cus
 customizability
@@ -44,6 +46,7 @@ CWE
 cyclonedx
 databind
 datasource
+DAX
 defaultstringfallbackrecipe
 defaultstringrecipe
 deletedirectoryfilerecipe
@@ -73,6 +76,7 @@ gpg
 gpgsign
 gradlew
 hamcrest
+hashcode
 Heroku
 HSQL
 httpclient
@@ -81,7 +85,7 @@ identityprovider
 IHzb
 indexofcharrecipe
 indexofstringrecipe
-Initializr
+inferrable
 initscript
 Intelli
 intranode
@@ -138,7 +142,6 @@ MDBs
 methoddeclaration
 micronaut
 Migratetohypersistenceutilshibernate
-Migratetohypersistenceutilshibernate6
 minidev
 misk
 MNG
@@ -147,7 +150,6 @@ mockito
 multimodule
 mvc
 mvn
-mvnw
 mycompany
 NACHA
 netflix
@@ -161,10 +163,9 @@ okio
 omg
 openj
 openrewrite
-orgmeow
 owasp
 passwordencoder
-Peristence
+pem
 petclinic
 Pgp
 Picatic
@@ -176,10 +177,10 @@ projectlombok
 protobuf
 quarkus
 Querydsl
+quickstart
 qute
 reactivestreams
 rebranded
-Recile
 recipespec
 redundantcallrecipe
 Refaster
@@ -190,8 +191,9 @@ replacerecipe
 reverserecipe
 rewritetest
 roadmap
+Rsa
 Runtimes
-Saas
+saml
 scanningrecipe
 scryptpasswordencoder
 SDKMAN
@@ -199,13 +201,13 @@ sdkmanrc
 searchresult
 securitycontextrepository
 semeru
+servlet
 setcustomerinfo
 Skywalker
 slf
 smallrye
 smushed
 snakeyaml
-Snyk
 Sonatype
 sourcespecs
 splitrecipe
@@ -217,6 +219,7 @@ SSRF
 staticanalysis
 Stewjon
 striprecipe
+subdir
 subpackages
 supertypes
 temurin
@@ -226,6 +229,7 @@ throwz
 thymeleaf
 TML
 TODOs
+tostring
 trimrecipe
 trimtoemptyrecipe
 trimtonullrecipe
@@ -233,14 +237,19 @@ TVP
 Twilio
 uppercaserecipe
 useequalsignorecaserecipe
+varargs
 variabledeclarations
+versioning
 vladmihalcea
+VPC
 Webflux
 websecurityconfigureradapter
-wlp
 wiremock
+wlp
+workflows
 writestringtofilerecipe
 Wsoc
+XRange
 xsi
 XXE
 Yoda
