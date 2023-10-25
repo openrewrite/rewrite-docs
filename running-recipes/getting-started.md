@@ -43,6 +43,8 @@ The first step in this process is making sure you have some code to work with. W
 
 {% hint style="warning" %}
 The sample spring-petclinic project requires JDK version 11 to build. Newer JDK versions will not work. Get OpenJDK 11 [here](https://adoptium.net/temurin/releases/?version=11) if you do not already have that version installed.
+
+If you are building the project in IntelliJ and are using Gradle, make sure that you set your Gradle JVM to 11 (Build, Execution, Deployment → Build Tools → Gradle → Gradle JVM).
 {% endhint %}
 
 To clone the [openrewrite/spring-petclinic-migration](https://github.com/openrewrite/spring-petclinic-migration) repository, please run this command:
