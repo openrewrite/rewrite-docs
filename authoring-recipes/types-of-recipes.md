@@ -10,7 +10,7 @@ In this doc, we'll briefly describe each of these so that you can determine what
 
 [Declarative recipes](/reference/yaml-format-reference.md) are the simplest and most common recipes. They are entirely written in YAML, and they generally tie together existing recipes while adding some light configuration to them.
 
-The [commmon static analysis recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml) is a great example of this. It takes a bunch of simple recipes relating to static analysis and combines them into one larger recipe that can be run more easily. It does not add any logic, and it doesn't change the existing recipes.
+The [common static analysis recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/common-static-analysis.yml) is a great example of this. It takes a bunch of simple recipes relating to static analysis and combines them into one larger recipe that can be run more easily. It does not add any logic, and it doesn't change the existing recipes.
 
 ```yaml
 ---
