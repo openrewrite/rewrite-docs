@@ -1,6 +1,7 @@
 # Authoring Recipes
 
 * [Recipe development environment](/authoring-recipes/recipe-development-environment.md)
+* [The different types of recipes](/authoring-recipes/types-of-recipes.md)
 * [Writing a Java refactoring recipe](/authoring-recipes/writing-a-java-refactoring-recipe.md)
 * [Recipe testing](/authoring-recipes/recipe-testing.md)
 * [Recipe conventions and best practices](/authoring-recipes/recipe-conventions-and-best-practices.md)
