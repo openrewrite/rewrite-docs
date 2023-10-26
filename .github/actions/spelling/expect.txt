@@ -80,6 +80,8 @@ hashcode
 Heroku
 HSQL
 httpclient
+httpcomponents
+httpcore
 hypersistence
 identityprovider
 IHzb
