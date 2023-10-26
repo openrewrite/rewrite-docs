@@ -6,11 +6,11 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.8.0
+* version: 8.8.1
 
 ## Options
 
@@ -21,6 +21,7 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `Boolean` | trustParent | *Optional*. Even if the parent suggests a version that is older than what we are trying to upgrade to, trust it anyway. Useful when you want to wait for the parent to catch up before upgrading. The parent is not trusted by default. |
+| `Boolean` | addVersionIfMissing | *Optional*. If the plugin is missing a version, add the latest release. Defaults to false. |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -50,6 +51,7 @@ recipeList:
       newVersion: 29.X
       versionPattern: '-jre'
       trustParent: null
+      addVersionIfMissing: null
 ```
 {% endcode %}
 
@@ -93,8 +95,8 @@ mod run <PATH> --recipe UpgradePluginVersion
 
 ## Contributors
 * Aaron Gershman
+* [Tim te Beek](mailto:tim@moderne.io)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* Tyler Van Gorder
 * [Joan Viladrosa](mailto:joan@moderne.io)
 * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
 * [Sam Snyder](mailto:sam@moderne.io)

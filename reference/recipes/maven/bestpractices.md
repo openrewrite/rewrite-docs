@@ -6,11 +6,11 @@ _Applies best practices to Maven POMs._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.8.0
+* version: 8.8.1
 
 
 ## Usage
@@ -68,6 +68,7 @@ mod run <PATH> --recipe BestPractices
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Add explicit `groupId` to Maven plugins](../maven/cleanup/explicitplugingroupid.md)
+* [Add explicit plugin versions](../maven/cleanup/explicitpluginversion.md)
 * [Drop prefixless expressions in POM](../maven/cleanup/prefixlessexpressions.md)
 
 {% endtab %}
@@ -81,6 +82,7 @@ displayName: Apache Maven best practices
 description: Applies best practices to Maven POMs.
 recipeList:
   - org.openrewrite.maven.cleanup.ExplicitPluginGroupId
+  - org.openrewrite.maven.cleanup.ExplicitPluginVersion
   - org.openrewrite.maven.cleanup.PrefixlessExpressions
 
 ```

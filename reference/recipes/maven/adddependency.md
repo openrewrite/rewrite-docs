@@ -6,11 +6,11 @@ _Add a Maven dependency to a `pom.xml` file in the correct scope based on where 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.8.0
+* version: 8.8.1
 
 ## Options
 
@@ -22,7 +22,7 @@ _Add a Maven dependency to a `pom.xml` file in the correct scope based on where 
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
 | `String` | scope | *Optional*. A scope to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a runtime, provided, or import dependency. |
 | `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |
-| `String` | onlyIfUsing | Used to determine if the dependency will be added and in which scope it should be placed. |
+| `String` | onlyIfUsing | *Optional*. Used to determine if the dependency will be added and in which scope it should be placed. |
 | `String` | type | *Optional*. The type of dependency to add. If omitted Maven defaults to assuming the type is "jar". |
 | `String` | classifier | *Optional*. A Maven classifier to add. Most commonly used to select shaded or test variants of a library |
 | `Boolean` | optional | *Optional*. Set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |

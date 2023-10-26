@@ -1125,6 +1125,7 @@
     * [Upgrade Maven plugin version](reference/recipes/maven/upgradepluginversion.md)
     * [Cleanup](reference/recipes/maven/cleanup/README.md)
       * [Add explicit groupId to Maven plugins](reference/recipes/maven/cleanup/explicitplugingroupid.md)
+      * [Add explicit plugin versions](reference/recipes/maven/cleanup/explicitpluginversion.md)
       * [Dependency management dependencies should have a version](reference/recipes/maven/cleanup/dependencymanagementdependencyrequiresversion.md)
       * [Drop prefixless expressions in POM](reference/recipes/maven/cleanup/prefixlessexpressions.md)
     * [Search](reference/recipes/maven/search/README.md)

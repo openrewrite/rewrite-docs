@@ -6,11 +6,11 @@ _Find all annotations matching the annotation pattern._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.8.0
+* version: 8.8.1
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.FindAnnotationsExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.0")
+    id("org.openrewrite.rewrite") version("6.4.1")
 }
 
 rewrite {
