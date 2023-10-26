@@ -29,6 +29,41 @@ recipeList:
 ---
 ```
 
+Another good example that demonstrates how you can use a declarative recipe to define a complex migration recipe is the [ApacheHttpClient migration recipe](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml):
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.apache.httpclient5.UpgradeApacheHttpClient_5
+displayName: Migrate to ApacheHttpClient 5.x
+description: >
+  Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an
+  application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have
+  changes between versions.
+tags:
+  - apache
+  - httpclient
+recipeList:
+  - org.openrewrite.java.apache.httpclient4.UpgradeApacheHttpClient_4_5
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.apache.httpcomponents
+      oldArtifactId: httpclient
+      newGroupId: org.apache.httpcomponents.client5
+      newArtifactId: httpclient5
+      newVersion: 5.1.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.apache.httpcomponents
+      oldArtifactId: httpcore
+      newGroupId: org.apache.httpcomponents.core5
+      newArtifactId: httpcore5
+      newVersion: 5.1.x
+  - org.openrewrite.java.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping
+  - org.openrewrite.java.apache.httpclient5.UpgradeApacheHttpClient_5_DeprecatedMethods
+  - org.openrewrite.java.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit
+  - org.openrewrite.java.apache.httpclient5.StatusLine
+---
+```
+
 {% hint style="success" %}
 As a best practice, if your recipe can be declarative (meaning it can be built out of other recipes), then you should make it declarative.
 {% endhint %}
@@ -37,9 +72,13 @@ As a best practice, if your recipe can be declarative (meaning it can be built o
 
 Refaster templates are the "middle ground" of recipes. They offer more functionality than [declarative recipes](#declarative-recipes), but not as much as [imperative recipes](#imperative-recipes). On the other hand, compared to an imperative recipe, they're much quicker to create and require much less knowledge to get started.
 
-Refaster templates are ideal for straightforward replacements such as converting `StringUtils.equals(..)` to `Objects.equals(..)`. These are more than just a string replacement, though; they offer compiler and type support.
+Refaster templates can only be used to replace one expression with another – or one statement with another. Because of that, they're ideal for straightforward replacements such as converting `StringUtils.equals(..)` to `Objects.equals(..)`. These are more than just a string replacement, though; they offer compiler and type support.
 
 Refaster templates can also be used as a starting point for more complex recipe implementations. This is due to the fact that, when you define a refaster template, an imperative recipe is what is actually created behind the scenes. You can find these imperative recipes in the `build` directory after you've built your repository.
+
+{% hint style="info" %}
+For more information on Refaster templates, check out the [Error Prone Refaster docs](https://errorprone.info/docs/refaster). Please note, though, that not all annotations available in those docs are available in Moderne.
+{% endhint %}
 
 A variety of refaster templates can be found in the [StringRules](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.1.1/src/main/java/org/openrewrite/java/migrate/lang/StringRules.java#L23-L48) class in `rewrite-migrate-java`:
 
@@ -86,3 +125,4 @@ The [FinalizeLocalVariables recipe](https://github.com/openrewrite/rewrite-stati
 
 * If you want more information about the types of recipes and the recipe execution pipeline, please see our [recipes documentation](/concepts-and-explanations/recipes.md)
 * If you want to write your own imperative recipe, please check out the [writing a Java refactoring recipe](/authoring-recipes/writing-a-java-refactoring-recipe.md) guide.
+* If you want to learn more about how to test recipes, please see our [recipe testing guide](/authoring-recipes/recipe-testing.md)
