@@ -41,7 +41,7 @@ In order to run the migration recipe, you will need to update your project with 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.0")
+    id("org.openrewrite.rewrite") version("6.4.1")
 }
 
 rewrite {
