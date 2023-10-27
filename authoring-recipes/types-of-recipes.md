@@ -68,6 +68,10 @@ recipeList:
 As a best practice, if your recipe can be declarative (meaning it can be built out of other recipes), then you should make it declarative.
 {% endhint %}
 
+{% hint style="success" %}
+Want to use a UI to build declarative recipes rather than trying to figure out all the keys on your own and manually typing out the recipes? Check out the [Moderne recipe builder](https://app.moderne.io/recipes/builder).
+{% endhint %}
+
 ## Refaster templates
 
 Refaster templates are the "middle ground" of recipes. They offer more functionality than [declarative recipes](#declarative-recipes), but not as much as [imperative recipes](#imperative-recipes). On the other hand, compared to an imperative recipe, they're much quicker to create and require much less knowledge to get started.
