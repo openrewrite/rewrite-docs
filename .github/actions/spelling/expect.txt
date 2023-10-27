@@ -80,6 +80,8 @@ hashcode
 Heroku
 HSQL
 httpclient
+httpcomponents
+httpcore
 hypersistence
 identityprovider
 IHzb
@@ -184,6 +186,7 @@ rebranded
 recipespec
 redundantcallrecipe
 Refaster
+refaster
 regexes
 relyingparty
 removeendrecipe
