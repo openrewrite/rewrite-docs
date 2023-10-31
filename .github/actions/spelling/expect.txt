@@ -112,6 +112,7 @@ jhipster
 Jks
 JLeft
 JLS
+jmockit
 Jndi
 jni
 Johnzon
@@ -238,6 +239,7 @@ trimtoemptyrecipe
 trimtonullrecipe
 TVP
 Twilio
+unmarshalling
 uppercaserecipe
 useequalsignorecaserecipe
 varargs
