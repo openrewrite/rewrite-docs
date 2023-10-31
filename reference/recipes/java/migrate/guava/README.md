@@ -9,6 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Long#compareUnsigned`](./preferlongcompareunsigned.md)
 * [Prefer `Long#divideUnsigned`](./preferlongdivideunsigned.md)
 * [Prefer `Math#addExact`](./prefermathaddexact.md)
+* [Prefer `Math#clamp`](./prefermathclamp.md)
 * [Prefer `Math#multiplyExact`](./prefermathmultiplyexact.md)
 * [Prefer `Math#subtractExact`](./prefermathsubtractexact.md)
 * [Prefer `java.util.Objects#equals`](./preferjavautilobjectsequals.md)
@@ -17,6 +18,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `java.util.Objects#requireNonNullElse`](./preferjavautilobjectsrequirenonnullelse.md)
 * [Prefer `java.util.Optional`](./preferjavautiloptional.md)
 * [Prefer the Java 11 standard library instead of Guava](./noguavajava11.md)
+* [Prefer the Java 21 standard library instead of Guava](./noguavajava21.md)
 * [Prefer the Java standard library instead of Guava](./noguava.md)
 
 ## Recipes

@@ -8,6 +8,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Convert `@lombok.Value` class to Record](./lombokvaluetorecord.md)
 * [Prefer `final var`](./lombokvaltofinalvar.md)
 
 

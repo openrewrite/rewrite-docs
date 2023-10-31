@@ -6,23 +6,23 @@ _[OWASP](https://owasp.org) publishes a list of the most impactful common securi
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/owasp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/owasp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.5
+* version: 2.0.6
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.5` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.1")
+    id("org.openrewrite.rewrite") version("6.4.3")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.6")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.4.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.4.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.5")
+        rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.6")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.security.OwaspTopTen")
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.9.1</version>
+        <version>5.10.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.security.OwaspTopTen</recipe>
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.5</version>
+            <version>2.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,6 +132,7 @@ mod run <PATH> --recipe OwaspTopTen
 * [Remediate OWASP A01:2021 Broken access control](../../java/security/owaspa01.md)
 * [Remediate OWASP A02:2021 Cryptographic failures](../../java/security/owaspa02.md)
 * [Remediate OWASP A03:2021 Injection](../../java/security/owaspa03.md)
+* [Remediate OWASP A04:2021 - Insecure Design](../../java/security/owaspa04.md)
 * [Remediate OWASP A05:2021 Security misconfiguration](../../java/security/owaspa05.md)
 * [Remediate OWASP A06:2021 Vulnerable and outdated components](../../java/security/owaspa06.md)
 * [Remediate OWASP A08:2021 Software and data integrity failures](../../java/security/owaspa08.md)
@@ -150,6 +151,7 @@ recipeList:
   - org.openrewrite.java.security.OwaspA01
   - org.openrewrite.java.security.OwaspA02
   - org.openrewrite.java.security.OwaspA03
+  - org.openrewrite.java.security.OwaspA04
   - org.openrewrite.java.security.OwaspA05
   - org.openrewrite.java.security.OwaspA06
   - org.openrewrite.java.security.OwaspA08
@@ -160,8 +162,8 @@ recipeList:
 
 ## Contributors
 * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
-* [Patrick](mailto:patway99@gmail.com)
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* [Patrick](mailto:patway99@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)

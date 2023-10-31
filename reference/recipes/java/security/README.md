@@ -22,9 +22,11 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Find text-direction changes](./findtextdirectionchanges.md)
+* [Improper privilege management](./improperprivilegemanagement.md)
 * [Partial path traversal vulnerability](./partialpathtraversalvulnerability.md)
 * [Regular Expression Denial of Service (ReDOS)](./regularexpressiondenialofservice.md)
 * [Remediate OWASP A02:2021 Cryptographic failures](./owaspa02.md)
+* [Remediate OWASP A04:2021 - Insecure Design](./owaspa04.md)
 * [Remediate OWASP A05:2021 Security misconfiguration](./owaspa05.md)
 * [Remediate OWASP A06:2021 Vulnerable and outdated components](./owaspa06.md)
 * [Remediate OWASP A10:2021 Server-side request forgery (SSRF)](./owaspa10.md)

@@ -11,23 +11,23 @@ _Migrate applications to the latest Spring Boot 3.0 release. This recipe will mo
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.11
+* version: 5.0.12
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.11` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.0.12` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.1")
+    id("org.openrewrite.rewrite") version("6.4.3")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.11")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.12")
 }
 ```
 {% endcode %}
@@ -54,12 +54,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.4.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.4.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.0.11")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.0.12")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0")
@@ -86,7 +86,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.9.1</version>
+        <version>5.10.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
@@ -96,7 +96,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.11</version>
+            <version>5.0.12</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -239,8 +239,8 @@ recipeList:
 * [Alex Boyko](mailto:aboyko@vmware.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
-* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * [Tim te Beek](mailto:tim.te.beek@jdriven.com)
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
 * Kun Li
 * [Kyle Scully](mailto:scullykns@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
@@ -249,6 +249,7 @@ recipeList:
 * Yeikel
 * [Greg Adams](mailto:greg@moderne.io)
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
+* Adriano Machado
 * [Tim te Beek](mailto:tim@moderne.io)
 * Chuka Obinabo
 * [Kevin McCarpenter](mailto:kevin@moderne.io)
@@ -259,11 +260,11 @@ recipeList:
 * nbruno
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
 * Sandeep Nagaraj
+* [Joan Viladrosa](mailto:joan@moderne.io)
 * [BoykoAlex](mailto:aboyko@pivotal.io)
 * [Johannes Jank](mailto:johannes.wengert@googlemail.com)
-* John Burns
 * [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
-* [Joan Viladrosa](mailto:joan@moderne.io)
+* John Burns
 * [Michael Keppler](mailto:bananeweizen@gmx.de)
 * [Scott Jungling](mailto:scott.jungling@gmail.com)
 * [Tim te Beek](mailto:timtebeek@gmail.com)

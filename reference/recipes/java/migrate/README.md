@@ -44,6 +44,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add `JDeprScan` Maven Plug-in](./addjdeprscanplugin.md)
 * [Add Maven Jar Plugin to suppress Illegal Reflection Warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
 * [Change method invocation return type](./changemethodinvocationreturntype.md)
+* [Force indentation to either tabs or spaces](./usetabsorspaces.md)
 * [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
 * [Replace `String` literal](./replacestringliteralvalue.md)
 * [Upgrade Java version](./upgradejavaversion.md)

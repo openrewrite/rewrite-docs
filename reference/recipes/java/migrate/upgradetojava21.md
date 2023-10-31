@@ -10,23 +10,23 @@ _This recipe will apply changes commonly needed when migrating to Java 21. This 
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-21.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-21.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.1.1
+* version: 2.2.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.1")
+    id("org.openrewrite.rewrite") version("6.4.3")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.0")
 }
 ```
 {% endcode %}
@@ -53,12 +53,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.4.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.4.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.UpgradeToJava21")
@@ -85,7 +85,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.9.1</version>
+        <version>5.10.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.UpgradeToJava21</recipe>
@@ -95,7 +95,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.1.1</version>
+            <version>2.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -138,6 +138,7 @@ mod run <PATH> --recipe UpgradeToJava21
 * [Prefer `Locale.of(..)` over `new Locale(..)`](../../java/migrate/util/uselocaleof.md)
 * [Replace deprecated `Runtime#exec()` methods](../../staticanalysis/replacedeprecatedruntimeexecmethods.md)
 * [Adopt `SequencedCollection`](../../java/migrate/util/sequencedcollection.md)
+* [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion.md)
 
 {% endtab %}
 
@@ -157,6 +158,7 @@ recipeList:
   - org.openrewrite.java.migrate.util.UseLocaleOf
   - org.openrewrite.staticanalysis.ReplaceDeprecatedRuntimeExecMethods
   - org.openrewrite.java.migrate.util.SequencedCollection
+  - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
 
 ```
 {% endtab %}
@@ -177,11 +179,13 @@ recipeList:
 * [Patrick](mailto:patway99@gmail.com)
 * [Aaron Gershman](mailto:aegershman@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Joan Viladrosa](mailto:joan@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
 * [Tim te Beek](mailto:tim@moderne.io)
 * Aakarshit Uppal
 * [Tim te Beek](mailto:timtebeek@gmail.com)
 * Josh Soref
+* [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

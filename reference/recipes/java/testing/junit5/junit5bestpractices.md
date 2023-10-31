@@ -11,23 +11,23 @@ _Applies best practices to tests._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.13/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.12
+* version: 2.0.13
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.13` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.1")
+    id("org.openrewrite.rewrite") version("6.4.3")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.13")
 }
 ```
 {% endcode %}
@@ -54,12 +54,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.4.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.4.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.12")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.13")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
@@ -86,7 +86,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.9.1</version>
+        <version>5.10.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -96,7 +96,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.12</version>
+            <version>2.0.13</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -178,6 +178,7 @@ recipeList:
 * [Aleksandar A Simpson](mailto:alek@asu.me)
 * [Greg Adams](mailto:gadams@gmail.com)
 * [Tim te Beek](mailto:tim.te.beek@jdriven.com)
+* Adriano Machado
 * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
 * [Greg Adams](mailto:greg@moderne.io)
 * [Nick McKinney](mailto:mckinneynicholas@gmail.com)

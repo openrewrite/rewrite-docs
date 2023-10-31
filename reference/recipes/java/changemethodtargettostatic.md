@@ -6,11 +6,11 @@ _Change method invocations to static method calls._
 
 ## Source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToStatic.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToStatic.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.8.1
+* version: 8.8.3
 
 ## Options
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.ChangeMethodTargetToStaticExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.1")
+    id("org.openrewrite.rewrite") version("6.4.3")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.9.1</version>
+        <version>5.10.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodTargetToStaticExample</recipe>

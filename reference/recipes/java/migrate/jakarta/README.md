@@ -42,6 +42,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
 * [Migrate xmlns entries in `persistence.xml` files](./javaxpersistencexmltojakartapersistencexml.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](./wswsocservercontainerdeprecation.md)
+* [Use `StateManagementStrategy`](./removedstatemanagermethods.md)
+* [Use `jakarta.el instead of jakarta.faces.el and javax.faces.el`](./removedjakartafacesexpressionlanguageclasses.md)
 * [Use `jakarta.xml.soap.SOAPFactory to create SOAPElements`](./removedsoapelementfactory.md)
 
 ## Recipes
