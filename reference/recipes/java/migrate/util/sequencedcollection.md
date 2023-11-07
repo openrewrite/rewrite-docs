@@ -137,6 +137,7 @@ mod run <PATH> --recipe SequencedCollection
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Replace `List` `get`, `add`, and `remove` with `SequencedCollection` `*First` and `*Last` methods](../../../java/migrate/util/listfirstandlast.md)
 * [Replace `iterator().next()` with `getFirst()`](../../../java/migrate/util/iteratornext.md)
 * [Change method name](../../../java/changemethodname.md)
   * methodPattern: `java.util.SortedSet first()`
@@ -161,6 +162,7 @@ tags:
   - collections
   - java21
 recipeList:
+  - org.openrewrite.java.migrate.util.ListFirstAndLast
   - org.openrewrite.java.migrate.util.IteratorNext
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.util.SortedSet first()
