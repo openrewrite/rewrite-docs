@@ -12,8 +12,9 @@ _Resolve common static analysis issues discovered through 3rd party tools._
 * artifactId: rewrite-python
 * version: 1.1.3
 
+{% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-
+{% endhint %}
 
 ## Usage
 

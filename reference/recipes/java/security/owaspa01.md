@@ -12,8 +12,9 @@ _OWASP [A01:2021](https://owasp.org/Top10/A01_2021-Broken_Access_Control/) descr
 * artifactId: rewrite-java-security
 * version: 2.0.6
 
+{% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-
+{% endhint %}
 
 ## Usage
 

@@ -12,8 +12,9 @@ _This recipe will add jakarta validation dependency if needed, migrate from java
 * artifactId: rewrite-micronaut
 * version: 2.1.5
 
+{% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-
+{% endhint %}
 
 ## Usage
 

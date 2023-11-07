@@ -17,8 +17,9 @@ _Migrates Cucumber tests to JUnit test `@Suite`._
 * artifactId: rewrite-cucumber-jvm
 * version: 1.0.9
 
+{% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-
+{% endhint %}
 
 ## Usage
 

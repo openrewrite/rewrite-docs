@@ -18,8 +18,9 @@ _Apply local variable type inference (`var`) for primitives and objects. These r
 * artifactId: rewrite-migrate-java
 * version: 2.2.1
 
+{% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-
+{% endhint %}
 
 ## Usage
 

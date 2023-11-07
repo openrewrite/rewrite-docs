@@ -12,8 +12,9 @@ _Find deprecated uses of methods, fields, and types. Optionally ignore those cla
 * artifactId: rewrite-java
 * version: 8.8.4
 
+{% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-
+{% endhint %}
 ## Options
 
 | Type | Name | Description |

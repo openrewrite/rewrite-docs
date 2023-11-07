@@ -18,8 +18,9 @@ _Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this cur
 * artifactId: rewrite-logging-frameworks
 * version: 2.0.6
 
+{% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-
+{% endhint %}
 
 ## Usage
 
