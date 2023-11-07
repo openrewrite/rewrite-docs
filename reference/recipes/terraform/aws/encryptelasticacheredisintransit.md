@@ -10,7 +10,7 @@ _ElastiCache for Redis offers optional encryption in transit. In-transit encrypt
 * terraform
 * AWS
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/aws.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.6/jar)
 

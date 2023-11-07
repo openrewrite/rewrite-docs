@@ -8,7 +8,7 @@ _Use `Deque`, `List`, `Map`, `ConcurrentMap`, `Queue`, and `Set` instead of impl
 
 * RSPEC-1319
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseCollectionInterfaces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.9/jar)
 

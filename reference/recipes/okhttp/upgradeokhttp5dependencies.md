@@ -4,7 +4,7 @@
 
 _Migrate OkHttp dependencies to 5.x._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okhttp-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/0.0.4/jar)
 

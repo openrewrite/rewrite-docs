@@ -10,7 +10,7 @@ _Ensure log profile is configured to capture all activities._
 * terraform
 * CKV_AZURE_38
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/azure.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.6/jar)
 

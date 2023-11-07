@@ -8,7 +8,7 @@ _"it" is a special identifier that allows you to refer to the current parameter 
 
 * RSPEC-6558
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/ImplicitParameterInLambda.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.5.1/jar)
 

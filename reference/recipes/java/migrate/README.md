@@ -28,6 +28,8 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add missing `isWrapperFor` and `unwrap` methods.](./jrewrapperinterface.md)
+* [Adds missing JDBC interface methods.](./jrejdbcinterfacenewmethods.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](./deprecatedlogrecordthreadid.md)
 * [Change Maven Java version property values to 11](./javaversion11.md)
 * [Change Maven Java version property values to 17](./javaversion17.md)
@@ -36,6 +38,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Java 11](./java8tojava11.md)
 * [Migrate to Java 17](./upgradetojava17.md)
 * [Migrate to Java 21](./upgradetojava21.md)
+* [Migrate to Java 7](./upgradetojava7.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](./jre17agentmainpremainpublic.md)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](./jredonotusesunnetsslinternalsslprovider.md)
 
@@ -43,8 +46,12 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add `JDeprScan` Maven Plug-in](./addjdeprscanplugin.md)
 * [Add Maven Jar Plugin to suppress Illegal Reflection Warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
+* [Adds missing method implementations.](./addmissingmethodimplementation.md)
 * [Change method invocation return type](./changemethodinvocationreturntype.md)
 * [Force indentation to either tabs or spaces](./usetabsorspaces.md)
+* [MBean and MXBean interfaces must be public](./mxbeannonpublic.md)
+* [Migrate to Java 6](./upgradetojava6.md)
+* [Migrate to Java 8](./upgradetojava8.md)
 * [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
 * [Replace `String` literal](./replacestringliteralvalue.md)
 * [Upgrade Java version](./upgradejavaversion.md)

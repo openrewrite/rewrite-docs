@@ -4,7 +4,7 @@
 
 _This recipe will update a Gradle or Maven build to reference the Micronaut 4 platform BOM._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/resources/META-INF/rewrite/micronaut3-to-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.5/jar)
 
@@ -129,7 +129,7 @@ mod run <PATH> --recipe UpdateMicronautPlatformBom
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change Maven Parent Pom](../../maven/changeparentpom.md)
+* [Change Maven parent pom](../../maven/changeparentpom.md)
   * oldGroupId: `io.micronaut`
   * newGroupId: `io.micronaut.platform`
   * oldArtifactId: `micronaut-parent`

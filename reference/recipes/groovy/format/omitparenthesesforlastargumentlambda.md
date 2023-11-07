@@ -4,13 +4,13 @@
 
 _Groovy allows a shorthand syntax that allows a closure to be placed outside of parentheses._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesForLastArgumentLambda.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesForLastArgumentLambda.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-groovy
-* version: 8.8.3
+* version: 8.8.4
 
 
 ## Usage

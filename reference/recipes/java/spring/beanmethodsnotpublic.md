@@ -4,7 +4,7 @@
 
 _Remove public modifier from `@Bean` methods. They no longer have to be public visibility to be usable by Spring._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/BeanMethodsNotPublic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

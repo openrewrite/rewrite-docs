@@ -8,7 +8,7 @@ _Ensures that boolean checks are not unnecessarily inverted. Also fixes double n
 
 * RSPEC-1940
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/BooleanChecksNotInverted.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.9/jar)
 

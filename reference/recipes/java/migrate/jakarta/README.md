@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](./facesjndinameschanged.md)
 * [Migrate Ehcache from javax to jakarta namespace](./ehcachejavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](./jacksonjavaxtojakarta.md)
 * [Migrate Johnzon from javax to jakarta namespace](./johnzonjavaxtojakarta.md)
@@ -41,15 +42,19 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Jakarta EE 10](./jakartaee10.md)
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
 * [Migrate xmlns entries in `persistence.xml` files](./javaxpersistencexmltojakartapersistencexml.md)
+* [Remove `getComment` and `getVersion` methods](./servletcookiebehaviorchangerfc6265.md)
+* [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](./removeduicomponentconstant.md)
+* [Replace `ResourceResolver` with `ResourceHandler`](./removedjakartafacesresourceresolver.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](./wswsocservercontainerdeprecation.md)
 * [Use `StateManagementStrategy`](./removedstatemanagermethods.md)
-* [Use `jakarta.el instead of jakarta.faces.el and javax.faces.el`](./removedjakartafacesexpressionlanguageclasses.md)
-* [Use `jakarta.xml.soap.SOAPFactory to create SOAPElements`](./removedsoapelementfactory.md)
+* [Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`](./removedjakartafacesexpressionlanguageclasses.md)
+* [Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`](./removedsoapelementfactory.md)
 
 ## Recipes
 
 * [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
+* [Remove methods calls](./removemethods.md)
 * [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)
 
 

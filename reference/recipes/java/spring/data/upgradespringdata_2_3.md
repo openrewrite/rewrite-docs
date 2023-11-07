@@ -4,7 +4,7 @@
 
 _Migrate applications to the latest Spring Data 2.3 release._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-23.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

@@ -9,7 +9,7 @@ _Optional semicolons at the end of try-with-resources are also removed._
 * RSPEC-1116
 * RSPEC-2959
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveExtraSemicolons.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.9/jar)
 

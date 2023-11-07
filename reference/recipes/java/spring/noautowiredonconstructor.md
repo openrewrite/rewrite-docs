@@ -4,7 +4,7 @@
 
 _Spring can infer an autowired constructor when there is a single constructor on the bean. This recipe removes unneeded `@Autowired` annotations on constructors._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/NoAutowiredOnConstructor.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

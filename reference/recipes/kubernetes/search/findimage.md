@@ -4,7 +4,7 @@
 
 _The image name to search for in containers and initContainers._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.6/jar)
 

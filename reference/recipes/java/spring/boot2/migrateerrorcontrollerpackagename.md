@@ -4,7 +4,7 @@
 
 _Use `org.springframework.boot.web.servlet.error.ErrorController` instead of the deprecated `org.springframework.boot.autoconfigure.web.ErrorController` in Spring Boot 2.0 or higher._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

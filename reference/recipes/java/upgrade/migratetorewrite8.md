@@ -7,13 +7,15 @@ While most parts can be automatically migrated, there are some complex and open-
 In those cases, this recipe will add a comment to the code and request a human to review and handle it manually.
 Reference : Migration guide (URL to be written)._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.8.3
+* version: 8.8.4
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage

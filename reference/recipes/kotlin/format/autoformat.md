@@ -4,7 +4,7 @@
 
 _Format Kotlin code using a standard comprehensive set of Kotlin formatting recipes._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.5.1/jar)
 

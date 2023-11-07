@@ -4,13 +4,15 @@
 
 _Use this category of rules to identify code changes needed when migrating  from WebSphere Application Server traditional to Liberty._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-liberty
 * version: 1.0.3
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage

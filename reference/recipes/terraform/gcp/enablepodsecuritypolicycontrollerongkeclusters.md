@@ -10,7 +10,7 @@ _Ensure `PodSecurityPolicy` controller is enabled on Google Kubernetes Engine (G
 * CKV_GCP_24
 * terraform
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/gcp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.6/jar)
 

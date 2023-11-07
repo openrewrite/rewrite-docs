@@ -8,7 +8,7 @@ _Run embedded service broker as a JMS Provider._
 
 * java-jms
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer/blob/main/src/main/resources/META-INF/rewrite/finders.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cloud-suitability-analyzer/2.0.6/jar)
 

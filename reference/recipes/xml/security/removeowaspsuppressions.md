@@ -4,13 +4,13 @@
 
 _Remove all OWASP suppressions with a suppression end date in the past, as these are no longer valid. For use with the OWASP `dependency-check` tool. More details on OWASP suppression files can be found [here](https://jeremylong.github.io/DependencyCheck/general/suppression.html)._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/RemoveOwaspSuppressions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/RemoveOwaspSuppressions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.8.3
+* version: 8.8.4
 
 
 ## Usage

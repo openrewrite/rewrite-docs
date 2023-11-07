@@ -4,7 +4,7 @@
 
 _Checks whether a text block may contain SQL, and if so, formats the text accordingly._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FormatSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.0.5/jar)
 

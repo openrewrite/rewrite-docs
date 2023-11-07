@@ -8,7 +8,7 @@ _A `serialVersionUID` field is strongly recommended in all `Serializable` classe
 
 * RSPEC-2057
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/AddSerialVersionUidToSerializable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.9/jar)
 

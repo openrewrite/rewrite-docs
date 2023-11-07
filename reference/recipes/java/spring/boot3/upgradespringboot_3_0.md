@@ -9,13 +9,15 @@ _Migrate applications to the latest Spring Boot 3.0 release. This recipe will mo
 * spring
 * boot
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
 * version: 5.0.12
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage
@@ -235,6 +237,7 @@ recipeList:
 * [Patrick](mailto:patway99@gmail.com)
 * Patrick Way
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
+* Chuka Obinabo
 * [Sam Snyder](mailto:sam@moderne.io)
 * [Alex Boyko](mailto:aboyko@vmware.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
@@ -251,11 +254,11 @@ recipeList:
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
 * Adriano Machado
 * [Tim te Beek](mailto:tim@moderne.io)
-* Chuka Obinabo
 * [Kevin McCarpenter](mailto:kevin@moderne.io)
 * [Kun Li](mailto:kun@moderne.io)
 * Fabian Krüger
 * [Matthias Klauer](mailto:matthias.klauer@sap.com)
+* Adam Slaski
 * Aaron Gershman
 * nbruno
 * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)

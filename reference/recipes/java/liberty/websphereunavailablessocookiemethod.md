@@ -4,7 +4,7 @@
 
 _Replace `WSSecurityHelper.revokeSSOCookies(request, response)` with `request.logout()`._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/WebSphereUnavailableSSOCookieMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.0.3/jar)
 

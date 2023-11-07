@@ -4,7 +4,7 @@
 
 _`@SpringBootTest` and all test slice annotations already applies `@SpringExtension` as of Spring Boot 2.1.0._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/UnnecessarySpringExtension.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

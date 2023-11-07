@@ -10,13 +10,15 @@ _Ensure the GKE metadata server is enabled._
 * CKV_GCP_69
 * terraform
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/gcp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
 * version: 2.0.6
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage

@@ -4,13 +4,15 @@
 
 _This recipe is intended to break down the modernization of very old plugins into distinct steps. It allows modernizing all tooling up to the last versions that supported Java 8. This can then be followed by another recipe that makes the jump to Java 11._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/java-8.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
 * version: 0.2.4
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage
@@ -132,7 +134,7 @@ mod run <PATH> --recipe ModernizePluginForJava8
 * [Use HTTPS for repositories](../maven/security/usehttpsforrepositories.md)
 * [Disables local file resolution for parent POM](../jenkins/disablelocalresolutionforparentpom.md)
 * [Add or correct Jenkins plugins BOM](../jenkins/addpluginsbom.md)
-* [Change Maven Parent Pom](../maven/changeparentpom.md)
+* [Change Maven parent pom](../maven/changeparentpom.md)
   * oldGroupId: `org.jenkins-ci.plugins`
   * oldArtifactId: `plugin`
   * newVersion: `4.51`

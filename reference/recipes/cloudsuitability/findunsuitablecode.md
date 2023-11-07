@@ -4,13 +4,15 @@
 
 _Locate patterns that may cause problems in containerized cloud environments._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer/blob/main/src/main/resources/META-INF/rewrite/finders.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cloud-suitability-analyzer/2.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cloud-suitability-analyzer
 * version: 2.0.6
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage

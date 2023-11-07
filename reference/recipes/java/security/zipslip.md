@@ -4,7 +4,7 @@
 
 _Zip slip is an arbitrary file overwrite critical vulnerability, which typically results in remote command execution. A fuller description of this vulnerability is available in the [Snyk documentation](https://snyk.io/research/zip-slip-vulnerability) on it._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/ZipSlip.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.6/jar)
 
@@ -32,7 +32,7 @@ name: com.yourorg.ZipSlipExample
 displayName: Zip slip example
 recipeList:
   - org.openrewrite.java.security.ZipSlip:
-      debug: true
+      debug: false
 ```
 {% endcode %}
 

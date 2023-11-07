@@ -6,7 +6,7 @@ _Spring Boot registers a logging shutdown hook by default for JAR-based applicat
 
 Most applications will want the shutdown hook. However, if your application has complex context hierarchies, then you may need to disable it. You can use the `logging.register-shutdown-hook` property to do that._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/search/LoggingShutdownHooks.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

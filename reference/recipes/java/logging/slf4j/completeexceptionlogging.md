@@ -10,7 +10,7 @@ _It is a common mistake to call `Exception.getMessage()` when passing an excepti
 * slf4j
 * logging
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/CompleteExceptionLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.6/jar)
 

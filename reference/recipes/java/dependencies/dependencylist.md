@@ -4,7 +4,7 @@
 
 _Emits a data table detailing all Gradle and Maven dependencies.This recipe makes no changes to any source file._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.11/jar)
 
@@ -51,7 +51,7 @@ displayName: Dependency report example
 recipeList:
   - org.openrewrite.java.dependencies.DependencyList:
       scope: Compile
-      includeTransitive: true
+      includeTransitive: false
 ```
 {% endcode %}
 

@@ -1,16 +1,16 @@
-# Change Maven Parent Pom
+# Change Maven parent pom
 
 **org.openrewrite.maven.ChangeParentPom**
 
 _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be changed by its groupId and artifactId._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.8.3
+* version: 8.8.4
 
 ## Options
 
@@ -47,7 +47,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeParentPomExample
-displayName: Change Maven Parent Pom example
+displayName: Change Maven parent pom example
 recipeList:
   - org.openrewrite.maven.ChangeParentPom:
       oldGroupId: org.springframework.boot

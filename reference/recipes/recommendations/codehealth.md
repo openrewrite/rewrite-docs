@@ -9,13 +9,15 @@ _Used for Code Health metric on moderne radar._
 * radar
 * health check
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/radar.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/1.0.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-recommendations
 * version: 1.0.5
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage

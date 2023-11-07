@@ -8,7 +8,7 @@ _Marking code as privileged enables a piece of trusted code to temporarily enabl
 
 * CWE-269
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/ImproperPrivilegeManagement.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.6/jar)
 

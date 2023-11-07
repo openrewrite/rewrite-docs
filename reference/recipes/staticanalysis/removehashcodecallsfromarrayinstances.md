@@ -8,7 +8,7 @@ _Replace `hashCode()` calls on arrays with `Arrays.hashCode()` because the resul
 
 * RSPEC-2116
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveHashCodeCallsFromArrayInstances.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.9/jar)
 

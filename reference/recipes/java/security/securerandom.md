@@ -8,7 +8,7 @@ _Use cryptographically secure Pseudo Random Number Generation in the "main" sour
 
 * RSPEC-2245
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/SecureRandom.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.6/jar)
 

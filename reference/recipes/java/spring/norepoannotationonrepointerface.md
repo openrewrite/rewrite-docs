@@ -4,7 +4,7 @@
 
 _Removes superfluous `@Repository` annotation from Spring Data `Repository` sub-interfaces._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/NoRepoAnnotationOnRepoInterface.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

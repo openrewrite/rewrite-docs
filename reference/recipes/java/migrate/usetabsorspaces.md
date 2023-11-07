@@ -4,13 +4,13 @@
 
 _This is useful for one-off migrations of a codebase that has mixed indentation styles, while preserving all other auto-detected formatting rules._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UseTabsOrSpaces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UseTabsOrSpaces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.2.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.2.0
+* version: 2.2.1
 
 ## Options
 
@@ -32,11 +32,11 @@ name: com.yourorg.UseTabsOrSpacesExample
 displayName: Force indentation to either tabs or spaces example
 recipeList:
   - org.openrewrite.java.migrate.UseTabsOrSpaces:
-      useTabs: null
+      useTabs: false
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseTabsOrSpacesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.2.0 in your build file:
+Now that `com.yourorg.UseTabsOrSpacesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.2.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.1")
 }
 ```
 {% endcode %}
@@ -81,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.2.0</version>
+            <version>2.2.1</version>
           </dependency>
         </dependencies>
       </plugin>

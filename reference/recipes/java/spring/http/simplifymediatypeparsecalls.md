@@ -4,7 +4,7 @@
 
 _Replaces `MediaType.parseMediaType('application/json')` and `MediaType.valueOf('application/json')` with `MediaType.APPLICATION_JSON`._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/http/SimplifyMediaTypeParseCalls.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

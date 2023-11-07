@@ -1,16 +1,16 @@
-# Add a Gradle build plugin
+# Add Gradle plugin
 
 **org.openrewrite.gradle.plugins.AddBuildPlugin**
 
-_Add a Gradle build plugin to `build.gradle(.kts)`._
+_Add a build plugin to a Gradle build file's `plugins` block._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddBuildPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddBuildPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.8.3
+* version: 8.8.4
 
 ## Options
 
@@ -31,7 +31,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddBuildPluginExample
-displayName: Add a Gradle build plugin example
+displayName: Add Gradle plugin example
 recipeList:
   - org.openrewrite.gradle.plugins.AddBuildPlugin:
       pluginId: com.jfrog.bintray

@@ -4,7 +4,7 @@
 
 _See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circleci-images/)._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/UpdateImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/2.0.6/jar)
 

@@ -4,7 +4,7 @@
 
 _To streamline the customization of jOOQ’s `DefaultConfiguration`, a bean that implements `DefaultConfigurationCustomizer` can now be defined. This customizer callback should be used in favour of defining one or more `*Provider` beans, the support for which has now been deprecated. See [Spring Boot 2.5 jOOQ customization](https://docs.spring.io/spring-boot/docs/2.5.x/reference/htmlsingle/#features.sql.jooq.customizing)._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/search/CustomizingJooqDefaultConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

@@ -4,7 +4,7 @@
 
 _Checks if the project is a Jenkins plugin by the presence of a managed version of jenkins-core_
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/IsJenkinsPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.4/jar)
 

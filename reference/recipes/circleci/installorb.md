@@ -4,7 +4,7 @@
 
 _Install a CircleCI [orb](https://circleci.com/docs/2.0/orb-intro/) if it is not already installed._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/InstallOrb.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/2.0.6/jar)
 

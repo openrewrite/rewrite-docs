@@ -8,18 +8,20 @@ _These recipes help with the Migration to Jakarta EE 10, flagging and updating d
 
 * jakarta
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.2.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.2.0
+* version: 2.2.1
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.2.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
@@ -38,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.1")
 }
 ```
 {% endcode %}
@@ -58,7 +60,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.jakarta.JakartaEE10")
@@ -95,7 +97,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.2.0</version>
+            <version>2.2.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,12 +135,16 @@ mod run <PATH> --recipe JakartaEE10
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](../../../java/migrate/jakarta/facesjndinameschanged.md)
 * [Migrate to Jakarta EE 9](../../../java/migrate/jakarta/javaxmigrationtojakarta.md)
+* [Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`](../../../java/migrate/jakarta/removedjakartafacesexpressionlanguageclasses.md)
+* [Replace `ResourceResolver` with `ResourceHandler`](../../../java/migrate/jakarta/removedjakartafacesresourceresolver.md)
 * [Use `isParametersProvided()`](../../../java/migrate/jakarta/removedisparmetersprovidedmethod.md)
-* [Use `jakarta.xml.soap.SOAPFactory to create SOAPElements`](../../../java/migrate/jakarta/removedsoapelementfactory.md)
+* [Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`](../../../java/migrate/jakarta/removedsoapelementfactory.md)
 * [Use `StateManagementStrategy`](../../../java/migrate/jakarta/removedstatemanagermethods.md)
+* [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](../../../java/migrate/jakarta/removeduicomponentconstant.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](../../../java/migrate/jakarta/wswsocservercontainerdeprecation.md)
-* [Use `jakarta.el instead of jakarta.faces.el and javax.faces.el`](../../../java/migrate/jakarta/removedjakartafacesexpressionlanguageclasses.md)
+* [Remove `getComment` and `getVersion` methods](../../../java/migrate/jakarta/servletcookiebehaviorchangerfc6265.md)
 
 {% endtab %}
 
@@ -152,16 +158,24 @@ description: These recipes help with the Migration to Jakarta EE 10, flagging an
 tags:
   - jakarta
 recipeList:
+  - org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
+  - org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesExpressionLanguageClasses
+  - org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesResourceResolver
   - org.openrewrite.java.migrate.jakarta.RemovedIsParmetersProvidedMethod
   - org.openrewrite.java.migrate.jakarta.RemovedSOAPElementFactory
   - org.openrewrite.java.migrate.jakarta.RemovedStateManagerMethods
+  - org.openrewrite.java.migrate.jakarta.RemovedUIComponentConstant
   - org.openrewrite.java.migrate.jakarta.WsWsocServerContainerDeprecation
-  - org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesExpressionLanguageClasses
+  - org.openrewrite.java.migrate.jakarta.ServletCookieBehaviorChangeRFC6265
 
 ```
 {% endtab %}
 {% endtabs %}
+
+## Contributors
+* ranuradh
+
 
 ## See how this recipe works across multiple open-source repositories
 

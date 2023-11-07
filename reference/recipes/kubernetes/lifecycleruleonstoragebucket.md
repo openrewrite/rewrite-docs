@@ -8,7 +8,7 @@ _When defining a rule, you can specify any set of conditions for any action. The
 
 * kubernetes
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/resources/META-INF/rewrite/kubernetes.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.6/jar)
 

@@ -10,7 +10,7 @@ The `==` and `!=` operators are a more concise and elegant way to test structura
 
 * RSPEC-6519
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/EqualsMethodUsage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.5.1/jar)
 

@@ -4,13 +4,13 @@
 
 _Simplify nested map hierarchies into their simplest dot separated property form, similar to how Spring Boot interprets `application.yml` files._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CoalesceProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CoalesceProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.8.3
+* version: 8.8.4
 
 
 ## Usage

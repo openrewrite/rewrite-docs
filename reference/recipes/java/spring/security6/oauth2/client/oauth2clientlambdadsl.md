@@ -4,7 +4,7 @@
 
 _Converts `OAuth2ClientConfigurer` chained call from Spring Security pre 5.2.x into new lambda DSL style calls and removes `and()` methods._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/oauth2/client/OAuth2ClientLambdaDsl.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

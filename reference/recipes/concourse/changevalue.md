@@ -4,7 +4,7 @@
 
 _Change every value matching the key pattern._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.6/jar)
 

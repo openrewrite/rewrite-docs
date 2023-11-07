@@ -4,7 +4,7 @@
 
 _Find resource manifests that have limits set beyond a specific maximum._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/FindExceedsResourceValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.6/jar)
 

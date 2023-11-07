@@ -4,7 +4,7 @@
 
 _This recipe will apply changes commonly needed when migrating to Okio 3.x._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okio-3.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/0.0.4/jar)
 

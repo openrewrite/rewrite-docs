@@ -4,7 +4,7 @@
 
 _Prior to Spring Security 6, `@EnableXXXSecurity` implicitly had `@Configuration`. `Configuration` was removed from the definitions of the `@EnableSecurity` definitions in Spring Security 6. Consequently classes annotated with `@EnableXXXSecurity` coming from pre-Boot 3 should have `@Configuration` annotation added._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/ConfigurationOverEnableSecurity.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 
@@ -32,7 +32,7 @@ name: com.yourorg.ConfigurationOverEnableSecurityExample
 displayName: Add `@Configuration` to classes with `@EnableXXXSecurity` annotations example
 recipeList:
   - org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity:
-      forceAddConfiguration: true
+      forceAddConfiguration: false
 ```
 {% endcode %}
 

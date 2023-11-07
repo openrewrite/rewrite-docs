@@ -4,7 +4,7 @@
 
 _Strip regex prefix and suffix from step annotation expressions arguments where possible._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/RegexToCucumberExpression.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.9/jar)
 

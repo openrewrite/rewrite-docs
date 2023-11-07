@@ -4,13 +4,13 @@
 
 _Delete an argument from method invocations._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/DeleteMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/DeleteMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.8.3
+* version: 8.8.4
 
 ## Options
 
@@ -98,6 +98,7 @@ mod run <PATH> --recipe DeleteMethodArgument
 * [Jonathan Schneider](mailto:jkschneider@gmail.com)
 * Tyler Van Gorder
 * [Greg Adams](mailto:greg@moderne.io)
+* [Joan Viladrosa](mailto:joan@moderne.io)
 * [Thomas Zub](mailto:thomas.zub@outlook.de)
 * [Sam Snyder](mailto:sam@moderne.io)
 

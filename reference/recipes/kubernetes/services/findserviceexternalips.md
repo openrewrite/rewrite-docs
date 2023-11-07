@@ -4,7 +4,7 @@
 
 _Find any `Service` whose `externalIP` list contains, or does not contain, one of a list of IPs._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/FindServiceExternalIPs.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.6/jar)
 
@@ -35,7 +35,7 @@ displayName: Find uses of `externalIP` example
 recipeList:
   - org.openrewrite.kubernetes.services.FindServiceExternalIPs:
       externalIPs: 192.168.0.1
-      findMissing: null
+      findMissing: false
       fileMatcher: '**/pod-*.yml'
 ```
 {% endcode %}

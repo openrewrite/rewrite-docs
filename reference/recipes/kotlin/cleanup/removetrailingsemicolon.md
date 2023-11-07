@@ -4,7 +4,7 @@
 
 _Some Java programmers may mistakenly add semicolons at the end when writing Kotlin code, but in reality, they are not necessary._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/RemoveTrailingSemicolon.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.5.1/jar)
 

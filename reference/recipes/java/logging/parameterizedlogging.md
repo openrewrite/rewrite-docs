@@ -9,7 +9,7 @@ _Transform logging statements using concatenation for messages and variables int
 * RSPEC-2629
 * RSPEC-3457
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/ParameterizedLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.6/jar)
 

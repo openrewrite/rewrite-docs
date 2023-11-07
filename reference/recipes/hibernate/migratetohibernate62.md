@@ -4,13 +4,15 @@
 
 _This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/1.0.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-hibernate
 * version: 1.0.6
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage

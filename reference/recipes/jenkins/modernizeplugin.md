@@ -4,13 +4,15 @@
 
 _This recipe is intended to change over time to reflect the most recent tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/)._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
 * version: 0.2.4
+
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 
 
 ## Usage
@@ -129,7 +131,7 @@ mod run <PATH> --recipe ModernizePlugin
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change Maven Parent Pom](../maven/changeparentpom.md)
+* [Change Maven parent pom](../maven/changeparentpom.md)
   * oldGroupId: `org.jenkins-ci.plugins`
   * oldArtifactId: `plugin`
   * newVersion: `latest.release`

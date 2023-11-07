@@ -4,13 +4,13 @@
 
 _Consistently use either Windows style (CRLF) or Linux style (LF) line breaks. If no `GeneralFormatStyle` is specified this will use whichever style of line endings are more common._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/format/NormalizeLineBreaks.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/format/NormalizeLineBreaks.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.8.3
+* version: 8.8.4
 
 
 ## Usage

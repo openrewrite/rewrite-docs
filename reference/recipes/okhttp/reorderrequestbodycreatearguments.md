@@ -4,7 +4,7 @@
 
 _Reorder the arguments of `RequestBody.create()` to put the `MediaType` argument after the `String` body._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okhttp-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/0.0.4/jar)
 

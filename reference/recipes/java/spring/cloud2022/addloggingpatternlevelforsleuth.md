@@ -4,7 +4,7 @@
 
 _Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/cloud2022/AddLoggingPatternLevelForSleuth.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
 

@@ -4,7 +4,7 @@
 
 _Update git resource `source.uri` URI values to point to a new URI value._
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/UpdateGitResourceUri.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.0.6/jar)
 

@@ -8,7 +8,7 @@ _Methods should not be named `hashcode`, `equal`, or `tostring`. Any of these ar
 
 * RSPEC-1221
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RenameMethodsNamedHashcodeEqualOrTostring.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.0.9/jar)
 

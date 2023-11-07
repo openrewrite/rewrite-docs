@@ -1,16 +1,16 @@
-# Remove plugin from `build.gradle(.kts)`
+# Remove Gradle plugin
 
 **org.openrewrite.gradle.plugins.RemoveBuildPlugin**
 
-_Remove plugin from `build.gradle(.kts)`._
+_Remove plugin from Gradle `plugins` block by its id. Does not remove plugins from the `buildscript` block._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/RemoveBuildPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/RemoveBuildPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.8.3
+* version: 8.8.4
 
 ## Options
 
@@ -29,7 +29,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveBuildPluginExample
-displayName: Remove plugin from `build.gradle(.kts)` example
+displayName: Remove Gradle plugin example
 recipeList:
   - org.openrewrite.gradle.plugins.RemoveBuildPlugin:
       pluginId: com.jfrog.bintray
@@ -72,6 +72,7 @@ mod run <PATH> --recipe RemoveBuildPlugin
 ## Contributors
 * [Shannon Pamperl](mailto:shanman190@gmail.com)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

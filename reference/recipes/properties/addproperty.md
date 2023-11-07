@@ -4,13 +4,13 @@
 
 _Adds a new property to a property file at the bottom of the file if it's missing. Whitespace before and after the `=` must be included in the property and value._
 
-## Source
+## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.8.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.8.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 8.8.3
+* version: 8.8.4
 
 ## Options
 

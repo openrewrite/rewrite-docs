@@ -8,7 +8,7 @@ _Does not allow a process to gain more privileges than its parent process._
 
 * kubernetes
 
-## Source
+## Recipe source
 
 [GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/resources/META-INF/rewrite/kubernetes.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.0.6/jar)
 
