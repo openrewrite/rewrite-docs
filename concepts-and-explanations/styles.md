@@ -78,6 +78,8 @@ Update your `build.gradle` file to include an `activeStyle` such as in:
 
 ```groovy
 rewrite {
+  activeRecipe("someRecipe")
+
   // This style is made up for the sake of example.
   activeStyle("com.yourorg.YesTabsNoStarImports")
 }
