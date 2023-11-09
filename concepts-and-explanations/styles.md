@@ -2,7 +2,7 @@
 
 A style is a programmatic way of defining what your code visually looks like. Do you use tabs or spaces? How many spaces is a tab composed of? When do you make a new line vs. not? These are all questions that are answered by a style.
 
-Styles, by themselves, can not be directly applied to your code. Instead, styles are used when a recipe makes changes to your code. For example, if a recipe was going to add a new method to an existing file, the style would determine things like how it's capitalized, what spaces exist or don't exist between params, and whether the `{` should go on a new line or not.
+Styles, by themselves, cannot be directly applied to your code. Instead, styles are used when a recipe makes changes to your code. For example, if a recipe was going to add a new method to an existing file, the style would determine things like how it's capitalized, what spaces exist or don't exist between params, and whether the `{` should go on a new line or not.
 
 By default, when you run a recipe, OpenRewrite will look at the existing code in your project to determine what "style" you have. It will then do its best to ensure recipes produce code according to that style.
 
