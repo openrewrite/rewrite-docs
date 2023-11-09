@@ -76,7 +76,7 @@ To enable a style so that it is used for any formatting performed by an OpenRewr
 {% tab title="Gradle" %}
 Update your `build.gradle` file to include:
 
-```yml
+```groovy
 rewrite {
   // This style is made up for the sake of example.
   activeStyle("com.yourorg.YesTabsNoStarImports")
