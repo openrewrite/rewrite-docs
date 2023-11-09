@@ -74,7 +74,7 @@ To enable a style so that it is used for any formatting performed by an OpenRewr
 
 {% tabs %}
 {% tab title="Gradle" %}
-Update your `build.gradle` file to include:
+Update your `build.gradle` file to include an `activeStyle` such as in:
 
 ```groovy
 rewrite {
@@ -85,7 +85,7 @@ rewrite {
 {% endtab %}
 
 {% tab title="Maven" %}
-Update your `pom.xml` file to include:
+Update your `pom.xml` file to include an `<activeStyles>` such as in:
 
 ```xml
 <plugins>
