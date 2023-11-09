@@ -188,7 +188,6 @@ reactivestreams
 rebranded
 recipespec
 redundantcallrecipe
-Refaster
 refaster
 regexes
 relyingparty
