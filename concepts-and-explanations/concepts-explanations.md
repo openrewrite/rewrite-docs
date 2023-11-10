@@ -11,5 +11,4 @@
 * [Environment](environment.md)
 * [Markers](markers.md)
 * [JavaTemplate](javatemplate.md)
-* [Pointcut expressions](pointcut-expressions.md)
 * [Quarks](quarks.md)
