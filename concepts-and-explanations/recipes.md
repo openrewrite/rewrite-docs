@@ -41,7 +41,7 @@ public class ChangeType extends Recipe {
     // In many cases, the visitor is implemented as a private, inner class. This
     // ensures that the visitor is only used via its managed, configured recipe. 
     private class ChangeTypeVisitor extends JavaVisitor<ExecutionContext> {
-        ...
+        //...
     }
 
 }
@@ -145,7 +145,7 @@ public class ChangeType extends Recipe {
         return "Change a given type to another.";
     }
 
-    ...
+    //...
 }
 ```
 
@@ -157,14 +157,19 @@ There are a few recommended best practices when defining metadata for a recipe:
 
 ## Scanning Recipes
 
-A recipe should be a `ScanningRecipe` if it needs to change many source files. A `ScanningRecipe` extends the normal `Recipe` and adds two key objects: an [accumulator](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L88-L90) and a [scanner](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L53). The `accumulator` object is a custom data structure defined by the recipe itself to store any information the recipe needs to function. The `scanner` object is a `visitor` which populates the `accumulator` with data.
+If a recipe needs to generate new source files or needs to see all source files before making changes, it must be a `ScanningRecipe`.
+A `ScanningRecipe` extends the normal `Recipe` and adds two key objects: an [accumulator](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L88-L90) and a [scanner](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L53). 
+The `accumulator` object is a custom data structure defined by the recipe itself to store any information the recipe needs to function.
+The `scanner` object is a `visitor` which populates the `accumulator` with data.
+
+Scanning recipes may not be used as preconditions for declarative YAML recipes.
 
 Scanning recipes have three phases:
 
 1. A scanning phase that collects information while making no new code changes. In this phase, the `scanner` is called for each source file and information is added to the `accumulator` that the recipe will need for future steps.
     * For example, a recipe might want to detect whether a project is a Maven project or not. The `scanner` could detect a `pom.xml` file and add a flag to the `accumulator` so that future steps know this.
 2. An _optional_ generating phase where new files are created (if any are needed). In this phase, the `accumulator` can be accessed to determine whether or not a file should be created.
-3. An editing phase where the recipe makes changes (as it would before). Like the generating phase, an `accumulator` can be accessed to make changes – but you **cannot** randomly access other source code or files.
+3. An editing phase where the recipe makes changes, same as a regular `Recipe`. Like the generating phase, the `accumulator` can be accessed to inform how changes are made. Like a regular `Recipe` this phase makes changes to files one at a time, no random access to other source files is provided.
 
 ### Example
 
@@ -178,7 +183,7 @@ Scanning recipes have three phases:
 public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Scanned> {
   // Standard methods such as displayName and description
 
-  static class Scanned {
+  public static class Scanned {
       boolean usingType;
       List<SourceFile> rootPoms = new ArrayList<>();
   }
@@ -341,4 +346,3 @@ The successful completion of a recipe's execution pipeline produces a collection
 | `getAfter()`                  | The modified `SourceFile`, or null if the change represents a file deletion.    |
 | `getRecipesThatMadeChanges()` | The recipe names that made the changes to the source file.                      |
 | `diff()`/`diff(Path)`         | A git-style diff (with an optional path to relativize file paths in the output) |
- 
