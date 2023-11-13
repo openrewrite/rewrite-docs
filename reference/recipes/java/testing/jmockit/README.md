@@ -8,6 +8,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Rewrite JMockit Expectations](./jmockitexpectationstomockitowhen.md)
+* [Rewrite JMockit Expectations](./jmockitexpectationstomockito.md)
 
 

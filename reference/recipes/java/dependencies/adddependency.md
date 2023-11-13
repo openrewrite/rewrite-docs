@@ -6,15 +6,12 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.0.11
+* version: 1.2.0
 
-{% hint style="info" %}
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-{% endhint %}
 ## Options
 
 | Type | Name | Description |
@@ -65,14 +62,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.11 in your build file:
+Now that `com.yourorg.AddDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.2.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -84,7 +81,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.11")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.2.0")
 }
 ```
 {% endcode %}
@@ -100,7 +97,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddDependencyExample</recipe>
@@ -110,7 +107,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.0.11</version>
+            <version>1.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -126,57 +123,11 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe AddDependency
+mod run . --recipe AddDependency
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Add Gradle dependency](../../gradle/adddependency.md)
-* [Add Maven dependency](../../maven/adddependency.md)
-  * version: `latest.release`
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.dependencies.AddDependency
-displayName: Add Gradle or Maven dependency
-description: For a Gradle project, add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used. Or For a maven project, Add a Maven dependency to a `pom.xml` file in the correct scope based on where it is used.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-recipeList:
-  - org.openrewrite.gradle.AddDependency:
-  - org.openrewrite.maven.AddDependency:
-      version: latest.release
-
-```
-{% endtab %}
-{% endtabs %}
-
-## Contributors
-* [Kun Li](mailto:kun@moderne.io)
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Knut Wannheden](mailto:knut@moderne.io)
-
 
 ## See how this recipe works across multiple open-source repositories
 

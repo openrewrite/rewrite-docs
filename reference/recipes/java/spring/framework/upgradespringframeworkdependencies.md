@@ -6,11 +6,11 @@ _Upgrade spring-framework 5.x Maven dependencies using a Node Semver advanced ra
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/UpgradeSpringFrameworkDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.0.12/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/UpgradeSpringFrameworkDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.0.12
+* version: 5.1.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -39,14 +39,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeSpringFrameworkDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.0.12 in your build file:
+Now that `com.yourorg.UpgradeSpringFrameworkDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.1.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.0.12")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
 }
 ```
 {% endcode %}
@@ -74,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeSpringFrameworkDependenciesExample</recipe>
@@ -84,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.0.12</version>
+            <version>5.1.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -100,7 +100,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe UpgradeSpringFrameworkDependencies
+mod run . --recipe UpgradeSpringFrameworkDependencies
 ```
 {% endcode %}
 {% endtab %}

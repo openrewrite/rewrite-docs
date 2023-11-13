@@ -6,11 +6,11 @@ _Exclude specified dependency from any dependency that transitively includes it.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ExcludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ExcludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.8.4
+* version: 8.9.0
 
 ## Options
 
@@ -53,7 +53,7 @@ Now that `com.yourorg.ExcludeDependencyExample` has been defined activate it in 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ExcludeDependencyExample</recipe>
@@ -72,7 +72,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe ExcludeDependency
+mod run . --recipe ExcludeDependency
 ```
 {% endcode %}
 {% endtab %}

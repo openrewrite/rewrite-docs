@@ -10,11 +10,11 @@ _Use HTTPS for repository urls._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/security/UseHttpsForRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.8.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/security/UseHttpsForRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.9.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.8.4
+* version: 8.9.0
 
 
 ## Usage
@@ -26,7 +26,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -78,7 +78,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe UseHttpsForRepositories
+mod run . --recipe UseHttpsForRepositories
 ```
 {% endcode %}
 {% endtab %}

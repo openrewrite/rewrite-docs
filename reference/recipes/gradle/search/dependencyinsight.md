@@ -6,11 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.8.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.9.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.8.4
+* version: 8.9.0
 
 ## Options
 
@@ -18,6 +18,7 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 | -- | -- | -- |
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. |
+| `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. |
 | `String` | configuration | *Optional*. Match dependencies with the specified scope. If not specified, all configurations will be searched. |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
@@ -53,6 +54,7 @@ recipeList:
   - org.openrewrite.gradle.search.DependencyInsight:
       groupIdPattern: com.fasterxml.jackson.module
       artifactIdPattern: jackson-module-*
+      version: 1.x
       configuration: compileClasspath
 ```
 {% endcode %}
@@ -64,7 +66,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -84,7 +86,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe DependencyInsight
+mod run . --recipe DependencyInsight
 ```
 {% endcode %}
 {% endtab %}

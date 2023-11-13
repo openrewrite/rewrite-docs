@@ -11,15 +11,12 @@ For Maven projects, upgrade the version of a dependency by specifying a group an
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.0.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.0.11
+* version: 1.2.0
 
-{% hint style="info" %}
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-{% endhint %}
 ## Options
 
 | Type | Name | Description |
@@ -54,14 +51,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.0.11 in your build file:
+Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.2.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -73,7 +70,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.0.11")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.2.0")
 }
 ```
 {% endcode %}
@@ -89,7 +86,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeDependencyVersionExample</recipe>
@@ -99,7 +96,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.0.11</version>
+            <version>1.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -115,55 +112,11 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe UpgradeDependencyVersion
+mod run . --recipe UpgradeDependencyVersion
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Upgrade Gradle dependency versions](../../gradle/upgradedependencyversion.md)
-* [Upgrade Maven dependency version](../../maven/upgradedependencyversion.md)
-  * retainVersions: `[]`
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
-        ---
-        type: specs.openrewrite.org/v1beta/recipe
-        name: org.openrewrite.java.dependencies.UpgradeDependencyVersion
-        displayName: Upgrade Gradle or Maven dependency versions
-        description: For Gradle projects, upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:
-* `String` notation: `"group:artifact:version"` 
-* `Map` notation: `group: 'group', name: 'artifact', version: 'version'`
-Can update version numbers which are defined earlier in the same file in variable declarations.
-
-For Maven projects, upgrade the version of a dependency by specifying a group and (optionally) an artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
-
-
-
-
-
-retainVersions: []
-
-recipeList:
-  - org.openrewrite.gradle.UpgradeDependencyVersion:
-  - org.openrewrite.maven.UpgradeDependencyVersion:
-      retainVersions: []
-
-```
-{% endtab %}
-{% endtabs %}
-
-## Contributors
-* [Kun Li](mailto:kun@moderne.io)
-* [Joan Viladrosa](mailto:joan@moderne.io)
-* [Mike Solomon](mailto:mike@moderne.io)
-
 
 ## See how this recipe works across multiple open-source repositories
 

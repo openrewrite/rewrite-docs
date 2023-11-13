@@ -10,6 +10,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Replace String literals with `HttpHeaders` constants](./replacestringliteralswithmediatypeconstants.md)
 * [Replace String literals with `MediaType` constants](./replacestringliteralswithhttpheadersconstants.md)
-* [Simplify Unnecessary `MediaType.parseMediaType` and `MediaType.valueOf` calls](./simplifymediatypeparsecalls.md)
+* [Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls](./simplifymediatypeparsecalls.md)
 
 

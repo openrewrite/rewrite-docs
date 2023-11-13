@@ -1,4 +1,4 @@
-# Remediate OWASP A04:2021 - Insecure Design
+# Remediate OWASP A04:2021 Insecure Design
 
 **org.openrewrite.java.security.OwaspA04**
 
@@ -6,23 +6,23 @@ _OWASP [A04:2021](https://owasp.org/Top10/A04_2021-Insecure_Design/) focuses on 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/owasp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.0.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/owasp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.0.6
+* version: 2.1.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.6")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.1.0")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.4.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-java-security:2.0.6")
+        rewrite("org.openrewrite.recipe:rewrite-java-security:2.1.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.security.OwaspA04")
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.security.OwaspA04</recipe>
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.0.6</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe OwaspA04
+mod run . --recipe OwaspA04
 ```
 {% endcode %}
 {% endtab %}
@@ -138,7 +138,7 @@ mod run <PATH> --recipe OwaspA04
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.security.OwaspA04
-displayName: Remediate OWASP A04:2021 - Insecure Design
+displayName: Remediate OWASP A04:2021 Insecure Design
 description: OWASP [A04:2021](https://owasp.org/Top10/A04_2021-Insecure_Design/) focuses on risks related to design and architectural flaws,  with a call for more use of threat modeling, secure design patterns, and reference architectures. This recipe seeks to remediate these vulnerabilities.
 
 recipeList:

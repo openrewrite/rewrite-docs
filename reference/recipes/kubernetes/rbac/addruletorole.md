@@ -55,7 +55,7 @@ Now that `com.yourorg.AddRuleToRoleExample` has been defined activate it and tak
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -83,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddRuleToRoleExample</recipe>
@@ -109,7 +109,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe AddRuleToRole
+mod run . --recipe AddRuleToRole
 ```
 {% endcode %}
 {% endtab %}

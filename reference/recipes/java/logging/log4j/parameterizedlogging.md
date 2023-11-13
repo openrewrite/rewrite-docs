@@ -2,7 +2,7 @@
 
 **org.openrewrite.java.logging.log4j.ParameterizedLogging**
 
-_Log4j 2.x supports parameterized logging, which can significantly boost logging performance for disabled logging statements._
+_Use Log4j 2.x parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message._
 
 ### Tags
 
@@ -11,11 +11,11 @@ _Log4j 2.x supports parameterized logging, which can significantly boost logging
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.0.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.0.6
+* version: 2.1.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.6")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.1.0")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.4.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.0.6")
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.1.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.logging.log4j.ParameterizedLogging")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.log4j.ParameterizedLogging</recipe>
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.0.6</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -127,7 +127,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe ParameterizedLogging
+mod run . --recipe ParameterizedLogging
 ```
 {% endcode %}
 {% endtab %}
@@ -174,7 +174,7 @@ mod run <PATH> --recipe ParameterizedLogging
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.logging.log4j.ParameterizedLogging
 displayName: Parameterize Log4j 2.x logging statements
-description: Log4j 2.x supports parameterized logging, which can significantly boost logging performance for disabled logging statements.
+description: Use Log4j 2.x parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message.
 tags:
   - logging
   - log4j
@@ -217,6 +217,7 @@ recipeList:
 * [Patrick](mailto:patway99@gmail.com)
 * [Knut Wannheden](mailto:knut@moderne.io)
 * [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+* [Sam Snyder](mailto:sam@moderne.io)
 
 
 ## See how this recipe works across multiple open-source repositories

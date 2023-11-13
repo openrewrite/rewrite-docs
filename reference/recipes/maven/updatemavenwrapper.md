@@ -6,11 +6,11 @@ _Update the version of Maven used in an existing Maven wrapper._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.8.4
+* version: 8.9.0
 
 ## Options
 
@@ -45,7 +45,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.UpdateMavenWrapper</recipe>
@@ -74,7 +74,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe UpdateMavenWrapper
+mod run . --recipe UpdateMavenWrapper
 ```
 {% endcode %}
 {% endtab %}

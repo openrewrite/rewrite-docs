@@ -17,8 +17,8 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Parameterize logging statements](./parameterizedlogging.md)
+* [Use logger instead of `System.err` print statements](./systemerrtologging.md)
+* [Use logger instead of `System.out` print statements](./systemouttologging.md)
 * [Use logger instead of `printStackTrace()`](./printstacktracetologerror.md)
-* [Use logger instead of system print statements](./systemerrtologging.md)
-* [Use logger instead of system print statements](./systemouttologging.md)
 
 

@@ -6,11 +6,11 @@ _Change the name of a given type alias._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.5.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.7.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-kotlin
-* version: 1.5.1
+* version: 1.7.0
 
 ## Options
 
@@ -40,14 +40,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RenameTypeAliasExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-kotlin:1.5.1 in your build file:
+Now that `com.yourorg.RenameTypeAliasExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-kotlin:1.7.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -59,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:1.5.1")
+    rewrite("org.openrewrite:rewrite-kotlin:1.7.0")
 }
 ```
 {% endcode %}
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RenameTypeAliasExample</recipe>
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-kotlin</artifactId>
-            <version>1.5.1</version>
+            <version>1.7.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -101,7 +101,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe RenameTypeAlias
+mod run . --recipe RenameTypeAlias
 ```
 {% endcode %}
 {% endtab %}
@@ -109,8 +109,8 @@ mod run <PATH> --recipe RenameTypeAlias
 
 ## Contributors
 * [Sam Snyder](mailto:sam@moderne.io)
+* [Kun Li](mailto:kun@moderne.io)
 * [traceyyoshima](mailto:tracey.yoshima@gmail.com)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
 
 
 ## See how this recipe works across multiple open-source repositories

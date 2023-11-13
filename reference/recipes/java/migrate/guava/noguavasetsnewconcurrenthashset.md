@@ -10,23 +10,23 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaSetsNewConcurrentHashSet.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.2.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaSetsNewConcurrentHashSet.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.2.1
+* version: 2.3.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.2.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
 }
 ```
 {% endcode %}
@@ -53,12 +53,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.4.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.2.1")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet")
@@ -85,7 +85,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.guava.NoGuavaSetsNewConcurrentHashSet</recipe>
@@ -95,7 +95,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.2.1</version>
+            <version>2.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -123,7 +123,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe NoGuavaSetsNewConcurrentHashSet
+mod run . --recipe NoGuavaSetsNewConcurrentHashSet
 ```
 {% endcode %}
 {% endtab %}

@@ -10,11 +10,11 @@ _Find methods with empty bodies and single public no arg constructors._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindEmptyMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.8.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindEmptyMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.9.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.8.4
+* version: 8.9.0
 
 ## Options
 
@@ -32,7 +32,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
@@ -88,7 +88,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindEmptyMethods</recipe>
@@ -117,7 +117,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe FindEmptyMethods
+mod run . --recipe FindEmptyMethods
 ```
 {% endcode %}
 {% endtab %}

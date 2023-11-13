@@ -6,16 +6,16 @@ _Replace Maven Shared `StringUtils.equalsIgnoreCase(String str1, String str2)` w
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/shared/MavenSharedStringUtilsRecipes$EqualsIgnoreCaseRecipe.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.2.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/shared/MavenSharedStringUtilsRecipes$EqualsIgnoreCaseRecipe.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.2.1
+* version: 2.3.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.2.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 
 {% tab title="Maven POM" %}
@@ -28,7 +28,7 @@ This recipe has no required configuration options. It can be activated by adding
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$EqualsIgnoreCaseRecipe</recipe>
@@ -38,7 +38,7 @@ This recipe has no required configuration options. It can be activated by adding
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.2.1</version>
+            <version>2.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -66,7 +66,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe MavenSharedStringUtilsRecipes$EqualsIgnoreCaseRecipe
+mod run . --recipe MavenSharedStringUtilsRecipes$EqualsIgnoreCaseRecipe
 ```
 {% endcode %}
 {% endtab %}

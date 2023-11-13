@@ -6,11 +6,11 @@ _Emit the data of binary dependency relationships._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveManagedDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.8.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveManagedDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.8.4
+* version: 8.9.0
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -39,7 +39,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.search.EffectiveManagedDependencies</recipe>
@@ -68,7 +68,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe EffectiveManagedDependencies
+mod run . --recipe EffectiveManagedDependencies
 ```
 {% endcode %}
 {% endtab %}

@@ -1,32 +1,32 @@
 # Rewrite JMockit Expectations
 
-**org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockitoWhen**
+**org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockito**
 
-_Rewrites JMockit `Expectations` to `Mockito.when`._
+_Rewrites JMockit `Expectations` blocks to Mockito statements._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/jmockit/JMockitExpectationsToMockitoWhen.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.0.13/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/jmockit/JMockitExpectationsToMockito.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.0.13
+* version: 2.1.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.0.13` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.4.3")
+    id("org.openrewrite.rewrite") version("6.5.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockitoWhen")
+    activeRecipe("org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockito")
 }
 
 repositories {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.13")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.0")
 }
 ```
 {% endcode %}
@@ -49,15 +49,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.4.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.0.13")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockitoWhen")
+        activeRecipe("org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockito")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -81,17 +81,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockitoWhen</recipe>
+            <recipe>org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockito</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.0.13</version>
+            <version>2.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,7 +110,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockitoWhen
+  -Drewrite.activeRecipes=org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockito
 ```
 {% endcode %}
 {% endtab %}
@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe JMockitExpectationsToMockitoWhen
+mod run . --recipe JMockitExpectationsToMockito
 ```
 {% endcode %}
 {% endtab %}
@@ -131,7 +131,7 @@ mod run <PATH> --recipe JMockitExpectationsToMockitoWhen
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockitoWhen)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockito)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -6,11 +6,11 @@ _Replaces any explicit `source` or `target` configuration (if present) on the ma
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.2.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.2.1
+* version: 2.3.0
 
 ## Options
 
@@ -36,7 +36,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.2.1 in your build file:
+Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.3.0 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -49,7 +49,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.10.0</version>
+        <version>5.11.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample</recipe>
@@ -59,7 +59,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.2.1</version>
+            <version>2.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -75,7 +75,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run <PATH> --recipe UseMavenCompilerPluginReleaseConfiguration
+mod run . --recipe UseMavenCompilerPluginReleaseConfiguration
 ```
 {% endcode %}
 {% endtab %}
