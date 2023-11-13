@@ -30,7 +30,7 @@ plugins {
 
 // ...
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.4.1"))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.0"))
 
     testImplementation("org.openrewrite:rewrite-test")
     testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
@@ -63,7 +63,7 @@ dependencies {
           <dependency>
               <groupId>org.openrewrite.recipe</groupId>
               <artifactId>rewrite-recipe-bom</artifactId>
-              <version>2.4.1</version>
+              <version>2.5.0</version>
               <type>pom</type>
               <scope>import</scope>
           </dependency>
