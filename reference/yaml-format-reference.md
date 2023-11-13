@@ -50,7 +50,7 @@ This is commonly used to target specific files or directories, but any recipe wh
 When a recipe is used as a precondition any file it would make a change to is considered to meet the precondition.
 When more than one recipe are used as preconditions all of them must make a change to the file for it to be considered to meet the precondition.
 Only when all preconditions are met will the recipes in the recipe list be run.
-When applying preconditions to `ScaninngRecipes` they limit both the scanning phase and the edit phase.
+When applying preconditions to `ScanningRecipes` they limit both the scanning phase and the edit phase.
 
 {% hint style="info" %} 
 Changes made by preconditions are not included in the final result of the recipe.

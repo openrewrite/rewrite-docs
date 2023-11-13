@@ -56,7 +56,7 @@ deletewhitespacerecipe
 Develocity
 diffs
 dsl
-Dto
+dto
 ehcache
 ejb
 EJBDD
@@ -168,6 +168,8 @@ okio
 omg
 openj
 openrewrite
+Overfetch
+Overfetching
 owasp
 passwordencoder
 pem
