@@ -114,7 +114,7 @@ Your file should look similar to:
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.2.4"
+    id("org.openrewrite.rewrite") version "6.5.0"
 }
 
 repositories {
@@ -181,7 +181,7 @@ rewrite {
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.2.4"
+    id("org.openrewrite.rewrite") version "6.5.0"
 }
 
 rewrite {
@@ -300,7 +300,7 @@ rewrite {
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.2.4"
+    id("org.openrewrite.rewrite") version "6.5.0"
 }
 
 rewrite {
