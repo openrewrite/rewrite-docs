@@ -44,21 +44,18 @@ You can find the full recipe schema [here](https://github.com/openrewrite/rewrit
 
 ### Preconditions
 
-Preconditions are used to limit where a recipe is run. 
-This is commonly used to target specific files or directories, but any recipe which is not a `ScanningRecipe` can be used as a precondition. 
+Preconditions are used to limit where a recipe is run. This is commonly used to target specific files or directories, but any recipe which is not a `ScanningRecipe` can be used as a precondition. 
 
-When a recipe is used as a precondition any file it would make a change to is considered to meet the precondition.
-When more than one recipe are used as preconditions all of them must make a change to the file for it to be considered to meet the precondition.
-Only when all preconditions are met will the recipes in the recipe list be run.
-When applying preconditions to `ScanningRecipes` they limit both the scanning phase and the edit phase.
+When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition. When more than one recipe are used as preconditions, all of them must make a change to the file for it to be considered to meet the precondition. 
+
+Only when all preconditions are met will the recipes in the recipe list be run. When applying preconditions to `ScanningRecipes` they limit both the scanning phase and the edit phase.
 
 {% hint style="info" %} 
 Changes made by preconditions are not included in the final result of the recipe.
 Changes made by preconditions are used _only_ to determine if the recipe should be run.
 {% endhint %}
 
-To create these top-level preconditions, you'll need to add the `preconditions` map to your declarative recipe's yaml.
-This object is a list of one or more recipes (formatted the same way as the [recipeList](#recipe-list)).
+To create these top-level preconditions, you'll need to add the `preconditions` map to your declarative recipe's YAML. This object is a list of one or more recipes (formatted the same way as the [recipeList](#recipe-list)).
 
 ```yaml
 ---
@@ -76,12 +73,12 @@ But because `Find` is used as a precondition, `ChangeText` will only be run on f
 
 Recipes commonly used as preconditions include:
 
-* org.openrewrite.FindSourceFiles - limits the recipe to only run on files whose path match a glob pattern
-* org.openrewrite.text.Find - limits the recipe to only run on files that contain a given string
-* org.openrewrite.java.search.FindTypes - limits the recipe to run only on source code which contain a given type
-* org.openrewrite.java.search.HasJavaVersion - limits the recipe to run only on Java source code with the specified source or target compatibility versions. Allowing a recipe to be targeted only at Java 8, 11, 17, etc., code.
-* org.openrewrite.java.search.IsLikelyTest - limits the recipe to run only on source code which is likely to be test code.
-* org.openrewrite.java.search.IsLikelyNotTest - limits the recipe to run only on source code which is likely to be production code.
+* `org.openrewrite.FindSourceFiles` - limits the recipe to only run on files whose path matches a glob pattern
+* `org.openrewrite.text.Find` - limits the recipe to only run on files that contain a given string
+* `org.openrewrite.java.search.FindTypes` - limits the recipe to run only on source code which contain a given type
+* `org.openrewrite.java.search.HasJavaVersion` - limits the recipe to run only on Java source code with the specified source or target compatibility versions. Allowing a recipe to be targeted only at Java 8, 11, 17, etc., code.
+* `org.openrewrite.java.search.IsLikelyTest` - limits the recipe to run only on source code which is likely to be test code.
+* `org.openrewrite.java.search.IsLikelyNotTest` - limits the recipe to run only on source code which is likely to be production code.
 
 ### Recipe list
 

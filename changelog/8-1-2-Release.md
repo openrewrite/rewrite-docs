@@ -14,8 +14,8 @@ As this is semantically equivalent to the OpenRewrite 7 single source applicabil
 
 In OpenRewrite 7, `Recipe.getApplicabilityTest()` was rarely used as it was confusing to most users. If your recipe uses it, you will need to convert your recipe to a [ScanningRecipe](#new-approach-to-recipe-visiting).
 
-{% hint style="warning" %}
-There is, unfortunately, no way for a YAML recipe to use `Preconditions`. We hope to support such a feature for them eventually, though.
+{% hint style="info" %}
+For information on how to use `Preconditions` with YAML recipes, please see our [YAML format reference doc](/reference/yaml-format-reference.md#preconditions).
 {% endhint %}
 
 **Example**:
