@@ -6,6 +6,10 @@ description: Prerequisites, tools, and recommendations for developing with OpenR
 
 This getting started guide covers setting up your development environment for creating your own OpenRewrite recipes.
 
+{% hint style="info" %}
+If you are looking to build [OpenRewrite](https://github.com/openrewrite/rewrite) itself instead of a specific recipe, check out our [building and developing OpenRewrite guide](../reference/building-openrewrite-from-source.md).&#x20;
+{% endhint %}
+
 ## Prerequisites
 
 * [JDK](https://adoptopenjdk.net) (version 1.8+)
@@ -245,7 +249,7 @@ Having configured the project per these recommendations, you're now able to begi
 
 * `src/main/java` - Recipe implementations
 * `src/test/java` - Recipe tests
-* (optional) `src/main/resources/META-INF/rewrite` - YAML files for defining [declarative OpenRewrite Recipes](/reference/yaml-format-reference.md)
+* (optional) `src/main/resources/META-INF/rewrite` - YAML files for defining [declarative OpenRewrite Recipes](../reference/yaml-format-reference.md)
 
 With all of that done, your project setup is complete! You are now ready to [create a Recipe](writing-a-java-refactoring-recipe.md).
 
@@ -366,7 +370,7 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 
 ## Next steps
 
-* [Learn about the different types of recipes you can create](/authoring-recipes/types-of-recipes.md)
+* [Learn about the different types of recipes you can create](types-of-recipes.md)
 * [Write a Java refactoring recipe](writing-a-java-refactoring-recipe.md)
-* [Maven plugin configuration](/reference/rewrite-maven-plugin.md)
-* [Gradle plugin configuration](/reference/gradle-plugin-configuration.md)
+* [Maven plugin configuration](../reference/rewrite-maven-plugin.md)
+* [Gradle plugin configuration](../reference/gradle-plugin-configuration.md)

@@ -1,16 +1,34 @@
-# Building OpenRewrite from source
+# Building and developing OpenRewrite
+
+## Building OpenRewrite
 
 OpenRewrite is built with [Gradle](https://gradle.org/). It is not typically necessary to manually install Gradle, as invoking the `./gradlew` (Linux and Mac) or `gradlew.bat` (Windows) shell scripts will download the appropriate version of Gradle to your user directory.
 
 OpenRewrite requires several JDK versions to be installed on your system. If you are able to access [Adoptium](https://adoptium.net/), then Gradle will automatically download and install any needed JDKs which you may be missing. If your network configuration or security policies do not permit this, then you must manually install JDK versions 8, 11, and 17.
 
-> **Note** If you are developing on a Mac M1 or M2 you must install the Java 1.8 JDK manually (for example using [SDKMAN!](https://sdkman.io/)), as there is no matching JDK available on Adoptium.
+{% hint style="danger" %}
+If you are developing on a Mac M1 or M2 you must install the Java 1.8 JDK manually (for example using [SDKMAN!](https://sdkman.io/)), as there is no matching JDK available on Adoptium.
+{% endhint %}
 
-To compile and run tests invoke `./gradlew build`. To publish a snapshot build to your maven local repository, run `./gradlew publishToMavenLocal`.
+To compile and run tests, invoke `./gradlew build`. To publish a snapshot build to your maven local repository, run `./gradlew publishToMavenLocal`.
 
-> **Note** If some of your tests fail with a message like `java.lang.IllegalArgumentException: Invalid value: gpg.format=ssh`, try running `git config commit.gpgsign false` in the `rewrite` directory to disable GPG signing for your commits then re-run the build. This is because there are some tests that use the [JGit](https://projects.eclipse.org/projects/technology.jgit) library to run git commands, which at the time of writing does not support SSH-based signed commits. See [this bug](https://bugs.eclipse.org/bugs/show_bug.cgi?id=581483) for more information.
+{% hint style="info" %}
+If some of your tests fail with a message like:
 
-### Building within Secure/Isolated environments
+```
+java.lang.IllegalArgumentException: Invalid value: gpg.format=ssh
+```
+
+Please try running the following command in the `rewrite` directory to disable GPG signing for your commits:
+
+```bash
+git config commit.gpgsign false
+```
+
+After this succeeds, please re-run the build. You should not longer see the error. This error is due to the fact that there are some tests that use the [JGit](https://projects.eclipse.org/projects/technology.jgit) library to run git commands, which at the time of writing does not support SSH-based signed commits. See [this bug](https://bugs.eclipse.org/bugs/show\_bug.cgi?id=581483) for more information.
+{% endhint %}
+
+## Building within Secure/Isolated environments
 
 OpenRewrite typically accesses the Maven Central artifact repository to download necessary dependencies. If organizational security policy or network configuration forbids this, then you can use a Gradle [init script](https://docs.gradle.org/current/userguide/init\_scripts.html) to forcibly reconfigure the OpenRewrite build to use a different repository.
 
@@ -93,4 +111,49 @@ allprojects {
 ```
 
 With this file placed, all of your Gradle builds will prefer to use your corporate repository instead of whatever repositories they would normally be configured with.
+
+## Developing tips
+
+We recommend that you use [IntelliJ IDEA](https://www.jetbrains.com/idea/) for development, as some of the Gradle specifics in `openrewrite/rewrite` are not supported as well in other IDEs. We also require all code contributions to be formatted using the IntelliJ IDEA auto-formatter.&#x20;
+
+### IntelliJ IDEA changes
+
+By default, IntelliJ IDEA uses Gradle to build and run tests with. While that ensures compatibility, it is very slow. To help speed up compilation and testing, we recommend that you change this to use `IntelliJ IDEA` instead. You can update this by going to the IntelliJ settings, searching for Gradle, and clicking on the `Build, Execution, Deployment` -> `Build Tools` -> `Gradle` setting:
+
+<figure><img src="https://github.com/openrewrite/.github/raw/main/resources/gradle-select.png" alt=""><figcaption></figcaption></figure>
+
+As part of doing that, you'll also need to update the `Java Compiler` to set the `-parameters` compiler flag. If your system does not have `UTF-8` as its default character encoding (e.g., Windows), you must also add `-encoding utf8`.
+
+<figure><img src="https://github.com/openrewrite/.github/raw/main/resources/parameters.png" alt=""><figcaption></figcaption></figure>
+
+You will also need to add an override to the compiler parameters for the `rewrite.rewrite-java-17.main` module to have the compilation options of:
+
+```bash
+-parameters --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
+```
+
+<figure><img src="https://github.com/openrewrite/.github/raw/main/resources/compilation-options.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="danger" %}
+If you've previously run tests using Gradle and you update the project to use IntelliJ instead, it's a good idea to make sure that your tests are actually using IntelliJ rather than Gradle. You can confirm the tests are not using Gradle by clicking on the run configurations in the top right hand corner of IntelliJ and ensuring that the tests have a left and right arrow next to them instead of the Gradle icon:
+
+&#x20;   Correct:  ![](<../.gitbook/assets/Screen Shot 2023-11-20 at 9.32.54 AM.png>)   Incorrect: ![](<../.gitbook/assets/image (1).png>)
+{% endhint %}
+
+### Optimizing your IDE for only modules you want to work on
+
+If you are only working on a subset of the modules in [openrewrite/rewrite](https://github.com/openrewrite/rewrite), you can optimize your IDE to only load those modules. To do so, create a new `IDE.properties` file if one doesn't exist in the base directory of the project. Then, copy the contents of [IDE.properties.tmp](https://github.com/openrewrite/rewrite/blob/main/IDE.properties.tmp) file to it. Next, comment out any lines that correspond to modules that you do not want to work on. This will cause Gradle to swap those project dependencies for binary dependencies resolved from either Maven local or the OSS snapshots repository – which will speed up your IDE.
+
+### Windows Caveats
+
+If you are contributing to OpenRewrite on Windows, please ensure that you set `core.autocrlf = false` as [Rewrite](https://github.com/openrewrite/rewrite) requires unix-style line endings. This can be done when you clone the repository:
+
+```bash
+git clone -c core.autocrlf=false https://github.com/openrewrite/rewrite.git
+```
+
+Also, as mentioned in the [IntelliJ IDEA section](building-openrewrite-from-source.md#intellij-idea-changes) above, please ensure that your system uses `UTF-8` for character encoding.
+
+\
+
 

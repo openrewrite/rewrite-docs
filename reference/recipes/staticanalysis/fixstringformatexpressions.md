@@ -1,8 +1,8 @@
-# Fix `String#format` and `String#formatted` expressions
+# Fix String#format and String#formatted expressions
 
 **org.openrewrite.staticanalysis.FixStringFormatExpressions**
 
-_Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index._
+_Fix `String#format` and `String#formatted` expressions by replacing  newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index._
 
 ### Tags
 
@@ -16,13 +16,14 @@ _Fix `String#format` and `String#formatted` expressions by replacing `\n` newlin
 * artifactId: rewrite-static-analysis
 * version: 1.1.0
 
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.1.0` in your build file or by running a shell command (in which case no build changes are needed):
+
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
+
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -42,11 +43,13 @@ dependencies {
 }
 ```
 {% endcode %}
+
 2. Run `gradle rewriteRun` to run the recipe.
 {% endtab %}
 
 {% tab title="Gradle init script" %}
 1. Create a file named `init.gradle` in the root of your project.
+
 {% code title="init.gradle" %}
 ```groovy
 initscript {
@@ -73,10 +76,13 @@ rootProject {
 }
 ```
 {% endcode %}
+
 2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
 {% endtab %}
+
 {% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
+
 {% code title="pom.xml" %}
 ```xml
 <project>
@@ -104,13 +110,12 @@ rootProject {
 </project>
 ```
 {% endcode %}
+
 2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE \
@@ -118,6 +123,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ```
 {% endcode %}
 {% endtab %}
+
 {% tab title="Moderne CLI" %}
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
 
@@ -131,11 +137,12 @@ mod run . --recipe FixStringFormatExpressions
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.FixStringFormatExpressions)
+[![Moderne Link Image](../../../.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.FixStringFormatExpressions)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
+
 Patrick Way, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
