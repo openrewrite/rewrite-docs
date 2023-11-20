@@ -2,4 +2,6 @@
 
 ## Recipes
 
-* [Control Flow Visualization](broken-reference)
+* [Control Flow Visualization](./controlflowvisualization.md)
+
+

@@ -2,7 +2,7 @@
 
 **org.openrewrite.java.migrate.javax.AddJaxwsRuntime**
 
-_Update build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the**** ****`javax`**** ****namespace, despite the move to the Jakarta artifact**._
+_Update build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**._
 
 ### Tags
 
@@ -26,12 +26,10 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.3.0` in your build file or by running a shell command (in which case no build changes are needed):
-
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
-
 {% code title="build.gradle" %}
 ```groovy
 plugins {
@@ -51,13 +49,11 @@ dependencies {
 }
 ```
 {% endcode %}
-
 2. Run `gradle rewriteRun` to run the recipe.
 {% endtab %}
 
 {% tab title="Gradle init script" %}
 1. Create a file named `init.gradle` in the root of your project.
-
 {% code title="init.gradle" %}
 ```groovy
 initscript {
@@ -84,13 +80,10 @@ rootProject {
 }
 ```
 {% endcode %}
-
 2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
 {% endtab %}
-
 {% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
-
 {% code title="pom.xml" %}
 ```xml
 <project>
@@ -118,12 +111,13 @@ rootProject {
 </project>
 ```
 {% endcode %}
-
 2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
@@ -131,7 +125,6 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
 ```
 {% endcode %}
 {% endtab %}
-
 {% tab title="Moderne CLI" %}
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
 
@@ -147,8 +140,9 @@ mod run . --recipe AddJaxwsRuntime
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Use the latest JAX-WS API and runtime for Jakarta EE 8](addjaxwsruntime$addjaxwsruntimegradle.md)
-* [Use the latest JAX-WS API and runtime for Jakarta EE 8](addjaxwsruntime$addjaxwsruntimemaven.md)
+* [Use the latest JAX-WS API and runtime for Jakarta EE 8](../../../java/migrate/javax/addjaxwsruntime$addjaxwsruntimegradle.md)
+* [Use the latest JAX-WS API and runtime for Jakarta EE 8](../../../java/migrate/javax/addjaxwsruntime$addjaxwsruntimemaven.md)
+
 {% endtab %}
 
 {% tab title="Yaml Recipe List" %}
@@ -174,7 +168,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](../../../../../.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.javax.AddJaxwsRuntime)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.javax.AddJaxwsRuntime)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
