@@ -134,4 +134,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), * [Jonathan Schneider](mailto:jkschneider@gmail.com), * smehta23, * [Knut Wannheden](mailto:knut@moderne.io), * [Tim te Beek](mailto:tim@moderne.io), * [Sam Snyder](mailto:sam@moderne.io), * [Tyler Kindy](mailto:me@tylerkindy.com), * [Patrick](mailto:patway99@gmail.com)
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), smehta23, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tyler Kindy](mailto:me@tylerkindy.com), [Patrick](mailto:patway99@gmail.com)

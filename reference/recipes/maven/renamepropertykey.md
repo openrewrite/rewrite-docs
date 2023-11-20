@@ -85,4 +85,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-* [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), * [Sam Snyder](mailto:sam@moderne.io), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * [Tim te Beek](mailto:tim@moderne.io)
+[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

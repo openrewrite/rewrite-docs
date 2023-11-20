@@ -134,4 +134,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-* [Alex Boyko](mailto:aboyko@vmware.com), * Kun Li, * Patrick Way, * [Knut Wannheden](mailto:knut@moderne.io), * [Nick McKinney](mailto:mckinneynichoals@gmail.com), * [Sam Snyder](mailto:sam@moderne.io), * [Patrick](mailto:patway99@gmail.com), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), * Josh Soref
+[Alex Boyko](mailto:aboyko@vmware.com), Kun Li, Patrick Way, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), Josh Soref

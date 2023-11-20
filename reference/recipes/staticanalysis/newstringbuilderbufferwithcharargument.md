@@ -138,4 +138,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-* Patrick Way, * [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), * [Knut Wannheden](mailto:knut@moderne.io), * [Jonathan Schneider](mailto:jkschneider@gmail.com), * [Patrick](mailto:patway99@gmail.com)
+Patrick Way, [Grzegorz Olędzki](mailto:grzegon@poczta.onet.pl), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com)
