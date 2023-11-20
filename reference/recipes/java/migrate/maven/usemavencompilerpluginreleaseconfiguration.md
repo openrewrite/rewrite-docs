@@ -49,7 +49,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample</recipe>
@@ -81,14 +81,6 @@ mod run . --recipe UseMavenCompilerPluginReleaseConfiguration
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Joan Viladrosa](mailto:joan@moderne.io)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration)
@@ -96,3 +88,6 @@ mod run . --recipe UseMavenCompilerPluginReleaseConfiguration
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com), * [Sam Snyder](mailto:sam@moderne.io), * [Joan Viladrosa](mailto:joan@moderne.io), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * [traceyyoshima](mailto:tracey.yoshima@gmail.com)

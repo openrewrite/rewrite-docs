@@ -51,7 +51,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeExplicitSpringBootDependenciesExample</recipe>
@@ -83,17 +83,6 @@ mod run . --recipe UpgradeExplicitSpringBootDependencies
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Andrei Shakirin](mailto:andrei.shakirin@gmail.com)
-* [Joan Viladrosa](mailto:joan@moderne.io)
-* [Patrick](mailto:patway99@gmail.com)
-* Patrick Way
-* [Knut Wannheden](mailto:knut@moderne.io)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* Kun Li
-* [Kyle Scully](mailto:scullykns@gmail.com)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies)
@@ -101,3 +90,6 @@ mod run . --recipe UpgradeExplicitSpringBootDependencies
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Andrei Shakirin](mailto:andrei.shakirin@gmail.com), * [Joan Viladrosa](mailto:joan@moderne.io), * [Patrick](mailto:patway99@gmail.com), * Patrick Way, * [Knut Wannheden](mailto:knut@moderne.io), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * Kun Li, * [Kyle Scully](mailto:scullykns@gmail.com)

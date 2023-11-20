@@ -6,11 +6,11 @@ _Removes a matching Maven repository._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.9.0
+* version: 8.9.4
 
 ## Options
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined activate it in y
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveRepositoryExample</recipe>
@@ -76,12 +76,6 @@ mod run . --recipe RemoveRepository
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* smehta23
-* [Yeikel](mailto:email@yeikel.com)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.RemoveRepository)
@@ -89,3 +83,6 @@ mod run . --recipe RemoveRepository
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* smehta23, * [Yeikel](mailto:email@yeikel.com), * [Jonathan Schnéider](mailto:jkschneider@gmail.com)

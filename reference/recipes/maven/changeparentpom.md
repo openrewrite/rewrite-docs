@@ -6,11 +6,11 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.9.0
+* version: 8.9.4
 
 ## Options
 
@@ -76,7 +76,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeParentPomExample</recipe>
@@ -101,16 +101,6 @@ mod run . --recipe ChangeParentPom
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* Valentin Delaye
-* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* Tyler Van Gorder
-* [Knut Wannheden](mailto:knut@moderne.io)
-* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.ChangeParentPom)
@@ -118,3 +108,6 @@ mod run . --recipe ChangeParentPom
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Sam Snyder](mailto:sam@moderne.io), * [Jonathan Schneider](mailto:jkschneider@gmail.com), * Valentin Delaye, * [Nick McKinney](mailto:mckinneynicholas@gmail.com), * Tyler Van Gorder, * [Knut Wannheden](mailto:knut@moderne.io), * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

@@ -6,11 +6,11 @@ _Locates the declaration of a method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethodDeclaration.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethodDeclaration.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.9.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.9.0
+* version: 8.9.4
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.FindMethodDeclarationExample` has been defined activate it
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.0")
+    id("org.openrewrite.rewrite") version("6.5.4")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindMethodDeclarationExample</recipe>
@@ -94,10 +94,6 @@ mod run . --recipe FindMethodDeclaration
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Sam Snyder](mailto:sam@moderne.io)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.search.FindMethodDeclaration)
@@ -105,3 +101,6 @@ mod run . --recipe FindMethodDeclaration
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Sam Snyder](mailto:sam@moderne.io)

@@ -6,11 +6,11 @@ _Remove explicitly-specified dependency versions when a parent POM's dependencyM
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRedundantDependencyVersions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRedundantDependencyVersions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.9.0
+* version: 8.9.4
 
 ## Options
 
@@ -37,7 +37,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.RemoveRedundantDependencyVersions</recipe>
@@ -72,14 +72,6 @@ mod run . --recipe RemoveRedundantDependencyVersions
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* [Kevin McCarpenter](mailto:kevin@moderne.io)
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.RemoveRedundantDependencyVersions)
@@ -87,3 +79,6 @@ mod run . --recipe RemoveRedundantDependencyVersions
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Nick McKinney](mailto:mckinneynicholas@gmail.com), * [Kevin McCarpenter](mailto:kevin@moderne.io), * [Jonathan Schneider](mailto:jkschneider@gmail.com), * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), * [Sam Snyder](mailto:sam@moderne.io)

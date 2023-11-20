@@ -6,11 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.9.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.9.0
+* version: 8.9.4
 
 ## Options
 
@@ -66,7 +66,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.0")
+    id("org.openrewrite.rewrite") version("6.5.4")
 }
 
 rewrite {
@@ -92,12 +92,6 @@ mod run . --recipe DependencyInsight
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.gradle.search.DependencyInsight)
@@ -105,3 +99,6 @@ mod run . --recipe DependencyInsight
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Sam Snyder](mailto:sam@moderne.io), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * [Tim te Beek](mailto:tim@moderne.io)

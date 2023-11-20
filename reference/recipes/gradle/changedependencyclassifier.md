@@ -6,11 +6,11 @@ _Finds dependencies declared in `build.gradle` files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyClassifier.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependencyClassifier.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.9.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.9.0
+* version: 8.9.4
 
 ## Options
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangeDependencyClassifierExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.0")
+    id("org.openrewrite.rewrite") version("6.5.4")
 }
 
 rewrite {
@@ -75,13 +75,6 @@ mod run . --recipe ChangeDependencyClassifier
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Shannon Pamperl](mailto:shanman190@gmail.com)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.gradle.ChangeDependencyClassifier)
@@ -89,3 +82,6 @@ mod run . --recipe ChangeDependencyClassifier
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Shannon Pamperl](mailto:shanman190@gmail.com), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * [Sam Snyder](mailto:sam@moderne.io), * [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

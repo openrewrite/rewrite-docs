@@ -6,11 +6,11 @@ _Remove matching annotations wherever they occur._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.9.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.9.0
+* version: 8.9.4
 
 ## Options
 
@@ -43,7 +43,7 @@ Now that `com.yourorg.RemoveAnnotationExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.0")
+    id("org.openrewrite.rewrite") version("6.5.4")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveAnnotationExample</recipe>
@@ -92,12 +92,6 @@ mod run . --recipe RemoveAnnotation
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Aaron Gershman](mailto:aegershman@gmail.com)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.RemoveAnnotation)
@@ -105,3 +99,6 @@ mod run . --recipe RemoveAnnotation
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Jonathan Schneider](mailto:jkschneider@gmail.com), * [Sam Snyder](mailto:sam@moderne.io), * [Aaron Gershman](mailto:aegershman@gmail.com)

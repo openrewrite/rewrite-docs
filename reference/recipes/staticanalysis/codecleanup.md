@@ -25,7 +25,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.0")
+    id("org.openrewrite.rewrite") version("6.5.4")
 }
 
 rewrite {
@@ -52,7 +52,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
@@ -190,23 +190,6 @@ recipeList:
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
-* [Knut Wannheden](mailto:knut@moderne.io)
-* [Kun Li](mailto:kun@moderne.io)
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* [Aaron Gershman](mailto:aegershman@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Knut Wannheden](mailto:knut.wannheden@mobi.ch)
-* [Tim te Beek](mailto:tim@moderne.io)
-* [Greg Adams](mailto:greg@moderne.io)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* Josh Soref
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
-* [Scott Jungling](mailto:scott.jungling@gmail.com)
-* [Mike Solomon](mailto:mike@moderne.io)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CodeCleanup)
@@ -214,3 +197,6 @@ recipeList:
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), * [Knut Wannheden](mailto:knut@moderne.io), * [Kun Li](mailto:kun@moderne.io), * [Jonathan Schneider](mailto:jkschneider@gmail.com), * [Aaron Gershman](mailto:aegershman@gmail.com), * [Sam Snyder](mailto:sam@moderne.io), * [Knut Wannheden](mailto:knut.wannheden@mobi.ch), * [Tim te Beek](mailto:tim@moderne.io), * [Greg Adams](mailto:greg@moderne.io), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * Josh Soref, * [traceyyoshima](mailto:tracey.yoshima@gmail.com), * [Scott Jungling](mailto:scott.jungling@gmail.com), * [Mike Solomon](mailto:mike@moderne.io)

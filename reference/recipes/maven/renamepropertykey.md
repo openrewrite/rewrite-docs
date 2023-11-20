@@ -6,11 +6,11 @@ _Rename the specified Maven project property key leaving the value unchanged._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RenamePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RenamePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.9.0
+* version: 8.9.4
 
 ## Options
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.RenamePropertyKeyExample` has been defined activate it in 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RenamePropertyKeyExample</recipe>
@@ -76,13 +76,6 @@ mod run . --recipe RenamePropertyKey
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [Tim te Beek](mailto:tim@moderne.io)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.maven.RenamePropertyKey)
@@ -90,3 +83,6 @@ mod run . --recipe RenamePropertyKey
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* [Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), * [Sam Snyder](mailto:sam@moderne.io), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * [Tim te Beek](mailto:tim@moderne.io)

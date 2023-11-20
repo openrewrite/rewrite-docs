@@ -33,7 +33,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.0")
+    id("org.openrewrite.rewrite") version("6.5.4")
 }
 
 rewrite {
@@ -60,7 +60,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -92,7 +92,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -185,41 +185,6 @@ recipeList:
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* Patrick Way
-* [Knut Wannheden](mailto:knut@moderne.io)
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* [Patrick](mailto:patway99@gmail.com)
-* [Jonathan Schnéider](mailto:jkschneider@gmail.com)
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Greg Adams](mailto:gadams@gmail.com)
-* [Tim te Beek](mailto:tim.te.beek@jdriven.com)
-* [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)
-* Yeikel
-* [Greg Adams](mailto:greg@moderne.io)
-* [Nick McKinney](mailto:mckinneynicholas@gmail.com)
-* Adriano Machado
-* Tyler Van Gorder
-* [Matthias Klauer](mailto:matthias.klauer@sap.com)
-* [Tim te Beek](mailto:tim@moderne.io)
-* nbruno
-* [Aaron Gershman](mailto:aegershman@gmail.com)
-* [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com)
-* John Burns
-* [Michael Keppler](mailto:bananeweizen@gmx.de)
-* [traceyyoshima](mailto:tracey.yoshima@gmail.com)
-* [Scott Jungling](mailto:scott.jungling@gmail.com)
-* Kun Li
-* Ties van de Ven
-* Peter Puškár
-* [Tim te Beek](mailto:timtebeek@gmail.com)
-* Josh Soref
-* [Joan Viladrosa](mailto:joan@moderne.io)
-* [Kun Li](mailto:kun@moderne.io)
-* [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
-* [Kyle Scully](mailto:scullykns@gmail.com)
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration)
@@ -227,3 +192,6 @@ recipeList:
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* Patrick Way, * [Knut Wannheden](mailto:knut@moderne.io), * [Jonathan Schneider](mailto:jkschneider@gmail.com), * [Patrick](mailto:patway99@gmail.com), * [Jonathan Schnéider](mailto:jkschneider@gmail.com), * [Sam Snyder](mailto:sam@moderne.io), * [Greg Adams](mailto:gadams@gmail.com), * [Tim te Beek](mailto:tim.te.beek@jdriven.com), * [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), * Yeikel, * [Greg Adams](mailto:greg@moderne.io), * [Nick McKinney](mailto:mckinneynicholas@gmail.com), * Adriano Machado, * Tyler Van Gorder, * [Matthias Klauer](mailto:matthias.klauer@sap.com), * [Tim te Beek](mailto:tim@moderne.io), * nbruno, * [Aaron Gershman](mailto:aegershman@gmail.com), * [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), * John Burns, * [Michael Keppler](mailto:bananeweizen@gmx.de), * [traceyyoshima](mailto:tracey.yoshima@gmail.com), * [Scott Jungling](mailto:scott.jungling@gmail.com), * Kun Li, * Ties van de Ven, * Peter Puškár, * [Tim te Beek](mailto:timtebeek@gmail.com), * Josh Soref, * [Joan Viladrosa](mailto:joan@moderne.io), * [Kun Li](mailto:kun@moderne.io), * [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), * [Kyle Scully](mailto:scullykns@gmail.com)

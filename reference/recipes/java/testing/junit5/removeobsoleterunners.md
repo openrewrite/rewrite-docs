@@ -43,7 +43,7 @@ Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined activate it
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.0")
+    id("org.openrewrite.rewrite") version("6.5.4")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.11.0</version>
+        <version>5.13.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveObsoleteRunnersExample</recipe>
@@ -103,16 +103,6 @@ mod run . --recipe RemoveObsoleteRunners
 {% endtab %}
 {% endtabs %}
 
-## Contributors
-* Tyler Van Gorder
-* [Knut Wannheden](mailto:knut@moderne.io)
-* [Sam Snyder](mailto:sam@moderne.io)
-* [Jonathan Schneider](mailto:jkschneider@gmail.com)
-* [Michael Keppler](mailto:bananeweizen@gmx.de)
-* [Aaron Gershman](mailto:aegershman@gmail.com)
-* Patrick Way
-
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.testing.junit5.RemoveObsoleteRunners)
@@ -120,3 +110,6 @@ mod run . --recipe RemoveObsoleteRunners
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+* Tyler Van Gorder, * [Knut Wannheden](mailto:knut@moderne.io), * [Sam Snyder](mailto:sam@moderne.io), * [Jonathan Schneider](mailto:jkschneider@gmail.com), * [Michael Keppler](mailto:bananeweizen@gmx.de), * [Aaron Gershman](mailto:aegershman@gmail.com), * Patrick Way
