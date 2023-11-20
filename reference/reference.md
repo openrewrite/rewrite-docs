@@ -10,5 +10,5 @@
 * [Method patterns](method-patterns.md)
 * [Dependency version selectors](dependency-version-selectors.md)
 * [Framework provided markers](framework-provided-markers.md)
-* [Building OpenRewrite from source](building-openrewrite-from-source.md)
+* [Building and developing OpenRewrite](building-openrewrite-from-source.md)
 * [Frequently asked questions](faq.md)

@@ -6,6 +6,10 @@ description: Prerequisites, tools, and recommendations for developing with OpenR
 
 This getting started guide covers setting up your development environment for creating your own OpenRewrite recipes.
 
+{% hint style="info" %}
+If you are looking to build [OpenRewrite](https://github.com/openrewrite/rewrite) itself instead of a specific recipe, check out our [building and developing OpenRewrite guide](../reference/building-openrewrite-from-source.md).&#x20;
+{% endhint %}
+
 ## Prerequisites
 
 * [JDK](https://adoptopenjdk.net) (version 1.8+)
