@@ -4,13 +4,18 @@
 
 _Migrate properties found in `application.properties` and `application.yml`._
 
+### Tags
+
+* spring
+* boot
+
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-26.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-26-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.1.1
+* version: 5.1.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.4")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {
@@ -37,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
 }
 ```
 {% endcode %}
@@ -52,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.SpringBootProperties_2_6")
@@ -94,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.1.1</version>
+            <version>5.1.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,86 +138,71 @@ mod run . --recipe SpringBootProperties_2_6
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `management.server.servlet.context-path`
-  * newPropertyKey: `management.server.base-path`
+  * oldPropertyKey: `management.metrics.export.dynatrace.device-id`
+  * newPropertyKey: `management.metrics.export.dynatrace.v1.device-id`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.mongodb.grid-fs-database`
-  * newPropertyKey: `spring.data.mongodb.gridfs.database`
+  * oldPropertyKey: `management.metrics.export.dynatrace.group`
+  * newPropertyKey: `management.metrics.export.dynatrace.v1.group`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.mvc.locale`
-  * newPropertyKey: `spring.web.locale`
+  * oldPropertyKey: `management.metrics.export.dynatrace.technology-type`
+  * newPropertyKey: `management.metrics.export.dynatrace.v1.technology-type`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.mvc.locale-resolver`
-  * newPropertyKey: `spring.web.locale-resolver`
+  * oldPropertyKey: `spring.data.elasticsearch.client.reactive.connection-timeout`
+  * newPropertyKey: `spring.elasticsearch.connection-timeout`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.add-mappings`
-  * newPropertyKey: `spring.web.resources.add-mappings`
+  * oldPropertyKey: `spring.data.elasticsearch.client.reactive.endpoints`
+  * newPropertyKey: `spring.elasticsearch.uris`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.cache-private`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.cache-private`
+  * oldPropertyKey: `spring.data.elasticsearch.client.reactive.max-in-memory-size`
+  * newPropertyKey: `spring.elasticsearch.webclient.max-in-memory-size`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.cache-public`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.cache-public`
+  * oldPropertyKey: `spring.data.elasticsearch.client.reactive.password`
+  * newPropertyKey: `spring.elasticsearch.password`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.max-age`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.max-age`
+  * oldPropertyKey: `spring.data.elasticsearch.client.reactive.socket-timeout`
+  * newPropertyKey: `spring.elasticsearch.socket-timeout`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.must-revalidate`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.must-revalidate`
+  * oldPropertyKey: `spring.data.elasticsearch.client.reactive.username`
+  * newPropertyKey: `spring.elasticsearch.username`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.no-cache`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.no-cache`
+  * oldPropertyKey: `spring.elasticsearch.rest.connection-timeout`
+  * newPropertyKey: `spring.elasticsearch.connection-timeout`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.no-store`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.no-store`
+  * oldPropertyKey: `spring.elasticsearch.rest.password`
+  * newPropertyKey: `spring.elasticsearch.password`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.no-transform`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.no-transform`
+  * oldPropertyKey: `spring.elasticsearch.rest.read-timeout`
+  * newPropertyKey: `spring.elasticsearch.socket-timeout`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.proxy-revalidate`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.proxy-revalidate`
+  * oldPropertyKey: `spring.elasticsearch.rest.sniffer.delay-after-failure`
+  * newPropertyKey: `spring.elasticsearch.restclient.sniffer.delay-after-failure`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.s-max-age`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.s-max-age`
+  * oldPropertyKey: `spring.elasticsearch.rest.sniffer.interval`
+  * newPropertyKey: `spring.elasticsearch.restclient.sniffer.interval`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.stale-if-error`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.stale-if-error`
+  * oldPropertyKey: `spring.elasticsearch.rest.uris`
+  * newPropertyKey: `spring.elasticsearch.uris`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.cachecontrol.stale-while-revalidate`
-  * newPropertyKey: `spring.web.resources.cache.cachecontrol.stale-while-revalidate`
+  * oldPropertyKey: `spring.elasticsearch.rest.username`
+  * newPropertyKey: `spring.elasticsearch.username`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.period`
-  * newPropertyKey: `spring.web.resources.cache.period`
+  * oldPropertyKey: `spring.flyway.ignore-future-migrations`
+  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.cache.use-last-modified`
-  * newPropertyKey: `spring.web.resources.cache.use-last-modified`
+  * oldPropertyKey: `spring.flyway.ignore-ignored-migrations`
+  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.chain.cache`
-  * newPropertyKey: `spring.web.resources.chain.cache`
+  * oldPropertyKey: `spring.flyway.ignore-missing-migrations`
+  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.chain.compressed`
-  * newPropertyKey: `spring.web.resources.chain.compressed`
+  * oldPropertyKey: `spring.flyway.ignore-pending-migrations`
+  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.chain.enabled`
-  * newPropertyKey: `spring.web.resources.chain.enabled`
+  * oldPropertyKey: `spring.flyway.oracle-kerberos-config-file`
+  * newPropertyKey: `spring.flyway.kerberos-config-file`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.chain.strategy.content.enabled`
-  * newPropertyKey: `spring.web.resources.chain.strategy.content.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.chain.strategy.content.paths`
-  * newPropertyKey: `spring.web.resources.chain.strategy.content.paths`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.chain.strategy.fixed.enabled`
-  * newPropertyKey: `spring.web.resources.chain.strategy.fixed.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.chain.strategy.fixed.paths`
-  * newPropertyKey: `spring.web.resources.chain.strategy.fixed.paths`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.chain.strategy.fixed.version`
-  * newPropertyKey: `spring.web.resources.chain.strategy.fixed.version`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.resources.static-locations`
-  * newPropertyKey: `spring.web.resources.static-locations`
+  * oldPropertyKey: `spring.webflux.session.cookie.same-site`
+  * newPropertyKey: `server.reactive.session.cookie.same-site`
 
 {% endtab %}
 
@@ -223,88 +213,76 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.SpringBootProperties_2_6
 displayName: Migrate Spring Boot properties to 2.6
 description: Migrate properties found in `application.properties` and `application.yml`.
+tags:
+  - spring
+  - boot
 recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.server.servlet.context-path
-      newPropertyKey: management.server.base-path
+      oldPropertyKey: management.metrics.export.dynatrace.device-id
+      newPropertyKey: management.metrics.export.dynatrace.v1.device-id
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.mongodb.grid-fs-database
-      newPropertyKey: spring.data.mongodb.gridfs.database
+      oldPropertyKey: management.metrics.export.dynatrace.group
+      newPropertyKey: management.metrics.export.dynatrace.v1.group
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.mvc.locale
-      newPropertyKey: spring.web.locale
+      oldPropertyKey: management.metrics.export.dynatrace.technology-type
+      newPropertyKey: management.metrics.export.dynatrace.v1.technology-type
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.mvc.locale-resolver
-      newPropertyKey: spring.web.locale-resolver
+      oldPropertyKey: spring.data.elasticsearch.client.reactive.connection-timeout
+      newPropertyKey: spring.elasticsearch.connection-timeout
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.add-mappings
-      newPropertyKey: spring.web.resources.add-mappings
+      oldPropertyKey: spring.data.elasticsearch.client.reactive.endpoints
+      newPropertyKey: spring.elasticsearch.uris
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.cache-private
-      newPropertyKey: spring.web.resources.cache.cachecontrol.cache-private
+      oldPropertyKey: spring.data.elasticsearch.client.reactive.max-in-memory-size
+      newPropertyKey: spring.elasticsearch.webclient.max-in-memory-size
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.cache-public
-      newPropertyKey: spring.web.resources.cache.cachecontrol.cache-public
+      oldPropertyKey: spring.data.elasticsearch.client.reactive.password
+      newPropertyKey: spring.elasticsearch.password
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.max-age
-      newPropertyKey: spring.web.resources.cache.cachecontrol.max-age
+      oldPropertyKey: spring.data.elasticsearch.client.reactive.socket-timeout
+      newPropertyKey: spring.elasticsearch.socket-timeout
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.must-revalidate
-      newPropertyKey: spring.web.resources.cache.cachecontrol.must-revalidate
+      oldPropertyKey: spring.data.elasticsearch.client.reactive.username
+      newPropertyKey: spring.elasticsearch.username
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.no-cache
-      newPropertyKey: spring.web.resources.cache.cachecontrol.no-cache
+      oldPropertyKey: spring.elasticsearch.rest.connection-timeout
+      newPropertyKey: spring.elasticsearch.connection-timeout
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.no-store
-      newPropertyKey: spring.web.resources.cache.cachecontrol.no-store
+      oldPropertyKey: spring.elasticsearch.rest.password
+      newPropertyKey: spring.elasticsearch.password
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.no-transform
-      newPropertyKey: spring.web.resources.cache.cachecontrol.no-transform
+      oldPropertyKey: spring.elasticsearch.rest.read-timeout
+      newPropertyKey: spring.elasticsearch.socket-timeout
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.proxy-revalidate
-      newPropertyKey: spring.web.resources.cache.cachecontrol.proxy-revalidate
+      oldPropertyKey: spring.elasticsearch.rest.sniffer.delay-after-failure
+      newPropertyKey: spring.elasticsearch.restclient.sniffer.delay-after-failure
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.s-max-age
-      newPropertyKey: spring.web.resources.cache.cachecontrol.s-max-age
+      oldPropertyKey: spring.elasticsearch.rest.sniffer.interval
+      newPropertyKey: spring.elasticsearch.restclient.sniffer.interval
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.stale-if-error
-      newPropertyKey: spring.web.resources.cache.cachecontrol.stale-if-error
+      oldPropertyKey: spring.elasticsearch.rest.uris
+      newPropertyKey: spring.elasticsearch.uris
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.cachecontrol.stale-while-revalidate
-      newPropertyKey: spring.web.resources.cache.cachecontrol.stale-while-revalidate
+      oldPropertyKey: spring.elasticsearch.rest.username
+      newPropertyKey: spring.elasticsearch.username
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.period
-      newPropertyKey: spring.web.resources.cache.period
+      oldPropertyKey: spring.flyway.ignore-future-migrations
+      newPropertyKey: spring.flyway.ignore-migration-patterns
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.cache.use-last-modified
-      newPropertyKey: spring.web.resources.cache.use-last-modified
+      oldPropertyKey: spring.flyway.ignore-ignored-migrations
+      newPropertyKey: spring.flyway.ignore-migration-patterns
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.chain.cache
-      newPropertyKey: spring.web.resources.chain.cache
+      oldPropertyKey: spring.flyway.ignore-missing-migrations
+      newPropertyKey: spring.flyway.ignore-migration-patterns
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.chain.compressed
-      newPropertyKey: spring.web.resources.chain.compressed
+      oldPropertyKey: spring.flyway.ignore-pending-migrations
+      newPropertyKey: spring.flyway.ignore-migration-patterns
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.chain.enabled
-      newPropertyKey: spring.web.resources.chain.enabled
+      oldPropertyKey: spring.flyway.oracle-kerberos-config-file
+      newPropertyKey: spring.flyway.kerberos-config-file
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.chain.strategy.content.enabled
-      newPropertyKey: spring.web.resources.chain.strategy.content.enabled
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.chain.strategy.content.paths
-      newPropertyKey: spring.web.resources.chain.strategy.content.paths
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.chain.strategy.fixed.enabled
-      newPropertyKey: spring.web.resources.chain.strategy.fixed.enabled
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.chain.strategy.fixed.paths
-      newPropertyKey: spring.web.resources.chain.strategy.fixed.paths
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.chain.strategy.fixed.version
-      newPropertyKey: spring.web.resources.chain.strategy.fixed.version
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.resources.static-locations
-      newPropertyKey: spring.web.resources.static-locations
+      oldPropertyKey: spring.webflux.session.cookie.same-site
+      newPropertyKey: server.reactive.session.cookie.same-site
 
 ```
 {% endtab %}

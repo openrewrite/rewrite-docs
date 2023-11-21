@@ -4,13 +4,18 @@
 
 _Migrate properties found in `application.properties` and `application.yml`._
 
+### Tags
+
+* spring
+* boot
+
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.1.1
+* version: 5.1.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.4")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {
@@ -37,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
 }
 ```
 {% endcode %}
@@ -52,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.SpringBootProperties_2_2")
@@ -94,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.1.1</version>
+            <version>5.1.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,13 +138,6 @@ mod run . --recipe SpringBootProperties_2_2
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `logging.file`
-  * newPropertyKey: `logging.file.name`
-  * except: `[.+]`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `logging.path`
-  * newPropertyKey: `logging.file.path`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.jetty.accesslog.date-format`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
@@ -161,23 +159,45 @@ mod run . --recipe SpringBootProperties_2_2
   * oldPropertyKey: `server.jetty.accesslog.time-zone`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `server.tomcat.max-http-header-size`
-  * newPropertyKey: `server.max-http-header-size`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.datasource.jmx-enabled`
   * newPropertyKey: `spring.datasource.tomcat.jmx-enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.kafka.streams.cache-max-bytes-buffering`
-  * newPropertyKey: `spring.kafka.streams.cache-max-size-buffering`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.rabbitmq.template.queue`
-  * newPropertyKey: `spring.rabbitmq.template.default-receive-queue`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.reactor.stacktrace-mode.enabled`
   * newPropertyKey: `spring.reactor.debug-agent.enabled`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `management.endpoints.jmx.unique-names`
-  * newPropertyKey: `spring.jmx.unique-names`
+  * oldPropertyKey: `server.use-forward-headers`
+  * newPropertyKey: `server.forward-headers-strategy`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.jackson.joda-date-time-format`
+  * newPropertyKey: `dateFormat`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.rabbitmq.listener.simple.transaction-size`
+  * newPropertyKey: `spring.rabbitmq.listener.simple.batch-size`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.rabbitmq.publisher-confirms`
+  * newPropertyKey: `spring.rabbitmq.publisher-confirm-type`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `logging.file`
+  * newPropertyKey: `logging.file.name`
+  * except: `[.+]`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `logging.path`
+  * newPropertyKey: `logging.file.path`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.health.status.http-mapping`
+  * newPropertyKey: `management.endpoint.health.status.http-mapping`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.health.status.order`
+  * newPropertyKey: `management.endpoint.health.status.order`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.web.client.requests-metric-name`
+  * newPropertyKey: `management.metrics.web.client.request.metric-name`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.web.server.auto-time-requests`
+  * newPropertyKey: `management.metrics.web.server.request.autotime.enabled`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.web.server.requests-metric-name`
+  * newPropertyKey: `management.metrics.web.server.request.metric-name`
 
 {% endtab %}
 
@@ -188,14 +208,10 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.SpringBootProperties_2_2
 displayName: Migrate Spring Boot properties to 2.2
 description: Migrate properties found in `application.properties` and `application.yml`.
+tags:
+  - spring
+  - boot
 recipeList:
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: logging.file
-      newPropertyKey: logging.file.name
-      except: [.+]
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: logging.path
-      newPropertyKey: logging.file.path
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.date-format
       newPropertyKey: server.jetty.accesslog.custom-format
@@ -218,23 +234,45 @@ recipeList:
       oldPropertyKey: server.jetty.accesslog.time-zone
       newPropertyKey: server.jetty.accesslog.custom-format
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: server.tomcat.max-http-header-size
-      newPropertyKey: server.max-http-header-size
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.datasource.jmx-enabled
       newPropertyKey: spring.datasource.tomcat.jmx-enabled
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.kafka.streams.cache-max-bytes-buffering
-      newPropertyKey: spring.kafka.streams.cache-max-size-buffering
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.rabbitmq.template.queue
-      newPropertyKey: spring.rabbitmq.template.default-receive-queue
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.reactor.stacktrace-mode.enabled
       newPropertyKey: spring.reactor.debug-agent.enabled
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.endpoints.jmx.unique-names
-      newPropertyKey: spring.jmx.unique-names
+      oldPropertyKey: server.use-forward-headers
+      newPropertyKey: server.forward-headers-strategy
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.joda-date-time-format
+      newPropertyKey: dateFormat
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.rabbitmq.listener.simple.transaction-size
+      newPropertyKey: spring.rabbitmq.listener.simple.batch-size
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.rabbitmq.publisher-confirms
+      newPropertyKey: spring.rabbitmq.publisher-confirm-type
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: logging.file
+      newPropertyKey: logging.file.name
+      except: [.+]
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: logging.path
+      newPropertyKey: logging.file.path
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.health.status.http-mapping
+      newPropertyKey: management.endpoint.health.status.http-mapping
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.health.status.order
+      newPropertyKey: management.endpoint.health.status.order
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.client.requests-metric-name
+      newPropertyKey: management.metrics.web.client.request.metric-name
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.server.auto-time-requests
+      newPropertyKey: management.metrics.web.server.request.autotime.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.server.requests-metric-name
+      newPropertyKey: management.metrics.web.server.request.metric-name
 
 ```
 {% endtab %}

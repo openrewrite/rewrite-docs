@@ -11,11 +11,11 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.1.1
+* version: 5.1.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.4")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.SpringBootProperties_3_0")
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.1.1</version>
+            <version>5.1.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -137,162 +137,6 @@ mod run . --recipe SpringBootProperties_3_0
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.compression`
-  * newPropertyKey: `spring.cassandra.compression`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.config`
-  * newPropertyKey: `spring.cassandra.config`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.connection.connect-timeout`
-  * newPropertyKey: `spring.cassandra.connection.connect-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.connection.init-query-timeout`
-  * newPropertyKey: `spring.cassandra.connection.init-query-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.contact-points`
-  * newPropertyKey: `spring.cassandra.contact-points`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.controlconnection.timeout`
-  * newPropertyKey: `spring.cassandra.controlconnection.timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.keyspace-name`
-  * newPropertyKey: `spring.cassandra.keyspace-name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.local-datacenter`
-  * newPropertyKey: `spring.cassandra.local-datacenter`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.password`
-  * newPropertyKey: `spring.cassandra.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.pool.heartbeat-interval`
-  * newPropertyKey: `spring.cassandra.pool.heartbeat-interval`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.pool.idle-timeout`
-  * newPropertyKey: `spring.cassandra.pool.idle-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.port`
-  * newPropertyKey: `spring.cassandra.port`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.consistency`
-  * newPropertyKey: `spring.cassandra.request.consistency`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.page-size`
-  * newPropertyKey: `spring.cassandra.request.page-size`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.serial-consistency`
-  * newPropertyKey: `spring.cassandra.request.serial-consistency`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.throttler.drain-interval`
-  * newPropertyKey: `spring.cassandra.request.throttler.drain-interval`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.throttler.max-concurrent-requests`
-  * newPropertyKey: `spring.cassandra.request.throttler.max-concurrent-requests`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.throttler.max-queue-size`
-  * newPropertyKey: `spring.cassandra.request.throttler.max-queue-size`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.throttler.max-requests-per-second`
-  * newPropertyKey: `spring.cassandra.request.throttler.max-requests-per-second`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.throttler.type`
-  * newPropertyKey: `spring.cassandra.request.throttler.type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.request.timeout`
-  * newPropertyKey: `spring.cassandra.request.timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.schema-action`
-  * newPropertyKey: `spring.cassandra.schema-action`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.session-name`
-  * newPropertyKey: `spring.cassandra.session-name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.ssl`
-  * newPropertyKey: `spring.cassandra.ssl`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.data.cassandra.username`
-  * newPropertyKey: `spring.cassandra.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.ignore-future-migrations`
-  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.ignore-ignored-migrations`
-  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.ignore-missing-migrations`
-  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.ignore-pending-migrations`
-  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.oracle-kerberos-config-file`
-  * newPropertyKey: `spring.flyway.kerberos-config-file`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.client-name`
-  * newPropertyKey: `spring.data.redis.client-name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.client-type`
-  * newPropertyKey: `spring.data.redis.client-type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.cluster.max-redirects`
-  * newPropertyKey: `spring.data.redis.cluster.max-redirects`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.cluster.nodes`
-  * newPropertyKey: `spring.data.redis.cluster.nodes`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.connect-timeout`
-  * newPropertyKey: `spring.data.redis.connect-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.database`
-  * newPropertyKey: `spring.data.redis.database`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.host`
-  * newPropertyKey: `spring.data.redis.host`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.lettuce.cluster.refresh.adaptive`
-  * newPropertyKey: `spring.data.redis.lettuce.cluster.refresh.adaptive`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.lettuce.cluster.refresh.dynamic-refresh-sources`
-  * newPropertyKey: `spring.data.redis.lettuce.cluster.refresh.dynamic-refresh-sources`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.lettuce.cluster.refresh.period`
-  * newPropertyKey: `spring.data.redis.lettuce.cluster.refresh.period`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.lettuce.shutdown-timeout`
-  * newPropertyKey: `spring.data.redis.lettuce.shutdown-timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.password`
-  * newPropertyKey: `spring.data.redis.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.port`
-  * newPropertyKey: `spring.data.redis.port`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.sentinel.master`
-  * newPropertyKey: `spring.data.redis.sentinel.master`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.sentinel.nodes`
-  * newPropertyKey: `spring.data.redis.sentinel.nodes`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.sentinel.password`
-  * newPropertyKey: `spring.data.redis.sentinel.password`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.sentinel.username`
-  * newPropertyKey: `spring.data.redis.sentinel.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.ssl`
-  * newPropertyKey: `spring.data.redis.ssl`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.timeout`
-  * newPropertyKey: `spring.data.redis.timeout`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.url`
-  * newPropertyKey: `spring.data.redis.url`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.redis.username`
-  * newPropertyKey: `spring.data.redis.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.security.oauth2.resourceserver.jwt.jws-algorithm`
-  * newPropertyKey: `spring.security.oauth2.resourceserver.jwt.jws-algorithms`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.metrics.export.appoptics.api-token`
   * newPropertyKey: `management.appoptics.metrics.export.api-token`
@@ -864,14 +708,20 @@ mod run . --recipe SpringBootProperties_3_0
   * oldPropertyKey: `management.metrics.export.wavefront.uri`
   * newPropertyKey: `management.wavefront.uri`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.web.client.request.metric-name`
+  * newPropertyKey: `management.observations.http.client.requests.name`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.web.server.request.metric-name`
+  * newPropertyKey: `management.observations.http.server.requests.name`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.trace.http.enabled`
   * newPropertyKey: `management.httpexchanges.recording.enabled`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.trace.http.include`
   * newPropertyKey: `management.httpexchanges.recording.include`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `management.trace.include`
-  * newPropertyKey: `management.httpexchanges.recording.include`
+  * oldPropertyKey: `server.undertow.allow-encoded-slash`
+  * newPropertyKey: `server.undertow.decode-slash`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.data.cassandra.compression`
   * newPropertyKey: `spring.cassandra.compression`
@@ -948,20 +798,8 @@ mod run . --recipe SpringBootProperties_3_0
   * oldPropertyKey: `spring.data.cassandra.username`
   * newPropertyKey: `spring.cassandra.username`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.ignore-future-migrations`
-  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.ignore-ignored-migrations`
-  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.ignore-missing-migrations`
-  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.ignore-pending-migrations`
-  * newPropertyKey: `spring.flyway.ignore-migration-patterns`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.flyway.oracle-kerberos-config-file`
-  * newPropertyKey: `spring.flyway.kerberos-config-file`
+  * oldPropertyKey: `spring.liquibase.labels`
+  * newPropertyKey: `spring.liquibase.label-filter`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.redis.client-name`
   * newPropertyKey: `spring.data.redis.client-name`
@@ -1025,9 +863,6 @@ mod run . --recipe SpringBootProperties_3_0
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.redis.username`
   * newPropertyKey: `spring.data.redis.username`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.security.oauth2.resourceserver.jwt.jws-algorithm`
-  * newPropertyKey: `spring.security.oauth2.resourceserver.jwt.jws-algorithms`
 
 {% endtab %}
 
@@ -1042,162 +877,6 @@ tags:
   - spring
   - boot
 recipeList:
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.compression
-      newPropertyKey: spring.cassandra.compression
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.config
-      newPropertyKey: spring.cassandra.config
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.connection.connect-timeout
-      newPropertyKey: spring.cassandra.connection.connect-timeout
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.connection.init-query-timeout
-      newPropertyKey: spring.cassandra.connection.init-query-timeout
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.contact-points
-      newPropertyKey: spring.cassandra.contact-points
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.controlconnection.timeout
-      newPropertyKey: spring.cassandra.controlconnection.timeout
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.keyspace-name
-      newPropertyKey: spring.cassandra.keyspace-name
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.local-datacenter
-      newPropertyKey: spring.cassandra.local-datacenter
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.password
-      newPropertyKey: spring.cassandra.password
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.pool.heartbeat-interval
-      newPropertyKey: spring.cassandra.pool.heartbeat-interval
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.pool.idle-timeout
-      newPropertyKey: spring.cassandra.pool.idle-timeout
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.port
-      newPropertyKey: spring.cassandra.port
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.consistency
-      newPropertyKey: spring.cassandra.request.consistency
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.page-size
-      newPropertyKey: spring.cassandra.request.page-size
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.serial-consistency
-      newPropertyKey: spring.cassandra.request.serial-consistency
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.throttler.drain-interval
-      newPropertyKey: spring.cassandra.request.throttler.drain-interval
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.throttler.max-concurrent-requests
-      newPropertyKey: spring.cassandra.request.throttler.max-concurrent-requests
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.throttler.max-queue-size
-      newPropertyKey: spring.cassandra.request.throttler.max-queue-size
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.throttler.max-requests-per-second
-      newPropertyKey: spring.cassandra.request.throttler.max-requests-per-second
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.throttler.type
-      newPropertyKey: spring.cassandra.request.throttler.type
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.request.timeout
-      newPropertyKey: spring.cassandra.request.timeout
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.schema-action
-      newPropertyKey: spring.cassandra.schema-action
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.session-name
-      newPropertyKey: spring.cassandra.session-name
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.ssl
-      newPropertyKey: spring.cassandra.ssl
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.username
-      newPropertyKey: spring.cassandra.username
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.ignore-future-migrations
-      newPropertyKey: spring.flyway.ignore-migration-patterns
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.ignore-ignored-migrations
-      newPropertyKey: spring.flyway.ignore-migration-patterns
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.ignore-missing-migrations
-      newPropertyKey: spring.flyway.ignore-migration-patterns
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.ignore-pending-migrations
-      newPropertyKey: spring.flyway.ignore-migration-patterns
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.oracle-kerberos-config-file
-      newPropertyKey: spring.flyway.kerberos-config-file
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.client-name
-      newPropertyKey: spring.data.redis.client-name
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.client-type
-      newPropertyKey: spring.data.redis.client-type
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.cluster.max-redirects
-      newPropertyKey: spring.data.redis.cluster.max-redirects
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.cluster.nodes
-      newPropertyKey: spring.data.redis.cluster.nodes
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.connect-timeout
-      newPropertyKey: spring.data.redis.connect-timeout
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.database
-      newPropertyKey: spring.data.redis.database
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.host
-      newPropertyKey: spring.data.redis.host
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.lettuce.cluster.refresh.adaptive
-      newPropertyKey: spring.data.redis.lettuce.cluster.refresh.adaptive
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.lettuce.cluster.refresh.dynamic-refresh-sources
-      newPropertyKey: spring.data.redis.lettuce.cluster.refresh.dynamic-refresh-sources
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.lettuce.cluster.refresh.period
-      newPropertyKey: spring.data.redis.lettuce.cluster.refresh.period
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.lettuce.shutdown-timeout
-      newPropertyKey: spring.data.redis.lettuce.shutdown-timeout
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.password
-      newPropertyKey: spring.data.redis.password
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.port
-      newPropertyKey: spring.data.redis.port
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.sentinel.master
-      newPropertyKey: spring.data.redis.sentinel.master
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.sentinel.nodes
-      newPropertyKey: spring.data.redis.sentinel.nodes
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.sentinel.password
-      newPropertyKey: spring.data.redis.sentinel.password
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.sentinel.username
-      newPropertyKey: spring.data.redis.sentinel.username
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.ssl
-      newPropertyKey: spring.data.redis.ssl
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.timeout
-      newPropertyKey: spring.data.redis.timeout
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.url
-      newPropertyKey: spring.data.redis.url
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.redis.username
-      newPropertyKey: spring.data.redis.username
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.security.oauth2.resourceserver.jwt.jws-algorithm
-      newPropertyKey: spring.security.oauth2.resourceserver.jwt.jws-algorithms
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.metrics.export.appoptics.api-token
       newPropertyKey: management.appoptics.metrics.export.api-token
@@ -1769,14 +1448,20 @@ recipeList:
       oldPropertyKey: management.metrics.export.wavefront.uri
       newPropertyKey: management.wavefront.uri
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.client.request.metric-name
+      newPropertyKey: management.observations.http.client.requests.name
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.server.request.metric-name
+      newPropertyKey: management.observations.http.server.requests.name
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.trace.http.enabled
       newPropertyKey: management.httpexchanges.recording.enabled
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.trace.http.include
       newPropertyKey: management.httpexchanges.recording.include
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.trace.include
-      newPropertyKey: management.httpexchanges.recording.include
+      oldPropertyKey: server.undertow.allow-encoded-slash
+      newPropertyKey: server.undertow.decode-slash
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.cassandra.compression
       newPropertyKey: spring.cassandra.compression
@@ -1853,20 +1538,8 @@ recipeList:
       oldPropertyKey: spring.data.cassandra.username
       newPropertyKey: spring.cassandra.username
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.ignore-future-migrations
-      newPropertyKey: spring.flyway.ignore-migration-patterns
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.ignore-ignored-migrations
-      newPropertyKey: spring.flyway.ignore-migration-patterns
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.ignore-missing-migrations
-      newPropertyKey: spring.flyway.ignore-migration-patterns
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.ignore-pending-migrations
-      newPropertyKey: spring.flyway.ignore-migration-patterns
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.flyway.oracle-kerberos-config-file
-      newPropertyKey: spring.flyway.kerberos-config-file
+      oldPropertyKey: spring.liquibase.labels
+      newPropertyKey: spring.liquibase.label-filter
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.redis.client-name
       newPropertyKey: spring.data.redis.client-name
@@ -1930,9 +1603,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.redis.username
       newPropertyKey: spring.data.redis.username
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.security.oauth2.resourceserver.jwt.jws-algorithm
-      newPropertyKey: spring.security.oauth2.resourceserver.jwt.jws-algorithms
 
 ```
 {% endtab %}

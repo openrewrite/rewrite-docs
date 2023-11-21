@@ -6,11 +6,11 @@ _Reorder method arguments into the specified order._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.9.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.9.5/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.9.4
+* version: 8.9.5
 
 ## Options
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined activate i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.4")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {
@@ -109,4 +109,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Greg Adams](mailto:greg@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Greg Adams](mailto:greg@moderne.io)

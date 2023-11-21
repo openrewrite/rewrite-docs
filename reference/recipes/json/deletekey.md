@@ -6,11 +6,11 @@ _Delete a JSON mapping entry key._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/DeleteKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/8.9.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/DeleteKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/8.9.5/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-json
-* version: 8.9.4
+* version: 8.9.5
 
 ## Options
 
@@ -43,7 +43,7 @@ Now that `com.yourorg.DeleteKeyExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.4")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {

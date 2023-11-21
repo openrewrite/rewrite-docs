@@ -4,13 +4,18 @@
 
 _Migrate properties found in `application.properties` and `application.yml`._
 
+### Tags
+
+* spring
+* boot
+
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-21.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-21-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.1.1
+* version: 5.1.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.4")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {
@@ -37,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
 }
 ```
 {% endcode %}
@@ -52,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.SpringBootProperties_2_1")
@@ -94,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.1.1</version>
+            <version>5.1.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,17 +138,17 @@ mod run . --recipe SpringBootProperties_2_1
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `management.metrics.binders.files.enabled`
-  * newPropertyKey: `management.metrics.enable.process.files`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `management.metrics.binders.jvm.enabled`
-  * newPropertyKey: `management.metrics.enable.jvm`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `management.metrics.binders.logback.enabled`
-  * newPropertyKey: `management.metrics.enable.logback`
+  * oldPropertyKey: `server.jetty.max-http-post-size`
+  * newPropertyKey: `server.jetty.max-http-form-post-size`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.servlet.path`
   * newPropertyKey: `spring.mvc.servlet.path`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `server.tomcat.max-http-header-size`
+  * newPropertyKey: `server.max-http-header-size`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `server.tomcat.max-http-post-size`
+  * newPropertyKey: `server.tomcat.max-http-form-post-size`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.activemq.pool.maximum-active-session-per-connection`
   * newPropertyKey: `spring.activemq.pool.max-sessions-per-connection`
@@ -199,8 +204,14 @@ mod run . --recipe SpringBootProperties_2_1
   * oldPropertyKey: `spring.kafka.ssl.truststore-password`
   * newPropertyKey: `spring.kafka.ssl.trust-store-password`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.kafka.streams.cache-max-bytes-buffering`
+  * newPropertyKey: `spring.kafka.streams.cache-max-size-buffering`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.mvc.formcontent.putfilter.enabled`
   * newPropertyKey: `spring.mvc.formcontent.filter.enabled`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.rabbitmq.template.queue`
+  * newPropertyKey: `spring.rabbitmq.template.default-receive-queue`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `spring.resources.chain.gzipped`
   * newPropertyKey: `spring.resources.chain.compressed`
@@ -213,6 +224,9 @@ mod run . --recipe SpringBootProperties_2_1
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `management.metrics.binders.logback.enabled`
   * newPropertyKey: `management.metrics.enable.logback`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.endpoints.jmx.unique-names`
+  * newPropertyKey: `spring.jmx.unique-names`
 
 {% endtab %}
 
@@ -223,19 +237,22 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot2.SpringBootProperties_2_1
 displayName: Migrate Spring Boot properties to 2.1
 description: Migrate properties found in `application.properties` and `application.yml`.
+tags:
+  - spring
+  - boot
 recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.metrics.binders.files.enabled
-      newPropertyKey: management.metrics.enable.process.files
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.metrics.binders.jvm.enabled
-      newPropertyKey: management.metrics.enable.jvm
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.metrics.binders.logback.enabled
-      newPropertyKey: management.metrics.enable.logback
+      oldPropertyKey: server.jetty.max-http-post-size
+      newPropertyKey: server.jetty.max-http-form-post-size
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.servlet.path
       newPropertyKey: spring.mvc.servlet.path
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.tomcat.max-http-header-size
+      newPropertyKey: server.max-http-header-size
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: server.tomcat.max-http-post-size
+      newPropertyKey: server.tomcat.max-http-form-post-size
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.activemq.pool.maximum-active-session-per-connection
       newPropertyKey: spring.activemq.pool.max-sessions-per-connection
@@ -291,8 +308,14 @@ recipeList:
       oldPropertyKey: spring.kafka.ssl.truststore-password
       newPropertyKey: spring.kafka.ssl.trust-store-password
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.kafka.streams.cache-max-bytes-buffering
+      newPropertyKey: spring.kafka.streams.cache-max-size-buffering
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.mvc.formcontent.putfilter.enabled
       newPropertyKey: spring.mvc.formcontent.filter.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.rabbitmq.template.queue
+      newPropertyKey: spring.rabbitmq.template.default-receive-queue
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.resources.chain.gzipped
       newPropertyKey: spring.resources.chain.compressed
@@ -305,6 +328,9 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.metrics.binders.logback.enabled
       newPropertyKey: management.metrics.enable.logback
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.endpoints.jmx.unique-names
+      newPropertyKey: spring.jmx.unique-names
 
 ```
 {% endtab %}

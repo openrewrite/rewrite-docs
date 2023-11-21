@@ -11,11 +11,11 @@ _Migrate applications to the latest Spring Boot 2.6 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-26.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-26.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.1.1
+* version: 5.1.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.4")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_6")
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.1.1</version>
+            <version>5.1.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -150,6 +150,12 @@ mod run . --recipe UpgradeSpringBoot_2_6
 * [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion.md)
   * pluginIdPattern: `org.springframework.boot`
   * newVersion: `2.6.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
+  * oldGroupId: `mysql`
+  * oldArtifactId: `mysql-connector-java`
+  * newGroupId: `com.mysql`
+  * newArtifactId: `mysql-connector-j`
+  * newVersion: `8.0.x`
 * [Migrate Spring Boot properties to 2.6](../../../java/spring/boot2/springbootproperties_2_6.md)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
   * groupId: `org.springframework.cloud`
@@ -184,6 +190,12 @@ recipeList:
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: org.springframework.boot
       newVersion: 2.6.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: mysql
+      oldArtifactId: mysql-connector-java
+      newGroupId: com.mysql
+      newArtifactId: mysql-connector-j
+      newVersion: 8.0.x
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_6
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
@@ -204,4 +216,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Yeikel, [Greg Adams](mailto:greg@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), Adriano Machado, [Kevin McCarpenter](mailto:kevin@moderne.io), Fabian Krüger, Kun Li, [Tim te Beek](mailto:tim@moderne.io), [Matthias Klauer](mailto:matthias.klauer@sap.com), nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), John Burns, [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Scott Jungling](mailto:scott.jungling@gmail.com), Ties van de Ven, Peter Puškár, Josh Soref, [Tim te Beek](mailto:timtebeek@gmail.com)
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Yeikel, [Greg Adams](mailto:greg@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), Adriano Machado, [Kevin McCarpenter](mailto:kevin@moderne.io), Fabian Krüger, Kun Li, [Tim te Beek](mailto:tim@moderne.io), [Matthias Klauer](mailto:matthias.klauer@sap.com), nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), John Burns, [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Scott Jungling](mailto:scott.jungling@gmail.com), Ties van de Ven, Peter Puškár, Josh Soref, [Tim te Beek](mailto:timtebeek@gmail.com)

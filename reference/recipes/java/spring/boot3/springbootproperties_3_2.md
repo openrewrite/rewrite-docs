@@ -4,13 +4,18 @@
 
 _Migrate properties found in `application.properties` and `application.yml`._
 
+### Tags
+
+* spring
+* boot
+
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-32.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-32-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.1.1
+* version: 5.1.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.4")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {
@@ -37,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
 }
 ```
 {% endcode %}
@@ -52,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.SpringBootProperties_3_2")
@@ -94,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.1.1</version>
+            <version>5.1.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,17 +138,35 @@ mod run . --recipe SpringBootProperties_3_2
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `management.metrics.web.client.request.metric-name`
-  * newPropertyKey: `management.observations.http.client.requests.name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `management.metrics.web.server.request.metric-name`
-  * newPropertyKey: `management.observations.http.server.requests.name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
   * oldPropertyKey: `server.max-http-header-size`
   * newPropertyKey: `server.max-http-request-header-size`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
-  * oldPropertyKey: `spring.liquibase.labels`
-  * newPropertyKey: `spring.liquibase.label-filter`
+  * oldPropertyKey: `spring.flyway.oracle-kerberos-cache-file`
+  * newPropertyKey: `spring.flyway.oracle.kerberos-cache-file`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.flyway.oracle-sqlplus`
+  * newPropertyKey: `spring.flyway.oracle.sqlplus`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.flyway.oracle-sqlplus-warn`
+  * newPropertyKey: `spring.flyway.oracle.sqlplus-warn`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.flyway.oracle-wallet-location`
+  * newPropertyKey: `spring.flyway.oracle.wallet-location`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.flyway.sql-server-kerberos-login-file`
+  * newPropertyKey: `spring.flyway.sqlserver.kerberos-login-file`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.jms.listener.acknowledge-mode`
+  * newPropertyKey: `spring.jms.listener.session.acknowledge-mode`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `spring.jms.listener.concurrency`
+  * newPropertyKey: `spring.jms.listener.min-concurrency`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.metrics.tags`
+  * newPropertyKey: `management.observations.key-values`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey.md)
+  * oldPropertyKey: `management.otlp.metrics.export.resource-attributes`
+  * newPropertyKey: `management.opentelemetry.resource-attributes`
 
 {% endtab %}
 
@@ -154,19 +177,40 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot3.SpringBootProperties_3_2
 displayName: Migrate Spring Boot properties to 3.2
 description: Migrate properties found in `application.properties` and `application.yml`.
+tags:
+  - spring
+  - boot
 recipeList:
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.metrics.web.client.request.metric-name
-      newPropertyKey: management.observations.http.client.requests.name
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.metrics.web.server.request.metric-name
-      newPropertyKey: management.observations.http.server.requests.name
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.max-http-header-size
       newPropertyKey: server.max-http-request-header-size
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.liquibase.labels
-      newPropertyKey: spring.liquibase.label-filter
+      oldPropertyKey: spring.flyway.oracle-kerberos-cache-file
+      newPropertyKey: spring.flyway.oracle.kerberos-cache-file
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.flyway.oracle-sqlplus
+      newPropertyKey: spring.flyway.oracle.sqlplus
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.flyway.oracle-sqlplus-warn
+      newPropertyKey: spring.flyway.oracle.sqlplus-warn
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.flyway.oracle-wallet-location
+      newPropertyKey: spring.flyway.oracle.wallet-location
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.flyway.sql-server-kerberos-login-file
+      newPropertyKey: spring.flyway.sqlserver.kerberos-login-file
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jms.listener.acknowledge-mode
+      newPropertyKey: spring.jms.listener.session.acknowledge-mode
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jms.listener.concurrency
+      newPropertyKey: spring.jms.listener.min-concurrency
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.tags
+      newPropertyKey: management.observations.key-values
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.otlp.metrics.export.resource-attributes
+      newPropertyKey: management.opentelemetry.resource-attributes
 
 ```
 {% endtab %}

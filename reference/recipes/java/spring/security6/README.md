@@ -10,6 +10,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate to Spring Security 6.0](./upgradespringsecurity_6_0.md)
 * [Migrate to Spring Security 6.1](./upgradespringsecurity_6_1.md)
+* [Migrate to Spring Security 6.2](./upgradespringsecurity_6_2.md)
 
 ## Recipes
 

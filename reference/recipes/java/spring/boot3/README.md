@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Enable Virtual Threads on Java 21](./enablevirtualthreads.md)
 * [Migrate Spring Boot properties to 3.0](./springbootproperties_3_0.md)
 * [Migrate Spring Boot properties to 3.1](./springbootproperties_3_1.md)
 * [Migrate Spring Boot properties to 3.2](./springbootproperties_3_2.md)
@@ -11,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Batch 5.0 from 4.3](./springbatch4to5migration.md)
 * [Migrate to Spring Boot 3.0](./upgradespringboot_3_0.md)
 * [Migrate to Spring Boot 3.1](./upgradespringboot_3_1.md)
+* [Migrate to Spring Boot 3.2](./upgradespringboot_3_2.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](./actuatorendpointsanitization.md)
 * [Upgrade to springdoc-openapi 2](./upgradespringdoc_2.md)
 
