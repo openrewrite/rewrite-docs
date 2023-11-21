@@ -13,7 +13,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/statica
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>5.11.0</version>
+  <version>5.13.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
@@ -29,7 +29,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/statica
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.5.0")
+    id("org.openrewrite.rewrite") version("6.5.6")
 }
 
 rewrite {
