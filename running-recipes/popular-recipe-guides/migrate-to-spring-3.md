@@ -1,10 +1,10 @@
 # Migrate to Spring Boot 3 from Spring Boot 2
 
-In this tutorial, we'll use OpenRewrite to perform an automated migration from Spring Boot 2.x to Spring Boot 3.1.
+In this tutorial, we'll use OpenRewrite to perform an automated migration from Spring Boot 2.x to Spring Boot 3.2.
 
 ## Example Configuration
 
-The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgradespringboot\_3\_1.md) can be applied by adding OpenRewrite's plugin to your project and adding a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring):
+The [Spring 3 migration recipe](/reference/recipes/java/spring/boot3/upgradespringboot_3_2.md) can be applied by adding OpenRewrite's plugin to your project and adding a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring):
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -18,7 +18,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
       <version>5.13.0</version>
       <configuration>
         <activeRecipes>
-          <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1</recipe>
+          <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2</recipe>
         </activeRecipes>
       </configuration>
       <dependencies>
@@ -44,7 +44,7 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
   }
   
   rewrite {
-      activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0")
+      activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2")
   }
   
   repositories {
@@ -65,8 +65,8 @@ The [Spring 3 migration recipe](../../reference/recipes/java/spring/boot3/upgrad
 {% code title="shell" %}
 ```sh
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
-  -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE \
+  -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2
 ```
 {% endcode %}
 {% endtab %}
@@ -76,7 +76,7 @@ At this point, you're ready to execute the migration by running `mvn rewrite:run
 
 ## Before and After
 
-For the full list of changes this recipe will make, see its [reference page](https://docs.openrewrite.org/recipes/java/spring/boot3/upgradespringboot\_3\_1).
+For the full list of changes this recipe will make, see its [reference page](/reference/recipes/java/spring/boot3/upgradespringboot_3_2.md).
 
 ### Example Java Class
 
