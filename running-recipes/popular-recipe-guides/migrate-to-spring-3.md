@@ -7,66 +7,109 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration from S
 The [Spring 3 migration recipe](/reference/recipes/java/spring/boot3/upgradespringboot_3_2.md) can be applied by adding OpenRewrite's plugin to your project and adding a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring):
 
 {% tabs %}
-{% tab title="Maven" %}
-{% code title="pom.xml" %}
-```xml
-<build>
-  <plugins>
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.13.0</version>
-      <configuration>
-        <activeRecipes>
-          <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2</recipe>
-        </activeRecipes>
-      </configuration>
-      <dependencies>
-        <dependency>
-          <groupId>org.openrewrite.recipe</groupId>
-          <artifactId>rewrite-spring</artifactId>
-          <version>5.1.2</version>
-        </dependency>
-      </dependencies>
-    </plugin>
-  </plugins>
-</build>
-```
-{% endcode %}
-{% endtab %}
-
 {% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
-  plugins {
-      id("java")
-      id("org.openrewrite.rewrite") version("6.5.6")
-  }
-  
-  rewrite {
-      activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2")
-  }
-  
-  repositories {
-      mavenCentral() // rewrite-spring is published to Maven Central
-  }
-  
-  dependencies {
-      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.0"))
-      rewrite("org.openrewrite.recipe:rewrite-spring")
-  
-      // Other project dependencies
-  }
+plugins {
+    id("org.openrewrite.rewrite") version("6.5.6")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
+}
 ```
 {% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
+{% endtab %}
+
+{% tab title="Gradle init script" %}
+1. Create a file named `init.gradle` in the root of your project.
+{% code title="init.gradle" %}
+```groovy
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.2")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2")
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+{% endcode %}
+2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+{% endtab %}
+{% tab title="Maven POM" %}
+1. Add the following to your `pom.xml` file:
+{% code title="pom.xml" %}
+```xml
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.13.0</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-spring</artifactId>
+            <version>5.1.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+{% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
 {% code title="shell" %}
-```sh
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE \
   -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run . --recipe UpgradeSpringBoot_3_2
 ```
 {% endcode %}
 {% endtab %}
@@ -275,7 +318,7 @@ management.server.base-path=/manage
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.1.1</version>
+    <version>3.2.0</version>
 </parent>
 
 <properties>
@@ -293,7 +336,7 @@ management.server.base-path=/manage
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
-        <version>3.1.1</version>
+        <version>3.2.0</version>
     </dependency>
 </dependencies>
 ```
