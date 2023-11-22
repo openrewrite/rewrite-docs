@@ -142,7 +142,7 @@ Scanning recipes have three phases:
 
 As converting a `Recipe` to a `ScanningRecipe` is a substantial change, the migration recipe is not able to automate this. You will need to rewrite your recipes that need to be `ScanningRecipes` on your own.
 
-Below is an example of what a recipe might look like before/after this change. You can find the converted recipe in it's entirety [here](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java).
+Below is an example of what a recipe might look like before/after this change. You can find the converted recipe in its entirety [here](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddProperty.java).
 
 {% tabs %}
 {% tab title="Before" %}
@@ -150,79 +150,64 @@ Below is an example of what a recipe might look like before/after this change. Y
 // imports
 
 @Value
-@EqualsAndHashCode(callSuper = true)
-public class AddManagedDependency extends Recipe {
-  // Standard methods such as displayName and description
+@EqualsAndHashCode(callSuper = false)
+public class AddProperty extends Recipe {
 
-  @Override
-  protected List<SourceFile> visit(List<SourceFile> before, ExecutionContext ctx) {
-      List<SourceFile> rootPoms = new ArrayList<>();
-      for (SourceFile source : before) {
-          source.getMarkers().findFirst(MavenResolutionResult.class).ifPresent(mavenResolutionResult -> {
-              if (mavenResolutionResult.getParent() == null) {
-                  rootPoms.add(source);
-              }
-          });
-      }
+    @Option(displayName = "Property name",
+            description = "The name of the property to add.",
+            example = "org.gradle.caching")
+    String key;
 
-      return ListUtils.map(before, s -> s.getMarkers().findFirst(MavenResolutionResult.class)
-              .map(javaProject -> (Tree) new MavenVisitor<ExecutionContext>() {
-                  @Override
-                  public Xml visitDocument(Xml.Document document, ExecutionContext executionContext) {
-                      Xml maven = super.visitDocument(document, executionContext);
+    @Option(displayName = "Property value",
+            description = "The value of the property to add.")
+    String value;
 
-                      if (!Boolean.TRUE.equals(addToRootPom) || rootPoms.contains(document)) {
-                          Validated versionValidation = Semver.validate(version, versionPattern);
-                          if (versionValidation.isValid()) {
-                              VersionComparator versionComparator = requireNonNull(versionValidation.getValue());
-                              try {
-                                  String versionToUse = findVersionToUse(versionComparator, ctx);
-                                  if (!Objects.equals(versionToUse, existingManagedDependencyVersion())) {
-                                      doAfterVisit(new AddManagedDependencyVisitor(groupId, artifactId,
-                                              versionToUse, scope, type, classifier));
-                                      maybeUpdateModel();
-                                  }
-                              } catch (MavenDownloadingException e) {
-                                  return e.warn(document);
-                              }
-                          }
-                      }
+    @Option(displayName = "Overwrite if exists",
+            description = "If a property with the same key exists, overwrite.",
+            example = "Enable the Gradle build cache")
+    @Nullable
+    Boolean overwrite;
 
-                      return maven;
-                  }
+    @Override
+    public String getDisplayName() {
+        return "Add Gradle property";
+    }
 
-                  @Nullable
-                  private String existingManagedDependencyVersion() {
-                      return getResolutionResult().getPom().getDependencyManagement().stream()
-                              .map(resolvedManagedDep -> {
-                                  if (resolvedManagedDep.matches(groupId, artifactId, type, classifier)) {
-                                      return resolvedManagedDep.getGav().getVersion();
-                                  } else if (resolvedManagedDep.getRequestedBom() != null
-                                              && resolvedManagedDep.getRequestedBom().getGroupId().equals(groupId)
-                                              && resolvedManagedDep.getRequestedBom().getArtifactId().equals(artifactId)) {
-                                      return resolvedManagedDep.getRequestedBom().getVersion();
-                                  }
-                                  return null;
-                              })
-                              .filter(Objects::nonNull)
-                              .findFirst().orElse(null);
-                  }
+    @Override
+    public String getDescription() {
+        return "Add a property to the `gradle.properties` file.";
+    }
 
-                  @Nullable
-                  private String findVersionToUse(VersionComparator versionComparator, ExecutionContext ctx) throws MavenDownloadingException {
-                      MavenMetadata mavenMetadata = metadataFailures.insertRows(ctx, () -> downloadMetadata(groupId, artifactId, ctx));
-                      LatestRelease latest = new LatestRelease(versionPattern);
-                      return mavenMetadata.getVersioning().getVersions().stream()
-                              .filter(v -> versionComparator.isValid(null, v))
-                              .filter(v -> !Boolean.TRUE.equals(releasesOnly) || latest.isValid(null, v))
-                              .max((v1, v2) -> versionComparator.compare(null, v1, v2))
-                              .orElse(null);
-                  }
-              }.visit(s, ctx))
-              .map(SourceFile.class::cast)
-              .orElse(s)
-      );
-  }
+    @Override
+    protected TreeVisitor<?, ExecutionContext> getApplicableTest() {
+        return new FindGradleProject(FindGradleProject.SearchCriteria.Marker).getVisitor();
+    }
+
+    @Override
+    protected List<SourceFile> visit(List<SourceFile> before, ExecutionContext ctx) {
+        AtomicBoolean exists = new AtomicBoolean();
+        List<SourceFile> after = ListUtils.map(before, sourceFile -> {
+            if (sourceFile.getSourcePath().endsWith(Paths.get("gradle.properties"))) {
+                exists.set(true);
+                Tree t = !Boolean.TRUE.equals(overwrite) ?
+                        sourceFile :
+                        new ChangePropertyValue(key, value, null, false, null, null)
+                                .getVisitor().visitNonNull(sourceFile, ctx);
+                return (SourceFile) new org.openrewrite.properties.AddProperty(key, value, null, null)
+                        .getVisitor()
+                        .visitNonNull(t, ctx);
+            }
+            return sourceFile;
+        });
+
+        if (!exists.get()) {
+            after = ListUtils.concatAll(before, PropertiesParser.builder().build()
+                    .parseInputs(singletonList(Parser.Input.fromString(Paths.get("gradle.properties"),
+                            key + "=" + value)), null, ctx));
+        }
+
+        return after;
+    }
 }
 ```
 {% endtab %}
@@ -232,115 +217,90 @@ public class AddManagedDependency extends Recipe {
 // imports
 
 @Value
-@EqualsAndHashCode(callSuper = true)
-public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Scanned> {
-  // Standard methods such as displayName and description
+@EqualsAndHashCode(callSuper = false)
+public class AddProperty extends ScanningRecipe<AddProperty.NeedsProperty> {
 
-  static class Scanned {
-      boolean usingType;
-      List<SourceFile> rootPoms = new ArrayList<>();
-  }
+    @Option(displayName = "Property name",
+            description = "The name of the property to add.",
+            example = "org.gradle.caching")
+    String key;
 
-  @Override
-  public Scanned getInitialValue(ExecutionContext ctx) {
-      Scanned scanned = new Scanned();
-      scanned.usingType = onlyIfUsing == null;
-      return scanned;
-  }
+    @Option(displayName = "Property value",
+            description = "The value of the property to add.")
+    String value;
 
-  @Override
-  public TreeVisitor<?, ExecutionContext> getScanner(Scanned acc) {
-      return Preconditions.check(acc.usingType || (!StringUtils.isNullOrEmpty(onlyIfUsing) && onlyIfUsing.contains(":")), new MavenIsoVisitor<ExecutionContext>() {
-          @Override
-          public Xml.Document visitDocument(Xml.Document document, ExecutionContext ctx) {
-              document.getMarkers().findFirst(MavenResolutionResult.class).ifPresent(mavenResolutionResult -> {
-                  if (mavenResolutionResult.getParent() == null) {
-                      acc.rootPoms.add(document);
-                  }
-              });
-              if(acc.usingType) {
-                  return SearchResult.found(document);
-              }
+    @Option(displayName = "Overwrite if exists",
+            description = "If a property with the same key exists, overwrite.",
+            example = "Enable the Gradle build cache")
+    @Nullable
+    Boolean overwrite;
 
-              return super.visitDocument(document, ctx);
-          }
+    @Override
+    public String getDisplayName() {
+        return "Add Gradle property";
+    }
 
-          @Override
-          public Xml.Tag visitTag(Xml.Tag tag, ExecutionContext ctx) {
-              Xml.Tag t = super.visitTag(tag, ctx);
+    @Override
+    public String getDescription() {
+        return "Add a property to the `gradle.properties` file.";
+    }
 
-              if (isDependencyTag()) {
-                  ResolvedDependency dependency = findDependency(t, null);
-                  if (dependency != null) {
-                      String[] ga = requireNonNull(onlyIfUsing).split(":");
-                      ResolvedDependency match = dependency.findDependency(ga[0], ga[1]);
-                      if (match != null) {
-                          acc.usingType = true;
-                      }
-                  }
-              }
+    static class NeedsProperty {
+        boolean isGradleProject;
+        boolean hasGradleProperties;
+    }
 
-              return t;
-          }
-      });
-  }
+    @Override
+    public NeedsProperty getInitialValue(ExecutionContext ctx) {
+        return new NeedsProperty();
+    }
 
-  @Override
-  public TreeVisitor<?, ExecutionContext> getVisitor(Scanned acc) {
-      return Preconditions.check(acc.usingType, new MavenVisitor<ExecutionContext>() {
-          @Override
-          public Xml visitDocument(Xml.Document document, ExecutionContext ctx) {
-              Xml maven = super.visitDocument(document, ctx);
+    @Override
+    public TreeVisitor<?, ExecutionContext> getScanner(NeedsProperty acc) {
+        return new TreeVisitor<Tree, ExecutionContext>() {
+            @Override
+            public Tree visit(@Nullable Tree tree, ExecutionContext ctx) {
+                SourceFile sourceFile = (SourceFile) requireNonNull(tree);
+                if (sourceFile.getSourcePath().endsWith(Paths.get("gradle.properties"))) {
+                    acc.hasGradleProperties = true;
+                } else if (IsBuildGradle.matches(sourceFile.getSourcePath())) {
+                    acc.isGradleProject = true;
+                }
+                return tree;
+            }
+        };
+    }
 
-              if (!Boolean.TRUE.equals(addToRootPom) || acc.rootPoms.contains(document)) {
-                  Validated versionValidation = Semver.validate(version, versionPattern);
-                  if (versionValidation.isValid()) {
-                      VersionComparator versionComparator = requireNonNull(versionValidation.getValue());
-                      try {
-                          String versionToUse = findVersionToUse(versionComparator, ctx);
-                          if (!Objects.equals(versionToUse, existingManagedDependencyVersion())) {
-                              doAfterVisit(new AddManagedDependencyVisitor(groupId, artifactId,
-                                      versionToUse, scope, type, classifier));
-                              maybeUpdateModel();
-                          }
-                      } catch (MavenDownloadingException e) {
-                          return e.warn(document);
-                      }
-                  }
-              }
+    @Override
+    public Collection<? extends SourceFile> generate(NeedsProperty acc, ExecutionContext ctx) {
+        if (!acc.hasGradleProperties) {
+            return PropertiesParser.builder().build()
+                    .parseInputs(singletonList(Parser.Input.fromString(Paths.get("gradle.properties"),
+                            key + "=" + value)), null, ctx)
+                    .collect(Collectors.toList());
+        }
+        return Collections.emptyList();
+    }
 
-              return maven;
-          }
-
-          @Nullable
-          private String existingManagedDependencyVersion() {
-              return getResolutionResult().getPom().getDependencyManagement().stream()
-                      .map(resolvedManagedDep -> {
-                          if (resolvedManagedDep.matches(groupId, artifactId, type, classifier)) {
-                              return resolvedManagedDep.getGav().getVersion();
-                          } else if (resolvedManagedDep.getRequestedBom() != null
-                                      && resolvedManagedDep.getRequestedBom().getGroupId().equals(groupId)
-                                      && resolvedManagedDep.getRequestedBom().getArtifactId().equals(artifactId)) {
-                              return resolvedManagedDep.getRequestedBom().getVersion();
-                          }
-                          return null;
-                      })
-                      .filter(Objects::nonNull)
-                      .findFirst().orElse(null);
-          }
-
-          @Nullable
-          private String findVersionToUse(VersionComparator versionComparator, ExecutionContext ctx) throws MavenDownloadingException {
-              MavenMetadata mavenMetadata = metadataFailures.insertRows(ctx, () -> downloadMetadata(groupId, artifactId, ctx));
-              LatestRelease latest = new LatestRelease(versionPattern);
-              return mavenMetadata.getVersioning().getVersions().stream()
-                      .filter(v -> versionComparator.isValid(null, v))
-                      .filter(v -> !Boolean.TRUE.equals(releasesOnly) || latest.isValid(null, v))
-                      .max((v1, v2) -> versionComparator.compare(null, v1, v2))
-                      .orElse(null);
-          }
-      });
-  }
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor(NeedsProperty acc) {
+        return Preconditions.check(acc.isGradleProject && acc.hasGradleProperties, new TreeVisitor<Tree, ExecutionContext>() {
+            @Override
+            public Tree visit(@Nullable Tree tree, ExecutionContext ctx) {
+                SourceFile sourceFile = (SourceFile) requireNonNull(tree);
+                if (sourceFile.getSourcePath().endsWith(Paths.get("gradle.properties"))) {
+                    Tree t = !Boolean.TRUE.equals(overwrite) ?
+                            sourceFile :
+                            new ChangePropertyValue(key, value, null, false, null)
+                                    .getVisitor().visitNonNull(sourceFile, ctx);
+                    return new org.openrewrite.properties.AddProperty(key, value, null)
+                            .getVisitor()
+                            .visitNonNull(t, ctx);
+                }
+                return sourceFile;
+            }
+        });
+    }
 }
 ```
 {% endtab %}
