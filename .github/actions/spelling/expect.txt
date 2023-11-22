@@ -139,6 +139,7 @@ Kilburn
 kotlin
 ksh
 kts
+launchdarkly
 linebreak
 liquibase
 logback
