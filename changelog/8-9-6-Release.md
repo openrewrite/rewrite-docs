@@ -1,4 +1,4 @@
-# 8.9.5 release (2023-11-21)
+# 8.9.6 release (2023-11-21)
 
 ## New Artifacts
 * rewrite-launchdarkly
