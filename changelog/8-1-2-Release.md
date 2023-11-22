@@ -469,9 +469,11 @@ public class AddOrUpdateAnnotationAttribute extends Recipe {
 
 All cleanup recipes have been moved to the [rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis) repository. The package name has also changed from `org.openrewrite.java.cleanup` to `org.openrewrite.staticanalysis`.
 
-### visitJavaSource file was removed
+### visitJavaSourceFile and visitSource were removed
 
 The [JavaVisitor.visitJavaSourceFile(JavaSourceFile cu, P p)](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L459-L462) method was removed in favor of the [TreeVisitor.visit(@Nullable Tree tree, P p) method](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/TreeVisitor.java#L66).
+
+Similarly, [TreeVisitor.visitSource](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-core/src/main/java/org/openrewrite/TreeVisitor.java#L176-L179) has been replaced with [TreeVisitor.visit(Tree tree, P p)](https://github.com/openrewrite/rewrite/blob/v8.9.6/rewrite-core/src/main/java/org/openrewrite/TreeVisitor.java#L253).
 
 **Example**:
 
