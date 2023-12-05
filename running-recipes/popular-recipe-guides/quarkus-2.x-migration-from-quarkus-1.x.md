@@ -11,7 +11,7 @@ The [Quarkus1to2Migration](/reference/recipes/java/quarkus/quarkus2/quarkus1to2m
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.11")
 }
 
 rewrite {
@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.0"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.2"))
     rewrite("org.openrewrite.recipe:rewrite-quarkus")
 }
 ```
@@ -39,7 +39,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.15.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.quarkus.quarkus2.Quarkus1to2Migration</recipe>
@@ -49,7 +49,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>2.0.6</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>

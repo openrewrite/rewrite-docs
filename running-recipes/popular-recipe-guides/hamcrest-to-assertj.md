@@ -16,7 +16,7 @@ In order to run the migration recipe, you will need to update your project with 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.15.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.Assertj</recipe>
@@ -26,7 +26,7 @@ In order to run the migration recipe, you will need to update your project with 
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -41,7 +41,7 @@ In order to run the migration recipe, you will need to update your project with 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.11")
 }
 
 rewrite {
@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.2")
 }
 ```
 {% endcode %}
