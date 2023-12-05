@@ -6,11 +6,11 @@ _Migrates Quarkus 1.x to 2.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/quarkus.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.0.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/quarkus.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.0.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 2.0.6
+* version: 2.0.9
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-quarkus:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-quarkus:2.0.9` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.0.6")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.0.9")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-quarkus:2.0.6")
+        rewrite("org.openrewrite.recipe:rewrite-quarkus:2.0.9")
     }
     rewrite {
         activeRecipe("org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration</recipe>
@@ -94,7 +94,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>2.0.6</version>
+            <version>2.0.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -167,11 +167,19 @@ mod run . --recipe Quarkus1to2Migration
 * [Change type](../../java/changetype.md)
   * oldFullyQualifiedTypeName: `io.quarkus.mongodb.runtime.MongoClientName`
   * newFullyQualifiedTypeName: `io.quarkus.mongodb.MongoClientName`
-* [Upgrade Maven dependency version](../../maven/upgradedependencyversion.md)
+* [Change Maven parent pom](../../maven/changeparentpom.md)
+  * oldGroupId: `io.quarkus`
+  * oldArtifactId: `quarkus-universe-bom`
+  * newVersion: `2.x`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion.md)
   * groupId: `io.quarkus`
   * artifactId: `quarkus-universe-bom`
   * newVersion: `2.x`
-* [Upgrade Maven dependency version](../../maven/upgradedependencyversion.md)
+* [Change Maven parent pom](../../maven/changeparentpom.md)
+  * oldGroupId: `io.quarkus`
+  * oldArtifactId: `quarkus-bom`
+  * newVersion: `2.x`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion.md)
   * groupId: `io.quarkus`
   * artifactId: `quarkus-bom`
   * newVersion: `2.x`
@@ -229,11 +237,19 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.quarkus.mongodb.runtime.MongoClientName
       newFullyQualifiedTypeName: io.quarkus.mongodb.MongoClientName
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.maven.ChangeParentPom:
+      oldGroupId: io.quarkus
+      oldArtifactId: quarkus-universe-bom
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: io.quarkus
       artifactId: quarkus-universe-bom
       newVersion: 2.x
-  - org.openrewrite.maven.UpgradeDependencyVersion:
+  - org.openrewrite.maven.ChangeParentPom:
+      oldGroupId: io.quarkus
+      oldArtifactId: quarkus-bom
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: io.quarkus
       artifactId: quarkus-bom
       newVersion: 2.x

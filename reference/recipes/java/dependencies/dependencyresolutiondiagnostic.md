@@ -10,11 +10,19 @@ The Gradle dependency configuration errors lists all the dependency configuratio
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyResolutionDiagnostic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyResolutionDiagnostic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.2.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.2.0
+* version: 1.2.4
+
+## Options
+
+| Type | Name | Description |
+| -- | -- | -- |
+| `String` | groupId | *Optional*. The group ID of a dependency to attempt to download from the repository. Default value is "com.fasterxml.jackson.core". If this dependency is not found in the repository the error will be noted in the report. There is no need to specify an alternate value for this parameter unless the repository is known not to contain jackson-core. |
+| `String` | artifactId | *Optional*. The artifact ID of a dependency to attempt to download from the repository. Default value is "jackson-core". If this dependency is not found in the repository the error will be noted in the report. There is no need to specify an alternate value for this parameter unless the repository is known not to contain jackson-core. |
+| `String` | version | *Optional*. The version of a dependency to attempt to download from the repository. Default value is "2.16.0". If this dependency is not found in the repository the error will be noted in the report. There is no need to specify an alternate value for this parameter unless the repository is known not to contain jackson-core. |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -25,9 +33,11 @@ _Listing of all dependency repositories and whether they are accessible._
 | Column Name | Description |
 | ----------- | ----------- |
 | Repository URI | The URI of the repository |
-| Exception type | Empty if the repository was accessible. Otherwise, the type of exception encountered when attempting to access the repository. |
-| Error message | Empty if the repository was accessible. Otherwise, the error message encountered when attempting to access the repository. |
-| HTTP code | The HTTP response code returned by the repository. May be empty for non-HTTP repositories. |
+| Ping exception type | Empty if the repository responded to a ping. Otherwise, the type of exception encountered when attempting to access the repository. |
+| Ping error message | Empty if the repository was accessible. Otherwise, the error message encountered when attempting to access the repository. |
+| Ping HTTP code | The HTTP response code returned by the repository. May be empty for non-HTTP repositories. |
+| Dependency resolution exception type | Empty if ping failed, or if the repository successfully downloaded the specified dependency. Otherwise, the type of exception encountered when attempting to access the repository. |
+| Dependency resolution error message | Empty if ping failed, or if the repository successfully downloaded the specified dependency. Otherwise, the error message encountered when attempting to access the repository. |
 
 ### Gradle dependency configuration errors
 
@@ -43,14 +53,14 @@ _Records Gradle dependency configurations which failed to resolve during parsing
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:1.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:1.2.4` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -62,7 +72,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.2.4")
 }
 ```
 {% endcode %}
@@ -77,12 +87,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.2.0")
+        rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.2.4")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.dependencies.DependencyResolutionDiagnostic")
@@ -109,7 +119,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.dependencies.DependencyResolutionDiagnostic</recipe>
@@ -119,7 +129,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.2.0</version>
+            <version>1.2.4</version>
           </dependency>
         </dependencies>
       </plugin>

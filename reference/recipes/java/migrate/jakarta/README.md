@@ -9,9 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Jackson from javax to jakarta namespace](./jacksonjavaxtojakarta.md)
 * [Migrate Johnzon from javax to jakarta namespace](./johnzonjavaxtojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](./javaxactivationmigrationtojakartaactivation.md)
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](./javaxannotationmigrationtojakartaannotation.md)
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](./changejavaxannotationtojakarta.md)
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](./javaxannotationpackagetojakarta.md)
+* [Migrate deprecated `javax.annotation` to `jakarta.annotation`](./javaxannotationmigrationtojakartaannotation.md)
 * [Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`](./javaxannotationsecuritypackagetojakarta.md)
 * [Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`](./javaxannotationsqlpackagetojakarta.md)
 * [Migrate deprecated `javax.batch` packages to `jakarta.batch`](./javaxbatchmigrationtojakartabatch.md)
@@ -39,6 +37,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `javax.ws` packages to `jakarta.ws`](./javaxwstojakartaws.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](./javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](./javaxxmlwsmigrationtojakartaxmlws.md)
+* [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](./updateapachewssecuritypackages.md)
 * [Migrate to Jakarta EE 10](./jakartaee10.md)
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
 * [Migrate xmlns entries in `persistence.xml` files](./javaxpersistencexmltojakartapersistencexml.md)
@@ -46,6 +45,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](./removeduicomponentconstant.md)
 * [Replace `ResourceResolver` with `ResourceHandler`](./removedjakartafacesresourceresolver.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](./wswsocservercontainerdeprecation.md)
+* [Substitute deprecated Faces Managed Beans](./facesmanagedbeansremoved.md)
 * [Use `StateManagementStrategy`](./removedstatemanagermethods.md)
 * [Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`](./removedjakartafacesexpressionlanguageclasses.md)
 * [Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`](./removedsoapelementfactory.md)
@@ -54,7 +54,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
-* [Remove methods calls](./removemethods.md)
+* [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](./applicationpathwildcardnolongeraccepted.md)
 * [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)
 
 

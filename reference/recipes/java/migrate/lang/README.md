@@ -15,10 +15,10 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Prefer `String#formatted(Object...)`](./stringformatted.md)
-* [Remove deprecated `Thread.destroy()`](./removethreaddestroymethod.md)
 * [Replace `0 < s.length()` with `!s.isEmpty()`](./usestringisemptyrecipe.md)
 * [Replace `String.indexOf(String, 0)` with `String.indexOf(String)`](./stringrulesrecipes$indexofstringrecipe.md)
 * [Replace `String.indexOf(char, 0)` with `String.indexOf(char)`](./stringrulesrecipes$indexofcharrecipe.md)
+* [Replace `Thread.stop()` with `throw new UnsupportedOperationException()`](./threadstopunsupported.md)
 * [Replace lower and upper case `String` comparisons with `String.equalsIgnoreCase(String)`](./stringrulesrecipes$useequalsignorecaserecipe.md)
 * [Replace redundant `String` method calls with self](./stringrulesrecipes$redundantcallrecipe.md)
 * [Use `Character#isJavaIdentifierPart(char)`](./migratecharacterisjavaletterordigittoisjavaidentifierpart.md)

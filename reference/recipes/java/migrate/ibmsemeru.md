@@ -10,11 +10,11 @@ _This recipe will apply changes commonly needed when upgrading Java versions. Th
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/ibm-java.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/ibm-java.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.4.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.3.0
+* version: 2.4.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -22,14 +22,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.4.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.4.1")
 }
 ```
 {% endcode %}
@@ -56,12 +56,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.4.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.IBMSemeru")
@@ -88,7 +88,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.IBMSemeru</recipe>
@@ -98,7 +98,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.3.0</version>
+            <version>2.4.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -139,6 +139,7 @@ mod run . --recipe IBMSemeru
 * [Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`](../../java/migrate/jredonotusesunnetsslinternalwwwprotocolhttpshandler.md)
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](../../java/migrate/jredonotusesunnetsslinternalwwwprotocol.md)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](../../java/migrate/jredonotusesunnetsslinternalsslprovider.md)
+* [Use `javax.net.ssl` instead of `com.sun.net.ssl`](../../java/migrate/jredonotusesunnetsslapis.md)
 
 {% endtab %}
 
@@ -156,6 +157,7 @@ recipeList:
   - org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocolHttpsHandler
   - org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol
   - org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalSslProvider
+  - org.openrewrite.java.migrate.JREDoNotUseSunNetSslAPIs
 
 ```
 {% endtab %}

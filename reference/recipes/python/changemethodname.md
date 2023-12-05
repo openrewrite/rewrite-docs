@@ -6,11 +6,11 @@ _Renames a method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-python/blob/main/src/main/java/org/openrewrite/python/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-python/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-python/1.2.3/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-python
-* version: 1.2.0
+* version: 1.2.3
 
 ## Options
 
@@ -40,14 +40,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-python:1.2.0 in your build file:
+Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-python:1.2.3 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -59,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-python:1.2.0")
+    rewrite("org.openrewrite:rewrite-python:1.2.3")
 }
 ```
 {% endcode %}
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodNameExample</recipe>
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-python</artifactId>
-            <version>1.2.0</version>
+            <version>1.2.3</version>
           </dependency>
         </dependencies>
       </plugin>

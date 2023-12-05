@@ -11,11 +11,11 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.1.0
+* version: 2.1.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.2")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.0")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.assertj.Assertj")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.Assertj</recipe>
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.1.0</version>
+            <version>2.1.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -137,9 +137,9 @@ mod run . --recipe Assertj
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports.md)
-* [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj.md)
 * [Migrate to AssertJ assertions](../../../java/testing/hamcrest/migratehamcresttoassertj.md)
+* [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj.md)
+* [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports.md)
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions.md)
 
 {% endtab %}
@@ -155,9 +155,9 @@ tags:
   - testing
   - assertj
 recipeList:
-  - org.openrewrite.java.testing.assertj.StaticImports
-  - org.openrewrite.java.testing.assertj.JUnitToAssertj
   - org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ
+  - org.openrewrite.java.testing.assertj.JUnitToAssertj
+  - org.openrewrite.java.testing.assertj.StaticImports
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions
 
 ```

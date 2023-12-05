@@ -1,4 +1,4 @@
-# Migrate deprecated `javax.annotation` packages to `jakarta.annotation`
+# Migrate deprecated `javax.annotation` to `jakarta.annotation`
 
 **org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation**
 
@@ -12,11 +12,11 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.4.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.3.0
+* version: 2.4.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -24,14 +24,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.4.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.4.1")
 }
 ```
 {% endcode %}
@@ -58,12 +58,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.4.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation")
@@ -90,7 +90,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation</recipe>
@@ -100,7 +100,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.3.0</version>
+            <version>2.4.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -138,20 +138,41 @@ mod run . --recipe JavaxAnnotationMigrationToJakartaAnnotation
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
-  * groupId: `jakarta.annotation`
-  * artifactId: `jakarta.annotation-api`
-  * version: `latest.release`
-  * onlyIfUsing: `javax.annotation..*`
-  * acceptTransitive: `true`
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
-  * groupId: `jakarta.annotation`
-  * artifactId: `jakarta.annotation-api`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency.md)
+  * oldGroupId: `javax.annotation`
+  * oldArtifactId: `javax.annotation-api`
+  * newGroupId: `jakarta.annotation`
+  * newArtifactId: `jakarta.annotation-api`
   * newVersion: `latest.release`
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](../../../java/migrate/jakarta/changejavaxannotationtojakarta.md)
-* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
-  * groupId: `javax.annotation`
-  * artifactId: `javax.annotation-api`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.Generated`
+  * newFullyQualifiedTypeName: `jakarta.annotation.Generated`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.ManagedBean`
+  * newFullyQualifiedTypeName: `jakarta.annotation.ManagedBean`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.Nonnull`
+  * newFullyQualifiedTypeName: `jakarta.annotation.Nonnull`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
+  * newFullyQualifiedTypeName: `jakarta.annotation.Nullable`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.PostConstruct`
+  * newFullyQualifiedTypeName: `jakarta.annotation.PostConstruct`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.PreDestroy`
+  * newFullyQualifiedTypeName: `jakarta.annotation.PreDestroy`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.Priority`
+  * newFullyQualifiedTypeName: `jakarta.annotation.Priority`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.Resource`
+  * newFullyQualifiedTypeName: `jakarta.annotation.Resource`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.Resources`
+  * newFullyQualifiedTypeName: `jakarta.annotation.Resources`
+* [Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`](../../../java/migrate/jakarta/javaxannotationsecuritypackagetojakarta.md)
+* [Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`](../../../java/migrate/jakarta/javaxannotationsqlpackagetojakarta.md)
 
 {% endtab %}
 
@@ -160,27 +181,48 @@ mod run . --recipe JavaxAnnotationMigrationToJakartaAnnotation
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation
-displayName: Migrate deprecated `javax.annotation` packages to `jakarta.annotation`
+displayName: Migrate deprecated `javax.annotation` to `jakarta.annotation`
 description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
   - annotation
   - javax
   - jakarta
 recipeList:
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: jakarta.annotation
-      artifactId: jakarta.annotation-api
-      version: latest.release
-      onlyIfUsing: javax.annotation..*
-      acceptTransitive: true
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: jakarta.annotation
-      artifactId: jakarta.annotation-api
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: javax.annotation
+      oldArtifactId: javax.annotation-api
+      newGroupId: jakarta.annotation
+      newArtifactId: jakarta.annotation-api
       newVersion: latest.release
-  - org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: javax.annotation
-      artifactId: javax.annotation-api
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Generated
+      newFullyQualifiedTypeName: jakarta.annotation.Generated
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.ManagedBean
+      newFullyQualifiedTypeName: jakarta.annotation.ManagedBean
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Nonnull
+      newFullyQualifiedTypeName: jakarta.annotation.Nonnull
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Nullable
+      newFullyQualifiedTypeName: jakarta.annotation.Nullable
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.PostConstruct
+      newFullyQualifiedTypeName: jakarta.annotation.PostConstruct
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.PreDestroy
+      newFullyQualifiedTypeName: jakarta.annotation.PreDestroy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Priority
+      newFullyQualifiedTypeName: jakarta.annotation.Priority
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Resource
+      newFullyQualifiedTypeName: jakarta.annotation.Resource
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Resources
+      newFullyQualifiedTypeName: jakarta.annotation.Resources
+  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationSecurityPackageToJakarta
+  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationSqlPackageToJakarta
 
 ```
 {% endtab %}

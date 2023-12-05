@@ -15,6 +15,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Dependency resolution diagnostic](./dependencyresolutiondiagnostic.md)
 * [Find and fix vulnerable dependencies](./dependencyvulnerabilitycheck.md)
 * [Find licenses in use in third-party dependencies](./dependencylicensecheck.md)
+* [Remove expired suppressions](./removeexpiredsuppressions.md)
 * [Upgrade Gradle or Maven dependency versions](./upgradedependencyversion.md)
 
 

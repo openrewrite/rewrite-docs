@@ -6,11 +6,12 @@ _Recipes related to [Simple Logging Facade for Java (`SLF4J`)](http://www.slf4j.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate Apache Commons Logging 1.x to SLF4J 1.x](./commonslogging1toslf4j1.md)
 * [Migrate Log4j 1.x to SLF4J 1.x](./log4j1toslf4j1.md)
 * [Migrate Log4j 2.x to SLF4J 1.x](./log4j2toslf4j1.md)
 * [Migrate Log4j to SLF4J](./log4jtoslf4j.md)
+* [Parameterize SLF4J's logging statements](./parameterizedlogging.md)
 * [SLF4J best practices](./slf4jbestpractices.md)
-* [org.openrewrite.java.logging.slf4j.ParameterizedLogging](./parameterizedlogging.md)
 
 ## Recipes
 

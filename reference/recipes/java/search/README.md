@@ -24,6 +24,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find plain text secrets](./findsecrets.md)
 * [Find source files with imports](./findimports.md)
 * [Find sources that are likely tests](./islikelytest.md)
+* [Find type mappings](./findtypemappings.md)
 * [Find types](./findtypes.md)
 * [Find uses of `@Repeatable` annotations](./findrepeatableannotations.md)
 * [Find uses of deprecated classes](./finddeprecatedclasses.md)

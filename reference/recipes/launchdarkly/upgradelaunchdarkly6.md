@@ -6,23 +6,26 @@ _This recipe will apply changes commonly needed when migrating to LaunchDarkly 6
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-launchdarkly/blob/main/src/main/resources/META-INF/rewrite/launchdarkly-6.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-launchdarkly/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-launchdarkly/0.0.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-launchdarkly/blob/main/src/main/resources/META-INF/rewrite/launchdarkly-6.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-launchdarkly/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-launchdarkly/0.0.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-launchdarkly
-* version: 0.0.1
+* version: 0.0.3
 
+{% hint style="info" %}
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+{% endhint %}
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-launchdarkly:0.0.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-launchdarkly:0.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -34,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.0.1")
+    rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.0.3")
 }
 ```
 {% endcode %}
@@ -49,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.0.1")
+        rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.0.3")
     }
     rewrite {
         activeRecipe("org.openrewrite.launchdarkly.UpgradeLaunchDarkly6")
@@ -81,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.launchdarkly.UpgradeLaunchDarkly6</recipe>
@@ -91,7 +94,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-launchdarkly</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -129,7 +132,11 @@ mod run . --recipe UpgradeLaunchDarkly6
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate LaunchDarkly dependencies to 6.x](../launchdarkly/upgradelaunchdarkly6dependencies.md)
+* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion.md)
+  * groupId: `com.launchdarkly`
+  * artifactId: `launchdarkly-java-server-sdk`
+  * newVersion: `6.x`
+* [Migrate `LDUser` to `LDContext`](../launchdarkly/migrateusertocontext.md)
 
 {% endtab %}
 
@@ -141,7 +148,11 @@ name: org.openrewrite.launchdarkly.UpgradeLaunchDarkly6
 displayName: Migrate to LaunchDarkly 6.x
 description: This recipe will apply changes commonly needed when migrating to LaunchDarkly 6.x.
 recipeList:
-  - org.openrewrite.launchdarkly.UpgradeLaunchDarkly6Dependencies
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.launchdarkly
+      artifactId: launchdarkly-java-server-sdk
+      newVersion: 6.x
+  - org.openrewrite.launchdarkly.MigrateUserToContext
 
 ```
 {% endtab %}
@@ -154,3 +165,6 @@ recipeList:
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+[Shannon Pamperl](mailto:shanman190@gmail.com)

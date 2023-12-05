@@ -6,7 +6,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](./migratecloudsleuthtomicrometertracing.md)
 * [Migrate to Spring Cloud 2022](./upgradespringcloud_2022.md)
-* [Upgrade Maven POM to Spring Cloud 2022](./mavenpomupgrade.md)
+* [Upgrade dependencies to Spring Cloud 2022](./dependencyupgrades.md)
 
 ## Recipes
 

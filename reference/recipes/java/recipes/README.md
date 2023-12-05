@@ -17,7 +17,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `org.openrewrite.marker.Markers#SearchResult(..)`](./migratemarkerssearchresult.md)
 * [Migrate rewrite unit test from version 7 to 8](./migratetesttorewrite8.md)
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)
-* [Remove applicability test from Yaml recipe](./removeapplicabilitytestfromyamlrecipe.md)
+* [Remove any-source applicability and migrate single-source applicability tests in YAML recipe](./removeapplicabilitytestfromyamlrecipe.md)
 * [Set default estimated effort](./setdefaultestimatedeffortperoccurrence.md)
 * [Update moved package class name](./updatemovedpackageclassname.md)
 * [Update moved package recipe in pom.xml](./updatemovedrecipexml.md)

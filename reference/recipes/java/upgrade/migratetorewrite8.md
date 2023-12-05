@@ -9,11 +9,11 @@ Reference : Migration guide (URL to be written)._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.9.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.9.5
+* version: 8.11.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -28,7 +28,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.upgrade.MigrateToRewrite8</recipe>
@@ -126,7 +126,7 @@ mod run . --recipe MigrateToRewrite8
 * [Migrate Rewrite recipes from version 7 to 8](../../java/recipes/migraterecipetorewrite8.md)
 * [Migrate rewrite unit test from version 7 to 8](../../java/recipes/migratetesttorewrite8.md)
 * [Migrate deprecated `org.openrewrite.marker.Markers#SearchResult(..)`](../../java/recipes/migratemarkerssearchresult.md)
-* [Remove applicability test from Yaml recipe](../../java/recipes/removeapplicabilitytestfromyamlrecipe.md)
+* [Remove any-source applicability and migrate single-source applicability tests in YAML recipe](../../java/recipes/removeapplicabilitytestfromyamlrecipe.md)
 * [Migrate `JavaTemplate` to accommodate Rewrite 8](../../java/recipes/migratejavatemplatetorewrite8.md)
 * [update referencing package name for the recipes moved to `rewrite-static-analysis`](../../java/upgrade/updatestaticanalysispackage.md)
 

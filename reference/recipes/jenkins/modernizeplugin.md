@@ -6,11 +6,11 @@ _This recipe is intended to change over time to reflect the most recent tooling 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.7/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.2.4
+* version: 0.2.7
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.2.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.2.7` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.2.4")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.2.7")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jenkins:0.2.4")
+        rewrite("org.openrewrite.recipe:rewrite-jenkins:0.2.7")
     }
     rewrite {
         activeRecipe("org.openrewrite.jenkins.ModernizePlugin")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.jenkins.ModernizePlugin</recipe>
@@ -94,7 +94,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.2.4</version>
+            <version>0.2.7</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -149,11 +149,15 @@ mod run . --recipe ModernizePlugin
   * overrideManagedVersion: `false`
 * [Upgrade property's value to version](../jenkins/upgradeversionproperty.md)
   * key: `jenkins.version`
-  * minimumVersion: `2.387.3`
+  * minimumVersion: `2.401.3`
 * [Remove Maven dependency](../maven/removedependency.md)
   * groupId: `org.jenkins-ci`
   * artifactId: `symbol-annotation`
 * [Add or correct Jenkins plugins BOM](../jenkins/addpluginsbom.md)
+* [Rename package name](../java/changepackage.md)
+  * oldPackageName: `javax.inject`
+  * newPackageName: `jakarta.inject`
+  * recursive: `true`
 
 {% endtab %}
 
@@ -183,11 +187,15 @@ recipeList:
       overrideManagedVersion: false
   - org.openrewrite.jenkins.UpgradeVersionProperty:
       key: jenkins.version
-      minimumVersion: 2.387.3
+      minimumVersion: 2.401.3
   - org.openrewrite.maven.RemoveDependency:
       groupId: org.jenkins-ci
       artifactId: symbol-annotation
   - org.openrewrite.jenkins.AddPluginsBom
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: javax.inject
+      newPackageName: jakarta.inject
+      recursive: true
 
 ```
 {% endtab %}
@@ -202,4 +210,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Steve Hill](mailto:sghill.dev@gmail.com)
+[Steve Hill](mailto:sghill.dev@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

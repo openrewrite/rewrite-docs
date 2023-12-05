@@ -22,6 +22,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Find text-direction changes](./findtextdirectionchanges.md)
+* [Fix CWE-338 with `SecureRandom`](./fixcwe338.md)
 * [Improper privilege management](./improperprivilegemanagement.md)
 * [Partial path traversal vulnerability](./partialpathtraversalvulnerability.md)
 * [Regular Expression Denial of Service (ReDOS)](./regularexpressiondenialofservice.md)

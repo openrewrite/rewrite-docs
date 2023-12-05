@@ -1,22 +1,16 @@
-# Migrate deprecated `javax.annotation` packages to `jakarta.annotation`
+# `URLConstructorsToURI` Refaster recipes
 
-**org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta**
+**org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes**
 
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`._
-
-### Tags
-
-* javax
-* batch
-* jakarta
+_Refaster template recipes for `org.openrewrite.java.migrate.net.URLConstructorsToURI`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/net/URLConstructorsToURIRecipes.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.4.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.3.0
+* version: 2.4.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -24,18 +18,18 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.4.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta")
+    activeRecipe("org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes")
 }
 
 repositories {
@@ -43,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.4.1")
 }
 ```
 {% endcode %}
@@ -58,15 +52,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.4.1")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta")
+        activeRecipe("org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -90,17 +84,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta</recipe>
+            <recipe>org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.3.0</version>
+            <version>2.4.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -119,7 +113,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta
+  -Drewrite.activeRecipes=org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes
 ```
 {% endcode %}
 {% endtab %}
@@ -128,7 +122,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe ChangeJavaxAnnotationToJakarta
+mod run . --recipe URLConstructorsToURIRecipes
 ```
 {% endcode %}
 {% endtab %}
@@ -138,9 +132,9 @@ mod run . --recipe ChangeJavaxAnnotationToJakarta
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](../../../java/migrate/jakarta/javaxannotationpackagetojakarta.md)
-* [Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`](../../../java/migrate/jakarta/javaxannotationsecuritypackagetojakarta.md)
-* [Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`](../../../java/migrate/jakarta/javaxannotationsqlpackagetojakarta.md)
+* [Convert `new URL(String)` to `URI.create(String).toURL()`](../../../java/migrate/net/urlconstructorstourirecipes$urlsingleargumentconstructorrecipe.md)
+* [Convert `new URL(String, String, String)` to `new URI(...).toURL()`](../../../java/migrate/net/urlconstructorstourirecipes$urlthreeargumentconstructorrecipe.md)
+* [Convert `new URL(String, String, int, String)` to `new URI(...).toURL()`](../../../java/migrate/net/urlconstructorstourirecipes$urlfourargumentconstructorrecipe.md)
 
 {% endtab %}
 
@@ -148,17 +142,13 @@ mod run . --recipe ChangeJavaxAnnotationToJakarta
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta
-displayName: Migrate deprecated `javax.annotation` packages to `jakarta.annotation`
-description: Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`.
-tags:
-  - javax
-  - batch
-  - jakarta
+name: org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes
+displayName: `URLConstructorsToURI` Refaster recipes
+description: Refaster template recipes for `org.openrewrite.java.migrate.net.URLConstructorsToURI`.
 recipeList:
-  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationPackageToJakarta
-  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationSecurityPackageToJakarta
-  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationSqlPackageToJakarta
+  - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes$URLSingleArgumentConstructorRecipe
+  - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes$URLThreeArgumentConstructorRecipe
+  - org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes$URLFourArgumentConstructorRecipe
 
 ```
 {% endtab %}
@@ -166,7 +156,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.jakarta.ChangeJavaxAnnotationToJakarta)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.net.URLConstructorsToURIRecipes)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -12,11 +12,11 @@ _Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementatio
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/logback.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/logback.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.2.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.1.0
+* version: 2.2.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -24,14 +24,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.2.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.2.1")
 }
 ```
 {% endcode %}
@@ -58,12 +58,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.1.0")
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.2.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.logging.logback.Log4jToLogback")
@@ -90,7 +90,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.logback.Log4jToLogback</recipe>
@@ -100,7 +100,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.1.0</version>
+            <version>2.2.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -141,22 +141,22 @@ mod run . --recipe Log4jToLogback
 * [Migrate Log4j to SLF4J](../../../java/logging/slf4j/log4jtoslf4j.md)
 * [Migrate Log4j 2.x Appender to logback-classic equivalents](../../../java/logging/logback/log4jappendertologback.md)
 * [Migrate Log4j 2.x Layout to logback-classic equivalents](../../../java/logging/logback/log4jlayouttologback.md)
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `ch.qos.logback`
   * artifactId: `logback-core`
   * version: `latest.release`
   * onlyIfUsing: `org.apache.logging.log4j.*`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `ch.qos.logback`
   * artifactId: `logback-classic`
   * version: `latest.release`
   * onlyIfUsing: `org.apache.logging.log4j.*`
-* [Add Maven dependency](../../../maven/adddependency.md)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.slf4j`
   * artifactId: `slf4j-api`
   * version: `latest.release`
   * onlyIfUsing: `org.apache.logging.log4j.*`
-* [Remove Maven dependency](../../../maven/removedependency.md)
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency.md)
   * groupId: `org.apache.logging.log4j`
   * artifactId: `log4j-*`
 
@@ -177,22 +177,22 @@ recipeList:
   - org.openrewrite.java.logging.slf4j.Log4jToSlf4j
   - org.openrewrite.java.logging.logback.Log4jAppenderToLogback
   - org.openrewrite.java.logging.logback.Log4jLayoutToLogback
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: ch.qos.logback
       artifactId: logback-core
       version: latest.release
       onlyIfUsing: org.apache.logging.log4j.*
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: ch.qos.logback
       artifactId: logback-classic
       version: latest.release
       onlyIfUsing: org.apache.logging.log4j.*
-  - org.openrewrite.maven.AddDependency:
+  - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.slf4j
       artifactId: slf4j-api
       version: latest.release
       onlyIfUsing: org.apache.logging.log4j.*
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.apache.logging.log4j
       artifactId: log4j-*
 
@@ -209,4 +209,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Aaron Gershman, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Peter Streef](mailto:p.streef@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com)
+Aaron Gershman, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Adriano Machado, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), Patrick Way, [Kun Li](mailto:kun@moderne.io), [Peter Streef](mailto:p.streef@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com)

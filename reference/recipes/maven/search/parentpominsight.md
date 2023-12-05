@@ -6,11 +6,11 @@ _Find Maven parents matching a `groupId` and `artifactId`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/ParentPomInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.9.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/ParentPomInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.9.5
+* version: 8.11.0
 
 ## Options
 
@@ -18,6 +18,7 @@ _Find Maven parents matching a `groupId` and `artifactId`._
 | -- | -- | -- |
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. |
+| `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -49,6 +50,7 @@ recipeList:
   - org.openrewrite.maven.search.ParentPomInsight:
       groupIdPattern: org.springframework.boot
       artifactIdPattern: spring-boot-starter-*
+      version: 1.x
 ```
 {% endcode %}
 
@@ -65,7 +67,7 @@ Now that `com.yourorg.ParentPomInsightExample` has been defined activate it in y
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ParentPomInsightExample</recipe>

@@ -1,32 +1,32 @@
-# Fix CWE-338 with `SecureRandom`
+# Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values
 
-**org.openrewrite.java.jhipster.FixCwe338**
+**org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted**
 
-_Use a cryptographically strong pseudo-random number generator (PRNG)._
+_Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jhipster/blob/main/src/main/java/org/openrewrite/java/jhipster/FixCwe338.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jhipster/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jhipster/2.0.6/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/jakarta/ApplicationPathWildcardNoLongerAccepted.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.4.1/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-jhipster
-* version: 2.0.6
+* artifactId: rewrite-migrate-java
+* version: 2.4.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jhipster:2.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.4.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.jhipster.FixCwe338")
+    activeRecipe("org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted")
 }
 
 repositories {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jhipster:2.0.6")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.4.1")
 }
 ```
 {% endcode %}
@@ -49,15 +49,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jhipster:2.0.6")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.4.1")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.jhipster.FixCwe338")
+        activeRecipe("org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -81,17 +81,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.jhipster.FixCwe338</recipe>
+            <recipe>org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-jhipster</artifactId>
-            <version>2.0.6</version>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>2.4.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -109,8 +109,8 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jhipster:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.jhipster.FixCwe338
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
+  -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted
 ```
 {% endcode %}
 {% endtab %}
@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe FixCwe338
+mod run . --recipe ApplicationPathWildcardNoLongerAccepted
 ```
 {% endcode %}
 {% endtab %}
@@ -127,11 +127,11 @@ mod run . --recipe FixCwe338
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.jhipster.FixCwe338)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+ranuradh

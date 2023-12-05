@@ -12,6 +12,7 @@ _Enforce logging best practices and migrate between logging frameworks._
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Replace any Lombok log annotations with target logging framework annotation](./changelomboklogannotation.md)
 * [Use logger instead of system print statements](./systemprinttologging.md)
 
 ## Recipes

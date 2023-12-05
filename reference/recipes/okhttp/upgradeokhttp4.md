@@ -1,36 +1,35 @@
-# Remove deprecated `Thread.destroy()`
+# Migrate to OkHttp 4.x
 
-**org.openrewrite.java.migrate.lang.RemoveThreadDestroyMethod**
+**org.openrewrite.okhttp.UpgradeOkHttp4**
 
-_Remove deprecated invocations of `Thread.destroy()` which have no alternatives needed._
-
-### Tags
-
-* JDK-8204260
+_This recipe will apply changes commonly needed when migrating to OkHttp 4.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/RemoveThreadDestroyMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okhttp-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/0.0.6/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: 2.3.0
+* artifactId: rewrite-okhttp
+* version: 0.0.6
 
+{% hint style="info" %}
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+{% endhint %}
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-okhttp:0.0.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.6")
+    id("org.openrewrite.rewrite") version("6.5.10")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.lang.RemoveThreadDestroyMethod")
+    activeRecipe("org.openrewrite.okhttp.UpgradeOkHttp4")
 }
 
 repositories {
@@ -38,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-okhttp:0.0.6")
 }
 ```
 {% endcode %}
@@ -53,15 +52,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.6") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.3.0")
+        rewrite("org.openrewrite.recipe:rewrite-okhttp:0.0.6")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.lang.RemoveThreadDestroyMethod")
+        activeRecipe("org.openrewrite.okhttp.UpgradeOkHttp4")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -85,17 +84,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.13.0</version>
+        <version>5.14.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.lang.RemoveThreadDestroyMethod</recipe>
+            <recipe>org.openrewrite.okhttp.UpgradeOkHttp4</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.3.0</version>
+            <artifactId>rewrite-okhttp</artifactId>
+            <version>0.0.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -113,8 +112,8 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.migrate.lang.RemoveThreadDestroyMethod
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-okhttp:RELEASE \
+  -Drewrite.activeRecipes=org.openrewrite.okhttp.UpgradeOkHttp4
 ```
 {% endcode %}
 {% endtab %}
@@ -123,19 +122,40 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe RemoveThreadDestroyMethod
+mod run . --recipe UpgradeOkHttp4
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Migrate OkHttp dependencies to 4.x](../okhttp/upgradeokhttp4dependencies.md)
+* [Migrate to Okio 3.x](../okio/upgradeokio3.md)
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.okhttp.UpgradeOkHttp4
+displayName: Migrate to OkHttp 4.x
+description: This recipe will apply changes commonly needed when migrating to OkHttp 4.x.
+recipeList:
+  - org.openrewrite.okhttp.UpgradeOkHttp4Dependencies
+  - org.openrewrite.okio.UpgradeOkio3
+
+```
+{% endtab %}
+{% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.lang.RemoveThreadDestroyMethod)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.okhttp.UpgradeOkHttp4)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
-
-## Contributors
-[Satvika Eda](mailto:satvika164.reddy@gmail.com)
