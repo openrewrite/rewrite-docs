@@ -7,6 +7,7 @@ Adoptium
 AKV
 allprojects
 APKCXEA
+archunit
 ASL
 assertingparty
 assertj
@@ -19,6 +20,7 @@ azzert
 baz
 bfa
 BOMs
+bval
 camelcase
 capitaliserecipe
 capitalizerecipe
@@ -45,7 +47,7 @@ cursoring
 cus
 customizability
 cve
-CWE
+cwe
 cyclonedx
 databind
 datasource
@@ -98,6 +100,7 @@ intranode
 jacc
 jassertion
 javac
+javaee
 javatemplate
 JAX
 jaxb
@@ -122,7 +125,7 @@ jmockit
 Jndi
 jni
 Johnzon
-Jpa
+jpa
 jre
 JREDo
 JRight
@@ -186,6 +189,7 @@ PII
 pointcut
 Postgre
 prefixless
+PRNG
 projectlombok
 protobuf
 quarkus
@@ -237,6 +241,7 @@ subpackages
 supertypes
 temurin
 terraform
+testcontainers
 testng
 throwz
 thymeleaf
@@ -250,6 +255,9 @@ TVP
 Twilio
 unmarshalling
 uppercaserecipe
+urlfourargumentconstructorrecipe
+urlsingleargumentconstructorrecipe
+urlthreeargumentconstructorrecipe
 useequalsignorecaserecipe
 varargs
 variabledeclarations
@@ -263,6 +271,7 @@ wlp
 workflows
 writestringtofilerecipe
 Wsoc
+wss
 XRange
 xsi
 XXE
