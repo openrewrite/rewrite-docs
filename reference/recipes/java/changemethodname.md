@@ -6,11 +6,11 @@ _Rename a method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodName.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.0
+* version: 8.11.1
 
 ## Options
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangeMethodNameExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.10")
+    id("org.openrewrite.rewrite") version("6.5.12")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.14.1</version>
+        <version>5.15.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodNameExample</recipe>
@@ -107,4 +107,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Aaron Gershman](mailto:aegershman@gmail.com)
+[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com)

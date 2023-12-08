@@ -6,11 +6,11 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.11.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 8.11.0
+* version: 8.11.1
 
 ## Options
 
@@ -18,6 +18,7 @@ _Adds a new property to a property file at the bottom of the file if it's missin
 | -- | -- | -- |
 | `String` | property | The property key to add. |
 | `String` | value | The value of the new property key. |
+| `String` | comment | *Optional*. A comment that will be added to the new property. |
 | `String` | delimiter | *Optional*. Property entries support different delimiters (`=`, `:`, or whitespace). The default value is `=` unless provided the delimiter of the new property entry. |
 
 
@@ -36,6 +37,7 @@ recipeList:
   - org.openrewrite.properties.AddProperty:
       property: management.metrics.enable.process.files
       value: null
+      comment: This is a comment
       delimiter: :
 ```
 {% endcode %}
@@ -47,7 +49,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.10")
+    id("org.openrewrite.rewrite") version("6.5.12")
 }
 
 rewrite {
@@ -71,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.14.1</version>
+        <version>5.15.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPropertyExample</recipe>
@@ -105,4 +107,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Aaron Gershman
+[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Adriano Machado, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Aaron Gershman

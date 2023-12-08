@@ -6,11 +6,11 @@ _Change the default value for `Variation` invocations for feature key._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-launchdarkly/blob/main/src/main/java/org/openrewrite/launchdarkly/ChangeVariationDefault.java), [Issue Tracker](https://github.com/openrewrite/rewrite-launchdarkly/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-launchdarkly/0.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-launchdarkly/blob/main/src/main/java/org/openrewrite/launchdarkly/ChangeVariationDefault.java), [Issue Tracker](https://github.com/openrewrite/rewrite-launchdarkly/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-launchdarkly/0.0.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-launchdarkly
-* version: 0.0.3
+* version: 0.0.4
 
 ## Options
 
@@ -38,14 +38,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeVariationDefaultExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-launchdarkly:0.0.3 in your build file:
+Now that `com.yourorg.ChangeVariationDefaultExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-launchdarkly:0.0.4 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.10")
+    id("org.openrewrite.rewrite") version("6.5.12")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.0.3")
+    rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.0.4")
 }
 ```
 {% endcode %}
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.14.1</version>
+        <version>5.15.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeVariationDefaultExample</recipe>
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-launchdarkly</artifactId>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
           </dependency>
         </dependencies>
       </plugin>

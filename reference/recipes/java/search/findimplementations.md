@@ -1,23 +1,22 @@
-# Find class declarations implementing an interface
+# Find implementing classes
 
 **org.openrewrite.java.search.FindImplementations**
 
-_Find source files that contain a class declaration implementing a specific interface._
+_Find class declarations which implement the specified type. If the specified type is a class, its subclasses will be matched. If the specified type is an interface, classes which implement it will be matched._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindImplementations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindImplementations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.0
+* version: 8.11.1
 
 ## Options
 
 | Type | Name | Description |
 | -- | -- | -- |
-| `String` | interfaceFullyQualifiedName | A fully-qualified interface name to search for. |
-| `Boolean` | matchInherited | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
+| `String` | typeName | The fully qualified name to search for. |
 
 
 ## Usage
@@ -30,11 +29,10 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FindImplementationsExample
-displayName: Find class declarations implementing an interface example
+displayName: Find implementing classes example
 recipeList:
   - org.openrewrite.java.search.FindImplementations:
-      interfaceFullyQualifiedName: org.openrewrite.Recipe
-      matchInherited: null
+      typeName: org.openrewrite.Recipe
 ```
 {% endcode %}
 
@@ -45,7 +43,7 @@ Now that `com.yourorg.FindImplementationsExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.10")
+    id("org.openrewrite.rewrite") version("6.5.12")
 }
 
 rewrite {
@@ -69,7 +67,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.14.1</version>
+        <version>5.15.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindImplementationsExample</recipe>
@@ -103,4 +101,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Kun Li](mailto:kun@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kevin Carpenter™️](mailto:kevin@moderne.io)
+[Kun Li](mailto:kun@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Kevin Carpenter™️](mailto:kevin@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

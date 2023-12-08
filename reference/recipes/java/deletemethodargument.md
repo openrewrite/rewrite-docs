@@ -6,11 +6,11 @@ _Delete an argument from method invocations._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/DeleteMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/DeleteMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.0
+* version: 8.11.1
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.DeleteMethodArgumentExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.10")
+    id("org.openrewrite.rewrite") version("6.5.12")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.14.1</version>
+        <version>5.15.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeleteMethodArgumentExample</recipe>
@@ -103,4 +103,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Thomas Zub](mailto:thomas.zub@outlook.de), [Sam Snyder](mailto:sam@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Greg Adams](mailto:greg@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Thomas Zub](mailto:thomas.zub@outlook.de), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)

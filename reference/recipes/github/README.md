@@ -7,6 +7,7 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 * [Add cron workflow trigger](./addcrontrigger.md)
 * [Add manual workflow trigger](./addmanualtrigger.md)
 * [Cancel in-progress workflow when it is triggered again](./autocancelinprogressworkflow.md)
+* [Change GitHub Action version](./changeactionversion.md)
 * [Change dependabot schedule interval](./changedependabotscheduleinterval.md)
 * [Check for github-actions updates daily](./dependabotcheckforgithubactionsupdatesdaily.md)
 * [Check for github-actions updates weekly](./dependabotcheckforgithubactionsupdatesweekly.md)

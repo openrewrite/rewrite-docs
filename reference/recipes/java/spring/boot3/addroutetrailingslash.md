@@ -6,23 +6,23 @@ _This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Frame
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/AddRouteTrailingSlash.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/AddRouteTrailingSlash.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.1.5
+* version: 5.1.6
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.5` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.1.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.10")
+    id("org.openrewrite.rewrite") version("6.5.12")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.5")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.1.6")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.10") }
+    dependencies { classpath("org.openrewrite:plugin:6.5.12") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.5")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.1.6")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.AddRouteTrailingSlash")
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.14.1</version>
+        <version>5.15.4</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.AddRouteTrailingSlash</recipe>
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.1.5</version>
+            <version>5.1.6</version>
           </dependency>
         </dependencies>
       </plugin>

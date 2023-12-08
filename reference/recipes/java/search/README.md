@@ -9,13 +9,13 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Find annotations](./findannotations.md)
-* [Find class declarations implementing an interface](./findimplementations.md)
 * [Find empty classes](./findemptyclasses.md)
 * [Find fields](./findfields.md)
 * [Find fields of type](./findfieldsoftype.md)
 * [Find files compiled at a specific Java version](./hasjavaversion.md)
 * [Find files in a source set](./hassourceset.md)
 * [Find files that are likely not tests](./islikelynottest.md)
+* [Find implementing classes](./findimplementations.md)
 * [Find literals](./findliterals.md)
 * [Find method declaration](./findmethoddeclaration.md)
 * [Find method usages](./findmethods.md)

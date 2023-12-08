@@ -14,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Convert `HttpSecurity::apply` chained calls into `HttpSecurity::with` Lambda DSL](./applytowithlambdadsl.md)
 * [Keep the default RequestCache querying behavior in Spring Security 5](./updaterequestcache.md)
 * [Remove calls matching `AuthenticationEntryPointFailureHandler.setRethrowAuthenticationServiceException(true)`](./propagateauthenticationserviceexceptions.md)
 * [Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in](./requireexplicitsavingofsecuritycontextrepository.md)

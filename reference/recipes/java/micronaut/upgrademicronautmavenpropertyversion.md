@@ -6,11 +6,11 @@ _Set the maven micronaut.version property according to a node-style semver selec
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.8/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.7
+* version: 2.1.8
 
 ## Options
 
@@ -36,14 +36,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.1.7 in your build file:
+Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.1.8 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.10")
+    id("org.openrewrite.rewrite") version("6.5.12")
 }
 
 rewrite {
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.7")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.8")
 }
 ```
 {% endcode %}
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.14.1</version>
+        <version>5.15.4</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeMicronautMavenPropertyVersionExample</recipe>
@@ -81,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.7</version>
+            <version>2.1.8</version>
           </dependency>
         </dependencies>
       </plugin>

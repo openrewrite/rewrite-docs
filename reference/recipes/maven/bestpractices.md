@@ -6,11 +6,11 @@ _Applies best practices to Maven POMs._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.0
+* version: 8.11.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -31,7 +31,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.14.1</version>
+        <version>5.15.4</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.BestPractices</recipe>
@@ -73,6 +73,7 @@ mod run . --recipe BestPractices
 * [Add explicit `groupId` to Maven plugins](../maven/cleanup/explicitplugingroupid.md)
 * [Add explicit plugin versions](../maven/cleanup/explicitpluginversion.md)
 * [Drop prefixless expressions in POM](../maven/cleanup/prefixlessexpressions.md)
+* [Order POM elements](../maven/orderpomelements.md)
 
 {% endtab %}
 
@@ -87,6 +88,7 @@ recipeList:
   - org.openrewrite.maven.cleanup.ExplicitPluginGroupId
   - org.openrewrite.maven.cleanup.ExplicitPluginVersion
   - org.openrewrite.maven.cleanup.PrefixlessExpressions
+  - org.openrewrite.maven.OrderPomElements
 
 ```
 {% endtab %}
@@ -101,4 +103,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com)
