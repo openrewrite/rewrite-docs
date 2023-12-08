@@ -15,7 +15,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.15.2</version>
+      <version>5.15.4</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -40,7 +40,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.5.11")
+        id("org.openrewrite.rewrite") version("6.5.12")
     }
     
     rewrite {
@@ -52,7 +52,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.2"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.3"))
         rewrite("org.openrewrite.recipe:rewrite-spring")
     
         // Other project dependencies
@@ -77,7 +77,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.15.2</version>
+      <version>5.15.4</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -87,7 +87,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>2.1.2</version>
+          <version>2.1.4</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -102,7 +102,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.5.11")
+        id("org.openrewrite.rewrite") version("6.5.12")
     }
     
     rewrite {
@@ -114,7 +114,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     }
     
     dependencies {
-        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.2"))
+        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.3"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies
@@ -360,13 +360,13 @@ public class ExampleJunitTestClass {
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.15.2</version>
+            <version>5.15.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.15.2</version>
+            <version>5.15.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
