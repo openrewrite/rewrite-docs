@@ -110,6 +110,19 @@ rootProject {
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
+
+Single line for easier copying:
+
+{% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:RELEASE -Drewrite.activeRecipes=org.openrewrite.terraform.aws.EncryptEBSSnapshots
+```
+{% endcode %}
+
+Multi-line for readability:
+
 {% code title="shell" %}
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
