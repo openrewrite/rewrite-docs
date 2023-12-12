@@ -368,6 +368,10 @@ Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
 {% endtab %}
 {% endtabs %}
 
+## Moderne IntelliJ plugin
+
+Moderne offers a [CLI](https://docs.moderne.io/user-documentation/getting-started/cli-intro) and an [IntelliJ plugin](https://docs.moderne.io/user-documentation/how-to-guides/moderne-intellij-plugin) that can help speed up the development and testing of recipes. We'd strongly encourage you to check those out while developing recipes.
+
 ## Next steps
 
 * [Learn about the different types of recipes you can create](/authoring-recipes/types-of-recipes.md)
