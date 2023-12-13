@@ -19,3 +19,4 @@
   * [Automating Maven dependency management](/running-recipes/popular-recipe-guides/automating-maven-dependency-management.md)
   * [Migrate Hamcrest to AssertJ](/running-recipes/popular-recipe-guides/hamcrest-to-assertj.md)
   * [Migrate JUnit Asserts to AssertJ](/running-recipes/popular-recipe-guides/junit-asserts-to-assertj.md)
+  * [Migrate to Jakarta EE 10](/running-recipes/popular-recipe-guides/migrate-to-jakarta-ee-10.md)
