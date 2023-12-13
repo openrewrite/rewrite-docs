@@ -21,6 +21,7 @@
     * [Refactoring with declarative YAML recipes](running-recipes/popular-recipe-guides/authoring-declarative-yaml-recipes.md)
     * [Automating Maven dependency management](running-recipes/popular-recipe-guides/automating-maven-dependency-management.md)
     * [Migrate Hamcrest to AssertJ](running-recipes/popular-recipe-guides/hamcrest-to-assertj.md)
+    * [Migrate JUnit Asserts to AssertJ](/running-recipes/popular-recipe-guides/junit-asserts-to-assertj.md)
 * [Authoring Recipes](authoring-recipes/authoring-recipes.md)
   * [Recipe development environment](authoring-recipes/recipe-development-environment.md)
   * [The different types of recipes](authoring-recipes/types-of-recipes.md)
