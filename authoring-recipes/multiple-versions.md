@@ -19,7 +19,7 @@ For instance, if you wanted to default to using `junit-4.13.2` and `mockito-core
 public void defaults(RecipeSpec spec) {
     spec
         .parser(JavaParser.fromJavaVersion()
-            .classpathFromResources("junit-4.13.2", "mockito-core-3.12.4"));
+            .classpathFromResources(new InMemoryExecutionContext(), "junit-4.13.2", "mockito-core-3.12.4"));
 }
 ```
 
