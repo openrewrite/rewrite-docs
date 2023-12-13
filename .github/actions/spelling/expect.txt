@@ -52,6 +52,7 @@ cyclonedx
 databind
 datasource
 DAX
+defaultimpl
 defaultstringfallbackrecipe
 defaultstringrecipe
 deletedirectoryfilerecipe
@@ -80,6 +81,7 @@ googlecode
 gpg
 gpgsign
 gradlew
+guice
 hamcrest
 hashcode
 Heroku
