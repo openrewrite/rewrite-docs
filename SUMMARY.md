@@ -40,6 +40,7 @@
     * [Rename type alias](reference/recipes/kotlin/renametypealias.md)
     * [Cleanup](reference/recipes/kotlin/cleanup/README.md)
       * ["it" shouldn't be used as a lambda parameter name](reference/recipes/kotlin/cleanup/implicitparameterinlambda.md)
+      * [Remove trailing comma in Kotlin](reference/recipes/kotlin/cleanup/removetrailingcomma.md)
       * [Remove unnecessary parentheses on Kotlin types](reference/recipes/kotlin/cleanup/unnecessarytypeparentheses.md)
       * [Remove unnecessary trailing semicolon](reference/recipes/kotlin/cleanup/removetrailingsemicolon.md)
       * [Replace Char#toInt() with Char#code](reference/recipes/kotlin/cleanup/replacechartointwithcode.md)
