@@ -6,18 +6,18 @@ _Find source files with matching build metadata._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/search/FindBuildMetadata.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/search/FindBuildMetadata.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | key | The key to search for in the build metadata. |
-| `String` | value | The value to search for in the build metadata. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | key | The key to search for in the build metadata. | `lstFormatVersion` |
+| `String` | value | The value to search for in the build metadata. | `2` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.FindBuildMetadataExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindBuildMetadataExample</recipe>
@@ -103,4 +103,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

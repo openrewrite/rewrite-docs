@@ -14,9 +14,9 @@ _Prior to Spring Security 6, `@EnableXXXSecurity` implicitly had `@Configuration
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `boolean` | forceAddConfiguration | Force add `@Configuration` regardless current Boot version. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `boolean` | forceAddConfiguration | Force add `@Configuration` regardless current Boot version. | `true` |
 
 
 ## Usage
@@ -43,7 +43,7 @@ Now that `com.yourorg.ConfigurationOverEnableSecurityExample` has been defined a
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ConfigurationOverEnableSecurityExample</recipe>

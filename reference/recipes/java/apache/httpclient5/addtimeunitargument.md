@@ -14,10 +14,10 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
-| `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to add to the method invocation. Defaults to `MILLISECONDS`. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. | `org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)` |
+| `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to add to the method invocation. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined activate it a
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddTimeUnitArgumentExample</recipe>

@@ -14,10 +14,10 @@ _Replace runners with the JUnit Jupiter extension equivalent._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `List` | runners | The fully qualified class names of the JUnit 4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. |
-| `String` | extension | The fully qualified class names of the JUnit Jupiter extension. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `List` | runners | The fully qualified class names of the JUnit 4 runners to replace. Sometimes several runners are replaced by a single JUnit Jupiter extension. | `org.springframework.test.context.junit4.SpringRunner` |
+| `String` | extension | The fully qualified class names of the JUnit Jupiter extension. | `org.springframework.test.context.junit.jupiter.SpringExtension` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.RunnerToExtensionExample` has been defined activate it and
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RunnerToExtensionExample</recipe>

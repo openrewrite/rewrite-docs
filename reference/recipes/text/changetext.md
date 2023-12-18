@@ -10,17 +10,17 @@ _Completely replaces the contents of the text file with other text. Use together
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/ChangeText.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/ChangeText.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | toText | The text file will have only this text after the change. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | toText | The text file will have only this text after the change. | `Some text.` |
 
 
 ## Usage
@@ -47,7 +47,7 @@ Now that `com.yourorg.ChangeTextExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTextExample</recipe>

@@ -6,18 +6,18 @@ _If the configuration has a different value, leave it alone. If it is missing, a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.11/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 2.0.10
+* version: 2.0.11
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | resourceName | A Terraform resource name, without the quotes. |
-| `String` | content | Terraform to insert if an attribute with the same name or block with the same 'type' is not found. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | resourceName | A Terraform resource name, without the quotes. | `aws_ebs_volume` |
+| `String` | content | Terraform to insert if an attribute with the same name or block with the same 'type' is not found. | `encrypted = true` |
 
 
 ## Usage
@@ -38,14 +38,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.0.10 in your build file:
+Now that `com.yourorg.AddConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.0.11 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.10")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.11")
 }
 ```
 {% endcode %}
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddConfigurationExample</recipe>
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>2.0.10</version>
+            <version>2.0.11</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,28 +6,28 @@ _Add a Maven dependency to a `pom.xml` file in the correct scope based on where 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
-| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
-| `String` | version | An exact version number or node-style semver selector used to select the version number. |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
-| `String` | scope | *Optional*. A scope to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a runtime, provided, or import dependency. |
-| `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |
-| `String` | onlyIfUsing | *Optional*. Used to determine if the dependency will be added and in which scope it should be placed. |
-| `String` | type | *Optional*. The type of dependency to add. If omitted Maven defaults to assuming the type is "jar". |
-| `String` | classifier | *Optional*. A Maven classifier to add. Most commonly used to select shaded or test variants of a library |
-| `Boolean` | optional | *Optional*. Set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |
-| `String` | familyPattern | *Optional*. A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. |
-| `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.guava` |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
+| `String` | version | An exact version number or node-style semver selector used to select the version number. | `29.X` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
+| `String` | scope | *Optional*. A scope to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a runtime, provided, or import dependency. Valid options: `import`, `runtime`, `provided` | `runtime` |
+| `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |  |
+| `String` | onlyIfUsing | *Optional*. Used to determine if the dependency will be added and in which scope it should be placed. | `org.junit.jupiter.api.*` |
+| `String` | type | *Optional*. The type of dependency to add. If omitted Maven defaults to assuming the type is "jar". Valid options: `jar`, `pom`, `war` | `jar` |
+| `String` | classifier | *Optional*. A Maven classifier to add. Most commonly used to select shaded or test variants of a library | `test` |
+| `Boolean` | optional | *Optional*. Set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |  |
+| `String` | familyPattern | *Optional*. A pattern, applied to groupIds, used to determine which other dependencies should have aligned version numbers. Accepts '*' as a wildcard character. | `com.fasterxml.jackson*` |
+| `Boolean` | acceptTransitive | *Optional*. Default false. If enabled, the dependency will not be added if it is already on the classpath as a transitive dependency. | `true` |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -57,11 +57,9 @@ recipeList:
       version: 29.X
       versionPattern: '-jre'
       scope: runtime
-      releasesOnly: null
       onlyIfUsing: org.junit.jupiter.api.*
       type: jar
       classifier: test
-      optional: null
       familyPattern: com.fasterxml.jackson*
       acceptTransitive: true
 ```
@@ -80,7 +78,7 @@ Now that `com.yourorg.AddDependencyExample` has been defined activate it in your
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddDependencyExample</recipe>

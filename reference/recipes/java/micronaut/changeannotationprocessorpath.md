@@ -14,14 +14,14 @@ _Change the groupId, artifactId, and version of a Maven annotation processor pat
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
-| `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
-| `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. |
-| `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
-| `String` | newVersion | *Optional*. An version string for the annotation processor path. Version strings that start with 'micronaut.' will be treated specially.  |
-| `List` | exclusions | *Optional*. A list of exclusions to apply to the annotation processor path in the format groupId:artifactId |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `org.openrewrite.recipe` |
+| `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `my-deprecated-annotation-processor` |
+| `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. | `corp.internal.openrewrite.recipe` |
+| `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. | `my-new-annotation-processor` |
+| `String` | newVersion | *Optional*. An version string for the annotation processor path. Version strings that start with 'micronaut.' will be treated specially.  | `micronaut.validation` |
+| `List` | exclusions | *Optional*. A list of exclusions to apply to the annotation processor path in the format groupId:artifactId | `io.micronaut:micronaut-inject` |
 
 
 ## Usage
@@ -53,7 +53,7 @@ Now that `com.yourorg.ChangeAnnotationProcessorPathExample` has been defined act
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -81,7 +81,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeAnnotationProcessorPathExample</recipe>

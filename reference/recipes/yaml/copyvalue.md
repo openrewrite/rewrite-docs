@@ -6,18 +6,18 @@ _Copies a YAML value from one key to another. The existing key/value pair remain
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldKeyPath | A [JsonPath](https://github.com/json-path/JsonPath) expression to locate a YAML key/value pair to copy. |
-| `String` | newKey | A [JsonPath](https://github.com/json-path/JsonPath) expression for where the new value should be copied to. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldKeyPath | A [JsonPath](https://github.com/json-path/JsonPath) expression to locate a YAML key/value pair to copy. | `$.source.kind` |
+| `String` | newKey | A [JsonPath](https://github.com/json-path/JsonPath) expression for where the new value should be copied to. | `$.dest.kind` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.CopyValueExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CopyValueExample</recipe>
@@ -103,4 +103,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Aaron Gershman, [Mike Solomon](mailto:mike@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), Aaron Gershman, [Mike Solomon](mailto:mike@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

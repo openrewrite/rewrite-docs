@@ -12,23 +12,23 @@ _Communication between an Azure Storage account and a client application is encr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/azure.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/azure.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.0.11/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 2.0.10
+* version: 2.0.11
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-terraform:2.0.10` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-terraform:2.0.11` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -40,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.10")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.11")
 }
 ```
 {% endcode %}
@@ -55,12 +55,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.12") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.10")
+        rewrite("org.openrewrite.recipe:rewrite-terraform:2.0.11")
     }
     rewrite {
         activeRecipe("org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion")
@@ -87,7 +87,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion</recipe>
@@ -97,7 +97,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>2.0.10</version>
+            <version>2.0.11</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -114,9 +114,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-terraform:RELEASE -Drewrite.activeRecipes=org.openrewrite.terraform.azure.EnsureStorageAccountUsesLatestTLSVersion
 ```
 {% endcode %}
 {% endtab %}

@@ -6,26 +6,26 @@ _Add a managed Maven dependency to a `pom.xml` file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'org.apache.logging.log4j:ARTIFACT_ID:VERSION'. |
-| `String` | artifactId | The second part of a dependency coordinate 'org.apache.logging.log4j:log4j-bom:VERSION'. |
-| `String` | version | An exact version number or node-style semver selector used to select the version number. |
-| `String` | scope | *Optional*. An optional scope to use for the dependency management tag. |
-| `String` | type | *Optional*. An optional type to use for the dependency management tag. |
-| `String` | classifier | *Optional*. An optional classifier to use for the dependency management tag |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select 29.0-jre |
-| `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |
-| `String` | onlyIfUsing | *Optional*. Only add managed dependencies to projects having a dependency matching the expression. |
-| `Boolean` | addToRootPom | *Optional*. Add to the root pom where root is the eldest parent of the pom within the source set. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The first part of a dependency coordinate 'org.apache.logging.log4j:ARTIFACT_ID:VERSION'. | `org.apache.logging.log4j` |
+| `String` | artifactId | The second part of a dependency coordinate 'org.apache.logging.log4j:log4j-bom:VERSION'. | `log4j-bom` |
+| `String` | version | An exact version number or node-style semver selector used to select the version number. | `latest.release` |
+| `String` | scope | *Optional*. An optional scope to use for the dependency management tag. Valid options: `import`, `runtime`, `provided`, `test` | `import` |
+| `String` | type | *Optional*. An optional type to use for the dependency management tag. Valid options: `jar`, `pom`, `war` | `pom` |
+| `String` | classifier | *Optional*. An optional classifier to use for the dependency management tag | `test` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select 29.0-jre | `-jre` |
+| `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |  |
+| `String` | onlyIfUsing | *Optional*. Only add managed dependencies to projects having a dependency matching the expression. | `org.apache.logging.log4j:log4j*` |
+| `Boolean` | addToRootPom | *Optional*. Add to the root pom where root is the eldest parent of the pom within the source set. |  |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -57,9 +57,7 @@ recipeList:
       type: pom
       classifier: test
       versionPattern: '-jre'
-      releasesOnly: null
       onlyIfUsing: org.apache.logging.log4j:log4j*
-      addToRootPom: null
 ```
 {% endcode %}
 
@@ -76,7 +74,7 @@ Now that `com.yourorg.AddManagedDependencyExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddManagedDependencyExample</recipe>

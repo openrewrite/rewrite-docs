@@ -6,17 +6,17 @@ _Gradle projects are those with `build.gradle` or `build.gradle.kts` files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindGradleProject.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindGradleProject.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `SearchCriteria` | searchCriteria | Whether to identify gradle projects by source file name or the presence of a marker |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `SearchCriteria` | searchCriteria | Whether to identify gradle projects by source file name or the presence of a marker Valid options: `File`, `Marker` | `Marker` |
 
 
 ## Usage
@@ -43,7 +43,7 @@ Now that `com.yourorg.FindGradleProjectExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {

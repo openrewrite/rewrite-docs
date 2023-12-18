@@ -6,18 +6,18 @@ _Deletes key/value pairs from properties files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/DeleteProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/DeleteProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | propertyKey | The key(s) to be deleted. This is a glob expression. |
-| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | propertyKey | The key(s) to be deleted. This is a glob expression. | `management.metrics.binders.files.enabled or management.metrics.*` |
+| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |  |
 
 
 ## Usage
@@ -34,7 +34,6 @@ displayName: Delete Property example
 recipeList:
   - org.openrewrite.properties.DeleteProperty:
       propertyKey: management.metrics.binders.files.enabled or management.metrics.*
-      relaxedBinding: null
 ```
 {% endcode %}
 
@@ -45,7 +44,7 @@ Now that `com.yourorg.DeletePropertyExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -69,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeletePropertyExample</recipe>

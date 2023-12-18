@@ -6,18 +6,18 @@ _Find all annotations matching the annotation pattern._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns.md). |
-| `Boolean` | matchMetaAnnotations | *Optional*. When enabled, matches on meta annotations of the annotation pattern. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | annotationPattern | An annotation pattern, expressed as a [method pattern](/reference/method-patterns.md). | `@java.lang.SuppressWarnings("deprecation")` |
+| `Boolean` | matchMetaAnnotations | *Optional*. When enabled, matches on meta annotations of the annotation pattern. |  |
 
 
 ## Usage
@@ -34,7 +34,6 @@ displayName: Find annotations example
 recipeList:
   - org.openrewrite.java.search.FindAnnotations:
       annotationPattern: '@java.lang.SuppressWarnings("deprecation")'
-      matchMetaAnnotations: null
 ```
 {% endcode %}
 
@@ -45,7 +44,7 @@ Now that `com.yourorg.FindAnnotationsExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -69,7 +68,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindAnnotationsExample</recipe>

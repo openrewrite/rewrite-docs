@@ -19,10 +19,10 @@ _Transform logging statements using concatenation for messages and variables int
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A method used to find matching statements to parameterize. |
-| `Boolean` | removeToString | *Optional*. Optionally remove `toString(`) method invocations from Object parameters. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | methodPattern | A method used to find matching statements to parameterize. | `org.slf4j.Logger info(..)` |
+| `Boolean` | removeToString | *Optional*. Optionally remove `toString(`) method invocations from Object parameters. |  |
 
 
 ## Usage
@@ -39,7 +39,6 @@ displayName: Parameterize logging statements example
 recipeList:
   - org.openrewrite.java.logging.ParameterizedLogging:
       methodPattern: org.slf4j.Logger info(..)
-      removeToString: null
 ```
 {% endcode %}
 
@@ -50,7 +49,7 @@ Now that `com.yourorg.ParameterizedLoggingExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -78,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ParameterizedLoggingExample</recipe>

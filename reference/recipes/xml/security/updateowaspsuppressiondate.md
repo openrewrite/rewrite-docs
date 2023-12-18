@@ -6,18 +6,18 @@ _Updates the expiration date for OWASP suppressions having a matching cve tag. F
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/UpdateOwaspSuppressionDate.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `List` | cveList | Update suppressions having any of the specified CVE tags. |
-| `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `List` | cveList | Update suppressions having any of the specified CVE tags. | `CVE-2022-1234` |
+| `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. | `2023-01-01` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.UpdateOwaspSuppressionDateExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateOwaspSuppressionDateExample</recipe>

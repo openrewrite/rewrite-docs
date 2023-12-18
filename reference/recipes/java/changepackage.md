@@ -6,19 +6,19 @@ _A recipe that will rename a package name in package statements, imports, and fu
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldPackageName | The package name to replace. |
-| `String` | newPackageName | New package name to replace the old package name with. |
-| `Boolean` | recursive | *Optional*. Recursively change subpackage names |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldPackageName | The package name to replace. | `com.yourorg.foo` |
+| `String` | newPackageName | New package name to replace the old package name with. | `com.yourorg.bar` |
+| `Boolean` | recursive | *Optional*. Recursively change subpackage names |  |
 
 
 ## Usage
@@ -36,7 +36,6 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.yourorg.foo
       newPackageName: com.yourorg.bar
-      recursive: null
 ```
 {% endcode %}
 
@@ -47,7 +46,7 @@ Now that `com.yourorg.ChangePackageExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePackageExample</recipe>
@@ -105,4 +104,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Roberto Cortez](mailto:radcortez@yahoo.com)
+[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Roberto Cortez](mailto:radcortez@yahoo.com)

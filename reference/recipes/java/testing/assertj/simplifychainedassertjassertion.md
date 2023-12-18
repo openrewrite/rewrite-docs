@@ -18,12 +18,12 @@ _Many AssertJ chained assertions have dedicated assertions that function the sam
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | chainedAssertion | *Optional*. The chained AssertJ assertion to move to dedicated assertion. |
-| `String` | assertToReplace | *Optional*. The AssertJ assert that should be replaced. |
-| `String` | dedicatedAssertion | *Optional*. The AssertJ method to migrate to. |
-| `String` | requiredType | *Optional*. Specifies the type the recipe should run on. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | chainedAssertion | *Optional*. The chained AssertJ assertion to move to dedicated assertion. | `equals` |
+| `String` | assertToReplace | *Optional*. The AssertJ assert that should be replaced. | `isTrue` |
+| `String` | dedicatedAssertion | *Optional*. The AssertJ method to migrate to. | `isEqualTo` |
+| `String` | requiredType | *Optional*. Specifies the type the recipe should run on. | `java.lang.String` |
 
 
 ## Usage
@@ -35,7 +35,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -62,7 +62,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.12") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -94,7 +94,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion</recipe>
@@ -121,9 +121,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion
 ```
 {% endcode %}
 {% endtab %}

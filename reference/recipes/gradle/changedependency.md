@@ -6,23 +6,23 @@ _Change a Gradle dependency coordinates._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
-| `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. |
-| `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. |
-| `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. |
-| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). |
-| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre |
-| `Boolean` | overrideManagedVersion | *Optional*. If the old dependency has a managed version, this flag can be used to explicitly set the version on the new dependency. WARNING: No check is done on the NEW dependency to verify if it is managed, it relies on whether the OLD dependency had a managed version. The default for this flag is `false`. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `org.openrewrite.recipe` |
+| `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a dependency coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `rewrite-testing-frameworks` |
+| `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. | `corp.internal.openrewrite.recipe` |
+| `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. | `rewrite-testing-frameworks` |
+| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). | `29.X` |
+| `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
+| `Boolean` | overrideManagedVersion | *Optional*. If the old dependency has a managed version, this flag can be used to explicitly set the version on the new dependency. WARNING: No check is done on the NEW dependency to verify if it is managed, it relies on whether the OLD dependency had a managed version. The default for this flag is `false`. |  |
 
 
 ## Usage
@@ -44,7 +44,6 @@ recipeList:
       newArtifactId: rewrite-testing-frameworks
       newVersion: 29.X
       versionPattern: '-jre'
-      overrideManagedVersion: null
 ```
 {% endcode %}
 
@@ -55,7 +54,7 @@ Now that `com.yourorg.ChangeDependencyExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {

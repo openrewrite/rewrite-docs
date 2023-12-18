@@ -14,10 +14,10 @@ _As of Spring-Batch 5.0 Listeners has default methods (made possible by a Java 8
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | fullyQualifiedClassName | A fully-qualified class name to be replaced. |
-| `String` | fullyQualifiedInterfaceName | A fully-qualified Interface name to replace by. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | fullyQualifiedClassName | A fully-qualified class name to be replaced. | `org.springframework.batch.core.listener.JobExecutionListenerSupport` |
+| `String` | fullyQualifiedInterfaceName | A fully-qualified Interface name to replace by. | `org.springframework.batch.core.JobExecutionListener` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.ReplaceSupportClassWithItsInterfaceExample` has been defin
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceSupportClassWithItsInterfaceExample</recipe>

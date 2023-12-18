@@ -14,12 +14,12 @@ _Add a spring configuration property to a configuration file if it does not alre
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | property | The property key to add. |
-| `String` | value | The value of the new property key. |
-| `String` | comment | *Optional*. A comment that will be added to the new property. |
-| `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yml", and "**/application.properties". |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | property | The property key to add. | `management.metrics.enable.process.files` |
+| `String` | value | The value of the new property key. | `true` |
+| `String` | comment | *Optional*. A comment that will be added to the new property. | `This is a comment` |
+| `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yml", and "**/application.properties". | `["**/application.yml"]` |
 
 
 ## Usage
@@ -49,7 +49,7 @@ Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddSpringPropertyExample</recipe>

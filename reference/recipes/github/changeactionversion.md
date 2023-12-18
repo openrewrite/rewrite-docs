@@ -6,18 +6,18 @@ _Change the version of a GitHub Action in any `.github/workflows/*.yml` file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.12/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 2.0.11
+* version: 2.0.12
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | action | Name of the action to update. |
-| `String` | version | Version to use. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | action | Name of the action to update. | `actions/setup-java` |
+| `String` | version | Version to use. | `v4` |
 
 
 ## Usage
@@ -38,14 +38,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeActionVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:2.0.11 in your build file:
+Now that `com.yourorg.ChangeActionVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:2.0.12 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.11")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.12")
 }
 ```
 {% endcode %}
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeActionVersionExample</recipe>
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>2.0.11</version>
+            <version>2.0.12</version>
           </dependency>
         </dependencies>
       </plugin>

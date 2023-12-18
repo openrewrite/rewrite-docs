@@ -6,20 +6,21 @@ _Merge a YAML snippet with an existing YAML document._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | key | A [JsonPath](https://github.com/json-path/JsonPath) expression used to find matching keys. |
-| `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. |
-| `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |
-| `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | key | A [JsonPath](https://github.com/json-path/JsonPath) expression used to find matching keys. | `$.metadata` |
+                       | `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. | `labels: 
+label-one: "value-one"` |
+| `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |  |
+| `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. | `name` |
 
 
 ## Usage
@@ -38,7 +39,6 @@ recipeList:
       key: $.metadata
       yaml: labels: 
 	label-one: "value-one"
-      acceptTheirs: null
       objectIdentifyingProperty: name
 ```
 {% endcode %}
@@ -50,7 +50,7 @@ Now that `com.yourorg.MergeYamlExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -74,7 +74,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.MergeYamlExample</recipe>

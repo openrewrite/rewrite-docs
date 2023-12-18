@@ -6,17 +6,17 @@ _Update the version of Maven used in an existing Maven wrapper._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | wrapperVersion | *Optional*. An exact version number or node-style semver selector used to select the wrapper version number. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | wrapperVersion | *Optional*. An exact version number or node-style semver selector used to select the wrapper version number. | `3.x` |
                         | `String` | wrapperDistribution | *Optional*. The distribution of the Maven wrapper to use.
 
 * "bin" uses a `maven-wrapper.jar` compiled binary.
@@ -24,10 +24,10 @@ _Update the version of Maven used in an existing Maven wrapper._
 * "script" downloads `maven-wrapper.jar` or `MavenWrapperDownloader.java` to then download a full distribution.
 * "source" uses `MavenWrapperDownloader.java` source file.
 
-Defaults to "bin". |
-| `String` | distributionVersion | *Optional*. An exact version number or node-style semver selector used to select the Maven version number. |
-| `String` | repositoryUrl | *Optional*. The URL of the repository to download the Maven wrapper and distribution from. Supports repositories with a Maven layout. Defaults to `https://repo.maven.apache.org/maven2`. |
-| `Boolean` | addIfMissing | *Optional*. Add a Maven wrapper, if it's missing. Defaults to `true`. |
+Defaults to "bin". Valid options: `bin`, `only-script`, `script`, `source` |  |
+| `String` | distributionVersion | *Optional*. An exact version number or node-style semver selector used to select the Maven version number. | `3.x` |
+| `String` | repositoryUrl | *Optional*. The URL of the repository to download the Maven wrapper and distribution from. Supports repositories with a Maven layout. Defaults to `https://repo.maven.apache.org/maven2`. | `https://repo.maven.apache.org/maven2` |
+| `Boolean` | addIfMissing | *Optional*. Add a Maven wrapper, if it's missing. Defaults to `true`. |  |
 
 
 ## Usage
@@ -45,7 +45,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.UpdateMavenWrapper</recipe>
@@ -64,8 +64,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.activeRecipes=org.openrewrite.maven.UpdateMavenWrapper
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.maven.UpdateMavenWrapper
 ```
 {% endcode %}
 {% endtab %}

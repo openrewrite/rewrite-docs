@@ -14,10 +14,10 @@ _Replace the value of a complete `String` literal._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldLiteralValue | The `String` value to replace. |
-| `String` | newLiteralValue | The `String` value to replace with. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldLiteralValue | The `String` value to replace. | `apple` |
+| `String` | newLiteralValue | The `String` value to replace with. | `orange` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.ReplaceStringLiteralValueExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceStringLiteralValueExample</recipe>

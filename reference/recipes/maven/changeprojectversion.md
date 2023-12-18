@@ -6,20 +6,20 @@ _Change the project version of a Maven pom.xml. Identifies the project to be cha
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The groupId of the maven project to change its version. This can be a glob expression. |
-| `String` | artifactId | The artifactId of the maven project to change its version. This can be a glob expression. |
-| `String` | newVersion | The new version to replace the maven project version. |
-| `Boolean` | overrideParentVersion | *Optional*. This flag can be set to explicitly override the inherited parent version. Default `false`. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The groupId of the maven project to change its version. This can be a glob expression. | `org.openrewrite` |
+| `String` | artifactId | The artifactId of the maven project to change its version. This can be a glob expression. | `*` |
+| `String` | newVersion | The new version to replace the maven project version. | `8.4.2` |
+| `Boolean` | overrideParentVersion | *Optional*. This flag can be set to explicitly override the inherited parent version. Default `false`. |  |
 
 
 ## Usage
@@ -38,7 +38,6 @@ recipeList:
       groupId: org.openrewrite
       artifactId: '*'
       newVersion: 8.4.2
-      overrideParentVersion: null
 ```
 {% endcode %}
 
@@ -55,7 +54,7 @@ Now that `com.yourorg.ChangeProjectVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeProjectVersionExample</recipe>

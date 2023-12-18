@@ -6,20 +6,20 @@ _Add a new property to the Maven project property._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | key | The name of the property key to be added. |
-| `String` | value | The value of property to be added. |
-| `Boolean` | preserveExistingValue | *Optional*. Preserve previous value if the property already exists in the pom file. |
-| `Boolean` | trustParent | *Optional*. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | key | The name of the property key to be added. | `junit.version` |
+| `String` | value | The value of property to be added. | `4.13` |
+| `Boolean` | preserveExistingValue | *Optional*. Preserve previous value if the property already exists in the pom file. |  |
+| `Boolean` | trustParent | *Optional*. Even if the parent defines a property with the same key, trust it even if the value isn't the same. Useful when you want to wait for the parent to have its value changed first. The parent is not trusted by default. |  |
 
 
 ## Usage
@@ -37,8 +37,6 @@ recipeList:
   - org.openrewrite.maven.AddProperty:
       key: junit.version
       value: 4.13
-      preserveExistingValue: null
-      trustParent: null
 ```
 {% endcode %}
 
@@ -55,7 +53,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPropertyExample</recipe>
@@ -89,4 +87,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Aurélien Mino](mailto:aurelien.mino@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Aurélien Mino](mailto:aurelien.mino@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

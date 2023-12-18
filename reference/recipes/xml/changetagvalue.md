@@ -6,19 +6,19 @@ _Alters the value of XML tags matching the provided expression._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | elementName | The name of the element whose value is to be changed. Interpreted as an XPath Expression. |
-| `String` | oldValue | *Optional*. The old value of the tag. |
-| `String` | newValue | The new value for the tag. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | elementName | The name of the element whose value is to be changed. Interpreted as an XPath Expression. | `/settings/servers/server/username` |
+| `String` | oldValue | *Optional*. The old value of the tag. | `user` |
+| `String` | newValue | The new value for the tag. | `user` |
 
 
 ## Usage
@@ -47,7 +47,7 @@ Now that `com.yourorg.ChangeTagValueExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTagValueExample</recipe>

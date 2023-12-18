@@ -6,19 +6,19 @@ _Change the access level (public, protected, private, package private) of a meth
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodAccessLevel.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodAccessLevel.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. |
-| `String` | newAccessLevel | New method access level to apply to the method. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. | `org.mockito.Matchers anyVararg()` |
+| `String` | newAccessLevel | New method access level to apply to the method. Valid options: `private`, `protected`, `package`, `public` | `public` |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |  |
 
 
 ## Usage
@@ -36,7 +36,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodAccessLevel:
       methodPattern: org.mockito.Matchers anyVararg()
       newAccessLevel: public
-      matchOverrides: null
 ```
 {% endcode %}
 
@@ -47,7 +46,7 @@ Now that `com.yourorg.ChangeMethodAccessLevelExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodAccessLevelExample</recipe>

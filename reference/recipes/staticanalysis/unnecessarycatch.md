@@ -14,9 +14,9 @@ _A refactoring operation may result in a checked exception that is no longer thr
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `boolean` | includeJavaLangException | *Optional*. Whether to include java.lang.Exception in the list of checked exceptions to remove. Unlike other checked exceptions, `java.lang.Exception` is also the superclass of unchecked exceptions. So removing `catch(Exception e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `boolean` | includeJavaLangException | *Optional*. Whether to include java.lang.Exception in the list of checked exceptions to remove. Unlike other checked exceptions, `java.lang.Exception` is also the superclass of unchecked exceptions. So removing `catch(Exception e)` may result in changed runtime behavior in the presence of unchecked exceptions. Default `false` |  |
 
 
 ## Usage
@@ -28,7 +28,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -55,7 +55,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.12") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -87,7 +87,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.UnnecessaryCatch</recipe>
@@ -114,9 +114,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.staticanalysis.UnnecessaryCatch
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.UnnecessaryCatch
 ```
 {% endcode %}
 {% endtab %}

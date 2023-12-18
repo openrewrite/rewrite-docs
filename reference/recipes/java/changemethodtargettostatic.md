@@ -6,21 +6,21 @@ _Change method invocations to static method calls._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToStatic.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToStatic.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. The original method call may or may not be a static method invocation. |
-| `String` | fullyQualifiedTargetTypeName | A fully-qualified class name of the type upon which the static method is defined. |
-| `String` | returnType | *Optional*. Sometimes changing the target type also changes the return type. In the Guava example, changing from `ImmutableSet#of(..)` to `Set#of(..)` widens the return type from Guava's `ImmutableSet` to just `java.util.Set`. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-| `Boolean` | matchUnknownTypes | *Optional*. When enabled, include method invocations which appear to match if full type information is missing. Using matchUnknownTypes can improve recipe resiliency for an AST with missing type information, but also increases the risk of false-positive matches on unrelated method invocations. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. The original method call may or may not be a static method invocation. | `com.google.common.collect.ImmutableSet of(..)` |
+| `String` | fullyQualifiedTargetTypeName | A fully-qualified class name of the type upon which the static method is defined. | `java.util.Set` |
+| `String` | returnType | *Optional*. Sometimes changing the target type also changes the return type. In the Guava example, changing from `ImmutableSet#of(..)` to `Set#of(..)` widens the return type from Guava's `ImmutableSet` to just `java.util.Set`. | `java.util.Set` |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |  |
+| `Boolean` | matchUnknownTypes | *Optional*. When enabled, include method invocations which appear to match if full type information is missing. Using matchUnknownTypes can improve recipe resiliency for an AST with missing type information, but also increases the risk of false-positive matches on unrelated method invocations. |  |
 
 
 ## Usage
@@ -39,8 +39,6 @@ recipeList:
       methodPattern: com.google.common.collect.ImmutableSet of(..)
       fullyQualifiedTargetTypeName: java.util.Set
       returnType: java.util.Set
-      matchOverrides: null
-      matchUnknownTypes: null
 ```
 {% endcode %}
 
@@ -51,7 +49,7 @@ Now that `com.yourorg.ChangeMethodTargetToStaticExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodTargetToStaticExample</recipe>

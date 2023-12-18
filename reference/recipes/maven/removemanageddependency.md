@@ -6,19 +6,19 @@ _Removes a single managed dependency from the <dependencyManagement><dependencie
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveManagedDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveManagedDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a managed dependency coordinate `com.google.guava:guava:VERSION`. |
-| `String` | artifactId | The second part of a managed dependency coordinate `com.google.guava:guava:VERSION`. |
-| `String` | scope | *Optional*. Only remove managed dependencies if they are in this scope. If 'runtime', this willalso remove managed dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The first part of a managed dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.guava` |
+| `String` | artifactId | The second part of a managed dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
+| `String` | scope | *Optional*. Only remove managed dependencies if they are in this scope. If 'runtime', this willalso remove managed dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
 
 ## Usage
@@ -53,7 +53,7 @@ Now that `com.yourorg.RemoveManagedDependencyExample` has been defined activate 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveManagedDependencyExample</recipe>

@@ -6,21 +6,21 @@ _Alters XML Attribute value within specified element of a specific resource vers
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeNamespaceValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeNamespaceValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | elementName | *Optional*. The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. |
-| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
-| `String` | newValue | The new value to be used for the namespace. |
-| `String` | versionMatcher | *Optional*. The version of resource to change |
-| `Boolean` | searchAllNamespaces | *Optional*. Specify whether evaluate all namespaces. Defaults to true |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | elementName | *Optional*. The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. | `property` |
+| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `newfoo.bar.attribute.value.string` |
+| `String` | newValue | The new value to be used for the namespace. | `newfoo.bar.attribute.value.string` |
+| `String` | versionMatcher | *Optional*. The version of resource to change | `1.1` |
+| `Boolean` | searchAllNamespaces | *Optional*. Specify whether evaluate all namespaces. Defaults to true | `true` |
 
 
 ## Usage
@@ -51,7 +51,7 @@ Now that `com.yourorg.ChangeNamespaceValueExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeNamespaceValueExample</recipe>

@@ -14,11 +14,11 @@ _Change the log level of slf4j log statements._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Level` | from | The log level to change from. |
-| `Level` | to | The log level to change to. |
-| `String` | startsWith | *Optional*. Only change log statements that start with this string. When omitted all log statements of the specified level are changed. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Level` | from | The log level to change from. | `INFO` |
+| `Level` | to | The log level to change to. | `DEBUG` |
+| `String` | startsWith | *Optional*. Only change log statements that start with this string. When omitted all log statements of the specified level are changed. | `LaunchDarkly` |
 
 
 ## Usage
@@ -47,7 +47,7 @@ Now that `com.yourorg.ChangeLogLevelExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeLogLevelExample</recipe>

@@ -14,9 +14,9 @@ _Some JUnit 4 `@RunWith` annotations do not require replacement with an equivale
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `List` | obsoleteRunners | The fully qualified class names of the JUnit 4 runners to be removed. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `List` | obsoleteRunners | The fully qualified class names of the JUnit 4 runners to be removed. | `org.junit.runners.JUnit4` |
 
 
 ## Usage
@@ -43,7 +43,7 @@ Now that `com.yourorg.RemoveObsoleteRunnersExample` has been defined activate it
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveObsoleteRunnersExample</recipe>

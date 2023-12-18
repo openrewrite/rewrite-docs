@@ -14,11 +14,11 @@ _Change spring application property keys existing in either Properties or Yaml f
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldPropertyKey | The property key to rename. Supports glob |
-| `String` | newPropertyKey | The new name for the property key. |
-| `List` | except | *Optional*. Regex. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldPropertyKey | The property key to rename. Supports glob | `management.metrics.binders.*.enabled` |
+| `String` | newPropertyKey | The new name for the property key. | `management.metrics.enable.process.files` |
+| `List` | except | *Optional*. Regex. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. |  |
 
 
 ## Usage
@@ -36,7 +36,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.metrics.binders.*.enabled
       newPropertyKey: management.metrics.enable.process.files
-      except: null
 ```
 {% endcode %}
 
@@ -47,7 +46,7 @@ Now that `com.yourorg.ChangeSpringPropertyKeyExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeSpringPropertyKeyExample</recipe>

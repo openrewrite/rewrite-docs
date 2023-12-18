@@ -6,18 +6,18 @@ _The `schedule` [event](https://docs.github.com/en/actions/reference/events-that
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/AddCronTrigger.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/AddCronTrigger.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.12/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 2.0.11
+* version: 2.0.12
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07) or the non standard options @hourly @daily @weekly @weekdays @weekends @monthly @yearly. |
-| `String` | workflowFileMatcher | *Optional*. Matches one or more workflows to update. Defaults to `*.yml` |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | cron | Using the [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07) or the non standard options @hourly @daily @weekly @weekdays @weekends @monthly @yearly. | `@daily` |
+| `String` | workflowFileMatcher | *Optional*. Matches one or more workflows to update. Defaults to `*.yml` | `build.yml` |
 
 
 ## Usage
@@ -38,14 +38,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:2.0.11 in your build file:
+Now that `com.yourorg.AddCronTriggerExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:2.0.12 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.11")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.12")
 }
 ```
 {% endcode %}
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCronTriggerExample</recipe>
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>2.0.11</version>
+            <version>2.0.12</version>
           </dependency>
         </dependencies>
       </plugin>

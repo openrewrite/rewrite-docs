@@ -14,10 +14,10 @@ _Replace method parameters that have DTOs with their data elements when only the
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | dtoType | The fully qualified name of the DTO. |
-| `String` | dtoDataElement | Replace the DTO as a method parameter when only this data element is used. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | dtoType | The fully qualified name of the DTO. |  |
+| `String` | dtoDataElement | Replace the DTO as a method parameter when only this data element is used. |  |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.DontOverfetchDtoExample` has been defined activate it and 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DontOverfetchDtoExample</recipe>

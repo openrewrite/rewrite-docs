@@ -14,11 +14,11 @@ _A secret is a literal that matches any one of the provided patterns._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | secretName | The type of secret that this recipe is looking for. |
-| `String` | keyPattern | *Optional*. A regular expression to match a 'key' against. For example, a key  |
-| `String` | valuePattern | A regular expression to search for. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | secretName | The type of secret that this recipe is looking for. | `AWS Access Key` |
+| `String` | keyPattern | *Optional*. A regular expression to match a 'key' against. For example, a key  | `[a-zA-Z0-9+\/=]{88}` |
+| `String` | valuePattern | A regular expression to search for. | `[a-zA-Z0-9+\/=]{88}` |
 
 
 ## Usage
@@ -47,7 +47,7 @@ Now that `com.yourorg.FindSecretsByPatternExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindSecretsByPatternExample</recipe>

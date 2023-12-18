@@ -14,9 +14,9 @@ _Upgrade build plugin configuration to use the specified Java version. This reci
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Integer` | version | The Java version to upgrade to. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Integer` | version | The Java version to upgrade to. | `11` |
 
 
 ## Usage
@@ -43,7 +43,7 @@ Now that `com.yourorg.UpgradeJavaVersionExample` has been defined activate it an
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeJavaVersionExample</recipe>

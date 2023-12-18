@@ -6,19 +6,19 @@ _Find and updates the Java compatibility for the Gradle project._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateJavaCompatibility.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateJavaCompatibility.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Integer` | version | The Java version to upgrade to. |
-| `CompatibilityType` | compatibilityType | *Optional*. The compatibility type to change |
-| `DeclarationStyle` | declarationStyle | *Optional*. The desired style to write the new version as when being written to the `sourceCompatibility` or `targetCompatibility` variables. Default, match current source style. (ex. Enum: `JavaVersion.VERSION_11`, Number: 11, or String: "11") |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Integer` | version | The Java version to upgrade to. | `11` |
+| `CompatibilityType` | compatibilityType | *Optional*. The compatibility type to change Valid options: `source`, `target` |  |
+| `DeclarationStyle` | declarationStyle | *Optional*. The desired style to write the new version as when being written to the `sourceCompatibility` or `targetCompatibility` variables. Default, match current source style. (ex. Enum: `JavaVersion.VERSION_11`, Number: 11, or String: "11") Valid options: `Enum`, `Number`, `String` |  |
 
 
 ## Usage
@@ -35,8 +35,6 @@ displayName: Update Gradle project Java compatibility example
 recipeList:
   - org.openrewrite.gradle.UpdateJavaCompatibility:
       version: 11
-      compatibilityType: null
-      declarationStyle: null
 ```
 {% endcode %}
 
@@ -47,7 +45,7 @@ Now that `com.yourorg.UpdateJavaCompatibilityExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -82,4 +80,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

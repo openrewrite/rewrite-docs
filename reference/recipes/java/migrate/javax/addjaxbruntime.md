@@ -26,9 +26,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
 {% endhint %}
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | runtime | Which implementation of the JAXB run-time that will be added to maven projects that have transitive dependencies on the JAXB API |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | runtime | Which implementation of the JAXB run-time that will be added to maven projects that have transitive dependencies on the JAXB API Valid options: `glassfish`, `sun` | `glassfish` |
 
 
 ## Usage
@@ -55,7 +55,7 @@ Now that `com.yourorg.AddJaxbRuntimeExample` has been defined activate it and ta
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -83,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddJaxbRuntimeExample</recipe>

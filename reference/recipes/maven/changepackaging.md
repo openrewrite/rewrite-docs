@@ -6,19 +6,19 @@ _Sets the packaging type of Maven projects. Either adds the packaging tag if it 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePackaging.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePackaging.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The groupId of the project whose packaging should be changed. Accepts glob patterns. |
-| `String` | artifactId | The artifactId of the project whose packaging should be changed. Accepts glob patterns. |
-| `String` | packaging | The type of packaging to set. If `null` specified the packaging tag will be removed |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The groupId of the project whose packaging should be changed. Accepts glob patterns. | `org.openrewrite.*` |
+| `String` | artifactId | The artifactId of the project whose packaging should be changed. Accepts glob patterns. | `rewrite-*` |
+| `String` | packaging | The type of packaging to set. If `null` specified the packaging tag will be removed | `jar` |
 
 
 ## Usage
@@ -53,7 +53,7 @@ Now that `com.yourorg.ChangePackagingExample` has been defined activate it in yo
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePackagingExample</recipe>
@@ -87,4 +87,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Adriano Machado
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Adriano Machado, [Tim te Beek](mailto:tim@moderne.io)

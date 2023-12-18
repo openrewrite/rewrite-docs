@@ -6,17 +6,17 @@ _Adds an expiration date to all OWASP suppressions in order to ensure that they 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/AddOwaspDateBoundSuppressions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/security/AddOwaspDateBoundSuppressions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | untilDate | *Optional*. Optional. The date to add to the suppression. Default will be 30 days from today. | `2023-01-01` |
 
 
 ## Usage
@@ -28,7 +28,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.xml.security.AddOwaspDateBoundSuppressions</recipe>
@@ -103,8 +103,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.activeRecipes=org.openrewrite.xml.security.AddOwaspDateBoundSuppressions
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.xml.security.AddOwaspDateBoundSuppressions
 ```
 {% endcode %}
 {% endtab %}

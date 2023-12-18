@@ -6,21 +6,21 @@ _Reorder method arguments into the specified order._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
-| `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. |
-| `String[]` | oldParameterNames | *Optional*. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. |
-| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. | `com.yourorg.A foo(String, Integer, Integer)` |
+| `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. | `[foo, bar, baz]` |
+| `String[]` | oldParameterNames | *Optional*. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. | `[baz, bar, foo]` |
+| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |  |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |  |
 
 
 ## Usage
@@ -39,8 +39,6 @@ recipeList:
       methodPattern: com.yourorg.A foo(String, Integer, Integer)
       newParameterNames: [foo, bar, baz]
       oldParameterNames: [baz, bar, foo]
-      ignoreDefinition: null
-      matchOverrides: null
 ```
 {% endcode %}
 
@@ -51,7 +49,7 @@ Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined activate i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReorderMethodArgumentsExample</recipe>
@@ -109,4 +107,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Greg Adams](mailto:greg@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Greg Adams](mailto:greg@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

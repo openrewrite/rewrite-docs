@@ -14,9 +14,9 @@ _Find data elements used on DTOs. This is useful to provide information where da
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | dtoType | The fully qualified name of the DTO. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | dtoType | The fully qualified name of the DTO. |  |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -52,7 +52,7 @@ Now that `com.yourorg.FindDataUsedOnDtoExample` has been defined activate it and
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -80,7 +80,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindDataUsedOnDtoExample</recipe>

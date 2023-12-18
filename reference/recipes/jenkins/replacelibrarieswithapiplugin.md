@@ -6,20 +6,20 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.2.9/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.2.8
+* version: 0.2.9
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | pluginGroupId | The first part of a dependency coordinate 'io.jenkins.plugins:ARTIFACT_ID:VERSION'. |
-| `String` | pluginArtifactId | The second part of a dependency coordinate 'GROUP_ID:jackson2-api:VERSION'. |
-| `String` | pluginVersion | An exact version number. |
-| `Set` | replaces | The set of library coordinates replaced by this API Plugin. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | pluginGroupId | The first part of a dependency coordinate 'io.jenkins.plugins:ARTIFACT_ID:VERSION'. | `io.jenkins.plugins` |
+| `String` | pluginArtifactId | The second part of a dependency coordinate 'GROUP_ID:jackson2-api:VERSION'. | `jackson2-api` |
+| `String` | pluginVersion | An exact version number. | `1981.v17df70e84a_a_1` |
+| `Set` | replaces | The set of library coordinates replaced by this API Plugin. |  |
 
 
 ## Usage
@@ -42,14 +42,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:0.2.8 in your build file:
+Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:0.2.9 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -61,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.2.8")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.2.9")
 }
 ```
 {% endcode %}
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceLibrariesWithApiPluginExample</recipe>
@@ -87,7 +87,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.2.8</version>
+            <version>0.2.9</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -118,4 +118,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Steve Hill](mailto:sghill.dev@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Steve Hill](mailto:sghill.dev@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

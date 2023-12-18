@@ -14,11 +14,11 @@ _When an API has been designed as a builder, use it that way rather than as a se
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | builderType | Fully qualified name of the Builder |
-| `Boolean` | immutable | *Optional*. The builder is immutable if you must assign the result of calls to intermediate variables or use directly. Defaults to true as many purpose-built builders will be immutable. |
-| `String` | builderCreator | *Optional*. The method that creates the builder instance, which may not be a method of the builder itself. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | builderType | Fully qualified name of the Builder |  |
+| `Boolean` | immutable | *Optional*. The builder is immutable if you must assign the result of calls to intermediate variables or use directly. Defaults to true as many purpose-built builders will be immutable. |  |
+| `String` | builderCreator | *Optional*. The method that creates the builder instance, which may not be a method of the builder itself. |  |
 
 
 ## Usage
@@ -35,8 +35,6 @@ displayName: Use the builder pattern where possible example
 recipeList:
   - org.openrewrite.staticanalysis.UseAsBuilder:
       builderType: null
-      immutable: null
-      builderCreator: null
 ```
 {% endcode %}
 
@@ -47,7 +45,7 @@ Now that `com.yourorg.UseAsBuilderExample` has been defined activate it and take
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseAsBuilderExample</recipe>

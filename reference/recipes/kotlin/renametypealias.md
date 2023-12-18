@@ -6,19 +6,19 @@ _Change the name of a given type alias._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.8.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.8.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-kotlin
-* version: 1.8.1
+* version: 1.8.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | aliasName | Name of the alias type. |
-| `String` | newName | Name of the alias type. |
-| `String` | fullyQualifiedAliasedType | Fully-qualified class name of the aliased type. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | aliasName | Name of the alias type. | `OldAlias` |
+| `String` | newName | Name of the alias type. | `NewAlias` |
+| `String` | fullyQualifiedAliasedType | Fully-qualified class name of the aliased type. | `org.junit.Assume` |
 
 
 ## Usage
@@ -40,14 +40,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RenameTypeAliasExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-kotlin:1.8.1 in your build file:
+Now that `com.yourorg.RenameTypeAliasExample` has been defined activate it and take a dependency on org.openrewrite:rewrite-kotlin:1.8.2 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -59,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:1.8.1")
+    rewrite("org.openrewrite:rewrite-kotlin:1.8.2")
 }
 ```
 {% endcode %}
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RenameTypeAliasExample</recipe>
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-kotlin</artifactId>
-            <version>1.8.1</version>
+            <version>1.8.2</version>
           </dependency>
         </dependencies>
       </plugin>

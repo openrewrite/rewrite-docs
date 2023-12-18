@@ -14,12 +14,12 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | propertyKey | The Spring property key to perform updates against. If this value is specified, the specified property will be used for searching, otherwise a default of `spring.datasource.url` will be used instead. |
-| `Integer` | oldPort | The non-TLS enabled port number to replace with the TLS-enabled port. If this value is specified, no changes will be made to jdbc connection strings which do not contain this port number.  |
-| `Integer` | port | The TLS-enabled port to use. |
-| `String` | attribute | A connection attribute, if any, indicating to the JDBC provider that this is a TLS connection. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | propertyKey | The Spring property key to perform updates against. If this value is specified, the specified property will be used for searching, otherwise a default of `spring.datasource.url` will be used instead. | `spring.datasource.url` |
+| `Integer` | oldPort | The non-TLS enabled port number to replace with the TLS-enabled port. If this value is specified, no changes will be made to jdbc connection strings which do not contain this port number.  | `1234` |
+| `Integer` | port | The TLS-enabled port to use. | `1234` |
+| `String` | attribute | A connection attribute, if any, indicating to the JDBC provider that this is a TLS connection. | `sslConnection=true` |
 
 
 ## Usage
@@ -49,7 +49,7 @@ Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseTlsJdbcConnectionStringExample</recipe>

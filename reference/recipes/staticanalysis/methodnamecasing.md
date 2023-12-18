@@ -18,10 +18,10 @@ _Method names should comply with a naming convention._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | includeTestSources | *Optional*. Changes only apply to main by default. `includeTestSources` will apply the recipe to `test` source files. |
-| `Boolean` | renamePublicMethods | *Optional*. Changes are not applied to public methods unless specified. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Boolean` | includeTestSources | *Optional*. Changes only apply to main by default. `includeTestSources` will apply the recipe to `test` source files. |  |
+| `Boolean` | renamePublicMethods | *Optional*. Changes are not applied to public methods unless specified. |  |
 
 
 ## Usage
@@ -33,7 +33,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -60,7 +60,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.12") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -92,7 +92,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.MethodNameCasing</recipe>
@@ -119,9 +119,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.staticanalysis.MethodNameCasing
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.MethodNameCasing
 ```
 {% endcode %}
 {% endtab %}

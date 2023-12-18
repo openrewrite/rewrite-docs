@@ -14,13 +14,13 @@ _Change spring application property values existing in either Properties or Yaml
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | propertyKey | The name of the property key whose value is to be changed. |
-| `String` | newValue | The new value to be used for key specified by `propertyKey`. |
-| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
-| `Boolean` | regex | *Optional*. Default false. If enabled, `oldValue` will be interpreted as a Regular Expression, and capture group contents will be available in `newValue` |
-| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false` to use exact matching. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | propertyKey | The name of the property key whose value is to be changed. | `management.metrics.binders.files.enabled` |
+| `String` | newValue | The new value to be used for key specified by `propertyKey`. |  |
+| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |  |
+| `Boolean` | regex | *Optional*. Default false. If enabled, `oldValue` will be interpreted as a Regular Expression, and capture group contents will be available in `newValue` |  |
+| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false` to use exact matching. |  |
 
 
 ## Usage
@@ -38,9 +38,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyValue:
       propertyKey: management.metrics.binders.files.enabled
       newValue: null
-      oldValue: null
-      regex: null
-      relaxedBinding: null
 ```
 {% endcode %}
 
@@ -51,7 +48,7 @@ Now that `com.yourorg.ChangeSpringPropertyValueExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -79,7 +76,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeSpringPropertyValueExample</recipe>

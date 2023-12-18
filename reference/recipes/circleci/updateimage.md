@@ -6,17 +6,17 @@ _See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circl
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/UpdateImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/2.0.10/jar)
+[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/UpdateImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/2.0.11/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-circleci
-* version: 2.0.10
+* version: 2.0.11
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | image | Image to use. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | image | Image to use. | `circleci/openjdk:jdk` |
 
 
 ## Usage
@@ -36,14 +36,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateImageExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:2.0.10 in your build file:
+Now that `com.yourorg.UpdateImageExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:2.0.11 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-circleci:2.0.10")
+    rewrite("org.openrewrite.recipe:rewrite-circleci:2.0.11")
 }
 ```
 {% endcode %}
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateImageExample</recipe>
@@ -81,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-circleci</artifactId>
-            <version>2.0.10</version>
+            <version>2.0.11</version>
           </dependency>
         </dependencies>
       </plugin>

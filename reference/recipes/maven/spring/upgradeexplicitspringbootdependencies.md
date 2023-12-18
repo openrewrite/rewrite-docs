@@ -14,10 +14,10 @@ _Upgrades un-managed spring-boot project dependencies according to the specified
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | fromVersion | XRage pattern for spring version used to limit which projects should be updated |
-| `String` | toVersion | Upgrade version of `org.springframework.boot` |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | fromVersion | XRage pattern for spring version used to limit which projects should be updated | ` 2.7.+` |
+| `String` | toVersion | Upgrade version of `org.springframework.boot` | `3.0.0-M3` |
 
 
 ## Usage
@@ -51,7 +51,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeExplicitSpringBootDependenciesExample</recipe>

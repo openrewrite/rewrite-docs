@@ -6,21 +6,21 @@ _Change a YAML property. Expects dot notation for nested YAML mappings, similar 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | propertyKey | The key to look for. Supports glob patterns. |
-| `String` | newValue | The new value to be used for key specified by `propertyKey`. |
-| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |
-| `Boolean` | regex | *Optional*. Defaults to `false`. If enabled, `oldValue` will be interpreted as a regular expression, and the capture group contents will be available in `newValue` |
-| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | propertyKey | The key to look for. Supports glob patterns. | `management.metrics.binders.*.enabled` |
+| `String` | newValue | The new value to be used for key specified by `propertyKey`. |  |
+| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |  |
+| `Boolean` | regex | *Optional*. Defaults to `false`. If enabled, `oldValue` will be interpreted as a regular expression, and the capture group contents will be available in `newValue` |  |
+| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |  |
 
 
 ## Usage
@@ -38,9 +38,6 @@ recipeList:
   - org.openrewrite.yaml.ChangePropertyValue:
       propertyKey: management.metrics.binders.*.enabled
       newValue: null
-      oldValue: null
-      regex: null
-      relaxedBinding: null
 ```
 {% endcode %}
 
@@ -51,7 +48,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>

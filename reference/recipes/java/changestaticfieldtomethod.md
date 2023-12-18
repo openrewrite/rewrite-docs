@@ -6,21 +6,21 @@ _Migrate accesses to a static field to invocations of a static method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldClassName | The fully qualified name of the class containing the field to replace. |
-| `String` | oldFieldName | The simple name of the static field to replace. |
-| `String` | newClassName | *Optional*. The fully qualified name of the class containing the method to use. Leave empty to keep the same class. |
-| `String` | newTarget | *Optional*. An optional method target that can be used to specify a static field within the new class. |
-| `String` | newMethodName | The simple name of the method to use. The method must be static and have no arguments. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldClassName | The fully qualified name of the class containing the field to replace. | `java.util.Collections` |
+| `String` | oldFieldName | The simple name of the static field to replace. | `EMPTY_LIST` |
+| `String` | newClassName | *Optional*. The fully qualified name of the class containing the method to use. Leave empty to keep the same class. | `java.util.List` |
+| `String` | newTarget | *Optional*. An optional method target that can be used to specify a static field within the new class. | `OK_RESPONSE` |
+| `String` | newMethodName | The simple name of the method to use. The method must be static and have no arguments. | `of` |
 
 
 ## Usage
@@ -51,7 +51,7 @@ Now that `com.yourorg.ChangeStaticFieldToMethodExample` has been defined activat
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeStaticFieldToMethodExample</recipe>
@@ -109,4 +109,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Christian Semrau, [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Thomas Zub](mailto:thomas.zub@outlook.de), [Aaron Gershman](mailto:aegershman@gmail.com)
+Christian Semrau, [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Thomas Zub](mailto:thomas.zub@outlook.de), [Aaron Gershman](mailto:aegershman@gmail.com)

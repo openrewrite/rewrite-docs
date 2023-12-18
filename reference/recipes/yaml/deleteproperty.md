@@ -6,19 +6,19 @@ _Delete a YAML property. Nested YAML mappings are interpreted as dot separated p
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/DeleteProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/DeleteProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | propertyKey | The key to be deleted. |
-| `Boolean` | coalesce | *Optional*. (Deprecated: in a future version, this recipe will always use the `false` behavior) Simplify nested map hierarchies into their simplest dot separated property form. |
-| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | propertyKey | The key to be deleted. | `management.metrics.binders.files.enabled` |
+| `Boolean` | coalesce | *Optional*. (Deprecated: in a future version, this recipe will always use the `false` behavior) Simplify nested map hierarchies into their simplest dot separated property form. |  |
+| `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |  |
 
 
 ## Usage
@@ -35,8 +35,6 @@ displayName: Delete property example
 recipeList:
   - org.openrewrite.yaml.DeleteProperty:
       propertyKey: management.metrics.binders.files.enabled
-      coalesce: null
-      relaxedBinding: null
 ```
 {% endcode %}
 
@@ -47,7 +45,7 @@ Now that `com.yourorg.DeletePropertyExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeletePropertyExample</recipe>
@@ -105,4 +103,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Mike Solomon](mailto:mike@moderne.io), [Aurélien Mino](mailto:aurelien.mino@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io), [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), Patrick Way, [Tim te Beek](mailto:tim@moderne.io), [Mike Solomon](mailto:mike@moderne.io), [Aurélien Mino](mailto:aurelien.mino@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com)

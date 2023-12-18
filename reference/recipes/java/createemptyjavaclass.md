@@ -6,22 +6,22 @@ _Create a new, empty Java class._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/CreateEmptyJavaClass.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/CreateEmptyJavaClass.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | sourceRoot | The source root of the new class file. |
-| `String` | packageName | The package of the new class. |
-| `String` | modifier | The class modifier. |
-| `String` | className | File path of new file. |
-| `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |
-| `String` | relativePath | *Optional*. Directory path of new class. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | sourceRoot | The source root of the new class file. | `src/main/java` |
+| `String` | packageName | The package of the new class. | `org.openrewrite.example` |
+| `String` | modifier | The class modifier. Valid options: `public`, `private`, `protected`, `package-private` | `public` |
+| `String` | className | File path of new file. | `ExampleClass` |
+| `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
+| `String` | relativePath | *Optional*. Directory path of new class. | `foo/bar` |
 
 
 ## Usage
@@ -41,7 +41,6 @@ recipeList:
       packageName: org.openrewrite.example
       modifier: public
       className: ExampleClass
-      overwriteExisting: null
       relativePath: foo/bar
 ```
 {% endcode %}
@@ -53,7 +52,7 @@ Now that `com.yourorg.CreateEmptyJavaClassExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -77,7 +76,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CreateEmptyJavaClassExample</recipe>

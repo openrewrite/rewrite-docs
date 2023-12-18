@@ -14,9 +14,9 @@ _Replaces any explicit `source` or `target` configuration (if present) on the ma
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | releaseVersion | The new value for the release configuration. This recipe prefers ${java.version} if defined. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | releaseVersion | The new value for the release configuration. This recipe prefers ${java.version} if defined. | `11` |
 
 
 ## Usage
@@ -49,7 +49,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample</recipe>

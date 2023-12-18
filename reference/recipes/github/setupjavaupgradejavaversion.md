@@ -6,29 +6,29 @@ _Update the Java version used by `actions/setup-java` if it is below the expecte
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/SetupJavaUpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.11/jar)
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/SetupJavaUpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.0.12/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 2.0.11
+* version: 2.0.12
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Integer` | minimumJavaMajorVersion | *Optional*.  |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Integer` | minimumJavaMajorVersion | *Optional*.  | `21` |
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-github-actions:2.0.11` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-github-actions:2.0.12` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -40,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.11")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.12")
 }
 ```
 {% endcode %}
@@ -55,12 +55,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.12") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.11")
+        rewrite("org.openrewrite.recipe:rewrite-github-actions:2.0.12")
     }
     rewrite {
         activeRecipe("org.openrewrite.github.SetupJavaUpgradeJavaVersion")
@@ -87,7 +87,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.github.SetupJavaUpgradeJavaVersion</recipe>
@@ -97,7 +97,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-github-actions</artifactId>
-            <version>2.0.11</version>
+            <version>2.0.12</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -114,9 +114,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-github-actions:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.github.SetupJavaUpgradeJavaVersion
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-github-actions:RELEASE -Drewrite.activeRecipes=org.openrewrite.github.SetupJavaUpgradeJavaVersion
 ```
 {% endcode %}
 {% endtab %}

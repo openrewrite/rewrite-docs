@@ -14,9 +14,9 @@ _Delete a spring configuration property from any configuration file that contain
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | propertyKey | The property key to delete. Supports glob expressions |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | propertyKey | The property key to delete. Supports glob expressions | `management.endpoint.configprops.*` |
 
 
 ## Usage
@@ -43,7 +43,7 @@ Now that `com.yourorg.DeleteSpringPropertyExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeleteSpringPropertyExample</recipe>

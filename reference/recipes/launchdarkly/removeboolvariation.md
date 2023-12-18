@@ -14,10 +14,10 @@ _Replace `boolVariation` invocations for feature key with value, and simplify co
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | featureKey | The key of the feature flag to remove. |
-| `Boolean` | replacementValue | The value to replace the feature flag check with. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | featureKey | The key of the feature flag to remove. | `flag-key-123abc` |
+| `Boolean` | replacementValue | The value to replace the feature flag check with. | `true` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.RemoveBoolVariationExample` has been defined activate it a
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveBoolVariationExample</recipe>

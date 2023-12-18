@@ -6,21 +6,21 @@ _Adds the specified dependencies to a Maven plugin. Will not add the plugin if i
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddPluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddPluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | pluginGroupId | GroupId of the plugin to which the dependency will be added. A GroupId is the first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | pluginArtifactId | ArtifactId of the plugin to which the dependency will be added.The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | groupId | The GroupId of the dependency to add. |
-| `String` | artifactId | The ArtifactId of the dependency to add. |
-| `String` | version | The Version of the dependency to add. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | pluginGroupId | GroupId of the plugin to which the dependency will be added. A GroupId is the first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `org.openrewrite.maven` |
+| `String` | pluginArtifactId | ArtifactId of the plugin to which the dependency will be added.The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `rewrite-maven-plugin` |
+| `String` | groupId | The GroupId of the dependency to add. | `org.openrewrite.recipe` |
+| `String` | artifactId | The ArtifactId of the dependency to add. | `org.openrewrite.recipe` |
+| `String` | version | The Version of the dependency to add. | `org.openrewrite.recipe` |
 
 
 ## Usage
@@ -57,7 +57,7 @@ Now that `com.yourorg.AddPluginDependencyExample` has been defined activate it i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPluginDependencyExample</recipe>

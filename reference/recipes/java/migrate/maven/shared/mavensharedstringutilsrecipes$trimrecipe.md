@@ -6,7 +6,7 @@ _Replace Maven Shared `StringUtils.trim(String str)` with JDK internals._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/shared/MavenSharedStringUtilsRecipes$Trim.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.4.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/shared/MavenSharedStringUtils.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.4.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
@@ -28,7 +28,7 @@ This recipe has no required configuration options. It can be activated by adding
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$TrimRecipe</recipe>
@@ -55,9 +55,7 @@ This recipe has no required configuration options. It can be activated by adding
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$TrimRecipe
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes$TrimRecipe
 ```
 {% endcode %}
 {% endtab %}

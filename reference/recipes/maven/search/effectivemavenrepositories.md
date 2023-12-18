@@ -6,17 +6,17 @@ _Lists the Maven repositories that would be used for dependency resolution, in o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveMavenRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveMavenRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Boolean` | useMarkers | *Optional*. Whether to add markers for each effective Maven repository to the POM. Default `false`. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Boolean` | useMarkers | *Optional*. Whether to add markers for each effective Maven repository to the POM. Default `false`. |  |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -45,7 +45,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.search.EffectiveMavenRepositories</recipe>
@@ -64,8 +64,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.activeRecipes=org.openrewrite.maven.search.EffectiveMavenRepositories
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.maven.search.EffectiveMavenRepositories
 ```
 {% endcode %}
 {% endtab %}

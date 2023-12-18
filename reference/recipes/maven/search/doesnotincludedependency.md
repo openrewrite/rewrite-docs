@@ -6,20 +6,20 @@ _An applicability test which returns false if visiting a Maven pom which include
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DoesNotIncludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DoesNotIncludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. |
-| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. |
-| `Boolean` | onlyDirect | *Optional*. Default false. If enabled, transitive dependencies will not be considered. |
-| `String` | scope | *Optional*. Default any. If specified, only the requested scope's classpaths will be checked. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. | `com.google.guava` |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. Supports glob. | `guava` |
+| `Boolean` | onlyDirect | *Optional*. Default false. If enabled, transitive dependencies will not be considered. | `true` |
+| `String` | scope | *Optional*. Default any. If specified, only the requested scope's classpaths will be checked. Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
 
 ## Usage
@@ -55,7 +55,7 @@ Now that `com.yourorg.DoesNotIncludeDependencyExample` has been defined activate
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DoesNotIncludeDependencyExample</recipe>

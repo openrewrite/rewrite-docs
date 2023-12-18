@@ -6,22 +6,22 @@ _Takes two patterns for the start/end methods to find flow between._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.1.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.1.5/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.1.4
+* version: 2.1.5
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | startMethodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching the start point's method invocations. |
-| `Boolean` | startMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-| `String` | endMethodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching the end point's method invocations. |
-| `Boolean` | endMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
-| `String` | target | The part of the method flow should traverse to |
-| `String` | flow | When enabled, show the data or taint flow of the method invocation. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | startMethodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching the start point's method invocations. | `java.util.List add(..)` |
+| `Boolean` | startMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |  |
+| `String` | endMethodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching the end point's method invocations. | `java.util.List add(..)` |
+| `Boolean` | endMatchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |  |
+| `String` | target | The part of the method flow should traverse to Valid options: `Select`, `Arguments`, `Both` |  |
+| `String` | flow | When enabled, show the data or taint flow of the method invocation. Valid options: `Data`, `Taint` |  |
 
 
 ## Usage
@@ -38,22 +38,20 @@ displayName: Finds flow between two methods example
 recipeList:
   - org.openrewrite.analysis.search.FindFlowBetweenMethods:
       startMethodPattern: java.util.List add(..)
-      startMatchOverrides: null
       endMethodPattern: java.util.List add(..)
-      endMatchOverrides: null
       target: null
       flow: null
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.1.4 in your build file:
+Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.1.5 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -65,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.1.4")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.1.5")
 }
 ```
 {% endcode %}
@@ -81,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindFlowBetweenMethodsExample</recipe>
@@ -91,7 +89,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.1.4</version>
+            <version>2.1.5</version>
           </dependency>
         </dependencies>
       </plugin>

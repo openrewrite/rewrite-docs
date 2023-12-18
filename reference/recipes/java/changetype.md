@@ -6,19 +6,19 @@ _Change a given type to another._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. |
-| `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. |
-| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. | `org.junit.Assume` |
+| `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. | `org.junit.jupiter.api.Assumptions` |
+| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |  |
 
 
 ## Usage
@@ -36,7 +36,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.junit.Assume
       newFullyQualifiedTypeName: org.junit.jupiter.api.Assumptions
-      ignoreDefinition: null
 ```
 {% endcode %}
 
@@ -47,7 +46,7 @@ Now that `com.yourorg.ChangeTypeExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTypeExample</recipe>
@@ -105,4 +104,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Joan Viladrosa](mailto:joan@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), Josh Soref, [Patrick](mailto:patway99@gmail.com)
+[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Joan Viladrosa](mailto:joan@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), Josh Soref, [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

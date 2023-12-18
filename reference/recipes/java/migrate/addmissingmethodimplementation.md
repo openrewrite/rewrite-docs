@@ -14,11 +14,11 @@ _Check for missing methods required by interfaces and adds them._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | fullyQualifiedClassName | A fully qualified class being implemented with missing method. |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) for matching required method definition. |
-| `String` | methodTemplateString | Template of method to add |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | fullyQualifiedClassName | A fully qualified class being implemented with missing method. | `com.yourorg.FooBar` |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) for matching required method definition. | `*..* hello(..)` |
+| `String` | methodTemplateString | Template of method to add | `public String hello() { return \"Hello from #{}!\"; }` |
 
 
 ## Usage
@@ -47,7 +47,7 @@ Now that `com.yourorg.AddMissingMethodImplementationExample` has been defined ac
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddMissingMethodImplementationExample</recipe>

@@ -14,10 +14,10 @@ _Changes the return type of a method invocation._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. |
-| `String` | newReturnType | The return return type of method invocation. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method declarations/invocations. | `org.mockito.Matchers anyVararg()` |
+| `String` | newReturnType | The return return type of method invocation. | `long` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.ChangeMethodInvocationReturnTypeExample` has been defined 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodInvocationReturnTypeExample</recipe>

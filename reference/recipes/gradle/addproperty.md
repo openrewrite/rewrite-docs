@@ -6,20 +6,20 @@ _Add a property to the `gradle.properties` file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/AddProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | key | The name of the property to add. |
-| `String` | value | The value of the property to add. |
-| `Boolean` | overwrite | If a property with the same key exists, overwrite. |
-| `String` | filePattern | A glob expression that can be used to constrain which directories or source files should be searched. When not set, all source files are searched. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | key | The name of the property to add. | `org.gradle.caching` |
+| `String` | value | The value of the property to add. |  |
+| `Boolean` | overwrite | If a property with the same key exists, overwrite. | `Enable the Gradle build cache` |
+| `String` | filePattern | A glob expression that can be used to constrain which directories or source files should be searched. When not set, all source files are searched. | `**/*.properties` |
 
 
 ## Usage
@@ -49,7 +49,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {

@@ -6,19 +6,19 @@ _Find a Gradle repository by url._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | type | *Optional*. The type of the artifact repository |
-| `String` | url | *Optional*. The url of the artifact repository |
-| `Purpose` | purpose | *Optional*. The purpose of this repository in terms of resolving project or plugin dependencies |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | type | *Optional*. The type of the artifact repository | `maven` |
+| `String` | url | *Optional*. The url of the artifact repository | `https://repo.spring.io` |
+| `Purpose` | purpose | *Optional*. The purpose of this repository in terms of resolving project or plugin dependencies Valid options: `Project`, `Plugin` |  |
 
 
 ## Usage
@@ -30,7 +30,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {

@@ -6,19 +6,19 @@ _Increase Maven project version by incrementing either the major, minor, or patc
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/IncrementProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/IncrementProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The groupId of the maven project to change its version. This can be a glob expression. |
-| `String` | artifactId | The artifactId of the maven project to change its version. This can be a glob expression. |
-| `SemverDigit` | digit | `MAJOR` increments the first digit, `MINOR` increments the second digit, and `PATCH` increments the third digit. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The groupId of the maven project to change its version. This can be a glob expression. | `org.openrewrite` |
+| `String` | artifactId | The artifactId of the maven project to change its version. This can be a glob expression. | `*` |
+| `SemverDigit` | digit | `MAJOR` increments the first digit, `MINOR` increments the second digit, and `PATCH` increments the third digit. | `PATCH` |
 
 
 ## Usage
@@ -53,7 +53,7 @@ Now that `com.yourorg.IncrementProjectVersionExample` has been defined activate 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.IncrementProjectVersionExample</recipe>

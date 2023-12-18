@@ -14,11 +14,11 @@ _Renames a Spring bean, both declaration and references._
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | type | *Optional*.  |
-| `String` | oldName |  |
-| `String` | newName |  |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | type | *Optional*.  |  |
+| `String` | oldName |  |  |
+| `String` | newName |  |  |
 
 
 ## Usage
@@ -34,7 +34,6 @@ name: com.yourorg.RenameBeanExample
 displayName: Rename bean example
 recipeList:
   - org.openrewrite.java.spring.RenameBean:
-      type: null
       oldName: null
       newName: null
 ```
@@ -47,7 +46,7 @@ Now that `com.yourorg.RenameBeanExample` has been defined activate it and take a
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RenameBeanExample</recipe>

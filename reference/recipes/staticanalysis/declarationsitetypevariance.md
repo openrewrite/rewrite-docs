@@ -14,11 +14,11 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `List` | variantTypes | A list of well-known classes that have in/out type variance. |
-| `List` | excludedBounds | *Optional*. A list of bounds that should not receive explicit variance. Globs supported. |
-| `Boolean` | excludeFinalClasses | *Optional*. If true, do not add `? extends` variance to final classes. `? super` variance will be added regardless of finality. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `List` | variantTypes | A list of well-known classes that have in/out type variance. | `java.util.function.Function<IN, OUT>` |
+| `List` | excludedBounds | *Optional*. A list of bounds that should not receive explicit variance. Globs supported. | `java.lang.*` |
+| `Boolean` | excludeFinalClasses | *Optional*. If true, do not add `? extends` variance to final classes. `? super` variance will be added regardless of finality. |  |
 
 
 ## Usage
@@ -36,7 +36,6 @@ recipeList:
   - org.openrewrite.staticanalysis.DeclarationSiteTypeVariance:
       variantTypes: java.util.function.Function<IN, OUT>
       excludedBounds: java.lang.*
-      excludeFinalClasses: null
 ```
 {% endcode %}
 
@@ -47,7 +46,7 @@ Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined activ
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DeclarationSiteTypeVarianceExample</recipe>

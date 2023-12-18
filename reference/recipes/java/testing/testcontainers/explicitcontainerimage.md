@@ -14,11 +14,11 @@ _Set the image to use for a container explicitly if unset, rather than relying o
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | containerClass | The fully qualified name of the container class to use. |
-| `String` | image | The image to use for the container. |
-| `Boolean` | parseImage | *Optional*. Whether to call `DockerImageName.parse(image)`. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | containerClass | The fully qualified name of the container class to use. | `org.testcontainers.containers.NginxContainer` |
+| `String` | image | The image to use for the container. | `nginx:1.9.4` |
+| `Boolean` | parseImage | *Optional*. Whether to call `DockerImageName.parse(image)`. |  |
 
 
 ## Usage
@@ -36,7 +36,6 @@ recipeList:
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImage:
       containerClass: org.testcontainers.containers.NginxContainer
       image: nginx:1.9.4
-      parseImage: null
 ```
 {% endcode %}
 
@@ -47,7 +46,7 @@ Now that `com.yourorg.ExplicitContainerImageExample` has been defined activate i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -75,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ExplicitContainerImageExample</recipe>

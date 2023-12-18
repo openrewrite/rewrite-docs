@@ -6,20 +6,20 @@ _Change a property key leaving the value intact._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | oldPropertyKey | The property key to rename. |
-| `String` | newPropertyKey | The new name for the key identified by `oldPropertyKey`. |
-| `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |
-| `Boolean` | regex | *Optional*. Default false. If enabled, `oldPropertyKey` will be interpreted as a Regular Expression, and capture group contents will be available in `newPropertyKey` |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | oldPropertyKey | The property key to rename. | `management.metrics.binders.files.enabled` |
+| `String` | newPropertyKey | The new name for the key identified by `oldPropertyKey`. | `management.metrics.enable.process.files` |
+| `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |  |
+| `Boolean` | regex | *Optional*. Default false. If enabled, `oldPropertyKey` will be interpreted as a Regular Expression, and capture group contents will be available in `newPropertyKey` |  |
 
 
 ## Usage
@@ -37,8 +37,6 @@ recipeList:
   - org.openrewrite.properties.ChangePropertyKey:
       oldPropertyKey: management.metrics.binders.files.enabled
       newPropertyKey: management.metrics.enable.process.files
-      relaxedBinding: null
-      regex: null
 ```
 {% endcode %}
 
@@ -49,7 +47,7 @@ Now that `com.yourorg.ChangePropertyKeyExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyKeyExample</recipe>

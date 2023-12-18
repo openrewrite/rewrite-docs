@@ -14,13 +14,13 @@ _Add the groupId, artifactId, version, and exclusions of a Maven annotation proc
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The groupId to use. |
-| `String` | artifactId | The artifactId to use. |
-| `String` | version | An exact version string for the annotation processor path. |
-| `String` | onlyIfUsing | Used to determine if the annotation processor will be added. |
-| `List` | exclusions | *Optional*. A list of exclusions to apply to the annotation processor path in the format groupId:artifactId |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The groupId to use. | `corp.internal.openrewrite.recipe` |
+| `String` | artifactId | The artifactId to use. | `my-new-annotation-processor` |
+| `String` | version | An exact version string for the annotation processor path. | `${micronaut.validation}` |
+| `String` | onlyIfUsing | Used to determine if the annotation processor will be added. | `jakarta.validation.constraints.*` |
+| `List` | exclusions | *Optional*. A list of exclusions to apply to the annotation processor path in the format groupId:artifactId | `io.micronaut:micronaut-inject` |
 
 
 ## Usage
@@ -51,7 +51,7 @@ Now that `com.yourorg.AddAnnotationProcessorPathExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddAnnotationProcessorPathExample</recipe>

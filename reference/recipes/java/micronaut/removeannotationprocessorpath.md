@@ -14,10 +14,10 @@ _Remove the Maven annotation processor path that matches the given groupId and a
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | groupId | The groupId to use. |
-| `String` | artifactId | The artifactId to use. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | groupId | The groupId to use. | `corp.internal.openrewrite.recipe` |
+| `String` | artifactId | The artifactId to use. | `my-new-annotation-processor` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.RemoveAnnotationProcessorPathExample` has been defined act
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveAnnotationProcessorPathExample</recipe>

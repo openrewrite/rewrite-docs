@@ -6,18 +6,18 @@ _Rename a file while keeping it in the same directory._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/RenameFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/RenameFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | fileMatcher | Matching files will be renamed. This is a glob expression. |
-| `String` | fileName | Just the file name without the folder path that precedes it. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | fileMatcher | Matching files will be renamed. This is a glob expression. | `**/application-*.yml` |
+| `String` | fileName | Just the file name without the folder path that precedes it. | `application.yml` |
 
 
 ## Usage
@@ -45,7 +45,7 @@ Now that `com.yourorg.RenameFileExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RenameFileExample</recipe>
@@ -103,4 +103,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Greg Adams](mailto:greg@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Greg Adams](mailto:greg@moderne.io)

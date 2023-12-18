@@ -12,23 +12,23 @@ The `==` and `!=` operators are a more concise and elegant way to test structura
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/EqualsMethodUsage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.8.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/EqualsMethodUsage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.8.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-kotlin
-* version: 1.8.1
+* version: 1.8.2
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-kotlin:1.8.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-kotlin:1.8.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -40,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:1.8.1")
+    rewrite("org.openrewrite:rewrite-kotlin:1.8.2")
 }
 ```
 {% endcode %}
@@ -55,12 +55,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.5.12") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite:rewrite-kotlin:1.8.1")
+        rewrite("org.openrewrite:rewrite-kotlin:1.8.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.kotlin.cleanup.EqualsMethodUsage")
@@ -87,7 +87,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.kotlin.cleanup.EqualsMethodUsage</recipe>
@@ -97,7 +97,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-kotlin</artifactId>
-            <version>1.8.1</version>
+            <version>1.8.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -114,9 +114,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-kotlin:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.kotlin.cleanup.EqualsMethodUsage
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-kotlin:RELEASE -Drewrite.activeRecipes=org.openrewrite.kotlin.cleanup.EqualsMethodUsage
 ```
 {% endcode %}
 {% endtab %}

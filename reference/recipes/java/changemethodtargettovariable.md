@@ -6,20 +6,20 @@ _Change method invocations to method calls on a variable._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToVariable.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeMethodTargetToVariable.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. |
-| `String` | variableName | Name of variable to use as target for the modified method invocation. |
-| `String` | variableType | Type attribution to use for the return type of the modified method invocation. |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | methodPattern | A [method pattern](/reference/method-patterns.md) that is used to find matching method invocations. | `org.mycorp.A method(..)` |
+| `String` | variableName | Name of variable to use as target for the modified method invocation. | `foo` |
+| `String` | variableType | Type attribution to use for the return type of the modified method invocation. | `java.lang.String` |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the [method pattern](/reference/method-patterns.md). |  |
 
 
 ## Usage
@@ -38,7 +38,6 @@ recipeList:
       methodPattern: org.mycorp.A method(..)
       variableName: foo
       variableType: java.lang.String
-      matchOverrides: null
 ```
 {% endcode %}
 
@@ -49,7 +48,7 @@ Now that `com.yourorg.ChangeMethodTargetToVariableExample` has been defined acti
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -73,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeMethodTargetToVariableExample</recipe>

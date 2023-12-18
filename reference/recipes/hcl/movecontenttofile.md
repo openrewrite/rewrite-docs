@@ -6,19 +6,19 @@ _Move content to another HCL file, deleting it in the original file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/MoveContentToFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/MoveContentToFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-hcl
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | contentPath | A JSONPath expression specifying the block to move. |
-| `String` | fromPath | The source path of the file from which content is being moved. |
-| `String` | destinationPath | The source path of the file to move the content to. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | contentPath | A JSONPath expression specifying the block to move. | `$.provider` |
+| `String` | fromPath | The source path of the file from which content is being moved. | `from.tf` |
+| `String` | destinationPath | The source path of the file to move the content to. | `to.tf` |
 
 
 ## Usage
@@ -47,7 +47,7 @@ Now that `com.yourorg.MoveContentToFileExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.MoveContentToFileExample</recipe>

@@ -6,26 +6,26 @@ _Adds a new Maven Repository or Update a matching repository._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | id | Repository id |
-| `String` | url | Repository URL |
-| `String` | repoName | *Optional*. Repository name |
-| `String` | layout | *Optional*. Repository layout |
-| `Boolean` | snapshotsEnabled | *Optional*. Snapshots from the repository are available |
-| `String` | snapshotsChecksumPolicy | *Optional*. Snapshots checksum policy |
-| `String` | snapshotsUpdatePolicy | *Optional*. Snapshots update policy policy |
-| `Boolean` | releasesEnabled | *Optional*. Releases from the repository are available |
-| `String` | releasesChecksumPolicy | *Optional*. Releases checksum policy |
-| `String` | releasesUpdatePolicy | *Optional*. Releases update policy |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | id | Repository id |  |
+| `String` | url | Repository URL |  |
+| `String` | repoName | *Optional*. Repository name |  |
+| `String` | layout | *Optional*. Repository layout |  |
+| `Boolean` | snapshotsEnabled | *Optional*. Snapshots from the repository are available |  |
+| `String` | snapshotsChecksumPolicy | *Optional*. Snapshots checksum policy |  |
+| `String` | snapshotsUpdatePolicy | *Optional*. Snapshots update policy policy |  |
+| `Boolean` | releasesEnabled | *Optional*. Releases from the repository are available |  |
+| `String` | releasesChecksumPolicy | *Optional*. Releases checksum policy |  |
+| `String` | releasesUpdatePolicy | *Optional*. Releases update policy |  |
 
 
 ## Usage
@@ -43,14 +43,6 @@ recipeList:
   - org.openrewrite.maven.AddRepository:
       id: null
       url: null
-      repoName: null
-      layout: null
-      snapshotsEnabled: null
-      snapshotsChecksumPolicy: null
-      snapshotsUpdatePolicy: null
-      releasesEnabled: null
-      releasesChecksumPolicy: null
-      releasesUpdatePolicy: null
 ```
 {% endcode %}
 
@@ -67,7 +59,7 @@ Now that `com.yourorg.AddRepositoryExample` has been defined activate it in your
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddRepositoryExample</recipe>

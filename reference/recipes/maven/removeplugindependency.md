@@ -6,20 +6,20 @@ _Removes a dependency from the <dependencies> section of a plugin in the pom.xml
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemovePluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemovePluginDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | pluginGroupId | GroupId of the plugin from which the dependency will be removed. Supports glob.A GroupId is the first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | pluginArtifactId | ArtifactId of the plugin from which the dependency will be removed. Supports glob.The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. |
-| `String` | groupId | The first part of a plugin dependency coordinate. Supports glob. |
-| `String` | artifactId | The second part of a plugin dependency coordinate. Supports glob. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | pluginGroupId | GroupId of the plugin from which the dependency will be removed. Supports glob.A GroupId is the first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `org.openrewrite.maven` |
+| `String` | pluginArtifactId | ArtifactId of the plugin from which the dependency will be removed. Supports glob.The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `rewrite-maven-plugin` |
+| `String` | groupId | The first part of a plugin dependency coordinate. Supports glob. | `com.google.guava` |
+| `String` | artifactId | The second part of a plugin dependency coordinate. Supports glob. | `guava` |
 
 
 ## Usage
@@ -55,7 +55,7 @@ Now that `com.yourorg.RemovePluginDependencyExample` has been defined activate i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemovePluginDependencyExample</recipe>

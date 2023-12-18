@@ -6,19 +6,19 @@ _This recipe explores parse failures after an LST is produced for classifying th
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `Integer` | maxSnippetLength | *Optional*. When the failure occurs on a granular tree element, its source code will be included as a column in the data table up to this maximum snippet length. |
-| `String` | parserType | *Optional*. Only display failures from parsers with this fully qualified name. |
-| `String` | stackTrace | *Optional*. Only mark stack traces with a message containing this text. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Integer` | maxSnippetLength | *Optional*. When the failure occurs on a granular tree element, its source code will be included as a column in the data table up to this maximum snippet length. |  |
+| `String` | parserType | *Optional*. Only display failures from parsers with this fully qualified name. | `org.openrewrite.yaml.YamlParser` |
+| `String` | stackTrace | *Optional*. Only mark stack traces with a message containing this text. |  |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -45,7 +45,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {
@@ -101,7 +101,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.FindParseFailures</recipe>
@@ -120,8 +120,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.activeRecipes=org.openrewrite.FindParseFailures
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.FindParseFailures
 ```
 {% endcode %}
 {% endtab %}

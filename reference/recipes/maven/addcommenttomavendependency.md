@@ -6,20 +6,20 @@ _Adds a comment as the first element in a `Maven` dependency._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddCommentToMavenDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddCommentToMavenDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.1
+* version: 8.11.2
 
 ## Options
 
-| Type | Name | Description |
-| -- | -- | -- |
-| `String` | xPath | An XPath expression used to find matching tags. |
-| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
-| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
-| `String` | commentText | The text to add as a comment.. |
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | xPath | An XPath expression used to find matching tags. | `/project/dependencies/dependency` |
+| `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.guava` |
+| `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
+| `String` | commentText | The text to add as a comment.. | `This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.` |
 
 
 ## Usage
@@ -55,7 +55,7 @@ Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined activ
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddCommentToMavenDependencyExample</recipe>
