@@ -16,7 +16,7 @@ In order to run the migration recipe, you will need to update your project with 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.15.4</version>
+        <version>5.16.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.assertj.Assertj</recipe>
@@ -41,7 +41,7 @@ In order to run the migration recipe, you will need to update your project with 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.5.12")
+    id("org.openrewrite.rewrite") version("6.6.1")
 }
 
 rewrite {

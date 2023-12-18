@@ -21,7 +21,7 @@ The Java 17 migration recipe can be applied by including OpenRewrite's plug-in t
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.15.4</version>
+      <version>5.16.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
@@ -46,7 +46,7 @@ The Java 17 migration recipe can be applied by including OpenRewrite's plug-in t
 ```groovy
   plugins {
       id("java")
-      id("org.openrewrite.rewrite") version("6.5.12")
+      id("org.openrewrite.rewrite") version("6.6.1")
   }
   
   rewrite {
