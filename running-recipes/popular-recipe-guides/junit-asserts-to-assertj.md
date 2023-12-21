@@ -15,7 +15,7 @@ The migrate to AssertJ recipe can be applied by adding OpenRewrite's plugin to y
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.16.0</version>
+      <version>5.17.1</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.testing.assertj.JUnitToAssertj</recipe>
@@ -25,7 +25,7 @@ The migrate to AssertJ recipe can be applied by adding OpenRewrite's plugin to y
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>2.1.4</version>
+          <version>2.1.5</version>
         </dependency>
       </dependencies>
     </plugin>
@@ -40,7 +40,7 @@ The migrate to AssertJ recipe can be applied by adding OpenRewrite's plugin to y
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.6.1")
+        id("org.openrewrite.rewrite") version("6.6.3")
     }
     
     rewrite {
@@ -52,7 +52,7 @@ The migrate to AssertJ recipe can be applied by adding OpenRewrite's plugin to y
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.3"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.4"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies
