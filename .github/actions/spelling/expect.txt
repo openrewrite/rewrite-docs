@@ -24,6 +24,7 @@ bval
 camelcase
 capitaliserecipe
 capitalizerecipe
+Cdi
 cgi
 checkstyle
 circleci
@@ -135,6 +136,7 @@ jsf
 jsonpathmatcher
 jsontype
 jsse
+JUL
 jvmargs
 jws
 JWTs
@@ -229,6 +231,7 @@ smushed
 snakeyaml
 Sonatype
 sourcespecs
+spi
 splitrecipe
 Spotbugs
 Springbatch
@@ -241,6 +244,7 @@ striprecipe
 subdir
 subpackages
 supertypes
+taglib
 temurin
 terraform
 testcontainers
