@@ -23,7 +23,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.java.migrate.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml](https://docs.openrewrite.org/recipes/java/migrate/jakarta/javaxwebfragmentxmltojakartawebfragmentxml): Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation. 
 * [org.openrewrite.java.migrate.jakarta.JavaxWebXmlToJakartaWebXml](https://docs.openrewrite.org/recipes/java/migrate/jakarta/javaxwebxmltojakartawebxml): Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation. 
 * [org.openrewrite.java.migrate.jakarta.UpgradeFacesOpenSourceLibraries](https://docs.openrewrite.org/recipes/java/migrate/jakarta/upgradefacesopensourcelibraries): Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE10 versions. 
-* [org.openrewrite.java.testing.junit5.AddMissingTestBeforeAfterAnnotations](https://docs.openrewrite.org/recipes/java/testing/junit5/addmissingtestbeforeafterannotations): Adds `@BeforeEach`, `@AfterEach`, `@Test` to methods overriding superclass methods if the annoations are present on the superclass method. 
+* [org.openrewrite.java.testing.junit5.AddMissingTestBeforeAfterAnnotations](https://docs.openrewrite.org/recipes/java/testing/junit5/addmissingtestbeforeafterannotations): Adds `@BeforeEach`, `@AfterEach`, `@Test` to methods overriding superclass methods if the annotations are present on the superclass method. 
 * [org.openrewrite.quarkus.AddQuarkusProperty](https://docs.openrewrite.org/recipes/quarkus/addquarkusproperty): Add a Quarkus configuration property to an existing configuration file if it does not already exist in that file. 
 
 ## Changed Recipes
