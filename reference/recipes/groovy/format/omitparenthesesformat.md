@@ -6,11 +6,11 @@ _Omit parentheses for last argument lambdas in Groovy code._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/8.11.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/OmitParenthesesFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/8.11.5/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-groovy
-* version: 8.11.2
+* version: 8.11.5
 
 
 ## Usage
@@ -22,7 +22,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.1")
+    id("org.openrewrite.rewrite") version("6.6.2")
 }
 
 rewrite {
@@ -78,7 +78,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.16.0</version>
+        <version>5.17.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.groovy.format.OmitParenthesesFormat</recipe>

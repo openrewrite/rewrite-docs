@@ -47,7 +47,7 @@ Now that `com.yourorg.FindSecretsByPatternExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.1")
+    id("org.openrewrite.rewrite") version("6.6.2")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.16.0</version>
+        <version>5.17.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindSecretsByPatternExample</recipe>

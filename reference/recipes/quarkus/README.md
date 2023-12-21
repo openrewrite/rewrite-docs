@@ -14,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add a Quarkus configuration property](./addquarkusproperty.md)
 * [Configure `quarkus-maven-plugin` with reasonable defaults](./configurequarkusmavenpluginwithreasonabledefaults.md)
 * [Use `@ConfigMapping`](./configpropertiestoconfigmapping.md)
 * [Use Mutiny `multi.toHotStream()`](./multitransformhotstreamtomultihotstream.md)

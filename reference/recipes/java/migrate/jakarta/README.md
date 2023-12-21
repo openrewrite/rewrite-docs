@@ -4,8 +4,11 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Faces XHTML migration for Jakarta EE 10](./jakartafacesxhtml.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](./facesjndinameschanged.md)
+* [JSF 2.x to Jakarta Faces 4.x](./faces2xmigrationtojakarta4x.md)
 * [Migrate Ehcache from javax to jakarta namespace](./ehcachejavaxtojakarta.md)
+* [Migrate JSF values inside EcmaScript files](./jakartafacesecmascript.md)
 * [Migrate Jackson from javax to jakarta namespace](./jacksonjavaxtojakarta.md)
 * [Migrate Johnzon from javax to jakarta namespace](./johnzonjavaxtojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](./javaxactivationmigrationtojakartaactivation.md)
@@ -40,12 +43,18 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](./updateapachewssecuritypackages.md)
 * [Migrate to Jakarta EE 10](./jakartaee10.md)
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
+* [Migrate xmlns entries in `beans.xml` files](./javaxbeansxmltojakartabeansxml.md)
+* [Migrate xmlns entries in `faces-config.xml` files](./javaxfacesconfigxmltojakartafacesconfigxml.md)
 * [Migrate xmlns entries in `persistence.xml` files](./javaxpersistencexmltojakartapersistencexml.md)
+* [Migrate xmlns entries in `taglib.xml` files](./javaxfacestaglibraryxmltojakartafacestaglibraryxml.md)
+* [Migrate xmlns entries in `web-fragment.xml` files](./javaxwebfragmentxmltojakartawebfragmentxml.md)
+* [Migrate xmlns entries in `web.xml` files](./javaxwebxmltojakartawebxml.md)
 * [Remove `getComment` and `getVersion` methods](./servletcookiebehaviorchangerfc6265.md)
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](./removeduicomponentconstant.md)
 * [Replace `ResourceResolver` with `ResourceHandler`](./removedjakartafacesresourceresolver.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](./wswsocservercontainerdeprecation.md)
 * [Substitute deprecated Faces Managed Beans](./facesmanagedbeansremoved.md)
+* [Upgrade Faces open source libraries](./upgradefacesopensourcelibraries.md)
 * [Use `StateManagementStrategy`](./removedstatemanagermethods.md)
 * [Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`](./removedjakartafacesexpressionlanguageclasses.md)
 * [Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`](./removedsoapelementfactory.md)
@@ -53,8 +62,10 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
+* [Migrate Bean Validation messages](./beanvalidationmessages.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
 * [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](./applicationpathwildcardnolongeraccepted.md)
+* [Rename CDI Extension to Jakarta](./javaxtojakartacdiextensions.md)
 * [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)
 
 

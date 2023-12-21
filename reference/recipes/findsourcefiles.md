@@ -6,17 +6,17 @@ _Find files by source path._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindSourceFiles.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindSourceFiles.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.11.5/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.11.2
+* version: 8.11.5
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | filePattern | A glob expression representing a file path to search for (relative to the project root). | `.github/workflows/*.yml` |
+| `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -32,43 +32,60 @@ _Source files that matched some criteria._
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindSourceFilesExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.FindSourceFilesExample
-displayName: Find files example
-recipeList:
-  - org.openrewrite.FindSourceFiles:
-      filePattern: .github/workflows/*.yml
-```
-{% endcode %}
-
-Now that `com.yourorg.FindSourceFilesExample` has been defined activate it in your build file:
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.1")
+    id("org.openrewrite.rewrite") version("6.6.2")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.FindSourceFilesExample")
+    activeRecipe("org.openrewrite.FindSourceFiles")
 }
 
 repositories {
     mavenCentral()
 }
+
 ```
 {% endcode %}
 2. Run `gradle rewriteRun` to run the recipe.
 {% endtab %}
-{% tab title="Maven" %}
+
+{% tab title="Gradle init script" %}
+1. Create a file named `init.gradle` in the root of your project.
+{% code title="init.gradle" %}
+```groovy
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:latest.release") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite:rewrite-java")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.FindSourceFiles")
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+{% endcode %}
+2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+{% endtab %}
+{% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
 ```xml
@@ -78,10 +95,10 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.16.0</version>
+        <version>5.17.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>com.yourorg.FindSourceFilesExample</recipe>
+            <recipe>org.openrewrite.FindSourceFiles</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -91,6 +108,15 @@ repositories {
 ```
 {% endcode %}
 2. Run `mvn rewrite:run` to run the recipe.
+{% endtab %}
+
+{% tab title="Maven Command Line" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+{% code title="shell" %}
+```shell
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.FindSourceFiles
+```
+{% endcode %}
 {% endtab %}
 {% tab title="Moderne CLI" %}
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
@@ -112,4 +138,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Sam Snyder](mailto:sam@moderne.io)
