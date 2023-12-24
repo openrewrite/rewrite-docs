@@ -19,6 +19,13 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/statica
       <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
     </activeRecipes>
   </configuration>
+  <dependencies>
+    <dependency>
+      <groupId>org.openrewrite.recipe</groupId>
+      <artifactId>rewrite-static-analysis</artifactId>
+      <version>1.1.4</version>
+    </dependency>
+  </dependencies>
 </plugin>
 ```
 {% endcode %}
@@ -38,6 +45,10 @@ rewrite {
 
 repositories {
     mavenCentral() // rewrite is published to Maven Central
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.1.4")
 }
 ```
 {% endcode %}
