@@ -30,3 +30,5 @@ In the meantime, one way to work around this is to add a profile on the parent P
 {% endcode %}
 
 You can then run OpenRewrite from any submodule using this command: `mvn -Popenrewrite rewrite:run`. 
+
+There's no need to set the `configLocation` for the default location of `rewrite.yml`. The default value is `${maven.multiModuleProjectDirectory}/rewrite.yml`, which works in multi module projects. More information about the various configuration options can be found in the [mojo docs](https://openrewrite.github.io/rewrite-maven-plugin/run-mojo.html)
