@@ -2,7 +2,7 @@
 
 **org.openrewrite.gradle.security.UseHttpsForRepositories**
 
-_Use HTTPS for repository urls._
+_Use HTTPS for repository URLs._
 
 ### Tags
 
@@ -10,11 +10,11 @@ _Use HTTPS for repository urls._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/security/UseHttpsForRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.11.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/security/UseHttpsForRepositories.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.12.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.11.5
+* version: 8.12.0
 
 
 ## Usage
@@ -26,7 +26,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.2")
+    id("org.openrewrite.rewrite") version("6.6.3")
 }
 
 rewrite {
@@ -93,4 +93,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com)
+[Jonathan Leitschuh](mailto:Jonathan.Leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)

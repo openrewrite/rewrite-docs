@@ -2,28 +2,29 @@
 
 **org.openrewrite.java.search.FindTypeMappings**
 
-_Find types mapped to J trees._
+_Study the frequency of `J` types and their `JavaType` type attribution._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindTypeMappings.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindTypeMappings.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.12.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.5
+* version: 8.12.0
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
 ### Type mapping
 
-_The types mapped to J trees._
+_The types mapped to `J` trees._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source file | The source file that the method call occurred in. |
-| Tree class name | The class name of the tree. |
-| Java type class name | The class name of the java type. |
-| Java type class name | The class name of the java type. |
+| Compilation unit class name | The root compilation unit class name containing the mapping. |
+| Tree class name | The simple class name of the `J` element. |
+| Java type class name | The simple class name of the `JavaType`. |
+| Count | The number of times this tree and type pair occurred in a repository. |
+| Nearest non-null tree class name | The simple class name of the nearest non-null `J` element when `typeName` is null. |
 
 
 ## Usage
@@ -35,7 +36,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.2")
+    id("org.openrewrite.rewrite") version("6.6.3")
 }
 
 rewrite {
@@ -91,7 +92,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.search.FindTypeMappings</recipe>

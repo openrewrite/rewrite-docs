@@ -31,7 +31,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.2")
+    id("org.openrewrite.rewrite") version("6.6.3")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.6.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -90,7 +90,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.jakarta.JavaxFacesConfigXmlToJakartaFacesConfigXml</recipe>
@@ -136,15 +136,15 @@ mod run . --recipe JavaxFacesConfigXmlToJakartaFacesConfigXml
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change XML Attribute](../../../xml/changetagattribute.md)
+* [Change XML attribute](../../../xml/changetagattribute.md)
   * elementName: `faces-config`
   * attributeName: `version`
   * newValue: `4.0`
-* [Change XML Attribute](../../../xml/changetagattribute.md)
+* [Change XML attribute](../../../xml/changetagattribute.md)
   * elementName: `faces-config`
   * attributeName: `xmlns`
   * newValue: `https://jakarta.ee/xml/ns/jakartaee`
-* [Change XML Attribute](../../../xml/changetagattribute.md)
+* [Change XML attribute](../../../xml/changetagattribute.md)
   * elementName: `faces-config`
   * attributeName: `xsi:schemaLocation`
   * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_4_0.xsd`

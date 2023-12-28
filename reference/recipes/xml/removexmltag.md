@@ -1,4 +1,4 @@
-# Remove XML Tag
+# Remove XML tag
 
 **org.openrewrite.xml.RemoveXmlTag**
 
@@ -6,11 +6,11 @@ _Removes XML tags matching the provided expression._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/RemoveXmlTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/RemoveXmlTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.12.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.11.5
+* version: 8.12.0
 
 ## Options
 
@@ -30,7 +30,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.RemoveXmlTagExample
-displayName: Remove XML Tag example
+displayName: Remove XML tag example
 recipeList:
   - org.openrewrite.xml.RemoveXmlTag:
       xPath: /project/dependencies/dependency
@@ -45,7 +45,7 @@ Now that `com.yourorg.RemoveXmlTagExample` has been defined activate it in your 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.2")
+    id("org.openrewrite.rewrite") version("6.6.3")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveXmlTagExample</recipe>
@@ -103,4 +103,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Mark Brophy, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+Mark Brophy, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com)

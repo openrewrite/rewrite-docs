@@ -1,22 +1,22 @@
-# Change XML Attribute
+# Change XML attribute
 
 **org.openrewrite.xml.ChangeTagAttribute**
 
-_Alters XML Attribute value within specified element._
+_Alters XML attribute value on a specified element._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.11.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.12.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.11.5
+* version: 8.12.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath Expression. | `property` |
+| `String` | elementName | The name of the element whose attribute's value is to be changed. Interpreted as an XPath expression. | `property` |
 | `String` | attributeName | The name of the attribute whose value is to be changed. | `name` |
 | `String` | newValue | The new value to be used for key specified by `attributeName`, Set to null if you want to remove the attribute. | `newfoo.bar.attribute.value.string` |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `foo.bar.attribute.value.string` |
@@ -32,7 +32,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTagAttributeExample
-displayName: Change XML Attribute example
+displayName: Change XML attribute example
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: property
@@ -49,7 +49,7 @@ Now that `com.yourorg.ChangeTagAttributeExample` has been defined activate it in
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.2")
+    id("org.openrewrite.rewrite") version("6.6.3")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeTagAttributeExample</recipe>

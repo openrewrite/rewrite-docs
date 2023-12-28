@@ -1,4 +1,4 @@
-# Increment Maven Project Version
+# Increment Maven project version
 
 **org.openrewrite.maven.IncrementProjectVersion**
 
@@ -6,18 +6,18 @@ _Increase Maven project version by incrementing either the major, minor, or patc
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/IncrementProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/IncrementProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.12.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.5
+* version: 8.12.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | groupId | The groupId of the maven project to change its version. This can be a glob expression. | `org.openrewrite` |
-| `String` | artifactId | The artifactId of the maven project to change its version. This can be a glob expression. | `*` |
+| `String` | groupId | The group ID of the Maven project to change its version. This can be a glob expression. | `org.openrewrite` |
+| `String` | artifactId | The artifact ID of the Maven project to change its version. This can be a glob expression. | `*` |
 | `SemverDigit` | digit | `MAJOR` increments the first digit, `MINOR` increments the second digit, and `PATCH` increments the third digit. | `PATCH` |
 
 
@@ -31,7 +31,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.IncrementProjectVersionExample
-displayName: Increment Maven Project Version example
+displayName: Increment Maven project version example
 recipeList:
   - org.openrewrite.maven.IncrementProjectVersion:
       groupId: org.openrewrite
@@ -53,7 +53,7 @@ Now that `com.yourorg.IncrementProjectVersionExample` has been defined activate 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.IncrementProjectVersionExample</recipe>

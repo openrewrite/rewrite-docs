@@ -4,6 +4,7 @@ _Basic building blocks for transforming Java code._
 
 ## Categories
 
+* [AI tools](/reference/recipes/java/ai)
 * [Apache](/reference/recipes/java/apache)
 * [Dependencies](/reference/recipes/java/dependencies)
 * [Format](/reference/recipes/java/format)
@@ -30,8 +31,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add imports for fully qualified references to types](./shortenfullyqualifiedtypereferences.md)
 * [Add license header](./addlicenseheader.md)
 * [Add or update annotation attribute](./addorupdateannotationattribute.md)
-* [Calculate token length of classes](./classdefinitionlength.md)
-* [Calculate token length of method definitions](./methoddefinitionlength.md)
 * [Change annotation attribute name](./changeannotationattributename.md)
 * [Change method access level](./changemethodaccesslevel.md)
 * [Change method name](./changemethodname.md)

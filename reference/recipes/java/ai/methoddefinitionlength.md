@@ -1,16 +1,16 @@
-# Calculate token length of classes
+# Calculate token length of method definitions
 
-**org.openrewrite.java.ClassDefinitionLength**
+**org.openrewrite.java.ai.MethodDefinitionLength**
 
-_Locates class definitions and predicts the number of token in each._
+_Locates method definitions and predicts the number of token in each._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ClassDefinitionLength.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.11.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ai/MethodDefinitionLength.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.12.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.11.5
+* version: 8.12.0
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -33,11 +33,11 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.2")
+    id("org.openrewrite.rewrite") version("6.6.3")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.ClassDefinitionLength")
+    activeRecipe("org.openrewrite.java.ai.MethodDefinitionLength")
 }
 
 repositories {
@@ -65,7 +65,7 @@ rootProject {
         rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.ClassDefinitionLength")
+        activeRecipe("org.openrewrite.java.ai.MethodDefinitionLength")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -89,10 +89,10 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.ClassDefinitionLength</recipe>
+            <recipe>org.openrewrite.java.ai.MethodDefinitionLength</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -108,7 +108,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.ClassDefinitionLength
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.ai.MethodDefinitionLength
 ```
 {% endcode %}
 {% endtab %}
@@ -117,7 +117,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe ClassDefinitionLength
+mod run . --recipe MethodDefinitionLength
 ```
 {% endcode %}
 {% endtab %}
@@ -125,11 +125,11 @@ mod run . --recipe ClassDefinitionLength
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.ClassDefinitionLength)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.ai.MethodDefinitionLength)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-justine-gehring
+justine-gehring, [Jonathan Schnéider](mailto:jkschneider@gmail.com)

@@ -25,7 +25,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.2")
+    id("org.openrewrite.rewrite") version("6.6.3")
 }
 
 rewrite {
@@ -52,7 +52,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.6.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.xml.liberty.ConnectorDDNamespaceRule</recipe>
@@ -130,17 +130,17 @@ mod run . --recipe ConnectorDDNamespaceRule
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change XML Attribute of a specific resource version](../../xml/changenamespacevalue.md)
+* [Change XML attribute of a specific resource version](../../xml/changenamespacevalue.md)
   * elementName: `connector`
   * newValue: `http://java.sun.com/xml/ns/j2ee`
   * versionMatcher: `1.5`
   * searchAllNamespaces: `false`
-* [Change XML Attribute of a specific resource version](../../xml/changenamespacevalue.md)
+* [Change XML attribute of a specific resource version](../../xml/changenamespacevalue.md)
   * elementName: `connector`
   * newValue: `http://java.sun.com/xml/ns/javaee`
   * versionMatcher: `1.6`
   * searchAllNamespaces: `false`
-* [Change XML Attribute of a specific resource version](../../xml/changenamespacevalue.md)
+* [Change XML attribute of a specific resource version](../../xml/changenamespacevalue.md)
   * elementName: `connector`
   * newValue: `http://xmlns.jcp.org/xml/ns/javaee`
   * versionMatcher: `1.7+`

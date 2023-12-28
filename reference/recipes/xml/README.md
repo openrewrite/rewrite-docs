@@ -11,13 +11,13 @@ _Basic building blocks for transforming XML._
 
 ## Recipes
 
-* [Add a comment to a `XML` tag](./addcommenttoxmltag.md)
-* [Change XML Attribute](./changetagattribute.md)
-* [Change XML Attribute of a specific resource version](./changenamespacevalue.md)
-* [Change XML Tag Name](./changetagname.md)
+* [Add a comment to an XML tag](./addcommenttoxmltag.md)
+* [Change XML attribute](./changetagattribute.md)
+* [Change XML attribute of a specific resource version](./changenamespacevalue.md)
+* [Change XML tag name](./changetagname.md)
 * [Change XML tag value](./changetagvalue.md)
 * [Create XML file](./createxmlfile.md)
-* [Remove XML Tag](./removexmltag.md)
+* [Remove XML tag](./removexmltag.md)
 * [Remove empty XML Tag](./removeemptyxmltags.md)
 * [Remove trailing whitespace](./removetrailingwhitespace.md)
 

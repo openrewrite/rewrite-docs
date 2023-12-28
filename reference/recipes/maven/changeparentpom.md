@@ -1,4 +1,4 @@
-# Change Maven parent pom
+# Change Maven parent
 
 **org.openrewrite.maven.ChangeParentPom**
 
@@ -6,20 +6,20 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.12.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.5
+* version: 8.12.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | oldGroupId | The groupId of the maven parent pom to be changed away from. | `org.springframework.boot` |
-| `String` | newGroupId | *Optional*. The groupId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldGroupId`. | `org.springframework.boot` |
-| `String` | oldArtifactId | The artifactId of the maven parent pom to be changed away from. | `spring-boot-starter-parent` |
-| `String` | newArtifactId | *Optional*. The artifactId of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldArtifactId`. | `spring-boot-starter-parent` |
+| `String` | oldGroupId | The group ID of the Maven parent pom to be changed away from. | `org.springframework.boot` |
+| `String` | newGroupId | *Optional*. The group ID of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldGroupId`. | `org.springframework.boot` |
+| `String` | oldArtifactId | The artifact ID of the maven parent pom to be changed away from. | `spring-boot-starter-parent` |
+| `String` | newArtifactId | *Optional*. The artifact ID of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldArtifactId`. | `spring-boot-starter-parent` |
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. | `29.X` |
 | `String` | oldRelativePath | *Optional*. The relativePath of the maven parent pom to be changed away from. | `../../pom.xml` |
 | `String` | newRelativePath | *Optional*. New relative path attribute for parent lookup. | `../pom.xml` |
@@ -47,7 +47,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeParentPomExample
-displayName: Change Maven parent pom example
+displayName: Change Maven parent example
 recipeList:
   - org.openrewrite.maven.ChangeParentPom:
       oldGroupId: org.springframework.boot
@@ -75,7 +75,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined activate it in yo
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeParentPomExample</recipe>

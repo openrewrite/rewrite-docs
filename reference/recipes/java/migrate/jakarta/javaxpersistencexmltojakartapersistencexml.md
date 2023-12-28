@@ -25,7 +25,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.2")
+    id("org.openrewrite.rewrite") version("6.6.3")
 }
 
 rewrite {
@@ -52,7 +52,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.6.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml</recipe>
@@ -130,26 +130,26 @@ mod run . --recipe JavaxPersistenceXmlToJakartaPersistenceXml
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Change XML Attribute](../../../xml/changetagattribute.md)
+* [Change XML attribute](../../../xml/changetagattribute.md)
   * elementName: `//property`
   * attributeName: `name`
   * newValue: `jakarta.persistence`
   * oldValue: `javax.persistence`
-* [Change XML Attribute](../../../xml/changetagattribute.md)
+* [Change XML attribute](../../../xml/changetagattribute.md)
   * elementName: `persistence`
   * attributeName: `version`
   * newValue: `3.0`
-* [Change XML Attribute](../../../xml/changetagattribute.md)
+* [Change XML attribute](../../../xml/changetagattribute.md)
   * elementName: `persistence`
   * attributeName: `xmlns`
   * newValue: `https://jakarta.ee`
   * oldValue: `http://xmlns.jcp.org`
-* [Change XML Attribute](../../../xml/changetagattribute.md)
+* [Change XML attribute](../../../xml/changetagattribute.md)
   * elementName: `persistence`
   * attributeName: `xmlns`
   * newValue: `https://jakarta.ee/xml/ns/persistence`
   * oldValue: `http://java.sun.com/xml/ns/persistence`
-* [Change XML Attribute](../../../xml/changetagattribute.md)
+* [Change XML attribute](../../../xml/changetagattribute.md)
   * elementName: `persistence`
   * attributeName: `xsi:schemaLocation`
   * newValue: `https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd`

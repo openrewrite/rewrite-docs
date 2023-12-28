@@ -6,18 +6,18 @@ _Removes a matching Maven repository._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.11.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.12.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.11.5
+* version: 8.12.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | id | *Optional*. Repository id |  |
-| `String` | url | Repository URL |  |
+| `String` | id | *Optional*. A unique repository ID. |  |
+| `String` | url | The URL of the repository. |  |
 
 
 ## Usage
@@ -50,7 +50,7 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined activate it in y
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.0</version>
+        <version>5.17.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveRepositoryExample</recipe>
@@ -84,4 +84,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-smehta23, [Yeikel](mailto:email@yeikel.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+smehta23, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Yeikel](mailto:email@yeikel.com)
