@@ -360,7 +360,7 @@ and the jar in that folder is:
 then the `rewrite` `dependency` should have:
 
 * A `groupId` of `com.yourorg`
-* An `artifactId` of `rewrite-recipe-start`,
+* An `artifactId` of `rewrite-recipe-starter`,
 * A `version` of `0.1.0-dev.25.uncommitted+f58d7fa`.
 {% endhint %}
 
