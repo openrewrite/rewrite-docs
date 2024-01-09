@@ -224,6 +224,8 @@ semeru
 servlet
 setcustomerinfo
 Skywalker
+simplifyternaryfalsetruerecipe
+simplifyternarytruefalserecipe
 slf
 smallrye
 smushed
