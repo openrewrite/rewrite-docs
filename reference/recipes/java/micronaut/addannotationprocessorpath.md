@@ -51,7 +51,7 @@ Now that `com.yourorg.AddAnnotationProcessorPathExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.3")
+    id("org.openrewrite.rewrite") version("6.6.4")
 }
 
 rewrite {
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.1</version>
+        <version>5.18.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddAnnotationProcessorPathExample</recipe>

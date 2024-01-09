@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.3")
+    id("org.openrewrite.rewrite") version("6.6.4")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.6.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.1</version>
+        <version>5.18.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
@@ -238,4 +238,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), Chuka Obinabo, [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), Kun Li, [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Yeikel, [Greg Adams](mailto:greg@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [magicwerk](mailto:magicwerk@gmail.com), [Satvika Eda](mailto:satvika164.reddy@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado, [Kevin McCarpenter](mailto:kevin@moderne.io), [Kun Li](mailto:kun@moderne.io), Fabian Krüger, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Aaron Gershman, nbruno, ranuradh, [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Sandeep Nagaraj, [Joan Viladrosa](mailto:joan@moderne.io), [BoykoAlex](mailto:aboyko@pivotal.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), John Burns, [Michael Keppler](mailto:bananeweizen@gmx.de), [Scott Jungling](mailto:scott.jungling@gmail.com), Aakarshit Uppal, Josh Soref, Ties van de Ven, Peter Puškár
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), Chuka Obinabo, [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), Kun Li, [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Yeikel, [Greg Adams](mailto:greg@moderne.io), [magicwerk](mailto:magicwerk@gmail.com), [Satvika Eda](mailto:satvika164.reddy@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado, [Kevin McCarpenter](mailto:kevin@moderne.io), [Kun Li](mailto:kun@moderne.io), Fabian Krüger, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, [Shannon Pamperl](mailto:shanman190@gmail.com), Aaron Gershman, nbruno, ranuradh, [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Sandeep Nagaraj, [Joan Viladrosa](mailto:joan@moderne.io), [BoykoAlex](mailto:aboyko@pivotal.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), John Burns, [Michael Keppler](mailto:bananeweizen@gmx.de), [Scott Jungling](mailto:scott.jungling@gmail.com), Aakarshit Uppal, Josh Soref, Ties van de Ven, Peter Puškár

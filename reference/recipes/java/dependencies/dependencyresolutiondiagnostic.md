@@ -10,11 +10,11 @@ The Gradle dependency configuration errors lists all the dependency configuratio
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyResolutionDiagnostic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.2.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyResolutionDiagnostic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.3.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.2.8
+* version: 1.3.1
 
 ## Options
 
@@ -53,14 +53,14 @@ _Records Gradle dependency configurations which failed to resolve during parsing
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:1.2.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:1.3.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.3")
+    id("org.openrewrite.rewrite") version("6.6.4")
 }
 
 rewrite {
@@ -72,7 +72,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.2.8")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.3.1")
 }
 ```
 {% endcode %}
@@ -87,12 +87,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.6.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.2.8")
+        rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.3.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.dependencies.DependencyResolutionDiagnostic")
@@ -119,7 +119,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.1</version>
+        <version>5.18.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.dependencies.DependencyResolutionDiagnostic</recipe>
@@ -129,7 +129,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.2.8</version>
+            <version>1.3.1</version>
           </dependency>
         </dependencies>
       </plugin>

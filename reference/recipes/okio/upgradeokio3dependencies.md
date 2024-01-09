@@ -6,11 +6,11 @@ _Migrate Okio dependencies to 3.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okio-3.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/0.0.8/jar)
+[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okio-3.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/0.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-okhttp
-* version: 0.0.8
+* version: 0.1.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-okhttp:0.0.8` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-okhttp:0.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.3")
+    id("org.openrewrite.rewrite") version("6.6.4")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-okhttp:0.0.8")
+    rewrite("org.openrewrite.recipe:rewrite-okhttp:0.1.0")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.6.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.6.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-okhttp:0.0.8")
+        rewrite("org.openrewrite.recipe:rewrite-okhttp:0.1.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.okio.UpgradeOkio3Dependencies")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.17.1</version>
+        <version>5.18.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.okio.UpgradeOkio3Dependencies</recipe>
@@ -94,7 +94,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-okhttp</artifactId>
-            <version>0.0.8</version>
+            <version>0.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -135,10 +135,9 @@ mod run . --recipe UpgradeOkio3Dependencies
   * oldArtifactId: `okio-multiplatform`
   * newArtifactId: `okio`
   * newVersion: `3.x`
-* [Change Gradle or Maven dependency](../java/dependencies/changedependency.md)
-  * oldGroupId: `com.squareup.okio`
-  * oldArtifactId: `okio`
-  * newArtifactId: `okio`
+* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion.md)
+  * groupId: `com.squareup.okio`
+  * artifactId: `okio`
   * newVersion: `3.x`
 
 {% endtab %}
@@ -156,10 +155,9 @@ recipeList:
       oldArtifactId: okio-multiplatform
       newArtifactId: okio
       newVersion: 3.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.squareup.okio
-      oldArtifactId: okio
-      newArtifactId: okio
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.squareup.okio
+      artifactId: okio
       newVersion: 3.x
 
 ```

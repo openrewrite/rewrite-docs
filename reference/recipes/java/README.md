@@ -44,6 +44,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Order imports](./orderimports.md)
 * [Randomize tree IDs](./randomizeid.md)
 * [Remove annotation](./removeannotation.md)
+* [Remove annotation attribute](./removeannotationattribute.md)
 * [Remove interface implementations](./removeimplements.md)
 * [Remove static import](./nostaticimport.md)
 * [Remove unused imports](./removeunusedimports.md)

@@ -10,6 +10,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Common static analysis issues](./commonstaticanalysis.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
+* [`SimplifyTernary` Refaster recipes](./simplifyternaryrecipes.md)
 
 ## Recipes
 
@@ -103,6 +104,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Simplify constant if branch execution](./simplifyconstantifbranchexecution.md)
 * [Simplify `java.time.Duration` units](./simplifydurationcreationunits.md)
 * [Simplify lambda blocks to expressions](./lambdablocktoexpression.md)
+* [Simplify ternary expressions](./simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
+* [Simplify ternary expressions](./simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
 * [Sorted set stream should be collected to LinkedHashSet](./sortedsetstreamtolinkedhashset.md)
 * [Static methods not final](./staticmethodnotfinal.md)
 * [Ternary operators should not be nested](./ternaryoperatorsshouldnotbenested.md)
