@@ -15,7 +15,7 @@ The migrate to Jakarta EE 10 recipe can be applied by adding OpenRewrite's plugi
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.17.1</version>
+      <version>5.18.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.migrate.jakarta.JakartaEE10</recipe>
@@ -40,7 +40,7 @@ The migrate to Jakarta EE 10 recipe can be applied by adding OpenRewrite's plugi
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.6.3")
+        id("org.openrewrite.rewrite") version("6.6.4")
     }
     
     rewrite {
