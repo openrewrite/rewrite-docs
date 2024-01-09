@@ -6,16 +6,16 @@ _Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit 5's `org.junit
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UpdateTestAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.1.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UpdateTestAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.1.5
+* version: 2.2.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.1.5` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.5")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.2.0")
 }
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.1.5")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.2.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.UpdateTestAnnotation")
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.1.5</version>
+            <version>2.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,4 +132,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Patrick](mailto:patway99@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Patrick Way, [Tim te Beek](mailto:timtebeek@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Patrick](mailto:patway99@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Patrick Way

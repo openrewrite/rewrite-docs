@@ -6,11 +6,11 @@ _Replace `boolVariation` invocations for feature key with value, and simplify co
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-launchdarkly/blob/main/src/main/java/org/openrewrite/launchdarkly/RemoveBoolVariation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-launchdarkly/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-launchdarkly/0.0.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-launchdarkly/blob/main/src/main/java/org/openrewrite/launchdarkly/RemoveBoolVariation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-launchdarkly/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-launchdarkly/0.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-launchdarkly
-* version: 0.0.5
+* version: 0.1.0
 
 ## Options
 
@@ -38,7 +38,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RemoveBoolVariationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-launchdarkly:0.0.5 in your build file:
+Now that `com.yourorg.RemoveBoolVariationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-launchdarkly:0.1.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.0.5")
+    rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.1.0")
 }
 ```
 {% endcode %}
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-launchdarkly</artifactId>
-            <version>0.0.5</version>
+            <version>0.1.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -6,16 +6,16 @@ _Replace `SummaryPrinter` with `Plugin`, if not already present._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/DropSummaryPrinter.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.0.13/jar)
+[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/DropSummaryPrinter.java), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/1.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-cucumber-jvm
-* version: 1.0.13
+* version: 1.1.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.13` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-cucumber-jvm:1.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.13")
+    rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.1.0")
 }
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.0.13")
+        rewrite("org.openrewrite.recipe:rewrite-cucumber-jvm:1.1.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.cucumber.jvm.DropSummaryPrinter")
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-cucumber-jvm</artifactId>
-            <version>1.0.13</version>
+            <version>1.1.0</version>
           </dependency>
         </dependencies>
       </plugin>

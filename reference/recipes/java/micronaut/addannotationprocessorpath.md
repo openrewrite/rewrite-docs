@@ -6,11 +6,11 @@ _Add the groupId, artifactId, version, and exclusions of a Maven annotation proc
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/AddAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.1.9/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/AddAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.1.9
+* version: 2.2.0
 
 ## Options
 
@@ -44,7 +44,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddAnnotationProcessorPathExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.1.9 in your build file:
+Now that `com.yourorg.AddAnnotationProcessorPathExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.2.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.1.9")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.2.0")
 }
 ```
 {% endcode %}
@@ -89,7 +89,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.1.9</version>
+            <version>2.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
