@@ -6,11 +6,11 @@ _Upgrades un-managed spring-boot project dependencies according to the specified
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.1.7/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.1.7
+* version: 5.2.0
 
 ## Options
 
@@ -38,7 +38,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.1.7 in your build file:
+Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.2.0 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -61,7 +61,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.1.7</version>
+            <version>5.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -92,4 +92,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Andrei Shakirin](mailto:andrei.shakirin@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Kun Li, [Kyle Scully](mailto:scullykns@gmail.com)
+[Andrei Shakirin](mailto:andrei.shakirin@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Kun Li, [Kyle Scully](mailto:scullykns@gmail.com), [Tobias Lidskog](mailto:tlidskog@paypal.com)

@@ -6,11 +6,11 @@ _Zip slip is an arbitrary file overwrite critical vulnerability, which typically
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/ZipSlip.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.1.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/ZipSlip.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.1.4
+* version: 2.2.0
 
 ## Options
 
@@ -36,7 +36,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.1.4 in your build file:
+Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.2.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.1.4")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.2.0")
 }
 ```
 {% endcode %}
@@ -81,7 +81,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.1.4</version>
+            <version>2.2.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -1,17 +1,17 @@
-# Migrate to Spring Security 6.2
+# Spring Boot 3.x best practices
 
-**org.openrewrite.java.spring.security6.UpgradeSpringSecurity\_6\_2**
+**org.openrewrite.java.spring.boot3.SpringBoot3BestPractices**
 
-_Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions._
+_Applies best practices to Spring Boot 3 applications._
 
 ### Tags
 
 * spring
-* security
+* boot
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-62.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-32.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
@@ -34,7 +34,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2")
+    activeRecipe("org.openrewrite.java.spring.boot3.SpringBoot3BestPractices")
 }
 
 repositories {
@@ -65,7 +65,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-spring:5.2.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2")
+        activeRecipe("org.openrewrite.java.spring.boot3.SpringBoot3BestPractices")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -92,7 +92,7 @@ rootProject {
         <version>5.18.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2</recipe>
+            <recipe>org.openrewrite.java.spring.boot3.SpringBoot3BestPractices</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -116,7 +116,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.SpringBoot3BestPractices
 ```
 {% endcode %}
 {% endtab %}
@@ -125,7 +125,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe UpgradeSpringSecurity_6_2
+mod run . --recipe SpringBoot3BestPractices
 ```
 {% endcode %}
 {% endtab %}
@@ -135,13 +135,9 @@ mod run . --recipe UpgradeSpringSecurity_6_2
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Migrate to Spring Security 6.1](../../../java/spring/security6/upgradespringsecurity_6_1.md)
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
-  * groupId: `org.springframework.security`
-  * artifactId: `*`
-  * newVersion: `6.2.x`
-  * overrideManagedVersion: `false`
-* [Convert `HttpSecurity::apply` chained calls into `HttpSecurity::with` Lambda DSL](../../../java/spring/security6/applytowithlambdadsl.md)
+* [Spring Boot 2.x best practices](../../../java/spring/boot2/springboot2bestpractices.md)
+* [Migrate to Java 21](../../../java/migrate/upgradetojava21.md)
+* [Migrate to Spring Boot 3.2](../../../java/spring/boot3/upgradespringboot_3_2.md)
 
 {% endtab %}
 
@@ -149,21 +145,16 @@ mod run . --recipe UpgradeSpringSecurity_6_2
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2
-displayName: Migrate to Spring Security 6.2
-description: Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-
+name: org.openrewrite.java.spring.boot3.SpringBoot3BestPractices
+displayName: Spring Boot 3.x best practices
+description: Applies best practices to Spring Boot 3 applications.
 tags:
   - spring
-  - security
+  - boot
 recipeList:
-  - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_1
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.springframework.security
-      artifactId: *
-      newVersion: 6.2.x
-      overrideManagedVersion: false
-  - org.openrewrite.java.spring.security6.ApplyToWithLambdaDsl
+  - org.openrewrite.java.spring.boot2.SpringBoot2BestPractices
+  - org.openrewrite.java.migrate.UpgradeToJava21
+  - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2
 
 ```
 {% endtab %}
@@ -171,11 +162,11 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.SpringBoot3BestPractices)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Knut Wannheden](mailto:knut@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), Kun Li, [Shannon Pamperl](mailto:shanman190@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Josh Soref, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Chuka Obinabo, [Alex Boyko](mailto:aboyko@vmware.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Kun Li, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Kyle Scully](mailto:scullykns@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Satvika Eda](mailto:satvika164.reddy@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), Yeikel, [Greg Adams](mailto:greg@moderne.io), [Kun Li](mailto:kun@moderne.io), [magicwerk](mailto:magicwerk@gmail.com), Adriano Machado, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, Aaron Gershman, Fabian Krüger, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), nbruno, ranuradh, [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), Sandeep Nagaraj, [BoykoAlex](mailto:aboyko@pivotal.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), John Burns, Aakarshit Uppal, [Michael Keppler](mailto:bananeweizen@gmx.de), [Scott Jungling](mailto:scott.jungling@gmail.com), Josh Soref, Ties van de Ven, Peter Puškár, [Mike Solomon](mailto:mikesol@hey.com)
