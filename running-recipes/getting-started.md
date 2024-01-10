@@ -412,7 +412,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:2.5.4')
+    rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:2.6.0')
     rewrite('org.openrewrite.recipe:rewrite-spring')
 
     // Other project dependencies
@@ -439,7 +439,7 @@ rewrite {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.4"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.6.0"))
     rewrite("org.openrewrite.recipe:rewrite-spring")
 
     // Other project dependencies

@@ -52,7 +52,7 @@ The migrate to AssertJ recipe can be applied by adding OpenRewrite's plugin to y
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.5.4"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.6.0"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies
