@@ -61,6 +61,7 @@ deletedirectorystringrecipe
 deletewhitespacerecipe
 Develocity
 diffs
+dropwizard
 dsl
 dto
 ehcache
