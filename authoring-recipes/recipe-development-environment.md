@@ -54,7 +54,7 @@ You can import the bill of materials into either Gradle or Maven and then includ
 ```groovy
 dependencies {
     // import Rewrite's bill of materials.
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.6.0"))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.6.2"))
 
     // rewrite-java dependencies only necessary for Java Recipe development
     implementation("org.openrewrite:rewrite-java")
@@ -105,7 +105,7 @@ dependencies {
       <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-recipe-bom</artifactId>
-          <version>2.6.0</version>
+          <version>2.6.2</version>
           <type>pom</type>
           <scope>import</scope>
       </dependency>
@@ -285,7 +285,7 @@ Once your recipe module is published, either locally for testing or to an extern
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.6.4")
+    id("org.openrewrite.rewrite") version("6.7.0")
 }
 
 repositories {
@@ -329,7 +329,7 @@ If you run into errors when trying to publish and read your recipe locally, try 
             <plugin>
                 <groupId>org.openrewrite.maven</groupId>
                 <artifactId>rewrite-maven-plugin</artifactId>
-                <version>5.18.0</version>
+                <version>5.20.0</version>
                 <configuration>
                     <activeRecipes>
                         <recipe> [your recipe name] </recipe>

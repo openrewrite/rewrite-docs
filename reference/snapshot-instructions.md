@@ -62,7 +62,7 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
         <plugin>
             <groupId>org.openrewrite.maven</groupId>
             <artifactId>rewrite-maven-plugin</artifactId>
-            <version>5.18.0-SNAPSHOT</version>
+            <version>5.20.0-SNAPSHOT</version>
             <configuration>
                 <activeRecipes>
                     <recipe>org.openrewrite.github.SetupJavaUpgradeJavaVersion</recipe>
