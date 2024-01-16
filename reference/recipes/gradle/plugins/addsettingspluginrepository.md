@@ -6,11 +6,11 @@ _Add a Gradle settings repository to `settings.gradle(.kts)`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddSettingsPluginRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.13.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/AddSettingsPluginRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.13.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.13.1
+* version: 8.13.4
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.AddSettingsPluginRepositoryExample` has been defined activ
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.4")
+    id("org.openrewrite.rewrite") version("6.7.0")
 }
 
 rewrite {
@@ -65,7 +65,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe AddSettingsPluginRepository
+mod run . --recipe AddSettingsPluginRepositoryExample
 ```
 {% endcode %}
 {% endtab %}

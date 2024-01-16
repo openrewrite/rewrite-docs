@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Automatically select recipe examples from the unit test cases of a recipe](./selectrecipeexamples.md)
 * [Find OpenRewrite recipes](./findrecipes.md)
+* [Find missing `@Option` `example` values](./missingoptionexample.md)
 * [Migrate `JavaTemplate` to accommodate Rewrite 8](./migratejavatemplatetorewrite8.md)
 * [Migrate Rewrite recipes from version 7 to 8](./migraterecipetorewrite8.md)
 * [Migrate deprecated `org.openrewrite.marker.Markers#SearchResult(..)`](./migratemarkerssearchresult.md)

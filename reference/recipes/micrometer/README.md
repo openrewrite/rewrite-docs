@@ -4,6 +4,7 @@ _Recipes to perform [Micrometer](https://micrometer.io/) migration tasks._
 
 ## Categories
 
+* [Dropwizard](/reference/recipes/micrometer/dropwizard)
 * [Misk](/reference/recipes/micrometer/misk)
 
 ## Recipes

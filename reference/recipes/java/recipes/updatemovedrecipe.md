@@ -6,11 +6,11 @@ _If a recipe moved between packages, update the code reference places, declarati
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/UpdateMoved.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.13.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/UpdateMoved.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.13.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.13.1
+* version: 8.13.4
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -48,7 +48,7 @@ Now that `com.yourorg.UpdateMovedRecipeExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.4")
+    id("org.openrewrite.rewrite") version("6.7.0")
 }
 
 rewrite {
@@ -72,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.18.0</version>
+        <version>5.20.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpdateMovedRecipeExample</recipe>
@@ -91,7 +91,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe UpdateMovedRecipe
+mod run . --recipe UpdateMovedRecipeExample
 ```
 {% endcode %}
 {% endtab %}

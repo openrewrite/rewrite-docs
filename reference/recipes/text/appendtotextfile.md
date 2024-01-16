@@ -6,11 +6,11 @@ _Appends or replaces content of an existing plain text file, or creates a new on
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/AppendToTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.13.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/AppendToTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.13.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.13.1
+* version: 8.13.4
 
 ## Options
 
@@ -56,7 +56,7 @@ Now that `com.yourorg.AppendToTextFileExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.6.4")
+    id("org.openrewrite.rewrite") version("6.7.0")
 }
 
 rewrite {
@@ -80,7 +80,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.18.0</version>
+        <version>5.20.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AppendToTextFileExample</recipe>
@@ -99,7 +99,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe AppendToTextFile
+mod run . --recipe AppendToTextFileExample
 ```
 {% endcode %}
 {% endtab %}

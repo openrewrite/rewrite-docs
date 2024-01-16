@@ -35,6 +35,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Runnable::run`](./noguavadirectexecutor.md)
 * [Prefer `Set.of(..)` in Java 9 or higher](./noguavaimmutablesetof.md)
 * [Prefer `Short#compare`](./prefershortcompare.md)
+* [Prefer `String#join()` over Guava `Joiner#join()`](./preferjavastringjoin.md)
 * [Prefer `java.lang.Char#compare`](./prefercharcompare.md)
 * [Prefer `java.nio.charset.StandardCharsets`](./preferjavaniocharsetstandardcharsets.md)
 * [Prefer `java.util.Collections#synchronizedNavigableMap`](./preferjavautilcollectionssynchronizednavigablemap.md)
