@@ -72,16 +72,22 @@ As a best practice, if your recipe can be declarative (meaning it can be built o
 Want to use a UI to build declarative recipes rather than trying to figure out all the keys on your own and manually typing out the recipes? Check out the [Moderne recipe builder](https://app.moderne.io/recipes/builder).
 {% endhint %}
 
-## Refaster templates
+## Refaster template recipes
 
-Refaster templates are the "middle ground" of recipes. They offer more functionality than [declarative recipes](#declarative-recipes), but not as much as [imperative recipes](#imperative-recipes). On the other hand, compared to an imperative recipe, they're much quicker to create and require much less knowledge to get started.
+Refaster template recipes are the "middle ground" of recipes. They offer more functionality than [declarative recipes](#declarative-recipes), but not as much as [imperative recipes](#imperative-recipes). On the other hand, compared to an imperative recipe, they're much quicker to create and require much less knowledge to get started.
 
-Refaster templates can only be used to replace one expression with another – or one statement with another. Because of that, they're ideal for straightforward replacements such as converting `StringUtils.equals(..)` to `Objects.equals(..)`. These are more than just a string replacement, though; they offer compiler and type support.
+Refaster template recipes can only be used to replace one expression with another – or one statement with another. Because of that, they're ideal for straightforward replacements such as converting `StringUtils.equals(..)` to `Objects.equals(..)`. These are more than just a string replacement, though; they offer compiler and type support.
 
-Refaster templates can also be used as a starting point for more complex recipe implementations. This is due to the fact that, when you define a refaster template, an imperative recipe is what is actually created behind the scenes. You can find these imperative recipes in the `build` directory after you've built your repository.
+To make Refaster template recipes, you will create [Refaster templates](https://errorprone.info/docs/refaster) that will get automatically converted to Refaster template recipes when you build your repository.
 
 {% hint style="info" %}
-For more information on Refaster templates, check out the [Error Prone Refaster docs](https://errorprone.info/docs/refaster). Please note, though, that not all annotations available in those docs are available in Moderne.
+While these recipes support Refaster template syntax, OpenRewrite **does not** invoke Refaster or ErrorProne. Instead, we generate OpenRewrite recipes from those templates.
+{% endhint %}
+
+Refaster template recipes can also be used as a starting point for more complex recipe implementations. This is due to the fact that, when you define a Refaster template, an imperative recipe is what is actually created behind the scenes. You can find these imperative recipes in the `build` directory after you've built your repository.
+
+{% hint style="info" %}
+If you want to learn more about Refaster, in general, check out the [Error Prone Refaster docs](https://errorprone.info/docs/refaster). Please note, though, that not all annotations available in those docs are available in Moderne.
 {% endhint %}
 
 A variety of refaster templates can be found in the [StringRules](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.1.1/src/main/java/org/openrewrite/java/migrate/lang/StringRules.java#L23-L48) class in `rewrite-migrate-java`:
