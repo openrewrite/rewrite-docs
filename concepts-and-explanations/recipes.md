@@ -47,7 +47,7 @@ public class ChangeType extends Recipe {
 }
 ```
 
-This recipe accepts two configuration parameters via its constructor. Recipes may be linked together with many other recipes and run in a variety of orders, contexts, and number of cycles. Making your recipes immutable, as this one is, is a strongly recommended best practice. Any mutable state should be local to the visitor, a fresh instance of which should be returned from each invocation of `getVisitor()`.
+This recipe accepts two configuration parameters via its constructor. Recipes may be linked together with many other recipes and run in a variety of orders, and contexts. Making your recipes immutable, as this one is, is a strongly recommended best practice. Any mutable state should be local to the visitor, a fresh instance of which should be returned from each invocation of `getVisitor()`.
 
 ### Linking Recipes Together
 
@@ -310,31 +310,6 @@ Using the same "Migrate JUnit 5" recipe as an example, the flow through the pipe
 ### Execution Context
 
 The initiation of the execution pipeline requires the creation of an execution context. There are overloaded versions of `Recipe.run()` that will implicitly create an execution context if one is not provided. The execution context is a mechanism for sharing state across recipes (and their underlying visitors). `ExecutionContext` provides the ability to add and poll messages in a thread-safe manner.
-
-### Execution Cycles
-
-The recipes in the execution pipeline may produce changes that in turn cause another recipe to do further work. As a result, the pipeline may perform multiple passes (or cycles) over all the recipes in the pipeline again until either no changes are made in a pass or some maximum number of passes is reached (by default 3). This allows recipes to respond to changes made by other recipes which execute after them in the pipeline.
-
-As an example, let's assume that two recipes are added to the execution pipeline. The first recipe performs whitespace formatting on an LST and the second recipe generates additional code that is added to the same LST. Those two recipes are executed in order, so the formatting recipe is applied before the second recipe adds its generated code. The execution pipeline detects that changes have been made and executes a second pass through the recipes. During the second pass, the formatting recipe will now properly format the generated code that was added as a result of the first cycle through the execution pipeline.
-
-When large recipes are applied to large repositories, the performance impact of additional cycles can be substantial. Whenever possible recipes should complete all of their own work within a single cycle, rather than spreading it out over multiple cycles. Whenever a recipe requires more than a single cycle to complete its work, it must return `true` from `Recipe.causesAnotherCycle()` for another cycle to be added.
-
-If a [Declarative Recipe](recipes.md#declarative-recipes) needs to cause another cycle but none of its constituent recipes return `true` from `Recipe.causesAnotherCycle()`, the declarative recipe can set the property in yaml:
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.NeedsAnotherCycle
-displayName: Test
-causesAnotherCycle: true
-recipeList:
-  - com.yourorg.SomeRecipeThatDoesNotCauseAnotherCycle
-  - com.yourorg.SomeOtherRecipeThatDoesNotCauseAnotherCycle
-```
-
-{% hint style="success" %}
-Calling `Recipe.doAfterVisit()` during the execution of a recipe/visitor schedules that recipe to execute immediately after the current recipe during the current cycle. `Recipe.doAfterVisit()` does not cause an extra cycle to execute or be required.
-{% endhint %}
 
 ### Result Set
 
