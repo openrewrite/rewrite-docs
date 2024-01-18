@@ -215,7 +215,7 @@ public class SayHelloRecipe extends Recipe {
 
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {
-        // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
+        // getVisitor() should always return a new instance of the visitor
         return new SayHelloVisitor();
     }
 
@@ -410,7 +410,7 @@ public class SayHelloRecipe extends Recipe {
 
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {
-        // getVisitor() should always return a new instance of the visitor to avoid any state leaking between cycles
+        // getVisitor() should always return a new instance of the visitor
         return new SayHelloVisitor();
     }
 

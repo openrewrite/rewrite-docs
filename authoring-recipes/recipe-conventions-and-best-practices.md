@@ -29,7 +29,7 @@ By reducing a recipe's scope and minimizing the number of changes a recipe makes
 On the other hand, a change that unnecessarily clobbers formatting or is otherwise overly broad in scope will burden code reviewers and drastically reduce the rate at which they accept changes.
 
 {% hint style="success" %}
-[RewriteTest](recipe-testing.md#rewritetest-interface) helps you to verify that your recipe does not make unnecessary changes by running your recipe over multiple cycles. If you see your change being made many times it is likely your visitor fails to avoid making unnecessary changes. See the [cycle section](recipe-conventions-and-best-practices.md#stay-single-cycle) for more information.
+[RewriteTest](recipe-testing.md#rewritetest-interface) helps you to verify that your recipe does not make unnecessary changes by running your recipe over multiple cycles. If you see your change being made many times it is likely your visitor fails to avoid making unnecessary changes.
 {% endhint %}
 
 {% hint style="info" %}
@@ -117,12 +117,6 @@ If your recipe is going to work with dates, please ensure that you adhere to [RS
 
 Even very simple pieces of code have complex LST representations which are tedious and error-prone to construct by hand. Never attempt to build up LSTs by hand. Instead, you should use faculties like [JavaTemplate](../concepts-and-explanations/javatemplate.md) to turn code snippets into [LST elements](../concepts-and-explanations/lst-examples.md). For data formats like XML or JSON, it is usually more convenient to use the format's parser to turn a snippet of text into usable LST elements.
 
-### Stay single cycle
-
-OpenRewrite executes recipes in a loop. Each iteration of that loop through the full recipe list is called a cycle. This is so that if one recipe makes a change and another recipe would do something based on that change, it will have a chance to do so. This happens regardless of the order the recipes are executed in.
-
-By default, only a single cycle is executed unless some recipe in the group overrides `Recipe.causesAnotherCycle()` to return `true`. For larger recipes, such as a framework migration, the performance impact of causing another cycle can be substantially detrimental. Whenever possible, a recipe should complete all of its work the first time (which avoids the need to override `Recipe.causesAnotherCycle()`).
-
 ### State conventions
 
 You should generally avoid passing [state](https://en.wikipedia.org/wiki/State\_\(computer\_science\)) across visitors if at all possible. If you do need to pass state around, though, you should first figure out which parts of your recipe need what information.
@@ -137,9 +131,9 @@ When passing state between functions in the same visitor, there are two main opt
 
 Cursor messaging is the preferred method. With it, you can utilize `TreeVisitor.getCursor()` to access a map that arbitrary data can be read from or written to. For instance, in the [AddDependency recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), we pass data from the [overridden visitTag method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L182) to the [overridden visitDocument method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L196) in our `MavenVisitor`.
 
-The `Cursor` object is a stack that keeps track of a visitor's current progress through an LST. Once everything has been visited in a particular [cycle](../concepts-and-explanations/recipes.md#execution-cycles), all of this information is then thrown away. There is no risk of this state leaking into places that you don't want.
+The `Cursor` object is a stack that keeps track of a visitor's current progress through an LST. Once everything has been visited, all of this information is then thrown away. There is no risk of this state leaking into places that you don't want.
 
-The `ExecutionContext` object, on the other hand, has a few key differences that make it less suitable for most situations. All recipes in a run will have the same `ExecutionContext` object. This object contains a map, similar to the `Cursor`, that recipes can read from or write arbitrary data to. Unlike the `Cursor` map, though, this `ExecutionContext` map sticks around between recipe run cycles. This poses some considerable danger.
+The `ExecutionContext` object, on the other hand, has a key difference that make it less suitable for most situations. All recipes in a run will have the same `ExecutionContext` object. This object contains a map, similar to the `Cursor`, that recipes can read from or write arbitrary data to. This poses some considerable danger.
 
 Imagine one recipe author decided to write a `foo` object to the `ExecutionContext` so that the `bar` and `bash` functions could both interact with it. Now, let's imagine another recipe author, unaware of the fact that the other recipe wrote a `foo` object to the `ExecutionContext`, also decides that their recipe should read and write to a `foo` object. If those recipes get chained together, both of those recipes could break.
 
