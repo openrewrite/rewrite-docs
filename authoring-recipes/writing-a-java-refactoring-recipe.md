@@ -469,7 +469,7 @@ class FooBar {
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.sayHelloToFooBar
+name: com.yourorg.SayHelloToFooBar
 recipeList:
   - org.openrewrite.samples.SayHelloRecipe:
       fullyQualifiedClassName: com.yourorg.FooBar
