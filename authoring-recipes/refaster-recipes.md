@@ -391,3 +391,7 @@ class SimplifyTernaryTest implements RewriteTest {
     }
 }
 ```
+
+## Next steps
+
+Congrats! You now know how to make a Refaster template recipe. This is a great way of getting started with recipe development. If you find that you need a bit more in your recipes, remember that you can take the recipe you generated above and then [write your own custom visitor](/authoring-recipes/writing-a-java-refactoring-recipe.md). Also remember to check out our [recipe conventions and best practices guide](/authoring-recipes/recipe-conventions-and-best-practices.md) to ensure you're writing reliable and scalable recipes.
