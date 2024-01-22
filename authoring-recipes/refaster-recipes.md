@@ -55,7 +55,7 @@ Moderne provides a [starter recipe repository](https://github.com/moderneinc/rew
 
 ### Update your dependencies
 
-The first thing you'll need to do is update your dependencies to. Below are the minimum recommended dependencies to include in your project:
+The first thing you'll need to do is update your dependencies  and add an annotation processor. Below are the minimum recommended dependencies to include in your project:
 
 {% code title="build.gradle" %}
 ```groovy
