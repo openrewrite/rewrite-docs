@@ -72,6 +72,7 @@ Encryptors
 endcode
 endhint
 endtab
+errorprone
 equalsignorecaserecipe
 equalsrecipe
 fasterxml
