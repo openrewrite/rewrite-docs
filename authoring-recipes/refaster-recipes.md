@@ -19,7 +19,6 @@ Here is an example of what a Refaster template looks like:
 
 ```java
 import com.google.errorprone.refaster.annotation.AfterTemplate;
-import com.google.errorprone.refaster.annotation.AlsoNegation;
 import com.google.errorprone.refaster.annotation.BeforeTemplate;
 
 public class StringIsEmpty {
