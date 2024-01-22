@@ -179,7 +179,7 @@ Scanning recipes have three phases:
 // imports
 
 @Value
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class AddManagedDependency extends ScanningRecipe<AddManagedDependency.Scanned> {
   // Standard methods such as displayName and description
 

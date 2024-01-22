@@ -340,7 +340,7 @@ import org.openrewrite.java.tree.J;
 import java.util.List;
 
 @Value
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class AddOrUpdateAnnotationAttribute extends Recipe {
     @Override
     public String getDisplayName() {
@@ -389,7 +389,7 @@ import org.openrewrite.java.tree.J;
 import java.util.List;
 
 @Value
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class AddOrUpdateAnnotationAttribute extends Recipe {
     @Override
     public String getDisplayName() {
@@ -564,7 +564,7 @@ import org.openrewrite.yaml.YamlIsoVisitor;
 import org.openrewrite.yaml.tree.Yaml;
 
 @Value
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class FindExceedsResourceRatio extends Recipe {
     @Override
     public String getDisplayName() {
@@ -597,7 +597,7 @@ import org.openrewrite.yaml.YamlIsoVisitor;
 import org.openrewrite.yaml.tree.Yaml;
 
 @Value
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = false)
 public class FindExceedsResourceRatio extends Recipe {
     @Override
     public String getDisplayName() {
