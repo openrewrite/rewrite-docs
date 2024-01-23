@@ -154,9 +154,15 @@ Here's an example of what this might look like if you were to use [rewriteRun wi
 
 {% code overflow="wrap" %}
 ```bash
-gradle rewriteRun --init-script init.gradle -Drewrite.activeRecipe=org.openrewrite.FindSpringUses -Drewrite.activeStyle=com.yourorg.YesTabsNoStarImports
+gradle rewriteRun --init-script init.gradle -Drewrite.activeRecipe=org.openrewrite.FindSpringUses 
 ```
 {% endcode %}
+
+In general, it's best to default to not passing in any styles and to allow rewrite to detect the styles itself. If you need to, though, you can always append `-Drewrite.activeStyle` to the end of the command:
+
+```bash
+-Drewrite.activeStyle=com.yourorg.YesTabsNoStarImports
+```
 
 ## The "dryRun" task
 
