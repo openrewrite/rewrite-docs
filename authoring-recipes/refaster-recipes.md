@@ -1,8 +1,10 @@
 # Getting started with Refaster template recipes
 
-Refaster template recipes are recipes created from [Refaster templates](#terminology) that refactor code by doing straightforward replacements (e.g., converting `StringUtils.equals(..)` to `Objects.equals(..)`). These are more than just a string replacement, though; they offer compiler and type support. They can also be used to build more complex recipes.
+Refaster template recipes are recipes created from [Refaster templates](refaster-recipes.md#terminology) that refactor code by doing straightforward replacements (e.g., converting `StringUtils.equals(..)` to `Objects.equals(..)`). These are more than just a string replacement, though; they offer compiler and type support. They can also be used to build more complex recipes.
 
 Let's walk through everything you need to know to get started making your own.
+
+{% embed url="https://www.youtube.com/watch?v=ZuUESGhJFlc" %}
 
 ## Terminology
 
@@ -41,11 +43,11 @@ public class StringIsEmpty {
 
 ### Refaster template recipe
 
-A Refaster template recipe is an [imperative recipe](/authoring-recipes/types-of-recipes.md#imperative-recipes) that is created automatically when you build your Java classes that have one or more [Refaster templates](#refaster-template) in them.
+A Refaster template recipe is an [imperative recipe](types-of-recipes.md#imperative-recipes) that is created automatically when you build your Java classes that have one or more [Refaster templates](refaster-recipes.md#refaster-template) in them.
 
 You can combine multiple Refaster templates into one larger recipe by creating the templates as subclasses such as in the [SimplifyTernary recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SimplifyTernary.java).
 
-Refaster template recipe names are the class name + `Recipe` or `Recipes` depending on if there is more than one template in the class. For example, in the above `SimplifyTernary` recipe, there are two Refaster templates, so the final recipe name is `SimplifyTernaryRecipes`. On the other hand, if you look at the [example in the Refaster template section](#refaster-template), you can see that there is only one template and no wrapper class. Because of that, the recipe would be named `StringIsEmptyRecipe`.
+Refaster template recipe names are the class name + `Recipe` or `Recipes` depending on if there is more than one template in the class. For example, in the above `SimplifyTernary` recipe, there are two Refaster templates, so the final recipe name is `SimplifyTernaryRecipes`. On the other hand, if you look at the [example in the Refaster template section](refaster-recipes.md#refaster-template), you can see that there is only one template and no wrapper class. Because of that, the recipe would be named `StringIsEmptyRecipe`.
 
 ## How to create a Refaster recipe
 
@@ -55,7 +57,7 @@ Moderne provides a [starter recipe repository](https://github.com/moderneinc/rew
 
 ### Update your dependencies
 
-The first thing you'll need to do is update your dependencies  and add an annotation processor. Below are the minimum recommended dependencies to include in your project:
+The first thing you'll need to do is update your dependencies and add an annotation processor. Below are the minimum recommended dependencies to include in your project:
 
 {% code title="build.gradle" %}
 ```groovy
@@ -90,7 +92,7 @@ A couple of important things to note:
 
 * You should provide a `RecipeDescriptor` with a useful `name` and `description`. Doing so will make it easier for others to discover and understand your recipe.
 * Every template needs one or more `@BeforeTemplate` and exactly one `@AfterTemplate`.
-* You do not need a wrapper class if you want to just make a single template recipe. 
+* You do not need a wrapper class if you want to just make a single template recipe.
 
 ```java
 package com.yourorg;
@@ -290,11 +292,12 @@ public class SimplifyTernaryRecipes extends Recipe {
 
 }
 ```
+
 </details>
 
 ### Create tests
 
-The last step in creating a Refaster template recipe is writing tests. These tests are the same as any other recipe development so our [recipe testing guide](/authoring-recipes/recipe-testing.md) still applies here.
+The last step in creating a Refaster template recipe is writing tests. These tests are the same as any other recipe development so our [recipe testing guide](recipe-testing.md) still applies here.
 
 Here is an example of what the test class might look like for the above recipe:
 
@@ -394,4 +397,4 @@ class SimplifyTernaryTest implements RewriteTest {
 
 ## Next steps
 
-Congrats! You now know how to make a Refaster template recipe. This is a great way of getting started with recipe development. If you find that you need a bit more in your recipes, remember that you can take the recipe you generated above and then [write your own custom visitor](/authoring-recipes/writing-a-java-refactoring-recipe.md). Also remember to check out our [recipe conventions and best practices guide](/authoring-recipes/recipe-conventions-and-best-practices.md) to ensure you're writing reliable and scalable recipes.
+Congrats! You now know how to make a Refaster template recipe. This is a great way of getting started with recipe development. If you find that you need a bit more in your recipes, remember that you can take the recipe you generated above and then [write your own custom visitor](writing-a-java-refactoring-recipe.md). Also remember to check out our [recipe conventions and best practices guide](recipe-conventions-and-best-practices.md) to ensure you're writing reliable and scalable recipes.
