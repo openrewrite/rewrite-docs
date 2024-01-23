@@ -1,17 +1,24 @@
 # Running Rewrite on a Gradle project without modifying the build
 
-In this tutorial, we will apply a Rewrite recipe to a source code repository built with Gradle without modifying the build itself. We will use a [Gradle init script](https://docs.gradle.org/current/userguide/init\_scripts.html) to accomplish this.
+In this tutorial, we will apply a Rewrite recipe to a repository built with Gradle without modifying the build itself. We will use a [Gradle init script](https://docs.gradle.org/current/userguide/init_scripts.html) to accomplish this.
 
 ### Step 1: Clone a repository
 
-To have a reproducible example, we'll start with a repository generated from [Spring Initializr](https://start.spring.io). Select the "Gradle Project" option, click Generate, and extract the resultant zip file.
+To have a reproducible example, we'll start with a repository generated from [Spring Initializr](https://start.spring.io). Make sure you've selected one of the Gradle project options and Java as the language. Then press `Generate` to download a zip file:
 
 <figure><img src="../.gitbook/assets/spring-init.png" alt=""><figcaption></figcaption></figure>
 
-### Step 2: Create a Gradle init script.
+Extract the zip file and open the project in your favorite editor.
 
-Save the following init script. It does not need to be in the project directory itself. In the `rootProject` block, we are specifying a dependency that contains OpenRewrite recipes (`rewrite-java`), and are also configuring a custom recipe YAML for use. For the full range of options, see [Gradle Plugin Configuration](/reference/gradle-plugin-configuration.md).
+### Step 2: Create a Gradle init script
 
+{% hint style="warning" %}
+If you want to use an init script you **cannot** have a `rewrite` section in your `build.gradle` file. You must pick one or the other. 
+{% endhint %}
+
+Create a `init.gradle` file. It does not need to be in the project directory itself (although it will make it easier for this guide). Copy the below init script to your file:
+
+{% code title="init.gradle" %}
 ```groovy
 initscript {
     repositories {
@@ -25,11 +32,9 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite:rewrite-java")
+        rewrite("org.openrewrite.recipe:rewrite-spring:latest.release")
     }
-    rewrite {
-        activeRecipe("org.openrewrite.FindSpringUses")
-    }
+
     afterEvaluate {
         if (repositories.isEmpty()) {
             repositories {
@@ -39,10 +44,15 @@ rootProject {
     }
 }
 ```
+{% endcode %}
 
-### Step 3: Create the custom recipe YAML
+In the `rootProject` block, we specify a dependency that contains OpenRewrite Spring recipes (`rewrite-spring`). If you wanted, you could also define a `rewrite` section inside of the `rootProject` that has elements like `activeRecipe` or `activeStyle`. In general, though, it's better to [use the command line to specify the recipes or styles](#step-4-run-the-recipe) so that you can keep your init script fairly generic. 
 
-The init script as configured above depends on a `rewrite.yml` that exists in the root of the project directory.
+For a full range of options available, please see our [Gradle plugin configuration doc](/reference/gradle-plugin-configuration.md)
+
+### Step 3: (Optional) Create a custom declarative recipe
+
+If you wanted to create your own [declarative recipe](/authoring-recipes/types-of-recipes.md#declarative-recipes) to run as part of running the init script, you'll need to create a `rewrite.yml` file in the root of the project directory.
 
 Here is what that might look like:
 
@@ -58,8 +68,14 @@ recipeList:
 
 ### Step 4: Run the recipe
 
-At this point, you are able to run the Rewrite gradle plugin as normal (with an additional `--init-gradle` argument). Note that we did not modify the project's build script. This same init script can then be used to apply this same recipe to a set of projects cloned locally without changing their contents.
+At this point, you are able to run the Rewrite Gradle plugin as normal (with an additional `--init-gradle` argument). Note that we did not modify the project's build script. This same init script can then be used to apply recipes to a set of projects cloned locally without changing their contents.
 
+Here is what the Gradle command would look like if you wanted to run the above declarative recipe with the init script you created earlier (assuming you're in the same location as the `init.gradle` file):
+
+{% code overflow="wrap" %}
+```bash
+gradle rewriteRun --init-script init.gradle -Drewrite.activeRecipe=org.openrewrite.FindSpringUses
 ```
-gradle --init-script init.gradle rewriteRun
-```
+{% endcode %}
+
+For a full list of options that you can use in the Gradle command line, please see our [Gradle plugin configuration doc](/reference/gradle-plugin-configuration.md#jvm-args-that-can-be-added-to-the-gradle-command-line)

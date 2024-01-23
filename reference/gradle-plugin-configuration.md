@@ -143,6 +143,27 @@ After the goal finishes executing, run `git diff` (or your VCS system's equivale
 
 ![Example of changes made to netflix conductor by the rewriteRun task](../.gitbook/assets/rewrite-fix-git-diff-output.png)
 
+### JVM args that can be added to the Gradle command line
+
+It is possible to control the active recipe and style using JVM arguments in the command line.
+
+* To change the active recipe, you can specify either `rewrite.activeRecipe` or `rewrite.activeRecipes` (both do the same thing and take the same input).
+* To change the style, you can specify either `rewrite.activeStyle` or `rewrite.activeStyles` (both do the same thing and take the same input).
+
+Here's an example of what this might look like if you were to use [rewriteRun with an init script](/running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build.md):
+
+{% code overflow="wrap" %}
+```bash
+gradle rewriteRun --init-script init.gradle -Drewrite.activeRecipe=org.openrewrite.FindSpringUses 
+```
+{% endcode %}
+
+In general, it's best to default to not passing in any styles and to allow rewrite to detect the styles itself. If you need to, though, you can always append `-Drewrite.activeStyle` to the end of the command:
+
+```bash
+-Drewrite.activeStyle=com.yourorg.YesTabsNoStarImports
+```
+
 ## The "dryRun" task
 
 Execute `gradle rewriteDryRun` to dry-run the active recipes and print which visitors would make changes to which files in the build log. This does not alter your source files on disk at all. This goal can be used to preview the changes that would be made by the active recipes.
