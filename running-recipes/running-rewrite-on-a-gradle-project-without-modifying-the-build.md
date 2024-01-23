@@ -32,7 +32,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.3.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:latest.release")
     }
 
     afterEvaluate {
