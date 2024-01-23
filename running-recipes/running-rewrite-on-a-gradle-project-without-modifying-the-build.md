@@ -13,7 +13,7 @@ Extract the zip file and open the project in your favorite editor.
 ### Step 2: Create a Gradle init script
 
 {% hint style="warning" %}
-If you want to use an init script you **can not** have a `rewrite` section in your `build.gradle` file. You must pick one or the other. 
+If you want to use an init script you **cannot** have a `rewrite` section in your `build.gradle` file. You must pick one or the other. 
 {% endhint %}
 
 Create a `init.gradle` file. It does not need to be in the project directory itself (although it will make it easier for this guide). Copy the below init script to your file:
