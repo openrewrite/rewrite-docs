@@ -46,7 +46,7 @@ rootProject {
 ```
 {% endcode %}
 
-In the `rootProject` block, we specify a dependency that contains OpenRewrite spring recipes (`rewrite-spring`). If you wanted, you could also define a `rewrite` section inside of the `rootProject` that has elements like `activeRecipe` or `activeStyle`. In general, though, it's better to [use the command line to specify the recipes or styles](#step-4-run-the-recipe) so that you can keep your init script fairly generic. 
+In the `rootProject` block, we specify a dependency that contains OpenRewrite Spring recipes (`rewrite-spring`). If you wanted, you could also define a `rewrite` section inside of the `rootProject` that has elements like `activeRecipe` or `activeStyle`. In general, though, it's better to [use the command line to specify the recipes or styles](#step-4-run-the-recipe) so that you can keep your init script fairly generic. 
 
 For a full range of options available, please see our [Gradle plugin configuration doc](/reference/gradle-plugin-configuration.md)
 
