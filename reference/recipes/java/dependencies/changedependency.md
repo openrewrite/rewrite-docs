@@ -6,15 +6,12 @@ _Change the groupId, artifactId and/or the version of a specified Gradle or Mave
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.3.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/ChangeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.3.2
+* version: 1.4.0
 
-{% hint style="info" %}
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-{% endhint %}
 ## Options
 
 | Type | Name | Description | Example |
@@ -50,14 +47,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.3.2 in your build file:
+Now that `com.yourorg.ChangeDependencyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.4.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.7.0")
+    id("org.openrewrite.rewrite") version("6.7.1")
 }
 
 rewrite {
@@ -69,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.3.2")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.4.0")
 }
 ```
 {% endcode %}
@@ -95,7 +92,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.3.2</version>
+            <version>1.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -117,37 +114,6 @@ mod run . --recipe ChangeDependencyExample
 {% endtab %}
 {% endtabs %}
 
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Change Gradle dependency](../../gradle/changedependency.md)
-* [Change Maven dependency groupId, artifactId and/or the version](../../maven/changedependencygroupidandartifactid.md)
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.dependencies.ChangeDependency
-displayName: Change Gradle or Maven dependency
-description: Change the groupId, artifactId and/or the version of a specified Gradle or Maven dependency.
-
-
-
-
-
-
-
-recipeList:
-  - org.openrewrite.gradle.ChangeDependency:
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
-
-```
-{% endtab %}
-{% endtabs %}
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.dependencies.ChangeDependency)
@@ -157,4 +123,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io)

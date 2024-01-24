@@ -10,7 +10,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Common static analysis issues](./commonstaticanalysis.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
-* [`SimplifyTernary` Refaster recipes](./simplifyternaryrecipes.md)
+* [Simplify ternary expressions](./simplifyternaryrecipes.md)
 
 ## Recipes
 
@@ -85,6 +85,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `Optional#isPresent()` with `Optional#ifPresent()`](./replaceoptionalispresentwithifpresent.md)
 * [Replace Stream.toList() with Stream.collect(Collectors.toList())](./replacestreamtolistwithcollect.md)
 * [Replace StringBuilder.append() with String](./replacestringbuilderwithstring.md)
+* [Replace `booleanExpression ? false : true` with `!booleanExpression`](./simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
+* [Replace `booleanExpression ? true : false` with `booleanExpression`](./simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
 * [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
 * [Replace deprecated `Runtime#exec()` methods](./replacedeprecatedruntimeexecmethods.md)
 * [Replace duplicate `String` literals](./replaceduplicatestringliterals.md)
@@ -104,8 +106,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Simplify constant if branch execution](./simplifyconstantifbranchexecution.md)
 * [Simplify `java.time.Duration` units](./simplifydurationcreationunits.md)
 * [Simplify lambda blocks to expressions](./lambdablocktoexpression.md)
-* [Simplify ternary expressions](./simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
-* [Simplify ternary expressions](./simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
 * [Sorted set stream should be collected to LinkedHashSet](./sortedsetstreamtolinkedhashset.md)
 * [Static methods not final](./staticmethodnotfinal.md)
 * [Ternary operators should not be nested](./ternaryoperatorsshouldnotbenested.md)

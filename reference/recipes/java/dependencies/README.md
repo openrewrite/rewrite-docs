@@ -4,17 +4,18 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Change Gradle or Maven dependency](./changedependency.md)
 * [Remove a Gradle or Maven dependency](./removedependency.md)
 
 ## Recipes
 
 * [Add Gradle or Maven dependency](./adddependency.md)
-* [Dependency Insight Gradle or Maven](./dependencyinsight.md)
+* [Change Gradle or Maven dependency](./changedependency.md)
+* [Dependency insight for Gradle and Maven](./dependencyinsight.md)
 * [Dependency report](./dependencylist.md)
 * [Dependency resolution diagnostic](./dependencyresolutiondiagnostic.md)
 * [Find and fix vulnerable dependencies](./dependencyvulnerabilitycheck.md)
 * [Find licenses in use in third-party dependencies](./dependencylicensecheck.md)
+* [Find relocated dependencies](./relocateddependencycheck.md)
 * [Remove expired suppressions](./removeexpiredsuppressions.md)
 * [Upgrade Gradle or Maven dependency versions](./upgradedependencyversion.md)
 

@@ -6,11 +6,11 @@ _Add a Quarkus configuration property to an existing configuration file if it do
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/AddQuarkusProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/AddQuarkusProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 2.1.1
+* version: 2.1.2
 
 ## Options
 
@@ -44,14 +44,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddQuarkusPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:2.1.1 in your build file:
+Now that `com.yourorg.AddQuarkusPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:2.1.2 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.7.0")
+    id("org.openrewrite.rewrite") version("6.7.1")
 }
 
 rewrite {
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.1.2")
 }
 ```
 {% endcode %}
@@ -89,7 +89,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>2.1.1</version>
+            <version>2.1.2</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -1,42 +1,41 @@
-# Remove any-source applicability and migrate single-source applicability tests in YAML recipe
+# MBean and MXBean interfaces must be public
 
-**org.openrewrite.java.recipes.RemoveApplicabilityTestFromYamlRecipe**
+**org.openrewrite.java.migrate.MXBeanRule**
 
-_Removes any-source applicability tests from YAML recipes, as the are no longer supported in Rewrite 8 and migrates single-source applicability tests to preconditions._
-
-### Tags
-
-* Rewrite8 migration
+_Sets visibility of MBean and MXBean interfaces to public._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/RemoveApplicabilityTestFromYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.13.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/MXBeanRule.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.7.1/jar)
 
-* groupId: org.openrewrite
-* artifactId: rewrite-java
-* version: 8.13.4
+* groupId: org.openrewrite.recipe
+* artifactId: rewrite-migrate-java
+* version: 2.7.1
 
 
 ## Usage
 
-This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.7.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.7.0")
+    id("org.openrewrite.rewrite") version("6.7.1")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.recipes.RemoveApplicabilityTestFromYamlRecipe")
+    activeRecipe("org.openrewrite.java.migrate.MXBeanRule")
 }
 
 repositories {
     mavenCentral()
 }
 
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.7.1")
+}
 ```
 {% endcode %}
 2. Run `gradle rewriteRun` to run the recipe.
@@ -50,15 +49,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:latest.release") }
+    dependencies { classpath("org.openrewrite:plugin:6.7.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite:rewrite-java")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.7.1")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.recipes.RemoveApplicabilityTestFromYamlRecipe")
+        activeRecipe("org.openrewrite.java.migrate.MXBeanRule")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -85,9 +84,16 @@ rootProject {
         <version>5.20.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.recipes.RemoveApplicabilityTestFromYamlRecipe</recipe>
+            <recipe>org.openrewrite.java.migrate.MXBeanRule</recipe>
           </activeRecipes>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>2.7.1</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -98,10 +104,11 @@ rootProject {
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.recipes.RemoveApplicabilityTestFromYamlRecipe
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.MXBeanRule
 ```
 {% endcode %}
 {% endtab %}
@@ -110,7 +117,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe RemoveApplicabilityTestFromYamlRecipe
+mod run . --recipe MXBeanRule
 ```
 {% endcode %}
 {% endtab %}
@@ -118,11 +125,11 @@ mod run . --recipe RemoveApplicabilityTestFromYamlRecipe
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.recipes.RemoveApplicabilityTestFromYamlRecipe)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.MXBeanRule)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io)
+Chuka Obinabo, [Tim te Beek](mailto:timtebeek@gmail.com)

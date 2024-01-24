@@ -1,20 +1,16 @@
-# Migrate deprecated `org.openrewrite.marker.Markers#SearchResult(..)`
+# Use of `@EqualsAndHashCode` on `Recipe`
 
-**org.openrewrite.java.recipes.MigrateMarkersSearchResult**
+**org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper**
 
-_Methods of `org.openrewrite.marker.Markers#SearchResult(..)` are deprecated and removed in rewrite 8, use `SearchResult.found()` instead._
-
-### Tags
-
-* Rewrite8 migration
+_Recipes are value objects, so should use `@EqualsAndHashCode(callSuper = false)`. While in most cases recipes do not extend other classes and so the option is moot, as a matter of stylistic consistency and to enforce the idea that recipes are value objects, this value should be set to `false`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/MigrateMarkersSearchResult.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.13.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.14.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.13.4
+* version: 8.14.0
 
 
 ## Usage
@@ -26,11 +22,11 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.7.0")
+    id("org.openrewrite.rewrite") version("6.7.1")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.recipes.MigrateMarkersSearchResult")
+    activeRecipe("org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper")
 }
 
 repositories {
@@ -58,7 +54,7 @@ rootProject {
         rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.recipes.MigrateMarkersSearchResult")
+        activeRecipe("org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -85,7 +81,7 @@ rootProject {
         <version>5.20.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.recipes.MigrateMarkersSearchResult</recipe>
+            <recipe>org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -101,7 +97,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.recipes.MigrateMarkersSearchResult
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper
 ```
 {% endcode %}
 {% endtab %}
@@ -110,7 +106,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe MigrateMarkersSearchResult
+mod run . --recipe RecipeEqualsAndHashCodeCallSuper
 ```
 {% endcode %}
 {% endtab %}
@@ -118,11 +114,11 @@ mod run . --recipe MigrateMarkersSearchResult
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.recipes.MigrateMarkersSearchResult)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Kun Li](mailto:kun@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com)

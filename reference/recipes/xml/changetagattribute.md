@@ -6,11 +6,11 @@ _Alters XML attribute value on a specified element._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.13.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttribute.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.14.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.13.4
+* version: 8.14.0
 
 ## Options
 
@@ -20,6 +20,7 @@ _Alters XML attribute value on a specified element._
 | `String` | attributeName | The name of the attribute whose value is to be changed. | `name` |
 | `String` | newValue | The new value to be used for key specified by `attributeName`, Set to null if you want to remove the attribute. | `newfoo.bar.attribute.value.string` |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `foo.bar.attribute.value.string` |
+| `Boolean` | regex | *Optional*. Default false. If true, `oldValue` will be interpreted as a Regular Expression, and capture group contents will be available in `newValue`. |  |
 
 
 ## Usage
@@ -49,7 +50,7 @@ Now that `com.yourorg.ChangeTagAttributeExample` has been defined activate it in
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.7.0")
+    id("org.openrewrite.rewrite") version("6.7.1")
 }
 
 rewrite {
@@ -107,4 +108,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Mark Brophy, [Kun Li](mailto:kun@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io)
+Mark Brophy, Adriano Machado, [Kun Li](mailto:kun@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io)

@@ -1,16 +1,16 @@
-# `SimplifyTernary` Refaster recipes
+# Simplify ternary expressions
 
 **org.openrewrite.staticanalysis.SimplifyTernaryRecipes**
 
-_Refaster template recipes for `org.openrewrite.staticanalysis.SimplifyTernary`._
+_Simplifies various types of ternary expressions to improve code readability._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SimplifyTernary.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.2.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SimplifyTernary.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.2.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.2.1
+* version: 1.2.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.2.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.2.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.7.0")
+    id("org.openrewrite.rewrite") version("6.7.1")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.2.2")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.7.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.7.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.2.1")
+        rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.2.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.staticanalysis.SimplifyTernaryRecipes")
@@ -94,7 +94,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.2.1</version>
+            <version>1.2.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -130,8 +130,8 @@ mod run . --recipe SimplifyTernaryRecipes
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Simplify ternary expressions](../staticanalysis/simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
-* [Simplify ternary expressions](../staticanalysis/simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
+* [Replace `booleanExpression ? true : false` with `booleanExpression`](../staticanalysis/simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
+* [Replace `booleanExpression ? false : true` with `!booleanExpression`](../staticanalysis/simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
 
 {% endtab %}
 
@@ -140,8 +140,8 @@ mod run . --recipe SimplifyTernaryRecipes
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.staticanalysis.SimplifyTernaryRecipes
-displayName: `SimplifyTernary` Refaster recipes
-description: Refaster template recipes for `org.openrewrite.staticanalysis.SimplifyTernary`.
+displayName: Simplify ternary expressions
+description: Simplifies various types of ternary expressions to improve code readability.
 recipeList:
   - org.openrewrite.staticanalysis.SimplifyTernaryRecipes$SimplifyTernaryTrueFalseRecipe
   - org.openrewrite.staticanalysis.SimplifyTernaryRecipes$SimplifyTernaryFalseTrueRecipe
