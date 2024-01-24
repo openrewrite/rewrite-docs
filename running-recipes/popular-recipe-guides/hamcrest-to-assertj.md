@@ -26,7 +26,7 @@ In order to run the migration recipe, you will need to update your project with 
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.3.0</version>
+            <version>2.3.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.3.1")
 }
 ```
 {% endcode %}

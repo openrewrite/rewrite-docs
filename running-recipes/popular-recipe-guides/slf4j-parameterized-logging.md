@@ -49,7 +49,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.4.1</version>
+            <version>2.4.2</version>
           </dependency>
         </dependencies>
       </plugin>

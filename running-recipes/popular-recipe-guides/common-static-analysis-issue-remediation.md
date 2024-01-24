@@ -23,7 +23,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/statica
     <dependency>
       <groupId>org.openrewrite.recipe</groupId>
       <artifactId>rewrite-static-analysis</artifactId>
-      <version>1.2.1</version>
+      <version>1.2.2</version>
     </dependency>
   </dependencies>
 </plugin>
@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.2.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.2.2")
 }
 ```
 {% endcode %}

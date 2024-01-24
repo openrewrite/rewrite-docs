@@ -87,7 +87,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>2.3.0</version>
+          <version>2.3.1</version>
         </dependency>
       </dependencies>
     </plugin>
