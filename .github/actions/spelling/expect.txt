@@ -148,6 +148,7 @@ kotlin
 ksh
 kts
 launchdarkly
+Lermitage
 linebreak
 liquibase
 logback
@@ -176,6 +177,7 @@ nimbusds
 nio
 NSG
 nullability
+oga
 OIDC
 okhttp
 okio
