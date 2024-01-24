@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.3.1")
 }
 ```
 {% endcode %}
@@ -44,7 +44,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.3.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.3.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2")
@@ -81,7 +81,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.3.0</version>
+            <version>5.3.1</version>
           </dependency>
         </dependencies>
       </plugin>

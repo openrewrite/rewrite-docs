@@ -25,7 +25,7 @@ The migrate to Jakarta EE 10 recipe can be applied by adding OpenRewrite's plugi
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-migrate-java</artifactId>
-          <version>2.7.0</version>
+          <version>2.7.1</version>
         </dependency>
       </dependencies>
     </plugin>
