@@ -6,9 +6,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [org.openrewrite.java.dependencies.RelocatedDependencyCheck](https://docs.openrewrite.org/recipes/java/dependencies/relocateddependencycheck): Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.
-
-This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes. 
+* [org.openrewrite.java.dependencies.RelocatedDependencyCheck](https://docs.openrewrite.org/recipes/java/dependencies/relocateddependencycheck): Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others. This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes. 
 * [org.openrewrite.java.migrate.MXBeanRule](https://docs.openrewrite.org/recipes/java/migrate/mxbeanrule): Sets visibility of MBean and MXBean interfaces to public. 
 * [org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper](https://docs.openrewrite.org/recipes/java/recipes/recipeequalsandhashcodecallsuper): Recipes are value objects, so should use `@EqualsAndHashCode(callSuper = false)`. While in most cases recipes do not extend other classes and so the option is moot, as a matter of stylistic consistency and to enforce the idea that recipes are value objects, this value should be set to `false`. 
 
