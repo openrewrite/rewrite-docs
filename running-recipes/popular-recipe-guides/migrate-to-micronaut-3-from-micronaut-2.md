@@ -9,7 +9,7 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.7.0")
+    id("org.openrewrite.rewrite") version("6.8.0")
 }
 
 rewrite {
@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.6.2"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.6.3"))
     rewrite("org.openrewrite.recipe:rewrite-micronaut")
 }
 ```
@@ -37,7 +37,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.20.0</version>
+        <version>5.21.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.Micronaut2to3Migration</recipe>
