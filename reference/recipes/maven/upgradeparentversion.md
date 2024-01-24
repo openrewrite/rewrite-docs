@@ -57,7 +57,7 @@ Now that `com.yourorg.UpgradeParentVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.20.0</version>
+        <version>5.21.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeParentVersionExample</recipe>

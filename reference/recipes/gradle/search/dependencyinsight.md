@@ -66,7 +66,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.7.1")
+    id("org.openrewrite.rewrite") version("6.8.0")
 }
 
 rewrite {
