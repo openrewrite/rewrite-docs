@@ -10,7 +10,7 @@ Fortunately, OpenRewrite has added some functionality to help with this predicam
 
 ## Manually copying jars and using the `classpathFromResources` function
 
-In your project, you can put many different versions (jars) of the same library in the `src/main/resources/META-INF/rewrite` directory. Then, in your tests, you can specify which one(s) you want to use by utilizing the `classpathFromResources` function.
+In your project, you can put many different versions (jars) of the same library in the `src/main/resources/META-INF/rewrite/classpath` directory. Then, in your tests, you can specify which one(s) you want to use by utilizing the `classpathFromResources` function.
 
 For instance, if you wanted to default to using `junit-4.13.2` and `mockito-core-3.12.4` in your tests, you could add this to your test file:
 
@@ -23,7 +23,7 @@ public void defaults(RecipeSpec spec) {
 }
 ```
 
-If you wanted to use a different version of these libraries in another test or in another file, all you would need to do is add the corresponding jar to the `src/main/resources/META-INF/rewrite` directory and specify the new version in the `classpathFromResources` function.
+If you wanted to use a different version of these libraries in another test or in another file, all you would need to do is add the corresponding jar to the `src/main/resources/META-INF/rewrite/classpath` directory and specify the new version in the `classpathFromResources` function.
 
 ### OpenRewrite recipe library
 
