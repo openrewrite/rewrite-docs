@@ -61,6 +61,7 @@ deletedirectorystringrecipe
 deletewhitespacerecipe
 Develocity
 diffs
+Dockerfiles
 dropwizard
 dsl
 dto
@@ -170,6 +171,7 @@ mockito
 multimodule
 mvc
 mvn
+mvnw
 mycompany
 NACHA
 netflix
@@ -279,6 +281,7 @@ Webflux
 websecurityconfigureradapter
 wiremock
 wlp
+WORKDIR
 workflows
 writestringtofilerecipe
 Wsoc
