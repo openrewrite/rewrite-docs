@@ -4,13 +4,13 @@
 
 With that being said, there _are_ some situations where you may want to do this. For example, you may want to automate replacing the base images in your Dockerfiles as part of running a Java upgrade. As Dockerfiles are not parsed into an LST, modifying them with text recipes won't cause any harm.
 
-Let's walk through an example of how to use a text recipe to modify a Dockerfile to change the base Java image. If you have an existing repository that you've run recipes on before, feel free to use that. Or, if you'd like to clone a repository follow along in, please feel free to checkout or [spring-petclinic-migration repository](https://github.com/openrewrite/spring-petclinic-migration) that many of the other tutorials use.
+Let's walk through an example of how to use a text recipe to modify a Dockerfile to change the base Java image. If you have an existing repository that you've run recipes on before, feel free to use that. Or, if you'd like to clone a sample repository, please checkout our [spring-petclinic-migration repository](https://github.com/openrewrite/spring-petclinic-migration) that many of the other tutorials use.
 
 ## Step 1: Create an example Dockerfile in the root of the project
 
 To begin, let's pretend we're on Java 17 and we're wanting to upgrade to Java 21. We'll create a simple Dockerfile that uses a Java 17 JDK as the base image:
 
-```Dockerfile
+```Docker
 FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
@@ -89,7 +89,7 @@ repositories {
 
 Either run `gradle rewriteRun` or `mvn rewrite:run` and you should see that the Dockerfile is updated to look like:
 
-```Dockerfile
+```Docker
 FROM eclipse-temurin:21.0.2_13-jdk-jammy
 
 WORKDIR /app
