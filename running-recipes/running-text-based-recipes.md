@@ -10,7 +10,7 @@ Let's walk through an example of how to use a text recipe to modify a Dockerfile
 
 To begin, let's pretend we're on Java 17 and we're wanting to upgrade to Java 21. We'll create a simple Dockerfile that uses a Java 17 JDK as the base image:
 
-```Docker
+```docker
 FROM eclipse-temurin:17-jdk-jammy
 
 WORKDIR /app
@@ -89,7 +89,7 @@ repositories {
 
 Either run `gradle rewriteRun` or `mvn rewrite:run` and you should see that the Dockerfile is updated to look like:
 
-```Docker
+```docker
 FROM eclipse-temurin:21.0.2_13-jdk-jammy
 
 WORKDIR /app
