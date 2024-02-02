@@ -273,6 +273,10 @@ There are two main pieces to this:
    * That we don't change existing `hello()` methods.
    * That we _do_ add a `hello()` method to a class that matches that fully qualified class name and doesn't have an existing `hello()` method.
 
+For more information on visitors, please see our [visitors doc](/concepts-and-explanations/visitors.md). You may also find it beneficial to watch our video explaining visitors and how they work:
+
+{% embed url="https://www.youtube.com/watch?v=BLCW9Ql7swI" %}
+
 ### Figure out which LSTs are needed
 
 Before we begin writing any code, it's a good idea to figure out which LSTs contain the data we need and which LSTs we might need to change to get the results we want. Using an LST that's too broad in scope will result in us having to do much more work than necessary, but using an LST that's too narrow in scope will result in us being unable to make the changes we need to.

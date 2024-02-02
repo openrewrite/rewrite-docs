@@ -12,6 +12,8 @@ To help you understand more about visitors, this guide will walk you through num
 Being familiar with the [visitor pattern](https://en.wikipedia.org/wiki/Visitor\_pattern#Java\_example) will help you understand OpenRewrite's visitors better as they are heavily inspired by that design pattern.
 {% endhint %}
 
+{% embed url="https://www.youtube.com/watch?v=BLCW9Ql7swI" %}
+
 ## Key components
 
 All OpenRewrite visitors share a common structure and life cycle. In order to effectively work with visitors, it's necessary to understand these topics.
