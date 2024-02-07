@@ -6,7 +6,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [org.openrewrite.FindDeserializationErrors](https://docs.openrewrite.org/recipes/finddeserializationerrors): Produces a data table collecting all deserialization errors of serialized LSTs. 
+* [org.openrewrite.FindDeserializationErrors](https://docs.openrewrite.org/recipes/core/finddeserializationerrors): Produces a data table collecting all deserialization errors of serialized LSTs. 
 * [org.openrewrite.groovy.format.GStringCurlyBraces](https://docs.openrewrite.org/recipes/groovy/format/gstringcurlybraces): In Groovy [GStrings](https://docs.groovy-lang.org/latest/html/api/groovy/lang/GString.html), curly braces are optional for single variable expressions. This recipe adds them, so that the expression is always surrounded by curly braces. 
 * [org.openrewrite.java.migrate.RemoveIllegalSemicolons](https://docs.openrewrite.org/recipes/java/migrate/removeillegalsemicolons): Remove semicolons after package declarations and imports, no longer accepted in Java 21 as of [JDK-8027682](https://bugs.openjdk.org/browse/JDK-8027682). 
 * [org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10](https://docs.openrewrite.org/recipes/java/migrate/jakarta/removalsservletjakarta10): This recipe replaces the classes and methods deprecated in Jakarta Servlet 6.0 
