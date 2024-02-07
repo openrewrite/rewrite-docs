@@ -1613,7 +1613,7 @@
       * [Find YAML entries](reference/recipes/yaml/search/findkey.md)
       * [Find YAML properties](reference/recipes/yaml/search/findproperty.md)
 * [Changelog](changelog/changelog.md)
-* [8.15.2 Release (2024-02-07)](/changelog/8-15-2-Release.md)
+  * [8.15.2 Release (2024-02-07)](/changelog/8-15-2-Release.md)
   * [8.14.0 Release (2024-01-24)](/changelog/8-14-0-Release.md)
   * [8.13.4 Release (2024-01-16)](changelog/8-13-4-Release.md)
   * [8.13.1 Release (2024-01-09)](changelog/8-13-1-Release.md)
