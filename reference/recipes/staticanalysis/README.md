@@ -142,6 +142,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [`hashCode()` should not be called on array instances](./removehashcodecallsfromarrayinstances.md)
 * [`indexOf` should not compare greater than zero](./indexofshouldnotcomparegreaterthanzero.md)
 * [`indexOf()` replaceable by `contains()`](./indexofreplaceablebycontains.md)
+* [`new BigDecimal(double)` should not be used](./bigdecimaldoubleconstructorrecipe.md)
 * [`switch` statements should have at least 3 `case` clauses](./minimumswitchcases.md)
 
 

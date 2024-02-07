@@ -6,11 +6,11 @@ _Replace `System.out` and `System.err` print statements with a logger._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/SystemPrintToLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.4.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/SystemPrintToLogging.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.4.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.4.2
+* version: 2.4.3
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -20,21 +20,21 @@ This recipe is composed of more than one recipe. If you want to customize the se
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `Boolean` | addLogger | *Optional*. Add a logger field to the class if it isn't already present. |  |
-| `String` | loggerName | *Optional*. The name of the logger to use when generating a field. |  |
+| `String` | loggerName | *Optional*. The name of the logger to use when generating a field. | `log` |
 | `String` | loggingFramework | *Optional*. The logging framework to use. Valid options: `SLF4J`, `Log4J1`, `Log4J2`, `JUL`, `COMMONS` |  |
 | `String` | level | *Optional*. The logging level to turn `System.out` print statements into. Valid options: `trace`, `debug`, `info` |  |
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.4.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.4.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.0")
+    id("org.openrewrite.rewrite") version("6.8.2")
 }
 
 rewrite {
@@ -46,7 +46,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.4.2")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.4.3")
 }
 ```
 {% endcode %}
@@ -61,12 +61,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.8.2") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.4.2")
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.4.3")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.logging.SystemPrintToLogging")
@@ -93,7 +93,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.21.0</version>
+        <version>5.22.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.SystemPrintToLogging</recipe>
@@ -103,7 +103,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.4.2</version>
+            <version>2.4.3</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -174,4 +174,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Adriano Machado
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado

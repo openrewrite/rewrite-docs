@@ -6,11 +6,17 @@ _List the committers on a repository._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/search/FindCommitters.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.14.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/search/FindCommitters.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.15.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.14.0
+* version: 8.15.2
+
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `String` | fromDate | *Optional*. Optional. Take into account only commits since this date (inclusive). Default will be the entire history. | `2023-01-01` |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -20,6 +26,10 @@ _The distinct set of committers per repository._
 
 | Column Name | Description |
 | ----------- | ----------- |
+| Name | The name of the committer. |
+| Email | The email of the committer. |
+| Last commit | The date of this committer's last commit. |
+| Number of commits | The number of commits made by this committer. |
 
 ### Commits by day
 
@@ -27,6 +37,10 @@ _The commit activity by day by committer._
 
 | Column Name | Description |
 | ----------- | ----------- |
+| Name | The name of the committer. |
+| Email | The email of the committer. |
+| Date | The date of the day. |
+| Number of commits | The number of commits made by this committer on this day. |
 
 
 ## Usage
@@ -38,7 +52,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.0")
+    id("org.openrewrite.rewrite") version("6.8.2")
 }
 
 rewrite {
@@ -94,7 +108,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.21.0</version>
+        <version>5.22.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.search.FindCommitters</recipe>
@@ -137,4 +151,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Peter Streef](mailto:peter@moderne.io)

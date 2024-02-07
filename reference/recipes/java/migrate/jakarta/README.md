@@ -50,6 +50,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate xmlns entries in `web-fragment.xml` files](./javaxwebfragmentxmltojakartawebfragmentxml.md)
 * [Migrate xmlns entries in `web.xml` files](./javaxwebxmltojakartawebxml.md)
 * [Remove `getComment` and `getVersion` methods](./servletcookiebehaviorchangerfc6265.md)
+* [Replace  deprecated Jakarta Servlet methods and classes](./removalsservletjakarta10.md)
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](./removeduicomponentconstant.md)
 * [Replace `ResourceResolver` with `ResourceHandler`](./removedjakartafacesresourceresolver.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](./wswsocservercontainerdeprecation.md)
@@ -64,8 +65,12 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
 * [Migrate Bean Validation messages](./beanvalidationmessages.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
+* [Remove `Bean.isNullable()`](./removebeanisnullable.md)
 * [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](./applicationpathwildcardnolongeraccepted.md)
 * [Rename CDI Extension to Jakarta](./javaxtojakartacdiextensions.md)
+* [Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`](./updateaddannotatedtypes.md)
+* [Update `fireEvent()` and `createInjectionTarget()` calls](./updatebeanmanagermethods.md)
+* [Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`](./updategetrealpath.md)
 * [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)
 
 

@@ -1,16 +1,16 @@
-# Use `JavaParser.Builder` when constructing `JavaTemplate`
+# Groovy GString curly braces
 
-**org.openrewrite.java.recipes.UseJavaParserBuilderInJavaTemplate**
+**org.openrewrite.groovy.format.GStringCurlyBraces**
 
-_Because we can now clone `JavaParser.Builder`, there is no need to fully build the parser inside a `Supplier<JavaParser>`. This also makes room for `JavaTemplate` to add shared `JavaTypeCache` implementations to parsers used to compile templates._
+_In Groovy [GStrings](https://docs.groovy-lang.org/latest/html/api/groovy/lang/GString.html), curly braces are optional for single variable expressions. This recipe adds them, so that the expression is always surrounded by curly braces._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/UseJavaParserBuilderInJavaTemplate.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.14.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/GStringCurlyBraces.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/8.15.2/jar)
 
 * groupId: org.openrewrite
-* artifactId: rewrite-java
-* version: 8.14.0
+* artifactId: rewrite-groovy
+* version: 8.15.2
 
 
 ## Usage
@@ -22,11 +22,11 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.0")
+    id("org.openrewrite.rewrite") version("6.8.2")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.recipes.UseJavaParserBuilderInJavaTemplate")
+    activeRecipe("org.openrewrite.groovy.format.GStringCurlyBraces")
 }
 
 repositories {
@@ -54,7 +54,7 @@ rootProject {
         rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.recipes.UseJavaParserBuilderInJavaTemplate")
+        activeRecipe("org.openrewrite.groovy.format.GStringCurlyBraces")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -78,10 +78,10 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.21.0</version>
+        <version>5.22.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.recipes.UseJavaParserBuilderInJavaTemplate</recipe>
+            <recipe>org.openrewrite.groovy.format.GStringCurlyBraces</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -97,7 +97,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 {% code title="shell" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.recipes.UseJavaParserBuilderInJavaTemplate
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.groovy.format.GStringCurlyBraces
 ```
 {% endcode %}
 {% endtab %}
@@ -106,7 +106,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe UseJavaParserBuilderInJavaTemplate
+mod run . --recipe GStringCurlyBraces
 ```
 {% endcode %}
 {% endtab %}
@@ -114,11 +114,11 @@ mod run . --recipe UseJavaParserBuilderInJavaTemplate
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.recipes.UseJavaParserBuilderInJavaTemplate)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.groovy.format.GStringCurlyBraces)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io)

@@ -9,7 +9,7 @@ _Apply best practices to OpenRewrite recipes._
 * [Find missing `@Option` `example` values](./missingoptionexample.md)
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)
 * [Set default estimated effort](./setdefaultestimatedeffortperoccurrence.md)
-* [Use `JavaParser.Builder` when constructing `JavaTemplate`](./usejavaparserbuilderinjavatemplate.md)
+* [Use `Tree.randomId()` in LST constructors](./usetreerandomid.md)
 * [Use a standard name for `ExecutionContext`](./executioncontextparametername.md)
 * [Use of `@EqualsAndHashCode` on `Recipe`](./recipeequalsandhashcodecallsuper.md)
 

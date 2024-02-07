@@ -7,12 +7,6 @@ _Recipes to search and transform Kotlin._
 * [Cleanup](/reference/recipes/kotlin/cleanup)
 * [Format](/reference/recipes/kotlin/format)
 
-## Composite Recipes
-
-_Recipes that include further recipes, often including the individual recipes below._
-
-* [Kotlin Common Static Analysis](./staticanalysis.md)
-
 ## Recipes
 
 * [Find Kotlin sources and collect data metrics](./findkotlinsources.md)

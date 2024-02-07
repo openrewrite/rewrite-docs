@@ -6,11 +6,11 @@ _Find and updates the Java compatibility for the Gradle project._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateJavaCompatibility.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.14.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateJavaCompatibility.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.15.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.14.0
+* version: 8.15.2
 
 ## Options
 
@@ -20,6 +20,8 @@ _Find and updates the Java compatibility for the Gradle project._
 | `CompatibilityType` | compatibilityType | *Optional*. The compatibility type to change Valid options: `source`, `target` |  |
 | `DeclarationStyle` | declarationStyle | *Optional*. The desired style to write the new version as when being written to the `sourceCompatibility` or `targetCompatibility` variables. Default, match current source style. (ex. Enum: `JavaVersion.VERSION_11`, Number: 11, or String: "11") Valid options: `Enum`, `Number`, `String` |  |
 | `Boolean` | allowDowngrade | *Optional*. Allow downgrading the Java version. |  |
+| `Boolean` | addSourceCompatibilityIfMissing | *Optional*. Adds Source Compatibility if one is not found. |  |
+| `Boolean` | addTargetCompatibilityIfMissing | *Optional*. Adds Target Compatibility if one is not found. |  |
 
 
 ## Usage
@@ -46,7 +48,7 @@ Now that `com.yourorg.UpdateJavaCompatibilityExample` has been defined activate 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.0")
+    id("org.openrewrite.rewrite") version("6.8.2")
 }
 
 rewrite {
@@ -81,4 +83,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Ken Little](mailto:krl49700@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

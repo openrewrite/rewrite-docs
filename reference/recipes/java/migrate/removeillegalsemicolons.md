@@ -1,32 +1,32 @@
-# Remediate OWASP A10:2021 Server-side request forgery (SSRF)
+# Remove illegal semicolons
 
-**org.openrewrite.java.security.OwaspA10**
+**org.openrewrite.java.migrate.RemoveIllegalSemicolons**
 
-_OWASP [A10:2021](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/) Server-Side Request Forgery (SSRF)_
+_Remove semicolons after package declarations and imports, no longer accepted in Java 21 as of [JDK-8027682](https://bugs.openjdk.org/browse/JDK-8027682)._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/owasp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.2.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/RemoveIllegalSemicolons.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.8.0/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-java-security
-* version: 2.2.2
+* artifactId: rewrite-migrate-java
+* version: 2.8.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.2.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.8.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.0")
+    id("org.openrewrite.rewrite") version("6.8.2")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.security.OwaspA10")
+    activeRecipe("org.openrewrite.java.migrate.RemoveIllegalSemicolons")
 }
 
 repositories {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.2.2")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.8.0")
 }
 ```
 {% endcode %}
@@ -49,15 +49,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.8.2") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-java-security:2.2.2")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.8.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.security.OwaspA10")
+        activeRecipe("org.openrewrite.java.migrate.RemoveIllegalSemicolons")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -81,17 +81,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.21.0</version>
+        <version>5.22.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.security.OwaspA10</recipe>
+            <recipe>org.openrewrite.java.migrate.RemoveIllegalSemicolons</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-java-security</artifactId>
-            <version>2.2.2</version>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>2.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -108,7 +108,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-security:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.security.OwaspA10
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.RemoveIllegalSemicolons
 ```
 {% endcode %}
 {% endtab %}
@@ -117,39 +117,19 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe OwaspA10
+mod run . --recipe RemoveIllegalSemicolons
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Enable CSRF attack prevention](../../java/security/spring/csrfprotection.md)
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.security.OwaspA10
-displayName: Remediate OWASP A10:2021 Server-side request forgery (SSRF)
-description: OWASP [A10:2021](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/) Server-Side Request Forgery (SSRF)
-
-recipeList:
-  - org.openrewrite.java.security.spring.CsrfProtection:
-
-```
-{% endtab %}
-{% endtabs %}
-
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.security.OwaspA10)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.RemoveIllegalSemicolons)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+[Tim te Beek](mailto:tim@moderne.io)

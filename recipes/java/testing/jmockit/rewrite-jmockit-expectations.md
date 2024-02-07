@@ -1,2 +1,0 @@
-# Rewrite JMockit Expectations
-

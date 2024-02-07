@@ -61,6 +61,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Java 6](./upgradetojava6.md)
 * [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
 * [Remove explicit casts on `Arrays.asList(..).toArray()`](./castarraysaslisttolist.md)
+* [Remove illegal semicolons](./removeillegalsemicolons.md)
 * [Remove methods calls](./removemethodinvocation.md)
 * [Replace DTO method parameters with data elements](./dontoverfetchdto.md)
 * [Replace `String` literal](./replacestringliteralvalue.md)

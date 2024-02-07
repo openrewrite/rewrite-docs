@@ -11,11 +11,11 @@ _This recipe will apply changes commonly needed when migrating from JMockit to M
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/jmockit.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.3.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/jmockit.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.3.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.3.1
+* version: 2.3.2
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.3.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.3.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.0")
+    id("org.openrewrite.rewrite") version("6.8.2")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.3.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.3.2")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.8.2") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.3.1")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.3.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.jmockit.JMockitToMockito")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.21.0</version>
+        <version>5.22.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.jmockit.JMockitToMockito</recipe>
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.3.1</version>
+            <version>2.3.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -135,6 +135,7 @@ mod run . --recipe JMockitToMockito
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Rewrite JMockit Expectations](../../../java/testing/jmockit/jmockitexpectationstomockito.md)
 * [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `mockit.Mocked`
   * newFullyQualifiedTypeName: `org.mockito.Mock`
@@ -147,7 +148,6 @@ mod run . --recipe JMockitToMockito
 * [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `mockit.integration.junit5.JMockitExtension`
   * newFullyQualifiedTypeName: `org.mockito.junit.jupiter.MockitoExtension`
-* [Rewrite JMockit Expectations](../../../java/testing/jmockit/jmockitexpectationstomockito.md)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.mockito`
   * artifactId: `mockito-core`
@@ -168,6 +168,7 @@ tags:
   - jmockit
   - testing
 recipeList:
+  - org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockito
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: mockit.Mocked
       newFullyQualifiedTypeName: org.mockito.Mock
@@ -180,7 +181,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: mockit.integration.junit5.JMockitExtension
       newFullyQualifiedTypeName: org.mockito.junit.jupiter.MockitoExtension
-  - org.openrewrite.java.testing.jmockit.JMockitExpectationsToMockito
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.mockito
       artifactId: mockito-core

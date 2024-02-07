@@ -1,32 +1,35 @@
-# Remediate OWASP A04:2021 Insecure design
+# OpenRewrite best practices
 
-**org.openrewrite.java.security.OwaspA04**
+**org.openrewrite.recipes.OpenRewriteBestPractices**
 
-_OWASP [A04:2021](https://owasp.org/Top10/A04_2021-Insecure_Design/) focuses on risks related to design and architectural flaws,  with a call for more use of threat modeling, secure design patterns, and reference architectures. This recipe seeks to remediate these vulnerabilities._
+_Best practices for OpenRewrite recipe development._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/owasp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.2.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/1.2.0/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-java-security
-* version: 2.2.2
+* artifactId: rewrite-recommendations
+* version: 1.2.0
 
+{% hint style="info" %}
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+{% endhint %}
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.2.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations:1.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.0")
+    id("org.openrewrite.rewrite") version("6.8.2")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.security.OwaspA04")
+    activeRecipe("org.openrewrite.recipes.OpenRewriteBestPractices")
 }
 
 repositories {
@@ -34,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.2.2")
+    rewrite("org.openrewrite.recipe:rewrite-recommendations:1.2.0")
 }
 ```
 {% endcode %}
@@ -49,15 +52,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.8.2") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-java-security:2.2.2")
+        rewrite("org.openrewrite.recipe:rewrite-recommendations:1.2.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.security.OwaspA04")
+        activeRecipe("org.openrewrite.recipes.OpenRewriteBestPractices")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -81,17 +84,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.21.0</version>
+        <version>5.22.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.security.OwaspA04</recipe>
+            <recipe>org.openrewrite.recipes.OpenRewriteBestPractices</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-java-security</artifactId>
-            <version>2.2.2</version>
+            <artifactId>rewrite-recommendations</artifactId>
+            <version>1.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -108,7 +111,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-security:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.security.OwaspA04
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-recommendations:RELEASE -Drewrite.activeRecipes=org.openrewrite.recipes.OpenRewriteBestPractices
 ```
 {% endcode %}
 {% endtab %}
@@ -117,7 +120,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe OwaspA04
+mod run . --recipe OpenRewriteBestPractices
 ```
 {% endcode %}
 {% endtab %}
@@ -127,7 +130,8 @@ mod run . --recipe OwaspA04
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Improper privilege management](../../java/security/improperprivilegemanagement.md)
+* [Java Recipe best practices](../recipes/javarecipebestpractices.md)
+* [Recipe testing best practices](../recipes/recipetestingbestpractices.md)
 
 {% endtab %}
 
@@ -135,12 +139,12 @@ mod run . --recipe OwaspA04
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.security.OwaspA04
-displayName: Remediate OWASP A04:2021 Insecure design
-description: OWASP [A04:2021](https://owasp.org/Top10/A04_2021-Insecure_Design/) focuses on risks related to design and architectural flaws,  with a call for more use of threat modeling, secure design patterns, and reference architectures. This recipe seeks to remediate these vulnerabilities.
-
+name: org.openrewrite.recipes.OpenRewriteBestPractices
+displayName: OpenRewrite best practices
+description: Best practices for OpenRewrite recipe development.
 recipeList:
-  - org.openrewrite.java.security.ImproperPrivilegeManagement
+  - org.openrewrite.recipes.JavaRecipeBestPractices
+  - org.openrewrite.recipes.RecipeTestingBestPractices
 
 ```
 {% endtab %}
@@ -148,11 +152,8 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.security.OwaspA04)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.recipes.OpenRewriteBestPractices)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
-
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com)

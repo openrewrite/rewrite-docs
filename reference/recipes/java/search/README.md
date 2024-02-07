@@ -9,6 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Find annotations](./findannotations.md)
+* [Find class hierarchy](./findclasshierarchy.md)
 * [Find empty classes](./findemptyclasses.md)
 * [Find fields](./findfields.md)
 * [Find fields of type](./findfieldsoftype.md)

@@ -6,19 +6,19 @@ _When an API has been designed as a builder, use it that way rather than as a se
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.2.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.2.2
+* version: 1.3.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | builderType | Fully qualified name of the Builder |  |
+| `String` | builderType | Fully qualified name of the Builder | `org.example.Buildable.Builder` |
 | `Boolean` | immutable | *Optional*. The builder is immutable if you must assign the result of calls to intermediate variables or use directly. Defaults to true as many purpose-built builders will be immutable. |  |
-| `String` | builderCreator | *Optional*. The method that creates the builder instance, which may not be a method of the builder itself. |  |
+| `String` | builderCreator | *Optional*. The method that creates the builder instance, which may not be a method of the builder itself. | `org.example.Buildable builder()` |
 
 
 ## Usage
@@ -34,18 +34,19 @@ name: com.yourorg.UseAsBuilderExample
 displayName: Use the builder pattern where possible example
 recipeList:
   - org.openrewrite.staticanalysis.UseAsBuilder:
-      builderType: null
+      builderType: org.example.Buildable.Builder
+      builderCreator: org.example.Buildable builder()
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseAsBuilderExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.2.2 in your build file:
+Now that `com.yourorg.UseAsBuilderExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.3.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.0")
+    id("org.openrewrite.rewrite") version("6.8.2")
 }
 
 rewrite {
@@ -57,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.2.2")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.3.0")
 }
 ```
 {% endcode %}
@@ -73,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.21.0</version>
+        <version>5.22.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseAsBuilderExample</recipe>
@@ -83,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.2.2</version>
+            <version>1.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -114,4 +115,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [srmalkan](mailto:smitmalkan99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [srmalkan](mailto:smitmalkan99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

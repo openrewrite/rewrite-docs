@@ -24,5 +24,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](./replacestreamcollectwithtolist.md)
 * [Replace `iterator().next()` with `getFirst()`](./iteratornext.md)
 * [`Stream<Optional>` idiom recipe](./optionalstreamrecipe.md)
+* [Use `getFirst()` instead of `stream().findFirst().orElseThrow()`](./streamfindfirst.md)
 
 

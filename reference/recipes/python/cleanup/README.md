@@ -6,4 +6,8 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Common static analysis issues](./commonstaticanalysis.md)
 
+## Recipes
+
+* [Combine startswith and endswith](./startswithendswith.md)
+
 
