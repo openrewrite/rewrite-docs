@@ -72,6 +72,7 @@ Elasti
 Encryptors
 endcode
 endhint
+endswith
 endtab
 errorprone
 equalsignorecaserecipe
@@ -85,6 +86,7 @@ googlecode
 gpg
 gpgsign
 gradlew
+gstring
 guice
 hamcrest
 hashcode
@@ -245,11 +247,13 @@ Springbatch
 springdoc
 springframework
 SSRF
+startswith
 staticanalysis
 Stewjon
 striprecipe
 subdir
 subpackages
+superclasses
 supertypes
 taglib
 temurin
