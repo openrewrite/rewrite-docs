@@ -14,6 +14,8 @@ Being familiar with the [visitor pattern](https://en.wikipedia.org/wiki/Visitor\
 
 {% embed url="https://www.youtube.com/watch?v=BLCW9Ql7swI" %}
 
+{% embed url="https://www.youtube.com/watch?v=4azJ9Y9De5M" %}
+
 ## Key components
 
 All OpenRewrite visitors share a common structure and life cycle. In order to effectively work with visitors, it's necessary to understand these topics.
