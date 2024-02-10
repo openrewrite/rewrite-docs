@@ -18,10 +18,17 @@ In the meantime, one way to work around this is to add a profile on the parent P
         <version>5.22.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.cleanup.Cleanup</recipe>
+            <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
           </activeRecipes>
           <failOnDryRunResults>true</failOnDryRunResults>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-static-analysis</artifactId>
+            <version>1.3.0</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
