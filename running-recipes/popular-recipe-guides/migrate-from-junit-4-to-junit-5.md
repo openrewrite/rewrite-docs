@@ -25,7 +25,7 @@ If your project is a Spring or Spring-Boot project take a dependency on [rewrite
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-spring</artifactId>
-          <version>4.35.0</version>
+          <version>5.4.0</version>
         </dependency>
       </dependencies>
     </plugin>
