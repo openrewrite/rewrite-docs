@@ -13,7 +13,27 @@
 Yes. There are two main options for this:
 
 1. (**Recommended**) Use some of the common [preconditions](/reference/yaml-format-reference.md#preconditions) to limit the files or directories the recipe runs on.
-2. With the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin), you can run recipes with the `-Drewrite.exclusions` parameter to exclude certain directories such as in the following example: `mvn rewrite:run -Drewrite.exclusions="folderA,folderB"`.
+2. Use exclusions to limit the folders the recipe can run on:
+
+{% tabs %}
+{% tab title="Gradle" %}
+In your `build.gradle` file:
+
+```groovy
+rewrite {
+    exclusions = ["folderA", "folderB"]
+}
+```
+{% endtab %}
+
+{% tab title="Maven" %}
+In the command line:
+
+```shell
+mvn rewrite:run -Drewrite.exclusions="folderA,folderB"
+```
+{% endtab %}
+{% endtabs %}
 
 ## I'm getting `java.lang.OutOfMemoryError: Java heap space` when running OpenRewrite. 
 
