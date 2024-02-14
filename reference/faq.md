@@ -8,6 +8,13 @@
 
 {% embed url="https://www.youtube.com/watch?v=Q-ej2lCJHRs" %}
 
+## Is it possible to update only a few files with a recipe rather than all of them?
+
+Yes. There are two main options for this:
+
+1. Use some of the common [preconditions](/reference/yaml-format-reference.md#preconditions) to limit the files or directories the recipe runs on.
+2. With the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin), you can run recipes with the `-Drewrite.exclusions` parameter to exclude certain directories such as in: `mvn rewrite:run -Drewrite.exclusions="folderA,folderB"`
+
 ## I'm getting `java.lang.OutOfMemoryError: Java heap space` when running OpenRewrite. 
 
 You can either increase the size of the Java heap or build and run recipes with the [Moderne CLI](https://docs.moderne.io/).
