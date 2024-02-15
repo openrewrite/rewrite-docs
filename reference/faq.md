@@ -13,7 +13,11 @@
 Yes. There are two main options for this:
 
 1. (**Recommended**) Use some of the common [preconditions](/reference/yaml-format-reference.md#preconditions) to limit the files or directories the recipe runs on.
-2. Use exclusions to limit the folders the recipe can run on:
+2. Use exclusions to limit the folders the recipe can run on: 
+
+{% hint style="info" %}
+Exclusion paths are paths relative to the project root, not the system file path.
+{% endhint %}
 
 {% tabs %}
 {% tab title="Gradle" %}
