@@ -16,7 +16,7 @@ Yes. There are two main options for this:
 2. Use exclusions to limit the folders the recipe can run on: 
 
 {% hint style="info" %}
-Exclusion paths are paths relative to the project root, not the system file path.
+Exclusion paths are relative to the project root, not the system file path.
 {% endhint %}
 
 {% tabs %}
