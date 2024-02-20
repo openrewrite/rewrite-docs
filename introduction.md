@@ -1,6 +1,8 @@
-# Introduction to OpenRewrite
+---
+description: Large-scale automated source code refactoring*
+---
 
-## **Large-scale automated source code refactoring**
+# Introduction to OpenRewrite
 
 OpenRewrite is an automated refactoring ecosystem for source code, enabling developers to effectively eliminate technical debt within their repositories.
 
