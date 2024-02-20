@@ -1,6 +1,6 @@
 # Supported languages
 
-As of September 2023, OpenRewrite supports:
+As of February 2024, OpenRewrite supports:
 
 ## Programming languages
 
@@ -33,5 +33,5 @@ Many different frameworks are supported such as (but not limited to):
 * Jakarta
 
 {% hint style="info" %}
-[Moderne](https://docs.moderne.io/) offers support for additional languages. If you want to see the roadmap of language support on Moderne, please see the [Moderne language roadmap](https://docs.moderne.io/references/language-roadmap).
+[Moderne](https://docs.moderne.io/) offers support for additional languages (such as JavaScript, Python, Ruby, COBOL, etc). If you want to see all the languages and tools Moderne supports, consider checking out the [Moderne support languages doc](https://docs.moderne.io/administrator-documentation/moderne-platform/references/supported-languages). Or, if you want to see what's in the pipeline for Moderne, you can check out the [Moderne language roadmap](https://docs.moderne.io/references/language-roadmap).
 {% endhint %}
