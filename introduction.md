@@ -1,5 +1,5 @@
 ---
-description: Large-scale automated source code refactoring*
+description: Large-scale automated source code refactoring
 ---
 
 # Introduction to OpenRewrite
