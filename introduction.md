@@ -1,7 +1,5 @@
 # Introduction to OpenRewrite
 
-![OpenRewrite](.gitbook/assets/OpenRewrite.gif)
-
 ## **Large-scale automated source code refactoring**
 
 OpenRewrite is an automated refactoring ecosystem for source code, enabling developers to effectively eliminate technical debt within their repositories.
@@ -11,6 +9,8 @@ It consists of an auto-refactoring engine that runs prepackaged, open-source ref
  While the original focus was on the Java language, the OpenRewrite community is continuously [expanding language and framework coverage](/reference/supported-languages.md). Thousands of great individuals and teams are working together to make software seamless to update and continuously secure.
 
 ## How does OpenRewrite work?
+
+{% embed url="https://www.youtube.com/watch?v=uViRlX-RahA" %}
 
 OpenRewrite works by making changes to [Lossless Semantic Trees](concepts-and-explanations/lossless-semantic-trees.md) (LSTs) that represent your source code and printing the modified trees back into source code. You can then review the changes in your code and commit. Modifications to the LST are performed in [Visitors](concepts-and-explanations/visitors.md) and visitors are aggregated into [Recipes](concepts-and-explanations/recipes.md). OpenRewrite recipes make minimally invasive changes to your source code that honor the original formatting.
 
