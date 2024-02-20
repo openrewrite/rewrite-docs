@@ -35,6 +35,7 @@ cloudsuitability
 CMK
 cmn
 Cobertura
+codebases
 codeowners
 committers
 compilationunit
