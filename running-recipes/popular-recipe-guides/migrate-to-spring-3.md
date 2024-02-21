@@ -12,7 +12,7 @@ The [Spring 3 migration recipe](/reference/recipes/java/spring/boot3/upgradespri
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.2")
+    id("org.openrewrite.rewrite") version("6.8.4")
 }
 
 rewrite {
@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.4.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.5.0")
 }
 ```
 {% endcode %}
@@ -39,12 +39,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.8.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.4.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.5.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2")
@@ -71,7 +71,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.22.0</version>
+        <version>5.23.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2</recipe>
@@ -81,7 +81,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.4.0</version>
+            <version>5.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
