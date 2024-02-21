@@ -134,6 +134,7 @@ Jndi
 jni
 Johnzon
 jpa
+JPATo
 jre
 JREDo
 JRight
