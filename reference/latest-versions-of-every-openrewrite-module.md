@@ -40,9 +40,11 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | [org.openrewrite.recipe:rewrite-micronaut](https://github.com/openrewrite/rewrite-micronaut)                                    | 2.2.4     | <!--Update-->
 | [org.openrewrite.recipe.rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java)                              | 2.9.0     | <!--Update-->
 | [org.openrewrite.recipe.rewrite-ok-http](https://github.com/openrewrite/rewrite-okhttp)                                         | 0.1.4    |
+| [org.openrewrite.recipe.rewrite-openapi](https://github.com/openrewrite/rewrite-openapi)                                        | 0.0.2    |
 | [org.openrewrite.recipe:rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus)                                        | 2.2.1     | <!--Update-->
 | [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring)                                          | 5.5.0     | <!--Update-->
 | [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis)                        | 1.3.1     | <!--Update-->
 | [org.openrewrite.recipe:rewrite-sql](https://github.com/openrewrite/rewrite-sql)                                                | 1.1.5     |
+| [org.openrewrite.recipe:rewrite-templating](https://github.com/openrewrite/rewrite-templating)                                  | 1.5.1     |
 | [org.openrewrite.recipe:rewrite-terraform](https://github.com/openrewrite/rewrite-terraform)                                    | 2.1.5     |
 | [org.openrewrite.recipe:rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks)                  | 2.4.1     | <!--Update-->
