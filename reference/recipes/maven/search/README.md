@@ -6,6 +6,7 @@
 * [Effective dependencies](./effectivedependencies.md)
 * [Effective dependencies](./effectivemanageddependencies.md)
 * [Find Maven dependency](./finddependency.md)
+* [Find Maven dependency management entry](./findmanageddependency.md)
 * [Find Maven plugin](./findplugin.md)
 * [Find Maven project properties](./findproperties.md)
 * [Find effective maven settings](./findmavensettings.md)

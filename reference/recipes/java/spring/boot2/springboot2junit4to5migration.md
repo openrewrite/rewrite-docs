@@ -14,11 +14,11 @@ _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUni
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.4.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.5.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.4.0
+* version: 5.5.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -26,14 +26,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.4.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.5.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.2")
+    id("org.openrewrite.rewrite") version("6.8.4")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.4.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.5.0")
 }
 ```
 {% endcode %}
@@ -60,12 +60,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.8.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.4.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.5.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration")
@@ -92,7 +92,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.22.0</version>
+        <version>5.23.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -102,7 +102,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.4.0</version>
+            <version>5.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -192,4 +192,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Tyler Van Gorder, [magicwerk](mailto:magicwerk@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), nbruno, [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), John Burns, Kun Li, [Michael Keppler](mailto:bananeweizen@gmx.de), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Peter Puškár, [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)
+Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), Tyler Van Gorder, [magicwerk](mailto:magicwerk@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), nbruno, [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), John Burns, Kun Li, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Peter Puškár, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)

@@ -6,11 +6,11 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.3.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.3.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.3.4
+* version: 0.3.5
 
 ## Options
 
@@ -19,7 +19,8 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 | `String` | pluginGroupId | The first part of a dependency coordinate 'io.jenkins.plugins:ARTIFACT_ID:VERSION'. | `io.jenkins.plugins` |
 | `String` | pluginArtifactId | The second part of a dependency coordinate 'GROUP_ID:jackson2-api:VERSION'. | `jackson2-api` |
 | `String` | pluginVersion | An exact version number. | `1981.v17df70e84a_a_1` |
-| `Set` | replaces | The set of library coordinates replaced by this API Plugin. |  |
+                        | `Set` | replaces | The set of library coordinates replaced by this API Plugin. | `groupId: org.apache.commons
+artifactId: commons-text` |
 
 
 ## Usage
@@ -38,18 +39,19 @@ recipeList:
       pluginGroupId: io.jenkins.plugins
       pluginArtifactId: jackson2-api
       pluginVersion: 1981.v17df70e84a_a_1
-      replaces: null
+      replaces: groupId: org.apache.commons
+artifactId: commons-text
 ```
 {% endcode %}
 
-Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:0.3.4 in your build file:
+Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:0.3.5 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.2")
+    id("org.openrewrite.rewrite") version("6.8.4")
 }
 
 rewrite {
@@ -61,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.3.4")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.3.5")
 }
 ```
 {% endcode %}
@@ -77,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.22.0</version>
+        <version>5.23.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceLibrariesWithApiPluginExample</recipe>
@@ -87,7 +89,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.3.4</version>
+            <version>0.3.5</version>
           </dependency>
         </dependencies>
       </plugin>

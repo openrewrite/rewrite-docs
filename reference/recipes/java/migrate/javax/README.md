@@ -14,6 +14,9 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add scope annotation to injected classes](./addscopetoinjectedclass.md)
+* [Attributes with automatically generated values require configuration](./addtablegenerator.md)
+* [Migrate from OpenJPA to EclipseLink JPA](./openjpatoeclipselink.md)
+* [Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0](./httpsessioninvalidate.md)
 * [Use `javax.lang.model.util.AbstractAnnotationValueVisitor9`](./migrateabstractannotationvaluevisitor6to9.md)
 * [Use `javax.lang.model.util.AbstractElementVisitor9`](./migrateabstractelementvisitor6to9.md)
 * [Use `javax.lang.model.util.AbstractTypeVisitor9`](./migrateabstracttypevisitor6to9.md)

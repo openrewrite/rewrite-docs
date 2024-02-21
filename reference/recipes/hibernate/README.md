@@ -16,5 +16,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [@Type annotation type parameter migration](./typeannotationparameter.md)
+* [Replace `@LazyCollection` with `jakarta.persistence.FetchType`](./replacelazycollectionannotation.md)
 
 

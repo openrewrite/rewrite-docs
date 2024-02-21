@@ -9,5 +9,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Rewrite JMockit Expectations](./jmockitexpectationstomockito.md)
+* [Rewrite JMockit Mocked Variable](./jmockitmockedvariabletomockito.md)
 
 

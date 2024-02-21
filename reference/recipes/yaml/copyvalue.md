@@ -2,22 +2,24 @@
 
 **org.openrewrite.yaml.CopyValue**
 
-_Copies a YAML value from one key to another. The existing key/value pair remains unaffected by this change. If either the source or destination key path does not exist, no value will be copied. Furthermore, copies are limited to scalar values, not whole YAML blocks._
+_Copies a YAML value from one key to another. The existing key/value pair remains unaffected by this change. Attempts to merge the copied value into the new key if it already exists. Attempts to create the new key if it does not exist._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.15.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.17.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.15.2
+* version: 8.17.1
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | oldKeyPath | A [JsonPath](https://github.com/json-path/JsonPath) expression to locate a YAML key/value pair to copy. | `$.source.kind` |
-| `String` | newKey | A [JsonPath](https://github.com/json-path/JsonPath) expression for where the new value should be copied to. | `$.dest.kind` |
+| `String` | oldFilePath | *Optional*. The file path to the YAML file to copy the value from. If `null` then the value will be copied from any yaml file it appears within. | `src/main/resources/application.yaml` |
+| `String` | newKey | A [JsonPath](https://github.com/json-path/JsonPath) expression defining where the value should be written. | `$.dest.kind` |
+| `String` | newFilePath | *Optional*. The file path to the YAML file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.yaml` |
 
 
 ## Usage
@@ -34,7 +36,9 @@ displayName: Copy YAML value example
 recipeList:
   - org.openrewrite.yaml.CopyValue:
       oldKeyPath: $.source.kind
+      oldFilePath: src/main/resources/application.yaml
       newKey: $.dest.kind
+      newFilePath: src/main/resources/application.yaml
 ```
 {% endcode %}
 
@@ -45,7 +49,7 @@ Now that `com.yourorg.CopyValueExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.2")
+    id("org.openrewrite.rewrite") version("6.8.4")
 }
 
 rewrite {
@@ -69,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.22.0</version>
+        <version>5.23.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CopyValueExample</recipe>
@@ -101,6 +105,3 @@ mod run . --recipe CopyValueExample
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
-
-## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Aaron Gershman, [Mike Solomon](mailto:mike@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

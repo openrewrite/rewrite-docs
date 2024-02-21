@@ -10,48 +10,27 @@ _Zip slip is an arbitrary file overwrite critical vulnerability, which typically
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/ZipSlip.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/ZipSlip.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.3.0
-
-## Options
-
-| Type | Name | Description | Example |
-| -- | -- | -- | -- |
-| `boolean` | debug | Debug and output intermediate results. | `true` |
+* version: 2.4.0
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ZipSlipExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.ZipSlipExample
-displayName: Zip slip example
-recipeList:
-  - org.openrewrite.java.security.ZipSlip:
-      debug: false
-```
-{% endcode %}
-
-Now that `com.yourorg.ZipSlipExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.3.0 in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.4.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.2")
+    id("org.openrewrite.rewrite") version("6.8.4")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.ZipSlipExample")
+    activeRecipe("org.openrewrite.java.security.ZipSlip")
 }
 
 repositories {
@@ -59,13 +38,44 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.4.0")
 }
 ```
 {% endcode %}
 2. Run `gradle rewriteRun` to run the recipe.
 {% endtab %}
-{% tab title="Maven" %}
+
+{% tab title="Gradle init script" %}
+1. Create a file named `init.gradle` in the root of your project.
+{% code title="init.gradle" %}
+```groovy
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:6.8.4") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-java-security:2.4.0")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.security.ZipSlip")
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+{% endcode %}
+2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+{% endtab %}
+{% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
 ```xml
@@ -75,17 +85,17 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.22.0</version>
+        <version>5.23.1</version>
         <configuration>
           <activeRecipes>
-            <recipe>com.yourorg.ZipSlipExample</recipe>
+            <recipe>org.openrewrite.java.security.ZipSlip</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.3.0</version>
+            <version>2.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,12 +106,22 @@ dependencies {
 {% endcode %}
 2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
+
+{% tab title="Maven Command Line" %}
+{% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-security:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.security.ZipSlip
+```
+{% endcode %}
+{% endtab %}
 {% tab title="Moderne CLI" %}
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe ZipSlipExample
+mod run . --recipe ZipSlip
 ```
 {% endcode %}
 {% endtab %}
@@ -116,4 +136,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Patrick](mailto:patway99@gmail.com)
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com)

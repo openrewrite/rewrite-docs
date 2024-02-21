@@ -16,6 +16,7 @@ _Basic building blocks for transforming Java code._
 * [Search](/reference/recipes/java/search)
 * [Security](/reference/recipes/java/security)
 * [Spring](/reference/recipes/java/spring)
+* [Springdoc](/reference/recipes/java/springdoc)
 * [Testing](/reference/recipes/java/testing)
 
 ## Composite Recipes

@@ -6,11 +6,11 @@ _Checks whether a text block may contain SQL, and if so, formats the text accord
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FormatSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.1.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FormatSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.1.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-sql
-* version: 1.1.4
+* version: 1.1.5
 
 ## Options
 
@@ -24,14 +24,14 @@ _Checks whether a text block may contain SQL, and if so, formats the text accord
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-sql:1.1.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-sql:1.1.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.2")
+    id("org.openrewrite.rewrite") version("6.8.4")
 }
 
 rewrite {
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-sql:1.1.4")
+    rewrite("org.openrewrite.recipe:rewrite-sql:1.1.5")
 }
 ```
 {% endcode %}
@@ -58,12 +58,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.8.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-sql:1.1.4")
+        rewrite("org.openrewrite.recipe:rewrite-sql:1.1.5")
     }
     rewrite {
         activeRecipe("org.openrewrite.sql.FormatSql")
@@ -90,7 +90,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.22.0</version>
+        <version>5.23.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.sql.FormatSql</recipe>
@@ -100,7 +100,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-sql</artifactId>
-            <version>1.1.4</version>
+            <version>1.1.5</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -141,4 +141,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Mahatma_Fatal_Error
+Mahatma_Fatal_Error, [Tim te Beek](mailto:timtebeek@gmail.com)

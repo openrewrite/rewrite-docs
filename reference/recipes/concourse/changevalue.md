@@ -6,19 +6,19 @@ _Change every value matching the key pattern._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.1.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.1.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 2.1.4
+* version: 2.1.5
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | keyPath | The key to match and replace. | `$.resources[?(@.type == 'git')].source.uri` |
-| `String` | oldValue | *Optional*. Only change if the existing value matches. |  |
-| `String` | newValue | New value to replace the old value with. |  |
+| `String` | oldValue | *Optional*. Only change if the existing value matches. | `https://github.com/openrewrite/rewrite0` |
+| `String` | newValue | New value to replace the old value with. | `git@github.com:openrewrite/rewrite1.git` |
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pipeline*.yml` |
 
 
@@ -36,19 +36,20 @@ displayName: Change Concourse value example
 recipeList:
   - org.openrewrite.concourse.ChangeValue:
       keyPath: $.resources[?(@.type == 'git')].source.uri
-      newValue: null
+      oldValue: https://github.com/openrewrite/rewrite0
+      newValue: git@github.com:openrewrite/rewrite1.git
       fileMatcher: '**/pipeline*.yml'
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.1.4 in your build file:
+Now that `com.yourorg.ChangeValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.1.5 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.2")
+    id("org.openrewrite.rewrite") version("6.8.4")
 }
 
 rewrite {
@@ -60,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:2.1.4")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:2.1.5")
 }
 ```
 {% endcode %}
@@ -76,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.22.0</version>
+        <version>5.23.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeValueExample</recipe>
@@ -86,7 +87,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>2.1.4</version>
+            <version>2.1.5</version>
           </dependency>
         </dependencies>
       </plugin>

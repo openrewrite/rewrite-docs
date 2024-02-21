@@ -59,6 +59,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Force indentation to either tabs or spaces](./usetabsorspaces.md)
 * [MBean and MXBean interfaces must be public](./mxbeanrule.md)
 * [Migrate to Java 6](./upgradetojava6.md)
+* [Migrate to JavaEE6](./javaee6.md)
 * [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
 * [Remove explicit casts on `Arrays.asList(..).toArray()`](./castarraysaslisttolist.md)
 * [Remove illegal semicolons](./removeillegalsemicolons.md)

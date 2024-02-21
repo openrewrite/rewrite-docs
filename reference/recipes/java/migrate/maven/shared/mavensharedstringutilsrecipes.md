@@ -6,11 +6,11 @@ _Refaster template recipes for `org.openrewrite.java.migrate.maven.shared.MavenS
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/shared/MavenSharedStringUtils.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.8.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/shared/MavenSharedStringUtils.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.9.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.8.0
+* version: 2.9.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,7 +18,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.8.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 
 {% tab title="Maven POM" %}
@@ -31,7 +31,7 @@ This recipe has no required configuration options. It can be activated by adding
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.22.0</version>
+        <version>5.23.1</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.maven.shared.MavenSharedStringUtilsRecipes</recipe>
@@ -41,7 +41,7 @@ This recipe has no required configuration options. It can be activated by adding
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.8.0</version>
+            <version>2.9.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -77,20 +77,20 @@ mod run . --recipe MavenSharedStringUtilsRecipes
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Replace `StringUtils.abbreviate(String, int)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$abbreviaterecipe.md)
-* [Replace `StringUtils.capitalise(String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$capitaliserecipe.md)
-* [Replace `StringUtils.defaultString(Object)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$defaultstringrecipe.md)
-* [Replace `StringUtils.defaultString(Object, String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$defaultstringfallbackrecipe.md)
-* [Replace `StringUtils.deleteWhitespace(String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$deletewhitespacerecipe.md)
-* [Replace `StringUtils.equalsIgnoreCase(String, String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$equalsignorecaserecipe.md)
-* [Replace `StringUtils.equals(String, String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$equalsrecipe.md)
-* [Replace `StringUtils.lowerCase(String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$lowercaserecipe.md)
-* [Replace `StringUtils.replace(String, String, String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$replacerecipe.md)
-* [Replace `StringUtils.reverse(String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$reverserecipe.md)
-* [Replace `StringUtils.split(String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$splitrecipe.md)
-* [Replace `StringUtils.strip(String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$striprecipe.md)
-* [Replace `StringUtils.trim(String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$trimrecipe.md)
-* [Replace `StringUtils.upperCase(String)` with JDK internals](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$uppercaserecipe.md)
+* [Replace `StringUtils.abbreviate(String, int)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$abbreviaterecipe.md)
+* [Replace `StringUtils.capitalise(String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$capitaliserecipe.md)
+* [Replace `StringUtils.defaultString(Object)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$defaultstringrecipe.md)
+* [Replace `StringUtils.defaultString(Object, String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$defaultstringfallbackrecipe.md)
+* [Replace `StringUtils.deleteWhitespace(String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$deletewhitespacerecipe.md)
+* [Replace `StringUtils.equalsIgnoreCase(String, String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$equalsignorecaserecipe.md)
+* [Replace `StringUtils.equals(String, String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$equalsrecipe.md)
+* [Replace `StringUtils.lowerCase(String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$lowercaserecipe.md)
+* [Replace `StringUtils.replace(String, String, String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$replacerecipe.md)
+* [Replace `StringUtils.reverse(String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$reverserecipe.md)
+* [Replace `StringUtils.split(String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$splitrecipe.md)
+* [Replace `StringUtils.strip(String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$striprecipe.md)
+* [Replace `StringUtils.trim(String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$trimrecipe.md)
+* [Replace `StringUtils.upperCase(String)` with JDK provided API](../../../../java/migrate/maven/shared/mavensharedstringutilsrecipes$uppercaserecipe.md)
 
 {% endtab %}
 
