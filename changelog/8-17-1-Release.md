@@ -5,7 +5,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 {% endhint %}
 
 ## New Artifacts
-* rewrite-openapi
+* [rewrite-openapi](https://github.com/openrewrite/rewrite-openapi/)
 
 ## New Recipes
 
