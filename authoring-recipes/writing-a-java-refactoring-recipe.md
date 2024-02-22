@@ -28,6 +28,8 @@ class FooBar {
 }
 ```
 
+{% embed url="https://www.youtube.com/watch?v=O3Se9Q25GCg" %}
+
 ## Prerequisites
 
 This guide assumes you've already set up your [Recipe Development Environment](recipe-development-environment.md) and that you are familiar with writing Java code.
