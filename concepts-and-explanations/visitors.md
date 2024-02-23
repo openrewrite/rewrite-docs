@@ -1,20 +1,24 @@
 # Visitors
 
-In OpenRewrite [recipes](recipes.md), a visitor is where the core logic lives. You can think of a visitor as an event handler that describes "what" to do and "when" to do it.
-
-As OpenRewrite traverses through the [Lossless Semantic Tree](lossless-semantic-trees.md) (LST) that your code is translated into, it will rely on the "events" you handle in your visitor to determine what, if anything, should be changed or returned. You only need to handle the "events" that are relevant to your recipe.
-
-For instance, if you wanted to write a recipe that renamed a Java package to be lowercase, your visitor would only need to worry about the `visitPackage` "event". All other "events" such as `visitClassDeclaration` or `visitVariableDeclarations` could be safely ignored.
+In OpenRewrite [recipes](recipes.md), a visitor is where the core logic lives. It determines what elements should be updated and when.
 
 To help you understand more about visitors, this guide will walk you through numerous concepts and examples. By the end, you should feel more confident in working with and implementing visitors in your own recipes.
-
-{% hint style="success" %}
-Being familiar with the [visitor pattern](https://en.wikipedia.org/wiki/Visitor\_pattern#Java\_example) will help you understand OpenRewrite's visitors better as they are heavily inspired by that design pattern.
-{% endhint %}
 
 {% embed url="https://www.youtube.com/watch?v=BLCW9Ql7swI" %}
 
 {% embed url="https://www.youtube.com/watch?v=4azJ9Y9De5M" %}
+
+## Background
+
+In the [visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern#Java_example), you have an object structure to navigate (LSTs), the client application doing the navigation, and visitors that specify what operation to perform on a given instance of a class.
+
+When recipes are executed, you can think of it as a client application navigating the LST structure. The default implementation of the `visitElement` method supplied with OpenRewrite traverses the tree depth-first. The recipe contains one or more overrides of `visitElement` and, therefore, allows you to intercept this type of LST element as the tree is being navigated.
+
+Given that the code (and LSTs) are deeply nested structures, it is important that the whole LST tree is traversed. If not, you will likely miss the LST element you want to change. This is why you need to call `super.visitElement` from your implementation. If you don't, you will not traverse down the tree.
+
+The reason we didn't automate LST navigation (i.e., made it into an event-driven system) and left it to recipe authors to implement, is that sometimes it is hard to know if the subtree needs to be navigated _before_ changing a particular element (in which case you'd call `super.visitElement` first and gather some data from the subtree to inform your decision about how to change the element) or if the subtree needs to be navigated _after_ changing the element, or if you want to traverse the tree more than one or even skip it altogether.
+
+Because an LST is a deeply nested structure, a full traversal of the LST is required to collect items of the same type (like all classes). Therefore, if we want to collect all classes, we need to traverse the LST. As recipes may want to act on more than one element type, we cannot have a system that returns all classes or all methods without implementing the traversal.
 
 ## Key components
 
