@@ -4,6 +4,10 @@ OpenRewrite's modules are published to [Maven Central](https://search.maven.org/
 
 It is highly recommended that developers use the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-recipe-bom) to align the versions of Rewrite's modules to ensure compatibility. The use of the "bill of materials" means that a developer will only need to specify explicit versions of the BOM and the build plugins:
 
+<!-- DO NOT AUTO UPDATE THESE VERSIONS -->
+<!-- 2.1.2 -->
+<!-- 2.2.0 -->
+
 | Module                                                                                                                          | Version   |
 | --------------------------------------------------------------------------------------------------------------------------------| ----------|
 | [**org.openrewrite:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                                     | **2.7.1** |

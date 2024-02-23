@@ -54,7 +54,7 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 
 * Update the version numbers of the `rewrite-maven-plugin` and all of its dependencies to use the latest snapshot versions.
   Snapshot versions are 1 minor version ahead of the [latest release](/reference/latest-versions-of-every-openrewrite-module.md) with `-SNAPSHOT` added to the end.
-  For instance, if the latest release is `2.1.2`, the snapshot version would be `2.2.0-SNAPSHOT`:
+  For instance, if the latest release is `2.1.2`, the snapshot version would be `2.2.0-SNAPSHOT`: <!--DO NOT BUMP-->
 
 ```xml
 <build>
