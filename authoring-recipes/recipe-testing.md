@@ -10,6 +10,8 @@ To help you create tests that meet those standards, this guide will:
 * [Explain the key classes that make up the tests](recipe-testing.md#rewritetest-interface)
 * [Give some additional advanced testing tips](recipe-testing.md#advanced-recipe-testing)
 
+{% embed url="https://www.youtube.com/watch?v=JAC9UIE80fs" %}
+
 ## Prerequisites
 
 This guide assumes that:
