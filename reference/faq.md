@@ -39,6 +39,22 @@ mvn rewrite:run -Drewrite.exclusions="folderA,folderB"
 {% endtab %}
 {% endtabs %}
 
+## Is it possible to apply recipes on a step-by-step basis (pausing after certain recipes, so smaller commits can be made)?
+
+This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](/reference/recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 180 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
+
+This nuance is why we don't support intermediate steps to commit results; it would simply be too much to handle feasibly. Furthermore, we'd have to write out to disk repeatedly, which would slow the migration down even more.
+
+That being said, there are two things you can do:
+
+1. You can run individual parts of the hierarchy. For instance, the [Migrate to Java 17 recipe](/reference/recipes/java/migrate/upgradetojava17.md) contains the [Migrate to Java 11 recipe](/reference/recipes/java/migrate/java8tojava11.md), which contains the [Migrate to Java 8 recipe](/reference/recipes/java/migrate/upgradetojava8.md). You could run each of those child recipes and commit the results - which would limit the number of changes being done at a time.
+
+2. You can also use [Preconditions](/reference/yaml-format-reference.md#preconditions) to limit the changes to a particular [source set](/reference/recipes/java/search/hassourceset.md) or [set of files](/reference/recipes/findsourcefiles.md).
+
+Using these two approaches together in separate runs means you can likely create something that's feasible to review.
+
+Worth noting, though, is that each recipe run will need to build up the Lossless Semantic Tree (LST) – which can take some time (especially for larger projects). If you'd like to speed that up, you can have a look at [Moderne](https://www.moderne.io/) where we allow you to use precomputed LSTs.
+
 ## I'm getting `java.lang.OutOfMemoryError: Java heap space` when running OpenRewrite. 
 
 You can either increase the size of the Java heap or build and run recipes with the [Moderne CLI](https://docs.moderne.io/).
@@ -63,22 +79,6 @@ mvn rewrite:run
 **Moderne CLI**
 
 The Moderne CLI builds the LST artifacts for your repository in pieces if the repository can't fit into memory entirely. It also allows you to run recipes against multiple repositories at once.
-
-## Is it possible to apply recipes on a step-by-step basis (pausing after certain recipes, so smaller commits can be made)?
-
-This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](/reference/recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 180 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
-
-This nuance is why we don't support intermediate steps to commit results; it would simply be too much to handle feasibly. Furthermore, we'd have to write out to disk repeatedly, which would slow the migration down even more.
-
-That being said, there are two things you can do:
-
-1. You can run individual parts of the hierarchy. For instance, the [Migrate to Java 17 recipe](/reference/recipes/java/migrate/upgradetojava17.md) contains the [Migrate to Java 11 recipe](/reference/recipes/java/migrate/java8tojava11.md), which contains the [Migrate to Java 8 recipe](/reference/recipes/java/migrate/upgradetojava8.md). You could run each of those child recipes and commit the results - which would limit the number of changes being done at a time.
-
-2. You can also use [Preconditions](/reference/yaml-format-reference.md#preconditions) to limit the changes to a particular [source set](/reference/recipes/java/search/hassourceset.md) or [set of files](/reference/recipes/findsourcefiles.md).
-
-Using these two approaches together in separate runs means you can likely create something that's feasible to review.
-
-Worth noting, though, is that each recipe run will need to build up the Lossless Semantic Tree (LST) – which can take some time (especially for larger projects). If you'd like to speed that up, you can have a look at [Moderne](https://www.moderne.io/) where we allow you to use precomputed LSTs.
 
 ## My recipe appears to hang when running. What's happening? Is there a progress report?
 
