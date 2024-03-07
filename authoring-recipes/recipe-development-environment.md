@@ -18,6 +18,12 @@ If you are looking to build [OpenRewrite](https://github.com/openrewrite/rewrite
 * [IntelliJ](https://www.jetbrains.com/idea/download/) (version 2024.1+) with [built-in support](https://blog.jetbrains.com/idea/2024/02/intellij-idea-2024-1-eap-7/) for OpenRewrite
   * Other IDEs might work as well, but lack dedicated support
 
+## OpenRewrite plugin in IntelliJ IDEA
+
+We'd strongly recommend you enable the OpenRewrite plugin in IntelliJ when creating your own recipes. For more details on this, check out the video below:
+
+{% embed url="https://www.youtube.com/watch?v=ULFnBwnTZ9E" %}
+
 ## Automatic project setup
 
 The easiest way to get started developing your own recipes is to visit the [rewrite-recipe-starter](https://github.com/moderneinc/rewrite-recipe-starter) repository and click the "Use this template" button. That template comes already set up with all the necessary dependencies, build configuration, an example recipe, and tests of the example recipe.
