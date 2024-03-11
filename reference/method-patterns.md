@@ -10,6 +10,8 @@ Method patterns provide a way to accurately and quickly identify one or more met
 An OpenRewrite method pattern is comparable to an AspectJ ["pointcut expression"](https://www.baeldung.com/spring-aop-pointcut-tutorial).
 {% endhint %}
 
+{% embed url="https://www.youtube.com/watch?v=DEd24gzNZCs" %}
+
 ## Anatomy of a method pattern
 
 A method pattern can identify one or more method definitions or invocations based on:
