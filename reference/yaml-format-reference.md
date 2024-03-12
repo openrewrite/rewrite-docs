@@ -31,31 +31,36 @@ Please keep these conventions in mind when you're creating OpenRewrite YAML file
 You can find the full recipe schema [here](https://github.com/openrewrite/rewrite/blob/241e146a8996a917a8a460b27d17136108b3d50a/rewrite-core/openrewrite.json#L32-L75).
 {% endhint %}
 
-| Key                                                | Type                                                                                                        | Description                                                                                     |
-| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| type                                               | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                                               |
-| name                                               | string                                                                                                      | A fully qualified, unique name for this recipe                                                  |
-| displayName                                        | string                                                                                                      | A human-readable name for this recipe (does not end with a period)                              |
-| description                                        | string                                                                                                      | A human-readable description for this recipe (ends with a period)                               |
-| tags                                               | array of strings                                                                                            | A list of strings that help categorize this recipe                                              |
-| estimatedEffortPerOccurrence                       | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something                         |
-| causesAnotherCycle                                 | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)                          |
-| [recipeList](yaml-format-reference.md#recipe-list) | array of recipes                                                                                            | The list of recipes which comprise this recipe                                                  |
+| Key                                                | Type                                                                                                        | Description                                                             |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| type                                               | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                       |
+| name                                               | string                                                                                                      | A fully qualified, unique name for this recipe                          |
+| displayName                                        | string                                                                                                      | A human-readable name for this recipe (does not end with a period)      |
+| description                                        | string                                                                                                      | A human-readable description for this recipe (ends with a period)       |
+| tags                                               | array of strings                                                                                            | A list of strings that help categorize this recipe                      |
+| estimatedEffortPerOccurrence                       | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something |
+| causesAnotherCycle                                 | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)  |
+| [recipeList](yaml-format-reference.md#recipe-list) | array of recipes                                                                                            | The list of recipes which comprise this recipe                          |
 
 ### Preconditions
 
-Preconditions are used to limit where a recipe is run. This is commonly used to target specific files or directories, but any recipe which is not a `ScanningRecipe` can be used as a precondition. 
+Preconditions are used to limit on which source files a recipe is run. This is commonly used to target specific files or directories, but any recipe which is not a `ScanningRecipe` can be used as a precondition.
 
-When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition. When more than one recipe are used as preconditions, all of them must make a change to the file for it to be considered to meet the precondition. 
+{% hint style="info" %}
+Preconditions are a **per-file** check. If the precondition recipe would a change to a file, that allows the rest of the recipe list to run **on that file**.\
+\
+If you need to check if **your repository** meets certain criteria, for example, that a test source set exists, then you will need to write a custom `ScanningRecipe`.
+{% endhint %}
+
+When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition. When more than one recipe are used as preconditions, all of them must make a change to the file for it to be considered to meet the precondition.
 
 Only when all preconditions are met will the recipes in the recipe list be run. When applying preconditions to `ScanningRecipes` they limit both the scanning phase and the edit phase.
 
-{% hint style="info" %} 
-Changes made by preconditions are not included in the final result of the recipe.
-Changes made by preconditions are used _only_ to determine if the recipe should be run.
+{% hint style="info" %}
+Changes made by preconditions are not included in the final result of the recipe. Changes made by preconditions are used _only_ to determine if the recipe should be run.
 {% endhint %}
 
-To create these top-level preconditions, you'll need to add the `preconditions` map to your declarative recipe's YAML. This object is a list of one or more recipes (formatted the same way as the [recipeList](#recipe-list)).
+To create these top-level preconditions, you'll need to add the `preconditions` map to your declarative recipe's YAML. This object is a list of one or more recipes (formatted the same way as the [recipeList](yaml-format-reference.md#recipe-list)).
 
 ```yaml
 ---
@@ -68,8 +73,8 @@ recipeList:
   - org.openrewrite.text.ChangeText:
      toText: 2
 ```
-On its own `ChangeText` would change the contents of all text files in the project to `2`.
-But because `Find` is used as a precondition, `ChangeText` will only be run on files that contain a `1`.
+
+On its own `ChangeText` would change the contents of all text files in the project to `2`. But because `Find` is used as a precondition, `ChangeText` will only be run on files that contain a `1`.
 
 Recipes commonly used as preconditions include:
 
