@@ -44,7 +44,13 @@ You can find the full recipe schema [here](https://github.com/openrewrite/rewrit
 
 ### Preconditions
 
-Preconditions are used to limit where a recipe is run. This is commonly used to target specific files or directories, but any recipe which is not a `ScanningRecipe` can be used as a precondition. 
+Preconditions are used to limit which source files a recipe is run on. This is commonly used to target specific files or directories, but any recipe which is not a `ScanningRecipe` can be used as a precondition. 
+
+{% hint style="info" %}
+Preconditions are a **per-file** check. If a file passes the precondition check, all recipes will be run on it.
+
+If you need to check if **your repository** meets certain criteria, instead (e.g., ensuring that a test source set exists), then you will need to write a custom `ScanningRecipe`.
+{% endhint %}
 
 When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition. When more than one recipe are used as preconditions, all of them must make a change to the file for it to be considered to meet the precondition. 
 
