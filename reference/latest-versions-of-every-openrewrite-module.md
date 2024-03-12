@@ -28,7 +28,7 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | org.openrewrite:rewrite-xml                                                                                                    | 8.19.0     |
 | org.openrewrite:rewrite-yaml                                                                                                   | 8.19.0     |
 | org.openrewrite:rewrite-test                                                                                                   | 8.19.0     |
-| [org.openrewrite.recipe:rewrite-apache](https://github.com/openrewrite/rewrite-apache)                                         | 0.1.0      |
+| [org.openrewrite.recipe:rewrite-apache](https://github.com/openrewrite/rewrite-apache)                                         | 0.1.1      |
 | [org.openrewrite.recipe:rewrite-circleci](https://github.com/openrewrite/rewrite-circleci)                                     | 2.1.5      |
 | [org.openrewrite.recipe:rewrite-cloud-suitability-analyzer](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer) | 2.1.5      |
 | [org.openrewrite.recipe:rewrite-concourse](https://github.com/openrewrite/rewrite-concourse)                                   | 2.1.5      |
