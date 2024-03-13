@@ -8,6 +8,7 @@ AKV
 allprojects
 APKCXEA
 archunit
+Artem
 ASL
 assertingparty
 assertj
@@ -25,6 +26,7 @@ camelcase
 capitaliserecipe
 capitalizerecipe
 Cdi
+CDIAPIs
 cgi
 checkstyle
 circleci
@@ -36,6 +38,7 @@ CMK
 cmn
 Cobertura
 codebases
+codehaus
 codeowners
 committers
 compilationunit
@@ -183,6 +186,7 @@ nimbusds
 nio
 NSG
 nullability
+NVL
 oga
 OIDC
 okhttp
@@ -238,6 +242,7 @@ simplifyternaryfalsetruerecipe
 simplifyternarytruefalserecipe
 slf
 smallrye
+Smotrakov
 smushed
 snakeyaml
 Sonatype
@@ -294,6 +299,7 @@ Wsoc
 wss
 XRange
 xsi
+Xwork
 XXE
 Yoda
 yourorg
