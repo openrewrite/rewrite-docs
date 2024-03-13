@@ -6,11 +6,11 @@ _Gradle's [ExtraPropertiesExtension](https://docs.gradle.org/current/dsl/org.gra
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeExtraProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.17.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeExtraProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.20.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.17.1
+* version: 8.20.0
 
 ## Options
 
@@ -45,7 +45,7 @@ Now that `com.yourorg.ChangeExtraPropertyExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.4")
+    id("org.openrewrite.rewrite") version("6.9.0")
 }
 
 rewrite {

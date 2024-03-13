@@ -49,6 +49,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate xmlns entries in `taglib.xml` files](./javaxfacestaglibraryxmltojakartafacestaglibraryxml.md)
 * [Migrate xmlns entries in `web-fragment.xml` files](./javaxwebfragmentxmltojakartawebfragmentxml.md)
 * [Migrate xmlns entries in `web.xml` files](./javaxwebxmltojakartawebxml.md)
+* [Remove deprecated API's not supported in CDI4.0](./deprecatedcdiapisremoved40.md)
 * [Remove `getComment` and `getVersion` methods](./servletcookiebehaviorchangerfc6265.md)
 * [Replace  deprecated Jakarta Servlet methods and classes](./removalsservletjakarta10.md)
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](./removeduicomponentconstant.md)

@@ -5,7 +5,6 @@ _Basic building blocks for transforming Java code._
 ## Categories
 
 * [AI tools](/reference/recipes/java/ai)
-* [Apache](/reference/recipes/java/apache)
 * [Dependencies](/reference/recipes/java/dependencies)
 * [Format](/reference/recipes/java/format)
 * [Liberty](/reference/recipes/java/liberty)
@@ -17,6 +16,7 @@ _Basic building blocks for transforming Java code._
 * [Security](/reference/recipes/java/security)
 * [Spring](/reference/recipes/java/spring)
 * [Springdoc](/reference/recipes/java/springdoc)
+* [Struts](/reference/recipes/java/struts)
 * [Testing](/reference/recipes/java/testing)
 
 ## Composite Recipes
@@ -28,6 +28,8 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add ASLv2 license header](./addapache2licenseheader.md)
+* [Add a literal method argument](./addliteralmethodargument.md)
+* [Add a `null` method argument](./addnullmethodargument.md)
 * [Add imports for fully qualified references to types](./shortenfullyqualifiedtypereferences.md)
 * [Add license header](./addlicenseheader.md)
 * [Add or update annotation attribute](./addorupdateannotationattribute.md)

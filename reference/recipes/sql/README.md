@@ -2,8 +2,13 @@
 
 _SQL query processing and analysis._
 
+## Categories
+
+* [Search](/reference/recipes/sql/search)
+
 ## Recipes
 
+* [Change a SQL function name](./changefunctionname.md)
 * [Find SQL in code and resource files](./findsql.md)
 * [Format SQL in String Text Blocks](./formatsql.md)
 

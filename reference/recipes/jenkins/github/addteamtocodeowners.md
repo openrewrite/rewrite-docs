@@ -6,23 +6,23 @@ _Adds the `{artifactId}-plugin-developers` team to all files in `.github/CODEOWN
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/github/AddTeamToCodeowners.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.3.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/github/AddTeamToCodeowners.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.3.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.3.5
+* version: 0.3.6
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.3.5` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.3.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.4")
+    id("org.openrewrite.rewrite") version("6.9.0")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.3.5")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.3.6")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.9.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jenkins:0.3.5")
+        rewrite("org.openrewrite.recipe:rewrite-jenkins:0.3.6")
     }
     rewrite {
         activeRecipe("org.openrewrite.jenkins.github.AddTeamToCodeowners")
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.jenkins.github.AddTeamToCodeowners</recipe>
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.3.5</version>
+            <version>0.3.6</version>
           </dependency>
         </dependencies>
       </plugin>

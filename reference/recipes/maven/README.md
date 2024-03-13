@@ -47,7 +47,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove Maven project property](./removeproperty.md)
 * [Remove duplicate Maven dependencies](./removeduplicatedependencies.md)
 * [Remove exclusion](./removeexclusion.md)
-* [Remove redundant explicit dependency versions](./removeredundantdependencyversions.md)
+* [Remove redundant explicit dependency and plugin versions](./removeredundantdependencyversions.md)
 * [Remove repository](./removerepository.md)
 * [Rename Maven property key](./renamepropertykey.md)
 * [Set Maven project packaging](./changepackaging.md)

@@ -4,7 +4,6 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 
 ## Categories
 
-* [Apache](/reference/recipes/java/migrate/apache)
 * [Cobertura](/reference/recipes/java/migrate/cobertura)
 * [Guava](/reference/recipes/java/migrate/guava)
 * [JaCoCo](/reference/recipes/java/migrate/jacoco)
@@ -14,7 +13,6 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Lombok](/reference/recipes/java/migrate/lombok)
 * [Maven](/reference/recipes/java/migrate/maven)
 * [Metrics](/reference/recipes/java/migrate/metrics)
-* [Plexus](/reference/recipes/java/migrate/plexus)
 * [Search](/reference/recipes/java/migrate/search)
 * [Wro4j](/reference/recipes/java/migrate/wro4j)
 * [java.io APIs](/reference/recipes/java/migrate/io)

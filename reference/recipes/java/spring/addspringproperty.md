@@ -6,11 +6,11 @@ _Add a spring configuration property to a configuration file if it does not alre
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/AddSpringProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.5.0
+* version: 5.6.0
 
 ## Options
 
@@ -42,14 +42,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.5.0 in your build file:
+Now that `com.yourorg.AddSpringPropertyExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.6.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.4")
+    id("org.openrewrite.rewrite") version("6.9.0")
 }
 
 rewrite {
@@ -61,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.6.0")
 }
 ```
 {% endcode %}
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddSpringPropertyExample</recipe>
@@ -87,7 +87,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.5.0</version>
+            <version>5.6.0</version>
           </dependency>
         </dependencies>
       </plugin>

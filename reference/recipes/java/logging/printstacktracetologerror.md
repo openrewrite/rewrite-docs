@@ -6,11 +6,11 @@ _When a logger is present, log exceptions rather than calling `printStackTrace()
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/PrintStackTraceToLogError.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.4.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/PrintStackTraceToLogError.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.4.6/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.4.4
+* version: 2.4.6
 
 ## Options
 
@@ -23,14 +23,14 @@ _When a logger is present, log exceptions rather than calling `printStackTrace()
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.4.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.4.6` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.4")
+    id("org.openrewrite.rewrite") version("6.9.0")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.4.4")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.4.6")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.9.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.4.4")
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.4.6")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.logging.PrintStackTraceToLogError")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.PrintStackTraceToLogError</recipe>
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.4.4</version>
+            <version>2.4.6</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -140,4 +140,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), Adriano Machado
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Adriano Machado

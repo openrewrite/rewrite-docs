@@ -6,11 +6,11 @@ _Replace the value of a complete `String` literal._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceStringLiteralValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceStringLiteralValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.10.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.9.0
+* version: 2.10.0
 
 ## Options
 
@@ -38,14 +38,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ReplaceStringLiteralValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.9.0 in your build file:
+Now that `com.yourorg.ReplaceStringLiteralValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.10.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.4")
+    id("org.openrewrite.rewrite") version("6.9.0")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.10.0")
 }
 ```
 {% endcode %}
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceStringLiteralValueExample</recipe>
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.9.0</version>
+            <version>2.10.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -114,4 +114,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Chuka Obinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+Chuka Obinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

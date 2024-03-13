@@ -1,5 +1,9 @@
 # Dependencies
 
+## Categories
+
+* [Search](/reference/recipes/java/dependencies/search)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

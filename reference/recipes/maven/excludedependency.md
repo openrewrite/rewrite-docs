@@ -6,11 +6,11 @@ _Exclude specified dependency from any dependency that transitively includes it.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ExcludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.17.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ExcludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.20.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.17.1
+* version: 8.20.0
 
 ## Options
 
@@ -53,7 +53,7 @@ Now that `com.yourorg.ExcludeDependencyExample` has been defined activate it in 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ExcludeDependencyExample</recipe>
@@ -87,4 +87,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Greg Adams](mailto:greg@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Tyler Van Gorder, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

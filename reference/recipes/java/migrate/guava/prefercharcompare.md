@@ -10,23 +10,23 @@ _Prefer `java.lang.Char#compare` instead of using `com.google.common.primitives.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.10.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.9.0
+* version: 2.10.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.10.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.4")
+    id("org.openrewrite.rewrite") version("6.9.0")
 }
 
 rewrite {
@@ -38,7 +38,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.10.0")
 }
 ```
 {% endcode %}
@@ -53,12 +53,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.8.4") }
+    dependencies { classpath("org.openrewrite:plugin:6.9.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.9.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.10.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.guava.PreferCharCompare")
@@ -85,7 +85,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.guava.PreferCharCompare</recipe>
@@ -95,7 +95,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.9.0</version>
+            <version>2.10.0</version>
           </dependency>
         </dependencies>
       </plugin>

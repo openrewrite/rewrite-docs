@@ -10,7 +10,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate to Spring Security 5.7](./upgradespringsecurity_5_7.md)
 * [Migrate to Spring Security 5.8](./upgradespringsecurity_5_8.md)
-* [Rename the package name from `com.nimbusds.jose.shaded.json.JSONObject` to `net.minidev.json.JSONObject`](./renamenimbusdsjsonobjectpackagename.md)
+* [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](./renamenimbusdsjsonobjectpackagename.md)
 * [Replace global method security with method security](./replaceglobalmethodsecuritywithmethodsecurityxml.md)
 
 ## Recipes

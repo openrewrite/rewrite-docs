@@ -20,7 +20,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Set.of(..)`](./migratecollectionssingletonset.md)
 * [Prefer `Set.of(..)`](./migratecollectionsunmodifiableset.md)
 * [Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile ](./removefinalizerfromzip.md)
-* [Replace `List` `get`, `add`, and `remove` with `SequencedCollection` `*First` and `*Last` methods](./listfirstandlast.md)
+* [Replace `List.get(int)`, `add(int, Object)`, and `remove(int)` with `SequencedCollection` `*First` and `*Last` methods](./listfirstandlast.md)
 * [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](./replacestreamcollectwithtolist.md)
 * [Replace `iterator().next()` with `getFirst()`](./iteratornext.md)
 * [`Stream<Optional>` idiom recipe](./optionalstreamrecipe.md)

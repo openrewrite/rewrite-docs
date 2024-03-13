@@ -6,11 +6,11 @@ _Replace `boolVariation` invocations for feature key with value, and simplify co
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-launchdarkly/blob/main/src/main/java/org/openrewrite/launchdarkly/RemoveBoolVariation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-launchdarkly/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-launchdarkly/0.1.5/jar)
+[GitHub](https://github.com/openrewrite/rewrite-launchdarkly/blob/main/src/main/java/org/openrewrite/launchdarkly/RemoveBoolVariation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-launchdarkly/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-launchdarkly/0.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-launchdarkly
-* version: 0.1.5
+* version: 0.2.0
 
 ## Options
 
@@ -40,14 +40,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RemoveBoolVariationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-launchdarkly:0.1.5 in your build file:
+Now that `com.yourorg.RemoveBoolVariationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-launchdarkly:0.2.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.8.4")
+    id("org.openrewrite.rewrite") version("6.9.0")
 }
 
 rewrite {
@@ -59,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.1.5")
+    rewrite("org.openrewrite.recipe:rewrite-launchdarkly:0.2.0")
 }
 ```
 {% endcode %}
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveBoolVariationExample</recipe>
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-launchdarkly</artifactId>
-            <version>0.1.5</version>
+            <version>0.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -116,4 +116,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

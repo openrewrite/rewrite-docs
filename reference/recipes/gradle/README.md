@@ -25,7 +25,7 @@
 * [Update Gradle project Java compatibility](./updatejavacompatibility.md)
 * [Update Gradle wrapper](./updategradlewrapper.md)
 * [Upgrade Gradle dependency versions](./upgradedependencyversion.md)
-* [Upgrade transitive Gradle dependencies](./adddirectdependencytoupgradetransitiveversion.md)
+* [Upgrade transitive Gradle dependencies](./upgradetransitivedependencyversion.md)
 * [Use `Map` notation for Gradle dependency declarations](./dependencyusemapnotation.md)
 * [Use `String` notation for Gradle dependency declarations](./dependencyusestringnotation.md)
 

@@ -6,11 +6,11 @@ _Add the specified Maven plugin to the pom.xml._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.17.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.20.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.17.1
+* version: 8.20.0
 
 ## Options
 
@@ -21,7 +21,7 @@ _Add the specified Maven plugin to the pom.xml._
 | `String` | version | *Optional*. A fixed version of the plugin to add. | `1.0.0` |
 | `String` | configuration | *Optional*. Optional plugin configuration provided as raw XML | `<configuration><foo>foo</foo></configuration>` |
 | `String` | dependencies | *Optional*. Optional plugin dependencies provided as raw XML. | `<dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>` |
-| `String` | executions | *Optional*. Optional executions provided as raw XML. | `<execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution>` |
+| `String` | executions | *Optional*. Optional executions provided as raw XML. | `<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>` |
 | `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*-parent/grpc-*/pom.xml` |
 
 
@@ -43,7 +43,7 @@ recipeList:
       version: 1.0.0
       configuration: <configuration><foo>foo</foo></configuration>
       dependencies: <dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>
-      executions: <execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution>
+      executions: <executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>
       filePattern: '**/*-parent/grpc-*/pom.xml'
 ```
 {% endcode %}
@@ -61,7 +61,7 @@ Now that `com.yourorg.AddPluginExample` has been defined activate it in your bui
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddPluginExample</recipe>
@@ -95,4 +95,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Daniel Wallman](mailto:daniel.wallman@m.co), [Greg Adams](mailto:greg@moderne.io), [Alex Boyko](mailto:aboyko@pivotal.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Tyler Van Gorder, [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Daniel Wallman](mailto:daniel.wallman@m.co), [Greg Adams](mailto:greg@moderne.io), [Alex Boyko](mailto:aboyko@pivotal.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Tyler Van Gorder, [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado, [Henrik S](mailto:henrik.strath@m.co)

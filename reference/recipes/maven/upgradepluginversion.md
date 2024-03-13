@@ -6,11 +6,11 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.17.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.20.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.17.1
+* version: 8.20.0
 
 ## Options
 
@@ -66,7 +66,7 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.23.1</version>
+        <version>5.24.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradePluginVersionExample</recipe>
@@ -100,4 +100,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Sam Snyder](mailto:sam@moderne.io)
+Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Sam Snyder](mailto:sam@moderne.io)
