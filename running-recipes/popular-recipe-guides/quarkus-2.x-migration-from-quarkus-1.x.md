@@ -219,7 +219,6 @@ quarkus.neo4j.pool.metrics.enabled=true
 | [Kubernetes Client 5.4](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#kubernetes-client)                      | -                                                               |
 | [Vert.x 4.0](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-2.0#vertx)                                             | -                                                               |
 
-
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration)
