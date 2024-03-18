@@ -2,79 +2,11 @@
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from [Hamcrest](https://hamcrest.org/JavaHamcrest/) to [AssertJ](https://assertj.github.io/doc/#assertj-overview). While Hamcrest still _functions_, it hasn't been updated since 2019 and there's a growing number of [issues](https://github.com/hamcrest/JavaHamcrest/issues) and [pull requests](https://github.com/hamcrest/JavaHamcrest/pulls) open on the project. On the other hand, AssertJ has much more activity and is generally favored for testing assertions. 
 
-## Example Configuration
+## Configuration
 
-In order to run the migration recipe, you will need to update your project with the following configuration:
-
-{% tabs %}
-{% tab title="Maven" %}
-{% code title="pom.xml" %}
-```xml
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.25.0</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.testing.assertj.Assertj</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.5.0</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Gradle" %}
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id("org.openrewrite.rewrite") version("6.10.0")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.testing.assertj.Assertj")
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.5.0")
-}
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Maven Command Line" %}
-You can also use the command line to run the recipe if you don't want to update your project:
-
-{% code title="shell" %}
-```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.testing.assertj.Assertj
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+Configure your repository according to the instructions on the [reference page](https://docs.openrewrite.org/recipes/java/testing/assertj/assertj). This is also where you'll find the full list of changes this recipe will make.
 
 # Before and After
-
-For the full list of changes this recipe will make, see its [reference page](https://docs.openrewrite.org/recipes/java/testing/assertj/assertj).
 
 ### Example test
 
@@ -138,3 +70,11 @@ public class BiscuitTest {
     }
 }
 ```
+
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.testing.assertj.Assertj)
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
