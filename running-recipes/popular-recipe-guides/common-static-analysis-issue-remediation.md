@@ -4,7 +4,7 @@ In this guide we'll look at using OpenRewrite to perform an automated remediatio
 
 ### Example Configuration
 
-The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/staticanalysis/commonstaticanalysis) consists of more than 50 types of issues and can be applied by including OpenRewrite's plug-in to your project and configuring the recipe:
+The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/staticanalysis/commonstaticanalysis) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -149,4 +149,12 @@ public class MessageExtBatch implements Serializable {
 
 ## Known Limitations
 
-We don't have OpenRewrite recipes implemented for all publicly available policies. If you find a violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue.
+We don't have OpenRewrite recipes implemented for all publicly available policies. If you find a violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue (or help out the community by contributing code yourself).
+
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CommonStaticAnalysis)
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
