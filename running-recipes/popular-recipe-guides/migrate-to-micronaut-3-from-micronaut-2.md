@@ -2,72 +2,17 @@
 
 In this guide we'll look at using OpenRewrite to perform an automated migration from Micronaut 2.x to Micronaut 3.x
 
-## Example Configuration
+## Configuration
 
-{% tabs %}
-{% tab title="Gradle" %}
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id("org.openrewrite.rewrite") version("6.10.0")
-}
+See various ways you can configure your project to run this recipe on the [recipe reference page](/reference/recipes/java/micronaut/micronaut2to3migration.md). This is also where you can find the full list of changes it will make.
 
-rewrite {
-    activeRecipe("org.openrewrite.java.micronaut.Micronaut2to3Migration")
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.8.0"))
-    rewrite("org.openrewrite.recipe:rewrite-micronaut")
-}
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="Maven" %}
-{% code title="pom.xml" %}
-```xml
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.25.0</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.micronaut.Micronaut2to3Migration</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-micronaut</artifactId>
-            <version>2.3.0</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
+Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
 ### Before and After
 
-For the full list of changes this recipe will make, see its [reference page](/reference/recipes/java/micronaut/micronaut2to3migration.md).
-
 **Deprecated Exception Handler constructors**
 
-Several micronaut `ExceptionHandlers` have been refactored such that the no-args constructor has been deprecated and replaced with one taking an `ErrorResponseProcessor`.
+Several Micronaut `ExceptionHandlers` have been refactored such that the no-args constructor has been deprecated and replaced with one taking an `ErrorResponseProcessor`:
 
 {% tabs %}
 {% tab title="Before" %}
@@ -184,3 +129,11 @@ public class Order {
 | DefaultContext doCreateBean deprecated                                               | [#23](https://github.com/openrewrite/rewrite-micronaut/issues/23) |
 | DefaultHttpHostResolver constructor arg Provider to BeanProvider                     | [#22](https://github.com/openrewrite/rewrite-micronaut/issues/22) |
 | Change io.micronaut.core.beans.PropertyDescriptor to BeanProperty                    | [#21](https://github.com/openrewrite/rewrite-micronaut/issues/21) |
+
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.micronaut.Micronaut2to3Migration)
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
