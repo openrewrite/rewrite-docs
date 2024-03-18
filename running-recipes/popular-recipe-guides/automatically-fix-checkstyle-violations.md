@@ -1,6 +1,6 @@
 # Automatically Fix Checkstyle Violations
 
-Most programmers agree that having consistent formatting across a code base makes it easier to work with. Tools like [Checkstyle](https://checkstyle.sourceforge.io/) provide automated enforcement of these policies. But it's never fun to have your workflow interrupted by complaints about formatting. This guide will show you how to configure rewrite to automate the remediation of Checkstyle policy violations.
+Most programmers agree that having consistent formatting across a code base makes it easier to work with. Tools like [Checkstyle](https://checkstyle.sourceforge.io/) provide automated enforcement of these policies. But it's never fun to have your workflow interrupted by complaints about formatting. This guide will show you how to configure OpenRewrite to automate the remediation of Checkstyle policy violations.
 
 ## Example Configuration
 
@@ -192,7 +192,7 @@ tasks.withType(Checkstyle) {
 
 ### Maven
 
-In Maven, the ordering of goals depends first on which phase of the [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) they are declared in, then secondarily by the order in which plugins are declared. This means that the rewrite-maven-plugin should be declared _above_ the maven-checkstyle-plugin in your pom.xml and configured to execute within the same phase as you configure checkstyle to run its "check" goal.
+In Maven, the ordering of goals depends first on which phase of the [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) they are declared in, then secondarily by the order in which plugins are declared. This means that the `rewrite-maven-plugin` should be declared _above_ the `maven-checkstyle-plugin` in your `pom.xml` and configured to execute within the same phase as you configure checkstyle to run its "check" goal.
 
 {% tabs %}
 {% tab title="Maven" %}
@@ -254,7 +254,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
 
 ## Known Limitations
 
-We don't have OpenRewrite recipes implemented for all publicly available policies. If you find a checkstyle policy violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue.
+We don't have OpenRewrite recipes implemented for all publicly available policies. If you find a checkstyle policy violation you'd like automated, visit the [rewrite](https://github.com/openrewrite/rewrite) repository and file an issue (or help out the community by contributing one yourself).
 
 {% hint style="info" %}
 Checkstyle configuration loading only informs the behavior of recipes, not which recipes are active. Regardless of the presence or non-presence of Checkstyle configuration, OpenRewrite will never apply any refactoring you do not explicitly activate.
