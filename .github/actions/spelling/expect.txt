@@ -55,6 +55,7 @@ cve
 cwe
 cyclonedx
 databind
+datafaker
 datasource
 DAX
 defaultimpl
