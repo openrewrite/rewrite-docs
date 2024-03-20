@@ -19,8 +19,7 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 | `String` | pluginGroupId | The first part of a dependency coordinate 'io.jenkins.plugins:ARTIFACT_ID:VERSION'. | `io.jenkins.plugins` |
 | `String` | pluginArtifactId | The second part of a dependency coordinate 'GROUP_ID:jackson2-api:VERSION'. | `jackson2-api` |
 | `String` | pluginVersion | An exact version number. | `1981.v17df70e84a_a_1` |
-                        | `Set` | replaces | The set of library coordinates replaced by this API Plugin. | `groupId: org.apache.commons
-artifactId: commons-text` |
+| `Set` | replaces | The set of library coordinates replaced by this API Plugin. | <pre>groupId: org.apache.commons<br />artifactId: commons-text</pre> |
 
 
 ## Usage
@@ -51,7 +50,7 @@ Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined act
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -79,7 +78,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ReplaceLibrariesWithApiPluginExample</recipe>

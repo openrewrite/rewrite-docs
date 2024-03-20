@@ -6,19 +6,18 @@ _Merge a YAML snippet with an existing YAML document._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.20.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/MergeYaml.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.21.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.20.0
+* version: 8.21.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | key | A [JsonPath](https://github.com/json-path/JsonPath) expression used to find matching keys. | `$.metadata` |
-                       | `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. | `labels: 
-label-one: "value-one"` |
+| `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. | <pre>labels: <br />	label-one: "value-one"</pre> |
 | `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |  |
 | `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. | `name` |
 
@@ -50,7 +49,7 @@ Now that `com.yourorg.MergeYamlExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -74,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.MergeYamlExample</recipe>

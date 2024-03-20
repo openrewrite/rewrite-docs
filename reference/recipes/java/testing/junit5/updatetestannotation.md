@@ -6,23 +6,23 @@ _Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit 5's `org.junit
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UpdateTestAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UpdateTestAnnotation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.5.0
+* version: 2.6.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.5.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.6.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.6.0")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.9.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.10.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.5.0")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.6.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.UpdateTestAnnotation")
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.UpdateTestAnnotation</recipe>
@@ -91,7 +91,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.5.0</version>
+            <version>2.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,4 +132,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Patrick](mailto:patway99@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Patrick Way
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Patrick](mailto:patway99@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Patrick Way

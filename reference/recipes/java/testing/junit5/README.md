@@ -20,6 +20,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add missing `@BeforeEach`, `@AfterEach`, `@Test` to overriding methods](./addmissingtestbeforeafterannotations.md)
 * [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](./addparameterizedtestannotation.md)
 * [Cleanup JUnit imports](./cleanupjunitimports.md)
+* [Gradle `Test` use JUnit Jupiter](./gradleusejunitjupiter.md)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](./categorytotag.md)
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](./runnertoextension.md)
 * [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](./enclosedtonested.md)

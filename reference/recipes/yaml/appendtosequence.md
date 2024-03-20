@@ -6,11 +6,11 @@ _Append item to YAML sequence._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/AppendToSequence.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.20.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/AppendToSequence.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.21.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.20.0
+* version: 8.21.0
 
 ## Options
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.AppendToSequenceExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AppendToSequenceExample</recipe>

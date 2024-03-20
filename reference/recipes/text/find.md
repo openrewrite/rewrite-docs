@@ -6,11 +6,11 @@ _Search for text, treating all textual sources as plain text._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/Find.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.20.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/Find.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.21.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.20.0
+* version: 8.21.0
 
 ## Options
 
@@ -22,6 +22,17 @@ _Search for text, treating all textual sources as plain text._
 | `Boolean` | multiline | *Optional*. When performing a regex search setting this to `true` allows "^" and "$" to match the beginning and end of lines, respectively. When performing a regex search when this is `false` "^" and "$" will match only the beginning and ending of the entire source file, respectively.Has no effect when not performing a regex search. Default `false`. |  |
 | `Boolean` | dotAll | *Optional*. When performing a regex search setting this to `true` allows "." to match line terminators.Has no effect when not performing a regex search. Default `false`. |  |
 | `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*.java` |
+
+## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+
+### Text matches
+
+_Lines matching simple text search._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path to the source file. |
+| Match | The text of the match. |
 
 
 ## Usage
@@ -49,7 +60,7 @@ Now that `com.yourorg.FindExample` has been defined activate it in your build fi
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -73,7 +84,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindExample</recipe>
@@ -107,4 +118,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

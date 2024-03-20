@@ -6,12 +6,15 @@ _Upgrade build plugin configuration to use the specified Java version. This reci
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.10.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.10.0
+* version: 2.11.0
 
+{% hint style="info" %}
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+{% endhint %}
 ## Options
 
 | Type | Name | Description | Example |
@@ -36,14 +39,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeJavaVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.10.0 in your build file:
+Now that `com.yourorg.UpgradeJavaVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.11.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -55,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.10.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.11.0")
 }
 ```
 {% endcode %}
@@ -71,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeJavaVersionExample</recipe>
@@ -81,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.10.0</version>
+            <version>2.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -103,6 +106,35 @@ mod run . --recipe UpgradeJavaVersionExample
 {% endtab %}
 {% endtabs %}
 
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Use Maven compiler plugin release configuration](../../java/migrate/maven/usemavencompilerpluginreleaseconfiguration.md)
+* [Update Maven Java project properties](../../java/migrate/maven/updatemavenprojectpropertyjavaversion.md)
+* [Update Gradle project Java compatibility](../../gradle/updatejavacompatibility.md)
+  * allowDowngrade: `false`
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.UpgradeJavaVersion
+displayName: Upgrade Java version
+description: Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
+
+recipeList:
+  - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration:
+  - org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion:
+  - org.openrewrite.gradle.UpdateJavaCompatibility:
+      allowDowngrade: false
+
+```
+{% endtab %}
+{% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpgradeJavaVersion)
@@ -112,4 +144,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), Kun Li, [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), Kun Li

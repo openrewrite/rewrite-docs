@@ -1,16 +1,16 @@
-# Change Quarkus Property value
+# Change Quarkus configuration property value
 
 **org.openrewrite.quarkus.ChangeQuarkusPropertyValue**
 
-_Change the value of a property in a Quarkus configuration file._
+_Change the value of a property in Quarkus configuration files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ChangeQuarkusPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.2.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ChangeQuarkusPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 2.2.2
+* version: 2.3.0
 
 ## Options
 
@@ -19,8 +19,8 @@ _Change the value of a property in a Quarkus configuration file._
 | `String` | propertyKey | The name of the property key whose value is to be changed. Supports regex. | `quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy` |
 | `String` | newValue | The new value to be used for key specified by `propertyKey`. | `read-sync` |
 | `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `read-sync` |
-| `String` | profile | *Optional*. The profile where the property is defined. If not specified, the property will be changed on the default profile. | `dev` |
-| `Boolean` | changeAllProfiles | *Optional*. If set to true, the property value will be changed on all available profiles. Defaults to `true`. | `false` |
+| `String` | profile | *Optional*. The profile where the property is defined. If not specified, the property will be changed on all profiles by default. | `dev` |
+| `Boolean` | changeAllProfiles | *Optional*. If set to true, the property value will be changed on all available profiles. Defaults to `true` if a profile is not defined. | `false` |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yaml", "**/application.properties" and "**/META-INF/microprofile-config.properties". | `["**/application.yaml"]` |
 
 
@@ -34,7 +34,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeQuarkusPropertyValueExample
-displayName: Change Quarkus Property value example
+displayName: Change Quarkus configuration property value example
 recipeList:
   - org.openrewrite.quarkus.ChangeQuarkusPropertyValue:
       propertyKey: quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy
@@ -46,14 +46,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeQuarkusPropertyValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:2.2.2 in your build file:
+Now that `com.yourorg.ChangeQuarkusPropertyValueExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:2.3.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -65,7 +65,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.2.2")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.3.0")
 }
 ```
 {% endcode %}
@@ -81,7 +81,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeQuarkusPropertyValueExample</recipe>
@@ -91,7 +91,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>2.2.2</version>
+            <version>2.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -122,4 +122,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Adriano Machado, [Tim te Beek](mailto:tim@moderne.io)
+Adriano Machado, [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

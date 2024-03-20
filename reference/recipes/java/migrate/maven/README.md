@@ -2,6 +2,7 @@
 
 ## Recipes
 
-* [Use Maven Compiler Plugin Release Configuration](./usemavencompilerpluginreleaseconfiguration.md)
+* [Update Maven Java project properties](./updatemavenprojectpropertyjavaversion.md)
+* [Use Maven compiler plugin release configuration](./usemavencompilerpluginreleaseconfiguration.md)
 
 

@@ -6,20 +6,18 @@ _Create a new XML file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/CreateXmlFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.20.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/CreateXmlFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.21.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.20.0
+* version: 8.21.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | relativeFileName | File path of new file. | `foo/bar/baz.xml` |
-                        | `String` | fileContents | *Optional*. Multiline text content for the file. | `<?xml version="1.0" encoding="UTF-8"?>
-<root>
-    <child>1</child></root>` |
+| `String` | fileContents | *Optional*. Multiline text content for the file. | <pre>\<?xml version="1.0" encoding="UTF-8"?><br />\<root><br />    \<child>1\</child>\</root></pre> |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 
 
@@ -50,7 +48,7 @@ Now that `com.yourorg.CreateXmlFileExample` has been defined activate it in your
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -74,7 +72,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CreateXmlFileExample</recipe>

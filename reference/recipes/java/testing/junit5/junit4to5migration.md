@@ -11,11 +11,11 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.5.0
+* version: 2.6.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.5.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.6.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.6.0")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.9.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.10.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.5.0")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.6.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.JUnit4to5Migration")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit4to5Migration</recipe>
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.5.0</version>
+            <version>2.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -197,28 +197,8 @@ mod run . --recipe JUnit4to5Migration
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter`
   * version: `5.x`
-  * onlyIfUsing: `org.junit.Test`
+  * onlyIfUsing: `org.junit..*`
   * scope: `test`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
-  * groupId: `org.junit.jupiter`
-  * artifactId: `junit-jupiter`
-  * version: `5.x`
-  * onlyIfUsing: `org.junit.jupiter.api.Test`
-  * scope: `test`
-  * acceptTransitive: `true`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
-  * groupId: `org.junit.jupiter`
-  * artifactId: `junit-jupiter-api`
-  * version: `5.x`
-  * onlyIfUsing: `org.junit.Test`
-  * scope: `test`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
-  * groupId: `org.junit.jupiter`
-  * artifactId: `junit-jupiter-api`
-  * version: `5.x`
-  * onlyIfUsing: `org.junit.jupiter.api.Test`
-  * scope: `test`
-  * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter-params`
@@ -231,14 +211,22 @@ mod run . --recipe JUnit4to5Migration
   * artifactId: `*`
   * newVersion: `3.x`
   * overrideManagedVersion: `false`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
+  * groupId: `org.mockito`
+  * artifactId: `mockito-junit-jupiter`
+  * version: `3.x`
+  * onlyIfUsing: `org.mockito..*`
+  * scope: `test`
+  * acceptTransitive: `true`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion.md)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-surefire-plugin`
-  * newVersion: `2.22.x`
+  * newVersion: `3.1.x`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion.md)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-failsafe-plugin`
-  * newVersion: `2.22.x`
+  * newVersion: `3.1.x`
+* [Gradle `Test` use JUnit Jupiter](../../../java/testing/junit5/gradleusejunitjupiter.md)
 
 {% endtab %}
 
@@ -315,28 +303,8 @@ recipeList:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter
       version: 5.x
-      onlyIfUsing: org.junit.Test
+      onlyIfUsing: org.junit..*
       scope: test
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.junit.jupiter
-      artifactId: junit-jupiter
-      version: 5.x
-      onlyIfUsing: org.junit.jupiter.api.Test
-      scope: test
-      acceptTransitive: true
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.junit.jupiter
-      artifactId: junit-jupiter-api
-      version: 5.x
-      onlyIfUsing: org.junit.Test
-      scope: test
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.junit.jupiter
-      artifactId: junit-jupiter-api
-      version: 5.x
-      onlyIfUsing: org.junit.jupiter.api.Test
-      scope: test
-      acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter-params
@@ -349,14 +317,22 @@ recipeList:
       artifactId: *
       newVersion: 3.x
       overrideManagedVersion: false
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.mockito
+      artifactId: mockito-junit-jupiter
+      version: 3.x
+      onlyIfUsing: org.mockito..*
+      scope: test
+      acceptTransitive: true
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
       artifactId: maven-surefire-plugin
-      newVersion: 2.22.x
+      newVersion: 3.1.x
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
       artifactId: maven-failsafe-plugin
-      newVersion: 2.22.x
+      newVersion: 3.1.x
+  - org.openrewrite.java.testing.junit5.GradleUseJunitJupiter
 
 ```
 {% endtab %}
@@ -371,4 +347,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [magicwerk](mailto:magicwerk@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), John Burns, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Peter Puškár, [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)
+Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [magicwerk](mailto:magicwerk@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), John Burns, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Peter Puškár, [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)

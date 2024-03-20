@@ -6,18 +6,18 @@ _When migrating between dialects, often one name can be substituted for another.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/ChangeFunctionName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/ChangeFunctionName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-sql
-* version: 1.2.0
+* version: 1.3.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | oldFunctionName | The name of the function to find, case insensitive. |  |
-| `String` | newFunctionName | The new name to use. This will match the casing of the original method when a replacement is made. |  |
+| `String` | oldFunctionName | The name of the function to find, case insensitive. | `NVL` |
+| `String` | newFunctionName | The new name to use. This will match the casing of the original method when a replacement is made. | `COALESCE` |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -54,19 +54,19 @@ name: com.yourorg.ChangeFunctionNameExample
 displayName: Change a SQL function name example
 recipeList:
   - org.openrewrite.sql.ChangeFunctionName:
-      oldFunctionName: null
-      newFunctionName: null
+      oldFunctionName: NVL
+      newFunctionName: COALESCE
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeFunctionNameExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-sql:1.2.0 in your build file:
+Now that `com.yourorg.ChangeFunctionNameExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-sql:1.3.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -78,7 +78,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-sql:1.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-sql:1.3.0")
 }
 ```
 {% endcode %}
@@ -94,7 +94,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangeFunctionNameExample</recipe>
@@ -104,7 +104,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-sql</artifactId>
-            <version>1.2.0</version>
+            <version>1.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -135,4 +135,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

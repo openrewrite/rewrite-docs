@@ -6,18 +6,18 @@ _Finds dependencies, including transitive dependencies, in both Gradle and Maven
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.5.0
+* version: 1.6.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | groupIdPattern | Group ID glob pattern used to match dependencies. | `com.fasterxml.jackson.module` |
-| `String` | artifactIdPattern | Artifact ID glob pattern used to match dependencies. | `jackson-module-*` |
+| `String` | groupIdPattern | Group ID glob pattern used to match dependencies. | `com.fasterxml.jackson*` |
+| `String` | artifactIdPattern | Artifact ID glob pattern used to match dependencies. | `jackson-*` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
@@ -51,20 +51,20 @@ name: com.yourorg.DependencyInsightExample
 displayName: Dependency insight for Gradle and Maven example
 recipeList:
   - org.openrewrite.java.dependencies.DependencyInsight:
-      groupIdPattern: com.fasterxml.jackson.module
-      artifactIdPattern: jackson-module-*
+      groupIdPattern: com.fasterxml.jackson*
+      artifactIdPattern: jackson-*
       version: 1.x
 ```
 {% endcode %}
 
-Now that `com.yourorg.DependencyInsightExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.5.0 in your build file:
+Now that `com.yourorg.DependencyInsightExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.6.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -76,7 +76,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.6.0")
 }
 ```
 {% endcode %}
@@ -92,7 +92,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.DependencyInsightExample</recipe>
@@ -102,7 +102,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.5.0</version>
+            <version>1.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,4 +133,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mikesol@hey.com), [Tim te Beek](mailto:tim@moderne.io)

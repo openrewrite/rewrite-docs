@@ -16,10 +16,10 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add a Quarkus configuration property](./addquarkusproperty.md)
-* [Change Quarkus Property value](./changequarkuspropertyvalue.md)
-* [Change Quarkus property key](./changequarkuspropertykey.md)
+* [Change Quarkus configuration property key](./changequarkuspropertykey.md)
+* [Change Quarkus configuration property value](./changequarkuspropertyvalue.md)
 * [Configure `quarkus-maven-plugin` with reasonable defaults](./configurequarkusmavenpluginwithreasonabledefaults.md)
-* [Delete Quarkus Property](./deletequarkusproperty.md)
+* [Delete Quarkus configuration property](./deletequarkusproperty.md)
 * [Use `@ConfigMapping`](./configpropertiestoconfigmapping.md)
 * [Use Mutiny `multi.toHotStream()`](./multitransformhotstreamtomultihotstream.md)
 * [Use `native` profile in `quarkus-maven-plugin`](./migratequarkusmavenpluginnativeimagegoal.md)

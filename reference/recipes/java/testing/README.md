@@ -5,6 +5,7 @@
 * [Archunit](/reference/recipes/java/testing/archunit)
 * [AssertJ](/reference/recipes/java/testing/assertj)
 * [Cleanup](/reference/recipes/java/testing/cleanup)
+* [Datafaker](/reference/recipes/java/testing/datafaker)
 * [Hamcrest](/reference/recipes/java/testing/hamcrest)
 * [JUnit Jupiter](/reference/recipes/java/testing/junit5)
 * [Jmockit](/reference/recipes/java/testing/jmockit)

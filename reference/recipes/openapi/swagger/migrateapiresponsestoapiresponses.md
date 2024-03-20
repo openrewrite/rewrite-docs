@@ -11,11 +11,11 @@ _Changes the namespace of the @ApiResponses and @ApiResponse annotations and con
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.0.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.0.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-openapi
-* version: 0.0.3
+* version: 0.0.4
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.0.3` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-openapi:0.0.3")
+    rewrite("org.openrewrite.recipe:rewrite-openapi:0.0.4")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.9.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.10.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-openapi:0.0.3")
+        rewrite("org.openrewrite.recipe:rewrite-openapi:0.0.4")
     }
     rewrite {
         activeRecipe("org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses</recipe>
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-openapi</artifactId>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
           </dependency>
         </dependencies>
       </plugin>

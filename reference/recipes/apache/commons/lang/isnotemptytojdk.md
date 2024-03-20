@@ -11,23 +11,23 @@ _Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/lang/IsNotEmptyToJdk.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/0.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/lang/IsNotEmptyToJdk.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/0.1.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-apache
-* version: 0.1.1
+* version: 0.1.2
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:0.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:0.1.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:0.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-apache:0.1.2")
 }
 ```
 {% endcode %}
@@ -54,12 +54,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.9.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.10.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:0.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-apache:0.1.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.apache.commons.lang.IsNotEmptyToJdk")
@@ -86,7 +86,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.apache.commons.lang.IsNotEmptyToJdk</recipe>
@@ -96,7 +96,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>0.1.1</version>
+            <version>0.1.2</version>
           </dependency>
         </dependencies>
       </plugin>

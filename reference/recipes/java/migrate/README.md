@@ -32,8 +32,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Adds missing JDBC interface methods.](./jrejdbcinterfacenewmethods.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](./deprecatedlogrecordthreadid.md)
 * [Change Maven Java version property values to 11](./javaversion11.md)
-* [Change Maven Java version property values to 17](./javaversion17.md)
-* [Change Maven Java version property values to 21](./javaversion21.md)
 * [Migrate to IBM Semeru Runtimes](./ibmsemeru.md)
 * [Migrate to Java 11](./java8tojava11.md)
 * [Migrate to Java 17](./upgradetojava17.md)
@@ -43,6 +41,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to JavaEE7](./javaee7.md)
 * [Migrate to JavaEE8](./javaee8.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](./jre17agentmainpremainpublic.md)
+* [Upgrade Java version](./upgradejavaversion.md)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](./jredonotusesunnetsslinternalsslprovider.md)
 
 ## Recipes
@@ -51,6 +50,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add Maven Jar Plugin to suppress Illegal Reflection Warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
 * [Adds missing method implementations.](./addmissingmethodimplementation.md)
 * [Behavior change to bean discovery in modules with `beans.xml` file with no version specified](./beandiscovery.md)
+* [Change Maven Java version property values to 17](./javaversion17.md)
+* [Change Maven Java version property values to 21](./javaversion21.md)
 * [Change `beans.xml` `schemaLocation` to match XML namespace](./beansxmlnamespace.md)
 * [Change method invocation return type](./changemethodinvocationreturntype.md)
 * [Disable the persistence unit second-level cache](./jpacacheproperties.md)
@@ -64,7 +65,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove methods calls](./removemethodinvocation.md)
 * [Replace DTO method parameters with data elements](./dontoverfetchdto.md)
 * [Replace `String` literal](./replacestringliteralvalue.md)
-* [Upgrade Java version](./upgradejavaversion.md)
 * [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](./removedlegacysunjsseprovidername.md)
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](./jredonotusesunnetsslinternalwwwprotocol.md)
 * [Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`](./jredonotusesunnetsslinternalwwwprotocolhttpshandler.md)

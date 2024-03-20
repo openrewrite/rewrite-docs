@@ -1,22 +1,22 @@
-# Use Maven Compiler Plugin Release Configuration
+# Use Maven compiler plugin release configuration
 
 **org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration**
 
-_Replaces any explicit `source` or `target` configuration (if present) on the maven-compiler-plugin with `release`, and updates the `release` value if needed. Will not downgrade the java version if the current version is higher._
+_Replaces any explicit `source` or `target` configuration (if present) on the `maven-compiler-plugin` with `release`, and updates the `release` value if needed. Will not downgrade the Java version if the current version is higher._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.10.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.10.0
+* version: 2.11.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | releaseVersion | The new value for the release configuration. This recipe prefers ${java.version} if defined. | `11` |
+| `Integer` | releaseVersion | The new value for the release configuration. This recipe prefers ${java.version} if defined. | `11` |
 
 
 ## Usage
@@ -29,14 +29,14 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample
-displayName: Use Maven Compiler Plugin Release Configuration example
+displayName: Use Maven compiler plugin release configuration example
 recipeList:
   - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration:
       releaseVersion: 11
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.10.0 in your build file:
+Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.11.0 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -49,7 +49,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample</recipe>
@@ -59,7 +59,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.10.0</version>
+            <version>2.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -90,4 +90,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Nick McKinney](mailto:mckinneynicholas@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Nick McKinney](mailto:mckinneynicholas@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

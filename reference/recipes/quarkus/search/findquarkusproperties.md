@@ -6,11 +6,11 @@ _Finds occurrences of a Quarkus property key._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.2.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 2.2.2
+* version: 2.3.0
 
 ## Options
 
@@ -18,7 +18,7 @@ _Finds occurrences of a Quarkus property key._
 | -- | -- | -- | -- |
 | `String` | propertyKey | The property key to look for. | `quarkus.http.port` |
 | `String` | profile | *Optional*. The profile where the property is defined. If not specified, the property will be searched on all profiles. | `dev` |
-| `Boolean` | searchAllProfiles | *Optional*. If set, the property will be searched on all available profiles. Defaults to `true`. | `false` |
+| `Boolean` | searchAllProfiles | *Optional*. If set, the property will be searched on all available profiles. Defaults to `true` if the profile is not defined. | `false` |
 
 
 ## Usage
@@ -40,14 +40,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindQuarkusPropertiesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:2.2.2 in your build file:
+Now that `com.yourorg.FindQuarkusPropertiesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:2.3.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -59,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.2.2")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.3.0")
 }
 ```
 {% endcode %}
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindQuarkusPropertiesExample</recipe>
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>2.2.2</version>
+            <version>2.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -116,4 +116,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Adriano Machado, [Tim te Beek](mailto:tim@moderne.io)
+Adriano Machado, [Guillaume Smet](mailto:guillaume.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

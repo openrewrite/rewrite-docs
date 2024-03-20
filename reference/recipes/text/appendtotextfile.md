@@ -2,15 +2,15 @@
 
 **org.openrewrite.text.AppendToTextFile**
 
-_Appends or replaces content of an existing plain text file, or creates a new one if it doesn't already exist._
+_Appends or replaces content of an existing plain text file, or creates a new one if it doesn't already exist. Please note that this recipes requires existing plain text files' format to be successfully parsable by OpenRewrite. If a file is left unchanged, it might be parsed as a `Quark` rather than plain text. In such case, use the `plainTextMask` option. See the [Gradle](https://docs.openrewrite.org/reference/gradle-plugin-configuration#configuring-the-rewrite-dsl) or [Maven](https://openrewrite.github.io/rewrite-maven-plugin/run-mojo.html#plainTextMasks) plugin configuration page._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/AppendToTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.20.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/AppendToTextFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.21.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.20.0
+* version: 8.21.0
 
 ## Options
 
@@ -56,7 +56,7 @@ Now that `com.yourorg.AppendToTextFileExample` has been defined activate it in y
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.9.0")
+    id("org.openrewrite.rewrite") version("6.10.0")
 }
 
 rewrite {
@@ -80,7 +80,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.24.0</version>
+        <version>5.25.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AppendToTextFileExample</recipe>
@@ -114,4 +114,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Kun Li, [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Maxime Michel, [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), Kun Li, [Tim te Beek](mailto:tim@moderne.io)
