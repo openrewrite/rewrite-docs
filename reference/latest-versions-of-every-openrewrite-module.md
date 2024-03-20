@@ -43,14 +43,14 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | [org.openrewrite.recipe:rewrite-liberty](https://github.com/openrewrite/rewrite-liberty)                                        | 1.1.5     |
 | [org.openrewrite.recipe:rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks)                  | 2.4.6     | <!--Update-->
 | [org.openrewrite.recipe:rewrite-micronaut](https://github.com/openrewrite/rewrite-micronaut)                                    | 2.3.0     | <!--Update-->
-| [org.openrewrite.recipe.rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java)                              | 2.10.0    | <!--Update-->
-| [org.openrewrite.recipe.rewrite-nodejs](https://github.com/openrewrite/rewrite-nodejs)                                          | 0.1.0     |
-| [org.openrewrite.recipe.rewrite-ok-http](https://github.com/openrewrite/rewrite-okhttp)                                         | 0.1.5     |
-| [org.openrewrite.recipe.rewrite-openapi](https://github.com/openrewrite/rewrite-openapi)                                        | 0.0.3     |
+| [org.openrewrite.recipe:rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java)                              | 2.10.0    | <!--Update-->
+| [org.openrewrite.recipe:rewrite-nodejs](https://github.com/openrewrite/rewrite-nodejs)                                          | 0.1.0     |
+| [org.openrewrite.recipe:rewrite-ok-http](https://github.com/openrewrite/rewrite-okhttp)                                         | 0.1.5     |
+| [org.openrewrite.recipe:rewrite-openapi](https://github.com/openrewrite/rewrite-openapi)                                        | 0.0.3     |
 | [org.openrewrite.recipe:rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus)                                        | 2.2.2     | <!--Update-->
 | [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring)                                          | 5.6.0     | <!--Update-->
 | [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis)                        | 1.4.0     | <!--Update-->
-| [org.openrewrite.recipe.rewrite-struts](https://github.com/openrewrite/rewrite-struts)                                          | 0.1.0     |
+| [org.openrewrite.recipe:rewrite-struts](https://github.com/openrewrite/rewrite-struts)                                          | 0.1.0     |
 | [org.openrewrite.recipe:rewrite-sql](https://github.com/openrewrite/rewrite-sql)                                                | 1.2.0     |
 | [org.openrewrite.recipe:rewrite-templating](https://github.com/openrewrite/rewrite-templating)                                  | 1.6.1     |
 | [org.openrewrite.recipe:rewrite-terraform](https://github.com/openrewrite/rewrite-terraform)                                    | 2.1.6     |
