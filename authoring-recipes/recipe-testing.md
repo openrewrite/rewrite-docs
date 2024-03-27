@@ -12,6 +12,8 @@ To help you create tests that meet those standards, this guide will:
 
 {% embed url="https://www.youtube.com/watch?v=JAC9UIE80fs" %}
 
+{% embed url="https://www.youtube.com/watch?v=O9o4y_2TO0w" %}
+
 ## Prerequisites
 
 This guide assumes that:
