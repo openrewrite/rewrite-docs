@@ -237,3 +237,7 @@ management.server.base-path=/manage
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Using Moderne to upgrade Spring versions
+
+{% embed url="https://www.youtube.com/watch?v=nz29-DWeV44" %}
