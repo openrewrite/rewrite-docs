@@ -12,6 +12,8 @@ It consists of an auto-refactoring engine that runs prepackaged, open-source ref
 
 ## How does OpenRewrite work?
 
+{% embed url="https://www.youtube.com/watch?v=nz29-DWeV44" %}
+
 {% embed url="https://www.youtube.com/watch?v=uViRlX-RahA" %}
 
 OpenRewrite works by making changes to [Lossless Semantic Trees](concepts-and-explanations/lossless-semantic-trees.md) (LSTs) that represent your source code and printing the modified trees back into source code. You can then review the changes in your code and commit the results. Modifications to the LST are performed in [Visitors](concepts-and-explanations/visitors.md) and visitors are aggregated into [Recipes](concepts-and-explanations/recipes.md). OpenRewrite recipes make minimally invasive changes to your source code that honor the original formatting.
