@@ -15,7 +15,7 @@ In the meantime, one way to work around this is to add a profile on the parent P
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.26.0</version>
+        <version>5.27.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
