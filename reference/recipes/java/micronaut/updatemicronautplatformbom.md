@@ -22,7 +22,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.10.0")
+    id("org.openrewrite.rewrite") version("6.11.2")
 }
 
 rewrite {
@@ -49,7 +49,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.10.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.11.2") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -81,7 +81,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.25.0</version>
+        <version>5.27.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.micronaut.UpdateMicronautPlatformBom</recipe>
@@ -132,7 +132,6 @@ mod run . --recipe UpdateMicronautPlatformBom
   * newGroupId: `io.micronaut.platform`
   * oldArtifactId: `micronaut-parent`
   * newVersion: `4.x`
-  * retainVersions: `[io.micronaut:micronaut-validation, io.micronaut:micronaut-session]`
 
 {% endtab %}
 
@@ -149,7 +148,6 @@ recipeList:
       newGroupId: io.micronaut.platform
       oldArtifactId: micronaut-parent
       newVersion: 4.x
-      retainVersions: [io.micronaut:micronaut-validation, io.micronaut:micronaut-session]
 
 ```
 {% endtab %}

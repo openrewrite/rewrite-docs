@@ -45,7 +45,7 @@ Now that `com.yourorg.RemoveAnnotationProcessorPathExample` has been defined act
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.10.0")
+    id("org.openrewrite.rewrite") version("6.11.2")
 }
 
 rewrite {
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.25.0</version>
+        <version>5.27.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveAnnotationProcessorPathExample</recipe>

@@ -2,15 +2,15 @@
 
 **org.openrewrite.maven.UpgradeParentVersion**
 
-_Set the parent pom version number according to a node-style semver selector or to a specific version number._
+_Set the parent pom version number according to a [version selector](https://docs.openrewrite.org/reference/dependency-version-selectors) or to a specific version number._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeParentVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.23.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.21.0
+* version: 8.23.1
 
 ## Options
 
@@ -20,7 +20,6 @@ _Set the parent pom version number according to a node-style semver selector or 
 | `String` | artifactId | The second part of a dependency coordinate 'org.springframework.boot:spring-boot-parent:VERSION'. | `spring-boot-parent` |
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. | `29.X` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
-| `List` | retainVersions | *Optional*. Accepts a list of GAVs. For each GAV, if it is a project direct dependency, and it is removed from dependency management in the new parent pom, then it will be retained with an explicit version. The version can be omitted from the GAV to use the old value from dependency management | `com.jcraft:jsch` |
 
 
 ## Usage
@@ -40,7 +39,6 @@ recipeList:
       artifactId: spring-boot-parent
       newVersion: 29.X
       versionPattern: '-jre'
-      retainVersions: com.jcraft:jsch
 ```
 {% endcode %}
 
@@ -57,7 +55,7 @@ Now that `com.yourorg.UpgradeParentVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.25.0</version>
+        <version>5.27.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeParentVersionExample</recipe>
@@ -91,4 +89,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Valentin Delaye
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Valentin Delaye

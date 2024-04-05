@@ -6,11 +6,11 @@ _Upgrades the version of a transitive dependency in a Gradle build file. There a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeTransitiveDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeTransitiveDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.23.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.21.0
+* version: 8.23.1
 
 ## Options
 
@@ -60,7 +60,7 @@ Now that `com.yourorg.UpgradeTransitiveDependencyVersionExample` has been define
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.10.0")
+    id("org.openrewrite.rewrite") version("6.11.2")
 }
 
 rewrite {
@@ -95,4 +95,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com)
+[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com)

@@ -6,11 +6,11 @@ _Groups and orders import statements. If a [style has been defined](https://docs
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.23.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.21.0
+* version: 8.23.1
 
 ## Options
 
@@ -28,7 +28,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.10.0")
+    id("org.openrewrite.rewrite") version("6.11.2")
 }
 
 rewrite {
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.25.0</version>
+        <version>5.27.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.OrderImports</recipe>

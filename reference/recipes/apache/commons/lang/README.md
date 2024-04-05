@@ -5,6 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [`ApacheCommonsStringUtils` Refaster recipes](./apachecommonsstringutilsrecipes.md)
+* [Migrates to Apache Commons Lang 3.x](./upgradeapachecommonslang_2_3.md)
 
 ## Recipes
 

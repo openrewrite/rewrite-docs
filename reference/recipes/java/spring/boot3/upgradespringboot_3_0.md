@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.10.0")
+    id("org.openrewrite.rewrite") version("6.11.2")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.10.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.11.2") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.25.0</version>
+        <version>5.27.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
@@ -152,7 +152,6 @@ mod run . --recipe UpgradeSpringBoot_3_0
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `3.0.x`
-  * retainVersions: `[org.thymeleaf:thymeleaf-spring5, org.thymeleaf.extras:thymeleaf-extras-springsecurity5]`
 * [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion.md)
   * pluginIdPattern: `org.springframework.boot`
   * newVersion: `3.0.x`
@@ -208,7 +207,6 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 3.0.x
-      retainVersions: [org.thymeleaf:thymeleaf-spring5, org.thymeleaf.extras:thymeleaf-extras-springsecurity5]
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: org.springframework.boot
       newVersion: 3.0.x

@@ -6,11 +6,11 @@ _Remove explicitly-specified dependency/plugin versions when a parent POM's `dep
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRedundantDependencyVersions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRedundantDependencyVersions.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.23.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.21.0
+* version: 8.23.1
 
 ## Options
 
@@ -18,7 +18,7 @@ _Remove explicitly-specified dependency/plugin versions when a parent POM's `dep
 | -- | -- | -- | -- |
 | `String` | groupPattern | *Optional*. Group glob expression pattern used to match dependencies that should be managed.Group is the first part of a dependency coordinate `com.google.guava:guava:VERSION`. | `com.google.*` |
 | `String` | artifactPattern | *Optional*. Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava*` |
-| `Boolean` | onlyIfVersionsMatch | *Optional*. Only remove the explicit version if it matches the managed dependency version. Default true. |  |
+| `Boolean` | onlyIfVersionsMatch | *Optional*. Only remove the explicit version if it exactly matches the managed dependency version. When `false` explicit versions will be removed if they are older than or equal to the managed dependency version. Default `true`. |  |
 | `List` | except | *Optional*. Accepts a list of GAVs. Dependencies matching a GAV will be ignored by this recipe. GAV versions are ignored if provided. | `com.jcraft:jsch` |
 
 
@@ -37,7 +37,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.25.0</version>
+        <version>5.27.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.RemoveRedundantDependencyVersions</recipe>
@@ -80,4 +80,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Nick McKinney](mailto:mckinneynicholas@gmail.com), Adriano Machado, [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Sam Snyder](mailto:sam@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), Adriano Machado, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
