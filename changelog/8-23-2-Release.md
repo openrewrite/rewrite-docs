@@ -1,4 +1,4 @@
-# 8.23.1 release (2024-04-05)
+# 8.23.2 release (2024-04-05)
 
 {% hint style="info" %}
 This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
