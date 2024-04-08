@@ -1,6 +1,6 @@
 # 8.1.2 Release
 
-OpenRewrite 8 makes some substantial changes in order to support large monorepos that cannot fit into memory. All recipes will need to be [migrated](#migrating-your-recipes) in order for them to keep working. Specific migration instructions can be found in the [migrating your recipes section](#migrating-your-recipes).
+OpenRewrite 8 makes some substantial changes in order to support large monorepos that cannot fit into memory. All recipes will need to be [migrated](#migrating-your-recipes) in order for them to keep working.
 
 Below, we'll detail the [key changes](#key-changes) being made and provide guidance for how you can update your recipes to ensure they keep working. [At the bottom](#new-recipes) you'll find the standard new/changed/deleted recipe list.
 
@@ -626,21 +626,6 @@ The [org.openrewrite.Recipe doNext(..)](https://github.com/openrewrite/rewrite/b
 However, as the `doAfterVisit` method only changes the current source file, if your recipe needs to change other files, it will need to be rewritten as a [ScanningRecipe](#new-approach-to-recipe-visiting).
 
 Similarly, the `doAfterVisit(Recipe)` method has been removed in favor of `doAfterVisit(Visitor)`. 
-
-## Migrating your recipes
-
-We've created a [migration recipe](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-java/src/main/resources/META-INF/rewrite/migrate-rewrite.yml) that will assist you with migrating your recipes to the latest version. You should run this recipe against all of your existing recipes. If the migration recipe is not able to fully migrate your recipe, comments will be added to the code to request a human to review it.
-
-**Do not attempt to bump the version of OpenRewrite or any of your dependencies before running this recipe**. The flow for the upgrade should look like this:
-
-1. Go to the [MigrateToRewrite8 recipe doc](https://docs.openrewrite.org/recipes/java/upgrade/migratetorewrite8). In the [usage section](https://docs.openrewrite.org/recipes/java/upgrade/migratetorewrite8#usage), there are instructions for how to add this recipe to your repository. Either add it directly to your Maven or Gradle project or use the Maven command line.
-2. Run the recipe.
-3. Look over the recipe. Some pieces may have been directly changed whereas other parts may have just had comments added.
-4. Bump your dependencies to the latest version and attempt to address the comments.
-5. Run your tests and recipe to ensure it continues working as expected. Make changes until it works.
-6. If you have questions or run into issues, please reach out in the [community Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA)
-
-You can find some examples of how this migration recipe works in the [Migrate Rewrite recipes from 7 to 8 recipe page](/reference/recipes/java/recipes/migraterecipetorewrite8.md)
 
 ## New Artifacts
 
