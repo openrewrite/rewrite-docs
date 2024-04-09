@@ -1,6 +1,6 @@
 # Getting started with Refaster template recipes
 
-Refaster template recipes are recipes created from [Refaster templates](refaster-recipes.md#terminology) that refactor code by doing straightforward replacements (e.g., converting `StringUtils.equals(..)` to `Objects.equals(..)`). These are more than just a string replacement, though; they offer compiler and type support. They can also be used to build more complex recipes.
+Refaster template recipes are recipes created from [Refaster templates](refaster-recipes.md#terminology) that refactor code by doing straightforward replacements (e.g., converting `StringUtils.equals(..)` to `Objects.equals(..)`). These are more than just a string replacement, though; they offer compiler and type support. They can also be used to build more complex recipes. Please note, though, that Refaster recipes are **whitespace agnostic** – meaning that you can't use a Refaster recipe to add or remove whitespace.
 
 Let's walk through everything you need to know to get started making your own.
 
@@ -78,7 +78,7 @@ dependencies {
 
     // The `@BeforeTemplate` and `@AfterTemplate` annotations are needed for refaster style recipes
     compileOnly("com.google.errorprone:error_prone_core:2.19.1") {
-        exclude("com.google.auto.service", "auto-service-annotations")
+        exclude group: "com.google.auto.service", module: "auto-service-annotations"
     }
 }
 ```
