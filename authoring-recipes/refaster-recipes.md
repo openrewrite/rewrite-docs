@@ -47,6 +47,8 @@ A Refaster template recipe is an [imperative recipe](types-of-recipes.md#imperat
 
 You can combine multiple Refaster templates into one larger recipe by creating the templates as subclasses such as in the [SimplifyTernary recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SimplifyTernary.java).
 
+### Refaster template recipe names
+
 Refaster template recipe names are the class name + `Recipe` or `Recipes` depending on if there is more than one template in the class. For example, in the above `SimplifyTernary` recipe, there are two Refaster templates, so the final recipe name is `SimplifyTernaryRecipes`. On the other hand, if you look at the [example in the Refaster template section](refaster-recipes.md#refaster-template), you can see that there is only one template and no wrapper class. Because of that, the recipe would be named `StringIsEmptyRecipe`.
 
 ## How to create a Refaster recipe
