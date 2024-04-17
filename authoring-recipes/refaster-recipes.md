@@ -61,6 +61,8 @@ Moderne provides a [starter recipe repository](https://github.com/moderneinc/rew
 
 The first thing you'll need to do is update your dependencies and add an annotation processor. Below are the minimum recommended dependencies to include in your project:
 
+{% tabs %}
+{% tab title="Gradle" %}
 {% code title="build.gradle" %}
 ```groovy
 dependencies {
@@ -85,6 +87,73 @@ dependencies {
 }
 ```
 {% endcode %}
+{% endtab %}
+
+{% tab title="Maven" %}
+{% code title="pom.xml" %}
+```xml
+<dependencies>
+    <!-- Refaster style recipes need the rewrite-templating annotation processor and dependency for generated recipes -->
+    <dependency>
+        <groupId>org.openrewrite</groupId>
+        <artifactId>rewrite-templating</artifactId>
+    </dependency>
+
+    <!-- If you are developing recipes in Java, you'll need to bring in rewrite-java -->
+    <dependency>
+        <groupId>org.openrewrite</groupId>
+        <artifactId>rewrite-java</artifactId>
+    </dependency>
+
+    <!-- The `@BeforeTemplate` and `@AfterTemplate` annotations are needed for refaster style recipes -->
+    <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_core</artifactId>
+        <version>2.19.1</version>
+        <scope>provided</scope>
+        <exclusions>
+            <exclusion>
+                <groupId>com.google.auto.service</groupId>
+                <artifactId>auto-service-annotations</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.12.1</version>
+            <configuration>
+                <source>17</source>
+                <target>17</target>
+                <compilerArgs>
+                    <arg>-parameters</arg>
+                </compilerArgs>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>1.18.32</version>
+                    </path>
+                    <path>
+                        <groupId>org.openrewrite</groupId>
+                        <artifactId>rewrite-templating</artifactId>
+                        <version>1.6.3</version>
+                    </path>
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+
+
 
 ### Create a Java class
 
