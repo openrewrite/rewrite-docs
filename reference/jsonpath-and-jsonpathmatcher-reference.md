@@ -118,20 +118,27 @@ subjects:
 JsonPathMatcher matcher = new JsonPathMatcher("$.spec.containers[?(@.name == 'app')].image");
 ```
 
-Once you have constructed your JsonPathMatcher with a JsonPath expression as the "evaluation target", you can use the JsonPathMatcher to determine whether a given `Cursor` at a point within the tree matches what you're looking for.
-
-`JsonPathMatcher.matches(Cursor c)` returns `true` if the provided `Cursor` is a location within the document tree that _exactly_ matches the provided JsonPath expression. `JsonPathMatcher.encloses(Cursor c)` returns `true` if the provided `Cursor` is a location within the document tree which is _within the path_ of the provided JsonPath expression.
+Once you have constructed your JsonPathMatcher with a JsonPath expression as the "evaluation target", you can use the JsonPathMatcher to determine whether a given `Cursor` at a point within the tree matches what you're looking for as demonstrated by the [following example from rewrite-json](https://github.com/openrewrite/rewrite/blob/769f6de46e2e3d711c495feb82e7e5e0f2d889c9/rewrite-json/src/main/java/org/openrewrite/json/ChangeValue.java#L57-L76):
 
 ```java
-class ActionsSetupJavaAdoptOpenJDKToTemurinVisitor extends YamlIsoVisitor<ExecutionContext> {
-    private static final JsonPathMatcher distribution = new JsonPathMatcher("..steps[?(@.uses =~ 'actions/setup-java@v2.*')].with.distribution");
-
-    @Override
-    public Yaml.Mapping.Entry visitMappingEntry(Yaml.Mapping.Entry entry, ExecutionContext ctx) {
-        if (distribution.encloses(getCursor()) && ((Yaml.Scalar) entry.getValue()).getValue().contains("adopt")) {
-            return super.visitMappingEntry(entry.withValue(((Yaml.Scalar) entry.getValue()).withValue("temurin")), ctx);
+@Override
+public TreeVisitor<?, ExecutionContext> getVisitor() {
+    JsonPathMatcher matcher = new JsonPathMatcher(oldKeyPath);
+    return new JsonIsoVisitor<ExecutionContext>() {
+        @Override
+        public Json.Member visitMember(Json.Member member, ExecutionContext ctx) {
+            Json.Member m = super.visitMember(member, ctx);
+            if (matcher.matches(getCursor()) && (!(m.getValue() instanceof Json.Literal) || !((Json.Literal) m.getValue()).getValue().equals(value))) {
+                String source = ChangeValue.this.value;
+                if (source.startsWith("'") || source.startsWith("\"")) {
+                    source = source.substring(1, source.length() - 1);
+                }
+                if (!(m.getValue() instanceof Json.Literal) || !((Json.Literal) m.getValue()).getSource().equals(ChangeValue.this.value)) {
+                    m = m.withValue(new Json.Literal(randomId(), m.getValue().getPrefix(), Markers.EMPTY, ChangeValue.this.value, source));
+                }
+            }
+            return m;
         }
-        return super.visitMappingEntry(entry, ctx);
-    }
+    };
 }
 ```
