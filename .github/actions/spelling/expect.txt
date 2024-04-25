@@ -16,6 +16,7 @@ authenticationserviceexceptions
 autocrlf
 autoconfigure
 avro
+Awt
 awt
 azzert
 baz
