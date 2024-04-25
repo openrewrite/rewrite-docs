@@ -30,7 +30,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.4.2</version>
+            <version>1.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.4.2")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.5.0")
 }
 ```
 {% endcode %}
@@ -105,7 +105,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.4.2</version>
+            <version>1.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -134,7 +134,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.4.2")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.5.0")
 }
 ```
 {% endcode %}
@@ -175,7 +175,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.4.2")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.5.0")
 }
 
 // In older versions of gradle, use tasks.get() instead of tasks.named()
@@ -223,7 +223,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.4.2</version>
+            <version>1.5.0</version>
           </dependency>
         </dependencies>
       </plugin>

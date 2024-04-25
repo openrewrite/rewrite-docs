@@ -31,7 +31,7 @@ The Java 17 migration recipe can be applied by including OpenRewrite's plug-in t
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-migrate-java</artifactId>
-          <version>2.11.0</version>
+          <version>2.12.0</version>
         </dependency>
       </dependencies>
     </plugin>
