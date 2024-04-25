@@ -11,7 +11,7 @@ The [UpgradeSpringBoot_2_7](/reference/recipes/java/spring/boot2/upgradespringbo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.11.2")
+    id("org.openrewrite.rewrite") version("6.12.0")
 }
 
 rewrite {

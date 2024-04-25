@@ -290,7 +290,7 @@ Once your recipe module is published, either locally for testing or to an extern
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.11.2")
+    id("org.openrewrite.rewrite") version("6.12.0")
 }
 
 repositories {
