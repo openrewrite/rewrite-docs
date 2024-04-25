@@ -14,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add Gradle or Maven dependency](./adddependency.md)
 * [Change Gradle or Maven dependency](./changedependency.md)
+* [Change Gradle or Maven dependency](./changedependencygroupidandartifactid.md)
 * [Dependency insight for Gradle and Maven](./dependencyinsight.md)
 * [Dependency report](./dependencylist.md)
 * [Dependency resolution diagnostic](./dependencyresolutiondiagnostic.md)
@@ -22,5 +23,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find relocated dependencies](./relocateddependencycheck.md)
 * [Remove expired suppressions](./removeexpiredsuppressions.md)
 * [Upgrade Gradle or Maven dependency versions](./upgradedependencyversion.md)
+* [Upgrade transitive Gradle or Maven dependencies](./upgradetransitivedependencyversion.md)
 
 

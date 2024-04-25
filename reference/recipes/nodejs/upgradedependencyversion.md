@@ -6,11 +6,11 @@ _Upgrade matching Node.js direct dependencies._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/java/org/openrewrite/nodejs/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/0.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/java/org/openrewrite/nodejs/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/0.2.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-nodejs
-* version: 0.1.1
+* version: 0.2.1
 
 ## Options
 
@@ -38,14 +38,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-nodejs:0.1.1 in your build file:
+Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-nodejs:0.2.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.11.2")
+    id("org.openrewrite.rewrite") version("6.12.0")
 }
 
 rewrite {
@@ -57,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-nodejs:0.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-nodejs:0.2.1")
 }
 ```
 {% endcode %}
@@ -73,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.27.0</version>
+        <version>5.29.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeDependencyVersionExample</recipe>
@@ -83,7 +83,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-nodejs</artifactId>
-            <version>0.1.1</version>
+            <version>0.2.1</version>
           </dependency>
         </dependencies>
       </plugin>

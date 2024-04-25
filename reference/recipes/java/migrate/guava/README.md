@@ -49,6 +49,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `new AtomicReference<>()`](./noguavaatomicsnewreference.md)
 * [Prefer `new ConcurrentHashMap<>()`](./noguavasetsnewconcurrenthashset.md)
 * [Prefer `new CopyOnWriteArrayList<>()`](./noguavalistsnewcopyonwritearraylist.md)
+* [Prefer `new HashMap<>()`](./noguavamapsnewhashmap.md)
 * [Prefer `new HashSet<>()`](./noguavasetsnewhashset.md)
 * [Prefer `new LinkedHashMap<>()`](./noguavamapsnewlinkedhashmap.md)
 * [Prefer `new LinkedHashSet<>()`](./noguavasetsnewlinkedhashset.md)

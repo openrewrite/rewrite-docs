@@ -55,5 +55,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade Maven dependency version](./upgradedependencyversion.md)
 * [Upgrade Maven parent project version](./upgradeparentversion.md)
 * [Upgrade Maven plugin version](./upgradepluginversion.md)
+* [Upgrade transitive Maven dependencies](./upgradetransitivedependencyversion.md)
 
 

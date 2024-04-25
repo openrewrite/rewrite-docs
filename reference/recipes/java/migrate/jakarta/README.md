@@ -40,6 +40,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `javax.ws` packages to `jakarta.ws`](./javaxwstojakartaws.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](./javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](./javaxxmlwsmigrationtojakartaxmlws.md)
+* [Migrate deprecated `javeee-api` dependencies to `jakarta.platform`](./javaxeeapitojakarta.md)
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](./updateapachewssecuritypackages.md)
 * [Migrate to Jakarta EE 10](./jakartaee10.md)
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
@@ -63,13 +64,13 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Maybe add `jakarta.servlet-api` dependency](./maybeaddjakartaservletapi.md)
 * [Migrate Bean Validation messages](./beanvalidationmessages.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
 * [Remove `Bean.isNullable()`](./removebeanisnullable.md)
 * [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](./applicationpathwildcardnolongeraccepted.md)
 * [Rename CDI Extension to Jakarta](./javaxtojakartacdiextensions.md)
 * [Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`](./updateaddannotatedtypes.md)
+* [Update Jakarta EE Platform Dependencies to 10.0.0](./updatejakartaplatform10.md)
 * [Update `fireEvent()` and `createInjectionTarget()` calls](./updatebeanmanagermethods.md)
 * [Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`](./updategetrealpath.md)
 * [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)

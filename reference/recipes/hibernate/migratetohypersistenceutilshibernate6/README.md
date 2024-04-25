@@ -9,5 +9,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Migrate Hibernate Types to Hypersistence Utils 6.2](./2.md)
+* [Migrate Hibernate Types to Hypersistence Utils 6.3](./3.md)
 
 

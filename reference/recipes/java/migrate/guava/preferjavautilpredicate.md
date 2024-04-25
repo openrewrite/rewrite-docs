@@ -6,28 +6,28 @@ _Prefer `java.util.function.Predicate` instead of using `com.google.common.base.
 
 ### Tags
 
-* RSPEC-4738
+* [RSPEC-S4738](https://sonarsource.github.io/rspec/#/rspec/S4738)
 * guava
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.12.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.11.0
+* version: 2.12.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.11.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.12.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.11.2")
+    id("org.openrewrite.rewrite") version("6.12.0")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.11.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
 }
 ```
 {% endcode %}
@@ -54,12 +54,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.11.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.11.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate")
@@ -86,7 +86,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.27.0</version>
+        <version>5.29.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate</recipe>
@@ -96,7 +96,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.11.0</version>
+            <version>2.12.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -146,7 +146,7 @@ name: org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate
 displayName: Prefer `java.util.function.Predicate`
 description: Prefer `java.util.function.Predicate` instead of using `com.google.common.base.Predicate`.
 tags:
-  - RSPEC-4738
+  - RSPEC-S4738
   - guava
 recipeList:
   - org.openrewrite.java.ChangeType:

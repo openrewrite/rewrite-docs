@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Log exceptions as parameters rather than as string concatenations](./loggingexceptionconcatenationrecipe.md)
 * [Prepend a random name to each Log4J statement](./prependrandomname.md)
 * [Rewrites JUL's Logger#entering method to Log4j API](./convertjulentering.md)
 * [Rewrites JUL's Logger#exiting method to Log4j API](./convertjulexiting.md)

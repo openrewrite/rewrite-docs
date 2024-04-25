@@ -2,7 +2,7 @@
 
 **org.openrewrite.java.migrate.javax.AddInjectDependencies**
 
-_This recipe will add the necessary `inject-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater._
+_Add the necessary `inject-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater._
 
 ### Tags
 
@@ -13,11 +13,11 @@ _This recipe will add the necessary `inject-api` dependency from Jakarta EE 8 to
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/add-inject-dependencies.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/add-inject-dependencies.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.12.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.11.0
+* version: 2.12.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -25,14 +25,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.11.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.12.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.11.2")
+    id("org.openrewrite.rewrite") version("6.12.0")
 }
 
 rewrite {
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.11.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
 }
 ```
 {% endcode %}
@@ -59,12 +59,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.11.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.11.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.javax.AddInjectDependencies")
@@ -91,7 +91,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.27.0</version>
+        <version>5.29.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.javax.AddInjectDependencies</recipe>
@@ -101,7 +101,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.11.0</version>
+            <version>2.12.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -156,7 +156,7 @@ mod run . --recipe AddInjectDependencies
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.javax.AddInjectDependencies
 displayName: Add explicit Inject dependencies
-description: This recipe will add the necessary `inject-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
+description: Add the necessary `inject-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
 
 tags:
   - javax

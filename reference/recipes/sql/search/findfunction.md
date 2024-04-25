@@ -6,17 +6,17 @@ _Find SQL functions by name._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/search/FindFunction.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/search/FindFunction.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/1.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-sql
-* version: 1.3.0
+* version: 1.4.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | functionName | The name of the function to find, case insensitive. |  |
+| `String` | functionName | The name of the function to find, case insensitive. | `nvl` |
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -53,18 +53,18 @@ name: com.yourorg.FindFunctionExample
 displayName: Find SQL function example
 recipeList:
   - org.openrewrite.sql.search.FindFunction:
-      functionName: null
+      functionName: nvl
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindFunctionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-sql:1.3.0 in your build file:
+Now that `com.yourorg.FindFunctionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-sql:1.4.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.11.2")
+    id("org.openrewrite.rewrite") version("6.12.0")
 }
 
 rewrite {
@@ -76,7 +76,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-sql:1.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-sql:1.4.0")
 }
 ```
 {% endcode %}
@@ -92,7 +92,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.27.0</version>
+        <version>5.29.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindFunctionExample</recipe>
@@ -102,7 +102,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-sql</artifactId>
-            <version>1.3.0</version>
+            <version>1.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -133,4 +133,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

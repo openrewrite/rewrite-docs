@@ -120,6 +120,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `Collection` interfaces](./usecollectioninterfaces.md)
 * [Use `Collection#isEmpty()` instead of comparing `size()`](./isemptycalloncollections.md)
 * [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](./noemptycollectionwithrawtype.md)
+* [Use Empty Array for `Collection.toArray()`](./replacecollectiontoarrayargwithemptyarray.md)
 * [Use `Map#containsKey`](./usemapcontainskey.md)
 * [Use `StandardCharset` constants](./usestandardcharset.md)
 * [Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`](./equalstocontentequals.md)

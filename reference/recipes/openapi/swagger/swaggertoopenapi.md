@@ -11,11 +11,11 @@ _Migrate from Swagger to OpenAPI._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.0.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.1.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-openapi
-* version: 0.0.4
+* version: 0.1.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.0.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.11.2")
+    id("org.openrewrite.rewrite") version("6.12.0")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-openapi:0.0.4")
+    rewrite("org.openrewrite.recipe:rewrite-openapi:0.1.0")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.11.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-openapi:0.0.4")
+        rewrite("org.openrewrite.recipe:rewrite-openapi:0.1.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.openapi.swagger.SwaggerToOpenAPI")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.27.0</version>
+        <version>5.29.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.openapi.swagger.SwaggerToOpenAPI</recipe>
@@ -99,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-openapi</artifactId>
-            <version>0.0.4</version>
+            <version>0.1.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -135,6 +135,21 @@ mod run . --recipe SwaggerToOpenAPI
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependencygroupidandartifactid.md)
+  * oldGroupId: `io.swagger`
+  * oldArtifactId: `swagger-annotations`
+  * newGroupId: `io.swagger.core.v3`
+  * newVersion: `2.2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependencygroupidandartifactid.md)
+  * oldGroupId: `io.swagger`
+  * oldArtifactId: `swagger-core`
+  * newGroupId: `io.swagger.core.v3`
+  * newVersion: `2.2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependencygroupidandartifactid.md)
+  * oldGroupId: `io.swagger`
+  * oldArtifactId: `swagger-models`
+  * newGroupId: `io.swagger.core.v3`
+  * newVersion: `2.2.x`
 * [Change type](../../java/changetype.md)
   * oldFullyQualifiedTypeName: `io.swagger.annotations.Tag`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.tags.Tag`
@@ -161,6 +176,21 @@ tags:
   - openapi
   - swagger
 recipeList:
+  - org.openrewrite.java.dependencies.ChangeDependencyGroupIdAndArtifactId:
+      oldGroupId: io.swagger
+      oldArtifactId: swagger-annotations
+      newGroupId: io.swagger.core.v3
+      newVersion: 2.2.x
+  - org.openrewrite.java.dependencies.ChangeDependencyGroupIdAndArtifactId:
+      oldGroupId: io.swagger
+      oldArtifactId: swagger-core
+      newGroupId: io.swagger.core.v3
+      newVersion: 2.2.x
+  - org.openrewrite.java.dependencies.ChangeDependencyGroupIdAndArtifactId:
+      oldGroupId: io.swagger
+      oldArtifactId: swagger-models
+      newGroupId: io.swagger.core.v3
+      newVersion: 2.2.x
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.swagger.annotations.Tag
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.tags.Tag

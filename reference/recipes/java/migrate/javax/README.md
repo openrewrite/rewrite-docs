@@ -4,18 +4,23 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add explicit Common Annotations dependencies](./addcommonannotationsdependencies.md)
 * [Add explicit Inject dependencies](./addinjectdependencies.md)
 * [Add explicit JAX-WS dependencies](./addjaxwsdependencies.md)
 * [Add explicit JAXB dependencies](./addjaxbdependencies.md)
+* [Migrate from OpenJPA to EclipseLink JPA](./openjpatoeclipselink.md)
 * [Use modernized `javax.lang.model.util` APIs](./javaxlangmodelutil.md)
 * [Use modernized `javax.xml.stream` APIs](./javaxxmlstreamapis.md)
 * [Use the latest JAX-WS API and runtime for Jakarta EE 8](./addjaxwsruntime.md)
 
 ## Recipes
 
+* [`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation](./addcolumnannotation.md)
+* [`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation](./removeembeddableid.md)
+* [`@Entity` objects with constructors must also have a default constructor](./adddefaultconstructortoentityclass.md)
+* [`@JoinColumn` annotations must be used with relationship mappings](./usejoincolumnformapping.md)
 * [Add scope annotation to injected classes](./addscopetoinjectedclass.md)
 * [Attributes with automatically generated values require configuration](./addtablegenerator.md)
-* [Migrate from OpenJPA to EclipseLink JPA](./openjpatoeclipselink.md)
 * [Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0](./httpsessioninvalidate.md)
 * [Use `javax.lang.model.util.AbstractAnnotationValueVisitor9`](./migrateabstractannotationvaluevisitor6to9.md)
 * [Use `javax.lang.model.util.AbstractElementVisitor9`](./migrateabstractelementvisitor6to9.md)

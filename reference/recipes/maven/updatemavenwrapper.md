@@ -6,25 +6,18 @@ _Update the version of Maven used in an existing Maven wrapper._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.23.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.24.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.23.1
+* version: 8.24.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | wrapperVersion | *Optional*. An exact version number or node-style semver selector used to select the wrapper version number. | `3.x` |
-                        | `String` | wrapperDistribution | *Optional*. The distribution of the Maven wrapper to use.
-
-* "bin" uses a `maven-wrapper.jar` compiled binary.
-* "only-script" uses a lite version of `mvnw`/`mvnw.cmd` using wget/curl or powershell. (required wrapper 3.2.0 or newer)
-* "script" downloads `maven-wrapper.jar` or `MavenWrapperDownloader.java` to then download a full distribution.
-* "source" uses `MavenWrapperDownloader.java` source file.
-
-Defaults to "bin". Valid options: `bin`, `only-script`, `script`, `source` |  |
+| `String` | wrapperDistribution | *Optional*. The distribution of the Maven wrapper to use.<br /><br />* "bin" uses a `maven-wrapper.jar` compiled binary.<br />* "only-script" uses a lite version of `mvnw`/`mvnw.cmd` using wget/curl or powershell. (required wrapper 3.2.0 or newer)<br />* "script" downloads `maven-wrapper.jar` or `MavenWrapperDownloader.java` to then download a full distribution.<br />* "source" uses `MavenWrapperDownloader.java` source file.<br /><br />Defaults to "bin". Valid options: `bin`, `only-script`, `script`, `source` |  |
 | `String` | distributionVersion | *Optional*. An exact version number or node-style semver selector used to select the Maven version number. | `3.x` |
 | `String` | repositoryUrl | *Optional*. The URL of the repository to download the Maven wrapper and distribution from. Supports repositories with a Maven layout. Defaults to `https://repo.maven.apache.org/maven2`. | `https://repo.maven.apache.org/maven2` |
 | `Boolean` | addIfMissing | *Optional*. Add a Maven wrapper, if it's missing. Defaults to `true`. |  |
@@ -46,7 +39,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.27.0</version>
+        <version>5.29.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.maven.UpdateMavenWrapper</recipe>

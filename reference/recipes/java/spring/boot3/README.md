@@ -8,6 +8,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Spring Boot properties to 3.0](./springbootproperties_3_0.md)
 * [Migrate Spring Boot properties to 3.1](./springbootproperties_3_1.md)
 * [Migrate Spring Boot properties to 3.2](./springbootproperties_3_2.md)
+* [Migrate dropWizard dependencies to Spring Boot 3.x](./migratedropwizarddependencies.md)
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](./migratethymeleafdependencies.md)
 * [Migrate to Spring Batch 5.0 from 4.3](./springbatch4to5migration.md)
 * [Migrate to Spring Boot 3.0](./upgradespringboot_3_0.md)

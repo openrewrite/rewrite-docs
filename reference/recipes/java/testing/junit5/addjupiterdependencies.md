@@ -1,32 +1,32 @@
-# Maybe add `jakarta.servlet-api` dependency
+# Add JUnit Jupiter dependencies
 
-**org.openrewrite.java.migrate.jakarta.MaybeAddJakartaServletApi**
+**org.openrewrite.java.testing.junit5.AddJupiterDependencies**
 
-_Adds the `jakarta.servlet-api` dependency, unless the project already uses `spring-boot-starter-web`, which transitively includes a compatible implementation under a different GAV._
+_Adds JUnit Jupiter dependencies to a Maven or Gradle project. Junit Jupiter can be added either with the artifact junit-jupiter, or both of junit-jupiter-api and junit-jupiter-engine. This adds "junit-jupiter" dependency unless "junit-jupiter-api" or "junit-jupiter-engine" are already present._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/jakarta/MaybeAddJakartaServletApi.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/AddJupiterDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.7.0/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: 2.11.0
+* artifactId: rewrite-testing-frameworks
+* version: 2.7.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.11.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.7.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.11.2")
+    id("org.openrewrite.rewrite") version("6.12.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.jakarta.MaybeAddJakartaServletApi")
+    activeRecipe("org.openrewrite.java.testing.junit5.AddJupiterDependencies")
 }
 
 repositories {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.11.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.7.0")
 }
 ```
 {% endcode %}
@@ -49,15 +49,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.11.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.11.0")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.7.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.jakarta.MaybeAddJakartaServletApi")
+        activeRecipe("org.openrewrite.java.testing.junit5.AddJupiterDependencies")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -81,17 +81,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.27.0</version>
+        <version>5.29.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.jakarta.MaybeAddJakartaServletApi</recipe>
+            <recipe>org.openrewrite.java.testing.junit5.AddJupiterDependencies</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.11.0</version>
+            <artifactId>rewrite-testing-frameworks</artifactId>
+            <version>2.7.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -108,7 +108,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.MaybeAddJakartaServletApi
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.junit5.AddJupiterDependencies
 ```
 {% endcode %}
 {% endtab %}
@@ -117,7 +117,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe MaybeAddJakartaServletApi
+mod run . --recipe AddJupiterDependencies
 ```
 {% endcode %}
 {% endtab %}
@@ -125,7 +125,7 @@ mod run . --recipe MaybeAddJakartaServletApi
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.jakarta.MaybeAddJakartaServletApi)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.testing.junit5.AddJupiterDependencies)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
