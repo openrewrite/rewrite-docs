@@ -86,7 +86,7 @@ OpenRewrite is likely building up a model of your code and resolving types – t
 
 ## Can I create a report or summary of the changes made through OpenRewrite?
 
-Yes. Take a look at the [getting started with data tables guide](https://docs.moderne.io/user-documentation/data-tables). Right now, data tables can only be accessed through the [Moderne platform](https://app.moderne.io/). Access to these will be made available through the Maven and Gradle plugin soon.
+This is currently not possible with OpenRewrite. That being said, Moderne offers this functionality through the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) and the [Moderne Platform](https://app.moderne.io/getting-started). For more information, check out our [getting started with data tables guide](https://docs.moderne.io/user-documentation/data-tables).
 
 ## I want to exclude a single recipe from a collection of recipes.
 
