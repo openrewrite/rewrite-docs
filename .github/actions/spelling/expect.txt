@@ -18,6 +18,7 @@ autoconfigure
 avro
 Awt
 azzert
+Bazel
 baz
 bfa
 BOMs
