@@ -171,7 +171,7 @@ mod run . --recipe JavaxMigrationToJakarta
 * [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](../../../java/migrate/jakarta/applicationpathwildcardnolongeraccepted.md)
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](../../../java/migrate/jakarta/updateapachewssecuritypackages.md)
 * [Migrate to JavaEE8](../../../java/migrate/javaee8.md)
-* [Migrate deprecated `javeee-api` dependencies to `jakarta.platform`](../../../java/migrate/jakarta/javaxeeapitojakarta.md)
+* [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](../../../java/migrate/jakarta/javaxeeapitojakarta.md)
 
 {% endtab %}
 

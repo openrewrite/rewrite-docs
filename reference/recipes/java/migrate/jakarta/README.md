@@ -40,7 +40,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `javax.ws` packages to `jakarta.ws`](./javaxwstojakartaws.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](./javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](./javaxxmlwsmigrationtojakartaxmlws.md)
-* [Migrate deprecated `javeee-api` dependencies to `jakarta.platform`](./javaxeeapitojakarta.md)
+* [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](./javaxeeapitojakarta.md)
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](./updateapachewssecuritypackages.md)
 * [Migrate to Jakarta EE 10](./jakartaee10.md)
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
