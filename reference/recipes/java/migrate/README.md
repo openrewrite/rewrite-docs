@@ -41,7 +41,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to JavaEE7](./javaee7.md)
 * [Migrate to JavaEE8](./javaee8.md)
 * [Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`](./removedfileiofinalizemethods.md)
-* [Replace `finalize` method in `java.util.zip.Zipfile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](./removedzipfinalizemethods.md)
+* [Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](./removedzipfinalizemethods.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](./jre17agentmainpremainpublic.md)
 * [Upgrade Java version](./upgradejavaversion.md)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](./jredonotusesunnetsslinternalsslprovider.md)

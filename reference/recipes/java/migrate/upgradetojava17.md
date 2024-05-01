@@ -159,7 +159,7 @@ mod run . --recipe UpgradeToJava17
   * artifactId: `clm-maven-plugin`
   * newVersion: `2.47.6-01`
 * [Remove `Thread.countStackFrames()` method](../../java/migrate/deprecatedcountstackframesmethod.md)
-* [Replace `finalize` method in `java.util.zip.Zipfile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](../../java/migrate/removedzipfinalizemethods.md)
+* [Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](../../java/migrate/removedzipfinalizemethods.md)
 * [Replace `SSLSession.getPeerCertificateChain()` method](../../java/migrate/removedsslsessiongetpeercertificatechainmethodimpl.md)
 * [Replace `com.sun.net.ssl` package](../../java/migrate/sunnetsslpackageunavailable.md)
 * [Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant](../../java/migrate/removedrmiconnectorservercredentialtypesconstant.md)
