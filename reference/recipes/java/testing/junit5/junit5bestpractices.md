@@ -162,7 +162,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.StaticImports
   - org.openrewrite.java.testing.junit5.CleanupAssertions
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
-  - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic:
+  - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
   - org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation
   - org.openrewrite.java.testing.junit5.RemoveDuplicateTestTemplates
   - org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks

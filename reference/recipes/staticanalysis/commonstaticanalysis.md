@@ -229,7 +229,7 @@ recipeList:
   - org.openrewrite.staticanalysis.InlineVariable
   - org.openrewrite.staticanalysis.IsEmptyCallOnCollections
   - org.openrewrite.staticanalysis.LambdaBlockToExpression
-  - org.openrewrite.staticanalysis.MethodNameCasing:
+  - org.openrewrite.staticanalysis.MethodNameCasing
   - org.openrewrite.staticanalysis.MinimumSwitchCases
   - org.openrewrite.staticanalysis.ModifierOrder
   - org.openrewrite.staticanalysis.MultipleVariableDeclarations

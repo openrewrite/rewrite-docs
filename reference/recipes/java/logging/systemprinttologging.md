@@ -157,9 +157,9 @@ description: Replace `System.out` and `System.err` print statements with a logge
 
 
 recipeList:
-  - org.openrewrite.java.logging.SystemErrToLogging:
-  - org.openrewrite.java.logging.SystemOutToLogging:
-  - org.openrewrite.java.logging.PrintStackTraceToLogError:
+  - org.openrewrite.java.logging.SystemErrToLogging
+  - org.openrewrite.java.logging.SystemOutToLogging
+  - org.openrewrite.java.logging.PrintStackTraceToLogError
 
 ```
 {% endtab %}

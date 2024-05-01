@@ -149,7 +149,7 @@ description: Applies best practices to tests.
 tags:
   - testing
 recipeList:
-  - org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions:
+  - org.openrewrite.java.testing.cleanup.TestsShouldIncludeAssertions
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
 
 ```

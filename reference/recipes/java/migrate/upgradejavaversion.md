@@ -126,8 +126,8 @@ displayName: Upgrade Java version
 description: Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
 
 recipeList:
-  - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration:
-  - org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion:
+  - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration
+  - org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion
   - org.openrewrite.gradle.UpdateJavaCompatibility:
       allowDowngrade: false
 

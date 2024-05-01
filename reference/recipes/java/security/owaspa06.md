@@ -140,7 +140,7 @@ displayName: Remediate OWASP A06:2021 Vulnerable and outdated components
 description: OWASP [A06:2021](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/) describes failures related to vulnerable and outdated components.
 
 recipeList:
-  - org.openrewrite.java.dependencies.DependencyVulnerabilityCheck:
+  - org.openrewrite.java.dependencies.DependencyVulnerabilityCheck
 
 ```
 {% endtab %}

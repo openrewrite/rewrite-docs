@@ -159,7 +159,7 @@ recipeList:
   - org.openrewrite.java.security.SecureTempFileCreation
   - org.openrewrite.java.security.FindTextDirectionChanges
   - org.openrewrite.java.security.UseFilesCreateTempDirectory
-  - org.openrewrite.java.security.spring.CsrfProtection:
+  - org.openrewrite.java.security.spring.CsrfProtection
 
 ```
 {% endtab %}

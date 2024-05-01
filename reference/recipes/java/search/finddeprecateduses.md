@@ -144,9 +144,9 @@ description: Find deprecated uses of methods, fields, and types. Optionally igno
 
 
 recipeList:
-  - org.openrewrite.java.search.FindDeprecatedMethods:
-  - org.openrewrite.java.search.FindDeprecatedClasses:
-  - org.openrewrite.java.search.FindDeprecatedFields:
+  - org.openrewrite.java.search.FindDeprecatedMethods
+  - org.openrewrite.java.search.FindDeprecatedClasses
+  - org.openrewrite.java.search.FindDeprecatedFields
 
 ```
 {% endtab %}

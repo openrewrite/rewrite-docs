@@ -188,7 +188,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.commons.logging.Log
       newFullyQualifiedTypeName: org.slf4j.Logger
-  - org.openrewrite.java.logging.ChangeLombokLogAnnotation:
+  - org.openrewrite.java.logging.ChangeLombokLogAnnotation
 
 ```
 {% endtab %}

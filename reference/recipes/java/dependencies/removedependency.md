@@ -135,8 +135,8 @@ For Maven project, removes a single dependency from the <dependencies> section o
 
 
 recipeList:
-  - org.openrewrite.gradle.RemoveDependency:
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.gradle.RemoveDependency
+  - org.openrewrite.maven.RemoveDependency
 
 ```
 {% endtab %}

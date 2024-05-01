@@ -178,7 +178,7 @@ recipeList:
       oldFullyQualifiedTypeName: org.apache.logging.log4j.Logger
       newFullyQualifiedTypeName: org.slf4j.Logger
   - org.openrewrite.java.logging.slf4j.ParameterizedLogging
-  - org.openrewrite.java.logging.ChangeLombokLogAnnotation:
+  - org.openrewrite.java.logging.ChangeLombokLogAnnotation
 
 ```
 {% endtab %}

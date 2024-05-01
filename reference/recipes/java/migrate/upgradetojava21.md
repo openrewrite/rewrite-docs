@@ -189,7 +189,7 @@ recipeList:
   - org.openrewrite.java.migrate.util.SequencedCollection
   - org.openrewrite.java.migrate.util.UseLocaleOf
   - org.openrewrite.staticanalysis.ReplaceDeprecatedRuntimeExecMethods
-  - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
+  - org.openrewrite.github.SetupJavaUpgradeJavaVersion
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: 8.5
       addIfMissing: false

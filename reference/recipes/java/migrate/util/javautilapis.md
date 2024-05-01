@@ -152,7 +152,7 @@ recipeList:
   - org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet
   - org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList
   - org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet
-  - org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList:
+  - org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList
 
 ```
 {% endtab %}

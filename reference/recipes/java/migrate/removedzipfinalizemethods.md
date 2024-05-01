@@ -1,4 +1,4 @@
-# Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`
+# Replace `finalize` method in `java.util.zip.Zipfile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`
 
 **org.openrewrite.java.migrate.RemovedZipFinalizeMethods**
 
