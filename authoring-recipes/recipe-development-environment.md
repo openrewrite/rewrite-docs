@@ -321,6 +321,10 @@ then the `rewrite` `dependency` should be:
 * `rewrite("com.yourorg:rewrite-recipe-starter:0.1.0-dev.25.uncommitted+f58d7fa")`.
 {% endhint %}
 
+{% hint style="warning" %}
+If the recipe you're wanting to use is a [Refaster template recipe](/authoring-recipes/refaster-recipes.md), please keep in mind that the _recipe name_ is not the class name – it is the generated class name. For instance, if you wanted to test the [SimplifyTernary recipe](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/SimplifyTernary.java) - you would need to enter `com.yourorg.SimplifyTernaryRecipes` as the recipe name.
+{% endhint %}
+
 Now you can run your recipe with `gradle rewriteRun` or `gradle rewriteDryRun`
 
 If you run into errors when trying to publish and read your recipe locally, try deleting the jars that end with `uncommitted+<hash>` and then re-build them. Furthermore, if you're getting errors in your IDE when trying to build or run recipes, try restarting the IDE.
@@ -367,6 +371,10 @@ then the `rewrite` `dependency` should have:
 * A `groupId` of `com.yourorg`
 * An `artifactId` of `rewrite-recipe-starter`,
 * A `version` of `1.0.1-SNAPSHOT`.
+{% endhint %}
+
+{% hint style="warning" %}
+If the recipe you're wanting to use is a [Refaster template recipe](/authoring-recipes/refaster-recipes.md), please keep in mind that the _recipe name_ is not the class name – it is the generated class name. For instance, if you wanted to test the [SimplifyTernary recipe](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/SimplifyTernary.java) - you would need to enter `com.yourorg.SimplifyTernaryRecipes` as the recipe name.
 {% endhint %}
 
 Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
