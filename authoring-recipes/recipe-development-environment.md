@@ -356,17 +356,17 @@ If you run into errors when trying to publish and read your recipe locally, try 
 {% hint style="info" %}
 If testing locally, your `rewrite` `dependency` should match the structure of your `.m2` folder. For example, if the path to your recipe in the `.m2` folder is:
 
-* `~/.m2/repository/com/yourorg/rewrite-recipe-starter`
+* `~/.m2/repository/com/yourorg/rewrite-recipe-starter/1.0.1-SNAPSHOT`
 
 and the jar in that folder is:
 
-* `rewrite-recipe-starter-0.1.0-dev.25.uncommitted+f58d7fa.jar`
+* `rewrite-recipe-starter-1.0.1-SNAPSHOT.jar`
 
 then the `rewrite` `dependency` should have:
 
 * A `groupId` of `com.yourorg`
 * An `artifactId` of `rewrite-recipe-starter`,
-* A `version` of `0.1.0-dev.25.uncommitted+f58d7fa`.
+* A `version` of `1.0.1-SNAPSHOT`.
 {% endhint %}
 
 Now you can run your recipe with `mvn rewrite:run` or `mvn rewrite:dryRun`
