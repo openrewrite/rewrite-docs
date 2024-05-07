@@ -264,9 +264,19 @@ In order for your recipes to be usable by the OpenRewrite build plugins or on [a
 
 ### Local publishing for testing
 
-Before you publish your recipe module to an artifact repository, you may want to try it out locally. To do this, on the command line, run `gradle publishToMavenLocal` (or equivalently `gradle pTML`). This will publish to your local maven repository, typically under `~/.m2/repository`.
+Before you publish your recipe module to an artifact repository, you may want to try it out locally. Run the command in the below table to publish your recipe to your local Maven repository (which typically exists at `~/.m2/repository`). You can then test this recipe in a separate repository locally by following the instructions in the [running your recipes](recipe-development-environment.md#running-your-recipes) section.
 
-Once your artifact is published, you can test this recipe in a separate repository locally by following the instructions in the [running your recipes](recipe-development-environment.md#running-your-recipes) section.
+{% tabs %}
+{% tab title="Gradle" %}
+Run `gradle publishToMavenLocal` (or, equivalently, `gradle pTML`).
+{% endtab %}
+
+{% tab title="Maven" %}
+```bash
+maven install
+```
+{% endtab %}
+{% endtabs %}
 
 ### Publishing to artifact repositories
 
