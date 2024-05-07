@@ -7,6 +7,7 @@
   * [Running Rewrite on a Maven project without modifying the build](running-recipes/running-rewrite-on-a-maven-project-without-modifying-the-build.md)
   * [Running Rewrite on a multi-module Maven project](running-recipes/multi-module-maven.md)
   * [Running text based recipes](/running-recipes/running-text-based-recipes.md)
+  * [Getting started with data tables](/running-recipes/data-tables.md)
   * [Popular recipe guides](running-recipes/popular-recipe-guides/README.md)
     * [Common static analysis issue remediation](running-recipes/popular-recipe-guides/common-static-analysis-issue-remediation.md)
     * [Automatically fix Checkstyle violations](running-recipes/popular-recipe-guides/automatically-fix-checkstyle-violations.md)
