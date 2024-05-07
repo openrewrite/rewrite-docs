@@ -21,7 +21,7 @@ repositories {
 }
 ```
 
-* Update your version numbers to use `latest.integration` (you can also specify a specific release such as `1.18<!-- DO NOT BUMP -->.0-SNAPSHOT` instead if you like):
+* Update your version numbers to use `latest.integration` (you can also specify a specific release such as `1.18.0-SNAPSHOT` <!--DO NOT BUMP--> instead if you like):
 
 ```groovy
 dependencies {
