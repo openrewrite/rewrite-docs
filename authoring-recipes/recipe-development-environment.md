@@ -273,7 +273,7 @@ Run `gradle publishToMavenLocal` (or, equivalently, `gradle pTML`).
 
 {% tab title="Maven" %}
 ```bash
-maven install
+mvn install
 ```
 {% endtab %}
 {% endtabs %}
