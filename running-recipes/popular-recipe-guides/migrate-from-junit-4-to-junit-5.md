@@ -15,7 +15,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.29.0</version>
+      <version>5.30.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -77,7 +77,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.29.0</version>
+      <version>5.30.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -360,13 +360,13 @@ public class ExampleJunitTestClass {
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.29.0</version>
+            <version>5.30.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.29.0</version>
+            <version>5.30.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -20,7 +20,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
@@ -94,7 +94,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
@@ -204,7 +204,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
