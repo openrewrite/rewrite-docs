@@ -59,7 +59,7 @@ Once data tables have been enabled, please run your recipe as normal such as wit
 
 ### Step 3: Access your data table
 
-After your recipe has been run, a `target/rewrite/datables` directory will be created in your repository. In there, there will be a timestamped folder that contains CSVs for the data tables that were produced by the recipe:
+After your recipe has been run, a `target/rewrite/datatables` directory will be created in your repository. In there, there will be a timestamped folder that contains CSVs for the data tables that were produced by the recipe:
 
 ![Example target folder](/.gitbook/assets/datatable-example.png)
 

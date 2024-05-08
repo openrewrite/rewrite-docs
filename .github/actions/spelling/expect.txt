@@ -58,6 +58,7 @@ cyclonedx
 databind
 datafaker
 datasource
+datatable
 DAX
 defaultimpl
 defaultstringfallbackrecipe
@@ -271,6 +272,7 @@ testcontainers
 testng
 throwz
 thymeleaf
+timestamped
 TML
 TODOs
 tostring
