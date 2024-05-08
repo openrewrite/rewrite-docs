@@ -14,7 +14,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add Gradle or Maven dependency](./adddependency.md)
 * [Change Gradle or Maven dependency](./changedependency.md)
-* [Change Gradle or Maven dependency](./changedependencygroupidandartifactid.md)
 * [Dependency insight for Gradle and Maven](./dependencyinsight.md)
 * [Dependency report](./dependencylist.md)
 * [Dependency resolution diagnostic](./dependencyresolutiondiagnostic.md)

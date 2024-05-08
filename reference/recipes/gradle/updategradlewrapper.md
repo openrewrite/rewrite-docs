@@ -6,11 +6,11 @@ _Update the version of Gradle used in an existing Gradle wrapper. Queries servic
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateGradleWrapper.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.24.0
+* version: 8.25.0
 
 ## Options
 
@@ -19,7 +19,7 @@ _Update the version of Gradle used in an existing Gradle wrapper. Queries servic
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. Defaults to the latest release available from services.gradle.org if not specified. | `7.x` |
 | `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. Defaults to "bin". Valid options: `bin`, `all` |  |
 | `Boolean` | addIfMissing | *Optional*. Add a Gradle wrapper, if it's missing. Defaults to `true`. |  |
-| `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution. Lookup of available versions still requires access to https://services.gradle.org When this is specified the exact literal values supplied for `version` and `distribution` will be interpolated into this string wherever `${version}` and `${distribution}` appear respectively. Defaults to https://services.gradle.org/distributions/gradle-${version}-${distribution}.zip. |  |
+| `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution. Lookup of available versions still requires access to https://services.gradle.org When this is specified the exact literal values supplied for `version` and `distribution` will be interpolated into this string wherever `${version}` and `${distribution}` appear respectively. Defaults to https://services.gradle.org/distributions/gradle-${version}-${distribution}.zip. | `https://services.gradle.org/distributions/gradle-${version}-${distribution}.zip` |
 
 
 ## Usage
@@ -31,7 +31,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {

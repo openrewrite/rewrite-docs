@@ -1,37 +1,32 @@
-# Change Maven Java version property values to 21
+# Private accessor methods must have a `@Transient` annotation
 
-**org.openrewrite.java.migrate.JavaVersion21**
+**org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor**
 
-_Change maven.compiler.source and maven.compiler.target values to 21._
-
-### Tags
-
-* compiler
-* java21
+_According to the JPA 2.1 specification, when property access is used, the property accessor methods must be public or protected. OpenJPA ignores any private accessor methods, whereas EclipseLink persists those attributes. To ignore private accessor methods in EclipseLink, the methods must have a `@Transient` annotation._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-21.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.12.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/javax/AddTransientAnnotationToPrivateAccessor.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.13.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.12.0
+* version: 2.13.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.12.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.13.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.JavaVersion21")
+    activeRecipe("org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor")
 }
 
 repositories {
@@ -39,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
 }
 ```
 {% endcode %}
@@ -54,15 +49,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.JavaVersion21")
+        activeRecipe("org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -86,17 +81,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.JavaVersion21</recipe>
+            <recipe>org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.12.0</version>
+            <version>2.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -113,7 +108,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.JavaVersion21
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor
 ```
 {% endcode %}
 {% endtab %}
@@ -122,46 +117,19 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe JavaVersion21
+mod run . --recipe AddTransientAnnotationToPrivateAccessor
 ```
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Upgrade Java version](../../java/migrate/upgradejavaversion.md)
-  * version: `21`
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.JavaVersion21
-displayName: Change Maven Java version property values to 21
-description: Change maven.compiler.source and maven.compiler.target values to 21.
-tags:
-  - compiler
-  - java21
-recipeList:
-  - org.openrewrite.java.migrate.UpgradeJavaVersion:
-      version: 21
-
-```
-{% endtab %}
-{% endtabs %}
-
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.JavaVersion21)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.javax.AddTransientAnnotationToPrivateAccessor)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), Kun Li
+Evie Lau

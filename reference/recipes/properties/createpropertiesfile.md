@@ -6,11 +6,11 @@ _Create a new Properties file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/CreatePropertiesFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/CreatePropertiesFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 8.24.0
+* version: 8.25.0
 
 ## Options
 
@@ -46,7 +46,7 @@ Now that `com.yourorg.CreatePropertiesFileExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
@@ -70,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CreatePropertiesFileExample</recipe>

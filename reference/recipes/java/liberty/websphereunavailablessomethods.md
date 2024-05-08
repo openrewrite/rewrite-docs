@@ -1,16 +1,16 @@
-# Use `getSSOCookieFromSSOToken`
+# Use `getSSOCookieFromSSOToken` and `logout`
 
-**org.openrewrite.java.liberty.WebSphereUnavailableSSOTokenMethod**
+**org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods**
 
-_This method `LTPACookieFromSSOToken()` is deprecated in traditional WebSphere Application  Server Version 8.5 and might be removed in a future release. It is not available on Liberty._
+_This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken`  and `revokeSSOCookies` with `logout`. The two methods are  deprecated in traditional WebSphere Application  Server Version 8.5 and might be removed in a future release. They are not available on Liberty._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-liberty
-* version: 1.2.0
+* version: 1.3.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,18 +18,18 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.liberty.WebSphereUnavailableSSOTokenMethod")
+    activeRecipe("org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods")
 }
 
 repositories {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-liberty:1.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-liberty:1.3.0")
 }
 ```
 {% endcode %}
@@ -52,15 +52,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-liberty:1.2.0")
+        rewrite("org.openrewrite.recipe:rewrite-liberty:1.3.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.liberty.WebSphereUnavailableSSOTokenMethod")
+        activeRecipe("org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -84,17 +84,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.liberty.WebSphereUnavailableSSOTokenMethod</recipe>
+            <recipe>org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>1.2.0</version>
+            <version>1.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -111,7 +111,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-liberty:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.liberty.WebSphereUnavailableSSOTokenMethod
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-liberty:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods
 ```
 {% endcode %}
 {% endtab %}
@@ -120,7 +120,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe WebSphereUnavailableSSOTokenMethod
+mod run . --recipe WebSphereUnavailableSSOMethods
 ```
 {% endcode %}
 {% endtab %}
@@ -130,6 +130,7 @@ mod run . --recipe WebSphereUnavailableSSOTokenMethod
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Replace `revokeSSOCookies` with `logout`](../../java/liberty/websphereunavailablessocookiemethod.md)
 * [Change method name](../../java/changemethodname.md)
   * methodPattern: `com.ibm.websphere.security.WSSecurityHelper getLTPACookieFromSSOToken()`
   * newMethodName: `getSSOCookieFromSSOToken`
@@ -145,11 +146,12 @@ mod run . --recipe WebSphereUnavailableSSOTokenMethod
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.liberty.WebSphereUnavailableSSOTokenMethod
-displayName: Use `getSSOCookieFromSSOToken`
-description: This method `LTPACookieFromSSOToken()` is deprecated in traditional WebSphere Application  Server Version 8.5 and might be removed in a future release. It is not available on Liberty.
+name: org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods
+displayName: Use `getSSOCookieFromSSOToken` and `logout`
+description: This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken`  and `revokeSSOCookies` with `logout`. The two methods are  deprecated in traditional WebSphere Application  Server Version 8.5 and might be removed in a future release. They are not available on Liberty.
 
 recipeList:
+  - org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.ibm.websphere.security.WSSecurityHelper getLTPACookieFromSSOToken()
       newMethodName: getSSOCookieFromSSOToken
@@ -165,8 +167,11 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.liberty.WebSphereUnavailableSSOTokenMethod)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+[Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

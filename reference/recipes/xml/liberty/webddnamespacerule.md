@@ -6,11 +6,11 @@ _Namespace values in web.xml must be consistent with the descriptor version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-liberty
-* version: 1.2.0
+* version: 1.3.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-liberty:1.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-liberty:1.3.0")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-liberty:1.2.0")
+        rewrite("org.openrewrite.recipe:rewrite-liberty:1.3.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.xml.liberty.WebDDNamespaceRule")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.xml.liberty.WebDDNamespaceRule</recipe>
@@ -94,7 +94,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>1.2.0</version>
+            <version>1.3.0</version>
           </dependency>
         </dependencies>
       </plugin>

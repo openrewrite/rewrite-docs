@@ -1,16 +1,16 @@
-# Use the builder pattern where possible
+# Chain calls to builder methods
 
 **org.openrewrite.staticanalysis.UseAsBuilder**
 
-_When an API has been designed as a builder, use it that way rather than as a series of setter calls._
+_Chain calls to builder methods that are on separate lines into one chain of builder calls._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.5.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.6.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.5.0
+* version: 1.6.0
 
 ## Options
 
@@ -31,7 +31,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.UseAsBuilderExample
-displayName: Use the builder pattern where possible example
+displayName: Chain calls to builder methods example
 recipeList:
   - org.openrewrite.staticanalysis.UseAsBuilder:
       builderType: org.example.Buildable.Builder
@@ -39,14 +39,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseAsBuilderExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.5.0 in your build file:
+Now that `com.yourorg.UseAsBuilderExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.6.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.5.0")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.6.0")
 }
 ```
 {% endcode %}
@@ -74,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.UseAsBuilderExample</recipe>
@@ -84,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.5.0</version>
+            <version>1.6.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -115,4 +115,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [srmalkan](mailto:smitmalkan99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [srmalkan](mailto:smitmalkan99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Mike Solomon](mailto:mikesol@hey.com)

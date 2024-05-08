@@ -4,7 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Use `getSSOCookieFromSSOToken`](./websphereunavailablessotokenmethod.md)
+* [Use `getSSOCookieFromSSOToken` and `logout`](./websphereunavailablessomethods.md)
 
 ## Recipes
 

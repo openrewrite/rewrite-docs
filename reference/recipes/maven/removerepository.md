@@ -6,18 +6,18 @@ _Removes a matching Maven repository._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.24.0
+* version: 8.25.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | id | *Optional*. A unique repository ID. |  |
-| `String` | url | The URL of the repository. |  |
+| `String` | id | *Optional*. A unique repository ID. | `repo-id` |
+| `String` | url | The URL of the repository. | `http://myrepo.maven.com/repo` |
 
 
 ## Usage
@@ -33,7 +33,8 @@ name: com.yourorg.RemoveRepositoryExample
 displayName: Remove repository example
 recipeList:
   - org.openrewrite.maven.RemoveRepository:
-      url: null
+      id: repo-id
+      url: http://myrepo.maven.com/repo
 ```
 {% endcode %}
 
@@ -50,7 +51,7 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined activate it in y
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.RemoveRepositoryExample</recipe>

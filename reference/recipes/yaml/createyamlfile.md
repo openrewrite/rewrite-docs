@@ -6,11 +6,11 @@ _Create a new YAML file._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CreateYamlFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CreateYamlFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.24.0
+* version: 8.25.0
 
 ## Options
 
@@ -18,6 +18,7 @@ _Create a new YAML file._
 | -- | -- | -- | -- |
 | `String` | relativeFileName | File path of new file. | `foo/bar/baz.yaml` |
 | `String` | fileContents | *Optional*. Multiline text content for the file. | <pre>a:<br />property: value<br />another:<br />property: value</pre> |
+| `String` | fileContentsUrl | *Optional*. URL to file containing text content for the file. Use either `fileContents` or `fileContentsUrl` option. | `http://foo.bar/baz.yaml` |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 
 
@@ -39,6 +40,7 @@ recipeList:
 property: value
 another:
 property: value
+      fileContentsUrl: http://foo.bar/baz.yaml
 ```
 {% endcode %}
 
@@ -49,7 +51,7 @@ Now that `com.yourorg.CreateYamlFileExample` has been defined activate it in you
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
@@ -73,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.CreateYamlFileExample</recipe>

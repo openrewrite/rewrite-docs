@@ -10,11 +10,11 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.12.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.13.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.12.0
+* version: 2.13.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -22,14 +22,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.12.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.13.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
 }
 ```
 {% endcode %}
@@ -56,12 +56,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")
@@ -88,7 +88,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
@@ -98,7 +98,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.12.0</version>
+            <version>2.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -135,7 +135,8 @@ mod run . --recipe UpgradeToJava17
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Migrate to Java 11](../../java/migrate/java8tojava11.md)
-* [Change Maven Java version property values to 17](../../java/migrate/javaversion17.md)
+* [Upgrade Java version](../../java/migrate/upgradejavaversion.md)
+  * version: `17`
 * [Prefer `String.formatted(Object...)`](../../java/migrate/lang/stringformatted.md)
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion.md)
   * minimumJavaMajorVersion: `17`
@@ -179,7 +180,8 @@ tags:
   - java17
 recipeList:
   - org.openrewrite.java.migrate.Java8toJava11
-  - org.openrewrite.java.migrate.JavaVersion17
+  - org.openrewrite.java.migrate.UpgradeJavaVersion:
+      version: 17
   - org.openrewrite.java.migrate.lang.StringFormatted
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
       minimumJavaMajorVersion: 17

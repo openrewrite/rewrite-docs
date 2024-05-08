@@ -6,26 +6,26 @@ _Adds a new Maven Repository or updates a matching repository._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.24.0
+* version: 8.25.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | id | A unique name to describe the repository. |  |
-| `String` | url | The URL of the repository. |  |
-| `String` | repoName | *Optional*. A display name for the repository. |  |
-| `String` | layout | *Optional*. The Maven layout of the repository. |  |
+| `String` | id | A unique name to describe the repository. | `repo-id` |
+| `String` | url | The URL of the repository. | `http://myrepo.maven.com/repo` |
+| `String` | repoName | *Optional*. A display name for the repository. | `My Great Repo Name` |
+| `String` | layout | *Optional*. The Maven layout of the repository. | `default` |
 | `Boolean` | snapshotsEnabled | *Optional*. Snapshots from the repository are available. |  |
-| `String` | snapshotsChecksumPolicy | *Optional*. Governs whether snapshots require checksums. |  |
-| `String` | snapshotsUpdatePolicy | *Optional*. The policy governing snapshot updating interval. |  |
+| `String` | snapshotsChecksumPolicy | *Optional*. Governs whether snapshots require checksums. | `warn` |
+| `String` | snapshotsUpdatePolicy | *Optional*. The policy governing snapshot updating interval. | `always` |
 | `Boolean` | releasesEnabled | *Optional*. Releases from the repository are available |  |
-| `String` | releasesChecksumPolicy | *Optional*. Governs whether releases require checksums. |  |
-| `String` | releasesUpdatePolicy | *Optional*. The policy governing release updating interval. |  |
+| `String` | releasesChecksumPolicy | *Optional*. Governs whether releases require checksums. | `fail` |
+| `String` | releasesUpdatePolicy | *Optional*. The policy governing release updating interval. | `never` |
 
 
 ## Usage
@@ -41,8 +41,14 @@ name: com.yourorg.AddRepositoryExample
 displayName: Add repository example
 recipeList:
   - org.openrewrite.maven.AddRepository:
-      id: null
-      url: null
+      id: repo-id
+      url: http://myrepo.maven.com/repo
+      repoName: My Great Repo Name
+      layout: default
+      snapshotsChecksumPolicy: warn
+      snapshotsUpdatePolicy: always
+      releasesChecksumPolicy: fail
+      releasesUpdatePolicy: never
 ```
 {% endcode %}
 
@@ -59,7 +65,7 @@ Now that `com.yourorg.AddRepositoryExample` has been defined activate it in your
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.AddRepositoryExample</recipe>
@@ -93,4 +99,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Patrick Way, [Tim te Beek](mailto:tim@moderne.io)
+[Alex Boyko](mailto:aboyko@vmware.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Patrick Way

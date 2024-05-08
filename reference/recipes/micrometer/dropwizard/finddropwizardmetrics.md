@@ -6,11 +6,11 @@ _Find uses of Dropwizard metrics that could be converted to a more modern metric
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/dropwizard/FindDropwizardMetrics.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/0.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/dropwizard/FindDropwizardMetrics.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/0.3.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micrometer
-* version: 0.3.0
+* version: 0.3.1
 
 ## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
 
@@ -27,14 +27,14 @@ _These metrics should be converted to a more moderne metrics instrumentation lib
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micrometer:0.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micrometer:0.3.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
@@ -46,7 +46,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micrometer:0.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-micrometer:0.3.1")
 }
 ```
 {% endcode %}
@@ -61,12 +61,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-micrometer:0.3.0")
+        rewrite("org.openrewrite.recipe:rewrite-micrometer:0.3.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.micrometer.dropwizard.FindDropwizardMetrics")
@@ -93,7 +93,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.micrometer.dropwizard.FindDropwizardMetrics</recipe>
@@ -103,7 +103,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micrometer</artifactId>
-            <version>0.3.0</version>
+            <version>0.3.1</version>
           </dependency>
         </dependencies>
       </plugin>

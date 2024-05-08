@@ -23,5 +23,6 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 * [Use `actions/setup-java` IBM `semeru` distribution](./setupjavaadoptopenj9tosemeru.md)
 * [Use `actions/setup-java` `temurin` distribution](./setupjavaadoptopenjdktotemurin.md)
 * [Use `actions/setup-java` `temurin` distribution as they are cached in hosted runners](./prefertemurindistributions.md)
+* [Use `secrets: inherit` if possible](./prefersecretsinheritworkflow.md)
 
 

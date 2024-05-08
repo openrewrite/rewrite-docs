@@ -4,10 +4,12 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate removed Spring `Assert` methods](./migratespringassert.md)
 * [Migrate to Spring Framework 5.0](./upgradespringframework_5_0.md)
 * [Migrate to Spring Framework 5.1](./upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](./upgradespringframework_5_2.md)
 * [Migrate to Spring Framework 5.3](./upgradespringframework_5_3.md)
+* [Migrate to Spring Framework 6.0](./upgradespringframework_6_0.md)
 
 ## Recipes
 

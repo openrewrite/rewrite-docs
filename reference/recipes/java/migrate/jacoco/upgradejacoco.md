@@ -1,37 +1,39 @@
-# Upgrade JaCoCo Maven plugin version
+# Upgrade JaCoCo
 
-**org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion**
+**org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo**
 
-_This recipe will upgrade the JaCoCo Maven plugin to a more recent version compatible with Java 11._
+_This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions._
 
 ### Tags
 
 * jacoco
-* java11
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jacoco.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.12.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jacoco.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.13.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.12.0
+* version: 2.13.0
 
+{% hint style="info" %}
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+{% endhint %}
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.12.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.13.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion")
+    activeRecipe("org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo")
 }
 
 repositories {
@@ -39,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
 }
 ```
 {% endcode %}
@@ -54,15 +56,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.12.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion")
+        activeRecipe("org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -86,17 +88,17 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion</recipe>
+            <recipe>org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.12.0</version>
+            <version>2.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -113,7 +115,7 @@ rootProject {
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo
 ```
 {% endcode %}
 {% endtab %}
@@ -122,7 +124,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe UpgradeJaCoCoMavenPluginVersion
+mod run . --recipe UpgradeJaCoCo
 ```
 {% endcode %}
 {% endtab %}
@@ -132,10 +134,14 @@ mod run . --recipe UpgradeJaCoCoMavenPluginVersion
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.jacoco`
+  * artifactId: `*`
+  * newVersion: `0.8.x`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion.md)
   * groupId: `org.jacoco`
   * artifactId: `jacoco-maven-plugin`
-  * newVersion: `0.8.8`
+  * newVersion: `0.8.x`
 
 {% endtab %}
 
@@ -143,17 +149,20 @@ mod run . --recipe UpgradeJaCoCoMavenPluginVersion
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion
-displayName: Upgrade JaCoCo Maven plugin version
-description: This recipe will upgrade the JaCoCo Maven plugin to a more recent version compatible with Java 11.
+name: org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo
+displayName: Upgrade JaCoCo
+description: This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions.
 tags:
   - jacoco
-  - java11
 recipeList:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.jacoco
+      artifactId: *
+      newVersion: 0.8.x
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.jacoco
       artifactId: jacoco-maven-plugin
-      newVersion: 0.8.8
+      newVersion: 0.8.x
 
 ```
 {% endtab %}
@@ -161,7 +170,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.jacoco.UpgradeJaCoCoMavenPluginVersion)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

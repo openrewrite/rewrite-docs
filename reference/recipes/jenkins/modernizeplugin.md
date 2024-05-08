@@ -6,11 +6,11 @@ _This recipe is intended to change over time to reflect the most recent tooling 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.4.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.4.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.4.0
+* version: 0.4.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.4.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.4.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.4.0")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.4.1")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.12.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jenkins:0.4.0")
+        rewrite("org.openrewrite.recipe:rewrite-jenkins:0.4.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.jenkins.ModernizePlugin")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.jenkins.ModernizePlugin</recipe>
@@ -94,7 +94,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.4.0</version>
+            <version>0.4.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -138,7 +138,7 @@ mod run . --recipe ModernizePlugin
 * [Remove annotation](../java/removeannotation.md)
   * annotationPattern: `@org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement`
 * [Migrate to HtmlUnit 3.x](../jenkins/upgradehtmlunit_3_3_0.md)
-* [Change Maven dependency](../maven/changedependencygroupidandartifactid.md)
+* [Change Gradle or Maven dependency](../java/dependencies/changedependency.md)
   * oldGroupId: `org.mockito`
   * oldArtifactId: `mockito-inline`
   * newGroupId: `org.mockito`
@@ -148,7 +148,7 @@ mod run . --recipe ModernizePlugin
 * [Upgrade property's value to version](../jenkins/upgradeversionproperty.md)
   * key: `jenkins.version`
   * minimumVersion: `2.426.3`
-* [Remove Maven dependency](../maven/removedependency.md)
+* [Remove a Gradle or Maven dependency](../java/dependencies/removedependency.md)
   * groupId: `org.jenkins-ci`
   * artifactId: `symbol-annotation`
 * [Add or correct Jenkins plugins BOM](../jenkins/addpluginsbom.md)
@@ -176,7 +176,7 @@ recipeList:
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
   - org.openrewrite.jenkins.UpgradeHtmlUnit_3_3_0
-  - org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId:
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.mockito
       oldArtifactId: mockito-inline
       newGroupId: org.mockito
@@ -186,7 +186,7 @@ recipeList:
   - org.openrewrite.jenkins.UpgradeVersionProperty:
       key: jenkins.version
       minimumVersion: 2.426.3
-  - org.openrewrite.maven.RemoveDependency:
+  - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.jenkins-ci
       artifactId: symbol-annotation
   - org.openrewrite.jenkins.AddPluginsBom

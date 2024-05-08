@@ -6,19 +6,19 @@ _Change a property value leaving the key intact._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/8.25.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-properties
-* version: 8.24.0
+* version: 8.25.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | propertyKey | The name of the property key whose value is to be changed. Supports glob patterns. | `management.metrics.binders.*.enabled` |
-| `String` | newValue | The new value to be used for key specified by `propertyKey`. |  |
-| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. |  |
+| `String` | newValue | The new value to be used for key specified by `propertyKey`. | `newValue` |
+| `String` | oldValue | *Optional*. Only change the property value if it matches the configured `oldValue`. | `oldValue` |
 | `Boolean` | regex | *Optional*. Default `false`. If enabled, `oldValue` will be interpreted as a Regular Expression, to replace only all parts that match the regex. Capturing group can be used in `newValue`. |  |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false`  to use exact matching. |  |
 
@@ -37,7 +37,8 @@ displayName: Change property value example
 recipeList:
   - org.openrewrite.properties.ChangePropertyValue:
       propertyKey: management.metrics.binders.*.enabled
-      newValue: null
+      newValue: newValue
+      oldValue: oldValue
 ```
 {% endcode %}
 
@@ -48,7 +49,7 @@ Now that `com.yourorg.ChangePropertyValueExample` has been defined activate it i
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.12.0")
+    id("org.openrewrite.rewrite") version("6.13.0")
 }
 
 rewrite {
@@ -72,7 +73,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.29.0</version>
+        <version>5.30.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.ChangePropertyValueExample</recipe>
@@ -106,4 +107,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jenson3210](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Jenson3210](mailto:jentesondervorst@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), $(git --no-pager log --format=format:'%an' -n 1), [Tim te Beek](mailto:tim@moderne.io)

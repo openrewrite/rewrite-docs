@@ -1,7 +1,9 @@
 # JaCoCo
 
-## Recipes
+## Composite Recipes
 
-* [Upgrade JaCoCo Maven plugin version](./upgradejacocomavenpluginversion.md)
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Upgrade JaCoCo](./upgradejacoco.md)
 
 
