@@ -4,6 +4,7 @@ addjaxwsruntimegradle
 addjaxwsruntimemaven
 admins
 Adoptium
+aggr
 AKV
 allprojects
 APKCXEA
@@ -113,6 +114,7 @@ Intelli
 intellij
 intranode
 jacc
+jacoco
 jassertion
 javac
 javaee
