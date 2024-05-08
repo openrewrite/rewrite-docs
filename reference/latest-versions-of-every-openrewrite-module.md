@@ -28,32 +28,32 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | org.openrewrite:rewrite-xml                                                                                                     | 8.25.0    |
 | org.openrewrite:rewrite-yaml                                                                                                    | 8.25.0    |
 | org.openrewrite:rewrite-test                                                                                                    | 8.25.0    |
-| [org.openrewrite.recipe:rewrite-apache](https://github.com/openrewrite/rewrite-apache)                                          | 1.1.0    |
-| [org.openrewrite.recipe:rewrite-circleci](https://github.com/openrewrite/rewrite-circleci)                                      | 2.2.0     |
-| [org.openrewrite.recipe:rewrite-cloud-suitability-analyzer](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer)  | 2.2.0     |
-| [org.openrewrite.recipe:rewrite-concourse](https://github.com/openrewrite/rewrite-concourse)                                    | 2.2.0     |
-| [org.openrewrite.recipe:rewrite-cucumber-jvm](https://github.com/openrewrite/rewrite-cucumber-jvm)                              | 1.2.0     |
-| [org.openrewrite.recipe:rewrite-github-actions](https://github.com/openrewrite/rewrite-github-actions)                          | 2.2.0     |
-| [org.openrewrite.recipe:rewrite-hibernate](https://github.com/openrewrite/rewrite-hibernate)                                    | 1.3.0     |
+| [org.openrewrite.recipe:rewrite-apache](https://github.com/openrewrite/rewrite-apache)                                          | 1.2.0     |
+| [org.openrewrite.recipe:rewrite-circleci](https://github.com/openrewrite/rewrite-circleci)                                      | 2.2.1     |
+| [org.openrewrite.recipe:rewrite-cloud-suitability-analyzer](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer)  | 2.2.1     |
+| [org.openrewrite.recipe:rewrite-concourse](https://github.com/openrewrite/rewrite-concourse)                                    | 2.2.1     |
+| [org.openrewrite.recipe:rewrite-cucumber-jvm](https://github.com/openrewrite/rewrite-cucumber-jvm)                              | 1.2.1     |
+| [org.openrewrite.recipe:rewrite-github-actions](https://github.com/openrewrite/rewrite-github-actions)                          | 2.3.0     |
+| [org.openrewrite.recipe:rewrite-hibernate](https://github.com/openrewrite/rewrite-hibernate)                                    | 1.3.1     |
 | [org.openrewrite.recipe:rewrite-jackson](https://github.com/openrewrite/rewrite-jackson)                                        | 0.0.1     |
-| [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies)                    | 1.7.0     |
-| [org.openrewrite.recipe:rewrite-java-security](https://github.com/openrewrite/rewrite-java-security)                            | 2.6.0     |
-| [org.openrewrite.recipe:rewrite-jenkins](https://github.com/openrewrite/rewrite-jenkins)                                        | 0.4.0     |
-| [org.openrewrite.recipe:rewrite-kotlin](https://github.com/openrewrite/rewrite-kotlin)                                          | 1.14.0    |
-| [org.openrewrite.recipe:rewrite-kubernetes](https://github.com/openrewrite/rewrite-kubernetes)                                  | 2.3.0     |
-| [org.openrewrite.recipe:rewrite-liberty](https://github.com/openrewrite/rewrite-liberty)                                        | 1.2.0     |
-| [org.openrewrite.recipe:rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks)                  | 2.6.0     | <!--Update-->
-| [org.openrewrite.recipe:rewrite-micronaut](https://github.com/openrewrite/rewrite-micronaut)                                    | 2.4.0     | 
-| [org.openrewrite.recipe:rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java)                              | 2.12.0    | <!--Update-->
-| [org.openrewrite.recipe:rewrite-nodejs](https://github.com/openrewrite/rewrite-nodejs)                                          | 0.2.1     |
-| [org.openrewrite.recipe:rewrite-ok-http](https://github.com/openrewrite/rewrite-okhttp)                                         | 0.2.0     |
-| [org.openrewrite.recipe:rewrite-openapi](https://github.com/openrewrite/rewrite-openapi)                                        | 0.1.0     |
-| [org.openrewrite.recipe:rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus)                                        | 2.4.0     | 
-| [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring)                                          | 5.8.0     | <!--Update-->
-| [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis)                        | 1.5.0     | <!--Update-->
-| [org.openrewrite.recipe:rewrite-struts](https://github.com/openrewrite/rewrite-struts)                                          | 0.2.0     |
-| [org.openrewrite.recipe:rewrite-sql](https://github.com/openrewrite/rewrite-sql)                                                | 1.4.0     |
-| [org.openrewrite.recipe:rewrite-templating](https://github.com/openrewrite/rewrite-templating)                                  | 1.7.2     |
-| [org.openrewrite.recipe:rewrite-terraform](https://github.com/openrewrite/rewrite-terraform)                                    | 2.2.0     |
-| [org.openrewrite.recipe:rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks)                  | 2.7.0     | <!--Update-->
-| [org.openrewrite.recipe:rewrite-third-party](https://github.com/openrewrite/rewrite-third-party)                                | 0.3.0     |
+| [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies)                    | 1.8.0     |
+| [org.openrewrite.recipe:rewrite-java-security](https://github.com/openrewrite/rewrite-java-security)                            | 2.7.0     |
+| [org.openrewrite.recipe:rewrite-jenkins](https://github.com/openrewrite/rewrite-jenkins)                                        | 0.4.1     |
+| [org.openrewrite.recipe:rewrite-kotlin](https://github.com/openrewrite/rewrite-kotlin)                                          | 1.15.0    |
+| [org.openrewrite.recipe:rewrite-kubernetes](https://github.com/openrewrite/rewrite-kubernetes)                                  | 2.3.1     |
+| [org.openrewrite.recipe:rewrite-liberty](https://github.com/openrewrite/rewrite-liberty)                                        | 1.3.0     |
+| [org.openrewrite.recipe:rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks)                  | 2.6.1     | <!--Update-->
+| [org.openrewrite.recipe:rewrite-micronaut](https://github.com/openrewrite/rewrite-micronaut)                                    | 2.4.1     | 
+| [org.openrewrite.recipe:rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java)                              | 2.13.0    | <!--Update-->
+| [org.openrewrite.recipe:rewrite-nodejs](https://github.com/openrewrite/rewrite-nodejs)                                          | 0.2.2     |
+| [org.openrewrite.recipe:rewrite-ok-http](https://github.com/openrewrite/rewrite-okhttp)                                         | 0.2.1     |
+| [org.openrewrite.recipe:rewrite-openapi](https://github.com/openrewrite/rewrite-openapi)                                        | 0.2.0     |
+| [org.openrewrite.recipe:rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus)                                        | 2.4.1     | 
+| [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring)                                          | 5.9.0     | <!--Update-->
+| [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis)                        | 1.6.0     | <!--Update-->
+| [org.openrewrite.recipe:rewrite-struts](https://github.com/openrewrite/rewrite-struts)                                          | 0.2.1     |
+| [org.openrewrite.recipe:rewrite-sql](https://github.com/openrewrite/rewrite-sql)                                                | 1.4.1     |
+| [org.openrewrite.recipe:rewrite-templating](https://github.com/openrewrite/rewrite-templating)                                  | 1.8.1     |
+| [org.openrewrite.recipe:rewrite-terraform](https://github.com/openrewrite/rewrite-terraform)                                    | 2.2.1     |
+| [org.openrewrite.recipe:rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks)                  | 2.8.0     | <!--Update-->
+| [org.openrewrite.recipe:rewrite-third-party](https://github.com/openrewrite/rewrite-third-party)                                | 0.3.1     |
