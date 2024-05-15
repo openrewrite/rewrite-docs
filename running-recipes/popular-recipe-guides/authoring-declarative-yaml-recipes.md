@@ -22,6 +22,7 @@ With a OpenRewrite build plugin applied, the next step is to create a `rewrite.y
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.FooToBar
+description: Convert Foo to Bar.
 recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.yourorg.foo
