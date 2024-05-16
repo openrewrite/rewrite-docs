@@ -118,6 +118,8 @@ We recommend that you use [IntelliJ IDEA](https://www.jetbrains.com/idea/) for d
 
 ### IntelliJ IDEA changes
 
+#### Speed up tests
+
 By default, IntelliJ IDEA uses Gradle to build and run tests with. While that ensures compatibility, it is very slow. To help speed up compilation and testing, we recommend that you change this to use `IntelliJ IDEA` instead. You can update this by going to the IntelliJ settings, searching for Gradle, and clicking on the `Build, Execution, Deployment` -> `Build Tools` -> `Gradle` setting:
 
 ![](/.gitbook/assets/Gradle%20Select.png)
@@ -126,19 +128,23 @@ As part of doing that, you'll also need to update the `Java Compiler` to set the
 
 ![](/.gitbook/assets/parameters.png)
 
-You will also need to add an override to the compiler parameters for the `rewrite.rewrite-java-17.main` module to have the compilation options of:
+{% hint style="danger" %}
+If you've previously run tests using Gradle and you update the project to use IntelliJ instead, it's a good idea to make sure that your tests are actually using IntelliJ rather than Gradle. You can confirm the tests are not using Gradle by clicking on the run configurations in the top right hand corner of IntelliJ and ensuring that the tests have a left and right arrow next to them instead of the Gradle icon:
+
+&#x20;   Correct:  ![](/.gitbook/assets/correct-example.png)   Incorrect: ![](/.gitbook/assets/incorrect-example.png)
+{% endhint %}
+
+#### Additional overrides if working on compiler internals
+
+_This will not apply to most people as a typical recipe module will not directly reference compiler internals._
+
+If you need to reference internals of the compiler, please add an override to the compiler parameters for the `rewrite.rewrite-java-17.main` module to have the compilation options of:
 
 ```bash
 -parameters --add-exports jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
 ```
 
 ![](/.gitbook/assets/compilation-options.png)
-
-{% hint style="danger" %}
-If you've previously run tests using Gradle and you update the project to use IntelliJ instead, it's a good idea to make sure that your tests are actually using IntelliJ rather than Gradle. You can confirm the tests are not using Gradle by clicking on the run configurations in the top right hand corner of IntelliJ and ensuring that the tests have a left and right arrow next to them instead of the Gradle icon:
-
-&#x20;   Correct:  ![](/.gitbook/assets/correct-example.png)   Incorrect: ![](/.gitbook/assets/incorrect-example.png)
-{% endhint %}
 
 ### Optimizing your IDE for only modules you want to work on
 
