@@ -111,7 +111,9 @@ rootProject {
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
-{% code title="shell" %}
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+{% code title="shell" overflow="wrap" %}
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell
