@@ -30,7 +30,6 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 | org.openrewrite:rewrite-test                                                                                                    | 8.25.0    |
 | [org.openrewrite.recipe:rewrite-apache](https://github.com/openrewrite/rewrite-apache)                                          | 1.2.0     |
 | [org.openrewrite.recipe:rewrite-circleci](https://github.com/openrewrite/rewrite-circleci)                                      | 2.2.1     |
-| [org.openrewrite.recipe:rewrite-cloud-suitability-analyzer](https://github.com/openrewrite/rewrite-cloud-suitability-analyzer)  | 2.2.1     |
 | [org.openrewrite.recipe:rewrite-concourse](https://github.com/openrewrite/rewrite-concourse)                                    | 2.2.1     |
 | [org.openrewrite.recipe:rewrite-cucumber-jvm](https://github.com/openrewrite/rewrite-cucumber-jvm)                              | 1.2.1     |
 | [org.openrewrite.recipe:rewrite-github-actions](https://github.com/openrewrite/rewrite-github-actions)                          | 2.3.0     |
