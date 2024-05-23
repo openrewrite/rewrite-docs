@@ -30,7 +30,9 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add missing `isWrapperFor` and `unwrap` methods.](./jrewrapperinterface.md)
 * [Adds missing JDBC interface methods.](./jrejdbcinterfacenewmethods.md)
+* [Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`](./removedsubjectmethods.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](./deprecatedlogrecordthreadid.md)
+* [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](./removedmodifierandconstantbootstrapsconstructors.md)
 * [Migrate to IBM Semeru Runtimes](./ibmsemeru.md)
 * [Migrate to Java 11](./java8tojava11.md)
 * [Migrate to Java 17](./upgradetojava17.md)
@@ -43,6 +45,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](./removedzipfinalizemethods.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](./jre17agentmainpremainpublic.md)
 * [Upgrade Java version](./upgradejavaversion.md)
+* [Upgrade plugins to Java 11 compatible versions](./upgradepluginsforjava11.md)
+* [Upgrade plugins to Java 17 compatible versions](./upgradepluginsforjava17.md)
+* [Upgrade plugins to Java 21 compatible versions](./upgradepluginsforjava21.md)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](./jredonotusesunnetsslinternalsslprovider.md)
 
 ## Recipes
@@ -52,6 +57,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Adds missing method implementations](./addmissingmethodimplementation.md)
 * [Behavior change to bean discovery in modules with `beans.xml` file with no version specified](./beandiscovery.md)
 * [Change `beans.xml` `schemaLocation` to match XML namespace](./beansxmlnamespace.md)
+* [Change `javax.tools.ToolProvider` methods calls to static](./removedtoolproviderconstructor.md)
 * [Change method invocation return type](./changemethodinvocationreturntype.md)
 * [Disable the persistence unit second-level cache](./jpacacheproperties.md)
 * [Force indentation to either tabs or spaces](./usetabsorspaces.md)
@@ -69,6 +75,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `String` literal](./replacestringliteralvalue.md)
 * [Replace `com.sun.net.ssl` package](./sunnetsslpackageunavailable.md)
 * [Replace deprecated methods in`SecurityManager`](./removedsecuritymanagermethods.md)
+* [Upgrade build to Java 11](./upgradebuildtojava11.md)
+* [Upgrade build to Java 17](./upgradebuildtojava17.md)
+* [Upgrade build to Java 21](./upgradebuildtojava21.md)
 * [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](./removedlegacysunjsseprovidername.md)
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](./jredonotusesunnetsslinternalwwwprotocol.md)
 * [Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`](./jredonotusesunnetsslinternalwwwprotocolhttpshandler.md)

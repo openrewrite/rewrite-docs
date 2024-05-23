@@ -6,11 +6,11 @@ _An applicability test which returns false if visiting a Maven pom which include
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DoesNotIncludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DoesNotIncludeDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.25.0
+* version: 8.27.1
 
 ## Options
 
@@ -55,8 +55,9 @@ Now that `com.yourorg.DoesNotIncludeDependencyExample` has been defined activate
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          
           <activeRecipes>
             <recipe>com.yourorg.DoesNotIncludeDependencyExample</recipe>
           </activeRecipes>

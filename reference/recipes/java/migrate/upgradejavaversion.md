@@ -6,11 +6,11 @@ _Upgrade build plugin configuration to use the specified Java version. This reci
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.13.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.13.0
+* version: 2.16.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -39,14 +39,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeJavaVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.13.0 in your build file:
+Now that `com.yourorg.UpgradeJavaVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.16.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.13.0")
+    id("org.openrewrite.rewrite") version("6.14.0")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.16.0")
 }
 ```
 {% endcode %}
@@ -74,8 +74,9 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          
           <activeRecipes>
             <recipe>com.yourorg.UpgradeJavaVersionExample</recipe>
           </activeRecipes>
@@ -84,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.13.0</version>
+            <version>2.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -112,6 +113,7 @@ mod run . --recipe UpgradeJavaVersionExample
 {% tab title="Recipe List" %}
 * [Use Maven compiler plugin release configuration](../../java/migrate/maven/usemavencompilerpluginreleaseconfiguration.md)
 * [Update Maven Java project properties](../../java/migrate/maven/updatemavenprojectpropertyjavaversion.md)
+* [Upgrade Jenkins Java version](../../jenkins/upgradejavaversion.md)
 * [Update Gradle project Java compatibility](../../gradle/updatejavacompatibility.md)
   * allowDowngrade: `false`
 
@@ -128,6 +130,7 @@ description: Upgrade build plugin configuration to use the specified Java versio
 recipeList:
   - org.openrewrite.java.migrate.maven.UseMavenCompilerPluginReleaseConfiguration
   - org.openrewrite.java.migrate.maven.UpdateMavenProjectPropertyJavaVersion
+  - org.openrewrite.jenkins.UpgradeJavaVersion
   - org.openrewrite.gradle.UpdateJavaCompatibility:
       allowDowngrade: false
 
@@ -144,4 +147,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), Kun Li
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Shannon Pamperl](mailto:shanman190@gmail.com), Kun Li

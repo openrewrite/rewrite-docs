@@ -6,11 +6,11 @@ _Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MU
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeDependencyGroupIdAndArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeDependencyGroupIdAndArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.25.0
+* version: 8.27.1
 
 ## Options
 
@@ -25,7 +25,7 @@ _Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MU
 | `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
 
-## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+## Data Tables
 
 ### Maven metadata failures
 
@@ -70,8 +70,9 @@ Now that `com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample` has been defi
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>com.yourorg.ChangeDependencyGroupIdAndArtifactIdExample</recipe>
           </activeRecipes>

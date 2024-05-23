@@ -10,11 +10,11 @@ _Remove imports for types that are not referenced. As a precaution against incor
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.25.0
+* version: 8.27.1
 
 
 ## Usage
@@ -26,7 +26,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.13.0")
+    id("org.openrewrite.rewrite") version("6.14.0")
 }
 
 rewrite {
@@ -82,8 +82,9 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          
           <activeRecipes>
             <recipe>org.openrewrite.java.RemoveUnusedImports</recipe>
           </activeRecipes>
@@ -98,10 +99,12 @@ rootProject {
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
+
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-{% code title="shell" %}
+
+{% code title="shell" overflow="wrap"%}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.RemoveUnusedImports
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.RemoveUnusedImports 
 ```
 {% endcode %}
 {% endtab %}

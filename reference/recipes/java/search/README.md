@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find files compiled at a specific Java version](./hasjavaversion.md)
 * [Find files in a source set](./hassourceset.md)
 * [Find files that are likely not tests](./islikelynottest.md)
+* [Find files with a particular build tool version](./hasbuildtoolversion.md)
 * [Find implementing classes](./findimplementations.md)
 * [Find literals](./findliterals.md)
 * [Find method declaration](./findmethoddeclaration.md)

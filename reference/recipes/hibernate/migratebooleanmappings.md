@@ -6,23 +6,23 @@ _Replaces type mapping of booleans with appropriate attribute converters._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateBooleanMappings.java), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/1.3.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateBooleanMappings.java), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/1.5.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-hibernate
-* version: 1.3.1
+* version: 1.5.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-hibernate:1.3.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-hibernate:1.5.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.13.0")
+    id("org.openrewrite.rewrite") version("6.14.0")
 }
 
 rewrite {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-hibernate:1.3.1")
+    rewrite("org.openrewrite.recipe:rewrite-hibernate:1.5.1")
 }
 ```
 {% endcode %}
@@ -49,12 +49,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.14.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-hibernate:1.3.1")
+        rewrite("org.openrewrite.recipe:rewrite-hibernate:1.5.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.hibernate.MigrateBooleanMappings")
@@ -81,8 +81,9 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          
           <activeRecipes>
             <recipe>org.openrewrite.hibernate.MigrateBooleanMappings</recipe>
           </activeRecipes>
@@ -91,7 +92,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-hibernate</artifactId>
-            <version>1.3.1</version>
+            <version>1.5.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -104,11 +105,12 @@ rootProject {
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
-{% code title="shell" %}
+
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
+{% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateBooleanMappings
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-hibernate:RELEASE -Drewrite.activeRecipes=org.openrewrite.hibernate.MigrateBooleanMappings 
 ```
 {% endcode %}
 {% endtab %}
@@ -132,4 +134,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Simon Zilliken
+Simon Zilliken, [Tim te Beek](mailto:tim@moderne.io)

@@ -6,11 +6,11 @@ _Upgrades the version of a transitive dependency in a Maven pom file. Leaves dir
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeTransitiveDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeTransitiveDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.25.0
+* version: 8.27.1
 
 ## Options
 
@@ -27,7 +27,7 @@ _Upgrades the version of a transitive dependency in a Maven pom file. Leaves dir
 | `String` | onlyIfUsing | *Optional*. Only add managed dependencies to projects having a dependency matching the expression. | `org.apache.logging.log4j:log4j*` |
 | `Boolean` | addToRootPom | *Optional*. Add to the root pom where root is the eldest parent of the pom within the source set. |  |
 
-## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+## Data Tables
 
 ### Maven metadata failures
 
@@ -74,8 +74,9 @@ Now that `com.yourorg.UpgradeTransitiveDependencyVersionExample` has been define
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>com.yourorg.UpgradeTransitiveDependencyVersionExample</recipe>
           </activeRecipes>

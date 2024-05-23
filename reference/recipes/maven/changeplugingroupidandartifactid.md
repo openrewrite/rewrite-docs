@@ -6,11 +6,11 @@ _Change the groupId and/or the artifactId of a specified Maven plugin._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginGroupIdAndArtifactId.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.25.0
+* version: 8.27.1
 
 ## Options
 
@@ -21,7 +21,7 @@ _Change the groupId and/or the artifactId of a specified Maven plugin._
 | `String` | newGroupId | *Optional*. The new group ID to use. Defaults to the existing group ID. | `corp.internal.openrewrite.recipe` |
 | `String` | newArtifact | *Optional*. The new artifact ID to use. Defaults to the existing artifact ID. | `my-new-maven-plugin` |
 
-## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+## Data Tables
 
 ### Maven metadata failures
 
@@ -64,8 +64,9 @@ Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>com.yourorg.ChangePluginGroupIdAndArtifactIdExample</recipe>
           </activeRecipes>

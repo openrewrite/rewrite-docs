@@ -6,11 +6,11 @@ _Finds the specified Maven project properties within a pom.xml._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/FindProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.25.0
+* version: 8.27.1
 
 ## Options
 
@@ -19,7 +19,7 @@ _Finds the specified Maven project properties within a pom.xml._
 | `String` | propertyPattern | Regular expression pattern used to match property tag names. | `guava.*` |
 | `String` | valuePattern | *Optional*. Regular expression pattern used to match property values. | `28.*` |
 
-## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+## Data Tables
 
 ### Maven properties
 
@@ -62,8 +62,9 @@ Now that `com.yourorg.FindPropertiesExample` has been defined activate it in you
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>com.yourorg.FindPropertiesExample</recipe>
           </activeRecipes>

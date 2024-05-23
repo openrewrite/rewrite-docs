@@ -6,11 +6,11 @@ _Emit the data of binary dependency relationships._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.25.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.27.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.25.0
+* version: 8.27.1
 
 ## Options
 
@@ -18,7 +18,7 @@ _Emit the data of binary dependency relationships._
 | -- | -- | -- | -- |
 | `String` | scope | Match dependencies with the specified scope Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
-## Data Tables (Only available on the [Moderne platform](https://app.moderne.io/))
+## Data Tables
 
 ### Dependency graph
 
@@ -62,8 +62,9 @@ Now that `com.yourorg.EffectiveDependenciesExample` has been defined activate it
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>com.yourorg.EffectiveDependenciesExample</recipe>
           </activeRecipes>

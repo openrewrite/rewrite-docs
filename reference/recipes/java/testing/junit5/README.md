@@ -9,6 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Clean Up Assertions](./cleanupassertions.md)
 * [JUnit Jupiter best practices](./junit5bestpractices.md)
 * [JUnit Jupiter migration from JUnit 4.x](./junit4to5migration.md)
+* [Upgrade Surefire Plugin](./upgradesurefireplugin.md)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](./migrateassumptions.md)
 * [Use `MatcherAssert#assertThat(..)`](./usehamcrestassertthat.md)
 * [Use Mockito JUnit Jupiter extension](./usemockitoextension.md)

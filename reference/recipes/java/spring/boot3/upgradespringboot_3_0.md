@@ -11,11 +11,11 @@ _Migrate applications to the latest Spring Boot 3.0 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.11.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.9.0
+* version: 5.11.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.11.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.13.0")
+    id("org.openrewrite.rewrite") version("6.14.0")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.11.0")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.14.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.9.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.11.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0")
@@ -89,8 +89,9 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0</recipe>
           </activeRecipes>
@@ -99,7 +100,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.9.0</version>
+            <version>5.11.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -112,11 +113,12 @@ rootProject {
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
-{% code title="shell" %}
+
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
+{% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0 
 ```
 {% endcode %}
 {% endtab %}
@@ -250,4 +252,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Chuka Obinabo, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), Kun Li, [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Satvika Eda](mailto:satvika164.reddy@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Greg Adams](mailto:greg@moderne.io), Fabian Krüger, Anu Ramamoorthy, [Kun Li](mailto:kun@moderne.io), [magicwerk](mailto:magicwerk@gmail.com), Simon Zilliken, Evie Lau, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Tim te Beek](mailto:timtebeek@gmail.com), Adam Slaski, Aaron Gershman, [Shannon Pamperl](mailto:shanman190@gmail.com), nbruno, ranuradh, Daryl Robbins, Sandeep Nagaraj, [Michael Keppler](mailto:bananeweizen@gmx.de), [BoykoAlex](mailto:aboyko@pivotal.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), Michel Gonzalez, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), John Burns, Aakarshit Uppal, Josh Soref, [Scott Jungling](mailto:scott.jungling@gmail.com), Peter Puškár, [Mike Solomon](mailto:mikesol@hey.com)
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Chuka Obinabo, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com), Kun Li, [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Satvika Eda](mailto:satvika164.reddy@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Greg Adams](mailto:greg@moderne.io), Fabian Krüger, [Kun Li](mailto:kun@moderne.io), Anu Ramamoorthy, [magicwerk](mailto:magicwerk@gmail.com), Simon Zilliken, Evie Lau, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Tim te Beek](mailto:timtebeek@gmail.com), Adam Slaski, Aaron Gershman, [Shannon Pamperl](mailto:shanman190@gmail.com), nbruno, ranuradh, Daryl Robbins, Sandeep Nagaraj, [Michael Keppler](mailto:bananeweizen@gmx.de), [BoykoAlex](mailto:aboyko@pivotal.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), Michel Gonzalez, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), John Burns, Aakarshit Uppal, Josh Soref, [Scott Jungling](mailto:scott.jungling@gmail.com), Peter Puškár, [Mike Solomon](mailto:mikesol@hey.com)

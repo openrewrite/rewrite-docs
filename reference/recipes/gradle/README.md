@@ -21,6 +21,7 @@
 * [Enable Gradle build cache](./enablegradlebuildcache.md)
 * [Enable Gradle parallel execution](./enablegradleparallelexecution.md)
 * [Remove a Gradle dependency](./removedependency.md)
+* [Remove an enabled Gradle preview feature](./removeenablefeaturepreview.md)
 * [Remove repository](./removerepository.md)
 * [Update Gradle project Java compatibility](./updatejavacompatibility.md)
 * [Update Gradle wrapper](./updategradlewrapper.md)

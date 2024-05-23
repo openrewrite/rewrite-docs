@@ -18,7 +18,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Spring Boot properties to 2.6](./springbootproperties_2_6.md)
 * [Migrate Spring Boot properties to 2.7](./springbootproperties_2_7.md)
 * [Migrate flyway and liquibase credentials](./migratedatabasecredentials.md)
-* [Migrate to Spring Boot 2.0](./upgradespringboot_2_0.md)
+* [Migrate from Spring Boot 1.x to 2.0](./upgradespringboot_2_0.md)
 * [Migrate to Spring Boot 2.1](./upgradespringboot_2_1.md)
 * [Migrate to Spring Boot 2.2](./upgradespringboot_2_2.md)
 * [Migrate to Spring Boot 2.3](./upgradespringboot_2_3.md)

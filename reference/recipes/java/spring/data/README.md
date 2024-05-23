@@ -5,6 +5,8 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrate to Spring Data 2.5](./upgradespringdata_2_5.md)
+* [Migrate to Spring Data 2.7](./upgradespringdata_2_7.md)
+* [Use `JpaRepository#getReferenceById(ID id)`](./usejparepositorygetreferencebyid.md)
 
 ## Recipes
 

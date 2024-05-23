@@ -10,11 +10,11 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.13.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-17.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.13.0
+* version: 2.16.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -22,14 +22,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.13.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.16.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.13.0")
+    id("org.openrewrite.rewrite") version("6.14.0")
 }
 
 rewrite {
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.16.0")
 }
 ```
 {% endcode %}
@@ -56,12 +56,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.13.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.14.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.13.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.16.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")
@@ -88,8 +88,9 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.0</version>
         <configuration>
+          
           <activeRecipes>
             <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
           </activeRecipes>
@@ -98,7 +99,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.13.0</version>
+            <version>2.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -111,11 +112,12 @@ rootProject {
 {% endtab %}
 
 {% tab title="Maven Command Line" %}
-{% code title="shell" %}
+
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
+{% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpgradeToJava17
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpgradeToJava17 
 ```
 {% endcode %}
 {% endtab %}
@@ -135,36 +137,28 @@ mod run . --recipe UpgradeToJava17
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Migrate to Java 11](../../java/migrate/java8tojava11.md)
-* [Upgrade Java version](../../java/migrate/upgradejavaversion.md)
-  * version: `17`
+* [Upgrade build to Java 17](../../java/migrate/upgradebuildtojava17.md)
 * [Prefer `String.formatted(Object...)`](../../java/migrate/lang/stringformatted.md)
-* [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion.md)
-  * minimumJavaMajorVersion: `17`
 * [Changes code to use Java 17's `instanceof` pattern matching](../../staticanalysis/instanceofpatternmatch.md)
 * [Remove methods calls](../../java/migrate/removemethodinvocation.md)
   * methodPattern: `java.lang.Runtime traceInstructions(boolean)`
 * [Remove methods calls](../../java/migrate/removemethodinvocation.md)
   * methodPattern: `java.lang.System traceMethodCalls(boolean)`
+* [Change `javax.tools.ToolProvider` methods calls to static](../../java/migrate/removedtoolproviderconstructor.md)
+* [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](../../java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
 * [Use text blocks](../../java/migrate/lang/usetextblocks.md)
   * convertStringsWithoutNewlines: `true`
 * [Use `java.security.cert` instead of `javax.security.cert`](../../java/migrate/deprecatedjavaxsecuritycert.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](../../java/migrate/deprecatedlogrecordthreadid.md)
 * [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](../../java/migrate/removedlegacysunjsseprovidername.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](../../java/migrate/jre17agentmainpremainpublic.md)
-* [Upgrade Maven plugin version](../../maven/upgradepluginversion.md)
-  * groupId: `org.apache.maven.plugins`
-  * artifactId: `maven-checkstyle-plugin`
-  * newVersion: `3.x`
-* [Upgrade Maven plugin version](../../maven/upgradepluginversion.md)
-  * groupId: `com.sonatype.clm`
-  * artifactId: `clm-maven-plugin`
-  * newVersion: `2.47.6-01`
 * [Remove `Thread.countStackFrames()` method](../../java/migrate/deprecatedcountstackframesmethod.md)
 * [Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](../../java/migrate/removedzipfinalizemethods.md)
 * [Replace `SSLSession.getPeerCertificateChain()` method](../../java/migrate/removedsslsessiongetpeercertificatechainmethodimpl.md)
 * [Replace `com.sun.net.ssl` package](../../java/migrate/sunnetsslpackageunavailable.md)
 * [Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant](../../java/migrate/removedrmiconnectorservercredentialtypesconstant.md)
 * [Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`](../../java/migrate/removedfileiofinalizemethods.md)
+* [Upgrade plugins to Java 17 compatible versions](../../java/migrate/upgradepluginsforjava17.md)
 
 {% endtab %}
 
@@ -180,36 +174,28 @@ tags:
   - java17
 recipeList:
   - org.openrewrite.java.migrate.Java8toJava11
-  - org.openrewrite.java.migrate.UpgradeJavaVersion:
-      version: 17
+  - org.openrewrite.java.migrate.UpgradeBuildToJava17
   - org.openrewrite.java.migrate.lang.StringFormatted
-  - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
-      minimumJavaMajorVersion: 17
   - org.openrewrite.staticanalysis.InstanceOfPatternMatch
   - org.openrewrite.java.migrate.RemoveMethodInvocation:
       methodPattern: java.lang.Runtime traceInstructions(boolean)
   - org.openrewrite.java.migrate.RemoveMethodInvocation:
       methodPattern: java.lang.System traceMethodCalls(boolean)
+  - org.openrewrite.java.migrate.RemovedToolProviderConstructor
+  - org.openrewrite.java.migrate.RemovedModifierAndConstantBootstrapsConstructors
   - org.openrewrite.java.migrate.lang.UseTextBlocks:
       convertStringsWithoutNewlines: true
   - org.openrewrite.java.migrate.DeprecatedJavaxSecurityCert
   - org.openrewrite.java.migrate.DeprecatedLogRecordThreadID
   - org.openrewrite.java.migrate.RemovedLegacySunJSSEProviderName
   - org.openrewrite.java.migrate.Jre17AgentMainPreMainPublic
-  - org.openrewrite.maven.UpgradePluginVersion:
-      groupId: org.apache.maven.plugins
-      artifactId: maven-checkstyle-plugin
-      newVersion: 3.x
-  - org.openrewrite.maven.UpgradePluginVersion:
-      groupId: com.sonatype.clm
-      artifactId: clm-maven-plugin
-      newVersion: 2.47.6-01
   - org.openrewrite.java.migrate.DeprecatedCountStackFramesMethod
   - org.openrewrite.java.migrate.RemovedZipFinalizeMethods
   - org.openrewrite.java.migrate.RemovedSSLSessionGetPeerCertificateChainMethodImpl
   - org.openrewrite.java.migrate.SunNetSslPackageUnavailable
   - org.openrewrite.java.migrate.RemovedRMIConnectorServerCredentialTypesConstant
   - org.openrewrite.java.migrate.RemovedFileIOFinalizeMethods
+  - org.openrewrite.java.migrate.UpgradePluginsForJava17
 
 ```
 {% endtab %}

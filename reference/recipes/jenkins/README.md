@@ -23,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Disables local file resolution for parent POM](./disablelocalresolutionforparentpom.md)
 * [Is the project a Jenkins plugin?](./isjenkinsplugin.md)
 * [Modernize Jenkinsfile](./modernizejenkinsfile.md)
+* [Upgrade Jenkins Java version](./upgradejavaversion.md)
 * [Upgrade property's value to version](./upgradeversionproperty.md)
 * [Use Jenkins API plugin instead of libraries](./replacelibrarieswithapiplugin.md)
 * [Use commons-lang3 API Plugin](./commonslang3toapiplugin.md)

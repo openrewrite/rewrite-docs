@@ -39,6 +39,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Exclude Maven dependency](./excludedependency.md)
 * [Increment Maven project version](./incrementprojectversion.md)
 * [Manage dependencies](./managedependencies.md)
+* [Modernize obsolete Maven poms](./modernizeobsoletepoms.md)
 * [Order POM elements](./orderpomelements.md)
 * [Remove Maven dependency](./removedependency.md)
 * [Remove Maven managed dependency](./removemanageddependency.md)

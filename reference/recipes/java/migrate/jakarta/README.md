@@ -44,6 +44,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](./updateapachewssecuritypackages.md)
 * [Migrate to Jakarta EE 10](./jakartaee10.md)
 * [Migrate to Jakarta EE 9](./javaxmigrationtojakarta.md)
+* [Migrate xmlns entries and javax. packages in `ejb-jar.xml` files](./javaxejbjarxmltojakartaejbjarxml.md)
+* [Migrate xmlns entries and javax. packages in `validation.xml` files](./javaxbeanvalidationxmltojakartabeanvalidationxml.md)
 * [Migrate xmlns entries in `beans.xml` files](./javaxbeansxmltojakartabeansxml.md)
 * [Migrate xmlns entries in `faces-config.xml` files](./javaxfacesconfigxmltojakartafacesconfigxml.md)
 * [Migrate xmlns entries in `persistence.xml` files](./javaxpersistencexmltojakartapersistencexml.md)
