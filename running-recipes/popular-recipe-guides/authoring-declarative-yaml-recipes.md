@@ -57,7 +57,7 @@ rewrite {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FooToBar</recipe>
@@ -130,7 +130,7 @@ rewrite {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.30.0</version>
+        <version>5.32.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FooToBar</recipe>
