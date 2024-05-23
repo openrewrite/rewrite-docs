@@ -26,7 +26,7 @@ In the meantime, one way to work around this is to add a profile on the parent P
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.6.0</version>
+            <version>1.8.1</version>
           </dependency>
         </dependencies>
       </plugin>
