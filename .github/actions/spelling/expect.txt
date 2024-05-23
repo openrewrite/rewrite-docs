@@ -82,6 +82,7 @@ endcode
 endhint
 endswith
 endtab
+Ehcache
 errorprone
 equalsignorecaserecipe
 equalsrecipe
