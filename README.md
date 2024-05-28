@@ -19,4 +19,4 @@ We use [GitBook](https://www.gitbook.com/) to manage our documentation. When any
 ## Standards
 
 * In document titles and headers, use sentence case. That is, capitalize only the first word in the title, the first word in a subheading after a colon, and any proper nouns or other terms that are always capitalized a certain way. Don't put a period at the end of a title or heading.
-* When using acronyms, you must always fully define the acronym before it can be used in the document. For instance, you would say something like: "The North Atlantic Treaty Organization (NATO) did..." Then, in the rest of the document, you can freely use NATO instead. 
+* When using acronyms, you must always fully define the acronym before it can be used in the document. For instance, you would say something like: "The North Atlantic Treaty Organization (NATO) did..." Then, in the rest of the document, you can freely use NATO instead.
