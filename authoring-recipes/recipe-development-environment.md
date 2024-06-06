@@ -194,6 +194,21 @@ dependencies {
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.0.0-M9</version>
         </plugin>
+        <!-- lombok is optional, but recommended for authoring recipes -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.13.0</version>
+            <configuration>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>1.18.32</version>
+                    </path>
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
     </plugins>
 </build>
 ```
