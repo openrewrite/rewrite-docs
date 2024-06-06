@@ -84,6 +84,7 @@ dependencies {
     implementation("org.openrewrite:rewrite-xml")
 
     // lombok is optional, but recommended for authoring recipes
+    compileOnly("org.projectlombok:lombok:latest.release")
     annotationProcessor("org.projectlombok:lombok:latest.release")
 
     // For authoring tests for any kind of Recipe
