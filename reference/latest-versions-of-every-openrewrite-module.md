@@ -10,7 +10,7 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 
 | Module                                                                                                                          | Version   |
 |---------------------------------------------------------------------------------------------------------------------------------| ----------|
-| [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                              | **2.11.1** |
+| [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                              | **2.12.0** |
 | [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                                 | **5.32.1** |
 | [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                               | **6.15.1** |
 | org.openrewrite:rewrite-groovy                                                                                                  | 8.27.1    |
