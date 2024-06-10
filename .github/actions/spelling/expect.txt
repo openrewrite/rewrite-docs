@@ -77,6 +77,7 @@ Ehcache
 ejb
 EJBDD
 Elasti
+embeddings
 Encryptors
 endcode
 endhint
@@ -117,6 +118,7 @@ jacc
 jacoco
 jassertion
 javac
+javadocs
 javaee
 javatemplate
 JAX
@@ -176,6 +178,7 @@ methoddeclaration
 micronaut
 Migratetohypersistenceutilshibernate
 minidev
+Misencoded
 misk
 MNG
 mnt
@@ -252,6 +255,7 @@ smushed
 snakeyaml
 Sonatype
 sourcespecs
+spellchecker
 spi
 splitrecipe
 Spotbugs
@@ -278,6 +282,7 @@ timestamped
 TML
 TODOs
 tostring
+Transposecapitalization
 trimrecipe
 trimtoemptyrecipe
 trimtonullrecipe
@@ -303,6 +308,7 @@ workflows
 writestringtofilerecipe
 Wsoc
 wss
+XMLs
 XRange
 xsi
 Xwork
