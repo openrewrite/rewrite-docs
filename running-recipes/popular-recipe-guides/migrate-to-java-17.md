@@ -46,7 +46,7 @@ The Java 17 migration recipe can be applied by including OpenRewrite's plug-in t
 ```groovy
   plugins {
       id("java")
-      id("org.openrewrite.rewrite") version("6.15.1")
+      id("org.openrewrite.rewrite") version("6.16.0")
   }
   
   rewrite {
