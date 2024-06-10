@@ -1169,8 +1169,6 @@
       * [Find method invocations that resemble a pattern](reference/recipes/ai/research/findcodethatresembles.md)
       * [Get embeddings for code snippets in code](reference/recipes/ai/research/getcodeembedding.md)
       * [Get recommendations](reference/recipes/ai/research/getrecommendations.md)
-  * [Transposecapitalization](reference/recipes/transposecapitalization/README.md)
-    * [SpongeBob-case comments](reference/recipes/transposecapitalization/spongebobcase.md)
   * [Apache](reference/recipes/apache/README.md)
     * [Commons](reference/recipes/apache/commons/README.md)
       * [Codec](reference/recipes/apache/commons/codec/README.md)
