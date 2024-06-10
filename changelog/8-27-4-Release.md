@@ -9,15 +9,15 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [io.moderne.ai.FindCommentsLanguage](https://docs.openrewrite.org/recipes/io/moderne/ai/findcommentslanguage): Finds all comments and uses AI to predict which language the comment is in. 
-* [io.moderne.ai.FixMisencodedCommentsInFrench](https://docs.openrewrite.org/recipes/io/moderne/ai/fixmisencodedcommentsinfrench): Fixes mis-encoded French comments in your code, javadocs and in your pom.xml files. Mis-encoded comments contain a ? or � character. 
-* [io.moderne.ai.ListAllMethodsUsed](https://docs.openrewrite.org/recipes/io/moderne/ai/listallmethodsused): List all methods used in any Java source file. 
-* [io.moderne.ai.SpellCheckCommentsInFrench](https://docs.openrewrite.org/recipes/io/moderne/ai/spellcheckcommentsinfrench): Use spellchecker to fix mis-encoded French comments. Mis-encoded comments will contain either '?' or '�'. 
-* [io.moderne.ai.SpellCheckCommentsInFrenchPomXml](https://docs.openrewrite.org/recipes/io/moderne/ai/spellcheckcommentsinfrenchpomxml): Use spellchecker to fix mis-encoded French comments in pom.xml files. Mis-encoded comments will contain either '?' or '�'. 
-* [io.moderne.ai.research.FindCodeThatResembles](https://docs.openrewrite.org/recipes/io/moderne/ai/research/findcodethatresembles): This recipe uses two phase AI approach to find a method invocation that resembles a search string. 
-* [io.moderne.ai.research.GetCodeEmbedding](https://docs.openrewrite.org/recipes/io/moderne/ai/research/getcodeembedding): This recipe calls an AI model to get an embedding for either classes or methods which can then be used for downstream tasks. 
-* [io.moderne.ai.research.GetRecommendations](https://docs.openrewrite.org/recipes/io/moderne/ai/research/getrecommendations): This recipe calls an AI model to get recommendations for modernizing the code base by looking at a sample of method declarations. 
-* [io.moderne.transposeCapitalization.SpongeBobCase](https://docs.openrewrite.org/recipes/io/moderne/transposecapitalization/spongebobcase): Change all your comments to be SpongeBob-case. 
+* [io.moderne.ai.FindCommentsLanguage](https://docs.openrewrite.org/recipes/ai/findcommentslanguage): Finds all comments and uses AI to predict which language the comment is in. 
+* [io.moderne.ai.FixMisencodedCommentsInFrench](https://docs.openrewrite.org/recipes/ai/fixmisencodedcommentsinfrench): Fixes mis-encoded French comments in your code, javadocs and in your pom.xml files. Mis-encoded comments contain a ? or � character. 
+* [io.moderne.ai.ListAllMethodsUsed](https://docs.openrewrite.org/recipes/ai/listallmethodsused): List all methods used in any Java source file. 
+* [io.moderne.ai.SpellCheckCommentsInFrench](https://docs.openrewrite.org/recipes/ai/spellcheckcommentsinfrench): Use spellchecker to fix mis-encoded French comments. Mis-encoded comments will contain either '?' or '�'. 
+* [io.moderne.ai.SpellCheckCommentsInFrenchPomXml](https://docs.openrewrite.org/recipes/ai/spellcheckcommentsinfrenchpomxml): Use spellchecker to fix mis-encoded French comments in pom.xml files. Mis-encoded comments will contain either '?' or '�'. 
+* [io.moderne.ai.research.FindCodeThatResembles](https://docs.openrewrite.org/recipes/ai/research/findcodethatresembles): This recipe uses two phase AI approach to find a method invocation that resembles a search string. 
+* [io.moderne.ai.research.GetCodeEmbedding](https://docs.openrewrite.org/recipes/ai/research/getcodeembedding): This recipe calls an AI model to get an embedding for either classes or methods which can then be used for downstream tasks. 
+* [io.moderne.ai.research.GetRecommendations](https://docs.openrewrite.org/recipes/ai/research/getrecommendations): This recipe calls an AI model to get recommendations for modernizing the code base by looking at a sample of method declarations. 
+* [io.moderne.transposeCapitalization.SpongeBobCase](https://docs.openrewrite.org/recipes/transposecapitalization/spongebobcase): Change all your comments to be SpongeBob-case. 
 * [org.openrewrite.hibernate.validator.HibernateValidator_8_0](https://docs.openrewrite.org/recipes/hibernate/validator/hibernatevalidator_8_0): This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x. 
 * [org.openrewrite.java.ReplaceAnnotation](https://docs.openrewrite.org/recipes/java/replaceannotation): Replace an Annotation with another one if the annotation pattern matches. Only fixed parameters can be set in the replacement. 
 * [org.openrewrite.java.jackson.codehaus.JsonIncludeAnnotation](https://docs.openrewrite.org/recipes/java/jackson/codehaus/jsonincludeannotation): Move Codehaus' `@JsonSerialize.include` argument to FasterXMLs `@JsonInclude` annotation. 
