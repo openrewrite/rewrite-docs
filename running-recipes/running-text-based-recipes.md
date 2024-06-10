@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.1</version>
+        <version>5.33.0</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindAndReplaceJDK17</recipe>
