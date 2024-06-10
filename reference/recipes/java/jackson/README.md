@@ -2,6 +2,10 @@
 
 _Recipes to perform [Jackson](https://fasterxml.com/) migration tasks._
 
+## Categories
+
+* [Codehaus](/reference/recipes/java/jackson/codehaus)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate from WebSphere traditional to Liberty](./migratefromwebspheretoliberty.md)
 * [Use `getSSOCookieFromSSOToken` and `logout`](./websphereunavailablessomethods.md)
 
 ## Recipes

@@ -1,16 +1,16 @@
 # Migrate from WebSphere traditional to Liberty
 
-**org.openrewrite.java.liberty**
+**org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty**
 
 _Use this category of rules to identify code changes needed when migrating  from WebSphere Application Server traditional to Liberty._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.4.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/1.5.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-liberty
-* version: 1.4.2
+* version: 1.5.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,18 +18,18 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.4.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-liberty:1.5.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.liberty")
+    activeRecipe("org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty")
 }
 
 repositories {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-liberty:1.4.2")
+    rewrite("org.openrewrite.recipe:rewrite-liberty:1.5.0")
 }
 ```
 {% endcode %}
@@ -52,15 +52,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.14.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-liberty:1.4.2")
+        rewrite("org.openrewrite.recipe:rewrite-liberty:1.5.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.liberty")
+        activeRecipe("org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -84,18 +84,18 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.0</version>
+        <version>5.33.0</version>
         <configuration>
           
           <activeRecipes>
-            <recipe>org.openrewrite.java.liberty</recipe>
+            <recipe>org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-liberty</artifactId>
-            <version>1.4.2</version>
+            <version>1.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -113,7 +113,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 {% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-liberty:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.liberty 
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-liberty:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty 
 ```
 {% endcode %}
 {% endtab %}
@@ -122,7 +122,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe liberty
+mod run . --recipe MigrateFromWebSphereToLiberty
 ```
 {% endcode %}
 {% endtab %}
@@ -132,14 +132,14 @@ mod run . --recipe liberty
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Removes invalid JNDI properties](../java/liberty/removewas2libertynonportablejndilookup.md)
-* [Use `getProperty("wlp.server.name")`](../java/liberty/servername.md)
-* [Use `getSSOCookieFromSSOToken` and `logout`](../java/liberty/websphereunavailablessomethods.md)
-* [Use correct application namespace values](../xml/liberty/appddnamespacerule.md)
-* [Use correct connector namespace values](../xml/liberty/connectorddnamespacerule.md)
-* [Use correct ejb-jar namespace values](../xml/liberty/ejbddnamespacerule.md)
-* [Move persistence.xml file](../xml/liberty/persistencexmllocationrule.md)
-* [Use correct web-app namespace values](../xml/liberty/webddnamespacerule.md)
+* [Removes invalid JNDI properties](../../java/liberty/removewas2libertynonportablejndilookup.md)
+* [Use `getProperty("wlp.server.name")`](../../java/liberty/servername.md)
+* [Use `getSSOCookieFromSSOToken` and `logout`](../../java/liberty/websphereunavailablessomethods.md)
+* [Use correct application namespace values](../../xml/liberty/appddnamespacerule.md)
+* [Use correct connector namespace values](../../xml/liberty/connectorddnamespacerule.md)
+* [Use correct ejb-jar namespace values](../../xml/liberty/ejbddnamespacerule.md)
+* [Move persistence.xml file](../../xml/liberty/persistencexmllocationrule.md)
+* [Use correct web-app namespace values](../../xml/liberty/webddnamespacerule.md)
 
 {% endtab %}
 
@@ -147,7 +147,7 @@ mod run . --recipe liberty
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.liberty
+name: org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty
 displayName: Migrate from WebSphere traditional to Liberty
 description: Use this category of rules to identify code changes needed when migrating  from WebSphere Application Server traditional to Liberty.
 
@@ -167,7 +167,7 @@ recipeList:
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.liberty)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -11,11 +11,11 @@ _Migrate applications to the latest Apache HttpClient 5.x release. This recipe w
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.2.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-apache
-* version: 1.2.2
+* version: 1.3.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.2.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:1.2.2")
+    rewrite("org.openrewrite.recipe:rewrite-apache:1.3.0")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.14.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:1.2.2")
+        rewrite("org.openrewrite.recipe:rewrite-apache:1.3.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.0</version>
+        <version>5.33.0</version>
         <configuration>
           
           <activeRecipes>
@@ -100,7 +100,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>1.2.2</version>
+            <version>1.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -143,13 +143,13 @@ mod run . --recipe UpgradeApacheHttpClient_5
   * oldArtifactId: `httpclient`
   * newGroupId: `org.apache.httpcomponents.client5`
   * newArtifactId: `httpclient5`
-  * newVersion: `5.2.x`
+  * newVersion: `5.3.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.apache.httpcomponents`
   * oldArtifactId: `httpcore`
   * newGroupId: `org.apache.httpcomponents.core5`
   * newArtifactId: `httpcore5`
-  * newVersion: `5.2.x`
+  * newVersion: `5.3.x`
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_deprecatedmethods.md)
 * [Adds `TimeUnit` to timeouts and duration methods](../../apache/httpclient5/upgradeapachehttpclient_5_timeunit.md)
@@ -176,13 +176,13 @@ recipeList:
       oldArtifactId: httpclient
       newGroupId: org.apache.httpcomponents.client5
       newArtifactId: httpclient5
-      newVersion: 5.2.x
+      newVersion: 5.3.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.httpcomponents
       oldArtifactId: httpcore
       newGroupId: org.apache.httpcomponents.core5
       newArtifactId: httpcore5
-      newVersion: 5.2.x
+      newVersion: 5.3.x
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_DeprecatedMethods
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit

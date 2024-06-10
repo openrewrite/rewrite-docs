@@ -6,11 +6,11 @@ _List out the contents of each unique `GitProvenance` marker in the set of sourc
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindGitProvenance.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.27.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindGitProvenance.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.27.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.27.1
+* version: 8.27.4
 
 ## Data Tables
 
@@ -36,7 +36,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
@@ -92,7 +92,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.0</version>
+        <version>5.33.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>

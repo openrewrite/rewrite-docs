@@ -6,11 +6,11 @@ _Best practices for testing recipes._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/1.4.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/1.5.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-recommendations
-* version: 1.4.3
+* version: 1.5.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations:1.4.3` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations:1.5.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-recommendations:1.4.3")
+    rewrite("org.openrewrite.recipe:rewrite-recommendations:1.5.0")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.14.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-recommendations:1.4.3")
+        rewrite("org.openrewrite.recipe:rewrite-recommendations:1.5.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.recipes.RecipeTestingBestPractices")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.0</version>
+        <version>5.33.0</version>
         <configuration>
           
           <activeRecipes>
@@ -95,7 +95,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-recommendations</artifactId>
-            <version>1.4.3</version>
+            <version>1.5.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,16 +132,13 @@ mod run . --recipe RecipeTestingBestPractices
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Order imports](../java/orderimports.md)
 * [RewriteTest classes should not be public](../java/recipes/rewritetestclassesshouldnotbepublic.md)
 * [Automatically select recipe examples from the unit test cases of a recipe](../java/recipes/selectrecipeexamples.md)
 * [Minimal indentation for `SourceSpecs` text blocks](../java/recipes/sourcespectextblockindentation.md)
 * [Remove `test` prefix from JUnit 5 tests](../java/testing/cleanup/removetestprefix.md)
 * [Remove `public` visibility of JUnit 5 tests](../java/testing/cleanup/testsshouldnotbepublic.md)
-* [Add missing `@Override` to overriding and implementing methods](../staticanalysis/missingoverrideannotation.md)
+* [Fix missing braces](../staticanalysis/needbraces.md)
 * [Remove `System.out#println` statements](../staticanalysis/removesystemoutprintln.md)
-* [Recipe nullability best practices](../recipes/recipenullabilitybestpractices.md)
-* [End files with a single newline](../java/format/emptynewlineatendoffile.md)
 
 {% endtab %}
 
@@ -153,16 +150,13 @@ name: org.openrewrite.recipes.RecipeTestingBestPractices
 displayName: Recipe testing best practices
 description: Best practices for testing recipes.
 recipeList:
-  - org.openrewrite.java.OrderImports
   - org.openrewrite.java.recipes.RewriteTestClassesShouldNotBePublic
   - org.openrewrite.java.recipes.SelectRecipeExamples
   - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
-  - org.openrewrite.staticanalysis.MissingOverrideAnnotation
+  - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.RemoveSystemOutPrintln
-  - org.openrewrite.recipes.RecipeNullabilityBestPractices
-  - org.openrewrite.java.format.EmptyNewlineAtEndOfFile
 
 ```
 {% endtab %}

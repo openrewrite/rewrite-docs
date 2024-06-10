@@ -3,6 +3,7 @@
 ## Categories
 
 * [Migratetohypersistenceutilshibernate6](/reference/recipes/hibernate/migratetohypersistenceutilshibernate6)
+* [Validator](/reference/recipes/hibernate/validator)
 
 ## Composite Recipes
 

@@ -20,12 +20,6 @@ _Basic building blocks for transforming Java code._
 * [Struts](/reference/recipes/java/struts)
 * [Testing](/reference/recipes/java/testing)
 
-## Composite Recipes
-
-_Recipes that include further recipes, often including the individual recipes below._
-
-* [Migrate from WebSphere traditional to Liberty](./liberty.md)
-
 ## Recipes
 
 * [Add ASLv2 license header](./addapache2licenseheader.md)
@@ -53,6 +47,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove unused imports](./removeunusedimports.md)
 * [Rename package name](./changepackage.md)
 * [Reorder method arguments](./reordermethodarguments.md)
+* [Replace Annotation](./replaceannotation.md)
 * [Replace String literal with constant](./replacestringliteralwithconstant.md)
 * [Replace constant with another constant](./replaceconstantwithanotherconstant.md)
 * [Replace constant with literal value](./replaceconstant.md)

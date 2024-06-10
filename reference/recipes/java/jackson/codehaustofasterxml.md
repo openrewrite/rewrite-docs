@@ -6,11 +6,11 @@ _In Jackson 2, the package and dependency coordinates moved from Codehaus to Fas
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/codehaus-to-fasterxml.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/0.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/resources/META-INF/rewrite/codehaus-to-fasterxml.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/0.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jackson
-* version: 0.1.1
+* version: 0.3.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson:0.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson:0.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jackson:0.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-jackson:0.3.0")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.14.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jackson:0.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-jackson:0.3.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.jackson.CodehausToFasterXML")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.0</version>
+        <version>5.33.0</version>
         <configuration>
           
           <activeRecipes>
@@ -95,7 +95,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jackson</artifactId>
-            <version>0.1.1</version>
+            <version>0.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,6 +132,7 @@ mod run . --recipe CodehausToFasterXML
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Migrate to Jackson `@JsonInclude`](../../java/jackson/codehaus/jsonincludeannotation.md)
 * [Change type](../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.JsonSerializer`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.JsonSerializer`
@@ -144,6 +145,12 @@ mod run . --recipe CodehausToFasterXML
 * [Change type](../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.ObjectMapper`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.ObjectMapper`
+* [Change type](../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.SerializationConfig$Feature`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.SerializationFeature`
+* [Change type](../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.DeserializationConfig$Feature`
+  * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.DeserializationFeature`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.codehaus.jackson`
   * oldArtifactId: `jackson-mapper-asl`
@@ -176,6 +183,7 @@ displayName: Migrate from Jackson Codehaus (legacy) to Jackson FasterXML
 description: In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
 
 recipeList:
+  - org.openrewrite.java.jackson.codehaus.JsonIncludeAnnotation
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.codehaus.jackson.map.JsonSerializer
       newFullyQualifiedTypeName: com.fasterxml.jackson.databind.JsonSerializer
@@ -188,6 +196,12 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.codehaus.jackson.map.ObjectMapper
       newFullyQualifiedTypeName: com.fasterxml.jackson.databind.ObjectMapper
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.SerializationConfig$Feature
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.SerializationFeature
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.codehaus.jackson.map.DeserializationConfig$Feature
+      newFullyQualifiedTypeName: com.fasterxml.jackson.databind.DeserializationFeature
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.codehaus.jackson
       oldArtifactId: jackson-mapper-asl
@@ -220,3 +234,6 @@ recipeList:
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+
+## Contributors
+[Tim te Beek](mailto:tim@moderne.io)

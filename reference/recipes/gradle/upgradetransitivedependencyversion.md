@@ -6,11 +6,11 @@ _Upgrades the version of a transitive dependency in a Gradle build file. There a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeTransitiveDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.27.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpgradeTransitiveDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.27.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.27.1
+* version: 8.27.4
 
 ## Options
 
@@ -21,6 +21,7 @@ _Upgrades the version of a transitive dependency in a Gradle build file. There a
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). Defaults to `latest.release`. | `29.X` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'newVersion' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `String` | because | *Optional*. The reason for upgrading the transitive dependency. For example, we could be responding to a vulnerability. | `CVE-2021-1234` |
+| `List` | onlyForConfigurations | *Optional*. A list of configurations to consider during the upgrade. For example, For example using `implementation, runtimeOnly`, we could be responding to a deployable asset vulnerability only (ignoring test scoped vulnerabilities). | `implementation, runtimeOnly` |
 
 ## Data Tables
 
@@ -50,6 +51,7 @@ recipeList:
       version: 29.X
       versionPattern: '-jre'
       because: CVE-2021-1234
+      onlyForConfigurations: implementation, runtimeOnly
 ```
 {% endcode %}
 
@@ -60,7 +62,7 @@ Now that `com.yourorg.UpgradeTransitiveDependencyVersionExample` has been define
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
@@ -95,4 +97,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com)

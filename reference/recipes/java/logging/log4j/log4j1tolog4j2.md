@@ -2,22 +2,20 @@
 
 **org.openrewrite.java.logging.log4j.Log4j1ToLog4j2**
 
-_Migrates Log4j 1.x to Log4j 2.x.  This remediates the [Log4Shell](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a) vulnerability  by upgrading to latest version of Log4j 2._
+_Migrates Log4j 1.x to Log4j 2.x._
 
 ### Tags
 
-* Log4Shell
 * logging
-* CVE-2021-44228
 * log4j
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.7.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.7.2
+* version: 2.8.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -25,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.7.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.8.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
@@ -44,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.7.2")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.8.0")
 }
 ```
 {% endcode %}
@@ -59,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.14.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.7.2")
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.8.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.logging.log4j.Log4j1ToLog4j2")
@@ -91,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.0</version>
+        <version>5.33.0</version>
         <configuration>
           
           <activeRecipes>
@@ -102,7 +100,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.7.2</version>
+            <version>2.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -192,11 +190,7 @@ mod run . --recipe Log4j1ToLog4j2
   * newGroupId: `org.apache.logging.log4j`
   * newArtifactId: `log4j-slf4j-impl`
   * newVersion: `2.x`
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
-  * groupId: `org.apache.logging.log4j`
-  * artifactId: `*`
-  * newVersion: `2.x`
-  * overrideManagedVersion: `true`
+* [Upgrade Log4j 2.x dependency version](../../../java/logging/log4j/upgradelog4j2dependencyversion.md)
 
 {% endtab %}
 
@@ -206,12 +200,10 @@ mod run . --recipe Log4j1ToLog4j2
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.logging.log4j.Log4j1ToLog4j2
 displayName: Migrate Log4j 1.x to Log4j 2.x
-description: Migrates Log4j 1.x to Log4j 2.x.  This remediates the [Log4Shell](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a) vulnerability  by upgrading to latest version of Log4j 2.
+description: Migrates Log4j 1.x to Log4j 2.x. 
 
 tags:
-  - Log4Shell
   - logging
-  - CVE-2021-44228
   - log4j
 recipeList:
   - org.openrewrite.java.logging.ChangeLombokLogAnnotation:
@@ -267,11 +259,7 @@ recipeList:
       newGroupId: org.apache.logging.log4j
       newArtifactId: log4j-slf4j-impl
       newVersion: 2.x
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.apache.logging.log4j
-      artifactId: *
-      newVersion: 2.x
-      overrideManagedVersion: true
+  - org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion
 
 ```
 {% endtab %}

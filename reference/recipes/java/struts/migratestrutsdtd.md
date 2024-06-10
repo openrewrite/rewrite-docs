@@ -6,17 +6,17 @@ _Update Struts DTD to reflect the specified version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/0.2.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/0.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-struts
-* version: 0.2.3
+* version: 0.4.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | strutsVersion | The Struts version to migrate to. Valid options: `2.3, 2.5, 6.0` | `6.0` |
+| `String` | strutsVersion | The Struts version to migrate to. Valid options: `2.3`, `2.5`, `6.0` | `6.0` |
 
 
 ## Usage
@@ -36,14 +36,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.MigrateStrutsDtdExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-struts:0.2.3 in your build file:
+Now that `com.yourorg.MigrateStrutsDtdExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-struts:0.4.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-struts:0.2.3")
+    rewrite("org.openrewrite.recipe:rewrite-struts:0.4.0")
 }
 ```
 {% endcode %}
@@ -71,7 +71,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.0</version>
+        <version>5.33.0</version>
         <configuration>
           
           <activeRecipes>
@@ -82,7 +82,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-struts</artifactId>
-            <version>0.2.3</version>
+            <version>0.4.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -113,4 +113,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

@@ -6,17 +6,17 @@ _Find XML tags by XPath expression._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/FindTags.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.27.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/FindTags.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.27.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.27.1
+* version: 8.27.4
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | xPath | An XPath expression used to find matching tags. | `/dependencies/dependency` |
+| `String` | xpath | An XPath expression used to find matching tags. | `//dependencies/dependency` |
 
 
 ## Usage
@@ -32,7 +32,7 @@ name: com.yourorg.FindTagsExample
 displayName: Find XML tags example
 recipeList:
   - org.openrewrite.xml.search.FindTags:
-      xPath: /dependencies/dependency
+      xpath: //dependencies/dependency
 ```
 {% endcode %}
 
@@ -43,7 +43,7 @@ Now that `com.yourorg.FindTagsExample` has been defined activate it in your buil
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.14.0")
+    id("org.openrewrite.rewrite") version("6.16.0")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.32.0</version>
+        <version>5.33.0</version>
         <configuration>
           
           <activeRecipes>
@@ -102,4 +102,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Greg Adams](mailto:greg@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Tyler Van Gorder, Aaron Gershman, [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[Greg Adams](mailto:greg@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), Aaron Gershman, [Tim te Beek](mailto:tim@moderne.io)
