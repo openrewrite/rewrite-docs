@@ -25,7 +25,7 @@ The migrate to AssertJ recipe can be applied by adding OpenRewrite's plugin to y
         <dependency>
           <groupId>org.openrewrite.recipe</groupId>
           <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>2.10.1</version>
+          <version>2.11.0</version>
         </dependency>
       </dependencies>
     </plugin>
