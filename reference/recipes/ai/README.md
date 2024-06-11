@@ -3,6 +3,7 @@
 ## Categories
 
 * [Research](/reference/recipes/ai/research)
+* [Timefold](/reference/recipes/ai/timefold)
 
 ## Composite Recipes
 

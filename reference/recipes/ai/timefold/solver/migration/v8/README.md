@@ -1,0 +1,18 @@
+# V8
+
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [PlanningVariable's `nullable` is newly called `unassignedValues`](./nullablerecipe.md)
+* [Use non-deprecated SingleConstraintAssertion methods](./singleconstraintassertionmethodsrecipe.md)
+
+## Recipes
+
+* [ConstraintStreams: use asConstraint() methods to define constraints](./asconstraintrecipe.md)
+* [Replace getConstraint*() with getConstraintRef()](./constraintrefrecipe.md)
+* [Score: use shorter getters](./scoregettersrecipe.md)
+* [ScoreManager: explain(), update()](./scoremanagermethodsrecipe.md)
+* [SolverManager: use builder API](./solvermanagerbuilderrecipe.md)
+
+
