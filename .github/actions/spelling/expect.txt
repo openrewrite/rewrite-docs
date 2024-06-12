@@ -73,6 +73,7 @@ deletedirectoryfilerecipe
 deletedirectorystringrecipe
 deletewhitespacerecipe
 Develocity
+diffing
 diffs
 Dockerfiles
 dropwizard
@@ -133,9 +134,11 @@ jaxb
 JAXRS
 jaxws
 JBig
+JBoolean
 JCache
 JChar
 JDepr
+JDouble
 jdeprscan
 jdk
 JDKTo
