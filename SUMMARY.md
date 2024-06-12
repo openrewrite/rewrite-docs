@@ -1915,7 +1915,7 @@
           * [Avoid contrived ways of expressing the "greater than" relationship](reference/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe.md)
           * [Avoid contrived ways of expressing the "less than or equal to" relationship](reference/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanorequaltorecipe.md)
           * [Avoid contrived ways of expressing the "less than" relationship](reference/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanrecipe.md)
-          * [Avoid double negations; this is not Javascript](reference/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe.md)
+          * [Avoid double negations; this is not JavaScript](reference/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe.md)
           * [Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead](reference/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe.md)
           * [Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead](reference/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe.md)
           * [Don't unnecessarily call Streams#concat(DoubleStream...)](reference/recipes/tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$concatonedoublestreamrecipe.md)

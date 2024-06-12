@@ -71,7 +71,7 @@
 \bore (?:more|less)\b
 
 # s.b. nonexistent
-\bnon existing\b
+#\bnon existing\b
 \b[Nn]o[nt][- ]existent\b
 
 # s.b. brief / details/ param / return / retval
