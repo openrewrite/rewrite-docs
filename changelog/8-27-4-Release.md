@@ -57,7 +57,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [io.quarkus.updates.camel.camel43.StateRepository](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/camel43/staterepository): Moved classes MemoryStateRepository and FileStateRepositor from camel-base-engine to  camel-support. 
 * [io.quarkus.updates.camel.camel44.CamelCoreRecipe](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/camel44/camelcorerecipe): Apache Camel Core migration from version 4.3 to 4.4. 
 * [io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/camel44/camelquarkusmigrationrecipe): Migrates `camel 4.0` quarkus application to `camel 4.4`. 
-* [io.quarkus.updates.camel.camel44.DefaultJsonSchemaLoader](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/camel44/defaultjsonschemaloader): Replaces depricated class withits successor. 
+* [io.quarkus.updates.camel.camel44.DefaultJsonSchemaLoader](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/camel44/defaultjsonschemaloader): Replaces deprecated class with its successor. 
 * [io.quarkus.updates.camel.camel44.RouteControllerProperties](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/camel44/routecontrollerproperties):  
 * [io.quarkus.updates.camel.customRecipes.ChangePropertyKeyWithCaseChange](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/customrecipes/changepropertykeywithcasechange): Change prefix of property with Camel case 
 * [io.quarkus.updates.core.quarkus30.AdditionalChanges](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus30/additionalchanges):  
