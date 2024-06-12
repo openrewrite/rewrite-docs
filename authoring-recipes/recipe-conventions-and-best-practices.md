@@ -47,14 +47,14 @@ By following these conventions, you'll ensure that:
 
 ### If it can be declarative, it should be declarative
 
-Before you begin writing a new recipe, take the time to examine existing recipes. You may find that what you want to do can be done by combining existing recipes without writing any code. You can achieve this by creating a [declarative YAML](/reference/yaml-format-reference.md) file.
+Before you begin writing a new recipe, take the time to examine existing recipes. You may find that what you want to do can be done by combining existing recipes without writing any code. You can achieve this by creating a [declarative YAML](../reference/yaml-format-reference.md) file.
 
 For instance, let's say you wanted to create a recipe that combines the functionality of numerous other static analysis recipes. You _could_ [imperatively code](https://gist.github.com/mike-solomon/a57a7f685bf8213d98162d57406cf8ae) a new recipe that calls one recipe after the next. However, that approach is strongly discouraged. Instead, you should [declaratively list out](https://gist.github.com/mike-solomon/95fa160b2ee07baf2256d57884321621) each recipe you want to run in a YAML file. In doing so, you will not only save time, but you will also substantially reduce the number of potential errors.
 
 If your recipe can be declarative, it should be.
 
 {% hint style="info" %}
-For more information on imperative and declarative recipes, please read the [Recipe documentation](../concepts-and-explanations/recipes.md). Or if you want to learn how to configure a declarative YAML file, please read our [declarative YAML format doc](/reference/yaml-format-reference.md).
+For more information on imperative and declarative recipes, please read the [Recipe documentation](../concepts-and-explanations/recipes.md). Or if you want to learn how to configure a declarative YAML file, please read our [declarative YAML format doc](../reference/yaml-format-reference.md).
 {% endhint %}
 
 ### Be deliberate about LST traversal
@@ -82,28 +82,60 @@ For instance, in the [MigrateCollectionsSingletonSet recipe](https://github.com/
 You can use [Preconditions.and(), Preconditions.or(), and Preconditions.not()](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L79-L123) to create more complex applicability criteria from simple building blocks.
 
 {% hint style="success" %}
-Preconditions are most worthwhile when they can cheaply prevent a visitor from running unnecessarily.
+Preconditions benefit recipe execution performance when they efficiently prevent unnecessary execution of a more computationally expensive visitor.
 {% endhint %}
 
-### Recipe and LST immutability
+### Recipes must be idempotent and immutable
 
-Recipes must have no mutable state. Likewise, `Recipe.getVisitor()` must always return a brand-new visitor instance. This is because, during recipe execution, the same recipe may be invoked multiple times, possibly on sources it has seen before. Any mutable state could lead to strange and confusing bugs. Following this rule is essential for OpenRewrite to operate reliably and correctly.
+A recipe given the same LST and configuration should always produce the same results. This means that a recipe's behavior should _not_ be influenced by LSTs which have been visited previously, only the source file currently being visited.
+
+{% hint style="warning" %}
+Mutable recipe state can be a source of strange and confusing bugs. If visiting a source file mutates your recipe's state then your recipe likely has a bug. Mutable state makes recipes more difficult to read, understand, test, debug, and maintain.&#x20;
+{% endhint %}
+
+{% hint style="success" %}
+Recipes extending [ScanningRecipe](https://docs.openrewrite.org/concepts-explanations/recipes#scanning-recipes) gather data from any or all LSTs via `ScanningRecipe.getScanner()`. That data is then available to use in the subsequent invocations of `ScanningRecipe.generate()` and `ScanningRecipe.getVisitor()`. Data is passed via a recipe-defined type conventionally referred to as an "accumulator". This is the only correct way to pass data from one LST to another.
+{% endhint %}
+
+Since recipe options are configured via their constructors there are few valid reasons for recipes to have mutable fields. It is typical, but not required, that recipes use the `@lombok.Value` annotation to declare their fields as `final` and to generate a suitable constructor. &#x20;
+
+To help prevent state from accidentally leaking between visits of different LSTs, `Recipe.getVisitor()` is called per source file, per cycle. `Recipe.getVisitor()` is required to always return a new, non-cached visitor instance.&#x20;
 
 {% hint style="info" %}
-During test execution, recipe execution is single-threaded for simplicity. However, outside of tests, recipe execution is parallelized.
+If you wish to cache the result of an expensive computation which does not affect Recipe idempotence, you can stare the result in a `transient` field or the execution context. Recipe execution is single-threaded but the `transient` modifier will tell lombok not to generate a constructor parameter and jackson not to attempt to serialize the field.
 {% endhint %}
 
-Also note that, inside the `Recipe.getVisitor()` method, all LST fields (such as the [Body](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1161) on a [Class Declaration](../concepts-and-explanations/lst-examples.md#classdeclaration)) should be treated as immutable. Even if there are certain circumstances where mutating these fields is _technically_ possible, it is **always** a bug for a recipe to mutate those fields.
+### Recipes must not mutate LSTs
 
-OpenRewrite detects that a visitor/recipe has made a change based on referential equality. Mutating fields on an LST breaks this detection, and can potentially cause incorrect diffs to be created.
+OpenRewrite detects changes based on referential comparison of the LST passed into the recipe's visitor with the LST returned by the recipe's visitor. Recipes indicate that a source file should remain unchanged by returning exactly the same LST object as was passed in. Recipes indicate that a patch should be made to a source file by returning an LST which represents the desired state of the source file post-patch. Patches themselves are generated by diffing the orignial, unmodified LST with the new, different LST instance returned by the recipe.&#x20;
 
-### Use ListUtils for collections manipulation
+LSTs are mostly immutable by default, not exposing `set` methods for any field. Instead LSTs provide `with` methods which return a copy of the LST with a different value for the specified field. For example, you "change" the name of a class declaration by visiting it and using `J.ClassDeclaration.withName()` to return a new class declaration with everything the same except for the name.&#x20;
 
-Since referential equality is so important for OpenRewrite to detect changes, typical collection creation and manipulation patterns like newing up your own collection or using Java streams are usually a mistake. Instead, we provide the `ListUtils` class which provides referential-equality conscious data access and manipulation faculties that avoid unnecessary memory allocations.
+{% hint style="warning" %}
+A Recipe should never mutate a field on an LST. Mutating an LST may result patches that cannot be applied. Or worse: incomplete patches that _can_ be applied but omit required diffs.
+{% endhint %}
 
-For instance, in the [UnnecessaryCatch recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-java/src/main/java/org/openrewrite/java/cleanup/UnnecessaryCatch.java), we [utilize ListUtils.flatMap](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-java/src/main/java/org/openrewrite/java/cleanup/UnnecessaryCatch.java#L50-L57) to flatten all of the statements in a block down to one level. We then make changes if that statement matches a `J.Try` via a `ListUtils.map` method.
+The most common way a recipe author runs afoul of this important requirement is to get a collection from an LST element and mutate it directly. For example, attempting to remove an argument from a method invocation by calling `method.getArguments().remove(0)`.
 
-If we used a typical Java stream, regardless of whether or not there were any changes, we'd end up with a newly allocated list. This would lead to OpenRewrite incorrectly saying that there were changes even if our recipe did not intend to make any.
+{% hint style="danger" %}
+The contents of collection fields on LST elements are not enforced to be immutable at runtime. Never directly mutate the contents of any collection that is a field of an LST.
+{% endhint %}
+
+{% hint style="info" %}
+Visitors can remove LST elements by returning `null` when visiting the element to be removed.
+{% endhint %}
+
+Conversely, visiting an LST and returning a copy whose fields are all identical to the original LST looks to OpenRewrite like a change when no change has been made. Typical consequences include excessive recipe execution time due to wasted computation, test failures, and empty patches/diffs. The most common way this happens is that a recipe author instantiates collections of LST elements directly, uses Java `streams` , Kotlin `sequences`, or similar methods. OpenRewrite provides the `ListUtils` class which includes referential-equality conscious data access and manipulation faculties that avoid unnecessary memory allocations.
+
+For instance, in the [UnnecessaryCatch recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-java/src/main/java/org/openrewrite/java/cleanup/UnnecessaryCatch.java), we [utilize ListUtils.flatMap](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-java/src/main/java/org/openrewrite/java/cleanup/UnnecessaryCatch.java#L50-L57) to flatten all of the statements in a block down to one level. We then make changes if that statement matches a `J.Try` with `ListUtils.map`. If this usage of `ListUtils` were replaced with a superficially equivalent Java `stream().map().collect()`, it would always allocate a new list and trigger OpenRewrite to detect and misreport an empty change where no real change was intended.&#x20;
+
+{% hint style="success" %}
+No recipe/visitor should ever mutate any part of the LST passed into it.
+
+A recipe/visitor making a change always returns a different LST than was passed into it.
+
+A recipe/visitor making no change always returns the exact same LST that was passed into it.
+{% endhint %}
 
 ### Nullability matters
 
