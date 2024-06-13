@@ -2,7 +2,7 @@
 
 **org.openrewrite.text.Find**
 
-_Search for text, treating all textual sources as plain text._
+_Textual search, optionally using Regular Expression (regex) to query._
 
 ## Recipe source
 
@@ -17,7 +17,7 @@ _Search for text, treating all textual sources as plain text._
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | find | The text to find. This snippet can be multiline. | `blacklist` |
-| `Boolean` | regex | *Optional*. If true, `find` will be interpreted as a Regular Expression. Default `false`. |  |
+| `Boolean` | regex | *Optional*. If true, `find` will be interpreted as a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression). Default `false`. |  |
 | `Boolean` | caseSensitive | *Optional*. If `true` the search will be sensitive to case. Default `false`. |  |
 | `Boolean` | multiline | *Optional*. When performing a regex search setting this to `true` allows "^" and "$" to match the beginning and end of lines, respectively. When performing a regex search when this is `false` "^" and "$" will match only the beginning and ending of the entire source file, respectively.Has no effect when not performing a regex search. Default `false`. |  |
 | `Boolean` | dotAll | *Optional*. When performing a regex search setting this to `true` allows "." to match line terminators.Has no effect when not performing a regex search. Default `false`. |  |

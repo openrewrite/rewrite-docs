@@ -2,7 +2,7 @@
 
 **org.openrewrite.text.FindAndReplace**
 
-_Simple text find and replace. When the original source file is a language-specific Lossless Semantic Tree, this operation irreversibly converts the source file to a plain text file. Subsequent recipes will not be able to operate on language-specific type._
+_Textual find and replace, optionally interpreting the search query as a Regular Expression (regex). When operating on source files that are language-specific Lossless Semantic Trees, such as Java or XML, this operation converts the source file to plain text for the rest of the recipe run. So if you are combining this recipe with language-specific recipes in a single recipe run, put all of the language-specific recipes before this recipe._
 
 ## Recipe source
 
