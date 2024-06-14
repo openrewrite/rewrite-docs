@@ -3,7 +3,7 @@
 In this tutorial, we will apply a Rewrite [recipe](https://docs.openrewrite.org/concepts-and-explanations/recipes) to a source code repository built with Maven without modifying the build itself. The instructions for this differ slightly depending on whether or not the recipe has configuration parameters. Please note that you will need to have [Maven](https://maven.apache.org/download.cgi) installed in order to run the shell commands.
 
 {% hint style="info" %}
-It is not possible to pass in configuration parameters from the commandline right now.
+It is not possible to pass in configuration parameters from the command-line right now.
 [Our frequently asked questions](https://docs.openrewrite.org/reference/faq#is-it-possible-to-pass-arguments-to-a-recipe-from-the-command-line-i-want-to-programmatically-config) goes into more detail why not.
 {% endhint %}
 
