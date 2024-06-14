@@ -102,7 +102,7 @@ Since recipe options are configured via their constructors there are few valid r
 To help prevent state from accidentally leaking between visits of different LSTs, `Recipe.getVisitor()` is called per source file, per cycle. `Recipe.getVisitor()` is required to always return a new, non-cached visitor instance.&#x20;
 
 {% hint style="info" %}
-If you wish to cache the result of an expensive computation which does not affect Recipe idempotence, you can stare the result in a `transient` field or the execution context. Recipe execution is single-threaded but the `transient` modifier will tell lombok not to generate a constructor parameter and jackson not to attempt to serialize the field.
+If you wish to cache the result of an expensive computation which does not affect Recipe idempotence, you can store the result in a `transient` field or the execution context. Recipe execution is single-threaded but the `transient` modifier will tell lombok not to generate a constructor parameter and jackson not to attempt to serialize the field.
 {% endhint %}
 
 ### Recipes must not mutate LSTs
