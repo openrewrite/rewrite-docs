@@ -104,8 +104,8 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
             <exclude>*/some/irrelevant/or/expensive/directory/**</exclude>
           </exclusions>
           <plainTextMasks>
-	    <plainTextMask>**/.txt</plainTextMask>
-	  </plainTextMasks>
+            <plainTextMask>**/.txt</plainTextMask>
+          </plainTextMasks>
         </configuration>
         <dependencies>
           <!-- This module is made up for sake of example. It isn't packaged with OpenRewrite -->
