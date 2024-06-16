@@ -2,21 +2,24 @@
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes**
 
-_<p>Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard type
+Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard type
  bounds (`<?>`), while the associated AssertJ `@AfterTemplate`s reference stricter
  type bounds. This introduces the risk of producing invalid code. We do this anyway, because
  TestNG's wildcard types can cause javac to infer less specific types than AssertJ requires, while
  the appropriate (more specific) types _will_ be inferred properly when plugged into AssertJ's
  API.
 
- <p>The following is an example of a TestNG statement, which would not be rewritten if it weren't
+The following is an example of a TestNG statement, which would not be rewritten if it weren't
  for the wildcard matching (note that the type parameters of the map on the right-hand side will
  be inferred to be `<Object, Object>` rather than `<String, Object>`).
 
- <pre>{@code
+```java
  List<Map<String, Object>> myMaps = new ArrayList<>();
  assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
- }</pre>. [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules)._
+ }
+```
+
+([Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules))
 
 ## Recipe source
 
