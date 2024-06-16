@@ -81,7 +81,7 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
 {% endhint %}
 
 {% code title="pom.xml" %}
-```markup
+```xml
 <project>
   <build>
     <plugins>
@@ -154,7 +154,7 @@ Execute `mvn rewrite:dryRun` to dry-run the active recipes and print which visit
 
 If desired, `dryRun` can be configured to bind `dryRun` to desired maven phases. For example, the following configuration is sufficient to have `mvn verify` also run `rewrite:dryRun`:
 
-```markup
+```xml
 <!-- truncating the pom.xml for brevity -->
 <project>
   <build>
