@@ -93,6 +93,20 @@ Currently, only the Maven plugin is able to produce data tables; [follow this is
 Moderne offers this functionality through the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) and the [Moderne Platform](https://app.moderne.io/getting-started).
 For more information, check out [getting started with data tables guide](https://docs.moderne.io/user-documentation/data-tables) in the Moderne docs.
 
+## My recipe runs, but is not making any changes. What's happening?
+
+When a recipe fails to make changes, that's often because of malformed or missing type information.
+You can use the diagnostic [Find missing types recipe](https://docs.openrewrite.org/recipes/java/search/findmissingtypes),
+and [the data table it produces](https://docs.moderne.io/user-documentation/data-tables), to find missing types in your codebase.
+If there are any missing types you might want to double-check your dependencies are set up correctly, or whether you're using Lombok, as [Lombok leads to missing types](https://github.com/openrewrite/rewrite/issues/1297).
+
+It could also be that a particular file is not parsed correctly. In such cases you'll see log line output which files failed to parse.
+You can use the [Find source files with ParseExceptionResult markers](https://docs.openrewrite.org/recipes/core/findparsefailures) diagnostic recipe to find & report these issues.
+Note that this again [produces a data table](https://docs.moderne.io/user-documentation/data-tables) for you to inspect.
+
+If you're still having trouble, it might help to attach a debugger to the running process and see what's going on.
+Use the typical debug flow for your build tool, and set a breakpoint in the recipe you're running to see what's happening.
+For Maven, that would be using `mvnDebug` instead of `mvn`, and for Gradle, that would be using `--debug-jvm`.
 
 ## I want to exclude a single recipe from a collection of recipes.
 
