@@ -86,7 +86,13 @@ OpenRewrite is likely building up a model of your code and resolving types – t
 
 ## Can I create a report or summary of the changes made through OpenRewrite?
 
-This is currently not possible with OpenRewrite. That being said, Moderne offers this functionality through the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) and the [Moderne Platform](https://app.moderne.io/getting-started). For more information, check out our [getting started with data tables guide](https://docs.moderne.io/user-documentation/data-tables).
+When recipes run with the OSS Maven and Gradle plugins, they produce a summary of what files where changes by which recipes.
+If you'd like more information, then you can look at the data tables additionally produced through [getting started with data tables guide](/running-recipes/data-tables) for OpenRewrite.
+Currently, only the Maven plugin is able to produce data tables; [follow this issue for the Gradle plugin](https://github.com/openrewrite/rewrite-gradle-plugin/issues/201).
+
+Moderne offers this functionality through the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) and the [Moderne Platform](https://app.moderne.io/getting-started).
+For more information, check out [getting started with data tables guide](https://docs.moderne.io/user-documentation/data-tables) in the Moderne docs.
+
 
 ## I want to exclude a single recipe from a collection of recipes.
 
@@ -99,7 +105,7 @@ Not right now. This is a particularly difficult problem to address for a couple 
 * Some recipes can be composed of other recipes which could then include other recipes composed of other recipes and so on.
 * Some recipes can be used multiple times in one recipe with different parameters such as in [this example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.6/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml#L140-L160).
 
-There is an [open issue](https://github.com/openrewrite/rewrite-maven-plugin/issues/345) for this request that you can +1 or provide feedback on.
+There is an [open issue](https://github.com/openrewrite/rewrite-maven-plugin/issues/799) for this request that you can +1 or provide feedback on.
 
 ## What order do recipes run in?
 
