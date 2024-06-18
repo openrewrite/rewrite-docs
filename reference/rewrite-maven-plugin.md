@@ -104,8 +104,8 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
             <exclude>*/some/irrelevant/or/expensive/directory/**</exclude>
           </exclusions>
           <plainTextMasks>
-	    <plainTextMask>**/.txt</plainTextMask>
-	  </plainTextMasks>
+            <plainTextMask>**/.txt</plainTextMask>
+          </plainTextMasks>
         </configuration>
         <dependencies>
           <!-- This module is made up for sake of example. It isn't packaged with OpenRewrite -->
@@ -146,7 +146,7 @@ Execute `mvn rewrite:dryRun` to dry-run the active recipes and print which visit
 
 `dryRun` can be used as a "gate" in a continuous integration environment by failing the build if `dryRun` detects changes to be made and `failOnDryRunResults` is set to `true`:
 
-```markup
+```xml
 <configuration>
   <failOnDryRunResults>true</failOnDryRunResults>
 </configuration>
