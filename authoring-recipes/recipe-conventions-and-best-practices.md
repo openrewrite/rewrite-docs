@@ -159,13 +159,14 @@ By default, only a single cycle is executed unless some recipe in the group over
 
 You should generally avoid passing [state](https://en.wikipedia.org/wiki/State\_\(computer\_science\)) across visitors if at all possible. If you do need to pass state around, though, you should first figure out which parts of your recipe need what information.
 
-If you need to pass state between functions in the **same** visitor, then you should [use cursor messaging instead of execution context messaging](recipe-conventions-and-best-practices.md#prefer-cursor-messaging-to-execution-context-messaging).
+If you need to pass state between functions in the **same** visitor, then you should [use cursor messaging instead of execution context messaging](#use-cursor-messaging-instead-of-execution-context-messaging).
 
 If you need to pass state between **different** visitors, then you should [override the visit function](recipe-conventions-and-best-practices.md#override-the-visit-method-if-you-need-pass-state-between-visitors).
 
 ### Use cursor messaging instead of execution context messaging
 
 When passing state between functions in the same visitor, there are two main options: cursor messaging and execution context messaging.
+If you merely wish to extract some information from visiting downstream elements, then you can also [use a local visitor with a mutable parameter](/concepts-explanations/visitors#sharing-data-between-visitors).
 
 Cursor messaging is the preferred method. With it, you can utilize `TreeVisitor.getCursor()` to access a map that arbitrary data can be read from or written to. For instance, in the [AddDependency recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java), we pass data from the [overridden visitTag method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L182) to the [overridden visitDocument method](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-maven/src/main/java/org/openrewrite/maven/AddDependency.java#L196) in our `MavenVisitor`.
 
