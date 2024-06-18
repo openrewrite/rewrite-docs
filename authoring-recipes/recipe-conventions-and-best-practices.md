@@ -159,9 +159,9 @@ By default, only a single cycle is executed unless some recipe in the group over
 
 You should generally avoid passing [state](https://en.wikipedia.org/wiki/State\_\(computer\_science\)) across visitors if at all possible. If you do need to pass state around, though, you should first figure out which parts of your recipe need what information.
 
-If you need to pass state between functions in the **same** visitor, then you should [use cursor messaging instead of execution context messaging](#use-cursor-messaging-instead-of-execution-context-messaging).
+If you need to pass state between functions in the **same** visitor, then you could [use cursor messaging instead of execution context messaging](#use-cursor-messaging-instead-of-execution-context-messaging).
 
-If you need to pass state between **different** visitors, then you should [override the visit function](recipe-conventions-and-best-practices.md#override-the-visit-method-if-you-need-pass-state-between-visitors).
+If you need to pass state between **different** visitors, then you could [use a ScanningRecipe](https://docs.openrewrite.org/concepts-explanations/recipes#scanning-recipes), where a first scanning phase can collect information, which you can then use in subsequent visitors.
 
 ### Use cursor messaging instead of execution context messaging
 
