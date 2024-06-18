@@ -104,9 +104,17 @@ It could also be that a particular file is not parsed correctly. In such cases y
 You can use the [Find source files with ParseExceptionResult markers](https://docs.openrewrite.org/recipes/core/findparsefailures) diagnostic recipe to find & report these issues.
 Note that this again [produces a data table](https://docs.moderne.io/user-documentation/data-tables) for you to inspect.
 
+If neither of those issues are present, then you might want to look at some diagnostic data tables we produce for each recipe run.
+Once enabled you can get insight into which recipes had results, or errors, and their runtime statistics. Look for these tables in your target folder to learn which recipes had results.
+```
+org.openrewrite.table.SourcesFileResults
+org.openrewrite.table.SourcesFileErrors
+org.openrewrite.table.RecipeRunStats
+```
+
 If you're still having trouble, it might help to attach a debugger to the running process and see what's going on.
 Use the typical debug flow for your build tool, and set a breakpoint in the recipe you're running to see what's happening.
-For Maven, that would be using `mvnDebug` instead of `mvn`, and for Gradle, that would be using `--debug-jvm`.
+For Maven, that would be using `mvnDebug` instead of `mvn`, and for Gradle, that would be using the `--debug-jvm` flag.
 
 ## I want to exclude a single recipe from a collection of recipes.
 
