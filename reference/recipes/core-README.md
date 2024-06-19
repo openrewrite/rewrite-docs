@@ -13,6 +13,7 @@ _Recipes broadly applicable to all types of source files._
 * [Find source files with `ParseExceptionResult` markers](findparsefailures.md)
 * [Is in repository](isinrepository.md)
 * [List runtime classpath](listruntimeclasspath.md)
+* [My Title](myrecipe.md)
 * [Rename a file](renamefile.md)
 * [Set file permission attributes](setfilepermissions.md)
 * [Show Git source control metadata](findgitprovenance.md)

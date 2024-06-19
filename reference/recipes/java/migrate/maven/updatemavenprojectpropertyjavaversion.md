@@ -17,11 +17,11 @@ _The Java version is determined by several project properties, including:
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UpdateMavenProjectPropertyJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.17.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UpdateMavenProjectPropertyJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.18.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.17.0
+* version: 2.18.1
 
 ## Options
 
@@ -47,7 +47,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.17.0 in your build file:
+Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.18.1 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -60,7 +60,7 @@ Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been def
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.33.0</version>
+        <version>5.34.0</version>
         <configuration>
           
           <activeRecipes>
@@ -71,7 +71,7 @@ Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been def
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.17.0</version>
+            <version>2.18.1</version>
           </dependency>
         </dependencies>
       </plugin>

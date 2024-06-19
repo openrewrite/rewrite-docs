@@ -2,32 +2,29 @@
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes**
 
-Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard type
+_<p>Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard type
  bounds (`<?>`), while the associated AssertJ `@AfterTemplate`s reference stricter
  type bounds. This introduces the risk of producing invalid code. We do this anyway, because
  TestNG's wildcard types can cause javac to infer less specific types than AssertJ requires, while
  the appropriate (more specific) types _will_ be inferred properly when plugged into AssertJ's
  API.
 
-The following is an example of a TestNG statement, which would not be rewritten if it weren't
+ <p>The following is an example of a TestNG statement, which would not be rewritten if it weren't
  for the wildcard matching (note that the type parameters of the map on the right-hand side will
  be inferred to be `<Object, Object>` rather than `<String, Object>`).
 
-```java
+ <pre>{@code
  List<Map<String, Object>> myMaps = new ArrayList<>();
  assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
- }
-```
-
-([Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules))
+ }</pre>. [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules)._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.4.0/jar)
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.5.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-third-party
-* version: 0.4.0
+* version: 0.5.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -35,14 +32,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.4.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.5.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.0")
+    id("org.openrewrite.rewrite") version("6.16.1")
 }
 
 rewrite {
@@ -54,7 +51,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:0.4.0")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:0.5.1")
 }
 ```
 {% endcode %}
@@ -69,12 +66,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:0.4.0")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:0.5.1")
     }
     rewrite {
         activeRecipe("tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes")
@@ -101,7 +98,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.33.0</version>
+        <version>5.34.0</version>
         <configuration>
           
           <activeRecipes>
@@ -112,7 +109,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>0.4.0</version>
+            <version>0.5.1</version>
           </dependency>
         </dependencies>
       </plugin>

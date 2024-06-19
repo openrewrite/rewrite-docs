@@ -6,11 +6,11 @@ _Mapping of all the compatible classes of ApacheHttpClient 5.x from 4.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.4.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-apache
-* version: 1.3.0
+* version: 1.4.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.3.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.4.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.0")
+    id("org.openrewrite.rewrite") version("6.16.1")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:1.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-apache:1.4.1")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:1.3.0")
+        rewrite("org.openrewrite.recipe:rewrite-apache:1.4.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.33.0</version>
+        <version>5.34.0</version>
         <configuration>
           
           <activeRecipes>
@@ -95,7 +95,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>1.3.0</version>
+            <version>1.4.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -324,6 +324,9 @@ mod run . --recipe UpgradeApacheHttpClient_5_ClassMapping
 * [Change type](../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.RedirectStrategy`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.protocol.RedirectStrategy`
+* [Change type](../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `org.apache.hc.client5.http.classic.methods.RequestBuilder`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.support.ClassicRequestBuilder`
 * [Rename package name](../../java/changepackage.md)
   * oldPackageName: `org.apache.http.config`
   * newPackageName: `org.apache.hc.core5.http.config`
@@ -689,6 +692,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.RedirectStrategy
       newFullyQualifiedTypeName: org.apache.hc.client5.http.protocol.RedirectStrategy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.hc.client5.http.classic.methods.RequestBuilder
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.support.ClassicRequestBuilder
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.config
       newPackageName: org.apache.hc.core5.http.config

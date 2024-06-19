@@ -10,6 +10,8 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Remove an annotation processor from the Maven Compiler plugin configuration](./removemavencompilerannotationprocessor.md)
+* [io.quarkus.updates.core.quarkus39.GraalSDK](./graalsdk.md)
 * [io.quarkus.updates.core.quarkus39.RemovePanacheAnnotationProcessor](./removepanacheannotationprocessor.md)
+* [io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM](./synchibernatejpamodelgenversionwithbom.md)
 
 

@@ -4,6 +4,7 @@ _Enforce logging best practices and migrate between logging frameworks._
 
 ## Categories
 
+* [Jul](/reference/recipes/java/logging/jul)
 * [Log4j](/reference/recipes/java/logging/log4j)
 * [Logback](/reference/recipes/java/logging/logback)
 * [SLF4J](/reference/recipes/java/logging/slf4j)
