@@ -183,7 +183,7 @@ management.server.base-path=/manage
 
 <properties>
     <java.version>11</java.version>
-    <wro4j.version>1.9.0</wro4j.version>
+    <wro4j.version>1.10.1</wro4j.version>
     <thymeleaf.version>3.0.15.RELEASE</thymeleaf.version>
 </properties>
 

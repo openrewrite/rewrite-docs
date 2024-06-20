@@ -50,7 +50,7 @@ Now that we have the recipe defined in our `rewrite.yml` file, we can update our
 {% tab title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.0")
+    id("org.openrewrite.rewrite") version("6.16.1")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.33.0</version>
+        <version>5.34.1</version>
         <configuration>
           <activeRecipes>
             <recipe>com.yourorg.FindAndReplaceJDK17</recipe>

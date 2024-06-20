@@ -12,7 +12,7 @@ To help you get started with data tables, let's walk through the steps needed to
 
 By default, OpenRewrite recipes will **not** produce a data table. In order for a recipe to produce one, you will need to do two things:
 
-1. You will need to ensure your project is built with Maven as only the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) (version `5.33.0` or higher) currently supports this feature. 
+1. You will need to ensure your project is built with Maven as only the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) (version `5.34.1` or higher) currently supports this feature. 
     * **Note**: If you are a Gradle user, consider helping out by [adding support for data tables to the Gradle plugin](https://github.com/openrewrite/rewrite-gradle-plugin/issues/201).
 2. Next, you will either need to update your `pom.xml` file or modify your Maven command for running a recipe:
 
@@ -24,7 +24,7 @@ Add `<exportDatatables>true</exportDatatables>` to your `pom.xml` file such as i
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>5.33.0-SNAPSHOT</version>
+    <version>5.34.1</version>
     <configuration>
         <exportDatatables>true</exportDatatables>
         <activeRecipes>
