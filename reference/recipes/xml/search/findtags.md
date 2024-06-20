@@ -6,17 +6,17 @@ _Find XML tags by XPath expression._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/FindTags.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.27.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/FindTags.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.28.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.27.4
+* version: 8.28.1
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | xpath | An XPath expression used to find matching tags. | `//dependencies/dependency` |
+| `String` | xPath | An XPath expression used to find matching tags. | `//dependencies/dependency` |
 
 
 ## Usage
@@ -32,7 +32,7 @@ name: com.yourorg.FindTagsExample
 displayName: Find XML tags example
 recipeList:
   - org.openrewrite.xml.search.FindTags:
-      xpath: //dependencies/dependency
+      xPath: //dependencies/dependency
 ```
 {% endcode %}
 
@@ -43,7 +43,7 @@ Now that `com.yourorg.FindTagsExample` has been defined activate it in your buil
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.0")
+    id("org.openrewrite.rewrite") version("6.16.1")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.33.0</version>
+        <version>5.34.0</version>
         <configuration>
           
           <activeRecipes>

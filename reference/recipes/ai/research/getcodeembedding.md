@@ -6,11 +6,11 @@ _This recipe calls an AI model to get an embedding for either classes or methods
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/GetCodeEmbedding.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/0.13.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/GetCodeEmbedding.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/0.14.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-ai-search
-* version: 0.13.0
+* version: 0.14.1
 
 ## Options
 
@@ -48,14 +48,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.GetCodeEmbeddingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-ai-search:0.13.0 in your build file:
+Now that `com.yourorg.GetCodeEmbeddingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-ai-search:0.14.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.0")
+    id("org.openrewrite.rewrite") version("6.16.1")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-ai-search:0.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-ai-search:0.14.1")
 }
 ```
 {% endcode %}
@@ -83,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.33.0</version>
+        <version>5.34.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -94,7 +94,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-ai-search</artifactId>
-            <version>0.13.0</version>
+            <version>0.14.1</version>
           </dependency>
         </dependencies>
       </plugin>

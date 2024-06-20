@@ -6,11 +6,11 @@ _Adds a new Maven Repository or updates a matching repository._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.27.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddRepository.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.28.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.27.4
+* version: 8.28.1
 
 ## Options
 
@@ -26,6 +26,7 @@ _Adds a new Maven Repository or updates a matching repository._
 | `Boolean` | releasesEnabled | *Optional*. Releases from the repository are available |  |
 | `String` | releasesChecksumPolicy | *Optional*. Governs whether releases require checksums. | `fail` |
 | `String` | releasesUpdatePolicy | *Optional*. The policy governing release updating interval. | `never` |
+| `Type` | type | *Optional*. The type of repository to add. | `Repository` |
 
 
 ## Usage
@@ -49,6 +50,7 @@ recipeList:
       snapshotsUpdatePolicy: always
       releasesChecksumPolicy: fail
       releasesUpdatePolicy: never
+      type: Repository
 ```
 {% endcode %}
 
@@ -65,7 +67,7 @@ Now that `com.yourorg.AddRepositoryExample` has been defined activate it in your
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.33.0</version>
+        <version>5.34.0</version>
         <configuration>
           
           <activeRecipes>
@@ -100,4 +102,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Alex Boyko](mailto:aboyko@vmware.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Patrick Way
+[Alex Boyko](mailto:aboyko@vmware.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [jdmcmahan](mailto:jmcmaha1@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Patrick Way
