@@ -47,7 +47,6 @@
     * [Find source files with ParseExceptionResult markers](reference/recipes/findparsefailures.md)
     * [Is in repository](reference/recipes/isinrepository.md)
     * [List runtime classpath](reference/recipes/listruntimeclasspath.md)
-    * [My Title](reference/recipes/myrecipe.md)
     * [Rename a file](reference/recipes/renamefile.md)
     * [Set file permission attributes](reference/recipes/setfilepermissions.md)
     * [Show Git source control metadata](reference/recipes/findgitprovenance.md)
