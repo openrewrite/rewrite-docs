@@ -1,5 +1,6 @@
 # Changelog
 
+* [8.28.1 Release (2024-06-19)](/changelog/8-28-1-Release.md)
 * [8.27.4 Release (2024-06-10)](/changelog/8-27-4-Release.md)
 * [8.27.1 Release (2024-05-22)](/changelog/8-27-1-Release.md)
 * [8.25.0 Release (2024-05-08)](/changelog/8-25-0-Release.md)
