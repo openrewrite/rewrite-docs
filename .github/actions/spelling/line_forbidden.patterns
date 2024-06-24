@@ -21,7 +21,7 @@
 (?<![&*.]|// |\btype )\bGitlab\b(?![{)])
 
 # s.b. JavaScript
-\bJavascript\b
+# \bJavascript\b
 
 # s.b. macOS or Mac OS X or ...
 \bMacOS\b
