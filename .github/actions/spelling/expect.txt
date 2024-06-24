@@ -113,6 +113,7 @@ httpclient
 httpcomponents
 httpcore
 hypersistence
+IBMJD
 identityprovider
 IHzb
 indexofcharrecipe
@@ -171,7 +172,7 @@ jsontype
 JString
 jsse
 JThrowing
-JUL
+jul
 jvmargs
 jws
 JWTs
@@ -179,7 +180,9 @@ Kenobi
 keystore
 Kilburn
 kotlin
+Krb
 ksh
+Kto
 kts
 launchdarkly
 Lermitage
