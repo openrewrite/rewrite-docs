@@ -40,7 +40,7 @@ The migrate to AssertJ recipe can be applied by adding OpenRewrite's plugin to y
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.16.1")
+        id("org.openrewrite.rewrite") version("6.16.2")
     }
     
     rewrite {
