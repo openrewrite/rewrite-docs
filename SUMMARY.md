@@ -2416,6 +2416,7 @@
 * [Reference](reference/reference.md)
   * [Frequently asked questions (FAQ)](reference/faq.md)
   * [Latest versions of every OpenRewrite module](reference/latest-versions-of-every-openrewrite-module.md)
+  * [Recipes with data tables](reference/recipes-with-data-tables.md)
   * [Maven plugin configuration](reference/rewrite-maven-plugin.md)
   * [Gradle plugin configuration](reference/gradle-plugin-configuration.md)
   * [Supported languages](reference/supported-languages.md)
