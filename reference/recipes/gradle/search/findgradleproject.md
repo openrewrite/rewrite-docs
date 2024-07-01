@@ -43,7 +43,7 @@ Now that `com.yourorg.FindGradleProjectExample` has been defined activate it in 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.1")
+    id("org.openrewrite.rewrite") version("6.16.2")
 }
 
 rewrite {

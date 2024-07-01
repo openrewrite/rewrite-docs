@@ -2,6 +2,7 @@
 
 * [Frequently asked questions (FAQ)](faq.md)
 * [Latest versions of every OpenRewrite module](latest-versions-of-every-openrewrite-module.md)
+* [Recipes with data tables](recipes-with-data-tables.md)
 * [Maven plugin configuration](rewrite-maven-plugin.md)
 * [Gradle plugin configuration](gradle-plugin-configuration.md)
 * [Supported languages](supported-languages.md)

@@ -49,7 +49,7 @@ Now that `com.yourorg.AddPropertyExample` has been defined activate it in your b
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.1")
+    id("org.openrewrite.rewrite") version("6.16.2")
 }
 
 rewrite {

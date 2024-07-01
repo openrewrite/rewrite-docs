@@ -61,7 +61,7 @@ Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined activate
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.1")
+    id("org.openrewrite.rewrite") version("6.16.2")
 }
 
 rewrite {

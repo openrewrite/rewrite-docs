@@ -43,7 +43,7 @@ Now that `com.yourorg.RemoveSettingsPluginExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.1")
+    id("org.openrewrite.rewrite") version("6.16.2")
 }
 
 rewrite {

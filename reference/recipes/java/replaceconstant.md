@@ -47,7 +47,7 @@ Now that `com.yourorg.ReplaceConstantExample` has been defined activate it in yo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.1")
+    id("org.openrewrite.rewrite") version("6.16.2")
 }
 
 rewrite {
@@ -71,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.0</version>
+        <version>5.34.1</version>
         <configuration>
           
           <activeRecipes>

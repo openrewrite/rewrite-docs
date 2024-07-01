@@ -54,7 +54,7 @@ Now that `com.yourorg.ChangeProjectVersionExample` has been defined activate it 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.0</version>
+        <version>5.34.1</version>
         <configuration>
           
           <activeRecipes>
