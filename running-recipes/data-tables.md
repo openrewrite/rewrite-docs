@@ -6,6 +6,10 @@ This is where data tables come in. In addition to modifying the code directly, r
 
 To help you get started with data tables, let's walk through the steps needed to make an OpenRewrite recipe produce a data table. We'll then talk about some of the limitations with them and how you can potentially get around them.
 
+{% hint style="info" %}
+If you want to see what recipes have data tables and what those tables are, check out our [recipes with data tables doc](https://docs.openrewrite.org/reference/recipes-with-data-tables).
+{% endhint %}
+
 ## Producing data tables
 
 ### Step 1: Enable data table functionality
