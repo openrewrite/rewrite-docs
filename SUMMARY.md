@@ -292,7 +292,7 @@
         * [Replace JUL Logger.warning(Supplier<String>) with SLF4J's Logger.atWarn().log(Supplier<String>)](reference/recipes/java/logging/slf4j/jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierwarningrecipe.md)
         * [Replace JUL active Level check with corresponding SLF4J method calls](reference/recipes/java/logging/slf4j/julisloggabletoisenabledrecipes.md)
         * [Replace JUL active Level check with corresponding SLF4J method calls](reference/recipes/java/logging/slf4j/jultoslf4jlambdasupplierrecipes.md)
-        * [Replace parameterized JUL leval call with corresponding slf4j method calls](reference/recipes/java/logging/slf4j/julparameterizedarguments.md)
+        * [Replace parameterized JUL level call with corresponding slf4j method calls](reference/recipes/java/logging/slf4j/julparameterizedarguments.md)
         * [SLF4J best practices](reference/recipes/java/logging/slf4j/slf4jbestpractices.md)
         * [SLF4J logging statements should begin with constants](reference/recipes/java/logging/slf4j/slf4jlogshouldbeconstant.md)
     * [Micronaut](reference/recipes/java/micronaut/README.md)
