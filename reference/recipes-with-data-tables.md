@@ -119,6 +119,11 @@ Can update version numbers which are defined earlier in the same file in variabl
   * org.openrewrite.java.table.TypeMappings: *The types mapped to `J` trees.*
 
 
+**[Add Maven parent](https://docs.openrewrite.org/?q=org.openrewrite.maven.AddParentPom)**: Add a parent pom to a Maven pom.xml. Does nothing if a parent pom is already present.
+
+  * org.openrewrite.maven.table.MavenMetadataFailures: *Attempts to resolve maven metadata that failed.*
+
+
 **[Change Maven dependency](https://docs.openrewrite.org/?q=org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId)**: Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `<dependencyManagement>` coordinates are also updated if a `newVersion` or `versionPattern` is provided.
 
   * org.openrewrite.maven.table.MavenMetadataFailures: *Attempts to resolve maven metadata that failed.*
@@ -154,7 +159,7 @@ Can update version numbers which are defined earlier in the same file in variabl
   * org.openrewrite.maven.table.DependenciesInUse: *Relationships between dependencies.*
 
 
-**[Effective dependencies](https://docs.openrewrite.org/?q=org.openrewrite.maven.search.EffectiveManagedDependencies)**: Emit the data of binary dependency relationships.
+**[Effective managed dependencies](https://docs.openrewrite.org/?q=org.openrewrite.maven.search.EffectiveManagedDependencies)**: Emit the data of binary dependency relationships.
 
   * org.openrewrite.maven.table.DependenciesInUse: *Relationships between POMs and their ancestors that define managed dependencies.*
 
