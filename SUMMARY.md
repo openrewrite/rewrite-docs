@@ -2359,6 +2359,7 @@
         * [Upgrade to Axonframework 4.7 Jakarta](reference/recipes/org/axonframework/migration/upgradeaxonframework_4_7_jakarta.md)
         * [Upgrade to Axonframework 4.7 Javax](reference/recipes/org/axonframework/migration/upgradeaxonframework_4_7_javax.md)
 * [Changelog](changelog/changelog.md)
+  * [8.29.0 Release (2024-07-03)](changelog/8-29-0-Release.md)
   * [8.28.1 Release (2024-06-19)](changelog/8-28-1-Release.md)
   * [8.27.4 Release (2024-06-10)](changelog/8-27-4-Release.md)
   * [8.27.1 Release (2024-05-22)](changelog/8-27-1-Release.md)
