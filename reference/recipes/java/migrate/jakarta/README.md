@@ -48,6 +48,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate xmlns entries and javax. packages in `validation.xml` files](./javaxbeanvalidationxmltojakartabeanvalidationxml.md)
 * [Migrate xmlns entries in `beans.xml` files](./javaxbeansxmltojakartabeansxml.md)
 * [Migrate xmlns entries in `faces-config.xml` files](./javaxfacesconfigxmltojakartafacesconfigxml.md)
+* [Migrate xmlns entries in `orm.xml` files](./javaxormxmltojakartaormxml.md)
 * [Migrate xmlns entries in `persistence.xml` files](./javaxpersistencexmltojakartapersistencexml.md)
 * [Migrate xmlns entries in `taglib.xml` files](./javaxfacestaglibraryxmltojakartafacestaglibraryxml.md)
 * [Migrate xmlns entries in `web-fragment.xml` files](./javaxwebfragmentxmltojakartawebfragmentxml.md)

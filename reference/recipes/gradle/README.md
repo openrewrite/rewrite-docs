@@ -18,6 +18,7 @@
 * [Change a Gradle dependency classifier](./changedependencyclassifier.md)
 * [Change a Gradle dependency configuration](./changedependencyconfiguration.md)
 * [Change a Gradle dependency extension](./changedependencyextension.md)
+* [Dependency constraint to resolution rule](./dependencyconstrainttorule.md)
 * [Enable Gradle build cache](./enablegradlebuildcache.md)
 * [Enable Gradle parallel execution](./enablegradleparallelexecution.md)
 * [Remove a Gradle dependency](./removedependency.md)

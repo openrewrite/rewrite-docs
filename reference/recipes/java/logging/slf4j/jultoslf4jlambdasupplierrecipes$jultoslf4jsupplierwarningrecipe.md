@@ -1,32 +1,32 @@
-# Rewrite JMockit Mocked Variable
+# Replace JUL `Logger.warning(Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`
 
-**org.openrewrite.java.testing.jmockit.JMockitMockedVariableToMockito**
+**org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierWarningRecipe**
 
-_Rewrites JMockit `Mocked Variable` to Mockito statements._
+_Replace calls to `java.util.logging.Logger.warning(Supplier<String>)` with `org.slf4j.Logger.atWarn().log(Supplier<String>)`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/jmockit/JMockitMockedVariableToMockito.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.12.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/JulToSlf4jLambdaSupplier.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.10.0/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-testing-frameworks
-* version: 2.12.2
+* artifactId: rewrite-logging-frameworks
+* version: 2.10.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.12.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.10.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.16.3")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.testing.jmockit.JMockitMockedVariableToMockito")
+    activeRecipe("org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierWarningRecipe")
 }
 
 repositories {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.12.2")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.10.0")
 }
 ```
 {% endcode %}
@@ -49,15 +49,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.12.2")
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.10.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.testing.jmockit.JMockitMockedVariableToMockito")
+        activeRecipe("org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierWarningRecipe")
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -81,18 +81,18 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.35.0</version>
         <configuration>
           
           <activeRecipes>
-            <recipe>org.openrewrite.java.testing.jmockit.JMockitMockedVariableToMockito</recipe>
+            <recipe>org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierWarningRecipe</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.12.2</version>
+            <artifactId>rewrite-logging-frameworks</artifactId>
+            <version>2.10.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,7 +110,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 {% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.jmockit.JMockitMockedVariableToMockito 
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierWarningRecipe 
 ```
 {% endcode %}
 {% endtab %}
@@ -119,7 +119,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe JMockitMockedVariableToMockito
+mod run . --recipe JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierWarningRecipe
 ```
 {% endcode %}
 {% endtab %}
@@ -127,11 +127,8 @@ mod run . --recipe JMockitMockedVariableToMockito
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.testing.jmockit.JMockitMockedVariableToMockito)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes$JulToSlf4jSupplierWarningRecipe)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
-
-## Contributors
-zenghu1chen

@@ -6,11 +6,11 @@ _Find actions and their associated definitions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/search/FindStrutsActions.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/0.4.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/search/FindStrutsActions.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/0.4.5/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-struts
-* version: 0.4.4
+* version: 0.4.5
 
 ## Data Tables
 
@@ -29,14 +29,14 @@ _Definition of struts action._
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-struts:0.4.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-struts:0.4.5` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.16.3")
 }
 
 rewrite {
@@ -48,7 +48,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-struts:0.4.4")
+    rewrite("org.openrewrite.recipe:rewrite-struts:0.4.5")
 }
 ```
 {% endcode %}
@@ -63,12 +63,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-struts:0.4.4")
+        rewrite("org.openrewrite.recipe:rewrite-struts:0.4.5")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.struts.search.FindStrutsActions")
@@ -95,7 +95,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.35.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -106,7 +106,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-struts</artifactId>
-            <version>0.4.4</version>
+            <version>0.4.5</version>
           </dependency>
         </dependencies>
       </plugin>

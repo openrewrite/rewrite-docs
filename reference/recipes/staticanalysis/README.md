@@ -47,6 +47,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Inline variable](./inlinevariable.md)
 * [Java API best practices](./javaapibestpractices.md)
 * [Jump statements should not be redundant](./noredundantjumpstatements.md)
+* [Mask credit card numbers](./maskcreditcardnumbers.md)
 * [Modifier order](./modifierorder.md)
 * [Nested enums are not static](./nestedenumsarenotstatic.md)
 * [No C-style array declarations](./usejavastylearraydeclarations.md)

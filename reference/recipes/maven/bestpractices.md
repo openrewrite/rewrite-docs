@@ -6,11 +6,11 @@ _Applies best practices to Maven POMs._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.28.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.29.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.28.1
+* version: 8.29.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -31,7 +31,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.35.0</version>
         <configuration>
           
           <activeRecipes>
@@ -76,6 +76,8 @@ mod run . --recipe BestPractices
 * [Add explicit plugin versions](../maven/cleanup/explicitpluginversion.md)
 * [Drop prefixless expressions in POM](../maven/cleanup/prefixlessexpressions.md)
 * [Order POM elements](../maven/orderpomelements.md)
+* [Remove duplicate Maven dependencies](../maven/removeduplicatedependencies.md)
+* [Remove redundant explicit dependency and plugin versions](../maven/removeredundantdependencyversions.md)
 
 {% endtab %}
 
@@ -91,6 +93,8 @@ recipeList:
   - org.openrewrite.maven.cleanup.ExplicitPluginVersion
   - org.openrewrite.maven.cleanup.PrefixlessExpressions
   - org.openrewrite.maven.OrderPomElements
+  - org.openrewrite.maven.RemoveDuplicateDependencies
+  - org.openrewrite.maven.RemoveRedundantDependencyVersions
 
 ```
 {% endtab %}
@@ -105,4 +109,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), Patrick Way, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Scott Jungling](mailto:scott.jungling@gmail.com)
+[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), Patrick Way, [Alex Boyko](mailto:aboyko@vmware.com), [Kevin McCarpenter](mailto:kevin@moderne.io), Adriano Machado, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), Ryan Hudson, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

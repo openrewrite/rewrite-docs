@@ -6,11 +6,11 @@ _Change a given type to another._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.28.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.29.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.28.1
+* version: 8.29.0
 
 ## Options
 
@@ -46,7 +46,7 @@ Now that `com.yourorg.ChangeTypeExample` has been defined activate it in your bu
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.16.3")
 }
 
 rewrite {
@@ -70,7 +70,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.35.0</version>
         <configuration>
           
           <activeRecipes>
@@ -105,4 +105,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nassim Jahnke](mailto:jahnke.nassim@gmail.com), [Kun Li](mailto:kun@moderne.io), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Joan Viladrosa](mailto:joan@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [Tim te Beek](mailto:tim@moderne.io), Josh Soref, Adriano Machado, [Patrick](mailto:patway99@gmail.com)
+[Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nassim Jahnke](mailto:jahnke.nassim@gmail.com), [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Joan Viladrosa](mailto:joan@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), Josh Soref, Adriano Machado, [Patrick](mailto:patway99@gmail.com)

@@ -4,7 +4,7 @@
 
 * [Does not include Maven dependency](./doesnotincludedependency.md)
 * [Effective dependencies](./effectivedependencies.md)
-* [Effective dependencies](./effectivemanageddependencies.md)
+* [Effective managed dependencies](./effectivemanageddependencies.md)
 * [Find Maven dependency](./finddependency.md)
 * [Find Maven dependency management entry](./findmanageddependency.md)
 * [Find Maven plugin](./findplugin.md)

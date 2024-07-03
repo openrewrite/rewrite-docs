@@ -6,11 +6,11 @@ _Use OpenRewrite internal nullability annotations; drop JetBrains annotations; u
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/1.6.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/1.7.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-recommendations
-* version: 1.6.1
+* version: 1.7.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -18,14 +18,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations:1.6.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations:1.7.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.16.3")
 }
 
 rewrite {
@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-recommendations:1.6.1")
+    rewrite("org.openrewrite.recipe:rewrite-recommendations:1.7.0")
 }
 ```
 {% endcode %}
@@ -52,12 +52,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-recommendations:1.6.1")
+        rewrite("org.openrewrite.recipe:rewrite-recommendations:1.7.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.recipes.RecipeNullabilityBestPractices")
@@ -84,7 +84,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.35.0</version>
         <configuration>
           
           <activeRecipes>
@@ -95,7 +95,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-recommendations</artifactId>
-            <version>1.6.1</version>
+            <version>1.7.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -135,8 +135,18 @@ mod run . --recipe RecipeNullabilityBestPractices
 * [Change type](../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.jetbrains.annotations.Nullable`
   * newFullyQualifiedTypeName: `org.openrewrite.internal.lang.Nullable`
+* [Change type](../java/changetype.md)
+  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
+  * newFullyQualifiedTypeName: `org.openrewrite.internal.lang.Nullable`
+* [Change type](../java/changetype.md)
+  * oldFullyQualifiedTypeName: `jakarta.annotation.Nullable`
+  * newFullyQualifiedTypeName: `org.openrewrite.internal.lang.Nullable`
 * [Remove annotation](../java/removeannotation.md)
   * annotationPattern: `@org.jetbrains.annotations.NotNull`
+* [Remove annotation](../java/removeannotation.md)
+  * annotationPattern: `@javax.annotation.NotNull`
+* [Remove annotation](../java/removeannotation.md)
+  * annotationPattern: `@jakarta.annotation.NotNull`
 
 {% endtab %}
 
@@ -151,8 +161,18 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.jetbrains.annotations.Nullable
       newFullyQualifiedTypeName: org.openrewrite.internal.lang.Nullable
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.Nullable
+      newFullyQualifiedTypeName: org.openrewrite.internal.lang.Nullable
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: jakarta.annotation.Nullable
+      newFullyQualifiedTypeName: org.openrewrite.internal.lang.Nullable
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @org.jetbrains.annotations.NotNull
+  - org.openrewrite.java.RemoveAnnotation:
+      annotationPattern: @javax.annotation.NotNull
+  - org.openrewrite.java.RemoveAnnotation:
+      annotationPattern: @jakarta.annotation.NotNull
 
 ```
 {% endtab %}

@@ -6,11 +6,11 @@ _Alters XML Attribute value within specified element of a specific resource vers
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeNamespaceValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.28.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeNamespaceValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.29.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-xml
-* version: 8.28.1
+* version: 8.29.0
 
 ## Options
 
@@ -21,6 +21,8 @@ _Alters XML Attribute value within specified element of a specific resource vers
 | `String` | newValue | The new value to be used for the namespace. | `newfoo.bar.attribute.value.string` |
 | `String` | versionMatcher | *Optional*. The version of resource to change | `1.1` |
 | `Boolean` | searchAllNamespaces | *Optional*. Specify whether evaluate all namespaces. Defaults to true | `true` |
+| `String` | newVersion | The new version of the resource | `2.0` |
+| `String` | newSchemaLocation | *Optional*. The new value to be used for the namespace schema location. | `newfoo.bar.attribute.value.string` |
 
 
 ## Usage
@@ -41,6 +43,8 @@ recipeList:
       newValue: newfoo.bar.attribute.value.string
       versionMatcher: 1.1
       searchAllNamespaces: true
+      newVersion: 2.0
+      newSchemaLocation: newfoo.bar.attribute.value.string
 ```
 {% endcode %}
 
@@ -51,7 +55,7 @@ Now that `com.yourorg.ChangeNamespaceValueExample` has been defined activate it 
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.16.3")
 }
 
 rewrite {
@@ -75,7 +79,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.35.0</version>
         <configuration>
           
           <activeRecipes>
@@ -110,4 +114,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-cjobinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+Adriano Machado, cjobinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

@@ -11,11 +11,11 @@ _Simplifies JUnit Jupiter assertions to their most-direct equivalents_
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.12.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.13.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.12.2
+* version: 2.13.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -23,14 +23,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.12.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.13.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.16.3")
 }
 
 rewrite {
@@ -42,7 +42,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.12.2")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.13.0")
 }
 ```
 {% endcode %}
@@ -57,12 +57,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.12.2")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.13.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.CleanupAssertions")
@@ -89,7 +89,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.35.0</version>
         <configuration>
           
           <activeRecipes>
@@ -100,7 +100,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.12.2</version>
+            <version>2.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -144,6 +144,7 @@ mod run . --recipe CleanupAssertions
 * [Replace JUnit `assertFalse(a.equals(b))` to `assertNotEquals(a,b)`](../../../java/testing/cleanup/assertfalseequalstoassertnotequals.md)
 * [`assertEquals(a, null)` to `assertNull(a)`](../../../java/testing/cleanup/assertequalsnulltoassertnull.md)
 * [Replace JUnit `assertFalse(a == null)` to `assertNotNull(a)`](../../../java/testing/cleanup/assertfalsenulltoassertnotnull.md)
+* [Replace JUnit `assertTrue(a == null)` to `assertNull(a)`](../../../java/testing/cleanup/asserttruenulltoassertnull.md)
 * [Replace JUnit `assertEquals(false, <boolean>)` to `assertFalse(<boolean>)` / `assertTrue(<boolean>)`](../../../java/testing/cleanup/assertequalsbooleantoassertboolean.md)
 * [Replace JUnit `assertNotEquals(false, <boolean>)` to `assertFalse(<boolean>)` / `assertTrue(<boolean>)`](../../../java/testing/cleanup/assertnotequalsbooleantoassertboolean.md)
 * [Assertion arguments should be passed in the correct order](../../../java/testing/cleanup/assertionsargumentorder.md)
@@ -168,6 +169,7 @@ recipeList:
   - org.openrewrite.java.testing.cleanup.AssertFalseEqualsToAssertNotEquals
   - org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull
   - org.openrewrite.java.testing.cleanup.AssertFalseNullToAssertNotNull
+  - org.openrewrite.java.testing.cleanup.AssertTrueNullToAssertNull
   - org.openrewrite.java.testing.cleanup.AssertEqualsBooleanToAssertBoolean
   - org.openrewrite.java.testing.cleanup.AssertNotEqualsBooleanToAssertBoolean
   - org.openrewrite.java.testing.cleanup.AssertionsArgumentOrder
@@ -185,4 +187,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Yeikel, Adriano Machado, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Ties van de Ven, timo-abele
+Yeikel, Adriano Machado, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Ties van de Ven, timo-abele

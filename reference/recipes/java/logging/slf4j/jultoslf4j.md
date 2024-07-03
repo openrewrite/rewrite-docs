@@ -12,11 +12,11 @@ _Migrates usage of Java Util Logging (JUL) to using SLF4J directly._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/slf4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.9.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/slf4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.10.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.9.1
+* version: 2.10.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -24,14 +24,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.9.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.10.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.16.3")
 }
 
 rewrite {
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.9.1")
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.10.0")
 }
 ```
 {% endcode %}
@@ -58,12 +58,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.2") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.9.1")
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.10.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.logging.slf4j.JulToSlf4j")
@@ -90,7 +90,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.35.0</version>
         <configuration>
           
           <activeRecipes>
@@ -101,7 +101,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.9.1</version>
+            <version>2.10.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -140,6 +140,8 @@ mod run . --recipe JulToSlf4j
 {% tab title="Recipe List" %}
 * [Replace JUL Logger creation with SLF4J LoggerFactory](../../../java/logging/slf4j/julgetloggertologgerfactoryrecipes.md)
 * [Replace JUL active Level check with corresponding SLF4J method calls](../../../java/logging/slf4j/julisloggabletoisenabledrecipes.md)
+* [Replace parameterized JUL leval call with corresponding slf4j method calls](../../../java/logging/slf4j/julparameterizedarguments.md)
+* [Replace JUL active Level check with corresponding SLF4J method calls](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes.md)
 * [Replace JUL `Level.ALL` logging with SLF4J's trace level](../../../java/logging/slf4j/jullevelalltotracerecipe.md)
 * [Migrate JUL to Log4j 2.x API](../../../java/logging/log4j/jultolog4j.md)
 * [Migrate Log4j 2.x to SLF4J 1.x](../../../java/logging/slf4j/log4j2toslf4j1.md)
@@ -160,6 +162,8 @@ tags:
 recipeList:
   - org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes
   - org.openrewrite.java.logging.slf4j.JulIsLoggableToIsEnabledRecipes
+  - org.openrewrite.java.logging.slf4j.JulParameterizedArguments
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes
   - org.openrewrite.java.logging.slf4j.JulLevelAllToTraceRecipe
   - org.openrewrite.java.logging.log4j.JulToLog4j
   - org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1
@@ -177,4 +181,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Aaron Gershman, [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Piotr P. Karwasz](mailto:piotr.github@karwasz.org), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+Aaron Gershman, [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Piotr P. Karwasz](mailto:piotr.github@karwasz.org), Wojtek, Md Riyazul Islam, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
