@@ -1,4 +1,4 @@
-# Replace parameterized JUL leval call with corresponding slf4j method calls
+# Replace parameterized JUL level call with corresponding slf4j method calls
 
 **org.openrewrite.java.logging.slf4j.JulParameterizedArguments**
 

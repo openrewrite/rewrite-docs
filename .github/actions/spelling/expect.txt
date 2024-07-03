@@ -24,6 +24,7 @@ azzert
 Bazel
 baz
 bfa
+BModule
 BOMs
 bugpatterns
 bval
@@ -130,7 +131,7 @@ javac
 javadocs
 javaee
 javatemplate
-JAX
+jax
 jaxb
 JAXRS
 jaxws
@@ -335,6 +336,7 @@ vladmihalcea
 VPC
 Webflux
 websecurityconfigureradapter
+Websphere
 wiremock
 wlp
 WORKDIR
@@ -343,9 +345,13 @@ writestringtofilerecipe
 Wsoc
 wss
 XMLs
+XMLWS
 XRange
 xsi
 Xwork
 XXE
 Yoda
 yourorg
+
+readabl
+Refas
