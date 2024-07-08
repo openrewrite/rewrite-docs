@@ -2432,7 +2432,6 @@
     * [8.1.6 Release (2023-07-06)](changelog/earlier-releases/8-1-6-Release.md)
     * [8.1.3 Release (2023-06-23)](changelog/earlier-releases/8-1-3-Release.md)
     * [Rewrite 7 to 8 migration. 8.1.2 Release (2023-06-13)](changelog/earlier-releases/8-1-2-Release.md)
-    * [Mike test](/changelog/earlier-releases/mike-test.md)
     * [Rewrite 7 changelog](changelog/earlier-releases/rewrite-7/rewrite-7.md)
       * [7.40.6 Release (2023-05-08)](changelog/earlier-releases/rewrite-7/7-40-6-Release.md)
       * [7.40.0 Release (2023-04-21)](changelog/earlier-releases/rewrite-7/7-40-0-Release.md)
