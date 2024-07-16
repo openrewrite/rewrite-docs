@@ -1869,7 +1869,7 @@
             * [Camel Core changes](reference/recipes/io/quarkus/updates/camel/camel44/camelcorerecipe.md)
             * [Migrates camel 4.0 application to camel 4.4](reference/recipes/io/quarkus/updates/camel/camel44/camelquarkusmigrationrecipe.md)
             * [Replace 'camel.main.routeController' with camel.routecontroller'](reference/recipes/io/quarkus/updates/camel/camel44/routecontrollerproperties.md)
-            * [Replace depricated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](reference/recipes/io/quarkus/updates/camel/camel44/defaultjsonschemaloader.md)
+            * [Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](reference/recipes/io/quarkus/updates/camel/camel44/defaultjsonschemaloader.md)
           * [Customrecipes](reference/recipes/io/quarkus/updates/camel/customrecipes/README.md)
             * [Change prefix of property with Camel case](reference/recipes/io/quarkus/updates/camel/customrecipes/changepropertykeywithcasechange.md)
             * [Move getter from context to PluginHelper.](reference/recipes/io/quarkus/updates/camel/customrecipes/movegettertopluginhelper.md)

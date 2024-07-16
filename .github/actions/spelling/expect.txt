@@ -228,6 +228,7 @@ okio
 omg
 openj
 openrewrite
+opensymphony
 Opta
 Overfetch
 Overfetching
@@ -315,6 +316,7 @@ timefold
 timestamped
 TML
 TODOs
+Toserial
 tostring
 Transposecapitalization
 trimrecipe
@@ -348,7 +350,7 @@ XMLs
 XMLWS
 XRange
 xsi
-Xwork
+xwork
 XXE
 Yoda
 yourorg
