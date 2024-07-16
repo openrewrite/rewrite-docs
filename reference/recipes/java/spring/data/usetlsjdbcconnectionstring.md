@@ -6,11 +6,11 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/data/UseTlsJdbcConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.14.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/data/UseTlsJdbcConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.14.0
+* version: 5.15.0
 
 ## Options
 
@@ -20,6 +20,50 @@ _Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/
 | `Integer` | oldPort | The non-TLS enabled port number to replace with the TLS-enabled port. If this value is specified, no changes will be made to jdbc connection strings which do not contain this port number.  | `1234` |
 | `Integer` | port | The TLS-enabled port to use. | `1234` |
 | `String` | attribute | A connection attribute, if any, indicating to the JDBC provider that this is a TLS connection. | `sslConnection=true` |
+
+## Data Tables
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time | The max time scanning any one source file. |
+| Cumulative edit time | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
+| Max edit time | The max time editing any one source file. |
 
 
 ## Usage
@@ -42,14 +86,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.14.0 in your build file:
+Now that `com.yourorg.UseTlsJdbcConnectionStringExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.15.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.3")
+    id("org.openrewrite.rewrite") version("6.16.4")
 }
 
 rewrite {
@@ -61,7 +105,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.15.0")
 }
 ```
 {% endcode %}
@@ -77,9 +121,9 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.35.0</version>
+        <version>5.36.0</version>
         <configuration>
-          
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>com.yourorg.UseTlsJdbcConnectionStringExample</recipe>
           </activeRecipes>
@@ -88,7 +132,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.14.0</version>
+            <version>5.15.0</version>
           </dependency>
         </dependencies>
       </plugin>

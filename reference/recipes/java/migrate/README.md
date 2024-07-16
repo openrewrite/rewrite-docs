@@ -88,7 +88,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](./jredonotusesunnetsslinternalwwwprotocol.md)
 * [Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`](./jredonotusesunnetsslinternalwwwprotocolhttpshandler.md)
 * [Use `com.sun.security.auth.module.Krb5LoginModule` instead of `com.ibm.security.auth.module.Krb5LoginModule`](./krb5loginmoduleclass.md)
-* [Use `com.sun.xml.bind.v2.ContextFactory` instead of `com.sun.xml.internal.bind.v2.ContextFactory`](./internalbindcontextfactory.md)
+* [Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`](./internalbindpackages.md)
 * [Use `java.security.cert` instead of `javax.security.cert`](./deprecatedjavaxsecuritycert.md)
 * [Use `javax.net.ssl` instead of `com.sun.net.ssl`](./jredonotusesunnetsslapis.md)
 

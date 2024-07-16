@@ -9,6 +9,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Convert JMockit `@Mocked` and `@Injectable` annotated arguments](./jmockitannotatedargumenttomockito.md)
-* [Rewrite JMockit Expectations and Verifications](./jmockitblocktomockito.md)
+* [Rewrite JMockit Expectations, Verifications and NonStrictExpectations](./jmockitblocktomockito.md)
 
 

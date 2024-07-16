@@ -15,6 +15,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace JUL Logger creation with SLF4J LoggerFactory](./julgetloggertologgerfactoryrecipes.md)
 * [Replace JUL active Level check with corresponding SLF4J method calls](./julisloggabletoisenabledrecipes.md)
 * [Replace JUL active Level check with corresponding SLF4J method calls](./jultoslf4jlambdasupplierrecipes.md)
+* [Replace JUL `log(Level, String, Throwable)` with corresponding SLF4J method calls](./jultoslf4jsimplecallswiththrowablerecipes.md)
+* [Replace JUL `log(Level, Throwable, Supplier<String>)` with corresponding SLF4J method calls](./jultoslf4jlambdasupplierwiththrowablerecipes.md)
 * [SLF4J best practices](./slf4jbestpractices.md)
 
 ## Recipes
@@ -48,7 +50,23 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace JUL `Logger.log(Level.WARNING, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierlogwarningrecipe.md)
 * [Replace JUL `Logger.severe(Supplier<String>)` with SLF4J's `Logger.atError().log(Supplier<String>)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsuppliersevererecipe.md)
 * [Replace JUL `Logger.warning(Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierwarningrecipe.md)
-* [Replace parameterized JUL leval call with corresponding slf4j method calls](./julparameterizedarguments.md)
+* [Replace JUL `logger.log(Level.ALL, String message, Throwable e)` with SLF4J's `Logger.trace(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierallrecipe.md)
+* [Replace JUL `logger.log(Level.ALL, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierallrecipe.md)
+* [Replace JUL `logger.log(Level.CONFIG, String message, Throwable e)` with SLF4J's `Logger.info(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierconfigrecipe.md)
+* [Replace JUL `logger.log(Level.CONFIG, e, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierconfigrecipe.md)
+* [Replace JUL `logger.log(Level.FINE, String message, Throwable e)` with SLF4J's `Logger.debug(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinerecipe.md)
+* [Replace JUL `logger.log(Level.FINE, e, Supplier<String>)` with SLF4J's `Logger.atDebug().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerecipe.md)
+* [Replace JUL `logger.log(Level.FINER, String message, Throwable e)` with SLF4J's `Logger.trace(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinerrecipe.md)
+* [Replace JUL `logger.log(Level.FINER, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerrecipe.md)
+* [Replace JUL `logger.log(Level.FINEST, String message, Throwable e)` with SLF4J's `Logger.trace(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierfinestrecipe.md)
+* [Replace JUL `logger.log(Level.FINEST, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinestrecipe.md)
+* [Replace JUL `logger.log(Level.INFO, String message, Throwable e)` with SLF4J's `Logger.info(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierinforecipe.md)
+* [Replace JUL `logger.log(Level.INFO, e, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierinforecipe.md)
+* [Replace JUL `logger.log(Level.SEVERE, String message, Throwable e)` with SLF4J's `Logger.error(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsuppliersevererecipe.md)
+* [Replace JUL `logger.log(Level.SEVERE, e, Supplier<String>)` with SLF4J's `Logger.atError().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsuppliersevererecipe.md)
+* [Replace JUL `logger.log(Level.WARNING, String message, Throwable e)` with SLF4J's `Logger.warn(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
+* [Replace JUL `logger.log(Level.WARNING, e, Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
+* [Replace parameterized JUL level call with corresponding SLF4J method calls](./julparameterizedarguments.md)
 * [SLF4J logging statements should begin with constants](./slf4jlogshouldbeconstant.md)
 
 

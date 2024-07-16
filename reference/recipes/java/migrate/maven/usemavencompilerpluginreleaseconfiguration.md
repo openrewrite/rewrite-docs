@@ -6,17 +6,61 @@ _Replaces any explicit `source` or `target` configuration (if present) on the `m
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.19.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/maven/UseMavenCompilerPluginReleaseConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.20.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.19.0
+* version: 2.20.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `Integer` | releaseVersion | The new value for the release configuration. This recipe prefers ${java.version} if defined. | `11` |
+
+## Data Tables
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time | The max time scanning any one source file. |
+| Cumulative edit time | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
+| Max edit time | The max time editing any one source file. |
 
 
 ## Usage
@@ -36,7 +80,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.19.0 in your build file:
+Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.20.0 in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
@@ -49,9 +93,9 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.35.0</version>
+        <version>5.36.0</version>
         <configuration>
-          
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample</recipe>
           </activeRecipes>
@@ -60,7 +104,7 @@ Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has bee
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.19.0</version>
+            <version>2.20.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -4,6 +4,7 @@ _Recipes for upgrading and patching [Quarkus](https://quarkus.io/) applications.
 
 ## Categories
 
+* [Migrate](/reference/recipes/quarkus/migrate)
 * [Quarkus 2.x](/reference/recipes/quarkus/quarkus2)
 * [Search](/reference/recipes/quarkus/search)
 

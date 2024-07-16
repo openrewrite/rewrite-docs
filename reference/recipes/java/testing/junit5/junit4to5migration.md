@@ -11,26 +11,70 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.13.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.14.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.13.0
+* version: 2.14.1
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 {% endhint %}
+## Data Tables
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time | The max time scanning any one source file. |
+| Cumulative edit time | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
+| Max edit time | The max time editing any one source file. |
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.13.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.14.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.3")
+    id("org.openrewrite.rewrite") version("6.16.4")
 }
 
 rewrite {
@@ -42,7 +86,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.14.1")
 }
 ```
 {% endcode %}
@@ -57,12 +101,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.13.0")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.14.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.JUnit4to5Migration")
@@ -89,9 +133,9 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.35.0</version>
+        <version>5.36.0</version>
         <configuration>
-          
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>org.openrewrite.java.testing.junit5.JUnit4to5Migration</recipe>
           </activeRecipes>
@@ -100,7 +144,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.13.0</version>
+            <version>2.14.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -118,7 +162,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 {% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.junit5.JUnit4to5Migration 
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.junit5.JUnit4to5Migration -Drewrite.exportDatatables=true
 ```
 {% endcode %}
 {% endtab %}
@@ -204,18 +248,7 @@ mod run . --recipe JUnit4to5Migration
   * onlyIfUsing: `org.junit.jupiter.params.ParameterizedTest`
   * scope: `test`
   * acceptTransitive: `true`
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
-  * groupId: `org.mockito`
-  * artifactId: `*`
-  * newVersion: `3.x`
-  * overrideManagedVersion: `false`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency.md)
-  * groupId: `org.mockito`
-  * artifactId: `mockito-junit-jupiter`
-  * version: `3.x`
-  * onlyIfUsing: `org.mockito..*`
-  * scope: `test`
-  * acceptTransitive: `true`
+* [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration.md)
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion.md)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-surefire-plugin`
@@ -306,18 +339,7 @@ recipeList:
       onlyIfUsing: org.junit.jupiter.params.ParameterizedTest
       scope: test
       acceptTransitive: true
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.mockito
-      artifactId: *
-      newVersion: 3.x
-      overrideManagedVersion: false
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.mockito
-      artifactId: mockito-junit-jupiter
-      version: 3.x
-      onlyIfUsing: org.mockito..*
-      scope: test
-      acceptTransitive: true
+  - org.openrewrite.java.testing.mockito.Mockito1to4Migration
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
       artifactId: maven-surefire-plugin
@@ -341,4 +363,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [magicwerk](mailto:magicwerk@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), John Burns, [Amitoj Duggal](mailto:amitojduggal@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Peter Puškár, [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)
+Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [magicwerk](mailto:magicwerk@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Tyler Van Gorder, John Burns, [Aaron Gershman](mailto:aegershman@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Amitoj Duggal](mailto:amitojduggal@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), Peter Puškár, [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)

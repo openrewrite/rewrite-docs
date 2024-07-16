@@ -14,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add `@Serial` annotation to `serialVersionUID`](./addserialannotationtoserialversionuid.md)
 * [Add missing `@Override` to overriding and implementing methods](./missingoverrideannotation.md)
 * [Add `serialVersionUID` to a `Serializable` class when missing](./addserialversionuidtoserializable.md)
 * [Atomic Boolean, Integer, and Long equality checks compare their values](./atomicprimitiveequalsusesget.md)

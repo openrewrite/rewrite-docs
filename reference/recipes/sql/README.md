@@ -10,6 +10,6 @@ _SQL query processing and analysis._
 
 * [Change a SQL function name](./changefunctionname.md)
 * [Find SQL in code and resource files](./findsql.md)
-* [Format SQL in String Text Blocks](./formatsql.md)
+* [Format SQL in string text blocks](./formatsql.md)
 
 

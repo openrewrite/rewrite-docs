@@ -11,26 +11,70 @@ _Migrate applications to the latest Spring Boot 2.4 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.14.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-24.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.14.0
+* version: 5.15.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 {% endhint %}
+## Data Tables
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time | The total time spent across the scanning phase of this recipe. |
+| 99th percentile scanning time | 99 out of 100 scans completed in this amount of time. |
+| Max scanning time | The max time scanning any one source file. |
+| Cumulative edit time | The total time spent across the editing phase of this recipe. |
+| 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
+| Max edit time | The max time editing any one source file. |
+
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.14.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.15.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.16.3")
+    id("org.openrewrite.rewrite") version("6.16.4")
 }
 
 rewrite {
@@ -42,7 +86,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.15.0")
 }
 ```
 {% endcode %}
@@ -57,12 +101,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.16.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.16.4") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.14.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.15.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4")
@@ -89,9 +133,9 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.35.0</version>
+        <version>5.36.0</version>
         <configuration>
-          
+          <exportDatatables>true</exportDatatables>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4</recipe>
           </activeRecipes>
@@ -100,7 +144,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.14.0</version>
+            <version>5.15.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -118,7 +162,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 {% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4 
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4 -Drewrite.exportDatatables=true
 ```
 {% endcode %}
 {% endtab %}
@@ -238,4 +282,4 @@ The community edition of the Moderne platform enables you to easily run recipes 
 Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Greg Adams](mailto:gadams@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Kyle Scully](mailto:scullykns@gmail.com), [magicwerk](mailto:magicwerk@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), nbruno, Kun Li, [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Tim te Beek](mailto:timtebeek@gmail.com), John Burns, [Amitoj Duggal](mailto:amitojduggal@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Kun Li](mailto:kun@moderne.io), [Scott Jungling](mailto:scott.jungling@gmail.com), Peter Puškár, [Joan Viladrosa](mailto:joan@moderne.io), [Mike Solomon](mailto:mikesol@hey.com)
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Kyle Scully](mailto:scullykns@gmail.com), [magicwerk](mailto:magicwerk@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), nbruno, Kun Li, John Burns, [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Amitoj Duggal](mailto:amitojduggal@gmail.com), [Kun Li](mailto:kun@moderne.io), [Scott Jungling](mailto:scott.jungling@gmail.com), Peter Puškár, [Joan Viladrosa](mailto:joan@moderne.io), [Mike Solomon](mailto:mikesol@hey.com)

@@ -13,6 +13,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Adopt AssertJ Duration assertions](./adoptassertjdurationassertions.md)
 * [Convert `assertThat(String).isEqualTo("")` to `isEmpty()`](./isequaltoemptystring.md)
+* [Convert `assertThat(String).isEqualTo(true)` to `isTrue()` and `isEqualTo(false)` to `isFalse()`](./isequaltoboolean.md)
 * [JUnit AssertThrows to AssertJ exceptionType](./junitassertthrowstoassertexceptiontype.md)
 * [JUnit `assertArrayEquals` To AssertJ](./junitassertarrayequalstoassertthat.md)
 * [JUnit `assertEquals` to AssertJ](./junitassertequalstoassertthat.md)

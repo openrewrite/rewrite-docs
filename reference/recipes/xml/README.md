@@ -20,5 +20,6 @@ _Basic building blocks for transforming XML._
 * [Remove XML tag](./removexmltag.md)
 * [Remove empty XML Tag](./removeemptyxmltags.md)
 * [Remove trailing whitespace](./removetrailingwhitespace.md)
+* [XSLT transformation](./xslttransformation.md)
 
 
