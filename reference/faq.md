@@ -118,7 +118,10 @@ For Maven, that would be using `mvnDebug` instead of `mvn`, and for Gradle, that
 
 ## I want to exclude a single recipe from a collection of recipes.
 
-This is not possible right now and doing so would be quite complicated. For a detailed explanation as to why, check out [this post](https://github.com/openrewrite/rewrite-maven-plugin/pull/569#issuecomment-1576793092).
+You can create your own custom recipe based off of an existing recipe most easily through [the Moderne recipe builder](https://app.moderne.io/builder).
+You can [read more about the new recipe builder](https://www.moderne.ai/blog/moderne-engineering-building-the-openrewrite-recipe-builder) on the Moderne blog.
+
+Excluding a single recipe from an existing unmodified recipe list would be quite complicated. For a detailed explanation as to why, check out [this post](https://github.com/openrewrite/rewrite-maven-plugin/pull/569#issuecomment-1576793092).
 
 ## Is it possible to pass arguments to a recipe from the command line? I want to programmatically configure complex recipes.
 
@@ -178,3 +181,22 @@ In this example, the recipes would be run in this order:
 There is currently no _open source_ build plugin for Bazel. [Moderne](https://docs.moderne.io/), on the other hand, does offer Bazel support through the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro). This is partially due to the fact that many Bazel repositories are mono repos that wouldn't fit into memory as easily – which is an OpenRewrite constraint. The Moderne CLI, on the other hand, serializes LSTs so that they don't have the same problem.
 
 For more information about the differences between the Moderne CLI and the OpenRewrite build plugins, please see the [Moderne CLI docs](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro#differences-between-the-moderne-cli-and-the-openrewrite-build-plugins).
+
+## How can I configure custom timeouts for my artifact repositories?
+
+You can configure custom timeouts for your artifact repositories by setting the `timeout` property in a Maven `settings.xml` file.
+This file is read from the default location in `~/.m2/settings.xml`, even if you are using Gradle to run your recipes.
+The specification is described in this [Maven mini guide on HTTP settings](https://maven.apache.org/guides/mini/guide-http-settings.html#connection-timeouts).
+```xml
+<settings>
+  <servers>
+    <server>
+      <id>my-server</id>
+      <configuration>
+        <timeout>60000</timeout> <!-- milliseconds -->
+      </configuration>
+    </server>
+  </servers>
+</settings>
+```
+Note that the per HTTP method `<httpConfiguration>` format is not supported.
