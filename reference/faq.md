@@ -39,6 +39,17 @@ mvn rewrite:run -Drewrite.exclusions="folderA,folderB"
 {% endtab %}
 {% endtabs %}
 
+## Why do artifact scanners detect vulnerabilities in recipe artifacts/JARs?
+
+In order to modernize and upgrade old or vulnerable code, some OpenRewrite recipe modules bundle copies of old libraries. Libraries bundled into recipe modules are never executed. That being said, these libraries are **never executed**.
+
+OpenRewrite exercises the Java compiler internally to compile code patterns that exist in these old and/or vulnerable libraries. These patterns are then used to **match** old or vulnerable code for the sake of modernizing or repairing it.
+
+Using a library in compilation in this way **does not trigger class initialization** in the way that reflection might, for example. In other words, code paths in libraries used in compilation are **never executed**.
+
+As an example of this, consider the case of [rewrite-spring](https://github.com/openrewrite/rewrite-spring). It has libraries bundled inside of the [META-INF/rewrite/classpath directory](https://github.com/openrewrite/rewrite-spring/tree/main/src/main/resources/META-INF/rewrite). However, those JARs are not made into a Fat Jar or a shaded library in the traditional sense. It is not possible that by using `rewrite-spring` that one of those libraries gets called.
+
+
 ## Is it possible to apply recipes on a step-by-step basis (pausing after certain recipes, so smaller commits can be made)?
 
 This question comes up a lot with bigger migration recipes such as the [Migrate to Java 17 recipe](/reference/recipes/java/migrate/upgradetojava17.md). Before we dive into the options you have, it's important to note that OpenRewrite recipes are highly hierarchical in nature. When you execute the Java 17 recipe, you're actually executing 180 individual migration recipes. Some of these recipes are partial steps, that by themselves, would not make sense. Consider, for instance, how different recipes change imports versus add a dependency; you'd need both for the change to make sense, and committing just a part of that would lead to failing intermediate steps.
