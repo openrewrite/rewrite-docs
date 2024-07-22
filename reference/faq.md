@@ -99,7 +99,6 @@ OpenRewrite is likely building up a model of your code and resolving types – t
 
 When recipes run with the OSS Maven and Gradle plugins, they produce a summary of what files where changes by which recipes.
 If you'd like more information, then you can look at the data tables additionally produced through [getting started with data tables guide](/running-recipes/data-tables) for OpenRewrite.
-Currently, only the Maven plugin is able to produce data tables; [follow this issue for the Gradle plugin](https://github.com/openrewrite/rewrite-gradle-plugin/issues/201).
 
 Moderne offers this functionality through the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) and the [Moderne Platform](https://app.moderne.io/getting-started).
 For more information, check out [getting started with data tables guide](https://docs.moderne.io/user-documentation/data-tables) in the Moderne docs.
