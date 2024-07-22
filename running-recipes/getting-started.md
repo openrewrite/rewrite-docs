@@ -28,6 +28,10 @@ In this guide, you will:
 * [Run a recipe with YAML configuration](getting-started.md#step-5-run-a-recipe-with-yaml-configuration)
 * [Add and run an externally created recipe](getting-started.md#step-6-running-recipes-from-external-modules)
 
+{% hint style="info" %}
+If you are a Moderne customer, you should use the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) or the [Moderne Platform](https://docs.moderne.io/user-documentation/moderne-platform/getting-started/running-your-first-recipe) to run recipes rather than following the instructions in this doc.
+{% endhint %}
+
 ## Prerequisites
 
 This quickstart guide assumes that you:
