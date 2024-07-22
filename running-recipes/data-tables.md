@@ -16,11 +16,45 @@ If you want to see what recipes have data tables and what those tables are, chec
 
 By default, OpenRewrite recipes will **not** produce a data table. In order for a recipe to produce one, you will need to do two things:
 
-1. You will need to ensure your project is built with Maven as only the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) (version `5.34.1` or higher) currently supports this feature. 
-    * **Note**: If you are a Gradle user, consider helping out by [adding support for data tables to the Gradle plugin](https://github.com/openrewrite/rewrite-gradle-plugin/issues/201).
-2. Next, you will either need to update your `pom.xml` file or modify your Maven command for running a recipe:
+1. You will need to ensure your project is built with
+   - [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) version `5.34.1` or higher.
+   - [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin/) version `6.16.5` or higher. 
+2. Next, you will either need to update build file or modify your command for running a recipe:
 
 {% tabs %}
+
+{% tab title="build.gradle" %}
+Add `exportDatatables = true` to your `build.gradle` file such as in the following example:
+
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("6.16.4")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.dependencies.DependencyVulnerabilityCheck")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.13.0")
+}
+```
+{% endtab %}
+
+{% tab title="Gradle command line" %}
+Add `-Drewrite.exportDatatables=true` to your Gradle command for running a recipe such as in the following example:
+
+{% code overflow="wrap" %}
+```bash
+gradle -Drewrite.exportDatatables=true rewriteRun
+```
+{% endcode %}
+{% endtab %}
 {% tab title="pom.xml" %}
 Add `<exportDatatables>true</exportDatatables>` to your `pom.xml` file such as in the following example:
 
