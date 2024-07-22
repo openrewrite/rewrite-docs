@@ -22,6 +22,39 @@ By default, OpenRewrite recipes will **not** produce a data table. In order for 
 2. Next, you will either need to update build file or modify your command for running a recipe:
 
 {% tabs %}
+
+{% tab title="build.gradle" %}
+Add `exportDatatables = true` to your `build.gradle` file such as in the following example:
+
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("6.16.4")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.dependencies.DependencyVulnerabilityCheck")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.13.0")
+}
+```
+{% endtab %}
+
+{% tab title="Gradle command line" %}
+Add `-Drewrite.exportDatatables=true` to your Gradle command for running a recipe such as in the following example:
+
+{% code overflow="wrap" %}
+```bash
+gradle -Drewrite.exportDatatables=true rewriteRun
+```
+{% endcode %}
+{% endtab %}
 {% tab title="pom.xml" %}
 Add `<exportDatatables>true</exportDatatables>` to your `pom.xml` file such as in the following example:
 
@@ -53,39 +86,6 @@ Add `-Drewrite.exportDatatables=true` to your Maven command for running a recipe
 {% code overflow="wrap" %}
 ```bash
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.exportDatatables=true -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-java-dependencies:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.dependencies.DependencyVulnerabilityCheck
-```
-{% endcode %}
-{% endtab %}
-
-{% tab title="build.gradle" %}
-Add `exportDatatables = true` to your `build.gradle` file such as in the following example:
-
-```groovy
-plugins {
-    id("org.openrewrite.rewrite") version("6.16.4")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.dependencies.DependencyVulnerabilityCheck")
-    exportDatatables = true
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.13.0")
-}
-```
-{% endtab %}
-
-{% tab title="Gradle command line" %}
-Add `-Drewrite.exportDatatables=true` to your Gradle command for running a recipe such as in the following example:
-
-{% code overflow="wrap" %}
-```bash
-gradle --init-script init.gradle -Drewrite.exportDatatables=true rewriteRun
 ```
 {% endcode %}
 {% endtab %}
