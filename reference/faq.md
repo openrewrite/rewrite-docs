@@ -133,14 +133,26 @@ You can [read more about the new recipe builder](https://www.moderne.ai/blog/mod
 
 Excluding a single recipe from an existing unmodified recipe list would be quite complicated. For a detailed explanation as to why, check out [this post](https://github.com/openrewrite/rewrite-maven-plugin/pull/569#issuecomment-1576793092).
 
-## Is it possible to pass arguments to a recipe from the command line? I want to programmatically configure complex recipes.
+## Is it possible to pass arguments to a recipe from the command line?
+This is a challenging problem for a couple of reasons:
 
-Not right now. This is a particularly difficult problem to address for a couple of reasons:
-
-* Some recipes can be composed of other recipes which could then include other recipes composed of other recipes and so on.
+* Some recipes can be composed of other recipes, which could in turn include other recipes, and so on.
 * Some recipes can be used multiple times in one recipe with different parameters such as in [this example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.6/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml#L140-L160).
+* The [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin) requires you to either change your build file, or add an `init.gradle` script to run recipes.
 
-There is an [open issue](https://github.com/openrewrite/rewrite-maven-plugin/issues/799) for this request that you can +1 or provide feedback on.
+In general, we recommend folks write a `rewrite.yml` file to configure recipes, as that clears out any ambiguity as to which recipe instances to configure, and this approach is portable across the various tools that run OpenRewrite recipes.
+
+For folks using the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) we [recently added](https://github.com/openrewrite/rewrite-maven-plugin/pull/816) an option to pass in arguments to recipes, for single recipes only.
+Using the below command you remove an argument plugin without modifying a `rewrite.yml` or `pom.xml` file:
+
+```shell
+mvn org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.activeRecipes=org.openrewrite.maven.RemovePlugin \
+  -Drewrite.options=groupId=org.springframework.boot,artifactId=spring-boot-maven-plugin
+```
+
+Note that this approach does not scale well; each recipe invocation would build up the Lossless Semantic Tree (LST) from scratch, which can be slow for larger projects.
+A better approach then is to [leverage serialized LSTs through the Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro).
 
 ## What order do recipes run in?
 
