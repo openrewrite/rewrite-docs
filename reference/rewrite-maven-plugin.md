@@ -34,12 +34,12 @@ The goals `rewrite:run` and `rewrite:dryRun` are configured to fork Maven's life
 {% endhint %}
 
 {% hint style="info" %}
-In some circumstances, depending on how your project pom.xml is configured, you may get a [`NoPluginFoundForPrefixException`](https://cwiki.apache.org/confluence/display/MAVEN/NoPluginFoundForPrefixException). The root cause for this varies from pom.xml to pom.xml. In any case, as a quick fix to get unstuck, try referencing the fully-qualified rewrite-maven-plugin coordinates instead of the shorthand prefix. That is, try using `mvn org.openrewrite.maven:rewrite-maven-plugin:GOAL` (such as `mvn org.openrewrite.maven:rewrite-maven-plugin:run`, etc.) rather than `mvn rewrite:GOAL`.
+In some circumstances, depending on how your project `pom.xml` is configured, you may get a [`NoPluginFoundForPrefixException`](https://cwiki.apache.org/confluence/display/MAVEN/NoPluginFoundForPrefixException). The root cause for this varies from `pom.xml` to `pom.xml`. In any case, as a quick fix to get unstuck, try referencing the fully-qualified rewrite-maven-plugin coordinates instead of the shorthand prefix. That is, try using `mvn org.openrewrite.maven:rewrite-maven-plugin:GOAL` (such as `mvn org.openrewrite.maven:rewrite-maven-plugin:run`, etc.) rather than `mvn rewrite:GOAL`.
 {% endhint %}
 
 ## Plugin configuration
 
-It generally makes sense to apply the plugin to the root pom.xml in a repository so that the configuration applies to each project in a multi-module project. The configuration block below contains an example of every configuration option.
+It generally makes sense to apply the plugin to the root `pom.xml` in a repository so that the configuration applies to each project in a multi-module project. The configuration block below contains an example of every configuration option. You may also find it beneficial to [check out the auto-generated rewrite-maven-plugin documentation](https://openrewrite.github.io/rewrite-maven-plugin/run-mojo.html) which contains `type` information among other things.
 
 * `activeRecipes` - Explicitly turns on recipes by name (the name given in the `specs.openrewrite.org/v1beta/recipe` resource). No recipe is run unless explicitly turned on with this setting. You can set `activeRecipes` ad-hoc directly on the command line using `-Drewrite.activeRecipes=an.example.Recipe0,an.example.Recipe1`. For example, `mvn rewrite:run -Drewrite.activeRecipes=an.example.Recipe0`.
 * `activeStyles` - Explicitly turns on a style by name (the name given in the `specs.openrewrite.org/v1beta/style` resource). No style is applied unless explicitly turned on with this setting. This can be invoked ad-hoc directly on the command line using `-Drewrite.activeStyles=an.example.Style0,an.example.Style1`. For example, `mvn rewrite:run -Drewrite.activeStyles=an.example.Style0`.
@@ -71,8 +71,8 @@ It generally makes sense to apply the plugin to the root pom.xml in a repository
     **/*.sql
     **/*.txt
     ```
-* `pomCacheDirectory` - The directory where OpenRewrite will cache pom.xml and meta-data. The default value is `~/.rewrite-cache`
-* `pomCacheEnabled` - This flag determines if OpenRewrite will cache pom.xml and meta-data using an on-disk cache. The default is `true`
+* `pomCacheDirectory` - The directory where OpenRewrite will cache `pom.xml` and meta-data. The default value is `~/.rewrite-cache`
+* `pomCacheEnabled` - This flag determines if OpenRewrite will cache `pom.xml` and meta-data using an on-disk cache. The default is `true`
 * `sizeThresholdMb` - Threshold over which non-Java sources are ignored during parsing. The default threshold is 10Mb.
 * `skipMavenParsing` - When enabled, skip parsing Maven `pom.xml`s, and any transitive poms, as source files. This can be an efficiency improvement in certain situations. Defaults to `false`. For example, `-DskipMavenParsing=true`.
 
