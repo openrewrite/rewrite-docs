@@ -1,3 +1,3 @@
 # Test doc
 
-Testing!
+Testing!1.0.0\n
