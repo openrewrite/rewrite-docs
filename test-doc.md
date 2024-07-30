@@ -1,3 +1,4 @@
 # Test doc
 
-Testing!1.0.0\n
+Testing!
+1.0.0
