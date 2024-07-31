@@ -15,7 +15,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.34.1</version>
+      <version>5.37.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
@@ -40,7 +40,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.16.2")
+        id("org.openrewrite.rewrite") version("6.17.0")
     }
     
     rewrite {
@@ -52,7 +52,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.13.2"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
         rewrite("org.openrewrite.recipe:rewrite-spring")
     
         // Other project dependencies
@@ -77,7 +77,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.34.1</version>
+      <version>5.37.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
@@ -102,7 +102,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```groovy
     plugins {
         id("java")
-        id("org.openrewrite.rewrite") version("6.16.2")
+        id("org.openrewrite.rewrite") version("6.17.0")
     }
     
     rewrite {
@@ -114,7 +114,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.13.2"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies

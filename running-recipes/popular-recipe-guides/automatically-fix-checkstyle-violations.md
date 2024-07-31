@@ -20,7 +20,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.37.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
@@ -55,7 +55,7 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.17.0")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.10.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest-release")
 }
 ```
 {% endcode %}
@@ -94,7 +94,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.37.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
@@ -121,7 +121,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.17.0")
 }
 
 rewrite {
@@ -134,7 +134,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.10.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest-release")
 }
 ```
 {% endcode %}
@@ -162,7 +162,7 @@ In Gradle, [Task.dependsOn()](https://docs.gradle.org/current/javadoc/org/gradle
 plugins {
     id("java")
     id("checkstyle")
-    id("org.openrewrite.rewrite") version("6.16.2")
+    id("org.openrewrite.rewrite") version("6.17.0")
 }
 
 rewrite {
@@ -175,7 +175,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.10.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest-release")
 }
 
 // In older versions of gradle, use tasks.get() instead of tasks.named()
@@ -204,7 +204,7 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.34.1</version>
+        <version>5.37.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
