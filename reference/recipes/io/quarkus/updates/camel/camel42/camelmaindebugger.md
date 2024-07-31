@@ -154,6 +154,7 @@ mod run . --recipe CamelMainDebugger
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/io.quarkus.updates.camel.camel42.CamelMainDebugger)

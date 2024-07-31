@@ -190,6 +190,7 @@ mod run . --recipe ApplicationProperties
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/io.quarkus.updates.core.quarkus30.ApplicationProperties)

@@ -175,6 +175,7 @@ mod run . --recipe CamelQuarkusMigrationRecipe
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe)

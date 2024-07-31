@@ -166,6 +166,7 @@ mod run . --recipe EnableDynamoDbPITR
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.terraform.aws.EnableDynamoDbPITR)

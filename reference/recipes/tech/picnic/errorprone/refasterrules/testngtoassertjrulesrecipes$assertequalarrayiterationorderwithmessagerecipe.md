@@ -182,6 +182,7 @@ mod run . --recipe TestNGToAssertJRulesRecipes$AssertEqualArrayIterationOrderWit
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualArrayIterationOrderWithMessageRecipe)

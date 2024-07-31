@@ -126,6 +126,7 @@ mod run . --recipe OAuth2ResourceServerLambdaDsl
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.spring.security6.oauth2.server.resource.OAuth2ResourceServerLambdaDsl)

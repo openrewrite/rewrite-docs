@@ -1629,6 +1629,7 @@ mod run . --recipe TimefoldChangeDependencies
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/ai.timefold.solver.migration.fork.TimefoldChangeDependencies)

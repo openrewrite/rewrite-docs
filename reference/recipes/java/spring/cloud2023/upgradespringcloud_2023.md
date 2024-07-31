@@ -161,6 +161,7 @@ mod run . --recipe UpgradeSpringCloud_2023
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.spring.cloud2023.UpgradeSpringCloud_2023)

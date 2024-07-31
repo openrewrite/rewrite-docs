@@ -179,6 +179,7 @@ mod run . --recipe Jre17AgentMainPreMainPublic
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/io.quarkus.updates.core.quarkus37.Jre17AgentMainPreMainPublic)

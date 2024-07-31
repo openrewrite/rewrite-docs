@@ -173,6 +173,7 @@ mod run . --recipe UpgradeLog4J2DependencyVersion
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion)

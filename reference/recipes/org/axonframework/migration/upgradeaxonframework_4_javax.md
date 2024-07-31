@@ -247,6 +247,7 @@ mod run . --recipe UpgradeAxonFramework_4_Javax
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.axonframework.migration.UpgradeAxonFramework_4_Javax)

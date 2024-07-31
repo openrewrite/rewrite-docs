@@ -167,6 +167,7 @@ mod run . --recipe UpgradeApacheHttpClient_4_5
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
 ## See how this recipe works across multiple open-source repositories
 
 [![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5)
