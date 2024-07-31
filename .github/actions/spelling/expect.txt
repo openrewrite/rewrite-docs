@@ -181,6 +181,7 @@ JWTs
 Kenobi
 keystore
 Kilburn
+KMethod
 kotlin
 Krb
 ksh
