@@ -8,6 +8,7 @@ _Basic building blocks for transforming XML._
 * [Liberty](/reference/recipes/xml/liberty)
 * [Search](/reference/recipes/xml/search)
 * [Security](/reference/recipes/xml/security)
+* [Style](/reference/recipes/xml/style)
 
 ## Recipes
 

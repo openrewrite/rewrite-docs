@@ -5,7 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Faces XHTML migration for Jakarta EE 10](./jakartafacesxhtml.md)
-* [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](./facesjndinameschanged.md)
+* [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`](./facesjndinameschanged.md)
 * [JSF 2.x to Jakarta Faces 4.x](./faces2xmigrationtojakarta4x.md)
 * [Migrate Ehcache from javax to jakarta namespace](./ehcachejavaxtojakarta.md)
 * [Migrate JSF values inside EcmaScript files](./jakartafacesecmascript.md)

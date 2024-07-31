@@ -6,11 +6,11 @@ _This recipe calls an AI model to get an embedding for either classes or methods
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/GetCodeEmbedding.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/0.14.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/GetCodeEmbedding.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/0.15.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-ai-search
-* version: 0.14.3
+* version: 0.15.0
 
 ## Options
 
@@ -18,6 +18,99 @@ _This recipe calls an AI model to get an embedding for either classes or methods
 | -- | -- | -- | -- |
 | `String` | codeSnippetType | Choose whether you want to get an embedding for the classes or methods. Valid options: `methods`, `classes` | `methods` |
 
+
+## Usage
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.GetCodeEmbeddingExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+
+{% code title="rewrite.yml" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.GetCodeEmbeddingExample
+displayName: Get embeddings for code snippets in code example
+recipeList:
+  - io.moderne.ai.research.GetCodeEmbedding:
+      codeSnippetType: methods
+```
+{% endcode %}
+
+Now that `com.yourorg.GetCodeEmbeddingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-ai-search:0.15.0 in your build file:
+{% tabs %}
+{% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("6.17.0")
+}
+
+rewrite {
+    activeRecipe("com.yourorg.GetCodeEmbeddingExample")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-ai-search:0.15.0")
+}
+```
+{% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
+{% endtab %}
+{% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
+{% code title="pom.xml" %}
+```xml
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.37.0</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>com.yourorg.GetCodeEmbeddingExample</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-ai-search</artifactId>
+            <version>0.15.0</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+{% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run . --recipe GetCodeEmbeddingExample
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/io.moderne.ai.research.GetCodeEmbedding)
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
 ### Embeddings
@@ -73,99 +166,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.GetCodeEmbeddingExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.GetCodeEmbeddingExample
-displayName: Get embeddings for code snippets in code example
-recipeList:
-  - io.moderne.ai.research.GetCodeEmbedding:
-      codeSnippetType: methods
-```
-{% endcode %}
-
-Now that `com.yourorg.GetCodeEmbeddingExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-ai-search:0.14.3 in your build file:
-{% tabs %}
-{% tab title="Gradle" %}
-1. Add the following to your `build.gradle` file:
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id("org.openrewrite.rewrite") version("6.16.4")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.GetCodeEmbeddingExample")
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-ai-search:0.14.3")
-}
-```
-{% endcode %}
-2. Run `gradle rewriteRun` to run the recipe.
-{% endtab %}
-{% tab title="Maven" %}
-1. Add the following to your `pom.xml` file:
-{% code title="pom.xml" %}
-```xml
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.36.0</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.GetCodeEmbeddingExample</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-ai-search</artifactId>
-            <version>0.14.3</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-2. Run `mvn rewrite:run` to run the recipe.
-{% endtab %}
-{% tab title="Moderne CLI" %}
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
-
-{% code title="shell" %}
-```shell
-mod run . --recipe GetCodeEmbeddingExample
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-## See how this recipe works across multiple open-source repositories
-
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/io.moderne.ai.research.GetCodeEmbedding)
-
-The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
-
-Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
 [juju](mailto:justine.gehring@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

@@ -6,15 +6,172 @@ _Replace calls to `Logger.log(Level, Throwable, Supplier<String>)` with the corr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/JulToSlf4jLambdaSupplierWithThrowable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/JulToSlf4jLambdaSupplierWithThrowable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/2.12.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-logging-frameworks
-* version: 2.11.0
+* version: 2.12.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 {% endhint %}
+
+## Definition
+
+{% tabs %}
+{% tab title="Recipe List" %}
+* [Replace JUL `logger.log(Level.FINEST, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinestrecipe.md)
+* [Replace JUL `logger.log(Level.FINER, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerrecipe.md)
+* [Replace JUL `logger.log(Level.FINE, e, Supplier<String>)` with SLF4J's `Logger.atDebug().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerecipe.md)
+* [Replace JUL `logger.log(Level.CONFIG, e, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierconfigrecipe.md)
+* [Replace JUL `logger.log(Level.INFO, e, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierinforecipe.md)
+* [Replace JUL `logger.log(Level.WARNING, e, Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
+* [Replace JUL `logger.log(Level.SEVERE, e, Supplier<String>)` with SLF4J's `Logger.atError().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsuppliersevererecipe.md)
+* [Replace JUL `logger.log(Level.ALL, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierallrecipe.md)
+
+{% endtab %}
+
+{% tab title="Yaml Recipe List" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes
+displayName: Replace JUL `log(Level, Throwable, Supplier<String>)` with corresponding SLF4J method calls
+description: Replace calls to `Logger.log(Level, Throwable, Supplier<String>)` with the corresponding SLF4J method calls.
+recipeList:
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierFinestRecipe
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierFinerRecipe
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierFineRecipe
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierConfigRecipe
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierInfoRecipe
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierWarningRecipe
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierSevereRecipe
+  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierAllRecipe
+
+```
+{% endtab %}
+{% endtabs %}
+
+## Usage
+
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.12.0` in your build file or by running a shell command (in which case no build changes are needed): 
+{% tabs %}
+{% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("6.17.0")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.12.0")
+}
+```
+{% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
+{% endtab %}
+
+{% tab title="Gradle init script" %}
+1. Create a file named `init.gradle` in the root of your project.
+{% code title="init.gradle" %}
+```groovy
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:6.17.0") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.12.0")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes")
+        exportDatatables = true
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+{% endcode %}
+2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+{% endtab %}
+{% tab title="Maven POM" %}
+1. Add the following to your `pom.xml` file:
+{% code title="pom.xml" %}
+```xml
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.37.0</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-logging-frameworks</artifactId>
+            <version>2.12.0</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+{% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
+{% endtab %}
+
+{% tab title="Maven Command Line" %}
+
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+{% code title="shell" overflow="wrap" %}
+```shell
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes -Drewrite.exportDatatables=true
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run . --recipe JulToSlf4jLambdaSupplierWithThrowableRecipes
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes)
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
 ### Source files that had results
@@ -59,159 +216,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Usage
-
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:2.11.0` in your build file or by running a shell command (in which case no build changes are needed): 
-{% tabs %}
-{% tab title="Gradle" %}
-1. Add the following to your `build.gradle` file:
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id("org.openrewrite.rewrite") version("6.16.4")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes")
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.11.0")
-}
-```
-{% endcode %}
-2. Run `gradle rewriteRun` to run the recipe.
-{% endtab %}
-
-{% tab title="Gradle init script" %}
-1. Create a file named `init.gradle` in the root of your project.
-{% code title="init.gradle" %}
-```groovy
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:6.16.4") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:2.11.0")
-    }
-    rewrite {
-        activeRecipe("org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes")
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-{% endcode %}
-2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
-{% endtab %}
-{% tab title="Maven POM" %}
-1. Add the following to your `pom.xml` file:
-{% code title="pom.xml" %}
-```xml
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.36.0</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>2.11.0</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-2. Run `mvn rewrite:run` to run the recipe.
-{% endtab %}
-
-{% tab title="Maven Command Line" %}
-
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-{% code title="shell" overflow="wrap" %}
-```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes -Drewrite.exportDatatables=true
-```
-{% endcode %}
-{% endtab %}
-{% tab title="Moderne CLI" %}
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
-
-{% code title="shell" %}
-```shell
-mod run . --recipe JulToSlf4jLambdaSupplierWithThrowableRecipes
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-## Definition
-
-{% tabs %}
-{% tab title="Recipe List" %}
-* [Replace JUL `logger.log(Level.FINEST, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinestrecipe.md)
-* [Replace JUL `logger.log(Level.FINER, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerrecipe.md)
-* [Replace JUL `logger.log(Level.FINE, e, Supplier<String>)` with SLF4J's `Logger.atDebug().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierfinerecipe.md)
-* [Replace JUL `logger.log(Level.CONFIG, e, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierconfigrecipe.md)
-* [Replace JUL `logger.log(Level.INFO, e, Supplier<String>)` with SLF4J's `Logger.atInfo().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierinforecipe.md)
-* [Replace JUL `logger.log(Level.WARNING, e, Supplier<String>)` with SLF4J's `Logger.atWarn().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
-* [Replace JUL `logger.log(Level.SEVERE, e, Supplier<String>)` with SLF4J's `Logger.atError().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsuppliersevererecipe.md)
-* [Replace JUL `logger.log(Level.ALL, e, Supplier<String>)` with SLF4J's `Logger.atTrace().log(Supplier<String>)`](../../../java/logging/slf4j/jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierallrecipe.md)
-
-{% endtab %}
-
-{% tab title="Yaml Recipe List" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes
-displayName: Replace JUL `log(Level, Throwable, Supplier<String>)` with corresponding SLF4J method calls
-description: Replace calls to `Logger.log(Level, Throwable, Supplier<String>)` with the corresponding SLF4J method calls.
-recipeList:
-  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierFinestRecipe
-  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierFinerRecipe
-  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierFineRecipe
-  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierConfigRecipe
-  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierInfoRecipe
-  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierWarningRecipe
-  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierSevereRecipe
-  - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes$JulToSlf4jSupplierAllRecipe
-
-```
-{% endtab %}
-{% endtabs %}
-
-## See how this recipe works across multiple open-source repositories
-
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes)
-
-The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
-
-Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.

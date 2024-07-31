@@ -8,7 +8,8 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4.](./springboot2junit4to5migration.md)
+* [Add `javax.validation-api` dependency](./maybeaddjavaxvalidationapi.md)
+* [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](./springboot2junit4to5migration.md)
 * [Migrate Spring Boot properties to 2.0](./springbootproperties_2_0.md)
 * [Migrate Spring Boot properties to 2.1](./springbootproperties_2_1.md)
 * [Migrate Spring Boot properties to 2.2](./springbootproperties_2_2.md)

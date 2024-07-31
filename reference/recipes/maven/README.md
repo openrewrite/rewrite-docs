@@ -23,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add Maven profile](./addprofile.md)
 * [Add Maven project property](./addproperty.md)
 * [Add a comment to a `Maven` dependency](./addcommenttomavendependency.md)
+* [Add a configuration option for the Maven runtime](./addruntimeconfig.md)
 * [Add managed Maven dependency](./addmanageddependency.md)
 * [Add repository](./addrepository.md)
 * [Add the Develocity Maven extension](./adddevelocitymavenextension.md)

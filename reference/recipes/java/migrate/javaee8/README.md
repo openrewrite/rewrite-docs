@@ -8,6 +8,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`](./servletisrequestedsessionidfromurl.md)
+* [Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`](./servletisrequestedsessionidfromurl.md)
 
 

@@ -2,6 +2,6 @@
 
 ## Recipes
 
-* [Upgrade un-managed spring project dependencies](./upgradeexplicitspringbootdependencies.md)
+* [Upgrade Spring dependencies](./upgradeexplicitspringbootdependencies.md)
 
 

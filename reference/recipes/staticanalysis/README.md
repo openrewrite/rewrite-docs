@@ -50,6 +50,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Jump statements should not be redundant](./noredundantjumpstatements.md)
 * [Mask credit card numbers](./maskcreditcardnumbers.md)
 * [Modifier order](./modifierorder.md)
+* [Move `@Nullable` method annotations to the return type](./nullableonmethodreturntype.md)
 * [Nested enums are not static](./nestedenumsarenotstatic.md)
 * [No C-style array declarations](./usejavastylearraydeclarations.md)
 * [No double brace initialization](./nodoublebraceinitialization.md)

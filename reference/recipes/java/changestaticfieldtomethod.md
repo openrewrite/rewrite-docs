@@ -6,11 +6,11 @@ _Migrate accesses to a static field to invocations of a static method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.30.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.32.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.30.0
+* version: 8.32.0
 
 ## Options
 
@@ -22,6 +22,92 @@ _Migrate accesses to a static field to invocations of a static method._
 | `String` | newTarget | *Optional*. An optional method target that can be used to specify a static field within the new class. | `OK_RESPONSE` |
 | `String` | newMethodName | The simple name of the method to use. The method must be static and have no arguments. | `of` |
 
+
+## Usage
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeStaticFieldToMethodExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+
+{% code title="rewrite.yml" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.ChangeStaticFieldToMethodExample
+displayName: Change static field access to static method access example
+recipeList:
+  - org.openrewrite.java.ChangeStaticFieldToMethod:
+      oldClassName: java.util.Collections
+      oldFieldName: EMPTY_LIST
+      newClassName: java.util.List
+      newTarget: OK_RESPONSE
+      newMethodName: of
+```
+{% endcode %}
+
+Now that `com.yourorg.ChangeStaticFieldToMethodExample` has been defined activate it in your build file:
+{% tabs %}
+{% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("6.17.0")
+}
+
+rewrite {
+    activeRecipe("com.yourorg.ChangeStaticFieldToMethodExample")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+```
+{% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
+{% endtab %}
+{% tab title="Maven" %}
+1. Add the following to your `pom.xml` file:
+{% code title="pom.xml" %}
+```xml
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.37.0</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>com.yourorg.ChangeStaticFieldToMethodExample</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+{% endcode %}
+2. Run `mvn rewrite:run` to run the recipe.
+{% endtab %}
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run . --recipe ChangeStaticFieldToMethodExample
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.ChangeStaticFieldToMethod)
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
 ### Source files that had results
@@ -66,92 +152,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeStaticFieldToMethodExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.ChangeStaticFieldToMethodExample
-displayName: Change static field access to static method access example
-recipeList:
-  - org.openrewrite.java.ChangeStaticFieldToMethod:
-      oldClassName: java.util.Collections
-      oldFieldName: EMPTY_LIST
-      newClassName: java.util.List
-      newTarget: OK_RESPONSE
-      newMethodName: of
-```
-{% endcode %}
-
-Now that `com.yourorg.ChangeStaticFieldToMethodExample` has been defined activate it in your build file:
-{% tabs %}
-{% tab title="Gradle" %}
-1. Add the following to your `build.gradle` file:
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id("org.openrewrite.rewrite") version("6.16.4")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.ChangeStaticFieldToMethodExample")
-}
-
-repositories {
-    mavenCentral()
-}
-```
-{% endcode %}
-2. Run `gradle rewriteRun` to run the recipe.
-{% endtab %}
-{% tab title="Maven" %}
-1. Add the following to your `pom.xml` file:
-{% code title="pom.xml" %}
-```xml
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.36.0</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.ChangeStaticFieldToMethodExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-{% endcode %}
-2. Run `mvn rewrite:run` to run the recipe.
-{% endtab %}
-{% tab title="Moderne CLI" %}
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
-
-{% code title="shell" %}
-```shell
-mod run . --recipe ChangeStaticFieldToMethodExample
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-## See how this recipe works across multiple open-source repositories
-
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.ChangeStaticFieldToMethod)
-
-The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
-
-Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
 Christian Semrau, [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Thomas Zub](mailto:thomas.zub@outlook.de), [Aaron Gershman](mailto:aegershman@gmail.com)

@@ -6,11 +6,11 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.30.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.32.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.30.0
+* version: 8.32.0
 
 ## Options
 
@@ -21,6 +21,67 @@ _Find direct and transitive dependencies matching a group, artifact, and optiona
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
 | `String` | configuration | *Optional*. Match dependencies with the specified scope. If not specified, all configurations will be searched. | `compileClasspath` |
 
+
+## Usage
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DependencyInsightExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+
+{% code title="rewrite.yml" %}
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.DependencyInsightExample
+displayName: Gradle dependency insight example
+recipeList:
+  - org.openrewrite.gradle.search.DependencyInsight:
+      groupIdPattern: com.fasterxml.jackson.module
+      artifactIdPattern: jackson-module-*
+      version: 1.x
+      configuration: compileClasspath
+```
+{% endcode %}
+
+Now that `com.yourorg.DependencyInsightExample` has been defined activate it in your build file:
+{% tabs %}
+{% tab title="Gradle" %}
+1. Add the following to your `build.gradle` file:
+{% code title="build.gradle" %}
+```groovy
+plugins {
+    id("org.openrewrite.rewrite") version("6.17.0")
+}
+
+rewrite {
+    activeRecipe("com.yourorg.DependencyInsightExample")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+```
+{% endcode %}
+2. Run `gradle rewriteRun` to run the recipe.
+{% endtab %}
+
+{% tab title="Moderne CLI" %}
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+{% code title="shell" %}
+```shell
+mod run . --recipe DependencyInsightExample
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
+## See how this recipe works across multiple open-source repositories
+
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.gradle.search.DependencyInsight)
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 ## Data Tables
 
 ### Dependencies in use
@@ -81,67 +142,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Usage
-
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DependencyInsightExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.DependencyInsightExample
-displayName: Gradle dependency insight example
-recipeList:
-  - org.openrewrite.gradle.search.DependencyInsight:
-      groupIdPattern: com.fasterxml.jackson.module
-      artifactIdPattern: jackson-module-*
-      version: 1.x
-      configuration: compileClasspath
-```
-{% endcode %}
-
-Now that `com.yourorg.DependencyInsightExample` has been defined activate it in your build file:
-{% tabs %}
-{% tab title="Gradle" %}
-1. Add the following to your `build.gradle` file:
-{% code title="build.gradle" %}
-```groovy
-plugins {
-    id("org.openrewrite.rewrite") version("6.16.4")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.DependencyInsightExample")
-}
-
-repositories {
-    mavenCentral()
-}
-```
-{% endcode %}
-2. Run `gradle rewriteRun` to run the recipe.
-{% endtab %}
-
-{% tab title="Moderne CLI" %}
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
-
-{% code title="shell" %}
-```shell
-mod run . --recipe DependencyInsightExample
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-## See how this recipe works across multiple open-source repositories
-
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.gradle.search.DependencyInsight)
-
-The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
-
-Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
 
 ## Contributors
 [Sam Snyder](mailto:sam@moderne.io), [Peter Streef](mailto:peter@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
