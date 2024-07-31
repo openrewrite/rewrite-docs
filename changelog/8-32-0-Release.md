@@ -10,13 +10,15 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
+https://docs.openrewrite.org/recipes/core/findduplicatesourcefiles
+
 * [io.quarkus.updates.core.quarkus313.WithTestResource](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus313/withtestresource):  
 * [io.quarkus.updates.core.quarkus313.WithTestResourceRestrictToAnnotatedClassValue](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus313/withtestresourcerestricttoannotatedclassvalue):  
 * [org.axonframework.migration.UpgradeAxonFramework_4_Jakarta](https://docs.openrewrite.org/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta): Migration file to upgrade from an Axon Framework Javax-specific project to Jakarta. 
 * [org.axonframework.migration.UpgradeAxonFramework_4_Javax](https://docs.openrewrite.org/recipes/org/axonframework/migration/upgradeaxonframework_4_javax): Migration file to upgrade an Axon Framework Javax-specific project and remain on Javax. 
-* [org.openrewrite.FindCallGraph](https://docs.openrewrite.org/recipes/findcallgraph): Produces a data table where each row represents a method call. 
-* [org.openrewrite.FindDuplicateSourceFiles](https://docs.openrewrite.org/recipes/findduplicatesourcefiles): Record the presence of LSTs with duplicate paths, indicating that the same file was parsed more than once. 
-* [org.openrewrite.LanguageComposition](https://docs.openrewrite.org/recipes/languagecomposition): Counts the number of lines of the various kinds of source code and data formats parsed by OpenRewrite. Comments are not included in line counts. This recipe emits its results as two data tables, making no changes to any source file. One data table is per-file, the other is per-repository. 
+* [org.openrewrite.FindCallGraph](https://docs.openrewrite.org/recipes/core/findcallgraph): Produces a data table where each row represents a method call. 
+* [org.openrewrite.FindDuplicateSourceFiles](https://docs.openrewrite.org/recipes/core/findduplicatesourcefiles): Record the presence of LSTs with duplicate paths, indicating that the same file was parsed more than once. 
+* [org.openrewrite.LanguageComposition](https://docs.openrewrite.org/recipes/core/languagecomposition): Counts the number of lines of the various kinds of source code and data formats parsed by OpenRewrite. Comments are not included in line counts. This recipe emits its results as two data tables, making no changes to any source file. One data table is per-file, the other is per-repository. 
 * [org.openrewrite.docker.search.FindDockerImageUses](https://docs.openrewrite.org/recipes/docker/search/finddockerimageuses): Produce an impact analysis of base images used in Dockerfiles. 
 * [org.openrewrite.hcl.search.FindAndReplaceLiteral](https://docs.openrewrite.org/recipes/hcl/search/findandreplaceliteral): Find and replace literal values in HCL files. This recipe parses the source files on which it runs as HCL, meaning you can execute HCL language-specific recipes before and after this recipe in a single recipe run. 
 * [org.openrewrite.java.migrate.nio.file.PathsGetToPathOf](https://docs.openrewrite.org/recipes/java/migrate/nio/file/pathsgettopathof): The `java.nio.file.Paths.get` method was introduced in Java SE 7. The `java.nio.file.Path.of` method was introduced in Java SE 11. This recipe replaces all usages of `Paths.get` with `Path.of` for consistency. 
