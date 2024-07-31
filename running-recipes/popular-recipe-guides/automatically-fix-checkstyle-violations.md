@@ -30,14 +30,14 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.10.1</version>
+            <version>1.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.1.2</version>
+        <version>3.4.0</version>
         <configuration>
           <configLocation>checkstyle.xml</configLocation>
         </configuration>
@@ -105,7 +105,7 @@ If your build does not use either of the Gradle or Maven Checkstyle plugins, you
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.10.1</version>
+            <version>1.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -223,14 +223,14 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.10.1</version>
+            <version>1.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.1.2</version>
+        <version>3.4.0</version>
         <configuration>
           <configLocation>checkstyle.xml</configLocation>
         </configuration>
