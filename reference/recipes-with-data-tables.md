@@ -1,5 +1,7 @@
 # Recipes with Data Tables
 
+_This doc contains all of the recipes with **unique** data tables that have been explicitly added by the recipe author. If a recipe contains only the default data tables, it won't be included in this list._
+
 **[Find colliding source files](https://docs.openrewrite.org/?q=org.openrewrite.FindCollidingSourceFiles)**  
 **org.openrewrite.FindCollidingSourceFiles**  
 Finds source files which share a path with another source file. There should always be exactly one source file per path within a repository. This is a diagnostic for finding problems in OpenRewrite parsers/build plugins.
@@ -291,6 +293,13 @@ Upgrades the version of a transitive dependency in a Maven pom file. Leaves dire
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+**[XML style Auto-detection debug](https://docs.openrewrite.org/?q=org.openrewrite.xml.style.AutodetectDebug)**  
+**org.openrewrite.xml.style.AutodetectDebug**  
+Runs XML Autodetect and records the results in data tables and search markers. A debugging tool for figuring out why XML documents get styled the way they do.
+
+  * **org.openrewrite.xml.table.XmlStyleReport**: *Records style information about XML documents. Used for debugging style auto-detection issues.*
+
+
 **[Find Kotlin sources and collect data metrics](https://docs.openrewrite.org/?q=org.openrewrite.kotlin.FindKotlinSources)**  
 **org.openrewrite.kotlin.FindKotlinSources**  
 Use data table to collect source files types and counts of files with extensions `.kt`.
@@ -331,7 +340,9 @@ This recipe calls an AI model to get an embedding for either classes or methods 
 This recipe uses two phase AI approach to find a method invocation that resembles a search string.
 
   * **io.moderne.ai.table.CodeSearch**: *Searches for method invocations that resemble a natural language query.*
+  * **io.moderne.ai.table.TopKMethodMatcher**: *Result from the scanning recipe for top-k method patterns that match the query.*
   * **io.moderne.ai.table.EmbeddingPerformance**: *Latency characteristics of uses of embedding models.*
+  * **io.moderne.ai.table.SuggestedMethodPatterns**: *As the next step after the AI-based searching for method invocations, you may want to do rule-based method searching using the recommended method patterns.*
 
 
 **[Get recommendations](https://docs.openrewrite.org/?q=io.moderne.ai.research.GetRecommendations)**  
@@ -339,6 +350,36 @@ This recipe uses two phase AI approach to find a method invocation that resemble
 This recipe calls an AI model to get recommendations for modernizing the code base by looking at a sample of method declarations.
 
   * **io.moderne.ai.table.Recommendations**: *Collects the recommendations based on sampled methods.*
+
+
+**[Find call graph](https://docs.openrewrite.org/?q=org.openrewrite.FindCallGraph)**  
+**org.openrewrite.FindCallGraph**  
+Produces a data table where each row represents a method call.
+
+  * **org.openrewrite.table.CallGraph**: *Records method callers and the methods they invoke.*
+
+
+**[Find duplicate source files](https://docs.openrewrite.org/?q=org.openrewrite.FindDuplicateSourceFiles)**  
+**org.openrewrite.FindDuplicateSourceFiles**  
+Record the presence of LSTs with duplicate paths, indicating that the same file was parsed more than once.
+
+  * **org.openrewrite.table.DuplicateSourceFiles**: *A list of source files that occur more than once in an LST.*
+
+
+**[Language composition report](https://docs.openrewrite.org/?q=org.openrewrite.LanguageComposition)**  
+**org.openrewrite.LanguageComposition**  
+Counts the number of lines of the various kinds of source code and data formats parsed by OpenRewrite. Comments are not included in line counts. This recipe emits its results as two data tables, making no changes to any source file. One data table is per-file, the other is per-repository.
+
+  * **org.openrewrite.table.LanguageCompositionPerRepository**: *Counts the number of files and lines of source code in the various formats OpenRewrite knows how to parse.*
+  * **org.openrewrite.table.LanguageCompositionPerFolder**: *A list of folders and the language composition and line counts of their contents.*
+  * **org.openrewrite.table.LanguageCompositionPerFile**: *A list of individual files and their language composition.*
+
+
+**[Find uses of docker base images](https://docs.openrewrite.org/?q=org.openrewrite.docker.search.FindDockerImageUses)**  
+**org.openrewrite.docker.search.FindDockerImageUses**  
+Produce an impact analysis of base images used in Dockerfiles.
+
+  * **org.openrewrite.docker.table.DockerBaseImages**: *Records the `FROM` block of Dockerfiles.*
 
 
 **[Dependency insight for Gradle and Maven](https://docs.openrewrite.org/?q=org.openrewrite.java.dependencies.DependencyInsight)**  
