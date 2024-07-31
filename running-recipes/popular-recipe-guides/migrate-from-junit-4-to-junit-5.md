@@ -114,7 +114,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     }
     
     dependencies {
-        implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.13.2"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.13.2"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies
