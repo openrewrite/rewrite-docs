@@ -21,6 +21,18 @@ This recipe is composed of more than one recipe. If you want to customize the se
 {% tabs %}
 {% tab title="Recipe List" %}
 * [Change method name](../../../../../java/changemethodname.md)
+  * methodPattern: `ai.timefold.solver.core.api.score.stream.quad.QuadConstraintStream ifNotExistsIncludingNullVars(..)`
+  * newMethodName: `ifNotExistsIncludingUnassigned`
+* [Change method name](../../../../../java/changemethodname.md)
+  * methodPattern: `ai.timefold.solver.core.api.score.stream.bi.BiConstraintStream ifNotExistsIncludingNullVars(..)`
+  * newMethodName: `ifNotExistsIncludingUnassigned`
+* [Change method name](../../../../../java/changemethodname.md)
+  * methodPattern: `ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifExistsOtherIncludingNullVars(..)`
+  * newMethodName: `ifExistsOtherIncludingUnassigned`
+* [Change method name](../../../../../java/changemethodname.md)
+  * methodPattern: `ai.timefold.solver.core.api.score.stream.ConstraintFactory forEachIncludingNullVars(Class)`
+  * newMethodName: `forEachIncludingUnassigned`
+* [Change method name](../../../../../java/changemethodname.md)
   * methodPattern: `ai.timefold.solver.core.api.score.stream.tri.TriConstraintStream ifExistsIncludingNullVars(..)`
   * newMethodName: `ifExistsIncludingUnassigned`
 * [Change method name](../../../../../java/changemethodname.md)
@@ -41,18 +53,6 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change method name](../../../../../java/changemethodname.md)
   * methodPattern: `ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifExistsIncludingNullVars(..)`
   * newMethodName: `ifExistsIncludingUnassigned`
-* [Change method name](../../../../../java/changemethodname.md)
-  * methodPattern: `ai.timefold.solver.core.api.score.stream.quad.QuadConstraintStream ifNotExistsIncludingNullVars(..)`
-  * newMethodName: `ifNotExistsIncludingUnassigned`
-* [Change method name](../../../../../java/changemethodname.md)
-  * methodPattern: `ai.timefold.solver.core.api.score.stream.bi.BiConstraintStream ifNotExistsIncludingNullVars(..)`
-  * newMethodName: `ifNotExistsIncludingUnassigned`
-* [Change method name](../../../../../java/changemethodname.md)
-  * methodPattern: `ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifExistsOtherIncludingNullVars(..)`
-  * newMethodName: `ifExistsOtherIncludingUnassigned`
-* [Change method name](../../../../../java/changemethodname.md)
-  * methodPattern: `ai.timefold.solver.core.api.score.stream.ConstraintFactory forEachIncludingNullVars(Class)`
-  * newMethodName: `forEachIncludingUnassigned`
 * [Change annotation attribute name](../../../../../java/changeannotationattributename.md)
   * annotationType: `ai.timefold.solver.core.api.domain.variable.PlanningVariable`
   * oldAttributeName: `nullable`
@@ -68,6 +68,18 @@ name: ai.timefold.solver.migration.v8.NullableRecipe
 displayName: PlanningVariable's `nullable` is newly called `unassignedValues`
 description: Removes references to null vars and replace them with unassigned values.
 recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: ai.timefold.solver.core.api.score.stream.quad.QuadConstraintStream ifNotExistsIncludingNullVars(..)
+      newMethodName: ifNotExistsIncludingUnassigned
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: ai.timefold.solver.core.api.score.stream.bi.BiConstraintStream ifNotExistsIncludingNullVars(..)
+      newMethodName: ifNotExistsIncludingUnassigned
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifExistsOtherIncludingNullVars(..)
+      newMethodName: ifExistsOtherIncludingUnassigned
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: ai.timefold.solver.core.api.score.stream.ConstraintFactory forEachIncludingNullVars(Class)
+      newMethodName: forEachIncludingUnassigned
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: ai.timefold.solver.core.api.score.stream.tri.TriConstraintStream ifExistsIncludingNullVars(..)
       newMethodName: ifExistsIncludingUnassigned
@@ -89,18 +101,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifExistsIncludingNullVars(..)
       newMethodName: ifExistsIncludingUnassigned
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: ai.timefold.solver.core.api.score.stream.quad.QuadConstraintStream ifNotExistsIncludingNullVars(..)
-      newMethodName: ifNotExistsIncludingUnassigned
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: ai.timefold.solver.core.api.score.stream.bi.BiConstraintStream ifNotExistsIncludingNullVars(..)
-      newMethodName: ifNotExistsIncludingUnassigned
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifExistsOtherIncludingNullVars(..)
-      newMethodName: ifExistsOtherIncludingUnassigned
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: ai.timefold.solver.core.api.score.stream.ConstraintFactory forEachIncludingNullVars(Class)
-      newMethodName: forEachIncludingUnassigned
   - org.openrewrite.java.ChangeAnnotationAttributeName:
       annotationType: ai.timefold.solver.core.api.domain.variable.PlanningVariable
       oldAttributeName: nullable
@@ -119,7 +119,7 @@ This recipe has no required configuration options. It can be activated by adding
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.0")
+    id("org.openrewrite.rewrite") version("6.17.1")
 }
 
 rewrite {
@@ -147,7 +147,7 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.17.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.17.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
@@ -180,7 +180,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.0</version>
+        <version>5.37.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>

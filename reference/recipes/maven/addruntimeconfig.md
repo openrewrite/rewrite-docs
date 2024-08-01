@@ -19,7 +19,7 @@ _Add a new configuration option for the Maven runtime if not already present._
 | `String` | relativeConfigFileName | The file name for setting the runtime configuration. Valid options: `maven.config`, `jvm.config` | `maven.config` |
 | `String` | flag | The runtime flag name to be set. | `-T` |
 | `String` | argument | *Optional*. The argument to set for the runtime flag. Some flags do not need to provide a value. | `3` |
-| `Separator` | separator | The separator to use if flag and argument have been provided. Valid options: ``, ` `, `=` | `=` |
+| `Separator` | separator | The separator to use if flag and argument have been provided. Valid options: "", " ", `=` | `=` |
 
 
 ## Usage
@@ -55,7 +55,7 @@ Now that `com.yourorg.AddRuntimeConfigExample` has been defined activate it in y
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.0</version>
+        <version>5.37.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>

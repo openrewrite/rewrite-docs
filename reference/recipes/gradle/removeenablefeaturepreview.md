@@ -43,7 +43,7 @@ Now that `com.yourorg.RemoveEnableFeaturePreviewExample` has been defined activa
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.0")
+    id("org.openrewrite.rewrite") version("6.17.1")
 }
 
 rewrite {

@@ -28,7 +28,7 @@ This recipe has no required configuration options. It can be activated by adding
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.0</version>
+        <version>5.37.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
