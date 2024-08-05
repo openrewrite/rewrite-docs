@@ -141,6 +141,14 @@ For instance, we have [a very simple recipe](https://github.com/openrewrite/rewr
 
 To learn more about manipulating LSTs, [check out our recipe conventions and best practices doc](/authoring-recipes/recipe-conventions-and-best-practices.md#recipes-must-not-mutate-lsts).
 
+## How do I replace one statement with multiple new statements using JavaTemplates?
+
+Conceptually, you will want to modify or replace a [single LST element](/concepts-and-explanations/lst-examples.md) with a single other LST element.
+
+For instance, let's say you wanted to replace `int i = 5` with `int i = 5; i++;`. You might be inclined to set the template string to `"int i = 5; i++;"` - but that wouldn't work. Instead, you should wrap those statements up into a [J.Block](/concepts-and-explanations/lst-examples.md#block): `{ int i = 5; i++; }`.
+
+After doing that, you would want to run a `doAfterVisit(new RemoveUnneededBlock.getVisitor())` to remove the unnecessary block again – giving you the desired result.
+
 ## Is it possible to pass arguments to a recipe from the command line?
 This is a challenging problem for a couple of reasons:
 
