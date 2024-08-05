@@ -133,6 +133,14 @@ You can [read more about the new recipe builder](https://www.moderne.ai/blog/mod
 
 Excluding a single recipe from an existing unmodified recipe list would be quite complicated. For a detailed explanation as to why, check out [this post](https://github.com/openrewrite/rewrite-maven-plugin/pull/569#issuecomment-1576793092).
 
+## How do I remove an element from an LST?
+
+Visitors can remove LST elements by returning `null` when visiting the element to be removed. Please keep in mind, though, that it may not always be safe to remove an element. 
+
+For instance, we have [a very simple recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/4608489da8dcdab51e80163a18094264482d88bc/src/main/java/org/openrewrite/staticanalysis/RemoveSystemOutPrintln.java#L44-L49) that checks for certain `System.out.println` methods and removes them. We use this recipe as part of our [Java Recipe best practices](https://github.com/openrewrite/rewrite-recommendations/blob/3d724859e0137bc4ea3d7be845e631f5ed9eddfd/src/main/resources/META-INF/rewrite/openrewrite.yml#L46). However, this can result in incorrect removals as demonstrated in [a PR to OpenRewrite](https://github.com/openrewrite/rewrite/pull/4270#discussion_r1649619823).
+
+To learn more about manipulating LSTs, [check out our recipe conventions and best practices doc](/authoring-recipes/recipe-conventions-and-best-practices.md#recipes-must-not-mutate-lsts).
+
 ## Is it possible to pass arguments to a recipe from the command line?
 This is a challenging problem for a couple of reasons:
 
