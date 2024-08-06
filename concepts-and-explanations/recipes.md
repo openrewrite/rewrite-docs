@@ -110,6 +110,14 @@ recipeList:
 For more information on how to work with and use declarative recipes, please read our [Declarative YAML guide](/reference/yaml-format-reference.md).
 {% endhint %}
 
+## Refaster Template Recipes
+
+Refaster template recipes are used to replace one expression with another – or one statement with another. Because of that, they're ideal for straightforward replacements such as converting `StringUtils.equals(..)` to `Objects.equals(..)`. These are more than just a string replacement, though; they offer compiler and type support.
+
+{% hint style="info" %}
+For more information on Refaster template recipes, please see our [Getting started with Refaster template recipes guide](/authoring-recipes/refaster-recipes.md) or our [documentation on the different types of recipes](/authoring-recipes/types-of-recipes.md).
+{% endhint %}
+
 ## Recipe Configuration & Validation
 
 OpenRewrite provides a managed environment in which a set of recipes are executed. It will instantiate recipe instances and often inject configuration properties that have been defined within configuration files. The Recipe class exposes a `validate()` method that is called by the framework to determine whether all required configuration to a recipe has been supplied. The default implementation of `validate()` provides basic required/optional validation checks if a recipe's fields are annotated with `@NonNull`.
