@@ -52,7 +52,7 @@ Preconditions are a **per-file** check. If a file passes the precondition check,
 If you need to check if **your repository** meets certain criteria, instead (e.g., ensuring that a test source set exists), then you will need to write a custom `ScanningRecipe`.
 {% endhint %}
 
-When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition. When more than one recipe are used as preconditions, all of them must make a change to the file for it to be considered to meet the precondition. 
+When a recipe is used as a precondition, any file it would make a change to is considered to meet the precondition. When more than one recipe is used as a precondition, _all_ of them must make a change to the file for it to be considered to meet the precondition. 
 
 Only when all preconditions are met will the recipes in the recipe list be run. When applying preconditions to `ScanningRecipes` they limit both the scanning phase and the edit phase.
 
@@ -77,7 +77,7 @@ recipeList:
 On its own `ChangeText` would change the contents of all text files in the project to `2`.
 But because `Find` is used as a precondition, `ChangeText` will only be run on files that contain a `1`.
 
-Recipes commonly used as preconditions include:
+**Recipes commonly used as preconditions include:**
 
 * `org.openrewrite.FindSourceFiles` - limits the recipe to only run on files whose path matches a glob pattern
 * `org.openrewrite.text.Find` - limits the recipe to only run on files that contain a given string
@@ -85,6 +85,35 @@ Recipes commonly used as preconditions include:
 * `org.openrewrite.java.search.HasJavaVersion` - limits the recipe to run only on Java source code with the specified source or target compatibility versions. Allowing a recipe to be targeted only at Java 8, 11, 17, etc., code.
 * `org.openrewrite.java.search.IsLikelyTest` - limits the recipe to run only on source code which is likely to be test code.
 * `org.openrewrite.java.search.IsLikelyNotTest` - limits the recipe to run only on source code which is likely to be production code.
+
+#### Creating "OR" preconditions instead of "AND"
+
+As mentioned above, _every_ recipe in the `preconditions` section is run and must apply to a file for it to "meet the precondition". However, what if you wanted to write a recipe where you had many precondition recipes – but you wanted to check if _any_ of them pass rather than _all_ of them?
+
+To do this, you'll want to create a recipe that wraps all of your preconditions up into one recipe, and then use that recipe as the precondition such as in the following example:
+
+```yaml
+type: specs.openrewrite.org/v1beta/recipe
+name: org.sample.DoSomething
+displayName: Do Something
+preconditions:
+  - org.sample.FindAnyJson
+recipeList:
+  - org.openrewrite.json.ChangeKey:
+      qwe: qwe
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.sample.FindAnyJson
+recipeList:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: "**/my.json"
+  - org.openrewrite.FindSourceFiles:
+      filePattern: "**/your.json"
+  - org.openrewrite.FindSourceFiles:
+      filePattern: "**/our.json"
+```
+
+In this example, if a file matches `**/my.json` OR `**/your.json*` OR `**/our.json`, then the precondition has passed and the `ChangeKey` recipe will be applied to it.
 
 ### Recipe list
 
