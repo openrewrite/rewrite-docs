@@ -252,6 +252,7 @@ quarkus
 Querydsl
 quickstart
 qute
+qwe
 reactivestreams
 rebranded
 recipespec
