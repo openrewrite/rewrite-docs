@@ -13,7 +13,7 @@ The [Common Static Analysis Recipe](https://docs.openrewrite.org/recipes/statica
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>5.37.0</version>
+  <version>5.39.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>

@@ -11,7 +11,7 @@ The use of the "bill of materials" means that a developer will only need to spec
 | Module                                                                                                                | Version    |
 |-----------------------------------------------------------------------------------------------------------------------| ---------- |
 | [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                    |            |
-| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                       | **[5.37.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v5.37.0)** |
+| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                       | **[5.39.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v5.39.0)** |
 | [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[6.17.0](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v6.17.0)** |
 | [org.openrewrite:rewrite-core](https://github.com/openrewrite/rewrite)                                                | [8.32.0](https://github.com/openrewrite/rewrite/releases/tag/v8.32.0) |
 | [org.openrewrite:rewrite-gradle](https://github.com/openrewrite/rewrite)                                              | [8.32.0](https://github.com/openrewrite/rewrite/releases/tag/v8.32.0) |

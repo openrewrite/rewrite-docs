@@ -70,7 +70,7 @@ Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks lik
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>5.37.0</version>
+  <version>5.39.0</version>
 </plugin>
 ```
 {% endcode %}
@@ -150,7 +150,7 @@ Before you can run any of the recipes, you will need to update the plugin config
 <plugin>
   <groupId>org.openrewrite.maven</groupId>
   <artifactId>rewrite-maven-plugin</artifactId>
-  <version>5.37.0</version>
+  <version>5.39.0</version>
   <configuration>
     <activeRecipes>
       <recipe>org.openrewrite.java.OrderImports</recipe>
@@ -265,7 +265,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.37.0</version>
+      <version>5.39.0</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.OrderImports</recipe>
@@ -357,7 +357,7 @@ After doing that, your `pom.xml` file should look similar to this:
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.0</version>
+        <version>5.39.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.OrderImports</recipe>

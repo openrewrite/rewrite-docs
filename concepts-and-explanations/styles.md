@@ -93,7 +93,7 @@ Update your `pom.xml` file to include an `<activeStyles>` such as in:
   <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>5.37.0</version>
+    <version>5.39.0</version>
     <configuration>
       <activeRecipes>
         <!-- Recipes here -->

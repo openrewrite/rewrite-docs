@@ -17,7 +17,7 @@ If you want to see what recipes have data tables and what those tables are, chec
 By default, OpenRewrite recipes will **not** produce a data table. In order for a recipe to produce one, you will need to do two things:
 
 1. You will need to ensure your project is built with
-   - [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) version `5.37.0` or higher.
+   - [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) version `5.39.0` or higher.
    - [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin/) version `6.16.5` or higher. 
 2. Next, you will either need to update build file or modify your command for running a recipe:
 
@@ -62,7 +62,7 @@ Add `<exportDatatables>true</exportDatatables>` to your `pom.xml` file such as i
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>5.37.0</version>
+    <version>5.39.0</version>
     <configuration>
         <exportDatatables>true</exportDatatables>
         <activeRecipes>
