@@ -8,11 +8,11 @@ _Ensure that the file ends with the newline character.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/EndOfLineAtEndOfFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.32.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/EndOfLineAtEndOfFile.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.33.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.32.0
+* version: 8.33.4
 
 
 ## Usage
@@ -24,7 +24,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.1")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -70,7 +70,12 @@ rootProject {
 }
 ```
 {% endcode %}
-2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+2. Run the recipe.
+{% code title="shell" overflow="wrap"%}
+```shell
+gradle --init-script init.gradle rewriteRun
+```
+{% endcode %}
 {% endtab %}
 {% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
@@ -82,7 +87,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.1</version>
+        <version>5.39.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>

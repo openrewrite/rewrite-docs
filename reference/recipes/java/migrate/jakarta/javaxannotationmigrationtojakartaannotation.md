@@ -12,11 +12,11 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.22.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.21.0
+* version: 2.22.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -38,35 +38,13 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * newGroupId: `jakarta.annotation`
   * newArtifactId: `jakarta.annotation-api`
   * newVersion: `latest.release`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.Generated`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Generated`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.ManagedBean`
-  * newFullyQualifiedTypeName: `jakarta.annotation.ManagedBean`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nonnull`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Nonnull`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Nullable`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.PostConstruct`
-  * newFullyQualifiedTypeName: `jakarta.annotation.PostConstruct`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.PreDestroy`
-  * newFullyQualifiedTypeName: `jakarta.annotation.PreDestroy`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.Priority`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Priority`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.Resource`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Resource`
-* [Change type](../../../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.Resources`
-  * newFullyQualifiedTypeName: `jakarta.annotation.Resources`
-* [Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`](../../../java/migrate/jakarta/javaxannotationsecuritypackagetojakarta.md)
-* [Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`](../../../java/migrate/jakarta/javaxannotationsqlpackagetojakarta.md)
+* [Rename package name](../../../java/changepackage.md)
+  * oldPackageName: `javax.annotation`
+  * newPackageName: `jakarta.annotation`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage.md)
+  * oldPackageName: `jakarta.annotation.processing`
+  * newPackageName: `javax.annotation.processing`
 
 {% endtab %}
 
@@ -94,35 +72,13 @@ recipeList:
       newGroupId: jakarta.annotation
       newArtifactId: jakarta.annotation-api
       newVersion: latest.release
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Generated
-      newFullyQualifiedTypeName: jakarta.annotation.Generated
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.ManagedBean
-      newFullyQualifiedTypeName: jakarta.annotation.ManagedBean
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nonnull
-      newFullyQualifiedTypeName: jakarta.annotation.Nonnull
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nullable
-      newFullyQualifiedTypeName: jakarta.annotation.Nullable
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.PostConstruct
-      newFullyQualifiedTypeName: jakarta.annotation.PostConstruct
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.PreDestroy
-      newFullyQualifiedTypeName: jakarta.annotation.PreDestroy
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Priority
-      newFullyQualifiedTypeName: jakarta.annotation.Priority
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Resource
-      newFullyQualifiedTypeName: jakarta.annotation.Resource
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Resources
-      newFullyQualifiedTypeName: jakarta.annotation.Resources
-  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationSecurityPackageToJakarta
-  - org.openrewrite.java.migrate.jakarta.JavaxAnnotationSqlPackageToJakarta
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: javax.annotation
+      newPackageName: jakarta.annotation
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: jakarta.annotation.processing
+      newPackageName: javax.annotation.processing
 
 ```
 {% endtab %}
@@ -130,14 +86,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.21.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.22.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.1")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -150,7 +106,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.21.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.22.0")
 }
 ```
 {% endcode %}
@@ -165,12 +121,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.17.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.20.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.21.0")
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.22.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation")
@@ -186,7 +142,12 @@ rootProject {
 }
 ```
 {% endcode %}
-2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+2. Run the recipe.
+{% code title="shell" overflow="wrap"%}
+```shell
+gradle --init-script init.gradle rewriteRun
+```
+{% endcode %}
 {% endtab %}
 {% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
@@ -198,7 +159,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.1</version>
+        <version>5.39.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -209,7 +170,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.21.0</version>
+            <version>2.22.0</version>
           </dependency>
         </dependencies>
       </plugin>

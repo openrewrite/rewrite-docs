@@ -11,7 +11,7 @@ _Recipes to perform [Micrometer](https://micrometer.io/) migration tasks._
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Migrate to Micrometer 1.13](./upgrademicrometer13.md)
+* [Migrate to Micrometer 1.13](./upgrademicrometer_1_13.md)
 
 ## Recipes
 

@@ -6,11 +6,11 @@ _Currently, Java requires use-site type variance, so if someone has `Function<IN
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/DeclarationSiteTypeVariance.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.13.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/DeclarationSiteTypeVariance.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.14.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.13.0
+* version: 1.14.0
 
 ## Options
 
@@ -39,14 +39,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.13.0 in your build file:
+Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.14.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.1")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -59,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.13.0")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.14.0")
 }
 ```
 {% endcode %}
@@ -75,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.1</version>
+        <version>5.39.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -86,7 +86,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.13.0</version>
+            <version>1.14.0</version>
           </dependency>
         </dependencies>
       </plugin>

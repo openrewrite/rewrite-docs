@@ -10,11 +10,11 @@ _Locates Discord secrets stored in plain text in code._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.11.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/resources/META-INF/rewrite/secrets.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.11.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.11.1
+* version: 2.11.2
 
 
 ## Definition
@@ -47,14 +47,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.11.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-java-security:2.11.2` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.1")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.11.1")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.11.2")
 }
 ```
 {% endcode %}
@@ -82,12 +82,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.17.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.20.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-java-security:2.11.1")
+        rewrite("org.openrewrite.recipe:rewrite-java-security:2.11.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.security.secrets.FindDiscordSecrets")
@@ -103,7 +103,12 @@ rootProject {
 }
 ```
 {% endcode %}
-2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+2. Run the recipe.
+{% code title="shell" overflow="wrap"%}
+```shell
+gradle --init-script init.gradle rewriteRun
+```
+{% endcode %}
 {% endtab %}
 {% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
@@ -115,7 +120,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.1</version>
+        <version>5.39.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -126,7 +131,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.11.1</version>
+            <version>2.11.2</version>
           </dependency>
         </dependencies>
       </plugin>

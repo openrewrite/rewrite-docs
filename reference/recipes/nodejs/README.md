@@ -8,6 +8,7 @@ _Node.js dependency and package management._
 
 ## Recipes
 
+* [Find and fix vulnerable npm dependencies](./dependencyvulnerabilitycheck.md)
 * [Upgrade Node.js dependencies](./upgradedependencyversion.md)
 
 

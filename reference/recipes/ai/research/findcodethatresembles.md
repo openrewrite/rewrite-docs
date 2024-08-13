@@ -6,11 +6,11 @@ _This recipe uses two phase AI approach to find a method invocation that resembl
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/FindCodeThatResembles.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/0.15.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/FindCodeThatResembles.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/0.16.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-ai-search
-* version: 0.15.0
+* version: 0.16.1
 
 ## Options
 
@@ -38,14 +38,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.FindCodeThatResemblesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-ai-search:0.15.0 in your build file:
+Now that `com.yourorg.FindCodeThatResemblesExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-ai-search:0.16.1 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.1")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -58,7 +58,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-ai-search:0.15.0")
+    rewrite("org.openrewrite.recipe:rewrite-ai-search:0.16.1")
 }
 ```
 {% endcode %}
@@ -74,7 +74,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.1</version>
+        <version>5.39.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -85,7 +85,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-ai-search</artifactId>
-            <version>0.15.0</version>
+            <version>0.16.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -154,6 +154,18 @@ _Latency characteristics of uses of embedding models._
 | Histogram | The latency histogram of the requests made to the model (counts). The histogram is a non-cumulative fixed distribution of 100 buckets of 0.01 second each. |
 | Max latency | The maximum embedding latency. |
 
+### Generative model performance
+**io.moderne.ai.table.GenerativeModelPerformance**
+
+_Latency characteristics of uses of generative models._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file that the method call occurred in. |
+| Number of requests | The count of requests made to the model. |
+| Histogram | The latency histogram of the requests made to the model (counts). The histogram is a non-cumulative fixed distribution of 100 buckets of 1 second each. |
+| Max latency | The maximum embedding latency. |
+
 ### Suggested method patterns
 **io.moderne.ai.table.SuggestedMethodPatterns**
 
@@ -163,6 +175,7 @@ _As the next step after the AI-based searching for method invocations, you may w
 | ----------- | ----------- |
 | Method | Method invocation |
 | Method Pattern | Method invocation pattern. |
+| Query | The natural language search query. |
 
 ### Source files that had results
 **org.openrewrite.table.SourcesFileResults**

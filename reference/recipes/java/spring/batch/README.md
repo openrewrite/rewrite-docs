@@ -4,6 +4,7 @@
 
 * [Migrate `ItemWriter`](./migrateitemwriterwrite.md)
 * [Migrate `JobBuilderFactory` to `JobBuilder`](./migratejobbuilderfactory.md)
+* [Migrate `StepBuilderFactory` to `StepBuilder`](./migratestepbuilderfactory.md)
 * [Remove `DefaultBatchConfigurer`](./removedefaultbatchconfigurer.md)
 * [Transform classes that extend `ChunkListenerSupport` to implement the `ChunkListener` interface instead](./implementchunklistenerdirectly.md)
 * [Transform classes that extend `JobExecutionListenerSupport` to implement the `JobExecutionListener` interface instead](./implementjobexecutionlistenerdirectly.md)

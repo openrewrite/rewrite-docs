@@ -35,5 +35,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find uses of deprecated methods](./finddeprecatedmethods.md)
 * [Find within comments and literals](./findcomments.md)
 * [Result of method call ignored](./resultofmethodcallignored.md)
+* [Study the size of the classpath by source set](./classpathtypecounts.md)
 
 

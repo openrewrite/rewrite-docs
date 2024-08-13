@@ -21,9 +21,12 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer the Java 11 standard library instead of Guava](./noguavajava11.md)
 * [Prefer the Java 21 standard library instead of Guava](./noguavajava21.md)
 * [Prefer the Java standard library instead of Guava](./noguava.md)
+* [Refaster style Guava to Java migration recipes](./noguavarefasterrecipes.md)
 
 ## Recipes
 
+* [`Preconditions.checkNotNull` to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnulltoobjectsrequirenonnullrecipe.md)
+* [Prefer `Arrays.asList(..)` over Guava primitives](./noguavaprimitiveaslist.md)
 * [Prefer `Files#createTempDirectory()`](./noguavacreatetempdir.md)
 * [Prefer `Integer#compare`](./preferintegercompare.md)
 * [Prefer `Integer#parseUnsignedInt`](./preferintegerparseunsignedint.md)
@@ -54,7 +57,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `new LinkedHashMap<>()`](./noguavamapsnewlinkedhashmap.md)
 * [Prefer `new LinkedHashSet<>()`](./noguavasetsnewlinkedhashset.md)
 * [Prefer `new LinkedList<>()`](./noguavalistsnewlinkedlist.md)
+* [Prefer `new TreeMap<>()`](./noguavamapsnewtreemap.md)
 * [Remove `com.google.common.base.Optional#toJavaUtil()`](./noguavaoptionaltojavautil.md)
 * [Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument](./noguavaoptionalfromjavautil.md)
+* [`String.valueof(String)` to `String`](./noguavarefasterrecipes$stringvalueofstringrecipe.md)
 
 

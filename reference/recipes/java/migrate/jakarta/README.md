@@ -14,8 +14,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](./javaxeeapitojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](./javaxactivationmigrationtojakartaactivation.md)
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](./javaxannotationmigrationtojakartaannotation.md)
-* [Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`](./javaxannotationsecuritypackagetojakarta.md)
-* [Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`](./javaxannotationsqlpackagetojakarta.md)
 * [Migrate deprecated `javax.batch` packages to `jakarta.batch`](./javaxbatchmigrationtojakartabatch.md)
 * [Migrate deprecated `javax.decorator` packages to `jakarta.decorator`](./javaxdecoratortojakartadecorator.md)
 * [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](./javaxejbtojakartaejb.md)

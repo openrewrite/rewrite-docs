@@ -11,11 +11,11 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.15.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.15.0
+* version: 2.16.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -28,9 +28,23 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Migrate to AssertJ assertions](../../../java/testing/hamcrest/migratehamcresttoassertj.md)
 * [Migrate JUnit asserts to AssertJ](../../../java/testing/assertj/junittoassertj.md)
 * [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports.md)
-* [Convert `assertThat(String).isEqualTo(true)` to `isTrue()` and `isEqualTo(false)` to `isFalse()`](../../../java/testing/assertj/isequaltoboolean.md)
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions.md)
-* [Convert `assertThat(String).isEqualTo("")` to `isEmpty()`](../../../java/testing/assertj/isequaltoemptystring.md)
+* [Shorten AssertJ assertions](../../../java/testing/assertj/simplifyassertjassertions.md)
+* [Refaster rules related to AssertJ assertions over `BigDecimal`s](../../../tech/picnic/errorprone/refasterrules/assertjbigdecimalrulesrecipes.md)
+* [`AssertJBigIntegerRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes.md)
+* [`AssertJBooleanRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjbooleanrulesrecipes.md)
+* [`AssertJByteRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjbyterulesrecipes.md)
+* [`AssertJCharSequenceRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes.md)
+* [`AssertJDoubleRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjdoublerulesrecipes.md)
+* [`AssertJFloatRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjfloatrulesrecipes.md)
+* [`AssertJIntegerRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjintegerrulesrecipes.md)
+* [`AssertJLongRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjlongrulesrecipes.md)
+* [`AssertJNumberRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjnumberrulesrecipes.md)
+* [`AssertJPrimitiveRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjprimitiverulesrecipes.md)
+* [Refaster rules related to AssertJ expressions and statements](../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes.md)
+* [`AssertJShortRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjshortrulesrecipes.md)
+* [`AssertJStringRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes.md)
+* [Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype](../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes.md)
 
 {% endtab %}
 
@@ -48,9 +62,23 @@ recipeList:
   - org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ
   - org.openrewrite.java.testing.assertj.JUnitToAssertj
   - org.openrewrite.java.testing.assertj.StaticImports
-  - org.openrewrite.java.testing.assertj.IsEqualToBoolean
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions
-  - org.openrewrite.java.testing.assertj.IsEqualToEmptyString
+  - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions
+  - tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes
 
 ```
 {% endtab %}
@@ -58,14 +86,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.15.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.16.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.1")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -78,7 +106,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.15.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.16.0")
 }
 ```
 {% endcode %}
@@ -93,12 +121,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.17.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.20.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.15.0")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.16.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.assertj.Assertj")
@@ -114,7 +142,12 @@ rootProject {
 }
 ```
 {% endcode %}
-2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+2. Run the recipe.
+{% code title="shell" overflow="wrap"%}
+```shell
+gradle --init-script init.gradle rewriteRun
+```
+{% endcode %}
 {% endtab %}
 {% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
@@ -126,7 +159,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.1</version>
+        <version>5.39.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -137,7 +170,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.15.0</version>
+            <version>2.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -223,4 +256,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Knut Wannheden](mailto:knut@moderne.io), [Greg Adams](mailto:greg@moderne.io), Yeikel, [Jonathan Schnéider](mailto:jkschneider@gmail.com), Patrick Way, [Patrick](mailto:patway99@gmail.com), Adriano Machado, Marvin, [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Philippe GRANET](mailto:philippe.granet@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jeroen Meijer](mailto:jjgmeijer@gmail.com), Ties van de Ven, [Aaron Gershman](mailto:aegershman@gmail.com), timo-abele, [Scott Jungling](mailto:scott.jungling@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de)
+[Tim te Beek](mailto:tim@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), Marvin, [Knut Wannheden](mailto:knut@moderne.io), [Greg Adams](mailto:greg@moderne.io), Yeikel, [Jonathan Schnéider](mailto:jkschneider@gmail.com), Patrick Way, [Patrick](mailto:patway99@gmail.com), Adriano Machado, [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Philippe GRANET](mailto:philippe.granet@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jeroen Meijer](mailto:jjgmeijer@gmail.com), Ties van de Ven, [Aaron Gershman](mailto:aegershman@gmail.com), timo-abele, [Scott Jungling](mailto:scott.jungling@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de)

@@ -6,11 +6,11 @@ _Find resources of a particular type that have pinned versions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/search/FindPinnedResource.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.6.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/search/FindPinnedResource.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.6.3/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-concourse
-* version: 2.6.1
+* version: 2.6.3
 
 ## Options
 
@@ -46,14 +46,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-concourse:2.6.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-concourse:2.6.3` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.1")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:2.6.1")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:2.6.3")
 }
 ```
 {% endcode %}
@@ -81,12 +81,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.17.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.20.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-concourse:2.6.1")
+        rewrite("org.openrewrite.recipe:rewrite-concourse:2.6.3")
     }
     rewrite {
         activeRecipe("org.openrewrite.concourse.search.FindPinnedResource")
@@ -102,7 +102,12 @@ rootProject {
 }
 ```
 {% endcode %}
-2. Run `gradle --init-script init.gradle rewriteRun` to run the recipe.
+2. Run the recipe.
+{% code title="shell" overflow="wrap"%}
+```shell
+gradle --init-script init.gradle rewriteRun
+```
+{% endcode %}
 {% endtab %}
 {% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
@@ -114,7 +119,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.1</version>
+        <version>5.39.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -125,7 +130,7 @@ rootProject {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>2.6.1</version>
+            <version>2.6.3</version>
           </dependency>
         </dependencies>
       </plugin>

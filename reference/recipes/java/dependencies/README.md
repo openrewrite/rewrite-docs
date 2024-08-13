@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find licenses in use in third-party dependencies](./dependencylicensecheck.md)
 * [Find relocated dependencies](./relocateddependencycheck.md)
 * [Remove expired suppressions](./removeexpiredsuppressions.md)
+* [Software bill of materials](./softwarebillofmaterials.md)
 * [Upgrade Gradle or Maven dependency versions](./upgradedependencyversion.md)
 * [Upgrade transitive Gradle or Maven dependencies](./upgradetransitivedependencyversion.md)
 

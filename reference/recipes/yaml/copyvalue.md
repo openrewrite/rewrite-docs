@@ -6,19 +6,19 @@ _Copies a YAML value from one key to another. The existing key/value pair remain
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.32.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/CopyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.33.4/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.32.0
+* version: 8.33.4
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | oldKeyPath | A [JsonPath](https://github.com/json-path/JsonPath) expression to locate a YAML key/value pair to copy. | `$.source.kind` |
+| `String` | oldKeyPath | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression to locate a YAML key/value pair to copy. | `$.source.kind` |
 | `String` | oldFilePath | *Optional*. The file path to the YAML file to copy the value from. If `null` then the value will be copied from any yaml file it appears within. | `src/main/resources/application.yaml` |
-| `String` | newKey | A [JsonPath](https://github.com/json-path/JsonPath) expression defining where the value should be written. | `$.dest.kind` |
+| `String` | newKey | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression defining where the value should be written. | `$.dest.kind` |
 | `String` | newFilePath | *Optional*. The file path to the YAML file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.yaml` |
 
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.CopyValueExample` has been defined activate it in your bui
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.1")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -74,7 +74,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.37.1</version>
+        <version>5.39.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>

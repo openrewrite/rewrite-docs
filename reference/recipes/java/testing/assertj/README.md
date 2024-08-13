@@ -6,14 +6,13 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [AssertJ best practices](./assertj.md)
 * [Migrate JUnit asserts to AssertJ](./junittoassertj.md)
+* [Shorten AssertJ assertions](./simplifyassertjassertions.md)
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertions.md)
 * [Statically import AssertJ's `assertThat`](./staticimports.md)
 
 ## Recipes
 
 * [Adopt AssertJ Duration assertions](./adoptassertjdurationassertions.md)
-* [Convert `assertThat(String).isEqualTo("")` to `isEmpty()`](./isequaltoemptystring.md)
-* [Convert `assertThat(String).isEqualTo(true)` to `isTrue()` and `isEqualTo(false)` to `isFalse()`](./isequaltoboolean.md)
 * [JUnit AssertThrows to AssertJ exceptionType](./junitassertthrowstoassertexceptiontype.md)
 * [JUnit `assertArrayEquals` To AssertJ](./junitassertarrayequalstoassertthat.md)
 * [JUnit `assertEquals` to AssertJ](./junitassertequalstoassertthat.md)
@@ -24,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [JUnit `assertSame` to AssertJ](./junitassertsametoassertthat.md)
 * [JUnit `assertTrue` to AssertJ](./junitasserttruetoassertthat.md)
 * [JUnit fail to AssertJ](./junitfailtoassertjfail.md)
+* [Simplify AssertJ assertions with literal arguments](./simplifyassertjassertion.md)
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertion.md)
 
 

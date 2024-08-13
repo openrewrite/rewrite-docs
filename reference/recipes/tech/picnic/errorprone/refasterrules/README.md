@@ -97,6 +97,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Duration#ofMinutes(long)` over alternative representations](./timerulesrecipes$durationofminutesrecipe.md)
 * [Prefer `Duration#ofNanos(long)` over alternative representations](./timerulesrecipes$durationofnanosrecipe.md)
 * [Prefer `Duration#ofSeconds(long)` over alternative representations](./timerulesrecipes$durationofsecondsrecipe.md)
+* [Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions](./filerulesrecipes$filescreatetempfiletofilerecipe.md)
 * [Prefer `Files#readString(Path)` over more verbose alternatives](./filerulesrecipes$filesreadstringrecipe.md)
 * [Prefer `Files#readString(Path, Charset)` over more contrived alternatives](./filerulesrecipes$filesreadstringwithcharsetrecipe.md)
 * [Prefer `Float#BYTES` over the Guava alternative](./primitiverulesrecipes$floatbytesrecipe.md)
