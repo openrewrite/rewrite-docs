@@ -160,6 +160,20 @@ Find method calls by pattern.
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
+**[Find types](https://docs.openrewrite.org/?q=org.openrewrite.java.search.FindTypes)**  
+**org.openrewrite.java.search.FindTypes**  
+Find type references by name.
+
+  * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
+
+
+**[Study the size of the classpath by source set](https://docs.openrewrite.org/?q=org.openrewrite.java.search.ClasspathTypeCounts)**  
+**org.openrewrite.java.search.ClasspathTypeCounts**  
+Emit one data table row per source set in a project, with the number of types in the source set.
+
+  * **org.openrewrite.java.table.ClasspathTypeCount**: *The number of types in each source set in a project's classpath.*
+
+
 **[Find type mappings](https://docs.openrewrite.org/?q=org.openrewrite.java.search.FindTypeMappings)**  
 **org.openrewrite.java.search.FindTypeMappings**  
 Study the frequency of `J` types and their `JavaType` type attribution.
@@ -342,6 +356,7 @@ This recipe uses two phase AI approach to find a method invocation that resemble
   * **io.moderne.ai.table.CodeSearch**: *Searches for method invocations that resemble a natural language query.*
   * **io.moderne.ai.table.TopKMethodMatcher**: *Result from the scanning recipe for top-k method patterns that match the query.*
   * **io.moderne.ai.table.EmbeddingPerformance**: *Latency characteristics of uses of embedding models.*
+  * **io.moderne.ai.table.GenerativeModelPerformance**: *Latency characteristics of uses of generative models.*
   * **io.moderne.ai.table.SuggestedMethodPatterns**: *As the next step after the AI-based searching for method invocations, you may want to do rule-based method searching using the recommended method patterns.*
 
 
@@ -471,6 +486,13 @@ Find data elements used on DTOs. This is useful to provide information where dat
 Finds Java versions in use.
 
   * **org.openrewrite.java.migrate.table.JavaVersionTable**: *Records versions of Java in use*
+
+
+**[Find and fix vulnerable npm dependencies](https://docs.openrewrite.org/?q=org.openrewrite.nodejs.DependencyVulnerabilityCheck)**  
+**org.openrewrite.nodejs.DependencyVulnerabilityCheck**  
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.
+
+  * **org.openrewrite.nodejs.table.VulnerabilityReport**: *A vulnerability report that includes detailed information about the affected artifact and the corresponding CVEs.*
 
 
 **[Node.js dependency insight](https://docs.openrewrite.org/?q=org.openrewrite.nodejs.search.DependencyInsight)**  
