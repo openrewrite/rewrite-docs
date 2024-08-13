@@ -38,7 +38,7 @@ Now that a recipe named `com.yourorg.FooToBar` has been created, set that recipe
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.17.0")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
@@ -100,7 +100,7 @@ Now when the next version of `A` is published its JAR will include this recipe. 
 ```groovy
 plugins {
     id("java")
-    id("org.openrewrite.rewrite") version("6.17.0")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 dependencies {

@@ -88,7 +88,7 @@ Your file should look similar to:
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.17.0'
+    id 'org.openrewrite.rewrite' version '6.20.0'
 }
 
 repositories {
@@ -118,7 +118,7 @@ Your file should look similar to:
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.17.0"
+    id("org.openrewrite.rewrite") version "6.20.0"
 }
 
 repositories {
@@ -167,7 +167,7 @@ Before you can run any of the recipes, you will need to update the plugin config
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.17.0'
+    id 'org.openrewrite.rewrite' version '6.20.0'
 }
 
 rewrite {
@@ -185,7 +185,7 @@ rewrite {
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.17.0"
+    id("org.openrewrite.rewrite") version "6.20.0"
 }
 
 rewrite {
@@ -285,7 +285,7 @@ If the file was created correctly, you should see `com.yourorg.VetToVeterinary` 
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.17.0'
+    id 'org.openrewrite.rewrite' version '6.20.0'
 }
 
 rewrite {
@@ -304,7 +304,7 @@ rewrite {
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.17.0"
+    id("org.openrewrite.rewrite") version "6.20.0"
 }
 
 rewrite {
@@ -404,7 +404,7 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'org.openrewrite.rewrite' version '6.17.0'
+    id 'org.openrewrite.rewrite' version '6.20.0'
 }
 
 rewrite {
@@ -431,7 +431,7 @@ dependencies {
 plugins {
     `java-library`
     `maven-publish`
-    id("org.openrewrite.rewrite") version "6.17.0"
+    id("org.openrewrite.rewrite") version "6.20.0"
 }
 
 rewrite {

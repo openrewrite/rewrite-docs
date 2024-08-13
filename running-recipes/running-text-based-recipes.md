@@ -50,7 +50,7 @@ Now that we have the recipe defined in our `rewrite.yml` file, we can update our
 {% tab title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.17.0")
+    id("org.openrewrite.rewrite") version("6.20.0")
 }
 
 rewrite {
