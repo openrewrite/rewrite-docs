@@ -21,6 +21,7 @@ avro
 Awt
 axonframework
 azzert
+Backpressure
 Bazel
 baz
 bfa
@@ -95,9 +96,13 @@ endtab
 errorprone
 equalsignorecaserecipe
 equalsrecipe
+expressiove
 Failover
 fasterxml
+featureflags
 fileexistsstringrecipe
+fns
+Formik
 gav
 getfilerecipe
 gitbook
@@ -190,6 +195,7 @@ kts
 launchdarkly
 Lermitage
 linebreak
+linting
 liquibase
 logback
 lombok
@@ -228,6 +234,7 @@ OIDC
 okhttp
 okio
 omg
+openfeature
 openj
 openrewrite
 opensymphony
@@ -273,6 +280,7 @@ Rsa
 Runtimes
 SAAS
 saml
+sbom
 scanningrecipe
 scryptpasswordencoder
 SDKMAN
@@ -304,6 +312,7 @@ startswith
 staticanalysis
 Stewjon
 striprecipe
+Stylelint
 subdir
 subpackages
 superclasses
@@ -334,11 +343,13 @@ urlfourargumentconstructorrecipe
 urlsingleargumentconstructorrecipe
 urlthreeargumentconstructorrecipe
 useequalsignorecaserecipe
+valueof
 varargs
 variabledeclarations
 versioning
 vladmihalcea
 VPC
+Vuex
 Webflux
 websecurityconfigureradapter
 Websphere
