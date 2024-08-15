@@ -114,7 +114,11 @@ It could also be that a particular file is not parsed correctly. In such cases y
 You can use the [Find source files with ParseExceptionResult markers](https://docs.openrewrite.org/recipes/core/findparsefailures) diagnostic recipe to find & report these issues.
 Note that this again [produces a data table](https://docs.moderne.io/user-documentation/data-tables) for you to inspect.
 
-If neither of those issues are present, then you might want to look at some diagnostic data tables we produce for each recipe run.
+In some cases missing changes can be attributed to a failure to connect to Artifactory, Nexus, while building up the LST model, or while running recipes.
+Quite a few recipes emit a `org.openrewrite.maven.table.MavenMetadataFailures` data table where such issues were detected.
+You might then want to run the [Dependency resolution diagnostic](https://docs.openrewrite.org/recipes/java/dependencies/dependencyresolutiondiagnostic) recipe to troubleshoot your connectivity.
+
+If none of those issues are present, then you might want to look at some diagnostic data tables we produce for each recipe run.
 Once enabled you can get insight into which recipes had results, or errors, and their runtime statistics. Look for these tables in your target folder to learn which recipes had results.
 ```
 org.openrewrite.table.SourcesFileResults
