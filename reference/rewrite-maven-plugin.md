@@ -17,7 +17,6 @@ The OpenRewrite Maven plugin offers these goals:
 * `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each maven modules' `target` folder.
 * `mvn rewrite:dryRunNoFork` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each maven modules' `target` folder. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
 * `mvn rewrite:discover` - Generate a report of available recipes found on the classpath.
-* `mvn rewrite:cyclonedx` - Generate a [CycloneDx](https://cyclonedx.org) bill of materials outlining the project's dependencies, including transitive dependencies.
 
 {% hint style="info" %}
 _`rewrite`_ name-spaced properties can be used for substituting plugin properties
@@ -186,12 +185,6 @@ Execute `mvn rewrite:discover` to list the recipes that the OpenRewrite Maven pl
 The discover goal will produce additional details (including recipe configuration options) when setting the `details` flag:  `mvn rewrite:discover -Ddetail=true`
 
 ![Recipes showing their configurable parameters. "!" means a parameter is required.](<../.gitbook/assets/configurable-param.png>)
-
-## The "CycloneDx" goal
-
-Execute `rewrite:cyclonedx` to generate a [CycloneDx](https://cyclonedx.org) bill of materials (BOM) outlining all of the project's dependencies, including transitive dependencies. The BOM will be written to target/\<module name>-\<version>-cyclonedx.xml.
-
-![Excerpt from OpenRewrite-generated CycloneDx BOM](<../.gitbook/assets/cyclone-bom.png>)
 
 ## Rewrite's pom cache
 
