@@ -1,4 +1,4 @@
-# Replace depricated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader
+# Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader
 
 **org.apache.camel.updates.camel44.DefaultJsonSchemaLoader**
 
