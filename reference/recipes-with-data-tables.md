@@ -397,6 +397,13 @@ Produce an impact analysis of base images used in Dockerfiles.
   * **org.openrewrite.docker.table.DockerBaseImages**: *Records the `FROM` block of Dockerfiles.*
 
 
+**[Dependency insight for C#](https://docs.openrewrite.org/?q=org.openrewrite.csharp.dependencies.DependencyInsight)**  
+**org.openrewrite.csharp.dependencies.DependencyInsight**  
+Finds dependencies in `*.csproj` and `packages.config`.
+
+  * **org.openrewrite.maven.table.DependenciesInUse**: *Direct and transitive dependencies in use.*
+
+
 **[Dependency insight for Gradle and Maven](https://docs.openrewrite.org/?q=org.openrewrite.java.dependencies.DependencyInsight)**  
 **org.openrewrite.java.dependencies.DependencyInsight**  
 Finds dependencies, including transitive dependencies, in both Gradle and Maven projects. Matches within all Gradle dependency configurations and Maven scopes.
@@ -409,6 +416,13 @@ Finds dependencies, including transitive dependencies, in both Gradle and Maven 
 Emits a data table detailing all Gradle and Maven dependencies.This recipe makes no changes to any source file.
 
   * **org.openrewrite.java.dependencies.table.DependencyListReport**: *Lists all Gradle and Maven dependencies*
+
+
+**[Find and fix vulnerable Nuget dependencies](https://docs.openrewrite.org/?q=org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck)**  
+**org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck**  
+This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.
+
+  * **org.openrewrite.csharp.dependencies.table.VulnerabilityReport**: *A vulnerability report that includes detailed information about the affected artifact and the corresponding CVEs.*
 
 
 **[Find licenses in use in third-party dependencies](https://docs.openrewrite.org/?q=org.openrewrite.java.dependencies.DependencyLicenseCheck)**  
