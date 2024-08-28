@@ -16,6 +16,7 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 * [Spring Boot 3.x](/reference/recipes/java/spring/boot3)
 * [Spring Data](/reference/recipes/java/spring/data)
 * [Spring Framework](/reference/recipes/java/spring/framework)
+* [Test](/reference/recipes/java/spring/test)
 
 ## Composite Recipes
 

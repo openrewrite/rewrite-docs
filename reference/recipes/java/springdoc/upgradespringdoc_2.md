@@ -10,11 +10,11 @@ _Upgrade to SpringDoc v2._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/springdoc.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.17.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/springdoc.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.17.0
+* version: 5.18.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -24,10 +24,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion.md)
-  * groupId: `org.springdoc`
-  * artifactId: `*`
-  * newVersion: `2.3.x`
+* [Use Jakarta Swagger Artifacts](../../openapi/swagger/usejakartaswaggerartifacts.md)
 * [Change type](../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springdoc.core.SpringDocUtils`
   * newFullyQualifiedTypeName: `org.springdoc.core.utils.SpringDocUtils`
@@ -50,46 +47,61 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-common`
   * newArtifactId: `springdoc-openapi-starter-common`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-data-rest`
   * newArtifactId: `springdoc-openapi-starter-common`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-groovy`
   * newArtifactId: `springdoc-openapi-starter-common`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-hateoas`
   * newArtifactId: `springdoc-openapi-starter-common`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-javadoc`
   * newArtifactId: `springdoc-openapi-starter-common`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-kotlin`
   * newArtifactId: `springdoc-openapi-starter-common`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-security`
   * newArtifactId: `springdoc-openapi-starter-common`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webmvc-core`
   * newArtifactId: `springdoc-openapi-starter-webmvc-api`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webflux-core`
   * newArtifactId: `springdoc-openapi-starter-webflux-api`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-ui`
   * newArtifactId: `springdoc-openapi-starter-webmvc-ui`
+  * newVersion: `2.1.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency.md)
   * oldGroupId: `org.springdoc`
   * oldArtifactId: `springdoc-openapi-webflux-ui`
   * newArtifactId: `springdoc-openapi-starter-webflux-ui`
+  * newVersion: `2.1.x`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springdoc`
+  * artifactId: `*`
+  * newVersion: `2.1.x`
 
 {% endtab %}
 
@@ -103,10 +115,7 @@ description: Upgrade to SpringDoc v2.
 tags:
   - springdoc
 recipeList:
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.springdoc
-      artifactId: *
-      newVersion: 2.3.x
+  - org.openrewrite.openapi.swagger.UseJakartaSwaggerArtifacts
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springdoc.core.SpringDocUtils
       newFullyQualifiedTypeName: org.springdoc.core.utils.SpringDocUtils
@@ -129,46 +138,61 @@ recipeList:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-common
       newArtifactId: springdoc-openapi-starter-common
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-data-rest
       newArtifactId: springdoc-openapi-starter-common
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-groovy
       newArtifactId: springdoc-openapi-starter-common
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-hateoas
       newArtifactId: springdoc-openapi-starter-common
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-javadoc
       newArtifactId: springdoc-openapi-starter-common
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-kotlin
       newArtifactId: springdoc-openapi-starter-common
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-security
       newArtifactId: springdoc-openapi-starter-common
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webmvc-core
       newArtifactId: springdoc-openapi-starter-webmvc-api
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webflux-core
       newArtifactId: springdoc-openapi-starter-webflux-api
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-ui
       newArtifactId: springdoc-openapi-starter-webmvc-ui
+      newVersion: 2.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springdoc
       oldArtifactId: springdoc-openapi-webflux-ui
       newArtifactId: springdoc-openapi-starter-webflux-ui
+      newVersion: 2.1.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springdoc
+      artifactId: *
+      newVersion: 2.1.x
 
 ```
 {% endtab %}
@@ -176,14 +200,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.17.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.20.0")
+    id("org.openrewrite.rewrite") version("6.21.1")
 }
 
 rewrite {
@@ -196,7 +220,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.18.0")
 }
 ```
 {% endcode %}
@@ -211,12 +235,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.20.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.21.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.17.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.18.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.springdoc.UpgradeSpringDoc_2")
@@ -249,7 +273,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.0</version>
+        <version>5.39.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -260,7 +284,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.17.0</version>
+            <version>5.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -309,8 +333,8 @@ _Source files that were modified by the recipe run._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source path before the run | The source path of the file before the run. |
-| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
 | Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |

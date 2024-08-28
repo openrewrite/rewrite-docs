@@ -9,6 +9,7 @@ _Basic building blocks for transforming Java code._
 * [Dependencies](/reference/recipes/java/dependencies)
 * [Format](/reference/recipes/java/format)
 * [Jackson](/reference/recipes/java/jackson)
+* [Jspecify](/reference/recipes/java/jspecify)
 * [Liberty](/reference/recipes/java/liberty)
 * [Logging](/reference/recipes/java/logging)
 * [Micronaut](/reference/recipes/java/micronaut)

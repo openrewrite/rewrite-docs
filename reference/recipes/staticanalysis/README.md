@@ -2,6 +2,10 @@
 
 _Remediations for issues identified by SAST tools._
 
+## Categories
+
+* [Java](/reference/recipes/staticanalysis/java)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
@@ -129,7 +133,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `StandardCharset` constants](./usestandardcharset.md)
 * [Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`](./equalstocontentequals.md)
 * [Use `String.equals()` on `String` literals](./stringliteralequality.md)
-* [Use `String::replace()` when fist parameter is not a real regular expression](./usestringreplace.md)
+* [Use `String::replace()` when first parameter is not a real regular expression](./usestringreplace.md)
 * [Use `System.lineSeparator()`](./usesystemlineseparator.md)
 * [Use comparison rather than equality checks in for conditions](./noequalityinforcondition.md)
 * [Use explicit types on lambda arguments](./explicitlambdaargumenttypes.md)

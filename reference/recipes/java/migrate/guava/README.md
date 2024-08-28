@@ -14,7 +14,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Math#subtractExact`](./prefermathsubtractexact.md)
 * [Prefer `java.util.Objects#equals`](./preferjavautilobjectsequals.md)
 * [Prefer `java.util.Objects#hash`](./preferjavautilobjectshashcode.md)
-* [Prefer `java.util.Objects#requireNonNull`](./preferjavautilobjectsrequirenonnull.md)
 * [Prefer `java.util.Objects#requireNonNullElse`](./preferjavautilobjectsrequirenonnullelse.md)
 * [Prefer `java.util.Optional`](./preferjavautiloptional.md)
 * [Prefer `java.util.function.Predicate`](./preferjavautilpredicate.md)
@@ -26,6 +25,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [`Preconditions.checkNotNull` to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnulltoobjectsrequirenonnullrecipe.md)
+* [`Preconditions.checkNotNull` with message to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullrecipe.md)
 * [Prefer `Arrays.asList(..)` over Guava primitives](./noguavaprimitiveaslist.md)
 * [Prefer `Files#createTempDirectory()`](./noguavacreatetempdir.md)
 * [Prefer `Integer#compare`](./preferintegercompare.md)

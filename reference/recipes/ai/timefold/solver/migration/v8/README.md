@@ -9,6 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Constraint Streams: don't use package name in the asConstraint() method](./removeconstraintpackagerecipe.md)
 * [ConstraintStreams: use asConstraint() methods to define constraints](./asconstraintrecipe.md)
 * [Replace getConstraint*() with getConstraintRef()](./constraintrefrecipe.md)
 * [Score: use shorter getters](./scoregettersrecipe.md)

@@ -10,9 +10,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Struts 2.0 interceptors to action "aware" interfaces](./migrateawareinterfaces.md)
 * [Migrate to Struts 6.0](./migratestruts6.md)
 * [Migrate to Struts 6.0 constants](./migratestruts6constants.md)
-
-## Recipes
-
 * [Upgrade Struts 6.0 dependencies](./upgradestruts6dependencies.md)
 
 

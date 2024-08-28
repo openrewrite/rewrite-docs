@@ -6,11 +6,11 @@ _Apply the specified configuration to a Maven plugin. Will not add the plugin if
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.33.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.34.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.33.4
+* version: 8.34.0
 
 ## Options
 
@@ -53,7 +53,7 @@ Now that `com.yourorg.ChangePluginConfigurationExample` has been defined activat
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.0</version>
+        <version>5.39.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -95,8 +95,8 @@ _Source files that were modified by the recipe run._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source path before the run | The source path of the file before the run. |
-| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
 | Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
@@ -132,4 +132,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), Adriano Machado, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado

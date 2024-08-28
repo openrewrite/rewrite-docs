@@ -30,6 +30,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Downgrade Jakarta Servlet API to 5.0 when using Jetty](./downgradeservletapiwhenusingjetty.md)
 * [Enable Spring Batch Annotation](./removeenablebatchprocessing.md)
 * [Maintain trailing slash URL mappings](./maintaintrailingslashurlmappings.md)
+* [Remove `SolrAutoConfiguration`](./removesolrautoconfigurationexclude.md)
 * [Remove Unnecessary `@ConstructorBinding`](./removeconstructorbindingannotation.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
 

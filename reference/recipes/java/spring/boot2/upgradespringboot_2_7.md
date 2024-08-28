@@ -6,11 +6,11 @@ _Upgrade to Spring Boot 2.7._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-27.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.17.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-27.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.17.0
+* version: 5.18.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -43,6 +43,10 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * newVersion: `5.3.x`
 * [Migrate to Spring Data 2.7](../../../java/spring/data/upgradespringdata_2_7.md)
 * [Migrate to Spring Security 5.7](../../../java/spring/security5/upgradespringsecurity_5_7.md)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springdoc`
+  * artifactId: `*`
+  * newVersion: `1.8.x`
 * [Change type](../../../java/changetype.md)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.server.LocalServerPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.server.LocalServerPort`
@@ -98,6 +102,10 @@ recipeList:
       newVersion: 5.3.x
   - org.openrewrite.java.spring.data.UpgradeSpringData_2_7
   - org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_7
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springdoc
+      artifactId: *
+      newVersion: 1.8.x
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.web.server.LocalServerPort
       newFullyQualifiedTypeName: org.springframework.boot.test.web.server.LocalServerPort
@@ -126,14 +134,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.17.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.20.0")
+    id("org.openrewrite.rewrite") version("6.21.1")
 }
 
 rewrite {
@@ -146,7 +154,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.18.0")
 }
 ```
 {% endcode %}
@@ -161,12 +169,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.20.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.21.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.17.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.18.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7")
@@ -199,7 +207,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.0</version>
+        <version>5.39.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -210,7 +218,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.17.0</version>
+            <version>5.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -259,8 +267,8 @@ _Source files that were modified by the recipe run._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source path before the run | The source path of the file before the run. |
-| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
 | Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
@@ -296,4 +304,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Kyle Scully](mailto:scullykns@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io), Kun Li, [Tim te Beek](mailto:tim.te.beek@jdriven.com), Fabian Krüger, [magicwerk](mailto:magicwerk@gmail.com), nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), Sandeep Nagaraj, [Kun Li](mailto:kun@moderne.io), [Tim te Beek](mailto:timtebeek@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), John Burns, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Amitoj Duggal](mailto:amitojduggal@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), Josh Soref, Peter Puškár, [Mike Solomon](mailto:mikesol@hey.com), eocantu
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Kyle Scully](mailto:scullykns@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io), Kun Li, [Tim te Beek](mailto:tim.te.beek@jdriven.com), Fabian Krüger, [magicwerk](mailto:magicwerk@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), nbruno, [Shannon Pamperl](mailto:shanman190@gmail.com), Sandeep Nagaraj, [Kun Li](mailto:kun@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), John Burns, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Amitoj Duggal](mailto:amitojduggal@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), Josh Soref, [Shivani Sharma](mailto:s.happyrose@gmail.com), Peter Puškár, [Mike Solomon](mailto:mikesol@hey.com), eocantu

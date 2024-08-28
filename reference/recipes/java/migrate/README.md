@@ -81,6 +81,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `String` literal](./replacestringliteralvalue.md)
 * [Replace `com.sun.net.ssl` package](./sunnetsslpackageunavailable.md)
 * [Replace deprecated methods in`SecurityManager`](./removedsecuritymanagermethods.md)
+* [Replace `getLocalizedInputStream` and `getLocalizedOutputStream` with direct assignment](./replacelocalizedstreammethods.md)
 * [Replace `javax.security.auth.Policy` with `java.security.Policy`](./removedpolicy.md)
 * [Upgrade build to Java 11](./upgradebuildtojava11.md)
 * [Upgrade build to Java 17](./upgradebuildtojava17.md)
