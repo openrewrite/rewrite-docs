@@ -2,7 +2,7 @@
 
 **org.apache.camel.updates.camel44.DefaultJsonSchemaLoader**
 
-_Replaces depricated class withits successor._
+_Replaces deprecated class with its successor._
 
 ## Recipe source
 
@@ -28,8 +28,8 @@ _Replaces depricated class withits successor._
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.camel.updates.camel44.DefaultJsonSchemaLoader
-displayName: Replace depricated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader
-description: Replaces depricated class withits successor.
+displayName: Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader
+description: Replaces deprecated class with its successor.
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.camel.component.jsonvalidator.DefaultJsonSchemaLoader

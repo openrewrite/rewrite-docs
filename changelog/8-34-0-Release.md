@@ -33,7 +33,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.apache.camel.updates.camel43.StateRepository](https://docs.openrewrite.org/recipes/org/apache/camel/updates/camel43/staterepository): Moved classes MemoryStateRepository and FileStateRepositor from camel-base-engine to  camel-support. 
 * [org.apache.camel.updates.camel44.CamelCoreRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/updates/camel44/camelcorerecipe): Apache Camel Core migration from version 4.3 to 4.4. 
 * [org.apache.camel.updates.camel44.CamelMigrationRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/updates/camel44/camelmigrationrecipe): Migrates `camel 4.0` application to `camel 4.4`. 
-* [org.apache.camel.updates.camel44.DefaultJsonSchemaLoader](https://docs.openrewrite.org/recipes/org/apache/camel/updates/camel44/defaultjsonschemaloader): Replaces depricated class withits successor. 
+* [org.apache.camel.updates.camel44.DefaultJsonSchemaLoader](https://docs.openrewrite.org/recipes/org/apache/camel/updates/camel44/defaultjsonschemaloader): Replaces deprecated class with its successor. 
 * [org.apache.camel.updates.camel44.RouteControllerProperties](https://docs.openrewrite.org/recipes/org/apache/camel/updates/camel44/routecontrollerproperties):  
 * [org.apache.camel.updates.customRecipes.ChangePropertyKeyWithCaseChange](https://docs.openrewrite.org/recipes/org/apache/camel/updates/customrecipes/changepropertykeywithcasechange): Change prefix of property with Camel case 
 * [org.apache.camel.updates.customRecipes.MoveGetterToPluginHelper](https://docs.openrewrite.org/recipes/org/apache/camel/updates/customrecipes/movegettertopluginhelper): Move getter from context to PluginHelper 

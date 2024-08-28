@@ -176,6 +176,7 @@ JRules
 jsf
 jsonpathmatcher
 jsontype
+jspecify
 JString
 jsse
 JThrowing
