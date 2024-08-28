@@ -39,7 +39,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.0</version>
+        <version>5.39.2</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7</recipe>

@@ -6,8 +6,8 @@ It is highly recommended that developers use the [rewrite-recipe-bom](https://gi
 
 | Module                                                                                                         | Version                                                                                  |
 | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)             |  [2.17.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v2.17.0)        |
-| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                | [**5.39.0**](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v5.39.0)   |
+| [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)             |  [2.18.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v2.18.0)        |
+| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                | [**5.39.2**](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v5.39.2)   |
 | [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)              | [**6.20.0**](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v6.20.0)  |
 | [org.openrewrite:rewrite-core](https://github.com/openrewrite/rewrite)                                         | [8.33.4](https://github.com/openrewrite/rewrite/releases/tag/v8.33.4)                    |
 | [org.openrewrite:rewrite-gradle](https://github.com/openrewrite/rewrite)                                       | [8.33.4](https://github.com/openrewrite/rewrite/releases/tag/v8.33.4)                    |

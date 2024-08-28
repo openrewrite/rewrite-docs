@@ -21,7 +21,7 @@ The Java 17 migration recipe can be applied by including OpenRewrite's plug-in t
     <plugin>
       <groupId>org.openrewrite.maven</groupId>
       <artifactId>rewrite-maven-plugin</artifactId>
-      <version>5.39.0</version>
+      <version>5.39.2</version>
       <configuration>
         <activeRecipes>
           <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
