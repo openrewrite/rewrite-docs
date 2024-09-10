@@ -44,7 +44,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.AddPluginDependencyExample` has been defined activate it in your build file:
+Now that `com.yourorg.AddPluginDependencyExample` has been defined, activate it in your build file:
 {% tabs %}
 
 {% tab title="Maven" %}
