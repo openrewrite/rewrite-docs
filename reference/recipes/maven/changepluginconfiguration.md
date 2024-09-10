@@ -16,9 +16,9 @@ _Apply the specified configuration to a Maven plugin. Will not add the plugin if
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `org.openrewrite.maven` |
-| `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `rewrite-maven-plugin` |
-| `String` | configuration | *Optional*. Plugin configuration provided as raw XML. Supplying `null` will remove any existing configuration. | `<foo>bar</foo>` |
+| `String` | groupId | The first part of the coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION' of the plugin to modify. | `org.openrewrite.maven` |
+| `String` | artifactId | The second part of the coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION' of the plugin to modify. | `rewrite-maven-plugin` |
+| `String` | configuration | *Optional*. Plugin configuration provided as raw XML overriding any existing configuration (configuration in executions will be preserved). Supplying `null` will remove any existing configuration. | `<foo>bar</foo>` |
 
 
 ## Usage
