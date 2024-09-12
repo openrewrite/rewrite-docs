@@ -10,11 +10,11 @@ _If a local variable is declared but not used, it is dead code and should be rem
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveUnusedLocalVariables.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.14.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveUnusedLocalVariables.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.14.0
+* version: 1.16.0
 
 ## Options
 
@@ -25,14 +25,14 @@ _If a local variable is declared but not used, it is dead code and should be rem
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.14.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.16.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.20.0")
+    id("org.openrewrite.rewrite") version("6.23.3")
 }
 
 rewrite {
@@ -45,7 +45,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.16.0")
 }
 ```
 {% endcode %}
@@ -60,12 +60,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.20.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.23.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.14.0")
+        rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.16.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.staticanalysis.RemoveUnusedLocalVariables")
@@ -98,7 +98,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.0</version>
+        <version>5.40.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -109,7 +109,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.14.0</version>
+            <version>1.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -158,8 +158,8 @@ _Source files that were modified by the recipe run._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source path before the run | The source path of the file before the run. |
-| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
 | Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
@@ -195,4 +195,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [David Tran](mailto:david.tran@snowflake.com)
+[Aaron Gershman](mailto:aegershman@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [David Tran](mailto:david.tran@snowflake.com)

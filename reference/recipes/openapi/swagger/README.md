@@ -13,6 +13,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate from @ApiParam to @Parameter](./migrateapiparamtoparameter.md)
 * [Migrate from @ApiResponses to @ApiResponses](./migrateapiresponsestoapiresponses.md)
 * [Migrate from Swagger to OpenAPI](./swaggertoopenapi.md)
+* [Use Jakarta Swagger Artifacts](./usejakartaswaggerartifacts.md)
 
 ## Recipes
 

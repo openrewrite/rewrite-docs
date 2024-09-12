@@ -8,6 +8,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Check whether a type is **not** in use](./doesnotusetype.md)
 * [Find annotations](./findannotations.md)
 * [Find class hierarchy](./findclasshierarchy.md)
 * [Find empty classes](./findemptyclasses.md)

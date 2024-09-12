@@ -1,4 +1,4 @@
-# Cloud2022
+# Spring Cloud 2022
 
 ## Composite Recipes
 

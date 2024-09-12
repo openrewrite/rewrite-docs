@@ -6,11 +6,11 @@ _Remove an enabled Gradle preview feature from `settings.gradle`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveEnableFeaturePreview.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.33.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveEnableFeaturePreview.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.35.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.33.4
+* version: 8.35.0
 
 ## Options
 
@@ -36,14 +36,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.RemoveEnableFeaturePreviewExample` has been defined activate it in your build file:
+Now that `com.yourorg.RemoveEnableFeaturePreviewExample` has been defined, activate it in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.20.0")
+    id("org.openrewrite.rewrite") version("6.23.3")
 }
 
 rewrite {
@@ -86,8 +86,8 @@ _Source files that were modified by the recipe run._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source path before the run | The source path of the file before the run. |
-| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
 | Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |

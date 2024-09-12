@@ -11,7 +11,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Spring Boot properties to 3.3](./springbootproperties_3_3.md)
 * [Migrate dropWizard dependencies to Spring Boot 3.x](./migratedropwizarddependencies.md)
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](./migratethymeleafdependencies.md)
-* [Migrate to Spring Batch 5.0 from 4.3](./springbatch4to5migration.md)
 * [Migrate to Spring Boot 3.0](./upgradespringboot_3_0.md)
 * [Migrate to Spring Boot 3.1](./upgradespringboot_3_1.md)
 * [Migrate to Spring Boot 3.2](./upgradespringboot_3_2.md)
@@ -30,6 +29,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Downgrade Jakarta Servlet API to 5.0 when using Jetty](./downgradeservletapiwhenusingjetty.md)
 * [Enable Spring Batch Annotation](./removeenablebatchprocessing.md)
 * [Maintain trailing slash URL mappings](./maintaintrailingslashurlmappings.md)
+* [Remove `SolrAutoConfiguration`](./removesolrautoconfigurationexclude.md)
 * [Remove Unnecessary `@ConstructorBinding`](./removeconstructorbindingannotation.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
 

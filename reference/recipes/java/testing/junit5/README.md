@@ -18,9 +18,11 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add Hamcrest JUnit dependency](./addhamcrestjunitdependency.md)
 * [Add JUnit Jupiter dependencies](./addjupiterdependencies.md)
 * [Add missing `@BeforeEach`, `@AfterEach`, `@Test` to overriding methods](./addmissingtestbeforeafterannotations.md)
 * [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](./addparameterizedtestannotation.md)
+* [Applies JUnit 5 `assertThrows` on last statement in lambda block only](./assertthrowsonlaststatement.md)
 * [Cleanup JUnit imports](./cleanupjunitimports.md)
 * [Gradle `Test` use JUnit Jupiter](./gradleusejunitjupiter.md)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](./categorytotag.md)

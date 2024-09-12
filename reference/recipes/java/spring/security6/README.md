@@ -1,4 +1,4 @@
-# Security6
+# Spring Security 6.x
 
 ## Categories
 

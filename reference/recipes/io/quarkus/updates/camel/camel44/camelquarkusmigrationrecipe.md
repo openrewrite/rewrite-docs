@@ -6,33 +6,18 @@ _Migrates `camel 4.0` quarkus application to `camel 4.4`._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.6.0/jar)
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.7.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-third-party
-* version: 0.6.0
+* version: 0.7.1
 
-{% hint style="info" %}
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-{% endhint %}
 
 ## Definition
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Camel Core changes](../../../../../io/quarkus/updates/camel/camel41/camelcorerecipe.md)
-* [Camel XMl DSL changes](../../../../../io/quarkus/updates/camel/camel41/xmldslrecipe.md)
-* [Changes for creation of inlined beans.](../../../../../io/quarkus/updates/camel/camel41/yamldslrecipe.md)
-* [Tag Enum has been deprecated](../../../../../io/quarkus/updates/camel/camel41/tracingtag.md)
-* [The option camel.main.debugger has been renamed](../../../../../io/quarkus/updates/camel/camel42/camelmaindebugger.md)
-* [Camel Core changes](../../../../../io/quarkus/updates/camel/camel42/camelsagarecipe.md)
-* [MemoryStateRepository and FileStateRepository were moved to another package and library](../../../../../io/quarkus/updates/camel/camel43/staterepository.md)
-* [Camel Resequence DSL changes](../../../../../io/quarkus/updates/camel/camel43/camelresequenceeipxmlrecipe.md)
-* [Camel Core changes](../../../../../io/quarkus/updates/camel/camel43/camelthrottleeiprecipe.md)
-* [The header name for the List metadata has changed](../../../../../io/quarkus/updates/camel/camel43/kafkametadata.md)
-* [Camel Core changes](../../../../../io/quarkus/updates/camel/camel44/camelcorerecipe.md)
-* [Replace 'camel.main.routeController' with `camel.routecontroller'](../../../../../io/quarkus/updates/camel/camel44/routecontrollerproperties.md)
-* [Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](../../../../../io/quarkus/updates/camel/camel44/defaultjsonschemaloader.md)
+* [Migrates `camel 4.0` application to `camel 4.4`](../../../../../org/apache/camel/updates/camel44/camelmigrationrecipe.md)
 
 {% endtab %}
 
@@ -44,19 +29,7 @@ name: io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe
 displayName: Migrates `camel 4.0` application to `camel 4.4`
 description: Migrates `camel 4.0` quarkus application to `camel 4.4`.
 recipeList:
-  - io.quarkus.updates.camel.camel41.CamelCoreRecipe
-  - io.quarkus.updates.camel.camel41.XmlDslRecipe
-  - io.quarkus.updates.camel.camel41.YamlDslRecipe
-  - io.quarkus.updates.camel.camel41.TracingTag
-  - io.quarkus.updates.camel.camel42.CamelMainDebugger
-  - io.quarkus.updates.camel.camel42.CamelSagaRecipe
-  - io.quarkus.updates.camel.camel43.StateRepository
-  - io.quarkus.updates.camel.camel43.CamelResequenceEIPXmlRecipe
-  - io.quarkus.updates.camel.camel43.CamelThrottleEIPRecipe
-  - io.quarkus.updates.camel.camel43.KafkaMetadata
-  - io.quarkus.updates.camel.camel44.CamelCoreRecipe
-  - io.quarkus.updates.camel.camel44.RouteControllerProperties
-  - io.quarkus.updates.camel.camel44.DefaultJsonSchemaLoader
+  - org.apache.camel.updates.camel44.CamelMigrationRecipe
 
 ```
 {% endtab %}
@@ -64,14 +37,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.6.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.7.1` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.20.0")
+    id("org.openrewrite.rewrite") version("6.23.3")
 }
 
 rewrite {
@@ -84,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:0.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:0.7.1")
 }
 ```
 {% endcode %}
@@ -99,12 +72,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.20.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.23.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:0.6.0")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:0.7.1")
     }
     rewrite {
         activeRecipe("io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe")
@@ -137,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.0</version>
+        <version>5.40.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -148,7 +121,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>0.6.0</version>
+            <version>0.7.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -197,8 +170,8 @@ _Source files that were modified by the recipe run._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source path before the run | The source path of the file before the run. |
-| Source path after the run | A recipe may modify the source path. This is the path after the run. |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
 | Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
 | Recipe that made changes | The specific recipe that made a change. |
 | Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
