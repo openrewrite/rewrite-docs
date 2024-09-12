@@ -1,4 +1,4 @@
-# Cloud2023
+# Spring Cloud 2023
 
 ## Composite Recipes
 

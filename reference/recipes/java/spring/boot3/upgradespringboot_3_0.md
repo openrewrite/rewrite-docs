@@ -11,11 +11,11 @@ _Migrate applications to the latest Spring Boot 3.0 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.18.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.19.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.18.0
+* version: 5.19.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -68,8 +68,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Upgrade to springdoc-openapi 2](../../../java/spring/boot3/upgradespringdoc_2.md)
 * [Migrate dropWizard dependencies to Spring Boot 3.x](../../../java/spring/boot3/migratedropwizarddependencies.md)
 * [Remove `SolrAutoConfiguration`](../../../java/spring/boot3/removesolrautoconfigurationexclude.md)
-* [Migrate to Spring Batch 5.0 from 4.3](../../../java/spring/boot3/springbatch4to5migration.md)
+* [Migrate to Spring Batch 5.0 from 4.3](../../../java/spring/batch/springbatch4to5migration.md)
 * [Migrate to Spring Framework 6.0](../../../java/spring/framework/upgradespringframework_6_0.md)
+* [Migrate to Spring Kafka 3.0](../../../java/spring/kafka/upgradespringkafka_3_0.md)
 * [Migrate to Spring Security 6.0](../../../java/spring/security6/upgradespringsecurity_6_0.md)
 * [Migrate to Spring Cloud 2022](../../../java/spring/cloud2022/upgradespringcloud_2022.md)
 * [Upgrade SpringDoc](../../../java/springdoc/upgradespringdoc_2.md)
@@ -131,8 +132,9 @@ recipeList:
   - org.openrewrite.java.spring.boot3.UpgradeSpringDoc_2
   - org.openrewrite.java.spring.boot3.MigrateDropWizardDependencies
   - org.openrewrite.java.spring.boot3.RemoveSolrAutoConfigurationExclude
-  - org.openrewrite.java.spring.boot3.SpringBatch4To5Migration
+  - org.openrewrite.java.spring.batch.SpringBatch4To5Migration
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0
+  - org.openrewrite.java.spring.kafka.UpgradeSpringKafka_3_0
   - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0
   - org.openrewrite.java.spring.cloud2022.UpgradeSpringCloud_2022
   - org.openrewrite.java.springdoc.UpgradeSpringDoc_2
@@ -144,14 +146,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.19.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.21.1")
+    id("org.openrewrite.rewrite") version("6.23.3")
 }
 
 rewrite {
@@ -164,7 +166,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.18.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.19.0")
 }
 ```
 {% endcode %}
@@ -179,12 +181,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.21.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.23.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.18.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.19.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0")
@@ -217,7 +219,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.2</version>
+        <version>5.40.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -228,7 +230,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.18.0</version>
+            <version>5.19.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -314,4 +316,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Chuka Obinabo, [Jonathan Schneider](mailto:jkschneider@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Alex Boyko](mailto:aboyko@vmware.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), pdesprez, [Kyle Scully](mailto:scullykns@gmail.com), Kun Li, [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Satvika Eda](mailto:satvika164.reddy@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Greg Adams](mailto:gadams@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Kevin McCarpenter](mailto:kevin@moderne.io), Fabian Krüger, [Kun Li](mailto:kun@moderne.io), Anu Ramamoorthy, [magicwerk](mailto:magicwerk@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Simon Zilliken, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Evie Lau, Adam Slaski, [Shannon Pamperl](mailto:shanman190@gmail.com), Aaron Gershman, BhavanaPidapa, nbruno, ranuradh, Daryl Robbins, Sandeep Nagaraj, [Michael Keppler](mailto:bananeweizen@gmx.de), [BoykoAlex](mailto:aboyko@pivotal.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), Michel Gonzalez, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), John Burns, [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aakarshit Uppal, eocantu, [Amitoj Duggal](mailto:amitojduggal@gmail.com), Josh Soref, [Scott Jungling](mailto:scott.jungling@gmail.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), Adriano Machado, Peter Puškár, [Mike Solomon](mailto:mikesol@hey.com)
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Chuka Obinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), pdesprez, [Kyle Scully](mailto:scullykns@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Kun Li, Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), [Satvika Eda](mailto:satvika164.reddy@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Anu Ramamoorthy, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Kevin McCarpenter](mailto:kevin@moderne.io), Fabian Krüger, [Kun Li](mailto:kun@moderne.io), Simon Zilliken, [Tim te Beek](mailto:timtebeek@gmail.com), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Evie Lau, Adam Slaski, [Shannon Pamperl](mailto:shanman190@gmail.com), Aaron Gershman, nbruno, ranuradh, BhavanaPidapa, Daryl Robbins, Sandeep Nagaraj, [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [BoykoAlex](mailto:aboyko@pivotal.io), [Johannes Jank](mailto:johannes.wengert@googlemail.com), Michel Gonzalez, [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), Aakarshit Uppal, eocantu, Josh Soref, Adriano Machado

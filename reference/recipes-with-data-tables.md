@@ -390,6 +390,15 @@ Counts the number of lines of the various kinds of source code and data formats 
   * **org.openrewrite.table.LanguageCompositionPerFile**: *A list of individual files and their language composition.*
 
 
+**[Lint source code with ESLint](https://docs.openrewrite.org/?q=org.openrewrite.codemods.ESLint)**  
+**org.openrewrite.codemods.ESLint**  
+Run [ESLint](https://eslint.org/) across the code to fix common static analysis issues in the code.
+
+This requires the code to have an existing ESLint configuration.
+
+  * **org.openrewrite.codemods.ESLintMessages**: *Errors and warnings as reported by ESLint.*
+
+
 **[Find uses of docker base images](https://docs.openrewrite.org/?q=org.openrewrite.docker.search.FindDockerImageUses)**  
 **org.openrewrite.docker.search.FindDockerImageUses**  
 Produce an impact analysis of base images used in Dockerfiles.

@@ -29,6 +29,7 @@ _Basic building blocks for transforming Java code._
 * [Add a `null` method argument](./addnullmethodargument.md)
 * [Add imports for fully qualified references to types](./shortenfullyqualifiedtypereferences.md)
 * [Add license header](./addlicenseheader.md)
+* [Add method parameter to a method declaration](./addmethodparameter.md)
 * [Add or update annotation attribute](./addorupdateannotationattribute.md)
 * [Change annotation attribute name](./changeannotationattributename.md)
 * [Change method access level](./changemethodaccesslevel.md)

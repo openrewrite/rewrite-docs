@@ -7,6 +7,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Mockito 3.x migration from 1.x](./mockito1to3migration.md)
 * [Mockito 4.x upgrade](./mockito1to4migration.md)
 * [Mockito 5.x upgrade](./mockito1to5migration.md)
+* [Mockito best practices](./mockitobestpractices.md)
 * [Replace PowerMock with raw Mockito](./replacepowermockito.md)
 
 ## Recipes

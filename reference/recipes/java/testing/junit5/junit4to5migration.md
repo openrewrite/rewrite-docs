@@ -11,11 +11,11 @@ _Migrates JUnit 4.x tests to JUnit Jupiter._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.17.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/junit5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.17.0
+* version: 2.18.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -103,6 +103,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * artifactId: `maven-failsafe-plugin`
   * newVersion: `3.1.x`
 * [Gradle `Test` use JUnit Jupiter](../../../java/testing/junit5/gradleusejunitjupiter.md)
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `org.jbehave.core.junit.JUnitStories`
+  * newFullyQualifiedTypeName: `org.jbehave.core.junit.JupiterStories`
 
 {% endtab %}
 
@@ -195,6 +198,9 @@ recipeList:
       artifactId: maven-failsafe-plugin
       newVersion: 3.1.x
   - org.openrewrite.java.testing.junit5.GradleUseJunitJupiter
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.jbehave.core.junit.JUnitStories
+      newFullyQualifiedTypeName: org.jbehave.core.junit.JupiterStories
 
 ```
 {% endtab %}
@@ -202,14 +208,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.17.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.21.1")
+    id("org.openrewrite.rewrite") version("6.23.3")
 }
 
 rewrite {
@@ -222,7 +228,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.18.0")
 }
 ```
 {% endcode %}
@@ -237,12 +243,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.21.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.23.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.17.0")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.18.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.junit5.JUnit4to5Migration")
@@ -275,7 +281,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.2</version>
+        <version>5.40.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -286,7 +292,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.17.0</version>
+            <version>2.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -370,6 +376,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Contributors
-Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:gadams@gmail.com), [Greg Adams](mailto:greg@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [magicwerk](mailto:magicwerk@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), Tyler Van Gorder, John Burns, [Aaron Gershman](mailto:aegershman@gmail.com), [Sofia Britto Schwartz](mailto:sofia.b.schwartz@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Amitoj Duggal](mailto:amitojduggal@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), Peter Puškár, [Joan Viladrosa](mailto:joan@moderne.io), [Kun Li](mailto:kun@moderne.io), [Kyle Scully](mailto:scullykns@gmail.com), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)

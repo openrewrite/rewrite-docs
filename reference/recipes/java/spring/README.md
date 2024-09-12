@@ -5,17 +5,18 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 ## Categories
 
 * [Amqp](/reference/recipes/java/spring/amqp)
-* [Cloud2022](/reference/recipes/java/spring/cloud2022)
-* [Cloud2023](/reference/recipes/java/spring/cloud2023)
 * [Http](/reference/recipes/java/spring/http)
 * [Search](/reference/recipes/java/spring/search)
-* [Security5](/reference/recipes/java/spring/security5)
-* [Security6](/reference/recipes/java/spring/security6)
 * [Spring Batch](/reference/recipes/java/spring/batch)
 * [Spring Boot 2.x](/reference/recipes/java/spring/boot2)
 * [Spring Boot 3.x](/reference/recipes/java/spring/boot3)
+* [Spring Cloud 2022](/reference/recipes/java/spring/cloud2022)
+* [Spring Cloud 2023](/reference/recipes/java/spring/cloud2023)
 * [Spring Data](/reference/recipes/java/spring/data)
 * [Spring Framework](/reference/recipes/java/spring/framework)
+* [Spring Kafka](/reference/recipes/java/spring/kafka)
+* [Spring Security 5.x](/reference/recipes/java/spring/security5)
+* [Spring Security 6.x](/reference/recipes/java/spring/security6)
 * [Test](/reference/recipes/java/spring/test)
 
 ## Composite Recipes

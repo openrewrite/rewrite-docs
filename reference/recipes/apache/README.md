@@ -8,5 +8,6 @@ _Recipes to perform [Apache](https://apache.org/) project migration tasks._
 * [Httpclient4](/reference/recipes/apache/httpclient4)
 * [Httpclient5](/reference/recipes/apache/httpclient5)
 * [Maven](/reference/recipes/apache/maven)
+* [Poi](/reference/recipes/apache/poi)
 
 

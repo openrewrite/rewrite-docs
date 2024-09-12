@@ -10,6 +10,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Camel Core changes](./camelcorerecipe.md)
-* [Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](./defaultjsonschemaloader.md)
+* [Replace depricated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](./defaultjsonschemaloader.md)
 
 

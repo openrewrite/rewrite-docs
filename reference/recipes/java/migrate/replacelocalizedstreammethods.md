@@ -6,50 +6,34 @@ _Replaces `Runtime.getLocalizedInputStream(InputStream)` and `Runtime.getLocaliz
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceLocalizedStreamMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.23.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/ReplaceLocalizedStreamMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-migrate-java
-* version: 2.23.0
+* version: 2.24.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | localizedInputStreamMethodMatcher | The [method pattern](/reference/method-patterns.md) to match and replace. | `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)` |
-| `String` | localizedOutputStreamMethodMatcher | The [method pattern](/reference/method-patterns.md) to match and replace. | `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)` |
+| `String` | localizedInputStreamMethodMatcher | *Optional*. The [method pattern](/reference/method-patterns.md) to match and replace. | `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)` |
+| `String` | localizedOutputStreamMethodMatcher | *Optional*. The [method pattern](/reference/method-patterns.md) to match and replace. | `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)` |
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReplaceLocalizedStreamMethodsExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-
-{% code title="rewrite.yml" %}
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.ReplaceLocalizedStreamMethodsExample
-displayName: Replace `getLocalizedInputStream` and `getLocalizedOutputStream` with direct assignment example
-recipeList:
-  - org.openrewrite.java.migrate.ReplaceLocalizedStreamMethods:
-      localizedInputStreamMethodMatcher: java.lang.Runtime getLocalizedInputStream(java.io.InputStream)
-      localizedOutputStreamMethodMatcher: java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)
-```
-{% endcode %}
-
-Now that `com.yourorg.ReplaceLocalizedStreamMethodsExample` has been defined activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.23.0 in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java:2.24.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.21.1")
+    id("org.openrewrite.rewrite") version("6.23.3")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.ReplaceLocalizedStreamMethodsExample")
+    activeRecipe("org.openrewrite.java.migrate.ReplaceLocalizedStreamMethods")
     exportDatatables = true
 }
 
@@ -58,13 +42,50 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.23.0")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.24.0")
 }
 ```
 {% endcode %}
 2. Run `gradle rewriteRun` to run the recipe.
 {% endtab %}
-{% tab title="Maven" %}
+
+{% tab title="Gradle init script" %}
+1. Create a file named `init.gradle` in the root of your project.
+{% code title="init.gradle" %}
+```groovy
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:6.23.3") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.24.0")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.migrate.ReplaceLocalizedStreamMethods")
+        exportDatatables = true
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+{% endcode %}
+2. Run the recipe.
+{% code title="shell" overflow="wrap"%}
+```shell
+gradle --init-script init.gradle rewriteRun
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Maven POM" %}
 1. Add the following to your `pom.xml` file:
 {% code title="pom.xml" %}
 ```xml
@@ -74,18 +95,18 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.2</version>
+        <version>5.40.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.ReplaceLocalizedStreamMethodsExample</recipe>
+            <recipe>org.openrewrite.java.migrate.ReplaceLocalizedStreamMethods</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.23.0</version>
+            <version>2.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,12 +117,23 @@ dependencies {
 {% endcode %}
 2. Run `mvn rewrite:run` to run the recipe.
 {% endtab %}
+
+{% tab title="Maven Command Line" %}
+
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+{% code title="shell" overflow="wrap" %}
+```shell
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.ReplaceLocalizedStreamMethods -Drewrite.exportDatatables=true
+```
+{% endcode %}
+{% endtab %}
 {% tab title="Moderne CLI" %}
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe ReplaceLocalizedStreamMethodsExample
+mod run . --recipe ReplaceLocalizedStreamMethods
 ```
 {% endcode %}
 {% endtab %}
@@ -160,4 +192,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io)
+BhavanaPidapa, Anu Ramamoorthy, [Knut Wannheden](mailto:knut@moderne.io)

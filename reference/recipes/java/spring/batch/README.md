@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate to Spring Batch 5.0 from 4.3](./springbatch4to5migration.md)
 * [Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead](./listenersupportclasstointerface.md)
 
 ## Recipes

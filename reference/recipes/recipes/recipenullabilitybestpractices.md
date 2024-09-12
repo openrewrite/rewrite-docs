@@ -6,11 +6,11 @@ _Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/1.8.4/jar)
+[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/openrewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/1.9.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-recommendations
-* version: 1.8.4
+* version: 1.9.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -20,22 +20,15 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 {% tabs %}
 {% tab title="Recipe List" %}
+* [Migrate to JSpecify](../java/jspecify/migratefromopenrewriteannotations.md)
 * [Move `@Nullable` method annotations to the return type](../staticanalysis/nullableonmethodreturntype.md)
-* [Change type](../java/changetype.md)
-  * oldFullyQualifiedTypeName: `org.jetbrains.annotations.Nullable`
-  * newFullyQualifiedTypeName: `org.jspecify.annotations.Nullable`
-* [Change type](../java/changetype.md)
-  * oldFullyQualifiedTypeName: `javax.annotation.Nullable`
-  * newFullyQualifiedTypeName: `org.jspecify.annotations.Nullable`
-* [Change type](../java/changetype.md)
-  * oldFullyQualifiedTypeName: `jakarta.annotation.Nullable`
-  * newFullyQualifiedTypeName: `org.jspecify.annotations.Nullable`
 * [Remove annotation](../java/removeannotation.md)
   * annotationPattern: `@org.jetbrains.annotations.NotNull`
 * [Remove annotation](../java/removeannotation.md)
   * annotationPattern: `@javax.annotation.Nonnull`
 * [Remove annotation](../java/removeannotation.md)
   * annotationPattern: `@jakarta.annotation.Nonnull`
+* [Migrate to JSpecify](../java/jspecify/migratetojspecify.md)
 
 {% endtab %}
 
@@ -47,22 +40,15 @@ name: org.openrewrite.recipes.RecipeNullabilityBestPractices
 displayName: Recipe nullability best practices
 description: Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` on `package-info.java` instead.
 recipeList:
+  - org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations
   - org.openrewrite.staticanalysis.NullableOnMethodReturnType
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.jetbrains.annotations.Nullable
-      newFullyQualifiedTypeName: org.jspecify.annotations.Nullable
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: javax.annotation.Nullable
-      newFullyQualifiedTypeName: org.jspecify.annotations.Nullable
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: jakarta.annotation.Nullable
-      newFullyQualifiedTypeName: org.jspecify.annotations.Nullable
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @org.jetbrains.annotations.NotNull
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @javax.annotation.Nonnull
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @jakarta.annotation.Nonnull
+  - org.openrewrite.java.jspecify.MigrateToJspecify
 
 ```
 {% endtab %}
@@ -70,14 +56,14 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations:1.8.4` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-recommendations:1.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.21.1")
+    id("org.openrewrite.rewrite") version("6.23.3")
 }
 
 rewrite {
@@ -90,7 +76,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-recommendations:1.8.4")
+    rewrite("org.openrewrite.recipe:rewrite-recommendations:1.9.0")
 }
 ```
 {% endcode %}
@@ -105,12 +91,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.21.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.23.3") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-recommendations:1.8.4")
+        rewrite("org.openrewrite.recipe:rewrite-recommendations:1.9.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.recipes.RecipeNullabilityBestPractices")
@@ -143,7 +129,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.39.2</version>
+        <version>5.40.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -154,7 +140,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-recommendations</artifactId>
-            <version>1.8.4</version>
+            <version>1.9.0</version>
           </dependency>
         </dependencies>
       </plugin>
