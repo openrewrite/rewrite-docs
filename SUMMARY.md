@@ -3029,6 +3029,7 @@
       * [Find YAML entries](reference/recipes/yaml/search/findkey.md)
       * [Find YAML properties](reference/recipes/yaml/search/findproperty.md)
 * [Changelog](changelog/changelog.md)
+  * [8.35.0 Release (2024-09-12)](/changelog/8-35-0-Release.md)
   * [8.34.0 Release (2024-08-28)](/changelog/8-34-0-Release.md)
   * [8.33.4 Release (2024-08-12)](changelog/8-33-4-Release.md)
   * [8.32.0 Release (2024-07-31)](changelog/8-32-0-Release.md)
