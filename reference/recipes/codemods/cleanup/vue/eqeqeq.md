@@ -1,8 +1,8 @@
-# Require the use of === and !== in <template>
+# Require the use of === and !== in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.Eqeqeq**
 
-_Require the use of === and !== in <template>
+_Require the use of === and !== in `<template>`
 See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html)_
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.Eqeqeq
-        displayName: Require the use of === and !== in <template>
-        description: Require the use of === and !== in <template>
+        displayName: Require the use of === and !== in `<template>`
+        description: Require the use of === and !== in `<template>`
 See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html)
 
 tags:

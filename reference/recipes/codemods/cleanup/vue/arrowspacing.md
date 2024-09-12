@@ -1,8 +1,8 @@
-# Enforce consistent spacing before and after the arrow in arrow functions in <template>
+# Enforce consistent spacing before and after the arrow in arrow functions in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.ArrowSpacing**
 
-_Enforce consistent spacing before and after the arrow in arrow functions in <template>
+_Enforce consistent spacing before and after the arrow in arrow functions in `<template>`
 See rule details for [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-sp
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.ArrowSpacing
-        displayName: Enforce consistent spacing before and after the arrow in arrow functions in <template>
-        description: Enforce consistent spacing before and after the arrow in arrow functions in <template>
+        displayName: Enforce consistent spacing before and after the arrow in arrow functions in `<template>`
+        description: Enforce consistent spacing before and after the arrow in arrow functions in `<template>`
 See rule details for [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html)
 
 tags:

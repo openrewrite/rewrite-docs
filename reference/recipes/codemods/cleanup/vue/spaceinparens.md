@@ -1,8 +1,8 @@
-# Enforce consistent spacing inside parentheses in <template>
+# Enforce consistent spacing inside parentheses in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.SpaceInParens**
 
-_Enforce consistent spacing inside parentheses in <template>
+_Enforce consistent spacing inside parentheses in `<template>`
 See rule details for [vue/space-in-parens](https://eslint.vuejs.org/rules/space-in-parens.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/space-in-parens](https://eslint.vuejs.org/rules/space-
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.SpaceInParens
-        displayName: Enforce consistent spacing inside parentheses in <template>
-        description: Enforce consistent spacing inside parentheses in <template>
+        displayName: Enforce consistent spacing inside parentheses in `<template>`
+        description: Enforce consistent spacing inside parentheses in `<template>`
 See rule details for [vue/space-in-parens](https://eslint.vuejs.org/rules/space-in-parens.html)
 
 tags:

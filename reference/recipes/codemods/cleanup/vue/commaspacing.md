@@ -1,8 +1,8 @@
-# Enforce consistent spacing before and after commas in <template>
+# Enforce consistent spacing before and after commas in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.CommaSpacing**
 
-_Enforce consistent spacing before and after commas in <template>
+_Enforce consistent spacing before and after commas in `<template>`
 See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-sp
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.CommaSpacing
-        displayName: Enforce consistent spacing before and after commas in <template>
-        description: Enforce consistent spacing before and after commas in <template>
+        displayName: Enforce consistent spacing before and after commas in `<template>`
+        description: Enforce consistent spacing before and after commas in `<template>`
 See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html)
 
 tags:

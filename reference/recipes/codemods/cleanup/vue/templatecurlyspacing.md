@@ -1,8 +1,8 @@
-# Require or disallow spacing around embedded expressions of template strings in <template>
+# Require or disallow spacing around embedded expressions of template strings in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing**
 
-_Require or disallow spacing around embedded expressions of template strings in <template>
+_Require or disallow spacing around embedded expressions of template strings in `<template>`
 See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing
-        displayName: Require or disallow spacing around embedded expressions of template strings in <template>
-        description: Require or disallow spacing around embedded expressions of template strings in <template>
+        displayName: Require or disallow spacing around embedded expressions of template strings in `<template>`
+        description: Require or disallow spacing around embedded expressions of template strings in `<template>`
 See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html)
 
 tags:

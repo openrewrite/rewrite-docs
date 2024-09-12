@@ -1,8 +1,8 @@
-# Enforce dot notation whenever possible in <template>
+# Enforce dot notation whenever possible in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.DotNotation**
 
-_Enforce dot notation whenever possible in <template>
+_Enforce dot notation whenever possible in `<template>`
 See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notat
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.DotNotation
-        displayName: Enforce dot notation whenever possible in <template>
-        description: Enforce dot notation whenever possible in <template>
+        displayName: Enforce dot notation whenever possible in `<template>`
+        description: Enforce dot notation whenever possible in `<template>`
 See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html)
 
 tags:

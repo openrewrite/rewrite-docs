@@ -1,8 +1,8 @@
-# Require quotes around object literal property names in <template>
+# Require quotes around object literal property names in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.QuoteProps**
 
-_Require quotes around object literal property names in <template>
+_Require quotes around object literal property names in `<template>`
 See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-prop
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.QuoteProps
-        displayName: Require quotes around object literal property names in <template>
-        description: Require quotes around object literal property names in <template>
+        displayName: Require quotes around object literal property names in `<template>`
+        description: Require quotes around object literal property names in `<template>`
 See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html)
 
 tags:

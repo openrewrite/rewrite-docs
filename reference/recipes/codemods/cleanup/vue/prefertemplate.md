@@ -1,8 +1,8 @@
-# Require template literals instead of string concatenation in <template>
+# Require template literals instead of string concatenation in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.PreferTemplate**
 
-_Require template literals instead of string concatenation in <template>
+_Require template literals instead of string concatenation in `<template>`
 See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.PreferTemplate
-        displayName: Require template literals instead of string concatenation in <template>
-        description: Require template literals instead of string concatenation in <template>
+        displayName: Require template literals instead of string concatenation in `<template>`
+        description: Require template literals instead of string concatenation in `<template>`
 See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html)
 
 tags:

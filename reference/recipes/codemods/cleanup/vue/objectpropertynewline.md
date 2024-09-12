@@ -1,8 +1,8 @@
-# Enforce placing object properties on separate lines in <template>
+# Enforce placing object properties on separate lines in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline**
 
-_Enforce placing object properties on separate lines in <template>
+_Enforce placing object properties on separate lines in `<template>`
 See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rule
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline
-        displayName: Enforce placing object properties on separate lines in <template>
-        description: Enforce placing object properties on separate lines in <template>
+        displayName: Enforce placing object properties on separate lines in `<template>`
+        description: Enforce placing object properties on separate lines in `<template>`
 See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html)
 
 tags:

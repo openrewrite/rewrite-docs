@@ -1,8 +1,8 @@
-# Enforce consistent newlines before and after dots in <template>
+# Enforce consistent newlines before and after dots in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.DotLocation**
 
-_Enforce consistent newlines before and after dots in <template>
+_Enforce consistent newlines before and after dots in `<template>`
 See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-locat
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.DotLocation
-        displayName: Enforce consistent newlines before and after dots in <template>
-        description: Enforce consistent newlines before and after dots in <template>
+        displayName: Enforce consistent newlines before and after dots in `<template>`
+        description: Enforce consistent newlines before and after dots in `<template>`
 See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html)
 
 tags:

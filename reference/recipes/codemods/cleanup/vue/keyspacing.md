@@ -1,8 +1,8 @@
-# Enforce consistent spacing between keys and values in object literal properties in <template>
+# Enforce consistent spacing between keys and values in object literal properties in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.KeySpacing**
 
-_Enforce consistent spacing between keys and values in object literal properties in <template>
+_Enforce consistent spacing between keys and values in object literal properties in `<template>`
 See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacin
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.KeySpacing
-        displayName: Enforce consistent spacing between keys and values in object literal properties in <template>
-        description: Enforce consistent spacing between keys and values in object literal properties in <template>
+        displayName: Enforce consistent spacing between keys and values in object literal properties in `<template>`
+        description: Enforce consistent spacing between keys and values in object literal properties in `<template>`
 See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html)
 
 tags:

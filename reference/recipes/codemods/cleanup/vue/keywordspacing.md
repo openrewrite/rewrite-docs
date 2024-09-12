@@ -1,8 +1,8 @@
-# Enforce consistent spacing before and after keywords in <template>
+# Enforce consistent spacing before and after keywords in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.KeywordSpacing**
 
-_Enforce consistent spacing before and after keywords in <template>
+_Enforce consistent spacing before and after keywords in `<template>`
 See rule details for [vue/keyword-spacing](https://eslint.vuejs.org/rules/keyword-spacing.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/keyword-spacing](https://eslint.vuejs.org/rules/keywor
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.KeywordSpacing
-        displayName: Enforce consistent spacing before and after keywords in <template>
-        description: Enforce consistent spacing before and after keywords in <template>
+        displayName: Enforce consistent spacing before and after keywords in `<template>`
+        description: Enforce consistent spacing before and after keywords in `<template>`
 See rule details for [vue/keyword-spacing](https://eslint.vuejs.org/rules/keyword-spacing.html)
 
 tags:

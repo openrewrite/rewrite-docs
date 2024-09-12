@@ -1,8 +1,8 @@
-# Require or disallow trailing commas in <template>
+# Require or disallow trailing commas in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.CommaDangle**
 
-_Require or disallow trailing commas in <template>
+_Require or disallow trailing commas in `<template>`
 See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dan
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.CommaDangle
-        displayName: Require or disallow trailing commas in <template>
-        description: Require or disallow trailing commas in <template>
+        displayName: Require or disallow trailing commas in `<template>`
+        description: Require or disallow trailing commas in `<template>`
 See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html)
 
 tags:

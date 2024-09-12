@@ -1,8 +1,8 @@
-# Enforce consistent line breaks after opening and before closing braces in <template>
+# Enforce consistent line breaks after opening and before closing braces in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline**
 
-_Enforce consistent line breaks after opening and before closing braces in <template>
+_Enforce consistent line breaks after opening and before closing braces in `<template>`
 See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/o
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline
-        displayName: Enforce consistent line breaks after opening and before closing braces in <template>
-        description: Enforce consistent line breaks after opening and before closing braces in <template>
+        displayName: Enforce consistent line breaks after opening and before closing braces in `<template>`
+        description: Enforce consistent line breaks after opening and before closing braces in `<template>`
 See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html)
 
 tags:

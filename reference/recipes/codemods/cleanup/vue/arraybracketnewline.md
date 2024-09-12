@@ -1,8 +1,8 @@
-# Enforce linebreaks after opening and before closing array brackets in <template>
+# Enforce linebreaks after opening and before closing array brackets in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline**
 
-_Enforce linebreaks after opening and before closing array brackets in <template>
+_Enforce linebreaks after opening and before closing array brackets in `<template>`
 See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline
-        displayName: Enforce linebreaks after opening and before closing array brackets in <template>
-        description: Enforce linebreaks after opening and before closing array brackets in <template>
+        displayName: Enforce linebreaks after opening and before closing array brackets in `<template>`
+        description: Enforce linebreaks after opening and before closing array brackets in `<template>`
 See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html)
 
 tags:

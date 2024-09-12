@@ -1,8 +1,8 @@
-# Require spacing around infix operators in <template>
+# Require spacing around infix operators in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.SpaceInfixOps**
 
-_Require spacing around infix operators in <template>
+_Require spacing around infix operators in `<template>`
 See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.SpaceInfixOps
-        displayName: Require spacing around infix operators in <template>
-        description: Require spacing around infix operators in <template>
+        displayName: Require spacing around infix operators in `<template>`
+        description: Require spacing around infix operators in `<template>`
 See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html)
 
 tags:

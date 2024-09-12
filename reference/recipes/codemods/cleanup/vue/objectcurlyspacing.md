@@ -1,8 +1,8 @@
-# Enforce consistent spacing inside braces in <template>
+# Enforce consistent spacing inside braces in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.ObjectCurlySpacing**
 
-_Enforce consistent spacing inside braces in <template>
+_Enforce consistent spacing inside braces in `<template>`
 See rule details for [vue/object-curly-spacing](https://eslint.vuejs.org/rules/object-curly-spacing.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/object-curly-spacing](https://eslint.vuejs.org/rules/o
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.ObjectCurlySpacing
-        displayName: Enforce consistent spacing inside braces in <template>
-        description: Enforce consistent spacing inside braces in <template>
+        displayName: Enforce consistent spacing inside braces in `<template>`
+        description: Enforce consistent spacing inside braces in `<template>`
 See rule details for [vue/object-curly-spacing](https://eslint.vuejs.org/rules/object-curly-spacing.html)
 
 tags:

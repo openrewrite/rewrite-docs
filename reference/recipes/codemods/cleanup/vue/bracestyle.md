@@ -1,8 +1,8 @@
-# Enforce consistent brace style for blocks in <template>
+# Enforce consistent brace style for blocks in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.BraceStyle**
 
-_Enforce consistent brace style for blocks in <template>
+_Enforce consistent brace style for blocks in `<template>`
 See rule details for [vue/brace-style](https://eslint.vuejs.org/rules/brace-style.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/brace-style](https://eslint.vuejs.org/rules/brace-styl
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.BraceStyle
-        displayName: Enforce consistent brace style for blocks in <template>
-        description: Enforce consistent brace style for blocks in <template>
+        displayName: Enforce consistent brace style for blocks in `<template>`
+        description: Enforce consistent brace style for blocks in `<template>`
 See rule details for [vue/brace-style](https://eslint.vuejs.org/rules/brace-style.html)
 
 tags:

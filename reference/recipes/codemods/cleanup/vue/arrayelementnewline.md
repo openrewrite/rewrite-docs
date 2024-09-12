@@ -1,8 +1,8 @@
-# Enforce line breaks after each array element in <template>
+# Enforce line breaks after each array element in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.ArrayElementNewline**
 
-_Enforce line breaks after each array element in <template>
+_Enforce line breaks after each array element in `<template>`
 See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.ArrayElementNewline
-        displayName: Enforce line breaks after each array element in <template>
-        description: Enforce line breaks after each array element in <template>
+        displayName: Enforce line breaks after each array element in `<template>`
+        description: Enforce line breaks after each array element in `<template>`
 See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html)
 
 tags:

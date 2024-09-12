@@ -1,8 +1,8 @@
-# Enforce consistent spacing before or after unary operators in <template>
+# Enforce consistent spacing before or after unary operators in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps**
 
-_Enforce consistent spacing before or after unary operators in <template>
+_Enforce consistent spacing before or after unary operators in `<template>`
 See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps
-        displayName: Enforce consistent spacing before or after unary operators in <template>
-        description: Enforce consistent spacing before or after unary operators in <template>
+        displayName: Enforce consistent spacing before or after unary operators in `<template>`
+        description: Enforce consistent spacing before or after unary operators in `<template>`
 See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html)
 
 tags:

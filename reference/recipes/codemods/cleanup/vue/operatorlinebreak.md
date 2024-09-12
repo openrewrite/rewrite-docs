@@ -1,8 +1,8 @@
-# Enforce consistent linebreak style for operators in <template>
+# Enforce consistent linebreak style for operators in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.OperatorLinebreak**
 
-_Enforce consistent linebreak style for operators in <template>
+_Enforce consistent linebreak style for operators in `<template>`
 See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/ope
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.OperatorLinebreak
-        displayName: Enforce consistent linebreak style for operators in <template>
-        description: Enforce consistent linebreak style for operators in <template>
+        displayName: Enforce consistent linebreak style for operators in `<template>`
+        description: Enforce consistent linebreak style for operators in `<template>`
 See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)
 
 tags:

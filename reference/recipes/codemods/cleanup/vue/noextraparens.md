@@ -1,8 +1,8 @@
-# Disallow unnecessary parentheses in <template>
+# Disallow unnecessary parentheses in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.NoExtraParens**
 
-_Disallow unnecessary parentheses in <template>
+_Disallow unnecessary parentheses in `<template>`
 See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-ext
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.NoExtraParens
-        displayName: Disallow unnecessary parentheses in <template>
-        description: Disallow unnecessary parentheses in <template>
+        displayName: Disallow unnecessary parentheses in `<template>`
+        description: Disallow unnecessary parentheses in `<template>`
 See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html)
 
 tags:

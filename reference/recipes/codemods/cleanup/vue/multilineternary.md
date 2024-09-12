@@ -1,8 +1,8 @@
-# Enforce newlines between operands of ternary expressions in <template>
+# Enforce newlines between operands of ternary expressions in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.MultilineTernary**
 
-_Enforce newlines between operands of ternary expressions in <template>
+_Enforce newlines between operands of ternary expressions in `<template>`
 See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/mult
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.MultilineTernary
-        displayName: Enforce newlines between operands of ternary expressions in <template>
-        description: Enforce newlines between operands of ternary expressions in <template>
+        displayName: Enforce newlines between operands of ternary expressions in `<template>`
+        description: Enforce newlines between operands of ternary expressions in `<template>`
 See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html)
 
 tags:

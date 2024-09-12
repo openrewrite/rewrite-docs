@@ -1,8 +1,8 @@
-# Enforce consistent spacing inside array brackets in <template>
+# Enforce consistent spacing inside array brackets in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing**
 
-_Enforce consistent spacing inside array brackets in <template>
+_Enforce consistent spacing inside array brackets in `<template>`
 See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing
-        displayName: Enforce consistent spacing inside array brackets in <template>
-        description: Enforce consistent spacing inside array brackets in <template>
+        displayName: Enforce consistent spacing inside array brackets in `<template>`
+        description: Enforce consistent spacing inside array brackets in `<template>`
 See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html)
 
 tags:

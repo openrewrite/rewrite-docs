@@ -1,8 +1,8 @@
-# Require or disallow spacing between function identifiers and their invocations in <template>
+# Require or disallow spacing between function identifiers and their invocations in `<template>`
 
 **org.openrewrite.codemods.cleanup.vue.FuncCallSpacing**
 
-_Require or disallow spacing between function identifiers and their invocations in <template>
+_Require or disallow spacing between function identifiers and their invocations in `<template>`
 See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html)_
 
 ### Tags
@@ -56,8 +56,8 @@ See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func
         ---
         type: specs.openrewrite.org/v1beta/recipe
         name: org.openrewrite.codemods.cleanup.vue.FuncCallSpacing
-        displayName: Require or disallow spacing between function identifiers and their invocations in <template>
-        description: Require or disallow spacing between function identifiers and their invocations in <template>
+        displayName: Require or disallow spacing between function identifiers and their invocations in `<template>`
+        description: Require or disallow spacing between function identifiers and their invocations in `<template>`
 See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html)
 
 tags:
