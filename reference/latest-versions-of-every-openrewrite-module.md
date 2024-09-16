@@ -60,5 +60,5 @@ The use of the "bill of materials" means that a developer will only need to spec
 | [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis)              | [1.16.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/v1.16.0) |
 | [org.openrewrite.recipe:rewrite-struts](https://github.com/openrewrite/rewrite-struts)                                | [0.6.2](https://github.com/openrewrite/rewrite-struts/releases/tag/v0.6.2) |
 | [org.openrewrite.recipe:rewrite-terraform](https://github.com/openrewrite/rewrite-terraform)                          | [2.3.9](https://github.com/openrewrite/rewrite-terraform/releases/tag/v2.3.9) |
-| [org.openrewrite.recipe:rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks)        | [2.18.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v2.18.0) |
+| [org.openrewrite.recipe:rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks)        | [2.18.0](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v2.19.0) |
 | [org.openrewrite.recipe:rewrite-third-party](https://github.com/openrewrite/rewrite-third-party)                      | [0.7.1](https://github.com/openrewrite/rewrite-third-party/releases/tag/v0.7.1) |

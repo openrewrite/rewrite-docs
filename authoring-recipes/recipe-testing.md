@@ -67,7 +67,7 @@ dependencies {
           <dependency>
               <groupId>org.openrewrite.recipe</groupId>
               <artifactId>rewrite-recipe-bom</artifactId>
-              <version>2.18.0</version>
+              <version>2.19.0</version>
               <type>pom</type>
               <scope>import</scope>
           </dependency>
