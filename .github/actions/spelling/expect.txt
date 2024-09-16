@@ -361,6 +361,7 @@ vladmihalcea
 VPC
 Vuex
 Webflux
+webinar
 websecurityconfigureradapter
 Websphere
 wiremock
