@@ -7,6 +7,7 @@ Adoc
 Adoptium
 aggr
 AKV
+alloc
 allprojects
 APKCXEA
 archunit
@@ -17,15 +18,18 @@ assertj
 authenticationserviceexceptions
 autocrlf
 autoconfigure
+Autosize
 avro
-Awt
+awt
 axonframework
 azzert
 Backpressure
+backticks
 Bazel
 baz
 bfa
 BModule
+boldweight
 BOMs
 bugpatterns
 bval
@@ -38,6 +42,7 @@ cgi
 checkstyle
 circleci
 classdeclaration
+classname
 clickjacking
 Cloudfront
 cloudsuitability
@@ -46,6 +51,7 @@ cmn
 Cobertura
 codebases
 codehaus
+codemod
 codeowners
 Codestarts
 committers
@@ -154,6 +160,7 @@ JDuration
 jedi
 jenkins
 Jenkinsfile
+Jetbrains
 JFloat
 JGit
 jhipster
@@ -177,6 +184,7 @@ jsf
 jsonpathmatcher
 jsontype
 jspecify
+JSS
 JString
 jsse
 JThrowing
@@ -227,6 +235,7 @@ netflix
 NGTo
 nimbusds
 nio
+noreferrer
 NSG
 nullability
 NVL
