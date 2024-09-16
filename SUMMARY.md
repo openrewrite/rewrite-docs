@@ -3059,6 +3059,7 @@
   * [8.8.3 Release (2023-10-31)](changelog/8-8-3-Release.md)
   * [8.8.1 Release (2023-10-27)](changelog/8-8-1-Release.md)
   * [8.8.0 Release (2023-10-23)](changelog/8-8-0-Release.md)
+  * [GitBook webinar test doc](./test-doc.md)
   * [Earlier releases](changelog/earlier-releases/earlier-releases.md)
     * [8.7.3 Release (2023-10-10)](changelog/earlier-releases/8-7-3-Release.md)
     * [8.7.0 Release (2023-10-02)](changelog/earlier-releases/8-7-0-Release.md)
