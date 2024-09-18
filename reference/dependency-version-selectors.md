@@ -18,16 +18,29 @@ The version selector `latest.release` can be specified to mean the most recent r
 
 ### Hyphenated range
 
-The selector `X.Y.Z - A.B.C` specifies that versions between `X.Y.Z` and `A.B.C` can be selected. This is inclusive of `X.Y.Z`and `A.B.C` themselves. If multiple versions within the range are found, the latest is used. If not all digits are specified, then "0" is assumed for any omitted digits.
+The selector `X.Y.Z - A.B.C` specifies that versions between `X.Y.Z` and `A.B.C` can be selected. This is inclusive of `X.Y.Z` and `A.B.C` themselves. If multiple versions within the range are found, the latest is used. If not all digits are specified, then "0" is assumed for any omitted digits.
 
 | Version Selector | Available Versions  | Selected Version |
 | ---------------- | ------------------- | ---------------- |
 | `1.0.0-1.5.0`    | 1.0.0, 1.5.0, 1.5.1 | 1.5.0            |
 | `1-1.5`          | 1.0.0, 1.5.0, 1.5.1 | 1.5.0            |
 
+### SetRange
+
+This is very similar to the above hyphenated range except that you can specify exclusion with `(` / `)`, inclusion with `[` / `]`, and you don't have to specify both a low and a high version. If multiple versions within the range are found, the latest is used. If not all digits are specified, then "0" is assumed for any omitted digits.
+
+| Version Selector | Available Versions           | Selected Version |
+| ---------------- | ---------------------------- | ---------------- |
+| `[1.0.0,1.5.0]`  | 1.0.0, 1.5.0, 1.5.1          | 1.5.0            |
+| `[1.0.0,1.5.0)`  | 1.0.0, 1.5.0, 1.5.1          | 1.0.0            |
+| `(1.0.0,1.5.0)`  | 1.0.0, 1.2.0 1.5.0, 1.5.1    | 1.2.0            |
+| `[1,1.5.0)`      | 1.0.0, 1.5.0, 1.5.1          | 1.5.0            |
+| `[1,)`           | 1.0.0, 1.5.0, 1.5.1          | 1.5.1            |
+| `(,999)`         | 1.0.0, 1.5.0, 1.5.1          | 1.5.1            |
+
 ### XRange
 
-Any of `X`, `x`, or `*` are interpreted as a wildcard and may be used instead of numeric values in the \[major, minor, patch] tuple.
+Any of `X`, `x`, or `*` are interpreted as a wildcard and may be used instead of numeric values in the [major, minor, patch] tuple.
 
 | Version Selector | Available Versions         | Selected Version |
 | ---------------- | -------------------------- | ---------------- |
