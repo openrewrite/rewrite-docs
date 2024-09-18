@@ -4,7 +4,7 @@ description: Compose powerful refactoring operations out of building blocks
 
 # Refactoring with declarative YAML recipes
 
-Not every refactoring operation requires a brand new imperative [Recipe](../../concepts-and-explanations/recipes.md) to be authored in code. With declarative YAML recipes, many powerful transformations can be achieved without writing any code. In this tutorial we'll use declarative YAML recipes to rename a package location and update downstream projects to reflect the updated package names.
+Not every refactoring operation requires a brand new imperative [Recipe](../../concepts-and-explanations/recipes.md) to be authored in code. With declarative YAML recipes, many powerful transformations can be achieved without writing any code. In this tutorial we'll use declarative YAML recipes to rename a package location and update downstream projects to reflect the updated package names `<template>`.
 
 Let's assume the existence of two projects, `A` and `B`, in different repositories:
 

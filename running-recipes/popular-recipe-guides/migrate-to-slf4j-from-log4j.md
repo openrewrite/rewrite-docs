@@ -14,7 +14,7 @@ Similar to the [`SLF4J Migrator`](http://www.slf4j.org/migrator.html), the goal 
 
 ### `.toString()`
 
-Because `Log4j` logging statements are automatically migrated to use the [`SLF4J Parameterized Logging` equivalent](http://www.slf4j.org/faq.html#logging\_performance) (see ["Use SLF4J Parameterized Logging"](../../reference/recipes/java/logging/slf4j/parameterizedlogging.md)), messages of type `String` are supported. Therefore, there is no need to add a `.toString()` method invocation on the object.
+Because `Log4j` logging statements are automatically migrated to use the [`SLF4J Parameterized Logging` equivalent](http://www.slf4j.org/faq.html#logging\_performance) (see ["Use SLF4J Parameterized Logging"](/reference/recipes/java/logging/slf4j/parameterizedlogging.md)), messages of type `String` are supported. Therefore, there is no need to add a `.toString()` method invocation on the object.
 
 {% tabs %}
 {% tab title="Object Parameters (Before)" %}

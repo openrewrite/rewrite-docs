@@ -12,8 +12,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `System.lineSeparator()`](./usesystemlineseparator.md)
 * [Prefer `java.nio.file.Files`](./apachefileutilstojavafiles.md)
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](./relocateapachecommonsio.md)
-* [Replace `FileUtils.getFile(String...)` with JDK provided API](./apachecommonsfileutilsrecipes$getfilerecipe.md)
-* [Replace `FileUtils.writeStringToFile(File, String)` with JDK provided API](./apachecommonsfileutilsrecipes$writestringtofilerecipe.md)
+* [Replace `FileUtils.getFile(String...)` with JDK provided API](./apachecommonsfileutilsrecipesgetfilerecipe.md)
+* [Replace `FileUtils.writeStringToFile(File, String)` with JDK provided API](./apachecommonsfileutilsrecipeswritestringtofilerecipe.md)
 * [Use IOUtils method that include  their charset encoding](./apacheioutilsuseexplicitcharset.md)
 
 

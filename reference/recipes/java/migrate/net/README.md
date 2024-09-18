@@ -9,9 +9,9 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Convert `new URL(String)` to `URI.create(String).toURL()`](./urlconstructorstourirecipes$urlsingleargumentconstructorrecipe.md)
-* [Convert `new URL(String, String, String)` to `new URI(...).toURL()`](./urlconstructorstourirecipes$urlthreeargumentconstructorrecipe.md)
-* [Convert `new URL(String, String, int, String)` to `new URI(...).toURL()`](./urlconstructorstourirecipes$urlfourargumentconstructorrecipe.md)
+* [Convert `new URL(String)` to `URI.create(String).toURL()`](./urlconstructorstourirecipesurlsingleargumentconstructorrecipe.md)
+* [Convert `new URL(String, String, String)` to `new URI(...).toURL()`](./urlconstructorstourirecipesurlthreeargumentconstructorrecipe.md)
+* [Convert `new URL(String, String, int, String)` to `new URI(...).toURL()`](./urlconstructorstourirecipesurlfourargumentconstructorrecipe.md)
 * [Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR`](./migratehttpurlconnectionhttpservererrortohttpinternalerror.md)
 * [Use `java.net.MulticastSocket#getTimeToLive()`](./migratemulticastsocketgetttltogettimetolive.md)
 * [Use `java.net.MulticastSocket#setTimeToLive(int)`](./migratemulticastsocketsetttltosettimetolive.md)
