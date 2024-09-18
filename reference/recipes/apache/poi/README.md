@@ -10,13 +10,13 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Replace `Cell.setCellType(Cell.CELL_TYPE_BLANK)` with `Cell.setCellType(CellType.BLANK)`](./replacesetcelltyperecipesreplacesetcelltypeblankrecipe.md)
-* [Replace `Cell.setCellType(Cell.CELL_TYPE_BOOLEAN)` with `Cell.setCellType(CellType.BOOLEAN)`](./replacesetcelltyperecipesreplacesetcelltypebooleanrecipe.md)
-* [Replace `Cell.setCellType(Cell.CELL_TYPE_ERROR)` with `Cell.setCellType(CellType.ERROR)`](./replacesetcelltyperecipesreplacesetcelltypeerrorrecipe.md)
-* [Replace `Cell.setCellType(Cell.CELL_TYPE_FORMULA)` with `Cell.setCellType(CellType.FORMULA)`](./replacesetcelltyperecipesreplacesetcelltypeformularecipe.md)
-* [Replace `Cell.setCellType(Cell.CELL_TYPE_NUMERIC)` with `Cell.setCellType(CellType.NUMERIC)`](./replacesetcelltyperecipesreplacesetcelltypenumericrecipe.md)
-* [Replace `Cell.setCellType(Cell.CELL_TYPE_STRING)` with `Cell.setCellType(CellType.STRING)`](./replacesetcelltyperecipesreplacesetcelltypestringrecipe.md)
-* [Replace `Font.setBoldweight(Font.BOLDWEIGHT_BOLD)` with `Font.setBold(true)`](./replacesetboldweightwithsetboldrecipesreplacesetboldweightboldwithsetboldtruerecipe.md)
-* [Replace `Font.setBoldweight(Font.BOLDWEIGHT_NORMAL)` with `Font.setBold(false)`](./replacesetboldweightwithsetboldrecipesreplacesetboldweightnormalwithsetboldfalserecipe.md)
+* [Replace `Cell.setCellType(Cell.CELL_TYPE_BLANK)` with `Cell.setCellType(CellType.BLANK)`](./replacesetcelltyperecipes$replacesetcelltypeblankrecipe.md)
+* [Replace `Cell.setCellType(Cell.CELL_TYPE_BOOLEAN)` with `Cell.setCellType(CellType.BOOLEAN)`](./replacesetcelltyperecipes$replacesetcelltypebooleanrecipe.md)
+* [Replace `Cell.setCellType(Cell.CELL_TYPE_ERROR)` with `Cell.setCellType(CellType.ERROR)`](./replacesetcelltyperecipes$replacesetcelltypeerrorrecipe.md)
+* [Replace `Cell.setCellType(Cell.CELL_TYPE_FORMULA)` with `Cell.setCellType(CellType.FORMULA)`](./replacesetcelltyperecipes$replacesetcelltypeformularecipe.md)
+* [Replace `Cell.setCellType(Cell.CELL_TYPE_NUMERIC)` with `Cell.setCellType(CellType.NUMERIC)`](./replacesetcelltyperecipes$replacesetcelltypenumericrecipe.md)
+* [Replace `Cell.setCellType(Cell.CELL_TYPE_STRING)` with `Cell.setCellType(CellType.STRING)`](./replacesetcelltyperecipes$replacesetcelltypestringrecipe.md)
+* [Replace `Font.setBoldweight(Font.BOLDWEIGHT_BOLD)` with `Font.setBold(true)`](./replacesetboldweightwithsetboldrecipes$replacesetboldweightboldwithsetboldtruerecipe.md)
+* [Replace `Font.setBoldweight(Font.BOLDWEIGHT_NORMAL)` with `Font.setBold(false)`](./replacesetboldweightwithsetboldrecipes$replacesetboldweightnormalwithsetboldfalserecipe.md)
 
 
