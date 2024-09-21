@@ -91,6 +91,13 @@ mvn rewrite:run
 
 The Moderne CLI builds the LST artifacts for your repository in pieces if the repository can't fit into memory entirely. It also allows you to run recipes against multiple repositories at once.
 
+## I'm getting `Failed to parse or resolve the Maven POM file or one of its dependencies; We can not reliably continue without this information.` when running OpenRewrite.
+
+OpenRewrite needs to resolve the Maven POM file and its dependencies to build up the Lossless Semantic Tree (LST).
+If you're seeing this error, it's likely that OpenRewrite is having trouble resolving the POM file or its dependencies.
+The output will indicate with markers which `<!--~~(... Unable to download POM ...)~~>-->` which POM failed, and which repositories were tried.
+Double check and adjust your dependency version, or add additional repository configuration or credentials, to resolve this issue.
+
 ## My recipe appears to hang when running. What's happening? Is there a progress report?
 
 OpenRewrite is likely building up a model of your code and resolving types – this can take a while. Right now, there is not a progress report for recipe runs. However, there is a suggestion to add progress indicators that you can +1 [here](https://github.com/openrewrite/rewrite-maven-plugin/issues/544).
