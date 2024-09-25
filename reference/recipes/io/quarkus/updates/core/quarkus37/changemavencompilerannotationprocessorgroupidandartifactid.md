@@ -6,11 +6,11 @@ _Change the groupId, artifactId and/or the version of a specified Maven Compiler
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.7.1/jar)
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-third-party
-* version: 0.7.1
+* version: 0.8.0
 
 ## Options
 
@@ -48,14 +48,14 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactIdExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-third-party:0.7.1 in your build file:
+Now that `com.yourorg.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactIdExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-third-party:0.8.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.23.3")
+    id("org.openrewrite.rewrite") version("6.24.0")
 }
 
 rewrite {
@@ -68,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:0.7.1")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:0.8.0")
 }
 ```
 {% endcode %}
@@ -84,7 +84,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.40.2</version>
+        <version>5.41.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -95,7 +95,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>0.7.1</version>
+            <version>0.8.0</version>
           </dependency>
         </dependencies>
       </plugin>

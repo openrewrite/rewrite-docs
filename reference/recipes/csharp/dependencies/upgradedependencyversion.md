@@ -6,11 +6,11 @@ _Upgrades dependencies in `*.csproj` and `packages.config`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/csharp/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.18.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/csharp/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.19.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.18.0
+* version: 1.19.0
 
 ## Options
 
@@ -38,7 +38,7 @@ recipeList:
 ```
 {% endcode %}
 
-Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.18.0 in your build file:
+Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.19.0 in your build file:
 {% tabs %}
 
 

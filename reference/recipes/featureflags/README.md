@@ -12,6 +12,7 @@ _Recipes to perform feature flag migration tasks._
 
 ## Recipes
 
+* [Remove a String feature flag for feature key](./removestringflag.md)
 * [Remove a boolean feature flag for feature key](./removebooleanflag.md)
 
 
