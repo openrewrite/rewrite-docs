@@ -11,7 +11,7 @@ The [ParameterizedLogging](/reference/recipes/java/logging/slf4j/parameterizedlo
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.23.3")
+    id("org.openrewrite.rewrite") version("6.24.0")
 }
 
 rewrite {
@@ -39,7 +39,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.40.2</version>
+        <version>5.41.0</version>
         <configuration>
           <activeRecipes>
             <recipe>org.openrewrite.java.logging.slf4j.ParameterizedLogging</recipe>

@@ -62,7 +62,7 @@ Add `<exportDatatables>true</exportDatatables>` to your `pom.xml` file such as i
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>5.40.2</version>
+    <version>5.41.0</version>
     <configuration>
         <exportDatatables>true</exportDatatables>
         <activeRecipes>

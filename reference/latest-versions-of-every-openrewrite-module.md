@@ -10,9 +10,9 @@ The use of the "bill of materials" means that a developer will only need to spec
 
 | Module                                                                                                                | Version    |
 |-----------------------------------------------------------------------------------------------------------------------| ---------- |
-| [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                    | **[2.19.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v2.19.0)** |
-| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                       | **[5.40.2](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v5.40.2)** |
-| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[6.23.3](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v6.23.3)** |
+| [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                    | **[2.20.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v2.20.0)** |
+| [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                       | **[5.41.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v5.41.0)** |
+| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[6.24.0](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v6.24.0)** |
 | [org.openrewrite:rewrite-core](https://github.com/openrewrite/rewrite)                                                | [8.35.0](https://github.com/openrewrite/rewrite/releases/tag/v8.35.0) |
 | [org.openrewrite:rewrite-gradle](https://github.com/openrewrite/rewrite)                                              | [8.35.0](https://github.com/openrewrite/rewrite/releases/tag/v8.35.0) |
 | [org.openrewrite:rewrite-groovy](https://github.com/openrewrite/rewrite)                                              | [8.35.0](https://github.com/openrewrite/rewrite/releases/tag/v8.35.0) |
