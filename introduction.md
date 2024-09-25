@@ -54,4 +54,5 @@ See how Moderne and OpenRewrite work in different ways to transform your code:
 
 Moderne freely runs an [open public service](https://www.moderne.io/try-moderne) for the benefit of tens of thousands of open-source projects. The platform can streamline your recipe customization and creation, enabling quick assembly and testing. It also includes a multi-repo command line interface (CLI) to enable developers to run and customize recipes locally.
 
-To understand better how Moderne can help your team, [contact us](https://www.moderne.io/contact-us).
+To understand better how Moderne can help your team, [contact us](https://www.moderne.io/contact-us). 
+
