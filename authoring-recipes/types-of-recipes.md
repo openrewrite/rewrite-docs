@@ -69,7 +69,7 @@ As a best practice, if your recipe can be declarative (meaning it can be built o
 {% endhint %}
 
 {% hint style="success" %}
-Want to use a UI to build declarative recipes rather than trying to figure out all the keys on your own and manually typing out the recipes? Check out the [Moderne recipe builder](https://app.moderne.io/recipes/builder).
+Want to use a UI to build declarative recipes rather than trying to figure out all the keys on your own and manually typing out the recipes? Check out the [Moderne recipe builder](https://app.moderne.io/builder).
 {% endhint %}
 
 ## Refaster template recipes
