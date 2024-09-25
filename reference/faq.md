@@ -91,7 +91,7 @@ mvn rewrite:run
 
 The Moderne CLI builds the LST artifacts for your repository in pieces if the repository can't fit into memory entirely. It also allows you to run recipes against multiple repositories at once.
 
-## I'm getting `Failed to parse or resolve the Maven POM file or one of its dependencies; We can not reliably continue without this information.` when running OpenRewrite.
+## I'm getting `Failed to parse or resolve the Maven POM file or one of its dependencies; We cannot reliably continue without this information.` when running OpenRewrite.
 
 OpenRewrite needs to resolve the Maven POM file and its dependencies to build up the Lossless Semantic Tree (LST).
 If you're seeing this error, it's likely that OpenRewrite is having trouble resolving the POM file or its dependencies.
