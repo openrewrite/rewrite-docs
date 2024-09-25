@@ -16,7 +16,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](./mockitojunitrunnersilenttoextension.md)
 * [Replace Mockito 1.x `anyString()` with `nullable(String.class)`](./anystringtonullable.md)
 * [Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`](./anytonullable.md)
-* [Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic](./mockitowhenonstatictomockstatic.md)
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](./powermockitomockstatictomockito.md)
 * [Retain Mockito strictness `WARN` when switching to JUnit 5](./retainstrictnesswarn.md)
 * [Use static form of Mockito `MockUtil`](./mockutilstostatic.md)

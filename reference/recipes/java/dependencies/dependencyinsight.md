@@ -6,11 +6,11 @@ _Finds dependencies, including transitive dependencies, in both Gradle and Maven
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.19.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.19.0
+* version: 1.18.0
 
 ## Options
 
@@ -19,7 +19,6 @@ _Finds dependencies, including transitive dependencies, in both Gradle and Maven
 | `String` | groupIdPattern | Group ID glob pattern used to match dependencies. | `com.fasterxml.jackson*` |
 | `String` | artifactIdPattern | Artifact ID glob pattern used to match dependencies. | `jackson-*` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used. All versions are searched by default. | `1.x` |
-| `String` | scope | *Optional*. Match dependencies with the specified Maven scope. All scopes are searched by default. Valid options: `compile`, `test`, `runtime`, `provided`, `system` | `compile` |
 
 
 ## Usage
@@ -38,18 +37,17 @@ recipeList:
       groupIdPattern: com.fasterxml.jackson*
       artifactIdPattern: jackson-*
       version: 1.x
-      scope: compile
 ```
 {% endcode %}
 
-Now that `com.yourorg.DependencyInsightExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.19.0 in your build file:
+Now that `com.yourorg.DependencyInsightExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.18.0 in your build file:
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.23.3")
 }
 
 rewrite {
@@ -62,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.19.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.18.0")
 }
 ```
 {% endcode %}
@@ -78,7 +76,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.40.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -89,7 +87,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.19.0</version>
+            <version>1.18.0</version>
           </dependency>
         </dependencies>
       </plugin>

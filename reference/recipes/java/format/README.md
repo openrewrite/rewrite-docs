@@ -11,6 +11,7 @@
 * [Normalize format](./normalizeformat.md)
 * [Normalize line breaks](./normalizelinebreaks.md)
 * [Normalize to tabs or spaces](./normalizetabsorspaces.md)
+* [Operator wrapping](./operatorwrap.md)
 * [Pad empty `for` loop components](./pademptyforloopcomponents.md)
 * [Remove trailing whitespace](./removetrailingwhitespace.md)
 * [Single line comments begin with a whitespace](./singlelinecomments.md)

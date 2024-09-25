@@ -1,16 +1,21 @@
-# Upgrade to Android SDK 34
+# Migrate to Spring Batch 5.0 from 4.3
 
-**org.openrewrite.android.UpgradeToAndroidSDK34**
+**org.openrewrite.java.spring.boot3.SpringBatch4To5Migration**
 
-_Recipes to upgrade to Android SDK version 34._
+_Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release._
+
+### Tags
+
+* spring
+* batch
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/resources/META-INF/rewrite/android-sdk-34.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/0.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-batch-5.0.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.18.0/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-android
-* version: 0.1.0
+* artifactId: rewrite-spring
+* version: 5.18.0
 
 {% hint style="info" %}
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -20,9 +25,25 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 {% tabs %}
 {% tab title="Recipe List" %}
-* [Upgrade to Android SDK 33](../android/upgradetoandroidsdk33.md)
-* [Change Android SDK version](../android/changeandroidsdkversion.md)
-  * version: `34`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion.md)
+  * groupId: `org.springframework.batch`
+  * artifactId: `*`
+  * newVersion: `5.0.x`
+  * overrideManagedVersion: `false`
+* [Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead](../../../java/spring/batch/listenersupportclasstointerface.md)
+* [Migrate `JobBuilderFactory` to `JobBuilder`](../../../java/spring/batch/migratejobbuilderfactory.md)
+* [Migrate `StepBuilderFactory` to `StepBuilder`](../../../java/spring/batch/migratestepbuilderfactory.md)
+* [Migrate `ItemWriter`](../../../java/spring/batch/migrateitemwriterwrite.md)
+* [Remove `DefaultBatchConfigurer`](../../../java/spring/batch/removedefaultbatchconfigurer.md)
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.metrics.BatchMetrics`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.observability.BatchMetrics`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.step.item.Chunk`
+  * newFullyQualifiedTypeName: `org.springframework.batch.item.Chunk`
+* [Change type](../../../java/changetype.md)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.configuration.annotation.ScopeConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.configuration.support.ScopeConfiguration`
 
 {% endtab %}
 
@@ -30,13 +51,32 @@ This recipe is composed of more than one recipe. If you want to customize the se
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.android.UpgradeToAndroidSDK34
-displayName: Upgrade to Android SDK 34
-description: Recipes to upgrade to Android SDK version 34.
+name: org.openrewrite.java.spring.boot3.SpringBatch4To5Migration
+displayName: Migrate to Spring Batch 5.0 from 4.3
+description: Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release.
+tags:
+  - spring
+  - batch
 recipeList:
-  - org.openrewrite.android.UpgradeToAndroidSDK33
-  - org.openrewrite.android.ChangeAndroidSdkVersion:
-      version: 34
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.batch
+      artifactId: *
+      newVersion: 5.0.x
+      overrideManagedVersion: false
+  - org.openrewrite.java.spring.batch.ListenerSupportClassToInterface
+  - org.openrewrite.java.spring.batch.MigrateJobBuilderFactory
+  - org.openrewrite.java.spring.batch.MigrateStepBuilderFactory
+  - org.openrewrite.java.spring.batch.MigrateItemWriterWrite
+  - org.openrewrite.java.spring.batch.RemoveDefaultBatchConfigurer
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.metrics.BatchMetrics
+      newFullyQualifiedTypeName: org.springframework.batch.core.observability.BatchMetrics
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.step.item.Chunk
+      newFullyQualifiedTypeName: org.springframework.batch.item.Chunk
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.configuration.annotation.ScopeConfiguration
+      newFullyQualifiedTypeName: org.springframework.batch.core.configuration.support.ScopeConfiguration
 
 ```
 {% endtab %}
@@ -44,18 +84,18 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-android:0.1.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.21.1")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.android.UpgradeToAndroidSDK34")
+    activeRecipe("org.openrewrite.java.spring.boot3.SpringBatch4To5Migration")
     exportDatatables = true
 }
 
@@ -64,7 +104,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-android:0.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.18.0")
 }
 ```
 {% endcode %}
@@ -79,15 +119,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.24.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.21.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-android:0.1.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.18.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.android.UpgradeToAndroidSDK34")
+        activeRecipe("org.openrewrite.java.spring.boot3.SpringBatch4To5Migration")
         exportDatatables = true
     }
     afterEvaluate {
@@ -117,18 +157,18 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.39.2</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.android.UpgradeToAndroidSDK34</recipe>
+            <recipe>org.openrewrite.java.spring.boot3.SpringBatch4To5Migration</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-android</artifactId>
-            <version>0.1.0</version>
+            <artifactId>rewrite-spring</artifactId>
+            <version>5.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -146,7 +186,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 {% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-android:RELEASE -Drewrite.activeRecipes=org.openrewrite.android.UpgradeToAndroidSDK34 -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.boot3.SpringBatch4To5Migration -Drewrite.exportDatatables=true
 ```
 {% endcode %}
 {% endtab %}
@@ -155,7 +195,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe UpgradeToAndroidSDK34
+mod run . --recipe SpringBatch4To5Migration
 ```
 {% endcode %}
 {% endtab %}
@@ -163,7 +203,7 @@ mod run . --recipe UpgradeToAndroidSDK34
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.android.UpgradeToAndroidSDK34)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.java.spring.boot3.SpringBatch4To5Migration)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -214,4 +254,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io)
+pdesprez, [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), Kun Li, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
