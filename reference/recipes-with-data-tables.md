@@ -457,6 +457,7 @@ The Gradle dependency configuration errors lists all the dependency configuratio
 **org.openrewrite.java.dependencies.DependencyVulnerabilityCheck**  
 This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.
 
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
   * **org.openrewrite.java.dependencies.table.VulnerabilityReport**: *A vulnerability report that includes detailed information about the affected artifact and the corresponding CVEs.*
 
 
@@ -504,11 +505,25 @@ Find data elements used on DTOs. This is useful to provide information where dat
   * **org.openrewrite.java.migrate.table.DtoDataUses**: *The use of the data elements of a DTO by the method declaration using it.*
 
 
+**[Find uses of internal javax APIs](https://docs.openrewrite.org/?q=org.openrewrite.java.migrate.search.FindInternalJavaxApis)**  
+**org.openrewrite.java.migrate.search.FindInternalJavaxApis**  
+The libraries that define these APIs will have to be migrated before any of the repositories that use them.
+
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
+
+
 **[Find Java versions in use](https://docs.openrewrite.org/?q=org.openrewrite.java.migrate.search.FindJavaVersion)**  
 **org.openrewrite.java.migrate.search.FindJavaVersion**  
 Finds Java versions in use.
 
   * **org.openrewrite.java.migrate.table.JavaVersionTable**: *Records versions of Java in use*
+
+
+**[Plan a Java version migration](https://docs.openrewrite.org/?q=org.openrewrite.java.migrate.search.PlanJavaMigration)**  
+**org.openrewrite.java.migrate.search.PlanJavaMigration**  
+Study the set of Java versions and associated tools in use across many repositories.
+
+  * **org.openrewrite.java.migrate.table.JavaVersionMigrationPlan**: *A per-repository view of the current state of Java versions and associated build tools*
 
 
 **[Find and fix vulnerable npm dependencies](https://docs.openrewrite.org/?q=org.openrewrite.nodejs.DependencyVulnerabilityCheck)**  
