@@ -227,7 +227,7 @@
   * [Docker](reference/recipes/docker/README.md)
     * [Search](reference/recipes/docker/search/README.md)
       * [Find uses of docker base images](reference/recipes/docker/search/finddockerimageuses.md)
-  * [.Net](reference/recipes/dotnet/README.md)
+  * [.NET](reference/recipes/dotnet/README.md)
     * [Analyze a .NET project using upgrade-assistant](reference/recipes/dotnet/upgradeassistantanalyze.md)
     * [Upgrade a .NET project using upgrade-assistant](reference/recipes/dotnet/upgradeassistant.md)
     * [Upgrade to .NET 6.0 using upgrade-assistant](reference/recipes/dotnet/migratetonet6.md)
