@@ -18,5 +18,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change the default value for feature key](./changevariationdefault.md)
 * [Migrate `LDUser` to `LDContext`](./migrateusertocontext.md)
 * [Remove LaunchDarkly's `boolVariation` for feature key](./removeboolvariation.md)
+* [Remove LaunchDarkly's `boolVariation` for feature key](./removestringvariation.md)
 
 

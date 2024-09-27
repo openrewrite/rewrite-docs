@@ -7,6 +7,14 @@
 * [Security](/reference/recipes/gradle/security)
 * [Spring](/reference/recipes/gradle/spring)
 
+## Composite Recipes
+
+_Recipes that include further recipes, often including the individual recipes below._
+
+* [Migrate to Gradle 6 from Gradle 5](./migratetogradle6.md)
+* [Migrate to Gradle 7 from Gradle 6](./migratetogradle7.md)
+* [Migrate to Gradle 8 from Gradle 7](./migratetogradle8.md)
+
 ## Recipes
 
 * [Add Gradle dependency](./adddependency.md)
@@ -21,6 +29,7 @@
 * [Dependency constraint to resolution rule](./dependencyconstrainttorule.md)
 * [Enable Gradle build cache](./enablegradlebuildcache.md)
 * [Enable Gradle parallel execution](./enablegradleparallelexecution.md)
+* [Migrate to Gradle 5 from Gradle 4](./migratetogradle5.md)
 * [Remove a Gradle dependency](./removedependency.md)
 * [Remove an enabled Gradle preview feature](./removeenablefeaturepreview.md)
 * [Remove repository](./removerepository.md)

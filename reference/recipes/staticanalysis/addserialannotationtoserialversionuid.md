@@ -1,32 +1,32 @@
 # Add `@Serial` annotation to `serialVersionUID`
 
-**org.openrewrite.staticanalysis.AddSerialAnnotationToserialVersionUID**
+**org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID**
 
 _Annotation any `serialVersionUID` fields with `@Serial` to indicate it's part of the serialization mechanism._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/AddSerialAnnotationToserialVersionUID.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.16.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/AddSerialAnnotationToSerialVersionUID.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.17.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.16.0
+* version: 1.17.0
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.16.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.17.0` in your build file or by running a shell command (in which case no build changes are needed): 
 {% tabs %}
 {% tab title="Gradle" %}
 1. Add the following to your `build.gradle` file:
 {% code title="build.gradle" %}
 ```groovy
 plugins {
-    id("org.openrewrite.rewrite") version("6.23.3")
+    id("org.openrewrite.rewrite") version("6.24.0")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.staticanalysis.AddSerialAnnotationToserialVersionUID")
+    activeRecipe("org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID")
     exportDatatables = true
 }
 
@@ -35,7 +35,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.16.0")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.17.0")
 }
 ```
 {% endcode %}
@@ -50,15 +50,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.23.3") }
+    dependencies { classpath("org.openrewrite:plugin:6.24.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.16.0")
+        rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.17.0")
     }
     rewrite {
-        activeRecipe("org.openrewrite.staticanalysis.AddSerialAnnotationToserialVersionUID")
+        activeRecipe("org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID")
         exportDatatables = true
     }
     afterEvaluate {
@@ -88,18 +88,18 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.40.2</version>
+        <version>5.41.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.staticanalysis.AddSerialAnnotationToserialVersionUID</recipe>
+            <recipe>org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.16.0</version>
+            <version>1.17.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -117,7 +117,7 @@ You will need to have [Maven](https://maven.apache.org/download.cgi) installed o
 
 {% code title="shell" overflow="wrap" %}
 ```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.AddSerialAnnotationToserialVersionUID -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID -Drewrite.exportDatatables=true
 ```
 {% endcode %}
 {% endtab %}
@@ -126,7 +126,7 @@ You will need to have configured the [Moderne CLI](https://docs.moderne.io/moder
 
 {% code title="shell" %}
 ```shell
-mod run . --recipe AddSerialAnnotationToserialVersionUID
+mod run . --recipe AddSerialAnnotationToSerialVersionUID
 ```
 {% endcode %}
 {% endtab %}
@@ -134,7 +134,7 @@ mod run . --recipe AddSerialAnnotationToserialVersionUID
 
 ## See how this recipe works across multiple open-source repositories
 
-[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.AddSerialAnnotationToserialVersionUID)
+[![Moderne Link Image](/.gitbook/assets/ModerneRecipeButton.png)](https://app.moderne.io/recipes/org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID)
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
