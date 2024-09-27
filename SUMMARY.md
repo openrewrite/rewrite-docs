@@ -1730,7 +1730,7 @@
             * [Camel Core changes](reference/recipes/org/apache/camel/updates/camel44/camelcorerecipe.md)
             * [Migrates camel 4.0 application to camel 4.4](reference/recipes/org/apache/camel/updates/camel44/camelmigrationrecipe.md)
             * [Replace 'camel.main.routeController' with camel.routecontroller'](reference/recipes/org/apache/camel/updates/camel44/routecontrollerproperties.md)
-            * [Replace depricated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](reference/recipes/org/apache/camel/updates/camel44/defaultjsonschemaloader.md)
+            * [Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](reference/recipes/org/apache/camel/updates/camel44/defaultjsonschemaloader.md)
           * [Customrecipes](reference/recipes/org/apache/camel/updates/customrecipes/README.md)
             * [Change prefix of property with Camel case](reference/recipes/org/apache/camel/updates/customrecipes/changepropertykeywithcasechange.md)
             * [Move getter from context to PluginHelper.](reference/recipes/org/apache/camel/updates/customrecipes/movegettertopluginhelper.md)

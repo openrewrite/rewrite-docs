@@ -32,7 +32,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [The header name for the List metadata has changed](../../../../../org/apache/camel/updates/camel43/kafkametadata.md)
 * [Camel Core changes](../../../../../org/apache/camel/updates/camel44/camelcorerecipe.md)
 * [Replace 'camel.main.routeController' with `camel.routecontroller'](../../../../../org/apache/camel/updates/camel44/routecontrollerproperties.md)
-* [Replace depricated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](../../../../../org/apache/camel/updates/camel44/defaultjsonschemaloader.md)
+* [Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader](../../../../../org/apache/camel/updates/camel44/defaultjsonschemaloader.md)
 
 {% endtab %}
 

@@ -84,6 +84,7 @@ Develocity
 diffing
 diffs
 Dockerfiles
+dotnet
 dropwizard
 dsl
 dto
