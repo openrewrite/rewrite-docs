@@ -51,7 +51,6 @@ cmn
 Cobertura
 codebases
 codehaus
-codemod
 codemods
 codeowners
 Codestarts
