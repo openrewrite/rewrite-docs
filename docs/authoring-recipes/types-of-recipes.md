@@ -123,7 +123,7 @@ public static class RedundantCall {
 
 ## Imperative recipes
 
-[Imperative recipes](./authoring-recipes/writing-a-java-refactoring-recipe) offer the most freedom and functionality at the cost of being more difficult to create. They allow you to write Java code to implement your recipe.
+[Imperative recipes](writing-a-java-refactoring-recipe.md) offer the most freedom and functionality at the cost of being more difficult to create. They allow you to write Java code to implement your recipe.
 
 Imperative recipes are ideal for situations where there is a lot of complexity or nuance needed to determine what should be changed or what it should be changed into. For instance, if you wanted to write a recipe that added the `final` modifier to any local variables that aren't reassigned, you would need to create an imperative recipe as refaster templates don't have the ability to determine whether a variable has been reassigned.
 
@@ -134,5 +134,5 @@ The [FinalizeLocalVariables recipe](https://github.com/openrewrite/rewrite-stati
 ## Next steps
 
 * If you want more information about the types of recipes and the recipe execution pipeline, please see our [recipes documentation](../concepts-and-explanations/recipes.md)
-* If you want to write your own imperative recipe, please check out the [writing a Java refactoring recipe](./authoring-recipes/writing-a-java-refactoring-recipe.md) guide.
-* If you want to learn more about how to test recipes, please see our [recipe testing guide](./authoring-recipes/recipe-testing.md)
+* If you want to write your own imperative recipe, please check out the [writing a Java refactoring recipe](writing-a-java-refactoring-recipe.md) guide.
+* If you want to learn more about how to test recipes, please see our [recipe testing guide](recipe-testing.md)

@@ -66,7 +66,7 @@ Available on all LSTs produced from a Git repository.
 ### NamedStyles
 
 [NamedStyles](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/style/NamedStyles.java)
-is a named collection of [styles](styles.md) representing code style/formatting and related configuration options.
+is a named collection of [styles](../concepts-and-explanations/styles.md) representing code style/formatting and related configuration options.
 If not explicitly configured the code style a project uses will be auto-detected.
 It is available on Java source files.
 

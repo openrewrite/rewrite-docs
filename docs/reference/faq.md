@@ -64,9 +64,9 @@ This nuance is why we don't support intermediate steps to commit results; it wou
 
 That being said, there are two things you can do:
 
-1. You can run individual parts of the hierarchy. For instance, the [Migrate to Java 17 recipe](/recipes/java/migrate/upgradetojava17.md) contains the [Migrate to Java 11 recipe](/recipes/java/migrate/java8tojava11.md), which contains the [Migrate to Java 8 recipe](/recipes/java/migrate/upgradetojava8.md). You could run each of those child recipes and commit the results - which would limit the number of changes being done at a time.
+1. You can run individual parts of the hierarchy. For instance, the [Migrate to Java 17 recipe](../recipes/java/migrate/upgradetojava17.md) contains the [Migrate to Java 11 recipe](../recipes/java/migrate/java8tojava11.md), which contains the [Migrate to Java 8 recipe](../recipes/java/migrate/upgradetojava8.md). You could run each of those child recipes and commit the results - which would limit the number of changes being done at a time.
 
-2. You can also use [Preconditions](/reference/yaml-format-reference.md#preconditions) to limit the changes to a particular [source set](../recipes/java/search/hassourceset.md) or [set of files](../recipes/findsourcefiles.md).
+2. You can also use [Preconditions](/reference/yaml-format-reference.md#preconditions) to limit the changes to a particular [source set](../recipes/java/search/hassourceset.md) or [set of files](../recipes/core/findsourcefiles.md).
 
 Using these two approaches together in separate runs means you can likely create something that's feasible to review.
 
