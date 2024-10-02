@@ -54,7 +54,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/mike-solomon/test-docusaurus/edit/main',
+            'https://github.com/openrewrite/rewrite-docs/edit/main',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -142,7 +142,7 @@ const config: Config = {
               href: 'https://app.moderne.io/marketplace',
             },
             {
-              label: 'Twitter',
+              label: 'X',
               href: 'https://twitter.com/ModerneInc',
             },
           ],
