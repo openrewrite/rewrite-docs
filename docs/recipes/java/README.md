@@ -1,0 +1,62 @@
+# Java
+
+_Basic building blocks for transforming Java code._
+
+## Categories
+
+* [AI tools](/recipes/java/ai)
+* [Camel](/recipes/java/camel)
+* [Dependencies](/recipes/java/dependencies)
+* [Format](/recipes/java/format)
+* [Jackson](/recipes/java/jackson)
+* [Jspecify](/recipes/java/jspecify)
+* [Liberty](/recipes/java/liberty)
+* [Logging](/recipes/java/logging)
+* [Micronaut](/recipes/java/micronaut)
+* [Modernize](/recipes/java/migrate)
+* [OpenRewrite best practices](/recipes/java/recipes)
+* [Search](/recipes/java/search)
+* [Security](/recipes/java/security)
+* [Spring](/recipes/java/spring)
+* [Springdoc](/recipes/java/springdoc)
+* [Struts](/recipes/java/struts)
+* [Testing](/recipes/java/testing)
+
+## Recipes
+
+* [Add ASLv2 license header](./addapache2licenseheader.md)
+* [Add a literal method argument](./addliteralmethodargument.md)
+* [Add a `null` method argument](./addnullmethodargument.md)
+* [Add imports for fully qualified references to types](./shortenfullyqualifiedtypereferences.md)
+* [Add license header](./addlicenseheader.md)
+* [Add method parameter to a method declaration](./addmethodparameter.md)
+* [Add or update annotation attribute](./addorupdateannotationattribute.md)
+* [Change annotation attribute name](./changeannotationattributename.md)
+* [Change method access level](./changemethodaccesslevel.md)
+* [Change method name](./changemethodname.md)
+* [Change method target to static](./changemethodtargettostatic.md)
+* [Change method target to variable](./changemethodtargettovariable.md)
+* [Change static field access to static method access](./changestaticfieldtomethod.md)
+* [Change type](./changetype.md)
+* [Create Java class](./createemptyjavaclass.md)
+* [Delete method argument](./deletemethodargument.md)
+* [Demonstrate rendering of `Markup` markers](./recipemarkupdemonstration.md)
+* [Order imports](./orderimports.md)
+* [Randomize tree IDs](./randomizeid.md)
+* [Remove annotation](./removeannotation.md)
+* [Remove annotation attribute](./removeannotationattribute.md)
+* [Remove interface implementations](./removeimplements.md)
+* [Remove static import](./nostaticimport.md)
+* [Remove unused imports](./removeunusedimports.md)
+* [Rename package name](./changepackage.md)
+* [Reorder method arguments](./reordermethodarguments.md)
+* [Replace String literal with constant](./replacestringliteralwithconstant.md)
+* [Replace annotation](./replaceannotation.md)
+* [Replace constant with another constant](./replaceconstantwithanotherconstant.md)
+* [Replace constant with literal value](./replaceconstant.md)
+* [Simplify a call chain](./simplifymethodchain.md)
+* [Transform calls to `Objects.isNull(..)` and `Objects.nonNull(..)`](./removeobjectsisnull.md)
+* [Update source positions](./updatesourcepositions.md)
+* [Use static import](./usestaticimport.md)
+
+
