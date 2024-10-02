@@ -80,5 +80,5 @@
 \.zip$
 ^\.github/actions/spelling/
 ^\Q.github/workflows/spelling.yml\E$
-^reference/recipes/
+^docs/recipes/
 ignore$
