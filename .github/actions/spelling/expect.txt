@@ -9,6 +9,7 @@ aggr
 AKV
 alloc
 allprojects
+anynestedcondition
 APKCXEA
 archunit
 Artem
@@ -39,6 +40,7 @@ capitalizerecipe
 Cdi
 CDIAPIs
 cgi
+changepackage
 checkstyle
 circleci
 classdeclaration
@@ -52,10 +54,12 @@ Cobertura
 codebases
 codehaus
 codemods
-codeowners
+CODEOWNERS
 Codestarts
 committers
+commonstaticanalysis
 compilationunit
+conditionalonbean
 configprops
 Configurer
 contextualized
@@ -67,6 +71,7 @@ cus
 customizability
 Customrecipes
 cve
+CVEs
 cwe
 cyclonedx
 databind
@@ -80,13 +85,15 @@ defaultstringrecipe
 deletedirectoryfilerecipe
 deletedirectorystringrecipe
 deletewhitespacerecipe
+dependencyresolutiondiagnostic
 Develocity
 diffing
 diffs
 Dockerfiles
 dotnet
+dracula
 dropwizard
-dsl
+DSL
 dto
 EEto
 Ehcache
@@ -108,9 +115,13 @@ Failover
 fasterxml
 featureflags
 fileexistsstringrecipe
+findandreplace
+findmissingtypes
+findparsefailures
 fns
 Formik
 gav
+GAVs
 getfilerecipe
 gitbook
 googlecode
@@ -144,7 +155,8 @@ javac
 javadocs
 javaee
 javatemplate
-jax
+javaxmigrationtojakarta
+JAX
 jaxb
 JAXRS
 jaxws
@@ -171,7 +183,7 @@ JLeft
 JLS
 jmockit
 Jndi
-jni
+JNI
 JNumber
 Johnzon
 jpa
@@ -250,6 +262,7 @@ openj
 openrewrite
 opensymphony
 Opta
+orderimports
 Overfetch
 Overfetching
 owasp
@@ -280,6 +293,7 @@ refasterrules
 regexes
 relyingparty
 removeendrecipe
+removeunusedimports
 replacerecipe
 Resequence
 Resteasy
@@ -316,6 +330,7 @@ spi
 splitrecipe
 Spotbugs
 Springbatch
+springboot
 springdoc
 springframework
 SSRF
@@ -329,6 +344,7 @@ subpackages
 superclasses
 supertypes
 taglib
+tagline
 temurin
 terraform
 testcontainers
@@ -357,7 +373,7 @@ useequalsignorecaserecipe
 valueof
 varargs
 variabledeclarations
-versioning
+Versioning
 vladmihalcea
 VPC
 Vuex
