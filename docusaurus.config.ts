@@ -21,10 +21,10 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://openrewrite.github.io/rewrite-docs',
+  url: 'https://openrewrite.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/rewrite-docs',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
