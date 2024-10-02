@@ -70,7 +70,6 @@ cursoring
 cus
 customizability
 Customrecipes
-cve
 CVEs
 cwe
 cyclonedx
@@ -120,7 +119,6 @@ findmissingtypes
 findparsefailures
 fns
 Formik
-gav
 GAVs
 getfilerecipe
 gitbook
