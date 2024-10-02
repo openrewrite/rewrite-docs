@@ -81,4 +81,8 @@
 ^\.github/actions/spelling/
 ^\Q.github/workflows/spelling.yml\E$
 ^docs/recipes/
+^docs/changelog/
+^gitbook-converter.py
+^src/
+^static/
 ignore$
