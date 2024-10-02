@@ -32,7 +32,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipe-type">
 <TabItem value="recipe-list" title="Recipe List" >
-* [Migrate to JavaEE7](../../java/migrate/javaee7)
+* [Migrate to JavaEE7](../../java/migrate/javaee7-recipe)
 * [Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`](../../java/migrate/javaee8/servletisrequestedsessionidfromurl)
 * [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](../../java/migrate/javaee8/apachedefaultprovider)
 
