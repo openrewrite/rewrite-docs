@@ -80,6 +80,7 @@
 \.zip$
 ^\.github/actions/spelling/
 ^\Q.github/workflows/spelling.yml\E$
+^\.github/workflows/pages.yml
 ^docs/recipes/
 ^docs/changelog/
 ^gitbook-converter.py
