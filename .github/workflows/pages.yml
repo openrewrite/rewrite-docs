@@ -27,8 +27,11 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Build website
         run: yarn build
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
