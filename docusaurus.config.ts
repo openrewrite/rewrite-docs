@@ -48,6 +48,9 @@ const config: Config = {
           editUrl:
             'https://github.com/openrewrite/rewrite-docs/edit/main',
         },
+        gtag: {
+          trackingID: 'G-Y67JVX3WB7',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },

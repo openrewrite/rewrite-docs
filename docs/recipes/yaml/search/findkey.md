@@ -41,6 +41,7 @@ recipeList:
 ```
 
 Now that `com.yourorg.FindKeyExample` has been defined, activate it in your build file:
+
 <Tabs groupId="project-type">
 <TabItem value="gradle" title="Gradle">
     1. Add the following to your `build.gradle` file:
