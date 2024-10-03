@@ -68,6 +68,11 @@ const config: Config = {
   },
 
   themeConfig: {
+    algolia: {
+      appId: 'NHGG4Q2UXX',
+      apiKey: '08f02d57e3f18adf647518db37e5b42d',
+      indexName: 'rewrite_docs',
+    },
     // Replace with your project's social card
     image: 'img/moderne-poster-logo.svg',
     colorMode: {
