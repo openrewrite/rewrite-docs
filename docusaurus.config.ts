@@ -20,25 +20,17 @@ const config: Config = {
   tagline: 'Large-scale automated source code refactoring',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://openrewrite.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/rewrite-docs',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'openrewrite', // Usually your GitHub org/user name.
-  projectName: 'rewrite-docs', // Usually your repo name.
+  organizationName: 'openrewrite',
+  projectName: 'rewrite-docs',
   deploymentBranch: 'docusaurus',
   trailingSlash: false,
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -63,6 +55,7 @@ const config: Config = {
     ],
   ],
 
+  // Handles variable substitution throughout the docs.
   markdown: {
     preprocessor: ({filePath, fileContent}) => {
       let content = fileContent;
@@ -77,24 +70,37 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/moderne-poster-logo.svg',
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
     navbar: {
       title: 'OpenRewrite',
       logo: {
         alt: 'Moderne Logo',
         src: 'img/logo.png',
+        srcDark: 'img/darkLogo.png',
       },
       items: [
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Tutorial',
-        // },
-        // {
-        //   href: 'https://github.com/facebook/docusaurus',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+        {
+          href: 'https://github.com/openrewrite',
+          label: 'GitHub',
+          position: "right",
+        },
+        {
+          href: 'https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA',
+          label: 'Join us on Slack',
+          position: "right",
+        },
+        {
+          href: 'https://discord.gg/xk3ZKrhWAb',
+          label: 'Join us on Discord',
+          position: "right",
+        },
+        {
+          href: 'https://stackoverflow.com/questions/tagged/openrewrite',
+          label: 'Ask on Stack Overflow',
+          position: "right",
+        },
       ],
     },
     footer: {
