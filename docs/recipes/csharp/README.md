@@ -1,4 +1,4 @@
-# C#
+# `C#`
 
 _Recipes for C# codebases._
 
