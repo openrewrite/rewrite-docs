@@ -10,7 +10,33 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration from t
 If your project is a Spring or Spring-Boot project, add a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the [SpringBoot2JUnit4to5Migration](../../recipes/java/spring/boot2/springboot2junit4to5migration.md) recipe:
 
 <Tabs groupId="projectType">
-	<TabItem value="maven" label="Maven">
+<TabItem value="gradle" label="Gradle">
+
+```groovy title="build.gradle"
+    plugins {
+        id("java")
+        id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    }
+    
+    rewrite {
+        activeRecipe("org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration")
+    }
+    
+    repositories {
+        mavenCentral() // rewrite-spring is published to Maven Central
+    }
+    
+    dependencies {
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+        rewrite("org.openrewrite.recipe:rewrite-spring")
+    
+        // Other project dependencies
+    }
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven">
+
 ```xml title="pom.xml"
 <build>
   <plugins>
@@ -35,32 +61,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
 <build>
 ```
 
-	</TabItem>
-
-	<TabItem value="gradle" label="Gradle">
-```groovy title="build.gradle"
-    plugins {
-        id("java")
-        id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-    }
-    
-    rewrite {
-        activeRecipe("org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration")
-    }
-    
-    repositories {
-        mavenCentral() // rewrite-spring is published to Maven Central
-    }
-    
-    dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
-        rewrite("org.openrewrite.recipe:rewrite-spring")
-    
-        // Other project dependencies
-    }
-```
-
-	</TabItem>
+</TabItem>
 </Tabs>
 
 :::info
@@ -70,6 +71,33 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
 If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the [JUnit5BestPractices](../../recipes/java/testing/junit5/junit5bestpractices.md) recipe:
 
 <Tabs groupId="projectType">
+
+<TabItem value="gradle" label="Gradle">
+
+```groovy title="build.gradle"
+    plugins {
+        id("java")
+        id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+    }
+    
+    rewrite {
+        activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
+    }
+    
+    repositories {
+        mavenCentral() // rewrite-testing-frameworks is published to Maven Central
+    }
+    
+    dependencies {
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
+    
+        // Other project dependencies
+    }
+```
+
+</TabItem>
+
 <TabItem value="maven" label="Maven">
 
 ```xml title="pom.xml"
@@ -97,31 +125,6 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
 ```
 </TabItem>
 
-<TabItem value="gradle" label="Gradle">
-
-```groovy title="build.gradle"
-    plugins {
-        id("java")
-        id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-    }
-    
-    rewrite {
-        activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
-    }
-    
-    repositories {
-        mavenCentral() // rewrite-testing-frameworks is published to Maven Central
-    }
-    
-    dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
-    
-        // Other project dependencies
-    }
-```
-
-</TabItem>
 </Tabs>
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.

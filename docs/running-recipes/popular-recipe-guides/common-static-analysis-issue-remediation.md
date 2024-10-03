@@ -10,30 +10,8 @@ In this guide we'll look at using OpenRewrite to perform an automated remediatio
 The [Common Static Analysis Recipe](/recipes/staticanalysis/commonstaticanalysis) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
 
 <Tabs groupId="projectType">
-	<TabItem value="maven" label="Maven">
-```xml title="pom.xml"
-<plugin>
-  <groupId>org.openrewrite.maven</groupId>
-  <artifactId>rewrite-maven-plugin</artifactId>
-  <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-  <configuration>
-    <activeRecipes>
-      <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
-    </activeRecipes>
-  </configuration>
-  <dependencies>
-    <dependency>
-      <groupId>org.openrewrite.recipe</groupId>
-      <artifactId>rewrite-static-analysis</artifactId>
-      <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
-    </dependency>
-  </dependencies>
-</plugin>
-```
+<TabItem value="gradle" label="Gradle">
 
-	</TabItem>
-
-	<TabItem value="gradle" label="Gradle">
 ```groovy title="build.gradle"
 plugins {
     id("java")
@@ -53,7 +31,31 @@ dependencies {
 }
 ```
 
-	</TabItem>
+</TabItem>
+<TabItem value="maven" label="Maven">
+
+```xml title="pom.xml"
+<plugin>
+    <groupId>org.openrewrite.maven</groupId>
+    <artifactId>rewrite-maven-plugin</artifactId>
+    <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+    <configuration>
+    <activeRecipes>
+        <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
+    </activeRecipes>
+    </configuration>
+    <dependencies>
+    <dependency>
+        <groupId>org.openrewrite.recipe</groupId>
+        <artifactId>rewrite-static-analysis</artifactId>
+        <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+    </dependency>
+    </dependencies>
+</plugin>
+```
+
+</TabItem>
+
 </Tabs>
 
 At this point, you're ready to fix common static analysis issues by running `mvn rewrite:run` or `gradlew rewriteRun`.

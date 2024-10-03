@@ -86,58 +86,58 @@ OpenRewrite can be configured to use different checkstyle policies than your Che
 If your build does not use either of the Gradle or Maven Checkstyle plugins, you can still configure the rewrite build plugins to use a checkstyle xml configuration file:
 
 <Tabs groupId="projectType">
-	<TabItem value="maven" label="Maven">
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
-          </activeRecipes>
-          <checkstyleConfigFile>checkstyle.xml</checkstyleConfigFile>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-static-analysis</artifactId>
-            <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
+<TabItem value="gradle" label="Gradle">
 
-	</TabItem>
-
-	<TabItem value="gradle" label="Gradle">
 ```groovy title="build.gradle"
 plugins {
-    id("java")
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+  id("java")
+  id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.staticanalysis.CodeCleanup")
-    checkstyleConfigFile = file("checkstyle.xml")
+  activeRecipe("org.openrewrite.staticanalysis.CodeCleanup")
+  checkstyleConfigFile = file("checkstyle.xml")
 }
 
 repositories {
-    mavenCentral() // rewrite is published to Maven Central
+  mavenCentral() // rewrite is published to Maven Central
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest-release")
+  rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest-release")
 }
 ```
 
-	</TabItem>
+</TabItem>
+<TabItem value="maven" label="Maven">
+```xml title="pom.xml"
+<project>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.openrewrite.maven</groupId>
+      <artifactId>rewrite-maven-plugin</artifactId>
+      <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+      <configuration>
+        <activeRecipes>
+          <recipe>org.openrewrite.staticanalysis.CodeCleanup</recipe>
+        </activeRecipes>
+        <checkstyleConfigFile>checkstyle.xml</checkstyleConfigFile>
+      </configuration>
+      <dependencies>
+        <dependency>
+          <groupId>org.openrewrite.recipe</groupId>
+          <artifactId>rewrite-static-analysis</artifactId>
+          <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
+        </dependency>
+      </dependencies>
+    </plugin>
+  </plugins>
+</build>
+</project>
+```
+
+</TabItem>
 </Tabs>
 
 At this point, you're ready to fix Checkstyle policy violations by running `mvn rewrite:run` or `gradlew rewriteRun`.

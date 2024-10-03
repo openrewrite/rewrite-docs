@@ -16,7 +16,33 @@ This recipe covers the following themes:
 The Java 17 migration recipe can be applied by including OpenRewrite's plug-in to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
 
 <Tabs groupId="projectType">
-	<TabItem value="maven" label="Maven">
+<TabItem value="gradle" label="Gradle">
+
+```groovy title="build.gradle"
+  plugins {
+      id("java")
+      id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
+  }
+  
+  rewrite {
+      activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")
+  }
+  
+  repositories {
+      mavenCentral() // rewrite-spring is published to Maven Central
+  }
+  
+  dependencies {
+      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+      rewrite("org.openrewrite.recipe:rewrite-migrate-java")
+  
+      // Other project dependencies
+  }
+```
+
+</TabItem>
+
+<TabItem value="maven" label="Maven">
 ```xml title="pom.xml"
 <build>
   <plugins>
@@ -41,32 +67,8 @@ The Java 17 migration recipe can be applied by including OpenRewrite's plug-in t
 </build>
 ```
 
-	</TabItem>
+</TabItem>
 
-	<TabItem value="gradle" label="Gradle">
-```groovy title="build.gradle"
-  plugins {
-      id("java")
-      id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-  }
-  
-  rewrite {
-      activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")
-  }
-  
-  repositories {
-      mavenCentral() // rewrite-spring is published to Maven Central
-  }
-  
-  dependencies {
-      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
-      rewrite("org.openrewrite.recipe:rewrite-migrate-java")
-  
-      // Other project dependencies
-  }
-```
-
-	</TabItem>
 </Tabs>
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.

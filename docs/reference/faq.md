@@ -26,23 +26,24 @@ Exclusion paths are relative to the project root, not the system file path.
 :::
 
 <Tabs groupId="projectType">
-	<TabItem value="maven" label="Maven">
+<TabItem value="gradle" label="Gradle">
+In your `build.gradle` file:
+
+```groovy title="build.gradle"
+rewrite {
+  exclusions = ["folderA", "folderB"]
+}
+```
+</TabItem>
+
+<TabItem value="maven" label="Maven">
 In the command line:
 
 ```shell
 mvn rewrite:run -Drewrite.exclusions="folderA,folderB"
 ```
-	</TabItem>
+</TabItem>
 
-  <TabItem value="gradle" label="Gradle">
-In your `build.gradle` file:
-
-```groovy title="build.gradle"
-rewrite {
-    exclusions = ["folderA", "folderB"]
-}
-```
-	</TabItem>
 </Tabs>
 
 ## Why do artifact scanners detect vulnerabilities in recipe artifacts/JARs?
@@ -79,18 +80,19 @@ You can either increase the size of the Java heap or build and run recipes with 
 **Java heap instructions**
 
 <Tabs groupId="projectType">
-	<TabItem value="maven" label="Maven">
+<TabItem value="gradle" label="Gradle">
+```shell
+gradle -Dorg.gradle.jvmargs=-Xmx8G rewrite:run
+```
+</TabItem>
+
+<TabItem value="maven" label="Maven">
 ```shell
 export MAVEN_OPTS="-Xmx8G"
 mvn rewrite:run
 ```
-	</TabItem>
+</TabItem>
 
-	<TabItem value="gradle" label="Gradle">
-```shell
-gradle -Dorg.gradle.jvmargs=-Xmx8G rewrite:run
-```
-	</TabItem>
 </Tabs>
 
 **Moderne CLI**

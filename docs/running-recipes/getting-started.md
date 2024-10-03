@@ -54,18 +54,7 @@ git clone https://github.com/openrewrite/spring-petclinic-migration.git
 Once you've checked out your project, the next step is to add the OpenRewrite plugin to Maven or Gradle. Please follow the instructions in the Maven or Gradle tab to do that:
 
 <Tabs groupId="projectType">
-  <TabItem value="maven" label="Maven">
-    Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks like:
-
-    ```markup title="pom.xml"
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-    </plugin>
-    ```
-  </TabItem>
-  <TabItem value="gradle-groovy" label="Gradle (Groovy)">
+<TabItem value="gradle-groovy" label="Gradle (Groovy)">
     * Add the OpenRewrite plugin to the `plugins` section of your `build.gradle` file
     * Make sure `mavenCentral()` is included in the `repositories` section
     * Add a `rewrite` section that will be filled in later
@@ -117,6 +106,18 @@ Once you've checked out your project, the next step is to add the OpenRewrite pl
     }
     ```
   </TabItem>
+  <TabItem value="maven" label="Maven">
+    Add a new `<plugin>` in the `<plugins>` section of your `pom.xml` that looks like:
+
+    ```markup title="pom.xml"
+    <plugin>
+      <groupId>org.openrewrite.maven</groupId>
+      <artifactId>rewrite-maven-plugin</artifactId>
+      <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+    </plugin>
+    ```
+  </TabItem>
+  
 </Tabs>
 
 At this point, you're able to run any of the Maven goals or Gradle tasks provided by the OpenRewrite plugin. See [Maven Plugin Configuration](../reference/rewrite-maven-plugin.md) or [Gradle Plugin Configuration](../reference/gradle-plugin-configuration.md) for the full set of options.
@@ -128,50 +129,56 @@ From the command line, try running `mvn rewrite:discover` or `gradle rewriteDisc
 Before you can run any of the recipes, you will need to update the plugin configuration to mark the desired recipe(s) as "active". Let's use the [org.openrewrite.java.OrderImports](/recipes/java/orderimports) recipe as an example (which will ensure your imports follow a standard order). To activate this recipe, please modify your `pom.xml` or `build.gradle(.kts)` file so that the sections you modified earlier look like the below example:
 
 <Tabs groupId="projectType">
-  <TabItem value="maven" label="Maven">
-    ```xml title="pom.xml"
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-      <configuration>
-        <activeRecipes>
-          <recipe>org.openrewrite.java.OrderImports</recipe>
-        </activeRecipes>
-      </configuration>
-    </plugin>
-    ```
-  </TabItem>
-  <TabItem value="gradle-groovy" label="Gradle (Groovy)">
-    ```groovy title="build.gradle"
-    plugins {
-      id 'java'
-      id 'maven-publish'
-      id 'org.openrewrite.rewrite' version '{{VERSION_REWRITE_GRADLE_PLUGIN}}'
-    }
+<TabItem value="gradle-groovy" label="Gradle (Groovy)">
 
-    rewrite {
-      activeRecipe(
-          'org.openrewrite.java.OrderImports',
-      )
-    }
-    ```
-  </TabItem>
-  <TabItem value="gradle-kotlin" label="Gradle (Kotlin)">
-    ```kotlin title="build.gradle.kts"
-    plugins {
-      `java-library`
-      `maven-publish`
-      id("org.openrewrite.rewrite") version "{{VERSION_REWRITE_GRADLE_PLUGIN}}"
-    }
+  ```groovy title="build.gradle"
+  plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'org.openrewrite.rewrite' version '{{VERSION_REWRITE_GRADLE_PLUGIN}}'
+  }
 
-    rewrite {
-      activeRecipe(
-          "org.openrewrite.java.OrderImports",
-      )
-    }
-    ```
-  </TabItem>
+  rewrite {
+    activeRecipe(
+        'org.openrewrite.java.OrderImports',
+    )
+  }
+  ```
+
+</TabItem>
+<TabItem value="gradle-kotlin" label="Gradle (Kotlin)">
+
+  ```kotlin title="build.gradle.kts"
+  plugins {
+    `java-library`
+    `maven-publish`
+    id("org.openrewrite.rewrite") version "{{VERSION_REWRITE_GRADLE_PLUGIN}}"
+  }
+
+  rewrite {
+    activeRecipe(
+        "org.openrewrite.java.OrderImports",
+    )
+  }
+  ```
+
+</TabItem>
+<TabItem value="maven" label="Maven">
+
+  ```xml title="pom.xml"
+  <plugin>
+    <groupId>org.openrewrite.maven</groupId>
+    <artifactId>rewrite-maven-plugin</artifactId>
+    <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+    <configuration>
+      <activeRecipes>
+        <recipe>org.openrewrite.java.OrderImports</recipe>
+      </activeRecipes>
+    </configuration>
+  </plugin>
+  ```
+
+</TabItem>
 </Tabs>
 
 ## Step 4: Run a simple refactoring recipe
@@ -179,16 +186,18 @@ Before you can run any of the recipes, you will need to update the plugin config
 Now that you've activated the `OrderImports` recipe, you can run it by executing the command:
 
 <Tabs groupId="projectType">
-  <TabItem value="maven" label="Maven">
-    ```bash
-    mvn rewrite:run
-    ```
-  </TabItem>
-  <TabItem value="gradle" label="Gradle">
-    ```bash
-    gradle rewriteRun
-    ```
-  </TabItem>
+<TabItem value="gradle" label="Gradle">
+
+  ```bash
+  gradle rewriteRun
+  ```
+</TabItem>
+<TabItem value="maven" label="Maven">
+
+  ```bash
+  mvn rewrite:run
+  ```
+</TabItem>
 </Tabs>
 
 After running it, you will be notified of all of the files that have been changed:
@@ -236,57 +245,63 @@ YAML files are very sensitive to indentation. If you are not seeing the expected
 If the file was created correctly, you should see `com.yourorg.VetToVeterinary` listed under available recipes if you run the discover command again. Also, as mentioned earlier, in order to use this recipe, you'll need to add it to your list of active recipes:
 
 <Tabs groupId="projectType">
-  <TabItem value="maven" label="Maven">
-    ```xml title="pom.xml"
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>org.openrewrite.maven</groupId>
-          <artifactId>rewrite-maven-plugin</artifactId>
-          <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-          <configuration>
-            <activeRecipes>
-              <recipe>org.openrewrite.java.OrderImports</recipe>
-              <recipe>com.yourorg.VetToVeterinary</recipe>
-            </activeRecipes>
-          </configuration>
-        </plugin>
-      </plugins>
-    </build>
-    ```
-  </TabItem>
-  <TabItem value="gradle-groovy" label="Gradle (Groovy)">
-    ```groovy title="build.gradle"
-    plugins {
-      id 'java'
-      id 'maven-publish'
-      id 'org.openrewrite.rewrite' version '{{VERSION_REWRITE_GRADLE_PLUGIN}}'
-    }
+<TabItem value="gradle-groovy" label="Gradle (Groovy)">
 
-    rewrite {
-      activeRecipe(
-          'org.openrewrite.java.OrderImports',
-          'com.yourorg.VetToVeterinary'
-      )
-    }
-    ```
-  </TabItem>
-  <TabItem value="gradle-kotlin" label="Gradle (Kotlin)">
-    ```kotlin title="build.gradle.kts"
-    plugins {
-      `java-library`
-      `maven-publish`
-      id("org.openrewrite.rewrite") version "{{VERSION_REWRITE_GRADLE_PLUGIN}}"
-    }
+  ```groovy title="build.gradle"
+  plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'org.openrewrite.rewrite' version '{{VERSION_REWRITE_GRADLE_PLUGIN}}'
+  }
 
-    rewrite {
-      activeRecipe(
-          "org.openrewrite.java.OrderImports",
-          "com.yourorg.VetToVeterinary"
-      )
-    }
-    ```
-  </TabItem>
+  rewrite {
+    activeRecipe(
+        'org.openrewrite.java.OrderImports',
+        'com.yourorg.VetToVeterinary'
+    )
+  }
+  ```
+</TabItem>
+<TabItem value="gradle-kotlin" label="Gradle (Kotlin)">
+
+  ```kotlin title="build.gradle.kts"
+  plugins {
+    `java-library`
+    `maven-publish`
+    id("org.openrewrite.rewrite") version "{{VERSION_REWRITE_GRADLE_PLUGIN}}"
+  }
+
+  rewrite {
+    activeRecipe(
+        "org.openrewrite.java.OrderImports",
+        "com.yourorg.VetToVeterinary"
+    )
+  }
+  ```
+
+</TabItem>
+<TabItem value="maven" label="Maven">
+
+  ```xml title="pom.xml"
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <activeRecipes>
+            <recipe>org.openrewrite.java.OrderImports</recipe>
+            <recipe>com.yourorg.VetToVeterinary</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  ```
+
+</TabItem>
+
 </Tabs>
 
 Once this recipe has been added to your active recipes, you can run either `mvn rewrite:run` or `gradle rewriteRun` to execute all of your active recipes. Afterward, you'll see that:

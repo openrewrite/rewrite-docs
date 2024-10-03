@@ -75,7 +75,8 @@ When a user goes to activate your style, all of the styles provided by your styl
 To enable a style so that it is used for any formatting performed by an OpenRewrite recipe, please:
 
 <Tabs groupId="projectType">
-	<TabItem value="gradle" label="Gradle">
+<TabItem value="gradle" label="Gradle">
+
 Update your `build.gradle` file to include an `activeStyle` such as in:
 
 ```groovy title="build.gradle"
@@ -86,9 +87,10 @@ rewrite {
   activeStyle("com.yourorg.YesTabsNoStarImports")
 }
 ```
-	</TabItem>
+</TabItem>
 
-	<TabItem value="maven" label="Maven">
+<TabItem value="maven" label="Maven">
+
 Update your `pom.xml` file to include an `<activeStyles>` such as in:
 
 ```xml title="pom.xml"
@@ -109,9 +111,10 @@ Update your `pom.xml` file to include an `<activeStyles>` such as in:
   </plugin>
 </plugins>
 ```
-	</TabItem>
+</TabItem>
 
-	<TabItem value="maven-command-line" label="Maven command line">
+<TabItem value="maven-command-line" label="Maven command line">
+
 Add a `-Drewrite.activeStyles` parameter to your Maven command in the terminal such as in:
 
 ```bash
@@ -120,7 +123,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.activeRecipes=org.openrewrite.staticanalysis.CommonStaticAnalysis \
   -Drewrite.activeStyles=org.some.style.name
 ```
-	</TabItem>
+</TabItem>
 </Tabs>
 
 Once the style has been specified as an `activeStyle`, the next time any OpenRewrite recipe is run in that project, any formatting it performs will take these styles into account.

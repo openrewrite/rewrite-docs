@@ -68,12 +68,18 @@ const config: Config = {
   },
 
   themeConfig: {
-    algolia: {
-      appId: 'NHGG4Q2UXX',
-      apiKey: '08f02d57e3f18adf647518db37e5b42d',
-      indexName: 'rewrite_docs',
+    // Doesn't work with GitHub pages
+    // algolia: {
+    //   appId: 'NHGG4Q2UXX',
+    //   apiKey: '08f02d57e3f18adf647518db37e5b42d',
+    //   indexName: 'rewrite_docs',
+    // },
+    announcementBar: {
+      id: 'doc_release',
+      content: 'We are currently migrating where we host our docs. Because of this, search is temporarily unavailable.',
+      backgroundColor: '#555555',
+      textColor: '#E3F2FD',
     },
-    // Replace with your project's social card
     image: 'img/moderne-poster-logo.svg',
     colorMode: {
       respectPrefersColorScheme: true,
