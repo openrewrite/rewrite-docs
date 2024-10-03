@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Frequently asked questions
+# Frequently asked questions (FAQ)
 
 ## Does OpenRewrite collect any data from our projects?
 

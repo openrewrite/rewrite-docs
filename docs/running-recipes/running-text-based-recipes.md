@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Text based recipes
+# Running text based recipes
 
 [Text recipes](/recipes/text) are recipes that forego the [Lossless Semantic Tree](/concepts-and-explanations/lossless-semantic-trees.md) (LST) in favor of interacting with text directly. **In almost every situation, this is not what you want to do.** This is because running a text recipe against any file that could be parsed into an LST will convert said file into a plain text file and you will no longer be able to run non-text recipes against the file.
 
