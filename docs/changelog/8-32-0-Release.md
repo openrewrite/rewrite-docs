@@ -11,8 +11,8 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [io.quarkus.updates.core.quarkus313.WithTestResource](../recipes/io/quarkus/updates/core/quarkus313/withtestresource):
-* [io.quarkus.updates.core.quarkus313.WithTestResourceRestrictToAnnotatedClassValue](../recipes/io/quarkus/updates/core/quarkus313/withtestresourcerestricttoannotatedclassvalue):
+* io.quarkus.updates.core.quarkus313.WithTestResource:
+* io.quarkus.updates.core.quarkus313.WithTestResourceRestrictToAnnotatedClassValue:
 * [org.axonframework.migration.UpgradeAxonFramework\_4\_Jakarta](../recipes/org/axonframework/migration/upgradeaxonframework\_4\_jakarta): Migration file to upgrade from an Axon Framework Javax-specific project to Jakarta.
 * [org.axonframework.migration.UpgradeAxonFramework\_4\_Javax](../recipes/org/axonframework/migration/upgradeaxonframework\_4\_javax): Migration file to upgrade an Axon Framework Javax-specific project and remain on Javax.
 * [org.openrewrite.FindCallGraph](../recipes/core/findcallgraph): Produces a data table where each row represents a method call.

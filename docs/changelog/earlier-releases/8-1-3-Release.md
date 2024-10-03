@@ -2,9 +2,9 @@
 
 ## New Recipes
 
-* [org.openrewrite.java.recipes.UpdateMovedRecipeXml](../../../recipes/java/recipes/updatemovedrecipexml): Update moved package recipe in pom.xml. 
-* [org.openrewrite.java.recipes.UpdateMovedRecipeYaml](../../../recipes/java/recipes/updatemovedrecipeyaml): Update moved package recipe in yaml file. 
-* [org.openrewrite.java.search.FindComments](../../../recipes/java/search/findcomments): Find regular expression matches within comments and literals. "Literals" includes string literals, character literals, and numeric literals. 
+* org.openrewrite.java.recipes.UpdateMovedRecipeXml: Update moved package recipe in pom.xml. 
+* org.openrewrite.java.recipes.UpdateMovedRecipeYaml: Update moved package recipe in yaml file. 
+* org.openrewrite.java.search.FindComments: Find regular expression matches within comments and literals. "Literals" includes string literals, character literals, and numeric literals. 
 
 ## Removed Recipes
 
@@ -13,7 +13,7 @@
 
 ## Changed Recipes
 
-* [org.openrewrite.text.Find](../../../recipes/text/find) was changed:
+* org.openrewrite.text.Find was changed:
   * Old Options:
     * `find: { type: String, required: true }`
     * `regex: { type: Boolean, required: false }`
@@ -24,7 +24,7 @@
     * `find: { type: String, required: true }`
     * `multiline: { type: Boolean, required: false }`
     * `regex: { type: Boolean, required: false }`
-* [org.openrewrite.gradle.UpdateGradleWrapper](../../../recipes/gradle/updategradlewrapper) was changed:
+* org.openrewrite.gradle.UpdateGradleWrapper was changed:
   * Old Options:
     * `distribution: { type: String, required: false }`
     * `repositoryUrl: { type: String, required: true }`

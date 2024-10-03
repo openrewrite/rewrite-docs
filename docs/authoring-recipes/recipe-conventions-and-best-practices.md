@@ -90,7 +90,7 @@ Mutable recipe state can be a source of strange and confusing bugs. If visiting 
 :::
 
 :::tip
-Recipes extending [ScanningRecipe](../concepts-explanations/recipes#scanning-recipes) gather data from any or all LSTs via `ScanningRecipe.getScanner()`. That data is then available to use in the subsequent invocations of `ScanningRecipe.generate()` and `ScanningRecipe.getVisitor()`. Data is passed via a recipe-defined type conventionally referred to as an "accumulator". This is the only correct way to pass data from one LST to another.
+Recipes extending [ScanningRecipe](../concepts-and-explanations/recipes.md#scanning-recipes) gather data from any or all LSTs via `ScanningRecipe.getScanner()`. That data is then available to use in the subsequent invocations of `ScanningRecipe.generate()` and `ScanningRecipe.getVisitor()`. Data is passed via a recipe-defined type conventionally referred to as an "accumulator". This is the only correct way to pass data from one LST to another.
 :::
 
 Since recipe options are configured via their constructors there are few valid reasons for recipes to have mutable fields. It is typical, but not required, that recipes use the `@lombok.Value` annotation to declare their fields as `final` and to generate a suitable constructor. &#x20;

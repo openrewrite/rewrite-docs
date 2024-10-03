@@ -300,7 +300,7 @@ As mentioned above, the first thing all tests need to do is implement the [Rewri
 In the above tests, we utilize two main pieces of this interface:
 
 * The `defaults` method to set up the environment needed for each test (via [RecipeSpecs](#recipespec))
-* The `rewriteRun` method to assert that the recipe has made the correct transformations on the code (via [SourceSpecs](r#sourcespecs))
+* The `rewriteRun` method to assert that the recipe has made the correct transformations on the code ([via SourceSpecs](#sourcespec))
 
 ### RecipeSpec
 

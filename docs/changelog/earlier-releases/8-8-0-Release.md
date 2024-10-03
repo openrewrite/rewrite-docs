@@ -2,8 +2,8 @@
 
 ## New Recipes
 
-* [org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin](../../recipes/gradle/plugins/adddevelocitygradleplugin): Add the Develocity Gradle plugin to settings.gradle files. 
-* [org.openrewrite.maven.AddDevelocityMavenExtension](../../recipes/maven/adddevelocitymavenextension): To integrate the Develocity Maven extension into Maven projects, ensure that the `gradle-enterprise-maven-extension` is added to the `.mvn/extensions.xml` file if not already present. Additionally, configure the extension by adding the `.mvn/gradle-enterprise.xml` configuration file. 
+* org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin: Add the Develocity Gradle plugin to settings.gradle files. 
+* org.openrewrite.maven.AddDevelocityMavenExtension: To integrate the Develocity Maven extension into Maven projects, ensure that the `gradle-enterprise-maven-extension` is added to the `.mvn/extensions.xml` file if not already present. Additionally, configure the extension by adding the `.mvn/gradle-enterprise.xml` configuration file. 
 
 ## Removed Recipes
 

@@ -2,10 +2,10 @@
 
 ## New Recipes
 
-* [org.openrewrite.maven.BestPractices](../../recipes/maven/bestpractices): Applies best practices to Maven POMs. 
-* [org.openrewrite.maven.cleanup.ExplicitPluginGroupId](../../recipes/maven/cleanup/explicitplugingroupid): Add the default `<groupId>org.apache.maven.plugins</groupId>` to plugins for clarity. 
-* [org.openrewrite.maven.cleanup.PrefixlessExpressions](../../recipes/maven/cleanup/prefixlessexpressions): MNG-7404 drops support for prefixless in POMs. This recipe will add the `project.` prefix where missing. 
-* [org.openrewrite.maven.search.ParentPomInsight](../../recipes/maven/search/parentpominsight): Find Maven parents matching a `groupId` and `artifactId`. 
+* org.openrewrite.maven.BestPractices: Applies best practices to Maven POMs. 
+* org.openrewrite.maven.cleanup.ExplicitPluginGroupId: Add the default `<groupId>org.apache.maven.plugins</groupId>` to plugins for clarity. 
+* org.openrewrite.maven.cleanup.PrefixlessExpressions: MNG-7404 drops support for prefixless in POMs. This recipe will add the `project.` prefix where missing. 
+* org.openrewrite.maven.search.ParentPomInsight: Find Maven parents matching a `groupId` and `artifactId`. 
 
 ## Removed Recipes
 
@@ -33,7 +33,7 @@ public class UseStringIsEmpty {
 
 ## Changed Recipes
 
-* [org.openrewrite.java.search.FindDeprecatedFields](../../recipes/java/search/finddeprecatedfields) was changed:
+* org.openrewrite.java.search.FindDeprecatedFields was changed:
   * Old Options:
     * `ignoreDeprecatedScopes: { type: Boolean, required: false }`
     * `typePattern: { type: String, required: false }`
@@ -41,7 +41,7 @@ public class UseStringIsEmpty {
     * `ignoreDeprecatedScopes: { type: Boolean, required: false }`
     * `matchInherited: { type: Boolean, required: false }`
     * `typePattern: { type: String, required: false }`
-* [org.openrewrite.java.search.FindFields](../../recipes/java/search/findfields) was changed:
+* org.openrewrite.java.search.FindFields was changed:
   * Old Options:
     * `fieldName: { type: String, required: true }`
     * `fullyQualifiedTypeName: { type: String, required: true }`
@@ -49,19 +49,19 @@ public class UseStringIsEmpty {
     * `fieldName: { type: String, required: true }`
     * `fullyQualifiedTypeName: { type: String, required: true }`
     * `matchInherited: { type: Boolean, required: false }`
-* [org.openrewrite.java.search.FindFieldsOfType](../../recipes/java/search/findfieldsoftype) was changed:
+* org.openrewrite.java.search.FindFieldsOfType was changed:
   * Old Options:
     * `fullyQualifiedTypeName: { type: String, required: true }`
   * New Options:
     * `fullyQualifiedTypeName: { type: String, required: true }`
     * `matchInherited: { type: Boolean, required: false }`
-* [org.openrewrite.java.search.FindImplementations](../../recipes/java/search/findimplementations) was changed:
+* org.openrewrite.java.search.FindImplementations was changed:
   * Old Options:
     * `None`
   * New Options:
     * `interfaceFullyQualifiedName: { type: String, required: true }`
     * `matchInherited: { type: Boolean, required: false }`
-* [org.openrewrite.java.search.FindImports](../../recipes/java/search/findimports) was changed:
+* org.openrewrite.java.search.FindImports was changed:
   * Old Options:
     * `typePattern: { type: String, required: false }`
   * New Options:

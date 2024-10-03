@@ -1,14 +1,14 @@
 # 8.14.0 release (2024-01-24)
 
 :::info
-This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
+This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the releases page.
 :::
 
 ## New Recipes
 
-* [org.openrewrite.java.dependencies.RelocatedDependencyCheck](../../recipes/java/dependencies/relocateddependencycheck): Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others. This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes. 
-* [org.openrewrite.java.migrate.MXBeanRule](../../recipes/java/migrate/mxbeanrule): Sets visibility of MBean and MXBean interfaces to public. 
-* [org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper](../../recipes/java/recipes/recipeequalsandhashcodecallsuper): Recipes are value objects, so should use `@EqualsAndHashCode(callSuper = false)`. While in most cases recipes do not extend other classes and so the option is moot, as a matter of stylistic consistency and to enforce the idea that recipes are value objects, this value should be set to `false`. 
+* org.openrewrite.java.dependencies.RelocatedDependencyCheck: Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the oga-maven-plugin maintained by Jonathan Lermitage, Filipe Roque and others. This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes. 
+* org.openrewrite.java.migrate.MXBeanRule: Sets visibility of MBean and MXBean interfaces to public. 
+* org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper: Recipes are value objects, so should use `@EqualsAndHashCode(callSuper = false)`. While in most cases recipes do not extend other classes and so the option is moot, as a matter of stylistic consistency and to enforce the idea that recipes are value objects, this value should be set to `false`. 
 
 ## Removed Recipes
 
@@ -30,7 +30,7 @@ Reference : Migration guide (URL to be written).
 
 ## Changed Recipes
 
-* [org.openrewrite.gradle.UpdateGradleWrapper](../../recipes/gradle/updategradlewrapper) was changed:
+* org.openrewrite.gradle.UpdateGradleWrapper was changed:
   * Old Options:
     * `addIfMissing: { type: Boolean, required: false }`
     * `distribution: { type: String, required: false }`
@@ -40,7 +40,7 @@ Reference : Migration guide (URL to be written).
     * `distribution: { type: String, required: false }`
     * `version: { type: String, required: false }`
     * `wrapperUri: { type: String, required: false }`
-* [org.openrewrite.gradle.UpdateJavaCompatibility](../../recipes/gradle/updatejavacompatibility) was changed:
+* org.openrewrite.gradle.UpdateJavaCompatibility was changed:
   * Old Options:
     * `compatibilityType: { type: CompatibilityType, required: false }`
     * `declarationStyle: { type: DeclarationStyle, required: false }`
@@ -50,7 +50,7 @@ Reference : Migration guide (URL to be written).
     * `compatibilityType: { type: CompatibilityType, required: false }`
     * `declarationStyle: { type: DeclarationStyle, required: false }`
     * `version: { type: Integer, required: true }`
-* [org.openrewrite.launchdarkly.RemoveBoolVariation](../../recipes/launchdarkly/removeboolvariation) was changed:
+* org.openrewrite.launchdarkly.RemoveBoolVariation was changed:
   * Old Options:
     * `featureKey: { type: String, required: true }`
     * `replacementValue: { type: Boolean, required: true }`
@@ -58,7 +58,7 @@ Reference : Migration guide (URL to be written).
     * `featureKey: { type: String, required: true }`
     * `methodPattern: { type: String, required: false }`
     * `replacementValue: { type: Boolean, required: true }`
-* [org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ](../../recipes/java/testing/hamcrest/hamcrestmatchertoassertj) was changed:
+* org.openrewrite.java.testing.hamcrest.HamcrestMatcherToAssertJ was changed:
   * Old Options:
     * `assertion: { type: String, required: false }`
     * `matcher: { type: String, required: false }`
@@ -66,7 +66,7 @@ Reference : Migration guide (URL to be written).
     * `argumentType: { type: String, required: false }`
     * `assertion: { type: String, required: false }`
     * `matcher: { type: String, required: false }`
-* [org.openrewrite.xml.ChangeTagAttribute](../../recipes/xml/changetagattribute) was changed:
+* org.openrewrite.xml.ChangeTagAttribute was changed:
   * Old Options:
     * `attributeName: { type: String, required: true }`
     * `elementName: { type: String, required: true }`

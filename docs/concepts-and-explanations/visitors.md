@@ -51,7 +51,7 @@ All visitors have access to a `Cursor` which keeps track of a visitor's position
 
 Logically a `Cursor` is a stack. Whenever an LST is visited, a `Cursor` pointing to it is pushed on top of the stack. When the visit for the LST completes, its `Cursor` is removed from the stack. In this way, the `Cursor` keeps track of the visitor's current position within the LST.
 
-As an example of how the `Cursor` can be helpful, imagine a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The [compilation unit](#compilationunit) may include a class that has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which [class declaration](#classdeclaration) represents the top-level class:
+As an example of how the `Cursor` can be helpful, imagine a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The [compilation unit](./lst-examples.md#compilationunit) may include a class that has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which [class declaration](./lst-examples.md#classdeclaration) represents the top-level class:
 
 ```java
 @Override
@@ -168,7 +168,7 @@ Search recipes are a great example of when JavaVisitor should be used over JavaI
 
 ## Sharing data between visitors
 
-Most of the time, visitors will extend a tree that has an [ExecutionContext](#execution-context) type such as in `JavaIsoVisitor<ExecutionContext>`. This context allows recipes to share state and respond to changes in other recipes.
+Most of the time, visitors will extend a tree that has an [ExecutionContext](./recipes.md#execution-context) type such as in `JavaIsoVisitor<ExecutionContext>`. This context allows recipes to share state and respond to changes in other recipes.
 
 There are some cases, though, where you may want to share other types of information between visitors. For instance, you may want to count the number of times a method appears or define a boolean that detects if a change has happened or not.
 

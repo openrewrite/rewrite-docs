@@ -2,11 +2,11 @@
 
 ## New Recipes
 
-* [org.openrewrite.maven.IncrementProjectVersion](../../recipes/maven/incrementprojectversion): Increase Maven project version by incrementing either the major, minor, or patch version as defined by [semver](https://semver.org/). Other versioning schemes are not supported. 
+* org.openrewrite.maven.IncrementProjectVersion: Increase Maven project version by incrementing either the major, minor, or patch version as defined by semver. Other versioning schemes are not supported. 
 
 ## Changed Recipes
 
-* [org.openrewrite.maven.AddPlugin](../../recipes/maven/addplugin) was changed:
+* org.openrewrite.maven.AddPlugin was changed:
   * Old Options:
     * `artifactId: { type: String, required: true }`
     * `configuration: { type: String, required: false }`

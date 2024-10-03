@@ -48,7 +48,7 @@ public class StringIsEmpty {
 
 ### Refaster template recipe
 
-A Refaster template recipe is an [imperative recipe](#imperative-recipes) that is created automatically when you build your Java classes that have one or more [Refaster templates](#refaster-template) in them.
+A Refaster template recipe is an [imperative recipe](./types-of-recipes.md#imperative-recipes) that is created automatically when you build your Java classes that have one or more [Refaster templates](#refaster-template) in them.
 
 You can combine multiple Refaster templates into one larger recipe by creating the templates as subclasses such as in the [SimplifyTernary recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SimplifyTernary.java).
 

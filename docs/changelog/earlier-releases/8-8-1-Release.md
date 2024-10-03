@@ -2,11 +2,11 @@
 
 ## New Recipes
 
-* [org.openrewrite.maven.cleanup.ExplicitPluginVersion](../../recipes/maven/cleanup/explicitpluginversion): Add explicit plugin versions to POMs for reproducibility, as [MNG-4173](https://issues.apache.org/jira/browse/MNG-4173) removes automatic version resolution for POM plugins. 
+* org.openrewrite.maven.cleanup.ExplicitPluginVersion: Add explicit plugin versions to POMs for reproducibility, as MNG-4173 removes automatic version resolution for POM plugins. 
 
 ## Changed Recipes
 
-* [org.openrewrite.gradle.AddDependency](../../recipes/gradle/adddependency) was changed:
+* org.openrewrite.gradle.AddDependency was changed:
   * Old Options:
     * `acceptTransitive: { type: Boolean, required: false }`
     * `artifactId: { type: String, required: true }`
@@ -29,7 +29,7 @@
     * `onlyIfUsing: { type: String, required: false }`
     * `version: { type: String, required: false }`
     * `versionPattern: { type: String, required: false }`
-* [org.openrewrite.maven.AddDependency](../../recipes/maven/adddependency) was changed:
+* org.openrewrite.maven.AddDependency was changed:
   * Old Options:
     * `acceptTransitive: { type: Boolean, required: false }`
     * `artifactId: { type: String, required: true }`
@@ -56,7 +56,7 @@
     * `type: { type: String, required: false }`
     * `version: { type: String, required: true }`
     * `versionPattern: { type: String, required: false }`
-* [org.openrewrite.maven.UpgradePluginVersion](../../recipes/maven/upgradepluginversion) was changed:
+* org.openrewrite.maven.UpgradePluginVersion was changed:
   * Old Options:
     * `artifactId: { type: String, required: true }`
     * `groupId: { type: String, required: true }`

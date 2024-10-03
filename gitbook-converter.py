@@ -1,6 +1,6 @@
 import re
 
-file_to_replace = '/Users/mikesol/Desktop/code/test-docusaurus/docs/running-recipes/popular-recipe-guides/migrate-to-jakarta-ee-10.md'
+file_to_replace = '/Users/mikesol/Desktop/code/rewrite-docs/docs/running-recipes/popular-recipe-guides/migrate-to-jakarta-ee-10.md'
 
 with open(file_to_replace, 'r') as file:
     content = file.read()

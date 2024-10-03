@@ -2,11 +2,11 @@
 
 ## New Recipes
 
-* [org.openrewrite.xml.ChangeNamespaceValue](../../../recipes/xml/changenamespacevalue): Alters XML Attribute value within specified element of a specific resource versions. 
+* org.openrewrite.xml.ChangeNamespaceValue: Alters XML Attribute value within specified element of a specific resource versions. 
 
 ## Changed Recipes
 
-* [org.openrewrite.maven.search.EffectiveMavenRepositories](../../../recipes/maven/search/effectivemavenrepositories) was changed:
+* org.openrewrite.maven.search.EffectiveMavenRepositories was changed:
   * Old Options:
     * `None`
   * New Options:

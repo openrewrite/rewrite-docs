@@ -4,7 +4,7 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration from [
 
 ## Configuration
 
-Configure your repository according to the instructions on the [reference page](../../recipes/java/testing/assertj/assertj). This is also where you'll find the full list of changes this recipe will make.
+Configure your repository according to the instructions on the [reference page](../../recipes/java/testing/assertj/assertj-best-practices.md). This is also where you'll find the full list of changes this recipe will make.
 
 # Before and After
 

@@ -88,10 +88,10 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'OpenRewrite',
+      // title: 'OpenRewrite™ by Moderne',
       logo: {
         alt: 'Moderne Logo',
-        src: 'img/logo.png',
+        src: 'img/logo.avif',
         srcDark: 'img/darkLogo.png',
       },
       items: [
