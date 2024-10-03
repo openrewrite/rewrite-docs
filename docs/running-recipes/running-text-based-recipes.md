@@ -110,4 +110,4 @@ CMD ["./mvnw", "spring-boot:run"]
 
 Congrats on running your first text based recipe. Remember, though, that these recipes should be run with the utmost caution, as they break the ability to run subsequent LST based recipes.
 
-If you're looking for other recipes to run, consider looking over our [popular recipe guides](./popular-recipe-guides/). Or, if you want to look into creating your own recipes, check out our [creating a Java refactoring recipe guide](/authoring-recipes/writing-a-java-refactoring-recipe.md).
+If you're looking for other recipes to run, consider looking over our [popular recipe guides](./popular-recipe-guides/authoring-declarative-yaml-recipes.md). Or, if you want to look into creating your own recipes, check out our [creating a Java refactoring recipe guide](/authoring-recipes/writing-a-java-refactoring-recipe.md).

@@ -91,8 +91,8 @@ const config: Config = {
       // title: 'OpenRewrite™ by Moderne',
       logo: {
         alt: 'Moderne Logo',
-        src: 'img/logo.avif',
-        srcDark: 'img/darkLogo.png',
+        src: 'img/logo.svg',
+        srcDark: 'img/darkLogo.svg',
       },
       items: [
         {
