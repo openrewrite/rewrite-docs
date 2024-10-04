@@ -86,6 +86,7 @@
 ^gitbook-converter.py
 ^strip-links.py
 ^docusaurus.config.ts
+^CNAME
 ^src/
 ^static/
 ignore$
