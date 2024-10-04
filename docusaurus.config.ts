@@ -20,7 +20,7 @@ const config: Config = {
   tagline: 'Large-scale automated source code refactoring',
   favicon: 'img/favicon.ico',
 
-  url: 'newdocs.openrewrite.org',
+  url: 'https://newdocs.openrewrite.org',
   baseUrl: '/',
 
   organizationName: 'openrewrite',
