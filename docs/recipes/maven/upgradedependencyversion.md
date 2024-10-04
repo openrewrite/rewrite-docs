@@ -50,37 +50,40 @@ recipeList:
 ```
 
 Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it in your build file:
-<Tabs groupId="project-type">
+<Tabs groupId="projectType">
 
-<TabItem value="maven" title="Maven">
-    1. Add the following to your `pom.xml` file:
-    ```xml title="pom.xml"
-    <project>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.openrewrite.maven</groupId>
-            <artifactId>rewrite-maven-plugin</artifactId>
-            <version>5.41.0</version>
-            <configuration>
-              <exportDatatables>true</exportDatatables>
-              <activeRecipes>
-                <recipe>com.yourorg.UpgradeDependencyVersionExample</recipe>
-              </activeRecipes>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </project>
-    ```
-    2. Run `mvn rewrite:run` to run the recipe.
+<TabItem value="maven" label="Maven">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.41.0</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>com.yourorg.UpgradeDependencyVersionExample</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
-<TabItem value="moderne-cli" title="Moderne CLI">
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+<TabItem value="moderne-cli" label="Moderne CLI">
 
-    ```shell title="shell"
-    mod run . --recipe UpgradeDependencyVersionExample
-    ```
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+```shell title="shell"
+mod run . --recipe UpgradeDependencyVersionExample
+```
 </TabItem>
 </Tabs>
 

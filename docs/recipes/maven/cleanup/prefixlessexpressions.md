@@ -25,8 +25,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Definition
 
-<Tabs groupId="recipe-type">
-<TabItem value="recipe-list" title="Recipe List" >
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
 * [Rename Maven property key](../../maven/renamepropertykey)
   * oldKey: `basedir`
   * newKey: `project.basedir`
@@ -48,7 +48,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 </TabItem>
 
-<TabItem value="yaml-recipe-list" title="Yaml Recipe List">
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
@@ -82,45 +83,51 @@ recipeList:
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
-<Tabs groupId="project-type">
+<Tabs groupId="projectType">
 
-<TabItem value="maven" title="Maven POM">
-    1. Add the following to your `pom.xml` file:
-    ```xml title="pom.xml"
-    <project>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.openrewrite.maven</groupId>
-            <artifactId>rewrite-maven-plugin</artifactId>
-            <version>5.41.0</version>
-            <configuration>
-              <exportDatatables>true</exportDatatables>
-              <activeRecipes>
-                <recipe>org.openrewrite.maven.cleanup.PrefixlessExpressions</recipe>
-              </activeRecipes>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </project>
-    ```
-    2. Run `mvn rewrite:run` to run the recipe.
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.41.0</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.maven.cleanup.PrefixlessExpressions</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
 
-<TabItem value="maven-command-line" title="Maven Command Line">
-    You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+<TabItem value="maven-command-line" label="Maven Command Line">
 
-    ```shell title="shell"
-    mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.maven.cleanup.PrefixlessExpressions -Drewrite.exportDatatables=true
-    ```
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.maven.cleanup.PrefixlessExpressions -Drewrite.exportDatatables=true
+```
+
 </TabItem>
-<TabItem value="moderne-cli" title="Moderne CLI">
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+<TabItem value="moderne-cli" label="Moderne CLI">
 
-    ```shell title="shell"
-    mod run . --recipe PrefixlessExpressions
-    ```
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+```shell title="shell"
+mod run . --recipe PrefixlessExpressions
+```
 </TabItem>
 </Tabs>
 

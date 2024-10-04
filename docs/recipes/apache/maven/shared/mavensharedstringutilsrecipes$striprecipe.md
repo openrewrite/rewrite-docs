@@ -23,52 +23,56 @@ _Replace Maven Shared `StringUtils.strip(String str)` with JDK provided API._
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.7.0` in your build file or by running a shell command (in which case no build changes are needed): 
-<Tabs groupId="project-type">
+<Tabs groupId="projectType">
 
-<TabItem value="maven" title="Maven POM">
-    1. Add the following to your `pom.xml` file:
-    ```xml title="pom.xml"
-    <project>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.openrewrite.maven</groupId>
-            <artifactId>rewrite-maven-plugin</artifactId>
-            <version>5.41.0</version>
-            <configuration>
-              <exportDatatables>true</exportDatatables>
-              <activeRecipes>
-                <recipe>org.openrewrite.apache.maven.shared.MavenSharedStringUtilsRecipes$StripRecipe</recipe>
-              </activeRecipes>
-            </configuration>
-            <dependencies>
-              <dependency>
-                <groupId>org.openrewrite.recipe</groupId>
-                <artifactId>rewrite-apache</artifactId>
-                <version>1.7.0</version>
-              </dependency>
-            </dependencies>
-          </plugin>
-        </plugins>
-      </build>
-    </project>
-    ```
-    2. Run `mvn rewrite:run` to run the recipe.
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.41.0</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.apache.maven.shared.MavenSharedStringUtilsRecipes$StripRecipe</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-apache</artifactId>
+            <version>1.7.0</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
 
-<TabItem value="maven-command-line" title="Maven Command Line">
-    You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
-    ```shell title="shell"
-    mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-apache:RELEASE -Drewrite.activeRecipes=org.openrewrite.apache.maven.shared.MavenSharedStringUtilsRecipes$StripRecipe -Drewrite.exportDatatables=true
-    ```
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-apache:RELEASE -Drewrite.activeRecipes=org.openrewrite.apache.maven.shared.MavenSharedStringUtilsRecipes$StripRecipe -Drewrite.exportDatatables=true
+```
 </TabItem>
-<TabItem value="moderne-cli" title="Moderne CLI">
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+<TabItem value="moderne-cli" label="Moderne CLI">
 
-    ```shell title="shell"
-    mod run . --recipe MavenSharedStringUtilsRecipes$StripRecipe
-    ```
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+```shell title="shell"
+mod run . --recipe MavenSharedStringUtilsRecipes$StripRecipe
+```
 </TabItem>
 </Tabs>
 

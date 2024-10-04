@@ -23,45 +23,51 @@ _Removes duplicated dependencies in the &lt;dependencies&gt; and &lt;dependencyM
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
-<Tabs groupId="project-type">
+<Tabs groupId="projectType">
 
-<TabItem value="maven" title="Maven POM">
-    1. Add the following to your `pom.xml` file:
-    ```xml title="pom.xml"
-    <project>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.openrewrite.maven</groupId>
-            <artifactId>rewrite-maven-plugin</artifactId>
-            <version>5.41.0</version>
-            <configuration>
-              <exportDatatables>true</exportDatatables>
-              <activeRecipes>
-                <recipe>org.openrewrite.maven.RemoveDuplicateDependencies</recipe>
-              </activeRecipes>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </project>
-    ```
-    2. Run `mvn rewrite:run` to run the recipe.
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.41.0</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>org.openrewrite.maven.RemoveDuplicateDependencies</recipe>
+          </activeRecipes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
 
-<TabItem value="maven-command-line" title="Maven Command Line">
-    You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+<TabItem value="maven-command-line" label="Maven Command Line">
 
-    ```shell title="shell"
-    mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.maven.RemoveDuplicateDependencies -Drewrite.exportDatatables=true
-    ```
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.maven.RemoveDuplicateDependencies -Drewrite.exportDatatables=true
+```
+
 </TabItem>
-<TabItem value="moderne-cli" title="Moderne CLI">
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+<TabItem value="moderne-cli" label="Moderne CLI">
 
-    ```shell title="shell"
-    mod run . --recipe RemoveDuplicateDependencies
-    ```
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+```shell title="shell"
+mod run . --recipe RemoveDuplicateDependencies
+```
 </TabItem>
 </Tabs>
 

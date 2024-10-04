@@ -31,66 +31,73 @@ _Find Gradle wrappers._
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
-<Tabs groupId="project-type">
-<TabItem value="gradle" title="Gradle">
-    1. Add the following to your `build.gradle` file:
-    ```groovy title="build.gradle"
-    plugins {
-        id("org.openrewrite.rewrite") version("6.24.0")
+<Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
+
+1. Add the following to your `build.gradle` file:
+
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("6.24.0")
+}
+
+rewrite {
+    activeRecipe("org.openrewrite.gradle.search.FindGradleWrapper")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+```
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
     }
-    
+    dependencies { classpath("org.openrewrite:plugin:latest.release") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite:rewrite-java")
+    }
     rewrite {
         activeRecipe("org.openrewrite.gradle.search.FindGradleWrapper")
         exportDatatables = true
     }
-    
-    repositories {
-        mavenCentral()
-    }
-    
-    ```
-    2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-
-<TabItem value="gradle-init-script" title="Gradle init script">
-    1. Create a file named `init.gradle` in the root of your project.
-    ```groovy title="init.gradle"
-    initscript {
-        repositories {
-            maven { url "https://plugins.gradle.org/m2" }
-        }
-        dependencies { classpath("org.openrewrite:plugin:latest.release") }
-    }
-    rootProject {
-        plugins.apply(org.openrewrite.gradle.RewritePlugin)
-        dependencies {
-            rewrite("org.openrewrite:rewrite-java")
-        }
-        rewrite {
-            activeRecipe("org.openrewrite.gradle.search.FindGradleWrapper")
-            exportDatatables = true
-        }
-        afterEvaluate {
-            if (repositories.isEmpty()) {
-                repositories {
-                    mavenCentral()
-                }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
             }
         }
     }
-    ```
-    2. Run the recipe.
-    ```shell title="shell"
-    gradle --init-script init.gradle rewriteRun
-    ```
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
 </TabItem>
 
-<TabItem value="moderne-cli" title="Moderne CLI">
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+<TabItem value="moderne-cli" label="Moderne CLI">
 
-    ```shell title="shell"
-    mod run . --recipe FindGradleWrapper
-    ```
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+```shell title="shell"
+mod run . --recipe FindGradleWrapper
+```
 </TabItem>
 </Tabs>
 

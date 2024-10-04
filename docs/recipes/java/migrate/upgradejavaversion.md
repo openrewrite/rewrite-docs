@@ -31,8 +31,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 ## Definition
 
-<Tabs groupId="recipe-type">
-<TabItem value="recipe-list" title="Recipe List" >
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
 * [Use Maven compiler plugin release configuration](../../java/migrate/maven/usemavencompilerpluginreleaseconfiguration)
 * [Update Maven Java project properties](../../java/migrate/maven/updatemavenprojectpropertyjavaversion)
 * [Upgrade jenkins java version](../../jenkins/upgradejavaversion)
@@ -41,7 +41,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 </TabItem>
 
-<TabItem value="yaml-recipe-list" title="Yaml Recipe List">
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
@@ -75,65 +76,70 @@ recipeList:
 ```
 
 Now that `com.yourorg.UpgradeJavaVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.26.0 in your build file:
-<Tabs groupId="project-type">
-<TabItem value="gradle" title="Gradle">
-    1. Add the following to your `build.gradle` file:
-    ```groovy title="build.gradle"
-    plugins {
-        id("org.openrewrite.rewrite") version("6.24.0")
-    }
-    
-    rewrite {
-        activeRecipe("com.yourorg.UpgradeJavaVersionExample")
-        exportDatatables = true
-    }
-    
-    repositories {
-        mavenCentral()
-    }
-    
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.26.0")
-    }
-    ```
-    2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" title="Maven">
-    1. Add the following to your `pom.xml` file:
-    ```xml title="pom.xml"
-    <project>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.openrewrite.maven</groupId>
-            <artifactId>rewrite-maven-plugin</artifactId>
-            <version>5.41.0</version>
-            <configuration>
-              <exportDatatables>true</exportDatatables>
-              <activeRecipes>
-                <recipe>com.yourorg.UpgradeJavaVersionExample</recipe>
-              </activeRecipes>
-            </configuration>
-            <dependencies>
-              <dependency>
-                <groupId>org.openrewrite.recipe</groupId>
-                <artifactId>rewrite-migrate-java</artifactId>
-                <version>2.26.0</version>
-              </dependency>
-            </dependencies>
-          </plugin>
-        </plugins>
-      </build>
-    </project>
-    ```
-    2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" title="Moderne CLI">
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+<Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
-    ```shell title="shell"
-    mod run . --recipe UpgradeJavaVersionExample
-    ```
+1. Add the following to your `build.gradle` file:
+
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("6.24.0")
+}
+
+rewrite {
+    activeRecipe("com.yourorg.UpgradeJavaVersionExample")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.26.0")
+}
+```
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+<TabItem value="maven" label="Maven">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>5.41.0</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>com.yourorg.UpgradeJavaVersionExample</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>2.26.0</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+<TabItem value="moderne-cli" label="Moderne CLI">
+
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+```shell title="shell"
+mod run . --recipe UpgradeJavaVersionExample
+```
 </TabItem>
 </Tabs>
 

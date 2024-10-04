@@ -47,32 +47,34 @@ recipeList:
 ```
 
 Now that `com.yourorg.ChangeDependencyArtifactIdExample` has been defined, activate it in your build file:
-<Tabs groupId="project-type">
-<TabItem value="gradle" title="Gradle">
-    1. Add the following to your `build.gradle` file:
-    ```groovy title="build.gradle"
-    plugins {
-        id("org.openrewrite.rewrite") version("6.24.0")
-    }
-    
-    rewrite {
-        activeRecipe("com.yourorg.ChangeDependencyArtifactIdExample")
-        exportDatatables = true
-    }
-    
-    repositories {
-        mavenCentral()
-    }
-    ```
-    2. Run `gradle rewriteRun` to run the recipe.
+<Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
+
+1. Add the following to your `build.gradle` file:
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("6.24.0")
+}
+
+rewrite {
+    activeRecipe("com.yourorg.ChangeDependencyArtifactIdExample")
+    exportDatatables = true
+}
+
+repositories {
+    mavenCentral()
+}
+```
+2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
 
-<TabItem value="moderne-cli" title="Moderne CLI">
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+<TabItem value="moderne-cli" label="Moderne CLI">
 
-    ```shell title="shell"
-    mod run . --recipe ChangeDependencyArtifactIdExample
-    ```
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+```shell title="shell"
+mod run . --recipe ChangeDependencyArtifactIdExample
+```
 </TabItem>
 </Tabs>
 

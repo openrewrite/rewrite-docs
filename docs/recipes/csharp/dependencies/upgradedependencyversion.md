@@ -43,15 +43,16 @@ recipeList:
 ```
 
 Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.19.0 in your build file:
-<Tabs groupId="project-type">
+<Tabs groupId="projectType">
 
 
-<TabItem value="moderne-cli" title="Moderne CLI">
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+<TabItem value="moderne-cli" label="Moderne CLI">
 
-    ```shell title="shell"
-    mod run . --recipe UpgradeDependencyVersionExample
-    ```
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+
+```shell title="shell"
+mod run . --recipe UpgradeDependencyVersionExample
+```
 </TabItem>
 </Tabs>
 
