@@ -84,6 +84,7 @@
 ^docs/recipes/
 ^docs/changelog/
 ^gitbook-converter.py
+^strip-links.py
 ^docusaurus.config.ts
 ^src/
 ^static/
