@@ -46,7 +46,7 @@ const config: Config = {
           sidebarCollapsible: true,
           sidebarPath: "./sidebars.ts",
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/openrewrite/rewrite-docs/edit/main",
+          editUrl: "https://github.com/openrewrite/rewrite-docs/edit/master",
           remarkPlugins: [
             [
               remarkTokenReplacer,
@@ -84,7 +84,6 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      // title: 'OpenRewrite™ by Moderne',
       logo: {
         alt: "Moderne Logo",
         src: "img/logo.svg",
