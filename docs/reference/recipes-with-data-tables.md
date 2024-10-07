@@ -512,7 +512,7 @@ Find method usages by pattern.
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-### [Find comments' language distribution](../recipes/io/moderne/ai/findcommentslanguage)
+### [Find comments' language distribution](../recipes/ai/findcommentslanguage)
  
 _io.moderne.ai.FindCommentsLanguage_
 
@@ -523,7 +523,7 @@ Finds all comments and uses AI to predict which language the comment is in.
   * **io.moderne.ai.table.LanguageDistribution**: *Shows the distribution of language in comments*
 
 
-### [List all methods used](../recipes/io/moderne/ai/listallmethodsused)
+### [List all methods used](../recipes/ai/listallmethodsused)
  
 _io.moderne.ai.ListAllMethodsUsed_
 
@@ -534,7 +534,7 @@ List all methods used in any Java source file.
   * **io.moderne.ai.table.MethodInUse**: *Methods used in any Java source file.*
 
 
-### [Get embeddings for code snippets in code](../recipes/io/moderne/ai/research/getcodeembedding)
+### [Get embeddings for code snippets in code](../recipes/ai/research/getcodeembedding)
  
 _io.moderne.ai.research.GetCodeEmbedding_
 
@@ -545,7 +545,7 @@ This recipe calls an AI model to get an embedding for either classes or methods 
   * **io.moderne.ai.table.Embeddings**: *Collects the embeddings for either each classes or methods.*
 
 
-### [Find method invocations that resemble a pattern](../recipes/io/moderne/ai/research/findcodethatresembles)
+### [Find method invocations that resemble a pattern](../recipes/ai/research/findcodethatresembles)
  
 _io.moderne.ai.research.FindCodeThatResembles_
 
@@ -560,7 +560,7 @@ This recipe uses two phase AI approach to find a method invocation that resemble
   * **io.moderne.ai.table.SuggestedMethodPatterns**: *As the next step after the AI-based searching for method invocations, you may want to do rule-based method searching using the recommended method patterns.*
 
 
-### [Get recommendations](../recipes/io/moderne/ai/research/getrecommendations)
+### [Get recommendations](../recipes/ai/research/getrecommendations)
  
 _io.moderne.ai.research.GetRecommendations_
 
