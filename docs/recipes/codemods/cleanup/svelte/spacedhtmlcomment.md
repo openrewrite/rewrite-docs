@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment**
 
-_enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/)_
+```
+enforce consistent spacing after the <!-- and before the --> in a HTML comment
+See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/)
+```
+
 
 ### Tags
 

@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.KeySpacing**
 
-_Enforce consistent spacing between keys and values in object literal properties in &lt;template&gt; See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html)_
+```
+Enforce consistent spacing between keys and values in object literal properties in `<template>`
+See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html)
+```
+
 
 ### Tags
 

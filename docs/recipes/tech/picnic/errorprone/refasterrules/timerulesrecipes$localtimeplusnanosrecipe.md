@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimePlusNanosRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalTimePlusNanos &lcub;          @BeforeTemplate     LocalTime before(LocalTime localTime, int nanos) &lcub;         return localTime.plus(Duration.ofNanos(nanos));     &rcub;          @BeforeTemplate     LocalTime before(LocalTime localTime, long nanos) &lcub;         return localTime.plus(nanos, ChronoUnit.NANOS);     &rcub;          @AfterTemplate     LocalTime after(LocalTime localTime, int nanos) &lcub;         return localTime.plusNanos(nanos);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalTimePlusNanos {
+    
+    @BeforeTemplate
+    LocalTime before(LocalTime localTime, int nanos) {
+        return localTime.plus(Duration.ofNanos(nanos));
+    }
+    
+    @BeforeTemplate
+    LocalTime before(LocalTime localTime, long nanos) {
+        return localTime.plus(nanos, ChronoUnit.NANOS);
+    }
+    
+    @AfterTemplate
+    LocalTime after(LocalTime localTime, int nanos) {
+        return localTime.plusNanos(nanos);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

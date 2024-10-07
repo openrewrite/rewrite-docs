@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcClockRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class UtcClock &lcub;          @BeforeTemplate     @SuppressWarnings(value = "TimeZoneUsage")     Clock before() &lcub;         return Clock.system(UTC);     &rcub;          @AfterTemplate     @SuppressWarnings(value = "TimeZoneUsage")     Clock after() &lcub;         return Clock.systemUTC();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class UtcClock {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "TimeZoneUsage")
+    Clock before() {
+        return Clock.system(UTC);
+    }
+    
+    @AfterTemplate
+    @SuppressWarnings(value = "TimeZoneUsage")
+    Clock after() {
+        return Clock.systemUTC();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

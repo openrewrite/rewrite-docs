@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenInstantsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DurationBetweenInstants &lcub;          @BeforeTemplate     Duration before(Instant a, Instant b) &lcub;         return Duration.ofMillis(b.toEpochMilli() - a.toEpochMilli());     &rcub;          @AfterTemplate     Duration after(Instant a, Instant b) &lcub;         return Duration.between(a, b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DurationBetweenInstants {
+    
+    @BeforeTemplate
+    Duration before(Instant a, Instant b) {
+        return Duration.ofMillis(b.toEpochMilli() - a.toEpochMilli());
+    }
+    
+    @AfterTemplate
+    Duration after(Instant a, Instant b) {
+        return Duration.between(a, b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

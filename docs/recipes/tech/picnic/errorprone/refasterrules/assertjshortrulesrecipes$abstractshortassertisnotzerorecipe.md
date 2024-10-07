@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsNotZeroRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractShortAssertIsNotZero &lcub;          @BeforeTemplate     AbstractShortAssert&lt;?&gt; before(AbstractShortAssert&lt;?&gt; shortAssert) &lcub;         return shortAssert.isNotZero();     &rcub;          @AfterTemplate     AbstractShortAssert&lt;?&gt; after(AbstractShortAssert&lt;?&gt; shortAssert) &lcub;         return shortAssert.isNotEqualTo((short)0);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractShortAssertIsNotZero {
+    
+    @BeforeTemplate
+    AbstractShortAssert<?> before(AbstractShortAssert<?> shortAssert) {
+        return shortAssert.isNotZero();
+    }
+    
+    @AfterTemplate
+    AbstractShortAssert<?> after(AbstractShortAssert<?> shortAssert) {
+        return shortAssert.isNotEqualTo((short)0);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

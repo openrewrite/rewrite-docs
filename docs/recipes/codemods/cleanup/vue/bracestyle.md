@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.BraceStyle**
 
-_Enforce consistent brace style for blocks in &lt;template&gt; See rule details for [vue/brace-style](https://eslint.vuejs.org/rules/brace-style.html)_
+```
+Enforce consistent brace style for blocks in `<template>`
+See rule details for [vue/brace-style](https://eslint.vuejs.org/rules/brace-style.html)
+```
+
 
 ### Tags
 

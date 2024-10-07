@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatDoesNotMatchRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatDoesNotMatch &lcub;          @BeforeTemplate     AbstractAssert&lt;?, ?&gt; before(String string, String regex) &lcub;         return assertThat(string.matches(regex)).isFalse();     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractAssert&lt;?, ?&gt; after(String string, String regex) &lcub;         return assertThat(string).doesNotMatch(regex);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatDoesNotMatch {
+    
+    @BeforeTemplate
+    AbstractAssert<?, ?> before(String string, String regex) {
+        return assertThat(string.matches(regex)).isFalse();
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractAssert<?, ?> after(String string, String regex) {
+        return assertThat(string).doesNotMatch(regex);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.logging.jul.LoggerLevelArgumentToMethodRecipes$LogLevelSevereSupplierToMethodRecipe**
 
-_Replace calls to `java.util.logging.Logger.log(Level.SEVERE, Supplier&lt;String&gt;)` with `Logger.severe(Supplier&lt;String&gt;)`._
+```
+Replace calls to `java.util.logging.Logger.log(Level.SEVERE, Supplier<String>)` with `Logger.severe(Supplier<String>)`.
+```
+
 
 ## Recipe source
 

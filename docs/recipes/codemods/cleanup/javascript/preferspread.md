@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.PreferSpread**
 
-_Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#&lcub;slice,toSpliced&rcub;()` and `String#split('')`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md)_
+```
+Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`.
+See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md)
+```
+
 
 ## Recipe source
 

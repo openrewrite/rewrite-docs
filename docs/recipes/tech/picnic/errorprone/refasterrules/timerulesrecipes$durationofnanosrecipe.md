@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfNanosRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DurationOfNanos &lcub;          @BeforeTemplate     Duration before(long amount) &lcub;         return Duration.of(amount, ChronoUnit.NANOS);     &rcub;          @AfterTemplate     Duration after(long amount) &lcub;         return Duration.ofNanos(amount);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DurationOfNanos {
+    
+    @BeforeTemplate
+    Duration before(long amount) {
+        return Duration.of(amount, ChronoUnit.NANOS);
+    }
+    
+    @AfterTemplate
+    Duration after(long amount) {
+        return Duration.ofNanos(amount);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

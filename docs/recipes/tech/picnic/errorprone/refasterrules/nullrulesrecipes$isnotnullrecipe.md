@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IsNotNull &lcub;          @BeforeTemplate     boolean before(@Nullable     Object object) &lcub;         return Refaster.anyOf(null != object, Objects.nonNull(object));     &rcub;          @AfterTemplate     boolean after(@Nullable     Object object) &lcub;         return object != null;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IsNotNull {
+    
+    @BeforeTemplate
+    boolean before(@Nullable
+    Object object) {
+        return Refaster.anyOf(null != object, Objects.nonNull(object));
+    }
+    
+    @AfterTemplate
+    boolean after(@Nullable
+    Object object) {
+        return object != null;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

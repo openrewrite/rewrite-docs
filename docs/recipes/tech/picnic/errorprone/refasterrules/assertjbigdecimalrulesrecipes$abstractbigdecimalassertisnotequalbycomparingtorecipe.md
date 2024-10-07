@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes$AbstractBigDecimalAssertIsNotEqualByComparingToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractBigDecimalAssertIsNotEqualByComparingTo &lcub;          @BeforeTemplate     AbstractBigDecimalAssert&lt;?&gt; before(AbstractBigDecimalAssert&lt;?&gt; bigDecimalAssert, BigDecimal n) &lcub;         return Refaster.anyOf(bigDecimalAssert.isNotCloseTo(n, offset(BigDecimal.ZERO)), bigDecimalAssert.isNotCloseTo(n, withPercentage(0)));     &rcub;          @AfterTemplate     AbstractBigDecimalAssert&lt;?&gt; after(AbstractBigDecimalAssert&lt;?&gt; bigDecimalAssert, BigDecimal n) &lcub;         return bigDecimalAssert.isNotEqualByComparingTo(n);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractBigDecimalAssertIsNotEqualByComparingTo {
+    
+    @BeforeTemplate
+    AbstractBigDecimalAssert<?> before(AbstractBigDecimalAssert<?> bigDecimalAssert, BigDecimal n) {
+        return Refaster.anyOf(bigDecimalAssert.isNotCloseTo(n, offset(BigDecimal.ZERO)), bigDecimalAssert.isNotCloseTo(n, withPercentage(0)));
+    }
+    
+    @AfterTemplate
+    AbstractBigDecimalAssert<?> after(AbstractBigDecimalAssert<?> bigDecimalAssert, BigDecimal n) {
+        return bigDecimalAssert.isNotEqualByComparingTo(n);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

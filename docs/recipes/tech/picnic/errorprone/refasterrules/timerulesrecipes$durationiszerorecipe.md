@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationIsZeroRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DurationIsZero &lcub;          @BeforeTemplate     boolean before(Duration duration) &lcub;         return Refaster.anyOf(duration.equals(Duration.ZERO), Duration.ZERO.equals(duration));     &rcub;          @AfterTemplate     boolean after(Duration duration) &lcub;         return duration.isZero();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DurationIsZero {
+    
+    @BeforeTemplate
+    boolean before(Duration duration) {
+        return Refaster.anyOf(duration.equals(Duration.ZERO), Duration.ZERO.equals(duration));
+    }
+    
+    @AfterTemplate
+    boolean after(Duration duration) {
+        return duration.isZero();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses**
 
-_Changes the namespace of the @ApiResponses and @ApiResponse annotations and converts its attributes (ex. code -&gt; responseCode, message -&gt; description)._
+```
+Changes the namespace of the @ApiResponses and @ApiResponse annotations and converts its attributes (ex. code -> responseCode, message -> description).
+```
+
 
 ### Tags
 

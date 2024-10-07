@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.CommaDangle**
 
-_Require or disallow trailing commas in &lt;template&gt; See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html)_
+```
+Require or disallow trailing commas in `<template>`
+See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html)
+```
+
 
 ### Tags
 

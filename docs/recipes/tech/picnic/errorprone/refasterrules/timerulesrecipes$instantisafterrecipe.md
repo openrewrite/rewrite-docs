@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIsAfterRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class InstantIsAfter &lcub;          @BeforeTemplate     boolean before(Instant a, Instant b) &lcub;         return a.compareTo(b) &gt; 0;     &rcub;          @AfterTemplate     @AlsoNegation     boolean after(Instant a, Instant b) &lcub;         return a.isAfter(b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class InstantIsAfter {
+    
+    @BeforeTemplate
+    boolean before(Instant a, Instant b) {
+        return a.compareTo(b) > 0;
+    }
+    
+    @AfterTemplate
+    @AlsoNegation
+    boolean after(Instant a, Instant b) {
+        return a.isAfter(b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

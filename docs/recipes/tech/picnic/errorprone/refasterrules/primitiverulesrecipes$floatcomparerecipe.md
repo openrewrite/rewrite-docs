@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatCompareRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class FloatCompare &lcub;          @BeforeTemplate     int before(float a, float b) &lcub;         return Floats.compare(a, b);     &rcub;          @AfterTemplate     int after(float a, float b) &lcub;         return Float.compare(a, b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class FloatCompare {
+    
+    @BeforeTemplate
+    int before(float a, float b) {
+        return Floats.compare(a, b);
+    }
+    
+    @AfterTemplate
+    int after(float a, float b) {
+        return Float.compare(a, b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

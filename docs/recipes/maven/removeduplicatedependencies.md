@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.RemoveDuplicateDependencies**
 
-_Removes duplicated dependencies in the &lt;dependencies&gt; and &lt;dependencyManagement&gt; sections of the `pom.xml`._
+```
+Removes duplicated dependencies in the `<dependencies>` and `<dependencyManagement>` sections of the `pom.xml`.
+```
+
 
 ## Recipe source
 

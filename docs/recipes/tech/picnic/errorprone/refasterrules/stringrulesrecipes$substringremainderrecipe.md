@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$SubstringRemainderRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class SubstringRemainder &lcub;          @BeforeTemplate     String before(String str, int index) &lcub;         return str.substring(index, str.length());     &rcub;          @AfterTemplate     String after(String str, int index) &lcub;         return str.substring(index);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class SubstringRemainder {
+    
+    @BeforeTemplate
+    String before(String str, int index) {
+        return str.substring(index, str.length());
+    }
+    
+    @AfterTemplate
+    String after(String str, int index) {
+        return str.substring(index);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

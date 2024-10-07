@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerSignumIsNegativeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IntegerSignumIsNegative &lcub;          @BeforeTemplate     boolean before(int i) &lcub;         return Refaster.anyOf(Integer.signum(i) &lt; 0, Integer.signum(i) &lt;= -1);     &rcub;          @AfterTemplate     @AlsoNegation     boolean after(int i) &lcub;         return Integer.signum(i) == -1;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IntegerSignumIsNegative {
+    
+    @BeforeTemplate
+    boolean before(int i) {
+        return Refaster.anyOf(Integer.signum(i) < 0, Integer.signum(i) <= -1);
+    }
+    
+    @AfterTemplate
+    @AlsoNegation
+    boolean after(int i) {
+        return Integer.signum(i) == -1;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

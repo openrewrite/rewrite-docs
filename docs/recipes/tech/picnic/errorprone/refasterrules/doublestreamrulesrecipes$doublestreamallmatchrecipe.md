@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAllMatchRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DoubleStreamAllMatch &lcub;          @BeforeTemplate     boolean before(DoubleStream stream, DoublePredicate predicate) &lcub;         return stream.noneMatch(predicate.negate());     &rcub;          @AfterTemplate     boolean after(DoubleStream stream, DoublePredicate predicate) &lcub;         return stream.allMatch(predicate);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DoubleStreamAllMatch {
+    
+    @BeforeTemplate
+    boolean before(DoubleStream stream, DoublePredicate predicate) {
+        return stream.noneMatch(predicate.negate());
+    }
+    
+    @AfterTemplate
+    boolean after(DoubleStream stream, DoublePredicate predicate) {
+        return stream.allMatch(predicate);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

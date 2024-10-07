@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes**
 
-_&lt;p&gt;Note that, while both libraries throw an `AssertionError` in case of an assertion  failure, the exact subtype used generally differs. [Source](https://error-prone.picnic.tech/refasterrules/JUnitToAssertJRules)._
+```
+<p>Note that, while both libraries throw an `AssertionError` in case of an assertion
+ failure, the exact subtype used generally differs. [Source](https://error-prone.picnic.tech/refasterrules/JUnitToAssertJRules).
+```
+
 
 ## Recipe source
 

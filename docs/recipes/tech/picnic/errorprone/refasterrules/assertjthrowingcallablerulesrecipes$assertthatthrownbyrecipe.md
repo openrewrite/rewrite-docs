@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatThrownBy &lcub;          @BeforeTemplate     AbstractObjectAssert&lt;?, ?&gt; before(ThrowingCallable throwingCallable, Class&lt;? extends Throwable&gt; exceptionType) &lcub;         return assertThatExceptionOfType(exceptionType).isThrownBy(throwingCallable);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractObjectAssert&lt;?, ?&gt; after(ThrowingCallable throwingCallable, Class&lt;? extends Throwable&gt; exceptionType) &lcub;         return assertThatThrownBy(throwingCallable).isInstanceOf(exceptionType);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatThrownBy {
+    
+    @BeforeTemplate
+    AbstractObjectAssert<?, ?> before(ThrowingCallable throwingCallable, Class<? extends Throwable> exceptionType) {
+        return assertThatExceptionOfType(exceptionType).isThrownBy(throwingCallable);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractObjectAssert<?, ?> after(ThrowingCallable throwingCallable, Class<? extends Throwable> exceptionType) {
+        return assertThatThrownBy(throwingCallable).isInstanceOf(exceptionType);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

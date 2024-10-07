@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$ConcatTwoLongStreamsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ConcatTwoLongStreams &lcub;          @BeforeTemplate     LongStream before(LongStream s1, LongStream s2) &lcub;         return Streams.concat(s1, s2);     &rcub;          @AfterTemplate     LongStream after(LongStream s1, LongStream s2) &lcub;         return LongStream.concat(s1, s2);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ConcatTwoLongStreams {
+    
+    @BeforeTemplate
+    LongStream before(LongStream s1, LongStream s2) {
+        return Streams.concat(s1, s2);
+    }
+    
+    @AfterTemplate
+    LongStream after(LongStream s1, LongStream s2) {
+        return LongStream.concat(s1, s2);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

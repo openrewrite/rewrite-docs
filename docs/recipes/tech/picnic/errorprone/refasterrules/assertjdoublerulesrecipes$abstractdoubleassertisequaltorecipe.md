@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsEqualToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractDoubleAssertIsEqualTo &lcub;          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(AbstractDoubleAssert&lt;?&gt; doubleAssert, double n) &lcub;         return Refaster.anyOf(doubleAssert.isCloseTo(n, offset(0.0)), doubleAssert.isCloseTo(n, withPercentage(0.0)));     &rcub;          @AfterTemplate     AbstractDoubleAssert&lt;?&gt; after(AbstractDoubleAssert&lt;?&gt; doubleAssert, double n) &lcub;         return doubleAssert.isEqualTo(n);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractDoubleAssertIsEqualTo {
+    
+    @BeforeTemplate
+    AbstractDoubleAssert<?> before(AbstractDoubleAssert<?> doubleAssert, double n) {
+        return Refaster.anyOf(doubleAssert.isCloseTo(n, offset(0.0)), doubleAssert.isCloseTo(n, withPercentage(0.0)));
+    }
+    
+    @AfterTemplate
+    AbstractDoubleAssert<?> after(AbstractDoubleAssert<?> doubleAssert, double n) {
+        return doubleAssert.isEqualTo(n);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$JoiningRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class Joining &lcub;          @BeforeTemplate     Collector&lt;CharSequence, ?, String&gt; before() &lcub;         return joining("");     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     Collector&lt;CharSequence, ?, String&gt; after() &lcub;         return joining();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class Joining {
+    
+    @BeforeTemplate
+    Collector<CharSequence, ?, String> before() {
+        return joining("");
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    Collector<CharSequence, ?, String> after() {
+        return joining();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

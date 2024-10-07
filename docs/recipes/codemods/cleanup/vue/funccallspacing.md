@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.FuncCallSpacing**
 
-_Require or disallow spacing between function identifiers and their invocations in &lt;template&gt; See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html)_
+```
+Require or disallow spacing between function identifiers and their invocations in `<template>`
+See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html)
+```
+
 
 ### Tags
 

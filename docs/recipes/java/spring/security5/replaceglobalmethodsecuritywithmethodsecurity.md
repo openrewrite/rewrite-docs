@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurity**
 
-_`@EnableGlobalMethodSecurity` and &lt;global-method-security&gt; are deprecated in favor of `@EnableMethodSecurity` and &lt;method-security&gt;, respectively. The new annotation and XML element activate Spring’s pre-post annotations by default and use AuthorizationManager internally._
+```
+`@EnableGlobalMethodSecurity` and `<global-method-security>` are deprecated in favor of `@EnableMethodSecurity` and `<method-security>`, respectively. The new annotation and XML element activate Spring’s pre-post annotations by default and use AuthorizationManager internally.
+```
+
 
 ## Recipe source
 

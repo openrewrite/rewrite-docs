@@ -9,7 +9,31 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyExceptionRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyException &lcub;          @BeforeTemplate     void before(Executable throwingCallable, Supplier&lt;String&gt; supplier) &lcub;         assertDoesNotThrow(throwingCallable, supplier);     &rcub;          @BeforeTemplate     void before(ThrowingSupplier&lt;?&gt; throwingCallable, Supplier&lt;String&gt; supplier) &lcub;         assertDoesNotThrow(throwingCallable, supplier);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable, Supplier&lt;String&gt; supplier) &lcub;         assertThatCode(throwingCallable).withFailMessage(supplier).doesNotThrowAnyException();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyException {
+    
+    @BeforeTemplate
+    void before(Executable throwingCallable, Supplier<String> supplier) {
+        assertDoesNotThrow(throwingCallable, supplier);
+    }
+    
+    @BeforeTemplate
+    void before(ThrowingSupplier<?> throwingCallable, Supplier<String> supplier) {
+        assertDoesNotThrow(throwingCallable, supplier);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(ThrowingCallable throwingCallable, Supplier<String> supplier) {
+        assertThatCode(throwingCallable).withFailMessage(supplier).doesNotThrowAnyException();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

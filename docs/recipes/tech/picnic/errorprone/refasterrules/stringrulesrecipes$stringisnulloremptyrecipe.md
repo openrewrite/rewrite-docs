@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNullOrEmptyRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class StringIsNullOrEmpty &lcub;          @BeforeTemplate     boolean before(@Nullable     String str) &lcub;         return str == null || str.isEmpty();     &rcub;          @AfterTemplate     @AlsoNegation     boolean after(String str) &lcub;         return Strings.isNullOrEmpty(str);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class StringIsNullOrEmpty {
+    
+    @BeforeTemplate
+    boolean before(@Nullable
+    String str) {
+        return str == null || str.isEmpty();
+    }
+    
+    @AfterTemplate
+    @AlsoNegation
+    boolean after(String str) {
+        return Strings.isNullOrEmpty(str);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

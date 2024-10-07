@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ClockInstantRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ClockInstant &lcub;          @BeforeTemplate     Instant before(Clock clock) &lcub;         return Instant.now(clock);     &rcub;          @AfterTemplate     Instant after(Clock clock) &lcub;         return clock.instant();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ClockInstant {
+    
+    @BeforeTemplate
+    Instant before(Clock clock) {
+        return Instant.now(clock);
+    }
+    
+    @AfterTemplate
+    Instant after(Clock clock) {
+        return clock.instant();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

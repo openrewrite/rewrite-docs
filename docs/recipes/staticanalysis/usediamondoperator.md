@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.UseDiamondOperator**
 
-_The diamond operator (&lt;&gt;) should be used. Java 7 introduced the diamond operator (&lt;&gt;) to reduce the verbosity of generics code. For instance, instead of having to declare a `List`'s type in both its declaration and its constructor, you can now simplify the constructor declaration with &lt;&gt;, and the compiler will infer the type._
+```
+The diamond operator (`<>`) should be used. Java 7 introduced the diamond operator (<>) to reduce the verbosity of generics code. For instance, instead of having to declare a `List`'s type in both its declaration and its constructor, you can now simplify the constructor declaration with `<>`, and the compiler will infer the type.
+```
+
 
 ### Tags
 

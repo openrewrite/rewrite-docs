@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.quarkus.MigrateQuarkusMavenPluginNativeImageGoal**
 
-_Migrates the `quarkus-maven-plugin` deprecated `native-image` goal. If the `native-image` goal needs to be removed, this adds &lt;quarkus.package.type&gt;native&lt;/quarkus.package.type&gt; to the `native` profile `properties` section, given the `native` profile exists in the `pom.xml`._
+```
+Migrates the `quarkus-maven-plugin` deprecated `native-image` goal. If the `native-image` goal needs to be removed, this adds `<quarkus.package.type>native</quarkus.package.type>` to the `native` profile `properties` section, given the `native` profile exists in the `pom.xml`.
+```
+
 
 ## Recipe source
 

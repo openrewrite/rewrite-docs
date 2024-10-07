@@ -9,7 +9,66 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualArrayIterationOrderWithMessageRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertEqualArrayIterationOrderWithMessage &lcub;          @BeforeTemplate     void before(boolean[] actual, String message, boolean[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(byte[] actual, String message, byte[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(char[] actual, String message, char[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(short[] actual, String message, short[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(int[] actual, String message, int[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(long[] actual, String message, long[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(float[] actual, String message, float[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(double[] actual, String message, double[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(Object[] actual, String message, Object[] expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object[] actual, String message, Object[] expected) &lcub;         assertThat(actual).withFailMessage(message).containsExactly(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertEqualArrayIterationOrderWithMessage {
+    
+    @BeforeTemplate
+    void before(boolean[] actual, String message, boolean[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(byte[] actual, String message, byte[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(char[] actual, String message, char[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(short[] actual, String message, short[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(int[] actual, String message, int[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(long[] actual, String message, long[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(float[] actual, String message, float[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(double[] actual, String message, double[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Object[] actual, String message, Object[] expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(Object[] actual, String message, Object[] expected) {
+        assertThat(actual).withFailMessage(message).containsExactly(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

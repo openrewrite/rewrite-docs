@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimePlusNanosRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetDateTimePlusNanos &lcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, int nanos) &lcub;         return offsetDateTime.plus(Duration.ofNanos(nanos));     &rcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, long nanos) &lcub;         return offsetDateTime.plus(nanos, ChronoUnit.NANOS);     &rcub;          @AfterTemplate     OffsetDateTime after(OffsetDateTime offsetDateTime, int nanos) &lcub;         return offsetDateTime.plusNanos(nanos);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetDateTimePlusNanos {
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, int nanos) {
+        return offsetDateTime.plus(Duration.ofNanos(nanos));
+    }
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, long nanos) {
+        return offsetDateTime.plus(nanos, ChronoUnit.NANOS);
+    }
+    
+    @AfterTemplate
+    OffsetDateTime after(OffsetDateTime offsetDateTime, int nanos) {
+        return offsetDateTime.plusNanos(nanos);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

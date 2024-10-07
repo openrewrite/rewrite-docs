@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyTimeoutRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class StepVerifierLastStepVerifyTimeout &lcub;          @BeforeTemplate     Duration before(StepVerifier.LastStep step, Duration duration) &lcub;         return step.expectTimeout(duration).verify();     &rcub;          @AfterTemplate     Duration after(StepVerifier.LastStep step, Duration duration) &lcub;         return step.verifyTimeout(duration);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class StepVerifierLastStepVerifyTimeout {
+    
+    @BeforeTemplate
+    Duration before(StepVerifier.LastStep step, Duration duration) {
+        return step.expectTimeout(duration).verify();
+    }
+    
+    @AfterTemplate
+    Duration after(StepVerifier.LastStep step, Duration duration) {
+        return step.verifyTimeout(duration);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

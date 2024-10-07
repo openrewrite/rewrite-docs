@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DoubleNegation &lcub;          @BeforeTemplate     @SuppressWarnings(value = "java:S2761")     boolean before(boolean b) &lcub;         return !!b;     &rcub;          @AfterTemplate     @CanIgnoreReturnValue     boolean after(boolean b) &lcub;         return b;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DoubleNegation {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "java:S2761")
+    boolean before(boolean b) {
+        return !!b;
+    }
+    
+    @AfterTemplate
+    @CanIgnoreReturnValue
+    boolean after(boolean b) {
+        return b;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

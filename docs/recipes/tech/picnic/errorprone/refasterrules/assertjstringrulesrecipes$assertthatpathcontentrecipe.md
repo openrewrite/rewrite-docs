@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatPathContentRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatPathContent &lcub;          @BeforeTemplate     AbstractStringAssert&lt;?&gt; before(Path path, Charset charset) throws IOException &lcub;         return assertThat(Files.readString(path, charset));     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractStringAssert&lt;?&gt; after(Path path, Charset charset) &lcub;         return assertThat(path).content(charset);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatPathContent {
+    
+    @BeforeTemplate
+    AbstractStringAssert<?> before(Path path, Charset charset) throws IOException {
+        return assertThat(Files.readString(path, charset));
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractStringAssert<?> after(Path path, Charset charset) {
+        return assertThat(path).content(charset);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

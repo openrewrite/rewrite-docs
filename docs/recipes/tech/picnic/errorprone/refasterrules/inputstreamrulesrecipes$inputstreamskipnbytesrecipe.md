@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamSkipNBytesRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class InputStreamSkipNBytes &lcub;          @BeforeTemplate     void before(InputStream in, long n) throws IOException &lcub;         ByteStreams.skipFully(in, n);     &rcub;          @AfterTemplate     void after(InputStream in, long n) throws IOException &lcub;         in.skipNBytes(n);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class InputStreamSkipNBytes {
+    
+    @BeforeTemplate
+    void before(InputStream in, long n) throws IOException {
+        ByteStreams.skipFully(in, n);
+    }
+    
+    @AfterTemplate
+    void after(InputStream in, long n) throws IOException {
+        in.skipNBytes(n);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

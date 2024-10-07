@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsSameAsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatIsSameAs &lcub;          @BeforeTemplate     void before(Object actual, Object expected) &lcub;         assertSame(expected, actual);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Object expected) &lcub;         assertThat(actual).isSameAs(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatIsSameAs {
+    
+    @BeforeTemplate
+    void before(Object actual, Object expected) {
+        assertSame(expected, actual);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(Object actual, Object expected) {
+        assertThat(actual).isSameAs(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

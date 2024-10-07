@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractShortAssertIsEqualTo &lcub;          @BeforeTemplate     AbstractShortAssert&lt;?&gt; before(AbstractShortAssert&lt;?&gt; shortAssert, short n) &lcub;         return Refaster.anyOf(shortAssert.isCloseTo(n, offset((short)0)), shortAssert.isCloseTo(n, withPercentage(0)));     &rcub;          @AfterTemplate     AbstractShortAssert&lt;?&gt; after(AbstractShortAssert&lt;?&gt; shortAssert, short n) &lcub;         return shortAssert.isEqualTo(n);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractShortAssertIsEqualTo {
+    
+    @BeforeTemplate
+    AbstractShortAssert<?> before(AbstractShortAssert<?> shortAssert, short n) {
+        return Refaster.anyOf(shortAssert.isCloseTo(n, offset((short)0)), shortAssert.isCloseTo(n, withPercentage(0)));
+    }
+    
+    @AfterTemplate
+    AbstractShortAssert<?> after(AbstractShortAssert<?> shortAssert, short n) {
+        return shortAssert.isEqualTo(n);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

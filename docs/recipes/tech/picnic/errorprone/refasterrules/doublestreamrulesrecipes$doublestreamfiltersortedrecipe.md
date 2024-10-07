@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamFilterSortedRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DoubleStreamFilterSorted &lcub;          @BeforeTemplate     DoubleStream before(DoubleStream stream, DoublePredicate predicate) &lcub;         return stream.sorted().filter(predicate);     &rcub;          @AfterTemplate     DoubleStream after(DoubleStream stream, DoublePredicate predicate) &lcub;         return stream.filter(predicate).sorted();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DoubleStreamFilterSorted {
+    
+    @BeforeTemplate
+    DoubleStream before(DoubleStream stream, DoublePredicate predicate) {
+        return stream.sorted().filter(predicate);
+    }
+    
+    @AfterTemplate
+    DoubleStream after(DoubleStream stream, DoublePredicate predicate) {
+        return stream.filter(predicate).sorted();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

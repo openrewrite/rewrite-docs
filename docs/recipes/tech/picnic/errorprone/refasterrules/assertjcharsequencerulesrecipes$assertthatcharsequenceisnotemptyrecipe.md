@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceIsNotEmptyRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatCharSequenceIsNotEmpty &lcub;          @BeforeTemplate     AbstractAssert&lt;?, ?&gt; before(CharSequence charSequence) &lcub;         return Refaster.anyOf(assertThat(charSequence.length()).isNotEqualTo(0), assertThat(charSequence.length()).isPositive());     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractAssert&lt;?, ?&gt; after(CharSequence charSequence) &lcub;         return assertThat(charSequence).isNotEmpty();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatCharSequenceIsNotEmpty {
+    
+    @BeforeTemplate
+    AbstractAssert<?, ?> before(CharSequence charSequence) {
+        return Refaster.anyOf(assertThat(charSequence.length()).isNotEqualTo(0), assertThat(charSequence.length()).isPositive());
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractAssert<?, ?> after(CharSequence charSequence) {
+        return assertThat(charSequence).isNotEmpty();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

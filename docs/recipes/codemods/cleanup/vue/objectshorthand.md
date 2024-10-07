@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ObjectShorthand**
 
-_Require or disallow method and property shorthand syntax for object literals in &lt;template&gt; See rule details for [vue/object-shorthand](https://eslint.vuejs.org/rules/object-shorthand.html)_
+```
+Require or disallow method and property shorthand syntax for object literals in `<template>`
+See rule details for [vue/object-shorthand](https://eslint.vuejs.org/rules/object-shorthand.html)
+```
+
 
 ### Tags
 

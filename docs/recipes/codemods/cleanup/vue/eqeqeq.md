@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.Eqeqeq**
 
-_Require the use of === and !== in &lt;template&gt; See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html)_
+```
+Require the use of === and !== in `<template>`
+See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html)
+```
+
 
 ### Tags
 

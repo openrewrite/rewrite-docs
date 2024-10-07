@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$BooleanCompareRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class BooleanCompare &lcub;          @BeforeTemplate     int before(boolean a, boolean b) &lcub;         return Booleans.compare(a, b);     &rcub;          @AfterTemplate     int after(boolean a, boolean b) &lcub;         return Boolean.compare(a, b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class BooleanCompare {
+    
+    @BeforeTemplate
+    int before(boolean a, boolean b) {
+        return Booleans.compare(a, b);
+    }
+    
+    @AfterTemplate
+    int after(boolean a, boolean b) {
+        return Boolean.compare(a, b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

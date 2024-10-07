@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.RemoveDependency**
 
-_Removes a single dependency from the &lt;dependencies&gt; section of the pom.xml._
+```
+Removes a single dependency from the <dependencies> section of the pom.xml.
+```
+
 
 ## Recipe source
 

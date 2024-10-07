@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetTimeOfInstantRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetTimeOfInstant &lcub;          @BeforeTemplate     OffsetTime before(Instant instant, ZoneId zoneId) &lcub;         return OffsetDateTime.ofInstant(instant, zoneId).toOffsetTime();     &rcub;          @BeforeTemplate     OffsetTime before(Instant instant, ZoneOffset zoneId) &lcub;         return instant.atOffset(zoneId).toOffsetTime();     &rcub;          @AfterTemplate     OffsetTime after(Instant instant, ZoneId zoneId) &lcub;         return OffsetTime.ofInstant(instant, zoneId);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetTimeOfInstant {
+    
+    @BeforeTemplate
+    OffsetTime before(Instant instant, ZoneId zoneId) {
+        return OffsetDateTime.ofInstant(instant, zoneId).toOffsetTime();
+    }
+    
+    @BeforeTemplate
+    OffsetTime before(Instant instant, ZoneOffset zoneId) {
+        return instant.atOffset(zoneId).toOffsetTime();
+    }
+    
+    @AfterTemplate
+    OffsetTime after(Instant instant, ZoneId zoneId) {
+        return OffsetTime.ofInstant(instant, zoneId);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

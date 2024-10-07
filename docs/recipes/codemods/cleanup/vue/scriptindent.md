@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ScriptIndent**
 
-_Enforce consistent indentation in &lt;script&gt; See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html)_
+```
+Enforce consistent indentation in <script>
+See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html)
+```
+
 
 ### Tags
 

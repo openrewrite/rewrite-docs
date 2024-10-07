@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks**
 
-_Replace `try-catch` blocks where `catch` merely contains a `fail()` for `fail(String)` statement with `Assertions.assertDoesNotThrow(() -&gt; &lcub; ... &rcub;)`._
+```
+Replace `try-catch` blocks where `catch` merely contains a `fail()` for `fail(String)` statement with `Assertions.assertDoesNotThrow(() -> { ... })`.
+```
+
 
 ### Tags
 

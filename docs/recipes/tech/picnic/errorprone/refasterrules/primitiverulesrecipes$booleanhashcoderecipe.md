@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$BooleanHashCodeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class BooleanHashCode &lcub;          @BeforeTemplate     int before(boolean b) &lcub;         return Booleans.hashCode(b);     &rcub;          @AfterTemplate     int after(boolean b) &lcub;         return Boolean.hashCode(b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class BooleanHashCode {
+    
+    @BeforeTemplate
+    int before(boolean b) {
+        return Booleans.hashCode(b);
+    }
+    
+    @AfterTemplate
+    int after(boolean b) {
+        return Boolean.hashCode(b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

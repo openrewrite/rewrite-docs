@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableToMonoRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class CompletableToMono &lcub;          @BeforeTemplate     Mono&lt;@Nullable Void&gt; before(Completable completable) &lcub;         return Refaster.anyOf(RxJava2Adapter.completableToMono(completable), completable.to(RxJava2Adapter::completableToMono));     &rcub;          @AfterTemplate     Mono&lt;@Nullable Void&gt; after(Completable completable) &lcub;         return completable.as(RxJava2Adapter::completableToMono);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class CompletableToMono {
+    
+    @BeforeTemplate
+    Mono<@Nullable Void> before(Completable completable) {
+        return Refaster.anyOf(RxJava2Adapter.completableToMono(completable), completable.to(RxJava2Adapter::completableToMono));
+    }
+    
+    @AfterTemplate
+    Mono<@Nullable Void> after(Completable completable) {
+        return completable.as(RxJava2Adapter::completableToMono);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

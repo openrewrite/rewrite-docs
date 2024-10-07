@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalArgumentExceptionRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatThrownByIllegalArgumentException &lcub;          @BeforeTemplate     AbstractObjectAssert&lt;?, ?&gt; before(ThrowingCallable throwingCallable) &lcub;         return assertThatIllegalArgumentException().isThrownBy(throwingCallable);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractObjectAssert&lt;?, ?&gt; after(ThrowingCallable throwingCallable) &lcub;         return assertThatThrownBy(throwingCallable).isInstanceOf(IllegalArgumentException.class);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatThrownByIllegalArgumentException {
+    
+    @BeforeTemplate
+    AbstractObjectAssert<?, ?> before(ThrowingCallable throwingCallable) {
+        return assertThatIllegalArgumentException().isThrownBy(throwingCallable);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractObjectAssert<?, ?> after(ThrowingCallable throwingCallable) {
+        return assertThatThrownBy(throwingCallable).isInstanceOf(IllegalArgumentException.class);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

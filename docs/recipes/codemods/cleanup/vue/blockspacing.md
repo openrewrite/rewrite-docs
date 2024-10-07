@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.BlockSpacing**
 
-_Disallow or enforce spaces inside of blocks after opening block and before closing block in &lt;template&gt; See rule details for [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html)_
+```
+Disallow or enforce spaces inside of blocks after opening block and before closing block in `<template>`
+See rule details for [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html)
+```
+
 
 ### Tags
 

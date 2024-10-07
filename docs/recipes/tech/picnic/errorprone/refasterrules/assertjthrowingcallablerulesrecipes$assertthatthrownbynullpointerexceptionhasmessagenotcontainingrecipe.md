@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByNullPointerExceptionHasMessageNotContainingRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatThrownByNullPointerExceptionHasMessageNotContaining &lcub;          @BeforeTemplate     @SuppressWarnings(value = "AssertThatThrownByNullPointerException")     AbstractObjectAssert&lt;?, ?&gt; before(ThrowingCallable throwingCallable, String message) &lcub;         return assertThatNullPointerException().isThrownBy(throwingCallable).withMessageNotContaining(message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractObjectAssert&lt;?, ?&gt; after(ThrowingCallable throwingCallable, String message) &lcub;         return assertThatThrownBy(throwingCallable).isInstanceOf(NullPointerException.class).hasMessageNotContaining(message);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatThrownByNullPointerExceptionHasMessageNotContaining {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "AssertThatThrownByNullPointerException")
+    AbstractObjectAssert<?, ?> before(ThrowingCallable throwingCallable, String message) {
+        return assertThatNullPointerException().isThrownBy(throwingCallable).withMessageNotContaining(message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractObjectAssert<?, ?> after(ThrowingCallable throwingCallable, String message) {
+        return assertThatThrownBy(throwingCallable).isInstanceOf(NullPointerException.class).hasMessageNotContaining(message);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

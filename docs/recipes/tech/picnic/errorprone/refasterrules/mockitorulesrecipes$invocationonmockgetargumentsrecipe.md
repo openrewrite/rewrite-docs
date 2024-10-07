@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$InvocationOnMockGetArgumentsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class InvocationOnMockGetArguments &lcub;          @BeforeTemplate     Object before(InvocationOnMock invocation, int i) &lcub;         return invocation.getArguments()[i];     &rcub;          @AfterTemplate     Object after(InvocationOnMock invocation, int i) &lcub;         return invocation.getArgument(i);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class InvocationOnMockGetArguments {
+    
+    @BeforeTemplate
+    Object before(InvocationOnMock invocation, int i) {
+        return invocation.getArguments()[i];
+    }
+    
+    @AfterTemplate
+    Object after(InvocationOnMock invocation, int i) {
+        return invocation.getArgument(i);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

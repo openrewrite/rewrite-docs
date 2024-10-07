@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AssertThatBooleanIsFalseRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatBooleanIsFalse &lcub;          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(boolean b) &lcub;         return assertThat(!b).isTrue();     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractBooleanAssert&lt;?&gt; after(boolean b) &lcub;         return assertThat(b).isFalse();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatBooleanIsFalse {
+    
+    @BeforeTemplate
+    AbstractBooleanAssert<?> before(boolean b) {
+        return assertThat(!b).isTrue();
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractBooleanAssert<?> after(boolean b) {
+        return assertThat(b).isFalse();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

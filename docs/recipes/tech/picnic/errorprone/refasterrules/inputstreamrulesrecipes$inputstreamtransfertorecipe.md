@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamTransferToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class InputStreamTransferTo &lcub;          @BeforeTemplate     long before(InputStream in, OutputStream out) throws IOException &lcub;         return ByteStreams.copy(in, out);     &rcub;          @AfterTemplate     long after(InputStream in, OutputStream out) throws IOException &lcub;         return in.transferTo(out);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class InputStreamTransferTo {
+    
+    @BeforeTemplate
+    long before(InputStream in, OutputStream out) throws IOException {
+        return ByteStreams.copy(in, out);
+    }
+    
+    @AfterTemplate
+    long after(InputStream in, OutputStream out) throws IOException {
+        return in.transferTo(out);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

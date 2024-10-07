@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalIntRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatOptionalInt &lcub;          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(OptionalInt optional, int expected) &lcub;         return assertThat(optional.getAsInt()).isEqualTo(expected);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     OptionalIntAssert after(OptionalInt optional, int expected) &lcub;         return assertThat(optional).hasValue(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatOptionalInt {
+    
+    @BeforeTemplate
+    AbstractIntegerAssert<?> before(OptionalInt optional, int expected) {
+        return assertThat(optional.getAsInt()).isEqualTo(expected);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    OptionalIntAssert after(OptionalInt optional, int expected) {
+        return assertThat(optional).hasValue(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

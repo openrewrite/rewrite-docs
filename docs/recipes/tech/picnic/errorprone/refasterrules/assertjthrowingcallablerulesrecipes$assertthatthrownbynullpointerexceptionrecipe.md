@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByNullPointerExceptionRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatThrownByNullPointerException &lcub;          @BeforeTemplate     AbstractObjectAssert&lt;?, ?&gt; before(ThrowingCallable throwingCallable) &lcub;         return assertThatNullPointerException().isThrownBy(throwingCallable);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractObjectAssert&lt;?, ?&gt; after(ThrowingCallable throwingCallable) &lcub;         return assertThatThrownBy(throwingCallable).isInstanceOf(NullPointerException.class);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatThrownByNullPointerException {
+    
+    @BeforeTemplate
+    AbstractObjectAssert<?, ?> before(ThrowingCallable throwingCallable) {
+        return assertThatNullPointerException().isThrownBy(throwingCallable);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractObjectAssert<?, ?> after(ThrowingCallable throwingCallable) {
+        return assertThatThrownBy(throwingCallable).isInstanceOf(NullPointerException.class);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

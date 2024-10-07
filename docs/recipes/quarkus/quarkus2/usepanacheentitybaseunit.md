@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.quarkus.quarkus2.UsePanacheEntityBaseUniT**
 
-_The `persist()` and `persistAndFlush()` methods now return an `Uni&lt;T extends PanacheEntityBase&gt; instead of an `Uni&lt;Void&gt; to allow chaining the methods._
+```
+The `persist()` and `persistAndFlush()` methods now return an `Uni<T extends PanacheEntityBase>` instead of an `Uni<Void>` to allow chaining the methods.
+```
+
 
 ## Recipe source
 

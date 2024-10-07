@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerBytesRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IntegerBytes &lcub;          @BeforeTemplate     int before() &lcub;         return Ints.BYTES;     &rcub;          @AfterTemplate     int after() &lcub;         return Integer.BYTES;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IntegerBytes {
+    
+    @BeforeTemplate
+    int before() {
+        return Ints.BYTES;
+    }
+    
+    @AfterTemplate
+    int after() {
+        return Integer.BYTES;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.RemoveManagedDependency**
 
-_Removes a single managed dependency from the &lt;dependencyManagement&gt;&lt;dependencies&gt; section of the pom.xml._
+```
+Removes a single managed dependency from the <dependencyManagement><dependencies> section of the pom.xml.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortHashCodeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ShortHashCode &lcub;          @BeforeTemplate     int before(short s) &lcub;         return Shorts.hashCode(s);     &rcub;          @AfterTemplate     int after(short s) &lcub;         return Short.hashCode(s);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ShortHashCode {
+    
+    @BeforeTemplate
+    int before(short s) {
+        return Shorts.hashCode(s);
+    }
+    
+    @AfterTemplate
+    int after(short s) {
+        return Short.hashCode(s);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

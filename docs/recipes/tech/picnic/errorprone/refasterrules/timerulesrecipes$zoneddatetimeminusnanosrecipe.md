@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusNanosRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ZonedDateTimeMinusNanos &lcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, int nanos) &lcub;         return zonedDateTime.minus(Duration.ofNanos(nanos));     &rcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, long nanos) &lcub;         return zonedDateTime.minus(nanos, ChronoUnit.NANOS);     &rcub;          @AfterTemplate     ZonedDateTime after(ZonedDateTime zonedDateTime, int nanos) &lcub;         return zonedDateTime.minusNanos(nanos);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ZonedDateTimeMinusNanos {
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, int nanos) {
+        return zonedDateTime.minus(Duration.ofNanos(nanos));
+    }
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, long nanos) {
+        return zonedDateTime.minus(nanos, ChronoUnit.NANOS);
+    }
+    
+    @AfterTemplate
+    ZonedDateTime after(ZonedDateTime zonedDateTime, int nanos) {
+        return zonedDateTime.minusNanos(nanos);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

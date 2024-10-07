@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsZeroRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class BigDecimalSignumIsZero &lcub;          @BeforeTemplate     boolean before(BigDecimal value) &lcub;         return Refaster.anyOf(value.compareTo(BigDecimal.ZERO) == 0, BigDecimal.ZERO.compareTo(value) == 0);     &rcub;          @AfterTemplate     @AlsoNegation     boolean after(BigDecimal value) &lcub;         return value.signum() == 0;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class BigDecimalSignumIsZero {
+    
+    @BeforeTemplate
+    boolean before(BigDecimal value) {
+        return Refaster.anyOf(value.compareTo(BigDecimal.ZERO) == 0, BigDecimal.ZERO.compareTo(value) == 0);
+    }
+    
+    @AfterTemplate
+    @AlsoNegation
+    boolean after(BigDecimal value) {
+        return value.signum() == 0;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateAtStartOfDayRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalDateAtStartOfDay &lcub;          @BeforeTemplate     LocalDateTime before(LocalDate localDate) &lcub;         return localDate.atTime(LocalTime.MIN);     &rcub;          @AfterTemplate     LocalDateTime after(LocalDate localDate) &lcub;         return localDate.atStartOfDay();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalDateAtStartOfDay {
+    
+    @BeforeTemplate
+    LocalDateTime before(LocalDate localDate) {
+        return localDate.atTime(LocalTime.MIN);
+    }
+    
+    @AfterTemplate
+    LocalDateTime after(LocalDate localDate) {
+        return localDate.atStartOfDay();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArrayRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class NewStringFromCharArray &lcub;          @BeforeTemplate     String before(char[] data) &lcub;         return Refaster.anyOf(String.valueOf(data), new String(data, 0, data.length));     &rcub;          @AfterTemplate     String after(char[] data) &lcub;         return new String(data);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class NewStringFromCharArray {
+    
+    @BeforeTemplate
+    String before(char[] data) {
+        return Refaster.anyOf(String.valueOf(data), new String(data, 0, data.length));
+    }
+    
+    @AfterTemplate
+    String after(char[] data) {
+        return new String(data);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

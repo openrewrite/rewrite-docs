@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixPostfixWithRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class SuggestedFixPostfixWith &lcub;          @BeforeTemplate     SuggestedFix before(Tree tree, String postfix) &lcub;         return SuggestedFix.builder().postfixWith(tree, postfix).build();     &rcub;          @AfterTemplate     SuggestedFix after(Tree tree, String postfix) &lcub;         return SuggestedFix.postfixWith(tree, postfix);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class SuggestedFixPostfixWith {
+    
+    @BeforeTemplate
+    SuggestedFix before(Tree tree, String postfix) {
+        return SuggestedFix.builder().postfixWith(tree, postfix).build();
+    }
+    
+    @AfterTemplate
+    SuggestedFix after(Tree tree, String postfix) {
+        return SuggestedFix.postfixWith(tree, postfix);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

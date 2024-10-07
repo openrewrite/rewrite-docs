@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatBytesRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class FloatBytes &lcub;          @BeforeTemplate     int before() &lcub;         return Floats.BYTES;     &rcub;          @AfterTemplate     int after() &lcub;         return Float.BYTES;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class FloatBytes {
+    
+    @BeforeTemplate
+    int before() {
+        return Floats.BYTES;
+    }
+    
+    @AfterTemplate
+    int after() {
+        return Float.BYTES;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing**
 
-_Require or disallow spacing around embedded expressions of template strings in &lt;template&gt; See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html)_
+```
+Require or disallow spacing around embedded expressions of template strings in `<template>`
+See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html)
+```
+
 
 ### Tags
 

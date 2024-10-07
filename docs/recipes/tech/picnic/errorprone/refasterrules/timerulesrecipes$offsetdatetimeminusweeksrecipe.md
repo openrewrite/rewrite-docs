@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeMinusWeeksRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetDateTimeMinusWeeks &lcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, int weeks) &lcub;         return offsetDateTime.minus(Period.ofWeeks(weeks));     &rcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, long weeks) &lcub;         return offsetDateTime.minus(weeks, ChronoUnit.WEEKS);     &rcub;          @AfterTemplate     OffsetDateTime after(OffsetDateTime offsetDateTime, int weeks) &lcub;         return offsetDateTime.minusWeeks(weeks);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetDateTimeMinusWeeks {
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, int weeks) {
+        return offsetDateTime.minus(Period.ofWeeks(weeks));
+    }
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, long weeks) {
+        return offsetDateTime.minus(weeks, ChronoUnit.WEEKS);
+    }
+    
+    @AfterTemplate
+    OffsetDateTime after(OffsetDateTime offsetDateTime, int weeks) {
+        return offsetDateTime.minusWeeks(weeks);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

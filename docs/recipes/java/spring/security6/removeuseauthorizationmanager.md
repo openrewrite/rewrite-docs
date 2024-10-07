@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager**
 
-_In Spring Security 6, &lt;websocket-message-broker&gt; defaults use-authorization-manager to true.  So, the 'use-authorization-manager' attribute for message security is no longer needed and can be removed._
+```
+In Spring Security 6, <websocket-message-broker> defaults use-authorization-manager to true.  So, the 'use-authorization-manager' attribute for message security is no longer needed and can be removed.
+```
+
 
 ### Tags
 

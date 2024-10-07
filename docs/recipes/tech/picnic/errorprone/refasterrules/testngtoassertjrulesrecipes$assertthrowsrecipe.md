@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThrowsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThrows &lcub;          @BeforeTemplate     void before(ThrowingRunnable runnable) &lcub;         assertThrows(runnable);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable runnable) &lcub;         assertThatThrownBy(runnable);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThrows {
+    
+    @BeforeTemplate
+    void before(ThrowingRunnable runnable) {
+        assertThrows(runnable);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(ThrowingCallable runnable) {
+        assertThatThrownBy(runnable);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

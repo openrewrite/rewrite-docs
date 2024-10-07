@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class Fail &lcub;          @BeforeTemplate     void before() &lcub;         Assert.fail();     &rcub;          @AfterTemplate     @DoNotCall     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after() &lcub;         fail();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class Fail {
+    
+    @BeforeTemplate
+    void before() {
+        Assert.fail();
+    }
+    
+    @AfterTemplate
+    @DoNotCall
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after() {
+        fail();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

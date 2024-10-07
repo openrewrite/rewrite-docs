@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfHoursRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DurationOfHours &lcub;          @BeforeTemplate     Duration before(long amount) &lcub;         return Duration.of(amount, ChronoUnit.HOURS);     &rcub;          @AfterTemplate     Duration after(long amount) &lcub;         return Duration.ofHours(amount);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DurationOfHours {
+    
+    @BeforeTemplate
+    Duration before(long amount) {
+        return Duration.of(amount, ChronoUnit.HOURS);
+    }
+    
+    @AfterTemplate
+    Duration after(long amount) {
+        return Duration.ofHours(amount);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamNoneMatchRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LongStreamNoneMatch &lcub;          @BeforeTemplate     boolean before(LongStream stream, LongPredicate predicate) &lcub;         return Refaster.anyOf(!stream.anyMatch(predicate), stream.allMatch(predicate.negate()), stream.filter(predicate).findAny().isEmpty());     &rcub;          @AfterTemplate     boolean after(LongStream stream, LongPredicate predicate) &lcub;         return stream.noneMatch(predicate);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LongStreamNoneMatch {
+    
+    @BeforeTemplate
+    boolean before(LongStream stream, LongPredicate predicate) {
+        return Refaster.anyOf(!stream.anyMatch(predicate), stream.allMatch(predicate.negate()), stream.filter(predicate).findAny().isEmpty());
+    }
+    
+    @AfterTemplate
+    boolean after(LongStream stream, LongPredicate predicate) {
+        return stream.noneMatch(predicate);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

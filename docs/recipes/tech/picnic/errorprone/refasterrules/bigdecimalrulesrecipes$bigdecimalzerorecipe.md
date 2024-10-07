@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalZeroRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class BigDecimalZero &lcub;          @BeforeTemplate     BigDecimal before() &lcub;         return Refaster.anyOf(BigDecimal.valueOf(0), new BigDecimal("0"));     &rcub;          @AfterTemplate     BigDecimal after() &lcub;         return BigDecimal.ZERO;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class BigDecimalZero {
+    
+    @BeforeTemplate
+    BigDecimal before() {
+        return Refaster.anyOf(BigDecimal.valueOf(0), new BigDecimal("0"));
+    }
+    
+    @AfterTemplate
+    BigDecimal after() {
+        return BigDecimal.ZERO;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

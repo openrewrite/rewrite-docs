@@ -9,7 +9,32 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsEqualToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatIsEqualTo &lcub;          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(boolean actual, boolean expected) &lcub;         return Refaster.anyOf(assertThat(actual == expected).isTrue(), assertThat(actual != expected).isFalse());     &rcub;          @BeforeTemplate     @SuppressWarnings(value = "java:S1244")     AbstractBooleanAssert&lt;?&gt; before(double actual, double expected) &lcub;         return Refaster.anyOf(assertThat(actual == expected).isTrue(), assertThat(actual != expected).isFalse());     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractBooleanAssert&lt;?&gt; after(boolean actual, boolean expected) &lcub;         return assertThat(actual).isEqualTo(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatIsEqualTo {
+    
+    @BeforeTemplate
+    AbstractBooleanAssert<?> before(boolean actual, boolean expected) {
+        return Refaster.anyOf(assertThat(actual == expected).isTrue(), assertThat(actual != expected).isFalse());
+    }
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "java:S1244")
+    AbstractBooleanAssert<?> before(double actual, double expected) {
+        return Refaster.anyOf(assertThat(actual == expected).isTrue(), assertThat(actual != expected).isFalse());
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractBooleanAssert<?> after(boolean actual, boolean expected) {
+        return assertThat(actual).isEqualTo(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

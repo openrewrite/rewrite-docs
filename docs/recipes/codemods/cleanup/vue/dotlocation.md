@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.DotLocation**
 
-_Enforce consistent newlines before and after dots in &lt;template&gt; See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html)_
+```
+Enforce consistent newlines before and after dots in `<template>`
+See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html)
+```
+
 
 ### Tags
 

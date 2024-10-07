@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.security6.RemoveFilterSecurityInterceptorOncePerRequest**
 
-_In Spring Security 6.0, &lt;http&gt; defaults `authorizeRequests#filterSecurityInterceptorOncePerRequest` to false. So, to complete migration, any defaults values can be removed._
+```
+In Spring Security 6.0, `<http>` defaults `authorizeRequests#filterSecurityInterceptorOncePerRequest` to false. So, to complete migration, any defaults values can be removed.
+```
+
 
 ## Recipe source
 

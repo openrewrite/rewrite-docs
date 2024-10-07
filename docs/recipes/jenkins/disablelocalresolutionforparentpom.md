@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.jenkins.DisableLocalResolutionForParentPom**
 
-_Explicitly sets &lt;relativePath/&gt; to disable file resolution, as recommended in the [plugin development guide](https://www.jenkins.io/doc/developer/plugin-development/updating-parent/)._
+```
+Explicitly sets `<relativePath/>` to disable file resolution, as recommended in the [plugin development guide](https://www.jenkins.io/doc/developer/plugin-development/updating-parent/).
+```
+
 
 ## Recipe source
 

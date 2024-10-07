@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileToFileRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class FilesCreateTempFileToFile &lcub;          @BeforeTemplate     @SuppressWarnings(value = "java:S5443")     File before(String prefix, String suffix) throws IOException &lcub;         return Refaster.anyOf(File.createTempFile(prefix, suffix), File.createTempFile(prefix, suffix, null));     &rcub;          @AfterTemplate     @SuppressWarnings(value = "java:S5443")     File after(String prefix, String suffix) throws IOException &lcub;         return Files.createTempFile(prefix, suffix).toFile();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class FilesCreateTempFileToFile {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "java:S5443")
+    File before(String prefix, String suffix) throws IOException {
+        return Refaster.anyOf(File.createTempFile(prefix, suffix), File.createTempFile(prefix, suffix, null));
+    }
+    
+    @AfterTemplate
+    @SuppressWarnings(value = "java:S5443")
+    File after(String prefix, String suffix) throws IOException {
+        return Files.createTempFile(prefix, suffix).toFile();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

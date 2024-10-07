@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.dependencies.RemoveDependency**
 
-_For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the &lt;dependencies&gt; section of the pom.xml._
+```
+For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`.
+For Maven project, removes a single dependency from the <dependencies> section of the pom.xml.
+```
+
 
 ## Recipe source
 

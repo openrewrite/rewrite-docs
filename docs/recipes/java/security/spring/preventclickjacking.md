@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.security.spring.PreventClickjacking**
 
-_The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP response header to indicate whether or not a browser should be allowed to render a page in a &lt;frame&gt; or &lt;iframe&gt;. Sites can use this to avoid Clickjacking attacks by ensuring that their content is not embedded into other sites._
+```
+The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP response header to indicate whether or not a browser should be allowed to render a page in a `<frame>` or `<iframe>`. Sites can use this to avoid Clickjacking attacks by ensuring that their content is not embedded into other sites.
+```
+
 
 ### Tags
 

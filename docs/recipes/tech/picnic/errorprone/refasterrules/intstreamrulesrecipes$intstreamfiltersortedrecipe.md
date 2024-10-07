@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamFilterSortedRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IntStreamFilterSorted &lcub;          @BeforeTemplate     IntStream before(IntStream stream, IntPredicate predicate) &lcub;         return stream.sorted().filter(predicate);     &rcub;          @AfterTemplate     IntStream after(IntStream stream, IntPredicate predicate) &lcub;         return stream.filter(predicate).sorted();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IntStreamFilterSorted {
+    
+    @BeforeTemplate
+    IntStream before(IntStream stream, IntPredicate predicate) {
+        return stream.sorted().filter(predicate);
+    }
+    
+    @AfterTemplate
+    IntStream after(IntStream stream, IntPredicate predicate) {
+        return stream.filter(predicate).sorted();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

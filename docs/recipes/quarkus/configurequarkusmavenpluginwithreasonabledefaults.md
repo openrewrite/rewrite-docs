@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.quarkus.ConfigureQuarkusMavenPluginWithReasonableDefaults**
 
-_Configures the `quarkus-maven-plugin` with reasonable defaults, such as default activated `goals` and &lt;extensions&gt; configuration._
+```
+Configures the `quarkus-maven-plugin` with reasonable defaults, such as default activated `goals` and `<extensions>` configuration.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeMinusMonthsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetDateTimeMinusMonths &lcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, int months) &lcub;         return offsetDateTime.minus(Period.ofMonths(months));     &rcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, long months) &lcub;         return offsetDateTime.minus(months, ChronoUnit.MONTHS);     &rcub;          @AfterTemplate     OffsetDateTime after(OffsetDateTime offsetDateTime, int months) &lcub;         return offsetDateTime.minusMonths(months);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetDateTimeMinusMonths {
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, int months) {
+        return offsetDateTime.minus(Period.ofMonths(months));
+    }
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, long months) {
+        return offsetDateTime.minus(months, ChronoUnit.MONTHS);
+    }
+    
+    @AfterTemplate
+    OffsetDateTime after(OffsetDateTime offsetDateTime, int months) {
+        return offsetDateTime.minusMonths(months);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

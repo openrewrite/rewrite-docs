@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.jenkins.UpgradeVersionProperty**
 
-_If the current value is &lt; given version, upgrade it._
+```
+If the current value is < given version, upgrade it.
+```
+
 
 ## Recipe source
 

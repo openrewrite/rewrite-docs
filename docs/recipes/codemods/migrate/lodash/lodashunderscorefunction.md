@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.lodash.LodashUnderscoreFunction**
 
-_- `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`_
+```
+- `_.bind(fn, obj, ...x)` -> `fn.bind(obj, ...x)`
+- `_.partial(fn, a, b);` -> `(...args) => fn(a, b, ...args)`
+```
+
 
 ### Tags
 

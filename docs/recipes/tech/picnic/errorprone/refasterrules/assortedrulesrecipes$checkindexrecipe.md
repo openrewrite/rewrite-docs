@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$CheckIndexRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class CheckIndex &lcub;          @BeforeTemplate     int before(int index, int size) &lcub;         return checkElementIndex(index, size);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     int after(int index, int size) &lcub;         return checkIndex(index, size);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class CheckIndex {
+    
+    @BeforeTemplate
+    int before(int index, int size) {
+        return checkElementIndex(index, size);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    int after(int index, int size) {
+        return checkIndex(index, size);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotEqualToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractBigIntegerAssertIsNotEqualTo &lcub;          @BeforeTemplate     AbstractBigIntegerAssert&lt;?&gt; before(AbstractBigIntegerAssert&lt;?&gt; bigIntegerAssert, BigInteger n) &lcub;         return Refaster.anyOf(bigIntegerAssert.isNotCloseTo(n, offset(BigInteger.ZERO)), bigIntegerAssert.isNotCloseTo(n, withPercentage(0)));     &rcub;          @AfterTemplate     AbstractBigIntegerAssert&lt;?&gt; after(AbstractBigIntegerAssert&lt;?&gt; bigIntegerAssert, BigInteger n) &lcub;         return bigIntegerAssert.isNotEqualTo(n);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractBigIntegerAssertIsNotEqualTo {
+    
+    @BeforeTemplate
+    AbstractBigIntegerAssert<?> before(AbstractBigIntegerAssert<?> bigIntegerAssert, BigInteger n) {
+        return Refaster.anyOf(bigIntegerAssert.isNotCloseTo(n, offset(BigInteger.ZERO)), bigIntegerAssert.isNotCloseTo(n, withPercentage(0)));
+    }
+    
+    @AfterTemplate
+    AbstractBigIntegerAssert<?> after(AbstractBigIntegerAssert<?> bigIntegerAssert, BigInteger n) {
+        return bigIntegerAssert.isNotEqualTo(n);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

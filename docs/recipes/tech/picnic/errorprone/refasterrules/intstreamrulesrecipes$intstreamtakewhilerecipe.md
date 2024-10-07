@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamTakeWhileRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IntStreamTakeWhile &lcub;          @BeforeTemplate     IntStream before(IntStream stream, IntPredicate predicate) &lcub;         return stream.takeWhile(predicate).filter(predicate);     &rcub;          @AfterTemplate     IntStream after(IntStream stream, IntPredicate predicate) &lcub;         return stream.takeWhile(predicate);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IntStreamTakeWhile {
+    
+    @BeforeTemplate
+    IntStream before(IntStream stream, IntPredicate predicate) {
+        return stream.takeWhile(predicate).filter(predicate);
+    }
+    
+    @AfterTemplate
+    IntStream after(IntStream stream, IntPredicate predicate) {
+        return stream.takeWhile(predicate);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

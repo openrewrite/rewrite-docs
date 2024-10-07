@@ -9,7 +9,81 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalWithMessageRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertUnequalWithMessage &lcub;          @BeforeTemplate     void before(boolean actual, String message, boolean expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(byte actual, String message, byte expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(char actual, String message, char expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(short actual, String message, short expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(int actual, String message, int expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(long actual, String message, long expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(float actual, String message, float expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(double actual, String message, double expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(Object actual, String message, Object expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(String actual, String message, String expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(Set&lt;?&gt; actual, String message, Set&lt;?&gt; expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(Map&lt;?, ?&gt; actual, String message, Map&lt;?, ?&gt; expected) &lcub;         assertNotEquals(actual, expected, message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, String message, Object expected) &lcub;         assertThat(actual).withFailMessage(message).isNotEqualTo(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertUnequalWithMessage {
+    
+    @BeforeTemplate
+    void before(boolean actual, String message, boolean expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(byte actual, String message, byte expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(char actual, String message, char expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(short actual, String message, short expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(int actual, String message, int expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(long actual, String message, long expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(float actual, String message, float expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(double actual, String message, double expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Object actual, String message, Object expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(String actual, String message, String expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Set<?> actual, String message, Set<?> expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Map<?, ?> actual, String message, Map<?, ?> expected) {
+        assertNotEquals(actual, expected, message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(Object actual, String message, Object expected) {
+        assertThat(actual).withFailMessage(message).isNotEqualTo(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

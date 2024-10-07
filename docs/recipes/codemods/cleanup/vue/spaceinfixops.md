@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.SpaceInfixOps**
 
-_Require spacing around infix operators in &lt;template&gt; See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html)_
+```
+Require spacing around infix operators in `<template>`
+See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html)
+```
+
 
 ### Tags
 

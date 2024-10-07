@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsOneRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractByteAssertIsOne &lcub;          @BeforeTemplate     AbstractByteAssert&lt;?&gt; before(AbstractByteAssert&lt;?&gt; byteAssert) &lcub;         return byteAssert.isOne();     &rcub;          @AfterTemplate     AbstractByteAssert&lt;?&gt; after(AbstractByteAssert&lt;?&gt; byteAssert) &lcub;         return byteAssert.isEqualTo((byte)1);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractByteAssertIsOne {
+    
+    @BeforeTemplate
+    AbstractByteAssert<?> before(AbstractByteAssert<?> byteAssert) {
+        return byteAssert.isOne();
+    }
+    
+    @AfterTemplate
+    AbstractByteAssert<?> after(AbstractByteAssert<?> byteAssert) {
+        return byteAssert.isEqualTo((byte)1);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

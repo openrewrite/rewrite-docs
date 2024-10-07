@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetTimeMinusMinutesRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetTimeMinusMinutes &lcub;          @BeforeTemplate     OffsetTime before(OffsetTime offsetTime, int minutes) &lcub;         return offsetTime.minus(Duration.ofMinutes(minutes));     &rcub;          @BeforeTemplate     OffsetTime before(OffsetTime offsetTime, long minutes) &lcub;         return offsetTime.minus(minutes, ChronoUnit.MINUTES);     &rcub;          @AfterTemplate     OffsetTime after(OffsetTime offsetTime, int minutes) &lcub;         return offsetTime.minusMinutes(minutes);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetTimeMinusMinutes {
+    
+    @BeforeTemplate
+    OffsetTime before(OffsetTime offsetTime, int minutes) {
+        return offsetTime.minus(Duration.ofMinutes(minutes));
+    }
+    
+    @BeforeTemplate
+    OffsetTime before(OffsetTime offsetTime, long minutes) {
+        return offsetTime.minus(minutes, ChronoUnit.MINUTES);
+    }
+    
+    @AfterTemplate
+    OffsetTime after(OffsetTime offsetTime, int minutes) {
+        return offsetTime.minusMinutes(minutes);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,16 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.lodash.LodashUnderscoreUtil**
 
-_- `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`_
+```
+- `_.isArray(x)` -> `Array.isArray(x)`
+- `_.isBoolean(x)` -> `typeof(x) === 'boolean'`
+- `_.isFinite(x)` -> `Number.isFinite(x)`
+- `_.isFunction(x)` -> `typeof(x) === 'function'`
+- `_.isNull(x)` -> `x === null`
+- `_.isString(x)` -> `typeof(x) === 'string'`
+- `_.isUndefined(x)` -> `typeof(x) === 'undefined'`
+```
+
 
 ### Tags
 

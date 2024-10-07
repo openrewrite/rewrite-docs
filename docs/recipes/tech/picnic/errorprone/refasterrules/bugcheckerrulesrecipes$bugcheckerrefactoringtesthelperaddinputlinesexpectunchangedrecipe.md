@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperAddInputLinesExpectUnchangedRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged &lcub;          @BeforeTemplate     BugCheckerRefactoringTestHelper before(BugCheckerRefactoringTestHelper helper, String path, String source) &lcub;         return helper.addInputLines(path, source).addOutputLines(path, source);     &rcub;          @AfterTemplate     BugCheckerRefactoringTestHelper after(BugCheckerRefactoringTestHelper helper, String path, String source) &lcub;         return helper.addInputLines(path, source).expectUnchanged();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged {
+    
+    @BeforeTemplate
+    BugCheckerRefactoringTestHelper before(BugCheckerRefactoringTestHelper helper, String path, String source) {
+        return helper.addInputLines(path, source).addOutputLines(path, source);
+    }
+    
+    @AfterTemplate
+    BugCheckerRefactoringTestHelper after(BugCheckerRefactoringTestHelper helper, String path, String source) {
+        return helper.addInputLines(path, source).expectUnchanged();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

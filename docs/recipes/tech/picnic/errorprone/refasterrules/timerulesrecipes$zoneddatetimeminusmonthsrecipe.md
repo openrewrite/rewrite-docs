@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimeMinusMonthsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ZonedDateTimeMinusMonths &lcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, int months) &lcub;         return zonedDateTime.minus(Period.ofMonths(months));     &rcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, long months) &lcub;         return zonedDateTime.minus(months, ChronoUnit.MONTHS);     &rcub;          @AfterTemplate     ZonedDateTime after(ZonedDateTime zonedDateTime, int months) &lcub;         return zonedDateTime.minusMonths(months);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ZonedDateTimeMinusMonths {
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, int months) {
+        return zonedDateTime.minus(Period.ofMonths(months));
+    }
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, long months) {
+        return zonedDateTime.minus(months, ChronoUnit.MONTHS);
+    }
+    
+    @AfterTemplate
+    ZonedDateTime after(ZonedDateTime zonedDateTime, int months) {
+        return zonedDateTime.minusMonths(months);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

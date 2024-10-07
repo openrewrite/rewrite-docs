@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoLocalDateIsBeforeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ChronoLocalDateIsBefore &lcub;          @BeforeTemplate     boolean before(ChronoLocalDate a, ChronoLocalDate b) &lcub;         return a.compareTo(b) &lt; 0;     &rcub;          @AfterTemplate     @AlsoNegation     boolean after(ChronoLocalDate a, ChronoLocalDate b) &lcub;         return a.isBefore(b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ChronoLocalDateIsBefore {
+    
+    @BeforeTemplate
+    boolean before(ChronoLocalDate a, ChronoLocalDate b) {
+        return a.compareTo(b) < 0;
+    }
+    
+    @AfterTemplate
+    @AlsoNegation
+    boolean after(ChronoLocalDate a, ChronoLocalDate b) {
+        return a.isBefore(b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

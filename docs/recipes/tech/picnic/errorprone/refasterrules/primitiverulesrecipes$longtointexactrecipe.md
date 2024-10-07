@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToIntExactRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LongToIntExact &lcub;          @BeforeTemplate     int before(long l) &lcub;         return Ints.checkedCast(l);     &rcub;          @AfterTemplate     int after(long l) &lcub;         return Math.toIntExact(l);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LongToIntExact {
+    
+    @BeforeTemplate
+    int before(long l) {
+        return Ints.checkedCast(l);
+    }
+    
+    @AfterTemplate
+    int after(long l) {
+        return Math.toIntExact(l);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

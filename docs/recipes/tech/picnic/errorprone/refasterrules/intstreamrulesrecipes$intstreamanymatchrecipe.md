@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAnyMatchRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IntStreamAnyMatch &lcub;          @BeforeTemplate     @SuppressWarnings(value = "java:S4034")     boolean before(IntStream stream, IntPredicate predicate) &lcub;         return Refaster.anyOf(!stream.noneMatch(predicate), stream.filter(predicate).findAny().isPresent());     &rcub;          @AfterTemplate     boolean after(IntStream stream, IntPredicate predicate) &lcub;         return stream.anyMatch(predicate);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IntStreamAnyMatch {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "java:S4034")
+    boolean before(IntStream stream, IntPredicate predicate) {
+        return Refaster.anyOf(!stream.noneMatch(predicate), stream.filter(predicate).findAny().isPresent());
+    }
+    
+    @AfterTemplate
+    boolean after(IntStream stream, IntPredicate predicate) {
+        return stream.anyMatch(predicate);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

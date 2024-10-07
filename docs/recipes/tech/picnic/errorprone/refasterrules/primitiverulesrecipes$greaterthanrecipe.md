@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class GreaterThan &lcub;          @BeforeTemplate     @SuppressWarnings(value = "java:S1940")     boolean before(double a, double b) &lcub;         return !(a &lt;= b);     &rcub;          @AfterTemplate     boolean after(double a, double b) &lcub;         return a &gt; b;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class GreaterThan {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "java:S1940")
+    boolean before(double a, double b) {
+        return !(a <= b);
+    }
+    
+    @AfterTemplate
+    boolean after(double a, double b) {
+        return a > b;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

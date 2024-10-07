@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToWithOffsetRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractDoubleAssertIsCloseToWithOffset &lcub;          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(AbstractDoubleAssert&lt;?&gt; doubleAssert, double n, Offset&lt;Double&gt; offset) &lcub;         return doubleAssert.isEqualTo(n, offset);     &rcub;          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(AbstractDoubleAssert&lt;?&gt; doubleAssert, Double n, Offset&lt;Double&gt; offset) &lcub;         return doubleAssert.isEqualTo(n, offset);     &rcub;          @AfterTemplate     AbstractDoubleAssert&lt;?&gt; after(AbstractDoubleAssert&lt;?&gt; doubleAssert, double n, Offset&lt;Double&gt; offset) &lcub;         return doubleAssert.isCloseTo(n, offset);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractDoubleAssertIsCloseToWithOffset {
+    
+    @BeforeTemplate
+    AbstractDoubleAssert<?> before(AbstractDoubleAssert<?> doubleAssert, double n, Offset<Double> offset) {
+        return doubleAssert.isEqualTo(n, offset);
+    }
+    
+    @BeforeTemplate
+    AbstractDoubleAssert<?> before(AbstractDoubleAssert<?> doubleAssert, Double n, Offset<Double> offset) {
+        return doubleAssert.isEqualTo(n, offset);
+    }
+    
+    @AfterTemplate
+    AbstractDoubleAssert<?> after(AbstractDoubleAssert<?> doubleAssert, double n, Offset<Double> offset) {
+        return doubleAssert.isCloseTo(n, offset);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

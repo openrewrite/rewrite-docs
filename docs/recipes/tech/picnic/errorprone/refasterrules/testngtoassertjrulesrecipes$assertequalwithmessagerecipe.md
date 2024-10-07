@@ -9,7 +9,76 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualWithMessageRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertEqualWithMessage &lcub;          @BeforeTemplate     void before(boolean actual, String message, boolean expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(byte actual, String message, byte expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(char actual, String message, char expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(short actual, String message, short expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(int actual, String message, int expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(long actual, String message, long expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(float actual, String message, float expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(double actual, String message, double expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(Object actual, String message, Object expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(String actual, String message, String expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @BeforeTemplate     void before(Map&lt;?, ?&gt; actual, String message, Map&lt;?, ?&gt; expected) &lcub;         assertEquals(actual, expected, message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, String message, Object expected) &lcub;         assertThat(actual).withFailMessage(message).isEqualTo(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertEqualWithMessage {
+    
+    @BeforeTemplate
+    void before(boolean actual, String message, boolean expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(byte actual, String message, byte expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(char actual, String message, char expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(short actual, String message, short expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(int actual, String message, int expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(long actual, String message, long expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(float actual, String message, float expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(double actual, String message, double expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Object actual, String message, Object expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(String actual, String message, String expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @BeforeTemplate
+    void before(Map<?, ?> actual, String message, Map<?, ?> expected) {
+        assertEquals(actual, expected, message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(Object actual, String message, Object expected) {
+        assertThat(actual).withFailMessage(message).isEqualTo(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

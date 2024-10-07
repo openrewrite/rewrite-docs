@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$Utf8EncodedLengthRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class Utf8EncodedLength &lcub;          @BeforeTemplate     int before(String str) &lcub;         return str.getBytes(UTF_8).length;     &rcub;          @AfterTemplate     int after(String str) &lcub;         return Utf8.encodedLength(str);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class Utf8EncodedLength {
+    
+    @BeforeTemplate
+    int before(String str) {
+        return str.getBytes(UTF_8).length;
+    }
+    
+    @AfterTemplate
+    int after(String str) {
+        return Utf8.encodedLength(str);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

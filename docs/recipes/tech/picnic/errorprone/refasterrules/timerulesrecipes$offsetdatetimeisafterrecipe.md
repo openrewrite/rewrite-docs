@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeIsAfterRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetDateTimeIsAfter &lcub;          @BeforeTemplate     boolean before(OffsetDateTime a, OffsetDateTime b) &lcub;         return a.compareTo(b) &gt; 0;     &rcub;          @AfterTemplate     @AlsoNegation     boolean after(OffsetDateTime a, OffsetDateTime b) &lcub;         return a.isAfter(b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetDateTimeIsAfter {
+    
+    @BeforeTemplate
+    boolean before(OffsetDateTime a, OffsetDateTime b) {
+        return a.compareTo(b) > 0;
+    }
+    
+    @AfterTemplate
+    @AlsoNegation
+    boolean after(OffsetDateTime a, OffsetDateTime b) {
+        return a.isAfter(b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

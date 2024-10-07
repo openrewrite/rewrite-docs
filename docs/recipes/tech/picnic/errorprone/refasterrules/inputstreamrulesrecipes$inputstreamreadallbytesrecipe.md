@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamReadAllBytesRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class InputStreamReadAllBytes &lcub;          @BeforeTemplate     byte[] before(InputStream in) throws IOException &lcub;         return ByteStreams.toByteArray(in);     &rcub;          @AfterTemplate     byte[] after(InputStream in) throws IOException &lcub;         return in.readAllBytes();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class InputStreamReadAllBytes {
+    
+    @BeforeTemplate
+    byte[] before(InputStream in) throws IOException {
+        return ByteStreams.toByteArray(in);
+    }
+    
+    @AfterTemplate
+    byte[] after(InputStream in) throws IOException {
+        return in.readAllBytes();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

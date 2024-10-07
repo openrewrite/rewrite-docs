@@ -9,7 +9,37 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$IndirectDoubleNegationRecipe**
 
-_Recipe created for the following Refaster template: ```java @SuppressWarnings(value = "java:S1940") static final class IndirectDoubleNegation &lcub;          @BeforeTemplate     boolean before(boolean a, boolean b) &lcub;         return Refaster.anyOf(!(a != b), a ? b : !b);     &rcub;          @BeforeTemplate     @SuppressWarnings(value = "java:S1244")     boolean before(double a, double b) &lcub;         return !(a != b);     &rcub;          @BeforeTemplate     boolean before(Object a, Object b) &lcub;         return !(a != b);     &rcub;          @AfterTemplate     boolean after(boolean a, boolean b) &lcub;         return a == b;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+@SuppressWarnings(value = "java:S1940")
+static final class IndirectDoubleNegation {
+    
+    @BeforeTemplate
+    boolean before(boolean a, boolean b) {
+        return Refaster.anyOf(!(a != b), a ? b : !b);
+    }
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "java:S1244")
+    boolean before(double a, double b) {
+        return !(a != b);
+    }
+    
+    @BeforeTemplate
+    boolean before(Object a, Object b) {
+        return !(a != b);
+    }
+    
+    @AfterTemplate
+    boolean after(boolean a, boolean b) {
+        return a == b;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

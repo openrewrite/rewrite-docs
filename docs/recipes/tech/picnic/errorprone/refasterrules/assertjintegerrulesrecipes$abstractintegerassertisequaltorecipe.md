@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractIntegerAssertIsEqualTo &lcub;          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(AbstractIntegerAssert&lt;?&gt; intAssert, int n) &lcub;         return Refaster.anyOf(intAssert.isCloseTo(n, offset(0)), intAssert.isCloseTo(n, withPercentage(0)));     &rcub;          @AfterTemplate     AbstractIntegerAssert&lt;?&gt; after(AbstractIntegerAssert&lt;?&gt; intAssert, int n) &lcub;         return intAssert.isEqualTo(n);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractIntegerAssertIsEqualTo {
+    
+    @BeforeTemplate
+    AbstractIntegerAssert<?> before(AbstractIntegerAssert<?> intAssert, int n) {
+        return Refaster.anyOf(intAssert.isCloseTo(n, offset(0)), intAssert.isCloseTo(n, withPercentage(0)));
+    }
+    
+    @AfterTemplate
+    AbstractIntegerAssert<?> after(AbstractIntegerAssert<?> intAssert, int n) {
+        return intAssert.isEqualTo(n);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

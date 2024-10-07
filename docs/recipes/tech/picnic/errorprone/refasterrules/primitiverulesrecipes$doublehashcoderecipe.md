@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleHashCodeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DoubleHashCode &lcub;          @BeforeTemplate     int before(double d) &lcub;         return Doubles.hashCode(d);     &rcub;          @AfterTemplate     int after(double d) &lcub;         return Double.hashCode(d);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DoubleHashCode {
+    
+    @BeforeTemplate
+    int before(double d) {
+        return Doubles.hashCode(d);
+    }
+    
+    @AfterTemplate
+    int after(double d) {
+        return Double.hashCode(d);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

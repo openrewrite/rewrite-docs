@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LongCompare &lcub;          @BeforeTemplate     int before(long a, long b) &lcub;         return Longs.compare(a, b);     &rcub;          @AfterTemplate     int after(long a, long b) &lcub;         return Long.compare(a, b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LongCompare {
+    
+    @BeforeTemplate
+    int before(long a, long b) {
+        return Longs.compare(a, b);
+    }
+    
+    @AfterTemplate
+    int after(long a, long b) {
+        return Long.compare(a, b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

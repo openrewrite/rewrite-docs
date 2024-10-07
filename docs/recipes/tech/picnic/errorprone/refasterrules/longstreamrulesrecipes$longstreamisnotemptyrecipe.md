@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamIsNotEmptyRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LongStreamIsNotEmpty &lcub;          @BeforeTemplate     boolean before(LongStream stream) &lcub;         return Refaster.anyOf(stream.count() != 0, stream.count() &gt; 0, stream.count() &gt;= 1, stream.findFirst().isPresent());     &rcub;          @AfterTemplate     boolean after(LongStream stream) &lcub;         return stream.findAny().isPresent();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LongStreamIsNotEmpty {
+    
+    @BeforeTemplate
+    boolean before(LongStream stream) {
+        return Refaster.anyOf(stream.count() != 0, stream.count() > 0, stream.count() >= 1, stream.findFirst().isPresent());
+    }
+    
+    @AfterTemplate
+    boolean after(LongStream stream) {
+        return stream.findAny().isPresent();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsOneRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractLongAssertIsOne &lcub;          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(AbstractLongAssert&lt;?&gt; longAssert) &lcub;         return longAssert.isOne();     &rcub;          @AfterTemplate     AbstractLongAssert&lt;?&gt; after(AbstractLongAssert&lt;?&gt; longAssert) &lcub;         return longAssert.isEqualTo(1);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractLongAssertIsOne {
+    
+    @BeforeTemplate
+    AbstractLongAssert<?> before(AbstractLongAssert<?> longAssert) {
+        return longAssert.isOne();
+    }
+    
+    @AfterTemplate
+    AbstractLongAssert<?> after(AbstractLongAssert<?> longAssert) {
+        return longAssert.isEqualTo(1);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

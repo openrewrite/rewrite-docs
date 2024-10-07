@@ -9,7 +9,27 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIllegalStateExceptionHasMessageRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatThrownByIllegalStateExceptionHasMessage &lcub;          @BeforeTemplate     @SuppressWarnings(value = "AssertThatThrownByIllegalStateException")     AbstractObjectAssert&lt;?, ?&gt; before(ThrowingCallable throwingCallable, String message) &lcub;         return assertThatIllegalStateException().isThrownBy(throwingCallable).withMessage(message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractObjectAssert&lt;?, ?&gt; after(ThrowingCallable throwingCallable, String message) &lcub;         return assertThatThrownBy(throwingCallable).isInstanceOf(IllegalStateException.class).hasMessage(message);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatThrownByIllegalStateExceptionHasMessage {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "AssertThatThrownByIllegalStateException")
+    AbstractObjectAssert<?, ?> before(ThrowingCallable throwingCallable, String message) {
+        return assertThatIllegalStateException().isThrownBy(throwingCallable).withMessage(message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractObjectAssert<?, ?> after(ThrowingCallable throwingCallable, String message) {
+        return assertThatThrownBy(throwingCallable).isInstanceOf(IllegalStateException.class).hasMessage(message);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

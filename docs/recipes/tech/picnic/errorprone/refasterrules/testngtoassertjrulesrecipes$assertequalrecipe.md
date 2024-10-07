@@ -9,7 +9,76 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertEqual &lcub;          @BeforeTemplate     void before(boolean actual, boolean expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(byte actual, byte expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(char actual, char expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(short actual, short expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(int actual, int expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(long actual, long expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(float actual, float expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(double actual, double expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(Object actual, Object expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(String actual, String expected) &lcub;         assertEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(Map&lt;?, ?&gt; actual, Map&lt;?, ?&gt; expected) &lcub;         assertEquals(actual, expected);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Object expected) &lcub;         assertThat(actual).isEqualTo(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertEqual {
+    
+    @BeforeTemplate
+    void before(boolean actual, boolean expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(byte actual, byte expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(char actual, char expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(short actual, short expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(int actual, int expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(long actual, long expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(float actual, float expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(double actual, double expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Object actual, Object expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(String actual, String expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Map<?, ?> actual, Map<?, ?> expected) {
+        assertEquals(actual, expected);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(Object actual, Object expected) {
+        assertThat(actual).isEqualTo(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

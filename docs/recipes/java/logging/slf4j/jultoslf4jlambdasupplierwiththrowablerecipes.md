@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierWithThrowableRecipes**
 
-_Replace calls to `Logger.log(Level, Throwable, Supplier&lt;String&gt;)` with the corresponding SLF4J method calls._
+```
+Replace calls to `Logger.log(Level, Throwable, Supplier<String>)` with the corresponding SLF4J method calls.
+```
+
 
 ## Recipe source
 

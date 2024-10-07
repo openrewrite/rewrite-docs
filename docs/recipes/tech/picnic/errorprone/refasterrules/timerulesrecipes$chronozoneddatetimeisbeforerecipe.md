@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoZonedDateTimeIsBeforeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ChronoZonedDateTimeIsBefore &lcub;          @BeforeTemplate     boolean before(ChronoZonedDateTime&lt;?&gt; a, ChronoZonedDateTime&lt;?&gt; b) &lcub;         return a.compareTo(b) &lt; 0;     &rcub;          @AfterTemplate     @AlsoNegation     boolean after(ChronoZonedDateTime&lt;?&gt; a, ChronoZonedDateTime&lt;?&gt; b) &lcub;         return a.isBefore(b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ChronoZonedDateTimeIsBefore {
+    
+    @BeforeTemplate
+    boolean before(ChronoZonedDateTime<?> a, ChronoZonedDateTime<?> b) {
+        return a.compareTo(b) < 0;
+    }
+    
+    @AfterTemplate
+    @AlsoNegation
+    boolean after(ChronoZonedDateTime<?> a, ChronoZonedDateTime<?> b) {
+        return a.isBefore(b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

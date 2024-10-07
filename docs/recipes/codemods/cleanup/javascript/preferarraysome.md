@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.javascript.PreferArraySome**
 
-_Prefer `.some()` over `.filter().length` check and `.&lcub;find,findLast&rcub;()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md)_
+```
+Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`.
+See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md)
+```
+
 
 ## Recipe source
 

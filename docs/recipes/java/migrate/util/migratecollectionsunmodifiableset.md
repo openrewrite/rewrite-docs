@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet**
 
-_Prefer `Set.Of(..)` instead of using `unmodifiableSet(java.util.Set(java.util.Arrays asList(&lt;args&gt;)))` in Java 9 or higher._
+```
+Prefer `Set.Of(..)` instead of using `unmodifiableSet(java.util.Set(java.util.Arrays asList(<args>)))` in Java 9 or higher.
+```
+
 
 ## Recipe source
 

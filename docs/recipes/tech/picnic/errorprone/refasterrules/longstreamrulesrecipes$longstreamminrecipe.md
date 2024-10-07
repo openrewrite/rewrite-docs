@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamMinRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LongStreamMin &lcub;          @BeforeTemplate     OptionalLong before(LongStream stream) &lcub;         return stream.sorted().findFirst();     &rcub;          @AfterTemplate     OptionalLong after(LongStream stream) &lcub;         return stream.min();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LongStreamMin {
+    
+    @BeforeTemplate
+    OptionalLong before(LongStream stream) {
+        return stream.sorted().findFirst();
+    }
+    
+    @AfterTemplate
+    OptionalLong after(LongStream stream) {
+        return stream.min();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

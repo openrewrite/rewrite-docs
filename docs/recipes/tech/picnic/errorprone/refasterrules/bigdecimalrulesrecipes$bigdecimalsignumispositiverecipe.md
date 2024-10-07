@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsPositiveRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class BigDecimalSignumIsPositive &lcub;          @BeforeTemplate     boolean before(BigDecimal value) &lcub;         return Refaster.anyOf(value.compareTo(BigDecimal.ZERO) &gt; 0, BigDecimal.ZERO.compareTo(value) &lt; 0, value.signum() &gt; 0, value.signum() &gt;= 1);     &rcub;          @AfterTemplate     @AlsoNegation     boolean after(BigDecimal value) &lcub;         return value.signum() == 1;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class BigDecimalSignumIsPositive {
+    
+    @BeforeTemplate
+    boolean before(BigDecimal value) {
+        return Refaster.anyOf(value.compareTo(BigDecimal.ZERO) > 0, BigDecimal.ZERO.compareTo(value) < 0, value.signum() > 0, value.signum() >= 1);
+    }
+    
+    @AfterTemplate
+    @AlsoNegation
+    boolean after(BigDecimal value) {
+        return value.signum() == 1;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

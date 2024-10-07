@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimePlusWeeksRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalDateTimePlusWeeks &lcub;          @BeforeTemplate     LocalDateTime before(LocalDateTime localDateTime, int weeks) &lcub;         return localDateTime.plus(Period.ofWeeks(weeks));     &rcub;          @BeforeTemplate     LocalDateTime before(LocalDateTime localDateTime, long weeks) &lcub;         return localDateTime.plus(weeks, ChronoUnit.WEEKS);     &rcub;          @AfterTemplate     LocalDateTime after(LocalDateTime localDateTime, int weeks) &lcub;         return localDateTime.plusWeeks(weeks);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalDateTimePlusWeeks {
+    
+    @BeforeTemplate
+    LocalDateTime before(LocalDateTime localDateTime, int weeks) {
+        return localDateTime.plus(Period.ofWeeks(weeks));
+    }
+    
+    @BeforeTemplate
+    LocalDateTime before(LocalDateTime localDateTime, long weeks) {
+        return localDateTime.plus(weeks, ChronoUnit.WEEKS);
+    }
+    
+    @AfterTemplate
+    LocalDateTime after(LocalDateTime localDateTime, int weeks) {
+        return localDateTime.plusWeeks(weeks);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

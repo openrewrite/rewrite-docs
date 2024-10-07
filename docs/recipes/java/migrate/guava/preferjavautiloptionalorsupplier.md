@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrSupplier**
 
-_Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)` over `com.google.common.base.Optional#or(com.google.common.base.Optional)._
+```
+Prefer `java.util.Optional#or(Supplier<T extends java.util.Optional<T>>)` over `com.google.common.base.Optional#or(com.google.common.base.Optional).
+```
+
 
 ### Tags
 

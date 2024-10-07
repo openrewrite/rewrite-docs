@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZeroDurationRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ZeroDuration &lcub;          @BeforeTemplate     Duration before(TemporalUnit temporalUnit) &lcub;         return Refaster.anyOf(Duration.ofNanos(0), Duration.ofMillis(0), Duration.ofSeconds(0), Duration.ofSeconds(0, 0), Duration.ofMinutes(0), Duration.ofHours(0), Duration.ofDays(0), Duration.of(0, temporalUnit));     &rcub;          @AfterTemplate     Duration after() &lcub;         return Duration.ZERO;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ZeroDuration {
+    
+    @BeforeTemplate
+    Duration before(TemporalUnit temporalUnit) {
+        return Refaster.anyOf(Duration.ofNanos(0), Duration.ofMillis(0), Duration.ofSeconds(0), Duration.ofSeconds(0, 0), Duration.ofMinutes(0), Duration.ofHours(0), Duration.ofDays(0), Duration.of(0, temporalUnit));
+    }
+    
+    @AfterTemplate
+    Duration after() {
+        return Duration.ZERO;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalLongRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatOptionalLong &lcub;          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(OptionalLong optional, long expected) &lcub;         return assertThat(optional.getAsLong()).isEqualTo(expected);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     OptionalLongAssert after(OptionalLong optional, long expected) &lcub;         return assertThat(optional).hasValue(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatOptionalLong {
+    
+    @BeforeTemplate
+    AbstractLongAssert<?> before(OptionalLong optional, long expected) {
+        return assertThat(optional.getAsLong()).isEqualTo(expected);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    OptionalLongAssert after(OptionalLong optional, long expected) {
+        return assertThat(optional).hasValue(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

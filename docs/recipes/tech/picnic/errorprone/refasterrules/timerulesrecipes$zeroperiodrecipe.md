@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZeroPeriodRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ZeroPeriod &lcub;          @BeforeTemplate     Period before() &lcub;         return Refaster.anyOf(Period.ofDays(0), Period.ofWeeks(0), Period.ofMonths(0), Period.ofYears(0), Period.of(0, 0, 0));     &rcub;          @AfterTemplate     Period after() &lcub;         return Period.ZERO;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ZeroPeriod {
+    
+    @BeforeTemplate
+    Period before() {
+        return Refaster.anyOf(Period.ofDays(0), Period.ofWeeks(0), Period.ofMonths(0), Period.ofYears(0), Period.of(0, 0, 0));
+    }
+    
+    @AfterTemplate
+    Period after() {
+        return Period.ZERO;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

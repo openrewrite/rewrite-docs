@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsNotZeroRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractLongAssertIsNotZero &lcub;          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(AbstractLongAssert&lt;?&gt; longAssert) &lcub;         return longAssert.isNotZero();     &rcub;          @AfterTemplate     AbstractLongAssert&lt;?&gt; after(AbstractLongAssert&lt;?&gt; longAssert) &lcub;         return longAssert.isNotEqualTo(0);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractLongAssertIsNotZero {
+    
+    @BeforeTemplate
+    AbstractLongAssert<?> before(AbstractLongAssert<?> longAssert) {
+        return longAssert.isNotZero();
+    }
+    
+    @AfterTemplate
+    AbstractLongAssert<?> after(AbstractLongAssert<?> longAssert) {
+        return longAssert.isNotEqualTo(0);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

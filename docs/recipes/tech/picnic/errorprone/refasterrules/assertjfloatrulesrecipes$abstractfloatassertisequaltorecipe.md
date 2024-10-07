@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsEqualToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractFloatAssertIsEqualTo &lcub;          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; floatAssert, float n) &lcub;         return Refaster.anyOf(floatAssert.isCloseTo(n, offset(0.0F)), floatAssert.isCloseTo(n, withPercentage(0)));     &rcub;          @AfterTemplate     AbstractFloatAssert&lt;?&gt; after(AbstractFloatAssert&lt;?&gt; floatAssert, float n) &lcub;         return floatAssert.isEqualTo(n);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractFloatAssertIsEqualTo {
+    
+    @BeforeTemplate
+    AbstractFloatAssert<?> before(AbstractFloatAssert<?> floatAssert, float n) {
+        return Refaster.anyOf(floatAssert.isCloseTo(n, offset(0.0F)), floatAssert.isCloseTo(n, withPercentage(0)));
+    }
+    
+    @AfterTemplate
+    AbstractFloatAssert<?> after(AbstractFloatAssert<?> floatAssert, float n) {
+        return floatAssert.isEqualTo(n);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

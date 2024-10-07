@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$FilterEmptyStringRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class FilterEmptyString &lcub;          @BeforeTemplate     Optional&lt;String&gt; before(Optional&lt;String&gt; optional) &lcub;         return optional.map(Strings::emptyToNull);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     Optional&lt;String&gt; after(Optional&lt;String&gt; optional) &lcub;         return optional.filter(not(String::isEmpty));     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class FilterEmptyString {
+    
+    @BeforeTemplate
+    Optional<String> before(Optional<String> optional) {
+        return optional.map(Strings::emptyToNull);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    Optional<String> after(Optional<String> optional) {
+        return optional.filter(not(String::isEmpty));
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

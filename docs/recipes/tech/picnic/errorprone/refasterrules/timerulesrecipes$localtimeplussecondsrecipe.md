@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimePlusSecondsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalTimePlusSeconds &lcub;          @BeforeTemplate     LocalTime before(LocalTime localTime, int seconds) &lcub;         return localTime.plus(Duration.ofSeconds(seconds));     &rcub;          @BeforeTemplate     LocalTime before(LocalTime localTime, long seconds) &lcub;         return localTime.plus(seconds, ChronoUnit.SECONDS);     &rcub;          @AfterTemplate     LocalTime after(LocalTime localTime, int seconds) &lcub;         return localTime.plusSeconds(seconds);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalTimePlusSeconds {
+    
+    @BeforeTemplate
+    LocalTime before(LocalTime localTime, int seconds) {
+        return localTime.plus(Duration.ofSeconds(seconds));
+    }
+    
+    @BeforeTemplate
+    LocalTime before(LocalTime localTime, long seconds) {
+        return localTime.plus(seconds, ChronoUnit.SECONDS);
+    }
+    
+    @AfterTemplate
+    LocalTime after(LocalTime localTime, int seconds) {
+        return localTime.plusSeconds(seconds);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

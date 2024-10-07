@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsZeroRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractBigIntegerAssertIsZero &lcub;          @BeforeTemplate     AbstractBigIntegerAssert&lt;?&gt; before(AbstractBigIntegerAssert&lt;?&gt; bigIntegerAssert) &lcub;         return Refaster.anyOf(bigIntegerAssert.isZero(), bigIntegerAssert.isEqualTo(0L), bigIntegerAssert.isEqualTo(BigInteger.ZERO));     &rcub;          @AfterTemplate     AbstractBigIntegerAssert&lt;?&gt; after(AbstractBigIntegerAssert&lt;?&gt; bigIntegerAssert) &lcub;         return bigIntegerAssert.isEqualTo(0);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractBigIntegerAssertIsZero {
+    
+    @BeforeTemplate
+    AbstractBigIntegerAssert<?> before(AbstractBigIntegerAssert<?> bigIntegerAssert) {
+        return Refaster.anyOf(bigIntegerAssert.isZero(), bigIntegerAssert.isEqualTo(0L), bigIntegerAssert.isEqualTo(BigInteger.ZERO));
+    }
+    
+    @AfterTemplate
+    AbstractBigIntegerAssert<?> after(AbstractBigIntegerAssert<?> bigIntegerAssert) {
+        return bigIntegerAssert.isEqualTo(0);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

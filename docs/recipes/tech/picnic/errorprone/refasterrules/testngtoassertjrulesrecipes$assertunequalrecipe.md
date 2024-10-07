@@ -9,7 +9,81 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertUnequal &lcub;          @BeforeTemplate     void before(boolean actual, boolean expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(byte actual, byte expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(char actual, char expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(short actual, short expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(int actual, int expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(long actual, long expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(float actual, float expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(double actual, double expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(Object actual, Object expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(String actual, String expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(Set&lt;?&gt; actual, Set&lt;?&gt; expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @BeforeTemplate     void before(Map&lt;?, ?&gt; actual, Map&lt;?, ?&gt; expected) &lcub;         assertNotEquals(actual, expected);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Object expected) &lcub;         assertThat(actual).isNotEqualTo(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertUnequal {
+    
+    @BeforeTemplate
+    void before(boolean actual, boolean expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(byte actual, byte expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(char actual, char expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(short actual, short expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(int actual, int expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(long actual, long expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(float actual, float expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(double actual, double expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Object actual, Object expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(String actual, String expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Set<?> actual, Set<?> expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @BeforeTemplate
+    void before(Map<?, ?> actual, Map<?, ?> expected) {
+        assertNotEquals(actual, expected);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(Object actual, Object expected) {
+        assertThat(actual).isNotEqualTo(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

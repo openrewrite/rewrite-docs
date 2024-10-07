@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamMinRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DoubleStreamMin &lcub;          @BeforeTemplate     OptionalDouble before(DoubleStream stream) &lcub;         return stream.sorted().findFirst();     &rcub;          @AfterTemplate     OptionalDouble after(DoubleStream stream) &lcub;         return stream.min();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DoubleStreamMin {
+    
+    @BeforeTemplate
+    OptionalDouble before(DoubleStream stream) {
+        return stream.sorted().findFirst();
+    }
+    
+    @AfterTemplate
+    OptionalDouble after(DoubleStream stream) {
+        return stream.min();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

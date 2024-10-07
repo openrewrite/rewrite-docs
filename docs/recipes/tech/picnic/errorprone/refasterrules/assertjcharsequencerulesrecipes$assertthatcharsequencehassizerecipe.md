@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceHasSizeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatCharSequenceHasSize &lcub;          @BeforeTemplate     AbstractAssert&lt;?, ?&gt; before(CharSequence charSequence, int length) &lcub;         return assertThat(charSequence.length()).isEqualTo(length);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractAssert&lt;?, ?&gt; after(CharSequence charSequence, int length) &lcub;         return assertThat(charSequence).hasSize(length);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatCharSequenceHasSize {
+    
+    @BeforeTemplate
+    AbstractAssert<?, ?> before(CharSequence charSequence, int length) {
+        return assertThat(charSequence.length()).isEqualTo(length);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractAssert<?, ?> after(CharSequence charSequence, int length) {
+        return assertThat(charSequence).hasSize(length);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

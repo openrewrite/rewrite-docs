@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeMinRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalTimeMin &lcub;          @BeforeTemplate     LocalTime before() &lcub;         return Refaster.anyOf(LocalTime.MIDNIGHT, LocalTime.of(0, 0), LocalTime.of(0, 0, 0), LocalTime.of(0, 0, 0, 0), LocalTime.ofNanoOfDay(0), LocalTime.ofSecondOfDay(0));     &rcub;          @AfterTemplate     LocalTime after() &lcub;         return LocalTime.MIN;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalTimeMin {
+    
+    @BeforeTemplate
+    LocalTime before() {
+        return Refaster.anyOf(LocalTime.MIDNIGHT, LocalTime.of(0, 0), LocalTime.of(0, 0, 0), LocalTime.of(0, 0, 0, 0), LocalTime.ofNanoOfDay(0), LocalTime.ofSecondOfDay(0));
+    }
+    
+    @AfterTemplate
+    LocalTime after() {
+        return LocalTime.MIN;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

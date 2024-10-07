@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.security.UseFilesCreateTempDirectory**
 
-_Use `Files#createTempDirectory` when the sequence `File#createTempFile(..)`-&gt;File#delete()`-&gt;File#mkdir()` is used for creating a temp directory._
+```
+Use `Files#createTempDirectory` when the sequence `File#createTempFile(..)`->`File#delete()`->`File#mkdir()` is used for creating a temp directory.
+```
+
 
 ### Tags
 

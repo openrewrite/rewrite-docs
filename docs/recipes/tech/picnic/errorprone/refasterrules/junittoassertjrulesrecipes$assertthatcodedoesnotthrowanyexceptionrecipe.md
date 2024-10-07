@@ -9,7 +9,31 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeDoesNotThrowAnyExceptionRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatCodeDoesNotThrowAnyException &lcub;          @BeforeTemplate     void before(Executable throwingCallable) &lcub;         assertDoesNotThrow(throwingCallable);     &rcub;          @BeforeTemplate     void before(ThrowingSupplier&lt;?&gt; throwingCallable) &lcub;         assertDoesNotThrow(throwingCallable);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable) &lcub;         assertThatCode(throwingCallable).doesNotThrowAnyException();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatCodeDoesNotThrowAnyException {
+    
+    @BeforeTemplate
+    void before(Executable throwingCallable) {
+        assertDoesNotThrow(throwingCallable);
+    }
+    
+    @BeforeTemplate
+    void before(ThrowingSupplier<?> throwingCallable) {
+        assertDoesNotThrow(throwingCallable);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(ThrowingCallable throwingCallable) {
+        assertThatCode(throwingCallable).doesNotThrowAnyException();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

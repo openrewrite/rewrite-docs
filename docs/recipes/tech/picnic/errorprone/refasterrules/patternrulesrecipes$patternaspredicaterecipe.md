@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PatternRulesRecipes$PatternAsPredicateRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class PatternAsPredicate &lcub;          @BeforeTemplate     Predicate&lt;CharSequence&gt; before(Pattern pattern) &lcub;         return Predicates.contains(pattern);     &rcub;          @AfterTemplate     Predicate&lt;String&gt; after(Pattern pattern) &lcub;         return pattern.asPredicate();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class PatternAsPredicate {
+    
+    @BeforeTemplate
+    Predicate<CharSequence> before(Pattern pattern) {
+        return Predicates.contains(pattern);
+    }
+    
+    @AfterTemplate
+    Predicate<String> after(Pattern pattern) {
+        return pattern.asPredicate();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

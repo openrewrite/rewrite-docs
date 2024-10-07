@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusHoursRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ZonedDateTimePlusHours &lcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, int hours) &lcub;         return zonedDateTime.plus(Duration.ofHours(hours));     &rcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, long hours) &lcub;         return zonedDateTime.plus(hours, ChronoUnit.HOURS);     &rcub;          @AfterTemplate     ZonedDateTime after(ZonedDateTime zonedDateTime, int hours) &lcub;         return zonedDateTime.plusHours(hours);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ZonedDateTimePlusHours {
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, int hours) {
+        return zonedDateTime.plus(Duration.ofHours(hours));
+    }
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, long hours) {
+        return zonedDateTime.plus(hours, ChronoUnit.HOURS);
+    }
+    
+    @AfterTemplate
+    ZonedDateTime after(ZonedDateTime zonedDateTime, int hours) {
+        return zonedDateTime.plusHours(hours);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

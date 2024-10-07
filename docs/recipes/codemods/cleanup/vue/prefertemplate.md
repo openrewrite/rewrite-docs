@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.PreferTemplate**
 
-_Require template literals instead of string concatenation in &lt;template&gt; See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html)_
+```
+Require template literals instead of string concatenation in `<template>`
+See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html)
+```
+
 
 ### Tags
 

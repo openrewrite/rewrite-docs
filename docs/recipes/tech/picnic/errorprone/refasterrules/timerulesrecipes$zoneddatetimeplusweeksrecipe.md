@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusWeeksRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ZonedDateTimePlusWeeks &lcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, int weeks) &lcub;         return zonedDateTime.plus(Period.ofWeeks(weeks));     &rcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, long weeks) &lcub;         return zonedDateTime.plus(weeks, ChronoUnit.WEEKS);     &rcub;          @AfterTemplate     ZonedDateTime after(ZonedDateTime zonedDateTime, int weeks) &lcub;         return zonedDateTime.plusWeeks(weeks);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ZonedDateTimePlusWeeks {
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, int weeks) {
+        return zonedDateTime.plus(Period.ofWeeks(weeks));
+    }
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, long weeks) {
+        return zonedDateTime.plus(weeks, ChronoUnit.WEEKS);
+    }
+    
+    @AfterTemplate
+    ZonedDateTime after(ZonedDateTime zonedDateTime, int weeks) {
+        return zonedDateTime.plusWeeks(weeks);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

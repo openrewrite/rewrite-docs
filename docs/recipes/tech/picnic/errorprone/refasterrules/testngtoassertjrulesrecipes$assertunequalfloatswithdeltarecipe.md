@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalFloatsWithDeltaRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertUnequalFloatsWithDelta &lcub;          @BeforeTemplate     void before(float actual, float expected, float delta) &lcub;         assertNotEquals(actual, expected, delta);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(float actual, float expected, float delta) &lcub;         assertThat(actual).isNotCloseTo(expected, offset(delta));     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertUnequalFloatsWithDelta {
+    
+    @BeforeTemplate
+    void before(float actual, float expected, float delta) {
+        assertNotEquals(actual, expected, delta);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(float actual, float expected, float delta) {
+        assertThat(actual).isNotCloseTo(expected, offset(delta));
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

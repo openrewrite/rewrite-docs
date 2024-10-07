@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$ConcatOneIntStreamRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ConcatOneIntStream &lcub;          @BeforeTemplate     IntStream before(IntStream stream) &lcub;         return Streams.concat(stream);     &rcub;          @AfterTemplate     @CanIgnoreReturnValue     IntStream after(IntStream stream) &lcub;         return stream;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ConcatOneIntStream {
+    
+    @BeforeTemplate
+    IntStream before(IntStream stream) {
+        return Streams.concat(stream);
+    }
+    
+    @AfterTemplate
+    @CanIgnoreReturnValue
+    IntStream after(IntStream stream) {
+        return stream;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

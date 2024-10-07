@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringIsNotEmptyRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatStringIsNotEmpty &lcub;          @BeforeTemplate     AbstractAssert&lt;?, ?&gt; before(String string) &lcub;         return assertThat(string.isEmpty()).isFalse();     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractAssert&lt;?, ?&gt; after(String string) &lcub;         return assertThat(string).isNotEmpty();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatStringIsNotEmpty {
+    
+    @BeforeTemplate
+    AbstractAssert<?, ?> before(String string) {
+        return assertThat(string.isEmpty()).isFalse();
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractAssert<?, ?> after(String string) {
+        return assertThat(string).isNotEmpty();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

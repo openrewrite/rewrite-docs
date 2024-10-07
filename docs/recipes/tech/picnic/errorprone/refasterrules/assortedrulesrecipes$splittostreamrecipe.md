@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$SplitToStreamRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class SplitToStream &lcub;          @BeforeTemplate     Stream&lt;String&gt; before(Splitter splitter, CharSequence charSequence) &lcub;         return Refaster.anyOf(Streams.stream(splitter.split(charSequence)), splitter.splitToList(charSequence).stream());     &rcub;          @AfterTemplate     Stream&lt;String&gt; after(Splitter splitter, CharSequence charSequence) &lcub;         return splitter.splitToStream(charSequence);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class SplitToStream {
+    
+    @BeforeTemplate
+    Stream<String> before(Splitter splitter, CharSequence charSequence) {
+        return Refaster.anyOf(Streams.stream(splitter.split(charSequence)), splitter.splitToList(charSequence).stream());
+    }
+    
+    @AfterTemplate
+    Stream<String> after(Splitter splitter, CharSequence charSequence) {
+        return splitter.splitToStream(charSequence);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

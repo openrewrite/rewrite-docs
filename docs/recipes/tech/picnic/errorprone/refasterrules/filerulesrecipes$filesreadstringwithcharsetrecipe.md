@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesReadStringWithCharsetRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class FilesReadStringWithCharset &lcub;          @BeforeTemplate     String before(Path path, Charset charset) throws IOException &lcub;         return new String(Files.readAllBytes(path), charset);     &rcub;          @AfterTemplate     String after(Path path, Charset charset) throws IOException &lcub;         return Files.readString(path, charset);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class FilesReadStringWithCharset {
+    
+    @BeforeTemplate
+    String before(Path path, Charset charset) throws IOException {
+        return new String(Files.readAllBytes(path), charset);
+    }
+    
+    @AfterTemplate
+    String after(Path path, Charset charset) throws IOException {
+        return Files.readString(path, charset);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

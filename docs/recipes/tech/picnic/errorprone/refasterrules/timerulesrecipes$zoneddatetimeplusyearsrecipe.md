@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZonedDateTimePlusYearsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ZonedDateTimePlusYears &lcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, int years) &lcub;         return zonedDateTime.plus(Period.ofYears(years));     &rcub;          @BeforeTemplate     ZonedDateTime before(ZonedDateTime zonedDateTime, long years) &lcub;         return zonedDateTime.plus(years, ChronoUnit.YEARS);     &rcub;          @AfterTemplate     ZonedDateTime after(ZonedDateTime zonedDateTime, int years) &lcub;         return zonedDateTime.plusYears(years);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ZonedDateTimePlusYears {
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, int years) {
+        return zonedDateTime.plus(Period.ofYears(years));
+    }
+    
+    @BeforeTemplate
+    ZonedDateTime before(ZonedDateTime zonedDateTime, long years) {
+        return zonedDateTime.plus(years, ChronoUnit.YEARS);
+    }
+    
+    @AfterTemplate
+    ZonedDateTime after(ZonedDateTime zonedDateTime, int years) {
+        return zonedDateTime.plusYears(years);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

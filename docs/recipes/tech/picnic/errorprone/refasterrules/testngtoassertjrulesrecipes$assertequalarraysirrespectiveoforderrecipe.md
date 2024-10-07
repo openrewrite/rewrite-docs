@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualArraysIrrespectiveOfOrderRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertEqualArraysIrrespectiveOfOrder &lcub;          @BeforeTemplate     void before(Object[] actual, Object[] expected) &lcub;         assertEqualsNoOrder(actual, expected);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object[] actual, Object[] expected) &lcub;         assertThat(actual).containsExactlyInAnyOrder(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertEqualArraysIrrespectiveOfOrder {
+    
+    @BeforeTemplate
+    void before(Object[] actual, Object[] expected) {
+        assertEqualsNoOrder(actual, expected);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(Object[] actual, Object[] expected) {
+        assertThat(actual).containsExactlyInAnyOrder(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

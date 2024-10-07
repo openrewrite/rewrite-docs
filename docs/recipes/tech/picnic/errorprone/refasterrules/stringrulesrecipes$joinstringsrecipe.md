@@ -9,7 +9,35 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$JoinStringsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class JoinStrings &lcub;          @BeforeTemplate     String before(String delimiter, CharSequence[] elements) &lcub;         return Refaster.anyOf(Joiner.on(delimiter).join(elements), Arrays.stream(elements).collect(joining(delimiter)));     &rcub;          @BeforeTemplate     String before(String delimiter, Iterable&lt;? extends CharSequence&gt; elements) &lcub;         return Refaster.anyOf(Joiner.on(delimiter).join(elements), Streams.stream(elements).collect(joining(delimiter)));     &rcub;          @BeforeTemplate     String before(CharSequence delimiter, Collection&lt;? extends CharSequence&gt; elements) &lcub;         return elements.stream().collect(joining(delimiter));     &rcub;          @AfterTemplate     String after(CharSequence delimiter, Iterable&lt;? extends CharSequence&gt; elements) &lcub;         return String.join(delimiter, elements);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class JoinStrings {
+    
+    @BeforeTemplate
+    String before(String delimiter, CharSequence[] elements) {
+        return Refaster.anyOf(Joiner.on(delimiter).join(elements), Arrays.stream(elements).collect(joining(delimiter)));
+    }
+    
+    @BeforeTemplate
+    String before(String delimiter, Iterable<? extends CharSequence> elements) {
+        return Refaster.anyOf(Joiner.on(delimiter).join(elements), Streams.stream(elements).collect(joining(delimiter)));
+    }
+    
+    @BeforeTemplate
+    String before(CharSequence delimiter, Collection<? extends CharSequence> elements) {
+        return elements.stream().collect(joining(delimiter));
+    }
+    
+    @AfterTemplate
+    String after(CharSequence delimiter, Iterable<? extends CharSequence> elements) {
+        return String.join(delimiter, elements);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

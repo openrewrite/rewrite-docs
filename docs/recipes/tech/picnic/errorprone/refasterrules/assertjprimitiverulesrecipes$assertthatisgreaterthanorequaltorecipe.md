@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsGreaterThanOrEqualToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatIsGreaterThanOrEqualTo &lcub;          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(double actual, double expected) &lcub;         return Refaster.anyOf(assertThat(actual &gt;= expected).isTrue(), assertThat(actual &lt; expected).isFalse());     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     AbstractDoubleAssert&lt;?&gt; after(double actual, double expected) &lcub;         return assertThat(actual).isGreaterThanOrEqualTo(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatIsGreaterThanOrEqualTo {
+    
+    @BeforeTemplate
+    AbstractBooleanAssert<?> before(double actual, double expected) {
+        return Refaster.anyOf(assertThat(actual >= expected).isTrue(), assertThat(actual < expected).isFalse());
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractDoubleAssert<?> after(double actual, double expected) {
+        return assertThat(actual).isGreaterThanOrEqualTo(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.CommonDeclarationSiteTypeVariances**
 
-_When using a method parameter like `Function&lt;IN, OUT&gt;, it should rather be `Function&lt;? super IN, ? extends OUT&gt;. This recipe checks for method parameters of well-known types._
+```
+When using a method parameter like `Function<IN, OUT>`, it should rather be `Function<? super IN, ? extends OUT>`. This recipe checks for method parameters of well-known types.
+```
+
 
 ### Tags
 

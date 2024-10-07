@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPatchRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class WebClientPatch &lcub;          @BeforeTemplate     RequestBodyUriSpec before(WebClient webClient) &lcub;         return webClient.method(PATCH);     &rcub;          @BeforeTemplate     WebTestClient.RequestBodyUriSpec before(WebTestClient webClient) &lcub;         return webClient.method(PATCH);     &rcub;          @AfterTemplate     RequestBodyUriSpec after(WebClient webClient) &lcub;         return webClient.patch();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class WebClientPatch {
+    
+    @BeforeTemplate
+    RequestBodyUriSpec before(WebClient webClient) {
+        return webClient.method(PATCH);
+    }
+    
+    @BeforeTemplate
+    WebTestClient.RequestBodyUriSpec before(WebTestClient webClient) {
+        return webClient.method(PATCH);
+    }
+    
+    @AfterTemplate
+    RequestBodyUriSpec after(WebClient webClient) {
+        return webClient.patch();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

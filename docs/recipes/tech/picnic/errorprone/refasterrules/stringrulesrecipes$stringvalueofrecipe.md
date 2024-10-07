@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class StringValueOf &lcub;          @BeforeTemplate     String before(Object object) &lcub;         return Objects.toString(object);     &rcub;          @AfterTemplate     String after(Object object) &lcub;         return String.valueOf(object);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class StringValueOf {
+    
+    @BeforeTemplate
+    String before(Object object) {
+        return Objects.toString(object);
+    }
+    
+    @AfterTemplate
+    String after(Object object) {
+        return String.valueOf(object);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

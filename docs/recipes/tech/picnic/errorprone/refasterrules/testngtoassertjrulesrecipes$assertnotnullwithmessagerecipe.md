@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertNotNullWithMessageRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertNotNullWithMessage &lcub;          @BeforeTemplate     void before(Object object, String message) &lcub;         assertNotNull(object, message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object object, String message) &lcub;         assertThat(object).withFailMessage(message).isNotNull();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertNotNullWithMessage {
+    
+    @BeforeTemplate
+    void before(Object object, String message) {
+        assertNotNull(object, message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(Object object, String message) {
+        assertThat(object).withFailMessage(message).isNotNull();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

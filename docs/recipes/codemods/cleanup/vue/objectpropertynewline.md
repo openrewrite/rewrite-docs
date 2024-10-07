@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline**
 
-_Enforce placing object properties on separate lines in &lt;template&gt; See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html)_
+```
+Enforce placing object properties on separate lines in `<template>`
+See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html)
+```
+
 
 ### Tags
 

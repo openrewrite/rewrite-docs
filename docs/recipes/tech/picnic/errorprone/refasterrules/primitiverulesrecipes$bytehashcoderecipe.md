@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ByteHashCodeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ByteHashCode &lcub;          @BeforeTemplate     int before(byte b) &lcub;         return Bytes.hashCode(b);     &rcub;          @AfterTemplate     int after(byte b) &lcub;         return Byte.hashCode(b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ByteHashCode {
+    
+    @BeforeTemplate
+    int before(byte b) {
+        return Bytes.hashCode(b);
+    }
+    
+    @AfterTemplate
+    int after(byte b) {
+        return Byte.hashCode(b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

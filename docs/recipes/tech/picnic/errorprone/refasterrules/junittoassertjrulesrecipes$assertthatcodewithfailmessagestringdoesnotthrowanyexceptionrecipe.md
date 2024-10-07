@@ -9,7 +9,31 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageStringDoesNotThrowAnyExceptionRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatCodeWithFailMessageStringDoesNotThrowAnyException &lcub;          @BeforeTemplate     void before(Executable throwingCallable, String message) &lcub;         assertDoesNotThrow(throwingCallable, message);     &rcub;          @BeforeTemplate     void before(ThrowingSupplier&lt;?&gt; throwingCallable, String message) &lcub;         assertDoesNotThrow(throwingCallable, message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable, String message) &lcub;         assertThatCode(throwingCallable).withFailMessage(message).doesNotThrowAnyException();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatCodeWithFailMessageStringDoesNotThrowAnyException {
+    
+    @BeforeTemplate
+    void before(Executable throwingCallable, String message) {
+        assertDoesNotThrow(throwingCallable, message);
+    }
+    
+    @BeforeTemplate
+    void before(ThrowingSupplier<?> throwingCallable, String message) {
+        assertDoesNotThrow(throwingCallable, message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(ThrowingCallable throwingCallable, String message) {
+        assertThatCode(throwingCallable).withFailMessage(message).doesNotThrowAnyException();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

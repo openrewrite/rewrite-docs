@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamClosedOpenRangeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IntStreamClosedOpenRange &lcub;          @BeforeTemplate     IntStream before(int from, int to) &lcub;         return IntStream.rangeClosed(from, to - 1);     &rcub;          @AfterTemplate     IntStream after(int from, int to) &lcub;         return IntStream.range(from, to);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IntStreamClosedOpenRange {
+    
+    @BeforeTemplate
+    IntStream before(int from, int to) {
+        return IntStream.rangeClosed(from, to - 1);
+    }
+    
+    @AfterTemplate
+    IntStream after(int from, int to) {
+        return IntStream.range(from, to);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

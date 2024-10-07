@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterHashCodeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class CharacterHashCode &lcub;          @BeforeTemplate     int before(char c) &lcub;         return Chars.hashCode(c);     &rcub;          @AfterTemplate     int after(char c) &lcub;         return Character.hashCode(c);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class CharacterHashCode {
+    
+    @BeforeTemplate
+    int before(char c) {
+        return Chars.hashCode(c);
+    }
+    
+    @AfterTemplate
+    int after(char c) {
+        return Character.hashCode(c);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

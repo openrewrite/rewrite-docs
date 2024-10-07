@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsOneRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractFloatAssertIsOne &lcub;          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; floatAssert) &lcub;         return floatAssert.isOne();     &rcub;          @AfterTemplate     AbstractFloatAssert&lt;?&gt; after(AbstractFloatAssert&lt;?&gt; floatAssert) &lcub;         return floatAssert.isEqualTo(1);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractFloatAssertIsOne {
+    
+    @BeforeTemplate
+    AbstractFloatAssert<?> before(AbstractFloatAssert<?> floatAssert) {
+        return floatAssert.isOne();
+    }
+    
+    @AfterTemplate
+    AbstractFloatAssert<?> after(AbstractFloatAssert<?> floatAssert) {
+        return floatAssert.isEqualTo(1);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

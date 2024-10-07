@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeMinusYearsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetDateTimeMinusYears &lcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, int years) &lcub;         return offsetDateTime.minus(Period.ofYears(years));     &rcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, long years) &lcub;         return offsetDateTime.minus(years, ChronoUnit.YEARS);     &rcub;          @AfterTemplate     OffsetDateTime after(OffsetDateTime offsetDateTime, int years) &lcub;         return offsetDateTime.minusYears(years);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetDateTimeMinusYears {
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, int years) {
+        return offsetDateTime.minus(Period.ofYears(years));
+    }
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, long years) {
+        return offsetDateTime.minus(years, ChronoUnit.YEARS);
+    }
+    
+    @AfterTemplate
+    OffsetDateTime after(OffsetDateTime offsetDateTime, int years) {
+        return offsetDateTime.minusYears(years);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

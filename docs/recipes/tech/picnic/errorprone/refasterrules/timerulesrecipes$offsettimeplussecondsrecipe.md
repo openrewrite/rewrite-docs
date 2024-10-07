@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetTimePlusSecondsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetTimePlusSeconds &lcub;          @BeforeTemplate     OffsetTime before(OffsetTime offsetTime, int seconds) &lcub;         return offsetTime.plus(Duration.ofSeconds(seconds));     &rcub;          @BeforeTemplate     OffsetTime before(OffsetTime offsetTime, long seconds) &lcub;         return offsetTime.plus(seconds, ChronoUnit.SECONDS);     &rcub;          @AfterTemplate     OffsetTime after(OffsetTime offsetTime, int seconds) &lcub;         return offsetTime.plusSeconds(seconds);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetTimePlusSeconds {
+    
+    @BeforeTemplate
+    OffsetTime before(OffsetTime offsetTime, int seconds) {
+        return offsetTime.plus(Duration.ofSeconds(seconds));
+    }
+    
+    @BeforeTemplate
+    OffsetTime before(OffsetTime offsetTime, long seconds) {
+        return offsetTime.plus(seconds, ChronoUnit.SECONDS);
+    }
+    
+    @AfterTemplate
+    OffsetTime after(OffsetTime offsetTime, int seconds) {
+        return offsetTime.plusSeconds(seconds);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

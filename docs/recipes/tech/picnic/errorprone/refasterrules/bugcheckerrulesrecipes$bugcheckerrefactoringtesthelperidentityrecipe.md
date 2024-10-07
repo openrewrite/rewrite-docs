@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperIdentityRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class BugCheckerRefactoringTestHelperIdentity &lcub;          @BeforeTemplate     BugCheckerRefactoringTestHelper before(BugCheckerRefactoringTestHelper helper) &lcub;         return Refaster.anyOf(helper.setFixChooser(FixChoosers.FIRST), helper.setImportOrder("static-first"));     &rcub;          @AfterTemplate     @CanIgnoreReturnValue     BugCheckerRefactoringTestHelper after(BugCheckerRefactoringTestHelper helper) &lcub;         return helper;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class BugCheckerRefactoringTestHelperIdentity {
+    
+    @BeforeTemplate
+    BugCheckerRefactoringTestHelper before(BugCheckerRefactoringTestHelper helper) {
+        return Refaster.anyOf(helper.setFixChooser(FixChoosers.FIRST), helper.setImportOrder("static-first"));
+    }
+    
+    @AfterTemplate
+    @CanIgnoreReturnValue
+    BugCheckerRefactoringTestHelper after(BugCheckerRefactoringTestHelper helper) {
+        return helper;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

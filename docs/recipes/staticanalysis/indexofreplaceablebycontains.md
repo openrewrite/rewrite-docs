@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.IndexOfReplaceableByContains**
 
-_Checking if a value is included in a `String` or `List` using `indexOf(value)&gt;-1` or `indexOf(value)&gt;=0` can be replaced with `contains(value)`._
+```
+Checking if a value is included in a `String` or `List` using `indexOf(value)>-1` or `indexOf(value)>=0` can be replaced with `contains(value)`.
+```
+
 
 ### Tags
 

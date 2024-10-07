@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.CommaStyle**
 
-_Enforce consistent comma style in &lt;template&gt; See rule details for [vue/comma-style](https://eslint.vuejs.org/rules/comma-style.html)_
+```
+Enforce consistent comma style in `<template>`
+See rule details for [vue/comma-style](https://eslint.vuejs.org/rules/comma-style.html)
+```
+
 
 ### Tags
 

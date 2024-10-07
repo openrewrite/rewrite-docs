@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenOffsetDateTimesRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DurationBetweenOffsetDateTimes &lcub;          @BeforeTemplate     Duration before(OffsetDateTime a, OffsetDateTime b) &lcub;         return Refaster.anyOf(Duration.between(a.toInstant(), b.toInstant()), Duration.ofSeconds(b.toEpochSecond() - a.toEpochSecond()));     &rcub;          @AfterTemplate     Duration after(OffsetDateTime a, OffsetDateTime b) &lcub;         return Duration.between(a, b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DurationBetweenOffsetDateTimes {
+    
+    @BeforeTemplate
+    Duration before(OffsetDateTime a, OffsetDateTime b) {
+        return Refaster.anyOf(Duration.between(a.toInstant(), b.toInstant()), Duration.ofSeconds(b.toEpochSecond() - a.toEpochSecond()));
+    }
+    
+    @AfterTemplate
+    Duration after(OffsetDateTime a, OffsetDateTime b) {
+        return Duration.between(a, b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

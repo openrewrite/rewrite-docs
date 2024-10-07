@@ -9,7 +9,11 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.cleanup.vue.OperatorLinebreak**
 
-_Enforce consistent linebreak style for operators in &lt;template&gt; See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)_
+```
+Enforce consistent linebreak style for operators in `<template>`
+See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)
+```
+
 
 ### Tags
 

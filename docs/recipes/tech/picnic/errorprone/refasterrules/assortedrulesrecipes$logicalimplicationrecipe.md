@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LogicalImplication &lcub;          @BeforeTemplate     @SuppressWarnings(value = "java:S2589")     boolean before(boolean firstTest, boolean secondTest) &lcub;         return firstTest || (!firstTest && secondTest);     &rcub;          @AfterTemplate     boolean after(boolean firstTest, boolean secondTest) &lcub;         return firstTest || secondTest;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LogicalImplication {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "java:S2589")
+    boolean before(boolean firstTest, boolean secondTest) {
+        return firstTest || (!firstTest && secondTest);
+    }
+    
+    @AfterTemplate
+    boolean after(boolean firstTest, boolean secondTest) {
+        return firstTest || secondTest;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

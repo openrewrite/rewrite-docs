@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDatePlusMonthsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalDatePlusMonths &lcub;          @BeforeTemplate     LocalDate before(LocalDate localDate, int months) &lcub;         return localDate.plus(Period.ofMonths(months));     &rcub;          @BeforeTemplate     LocalDate before(LocalDate localDate, long months) &lcub;         return localDate.plus(months, ChronoUnit.MONTHS);     &rcub;          @AfterTemplate     LocalDate after(LocalDate localDate, int months) &lcub;         return localDate.plusMonths(months);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalDatePlusMonths {
+    
+    @BeforeTemplate
+    LocalDate before(LocalDate localDate, int months) {
+        return localDate.plus(Period.ofMonths(months));
+    }
+    
+    @BeforeTemplate
+    LocalDate before(LocalDate localDate, long months) {
+        return localDate.plus(months, ChronoUnit.MONTHS);
+    }
+    
+    @AfterTemplate
+    LocalDate after(LocalDate localDate, int months) {
+        return localDate.plusMonths(months);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

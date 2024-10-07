@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerCompareRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IntegerCompare &lcub;          @BeforeTemplate     int before(int a, int b) &lcub;         return Ints.compare(a, b);     &rcub;          @AfterTemplate     int after(int a, int b) &lcub;         return Integer.compare(a, b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IntegerCompare {
+    
+    @BeforeTemplate
+    int before(int a, int b) {
+        return Ints.compare(a, b);
+    }
+    
+    @AfterTemplate
+    int after(int a, int b) {
+        return Integer.compare(a, b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

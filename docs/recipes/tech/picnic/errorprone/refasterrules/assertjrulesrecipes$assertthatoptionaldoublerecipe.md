@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalDoubleRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatOptionalDouble &lcub;          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(OptionalDouble optional, double expected) &lcub;         return assertThat(optional.getAsDouble()).isEqualTo(expected);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     OptionalDoubleAssert after(OptionalDouble optional, double expected) &lcub;         return assertThat(optional).hasValue(expected);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatOptionalDouble {
+    
+    @BeforeTemplate
+    AbstractDoubleAssert<?> before(OptionalDouble optional, double expected) {
+        return assertThat(optional.getAsDouble()).isEqualTo(expected);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    OptionalDoubleAssert after(OptionalDouble optional, double expected) {
+        return assertThat(optional).hasValue(expected);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

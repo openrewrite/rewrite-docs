@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongBytesRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LongBytes &lcub;          @BeforeTemplate     int before() &lcub;         return Longs.BYTES;     &rcub;          @AfterTemplate     int after() &lcub;         return Long.BYTES;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LongBytes {
+    
+    @BeforeTemplate
+    int before() {
+        return Longs.BYTES;
+    }
+    
+    @AfterTemplate
+    int after() {
+        return Long.BYTES;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

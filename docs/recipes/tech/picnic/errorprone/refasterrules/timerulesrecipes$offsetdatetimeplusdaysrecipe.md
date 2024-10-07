@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimePlusDaysRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class OffsetDateTimePlusDays &lcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, int days) &lcub;         return offsetDateTime.plus(Period.ofDays(days));     &rcub;          @BeforeTemplate     OffsetDateTime before(OffsetDateTime offsetDateTime, long days) &lcub;         return offsetDateTime.plus(days, ChronoUnit.DAYS);     &rcub;          @AfterTemplate     OffsetDateTime after(OffsetDateTime offsetDateTime, int days) &lcub;         return offsetDateTime.plusDays(days);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class OffsetDateTimePlusDays {
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, int days) {
+        return offsetDateTime.plus(Period.ofDays(days));
+    }
+    
+    @BeforeTemplate
+    OffsetDateTime before(OffsetDateTime offsetDateTime, long days) {
+        return offsetDateTime.plus(days, ChronoUnit.DAYS);
+    }
+    
+    @AfterTemplate
+    OffsetDateTime after(OffsetDateTime offsetDateTime, int days) {
+        return offsetDateTime.plusDays(days);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

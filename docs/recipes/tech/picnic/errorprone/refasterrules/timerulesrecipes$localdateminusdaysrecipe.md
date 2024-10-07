@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateMinusDaysRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalDateMinusDays &lcub;          @BeforeTemplate     LocalDate before(LocalDate localDate, int days) &lcub;         return localDate.minus(Period.ofDays(days));     &rcub;          @BeforeTemplate     LocalDate before(LocalDate localDate, long days) &lcub;         return localDate.minus(days, ChronoUnit.DAYS);     &rcub;          @AfterTemplate     LocalDate after(LocalDate localDate, int days) &lcub;         return localDate.minusDays(days);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalDateMinusDays {
+    
+    @BeforeTemplate
+    LocalDate before(LocalDate localDate, int days) {
+        return localDate.minus(Period.ofDays(days));
+    }
+    
+    @BeforeTemplate
+    LocalDate before(LocalDate localDate, long days) {
+        return localDate.minus(days, ChronoUnit.DAYS);
+    }
+    
+    @AfterTemplate
+    LocalDate after(LocalDate localDate, int days) {
+        return localDate.minusDays(days);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

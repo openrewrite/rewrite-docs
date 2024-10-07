@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.jenkins.github.AddTeamToCodeowners**
 
-_Adds the `&lcub;artifactId&rcub;-plugin-developers` team to all files in `.github/CODEOWNERS` if absent._
+```
+Adds the `{artifactId}-plugin-developers` team to all files in `.github/CODEOWNERS` if absent.
+```
+
 
 ## Recipe source
 

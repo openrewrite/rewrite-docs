@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageStringIsTrueRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageStringIsTrue &lcub;          @BeforeTemplate     void before(boolean actual, String message) &lcub;         assertTrue(actual, message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(boolean actual, String message) &lcub;         assertThat(actual).withFailMessage(message).isTrue();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertThatWithFailMessageStringIsTrue {
+    
+    @BeforeTemplate
+    void before(boolean actual, String message) {
+        assertTrue(actual, message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(boolean actual, String message) {
+        assertThat(actual).withFailMessage(message).isTrue();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

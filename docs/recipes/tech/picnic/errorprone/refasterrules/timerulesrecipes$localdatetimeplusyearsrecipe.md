@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimePlusYearsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalDateTimePlusYears &lcub;          @BeforeTemplate     LocalDateTime before(LocalDateTime localDateTime, int years) &lcub;         return localDateTime.plus(Period.ofYears(years));     &rcub;          @BeforeTemplate     LocalDateTime before(LocalDateTime localDateTime, long years) &lcub;         return localDateTime.plus(years, ChronoUnit.YEARS);     &rcub;          @AfterTemplate     LocalDateTime after(LocalDateTime localDateTime, int years) &lcub;         return localDateTime.plusYears(years);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalDateTimePlusYears {
+    
+    @BeforeTemplate
+    LocalDateTime before(LocalDateTime localDateTime, int years) {
+        return localDateTime.plus(Period.ofYears(years));
+    }
+    
+    @BeforeTemplate
+    LocalDateTime before(LocalDateTime localDateTime, long years) {
+        return localDateTime.plus(years, ChronoUnit.YEARS);
+    }
+    
+    @AfterTemplate
+    LocalDateTime after(LocalDateTime localDateTime, int years) {
+        return localDateTime.plusYears(years);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

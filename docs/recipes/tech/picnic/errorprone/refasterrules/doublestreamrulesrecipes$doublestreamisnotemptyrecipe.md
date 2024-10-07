@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamIsNotEmptyRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class DoubleStreamIsNotEmpty &lcub;          @BeforeTemplate     boolean before(DoubleStream stream) &lcub;         return Refaster.anyOf(stream.count() != 0, stream.count() &gt; 0, stream.count() &gt;= 1, stream.findFirst().isPresent());     &rcub;          @AfterTemplate     boolean after(DoubleStream stream) &lcub;         return stream.findAny().isPresent();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class DoubleStreamIsNotEmpty {
+    
+    @BeforeTemplate
+    boolean before(DoubleStream stream) {
+        return Refaster.anyOf(stream.count() != 0, stream.count() > 0, stream.count() >= 1, stream.findFirst().isPresent());
+    }
+    
+    @AfterTemplate
+    boolean after(DoubleStream stream) {
+        return stream.findAny().isPresent();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

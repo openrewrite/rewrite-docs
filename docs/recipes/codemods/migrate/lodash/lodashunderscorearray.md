@@ -9,7 +9,17 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.codemods.migrate.lodash.LodashUnderscoreArray**
 
-_- `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`_
+```
+- `_.head(x)` -> `x[0]`
+- `_.head(x, n)` -> `x.slice(n)`
+- `_.first` (alias for `_.head`)
+- `_.tail(x)` -> `x.slice(1)`
+- `_.tail(x, n)` -> `x.slice(n)`
+- `_.rest` (alias for `_.tail`)
+- `_.last(x)` -> `x[x.length - 1]`
+- `_.last(x, n)` -> `x.slice(x.length - n)`
+```
+
 
 ### Tags
 

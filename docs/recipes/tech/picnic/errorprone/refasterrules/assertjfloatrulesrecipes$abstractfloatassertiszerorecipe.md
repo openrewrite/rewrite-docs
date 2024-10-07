@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsZeroRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractFloatAssertIsZero &lcub;          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; floatAssert) &lcub;         return floatAssert.isZero();     &rcub;          @AfterTemplate     AbstractFloatAssert&lt;?&gt; after(AbstractFloatAssert&lt;?&gt; floatAssert) &lcub;         return floatAssert.isEqualTo(0);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractFloatAssertIsZero {
+    
+    @BeforeTemplate
+    AbstractFloatAssert<?> before(AbstractFloatAssert<?> floatAssert) {
+        return floatAssert.isZero();
+    }
+    
+    @AfterTemplate
+    AbstractFloatAssert<?> after(AbstractFloatAssert<?> floatAssert) {
+        return floatAssert.isEqualTo(0);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

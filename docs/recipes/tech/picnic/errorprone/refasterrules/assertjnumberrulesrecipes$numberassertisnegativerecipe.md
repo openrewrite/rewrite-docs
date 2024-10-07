@@ -9,7 +9,60 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsNegativeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class NumberAssertIsNegative &lcub;          @BeforeTemplate     AbstractByteAssert&lt;?&gt; before(AbstractByteAssert&lt;?&gt; numberAssert) &lcub;         return Refaster.anyOf(numberAssert.isLessThan((byte)0), numberAssert.isLessThanOrEqualTo((byte)-1));     &rcub;          @BeforeTemplate     AbstractShortAssert&lt;?&gt; before(AbstractShortAssert&lt;?&gt; numberAssert) &lcub;         return Refaster.anyOf(numberAssert.isLessThan((short)0), numberAssert.isLessThanOrEqualTo((short)-1));     &rcub;          @BeforeTemplate     AbstractIntegerAssert&lt;?&gt; before(AbstractIntegerAssert&lt;?&gt; numberAssert) &lcub;         return Refaster.anyOf(numberAssert.isLessThan(0), numberAssert.isLessThanOrEqualTo(-1));     &rcub;          @BeforeTemplate     AbstractLongAssert&lt;?&gt; before(AbstractLongAssert&lt;?&gt; numberAssert) &lcub;         return Refaster.anyOf(numberAssert.isLessThan(0), numberAssert.isLessThanOrEqualTo(-1));     &rcub;          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; numberAssert) &lcub;         return numberAssert.isLessThan(0);     &rcub;          @BeforeTemplate     AbstractDoubleAssert&lt;?&gt; before(AbstractDoubleAssert&lt;?&gt; numberAssert) &lcub;         return numberAssert.isLessThan(0);     &rcub;          @BeforeTemplate     AbstractBigIntegerAssert&lt;?&gt; before(AbstractBigIntegerAssert&lt;?&gt; numberAssert) &lcub;         return Refaster.anyOf(numberAssert.isLessThan(BigInteger.ZERO), numberAssert.isLessThanOrEqualTo(BigInteger.valueOf(-1)));     &rcub;          @BeforeTemplate     AbstractBigDecimalAssert&lt;?&gt; before(AbstractBigDecimalAssert&lt;?&gt; numberAssert) &lcub;         return numberAssert.isLessThan(BigDecimal.ZERO);     &rcub;          @AfterTemplate     NumberAssert&lt;?, ?&gt; after(NumberAssert&lt;?, ?&gt; numberAssert) &lcub;         return numberAssert.isNegative();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class NumberAssertIsNegative {
+    
+    @BeforeTemplate
+    AbstractByteAssert<?> before(AbstractByteAssert<?> numberAssert) {
+        return Refaster.anyOf(numberAssert.isLessThan((byte)0), numberAssert.isLessThanOrEqualTo((byte)-1));
+    }
+    
+    @BeforeTemplate
+    AbstractShortAssert<?> before(AbstractShortAssert<?> numberAssert) {
+        return Refaster.anyOf(numberAssert.isLessThan((short)0), numberAssert.isLessThanOrEqualTo((short)-1));
+    }
+    
+    @BeforeTemplate
+    AbstractIntegerAssert<?> before(AbstractIntegerAssert<?> numberAssert) {
+        return Refaster.anyOf(numberAssert.isLessThan(0), numberAssert.isLessThanOrEqualTo(-1));
+    }
+    
+    @BeforeTemplate
+    AbstractLongAssert<?> before(AbstractLongAssert<?> numberAssert) {
+        return Refaster.anyOf(numberAssert.isLessThan(0), numberAssert.isLessThanOrEqualTo(-1));
+    }
+    
+    @BeforeTemplate
+    AbstractFloatAssert<?> before(AbstractFloatAssert<?> numberAssert) {
+        return numberAssert.isLessThan(0);
+    }
+    
+    @BeforeTemplate
+    AbstractDoubleAssert<?> before(AbstractDoubleAssert<?> numberAssert) {
+        return numberAssert.isLessThan(0);
+    }
+    
+    @BeforeTemplate
+    AbstractBigIntegerAssert<?> before(AbstractBigIntegerAssert<?> numberAssert) {
+        return Refaster.anyOf(numberAssert.isLessThan(BigInteger.ZERO), numberAssert.isLessThanOrEqualTo(BigInteger.valueOf(-1)));
+    }
+    
+    @BeforeTemplate
+    AbstractBigDecimalAssert<?> before(AbstractBigDecimalAssert<?> numberAssert) {
+        return numberAssert.isLessThan(BigDecimal.ZERO);
+    }
+    
+    @AfterTemplate
+    NumberAssert<?, ?> after(NumberAssert<?, ?> numberAssert) {
+        return numberAssert.isNegative();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

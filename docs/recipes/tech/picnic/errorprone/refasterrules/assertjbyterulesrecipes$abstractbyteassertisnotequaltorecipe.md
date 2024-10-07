@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsNotEqualToRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractByteAssertIsNotEqualTo &lcub;          @BeforeTemplate     AbstractByteAssert&lt;?&gt; before(AbstractByteAssert&lt;?&gt; byteAssert, byte n) &lcub;         return Refaster.anyOf(byteAssert.isNotCloseTo(n, offset((byte)0)), byteAssert.isNotCloseTo(n, withPercentage(0)));     &rcub;          @AfterTemplate     AbstractByteAssert&lt;?&gt; after(AbstractByteAssert&lt;?&gt; byteAssert, byte n) &lcub;         return byteAssert.isNotEqualTo(n);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractByteAssertIsNotEqualTo {
+    
+    @BeforeTemplate
+    AbstractByteAssert<?> before(AbstractByteAssert<?> byteAssert, byte n) {
+        return Refaster.anyOf(byteAssert.isNotCloseTo(n, offset((byte)0)), byteAssert.isNotCloseTo(n, withPercentage(0)));
+    }
+    
+    @AfterTemplate
+    AbstractByteAssert<?> after(AbstractByteAssert<?> byteAssert, byte n) {
+        return byteAssert.isNotEqualTo(n);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

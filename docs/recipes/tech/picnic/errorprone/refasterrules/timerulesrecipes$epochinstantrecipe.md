@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$EpochInstantRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class EpochInstant &lcub;          @BeforeTemplate     Instant before() &lcub;         return Refaster.anyOf(Instant.ofEpochMilli(0), Instant.ofEpochSecond(0), Instant.ofEpochSecond(0, 0));     &rcub;          @AfterTemplate     Instant after() &lcub;         return Instant.EPOCH;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class EpochInstant {
+    
+    @BeforeTemplate
+    Instant before() {
+        return Refaster.anyOf(Instant.ofEpochMilli(0), Instant.ofEpochSecond(0), Instant.ofEpochSecond(0, 0));
+    }
+    
+    @AfterTemplate
+    Instant after() {
+        return Instant.EPOCH;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoublesWithDeltaWithMessageRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertEqualDoublesWithDeltaWithMessage &lcub;          @BeforeTemplate     void before(double actual, String message, double expected, double delta) &lcub;         assertEquals(actual, expected, delta, message);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(double actual, String message, double expected, double delta) &lcub;         assertThat(actual).withFailMessage(message).isCloseTo(expected, offset(delta));     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertEqualDoublesWithDeltaWithMessage {
+    
+    @BeforeTemplate
+    void before(double actual, String message, double expected, double delta) {
+        assertEquals(actual, expected, delta, message);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(double actual, String message, double expected, double delta) {
+        assertThat(actual).withFailMessage(message).isCloseTo(expected, offset(delta));
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

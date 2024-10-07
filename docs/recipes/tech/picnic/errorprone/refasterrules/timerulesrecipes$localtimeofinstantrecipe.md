@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeOfInstantRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LocalTimeOfInstant &lcub;          @BeforeTemplate     LocalTime before(Instant instant, ZoneId zoneId) &lcub;         return Refaster.anyOf(instant.atZone(zoneId).toLocalTime(), LocalDateTime.ofInstant(instant, zoneId).toLocalTime(), OffsetDateTime.ofInstant(instant, zoneId).toLocalTime(), OffsetTime.ofInstant(instant, zoneId).toLocalTime());     &rcub;          @BeforeTemplate     LocalTime before(Instant instant, ZoneOffset zoneId) &lcub;         return instant.atOffset(zoneId).toLocalTime();     &rcub;          @AfterTemplate     LocalTime after(Instant instant, ZoneId zoneId) &lcub;         return LocalTime.ofInstant(instant, zoneId);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LocalTimeOfInstant {
+    
+    @BeforeTemplate
+    LocalTime before(Instant instant, ZoneId zoneId) {
+        return Refaster.anyOf(instant.atZone(zoneId).toLocalTime(), LocalDateTime.ofInstant(instant, zoneId).toLocalTime(), OffsetDateTime.ofInstant(instant, zoneId).toLocalTime(), OffsetTime.ofInstant(instant, zoneId).toLocalTime());
+    }
+    
+    @BeforeTemplate
+    LocalTime before(Instant instant, ZoneOffset zoneId) {
+        return instant.atOffset(zoneId).toLocalTime();
+    }
+    
+    @AfterTemplate
+    LocalTime after(Instant instant, ZoneId zoneId) {
+        return LocalTime.ofInstant(instant, zoneId);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

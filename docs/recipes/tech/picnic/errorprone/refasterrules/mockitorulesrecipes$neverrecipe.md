@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$NeverRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class Never &lcub;          @BeforeTemplate     VerificationMode before() &lcub;         return times(0);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     VerificationMode after() &lcub;         return never();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class Never {
+    
+    @BeforeTemplate
+    VerificationMode before() {
+        return times(0);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    VerificationMode after() {
+        return never();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

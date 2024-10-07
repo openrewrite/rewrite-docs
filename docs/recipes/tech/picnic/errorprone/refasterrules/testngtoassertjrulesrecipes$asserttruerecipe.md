@@ -9,7 +9,26 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertTrueRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AssertTrue &lcub;          @BeforeTemplate     void before(boolean condition) &lcub;         assertTrue(condition);     &rcub;          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(boolean condition) &lcub;         assertThat(condition).isTrue();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AssertTrue {
+    
+    @BeforeTemplate
+    void before(boolean condition) {
+        assertTrue(condition);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    void after(boolean condition) {
+        assertThat(condition).isTrue();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

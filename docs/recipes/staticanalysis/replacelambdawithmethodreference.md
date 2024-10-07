@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference**
 
-_Replaces the single statement lambdas `o -&gt; o instanceOf X`, `o -&gt; (A) o`, `o -&gt; System.out.println(o)`, `o -&gt; o != null`, `o -&gt; o == null` with the equivalent method reference._
+```
+Replaces the single statement lambdas `o -> o instanceOf X`, `o -> (A) o`, `o -> System.out.println(o)`, `o -> o != null`, `o -> o == null` with the equivalent method reference.
+```
+
 
 ### Tags
 

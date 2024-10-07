@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamClosedOpenRangeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LongStreamClosedOpenRange &lcub;          @BeforeTemplate     LongStream before(long from, long to) &lcub;         return LongStream.rangeClosed(from, to - 1);     &rcub;          @AfterTemplate     LongStream after(long from, long to) &lcub;         return LongStream.range(from, to);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LongStreamClosedOpenRange {
+    
+    @BeforeTemplate
+    LongStream before(long from, long to) {
+        return LongStream.rangeClosed(from, to - 1);
+    }
+    
+    @AfterTemplate
+    LongStream after(long from, long to) {
+        return LongStream.range(from, to);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

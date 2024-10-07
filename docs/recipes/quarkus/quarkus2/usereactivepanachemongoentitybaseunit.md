@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.quarkus.quarkus2.UseReactivePanacheMongoEntityBaseUniT**
 
-_The `persist()`, `update()`, and `persistOrUpdate()` methods now return a `Uni&lt;T extends ReactivePanacheMongoEntityBase&gt; instead of a `Uni&lt;Void&gt; to allow chaining the methods._
+```
+The `persist()`, `update()`, and `persistOrUpdate()` methods now return a `Uni<T extends ReactivePanacheMongoEntityBase>` instead of a `Uni<Void>` to allow chaining the methods.
+```
+
 
 ## Recipe source
 

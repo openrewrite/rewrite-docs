@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsFalseRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractBooleanAssertIsFalse &lcub;          @BeforeTemplate     AbstractBooleanAssert&lt;?&gt; before(AbstractBooleanAssert&lt;?&gt; boolAssert) &lcub;         return Refaster.anyOf(boolAssert.isEqualTo(false), boolAssert.isEqualTo(Boolean.FALSE), boolAssert.isNotEqualTo(true), boolAssert.isNotEqualTo(Boolean.TRUE));     &rcub;          @AfterTemplate     AbstractBooleanAssert&lt;?&gt; after(AbstractBooleanAssert&lt;?&gt; boolAssert) &lcub;         return boolAssert.isFalse();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractBooleanAssertIsFalse {
+    
+    @BeforeTemplate
+    AbstractBooleanAssert<?> before(AbstractBooleanAssert<?> boolAssert) {
+        return Refaster.anyOf(boolAssert.isEqualTo(false), boolAssert.isEqualTo(Boolean.FALSE), boolAssert.isNotEqualTo(true), boolAssert.isNotEqualTo(Boolean.TRUE));
+    }
+    
+    @AfterTemplate
+    AbstractBooleanAssert<?> after(AbstractBooleanAssert<?> boolAssert) {
+        return boolAssert.isFalse();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

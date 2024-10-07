@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterCompareRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class CharacterCompare &lcub;          @BeforeTemplate     int before(char a, char b) &lcub;         return Chars.compare(a, b);     &rcub;          @AfterTemplate     int after(char a, char b) &lcub;         return Character.compare(a, b);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class CharacterCompare {
+    
+    @BeforeTemplate
+    int before(char a, char b) {
+        return Chars.compare(a, b);
+    }
+    
+    @AfterTemplate
+    int after(char a, char b) {
+        return Character.compare(a, b);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

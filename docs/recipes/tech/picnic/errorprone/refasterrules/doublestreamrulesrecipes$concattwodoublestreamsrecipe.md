@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatTwoDoubleStreamsRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ConcatTwoDoubleStreams &lcub;          @BeforeTemplate     DoubleStream before(DoubleStream s1, DoubleStream s2) &lcub;         return Streams.concat(s1, s2);     &rcub;          @AfterTemplate     DoubleStream after(DoubleStream s1, DoubleStream s2) &lcub;         return DoubleStream.concat(s1, s2);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ConcatTwoDoubleStreams {
+    
+    @BeforeTemplate
+    DoubleStream before(DoubleStream s1, DoubleStream s2) {
+        return Streams.concat(s1, s2);
+    }
+    
+    @AfterTemplate
+    DoubleStream after(DoubleStream s1, DoubleStream s2) {
+        return DoubleStream.concat(s1, s2);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

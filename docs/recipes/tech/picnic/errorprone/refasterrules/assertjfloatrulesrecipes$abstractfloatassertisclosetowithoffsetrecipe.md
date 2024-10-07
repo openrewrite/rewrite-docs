@@ -9,7 +9,30 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsCloseToWithOffsetRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class AbstractFloatAssertIsCloseToWithOffset &lcub;          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; floatAssert, float n, Offset&lt;Float&gt; offset) &lcub;         return floatAssert.isEqualTo(n, offset);     &rcub;          @BeforeTemplate     AbstractFloatAssert&lt;?&gt; before(AbstractFloatAssert&lt;?&gt; floatAssert, Float n, Offset&lt;Float&gt; offset) &lcub;         return floatAssert.isEqualTo(n, offset);     &rcub;          @AfterTemplate     AbstractFloatAssert&lt;?&gt; after(AbstractFloatAssert&lt;?&gt; floatAssert, float n, Offset&lt;Float&gt; offset) &lcub;         return floatAssert.isCloseTo(n, offset);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class AbstractFloatAssertIsCloseToWithOffset {
+    
+    @BeforeTemplate
+    AbstractFloatAssert<?> before(AbstractFloatAssert<?> floatAssert, float n, Offset<Float> offset) {
+        return floatAssert.isEqualTo(n, offset);
+    }
+    
+    @BeforeTemplate
+    AbstractFloatAssert<?> before(AbstractFloatAssert<?> floatAssert, Float n, Offset<Float> offset) {
+        return floatAssert.isEqualTo(n, offset);
+    }
+    
+    @AfterTemplate
+    AbstractFloatAssert<?> after(AbstractFloatAssert<?> floatAssert, float n, Offset<Float> offset) {
+        return floatAssert.isCloseTo(n, offset);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

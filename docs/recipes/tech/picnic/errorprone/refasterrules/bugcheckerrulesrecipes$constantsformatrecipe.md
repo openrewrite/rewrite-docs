@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ConstantsFormatRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class ConstantsFormat &lcub;          @BeforeTemplate     String before(String value) &lcub;         return String.format("\"%s\"", Convert.quote(value));     &rcub;          @AfterTemplate     String after(String value) &lcub;         return Constants.format(value);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class ConstantsFormat {
+    
+    @BeforeTemplate
+    String before(String value) {
+        return String.format("\"%s\"", Convert.quote(value));
+    }
+    
+    @AfterTemplate
+    String after(String value) {
+        return Constants.format(value);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

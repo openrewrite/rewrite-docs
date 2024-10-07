@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorMessageRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class StepVerifierLastStepVerifyErrorMessage &lcub;          @BeforeTemplate     Duration before(StepVerifier.LastStep step, String message) &lcub;         return step.expectErrorMessage(message).verify();     &rcub;          @AfterTemplate     Duration after(StepVerifier.LastStep step, String message) &lcub;         return step.verifyErrorMessage(message);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class StepVerifierLastStepVerifyErrorMessage {
+    
+    @BeforeTemplate
+    Duration before(StepVerifier.LastStep step, String message) {
+        return step.expectErrorMessage(message).verify();
+    }
+    
+    @AfterTemplate
+    Duration after(StepVerifier.LastStep step, String message) {
+        return step.verifyErrorMessage(message);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

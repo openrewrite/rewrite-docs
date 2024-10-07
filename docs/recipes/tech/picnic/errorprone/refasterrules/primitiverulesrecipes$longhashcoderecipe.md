@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongHashCodeRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class LongHashCode &lcub;          @BeforeTemplate     int before(long l) &lcub;         return Longs.hashCode(l);     &rcub;          @AfterTemplate     int after(long l) &lcub;         return Long.hashCode(l);     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class LongHashCode {
+    
+    @BeforeTemplate
+    int before(long l) {
+        return Longs.hashCode(l);
+    }
+    
+    @AfterTemplate
+    int after(long l) {
+        return Long.hashCode(l);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

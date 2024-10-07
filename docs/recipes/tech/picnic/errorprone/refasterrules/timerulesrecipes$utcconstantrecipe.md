@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcConstantRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class UtcConstant &lcub;          @BeforeTemplate     ZoneId before() &lcub;         return Refaster.anyOf(ZoneId.of("GMT"), ZoneId.of("UTC"), ZoneId.of("+0"), ZoneId.of("-0"), UTC.normalized(), ZoneId.from(UTC));     &rcub;          @AfterTemplate     ZoneOffset after() &lcub;         return UTC;     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class UtcConstant {
+    
+    @BeforeTemplate
+    ZoneId before() {
+        return Refaster.anyOf(ZoneId.of("GMT"), ZoneId.of("UTC"), ZoneId.of("+0"), ZoneId.of("-0"), UTC.normalized(), ZoneId.from(UTC));
+    }
+    
+    @AfterTemplate
+    ZoneOffset after() {
+        return UTC;
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository**
 
-_`QuerydslJpaRepository&lt;T, ID extends Serializable&gt; was deprecated in Spring Data 2.1._
+```
+`QuerydslJpaRepository<T, ID extends Serializable>` was deprecated in Spring Data 2.1.
+```
+
 
 ## Recipe source
 

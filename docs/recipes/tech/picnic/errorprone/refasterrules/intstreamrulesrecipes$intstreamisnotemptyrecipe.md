@@ -9,7 +9,25 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamIsNotEmptyRecipe**
 
-_Recipe created for the following Refaster template: ```java static final class IntStreamIsNotEmpty &lcub;          @BeforeTemplate     boolean before(IntStream stream) &lcub;         return Refaster.anyOf(stream.count() != 0, stream.count() &gt; 0, stream.count() &gt;= 1, stream.findFirst().isPresent());     &rcub;          @AfterTemplate     boolean after(IntStream stream) &lcub;         return stream.findAny().isPresent();     &rcub; &rcub; ``` ._
+```
+Recipe created for the following Refaster template:
+java
+static final class IntStreamIsNotEmpty {
+    
+    @BeforeTemplate
+    boolean before(IntStream stream) {
+        return Refaster.anyOf(stream.count() != 0, stream.count() > 0, stream.count() >= 1, stream.findFirst().isPresent());
+    }
+    
+    @AfterTemplate
+    boolean after(IntStream stream) {
+        return stream.findAny().isPresent();
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 

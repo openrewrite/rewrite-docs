@@ -9,7 +9,10 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.migrate.util.OptionalStreamRecipe**
 
-_Migrate Java 8 `Optional&lt;Stream&gt;.filter(Optional::isPresent).map(Optional::get)` to Java 11 `.flatMap(Optional::stream)`._
+```
+Migrate Java 8 `Optional<Stream>.filter(Optional::isPresent).map(Optional::get)` to Java 11 `.flatMap(Optional::stream)`.
+```
+
 
 ## Recipe source
 
