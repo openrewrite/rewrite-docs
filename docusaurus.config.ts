@@ -101,17 +101,17 @@ const config: Config = {
         },
         {
           href: 'https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA',
-          label: 'Join us on Slack',
+          label: 'Slack',
           position: "right",
         },
         {
           href: 'https://discord.gg/xk3ZKrhWAb',
-          label: 'Join us on Discord',
+          label: 'Discord',
           position: "right",
         },
         {
           href: 'https://stackoverflow.com/questions/tagged/openrewrite',
-          label: 'Ask on Stack Overflow',
+          label: 'Stack Overflow',
           position: "right",
         },
       ],
