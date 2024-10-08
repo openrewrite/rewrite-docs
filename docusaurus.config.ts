@@ -70,7 +70,7 @@ const config: Config = {
     algolia: {
       appId: "NHGG4Q2UXX",
       apiKey: "08f02d57e3f18adf647518db37e5b42d",
-      indexName: "prod_REWRITE_DOCS",
+      indexName: "crawler_Rewrite Docs",
     },
     announcementBar: {
       id: "doc_release",
