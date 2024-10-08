@@ -80,5 +80,15 @@
 \.zip$
 ^\.github/actions/spelling/
 ^\Q.github/workflows/spelling.yml\E$
-^reference/recipes/
+^\.github/workflows/pages.yml
+^docs/recipes/
+^docs/changelog/
+^gitbook-converter.py
+^strip-links.py
+^docusaurus.config.ts
+^docs/reference/recipes-with-data-tables.md
+^robots.txt
+^CNAME
+^src/
+^static/
 ignore$

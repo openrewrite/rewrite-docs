@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - docusaurus
+      - master
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -27,8 +27,11 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
       - name: Build website
         run: yarn build
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
