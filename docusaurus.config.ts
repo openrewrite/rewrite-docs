@@ -68,9 +68,9 @@ const config: Config = {
 
   themeConfig: {
     algolia: {
-      appId: "NHGG4Q2UXX",
-      apiKey: "08f02d57e3f18adf647518db37e5b42d",
-      indexName: "crawler_Rewrite Docs",
+      appId: "8XDBE5G3ZV",
+      apiKey: "14363fc8de10ed3d1785fe6d17a92631",
+      indexName: "openrewrite",
     },
     // announcementBar: {
     //   id: "doc_release",
