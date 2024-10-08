@@ -21,7 +21,7 @@ const config: Config = {
   tagline: "Large-scale automated source code refactoring",
   favicon: "img/favicon.ico",
 
-  url: "https://newdocs.openrewrite.org",
+  url: "https://docs.openrewrite.org",
   baseUrl: "/",
 
   organizationName: "openrewrite",
@@ -70,7 +70,7 @@ const config: Config = {
     algolia: {
       appId: "NHGG4Q2UXX",
       apiKey: "08f02d57e3f18adf647518db37e5b42d",
-      indexName: "crawler_Rewrite Docs",
+      indexName: "prod_REWRITE_DOCS",
     },
     announcementBar: {
       id: "doc_release",
