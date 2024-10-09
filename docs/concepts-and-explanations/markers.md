@@ -48,9 +48,11 @@ In this example, the search recipe [FindAnnotations](https://github.com/openrewr
 ```java title="FindAnnotations.java"
 public J.Annotation visitAnnotation(J.Annotation annotation, ExecutionContext ctx) {
     J.Annotation a = super.visitAnnotation(annotation, ctx);
+
     if (annotationMatcher.matches(annotation)) {
-        aa = a.withMarkers(a.getMarkers().searchResult());
+        a = SearchResult.found(a);
     }
+
     return a;
 }
 ```
