@@ -45,7 +45,6 @@ const config: Config = {
           routeBasePath: "/",
           sidebarCollapsible: true,
           sidebarPath: "./sidebars.ts",
-          // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/openrewrite/rewrite-docs/edit/master",
           remarkPlugins: [
             [
