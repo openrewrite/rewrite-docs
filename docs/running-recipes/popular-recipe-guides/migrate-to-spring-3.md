@@ -248,5 +248,5 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 
 ## Using Moderne to upgrade Spring versions
 
-<ReactPlayer url='https://www.youtube.com/watch?v=nz29-DWeV44' />
+<ReactPlayer url='https://www.youtube.com/watch?v=nz29-DWeV44' controls="true" />
 

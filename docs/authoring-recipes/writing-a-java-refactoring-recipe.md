@@ -29,7 +29,7 @@ class FooBar {
 }
 ```
 
-<ReactPlayer url='https://www.youtube.com/watch?v=O3Se9Q25GCg' />
+<ReactPlayer url='https://www.youtube.com/watch?v=O3Se9Q25GCg' controls="true" />
 
 ## Prerequisites
 
@@ -278,7 +278,7 @@ There are two main pieces to this:
 
 For more information on visitors, please see our [visitors doc](../concepts-and-explanations/visitors.md). You may also find it beneficial to watch our video explaining visitors and how they work:
 
-<ReactPlayer url='https://www.youtube.com/watch?v=BLCW9Ql7swI' />
+<ReactPlayer url='https://www.youtube.com/watch?v=BLCW9Ql7swI' controls="true" />
 
 ### Figure out which LSTs are needed
 

@@ -6,9 +6,9 @@ In OpenRewrite [recipes](./recipes.md), a visitor is where the core logic lives.
 
 To help you understand more about visitors, this guide will walk you through numerous concepts and examples. By the end, you should feel more confident in working with and implementing visitors in your own recipes.
 
-<ReactPlayer url='https://www.youtube.com/watch?v=BLCW9Ql7swI' />
+<ReactPlayer url='https://www.youtube.com/watch?v=BLCW9Ql7swI' controls="true" />
 
-<ReactPlayer url='https://www.youtube.com/watch?v=4azJ9Y9De5M' />
+<ReactPlayer url='https://www.youtube.com/watch?v=4azJ9Y9De5M' controls="true" />
 
 ## Background
 

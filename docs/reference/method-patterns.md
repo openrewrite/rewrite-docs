@@ -8,7 +8,7 @@ Method patterns provide a way to accurately and quickly identify one or more met
 An OpenRewrite method pattern is comparable to an AspectJ ["pointcut expression"](https://www.baeldung.com/spring-aop-pointcut-tutorial).
 :::
 
-<ReactPlayer url='https://www.youtube.com/watch?v=DEd24gzNZCs' />
+<ReactPlayer url='https://www.youtube.com/watch?v=DEd24gzNZCs' controls="true" />
 
 
 ## Anatomy of a method pattern

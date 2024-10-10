@@ -121,7 +121,7 @@ def replace_video_embed(match):
     global video_replaced
 
     embedded_url = match.group(1)
-    video_block = f"<ReactPlayer url='{embedded_url}' />\n"
+    video_block = f"<ReactPlayer url='{embedded_url}' controls=\"true\" />\n"
 
     video_replaced = True
 

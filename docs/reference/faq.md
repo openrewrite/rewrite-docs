@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 ## What is the difference between OpenRewrite and Moderne?
 
-<ReactPlayer url='https://www.youtube.com/watch?v=Q-ej2lCJHRs' />
+<ReactPlayer url='https://www.youtube.com/watch?v=Q-ej2lCJHRs' controls="true" />
 
 
 ## Is it possible to update only a few files with a recipe rather than all of them?
@@ -55,7 +55,6 @@ OpenRewrite exercises the Java compiler internally to compile code patterns that
 Using a library in compilation in this way **does not trigger class initialization** in the way that reflection might, for example. In other words, code paths in libraries used in compilation are **never executed**.
 
 As an example of this, consider the case of [rewrite-spring](https://github.com/openrewrite/rewrite-spring). It has libraries bundled inside of the [META-INF/rewrite/classpath directory](https://github.com/openrewrite/rewrite-spring/tree/main/src/main/resources/META-INF/rewrite). However, those JARs are not made into a Fat Jar or a shaded library in the traditional sense. It is not possible that by using `rewrite-spring` that one of those libraries gets called.
-
 
 ## Is it possible to apply recipes on a step-by-step basis (pausing after certain recipes, so smaller commits can be made)?
 
@@ -170,6 +169,7 @@ For instance, let's say you wanted to replace `int i = 5` with `int i = 5; i++;`
 After doing that, you would want to run a `doAfterVisit(new RemoveUnneededBlock.getVisitor())` to remove the unnecessary block again – giving you the desired result.
 
 ## Is it possible to pass arguments to a recipe from the command line?
+
 This is a challenging problem for a couple of reasons:
 
 * Some recipes can be composed of other recipes, which could in turn include other recipes, and so on.
@@ -259,3 +259,5 @@ The specification is described in this [Maven mini guide on HTTP settings](https
 </settings>
 ```
 Note that the per HTTP method `<httpConfiguration>` format is not supported.
+
+## How can I remove 

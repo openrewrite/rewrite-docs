@@ -15,9 +15,9 @@ To help you create tests that meet those standards, this guide will:
 * [Explain the key classes that make up the tests](#rewritetest-interface)
 * [Give some additional advanced testing tips](#advanced-recipe-testing)
 
-<ReactPlayer url='https://www.youtube.com/watch?v=JAC9UIE80fs' />
+<ReactPlayer url='https://www.youtube.com/watch?v=JAC9UIE80fs' controls="true" />
 
-<ReactPlayer url='https://www.youtube.com/watch?v=O9o4y_2TO0w' />
+<ReactPlayer url='https://www.youtube.com/watch?v=O9o4y_2TO0w' controls="true" />
 
 
 ## Prerequisites

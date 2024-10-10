@@ -9,7 +9,7 @@ Refaster template recipes are recipes created from [Refaster templates](#termino
 
 Let's walk through everything you need to know to get started making your own.
 
-<ReactPlayer url='https://www.youtube.com/watch?v=ZuUESGhJFlc' />
+<ReactPlayer url='https://www.youtube.com/watch?v=ZuUESGhJFlc' controls="true" />
 
 ## Terminology
 

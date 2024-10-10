@@ -22,7 +22,7 @@ If you are looking to build [OpenRewrite](https://github.com/openrewrite/rewrite
 
 We'd strongly recommend you enable the OpenRewrite plugin in IntelliJ when creating your own recipes. For more details on this, check out the video below:
 
-<ReactPlayer url='https://www.youtube.com/watch?v=ULFnBwnTZ9E' />
+<ReactPlayer url='https://www.youtube.com/watch?v=ULFnBwnTZ9E' controls="true" />
 
 ## Automatic project setup
 
