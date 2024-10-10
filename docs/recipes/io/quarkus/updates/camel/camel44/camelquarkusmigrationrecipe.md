@@ -24,7 +24,7 @@ _Migrates `camel 4.0` quarkus application to `camel 4.4`._
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrates `camel 4.0` application to `camel 4.4`](../../../../../org/apache/camel/upgrade/camel44/camelmigrationrecipe)
+* Migrates `camel 4.0` application to `camel 4.4`
 
 </TabItem>
 

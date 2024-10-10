@@ -27,8 +27,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate `camel3` application to `camel4.`](../../../../../org/apache/camel/upgrade/camel40/camelmigrationrecipe)
-* [Camel API changes in application.properties](../../../../../java/camel/migrate/changepropertyvalue)
+* Migrate `camel3` application to `camel4.`
+* Camel API changes in application.properties
 
 </TabItem>
 

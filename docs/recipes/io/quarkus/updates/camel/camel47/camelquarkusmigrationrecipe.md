@@ -27,9 +27,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrates `camel 4.4` application to `camel 4.5`](../../../../../org/apache/camel/upgrade/camel45/camelmigrationrecipe)
-* [Migrates `camel 4.5` application to `camel 4.6`](../../../../../org/apache/camel/upgrade/camel46/camelmigrationrecipe)
-* [Migrates `camel 4.6` application to `camel 4.7`](../../../../../org/apache/camel/upgrade/camel47/camelmigrationrecipe)
+* Migrates `camel 4.4` application to `camel 4.5`
+* Migrates `camel 4.5` application to `camel 4.6`
+* Migrates `camel 4.6` application to `camel 4.7`
 
 </TabItem>
 
