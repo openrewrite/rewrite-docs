@@ -5,6 +5,7 @@
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [PlanningVariable's `nullable` is newly called `unassignedValues`](./nullablerecipe.md)
+* [Recommended Fit API becomes Assignment Recommendation API](./solutionmanagerrecommendassignmentrecipe.md)
 * [Use non-deprecated SingleConstraintAssertion methods](./singleconstraintassertionmethodsrecipe.md)
 
 ## Recipes

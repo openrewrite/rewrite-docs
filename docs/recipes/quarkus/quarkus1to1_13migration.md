@@ -13,11 +13,11 @@ _Migrates Quarkus 1.11 to 1.13._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/quarkus.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/quarkus.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.9.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-quarkus
-* version: 2.9.0
+* version: 2.9.1
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -138,7 +138,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-quarkus:2.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-quarkus:2.9.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -146,7 +146,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -159,7 +159,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.9.1")
 }
 ```
 
@@ -175,12 +175,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.24.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.25.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-quarkus:2.9.0")
+        rewrite("org.openrewrite.recipe:rewrite-quarkus:2.9.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.quarkus.Quarkus1to1_13Migration")
@@ -214,7 +214,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -225,7 +225,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>2.9.0</version>
+            <version>2.9.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -313,4 +313,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Kun Li, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+Patrick Way, [Aaron Gershman](mailto:aegershman@gmail.com), Tyler Van Gorder, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), Kun Li, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

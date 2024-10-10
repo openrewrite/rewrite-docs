@@ -13,11 +13,11 @@ _This recipe will apply changes commonly needed when migrating to Hibernate 6.1.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.1.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/1.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.1.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/1.10.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-hibernate
-* version: 1.9.0
+* version: 1.10.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -27,13 +27,11 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate Hibernate dependencies to 6.1.x](../hibernate/migratetohibernatedependencies61)
-* [Replace boolean type mappings with converters](../hibernate/migratebooleanmappings)
-* [@Type annotation type parameter migration](../hibernate/typeannotationparameter)
-* [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`](../hibernate/typedescriptortotype)
-* [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](../java/migrate/jakarta/javaxpersistencetojakartapersistence)
-* [Migrate xmlns entries in `persistence.xml` files](../java/migrate/jakarta/javaxpersistencexmltojakartapersistencexml)
-* [Migrate Hibernate Types to Hypersistence Utils 6.0](../hibernate/migratetohypersistenceutilshibernate6/0)
+* [Migrate to Hibernate 6.0.x](../hibernate/migratetohibernate60)
+* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
+  * groupId: `org.hibernate.orm`
+  * artifactId: `*`
+  * newVersion: `6.1.x`
 
 </TabItem>
 
@@ -46,13 +44,11 @@ name: org.openrewrite.hibernate.MigrateToHibernate61
 displayName: Migrate to Hibernate 6.1.x
 description: This recipe will apply changes commonly needed when migrating to Hibernate 6.1.x. The hibernate dependencies will   be updated to use the new org.hibernate.orm group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
 recipeList:
-  - org.openrewrite.hibernate.MigrateToHibernateDependencies61
-  - org.openrewrite.hibernate.MigrateBooleanMappings
-  - org.openrewrite.hibernate.TypeAnnotationParameter
-  - org.openrewrite.hibernate.TypeDescriptorToType
-  - org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence
-  - org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml
-  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.0
+  - org.openrewrite.hibernate.MigrateToHibernate60
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.hibernate.orm
+      artifactId: *
+      newVersion: 6.1.x
 
 ```
 </TabItem>
@@ -60,7 +56,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-hibernate:1.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-hibernate:1.10.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -68,7 +64,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -81,7 +77,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-hibernate:1.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-hibernate:1.10.0")
 }
 ```
 
@@ -97,12 +93,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.24.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.25.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-hibernate:1.9.0")
+        rewrite("org.openrewrite.recipe:rewrite-hibernate:1.10.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.hibernate.MigrateToHibernate61")
@@ -136,7 +132,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -147,7 +143,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-hibernate</artifactId>
-            <version>1.9.0</version>
+            <version>1.10.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -235,4 +231,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Simon Zilliken, [Alex Boyko](mailto:aboyko@vmware.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+Simon Zilliken, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Alex Boyko](mailto:aboyko@vmware.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

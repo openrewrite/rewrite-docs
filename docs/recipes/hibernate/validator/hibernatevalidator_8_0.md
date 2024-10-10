@@ -13,11 +13,11 @@ _This recipe will apply changes commonly needed when migrating to Hibernate Vali
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-validator.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/1.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-validator.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/1.10.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-hibernate
-* version: 1.9.0
+* version: 1.10.0
 
 
 ## Definition
@@ -53,7 +53,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-hibernate:1.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-hibernate:1.10.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -61,7 +61,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -74,7 +74,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-hibernate:1.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-hibernate:1.10.0")
 }
 ```
 
@@ -90,12 +90,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.24.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.25.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-hibernate:1.9.0")
+        rewrite("org.openrewrite.recipe:rewrite-hibernate:1.10.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.hibernate.validator.HibernateValidator_8_0")
@@ -129,7 +129,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -140,7 +140,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-hibernate</artifactId>
-            <version>1.9.0</version>
+            <version>1.10.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -13,11 +13,11 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.14.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.14.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.14.0
+* version: 0.14.1
 
 ## Options
 
@@ -47,7 +47,7 @@ recipeList:
 artifactId: commons-text
 ```
 
-Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:0.14.0 in your build file:
+Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:0.14.1 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -55,7 +55,7 @@ Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined, ac
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -68,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.14.0")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.14.1")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -84,7 +84,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -95,7 +95,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.14.0</version>
+            <version>0.14.1</version>
           </dependency>
         </dependencies>
       </plugin>

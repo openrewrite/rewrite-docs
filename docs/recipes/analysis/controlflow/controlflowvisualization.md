@@ -13,11 +13,11 @@ _Visualize the control flow of a Java program._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.11.1/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.11.0
+* version: 2.11.1
 
 ## Options
 
@@ -40,7 +40,7 @@ recipeList:
       includeDotfile: false
 ```
 
-Now that `com.yourorg.ControlFlowVisualizationExample` has been defined, activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.11.0 in your build file:
+Now that `com.yourorg.ControlFlowVisualizationExample` has been defined, activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.11.1 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -48,7 +48,7 @@ Now that `com.yourorg.ControlFlowVisualizationExample` has been defined, activat
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -61,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.11.0")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.11.1")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -88,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.11.0</version>
+            <version>2.11.1</version>
           </dependency>
         </dependencies>
       </plugin>

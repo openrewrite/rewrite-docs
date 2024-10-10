@@ -18,7 +18,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Relocate Launcher Classes](./relocatelauncherclasses.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](./actuatorendpointsanitization.md)
 * [Spring Boot 3.x best practices](./springboot3bestpractices.md)
-* [Upgrade to springdoc-openapi 2](./upgradespringdoc_2.md)
 
 ## Recipes
 
@@ -29,6 +28,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Downgrade Jakarta Servlet API to 5.0 when using Jetty](./downgradeservletapiwhenusingjetty.md)
 * [Enable Spring Batch Annotation](./removeenablebatchprocessing.md)
 * [Maintain trailing slash URL mappings](./maintaintrailingslashurlmappings.md)
+* [Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`](./migratewebmvctagstoobservationconvention.md)
 * [Remove `SolrAutoConfiguration`](./removesolrautoconfigurationexclude.md)
 * [Remove Unnecessary `@ConstructorBinding`](./removeconstructorbindingannotation.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)

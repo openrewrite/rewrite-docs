@@ -4,6 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Migrate breaking changes in `ResponseStatusException`](./migrateresponsestatusexception.md)
 * [Migrate removed Spring `Assert` methods](./migratespringassert.md)
 * [Migrate to Spring Framework 5.0](./upgradespringframework_5_0.md)
 * [Migrate to Spring Framework 5.1](./upgradespringframework_5_1.md)
@@ -17,6 +18,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](./migrateinstantiationawarebeanpostprocessoradapter.md)
 * [Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`](./migratehandlerinterceptor.md)
 * [Migrate `ResponseEntityExceptionHandler` from HttpStatus to HttpStatusCode](./migrateresponseentityexceptionhandlerhttpstatustohttpstatuscode.md)
+* [Migrate `ResponseStatusException#getRawStatusCode()` to `getStatusCode().value()`](./migrateresponsestatusexceptiongetrawstatuscodemethod.md)
 * [Migrate deprecated Spring Web UTF8 `MediaType` enums](./migrateutf8mediatypes.md)
 * [Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`](./httpcomponentsclienthttprequestfactoryreadtimeout.md)
 * [Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`](./migratewebmvcconfigureradapter.md)

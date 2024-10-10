@@ -13,11 +13,11 @@ _Find any `Service` whose `externalIP` list contains, or does not contain, one o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/FindServiceExternalIPs.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/FindServiceExternalIPs.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.9.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.9.0
+* version: 2.9.1
 
 ## Options
 
@@ -43,7 +43,7 @@ recipeList:
       fileMatcher: '**/pod-*.yml'
 ```
 
-Now that `com.yourorg.FindServiceExternalIPsExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.9.0 in your build file:
+Now that `com.yourorg.FindServiceExternalIPsExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.9.1 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.FindServiceExternalIPsExample` has been defined, activate 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -64,7 +64,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.9.1")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -80,7 +80,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -91,7 +91,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.9.0</version>
+            <version>2.9.1</version>
           </dependency>
         </dependencies>
       </plugin>

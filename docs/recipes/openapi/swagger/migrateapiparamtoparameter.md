@@ -5,11 +5,11 @@ sidebar_label: "Migrate from @ApiParam to @Parameter"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate from @ApiParam to @Parameter
+# Migrate from `@ApiParam` to `@Parameter`
 
 **org.openrewrite.openapi.swagger.MigrateApiParamToParameter**
 
-_Converts the @ApiParam annotation to @Parameter and converts the directly mappable attributes._
+_Converts the `@ApiParam` annotation to `@Parameter` and converts the directly mappable attributes._
 
 ### Tags
 
@@ -18,11 +18,11 @@ _Converts the @ApiParam annotation to @Parameter and converts the directly mappa
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.7.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-openapi
-* version: 0.7.0
+* version: 0.8.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -48,8 +48,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.openapi.swagger.MigrateApiParamToParameter
-displayName: Migrate from @ApiParam to @Parameter
-description: Converts the @ApiParam annotation to @Parameter and converts the directly mappable attributes.
+displayName: Migrate from `@ApiParam` to `@Parameter`
+description: Converts the `@ApiParam` annotation to `@Parameter` and converts the directly mappable attributes.
 tags:
   - openapi
   - swagger
@@ -68,7 +68,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.7.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.8.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -76,7 +76,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -89,7 +89,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-openapi:0.7.0")
+    rewrite("org.openrewrite.recipe:rewrite-openapi:0.8.0")
 }
 ```
 
@@ -105,12 +105,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.24.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.25.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-openapi:0.7.0")
+        rewrite("org.openrewrite.recipe:rewrite-openapi:0.8.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.openapi.swagger.MigrateApiParamToParameter")
@@ -144,7 +144,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -155,7 +155,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-openapi</artifactId>
-            <version>0.7.0</version>
+            <version>0.8.0</version>
           </dependency>
         </dependencies>
       </plugin>

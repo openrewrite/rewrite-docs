@@ -5,11 +5,11 @@ sidebar_label: "Migrate from @ApiModelProperty to @Schema"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate from @ApiModelProperty to @Schema
+# Migrate from `@ApiModelProperty` to `@Schema`
 
 **org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema**
 
-_Converts the @ApiModelProperty annotation to @Schema and converts the "value" attribute to "description"._
+_Converts the `@ApiModelProperty` annotation to `@Schema` and converts the "value" attribute to "description"._
 
 ### Tags
 
@@ -18,11 +18,11 @@ _Converts the @ApiModelProperty annotation to @Schema and converts the "value" a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.7.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-openapi
-* version: 0.7.0
+* version: 0.8.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -36,9 +36,16 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldFullyQualifiedTypeName: `io.swagger.annotations.ApiModelProperty`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.media.Schema`
 * [Change annotation attribute name](../../java/changeannotationattributename)
+  * annotationType: `io.swagger.v3.oas.annotations.Parameter`
+  * oldAttributeName: `description`
+  * newAttributeName: `title`
+* [Change annotation attribute name](../../java/changeannotationattributename)
   * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
   * oldAttributeName: `value`
   * newAttributeName: `description`
+* [Remove annotation attribute](../../java/removeannotationattribute)
+  * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
+  * attributeName: `position`
 
 </TabItem>
 
@@ -48,8 +55,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema
-displayName: Migrate from @ApiModelProperty to @Schema
-description: Converts the @ApiModelProperty annotation to @Schema and converts the "value" attribute to "description".
+displayName: Migrate from `@ApiModelProperty` to `@Schema`
+description: Converts the `@ApiModelProperty` annotation to `@Schema` and converts the "value" attribute to "description".
 tags:
   - openapi
   - swagger
@@ -58,9 +65,16 @@ recipeList:
       oldFullyQualifiedTypeName: io.swagger.annotations.ApiModelProperty
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.media.Schema
   - org.openrewrite.java.ChangeAnnotationAttributeName:
+      annotationType: io.swagger.v3.oas.annotations.Parameter
+      oldAttributeName: description
+      newAttributeName: title
+  - org.openrewrite.java.ChangeAnnotationAttributeName:
       annotationType: io.swagger.v3.oas.annotations.media.Schema
       oldAttributeName: value
       newAttributeName: description
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: io.swagger.v3.oas.annotations.media.Schema
+      attributeName: position
 
 ```
 </TabItem>
@@ -68,7 +82,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.7.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.8.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -76,7 +90,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -89,7 +103,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-openapi:0.7.0")
+    rewrite("org.openrewrite.recipe:rewrite-openapi:0.8.0")
 }
 ```
 
@@ -105,12 +119,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.24.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.25.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-openapi:0.7.0")
+        rewrite("org.openrewrite.recipe:rewrite-openapi:0.8.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema")
@@ -144,7 +158,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -155,7 +169,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-openapi</artifactId>
-            <version>0.7.0</version>
+            <version>0.8.0</version>
           </dependency>
         </dependencies>
       </plugin>

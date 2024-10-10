@@ -13,6 +13,7 @@ _Basic building blocks for transforming XML._
 ## Recipes
 
 * [Add a comment to an XML tag](./addcommenttoxmltag.md)
+* [Add or update child tag](./addorupdatechildtag.md)
 * [Change XML attribute](./changetagattribute.md)
 * [Change XML attribute of a specific resource version](./changenamespacevalue.md)
 * [Change XML tag name](./changetagname.md)

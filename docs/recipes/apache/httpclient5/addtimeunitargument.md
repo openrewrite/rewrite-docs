@@ -13,11 +13,11 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.7.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.8.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-apache
-* version: 1.7.0
+* version: 1.8.0
 
 ## Options
 
@@ -42,7 +42,7 @@ recipeList:
       timeUnit: MILLISECONDS
 ```
 
-Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-apache:1.7.0 in your build file:
+Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-apache:1.8.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined, activate it 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.24.0")
+    id("org.openrewrite.rewrite") version("6.25.0")
 }
 
 rewrite {
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:1.7.0")
+    rewrite("org.openrewrite.recipe:rewrite-apache:1.8.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.41.0</version>
+        <version>5.42.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -90,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>1.7.0</version>
+            <version>1.8.0</version>
           </dependency>
         </dependencies>
       </plugin>
