@@ -32,3 +32,7 @@
 .navbar__logo img {
   height: 33px;
 }
+
+figure figcaption {
+  text-align: center;
+}
