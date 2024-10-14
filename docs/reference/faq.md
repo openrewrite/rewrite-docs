@@ -168,6 +168,20 @@ For instance, let's say you wanted to replace `int i = 5` with `int i = 5; i++;`
 
 After doing that, you would want to run a `doAfterVisit(new RemoveUnneededBlock.getVisitor())` to remove the unnecessary block again – giving you the desired result.
 
+## I'm seeing `LST contains missing or invalid type information` in my recipe unit tests. How to resolve?
+
+The unit test framework for recipes has additional checks beyond the visible code.
+One such check is to ensure all LST elements have valid type information, such that recipes can reliably be chained together.
+Any missing types would mean subsequent recipes can not match or modify the generated code.
+
+A common source of missing type information is when you use `JavaTemplate`, but fail to provide any `.classpath*(...)` or `.imports(...)`.
+These method calls are required to resolve types referenced in your code template, and serve as input to the generated class stub.
+Also note that transitive dependencies are _not_ resolved, so in deeper class hierarchies you might need to add multiple `.classpath*(...)` entries.
+
+The error message will indicate which types are missing; Using the debugger it should be possible to pinpoint the source of the issue.
+If for some reason you're unable to resolve the missing types issue, and are OK with a limited ability to chain recipes together,
+then you can disable the type validation through either `org.openrewrite.test.RecipeSpec.afterTypeValidationOptions` or `org.openrewrite.test.RecipeSpec.typeValidationOptions`.
+
 ## Is it possible to pass arguments to a recipe from the command line?
 
 This is a challenging problem for a couple of reasons:
