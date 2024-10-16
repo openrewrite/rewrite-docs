@@ -3,7 +3,7 @@ name: Check for unneeded recipe updates
 on:
   pull_request:
     paths:
-      - 'recipes/**/*.md'
+      - 'docs/recipes/**/*.md'
 
 jobs:
   check_updates:
