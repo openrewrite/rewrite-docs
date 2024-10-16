@@ -172,7 +172,7 @@ After doing that, you would want to run a `doAfterVisit(new RemoveUnneededBlock.
 
 The unit test framework for recipes has additional checks beyond the visible code.
 One such check is to ensure all LST elements have valid type information, such that recipes can reliably be chained together.
-Any missing types would mean subsequent recipes can not match or modify the generated code.
+Any missing types would mean subsequent recipes can't match or modify the generated code.
 
 A common source of missing type information is when you use `JavaTemplate`, but fail to provide any `.classpath*(...)` or `.imports(...)`.
 These method calls are required to resolve types referenced in your code template, and serve as input to the generated class stub.
