@@ -148,8 +148,8 @@ const config: Config = {
           title: "Moderne",
           items: [
             {
-              label: "Moderne.io",
-              href: "https://moderne.io",
+              label: "Moderne.ai",
+              href: "https://moderne.ai",
             },
             {
               label: "Marketplace",
