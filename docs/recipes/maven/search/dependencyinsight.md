@@ -13,11 +13,11 @@ _Find direct and transitive dependencies matching a group, artifact, and scope. 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.37.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.38.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.37.1
+* version: 8.38.0
 
 ## Options
 
@@ -62,7 +62,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined, activate it in
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>

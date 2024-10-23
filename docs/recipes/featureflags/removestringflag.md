@@ -13,11 +13,11 @@ _Replace method invocations for feature key with value, and simplify constant if
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/RemoveStringFlag.java), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/0.8.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/RemoveStringFlag.java), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/0.9.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-feature-flags
-* version: 0.8.1
+* version: 0.9.0
 
 ## Options
 
@@ -44,7 +44,7 @@ recipeList:
       replacementValue: topic-456
 ```
 
-Now that `com.yourorg.RemoveStringFlagExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-feature-flags:0.8.1 in your build file:
+Now that `com.yourorg.RemoveStringFlagExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-feature-flags:0.9.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -52,7 +52,7 @@ Now that `com.yourorg.RemoveStringFlagExample` has been defined, activate it and
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -65,7 +65,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-feature-flags:0.8.1")
+    rewrite("org.openrewrite.recipe:rewrite-feature-flags:0.9.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -81,7 +81,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -92,7 +92,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-feature-flags</artifactId>
-            <version>0.8.1</version>
+            <version>0.9.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -171,4 +171,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), [Kavitha Kesavalu](mailto:kavitha.kesavalu@gmail.com)

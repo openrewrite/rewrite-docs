@@ -18,11 +18,11 @@ _Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gra
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/gradle.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.8.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/gradle.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/2.8.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-github-actions
-* version: 2.8.1
+* version: 2.8.2
 
 
 ## Definition
@@ -59,7 +59,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-github-actions:2.8.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-github-actions:2.8.2` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -67,7 +67,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -80,7 +80,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.8.1")
+    rewrite("org.openrewrite.recipe:rewrite-github-actions:2.8.2")
 }
 ```
 
@@ -96,12 +96,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.25.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-github-actions:2.8.1")
+        rewrite("org.openrewrite.recipe:rewrite-github-actions:2.8.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.github.gradle.RenameGradleBuildActionToSetupGradle")

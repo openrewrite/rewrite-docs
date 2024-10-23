@@ -9,15 +9,15 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.OrderImports**
 
-_Groups and orders import statements. If a [style has been defined](https://docs.openrewrite.org/concepts-explanations/styles), this recipe will order the imports according to that style. If no style is detected, this recipe will default to ordering imports in the same way that IntelliJ IDEA does._
+_Groups and orders import statements. If a [style has been defined](https://docs.openrewrite.org/concepts-and-explanations/styles), this recipe will order the imports according to that style. If no style is detected, this recipe will default to ordering imports in the same way that IntelliJ IDEA does._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.37.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/OrderImports.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.38.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.37.1
+* version: 8.38.0
 
 ## Options
 
@@ -36,7 +36,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -99,7 +99,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -193,4 +193,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Mike Solomon](mailto:mike@moderne.io), [Marit van Dijk](mailto:mlvandijk@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), Tyler Van Gorder, [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Mike Solomon](mailto:mike@moderne.io), [Marit van Dijk](mailto:mlvandijk@gmail.com), [Knut Wannheden](mailto:knut.wannheden@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)

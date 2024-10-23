@@ -13,11 +13,11 @@ _Change a given type to another._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.37.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.38.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.37.1
+* version: 8.38.0
 
 ## Options
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.ChangeTypeExample` has been defined, activate it in your b
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -75,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>

@@ -13,11 +13,11 @@ _Install a CircleCI [orb](https://circleci.com/docs/2.0/orb-intro/) if it is not
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/InstallOrb.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/2.7.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/InstallOrb.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/2.7.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-circleci
-* version: 2.7.1
+* version: 2.7.2
 
 ## Options
 
@@ -42,7 +42,7 @@ recipeList:
       slug: circleci/kubernetes@0.11.0
 ```
 
-Now that `com.yourorg.InstallOrbExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:2.7.1 in your build file:
+Now that `com.yourorg.InstallOrbExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:2.7.2 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.InstallOrbExample` has been defined, activate it and take 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-circleci:2.7.1")
+    rewrite("org.openrewrite.recipe:rewrite-circleci:2.7.2")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -90,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-circleci</artifactId>
-            <version>2.7.1</version>
+            <version>2.7.2</version>
           </dependency>
         </dependencies>
       </plugin>

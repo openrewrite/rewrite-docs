@@ -13,11 +13,11 @@ _Use TLS for AMQP connection strings._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/amqp/UseTlsAmqpConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/amqp/UseTlsAmqpConnectionString.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.22.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.21.0
+* version: 5.22.0
 
 ## Options
 
@@ -48,7 +48,7 @@ recipeList:
       pathExpressions: **/application.yml
 ```
 
-Now that `com.yourorg.UseTlsAmqpConnectionStringExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.21.0 in your build file:
+Now that `com.yourorg.UseTlsAmqpConnectionStringExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.22.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -56,7 +56,7 @@ Now that `com.yourorg.UseTlsAmqpConnectionStringExample` has been defined, activ
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.21.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.22.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -85,7 +85,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -96,7 +96,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.21.0</version>
+            <version>5.22.0</version>
           </dependency>
         </dependencies>
       </plugin>

@@ -3,6 +3,7 @@
 ## Categories
 
 * [Cleanup](/recipes/maven/cleanup)
+* [Liberty](/recipes/maven/liberty)
 * [Search](/recipes/maven/search)
 * [Security](/recipes/maven/security)
 * [Spring](/recipes/maven/spring)

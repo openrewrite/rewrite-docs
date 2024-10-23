@@ -13,11 +13,11 @@ _Find Maven parents matching a `groupId` and `artifactId`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/ParentPomInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.37.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/ParentPomInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.38.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.37.1
+* version: 8.38.0
 
 ## Options
 
@@ -26,6 +26,7 @@ _Find Maven parents matching a `groupId` and `artifactId`._
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. | `org.springframework.boot` |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. | `spring-boot-starter-*` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
+| `Boolean` | recursive | *Optional*. Whether to search recursively through the parents. True by default. |  |
 
 
 ## Usage
@@ -58,7 +59,7 @@ Now that `com.yourorg.ParentPomInsightExample` has been defined, activate it in 
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -154,4 +155,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io), [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

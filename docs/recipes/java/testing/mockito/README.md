@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Call to Mockito method "verify", "when" or "given" should be simplified](./simplifymockitoverifywhengiven.md)
 * [Cleanup Mockito imports](./cleanupmockitoimports.md)
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](./mockitojunitrunnersilenttoextension.md)
 * [Replace Mockito 1.x `anyString()` with `nullable(String.class)`](./anystringtonullable.md)

@@ -13,11 +13,11 @@ _Recipes to upgrade to Android SDK version 34._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/resources/META-INF/rewrite/android-sdk-34.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/0.1.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/resources/META-INF/rewrite/android-sdk-34.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/0.2.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-android
-* version: 0.1.1
+* version: 0.2.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -28,6 +28,10 @@ This recipe is composed of more than one recipe. If you want to customize the se
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Upgrade to Android SDK 33](../android/upgradetoandroidsdk33)
+* [Migrate to Android Gradle Plugin 8.1](../android/migratetoandroidgradleplugin_8_1)
+* [Upgrade Android Gradle Plugin (AGP) version](../android/upgradeandroidgradlepluginversion)
+  * agpVersion: `[8.1.1, 8.2)`
+  * gradleWrapperVersion: `[8.0, 9)`
 * [Change Android SDK version](../android/changeandroidsdkversion)
   * version: `34`
 
@@ -43,6 +47,10 @@ displayName: Upgrade to Android SDK 34
 description: Recipes to upgrade to Android SDK version 34.
 recipeList:
   - org.openrewrite.android.UpgradeToAndroidSDK33
+  - org.openrewrite.android.MigrateToAndroidGradlePlugin_8_1
+  - org.openrewrite.android.UpgradeAndroidGradlePluginVersion:
+      agpVersion: [8.1.1, 8.2)
+      gradleWrapperVersion: [8.0, 9)
   - org.openrewrite.android.ChangeAndroidSdkVersion:
       version: 34
 
@@ -52,7 +60,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-android:0.1.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-android:0.2.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -60,7 +68,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -73,7 +81,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-android:0.1.1")
+    rewrite("org.openrewrite.recipe:rewrite-android:0.2.0")
 }
 ```
 
@@ -89,12 +97,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.25.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-android:0.1.1")
+        rewrite("org.openrewrite.recipe:rewrite-android:0.2.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.android.UpgradeToAndroidSDK34")
@@ -128,7 +136,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -139,7 +147,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-android</artifactId>
-            <version>0.1.1</version>
+            <version>0.2.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -227,4 +235,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io)
+[Tim te Beek](mailto:tim@moderne.io), [Jan-Jelle Kester](mailto:janjelle@jjkester.nl)

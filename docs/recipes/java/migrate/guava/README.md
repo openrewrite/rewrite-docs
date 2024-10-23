@@ -25,7 +25,8 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [`Preconditions.checkNotNull` to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnulltoobjectsrequirenonnullrecipe.md)
-* [`Preconditions.checkNotNull` with message to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullrecipe.md)
+* [`Preconditions.checkNotNull` with `Object` message to `Objects.requireNonNull` with `String.valueOf`](./noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullmessagetypeobjectrecipe.md)
+* [`Preconditions.checkNotNull` with `String` message to `Objects.requireNonNull`](./noguavarefasterrecipes$preconditionschecknotnullwithmessagetoobjectsrequirenonnullrecipe.md)
 * [Prefer `Arrays.asList(..)` over Guava primitives](./noguavaprimitiveaslist.md)
 * [Prefer `Files#createTempDirectory()`](./noguavacreatetempdir.md)
 * [Prefer `Integer#compare`](./preferintegercompare.md)
@@ -60,6 +61,5 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `new TreeMap<>()`](./noguavamapsnewtreemap.md)
 * [Remove `com.google.common.base.Optional#toJavaUtil()`](./noguavaoptionaltojavautil.md)
 * [Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument](./noguavaoptionalfromjavautil.md)
-* [`String.valueof(String)` to `String`](./noguavarefasterrecipes$stringvalueofstringrecipe.md)
 
 

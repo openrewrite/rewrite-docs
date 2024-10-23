@@ -2,6 +2,6 @@
 
 ## Categories
 
-* [Updates](/recipes/org/apache/camel/updates)
+* [Upgrade](/recipes/org/apache/camel/upgrade)
 
 

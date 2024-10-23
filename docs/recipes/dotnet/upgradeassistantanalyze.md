@@ -9,15 +9,15 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.dotnet.UpgradeAssistantAnalyze**
 
-_Run [upgrade-assistant analyze](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to analyze changes required to upgrade projects to a newer version of .NET.This recipe will generate an `org.openrewrite.dotnet.UpgradeAssistantAnalysis` data table containing the report details._
+_Run [upgrade-assistant analyze](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to analyze changes required to upgrade projects to a newer version of .NET. This recipe will generate an `org.openrewrite.dotnet.UpgradeAssistantAnalysis` data table containing the report details._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/java/org/openrewrite/dotnet/UpgradeAssistantAnalyze.java), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/0.3.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/java/org/openrewrite/dotnet/UpgradeAssistantAnalyze.java), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/0.3.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-dotnet
-* version: 0.3.1
+* version: 0.3.2
 
 ## Options
 
@@ -42,7 +42,7 @@ recipeList:
       privacyMode: Restricted
 ```
 
-Now that `com.yourorg.UpgradeAssistantAnalyzeExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-dotnet:0.3.1 in your build file:
+Now that `com.yourorg.UpgradeAssistantAnalyzeExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-dotnet:0.3.2 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.UpgradeAssistantAnalyzeExample` has been defined, activate
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-dotnet:0.3.1")
+    rewrite("org.openrewrite.recipe:rewrite-dotnet:0.3.2")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -90,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-dotnet</artifactId>
-            <version>0.3.1</version>
+            <version>0.3.2</version>
           </dependency>
         </dependencies>
       </plugin>

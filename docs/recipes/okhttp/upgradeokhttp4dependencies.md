@@ -13,11 +13,11 @@ _Migrate OkHttp dependencies to 4.x._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okhttp-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/0.4.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okhttp-4.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/0.4.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-okhttp
-* version: 0.4.1
+* version: 0.4.2
 
 
 ## Definition
@@ -51,7 +51,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-okhttp:0.4.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-okhttp:0.4.2` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -59,7 +59,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -72,7 +72,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-okhttp:0.4.1")
+    rewrite("org.openrewrite.recipe:rewrite-okhttp:0.4.2")
 }
 ```
 
@@ -88,12 +88,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.25.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-okhttp:0.4.1")
+        rewrite("org.openrewrite.recipe:rewrite-okhttp:0.4.2")
     }
     rewrite {
         activeRecipe("org.openrewrite.okhttp.UpgradeOkHttp4Dependencies")
@@ -127,7 +127,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -138,7 +138,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-okhttp</artifactId>
-            <version>0.4.1</version>
+            <version>0.4.2</version>
           </dependency>
         </dependencies>
       </plugin>

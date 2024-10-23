@@ -13,11 +13,11 @@ _Applies a codemod represented by an NPM package to all source files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ApplyCodemod.java), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/0.3.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ApplyCodemod.java), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/0.4.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-codemods
-* version: 0.3.1
+* version: 0.4.0
 
 ## Options
 
@@ -46,7 +46,7 @@ recipeList:
       codemodArgs: --force --jscodeshift='--parser=${parser}'
 ```
 
-Now that `com.yourorg.ApplyCodemodExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-codemods:0.3.1 in your build file:
+Now that `com.yourorg.ApplyCodemodExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-codemods:0.4.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -54,7 +54,7 @@ Now that `com.yourorg.ApplyCodemodExample` has been defined, activate it and tak
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.25.0")
+    id("org.openrewrite.rewrite") version("6.26.0")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-codemods:0.3.1")
+    rewrite("org.openrewrite.recipe:rewrite-codemods:0.4.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -83,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.42.0</version>
+        <version>5.43.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -94,7 +94,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-codemods</artifactId>
-            <version>0.3.1</version>
+            <version>0.4.0</version>
           </dependency>
         </dependencies>
       </plugin>

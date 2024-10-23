@@ -4,7 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [AssertJ best practices](./assertj-best-practices.md)
+* [Assertj](./assertj-best-practices.md)
 * [Migrate JUnit asserts to AssertJ](./junittoassertj.md)
 * [Shorten AssertJ assertions](./simplifyassertjassertions.md)
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertions.md)

@@ -73,6 +73,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Rename CDI Extension to Jakarta](./javaxtojakartacdiextensions.md)
 * [Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`](./updateaddannotatedtypes.md)
 * [Update Jakarta EE Platform Dependencies to 10.0.0](./updatejakartaplatform10.md)
+* [Update Jakarta EE annotation Dependencies to 2.1.x.](./updatejakartaannotations2.md)
 * [Update `fireEvent()` and `createInjectionTarget()` calls](./updatebeanmanagermethods.md)
 * [Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`](./updategetrealpath.md)
 * [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)
