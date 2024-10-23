@@ -27,7 +27,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace context.{method}(*) with context.getCamelContextExtension().{method}(*)](../../../../../org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters)
+* [Replace context.method(*) with context.getCamelContextExtension().method(*)](../../../../../org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters)
 * [Replace 'camel.main.backlogTracing' with `camel.trace.enabled'](../../../../../org/apache/camel/upgrade/camel45/traceproperties)
 * [Renamed classes for elasticsearch,opensearch and spring regis](../../../../../org/apache/camel/upgrade/camel45/renamedclasses)
 
