@@ -30,6 +30,10 @@ static final class BigDecimalValueOf {
 ```
 
 
+### Tags
+
+* [RSPEC-S2111](https://sonarsource.github.io/rspec/#/rspec/S2111)
+
 ## Recipe source
 
 [GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.10.1/jar)
