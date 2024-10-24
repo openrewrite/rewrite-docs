@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy plugin docs to Pages
+name: Deploy OpenRewrite docs to Pages
 
 on:
   workflow_dispatch:
