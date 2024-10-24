@@ -27,10 +27,10 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate flyway credentials](../../../java/spring/boot2/migratedatabasecredentials$migratedatabasecredentialsfortoolyaml)
-* [Migrate flyway credentials](../../../java/spring/boot2/migratedatabasecredentials$migratedatabasecredentialsfortoolproperties)
-* [Migrate liquibase credentials](../../../java/spring/boot2/migratedatabasecredentials$migratedatabasecredentialsfortoolyaml)
-* [Migrate liquibase credentials](../../../java/spring/boot2/migratedatabasecredentials$migratedatabasecredentialsfortoolproperties)
+* Migrate flyway credentials
+* Migrate flyway credentials
+* Migrate liquibase credentials
+* Migrate liquibase credentials
 
 </TabItem>
 

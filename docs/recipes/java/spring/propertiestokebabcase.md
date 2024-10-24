@@ -30,8 +30,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Normalize Spring `application*.{yml,yaml}` properties to kebab-case](../../java/spring/propertiestokebabcase$propertiestokebabcaseyaml)
-* [Normalize Spring `application*.properties` properties to kebab-case](../../java/spring/propertiestokebabcase$propertiestokebabcaseproperties)
+* Normalize Spring `application*.{yml,yaml}` properties to kebab-case
+* Normalize Spring `application*.properties` properties to kebab-case
 
 </TabItem>
 
