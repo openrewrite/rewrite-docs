@@ -1,4 +1,6 @@
 ---
+title: OpenRewrite by Moderne | Large Scale Automated Refactoring
+keywords: [OpenRewrite, Moderne, refactoring, Java, Spring Boot Migration, auto-remediation, SAST, SCA]
 description: Large-scale automated source code refactoring
 slug: /
 ---
