@@ -246,7 +246,7 @@ void countsMethods() {
 }
 ```
 
-If you'd like to see a more complex, real-world example, check out the [FinalizeLocalVariables](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/cleanup/FinalizeLocalVariables.java) recipe or read through our [multiple visitors doc](../authoring-recipes/multiple-visitors.md).
+If you'd like to see a more complex, real-world example, check out the [FinalizeLocalVariables](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/FinalizeLocalVariables.java) recipe or read through our [multiple visitors doc](../authoring-recipes/multiple-visitors.md).
 
 ## Chaining visitors
 

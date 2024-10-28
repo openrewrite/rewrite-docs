@@ -549,7 +549,7 @@ public class RenamePrivateFieldsToCamelCase extends Recipe {
 
 ### searchResult methods have been removed
 
-The deprecated [Markers#searchResult](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java#L171-L183) methods have been removed in favor of the [SearchResult#found](https://github.com/openrewrite/rewrite/blob/large-repositories/rewrite-core/src/main/java/org/openrewrite/marker/SearchResult.java#L43-L54) methods.
+The deprecated [Markers#searchResult](https://github.com/openrewrite/rewrite/blob/v7.40.8/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java#L171-L183) methods have been removed in favor of the [SearchResult#found](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/SearchResult.java) methods.
 
 **Example**:
 

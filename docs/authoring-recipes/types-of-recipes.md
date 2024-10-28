@@ -29,7 +29,7 @@ recipeList:
 ---
 ```
 
-Another good example that demonstrates how you can use a declarative recipe to define a complex migration recipe is the [ApacheHttpClient migration recipe](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml):
+Another good example that demonstrates how you can use a declarative recipe to define a complex migration recipe is the ApacheHttpClient migration recipe:
 
 ```yaml title="apache-httpclient-5.yml"
 ---
