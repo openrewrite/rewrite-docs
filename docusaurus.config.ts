@@ -82,6 +82,12 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    metadata: [
+      { 
+        name: 'keywords', 
+        content: 'auto-remediation, Java, migrate, Moderne, OpenRewrite, refactoring, SAST, SCA, Spring Boot Migration, security' 
+      },
+    ],
     navbar: {
       logo: {
         alt: "Moderne Logo",
