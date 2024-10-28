@@ -1,3 +1,8 @@
+---
+keywords: [OpenRewrite, Spring, Spring Boot Migration]
+description: Automatically migrate from Spring Boot 2.x to Spring Boot 3.x
+---
+
 import ReactPlayer from 'react-player';
 
 # Migrate to Spring Boot 3 from Spring Boot 2
