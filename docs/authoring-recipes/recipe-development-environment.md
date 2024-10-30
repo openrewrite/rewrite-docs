@@ -63,7 +63,7 @@ You can import the bill of materials into either Gradle or Maven and then includ
 ```groovy title="build.gradle"
 dependencies {
     // import Rewrite's bill of materials.
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
 
     // rewrite-java dependencies only necessary for Java Recipe development
     implementation("org.openrewrite:rewrite-java")
