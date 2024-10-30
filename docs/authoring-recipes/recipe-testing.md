@@ -41,7 +41,7 @@ plugins {
 
 // ...
 dependencies {
-    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
 
     testImplementation("org.openrewrite:rewrite-test")
     testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")

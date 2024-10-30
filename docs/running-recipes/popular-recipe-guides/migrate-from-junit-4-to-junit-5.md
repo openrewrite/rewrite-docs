@@ -27,7 +27,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
         rewrite("org.openrewrite.recipe:rewrite-spring")
     
         // Other project dependencies
@@ -89,7 +89,7 @@ If your project is _not_ a Spring or Spring-Boot project take a dependency on [r
     }
     
     dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
         rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
     
         // Other project dependencies

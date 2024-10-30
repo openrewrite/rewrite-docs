@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
     rewrite("org.openrewrite.recipe:rewrite-spring")
 }
 ```

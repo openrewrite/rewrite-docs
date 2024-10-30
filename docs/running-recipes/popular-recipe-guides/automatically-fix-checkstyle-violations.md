@@ -68,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest-release")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest.release")
 }
 ```
 
@@ -104,7 +104,7 @@ repositories {
 }
 
 dependencies {
-  rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest-release")
+  rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest.release")
 }
 ```
 
@@ -171,7 +171,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest-release")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:latest.release")
 }
 
 // In older versions of gradle, use tasks.get() instead of tasks.named()

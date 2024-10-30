@@ -102,7 +102,7 @@ No recipe is ever run on your codebase without being explicitly activated in the
 
 ```groovy title="build.gradle"
 dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
     rewrite("org.openrewrite.recipe:rewrite-spring")
 }
 ```
@@ -121,7 +121,7 @@ repositories {
 
 dependencies {
     testImplementation("junit:junit:4.13")
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
     rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
 }
 

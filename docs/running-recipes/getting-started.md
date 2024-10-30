@@ -402,7 +402,7 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
     }
 
     dependencies {
-      rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:latest-release')
+      rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:latest.release')
       rewrite('org.openrewrite.recipe:rewrite-spring')
 
       // Other project dependencies
@@ -426,7 +426,7 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
     }
 
     dependencies {
-      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest-release"))
+      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
       rewrite("org.openrewrite.recipe:rewrite-spring")
 
       // Other project dependencies
