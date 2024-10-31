@@ -44,7 +44,7 @@ findmissingtypes
 findparsefailures
 gitlab
 googlecode
-gpg
+GPG
 gpgsign
 gradlew
 guice
@@ -139,6 +139,7 @@ throwz
 thymeleaf
 timestamped
 TML
+toc
 TODOs
 TVP
 varargs
