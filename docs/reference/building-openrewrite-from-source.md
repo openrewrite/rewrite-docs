@@ -8,17 +8,16 @@ OpenRewrite requires several JDK versions to be installed on your system to acco
 If you wish to limit the JDKs required, follow the instructions in `IDE.properties.tmp` in the root of `openrewrite/rewrite`.
 
 :::danger
-If you are developing on a Mac M1 or M2 you must install the Java 1.8 JDK manually (for example using [SDKMAN!](https://sdkman.io/)), as there is no matching JDK available on Adoptium.
+If you are developing on a Mac with Apple silicon, you must install the Java 1.8 JDK manually (for example using [SDKMAN!](https://sdkman.io/)), as there is no matching JDK available on Adoptium.
 :::
 
 To compile and run tests, invoke `./gradlew build`. To publish a snapshot build to your maven local repository, run `./gradlew publishToMavenLocal`.
 
-:::info
-If some of your tests fail with a message like:
+<details>
 
-```bash
-java.lang.IllegalArgumentException: Invalid value: gpg.format=ssh
-```
+<summary>
+If some of your tests fail with an `IllegalArgumentException` about invalid GPG credentials:
+</summary>
 
 Please try running the following command in the `rewrite` directory to disable GPG signing for your commits:
 
@@ -27,13 +26,18 @@ git config commit.gpgsign false
 ```
 
 After this succeeds, please re-run the build. You should not longer see the error. This error is due to the fact that there are some tests that use the [JGit](https://projects.eclipse.org/projects/technology.jgit) library to run git commands, which at the time of writing does not support SSH-based signed commits. See [this bug](https://bugs.eclipse.org/bugs/show\_bug.cgi?id=581483) for more information.
-:::
+
+</details>
 
 ## Building within Secure/Isolated environments
 
 OpenRewrite typically accesses the Maven Central artifact repository to download necessary dependencies. If organizational security policy or network configuration forbids this, then you can use a Gradle [init script](https://docs.gradle.org/current/userguide/init\_scripts.html) to forcibly reconfigure the OpenRewrite build to use a different repository.
 
 Copy this script to a file named `init.gradle.kts` into the `/.gradle` directory. Modify the `enterpriseRepository` value as appropriate for your situation.
+
+<details>
+
+<summary>`init.gradle.kts`</summary>
 
 ```kotlin title="init.gradle.kts"
 import org.gradle.api.artifacts.repositories.MavenArtifactRepository
@@ -111,6 +115,8 @@ allprojects {
 
 ```
 
+</details>
+
 With this file placed, all of your Gradle builds will prefer to use your corporate repository instead of whatever repositories they would normally be configured with.
 
 ## Developing tips
@@ -153,6 +159,20 @@ If you need to reference internals of the compiler, please add an override to th
 
 ![](./assets/compilation-options.png)
 
+### Diff view when running tests
+
+When a test fails, it can often times be difficult to read what is wrong if you just look in the terminal. One trick with IntelliJ and testing is, after your tests are run, press `Command + D` or right-click on your test and select `View <testName> Difference`. That will open up a diff window that shows the expected and the actual result.
+
+<figure>
+  ![](./assets/diff-button.png)
+  <figcaption>_Right-click on a test to open up this modal._</figcaption>
+</figure>
+
+<figure>
+  ![](./assets/diff-view.png)
+  <figcaption>_What the diff view looks like._</figcaption>
+</figure>
+
 ### Optimizing your IDE for only modules you want to work on
 
 If you are only working on a subset of the modules in [openrewrite/rewrite](https://github.com/openrewrite/rewrite), you can optimize your IDE to only load those modules. To do so, create a new `IDE.properties` file if one doesn't exist in the base directory of the project. Then, copy the contents of [IDE.properties.tmp](https://github.com/openrewrite/rewrite/blob/main/IDE.properties.tmp) file to it. Next, comment out any lines that correspond to modules that you do not want to work on. This will cause Gradle to swap those project dependencies for binary dependencies resolved from either Maven local or the OSS snapshots repository – which will speed up your IDE.
@@ -166,4 +186,3 @@ git clone -c core.autocrlf=false https://github.com/openrewrite/rewrite.git
 ```
 
 Also, as mentioned in the [IntelliJ IDEA section](#intellij-idea-changes) above, please ensure that your system uses `UTF-8` for character encoding.
-

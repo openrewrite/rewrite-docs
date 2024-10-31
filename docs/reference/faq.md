@@ -1,9 +1,12 @@
 import ReactPlayer from 'react-player';
+import TOCInline from '@theme/TOCInline';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Frequently asked questions (FAQ)
+
+<TOCInline toc={toc} />
 
 ## Does OpenRewrite collect any data from our projects?
 
@@ -273,5 +276,3 @@ The specification is described in this [Maven mini guide on HTTP settings](https
 </settings>
 ```
 Note that the per HTTP method `<httpConfiguration>` format is not supported.
-
-## How can I remove 
