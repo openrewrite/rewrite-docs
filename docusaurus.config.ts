@@ -71,13 +71,13 @@ const config: Config = {
       apiKey: "14363fc8de10ed3d1785fe6d17a92631",
       indexName: "openrewrite",
     },
-    // announcementBar: {
-    //   id: "doc_release",
-    //   content:
-    //     "We are currently migrating where we host our docs. Because of this, search is temporarily unavailable.",
-    //   backgroundColor: "#555555",
-    //   textColor: "#E3F2FD",
-    // },
+    announcementBar: {
+      id: "code_remix",
+      content:
+        "Now announcing the inaugural <a href=\"https://coderemix.ai/\"><strong>Code Remix Summit</strong></a> – in Miami May 12th-14th. Use the code <strong>MODERNE3VIP</strong> for an additional $300 off.",
+      backgroundColor: "#555555",
+      textColor: "#E3F2FD",
+    },
     image: "img/moderne-poster-logo.svg",
     colorMode: {
       respectPrefersColorScheme: true,
