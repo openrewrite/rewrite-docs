@@ -46,7 +46,7 @@ assertTrue(condition);
 * If you want to jump right in and run recipes on some sample code, check out our [quickstart guide](/running-recipes/getting-started.md).
 * If you want to learn how to create your own recipes, start with the [Recipe Development Environment guide](authoring-recipes/recipe-development-environment.md) and then work through the [Writing a Java Refactoring Recipe guide](authoring-recipes/writing-a-java-refactoring-recipe.md).
 * If you have questions, join us in [Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA) or [Discord](https://discord.gg/xk3ZKrhWAb). We're happy to answer your questions directly.
-* Check out our [community office hours](https://docs.moderne.io/user-documentation/community-office-hours) where we dive deep into key topics and answer community questions.
+* Check out our [code remix weekly](https://docs.moderne.io/user-documentation/community-office-hours) where we dive deep into key topics and answer community questions.
 * Subscribe to our [YouTube channel](https://www.youtube.com/@Moderne-and-OpenRewrite) for great videos on OpenRewrite recipes.
 
 ## Refactoring at scale with Moderne
