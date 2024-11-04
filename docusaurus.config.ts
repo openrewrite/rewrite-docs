@@ -111,8 +111,8 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://stackoverflow.com/questions/tagged/openrewrite",
-          label: "Stack Overflow",
+          href: "https://docs.moderne.io",
+          label: "Moderne",
           position: "right",
         },
       ],
