@@ -57,11 +57,11 @@ def replace_tab(match):
     global tabs_replaced
 
     # Extract the title value (e.g., "Gradle (Kotlin)")
-    title = match.group(1)  
+    title = match.group(1)
 
     # Replace spaces with dashes and remove parenthesis
     value = title.lower().replace(" ", "-").replace("(", "").replace(")", "")
-    
+
     tabs_replaced = True
 
     return f'<TabItem value="{value}" label="{title}">\n'
@@ -70,7 +70,7 @@ def replace_tab(match):
 # and then adds it to the following ```language line
 def replace_code(match):
     # Extract the title value (e.g., "build.gradle.kts")
-    title = match.group(1)  
+    title = match.group(1)
 
     # Extract the language (e.g., "kotlin")
     language = match.group(2)
@@ -85,7 +85,7 @@ def replace_code(match):
 def replace_image(match):
     alt_text = match.group(1)
     image_path = match.group(3)
-    
+
     print(image_path)
 
     figure_block = (

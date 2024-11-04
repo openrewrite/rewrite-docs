@@ -5,7 +5,7 @@ file_path = '/Users/mikesol/Desktop/code/rewrite-docs/docs/changelog/8-34-0-Rele
 def remove_links_from_markdown(file_path):
     with open(file_path, 'r') as file:
         content = file.read()
-    
+
     # Regex to match inline Markdown links: [text](url)
     inline_link_regex = r'\[([^\]]+)\]\([^\)]+\)'
 
