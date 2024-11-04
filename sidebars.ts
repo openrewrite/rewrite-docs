@@ -214,6 +214,7 @@ const sidebars: SidebarsConfig = {
         'reference/dependency-version-selectors',
         'reference/framework-provided-markers',
         'reference/building-openrewrite-from-source',
+        'reference/community-recipes',
       ],
     },
     {
