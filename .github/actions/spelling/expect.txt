@@ -73,6 +73,7 @@ jre
 JRight
 jsonpathmatcher
 jsontype
+jspecify
 jvmargs
 Kenobi
 kotlin

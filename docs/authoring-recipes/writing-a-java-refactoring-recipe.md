@@ -56,8 +56,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
+import org.jspecify.annotations.NonNull;
 import org.openrewrite.*;
-import org.openrewrite.internal.lang.NonNull;
 
 // Making your recipe immutable helps make them idempotent and eliminates a variety of possible bugs.
 // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite.
@@ -99,8 +99,8 @@ package com.yourorg;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.jspecify.annotations.NonNull;
 import org.openrewrite.*;
-import org.openrewrite.internal.lang.NonNull;
 
 import java.util.Objects;
 
@@ -461,8 +461,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
+import org.jspecify.annotations.NonNull;
 import org.openrewrite.*;
-import org.openrewrite.internal.lang.NonNull;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
@@ -544,8 +544,8 @@ package com.yourorg;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
+import org.jspecify.annotations.NonNull;
 import org.openrewrite.*;
-import org.openrewrite.internal.lang.NonNull;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
