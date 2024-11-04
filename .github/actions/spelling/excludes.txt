@@ -87,6 +87,7 @@
 ^strip-links.py
 ^docusaurus.config.ts
 ^docs/reference/recipes-with-data-tables.md
+^docs/reference/community-recipes.md
 ^robots.txt
 ^CNAME
 ^src/
