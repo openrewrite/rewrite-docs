@@ -58,7 +58,7 @@ If your project is a Spring or Spring-Boot project, add a dependency on [rewrite
       </dependencies>
     </plugin>
   </plugins>
-<build>
+</build>
 ```
 
 </TabItem>
