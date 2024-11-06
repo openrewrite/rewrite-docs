@@ -65,6 +65,10 @@ const config: Config = {
     ],
   ],
 
+  future: {
+    experimental_faster: true,
+  },
+
   themeConfig: {
     algolia: {
       appId: "8XDBE5G3ZV",
@@ -90,9 +94,9 @@ const config: Config = {
     ],
     navbar: {
       logo: {
-        alt: "Moderne Logo",
+        alt: "OpenRewrite Logo",
         src: "img/logo.svg",
-        srcDark: "img/darkLogo.svg",
+        srcDark: "img/newlogo.svg",
       },
       items: [
         {
