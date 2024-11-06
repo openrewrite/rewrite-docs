@@ -78,8 +78,7 @@ const config: Config = {
     announcementBar: {
       id: "code_remix",
       content:
-        "Now announcing the inaugural <a href=\"https://coderemix.ai/\"><strong>Code Remix Summit</strong></a> – in Miami May 12th-14th. Use the code <strong>MODERNE3VIP</strong> for an additional $300 off.",
-      backgroundColor: "#555555",
+        'Now announcing the inaugural <a href="https://coderemix.ai/"><strong>Code Remix Summit</strong></a> – in Miami May 12th-14th. Use the code <strong>MODERNE3VIP</strong> for an additional $300 off.',
       textColor: "#E3F2FD",
     },
     image: "img/moderne-poster-logo.svg",
