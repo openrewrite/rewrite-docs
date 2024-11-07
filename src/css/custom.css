@@ -42,3 +42,8 @@ figure img {
 figure figcaption {
   text-align: center;
 }
+
+/* Zoomed image background */
+[data-rmiz-modal-content] {
+  background-color: black;
+}
