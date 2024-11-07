@@ -32,6 +32,7 @@ jobs:
         run: yarn build
         env:
           NODE_OPTIONS: --max-old-space-size=8192
+          DOCUSAURUS_IGNORE_SSG_WARNINGS: true
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
