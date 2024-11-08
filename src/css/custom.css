@@ -59,7 +59,7 @@ figure figcaption {
 /* Custom styles for mobile (screens smaller than 768px) */
 @media (max-width: 767px) {
   .navbar__logo {
-    width: 220px; /* Smaller logo for desktop */
+    width: 220px; /* Smaller logo for mobile */
     margin-right: 10px;
   }
 }
