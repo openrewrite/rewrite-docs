@@ -95,7 +95,7 @@ const config: Config = {
       logo: {
         alt: "OpenRewrite Logo",
         src: "img/logo.svg",
-        srcDark: "img/mobileLogo.svg",
+        srcDark: "img/darkLogo.svg",
       },
       items: [
         {

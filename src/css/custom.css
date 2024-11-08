@@ -47,3 +47,19 @@ figure figcaption {
 [data-rmiz-modal-content] {
   background-color: black;
 }
+
+/* Custom styles for desktop (screens wider than 768px) */
+@media (min-width: 768px) {
+  .navbar__logo {
+    width: 312px; /* Larger logo for desktop */
+    margin-right: 20px;
+  }
+}
+
+/* Custom styles for desktop (screens wider than 768px) */
+@media (max-width: 768px) {
+  .navbar__logo {
+    width: 220px; /* Smaller logo for desktop */
+    margin-right: 10px;
+  }
+}
