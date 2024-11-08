@@ -156,13 +156,9 @@ We don't have OpenRewrite recipes implemented for all publicly available policie
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CommonStaticAnalysis">
-    <img
-    src={require('/static/img/ModerneRecipeButton.png').default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CommonStaticAnalysis" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

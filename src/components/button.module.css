@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #2546F0;
+  padding: 30px;
+  gap: 15px;
+  margin: 16px 0;
+}
+
+.subContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heading {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #FBFDFF;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  background-color: #2546F0;
+  padding: 8px;
+  align-items: center;
+  border-radius: 6px;
+  color: #FBFDFF;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.link:hover {
+  background-color: #2546F080;
+  color: #FBFDFF;
+  text-decoration: none;
+}
