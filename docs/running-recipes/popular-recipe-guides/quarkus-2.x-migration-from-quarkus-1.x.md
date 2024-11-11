@@ -230,13 +230,9 @@ quarkus.neo4j.pool.metrics.enabled=true
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
