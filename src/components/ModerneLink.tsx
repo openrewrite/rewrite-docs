@@ -11,7 +11,7 @@ export default function RecipeCallout({children, link}) {
           Run this recipe on OSS repos at scale with the Moderne SaaS.
         </p>
         <div>
-          <a href={link} className={Styles.link}>
+          <a href={link} target='_blank' className={Styles.link}>
             Run this recipe here <ExternalSVG />
           </a>
         </div>
