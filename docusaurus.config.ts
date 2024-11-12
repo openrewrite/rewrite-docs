@@ -19,7 +19,7 @@ const globalVariables = {
 const config: Config = {
   title: "OpenRewrite Docs",
   tagline: "Large-scale automated source code refactoring",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.svg",
 
   url: "https://docs.openrewrite.org",
   baseUrl: "/",
