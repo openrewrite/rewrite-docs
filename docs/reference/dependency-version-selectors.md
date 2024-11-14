@@ -10,11 +10,12 @@ Maven dependency management recipes use the same artifact repositories your mave
 
 ### Latest release version
 
-The version selector `latest.release` can be specified to mean the most recent release (non-snapshot) version that can be found.
+The version selector `latest.release` can be specified to mean the most recent release (non-snapshot) version that can be found. The version selector `latest.patch` can be specified to mean the most recent patch version that can be found.
 
 | Version Selector | Available Versions           | Selected Version |
 | ---------------- | ---------------------------- | ---------------- |
 | `latest.release` | 1.0.0, 2.0.0, 3.0.0-SNAPSHOT | 2.0.0            |
+| `latest.patch`   | 1.0.0, 1.0.1, 1.0.2          | 1.0.2            |
 
 ### Hyphenated range
 
