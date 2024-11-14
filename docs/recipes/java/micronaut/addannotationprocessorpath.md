@@ -13,11 +13,11 @@ _Add the groupId, artifactId, version, and exclusions of a Maven annotation proc
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/AddAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/AddAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.12.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.11.0
+* version: 2.12.0
 
 ## Options
 
@@ -48,7 +48,7 @@ recipeList:
       exclusions: io.micronaut:micronaut-inject
 ```
 
-Now that `com.yourorg.AddAnnotationProcessorPathExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.11.0 in your build file:
+Now that `com.yourorg.AddAnnotationProcessorPathExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:2.12.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -56,12 +56,12 @@ Now that `com.yourorg.AddAnnotationProcessorPathExample` has been defined, activ
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.AddAnnotationProcessorPathExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -69,7 +69,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.11.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.12.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -85,7 +85,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -96,7 +96,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.11.0</version>
+            <version>2.12.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -118,13 +118,9 @@ mod run . --recipe AddAnnotationProcessorPathExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.java.micronaut.AddAnnotationProcessorPath">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.micronaut.AddAnnotationProcessorPath" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

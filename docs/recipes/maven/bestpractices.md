@@ -13,11 +13,11 @@ _Applies best practices to Maven POMs._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.38.0
+* version: 8.40.2
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -72,7 +72,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -109,13 +109,9 @@ mod run . --recipe BestPractices
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.maven.BestPractices">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.maven.BestPractices" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -166,4 +162,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), Patrick Way, [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Adriano Machado, [DidierLoiseau](mailto:didierloiseau+git@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), Ryan Hudson, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), rob-valor, [Kyle Scully](mailto:scullykns@gmail.com)
+[Geoffrey De Smet](mailto:gds.geoffrey.de.smet@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut.wannheden@mobi.ch), Patrick Way, [DidierLoiseau](mailto:didierloiseau+github@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), Adriano Machado, [DidierLoiseau](mailto:didierloiseau+git@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Scott Jungling](mailto:scott.jungling@gmail.com), Ryan Hudson, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), rob-valor, [Kyle Scully](mailto:scullykns@gmail.com)

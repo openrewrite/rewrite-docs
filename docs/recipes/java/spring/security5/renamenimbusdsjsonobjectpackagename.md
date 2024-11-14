@@ -18,11 +18,11 @@ _Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.js
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.22.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-security-58.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.23.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.22.0
+* version: 5.23.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -72,7 +72,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.22.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.23.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -80,12 +80,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -93,7 +93,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.22.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
 }
 ```
 
@@ -109,16 +109,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.22.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -148,7 +148,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -159,7 +159,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.22.0</version>
+            <version>5.23.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -190,13 +190,9 @@ mod run . --recipe RenameNimbusdsJsonObjectPackageName
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

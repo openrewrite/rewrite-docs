@@ -13,11 +13,11 @@ _Removes a single dependency from the dependencies section of the `build.gradle`
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.38.0
+* version: 8.40.2
 
 ## Options
 
@@ -51,12 +51,12 @@ Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it in 
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.RemoveDependencyExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -78,13 +78,9 @@ mod run . --recipe RemoveDependencyExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.gradle.RemoveDependency">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gradle.RemoveDependency" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -135,4 +131,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Tim te Beek](mailto:tim@moderne.io), Josh Soref
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Tim te Beek](mailto:tim@moderne.io), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)

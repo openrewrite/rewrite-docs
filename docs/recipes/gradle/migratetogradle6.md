@@ -13,11 +13,11 @@ _Migrate to version 6.x. See the Gradle upgrade guide from [version 5.x to 6.0](
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle-6.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle-6.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.38.0
+* version: 8.40.2
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -104,12 +104,12 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.gradle.MigrateToGradle6")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -138,7 +138,7 @@ rootProject {
     }
     rewrite {
         activeRecipe("org.openrewrite.gradle.MigrateToGradle6")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -169,13 +169,9 @@ mod run . --recipe MigrateToGradle6
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.gradle.MigrateToGradle6">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gradle.MigrateToGradle6" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -226,4 +222,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Ryan Walker](mailto:ryanwalker7@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Ryan Walker](mailto:ryanwalker7@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

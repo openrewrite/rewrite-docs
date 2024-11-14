@@ -18,6 +18,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add XML declaration to Jelly files](./addjellyxmldeclaration.md)
 * [Add or correct Jenkins plugins BOM](./addpluginsbom.md)
 * [Create `index.jelly` if it doesn't exist](./createindexjelly.md)
 * [Disables local file resolution for parent POM](./disablelocalresolutionforparentpom.md)

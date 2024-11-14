@@ -16,11 +16,11 @@ Very old Maven poms are no longer supported by current versions of Maven. This r
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ModernizeObsoletePoms.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ModernizeObsoletePoms.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.38.0
+* version: 8.40.2
 
 
 ## Usage
@@ -39,7 +39,7 @@ This recipe has no required configuration parameters and comes from a rewrite co
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -76,13 +76,9 @@ mod run . --recipe ModernizeObsoletePoms
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.maven.ModernizeObsoletePoms">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.maven.ModernizeObsoletePoms" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -133,4 +129,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io)
+[Sam Snyder](mailto:sam@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com)

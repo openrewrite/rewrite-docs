@@ -13,11 +13,11 @@ _Migrate from the Gradle Enterprise Gradle plugin to the Develocity Gradle plugi
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/MigrateGradleEnterpriseToDevelocity.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/MigrateGradleEnterpriseToDevelocity.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.38.0
+* version: 8.40.2
 
 ## Options
 
@@ -36,12 +36,12 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.gradle.plugins.MigrateGradleEnterpriseToDevelocity")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -70,7 +70,7 @@ rootProject {
     }
     rewrite {
         activeRecipe("org.openrewrite.gradle.plugins.MigrateGradleEnterpriseToDevelocity")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -101,13 +101,9 @@ mod run . --recipe MigrateGradleEnterpriseToDevelocity
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.gradle.plugins.MigrateGradleEnterpriseToDevelocity">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gradle.plugins.MigrateGradleEnterpriseToDevelocity" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

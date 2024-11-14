@@ -8,7 +8,9 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Migrate serialization annotation processor](./replaceserializationconfigannotationintrospector.md)
 * [Migrate to Jackson `@JsonInclude`](./jsonincludeannotation.md)
 * [Remove Codehaus Jackson annotations if doubly annotated](./removedoublyannotatedcodehausannotations.md)
+* [Transfer @JsonSerialize arguments from Codehaus to FasterXML](./transferjsonserializeargumentsfromcodehaustofasterxml.md)
 
 

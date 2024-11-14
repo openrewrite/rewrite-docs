@@ -17,53 +17,22 @@ For Maven project, removes a single dependency from the <dependencies> section o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.23.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.21.0
+* version: 1.23.0
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | groupId | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `com.fasterxml.jackson*` |
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `jackson-module*` |
+| `String` | unlessUsing | *Optional*. Do not remove if type is in use. Supports glob expressions. | `org.aspectj.lang.*` |
 | `String` | configuration | *Optional*. The dependency configuration to remove from. | `api` |
 | `String` | scope | *Optional*. Only remove dependencies if they are in this scope. If 'runtime', this willalso remove dependencies in the 'compile' scope because 'compile' dependencies are part of the runtime dependency set Valid options: `compile`, `test`, `runtime`, `provided` | `compile` |
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Remove a Gradle dependency](../../gradle/removedependency)
-* [Remove Maven dependency](../../maven/removedependency)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.dependencies.RemoveDependency
-displayName: Remove a Gradle or Maven dependency
-description: For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. – For Maven project, removes a single dependency from the <dependencies> section of the pom.xml.
-
-
-
-
-recipeList:
-  - org.openrewrite.gradle.RemoveDependency
-  - org.openrewrite.maven.RemoveDependency
-
-```
-</TabItem>
-</Tabs>
 
 ## Usage
 
@@ -78,11 +47,12 @@ recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: com.fasterxml.jackson*
       artifactId: jackson-module*
+      unlessUsing: org.aspectj.lang.*
       configuration: api
       scope: compile
 ```
 
-Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.21.0 in your build file:
+Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.23.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -90,12 +60,12 @@ Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it and
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.RemoveDependencyExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -103,7 +73,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.21.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.23.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -119,7 +89,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -130,7 +100,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.21.0</version>
+            <version>1.23.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -152,13 +122,9 @@ mod run . --recipe RemoveDependencyExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.java.dependencies.RemoveDependency">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.dependencies.RemoveDependency" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -207,6 +173,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Contributors
-[Kun Li](mailto:kun@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

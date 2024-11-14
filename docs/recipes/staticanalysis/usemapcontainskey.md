@@ -13,11 +13,11 @@ _`map.keySet().contains(a)` can be simplified to `map.containsKey(a)`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/java-best-practices.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.19.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/java-best-practices.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.20.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.19.0
+* version: 1.20.0
 
 
 ## Definition
@@ -49,7 +49,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.19.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis:1.20.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -57,12 +57,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.staticanalysis.UseMapContainsKey")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -70,7 +70,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.19.0")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.20.0")
 }
 ```
 
@@ -86,16 +86,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.19.0")
+        rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.20.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.staticanalysis.UseMapContainsKey")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -125,7 +125,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -136,7 +136,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.19.0</version>
+            <version>1.20.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -167,13 +167,9 @@ mod run . --recipe UseMapContainsKey
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.UseMapContainsKey">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.UseMapContainsKey" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

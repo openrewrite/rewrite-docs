@@ -13,11 +13,11 @@ _Chain calls to builder methods that are on separate lines into one chain of bui
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.19.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.20.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.19.0
+* version: 1.20.0
 
 ## Options
 
@@ -43,7 +43,7 @@ recipeList:
       builderCreator: org.example.Buildable builder()
 ```
 
-Now that `com.yourorg.UseAsBuilderExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.19.0 in your build file:
+Now that `com.yourorg.UseAsBuilderExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.20.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -51,12 +51,12 @@ Now that `com.yourorg.UseAsBuilderExample` has been defined, activate it and tak
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.UseAsBuilderExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -64,7 +64,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.19.0")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.20.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -80,7 +80,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -91,7 +91,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.19.0</version>
+            <version>1.20.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -113,13 +113,9 @@ mod run . --recipe UseAsBuilderExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.UseAsBuilder">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.UseAsBuilder" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

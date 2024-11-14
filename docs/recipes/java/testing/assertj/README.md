@@ -4,7 +4,7 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Assertj](./assertj-best-practices.md)
+* [AssertJ best practices](./assertj-best-practices.md)
 * [Migrate JUnit asserts to AssertJ](./junittoassertj.md)
 * [Shorten AssertJ assertions](./simplifyassertjassertions.md)
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertions.md)
@@ -15,9 +15,10 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Adopt AssertJ Duration assertions](./adoptassertjdurationassertions.md)
 * [Collapse consecutive `assertThat` statements](./collapseconsecutiveassertthatstatements.md)
 * [JUnit AssertThrows to AssertJ exceptionType](./junitassertthrowstoassertexceptiontype.md)
-* [JUnit `assertArrayEquals` To AssertJ](./junitassertarrayequalstoassertthat.md)
+* [JUnit `assertArrayEquals` to assertJ](./junitassertarrayequalstoassertthat.md)
 * [JUnit `assertEquals` to AssertJ](./junitassertequalstoassertthat.md)
 * [JUnit `assertFalse` to AssertJ](./junitassertfalsetoassertthat.md)
+* [JUnit `assertInstanceOf` to AssertJ](./junitassertinstanceoftoassertthat.md)
 * [JUnit `assertNotEquals` to AssertJ](./junitassertnotequalstoassertthat.md)
 * [JUnit `assertNotNull` to AssertJ](./junitassertnotnulltoassertthat.md)
 * [JUnit `assertNull` to AssertJ](./junitassertnulltoassertthat.md)

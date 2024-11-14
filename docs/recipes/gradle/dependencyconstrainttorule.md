@@ -13,11 +13,11 @@ _Gradle [dependency constraints](https://docs.gradle.org/current/userguide/depen
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/DependencyConstraintToRule.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/DependencyConstraintToRule.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.38.0
+* version: 8.40.2
 
 
 ## Usage
@@ -30,12 +30,12 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.gradle.DependencyConstraintToRule")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -64,7 +64,7 @@ rootProject {
     }
     rewrite {
         activeRecipe("org.openrewrite.gradle.DependencyConstraintToRule")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -95,13 +95,9 @@ mod run . --recipe DependencyConstraintToRule
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.gradle.DependencyConstraintToRule">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gradle.DependencyConstraintToRule" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -152,4 +148,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

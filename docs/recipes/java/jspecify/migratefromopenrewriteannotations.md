@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to JSpecify"
+sidebar_label: "Migrate from OpenRewrite annotations to JSpecify"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to JSpecify
+# Migrate from OpenRewrite annotations to JSpecify
 
 **org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations**
 
@@ -13,11 +13,11 @@ _Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/resources/META-INF/rewrite/jspecify.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/resources/META-INF/rewrite/jspecify.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-core
-* version: 8.38.0
+* version: 8.40.2
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -58,7 +58,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations
-displayName: Migrate to JSpecify
+displayName: Migrate from OpenRewrite annotations to JSpecify
 description: Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify.
 recipeList:
   - org.openrewrite.staticanalysis.java.MoveFieldAnnotationToType:
@@ -98,12 +98,12 @@ This recipe has no required configuration parameters and comes from a rewrite co
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -132,7 +132,7 @@ rootProject {
     }
     rewrite {
         activeRecipe("org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -161,7 +161,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -198,13 +198,9 @@ mod run . --recipe MigrateFromOpenRewriteAnnotations
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

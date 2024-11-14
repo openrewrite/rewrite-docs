@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.assertj.JUnitToAssertj**
 
-_AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts assertions from `org.junit.jupiter.api.Assertions` to `org.assertj.core.api.Assertions`._
+_AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts assertions from `org.junit.jupiter.api.Assertions` to `org.assertj.core.api.Assertions`. Will convert JUnit 4 to JUnit Jupiter if necessary to match and modify assertions._
 
 ### Tags
 
@@ -18,11 +18,11 @@ _AssertJ provides a rich set of assertions, truly helpful error messages, improv
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/assertj.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.22.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-testing-frameworks
-* version: 2.21.0
+* version: 2.22.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -33,7 +33,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [JUnit Jupiter best practices](../../../java/testing/junit5/junit5bestpractices)
-* [JUnit `assertArrayEquals` To AssertJ](../../../java/testing/assertj/junitassertarrayequalstoassertthat)
+* [JUnit `assertArrayEquals` to assertJ](../../../java/testing/assertj/junitassertarrayequalstoassertthat)
 * [JUnit `assertEquals` to AssertJ](../../../java/testing/assertj/junitassertequalstoassertthat)
 * [JUnit `assertFalse` to AssertJ](../../../java/testing/assertj/junitassertfalsetoassertthat)
 * [JUnit `assertNotEquals` to AssertJ](../../../java/testing/assertj/junitassertnotequalstoassertthat)
@@ -43,6 +43,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [JUnit `assertTrue` to AssertJ](../../../java/testing/assertj/junitasserttruetoassertthat)
 * [JUnit fail to AssertJ](../../../java/testing/assertj/junitfailtoassertjfail)
 * [JUnit AssertThrows to AssertJ exceptionType](../../../java/testing/assertj/junitassertthrowstoassertexceptiontype)
+* [JUnit `assertInstanceOf` to AssertJ](../../../java/testing/assertj/junitassertinstanceoftoassertthat)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.assertj`
   * artifactId: `assertj-core`
@@ -60,7 +61,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.assertj.JUnitToAssertj
 displayName: Migrate JUnit asserts to AssertJ
-description: AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts assertions from `org.junit.jupiter.api.Assertions` to `org.assertj.core.api.Assertions`.
+description: AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts assertions from `org.junit.jupiter.api.Assertions` to `org.assertj.core.api.Assertions`. Will convert JUnit 4 to JUnit Jupiter if necessary to match and modify assertions.
 tags:
   - testing
   - assertj
@@ -76,6 +77,7 @@ recipeList:
   - org.openrewrite.java.testing.assertj.JUnitAssertTrueToAssertThat
   - org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail
   - org.openrewrite.java.testing.assertj.JUnitAssertThrowsToAssertExceptionType
+  - org.openrewrite.java.testing.assertj.JUnitAssertInstanceOfToAssertThat
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.assertj
       artifactId: assertj-core
@@ -90,7 +92,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.21.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.22.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -98,12 +100,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.java.testing.assertj.JUnitToAssertj")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -111,7 +113,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.21.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.22.0")
 }
 ```
 
@@ -127,16 +129,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.21.0")
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.22.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.testing.assertj.JUnitToAssertj")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -166,7 +168,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -177,7 +179,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.21.0</version>
+            <version>2.22.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -208,13 +210,9 @@ mod run . --recipe JUnitToAssertj
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.java.testing.assertj.JUnitToAssertj">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.assertj.JUnitToAssertj" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -265,4 +263,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Greg Adams](mailto:greg@moderne.io), Yeikel, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), Patrick Way, [Patrick](mailto:patway99@gmail.com), Adriano Machado, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Philippe GRANET](mailto:philippe.granet@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Jeroen Meijer](mailto:jjgmeijer@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), Ties van de Ven, [Tim te Beek](mailto:timtebeek@gmail.com), timo-abele, [Michael Keppler](mailto:bananeweizen@gmx.de), [Scott Jungling](mailto:scott.jungling@gmail.com)
+Yeikel, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Adams](mailto:greg@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), Patrick Way, [Patrick](mailto:patway99@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Adriano Machado, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), timo-abele, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), [Aaron Gershman](mailto:aegershman@gmail.com), Ties van de Ven, [Tim te Beek](mailto:timtebeek@gmail.com), [Philippe GRANET](mailto:philippe.granet@gmail.com), [Jeroen Meijer](mailto:jjgmeijer@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de)

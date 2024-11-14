@@ -21,11 +21,11 @@ Finds dependencies declared in `build.gradle` files. See the [reference](https:/
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-gradle
-* version: 8.38.0
+* version: 8.40.2
 
 ## Options
 
@@ -59,12 +59,12 @@ Now that `com.yourorg.FindDependencyExample` has been defined, activate it in yo
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.FindDependencyExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -86,13 +86,9 @@ mod run . --recipe FindDependencyExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.gradle.search.FindDependency">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gradle.search.FindDependency" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -15,6 +15,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [`@Bean` methods may not return `void`](./beanmethodreturnnull.md)
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](./migrateinstantiationawarebeanpostprocessoradapter.md)
 * [Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`](./migratehandlerinterceptor.md)
 * [Migrate `ResponseEntityExceptionHandler` from HttpStatus to HttpStatusCode](./migrateresponseentityexceptionhandlerhttpstatustohttpstatuscode.md)
@@ -22,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `ResponseStatusException#getStatus()` to `getStatusCode()`](./migrateresponsestatusexceptiongetstatuscodemethod.md)
 * [Migrate deprecated Spring Web UTF8 `MediaType` enums](./migrateutf8mediatypes.md)
 * [Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`](./httpcomponentsclienthttprequestfactoryreadtimeout.md)
+* [Remove `public` from `@Bean` methods](./beanmethodsnotpublic.md)
 * [Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`](./migratewebmvcconfigureradapter.md)
 * [Use `Environment#acceptsProfiles(Profiles)`](./environmentacceptsprofiles.md)
 * [Use `ObjectUtils#isEmpty(Object)`](./useobjectutilsisempty.md)

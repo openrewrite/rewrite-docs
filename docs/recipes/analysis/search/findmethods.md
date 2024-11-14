@@ -13,11 +13,11 @@ _Find method usages by pattern._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.11.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.12.2/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.11.2
+* version: 2.12.2
 
 ## Options
 
@@ -42,7 +42,7 @@ recipeList:
       methodPattern: java.util.List add(..)
 ```
 
-Now that `com.yourorg.FindMethodsExample` has been defined, activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.11.2 in your build file:
+Now that `com.yourorg.FindMethodsExample` has been defined, activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.12.2 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -50,12 +50,12 @@ Now that `com.yourorg.FindMethodsExample` has been defined, activate it and take
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.FindMethodsExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.11.2")
+    rewrite("org.openrewrite.meta:rewrite-analysis:2.12.2")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -90,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.11.2</version>
+            <version>2.12.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -112,13 +112,9 @@ mod run . --recipe FindMethodsExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.analysis.search.FindMethods">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.analysis.search.FindMethods" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -4,6 +4,7 @@ _Recipes to perform [Kubernetes](https://kubernetes.io/) hygiene and migration t
 
 ## Categories
 
+* [Migrate](/recipes/kubernetes/migrate)
 * [RBAC](/recipes/kubernetes/rbac)
 * [Resource](/recipes/kubernetes/resource)
 * [Search](/recipes/kubernetes/search)
@@ -18,6 +19,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add Kubernetes configuration](./addconfiguration.md)
+* [Change Kubernetes API version](./changeapiversion.md)
 * [Ensure CPU limits are set](./missingcpulimits.md)
 * [Ensure CPU request is set](./missingcpurequest.md)
 * [Ensure image pull policy is `Always`](./imagepullpolicyalways.md)

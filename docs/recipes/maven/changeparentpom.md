@@ -13,11 +13,11 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangeParentPom.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.38.0
+* version: 8.40.2
 
 ## Options
 
@@ -28,7 +28,7 @@ _Change the parent pom of a Maven pom.xml. Identifies the parent pom to be chang
 | `String` | oldArtifactId | The artifact ID of the maven parent pom to be changed away from. | `spring-boot-starter-parent` |
 | `String` | newArtifactId | *Optional*. The artifact ID of the new maven parent pom to be adopted. If this argument is omitted it defaults to the value of `oldArtifactId`. | `spring-boot-starter-parent` |
 | `String` | newVersion | An exact version number or node-style semver selector used to select the version number. | `29.X` |
-| `String` | oldRelativePath | *Optional*. The relativePath of the maven parent pom to be changed away from. | `../../pom.xml` |
+| `String` | oldRelativePath | *Optional*. The relativePath of the maven parent pom to be changed away from. Use an empty String to match `<relativePath />`, use `../pom.xml` to match the default value. | `../../pom.xml` |
 | `String` | newRelativePath | *Optional*. New relative path attribute for parent lookup. | `../pom.xml` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | allowVersionDowngrades | *Optional*. If the new parent has the same group/artifact, this flag can be used to only upgrade the version if the target version is newer than the current. |  |
@@ -69,7 +69,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined, activate it in y
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -95,13 +95,9 @@ mod run . --recipe ChangeParentPomExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.maven.ChangeParentPom">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.maven.ChangeParentPom" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -167,4 +163,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Valentin Delaye, Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+[Sam Snyder](mailto:sam@moderne.io), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [DidierLoiseau](mailto:didierloiseau+github@gmail.com), Valentin Delaye, Tyler Van Gorder, [Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)

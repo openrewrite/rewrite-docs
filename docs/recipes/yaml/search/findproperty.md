@@ -13,11 +13,11 @@ _Find YAML properties that match the specified `propertyKey`. Expects dot notati
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/search/FindProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.38.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/search/FindProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/8.40.2/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-yaml
-* version: 8.38.0
+* version: 8.40.2
 
 ## Options
 
@@ -25,6 +25,7 @@ _Find YAML properties that match the specified `propertyKey`. Expects dot notati
 | -- | -- | -- | -- |
 | `String` | propertyKey | The key to look for. Glob is supported. | `management.metrics.binders.*.enabled` |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |  |
+| `String` | propertyValue | *Optional*. If provided, only properties specified in propertyKey having this value will be found. Works only for scalar values | `false` |
 
 
 ## Usage
@@ -39,6 +40,7 @@ displayName: Find YAML properties example
 recipeList:
   - org.openrewrite.yaml.search.FindProperty:
       propertyKey: management.metrics.binders.*.enabled
+      propertyValue: false
 ```
 
 Now that `com.yourorg.FindPropertyExample` has been defined, activate it in your build file:
@@ -48,12 +50,12 @@ Now that `com.yourorg.FindPropertyExample` has been defined, activate it in your
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.FindPropertyExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -73,7 +75,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -99,13 +101,9 @@ mod run . --recipe FindPropertyExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.yaml.search.FindProperty">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.yaml.search.FindProperty" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -156,4 +154,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jonathan Schneider](mailto:jkschneider@gmail.com), Aaron Gershman, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Mike Solomon](mailto:mike@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Jonathan Schneider](mailto:jkschneider@gmail.com), [Harald Aamot](mailto:harald.aamot@sap.com), Aaron Gershman, [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Mike Solomon](mailto:mike@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

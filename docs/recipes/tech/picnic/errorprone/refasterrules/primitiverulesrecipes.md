@@ -13,11 +13,11 @@ _Refaster template recipes for `tech.picnic.errorprone.refasterrules.PrimitiveRu
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.10.1/jar)
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.11.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-third-party
-* version: 0.10.1
+* version: 0.11.1
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -40,13 +40,6 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Prefer `Long#hashCode(long)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longhashcoderecipe)
 * [Prefer `Float#hashCode(float)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floathashcoderecipe)
 * [Prefer `Double#hashCode(double)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doublehashcoderecipe)
-* [Prefer `Boolean#compare(boolean, boolean)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$booleancomparerecipe)
-* [Prefer `Character#compare(char, char)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$charactercomparerecipe)
-* [Prefer `Short#compare(short, short)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$shortcomparerecipe)
-* [Prefer `Integer#compare(int, int)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integercomparerecipe)
-* [Prefer `Long#compare(long, long)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longcomparerecipe)
-* [Prefer `Float#compare(float, float)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$floatcomparerecipe)
-* [Prefer `Double#compare(double, double)` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$doublecomparerecipe)
 * [Prefer `Character#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$characterbytesrecipe)
 * [Prefer `Short#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$shortbytesrecipe)
 * [Prefer `Integer#BYTES` over the Guava alternative](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerbytesrecipe)
@@ -59,6 +52,20 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Prefer an `Integer#signum(int)` comparison to -1 over less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integersignumisnegativerecipe)
 * [Prefer an `Long#signum(long)` comparison to 1 over less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longsignumispositiverecipe)
 * [Prefer an `Long#signum(long)` comparison to -1 over less clear alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longsignumisnegativerecipe)
+* [Prefer JDK's `Integer#compareUnsigned(int, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integercompareunsignedrecipe)
+* [Prefer JDK's `Long#compareUnsigned(long, long)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longcompareunsignedrecipe)
+* [Prefer JDK's `Integer#divideUnsigned(int, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerdivideunsignedrecipe)
+* [Prefer JDK's `Long#divideUnsigned(long, long)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longdivideunsignedrecipe)
+* [Prefer JDK's `Integer#remainderUnsigned(int, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerremainderunsignedrecipe)
+* [Prefer JDK's `Long#remainderUnsigned(long, long)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longremainderunsignedrecipe)
+* [Prefer JDK's `Integer#parseUnsignedInt(String)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintrecipe)
+* [Prefer JDK's `Long#parseUnsignedLong(String)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongrecipe)
+* [Prefer JDK's `Integer#parseUnsignedInt(String, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintwithradixrecipe)
+* [Prefer JDK's `Long#parseUnsignedLong(String, int)` over third-party alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongwithradixrecipe)
+* [Prefer JDK's `Integer#toUnsignedString(int)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringrecipe)
+* [Prefer JDK's `Long#toUnsignedString(long)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringrecipe)
+* [Prefer JDK's `Integer#toUnsignedString(int,int)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringwithradixrecipe)
+* [Prefer JDK's `Long#toUnsignedString(long,int)` over third-party or more verbose alternatives](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringwithradixrecipe)
 
 </TabItem>
 
@@ -84,13 +91,6 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongHashCodeRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatHashCodeRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleHashCodeRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$BooleanCompareRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterCompareRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortCompareRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerCompareRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatCompareRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleCompareRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerBytesRecipe
@@ -103,6 +103,20 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerSignumIsNegativeRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongSignumIsPositiveRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongSignumIsNegativeRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerCompareUnsignedRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareUnsignedRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerDivideUnsignedRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongDivideUnsignedRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerRemainderUnsignedRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongRemainderUnsignedRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerParseUnsignedIntRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongParseUnsignedLongRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerParseUnsignedIntWithRadixRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongParseUnsignedLongWithRadixRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringWithRadixRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringWithRadixRecipe
 
 ```
 </TabItem>
@@ -110,7 +124,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.10.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.11.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -118,12 +132,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -131,7 +145,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:0.10.1")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:0.11.1")
 }
 ```
 
@@ -147,16 +161,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:0.10.1")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:0.11.1")
     }
     rewrite {
         activeRecipe("tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -186,7 +200,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -197,7 +211,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>0.10.1</version>
+            <version>0.11.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -228,13 +242,9 @@ mod run . --recipe PrimitiveRulesRecipes
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

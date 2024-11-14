@@ -1,27 +1,27 @@
 ---
-sidebar_label: "Prefer Long#compare(long, long) over the Guava alternative"
+sidebar_label: "Prefer using Tags over other immutable collections"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Long#compare(long, long)` over the Guava alternative
+# Prefer using `Tags` over other immutable collections
 
-**tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe**
+**tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe**
 
 ```
 Recipe created for the following Refaster template:
 java
-static final class LongCompare {
+static final class TagsOf1 {
     
     @BeforeTemplate
-    int before(long a, long b) {
-        return Longs.compare(a, b);
+    ImmutableCollection<Tag> before(Tag tag) {
+        return Refaster.anyOf(ImmutableSet.of(tag), ImmutableList.of(tag));
     }
     
     @AfterTemplate
-    int after(long a, long b) {
-        return Long.compare(a, b);
+    Iterable<Tag> after(Tag tag) {
+        return Tags.of(tag);
     }
 }
 
@@ -31,16 +31,16 @@ static final class LongCompare {
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.10.1/jar)
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.11.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-third-party
-* version: 0.10.1
+* version: 0.11.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.10.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.11.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -48,12 +48,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
-    activeRecipe("tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe")
-    exportDatatables = true
+    activeRecipe("tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe")
+    setExportDatatables(true)
 }
 
 repositories {
@@ -61,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:0.10.1")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:0.11.1")
 }
 ```
 
@@ -77,16 +77,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:0.10.1")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:0.11.1")
     }
     rewrite {
-        activeRecipe("tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe")
-        exportDatatables = true
+        activeRecipe("tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe")
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -116,18 +116,18 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe</recipe>
+            <recipe>tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-third-party</artifactId>
-            <version>0.10.1</version>
+            <version>0.11.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -143,7 +143,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -151,20 +151,16 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe PrimitiveRulesRecipes$LongCompareRecipe
+mod run . --recipe MicrometerRulesRecipes$TagsOf1Recipe
 ```
 </TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareRecipe">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

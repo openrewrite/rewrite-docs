@@ -13,11 +13,11 @@ _Change `compileSdk`, `compileSdkVersion`, `targetSdk` and `targetSdkVersion` in
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/java/org/openrewrite/android/ChangeAndroidSdkVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/0.2.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/java/org/openrewrite/android/ChangeAndroidSdkVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/0.3.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-android
-* version: 0.2.0
+* version: 0.3.4
 
 ## Options
 
@@ -40,7 +40,7 @@ recipeList:
       version: 35
 ```
 
-Now that `com.yourorg.ChangeAndroidSdkVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-android:0.2.0 in your build file:
+Now that `com.yourorg.ChangeAndroidSdkVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-android:0.3.4 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -48,12 +48,12 @@ Now that `com.yourorg.ChangeAndroidSdkVersionExample` has been defined, activate
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.ChangeAndroidSdkVersionExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -61,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-android:0.2.0")
+    rewrite("org.openrewrite.recipe:rewrite-android:0.3.4")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -88,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-android</artifactId>
-            <version>0.2.0</version>
+            <version>0.3.4</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,13 +110,9 @@ mod run . --recipe ChangeAndroidSdkVersionExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.android.ChangeAndroidSdkVersion">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.android.ChangeAndroidSdkVersion" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

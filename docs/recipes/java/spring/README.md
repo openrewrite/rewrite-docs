@@ -34,7 +34,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Expand Spring YAML properties](./expandproperties.md)
 * [Remove `@RequestMapping` annotations](./norequestmappingannotation.md)
 * [Remove implicit web annotation names](./implicitwebannotationnames.md)
-* [Remove `public` from `@Bean` methods](./beanmethodsnotpublic.md)
 * [Remove the `@Autowired` annotation on inferred constructor](./noautowiredonconstructor.md)
 * [Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface](./norepoannotationonrepointerface.md)
 * [Rename bean](./renamebean.md)

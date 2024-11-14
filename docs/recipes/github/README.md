@@ -17,6 +17,7 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 * [Check for github-actions updates daily](./dependabotcheckforgithubactionsupdatesdaily.md)
 * [Check for github-actions updates weekly](./dependabotcheckforgithubactionsupdatesweekly.md)
 * [Find GitHub action secret references](./findgithubactionsecretreferences.md)
+* [Find jobs missing timeout](./findmissingtimeout.md)
 * [Remove all cron triggers](./removeallcrontriggers.md)
 * [Replace runners for a job](./replacerunners.md)
 * [Setup Java dependency caching](./setupjavacaching.md)

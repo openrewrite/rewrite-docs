@@ -1,46 +1,66 @@
 ---
-sidebar_label: "Prefer Short#compare(short, short) over the Guava alternative"
+sidebar_label: "Migrate to Kubernetes API v1.27"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `Short#compare(short, short)` over the Guava alternative
+# Migrate to Kubernetes API v1.27
 
-**tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortCompareRecipe**
+**org.openrewrite.kubernetes.migrate.MigrateToAPIv1\_27**
 
-```
-Recipe created for the following Refaster template:
-java
-static final class ShortCompare {
-    
-    @BeforeTemplate
-    int before(short a, short b) {
-        return Shorts.compare(a, b);
-    }
-    
-    @AfterTemplate
-    int after(short a, short b) {
-        return Short.compare(a, b);
-    }
-}
+_This recipe will apply changes commonly needed when migrating to Kubernetes API v1.27._
 
-.
-```
+### Tags
 
+* kubernetes
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortCompareRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.10.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/resources/META-INF/rewrite/deprecated-api-migrations.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.10.1/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: 0.10.1
+* artifactId: rewrite-kubernetes
+* version: 2.10.1
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Kubernetes API v1.26](../../kubernetes/migrate/migratetoapiv1_26)
+* [Change Kubernetes API version](../../kubernetes/changeapiversion)
+  * oldApiVersion: `storage.k8s.io/v1beta1`
+  * newApiVersion: `storage.k8s.io/v1`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.kubernetes.migrate.MigrateToAPIv1_27
+displayName: Migrate to Kubernetes API v1.27
+description: This recipe will apply changes commonly needed when migrating to Kubernetes API v1.27.
+tags:
+  - kubernetes
+recipeList:
+  - org.openrewrite.kubernetes.migrate.MigrateToAPIv1_26
+  - org.openrewrite.kubernetes.ChangeApiVersion:
+      oldApiVersion: storage.k8s.io/v1beta1
+      newApiVersion: storage.k8s.io/v1
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.10.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.10.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -48,12 +68,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
-    activeRecipe("tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortCompareRecipe")
-    exportDatatables = true
+    activeRecipe("org.openrewrite.kubernetes.migrate.MigrateToAPIv1_27")
+    setExportDatatables(true)
 }
 
 repositories {
@@ -61,7 +81,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-third-party:0.10.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.10.1")
 }
 ```
 
@@ -77,16 +97,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-third-party:0.10.1")
+        rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.10.1")
     }
     rewrite {
-        activeRecipe("tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortCompareRecipe")
-        exportDatatables = true
+        activeRecipe("org.openrewrite.kubernetes.migrate.MigrateToAPIv1_27")
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -116,18 +136,18 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortCompareRecipe</recipe>
+            <recipe>org.openrewrite.kubernetes.migrate.MigrateToAPIv1_27</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-third-party</artifactId>
-            <version>0.10.1</version>
+            <artifactId>rewrite-kubernetes</artifactId>
+            <version>2.10.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -143,7 +163,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortCompareRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:RELEASE -Drewrite.activeRecipes=org.openrewrite.kubernetes.migrate.MigrateToAPIv1_27 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -151,20 +171,16 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe PrimitiveRulesRecipes$ShortCompareRecipe
+mod run . --recipe MigrateToAPIv1_27
 ```
 </TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortCompareRecipe">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.kubernetes.migrate.MigrateToAPIv1_27" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -213,3 +229,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Tim te Beek](mailto:tim@moderne.io)

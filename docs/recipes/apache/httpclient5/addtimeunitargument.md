@@ -13,11 +13,11 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.8.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.8.2/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-apache
-* version: 1.8.1
+* version: 1.8.2
 
 ## Options
 
@@ -42,7 +42,7 @@ recipeList:
       timeUnit: MILLISECONDS
 ```
 
-Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-apache:1.8.1 in your build file:
+Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-apache:1.8.2 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -50,12 +50,12 @@ Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined, activate it 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.AddTimeUnitArgumentExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:1.8.1")
+    rewrite("org.openrewrite.recipe:rewrite-apache:1.8.2")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -90,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>1.8.1</version>
+            <version>1.8.2</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -112,13 +112,9 @@ mod run . --recipe AddTimeUnitArgumentExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.apache.httpclient5.AddTimeUnitArgument">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.apache.httpclient5.AddTimeUnitArgument" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -1,28 +1,46 @@
 ---
-sidebar_label: "Remove public from @Bean methods"
+sidebar_label: "Prefer String#lastIndexOf(String, int) over less efficient alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove `public` from `@Bean` methods
+# Prefer `String#lastIndexOf(String, int)` over less efficient alternatives
 
-**org.openrewrite.java.spring.BeanMethodsNotPublic**
+**tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe**
 
-_Remove public modifier from `@Bean` methods. They no longer have to be public visibility to be usable by Spring._
+```
+Recipe created for the following Refaster template:
+java
+static final class StringLastIndexOfStringWithIndex {
+    
+    @BeforeTemplate
+    int before(String string, String substring, int fromIndex) {
+        return string.substring(0, fromIndex).lastIndexOf(substring);
+    }
+    
+    @AfterTemplate
+    int after(String string, String substring, int fromIndex) {
+        return string.lastIndexOf(substring, fromIndex - 1);
+    }
+}
+
+.
+```
+
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/BeanMethodsNotPublic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.22.0/jar)
+[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/0.11.1/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: 5.22.0
+* artifactId: rewrite-third-party
+* version: 0.11.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.22.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party:0.11.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -30,12 +48,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.spring.BeanMethodsNotPublic")
-    exportDatatables = true
+    activeRecipe("tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe")
+    setExportDatatables(true)
 }
 
 repositories {
@@ -43,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.22.0")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:0.11.1")
 }
 ```
 
@@ -59,16 +77,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.22.0")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:0.11.1")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.spring.BeanMethodsNotPublic")
-        exportDatatables = true
+        activeRecipe("tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe")
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -98,18 +116,18 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.spring.BeanMethodsNotPublic</recipe>
+            <recipe>tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>5.22.0</version>
+            <artifactId>rewrite-third-party</artifactId>
+            <version>0.11.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -125,7 +143,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.BeanMethodsNotPublic -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -133,20 +151,16 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe BeanMethodsNotPublic
+mod run . --recipe StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe
 ```
 </TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.java.spring.BeanMethodsNotPublic">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -195,6 +209,3 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
-
-## Contributors
-[Jon Schneider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com)

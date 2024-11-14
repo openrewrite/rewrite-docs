@@ -13,16 +13,16 @@ _Convert API response codes to strings._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/ConvertApiResponseCodesToStrings.java), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.8.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/ConvertApiResponseCodesToStrings.java), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/0.9.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-openapi
-* version: 0.8.1
+* version: 0.9.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.8.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-openapi:0.9.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -30,12 +30,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-openapi:0.8.1")
+    rewrite("org.openrewrite.recipe:rewrite-openapi:0.9.1")
 }
 ```
 
@@ -59,16 +59,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-openapi:0.8.1")
+        rewrite("org.openrewrite.recipe:rewrite-openapi:0.9.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -98,7 +98,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -109,7 +109,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-openapi</artifactId>
-            <version>0.8.1</version>
+            <version>0.9.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -140,13 +140,9 @@ mod run . --recipe ConvertApiResponseCodesToStrings
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

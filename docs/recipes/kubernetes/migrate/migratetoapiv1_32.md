@@ -1,28 +1,66 @@
 ---
-sidebar_label: "Retain Mockito strictness WARN when switching to JUnit 5"
+sidebar_label: "Migrate to Kubernetes API v1.32"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Retain Mockito strictness `WARN` when switching to JUnit 5
+# Migrate to Kubernetes API v1.32
 
-**org.openrewrite.java.testing.mockito.RetainStrictnessWarn**
+**org.openrewrite.kubernetes.migrate.MigrateToAPIv1\_32**
 
-_Migrating from JUnit 4 to 5 [changes the default strictness](https://stackoverflow.com/a/53234137/53444) of the mocks from `WARN` to `STRICT_STUBS`. To prevent tests from failing we restore the original behavior by adding `@MockitoSettings(strictness = Strictness.WARN)`._
+_This recipe will apply changes commonly needed when migrating to Kubernetes API v1.32._
+
+### Tags
+
+* kubernetes
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/RetainStrictnessWarn.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.21.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/resources/META-INF/rewrite/deprecated-api-migrations.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.10.1/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-testing-frameworks
-* version: 2.21.0
+* artifactId: rewrite-kubernetes
+* version: 2.10.1
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Kubernetes API v1.29](../../kubernetes/migrate/migratetoapiv1_29)
+* [Change Kubernetes API version](../../kubernetes/changeapiversion)
+  * oldApiVersion: `flowcontrol.apiserver.k8s.io/v1beta3`
+  * newApiVersion: `flowcontrol.apiserver.k8s.io/v1`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.kubernetes.migrate.MigrateToAPIv1_32
+displayName: Migrate to Kubernetes API v1.32
+description: This recipe will apply changes commonly needed when migrating to Kubernetes API v1.32.
+tags:
+  - kubernetes
+recipeList:
+  - org.openrewrite.kubernetes.migrate.MigrateToAPIv1_29
+  - org.openrewrite.kubernetes.ChangeApiVersion:
+      oldApiVersion: flowcontrol.apiserver.k8s.io/v1beta3
+      newApiVersion: flowcontrol.apiserver.k8s.io/v1
+
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.21.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.10.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -30,12 +68,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.testing.mockito.RetainStrictnessWarn")
-    exportDatatables = true
+    activeRecipe("org.openrewrite.kubernetes.migrate.MigrateToAPIv1_32")
+    setExportDatatables(true)
 }
 
 repositories {
@@ -43,7 +81,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.21.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.10.1")
 }
 ```
 
@@ -59,16 +97,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.21.0")
+        rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.10.1")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.testing.mockito.RetainStrictnessWarn")
-        exportDatatables = true
+        activeRecipe("org.openrewrite.kubernetes.migrate.MigrateToAPIv1_32")
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -98,18 +136,18 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.testing.mockito.RetainStrictnessWarn</recipe>
+            <recipe>org.openrewrite.kubernetes.migrate.MigrateToAPIv1_32</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.21.0</version>
+            <artifactId>rewrite-kubernetes</artifactId>
+            <version>2.10.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -125,7 +163,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.mockito.RetainStrictnessWarn -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-kubernetes:RELEASE -Drewrite.activeRecipes=org.openrewrite.kubernetes.migrate.MigrateToAPIv1_32 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -133,20 +171,16 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RetainStrictnessWarn
+mod run . --recipe MigrateToAPIv1_32
 ```
 </TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.java.testing.mockito.RetainStrictnessWarn">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.kubernetes.migrate.MigrateToAPIv1_32" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -195,3 +229,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Tim te Beek](mailto:tim@moderne.io)

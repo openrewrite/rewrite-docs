@@ -13,11 +13,11 @@ _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/p
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/resources/META-INF/rewrite/dotnet.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/0.3.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/resources/META-INF/rewrite/dotnet.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/0.4.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-dotnet
-* version: 0.3.2
+* version: 0.4.1
 
 
 ## Definition
@@ -47,7 +47,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-dotnet:0.3.2` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-dotnet:0.4.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -55,12 +55,12 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("org.openrewrite.dotnet.MigrateToNet9")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -68,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-dotnet:0.3.2")
+    rewrite("org.openrewrite.recipe:rewrite-dotnet:0.4.1")
 }
 ```
 
@@ -84,16 +84,16 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.26.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-dotnet:0.3.2")
+        rewrite("org.openrewrite.recipe:rewrite-dotnet:0.4.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.dotnet.MigrateToNet9")
-        exportDatatables = true
+        setExportDatatables(true)
     }
     afterEvaluate {
         if (repositories.isEmpty()) {
@@ -123,7 +123,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -134,7 +134,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-dotnet</artifactId>
-            <version>0.3.2</version>
+            <version>0.4.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -165,13 +165,9 @@ mod run . --recipe MigrateToNet9
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.dotnet.MigrateToNet9">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.dotnet.MigrateToNet9" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

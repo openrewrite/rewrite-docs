@@ -13,11 +13,11 @@ _Cap resource values that exceed a specific maximum._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/CapResourceValueToMaximum.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.9.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/resource/CapResourceValueToMaximum.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.10.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.9.2
+* version: 2.10.1
 
 ## Options
 
@@ -46,7 +46,7 @@ recipeList:
       fileMatcher: '**/pod-*.yml'
 ```
 
-Now that `com.yourorg.CapResourceValueToMaximumExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.9.2 in your build file:
+Now that `com.yourorg.CapResourceValueToMaximumExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.10.1 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -54,12 +54,12 @@ Now that `com.yourorg.CapResourceValueToMaximumExample` has been defined, activa
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.CapResourceValueToMaximumExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.9.2")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.10.1")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -83,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -94,7 +94,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.9.2</version>
+            <version>2.10.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -116,13 +116,9 @@ mod run . --recipe CapResourceValueToMaximumExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.kubernetes.resource.CapResourceValueToMaximum">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.kubernetes.resource.CapResourceValueToMaximum" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

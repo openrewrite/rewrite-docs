@@ -83,12 +83,12 @@ Now that `com.yourorg.AddTemplateExample` has been defined, activate it and take
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.26.0")
+    id("org.openrewrite.rewrite") version("6.27.1")
 }
 
 rewrite {
     activeRecipe("com.yourorg.AddTemplateExample")
-    exportDatatables = true
+    setExportDatatables(true)
 }
 
 repositories {
@@ -112,7 +112,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.43.0</version>
+        <version>5.45.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -145,13 +145,9 @@ mod run . --recipe AddTemplateExample
 
 ## See how this recipe works across multiple open-source repositories
 
-<a href="https://app.moderne.io/recipes/org.openrewrite.gitlab.core.AddTemplate">
-    <img
-    src={require("/static/img/ModerneRecipeButton.png").default}
-    alt="Moderne Link Image"
-    width="50%"
-    />
-</a>
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gitlab.core.AddTemplate" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -10,6 +10,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 * [Jakarta](/recipes/java/migrate/jakarta)
 * [Javaee7](/recipes/java/migrate/javaee7)
 * [Javaee8](/recipes/java/migrate/javaee8)
+* [Joda](/recipes/java/migrate/joda)
 * [Lombok](/recipes/java/migrate/lombok)
 * [Maven](/recipes/java/migrate/maven)
 * [Metrics](/recipes/java/migrate/metrics)

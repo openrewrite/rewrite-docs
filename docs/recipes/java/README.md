@@ -46,6 +46,7 @@ _Basic building blocks for transforming Java code._
 * [Remove annotation](./removeannotation.md)
 * [Remove annotation attribute](./removeannotationattribute.md)
 * [Remove interface implementations](./removeimplements.md)
+* [Remove method invocations](./removemethodinvocations.md)
 * [Remove static import](./nostaticimport.md)
 * [Remove unused imports](./removeunusedimports.md)
 * [Rename package name](./changepackage.md)
