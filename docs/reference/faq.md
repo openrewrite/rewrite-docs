@@ -106,6 +106,12 @@ The Moderne CLI builds the LST artifacts for your repository in pieces if the re
 OpenRewrite needs to resolve the Maven POM file and its dependencies to build up the Lossless Semantic Tree (LST).
 If you're seeing this error, it's likely that OpenRewrite is having trouble resolving the POM file or its dependencies.
 The output will indicate with markers which `<!--~~(... Unable to download POM ...)~~>-->` which POM failed, and which repositories were tried.
+
+There's also a trio of recipes that we offer to help you troubleshoot which Maven repositories are selected, and in what order:
+1. [List effective Maven repositories](https://docs.openrewrite.org/recipes/maven/search/effectivemavenrepositories)
+2. [Dependency resolution diagnostic](https://docs.openrewrite.org/recipes/java/dependencies/dependencyresolutiondiagnostic)
+3. [Maven repository order](https://docs.openrewrite.org/recipes/maven/search/findrepositoryorder)
+
 Double check and adjust your dependency version, or add additional repository configuration or credentials, to resolve this issue.
 
 ## My recipe appears to hang when running. What's happening? Is there a progress report?
