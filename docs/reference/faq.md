@@ -282,3 +282,11 @@ The specification is described in this [Maven mini guide on HTTP settings](https
 </settings>
 ```
 Note that the per HTTP method `<httpConfiguration>` format is not supported.
+
+## What is the estimated time save log we are seeing? How is this value calculated?
+
+Time savings estimates provide you with a general idea of how much time was saved from running this recipe. [Every recipe defaults to saying that it saves 5 minutes per issue it found/fixed](https://github.com/openrewrite/rewrite/blob/f2b923248e2692a3d35bdff15285be256cfd69b6/rewrite-core/src/main/java/org/openrewrite/Recipe.java#L198-L203) - but recipe authors can override that with a more accurate estimate. Some recipes may have zero time saved whereas others may have significantly more.
+
+The assumption is that this time saved number represents how long it would take a developer to change the code, create a PR to review said change, and then merge/deploy it once it was reviewed. It _does not_ estimate how long it would take a developer to find this issue in the code (which, in some cases, can be quite a bit longer than making the change itself).
+
+[You can export data tables with those results per recipe](../running-recipes/data-tables.md).
