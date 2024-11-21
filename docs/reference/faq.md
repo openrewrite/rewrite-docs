@@ -104,6 +104,9 @@ The Moderne CLI builds the LST artifacts for your repository in pieces if the re
 ## I'm getting `Failed to parse or resolve the Maven POM file or one of its dependencies; We cannot reliably continue without this information.` when running OpenRewrite.
 
 OpenRewrite needs to resolve the Maven POM file and its dependencies to build up the Lossless Semantic Tree (LST).
+We parse parse the POM files of your project, your dependencies and any plugins to enrich our type information, and resolve any transitive dependencies.
+When POM files can not be found or parsed, we are not able to type attribute some elements of your code, and recipes will fail to match those elements.
+
 If you're seeing this error, it's likely that OpenRewrite is having trouble resolving the POM file or its dependencies.
 The output will indicate with markers which `<!--~~(... Unable to download POM ...)~~>-->` which POM failed, and which repositories were tried.
 
