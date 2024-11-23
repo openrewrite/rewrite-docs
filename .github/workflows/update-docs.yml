@@ -49,6 +49,6 @@ jobs:
       - name: Commit and push Maven dependency vulnerabilities to rewrite-java-dependencies
         working-directory: rewrite-docs
         run: |
-          export MSG=[Auto] Latest versions as of $(date +'%Y-%m-%dT%H%M')"
+          export MSG="[Auto] Latest versions as of $(date +'%Y-%m-%dT%H%M')"
           export DOC=docs/reference/latest-versions-of-every-openrewrite-module.md
           git diff-index --quiet HEAD ${DOC} || (git commit --message "${MSG}" ${DOC} && git push origin main)
