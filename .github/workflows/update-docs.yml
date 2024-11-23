@@ -1,0 +1,52 @@
+# Update the docs using the rewrite-recipe-markdown-generator
+name: Update docs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
+
+concurrency:
+  group: "update-docs"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Update docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # Shared setup
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+
+      # Run generator
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          repository: 'openrewrite/rewrite-recipe-markdown-generator'
+          path: 'rewrite-recipe-markdown-generator'
+      - name: Generate Markdown
+        run: ./gradlew ${{ env.GRADLE_SWITCHES }} latestVersionsMarkdown
+        working-directory: rewrite-recipe-markdown-generator
+
+      # Move generated markdown to docs/
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Move generated markdown to docs/
+        run: mv rewrite-recipe-markdown-generator/build/docs/latest-versions-of-every-openrewrite-module.md docs/reference/
+
+      # Commit and push changes
+      - name: configure-git-user
+        run: |
+          git config --global user.email "team@moderne.io"
+          git config --global user.name "team-moderne[bot]"
+      - name: Commit and push Maven dependency vulnerabilities to rewrite-java-dependencies
+        run: |
+          export MSG=[Auto] Latest versions as of $(date +'%Y-%m-%dT%H%M')"
+          export DOC=docs/reference/latest-versions-of-every-openrewrite-module.md
+          git diff-index --quiet HEAD ${DOC} || (git commit --message "${MSG}" ${DOC} && git push origin main)
