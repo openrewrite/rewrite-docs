@@ -39,7 +39,7 @@ jobs:
           fetch-depth: 0
           path: 'rewrite-docs'
       - name: Move generated markdown to docs/
-        run: mv rewrite-recipe-markdown-generator/build/docs/latest-versions-of-every-openrewrite-module.md rewrite-docs/docs/reference/
+        run: mv rewrite-recipe-markdown-generator/build/docs/latest-versions-of-every-openrewrite-module.md rewrite-docs/docs/reference/latest-versions-of-every-openrewrite-module.md
 
       # Commit and push changes
       - name: configure-git-user
