@@ -56,6 +56,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
+import org.jetbrains.annotations.TestOnly;
 import org.jspecify.annotations.NonNull;
 import org.openrewrite.*;
 
@@ -70,6 +71,11 @@ public class SayHelloRecipe extends Recipe {
             example = "com.yourorg.FooBar")
     @NonNull
     String fullyQualifiedClassName;
+
+    @TestOnly
+    public SayHelloRecipe() {
+        fullyQualifiedClassName = "";
+    }    
 
     // All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
     @JsonCreator
@@ -99,6 +105,7 @@ package com.yourorg;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.jetbrains.annotations.TestOnly;
 import org.jspecify.annotations.NonNull;
 import org.openrewrite.*;
 
@@ -134,6 +141,11 @@ public class SayHelloRecipe extends Recipe {
 
     public String getFullyQualifiedClassName() {
         return fullyQualifiedClassName;
+    }
+
+    @TestOnly
+    public SayHelloRecipe() {
+        fullyQualifiedClassName = "";
     }
 
     // All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
