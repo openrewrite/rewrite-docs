@@ -56,7 +56,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
-import org.jetbrains.annotations.TestOnly;
 import org.jspecify.annotations.NonNull;
 import org.openrewrite.*;
 
@@ -72,7 +71,6 @@ public class SayHelloRecipe extends Recipe {
     @NonNull
     String fullyQualifiedClassName;
 
-    @TestOnly
     public SayHelloRecipe() {
         fullyQualifiedClassName = "";
     }    
@@ -105,7 +103,6 @@ package com.yourorg;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.jetbrains.annotations.TestOnly;
 import org.jspecify.annotations.NonNull;
 import org.openrewrite.*;
 
@@ -143,7 +140,6 @@ public class SayHelloRecipe extends Recipe {
         return fullyQualifiedClassName;
     }
 
-    @TestOnly
     public SayHelloRecipe() {
         fullyQualifiedClassName = "";
     }
