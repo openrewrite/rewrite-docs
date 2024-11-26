@@ -71,6 +71,10 @@ public class SayHelloRecipe extends Recipe {
     @NonNull
     String fullyQualifiedClassName;
 
+    public SayHelloRecipe() {
+        fullyQualifiedClassName = "";
+    }    
+
     // All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
     @JsonCreator
     public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
@@ -134,6 +138,10 @@ public class SayHelloRecipe extends Recipe {
 
     public String getFullyQualifiedClassName() {
         return fullyQualifiedClassName;
+    }
+
+    public SayHelloRecipe() {
+        fullyQualifiedClassName = "";
     }
 
     // All recipes must be serializable. This is verified by RewriteTest.rewriteRun() in your tests.
