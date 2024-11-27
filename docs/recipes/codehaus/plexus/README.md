@@ -9,6 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Migrate from Plexus `AbstractLogEnabled` to SLF4J](./abstractlogenabledtoslf4j.md)
 * [Replace `FileUtils.deleteDirectory(File)` with JDK provided API](./plexusfileutilsrecipes$deletedirectoryfilerecipe.md)
 * [Replace `FileUtils.deleteDirectory(String)` with JDK provided API](./plexusfileutilsrecipes$deletedirectorystringrecipe.md)
 * [Replace `FileUtils.fileExists(String)` with JDK provided API](./plexusfileutilsrecipes$fileexistsstringrecipe.md)

@@ -13,11 +13,11 @@ _Upgrade the version of a plugin using Node Semver advanced range selectors, all
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.40.2/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradePluginVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.41.0/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.40.2
+* version: 8.41.0
 
 ## Options
 
@@ -62,7 +62,7 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined, activate it
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -78,10 +78,15 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined, activate it
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe UpgradePluginVersionExample
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite:rewrite-maven:8.41.0
 ```
 </TabItem>
 </Tabs>

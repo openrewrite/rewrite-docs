@@ -18,11 +18,11 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.23.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-25-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.23.0
+* version: 5.24.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -42,11 +42,17 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldPropertyKey: `spring.batch.initialize-schema`
   * newPropertyKey: `spring.batch.jdbc.initialize-schema`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.batch.initializer.enabled`
+  * newPropertyKey: `spring.batch.jdbc.initialize-schema`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.batch.schema`
   * newPropertyKey: `spring.batch.jdbc.schema`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.batch.table-prefix`
   * newPropertyKey: `spring.batch.jdbc.table-prefix`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.neo4j.username`
+  * newPropertyKey: `spring.neo4j.authentication.username`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.continue-on-error`
   * newPropertyKey: `spring.sql.init.continue-on-error`
@@ -83,6 +89,153 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.sql.init.enabled`
   * newPropertyKey: `spring.sql.init.mode`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.flyway.check-location`
+  * comment: `This property is deprecated: Locations can no longer be checked accurately due to changes in Flyway's location support.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.acquire-increment`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.acquisition-interval`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.acquisition-timeout`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.allow-local-transactions`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.apply-transaction-timeout`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.automatic-enlisting-enabled`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.cache-producers-consumers`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.class-name`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.defer-connection-release`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.disabled`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.driver-properties`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.ignore-recovery-failures`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.max-idle-time`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.max-pool-size`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.min-pool-size`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.password`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.share-transaction-connections`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.test-connections`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.two-pc-ordering-position`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.unique-name`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.use-tm-join`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.connectionfactory.user`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.acquire-increment`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.acquisition-interval`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.acquisition-timeout`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.allow-local-transactions`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.apply-transaction-timeout`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.automatic-enlisting-enabled`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.class-name`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.cursor-holdability`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.defer-connection-release`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.disabled`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.driver-properties`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.enable-jdbc4-connection-test`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.ignore-recovery-failures`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.isolation-level`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.local-auto-commit`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.login-timeout`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.max-idle-time`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.max-pool-size`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.min-pool-size`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.prepared-statement-cache-size`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.share-transaction-connections`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.test-query`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.two-pc-ordering-position`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.unique-name`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.datasource.use-tm-join`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jta.bitronix.properties.background-recovery-interval`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
 
 </TabItem>
 
@@ -108,11 +261,17 @@ recipeList:
       oldPropertyKey: spring.batch.initialize-schema
       newPropertyKey: spring.batch.jdbc.initialize-schema
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.batch.initializer.enabled
+      newPropertyKey: spring.batch.jdbc.initialize-schema
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.batch.schema
       newPropertyKey: spring.batch.jdbc.schema
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.batch.table-prefix
       newPropertyKey: spring.batch.jdbc.table-prefix
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.neo4j.username
+      newPropertyKey: spring.neo4j.authentication.username
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.datasource.continue-on-error
       newPropertyKey: spring.sql.init.continue-on-error
@@ -149,6 +308,153 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.sql.init.enabled
       newPropertyKey: spring.sql.init.mode
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.flyway.check-location
+      comment: This property is deprecated: Locations can no longer be checked accurately due to changes in Flyway's location support.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.acquire-increment
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.acquisition-interval
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.acquisition-timeout
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.allow-local-transactions
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.apply-transaction-timeout
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.automatic-enlisting-enabled
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.cache-producers-consumers
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.class-name
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.defer-connection-release
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.disabled
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.driver-properties
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.ignore-recovery-failures
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.max-idle-time
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.max-pool-size
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.min-pool-size
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.password
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.share-transaction-connections
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.test-connections
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.two-pc-ordering-position
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.unique-name
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.use-tm-join
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.connectionfactory.user
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.acquire-increment
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.acquisition-interval
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.acquisition-timeout
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.allow-local-transactions
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.apply-transaction-timeout
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.automatic-enlisting-enabled
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.class-name
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.cursor-holdability
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.defer-connection-release
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.disabled
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.driver-properties
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.enable-jdbc4-connection-test
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.ignore-recovery-failures
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.isolation-level
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.local-auto-commit
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.login-timeout
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.max-idle-time
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.max-pool-size
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.min-pool-size
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.prepared-statement-cache-size
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.share-transaction-connections
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.test-query
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.two-pc-ordering-position
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.unique-name
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.datasource.use-tm-join
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jta.bitronix.properties.background-recovery-interval
+      comment: This property is deprecated and will be removed in future Spring Boot versions
 
 ```
 </TabItem>
@@ -156,7 +462,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.23.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.24.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -164,7 +470,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -177,7 +483,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
 }
 ```
 
@@ -193,12 +499,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.SpringBootProperties_2_5")
@@ -232,7 +538,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -243,7 +549,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.23.0</version>
+            <version>5.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -264,10 +570,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe SpringBootProperties_2_5
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:5.24.0
 ```
 </TabItem>
 </Tabs>
@@ -327,4 +638,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)
+ashakirin, Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)

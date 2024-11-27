@@ -1,61 +1,28 @@
 ---
-sidebar_label: "Add Test Resources Client dependency if needed"
+sidebar_label: "Add micronaut-test-resources-client if needed"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add Test Resources Client dependency if needed
+# Add `micronaut-test-resources-client` if needed
 
 **org.openrewrite.java.micronaut.AddTestResourcesClientDependencyIfNeeded**
 
-_This recipe adds the Test Resources Client dependency to pom.xml if test.resources.client.enabled property is true._
+_Add the `micronaut-test-resources-client` dependency to pom.xml if `test.resources.client.enabled property=true`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/AddTestResourcesClientDependencyIfNeeded.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.12.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/AddTestResourcesClientDependencyIfNeeded.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/2.13.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-micronaut
-* version: 2.12.0
+* version: 2.13.0
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Add Maven dependency](../../maven/adddependency)
-  * groupId: `io.micronaut.testresources`
-  * artifactId: `micronaut-test-resources-client`
-  * version: `LATEST`
-  * scope: `provided`
-  * onlyIfUsing: `io.micronaut.runtime.Micronaut`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.micronaut.AddTestResourcesClientDependencyIfNeeded
-displayName: Add Test Resources Client dependency if needed
-description: This recipe adds the Test Resources Client dependency to pom.xml if test.resources.client.enabled property is true.
-recipeList:
-  - org.openrewrite.maven.AddDependency:
-      groupId: io.micronaut.testresources
-      artifactId: micronaut-test-resources-client
-      version: LATEST
-      scope: provided
-      onlyIfUsing: io.micronaut.runtime.Micronaut
-
-```
-</TabItem>
-</Tabs>
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.12.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-micronaut:2.13.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -63,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -76,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.12.0")
+    rewrite("org.openrewrite.recipe:rewrite-micronaut:2.13.0")
 }
 ```
 
@@ -92,12 +59,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-micronaut:2.12.0")
+        rewrite("org.openrewrite.recipe:rewrite-micronaut:2.13.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.micronaut.AddTestResourcesClientDependencyIfNeeded")
@@ -131,7 +98,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -142,7 +109,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-micronaut</artifactId>
-            <version>2.12.0</version>
+            <version>2.13.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -163,10 +130,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe AddTestResourcesClientDependencyIfNeeded
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:2.13.0
 ```
 </TabItem>
 </Tabs>
@@ -224,3 +196,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Jeremy Grelle](mailto:grellej@unityfoundation.io), [Tim te Beek](mailto:tim@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io)

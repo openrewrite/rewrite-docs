@@ -12,7 +12,6 @@ _Recipes to perform [Jenkins](https://www.jenkins.io/) plugin hygiene and migrat
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrate `javax.annotations` to SpotBugs annotations](./javaxannotationstospotbugs.md)
-* [Migrate to HtmlUnit 3.x](./upgradehtmlunit_3_3_0.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](./modernizeplugin.md)
 * [Modernize a Jenkins plugin to the latest versions supported by Java 8](./modernizepluginforjava8.md)
 

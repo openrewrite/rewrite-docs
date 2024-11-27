@@ -29,6 +29,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](./addlombokmapstructbinding.md)
 * [Add missing `isWrapperFor` and `unwrap` methods.](./jrewrapperinterface.md)
 * [Adds missing JDBC interface methods.](./jrejdbcinterfacenewmethods.md)
 * [Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`](./removedsubjectmethods.md)
@@ -61,6 +62,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add maven jar plugin to suppress illegal reflection warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
 * [Adds missing method implementations](./addmissingmethodimplementation.md)
 * [Behavior change to bean discovery in modules with `beans.xml` file with no version specified](./beandiscovery.md)
+* [Catch `TypeNotPresentException` thrown by `Class.getAnnotation()`](./arraystoreexceptiontotypenotpresentexception.md)
 * [Change `beans.xml` `schemaLocation` to match XML namespace](./beansxmlnamespace.md)
 * [Change `javax.tools.ToolProvider` methods calls to static](./removedtoolproviderconstructor.md)
 * [Change method invocation return type](./changemethodinvocationreturntype.md)
@@ -75,7 +77,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove `Thread.countStackFrames()` method](./deprecatedcountstackframesmethod.md)
 * [Remove explicit casts on `Arrays.asList(..).toArray()`](./castarraysaslisttolist.md)
 * [Remove illegal semicolons](./removeillegalsemicolons.md)
-* [Remove methods calls](./removemethodinvocation.md)
 * [Rename final method declarations `getSuppressed()` and `addSuppressed(Throwable exception)` in classes that extend `Throwable`](./jrethrowablefinalmethods.md)
 * [Replace AWT `getPeer()` method](./replaceawtgetpeermethod.md)
 * [Replace DTO method parameters with data elements](./dontoverfetchdto.md)

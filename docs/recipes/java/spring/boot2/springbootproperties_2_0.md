@@ -18,11 +18,11 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.23.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-20-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.23.0
+* version: 5.24.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -32,12 +32,6 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.main.show-banner`
-  * newPropertyKey: `spring.main.banner-mode`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.main.web-environment`
-  * newPropertyKey: `spring.main.web-application-type`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `banner.charset`
   * newPropertyKey: `spring.banner.charset`
@@ -59,27 +53,6 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `banner.location`
   * newPropertyKey: `spring.banner.location`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `security.filter-dispatcher-types`
-  * newPropertyKey: `spring.security.filter.dispatcher-types`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `security.filter-order`
-  * newPropertyKey: `spring.security.filter.order`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.data.cassandra.repositories.enabled`
-  * newPropertyKey: `spring.data.cassandra.repositories.type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.data.couchbase.repositories.enabled`
-  * newPropertyKey: `spring.data.couchbase.repositories.type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.data.mongodb.repositories.enabled`
-  * newPropertyKey: `spring.data.mongodb.repositories.type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.jta.bitronix.properties.background-recovery-interval`
-  * newPropertyKey: `spring.jta.bitronix.properties.background-recovery-interval-seconds`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.mvc.media-types`
-  * newPropertyKey: `spring.mvc.contentnegotiation.media-types`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `flyway.baseline-description`
   * newPropertyKey: `spring.flyway.baseline-description`
@@ -152,6 +125,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `flyway.validate-on-migrate`
   * newPropertyKey: `spring.flyway.validate-on-migrate`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `jolokia.config`
+  * newPropertyKey: `management.endpoint.jolokia.config`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `liquibase.change-log`
   * newPropertyKey: `spring.liquibase.change-log`
@@ -255,11 +231,26 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldPropertyKey: `spring.batch.initializer.enabled`
   * newPropertyKey: `spring.batch.initialize-schema`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.couchbase.env.endpoints.query`
+  * newPropertyKey: `spring.couchbase.env.endpoints.queryservice.max-endpoints`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.couchbase.env.endpoints.view`
+  * newPropertyKey: `spring.couchbase.env.endpoints.viewservice.max-endpoints`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.connect-timeout-millis`
   * newPropertyKey: `spring.data.cassandra.connect-timeout`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.read-timeout-millis`
   * newPropertyKey: `spring.data.cassandra.read-timeout`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.cassandra.repositories.enabled`
+  * newPropertyKey: `spring.data.cassandra.repositories.type`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.couchbase.repositories.enabled`
+  * newPropertyKey: `spring.data.couchbase.repositories.type`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.mongodb.repositories.enabled`
+  * newPropertyKey: `spring.data.mongodb.repositories.type`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.datasource.initialize`
   * newPropertyKey: `spring.datasource.initialization-mode`
@@ -288,8 +279,26 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldPropertyKey: `spring.http.multipart.resolve-lazily`
   * newPropertyKey: `spring.servlet.multipart.resolve-lazily`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jta.bitronix.properties.background-recovery-interval`
+  * newPropertyKey: `spring.jta.bitronix.properties.background-recovery-interval-seconds`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.main.show-banner`
+  * newPropertyKey: `spring.main.banner-mode`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.main.web-environment`
+  * newPropertyKey: `spring.main.web-application-type`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.messages.cache-seconds`
   * newPropertyKey: `spring.messages.cache-duration`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.metrics.export.statsd.host`
+  * newPropertyKey: `management.metrics.export.statsd.host`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.metrics.export.statsd.port`
+  * newPropertyKey: `management.metrics.export.statsd.port`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.mvc.media-types`
+  * newPropertyKey: `spring.mvc.contentnegotiation.media-types`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.redis.pool.max-active`
   * newPropertyKey: `spring.redis.jedis.pool.max-idle`
@@ -314,12 +323,6 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.thymeleaf.content-type`
   * newPropertyKey: `spring.thymeleaf.servlet.content-type`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.couchbase.env.endpoints.query`
-  * newPropertyKey: `spring.couchbase.env.endpoints.queryservice.max-endpoints`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.couchbase.env.endpoints.view`
-  * newPropertyKey: `spring.couchbase.env.endpoints.viewservice.max-endpoints`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `endpoints.auditevents.enabled`
   * newPropertyKey: `management.endpoint.auditevents.enabled`
@@ -465,17 +468,14 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldPropertyKey: `endpoints.shutdown.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.shutdown`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `endpoints.trace.filter.enabled`
-  * newPropertyKey: `management.trace.http.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `endpoints.trace.enabled`
   * newPropertyKey: `management.endpoint.httptrace.enabled`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `endpoints.trace.filter.enabled`
+  * newPropertyKey: `management.trace.http.enabled`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `endpoints.trace.path`
   * newPropertyKey: `management.endpoints.web.path-mapping.httptrace`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `jolokia.config`
-  * newPropertyKey: `management.endpoint.jolokia.config`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.add-application-context-header`
   * newPropertyKey: `management.server.add-application-context-header`
@@ -537,11 +537,344 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldPropertyKey: `management.trace.include`
   * newPropertyKey: `management.trace.http.include`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.metrics.export.statsd.host`
-  * newPropertyKey: `management.metrics.export.statsd.host`
+  * oldPropertyKey: `security.filter-dispatcher-types`
+  * newPropertyKey: `spring.security.filter.dispatcher-types`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.metrics.export.statsd.port`
-  * newPropertyKey: `management.metrics.export.statsd.port`
+  * oldPropertyKey: `security.filter-order`
+  * newPropertyKey: `spring.security.filter.order`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.actuator.enabled`
+  * comment: `This property is deprecated: The "actuator" endpoint is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.actuator.path`
+  * comment: `This property is deprecated: The "actuator" endpoint is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.actuator.sensitive`
+  * comment: `This property is deprecated: The "actuator" endpoint is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.auditevents.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.autoconfig.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.autoconfig.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.beans.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.beans.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.configprops.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.configprops.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.docs.curies.enabled`
+  * comment: `This property is deprecated: The "docs" endpoint is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.docs.enabled`
+  * comment: `This property is deprecated: The "docs" endpoint is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.docs.path`
+  * comment: `This property is deprecated: The "docs" endpoint is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.docs.sensitive`
+  * comment: `This property is deprecated: The "docs" endpoint is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.dump.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.dump.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.env.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.env.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.flyway.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.flyway.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.health.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.health.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.heapdump.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.hypermedia.enabled`
+  * comment: `This property is deprecated: Hypermedia support in the Actuator is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.info.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.info.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.jolokia.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.liquibase.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.liquibase.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.logfile.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.loggers.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.loggers.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.mappings.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.mappings.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.metrics.filter.counter-submissions`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.metrics.filter.enabled`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.metrics.filter.gauge-submissions`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.metrics.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.metrics.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.shutdown.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.shutdown.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.trace.id`
+  * comment: `This property is deprecated: Endpoint identifier is no longer customizable.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `endpoints.trace.sensitive`
+  * comment: `This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `flyway.init-description`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `flyway.init-on-migrate`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `flyway.init-version`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.health.couchbase.timeout`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.statsd.queue-size`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.security.enabled`
+  * comment: `This property is deprecated: A global security auto-configuration is now provided. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.security.roles`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.security.sessions`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.auth.jaas.domain`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.auth.key.path`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.auth.simple.user.name`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.auth.simple.user.password`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.auth.spring.roles`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.auth.type`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.command-path-patterns`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.command-refresh-interval`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.config-path-patterns`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.disabled-commands`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.disabled-plugins`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.ssh.auth-timeout`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.ssh.enabled`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.ssh.idle-timeout`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.ssh.key-path`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.ssh.port`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.telnet.enabled`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.shell.telnet.port`
+  * comment: `This property is deprecated: CRaSH support is no longer available.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.basic.authorize-mode`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.basic.enabled`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.basic.path`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.basic.realm`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.enable-csrf`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.headers.cache`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.headers.content-security-policy`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.headers.content-security-policy-mode`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.headers.content-type`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.headers.frame`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.headers.hsts`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.headers.xss`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.ignored`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.require-ssl`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `security.sessions`
+  * comment: `This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `server.max-http-post-size`
+  * comment: `This property is deprecated: Use dedicated property for each container.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `server.undertow.buffers-per-region`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.activemq.pool.create-connection-on-startup`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.activemq.pool.expiry-timeout`
+  * comment: `This property is deprecated: Use idle-timeout instead`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.activemq.pool.reconnect-on-exception`
+  * comment: `This property is deprecated: Disabling this option will likely lead to broken connections in the pool.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.application.index`
+  * comment: `This property is deprecated: Application context ids are now unique by default.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.data.neo4j.compiler`
+  * comment: `This property is deprecated: Not supported anymore as of Neo4j 3.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.datasource.hikari.initialization-fail-fast`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.datasource.hikari.jdbc4-connection-test`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.datasource.hikari.scheduled-executor-service`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.devtools.remote.debug.enabled`
+  * comment: `This property is deprecated: Remote debug is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.devtools.remote.debug.local-port`
+  * comment: `This property is deprecated: Remote debug is no longer supported.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jpa.hibernate.naming.strategy`
+  * comment: `This property is deprecated: Auto-configuration for Hibernate 4 is no longer provided.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.aggregate.key-pattern`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.aggregate.prefix`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.delay-millis`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.enabled`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.excludes`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.includes`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.redis.key`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.redis.prefix`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.send-latest`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.statsd.prefix`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.metrics.export.triggers`
+  * comment: `This property is deprecated: Metrics support is now using Micrometer.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.sendgrid.password`
+  * comment: `This property is deprecated: The use of a username and password is no longer supported (Use spring.sendgrid.api-key instead).`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.sendgrid.username`
+  * comment: `This property is deprecated: The use of a username and password is no longer supported (Use spring.sendgrid.api-key instead).`
 
 </TabItem>
 
@@ -557,12 +890,6 @@ tags:
   - spring
   - boot
 recipeList:
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.main.show-banner
-      newPropertyKey: spring.main.banner-mode
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.main.web-environment
-      newPropertyKey: spring.main.web-application-type
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: banner.charset
       newPropertyKey: spring.banner.charset
@@ -584,27 +911,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: banner.location
       newPropertyKey: spring.banner.location
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: security.filter-dispatcher-types
-      newPropertyKey: spring.security.filter.dispatcher-types
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: security.filter-order
-      newPropertyKey: spring.security.filter.order
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.cassandra.repositories.enabled
-      newPropertyKey: spring.data.cassandra.repositories.type
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.couchbase.repositories.enabled
-      newPropertyKey: spring.data.couchbase.repositories.type
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.data.mongodb.repositories.enabled
-      newPropertyKey: spring.data.mongodb.repositories.type
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.jta.bitronix.properties.background-recovery-interval
-      newPropertyKey: spring.jta.bitronix.properties.background-recovery-interval-seconds
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.mvc.media-types
-      newPropertyKey: spring.mvc.contentnegotiation.media-types
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: flyway.baseline-description
       newPropertyKey: spring.flyway.baseline-description
@@ -677,6 +983,9 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: flyway.validate-on-migrate
       newPropertyKey: spring.flyway.validate-on-migrate
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: jolokia.config
+      newPropertyKey: management.endpoint.jolokia.config
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: liquibase.change-log
       newPropertyKey: spring.liquibase.change-log
@@ -780,11 +1089,26 @@ recipeList:
       oldPropertyKey: spring.batch.initializer.enabled
       newPropertyKey: spring.batch.initialize-schema
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.couchbase.env.endpoints.query
+      newPropertyKey: spring.couchbase.env.endpoints.queryservice.max-endpoints
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.couchbase.env.endpoints.view
+      newPropertyKey: spring.couchbase.env.endpoints.viewservice.max-endpoints
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.cassandra.connect-timeout-millis
       newPropertyKey: spring.data.cassandra.connect-timeout
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.cassandra.read-timeout-millis
       newPropertyKey: spring.data.cassandra.read-timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.cassandra.repositories.enabled
+      newPropertyKey: spring.data.cassandra.repositories.type
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.couchbase.repositories.enabled
+      newPropertyKey: spring.data.couchbase.repositories.type
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.mongodb.repositories.enabled
+      newPropertyKey: spring.data.mongodb.repositories.type
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.datasource.initialize
       newPropertyKey: spring.datasource.initialization-mode
@@ -813,8 +1137,26 @@ recipeList:
       oldPropertyKey: spring.http.multipart.resolve-lazily
       newPropertyKey: spring.servlet.multipart.resolve-lazily
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jta.bitronix.properties.background-recovery-interval
+      newPropertyKey: spring.jta.bitronix.properties.background-recovery-interval-seconds
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.main.show-banner
+      newPropertyKey: spring.main.banner-mode
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.main.web-environment
+      newPropertyKey: spring.main.web-application-type
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.messages.cache-seconds
       newPropertyKey: spring.messages.cache-duration
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.metrics.export.statsd.host
+      newPropertyKey: management.metrics.export.statsd.host
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.metrics.export.statsd.port
+      newPropertyKey: management.metrics.export.statsd.port
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.mvc.media-types
+      newPropertyKey: spring.mvc.contentnegotiation.media-types
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.redis.pool.max-active
       newPropertyKey: spring.redis.jedis.pool.max-idle
@@ -839,12 +1181,6 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.thymeleaf.content-type
       newPropertyKey: spring.thymeleaf.servlet.content-type
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.couchbase.env.endpoints.query
-      newPropertyKey: spring.couchbase.env.endpoints.queryservice.max-endpoints
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.couchbase.env.endpoints.view
-      newPropertyKey: spring.couchbase.env.endpoints.viewservice.max-endpoints
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: endpoints.auditevents.enabled
       newPropertyKey: management.endpoint.auditevents.enabled
@@ -990,17 +1326,14 @@ recipeList:
       oldPropertyKey: endpoints.shutdown.path
       newPropertyKey: management.endpoints.web.path-mapping.shutdown
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: endpoints.trace.filter.enabled
-      newPropertyKey: management.trace.http.enabled
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: endpoints.trace.enabled
       newPropertyKey: management.endpoint.httptrace.enabled
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: endpoints.trace.filter.enabled
+      newPropertyKey: management.trace.http.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: endpoints.trace.path
       newPropertyKey: management.endpoints.web.path-mapping.httptrace
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: jolokia.config
-      newPropertyKey: management.endpoint.jolokia.config
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.add-application-context-header
       newPropertyKey: management.server.add-application-context-header
@@ -1062,11 +1395,344 @@ recipeList:
       oldPropertyKey: management.trace.include
       newPropertyKey: management.trace.http.include
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.metrics.export.statsd.host
-      newPropertyKey: management.metrics.export.statsd.host
+      oldPropertyKey: security.filter-dispatcher-types
+      newPropertyKey: spring.security.filter.dispatcher-types
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.metrics.export.statsd.port
-      newPropertyKey: management.metrics.export.statsd.port
+      oldPropertyKey: security.filter-order
+      newPropertyKey: spring.security.filter.order
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.actuator.enabled
+      comment: This property is deprecated: The "actuator" endpoint is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.actuator.path
+      comment: This property is deprecated: The "actuator" endpoint is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.actuator.sensitive
+      comment: This property is deprecated: The "actuator" endpoint is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.auditevents.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.autoconfig.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.autoconfig.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.beans.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.beans.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.configprops.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.configprops.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.docs.curies.enabled
+      comment: This property is deprecated: The "docs" endpoint is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.docs.enabled
+      comment: This property is deprecated: The "docs" endpoint is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.docs.path
+      comment: This property is deprecated: The "docs" endpoint is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.docs.sensitive
+      comment: This property is deprecated: The "docs" endpoint is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.dump.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.dump.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.env.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.env.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.flyway.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.flyway.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.health.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.health.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.heapdump.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.hypermedia.enabled
+      comment: This property is deprecated: Hypermedia support in the Actuator is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.info.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.info.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.jolokia.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.liquibase.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.liquibase.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.logfile.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.loggers.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.loggers.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.mappings.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.mappings.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.metrics.filter.counter-submissions
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.metrics.filter.enabled
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.metrics.filter.gauge-submissions
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.metrics.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.metrics.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.shutdown.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.shutdown.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.trace.id
+      comment: This property is deprecated: Endpoint identifier is no longer customizable.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: endpoints.trace.sensitive
+      comment: This property is deprecated: Endpoint sensitive flag is no longer customizable as Spring Boot no longer provides a customizable security auto-configuration . Create or adapt your security configuration accordingly.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: flyway.init-description
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: flyway.init-on-migrate
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: flyway.init-version
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.health.couchbase.timeout
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.statsd.queue-size
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.security.enabled
+      comment: This property is deprecated: A global security auto-configuration is now provided. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.security.roles
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.security.sessions
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.auth.jaas.domain
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.auth.key.path
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.auth.simple.user.name
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.auth.simple.user.password
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.auth.spring.roles
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.auth.type
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.command-path-patterns
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.command-refresh-interval
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.config-path-patterns
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.disabled-commands
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.disabled-plugins
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.ssh.auth-timeout
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.ssh.enabled
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.ssh.idle-timeout
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.ssh.key-path
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.ssh.port
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.telnet.enabled
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.shell.telnet.port
+      comment: This property is deprecated: CRaSH support is no longer available.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.basic.authorize-mode
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.basic.enabled
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.basic.path
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.basic.realm
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.enable-csrf
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.headers.cache
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.headers.content-security-policy
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.headers.content-security-policy-mode
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.headers.content-type
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.headers.frame
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.headers.hsts
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.headers.xss
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.ignored
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.require-ssl
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: security.sessions
+      comment: This property is deprecated: The security auto-configuration is no longer customizable. Provide your own WebSecurityConfigurer bean instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: server.max-http-post-size
+      comment: This property is deprecated: Use dedicated property for each container.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: server.undertow.buffers-per-region
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.activemq.pool.create-connection-on-startup
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.activemq.pool.expiry-timeout
+      comment: This property is deprecated: Use idle-timeout instead
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.activemq.pool.reconnect-on-exception
+      comment: This property is deprecated: Disabling this option will likely lead to broken connections in the pool.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.application.index
+      comment: This property is deprecated: Application context ids are now unique by default.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.data.neo4j.compiler
+      comment: This property is deprecated: Not supported anymore as of Neo4j 3.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.datasource.hikari.initialization-fail-fast
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.datasource.hikari.jdbc4-connection-test
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.datasource.hikari.scheduled-executor-service
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.devtools.remote.debug.enabled
+      comment: This property is deprecated: Remote debug is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.devtools.remote.debug.local-port
+      comment: This property is deprecated: Remote debug is no longer supported.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jpa.hibernate.naming.strategy
+      comment: This property is deprecated: Auto-configuration for Hibernate 4 is no longer provided.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.aggregate.key-pattern
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.aggregate.prefix
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.delay-millis
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.enabled
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.excludes
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.includes
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.redis.key
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.redis.prefix
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.send-latest
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.statsd.prefix
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.metrics.export.triggers
+      comment: This property is deprecated: Metrics support is now using Micrometer.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.sendgrid.password
+      comment: This property is deprecated: The use of a username and password is no longer supported (Use spring.sendgrid.api-key instead).
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.sendgrid.username
+      comment: This property is deprecated: The use of a username and password is no longer supported (Use spring.sendgrid.api-key instead).
 
 ```
 </TabItem>
@@ -1074,7 +1740,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.23.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.24.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -1082,7 +1748,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -1095,7 +1761,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
 }
 ```
 
@@ -1111,12 +1777,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.SpringBootProperties_2_0")
@@ -1150,7 +1816,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -1161,7 +1827,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.23.0</version>
+            <version>5.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -1182,10 +1848,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe SpringBootProperties_2_0
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:5.24.0
 ```
 </TabItem>
 </Tabs>
@@ -1245,4 +1916,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)

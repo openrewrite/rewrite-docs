@@ -13,17 +13,17 @@ _Change spring application property keys existing in either Properties or Yaml f
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeSpringPropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.23.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeSpringPropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.23.0
+* version: 5.24.0
 
 ## Options
 
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
-| `String` | oldPropertyKey | The property key to rename. Supports glob | `management.metrics.binders.*.enabled` |
+| `String` | oldPropertyKey | The property key to rename. | `management.metrics.binders.*.enabled` |
 | `String` | newPropertyKey | The new name for the property key. | `management.metrics.enable.process.files` |
 | `List` | except | *Optional*. Regex. If any of these property keys exist as direct children of `oldPropertyKey`, then they will not be moved to `newPropertyKey`. | `jvm` |
 
@@ -44,7 +44,7 @@ recipeList:
       except: jvm
 ```
 
-Now that `com.yourorg.ChangeSpringPropertyKeyExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.23.0 in your build file:
+Now that `com.yourorg.ChangeSpringPropertyKeyExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.24.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -52,7 +52,7 @@ Now that `com.yourorg.ChangeSpringPropertyKeyExample` has been defined, activate
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -65,7 +65,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -81,7 +81,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -92,7 +92,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.23.0</version>
+            <version>5.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -104,10 +104,15 @@ dependencies {
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe ChangeSpringPropertyKeyExample
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:5.24.0
 ```
 </TabItem>
 </Tabs>

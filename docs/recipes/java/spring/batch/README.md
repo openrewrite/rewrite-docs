@@ -9,6 +9,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`](./upgradeskippolicyparametertype.md)
 * [Migrate `ItemWriter`](./migrateitemwriterwrite.md)
 * [Migrate `JobBuilderFactory` to `JobBuilder`](./migratejobbuilderfactory.md)
 * [Migrate `StepBuilderFactory` to `StepBuilder`](./migratestepbuilderfactory.md)

@@ -25,7 +25,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add `@Introspected` to classes requiring a map representation](./typerequiresintrospection.md)
 * [Add `HttpRequest` type parameter for implemented interfaces](./addhttprequesttypeparameter.md)
 * [Add Maven annotation processor path](./addannotationprocessorpath.md)
-* [Add Test Resources Client dependency if needed](./addtestresourcesclientdependencyifneeded.md)
+* [Add `micronaut-test-resources-client` if needed](./addtestresourcesclientdependencyifneeded.md)
 * [Add `snakeyaml` dependency if needed](./addsnakeyamldependencyifneeded.md)
 * [Change Maven annotation processor path](./changeannotationprocessorpath.md)
 * [Change factory method return types to reflect their resolved return type](./subclassesreturnedfromfactoriesnotinjectable.md)

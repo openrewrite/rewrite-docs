@@ -16,11 +16,11 @@ If the current value is < given version, upgrade it.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/UpgradeVersionProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.17.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/UpgradeVersionProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.17.0
+* version: 0.18.0
 
 ## Options
 
@@ -45,7 +45,7 @@ recipeList:
       minimumVersion: 2.375.1
 ```
 
-Now that `com.yourorg.UpgradeVersionPropertyExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:0.17.0 in your build file:
+Now that `com.yourorg.UpgradeVersionPropertyExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:0.18.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -53,7 +53,7 @@ Now that `com.yourorg.UpgradeVersionPropertyExample` has been defined, activate 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -66,7 +66,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.18.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -82,7 +82,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -93,7 +93,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.17.0</version>
+            <version>0.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -105,10 +105,15 @@ dependencies {
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe UpgradeVersionPropertyExample
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:0.18.0
 ```
 </TabItem>
 </Tabs>

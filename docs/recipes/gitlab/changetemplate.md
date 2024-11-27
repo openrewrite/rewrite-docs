@@ -7,17 +7,17 @@ import TabItem from '@theme/TabItem';
 
 # Change GitLab template
 
-**org.openrewrite.gitlab.core.ChangeTemplate**
+**org.openrewrite.gitlab.ChangeTemplate**
 
 _Change a GitLab template in use._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/core/ChangeTemplate.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/0.1.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/ChangeTemplate.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/0.3.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-gitlab
-* version: 0.1.0
+* version: 0.3.0
 
 ## Options
 
@@ -31,7 +31,7 @@ _Change a GitLab template in use._
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change value](../../yaml/changevalue)
+* [Change value](../yaml/changevalue)
   * keyPath: `$.include[?(@.template =~ 'null(?:@.+)?')].template`
   * filePattern: `.gitlab-ci.yml`
 
@@ -42,7 +42,7 @@ _Change a GitLab template in use._
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.gitlab.core.ChangeTemplate
+name: org.openrewrite.gitlab.ChangeTemplate
 displayName: Change GitLab template
 description: Change a GitLab template in use.
 
@@ -66,12 +66,12 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ChangeTemplateExample
 displayName: Change GitLab template example
 recipeList:
-  - org.openrewrite.gitlab.core.ChangeTemplate:
+  - org.openrewrite.gitlab.ChangeTemplate:
       oldTemplate: Terraform/Base.gitlab-ci.yml
       newTemplate: OpenTofu/Base.gitlab-ci.yml
 ```
 
-Now that `com.yourorg.ChangeTemplateExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-gitlab:0.1.0 in your build file:
+Now that `com.yourorg.ChangeTemplateExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-gitlab:0.3.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -79,7 +79,7 @@ Now that `com.yourorg.ChangeTemplateExample` has been defined, activate it and t
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -92,7 +92,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-gitlab:0.1.0")
+    rewrite("org.openrewrite.recipe:rewrite-gitlab:0.3.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -108,7 +108,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -119,7 +119,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-gitlab</artifactId>
-            <version>0.1.0</version>
+            <version>0.3.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -131,10 +131,15 @@ dependencies {
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe ChangeTemplateExample
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:0.3.0
 ```
 </TabItem>
 </Tabs>
@@ -143,7 +148,7 @@ mod run . --recipe ChangeTemplateExample
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gitlab.core.ChangeTemplate" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gitlab.ChangeTemplate" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

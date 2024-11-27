@@ -18,11 +18,11 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.23.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.23.0
+* version: 5.24.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -615,6 +615,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldPropertyKey: `management.trace.http.include`
   * newPropertyKey: `management.httpexchanges.recording.include`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.trace.include`
+  * newPropertyKey: `management.httpexchanges.recording.include`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.undertow.allow-encoded-slash`
   * newPropertyKey: `server.undertow.decode-slash`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
@@ -650,6 +653,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.pool.idle-timeout`
   * newPropertyKey: `spring.cassandra.pool.idle-timeout`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.data.cassandra.pool.max-queue-size`
+  * newPropertyKey: `spring.cassandra.request.throttler.max-queue-size`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.port`
   * newPropertyKey: `spring.cassandra.port`
@@ -758,6 +764,123 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.redis.username`
   * newPropertyKey: `spring.data.redis.username`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.atlas.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.graphql.autotime.enabled`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.graphql.autotime.percentiles`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.graphql.autotime.percentiles-histogram`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.web.client.request.autotime.enabled`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.web.client.request.autotime.percentiles`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.web.client.request.autotime.percentiles-histogram`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.web.server.request.autotime.enabled`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.web.server.request.autotime.percentiles`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.web.server.request.autotime.percentiles-histogram`
+  * comment: `This property is deprecated: Should be applied at the ObservationRegistry level.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.web.server.request.ignore-trailing-slash`
+  * comment: `This property is deprecated: Not needed anymore, direct instrumentation in Spring MVC.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `server.max-http-header-size`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `server.netty.max-chunk-size`
+  * comment: `This property is deprecated: Deprecated for removal in Reactor Netty`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `server.servlet.session.cookie.comment`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.banner.image.bitdepth`
+  * comment: `This property is deprecated: Support for image banners has been removed.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.banner.image.height`
+  * comment: `This property is deprecated: Support for image banners has been removed.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.banner.image.invert`
+  * comment: `This property is deprecated: Support for image banners has been removed.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.banner.image.location`
+  * comment: `This property is deprecated: Support for image banners has been removed.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.banner.image.margin`
+  * comment: `This property is deprecated: Support for image banners has been removed.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.banner.image.pixelmode`
+  * comment: `This property is deprecated: Support for image banners has been removed.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.banner.image.width`
+  * comment: `This property is deprecated: Support for image banners has been removed.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.elasticsearch.webclient.max-in-memory-size`
+  * comment: `This property is deprecated: Reactive Elasticsearch client no longer uses WebClient.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.flyway.baseline-migration-prefix`
+  * comment: `This property is deprecated: Removed in Flyway 9.0`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.jpa.hibernate.use-new-id-generator-mappings`
+  * comment: `This property is deprecated: Hibernate no longer supports disabling the use of new ID generator mappings.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.mvc.date-format`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.mvc.ignore-default-model-on-redirect`
+  * comment: `This property is deprecated: Deprecated for removal in Spring MVC`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.jedis.pool.enabled`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.jedis.pool.max-active`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.jedis.pool.max-idle`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.jedis.pool.max-wait`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.jedis.pool.min-idle`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.jedis.pool.time-between-eviction-runs`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.lettuce.pool.enabled`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.lettuce.pool.max-active`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.lettuce.pool.max-idle`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.lettuce.pool.max-wait`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.lettuce.pool.min-idle`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.redis.lettuce.pool.time-between-eviction-runs`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.webflux.multipart.streaming`
+  * comment: `This property is deprecated: Replaced by the PartEventHttpMessageReader and the PartEvent API.`
 
 </TabItem>
 
@@ -1356,6 +1479,9 @@ recipeList:
       oldPropertyKey: management.trace.http.include
       newPropertyKey: management.httpexchanges.recording.include
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.trace.include
+      newPropertyKey: management.httpexchanges.recording.include
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.undertow.allow-encoded-slash
       newPropertyKey: server.undertow.decode-slash
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
@@ -1391,6 +1517,9 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.cassandra.pool.idle-timeout
       newPropertyKey: spring.cassandra.pool.idle-timeout
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.data.cassandra.pool.max-queue-size
+      newPropertyKey: spring.cassandra.request.throttler.max-queue-size
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.cassandra.port
       newPropertyKey: spring.cassandra.port
@@ -1499,6 +1628,123 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.redis.username
       newPropertyKey: spring.data.redis.username
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.atlas.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.graphql.autotime.enabled
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.graphql.autotime.percentiles
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.graphql.autotime.percentiles-histogram
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.web.client.request.autotime.enabled
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.web.client.request.autotime.percentiles
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.web.client.request.autotime.percentiles-histogram
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.web.server.request.autotime.enabled
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.web.server.request.autotime.percentiles
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.web.server.request.autotime.percentiles-histogram
+      comment: This property is deprecated: Should be applied at the ObservationRegistry level.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.web.server.request.ignore-trailing-slash
+      comment: This property is deprecated: Not needed anymore, direct instrumentation in Spring MVC.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: server.max-http-header-size
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: server.netty.max-chunk-size
+      comment: This property is deprecated: Deprecated for removal in Reactor Netty
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: server.servlet.session.cookie.comment
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.banner.image.bitdepth
+      comment: This property is deprecated: Support for image banners has been removed.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.banner.image.height
+      comment: This property is deprecated: Support for image banners has been removed.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.banner.image.invert
+      comment: This property is deprecated: Support for image banners has been removed.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.banner.image.location
+      comment: This property is deprecated: Support for image banners has been removed.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.banner.image.margin
+      comment: This property is deprecated: Support for image banners has been removed.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.banner.image.pixelmode
+      comment: This property is deprecated: Support for image banners has been removed.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.banner.image.width
+      comment: This property is deprecated: Support for image banners has been removed.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.elasticsearch.webclient.max-in-memory-size
+      comment: This property is deprecated: Reactive Elasticsearch client no longer uses WebClient.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.flyway.baseline-migration-prefix
+      comment: This property is deprecated: Removed in Flyway 9.0
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.jpa.hibernate.use-new-id-generator-mappings
+      comment: This property is deprecated: Hibernate no longer supports disabling the use of new ID generator mappings.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.mvc.date-format
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.mvc.ignore-default-model-on-redirect
+      comment: This property is deprecated: Deprecated for removal in Spring MVC
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.jedis.pool.enabled
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.jedis.pool.max-active
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.jedis.pool.max-idle
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.jedis.pool.max-wait
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.jedis.pool.min-idle
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.jedis.pool.time-between-eviction-runs
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.lettuce.pool.enabled
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.lettuce.pool.max-active
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.lettuce.pool.max-idle
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.lettuce.pool.max-wait
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.lettuce.pool.min-idle
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.redis.lettuce.pool.time-between-eviction-runs
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.webflux.multipart.streaming
+      comment: This property is deprecated: Replaced by the PartEventHttpMessageReader and the PartEvent API.
 
 ```
 </TabItem>
@@ -1506,7 +1752,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.23.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.24.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -1514,7 +1760,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -1527,7 +1773,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
 }
 ```
 
@@ -1543,12 +1789,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.SpringBootProperties_3_0")
@@ -1582,7 +1828,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -1593,7 +1839,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.23.0</version>
+            <version>5.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -1614,10 +1860,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe SpringBootProperties_3_0
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:5.24.0
 ```
 </TabItem>
 </Tabs>
@@ -1677,4 +1928,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)
+Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), ashakirin, [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)

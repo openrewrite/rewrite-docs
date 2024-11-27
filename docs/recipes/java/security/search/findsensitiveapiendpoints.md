@@ -13,11 +13,11 @@ _Find data models exposed by REST APIs that contain sensitive information like P
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/search/FindSensitiveApiEndpoints.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.15.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/search/FindSensitiveApiEndpoints.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.16.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-security
-* version: 2.15.0
+* version: 2.16.0
 
 ## Options
 
@@ -41,7 +41,7 @@ recipeList:
       fieldNames: password,dateOfBirth,dob,ssn
 ```
 
-Now that `com.yourorg.FindSensitiveApiEndpointsExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.15.0 in your build file:
+Now that `com.yourorg.FindSensitiveApiEndpointsExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.16.0 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -49,7 +49,7 @@ Now that `com.yourorg.FindSensitiveApiEndpointsExample` has been defined, activa
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -62,7 +62,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.15.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:2.16.0")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -78,7 +78,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -89,7 +89,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.15.0</version>
+            <version>2.16.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -101,10 +101,15 @@ dependencies {
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe FindSensitiveApiEndpointsExample
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-security:2.16.0
 ```
 </TabItem>
 </Tabs>

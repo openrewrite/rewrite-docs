@@ -13,11 +13,11 @@ _This recipe is intended to change over time to reflect the most recent tooling 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.17.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/0.18.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-jenkins
-* version: 0.17.0
+* version: 0.18.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -34,7 +34,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * allowVersionDowngrades: `false`
 * [Remove annotation](../java/removeannotation)
   * annotationPattern: `@org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement`
-* [Migrate to HtmlUnit 3.x](../jenkins/upgradehtmlunit_3_3_0)
+* [Migrate to HtmlUnit 3.x](../java/testing/htmlunit/upgradehtmlunit_3)
 * [Change Gradle or Maven dependency](../java/dependencies/changedependency)
   * oldGroupId: `org.mockito`
   * oldArtifactId: `mockito-inline`
@@ -72,7 +72,7 @@ recipeList:
       allowVersionDowngrades: false
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
-  - org.openrewrite.jenkins.UpgradeHtmlUnit_3_3_0
+  - org.openrewrite.java.testing.htmlunit.UpgradeHtmlUnit_3
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.mockito
       oldArtifactId: mockito-inline
@@ -98,7 +98,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.17.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jenkins:0.18.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -106,7 +106,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -119,7 +119,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.17.0")
+    rewrite("org.openrewrite.recipe:rewrite-jenkins:0.18.0")
 }
 ```
 
@@ -135,12 +135,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-jenkins:0.17.0")
+        rewrite("org.openrewrite.recipe:rewrite-jenkins:0.18.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.jenkins.ModernizePlugin")
@@ -174,7 +174,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -185,7 +185,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-jenkins</artifactId>
-            <version>0.17.0</version>
+            <version>0.18.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -206,10 +206,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe ModernizePlugin
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:0.18.0
 ```
 </TabItem>
 </Tabs>

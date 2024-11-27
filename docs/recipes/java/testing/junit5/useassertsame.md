@@ -1,46 +1,28 @@
 ---
-sidebar_label: "Remove methods calls"
+sidebar_label: "Use JUnit5's assertSame or assertNotSame instead of assertTrue(... == ...)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove methods calls
+# Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`
 
-**org.openrewrite.java.migrate.RemoveMethodInvocation**
+**org.openrewrite.java.testing.junit5.UseAssertSame**
 
-_Checks for a method patterns and removes the method call from the class._
+_Prefers the usage of `assertSame` or `assertNotSame` methods instead of using of vanilla `assertTrue` or `assertFalse` with a boolean comparison._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/RemoveMethodInvocation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.29.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/UseAssertSame.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.23.0/jar)
 
 * groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: 2.29.0
-
-## Options
-
-| Type | Name | Description | Example |
-| -- | -- | -- | -- |
-| `String` | methodPattern | A [method pattern](/reference/method-patterns) for matching required method definition. | `*..* hello(..)` |
+* artifactId: rewrite-testing-frameworks
+* version: 2.23.0
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveMethodInvocationExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.RemoveMethodInvocationExample
-displayName: Remove methods calls example
-recipeList:
-  - org.openrewrite.java.migrate.RemoveMethodInvocation:
-      methodPattern: '*..* hello(..)'
-```
-
-Now that `com.yourorg.RemoveMethodInvocationExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.29.0 in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:2.23.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -48,11 +30,11 @@ Now that `com.yourorg.RemoveMethodInvocationExample` has been defined, activate 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.RemoveMethodInvocationExample")
+    activeRecipe("org.openrewrite.java.testing.junit5.UseAssertSame")
     setExportDatatables(true)
 }
 
@@ -61,12 +43,51 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.29.0")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.23.0")
 }
 ```
+
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-<TabItem value="maven" label="Maven">
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.23.0")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.testing.junit5.UseAssertSame")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
 
 1. Add the following to your `pom.xml` file:
 
@@ -77,18 +98,18 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.RemoveMethodInvocationExample</recipe>
+            <recipe>org.openrewrite.java.testing.junit5.UseAssertSame</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.29.0</version>
+            <artifactId>rewrite-testing-frameworks</artifactId>
+            <version>2.23.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -96,14 +117,28 @@ dependencies {
   </build>
 </project>
 ```
+
 2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-testing-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.testing.junit5.UseAssertSame -Drewrite.exportDatatables=true
+```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveMethodInvocationExample
+mod run . --recipe UseAssertSame
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:2.23.0
 ```
 </TabItem>
 </Tabs>
@@ -112,7 +147,7 @@ mod run . --recipe RemoveMethodInvocationExample
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.RemoveMethodInvocation" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.junit5.UseAssertSame" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -163,4 +198,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Satvika Eda](mailto:satvika164.reddy@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+Greg Oledzki, [Knut Wannheden](mailto:knut@moderne.io)

@@ -129,6 +129,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Unnecessary `String#valueOf(..)`](./novalueofonstringtype.md)
 * [Unnecessary close in try-with-resources](./unnecessarycloseintrywithresources.md)
 * [Unnecessary explicit type arguments](./unnecessaryexplicittypearguments.md)
+* [Unnecessary `return` as last statement in void method](./unnecessaryreturnaslaststatement.md)
 * [Unnecessary throws](./unnecessarythrows.md)
 * [Unwrap `@Repeatable` annotations](./unwraprepeatableannotations.md)
 * [Upper case literal suffixes](./uppercaseliteralsuffixes.md)

@@ -28,8 +28,10 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add a spring configuration property](./addspringproperty.md)
+* [Change parameter type for a method declaration](./changemethodparameter.md)
 * [Change the key of a spring application property](./changespringpropertykey.md)
 * [Change the value of a spring application property](./changespringpropertyvalue.md)
+* [Comment out Spring properties](./commentoutspringpropertykey.md)
 * [Delete a spring configuration property](./deletespringproperty.md)
 * [Expand Spring YAML properties](./expandproperties.md)
 * [Remove `@RequestMapping` annotations](./norequestmappingannotation.md)

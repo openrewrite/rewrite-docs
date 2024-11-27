@@ -22,6 +22,7 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 * [Replace runners for a job](./replacerunners.md)
 * [Setup Java dependency caching](./setupjavacaching.md)
 * [Upgrade `actions/setup-java` `java-version`](./setupjavaupgradejavaversion.md)
+* [Upgrade `slackapi/slack-github-action`](./upgradeslacknotificationversion2.md)
 * [Use `actions/setup-java` IBM `semeru` distribution](./setupjavaadoptopenj9tosemeru.md)
 * [Use `actions/setup-java` `temurin` distribution](./setupjavaadoptopenjdktotemurin.md)
 * [Use `actions/setup-java` `temurin` distribution as they are cached in hosted runners](./prefertemurindistributions.md)

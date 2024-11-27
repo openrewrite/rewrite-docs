@@ -18,11 +18,11 @@ _Migrate applications to the latest Spring Boot 3.1 release. This recipe will mo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-31.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.23.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-31.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.23.0
+* version: 5.24.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -106,7 +106,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.23.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.24.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -114,7 +114,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -127,7 +127,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
 }
 ```
 
@@ -143,12 +143,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1")
@@ -182,7 +182,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -193,7 +193,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.23.0</version>
+            <version>5.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -214,10 +214,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe UpgradeSpringBoot_3_1
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:5.24.0
 ```
 </TabItem>
 </Tabs>
@@ -277,4 +282,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Chuka Obinabo, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Kun Li, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), pdesprez, Anu Ramamoorthy, [Kyle Scully](mailto:scullykns@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [Satvika Eda](mailto:satvika164.reddy@gmail.com), SiBorea, [Shannon Pamperl](mailto:shanman190@gmail.com), Simon Zilliken, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Kun Li](mailto:kun@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Fabian Krüger, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Tim te Beek](mailto:timtebeek@gmail.com), Evie Lau, Adam Slaski, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), Michel Gonzalez, Aaron Gershman, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), ranuradh, nbruno, BhavanaPidapa, Daryl Robbins, [Greg Adams](mailto:gadams@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), [BoykoAlex](mailto:aboyko@pivotal.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Greg Adams](mailto:greg@moderne.io), BramliAK, [Michael Keppler](mailto:bananeweizen@gmx.de), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), John Burns, Josh Soref, Aakarshit Uppal, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), Adriano Machado
+Tyler Van Gorder, ashakirin, [Knut Wannheden](mailto:knut@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Patrick](mailto:patway99@gmail.com), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Chuka Obinabo, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Laurens Westerlaken](mailto:laurens.w@live.nl), Kun Li, [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), pdesprez, Anu Ramamoorthy, [Kyle Scully](mailto:scullykns@gmail.com), Patrick Way, [Sam Snyder](mailto:sam@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), SiBorea, [Shannon Pamperl](mailto:shanman190@gmail.com), [Curtis](mailto:curtis@mail.ustc.edu.cn), Simon Zilliken, [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Kevin McCarpenter](mailto:kevin@moderne.io), [Kun Li](mailto:kun@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), BhavanaPidapa, Fabian Krüger, [Tim te Beek](mailto:timtebeek@gmail.com), Evie Lau, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Adam Slaski, [Johannes Jank](mailto:johannes.wengert@googlemail.com), [Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), Michel Gonzalez, Aaron Gershman, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), ranuradh, nbruno, Daryl Robbins, [Greg Adams](mailto:gadams@gmail.com), Sandeep Nagaraj, [Matthias Klauer](mailto:matthias.klauer@sap.com), [Marcin Słowiak](mailto:marcin.slowiak.007@gmail.com), [BoykoAlex](mailto:aboyko@pivotal.io), [Simon Verhoeven](mailto:verhoeven.simon@gmail.com), [Greg Adams](mailto:greg@moderne.io), BramliAK, [Michael Keppler](mailto:bananeweizen@gmx.de), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), John Burns, Josh Soref, Aakarshit Uppal, [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), eocantu, [Mckinney, Nicholas](mailto:mckinneynicholas@gmail.com), Adriano Machado

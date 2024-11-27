@@ -18,11 +18,11 @@ _Migrate properties found in `application.properties` and `application.yml`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.23.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-22-properties.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-spring
-* version: 5.23.0
+* version: 5.24.0
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -32,6 +32,21 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.health.status.http-mapping`
+  * newPropertyKey: `management.endpoint.health.status.http-mapping`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.health.status.order`
+  * newPropertyKey: `management.endpoint.health.status.order`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.metrics.web.client.requests-metric-name`
+  * newPropertyKey: `management.metrics.web.client.request.metric-name`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.metrics.web.server.auto-time-requests`
+  * newPropertyKey: `management.metrics.web.server.request.autotime.enabled`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `management.metrics.web.server.requests-metric-name`
+  * newPropertyKey: `management.metrics.web.server.request.metric-name`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.jetty.accesslog.date-format`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
@@ -54,14 +69,11 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldPropertyKey: `server.jetty.accesslog.time-zone`
   * newPropertyKey: `server.jetty.accesslog.custom-format`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.datasource.jmx-enabled`
-  * newPropertyKey: `spring.datasource.tomcat.jmx-enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.reactor.stacktrace-mode.enabled`
-  * newPropertyKey: `spring.reactor.debug-agent.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `server.use-forward-headers`
   * newPropertyKey: `server.forward-headers-strategy`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.datasource.jmx-enabled`
+  * newPropertyKey: `spring.datasource.tomcat.jmx-enabled`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.jackson.joda-date-time-format`
   * newPropertyKey: `dateFormat`
@@ -72,27 +84,81 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * oldPropertyKey: `spring.rabbitmq.publisher-confirms`
   * newPropertyKey: `spring.rabbitmq.publisher-confirm-type`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.reactor.stacktrace-mode.enabled`
+  * newPropertyKey: `spring.reactor.debug-agent.enabled`
+* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `logging.file`
   * newPropertyKey: `logging.file.name`
   * except: `[.+]`
 * [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `logging.path`
   * newPropertyKey: `logging.file.path`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `management.health.status.http-mapping`
-  * newPropertyKey: `management.endpoint.health.status.http-mapping`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `management.health.status.order`
-  * newPropertyKey: `management.endpoint.health.status.order`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `management.metrics.web.client.requests-metric-name`
-  * newPropertyKey: `management.metrics.web.client.request.metric-name`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `management.metrics.web.server.auto-time-requests`
-  * newPropertyKey: `management.metrics.web.server.request.autotime.enabled`
-* [Change the key of a spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `management.metrics.web.server.requests-metric-name`
-  * newPropertyKey: `management.metrics.web.server.request.metric-name`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.health.elasticsearch.indices`
+  * comment: `This property is deprecated: Upstream elasticsearch transport is deprecated.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.health.elasticsearch.response-timeout`
+  * comment: `This property is deprecated: Upstream elasticsearch transport is deprecated.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.appoptics.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.datadog.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.dynatrace.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.elastic.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.humio.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.humio.repository`
+  * comment: `This property is deprecated: No longer used as repository is resolved from the api token.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.influx.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.kairos.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.newrelic.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.signalfx.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `management.metrics.export.wavefront.num-threads`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.data.elasticsearch.cluster-name`
+  * comment: `This property is deprecated: The transport client support is deprecated. Use other supported clients instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.data.elasticsearch.cluster-nodes`
+  * comment: `This property is deprecated: The transport client support is deprecated. Use other supported clients instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.data.elasticsearch.properties`
+  * comment: `This property is deprecated: The transport client support is deprecated. Use other supported clients instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.datasource.dbcp2.enable-auto-commit-on-return`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.elasticsearch.jest.uris`
+  * comment: `This property is deprecated: The Jest client support is deprecated. Use other supported clients instead.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.mvc.contentnegotiation.favor-path-extension`
+  * comment: `This property is deprecated: Use of path extensions for request mapping and for content negotiation is discouraged.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.mvc.favicon.enabled`
+  * comment: `This property is deprecated and will be removed in future Spring Boot versions`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.mvc.pathmatch.use-registered-suffix-pattern`
+  * comment: `This property is deprecated: Use of path extensions for request mapping and for content negotiation is discouraged.`
+* [Comment out Spring properties](../../../java/spring/commentoutspringpropertykey)
+  * propertyKey: `spring.mvc.pathmatch.use-suffix-pattern`
+  * comment: `This property is deprecated: Use of path extensions for request mapping and for content negotiation is discouraged.`
 
 </TabItem>
 
@@ -108,6 +174,21 @@ tags:
   - spring
   - boot
 recipeList:
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.health.status.http-mapping
+      newPropertyKey: management.endpoint.health.status.http-mapping
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.health.status.order
+      newPropertyKey: management.endpoint.health.status.order
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.client.requests-metric-name
+      newPropertyKey: management.metrics.web.client.request.metric-name
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.server.auto-time-requests
+      newPropertyKey: management.metrics.web.server.request.autotime.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: management.metrics.web.server.requests-metric-name
+      newPropertyKey: management.metrics.web.server.request.metric-name
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.jetty.accesslog.date-format
       newPropertyKey: server.jetty.accesslog.custom-format
@@ -130,14 +211,11 @@ recipeList:
       oldPropertyKey: server.jetty.accesslog.time-zone
       newPropertyKey: server.jetty.accesslog.custom-format
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.datasource.jmx-enabled
-      newPropertyKey: spring.datasource.tomcat.jmx-enabled
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.reactor.stacktrace-mode.enabled
-      newPropertyKey: spring.reactor.debug-agent.enabled
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: server.use-forward-headers
       newPropertyKey: server.forward-headers-strategy
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.datasource.jmx-enabled
+      newPropertyKey: spring.datasource.tomcat.jmx-enabled
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.jackson.joda-date-time-format
       newPropertyKey: dateFormat
@@ -148,27 +226,81 @@ recipeList:
       oldPropertyKey: spring.rabbitmq.publisher-confirms
       newPropertyKey: spring.rabbitmq.publisher-confirm-type
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.reactor.stacktrace-mode.enabled
+      newPropertyKey: spring.reactor.debug-agent.enabled
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: logging.file
       newPropertyKey: logging.file.name
       except: [.+]
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: logging.path
       newPropertyKey: logging.file.path
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.health.status.http-mapping
-      newPropertyKey: management.endpoint.health.status.http-mapping
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.health.status.order
-      newPropertyKey: management.endpoint.health.status.order
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.metrics.web.client.requests-metric-name
-      newPropertyKey: management.metrics.web.client.request.metric-name
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.metrics.web.server.auto-time-requests
-      newPropertyKey: management.metrics.web.server.request.autotime.enabled
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: management.metrics.web.server.requests-metric-name
-      newPropertyKey: management.metrics.web.server.request.metric-name
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.health.elasticsearch.indices
+      comment: This property is deprecated: Upstream elasticsearch transport is deprecated.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.health.elasticsearch.response-timeout
+      comment: This property is deprecated: Upstream elasticsearch transport is deprecated.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.appoptics.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.datadog.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.dynatrace.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.elastic.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.humio.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.humio.repository
+      comment: This property is deprecated: No longer used as repository is resolved from the api token.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.influx.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.kairos.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.newrelic.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.signalfx.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: management.metrics.export.wavefront.num-threads
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.data.elasticsearch.cluster-name
+      comment: This property is deprecated: The transport client support is deprecated. Use other supported clients instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.data.elasticsearch.cluster-nodes
+      comment: This property is deprecated: The transport client support is deprecated. Use other supported clients instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.data.elasticsearch.properties
+      comment: This property is deprecated: The transport client support is deprecated. Use other supported clients instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.datasource.dbcp2.enable-auto-commit-on-return
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.elasticsearch.jest.uris
+      comment: This property is deprecated: The Jest client support is deprecated. Use other supported clients instead.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.mvc.contentnegotiation.favor-path-extension
+      comment: This property is deprecated: Use of path extensions for request mapping and for content negotiation is discouraged.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.mvc.favicon.enabled
+      comment: This property is deprecated and will be removed in future Spring Boot versions
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.mvc.pathmatch.use-registered-suffix-pattern
+      comment: This property is deprecated: Use of path extensions for request mapping and for content negotiation is discouraged.
+  - org.openrewrite.java.spring.CommentOutSpringPropertyKey:
+      propertyKey: spring.mvc.pathmatch.use-suffix-pattern
+      comment: This property is deprecated: Use of path extensions for request mapping and for content negotiation is discouraged.
 
 ```
 </TabItem>
@@ -176,7 +308,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.23.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring:5.24.0` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -184,7 +316,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.27.1")
+    id("org.openrewrite.rewrite") version("6.28.0")
 }
 
 rewrite {
@@ -197,7 +329,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
 }
 ```
 
@@ -213,12 +345,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.27.1") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:5.23.0")
+        rewrite("org.openrewrite.recipe:rewrite-spring:5.24.0")
     }
     rewrite {
         activeRecipe("org.openrewrite.java.spring.boot2.SpringBootProperties_2_2")
@@ -252,7 +384,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.45.0</version>
+        <version>5.46.0</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -263,7 +395,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.23.0</version>
+            <version>5.24.0</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -284,10 +416,15 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe SpringBootProperties_2_2
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:5.24.0
 ```
 </TabItem>
 </Tabs>
@@ -347,4 +484,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)
+ashakirin, Tyler Van Gorder, [Knut Wannheden](mailto:knut@moderne.io), [Nick McKinney](mailto:mckinneynichoals@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Patrick](mailto:patway99@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kyle Scully](mailto:scullykns@gmail.com)

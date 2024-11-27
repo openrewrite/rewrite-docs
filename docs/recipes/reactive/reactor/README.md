@@ -32,5 +32,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `UnicastProcessor.create(Queue)` with `Sinks.many().unicast().onBackpressureBuffer(Queue)`](./reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeuetosinkrecipe.md)
 * [Replace `UnicastProcessor.create(Queue, Consumer, Disposable)` with `Sinks.many().unicast().onBackpressureBuffer(Queue, Disposable)`](./reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeueconsumerdisposabletosinkrecipe.md)
 * [Replace `UnicastProcessor.create(Queue, Disposable)` with `Sinks.many().unicast().onBackpressureBuffer(Queue, Disposable)`](./reactorprocessorcreatetosinkrecipes$unicastprocessorcreatequeuedisposabletosinkrecipe.md)
+* [Replace `doAfterSuccessOrError` calls with `tap` operator](./reactordoaftersuccessorerrortotap.md)
 
 

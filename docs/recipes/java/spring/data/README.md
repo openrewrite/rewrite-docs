@@ -17,6 +17,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `JpaSort.of(..)`](./migratejpasort.md)
 * [Use `QuerydslPredicateExecutor<T>`](./migratequerydsljparepository.md)
 * [Use TLS for JDBC connection strings](./usetlsjdbcconnectionstring.md)
-* [Use `new SimpleMongoClientDbFactory(String)`](./refactorsimplemongodbfactoryrecipe.md)
+* [Use `new SimpleMongoClientDbFactory(String)`](./refactorsimplemongodbfactory.md)
 
 

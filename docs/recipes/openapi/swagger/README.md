@@ -6,7 +6,6 @@ _Recipes to perform [Swagger](https://swagger.io/) migration tasks._
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Migrate from `@Api` to `@Tag`](./migrateapitotag.md)
 * [Migrate from `@ApiImplicitParams`  to `@Parameters`](./migrateapiimplicitparamstoparameters.md)
 * [Migrate from `@ApiModel` to `@Schema`](./migrateapimodeltoschema.md)
 * [Migrate from `@ApiModelProperty` to `@Schema`](./migrateapimodelpropertytoschema.md)
@@ -19,5 +18,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Convert API response codes to strings](./convertapiresponsecodestostrings.md)
+* [Migrate from `@Api` to `@Tag`](./migrateapitotag.md)
 
 

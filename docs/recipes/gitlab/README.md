@@ -4,6 +4,13 @@ _Recipes to perform [GitLab](https://gitlab.com/) migration tasks._
 
 ## Categories
 
-* [Core](/recipes/gitlab/core)
+* [Search](/recipes/gitlab/search)
+
+## Recipes
+
+* [Add GitLab component](./addcomponent.md)
+* [Add GitLab template](./addtemplate.md)
+* [Change GitLab template](./changetemplate.md)
+* [Remove GitLab template](./removetemplate.md)
 
 

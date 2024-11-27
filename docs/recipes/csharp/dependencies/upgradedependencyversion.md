@@ -13,11 +13,11 @@ _Upgrades dependencies in `*.csproj` and `packages.config`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/csharp/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.23.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/csharp/dependencies/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.24.0/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.23.0
+* version: 1.24.0
 
 ## Options
 
@@ -42,16 +42,21 @@ recipeList:
       newVersion: 12.3
 ```
 
-Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.23.0 in your build file:
+Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.24.0 in your build file:
 <Tabs groupId="projectType">
 
 
 <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/moderne-cli/cli-intro) on your machine before you can run the following command.
+You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
 mod run . --recipe UpgradeDependencyVersionExample
+```
+
+If the recipe is not available locally, then you can install it using:
+```shell
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:1.24.0
 ```
 </TabItem>
 </Tabs>
