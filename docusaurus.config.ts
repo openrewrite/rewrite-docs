@@ -2,7 +2,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkTokenReplacer from "./src/plugins/replace-tokens";
-import globalVariables from "./src/plugins/global-variables";
+import latestVersions from "./src/plugins/latest-versions";
 
 const config: Config = {
   title: "OpenRewrite Docs",
@@ -38,7 +38,7 @@ const config: Config = {
             [
               remarkTokenReplacer,
               {
-                replacements: globalVariables,
+                replacements: latestVersions,
               },
             ],
           ],
