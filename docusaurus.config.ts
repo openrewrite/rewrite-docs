@@ -2,19 +2,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
 import remarkTokenReplacer from "./src/plugins/replace-tokens";
-
-const globalVariables = {
-  "{{VERSION_REWRITE_RECIPE_BOM}}": "2.23.1",
-  "{{VERSION_REWRITE_GRADLE_PLUGIN}}": "6.28.1",
-  "{{VERSION_REWRITE_JAVA_DEPENDENCIES}}": "1.24.1",
-  "{{VERSION_REWRITE_LOGGING_FRAMEWORKS}}": "2.17.1",
-  "{{VERSION_REWRITE_MAVEN_PLUGIN}}": "5.46.1",
-  "{{VERSION_REWRITE_MIGRATE_JAVA}}": "2.30.1",
-  "{{VERSION_REWRITE_TEMPLATING}}": "1.19.1",
-  "{{VERSION_REWRITE_TESTING_FRAMEWORKS}}": "2.23.1",
-  "{{VERSION_REWRITE_SPRING}}": "5.24.1",
-  "{{VERSION_REWRITE_STATIC_ANALYSIS}}": "1.21.1",
-};
+import globalVariables from "./src/plugins/global-variables";
 
 const config: Config = {
   title: "OpenRewrite Docs",
