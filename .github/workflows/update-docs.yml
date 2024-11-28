@@ -51,4 +51,5 @@ jobs:
         run: |
           export MSG="[Auto] Latest versions as of $(date +'%Y-%m-%d %H:%M')"
           export DOC=docs/reference/latest-versions-of-every-openrewrite-module.md
-          git diff-index --quiet HEAD ${DOC} || (git commit --message "${MSG}" ${DOC} && git push origin master)
+          export JS=src/plugins/latest-versions.js
+          git diff-index --quiet HEAD ${DOC} || (git commit --message "${MSG}" ${DOC} ${JS} && git push origin master)
