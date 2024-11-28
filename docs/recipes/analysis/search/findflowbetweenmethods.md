@@ -13,11 +13,11 @@ _Takes two patterns for the start/end methods to find flow between._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/2.13.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/{{VERSION_REWRITE_ANALYSIS}}/jar)
 
 * groupId: org.openrewrite.meta
 * artifactId: rewrite-analysis
-* version: 2.13.1
+* version: {{VERSION_REWRITE_ANALYSIS}}
 
 ## Options
 
@@ -48,7 +48,7 @@ recipeList:
       flow: null
 ```
 
-Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined, activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:2.13.1 in your build file:
+Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined, activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}} in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -56,7 +56,7 @@ Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined, activate 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -69,7 +69,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.meta:rewrite-analysis:2.13.1")
+    rewrite("org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -85,7 +85,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -96,7 +96,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.meta</groupId>
             <artifactId>rewrite-analysis</artifactId>
-            <version>2.13.1</version>
+            <version>{{VERSION_REWRITE_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -116,7 +116,7 @@ mod run . --recipe FindFlowBetweenMethodsExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.meta:rewrite-analysis:2.13.1
+mod config recipes jar install org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>

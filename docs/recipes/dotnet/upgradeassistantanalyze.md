@@ -13,11 +13,11 @@ _Run [upgrade-assistant analyze](https://learn.microsoft.com/en-us/dotnet/core/p
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/java/org/openrewrite/dotnet/UpgradeAssistantAnalyze.java), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/0.5.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/java/org/openrewrite/dotnet/UpgradeAssistantAnalyze.java), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/{{VERSION_REWRITE_DOTNET}}/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-dotnet
-* version: 0.5.1
+* version: {{VERSION_REWRITE_DOTNET}}
 
 ## Options
 
@@ -42,7 +42,7 @@ recipeList:
       privacyMode: Restricted
 ```
 
-Now that `com.yourorg.UpgradeAssistantAnalyzeExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-dotnet:0.5.1 in your build file:
+Now that `com.yourorg.UpgradeAssistantAnalyzeExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-dotnet:{{VERSION_REWRITE_DOTNET}} in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.UpgradeAssistantAnalyzeExample` has been defined, activate
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-dotnet:0.5.1")
+    rewrite("org.openrewrite.recipe:rewrite-dotnet:{{VERSION_REWRITE_DOTNET}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -90,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-dotnet</artifactId>
-            <version>0.5.1</version>
+            <version>{{VERSION_REWRITE_DOTNET}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,7 +110,7 @@ mod run . --recipe UpgradeAssistantAnalyzeExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-dotnet:0.5.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-dotnet:{{VERSION_REWRITE_DOTNET}}
 ```
 </TabItem>
 </Tabs>

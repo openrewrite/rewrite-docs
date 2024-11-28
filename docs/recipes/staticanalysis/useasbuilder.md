@@ -13,11 +13,11 @@ _Chain calls to builder methods that are on separate lines into one chain of bui
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/1.21.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/{{VERSION_REWRITE_STATIC_ANALYSIS}}/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-static-analysis
-* version: 1.21.1
+* version: {{VERSION_REWRITE_STATIC_ANALYSIS}}
 
 ## Options
 
@@ -43,7 +43,7 @@ recipeList:
       builderCreator: org.example.Buildable builder()
 ```
 
-Now that `com.yourorg.UseAsBuilderExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:1.21.1 in your build file:
+Now that `com.yourorg.UseAsBuilderExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}} in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -51,7 +51,7 @@ Now that `com.yourorg.UseAsBuilderExample` has been defined, activate it and tak
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -64,7 +64,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:1.21.1")
+    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -80,7 +80,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -91,7 +91,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-static-analysis</artifactId>
-            <version>1.21.1</version>
+            <version>{{VERSION_REWRITE_STATIC_ANALYSIS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -111,7 +111,7 @@ mod run . --recipe UseAsBuilderExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:1.21.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}
 ```
 </TabItem>
 </Tabs>

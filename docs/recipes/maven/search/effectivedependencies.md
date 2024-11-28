@@ -13,11 +13,11 @@ _Emit the data of binary dependency relationships._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/8.41.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/search/EffectiveDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/{{VERSION_REWRITE_MAVEN}}/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-maven
-* version: 8.41.1
+* version: {{VERSION_REWRITE_MAVEN}}
 
 ## Options
 
@@ -54,7 +54,7 @@ Now that `com.yourorg.EffectiveDependenciesExample` has been defined, activate i
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -78,7 +78,7 @@ mod run . --recipe EffectiveDependenciesExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-maven:8.41.1
+mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_REWRITE_MAVEN}}
 ```
 </TabItem>
 </Tabs>

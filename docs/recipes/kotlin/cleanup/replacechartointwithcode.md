@@ -13,16 +13,16 @@ _Replace the usage of the deprecated `Char#toInt()` with `Char#code`. Please ens
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/ReplaceCharToIntWithCode.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.23.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/ReplaceCharToIntWithCode.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/{{VERSION_REWRITE_KOTLIN}}/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-kotlin
-* version: 1.23.1
+* version: {{VERSION_REWRITE_KOTLIN}}
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-kotlin:1.23.1` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -30,7 +30,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -43,7 +43,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:1.23.1")
+    rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}")
 }
 ```
 
@@ -59,12 +59,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.28.1") }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite:rewrite-kotlin:1.23.1")
+        rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}")
     }
     rewrite {
         activeRecipe("org.openrewrite.kotlin.cleanup.ReplaceCharToIntWithCode")
@@ -98,7 +98,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -109,7 +109,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-kotlin</artifactId>
-            <version>1.23.1</version>
+            <version>{{VERSION_REWRITE_KOTLIN}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -138,7 +138,7 @@ mod run . --recipe ReplaceCharToIntWithCode
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-kotlin:1.23.1
+mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}
 ```
 </TabItem>
 </Tabs>

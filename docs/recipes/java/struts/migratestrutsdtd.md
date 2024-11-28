@@ -13,11 +13,11 @@ _Update Struts DTD to reflect the specified version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/0.8.1/jar)
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/{{VERSION_REWRITE_STRUTS}}/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-struts
-* version: 0.8.1
+* version: {{VERSION_REWRITE_STRUTS}}
 
 ## Options
 
@@ -40,7 +40,7 @@ recipeList:
       strutsVersion: 6.0
 ```
 
-Now that `com.yourorg.MigrateStrutsDtdExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-struts:0.8.1 in your build file:
+Now that `com.yourorg.MigrateStrutsDtdExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}} in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -48,7 +48,7 @@ Now that `com.yourorg.MigrateStrutsDtdExample` has been defined, activate it and
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -61,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-struts:0.8.1")
+    rewrite("org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -77,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -88,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-struts</artifactId>
-            <version>0.8.1</version>
+            <version>{{VERSION_REWRITE_STRUTS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -108,7 +108,7 @@ mod run . --recipe MigrateStrutsDtdExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-struts:0.8.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}
 ```
 </TabItem>
 </Tabs>
