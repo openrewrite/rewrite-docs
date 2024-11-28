@@ -148,9 +148,13 @@ const config: Config = {
               href: "https://discord.gg/xk3ZKrhWAb",
             },
             {
+              label: "Bluesky",
+              href: "https://bsky.app/profile/openrewrite.github.io",
+            },
+            {
               label: "X",
               href: "https://x.com/OpenRewrite",
-            },
+            }
           ],
         },
         {
