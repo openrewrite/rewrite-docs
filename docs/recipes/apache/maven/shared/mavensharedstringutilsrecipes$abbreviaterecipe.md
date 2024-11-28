@@ -13,16 +13,16 @@ _Replace Maven Shared `StringUtils.abbreviate(String str, int maxWidth)` with JD
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/maven/shared/MavenSharedStringUtils.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/maven/shared/MavenSharedStringUtils.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.9.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-apache
-* version: 1.9.0
+* version: 1.9.1
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.9.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 
 <TabItem value="maven" label="Maven POM">
@@ -36,7 +36,7 @@ This recipe has no required configuration options. It can be activated by adding
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.0</version>
+        <version>5.46.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -47,7 +47,7 @@ This recipe has no required configuration options. It can be activated by adding
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>1.9.0</version>
+            <version>1.9.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -76,7 +76,7 @@ mod run . --recipe MavenSharedStringUtilsRecipes$AbbreviateRecipe
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:1.9.0
+mod config recipes jar install org.openrewrite.recipe:rewrite-apache:1.9.1
 ```
 </TabItem>
 </Tabs>

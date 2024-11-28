@@ -17,11 +17,11 @@ _This recipe will apply changes commonly needed when migrating to Kubernetes API
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/resources/META-INF/rewrite/deprecated-api-migrations.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.11.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/resources/META-INF/rewrite/deprecated-api-migrations.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.11.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-kubernetes
-* version: 2.11.0
+* version: 2.11.1
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -60,7 +60,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.11.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-kubernetes:2.11.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -68,7 +68,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.0")
+    id("org.openrewrite.rewrite") version("6.28.1")
 }
 
 rewrite {
@@ -81,7 +81,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.11.0")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.11.1")
 }
 ```
 
@@ -97,12 +97,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.11.0")
+        rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.11.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.kubernetes.migrate.MigrateToAPIv1_27")
@@ -136,7 +136,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.0</version>
+        <version>5.46.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -147,7 +147,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.11.0</version>
+            <version>2.11.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -176,7 +176,7 @@ mod run . --recipe MigrateToAPIv1_27
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-kubernetes:2.11.0
+mod config recipes jar install org.openrewrite.recipe:rewrite-kubernetes:2.11.1
 ```
 </TabItem>
 </Tabs>

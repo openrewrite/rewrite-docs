@@ -13,11 +13,11 @@ _Finds dependencies, including transitive dependencies, in both Gradle and Maven
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.24.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/1.24.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-java-dependencies
-* version: 1.24.0
+* version: 1.24.1
 
 ## Options
 
@@ -46,7 +46,7 @@ recipeList:
       scope: compile
 ```
 
-Now that `com.yourorg.DependencyInsightExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.24.0 in your build file:
+Now that `com.yourorg.DependencyInsightExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:1.24.1 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -54,7 +54,7 @@ Now that `com.yourorg.DependencyInsightExample` has been defined, activate it an
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.0")
+    id("org.openrewrite.rewrite") version("6.28.1")
 }
 
 rewrite {
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.24.0")
+    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:1.24.1")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -83,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.0</version>
+        <version>5.46.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -94,7 +94,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-dependencies</artifactId>
-            <version>1.24.0</version>
+            <version>1.24.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -114,7 +114,7 @@ mod run . --recipe DependencyInsightExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:1.24.0
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:1.24.1
 ```
 </TabItem>
 </Tabs>

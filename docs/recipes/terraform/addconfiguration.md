@@ -13,11 +13,11 @@ _If the configuration has a different value, leave it alone. If it is missing, a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.6.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/2.6.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-terraform
-* version: 2.6.0
+* version: 2.6.1
 
 ## Options
 
@@ -42,7 +42,7 @@ recipeList:
       content: encrypted = true
 ```
 
-Now that `com.yourorg.AddConfigurationExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.6.0 in your build file:
+Now that `com.yourorg.AddConfigurationExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:2.6.1 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -50,7 +50,7 @@ Now that `com.yourorg.AddConfigurationExample` has been defined, activate it and
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.0")
+    id("org.openrewrite.rewrite") version("6.28.1")
 }
 
 rewrite {
@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-terraform:2.6.0")
+    rewrite("org.openrewrite.recipe:rewrite-terraform:2.6.1")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -79,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.0</version>
+        <version>5.46.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -90,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-terraform</artifactId>
-            <version>2.6.0</version>
+            <version>2.6.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,7 +110,7 @@ mod run . --recipe AddConfigurationExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-terraform:2.6.0
+mod config recipes jar install org.openrewrite.recipe:rewrite-terraform:2.6.1
 ```
 </TabItem>
 </Tabs>

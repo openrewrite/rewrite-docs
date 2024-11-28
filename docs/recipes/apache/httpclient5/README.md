@@ -12,6 +12,8 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Adds a TimeUnit argument to the matched method invocations](./addtimeunitargument.md)
+* [Migrate `RequestConfig` to httpclient5](./migraterequestconfig.md)
+* [Migrate `UsernamePasswordCredentials` to httpclient5](./usernamepasswordcredentials.md)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](./upgradeapachehttpclient_5_deprecatedmethods.md)
 * [Replaces `AuthScope.ANY`](./migrateauthscope.md)
 * [Replaces deprecated `HttpResponse::getStatusLine()`](./newstatusline.md)

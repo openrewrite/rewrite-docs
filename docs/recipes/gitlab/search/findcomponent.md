@@ -13,11 +13,11 @@ _Find a GitLab Component in use._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/search/FindComponent.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/0.3.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/search/FindComponent.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/0.3.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-gitlab
-* version: 0.3.0
+* version: 0.3.1
 
 ## Options
 
@@ -66,7 +66,7 @@ recipeList:
       component: $CI_SERVER_FQDN/components/opentofu/full-pipeline
 ```
 
-Now that `com.yourorg.FindComponentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-gitlab:0.3.0 in your build file:
+Now that `com.yourorg.FindComponentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-gitlab:0.3.1 in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -74,7 +74,7 @@ Now that `com.yourorg.FindComponentExample` has been defined, activate it and ta
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.0")
+    id("org.openrewrite.rewrite") version("6.28.1")
 }
 
 rewrite {
@@ -87,7 +87,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-gitlab:0.3.0")
+    rewrite("org.openrewrite.recipe:rewrite-gitlab:0.3.1")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -103,7 +103,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.0</version>
+        <version>5.46.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -114,7 +114,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-gitlab</artifactId>
-            <version>0.3.0</version>
+            <version>0.3.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -134,7 +134,7 @@ mod run . --recipe FindComponentExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:0.3.0
+mod config recipes jar install org.openrewrite.recipe:rewrite-gitlab:0.3.1
 ```
 </TabItem>
 </Tabs>

@@ -19,11 +19,11 @@ _Disallow unnecessary mustache interpolations See rule details for [vue/no-usele
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-vue.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/0.4.3/jar)
+[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-vue.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/0.4.4/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-codemods
-* version: 0.4.3
+* version: 0.4.4
 
 
 ## Definition
@@ -80,7 +80,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-codemods:0.4.3` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-codemods:0.4.4` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -88,7 +88,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.0")
+    id("org.openrewrite.rewrite") version("6.28.1")
 }
 
 rewrite {
@@ -101,7 +101,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-codemods:0.4.3")
+    rewrite("org.openrewrite.recipe:rewrite-codemods:0.4.4")
 }
 ```
 
@@ -117,12 +117,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-codemods:0.4.3")
+        rewrite("org.openrewrite.recipe:rewrite-codemods:0.4.4")
     }
     rewrite {
         activeRecipe("org.openrewrite.codemods.cleanup.vue.NoUselessMustaches")
@@ -156,7 +156,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.0</version>
+        <version>5.46.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -167,7 +167,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-codemods</artifactId>
-            <version>0.4.3</version>
+            <version>0.4.4</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -196,7 +196,7 @@ mod run . --recipe NoUselessMustaches
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:0.4.3
+mod config recipes jar install org.openrewrite.recipe:rewrite-codemods:0.4.4
 ```
 </TabItem>
 </Tabs>

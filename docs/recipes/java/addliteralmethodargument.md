@@ -13,11 +13,11 @@ _Add a literal `String` or `int` argument to method invocations._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddLiteralMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.41.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddLiteralMethodArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/8.41.1/jar)
 
 * groupId: org.openrewrite
 * artifactId: rewrite-java
-* version: 8.41.0
+* version: 8.41.1
 
 ## Options
 
@@ -53,7 +53,7 @@ Now that `com.yourorg.AddLiteralMethodArgumentExample` has been defined, activat
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.0")
+    id("org.openrewrite.rewrite") version("6.28.1")
 }
 
 rewrite {
@@ -78,7 +78,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.0</version>
+        <version>5.46.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -102,7 +102,7 @@ mod run . --recipe AddLiteralMethodArgumentExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-java:8.41.0
+mod config recipes jar install org.openrewrite:rewrite-java:8.41.1
 ```
 </TabItem>
 </Tabs>

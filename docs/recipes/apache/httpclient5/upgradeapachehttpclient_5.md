@@ -18,11 +18,11 @@ _Migrate applications to the latest Apache HttpClient 5.x release. This recipe w
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.9.0/jar)
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/1.9.1/jar)
 
 * groupId: org.openrewrite.recipe
 * artifactId: rewrite-apache
-* version: 1.9.0
+* version: 1.9.1
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -45,6 +45,8 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * newGroupId: `org.apache.httpcomponents.core5`
   * newArtifactId: `httpcore5`
   * newVersion: `5.3.x`
+* [Migrate `RequestConfig` to httpclient5](../../apache/httpclient5/migraterequestconfig)
+* [Migrate `UsernamePasswordCredentials` to httpclient5](../../apache/httpclient5/usernamepasswordcredentials)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_classmapping)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](../../apache/httpclient5/upgradeapachehttpclient_5_deprecatedmethods)
 * [Adds `TimeUnit` to timeouts and duration methods](../../apache/httpclient5/upgradeapachehttpclient_5_timeunit)
@@ -78,6 +80,8 @@ recipeList:
       newGroupId: org.apache.httpcomponents.core5
       newArtifactId: httpcore5
       newVersion: 5.3.x
+  - org.openrewrite.apache.httpclient5.MigrateRequestConfig
+  - org.openrewrite.apache.httpclient5.UsernamePasswordCredentials
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_DeprecatedMethods
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit
@@ -90,7 +94,7 @@ recipeList:
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.9.0` in your build file or by running a shell command (in which case no build changes are needed): 
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-apache:1.9.1` in your build file or by running a shell command (in which case no build changes are needed): 
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -98,7 +102,7 @@ This recipe has no required configuration options. It can be activated by adding
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.0")
+    id("org.openrewrite.rewrite") version("6.28.1")
 }
 
 rewrite {
@@ -111,7 +115,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-apache:1.9.0")
+    rewrite("org.openrewrite.recipe:rewrite-apache:1.9.1")
 }
 ```
 
@@ -127,12 +131,12 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:6.28.0") }
+    dependencies { classpath("org.openrewrite:plugin:6.28.1") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-apache:1.9.0")
+        rewrite("org.openrewrite.recipe:rewrite-apache:1.9.1")
     }
     rewrite {
         activeRecipe("org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5")
@@ -166,7 +170,7 @@ gradle --init-script init.gradle rewriteRun
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.0</version>
+        <version>5.46.1</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -177,7 +181,7 @@ gradle --init-script init.gradle rewriteRun
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-apache</artifactId>
-            <version>1.9.0</version>
+            <version>1.9.1</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -206,7 +210,7 @@ mod run . --recipe UpgradeApacheHttpClient_5
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-apache:1.9.0
+mod config recipes jar install org.openrewrite.recipe:rewrite-apache:1.9.1
 ```
 </TabItem>
 </Tabs>
@@ -266,4 +270,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Joan Viladrosa](mailto:joan@moderne.io), Adriano Machado, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
+[Joan Viladrosa](mailto:joan@moderne.io), SiBorea, Adriano Machado, [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io)
