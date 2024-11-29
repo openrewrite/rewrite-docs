@@ -44,8 +44,8 @@ jobs:
       # Commit and push changes
       - name: configure-git-user
         run: |
-          git config --global user.email "team@moderne.io"
-          git config --global user.name "team-moderne[bot]"
+          git config user.email "team@moderne.io"
+          git config user.name "team-moderne[bot]"
       - name: Commit and push
         working-directory: rewrite-docs
         run: |
