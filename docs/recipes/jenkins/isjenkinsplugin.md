@@ -13,11 +13,7 @@ _Checks if the project is a Jenkins plugin by the presence of a managed version 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/IsJenkinsPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/{{VERSION_REWRITE_JENKINS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-jenkins
-* version: {{VERSION_REWRITE_JENKINS}}
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/IsJenkinsPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       version: '[1,)'
 ```
 
-Now that `com.yourorg.IsJenkinsPluginExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}} in your build file:
+Now that `com.yourorg.IsJenkinsPluginExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

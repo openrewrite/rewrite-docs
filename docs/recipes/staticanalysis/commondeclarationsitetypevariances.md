@@ -20,11 +20,7 @@ When using a method parameter like `Function<IN, OUT>`, it should rather be `Fun
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/{{VERSION_REWRITE_STATIC_ANALYSIS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-static-analysis
-* version: {{VERSION_REWRITE_STATIC_ANALYSIS}}
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/static-analysis.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 
 ## Definition

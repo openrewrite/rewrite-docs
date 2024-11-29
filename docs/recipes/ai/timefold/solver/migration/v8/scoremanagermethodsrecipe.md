@@ -13,11 +13,7 @@ _Use `explain()` and `update()`    instead of `explainScore()`, `updateScore()` 
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.v8.ScoreManagerMethodsRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/{{VERSION_REWRITE_THIRD_PARTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: {{VERSION_REWRITE_THIRD_PARTY}}
+[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.v8.ScoreManagerMethodsRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 
 ## Usage

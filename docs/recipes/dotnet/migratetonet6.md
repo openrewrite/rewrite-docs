@@ -13,11 +13,7 @@ _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/p
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/resources/META-INF/rewrite/dotnet.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/{{VERSION_REWRITE_DOTNET}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-dotnet
-* version: {{VERSION_REWRITE_DOTNET}}
+[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/resources/META-INF/rewrite/dotnet.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/)
 
 
 ## Definition

@@ -13,11 +13,7 @@ _Takes two patterns for the start/end methods to find flow between._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/{{VERSION_REWRITE_ANALYSIS}}/jar)
-
-* groupId: org.openrewrite.meta
-* artifactId: rewrite-analysis
-* version: {{VERSION_REWRITE_ANALYSIS}}
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/FindFlowBetweenMethods.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
 
 ## Options
 
@@ -48,7 +44,7 @@ recipeList:
       flow: null
 ```
 
-Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined, activate it and take a dependency on org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}} in your build file:
+Now that `com.yourorg.FindFlowBetweenMethodsExample` has been defined, activate it and take a dependency on `org.openrewrite.meta:rewrite-analysis:{{VERSION_REWRITE_ANALYSIS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

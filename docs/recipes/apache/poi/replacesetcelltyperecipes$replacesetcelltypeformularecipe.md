@@ -13,11 +13,7 @@ _Replace `Cell.setCellType(Cell.CELL_TYPE_FORMULA)` with `Cell.setCellType(CellT
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/poi/ReplaceSetCellType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/{{VERSION_REWRITE_APACHE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-apache
-* version: {{VERSION_REWRITE_APACHE}}
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/poi/ReplaceSetCellType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 
 ## Usage

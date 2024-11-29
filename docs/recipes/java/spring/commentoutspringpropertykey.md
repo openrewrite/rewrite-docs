@@ -13,11 +13,7 @@ _Add comment to specified Spring properties, and comment out the property._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/CommentOutSpringPropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/{{VERSION_REWRITE_SPRING}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: {{VERSION_REWRITE_SPRING}}
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/CommentOutSpringPropertyKey.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       comment: This property is deprecated and no longer applicable starting from Spring Boot 3.0.x
 ```
 
-Now that `com.yourorg.CommentOutSpringPropertyKeyExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}} in your build file:
+Now that `com.yourorg.CommentOutSpringPropertyKeyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

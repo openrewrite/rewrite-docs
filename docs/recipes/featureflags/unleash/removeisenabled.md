@@ -13,11 +13,7 @@ _Replace `isEnabled()` invocations for `featureKey` with `replacementValue`, and
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/unleash/RemoveIsEnabled.java), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/{{VERSION_REWRITE_FEATURE_FLAGS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-feature-flags
-* version: {{VERSION_REWRITE_FEATURE_FLAGS}}
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/unleash/RemoveIsEnabled.java), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 ## Options
 
@@ -69,7 +65,7 @@ recipeList:
       replacementValue: true
 ```
 
-Now that `com.yourorg.RemoveIsEnabledExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_REWRITE_FEATURE_FLAGS}} in your build file:
+Now that `com.yourorg.RemoveIsEnabledExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-feature-flags:{{VERSION_REWRITE_FEATURE_FLAGS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

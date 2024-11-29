@@ -13,11 +13,7 @@ _Install a CircleCI [orb](https://circleci.com/docs/2.0/orb-intro/) if it is not
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/InstallOrb.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/{{VERSION_REWRITE_CIRCLECI}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-circleci
-* version: {{VERSION_REWRITE_CIRCLECI}}
+[GitHub](https://github.com/openrewrite/rewrite-circleci/blob/main/src/main/java/org/openrewrite/circleci/InstallOrb.java), [Issue Tracker](https://github.com/openrewrite/rewrite-circleci/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-circleci/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       slug: circleci/kubernetes@0.11.0
 ```
 
-Now that `com.yourorg.InstallOrbExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-circleci:{{VERSION_REWRITE_CIRCLECI}} in your build file:
+Now that `com.yourorg.InstallOrbExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-circleci:{{VERSION_REWRITE_CIRCLECI}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

@@ -13,11 +13,7 @@ _Replace `org.apache.commons.lang3.Validate.notNull(..)` with `Objects.requireNo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/java-best-practices.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/{{VERSION_REWRITE_STATIC_ANALYSIS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-static-analysis
-* version: {{VERSION_REWRITE_STATIC_ANALYSIS}}
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/java-best-practices.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

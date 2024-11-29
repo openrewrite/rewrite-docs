@@ -18,11 +18,7 @@ _Used for Code Style metric on moderne radar._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/radar.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/{{VERSION_REWRITE_RECOMMENDATIONS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-recommendations
-* version: {{VERSION_REWRITE_RECOMMENDATIONS}}
+[GitHub](https://github.com/openrewrite/rewrite-recommendations/blob/main/src/main/resources/META-INF/rewrite/radar.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-recommendations/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-recommendations/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

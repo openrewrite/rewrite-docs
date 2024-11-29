@@ -13,11 +13,7 @@ _Chain calls to builder methods that are on separate lines into one chain of bui
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/{{VERSION_REWRITE_STATIC_ANALYSIS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-static-analysis
-* version: {{VERSION_REWRITE_STATIC_ANALYSIS}}
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseAsBuilder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 ## Options
 
@@ -43,7 +39,7 @@ recipeList:
       builderCreator: org.example.Buildable builder()
 ```
 
-Now that `com.yourorg.UseAsBuilderExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}} in your build file:
+Now that `com.yourorg.UseAsBuilderExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

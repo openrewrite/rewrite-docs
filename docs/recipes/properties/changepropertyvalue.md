@@ -13,11 +13,7 @@ _Change a property value leaving the key intact._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/{{VERSION_REWRITE_PROPERTIES}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-properties
-* version: {{VERSION_REWRITE_PROPERTIES}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/ChangePropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
 
 ## Options
 

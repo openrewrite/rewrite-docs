@@ -13,11 +13,7 @@ _Remove the `KafkaOperations.usingCompletableFuture()` bridge during Spring Kafk
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/kafka/RemoveUsingCompletableFuture.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/{{VERSION_REWRITE_SPRING}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: {{VERSION_REWRITE_SPRING}}
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/kafka/RemoveUsingCompletableFuture.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 
 ## Usage

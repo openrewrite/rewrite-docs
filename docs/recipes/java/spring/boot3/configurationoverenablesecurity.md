@@ -13,11 +13,7 @@ _Prior to Spring Security 6, `@EnableXXXSecurity` implicitly had `@Configuration
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/ConfigurationOverEnableSecurity.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/{{VERSION_REWRITE_SPRING}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: {{VERSION_REWRITE_SPRING}}
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/ConfigurationOverEnableSecurity.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       forceAddConfiguration: false
 ```
 
-Now that `com.yourorg.ConfigurationOverEnableSecurityExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}} in your build file:
+Now that `com.yourorg.ConfigurationOverEnableSecurityExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

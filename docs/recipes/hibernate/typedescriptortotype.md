@@ -13,11 +13,7 @@ _Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.0.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/{{VERSION_REWRITE_HIBERNATE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-hibernate
-* version: {{VERSION_REWRITE_HIBERNATE}}
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-6.0.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

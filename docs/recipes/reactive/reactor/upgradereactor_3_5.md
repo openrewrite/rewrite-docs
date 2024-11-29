@@ -17,11 +17,7 @@ _Adopt to [breaking changes in Reactor 3.5](https://projectreactor.io/docs/core/
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-reactive-streams/blob/main/src/main/resources/META-INF/rewrite/reactor-3.5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-reactive-streams/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-reactive-streams/{{VERSION_REWRITE_REACTIVE_STREAMS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-reactive-streams
-* version: {{VERSION_REWRITE_REACTIVE_STREAMS}}
+[GitHub](https://github.com/openrewrite/rewrite-reactive-streams/blob/main/src/main/resources/META-INF/rewrite/reactor-3.5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-reactive-streams/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-reactive-streams/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

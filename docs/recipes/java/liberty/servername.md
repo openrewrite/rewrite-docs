@@ -13,11 +13,7 @@ _`ServerName.getDisplayName()` is not available in Liberty._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/ServerName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/{{VERSION_REWRITE_LIBERTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-liberty
-* version: {{VERSION_REWRITE_LIBERTY}}
+[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/ServerName.java), [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/)
 
 
 ## Usage

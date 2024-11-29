@@ -13,11 +13,7 @@ _Run `ng update` to upgrade Angular CLI and Angular Core to the specified versio
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods-ng/blob/main/src/main/java/org/openrewrite/codemods/migrate/angular/ApplyAngularCLI.java), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods-ng/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods-ng/{{VERSION_REWRITE_CODEMODS_NG}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-codemods-ng
-* version: {{VERSION_REWRITE_CODEMODS_NG}}
+[GitHub](https://github.com/openrewrite/rewrite-codemods-ng/blob/main/src/main/java/org/openrewrite/codemods/migrate/angular/ApplyAngularCLI.java), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods-ng/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods-ng/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       version: 17
 ```
 
-Now that `com.yourorg.ApplyAngularCLIExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-codemods-ng:{{VERSION_REWRITE_CODEMODS_NG}} in your build file:
+Now that `com.yourorg.ApplyAngularCLIExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-codemods-ng:{{VERSION_REWRITE_CODEMODS_NG}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

@@ -13,11 +13,7 @@ _Pin or unpin a resource to a particular version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeResourceVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/{{VERSION_REWRITE_CONCOURSE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-concourse
-* version: {{VERSION_REWRITE_CONCOURSE}}
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeResourceVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       version: 2.0
 ```
 
-Now that `com.yourorg.ChangeResourceVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}} in your build file:
+Now that `com.yourorg.ChangeResourceVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

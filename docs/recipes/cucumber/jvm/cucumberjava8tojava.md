@@ -18,11 +18,7 @@ _Migrates `cucumber-java8` step definitions and `LambdaGlue` hooks to `cucumber-
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/{{VERSION_REWRITE_CUCUMBER_JVM}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-cucumber-jvm
-* version: {{VERSION_REWRITE_CUCUMBER_JVM}}
+[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

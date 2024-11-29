@@ -17,11 +17,7 @@ _Fixes mis-encoded French comments in your code, javadocs and in your pom.xml fi
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/resources/META-INF/rewrite/misencoded-french.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/{{VERSION_REWRITE_AI_SEARCH}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-ai-search
-* version: {{VERSION_REWRITE_AI_SEARCH}}
+[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/resources/META-INF/rewrite/misencoded-french.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

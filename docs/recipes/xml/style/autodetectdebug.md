@@ -13,11 +13,7 @@ _Runs XML Autodetect and records the results in data tables and search markers. 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/style/AutodetectDebug.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/{{VERSION_REWRITE_XML}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-xml
-* version: {{VERSION_REWRITE_XML}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/style/AutodetectDebug.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 
 
 ## Usage

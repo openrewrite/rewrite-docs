@@ -19,11 +19,7 @@ _Ensure GCP VPC flow logs for subnets are enabled. Flow Logs capture information
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/gcp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/{{VERSION_REWRITE_TERRAFORM}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-terraform
-* version: {{VERSION_REWRITE_TERRAFORM}}
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/gcp.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/)
 
 
 ## Definition

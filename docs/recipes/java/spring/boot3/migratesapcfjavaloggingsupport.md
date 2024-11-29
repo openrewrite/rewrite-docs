@@ -21,11 +21,7 @@ _Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/{{VERSION_REWRITE_SPRING}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: {{VERSION_REWRITE_SPRING}}
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 
 ## Definition

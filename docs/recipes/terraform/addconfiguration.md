@@ -13,11 +13,7 @@ _If the configuration has a different value, leave it alone. If it is missing, a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/{{VERSION_REWRITE_TERRAFORM}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-terraform
-* version: {{VERSION_REWRITE_TERRAFORM}}
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/java/org/openrewrite/terraform/AddConfiguration.java), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       content: encrypted = true
 ```
 
-Now that `com.yourorg.AddConfigurationExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-terraform:{{VERSION_REWRITE_TERRAFORM}} in your build file:
+Now that `com.yourorg.AddConfigurationExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-terraform:{{VERSION_REWRITE_TERRAFORM}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

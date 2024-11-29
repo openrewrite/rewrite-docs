@@ -13,11 +13,7 @@ _Recipes which manipulate dependencies must be able to successfully access the a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyResolutionDiagnostic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/{{VERSION_REWRITE_JAVA_DEPENDENCIES}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-java-dependencies
-* version: {{VERSION_REWRITE_JAVA_DEPENDENCIES}}
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyResolutionDiagnostic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 ## Options
 

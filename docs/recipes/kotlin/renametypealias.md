@@ -13,11 +13,7 @@ _Change the name of a given type alias._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/{{VERSION_REWRITE_KOTLIN}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-kotlin
-* version: {{VERSION_REWRITE_KOTLIN}}
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 
 ## Options
 
@@ -44,7 +40,7 @@ recipeList:
       fullyQualifiedAliasedType: org.junit.Assume
 ```
 
-Now that `com.yourorg.RenameTypeAliasExample` has been defined, activate it and take a dependency on org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}} in your build file:
+Now that `com.yourorg.RenameTypeAliasExample` has been defined, activate it and take a dependency on `org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

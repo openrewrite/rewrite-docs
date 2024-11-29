@@ -18,11 +18,7 @@ _Use `IOUtils` method invocations that include the charset encoding instead of u
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/io/ApacheIOUtilsUseExplicitCharset.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/{{VERSION_REWRITE_APACHE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-apache
-* version: {{VERSION_REWRITE_APACHE}}
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/io/ApacheIOUtilsUseExplicitCharset.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 ## Options
 

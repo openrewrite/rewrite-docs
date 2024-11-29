@@ -13,11 +13,7 @@ _The `skipCount` parameter in `org.springframework.batch.core.step.skip.SkipPoli
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-batch-5.0.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/{{VERSION_REWRITE_SPRING}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: {{VERSION_REWRITE_SPRING}}
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-batch-5.0.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 
 ## Definition

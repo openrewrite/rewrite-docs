@@ -13,11 +13,7 @@ _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/p
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/java/org/openrewrite/dotnet/UpgradeAssistant.java), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/{{VERSION_REWRITE_DOTNET}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-dotnet
-* version: {{VERSION_REWRITE_DOTNET}}
+[GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/java/org/openrewrite/dotnet/UpgradeAssistant.java), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       targetFramework: net9.0
 ```
 
-Now that `com.yourorg.UpgradeAssistantExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-dotnet:{{VERSION_REWRITE_DOTNET}} in your build file:
+Now that `com.yourorg.UpgradeAssistantExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-dotnet:{{VERSION_REWRITE_DOTNET}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

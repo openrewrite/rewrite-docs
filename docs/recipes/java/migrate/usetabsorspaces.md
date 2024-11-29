@@ -13,11 +13,7 @@ _This is useful for one-off migrations of a codebase that has mixed indentation 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UseTabsOrSpaces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/{{VERSION_REWRITE_MIGRATE_JAVA}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: {{VERSION_REWRITE_MIGRATE_JAVA}}
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UseTabsOrSpaces.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       useTabs: false
 ```
 
-Now that `com.yourorg.UseTabsOrSpacesExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}} in your build file:
+Now that `com.yourorg.UseTabsOrSpacesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

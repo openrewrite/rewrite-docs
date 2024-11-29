@@ -13,11 +13,7 @@ _Change the log level of SLF4J log statements._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/ChangeLogLevel.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/{{VERSION_REWRITE_LOGGING_FRAMEWORKS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-logging-frameworks
-* version: {{VERSION_REWRITE_LOGGING_FRAMEWORKS}}
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/ChangeLogLevel.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 ## Options
 
@@ -44,7 +40,7 @@ recipeList:
       startsWith: LaunchDarkly
 ```
 
-Now that `com.yourorg.ChangeLogLevelExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_REWRITE_LOGGING_FRAMEWORKS}} in your build file:
+Now that `com.yourorg.ChangeLogLevelExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_REWRITE_LOGGING_FRAMEWORKS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

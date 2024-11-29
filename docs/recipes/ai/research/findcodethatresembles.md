@@ -13,11 +13,7 @@ _This recipe uses two phase AI approach to find a method invocation that resembl
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/FindCodeThatResembles.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/{{VERSION_REWRITE_AI_SEARCH}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-ai-search
-* version: {{VERSION_REWRITE_AI_SEARCH}}
+[GitHub](https://github.com/openrewrite/rewrite-ai-search/blob/main/src/main/java/io/moderne/ai/research/FindCodeThatResembles.java), [Issue Tracker](https://github.com/openrewrite/rewrite-ai-search/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-ai-search/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       k: 5
 ```
 
-Now that `com.yourorg.FindCodeThatResemblesExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-ai-search:{{VERSION_REWRITE_AI_SEARCH}} in your build file:
+Now that `com.yourorg.FindCodeThatResemblesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-ai-search:{{VERSION_REWRITE_AI_SEARCH}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

@@ -13,11 +13,7 @@ _Recipes to migrate to Android Gradle Plugin version 8.0._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/resources/META-INF/rewrite/agp-8.0.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/{{VERSION_REWRITE_ANDROID}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-android
-* version: {{VERSION_REWRITE_ANDROID}}
+[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/resources/META-INF/rewrite/agp-8.0.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/)
 
 
 ## Definition

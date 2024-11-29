@@ -13,11 +13,7 @@ _Set the maven micronaut.version property according to a node-style semver selec
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/{{VERSION_REWRITE_MICRONAUT}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-micronaut
-* version: {{VERSION_REWRITE_MICRONAUT}}
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/UpgradeMicronautMavenPropertyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       newVersion: 4.x
 ```
 
-Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}} in your build file:
+Now that `com.yourorg.UpgradeMicronautMavenPropertyVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

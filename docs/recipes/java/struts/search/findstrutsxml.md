@@ -13,11 +13,7 @@ _Struts XML files may have any name, and may be outside a resources directory, s
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/search/FindStrutsXml.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/{{VERSION_REWRITE_STRUTS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-struts
-* version: {{VERSION_REWRITE_STRUTS}}
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/search/FindStrutsXml.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 
 
 ## Usage

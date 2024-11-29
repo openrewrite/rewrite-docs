@@ -21,11 +21,7 @@ _Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [L
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/{{VERSION_REWRITE_LOGGING_FRAMEWORKS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-logging-frameworks
-* version: {{VERSION_REWRITE_LOGGING_FRAMEWORKS}}
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/log4j.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 
 ## Definition

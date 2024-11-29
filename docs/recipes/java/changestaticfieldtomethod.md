@@ -13,11 +13,7 @@ _Migrate accesses to a static field to invocations of a static method._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/{{VERSION_REWRITE_JAVA}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-java
-* version: {{VERSION_REWRITE_JAVA}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeStaticFieldToMethod.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 ## Options
 

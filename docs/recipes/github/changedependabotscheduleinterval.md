@@ -19,11 +19,7 @@ _Change the schedule interval for a given package-ecosystem in a `dependabot.yml
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeDependabotScheduleInterval.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/{{VERSION_REWRITE_GITHUB_ACTIONS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-github-actions
-* version: {{VERSION_REWRITE_GITHUB_ACTIONS}}
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeDependabotScheduleInterval.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 ## Options
 
@@ -48,7 +44,7 @@ recipeList:
       interval: weekly
 ```
 
-Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}} in your build file:
+Now that `com.yourorg.ChangeDependabotScheduleIntervalExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_REWRITE_GITHUB_ACTIONS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

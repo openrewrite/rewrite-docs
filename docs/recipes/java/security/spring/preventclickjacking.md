@@ -20,11 +20,7 @@ The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP re
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/spring/PreventClickjacking.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/{{VERSION_REWRITE_JAVA_SECURITY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-java-security
-* version: {{VERSION_REWRITE_JAVA_SECURITY}}
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/spring/PreventClickjacking.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/)
 
 ## Options
 

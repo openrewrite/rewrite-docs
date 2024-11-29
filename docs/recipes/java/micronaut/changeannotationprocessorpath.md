@@ -13,11 +13,7 @@ _Change the groupId, artifactId, and version of a Maven annotation processor pat
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ChangeAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/{{VERSION_REWRITE_MICRONAUT}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-micronaut
-* version: {{VERSION_REWRITE_MICRONAUT}}
+[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ChangeAnnotationProcessorPath.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 
 ## Options
 
@@ -50,7 +46,7 @@ recipeList:
       exclusions: io.micronaut:micronaut-inject
 ```
 
-Now that `com.yourorg.ChangeAnnotationProcessorPathExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}} in your build file:
+Now that `com.yourorg.ChangeAnnotationProcessorPathExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-micronaut:{{VERSION_REWRITE_MICRONAUT}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

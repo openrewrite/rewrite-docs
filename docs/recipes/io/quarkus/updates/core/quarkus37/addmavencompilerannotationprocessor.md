@@ -13,11 +13,7 @@ _Add an annotation processor to the Maven Compiler plugin configuration._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.AddMavenCompilerAnnotationProcessor), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/{{VERSION_REWRITE_THIRD_PARTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: {{VERSION_REWRITE_THIRD_PARTY}}
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.AddMavenCompilerAnnotationProcessor), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 ## Options
 
@@ -45,7 +41,7 @@ recipeList:
       mavenCompilerPluginVersion: hibernate-jpamodelgen
 ```
 
-Now that `com.yourorg.AddMavenCompilerAnnotationProcessorExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}} in your build file:
+Now that `com.yourorg.AddMavenCompilerAnnotationProcessorExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_REWRITE_THIRD_PARTY}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

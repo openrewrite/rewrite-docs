@@ -19,11 +19,7 @@ _DAX encryption at rest automatically integrates with AWS KMS for managing the s
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/aws.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/{{VERSION_REWRITE_TERRAFORM}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-terraform
-* version: {{VERSION_REWRITE_TERRAFORM}}
+[GitHub](https://github.com/openrewrite/rewrite-terraform/blob/main/src/main/resources/META-INF/rewrite/aws.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-terraform/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-terraform/)
 
 
 ## Definition

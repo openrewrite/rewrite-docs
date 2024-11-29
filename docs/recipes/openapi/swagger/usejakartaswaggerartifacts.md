@@ -19,11 +19,7 @@ _Migrate from javax Swagger artifacts to Jakarta versions._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/{{VERSION_REWRITE_OPENAPI}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-openapi
-* version: {{VERSION_REWRITE_OPENAPI}}
+[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/resources/META-INF/rewrite/swagger-2.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

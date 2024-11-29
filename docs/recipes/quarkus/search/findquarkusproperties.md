@@ -13,11 +13,7 @@ _Finds occurrences of a Quarkus property key._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/{{VERSION_REWRITE_QUARKUS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-quarkus
-* version: {{VERSION_REWRITE_QUARKUS}}
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/search/FindQuarkusProperties.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 ## Options
 
@@ -44,7 +40,7 @@ recipeList:
       searchAllProfiles: false
 ```
 
-Now that `com.yourorg.FindQuarkusPropertiesExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}} in your build file:
+Now that `com.yourorg.FindQuarkusPropertiesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

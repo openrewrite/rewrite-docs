@@ -13,11 +13,7 @@ _`listOf()` is the default argument for the `labels` parameter._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/misk/NoExplicitEmptyLabelList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/{{VERSION_REWRITE_MICROMETER}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-micrometer
-* version: {{VERSION_REWRITE_MICROMETER}}
+[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/misk/NoExplicitEmptyLabelList.java), [Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 
 
 ## Usage

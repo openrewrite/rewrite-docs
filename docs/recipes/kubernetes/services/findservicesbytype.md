@@ -13,11 +13,7 @@ _Type of Kubernetes `Service` to find._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/FindServicesByType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/{{VERSION_REWRITE_KUBERNETES}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-kubernetes
-* version: {{VERSION_REWRITE_KUBERNETES}}
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/services/FindServicesByType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       fileMatcher: '**/pod-*.yml'
 ```
 
-Now that `com.yourorg.FindServicesByTypeExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}} in your build file:
+Now that `com.yourorg.FindServicesByTypeExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

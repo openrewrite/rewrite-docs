@@ -13,11 +13,7 @@ _Migrate to version 5.x. See the Gradle upgrade guide from [version 4.x to 5.0](
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/{{VERSION_REWRITE_GRADLE}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-gradle
-* version: {{VERSION_REWRITE_GRADLE}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
 
 ## Definition

@@ -13,11 +13,7 @@ _In Apache Http Client 5.x migration, an extra TimeUnit argument is required in 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/{{VERSION_REWRITE_APACHE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-apache
-* version: {{VERSION_REWRITE_APACHE}}
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/AddTimeUnitArgument.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       timeUnit: MILLISECONDS
 ```
 
-Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}} in your build file:
+Now that `com.yourorg.AddTimeUnitArgumentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-apache:{{VERSION_REWRITE_APACHE}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

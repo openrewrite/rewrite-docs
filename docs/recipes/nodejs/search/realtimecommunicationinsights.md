@@ -13,11 +13,7 @@ _Discover which popular javascript real-time communication libraries (Socket.io,
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/resources/META-INF/rewrite/insights.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/{{VERSION_REWRITE_NODEJS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-nodejs
-* version: {{VERSION_REWRITE_NODEJS}}
+[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/resources/META-INF/rewrite/insights.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

@@ -18,11 +18,7 @@ _Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wra
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/gradle.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/{{VERSION_REWRITE_GITHUB_ACTIONS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-github-actions
-* version: {{VERSION_REWRITE_GITHUB_ACTIONS}}
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/resources/META-INF/rewrite/gradle.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 
 ## Definition

@@ -13,11 +13,7 @@ _Annotations that could be applied to either a field or a type are better applie
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/java/MoveFieldAnnotationToType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/{{VERSION_REWRITE_STATIC_ANALYSIS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-static-analysis
-* version: {{VERSION_REWRITE_STATIC_ANALYSIS}}
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/java/MoveFieldAnnotationToType.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 ## Options
 

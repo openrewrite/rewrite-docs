@@ -13,11 +13,7 @@ _By using the exception as another parameter you get the whole stack trace._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/log4j/LoggingExceptionConcatenation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/{{VERSION_REWRITE_LOGGING_FRAMEWORKS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-logging-frameworks
-* version: {{VERSION_REWRITE_LOGGING_FRAMEWORKS}}
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/log4j/LoggingExceptionConcatenation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 
 ## Usage

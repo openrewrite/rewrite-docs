@@ -13,11 +13,7 @@ _Find SQL in code (e.g. in string literals) and in resources like those ending w
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FindSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/{{VERSION_REWRITE_SQL}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-sql
-* version: {{VERSION_REWRITE_SQL}}
+[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FindSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/)
 
 
 ## Usage

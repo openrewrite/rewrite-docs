@@ -13,11 +13,7 @@ _Change `compileSdk`, `compileSdkVersion`, `targetSdk` and `targetSdkVersion` in
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/java/org/openrewrite/android/ChangeAndroidSdkVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/{{VERSION_REWRITE_ANDROID}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-android
-* version: {{VERSION_REWRITE_ANDROID}}
+[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/java/org/openrewrite/android/ChangeAndroidSdkVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       version: 35
 ```
 
-Now that `com.yourorg.ChangeAndroidSdkVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}} in your build file:
+Now that `com.yourorg.ChangeAndroidSdkVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

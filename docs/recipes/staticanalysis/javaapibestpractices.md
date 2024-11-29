@@ -13,11 +13,7 @@ _Use the Java standard library in a way that is most idiomatic._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/java-best-practices.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/{{VERSION_REWRITE_STATIC_ANALYSIS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-static-analysis
-* version: {{VERSION_REWRITE_STATIC_ANALYSIS}}
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/resources/META-INF/rewrite/java-best-practices.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 
 ## Definition

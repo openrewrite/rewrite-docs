@@ -13,11 +13,7 @@ _Move HTTP settings from the ClientOverrideConfiguration to ApacheHttpClient for
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.HttpSettingsToHttpClient), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/{{VERSION_REWRITE_THIRD_PARTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: {{VERSION_REWRITE_THIRD_PARTY}}
+[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.HttpSettingsToHttpClient), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 
 ## Usage

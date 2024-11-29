@@ -19,11 +19,7 @@ _require class directives instead of ternary expressions See rule details for [s
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-svelte.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/{{VERSION_REWRITE_CODEMODS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-codemods
-* version: {{VERSION_REWRITE_CODEMODS}}
+[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/eslint-plugin-svelte.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 
 ## Definition

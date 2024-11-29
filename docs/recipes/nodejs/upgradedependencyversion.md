@@ -13,11 +13,7 @@ _Upgrade matching Node.js direct dependencies._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/java/org/openrewrite/nodejs/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/{{VERSION_REWRITE_NODEJS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-nodejs
-* version: {{VERSION_REWRITE_NODEJS}}
+[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/java/org/openrewrite/nodejs/UpgradeDependencyVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       version: 1.x
 ```
 
-Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-nodejs:{{VERSION_REWRITE_NODEJS}} in your build file:
+Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-nodejs:{{VERSION_REWRITE_NODEJS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

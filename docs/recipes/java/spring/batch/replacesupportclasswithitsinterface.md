@@ -13,11 +13,7 @@ _As of spring-batch 5.x Listeners has default methods (made possible by a Java 8
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/ReplaceSupportClassWithItsInterface.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/{{VERSION_REWRITE_SPRING}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: {{VERSION_REWRITE_SPRING}}
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/ReplaceSupportClassWithItsInterface.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       fullyQualifiedInterfaceName: org.springframework.batch.core.JobExecutionListener
 ```
 
-Now that `com.yourorg.ReplaceSupportClassWithItsInterfaceExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}} in your build file:
+Now that `com.yourorg.ReplaceSupportClassWithItsInterfaceExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

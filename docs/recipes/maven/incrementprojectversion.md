@@ -13,11 +13,7 @@ _Increase Maven project version by incrementing either the major, minor, or patc
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/IncrementProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/{{VERSION_REWRITE_MAVEN}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-maven
-* version: {{VERSION_REWRITE_MAVEN}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/IncrementProjectVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
 ## Options
 

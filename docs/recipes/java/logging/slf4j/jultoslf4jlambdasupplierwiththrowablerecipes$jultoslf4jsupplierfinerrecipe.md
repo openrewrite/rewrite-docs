@@ -16,11 +16,7 @@ Replace calls to `java.util.logging.Logger.log(Level.FINER, e, Supplier<String>)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/JulToSlf4jLambdaSupplierWithThrowable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/{{VERSION_REWRITE_LOGGING_FRAMEWORKS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-logging-frameworks
-* version: {{VERSION_REWRITE_LOGGING_FRAMEWORKS}}
+[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/JulToSlf4jLambdaSupplierWithThrowable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 
 
 ## Usage

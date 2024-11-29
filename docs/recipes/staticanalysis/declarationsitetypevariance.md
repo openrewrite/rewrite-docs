@@ -16,11 +16,7 @@ Currently, Java requires use-site type variance, so if someone has `Function<IN,
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/DeclarationSiteTypeVariance.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/{{VERSION_REWRITE_STATIC_ANALYSIS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-static-analysis
-* version: {{VERSION_REWRITE_STATIC_ANALYSIS}}
+[GitHub](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/DeclarationSiteTypeVariance.java), [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 ## Options
 
@@ -46,7 +42,7 @@ recipeList:
       excludedBounds: java.lang.*
 ```
 
-Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}} in your build file:
+Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_REWRITE_STATIC_ANALYSIS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

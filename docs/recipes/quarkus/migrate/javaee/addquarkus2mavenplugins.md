@@ -13,11 +13,7 @@ _Upgrade Standard JavaEE dependencies to Quarkus 2 dependencies._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/javaee7-to-quarkus.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/{{VERSION_REWRITE_QUARKUS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-quarkus
-* version: {{VERSION_REWRITE_QUARKUS}}
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/resources/META-INF/rewrite/javaee7-to-quarkus.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

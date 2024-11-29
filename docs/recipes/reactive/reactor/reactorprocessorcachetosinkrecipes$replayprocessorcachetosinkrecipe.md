@@ -13,11 +13,7 @@ _As of 3.5 ReplayProcessor is deprecated and Sinks are preferred_
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-reactive-streams/blob/main/src/main/java/org/openrewrite/reactive/reactor/ReactorProcessorCacheToSink.java), [Issue Tracker](https://github.com/openrewrite/rewrite-reactive-streams/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-reactive-streams/{{VERSION_REWRITE_REACTIVE_STREAMS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-reactive-streams
-* version: {{VERSION_REWRITE_REACTIVE_STREAMS}}
+[GitHub](https://github.com/openrewrite/rewrite-reactive-streams/blob/main/src/main/java/org/openrewrite/reactive/reactor/ReactorProcessorCacheToSink.java), [Issue Tracker](https://github.com/openrewrite/rewrite-reactive-streams/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-reactive-streams/)
 
 
 ## Usage

@@ -17,11 +17,7 @@ _Prefer the Java standard library over third-party usage of Guava in simple case
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaSetsNewLinkedHashSet.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/{{VERSION_REWRITE_MIGRATE_JAVA}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: {{VERSION_REWRITE_MIGRATE_JAVA}}
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaSetsNewLinkedHashSet.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 
 ## Usage

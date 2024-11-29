@@ -13,11 +13,7 @@ _Updates `Jenkinsfile` to build with recommended Java versions, platforms, and s
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/{{VERSION_REWRITE_JENKINS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-jenkins
-* version: {{VERSION_REWRITE_JENKINS}}
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/rewrite.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 
 ## Definition

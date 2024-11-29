@@ -13,11 +13,7 @@ _Textual find and replace, optionally interpreting the search query as a Regular
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/FindAndReplace.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/{{VERSION_REWRITE_CORE}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-core
-* version: {{VERSION_REWRITE_CORE}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/FindAndReplace.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 
 ## Options
 

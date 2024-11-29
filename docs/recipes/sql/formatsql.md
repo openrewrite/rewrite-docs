@@ -13,11 +13,7 @@ _Checks whether a text block may contain SQL, and if so, formats the text accord
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FormatSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/{{VERSION_REWRITE_SQL}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-sql
-* version: {{VERSION_REWRITE_SQL}}
+[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/FormatSql.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/)
 
 ## Options
 

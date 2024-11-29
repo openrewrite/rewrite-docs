@@ -13,11 +13,7 @@ _Apache Camel XML DSL Circuit Breaker migration from version 3.20 or higher to 4
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel40.xml.CircuitBreakerXmlDslRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/{{VERSION_REWRITE_THIRD_PARTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: {{VERSION_REWRITE_THIRD_PARTY}}
+[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel40.xml.CircuitBreakerXmlDslRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 
 ## Usage

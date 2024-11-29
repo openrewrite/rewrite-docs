@@ -13,11 +13,7 @@ _Change AWS SDK for Java v1 types to v2 equivalents._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeSdkType), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/{{VERSION_REWRITE_THIRD_PARTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: {{VERSION_REWRITE_THIRD_PARTY}}
+[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeSdkType), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 
 ## Usage

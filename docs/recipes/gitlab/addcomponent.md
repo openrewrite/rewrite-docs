@@ -13,11 +13,7 @@ _Add a GitLab component to an existing list, or add a new list where none was pr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddComponent.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/{{VERSION_REWRITE_GITLAB}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-gitlab
-* version: {{VERSION_REWRITE_GITLAB}}
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddComponent.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 
 ## Options
 
@@ -84,7 +80,7 @@ recipeList:
       inputs: opentofu_version: 1.6.1
 ```
 
-Now that `com.yourorg.AddComponentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}} in your build file:
+Now that `com.yourorg.AddComponentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

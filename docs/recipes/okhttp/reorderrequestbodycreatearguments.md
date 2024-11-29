@@ -13,11 +13,7 @@ _Reorder the arguments of `RequestBody.create()` to put the `MediaType` argument
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okhttp-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/{{VERSION_REWRITE_OKHTTP}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-okhttp
-* version: {{VERSION_REWRITE_OKHTTP}}
+[GitHub](https://github.com/openrewrite/rewrite-okhttp/blob/main/src/main/resources/META-INF/rewrite/okhttp-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-okhttp/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-okhttp/)
 
 
 ## Definition

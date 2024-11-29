@@ -13,11 +13,7 @@ _By default, `resource_type` definitions are unprivileged._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/resources/META-INF/rewrite/search.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/{{VERSION_REWRITE_CONCOURSE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-concourse
-* version: {{VERSION_REWRITE_CONCOURSE}}
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/resources/META-INF/rewrite/search.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/)
 
 
 ## Definition

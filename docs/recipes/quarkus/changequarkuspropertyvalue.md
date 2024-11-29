@@ -13,11 +13,7 @@ _Change the value of a property in Quarkus configuration files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ChangeQuarkusPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/{{VERSION_REWRITE_QUARKUS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-quarkus
-* version: {{VERSION_REWRITE_QUARKUS}}
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ChangeQuarkusPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 ## Options
 
@@ -50,7 +46,7 @@ recipeList:
       pathExpressions: ["**/application.yaml"]
 ```
 
-Now that `com.yourorg.ChangeQuarkusPropertyValueExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}} in your build file:
+Now that `com.yourorg.ChangeQuarkusPropertyValueExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

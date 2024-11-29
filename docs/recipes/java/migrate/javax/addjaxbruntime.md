@@ -22,11 +22,7 @@ _Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/javax/AddJaxbRuntime.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/{{VERSION_REWRITE_MIGRATE_JAVA}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: {{VERSION_REWRITE_MIGRATE_JAVA}}
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/javax/AddJaxbRuntime.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 ## Options
 
@@ -49,7 +45,7 @@ recipeList:
       runtime: glassfish
 ```
 
-Now that `com.yourorg.AddJaxbRuntimeExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}} in your build file:
+Now that `com.yourorg.AddJaxbRuntimeExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

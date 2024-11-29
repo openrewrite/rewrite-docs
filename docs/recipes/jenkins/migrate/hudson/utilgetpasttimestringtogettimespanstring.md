@@ -13,11 +13,7 @@ _`hudson.Util.getPastTimeString` has been [deprecated](https://github.com/jenkin
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/hudson-migrations.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/{{VERSION_REWRITE_JENKINS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-jenkins
-* version: {{VERSION_REWRITE_JENKINS}}
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/resources/META-INF/rewrite/hudson-migrations.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 
 ## Definition

@@ -13,11 +13,7 @@ _Delete a YAML property. Nested YAML mappings are interpreted as dot separated p
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/DeleteProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/{{VERSION_REWRITE_YAML}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-yaml
-* version: {{VERSION_REWRITE_YAML}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/DeleteProperty.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 
 ## Options
 

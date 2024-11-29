@@ -13,11 +13,7 @@ _Change every value matching the key pattern._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/{{VERSION_REWRITE_CONCOURSE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-concourse
-* version: {{VERSION_REWRITE_CONCOURSE}}
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/)
 
 ## Options
 
@@ -46,7 +42,7 @@ recipeList:
       fileMatcher: '**/pipeline*.yml'
 ```
 
-Now that `com.yourorg.ChangeValueExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}} in your build file:
+Now that `com.yourorg.ChangeValueExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

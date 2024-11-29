@@ -13,11 +13,7 @@ _Identify the direct and transitive Node.js dependencies used in a project._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/java/org/openrewrite/nodejs/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/{{VERSION_REWRITE_NODEJS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-nodejs
-* version: {{VERSION_REWRITE_NODEJS}}
+[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/java/org/openrewrite/nodejs/search/DependencyInsight.java), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/)
 
 ## Options
 
@@ -44,7 +40,7 @@ recipeList:
       onlyDirect: true
 ```
 
-Now that `com.yourorg.DependencyInsightExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-nodejs:{{VERSION_REWRITE_NODEJS}} in your build file:
+Now that `com.yourorg.DependencyInsightExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-nodejs:{{VERSION_REWRITE_NODEJS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

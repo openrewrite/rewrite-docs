@@ -13,11 +13,7 @@ _Find a GitLab Component in use._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/search/FindComponent.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/{{VERSION_REWRITE_GITLAB}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-gitlab
-* version: {{VERSION_REWRITE_GITLAB}}
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/search/FindComponent.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 
 ## Options
 
@@ -66,7 +62,7 @@ recipeList:
       component: $CI_SERVER_FQDN/components/opentofu/full-pipeline
 ```
 
-Now that `com.yourorg.FindComponentExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}} in your build file:
+Now that `com.yourorg.FindComponentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

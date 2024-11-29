@@ -13,11 +13,7 @@ _Produce an impact analysis of base images used in Dockerfiles._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-docker/blob/main/src/main/java/org/openrewrite/docker/search/FindDockerImageUses.java), [Issue Tracker](https://github.com/openrewrite/rewrite-docker/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-docker/{{VERSION_REWRITE_DOCKER}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-docker
-* version: {{VERSION_REWRITE_DOCKER}}
+[GitHub](https://github.com/openrewrite/rewrite-docker/blob/main/src/main/java/org/openrewrite/docker/search/FindDockerImageUses.java), [Issue Tracker](https://github.com/openrewrite/rewrite-docker/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-docker/)
 
 
 ## Usage

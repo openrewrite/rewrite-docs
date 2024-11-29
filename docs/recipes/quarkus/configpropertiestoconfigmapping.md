@@ -13,11 +13,7 @@ _Migrate Quarkus configuration classes annotated with `@ConfigProperties` to the
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ConfigPropertiesToConfigMapping.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/{{VERSION_REWRITE_QUARKUS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-quarkus
-* version: {{VERSION_REWRITE_QUARKUS}}
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ConfigPropertiesToConfigMapping.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 
 ## Usage

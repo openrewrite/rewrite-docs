@@ -13,11 +13,7 @@ _Find SQL functions by name._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/search/FindFunction.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/{{VERSION_REWRITE_SQL}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-sql
-* version: {{VERSION_REWRITE_SQL}}
+[GitHub](https://github.com/openrewrite/rewrite-sql/blob/main/src/main/java/org/openrewrite/sql/search/FindFunction.java), [Issue Tracker](https://github.com/openrewrite/rewrite-sql/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-sql/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       functionName: nvl
 ```
 
-Now that `com.yourorg.FindFunctionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-sql:{{VERSION_REWRITE_SQL}} in your build file:
+Now that `com.yourorg.FindFunctionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-sql:{{VERSION_REWRITE_SQL}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

@@ -17,11 +17,7 @@ For Maven project, removes a single dependency from the <dependencies> section o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/{{VERSION_REWRITE_JAVA_DEPENDENCIES}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-java-dependencies
-* version: {{VERSION_REWRITE_JAVA_DEPENDENCIES}}
+[GitHub](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 
 ## Options
 
@@ -52,7 +48,7 @@ recipeList:
       scope: compile
 ```
 
-Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}} in your build file:
+Now that `com.yourorg.RemoveDependencyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

@@ -13,11 +13,7 @@ _This is a sample recipe demonstrating a simple application of local data flow a
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/UriCreatedWithHttpScheme.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/{{VERSION_REWRITE_ANALYSIS}}/jar)
-
-* groupId: org.openrewrite.meta
-* artifactId: rewrite-analysis
-* version: {{VERSION_REWRITE_ANALYSIS}}
+[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/search/UriCreatedWithHttpScheme.java), [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
 
 
 ## Usage

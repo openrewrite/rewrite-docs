@@ -13,11 +13,7 @@ _Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/resources/META-INF/rewrite/jspecify.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/{{VERSION_REWRITE_CORE}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-core
-* version: {{VERSION_REWRITE_CORE}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/resources/META-INF/rewrite/jspecify.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

@@ -13,11 +13,7 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/{{VERSION_REWRITE_JENKINS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-jenkins
-* version: {{VERSION_REWRITE_JENKINS}}
+[GitHub](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java), [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 
 ## Options
 
@@ -47,7 +43,7 @@ recipeList:
 artifactId: commons-text
 ```
 
-Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}} in your build file:
+Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

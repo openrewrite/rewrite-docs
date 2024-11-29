@@ -13,11 +13,7 @@ _Update Jakarta EE Platform Dependencies to 10.0.0._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/{{VERSION_REWRITE_MIGRATE_JAVA}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: {{VERSION_REWRITE_MIGRATE_JAVA}}
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-10.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 
 ## Definition

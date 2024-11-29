@@ -13,11 +13,7 @@ _Change a GitLab template in use._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/ChangeTemplate.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/{{VERSION_REWRITE_GITLAB}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-gitlab
-* version: {{VERSION_REWRITE_GITLAB}}
+[GitHub](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/ChangeTemplate.java), [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 
 ## Options
 
@@ -71,7 +67,7 @@ recipeList:
       newTemplate: OpenTofu/Base.gitlab-ci.yml
 ```
 
-Now that `com.yourorg.ChangeTemplateExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}} in your build file:
+Now that `com.yourorg.ChangeTemplateExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_REWRITE_GITLAB}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

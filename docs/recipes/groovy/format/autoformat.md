@@ -13,11 +13,7 @@ _Format Groovy code using a standard comprehensive set of Groovy formatting reci
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/{{VERSION_REWRITE_GROOVY}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-groovy
-* version: {{VERSION_REWRITE_GROOVY}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/AutoFormat.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/)
 
 
 ## Usage

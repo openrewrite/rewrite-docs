@@ -13,11 +13,7 @@ _A secret is a literal that matches any one of the provided patterns._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/secrets/FindSecretsByPattern.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/{{VERSION_REWRITE_JAVA_SECURITY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-java-security
-* version: {{VERSION_REWRITE_JAVA_SECURITY}}
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/secrets/FindSecretsByPattern.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/)
 
 ## Options
 
@@ -44,7 +40,7 @@ recipeList:
       valuePattern: '[a-zA-Z0-9+\/=]{88}'
 ```
 
-Now that `com.yourorg.FindSecretsByPatternExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}} in your build file:
+Now that `com.yourorg.FindSecretsByPatternExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

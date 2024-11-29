@@ -17,11 +17,7 @@ _Assertions such as `org.junit.Assert.assertEquals` expect the first argument to
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/AssertionsArgumentOrder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/{{VERSION_REWRITE_TESTING_FRAMEWORKS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-testing-frameworks
-* version: {{VERSION_REWRITE_TESTING_FRAMEWORKS}}
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/cleanup/AssertionsArgumentOrder.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 
 ## Usage

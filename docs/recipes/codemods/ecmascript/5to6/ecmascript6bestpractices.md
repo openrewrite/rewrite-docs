@@ -18,11 +18,7 @@ _A collection of common ECMAScript 5 to ECMAScript 6 updates._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/ecmascript.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/{{VERSION_REWRITE_CODEMODS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-codemods
-* version: {{VERSION_REWRITE_CODEMODS}}
+[GitHub](https://github.com/openrewrite/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/ecmascript.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-codemods/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

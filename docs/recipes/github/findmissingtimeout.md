@@ -13,11 +13,7 @@ _Find GitHub Actions jobs missing a timeout._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/FindMissingTimeout.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/{{VERSION_REWRITE_GITHUB_ACTIONS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-github-actions
-* version: {{VERSION_REWRITE_GITHUB_ACTIONS}}
+[GitHub](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/FindMissingTimeout.java), [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 
 
 ## Usage

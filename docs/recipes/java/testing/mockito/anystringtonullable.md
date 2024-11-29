@@ -13,11 +13,7 @@ _Since Mockito 2.10 `anyString()` no longer matches null values. Use `nullable(C
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/AnyStringToNullable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/{{VERSION_REWRITE_TESTING_FRAMEWORKS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-testing-frameworks
-* version: {{VERSION_REWRITE_TESTING_FRAMEWORKS}}
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/AnyStringToNullable.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 
 ## Usage

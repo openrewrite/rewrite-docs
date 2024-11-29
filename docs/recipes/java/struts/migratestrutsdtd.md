@@ -13,11 +13,7 @@ _Update Struts DTD to reflect the specified version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/{{VERSION_REWRITE_STRUTS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-struts
-* version: {{VERSION_REWRITE_STRUTS}}
+[GitHub](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/MigrateStrutsDtd.java), [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       strutsVersion: 6.0
 ```
 
-Now that `com.yourorg.MigrateStrutsDtdExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}} in your build file:
+Now that `com.yourorg.MigrateStrutsDtdExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-struts:{{VERSION_REWRITE_STRUTS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

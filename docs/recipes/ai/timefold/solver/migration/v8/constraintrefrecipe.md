@@ -13,11 +13,7 @@ _Use `getConstraintRef()` instead of `getConstraintId()` et al._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.v8.ConstraintRefRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/{{VERSION_REWRITE_THIRD_PARTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: {{VERSION_REWRITE_THIRD_PARTY}}
+[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.v8.ConstraintRefRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 
 ## Usage

@@ -13,11 +13,7 @@ _The oldest Java version in use is the lowest Java version in use in any source 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/HasMinimumJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/{{VERSION_REWRITE_JAVA}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-java
-* version: {{VERSION_REWRITE_JAVA}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/HasMinimumJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 ## Options
 

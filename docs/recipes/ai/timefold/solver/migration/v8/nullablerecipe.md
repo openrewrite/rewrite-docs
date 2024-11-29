@@ -13,11 +13,7 @@ _Removes references to null vars and replace them with unassigned values._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.v8.NullableRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/{{VERSION_REWRITE_THIRD_PARTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: {{VERSION_REWRITE_THIRD_PARTY}}
+[GitHub](https://github.com/search?type=code&q=ai.timefold.solver.migration.v8.NullableRecipe), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -27,6 +23,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Change method name](../../../../../java/changemethodname)
+  * methodPattern: `ai.timefold.solver.core.api.score.stream.bi.BiConstraintStream ifExistsIncludingNullVars(..)`
+  * newMethodName: `ifExistsIncludingUnassigned`
 * [Change method name](../../../../../java/changemethodname)
   * methodPattern: `ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifNotExistsOtherIncludingNullVars(..)`
   * newMethodName: `ifNotExistsOtherIncludingUnassigned`
@@ -57,9 +56,6 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change method name](../../../../../java/changemethodname)
   * methodPattern: `ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifNotExistsIncludingNullVars(..)`
   * newMethodName: `ifNotExistsIncludingUnassigned`
-* [Change method name](../../../../../java/changemethodname)
-  * methodPattern: `ai.timefold.solver.core.api.score.stream.bi.BiConstraintStream ifExistsIncludingNullVars(..)`
-  * newMethodName: `ifExistsIncludingUnassigned`
 * [Change annotation attribute name](../../../../../java/changeannotationattributename)
   * annotationType: `ai.timefold.solver.core.api.domain.variable.PlanningVariable`
   * oldAttributeName: `nullable`
@@ -76,6 +72,9 @@ name: ai.timefold.solver.migration.v8.NullableRecipe
 displayName: PlanningVariable's `nullable` is newly called `unassignedValues`
 description: Removes references to null vars and replace them with unassigned values.
 recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: ai.timefold.solver.core.api.score.stream.bi.BiConstraintStream ifExistsIncludingNullVars(..)
+      newMethodName: ifExistsIncludingUnassigned
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifNotExistsOtherIncludingNullVars(..)
       newMethodName: ifNotExistsOtherIncludingUnassigned
@@ -106,9 +105,6 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: ai.timefold.solver.core.api.score.stream.uni.UniConstraintStream ifNotExistsIncludingNullVars(..)
       newMethodName: ifNotExistsIncludingUnassigned
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: ai.timefold.solver.core.api.score.stream.bi.BiConstraintStream ifExistsIncludingNullVars(..)
-      newMethodName: ifExistsIncludingUnassigned
   - org.openrewrite.java.ChangeAnnotationAttributeName:
       annotationType: ai.timefold.solver.core.api.domain.variable.PlanningVariable
       oldAttributeName: nullable

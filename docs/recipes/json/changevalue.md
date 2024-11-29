@@ -13,11 +13,7 @@ _Change a JSON mapping entry value leaving the key intact._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/{{VERSION_REWRITE_JSON}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-json
-* version: {{VERSION_REWRITE_JSON}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/ChangeValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 
 ## Options
 

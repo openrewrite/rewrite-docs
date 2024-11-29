@@ -13,11 +13,7 @@ _Find Ingress resources that don't disallow HTTP or don't have TLS configured._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindNonTlsIngress.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/{{VERSION_REWRITE_KUBERNETES}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-kubernetes
-* version: {{VERSION_REWRITE_KUBERNETES}}
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindNonTlsIngress.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/)
 
 ## Options
 

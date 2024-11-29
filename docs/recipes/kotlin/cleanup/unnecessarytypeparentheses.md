@@ -13,11 +13,7 @@ _In Kotlin, it's possible to add redundant nested parentheses in type definition
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/UnnecessaryTypeParentheses.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/{{VERSION_REWRITE_KOTLIN}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-kotlin
-* version: {{VERSION_REWRITE_KOTLIN}}
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/cleanup/UnnecessaryTypeParentheses.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 
 
 ## Usage

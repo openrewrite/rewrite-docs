@@ -18,11 +18,7 @@ _Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == 
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/lang/IsNotEmptyToJdk.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/{{VERSION_REWRITE_APACHE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-apache
-* version: {{VERSION_REWRITE_APACHE}}
+[GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/commons/lang/IsNotEmptyToJdk.java), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
 
 ## Usage

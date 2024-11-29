@@ -13,11 +13,7 @@ _This recipe will apply changes commonly needed when migrating to LaunchDarkly 6
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/resources/META-INF/rewrite/launchdarkly-6.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/{{VERSION_REWRITE_FEATURE_FLAGS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-feature-flags
-* version: {{VERSION_REWRITE_FEATURE_FLAGS}}
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/resources/META-INF/rewrite/launchdarkly-6.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

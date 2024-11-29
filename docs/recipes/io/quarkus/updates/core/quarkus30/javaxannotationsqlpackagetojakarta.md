@@ -19,11 +19,7 @@ _Change type of classes in the `javax.annotation.sql` package to jakarta._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus30.JavaxAnnotationSqlPackageToJakarta), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/{{VERSION_REWRITE_THIRD_PARTY}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-third-party
-* version: {{VERSION_REWRITE_THIRD_PARTY}}
+[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus30.JavaxAnnotationSqlPackageToJakarta), [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

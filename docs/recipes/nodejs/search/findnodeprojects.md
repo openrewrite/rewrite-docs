@@ -13,11 +13,7 @@ _Find Node.js projects and summarize data about them._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/java/org/openrewrite/nodejs/search/FindNodeProjects.java), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/{{VERSION_REWRITE_NODEJS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-nodejs
-* version: {{VERSION_REWRITE_NODEJS}}
+[GitHub](https://github.com/openrewrite/rewrite-nodejs/blob/main/src/main/java/org/openrewrite/nodejs/search/FindNodeProjects.java), [Issue Tracker](https://github.com/openrewrite/rewrite-nodejs/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-nodejs/)
 
 
 ## Usage

@@ -13,11 +13,7 @@ _Will migrate the usage of `org.hibernate.annotations.ResultCheckStyle` to `org.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateResultCheckStyleToExpectation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/{{VERSION_REWRITE_HIBERNATE}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-hibernate
-* version: {{VERSION_REWRITE_HIBERNATE}}
+[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateResultCheckStyleToExpectation.java), [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 
 
 ## Usage

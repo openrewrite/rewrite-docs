@@ -13,11 +13,7 @@ _Most builds consist of more than one project and some of those projects are usu
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/{{VERSION_REWRITE_GRADLE}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-gradle
-* version: {{VERSION_REWRITE_GRADLE}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/resources/META-INF/rewrite/gradle.yml), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
 
 ## Definition

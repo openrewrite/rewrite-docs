@@ -13,11 +13,7 @@ _Migrate from `LDUser` and `LDUser.Builder` to `LDContext` and `ContextBuilder`.
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/MigrateUserToContext.java), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/{{VERSION_REWRITE_FEATURE_FLAGS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-feature-flags
-* version: {{VERSION_REWRITE_FEATURE_FLAGS}}
+[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/MigrateUserToContext.java), [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 
 ## Usage

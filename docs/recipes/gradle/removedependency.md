@@ -13,11 +13,7 @@ _Removes a single dependency from the dependencies section of the `build.gradle`
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/{{VERSION_REWRITE_GRADLE}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-gradle
-* version: {{VERSION_REWRITE_GRADLE}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveDependency.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
 ## Options
 

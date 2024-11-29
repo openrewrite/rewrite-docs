@@ -13,11 +13,7 @@ _Remove the public modifier from classes that implement RewriteTest._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/RewriteTestClassesShouldNotBePublic.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/{{VERSION_REWRITE_JAVA}}/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-java
-* version: {{VERSION_REWRITE_JAVA}}
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/recipes/RewriteTestClassesShouldNotBePublic.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 
 ## Usage

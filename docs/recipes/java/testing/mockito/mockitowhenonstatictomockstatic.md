@@ -13,11 +13,7 @@ _Replace `Mockito.when` on static (non mock) with try-with-resource with MockedS
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/MockitoWhenOnStaticToMockStatic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/{{VERSION_REWRITE_TESTING_FRAMEWORKS}}/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-testing-frameworks
-* version: {{VERSION_REWRITE_TESTING_FRAMEWORKS}}
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/MockitoWhenOnStaticToMockStatic.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 
 ## Usage
