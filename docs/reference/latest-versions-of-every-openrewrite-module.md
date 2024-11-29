@@ -65,7 +65,6 @@ The use of the "bill of materials" means that a developer will only need to spec
 | [org.openrewrite.recipe:rewrite-terraform](https://github.com/openrewrite/rewrite-terraform)                          | [2.6.1](https://github.com/openrewrite/rewrite-terraform/releases/tag/v2.6.1)              |
 | [org.openrewrite.recipe:rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks)        | [2.23.1](https://github.com/openrewrite/rewrite-testing-frameworks/releases/tag/v2.23.1)   |
 | [org.openrewrite.recipe:rewrite-third-party](https://github.com/openrewrite/rewrite-third-party)                      | [0.12.1](https://github.com/openrewrite/rewrite-third-party/releases/tag/v0.12.1)          |
-|-----------------------------------------------------------------------------------------------------------------------| ---------- |
 
 ## CLI Installation
 
