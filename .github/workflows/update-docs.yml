@@ -39,10 +39,13 @@ jobs:
           fetch-depth: 0
           path: 'rewrite-docs'
       - name: Move generated markdown to docs/
-        run: mv rewrite-recipe-markdown-generator/build/docs/latest-versions-of-every-openrewrite-module.md rewrite-docs/docs/reference/latest-versions-of-every-openrewrite-module.md
+        run: |
+          mv rewrite-recipe-markdown-generator/build/docs/*.md rewrite-docs/docs/reference/
+          mv rewrite-recipe-markdown-generator/build/docs/*.js rewrite-docs/src/plugins/
 
       # Commit and push changes
       - name: configure-git-user
+        working-directory: rewrite-docs
         run: |
           git config user.email "team@moderne.io"
           git config user.name "team-moderne[bot]"
