@@ -13,11 +13,7 @@ _Upgrade build plugin configuration to use the specified Java version. This reci
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.30.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: 2.30.1
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/UpgradeJavaVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -75,7 +71,7 @@ recipeList:
       version: 11
 ```
 
-Now that `com.yourorg.UpgradeJavaVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.30.1 in your build file:
+Now that `com.yourorg.UpgradeJavaVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -83,7 +79,7 @@ Now that `com.yourorg.UpgradeJavaVersionExample` has been defined, activate it a
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -96,7 +92,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.30.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -112,7 +108,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -123,7 +119,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.30.1</version>
+            <version>{{VERSION_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -143,7 +139,7 @@ mod run . --recipe UpgradeJavaVersionExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:2.30.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>

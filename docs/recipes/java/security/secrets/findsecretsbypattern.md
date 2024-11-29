@@ -13,11 +13,7 @@ _A secret is a literal that matches any one of the provided patterns._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/secrets/FindSecretsByPattern.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/2.16.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-java-security
-* version: 2.16.1
+[GitHub](https://github.com/openrewrite/rewrite-java-security/blob/main/src/main/java/org/openrewrite/java/security/secrets/FindSecretsByPattern.java), [Issue Tracker](https://github.com/openrewrite/rewrite-java-security/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-security/)
 
 ## Options
 
@@ -44,7 +40,7 @@ recipeList:
       valuePattern: '[a-zA-Z0-9+\/=]{88}'
 ```
 
-Now that `com.yourorg.FindSecretsByPatternExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-java-security:2.16.1 in your build file:
+Now that `com.yourorg.FindSecretsByPatternExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -52,7 +48,7 @@ Now that `com.yourorg.FindSecretsByPatternExample` has been defined, activate it
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -65,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-security:2.16.1")
+    rewrite("org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -81,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -92,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-java-security</artifactId>
-            <version>2.16.1</version>
+            <version>{{VERSION_REWRITE_JAVA_SECURITY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -112,7 +108,7 @@ mod run . --recipe FindSecretsByPatternExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-security:2.16.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-java-security:{{VERSION_REWRITE_JAVA_SECURITY}}
 ```
 </TabItem>
 </Tabs>

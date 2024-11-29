@@ -13,11 +13,7 @@ _Find data elements used on DTOs. This is useful to provide information where da
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/search/FindDataUsedOnDto.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/2.30.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-migrate-java
-* version: 2.30.1
+[GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/search/FindDataUsedOnDto.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       dtoType: com.example.dto.*
 ```
 
-Now that `com.yourorg.FindDataUsedOnDtoExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-migrate-java:2.30.1 in your build file:
+Now that `com.yourorg.FindDataUsedOnDtoExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -48,7 +44,7 @@ Now that `com.yourorg.FindDataUsedOnDtoExample` has been defined, activate it an
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -61,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-migrate-java:2.30.1")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -77,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -88,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-migrate-java</artifactId>
-            <version>2.30.1</version>
+            <version>{{VERSION_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -108,7 +104,7 @@ mod run . --recipe FindDataUsedOnDtoExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:2.30.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>

@@ -13,11 +13,7 @@ _Change the name of a given type alias._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/1.23.1/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-kotlin
-* version: 1.23.1
+[GitHub](https://github.com/openrewrite/rewrite-kotlin/blob/main/src/main/java/org/openrewrite/kotlin/RenameTypeAlias.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kotlin/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 
 ## Options
 
@@ -44,7 +40,7 @@ recipeList:
       fullyQualifiedAliasedType: org.junit.Assume
 ```
 
-Now that `com.yourorg.RenameTypeAliasExample` has been defined, activate it and take a dependency on org.openrewrite:rewrite-kotlin:1.23.1 in your build file:
+Now that `com.yourorg.RenameTypeAliasExample` has been defined, activate it and take a dependency on `org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -52,7 +48,7 @@ Now that `com.yourorg.RenameTypeAliasExample` has been defined, activate it and 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -65,7 +61,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite:rewrite-kotlin:1.23.1")
+    rewrite("org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -81,7 +77,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -92,7 +88,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-kotlin</artifactId>
-            <version>1.23.1</version>
+            <version>{{VERSION_REWRITE_KOTLIN}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -112,7 +108,7 @@ mod run . --recipe RenameTypeAliasExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-kotlin:1.23.1
+mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_REWRITE_KOTLIN}}
 ```
 </TabItem>
 </Tabs>

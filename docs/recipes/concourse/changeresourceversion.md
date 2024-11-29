@@ -13,11 +13,7 @@ _Pin or unpin a resource to a particular version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeResourceVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/2.9.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-concourse
-* version: 2.9.1
+[GitHub](https://github.com/openrewrite/rewrite-concourse/blob/main/src/main/java/org/openrewrite/concourse/ChangeResourceVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-concourse/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-concourse/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       version: 2.0
 ```
 
-Now that `com.yourorg.ChangeResourceVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-concourse:2.9.1 in your build file:
+Now that `com.yourorg.ChangeResourceVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -50,7 +46,7 @@ Now that `com.yourorg.ChangeResourceVersionExample` has been defined, activate i
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -63,7 +59,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:2.9.1")
+    rewrite("org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -79,7 +75,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -90,7 +86,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-concourse</artifactId>
-            <version>2.9.1</version>
+            <version>{{VERSION_REWRITE_CONCOURSE}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -110,7 +106,7 @@ mod run . --recipe ChangeResourceVersionExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-concourse:2.9.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}}
 ```
 </TabItem>
 </Tabs>

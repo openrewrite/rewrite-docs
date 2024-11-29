@@ -13,11 +13,7 @@ _Change `compileSdk`, `compileSdkVersion`, `targetSdk` and `targetSdkVersion` in
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/java/org/openrewrite/android/ChangeAndroidSdkVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/0.4.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-android
-* version: 0.4.1
+[GitHub](https://github.com/openrewrite/rewrite-android/blob/main/src/main/java/org/openrewrite/android/ChangeAndroidSdkVersion.java), [Issue Tracker](https://github.com/openrewrite/rewrite-android/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-android/)
 
 ## Options
 
@@ -40,7 +36,7 @@ recipeList:
       version: 35
 ```
 
-Now that `com.yourorg.ChangeAndroidSdkVersionExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-android:0.4.1 in your build file:
+Now that `com.yourorg.ChangeAndroidSdkVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -48,7 +44,7 @@ Now that `com.yourorg.ChangeAndroidSdkVersionExample` has been defined, activate
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -61,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-android:0.4.1")
+    rewrite("org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -77,7 +73,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -88,7 +84,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-android</artifactId>
-            <version>0.4.1</version>
+            <version>{{VERSION_REWRITE_ANDROID}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -108,7 +104,7 @@ mod run . --recipe ChangeAndroidSdkVersionExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-android:0.4.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}}
 ```
 </TabItem>
 </Tabs>

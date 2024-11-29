@@ -13,11 +13,7 @@ _Upgrades dependencies according to the specified version of spring boot. Spring
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.24.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: 5.24.1
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/maven/spring/UpgradeExplicitSpringBootDependencies.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 ## Options
 
@@ -42,7 +38,7 @@ recipeList:
       toVersion: 3.0.0-M3
 ```
 
-Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.24.1 in your build file:
+Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:
 <Tabs groupId="projectType">
 
 <TabItem value="maven" label="Maven">
@@ -56,7 +52,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -67,7 +63,7 @@ Now that `com.yourorg.UpgradeExplicitSpringBootDependenciesExample` has been def
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.24.1</version>
+            <version>{{VERSION_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -87,7 +83,7 @@ mod run . --recipe UpgradeExplicitSpringBootDependenciesExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:5.24.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>

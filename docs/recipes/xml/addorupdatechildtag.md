@@ -13,11 +13,7 @@ _Adds or updates a child element below the parent(s) matching the provided `pare
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddOrUpdateChildTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/8.41.1/jar)
-
-* groupId: org.openrewrite
-* artifactId: rewrite-xml
-* version: 8.41.1
+[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/AddOrUpdateChildTag.java), [Issue Tracker](https://github.com/openrewrite/rewrite/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 
 ## Options
 
@@ -50,7 +46,7 @@ Now that `com.yourorg.AddOrUpdateChildTagExample` has been defined, activate it 
 1. Add the following to your `build.gradle` file:
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -75,7 +71,7 @@ repositories {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -99,7 +95,7 @@ mod run . --recipe AddOrUpdateChildTagExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-xml:8.41.1
+mod config recipes jar install org.openrewrite:rewrite-xml:{{VERSION_REWRITE_XML}}
 ```
 </TabItem>
 </Tabs>

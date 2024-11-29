@@ -13,11 +13,7 @@ _The image name to search for in containers and initContainers._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/2.11.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-kubernetes
-* version: 2.11.1
+[GitHub](https://github.com/openrewrite/rewrite-kubernetes/blob/main/src/main/java/org/openrewrite/kubernetes/search/FindImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-kubernetes/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-kubernetes/)
 
 ## Options
 
@@ -48,7 +44,7 @@ recipeList:
       fileMatcher: '**/pod-*.yml'
 ```
 
-Now that `com.yourorg.FindImageExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-kubernetes:2.11.1 in your build file:
+Now that `com.yourorg.FindImageExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -56,7 +52,7 @@ Now that `com.yourorg.FindImageExample` has been defined, activate it and take a
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -69,7 +65,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:2.11.1")
+    rewrite("org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -85,7 +81,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -96,7 +92,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-kubernetes</artifactId>
-            <version>2.11.1</version>
+            <version>{{VERSION_REWRITE_KUBERNETES}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -116,7 +112,7 @@ mod run . --recipe FindImageExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-kubernetes:2.11.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}}
 ```
 </TabItem>
 </Tabs>

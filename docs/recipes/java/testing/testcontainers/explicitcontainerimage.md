@@ -13,11 +13,7 @@ _Set the image to use for a container explicitly if unset, rather than relying o
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/testcontainers/ExplicitContainerImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/2.23.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-testing-frameworks
-* version: 2.23.1
+[GitHub](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/testcontainers/ExplicitContainerImage.java), [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 ## Options
 
@@ -43,7 +39,7 @@ recipeList:
       image: nginx:1.9.4
 ```
 
-Now that `com.yourorg.ExplicitContainerImageExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-testing-frameworks:2.23.1 in your build file:
+Now that `com.yourorg.ExplicitContainerImageExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -51,7 +47,7 @@ Now that `com.yourorg.ExplicitContainerImageExample` has been defined, activate 
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -64,7 +60,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:2.23.1")
+    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -80,7 +76,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -91,7 +87,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-testing-frameworks</artifactId>
-            <version>2.23.1</version>
+            <version>{{VERSION_REWRITE_TESTING_FRAMEWORKS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -111,7 +107,7 @@ mod run . --recipe ExplicitContainerImageExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:2.23.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_REWRITE_TESTING_FRAMEWORKS}}
 ```
 </TabItem>
 </Tabs>

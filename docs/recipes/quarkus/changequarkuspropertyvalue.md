@@ -13,11 +13,7 @@ _Change the value of a property in Quarkus configuration files._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ChangeQuarkusPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/2.11.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-quarkus
-* version: 2.11.1
+[GitHub](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/ChangeQuarkusPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 
 ## Options
 
@@ -50,7 +46,7 @@ recipeList:
       pathExpressions: ["**/application.yaml"]
 ```
 
-Now that `com.yourorg.ChangeQuarkusPropertyValueExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-quarkus:2.11.1 in your build file:
+Now that `com.yourorg.ChangeQuarkusPropertyValueExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -58,7 +54,7 @@ Now that `com.yourorg.ChangeQuarkusPropertyValueExample` has been defined, activ
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -71,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-quarkus:2.11.1")
+    rewrite("org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -87,7 +83,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -98,7 +94,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-quarkus</artifactId>
-            <version>2.11.1</version>
+            <version>{{VERSION_REWRITE_QUARKUS}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -118,7 +114,7 @@ mod run . --recipe ChangeQuarkusPropertyValueExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:2.11.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_REWRITE_QUARKUS}}
 ```
 </TabItem>
 </Tabs>

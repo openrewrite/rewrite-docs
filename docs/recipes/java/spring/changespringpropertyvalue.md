@@ -13,11 +13,7 @@ _Change spring application property values existing in either Properties or Yaml
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeSpringPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/5.24.1/jar)
-
-* groupId: org.openrewrite.recipe
-* artifactId: rewrite-spring
-* version: 5.24.1
+[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ChangeSpringPropertyValue.java), [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 ## Options
 
@@ -46,7 +42,7 @@ recipeList:
       oldValue: false
 ```
 
-Now that `com.yourorg.ChangeSpringPropertyValueExample` has been defined, activate it and take a dependency on org.openrewrite.recipe:rewrite-spring:5.24.1 in your build file:
+Now that `com.yourorg.ChangeSpringPropertyValueExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}` in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -54,7 +50,7 @@ Now that `com.yourorg.ChangeSpringPropertyValueExample` has been defined, activa
 
 ```groovy title="build.gradle"
 plugins {
-    id("org.openrewrite.rewrite") version("6.28.1")
+    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
 }
 
 rewrite {
@@ -67,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-spring:5.24.1")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}")
 }
 ```
 2. Run `gradle rewriteRun` to run the recipe.
@@ -83,7 +79,7 @@ dependencies {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>5.46.1</version>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
@@ -94,7 +90,7 @@ dependencies {
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
             <artifactId>rewrite-spring</artifactId>
-            <version>5.24.1</version>
+            <version>{{VERSION_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -114,7 +110,7 @@ mod run . --recipe ChangeSpringPropertyValueExample
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:5.24.1
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
