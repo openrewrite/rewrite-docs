@@ -96,7 +96,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CreateEmptyJavaClassExample
+mod run . --recipe CreateEmptyJavaClass --recipe-option "sourceRoot=src/main/java" --recipe-option "packageName=org.openrewrite.example" --recipe-option "modifier=public" --recipe-option "className=ExampleClass" --recipe-option "relativePath=foo/bar"
 ```
 
 If the recipe is not available locally, then you can install it using:

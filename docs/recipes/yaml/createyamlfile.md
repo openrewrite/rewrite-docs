@@ -90,19 +90,22 @@ repositories {
 ```
 2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
+            <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
+            You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
-```shell title="shell"
-mod run . --recipe CreateYamlFileExample
-```
+            ```shell title="shell"
+            mod run . --recipe CreateYamlFile --recipe-option "relativeFileName=foo/bar/baz.yaml" --recipe-option "fileContents=a:
+property: value
+another:
+property: value" --recipe-option "fileContentsUrl=http://foo.bar/baz.yaml"
+            ```
 
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-yaml:{{VERSION_REWRITE_YAML}}
-```
-</TabItem>
+            If the recipe is not available locally, then you can install it using:
+            ```shell
+            mod config recipes jar install org.openrewrite:rewrite-yaml:{{VERSION_REWRITE_YAML}}
+            ```
+            </TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories

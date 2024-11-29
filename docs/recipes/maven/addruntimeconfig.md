@@ -75,7 +75,7 @@ Now that `com.yourorg.AddRuntimeConfigExample` has been defined, activate it in 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddRuntimeConfigExample
+mod run . --recipe AddRuntimeConfig --recipe-option "relativeConfigFileName=maven.config" --recipe-option "flag='-T'" --recipe-option "argument=3" --recipe-option "separator=="
 ```
 
 If the recipe is not available locally, then you can install it using:

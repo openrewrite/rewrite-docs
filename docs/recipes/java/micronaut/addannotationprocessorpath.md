@@ -107,7 +107,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddAnnotationProcessorPathExample
+mod run . --recipe AddAnnotationProcessorPath --recipe-option "groupId=corp.internal.openrewrite.recipe" --recipe-option "artifactId=my-new-annotation-processor" --recipe-option "version=${micronaut.validation}" --recipe-option "onlyIfUsing=jakarta.validation.constraints.*" --recipe-option "exclusions=io.micronaut:micronaut-inject"
 ```
 
 If the recipe is not available locally, then you can install it using:

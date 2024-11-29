@@ -96,7 +96,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindAndReplaceExample
+mod run . --recipe FindAndReplace --recipe-option "find=blacklist" --recipe-option "replace=denylist" --recipe-option "filePattern='**/*.java'"
 ```
 
 If the recipe is not available locally, then you can install it using:

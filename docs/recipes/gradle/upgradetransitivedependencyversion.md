@@ -73,7 +73,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeTransitiveDependencyVersionExample
+mod run . --recipe UpgradeTransitiveDependencyVersion --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "version=29.X" --recipe-option "versionPattern='-jre'" --recipe-option "because=CVE-2021-1234" --recipe-option "onlyForConfigurations=implementation, runtimeOnly"
 ```
 
 If the recipe is not available locally, then you can install it using:

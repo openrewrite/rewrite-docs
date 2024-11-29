@@ -101,7 +101,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddCommentToMethodExample
+mod run . --recipe AddCommentToMethod --recipe-option "methodPattern=org.mockito.Matchers anyVararg()" --recipe-option "comment=This method is not supported in AWS SDK for Java v2."
 ```
 
 If the recipe is not available locally, then you can install it using:

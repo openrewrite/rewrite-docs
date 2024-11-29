@@ -89,7 +89,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdateOwaspSuppressionDateExample
+mod run . --recipe UpdateOwaspSuppressionDate --recipe-option "cveList=CVE-2022-1234" --recipe-option "untilDate=2023-01-01"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -69,7 +69,7 @@ Now that `com.yourorg.RemovePropertyExample` has been defined, activate it in yo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemovePropertyExample
+mod run . --recipe RemoveProperty --recipe-option "propertyName=junit.version"
 ```
 
 If the recipe is not available locally, then you can install it using:

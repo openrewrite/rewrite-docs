@@ -79,7 +79,7 @@ Now that `com.yourorg.AddDevelocityMavenExtensionExample` has been defined, acti
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddDevelocityMavenExtensionExample
+mod run . --recipe AddDevelocityMavenExtension --recipe-option "version=1.17.4" --recipe-option "server=https://scans.gradle.com/" --recipe-option "allowUntrustedServer=true" --recipe-option "fileFingerprints=true" --recipe-option "uploadInBackground=false" --recipe-option "publishCriteria=Always"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -69,7 +69,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DependencyInsightExample
+mod run . --recipe DependencyInsight --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "version=1.x" --recipe-option "configuration=compileClasspath"
 ```
 
 If the recipe is not available locally, then you can install it using:

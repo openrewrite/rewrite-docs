@@ -101,7 +101,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RunnerToExtensionExample
+mod run . --recipe RunnerToExtension --recipe-option "runners=[ org.springframework.test.context.junit4.SpringRunner ]" --recipe-option "extension=org.springframework.test.context.junit.jupiter.SpringExtension"
 ```
 
 If the recipe is not available locally, then you can install it using:

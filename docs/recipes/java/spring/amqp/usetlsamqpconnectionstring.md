@@ -107,7 +107,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UseTlsAmqpConnectionStringExample
+mod run . --recipe UseTlsAmqpConnectionString --recipe-option "propertyKey=spring.rabbitmq.addresses" --recipe-option "oldPort=1234" --recipe-option "port=1234" --recipe-option "tlsPropertyKey=spring.rabbitmq.ssl.enabled" --recipe-option "pathExpressions=**/application.yml"
 ```
 
 If the recipe is not available locally, then you can install it using:

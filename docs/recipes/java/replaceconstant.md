@@ -91,7 +91,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceConstantExample
+mod run . --recipe ReplaceConstant --recipe-option "owningType=com.google.common.base.Charsets" --recipe-option "constantName=UTF_8" --recipe-option "literalValue=UTF_8"
 ```
 
 If the recipe is not available locally, then you can install it using:

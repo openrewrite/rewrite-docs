@@ -73,7 +73,7 @@ Now that `com.yourorg.IncrementProjectVersionExample` has been defined, activate
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe IncrementProjectVersionExample
+mod run . --recipe IncrementProjectVersion --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId='*'" --recipe-option "digit=PATCH"
 ```
 
 If the recipe is not available locally, then you can install it using:

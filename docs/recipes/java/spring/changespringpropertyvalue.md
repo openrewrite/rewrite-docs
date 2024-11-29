@@ -105,7 +105,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeSpringPropertyValueExample
+mod run . --recipe ChangeSpringPropertyValue --recipe-option "propertyKey=management.metrics.binders.files.enabled" --recipe-option "newValue=management.metrics.enable.process.files" --recipe-option "oldValue=false"
 ```
 
 If the recipe is not available locally, then you can install it using:

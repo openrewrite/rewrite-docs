@@ -77,7 +77,7 @@ Now that `com.yourorg.ChangePluginGroupIdAndArtifactIdExample` has been defined,
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangePluginGroupIdAndArtifactIdExample
+mod run . --recipe ChangePluginGroupIdAndArtifactId --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newArtifact=my-new-maven-plugin"
 ```
 
 If the recipe is not available locally, then you can install it using:

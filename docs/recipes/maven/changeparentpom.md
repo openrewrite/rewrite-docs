@@ -84,7 +84,7 @@ Now that `com.yourorg.ChangeParentPomExample` has been defined, activate it in y
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeParentPomExample
+mod run . --recipe ChangeParentPom --recipe-option "oldGroupId=org.springframework.boot" --recipe-option "newGroupId=org.springframework.boot" --recipe-option "oldArtifactId=spring-boot-starter-parent" --recipe-option "newArtifactId=spring-boot-starter-parent" --recipe-option "newVersion=29.X" --recipe-option "oldRelativePath=../../pom.xml" --recipe-option "newRelativePath=../pom.xml" --recipe-option "versionPattern='-jre'"
 ```
 
 If the recipe is not available locally, then you can install it using:

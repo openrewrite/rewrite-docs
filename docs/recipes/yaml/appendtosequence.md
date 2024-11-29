@@ -93,7 +93,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AppendToSequenceExample
+mod run . --recipe AppendToSequence --recipe-option "sequencePath=$.universe.planets" --recipe-option "value=earth" --recipe-option "existingSequenceValues=existingValue1" --recipe-option "matchExistingSequenceValuesInAnyOrder=true"
 ```
 
 If the recipe is not available locally, then you can install it using:

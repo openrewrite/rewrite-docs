@@ -101,7 +101,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe SyncMavenCompilerAnnotationProcessorVersionExample
+mod run . --recipe SyncMavenCompilerAnnotationProcessorVersion --recipe-option "groupId=org.hibernate.orm" --recipe-option "artifactId=hibernate-jpamodelgen"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -131,7 +131,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdateGitResourceUriExample
+mod run . --recipe UpdateGitResourceUri --recipe-option "oldURIPattern=https://github.com/openrewrite/rewrite" --recipe-option "newURI=git@gitlab.com:openrewrite/rewrite.git" --recipe-option "fileMatcher='**/pipeline*.yml'"
 ```
 
 If the recipe is not available locally, then you can install it using:

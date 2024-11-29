@@ -103,7 +103,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RenameTypeAliasExample
+mod run . --recipe RenameTypeAlias --recipe-option "aliasName=OldAlias" --recipe-option "newName=NewAlias" --recipe-option "fullyQualifiedAliasedType=org.junit.Assume"
 ```
 
 If the recipe is not available locally, then you can install it using:

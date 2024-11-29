@@ -67,7 +67,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveDependencyExample
+mod run . --recipe RemoveDependency --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "configuration=api"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -63,7 +63,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveEnableFeaturePreviewExample
+mod run . --recipe RemoveEnableFeaturePreview --recipe-option "previewFeatureName=ONE_LOCKFILE_PER_PROJECT"
 ```
 
 If the recipe is not available locally, then you can install it using:

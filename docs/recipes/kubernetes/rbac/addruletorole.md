@@ -111,7 +111,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddRuleToRoleExample
+mod run . --recipe AddRuleToRole --recipe-option "rbacResourceType=ClusterRole" --recipe-option "rbacResourceName=my-cluster-role" --recipe-option "apiGroups=,v1" --recipe-option "resources=pods" --recipe-option "resourceNames=my-pod" --recipe-option "verbs=get,list" --recipe-option "fileMatcher='**/pod-*.yml'"
 ```
 
 If the recipe is not available locally, then you can install it using:

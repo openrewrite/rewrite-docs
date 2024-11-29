@@ -75,7 +75,7 @@ Now that `com.yourorg.ChangePackagingExample` has been defined, activate it in y
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangePackagingExample
+mod run . --recipe ChangePackaging --recipe-option "groupId=org.openrewrite.*" --recipe-option "artifactId=rewrite-*" --recipe-option "packaging=jar" --recipe-option "oldPackaging=jar"
 ```
 
 If the recipe is not available locally, then you can install it using:

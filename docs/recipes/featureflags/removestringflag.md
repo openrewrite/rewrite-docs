@@ -103,7 +103,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveStringFlagExample
+mod run . --recipe RemoveStringFlag --recipe-option "methodPattern=dev.openfeature.sdk.Client getBooleanValue(String, Boolean)" --recipe-option "featureKey=flag-key-123abc" --recipe-option "replacementValue=topic-456"
 ```
 
 If the recipe is not available locally, then you can install it using:

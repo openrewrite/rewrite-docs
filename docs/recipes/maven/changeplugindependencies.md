@@ -73,7 +73,7 @@ Now that `com.yourorg.ChangePluginDependenciesExample` has been defined, activat
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangePluginDependenciesExample
+mod run . --recipe ChangePluginDependencies --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "dependencies=org.openrewrite.recipe:rewrite-spring:1.0.0, org.openrewrite.recipe:rewrite-testing-frameworks:1.0.0"
 ```
 
 If the recipe is not available locally, then you can install it using:

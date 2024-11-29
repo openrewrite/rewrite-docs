@@ -73,7 +73,7 @@ Now that `com.yourorg.ManageDependenciesExample` has been defined, activate it i
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ManageDependenciesExample
+mod run . --recipe ManageDependencies --recipe-option "groupPattern=com.google.*" --recipe-option "artifactPattern=guava*"
 ```
 
 If the recipe is not available locally, then you can install it using:

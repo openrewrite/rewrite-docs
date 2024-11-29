@@ -87,19 +87,21 @@ repositories {
 ```
 2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
+            <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
+            You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
-```shell title="shell"
-mod run . --recipe CreateXmlFileExample
-```
+            ```shell title="shell"
+            mod run . --recipe CreateXmlFile --recipe-option "relativeFileName=foo/bar/baz.xml" --recipe-option "fileContents=<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <child>1</child></root>"
+            ```
 
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-xml:{{VERSION_REWRITE_XML}}
-```
-</TabItem>
+            If the recipe is not available locally, then you can install it using:
+            ```shell
+            mod config recipes jar install org.openrewrite:rewrite-xml:{{VERSION_REWRITE_XML}}
+            ```
+            </TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories

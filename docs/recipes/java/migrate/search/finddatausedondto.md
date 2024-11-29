@@ -99,7 +99,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindDataUsedOnDtoExample
+mod run . --recipe FindDataUsedOnDto --recipe-option "dtoType=com.example.dto.*"
 ```
 
 If the recipe is not available locally, then you can install it using:

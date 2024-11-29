@@ -76,7 +76,7 @@ Now that `com.yourorg.UpdateMavenProjectPropertyJavaVersionExample` has been def
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdateMavenProjectPropertyJavaVersionExample
+mod run . --recipe UpdateMavenProjectPropertyJavaVersion --recipe-option "version=11"
 ```
 
 If the recipe is not available locally, then you can install it using:

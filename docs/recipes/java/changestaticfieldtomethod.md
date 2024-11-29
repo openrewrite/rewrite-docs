@@ -95,7 +95,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeStaticFieldToMethodExample
+mod run . --recipe ChangeStaticFieldToMethod --recipe-option "oldClassName=java.util.Collections" --recipe-option "oldFieldName=EMPTY_LIST" --recipe-option "newClassName=java.util.List" --recipe-option "newTarget=OK_RESPONSE" --recipe-option "newMethodName=of"
 ```
 
 If the recipe is not available locally, then you can install it using:

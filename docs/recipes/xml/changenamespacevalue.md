@@ -99,7 +99,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeNamespaceValueExample
+mod run . --recipe ChangeNamespaceValue --recipe-option "elementName=property" --recipe-option "oldValue=newfoo.bar.attribute.value.string" --recipe-option "newValue=newfoo.bar.attribute.value.string" --recipe-option "versionMatcher=1.1" --recipe-option "searchAllNamespaces=true" --recipe-option "newVersion=2.0" --recipe-option "newSchemaLocation=newfoo.bar.attribute.value.string"
 ```
 
 If the recipe is not available locally, then you can install it using:

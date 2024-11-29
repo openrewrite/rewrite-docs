@@ -75,7 +75,7 @@ Now that `com.yourorg.FindManagedDependencyExample` has been defined, activate i
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindManagedDependencyExample
+mod run . --recipe FindManagedDependency --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=3.0.0" --recipe-option "versionPattern='-jre'"
 ```
 
 If the recipe is not available locally, then you can install it using:

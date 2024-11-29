@@ -71,7 +71,7 @@ Now that `com.yourorg.RemoveRepositoryExample` has been defined, activate it in 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveRepositoryExample
+mod run . --recipe RemoveRepository --recipe-option "id=repo-id" --recipe-option "url=http://myrepo.maven.com/repo"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -105,7 +105,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddConfigurationExample
+mod run . --recipe AddConfiguration --recipe-option "apiVersion=policy/v1beta1" --recipe-option "resourceKind=PodSecurityPolicy" --recipe-option "configurationPath=$.spec" --recipe-option "value='privileged: false'"
 ```
 
 If the recipe is not available locally, then you can install it using:

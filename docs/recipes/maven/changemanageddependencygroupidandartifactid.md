@@ -79,7 +79,7 @@ Now that `com.yourorg.ChangeManagedDependencyGroupIdAndArtifactIdExample` has be
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeManagedDependencyGroupIdAndArtifactIdExample
+mod run . --recipe ChangeManagedDependencyGroupIdAndArtifactId --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=rewrite-testing-frameworks" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=rewrite-testing-frameworks" --recipe-option "newVersion=2.0.0" --recipe-option "versionPattern='-jre'"
 ```
 
 If the recipe is not available locally, then you can install it using:

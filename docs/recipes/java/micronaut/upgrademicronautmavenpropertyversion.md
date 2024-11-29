@@ -99,7 +99,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeMicronautMavenPropertyVersionExample
+mod run . --recipe UpgradeMicronautMavenPropertyVersion --recipe-option "newVersion=4.x"
 ```
 
 If the recipe is not available locally, then you can install it using:

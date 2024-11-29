@@ -92,7 +92,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeMethodTargetToVariableExample
+mod run . --recipe ChangeMethodTargetToVariable --recipe-option "methodPattern=org.mycorp.A method(..)" --recipe-option "variableName=foo" --recipe-option "variableType=java.lang.String"
 ```
 
 If the recipe is not available locally, then you can install it using:

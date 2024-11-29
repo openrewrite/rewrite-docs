@@ -75,7 +75,7 @@ Now that `com.yourorg.AddProfileExample` has been defined, activate it in your b
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddProfileExample
+mod run . --recipe AddProfile --recipe-option "id=default" --recipe-option "activation=<activation><foo>foo</foo></activation>" --recipe-option "properties=<properties><foo>foo</foo><bar>bar</bar></properties>" --recipe-option "build=<build><foo>foo</foo></build>"
 ```
 
 If the recipe is not available locally, then you can install it using:

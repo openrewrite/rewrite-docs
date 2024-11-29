@@ -93,7 +93,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeMethodTargetToStaticExample
+mod run . --recipe ChangeMethodTargetToStatic --recipe-option "methodPattern=com.google.common.collect.ImmutableSet of(..)" --recipe-option "fullyQualifiedTargetTypeName=java.util.Set" --recipe-option "returnType=java.util.Set"
 ```
 
 If the recipe is not available locally, then you can install it using:

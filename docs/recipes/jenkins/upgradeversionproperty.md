@@ -104,7 +104,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeVersionPropertyExample
+mod run . --recipe UpgradeVersionProperty --recipe-option "key=jenkins.version" --recipe-option "minimumVersion=2.375.1"
 ```
 
 If the recipe is not available locally, then you can install it using:

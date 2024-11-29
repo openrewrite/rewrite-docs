@@ -91,7 +91,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceAnnotationExample
+mod run . --recipe ReplaceAnnotation --recipe-option "annotationPatternToReplace='@org.jetbrains.annotations.NotNull("Test")'" --recipe-option "annotationTemplateToInsert='@org.jetbrains.annotations.NotNull("Null not permitted")'" --recipe-option "classpathResourceName=annotations"
 ```
 
 If the recipe is not available locally, then you can install it using:

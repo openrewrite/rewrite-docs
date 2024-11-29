@@ -109,7 +109,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeQuarkusPropertyValueExample
+mod run . --recipe ChangeQuarkusPropertyValue --recipe-option "propertyKey=quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy" --recipe-option "newValue=read-sync" --recipe-option "oldValue=read-sync" --recipe-option "profile=dev" --recipe-option "changeAllProfiles=false" --recipe-option "pathExpressions=["**/application.yaml"]"
 ```
 
 If the recipe is not available locally, then you can install it using:

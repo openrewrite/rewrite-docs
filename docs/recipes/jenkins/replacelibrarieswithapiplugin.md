@@ -101,19 +101,20 @@ dependencies {
 ```
 2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
+            <TabItem value="moderne-cli" label="Moderne CLI">
 
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
+            You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
-```shell title="shell"
-mod run . --recipe ReplaceLibrariesWithApiPluginExample
-```
+            ```shell title="shell"
+            mod run . --recipe ReplaceLibrariesWithApiPlugin --recipe-option "pluginGroupId=io.jenkins.plugins" --recipe-option "pluginArtifactId=jackson2-api" --recipe-option "pluginVersion=1981.v17df70e84a_a_1" --recipe-option "replaces=groupId: org.apache.commons
+artifactId: commons-text"
+            ```
 
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}
-```
-</TabItem>
+            If the recipe is not available locally, then you can install it using:
+            ```shell
+            mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_REWRITE_JENKINS}}
+            ```
+            </TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories

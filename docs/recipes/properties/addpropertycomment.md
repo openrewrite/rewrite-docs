@@ -91,7 +91,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddPropertyCommentExample
+mod run . --recipe AddPropertyComment --recipe-option "propertyKey=management.metrics.binders" --recipe-option "comment=comment" --recipe-option "commentOutProperty=true"
 ```
 
 If the recipe is not available locally, then you can install it using:

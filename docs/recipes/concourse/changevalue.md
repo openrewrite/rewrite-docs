@@ -105,7 +105,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeValueExample
+mod run . --recipe ChangeValue --recipe-option "keyPath=$.resources[?(@.type == 'git')].source.uri" --recipe-option "oldValue=https://github.com/openrewrite/rewrite0" --recipe-option "newValue=git@github.com:openrewrite/rewrite1.git" --recipe-option "fileMatcher='**/pipeline*.yml'"
 ```
 
 If the recipe is not available locally, then you can install it using:

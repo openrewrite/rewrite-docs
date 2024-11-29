@@ -87,7 +87,7 @@ Now that `com.yourorg.AddRepositoryExample` has been defined, activate it in you
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddRepositoryExample
+mod run . --recipe AddRepository --recipe-option "id=repo-id" --recipe-option "url=http://myrepo.maven.com/repo" --recipe-option "repoName=My Great Repo Name" --recipe-option "layout=default" --recipe-option "snapshotsChecksumPolicy=warn" --recipe-option "snapshotsUpdatePolicy=always" --recipe-option "releasesChecksumPolicy=fail" --recipe-option "releasesUpdatePolicy=never" --recipe-option "type=Repository"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -117,7 +117,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeTransitiveDependencyVersionExample
+mod run . --recipe UpgradeTransitiveDependencyVersion --recipe-option "groupId=org.apache.logging.log4j" --recipe-option "artifactId=log4j-bom" --recipe-option "version=latest.release" --recipe-option "scope=import" --recipe-option "type=pom" --recipe-option "classifier=test" --recipe-option "versionPattern='-jre'" --recipe-option "because=CVE-2021-1234" --recipe-option "onlyIfUsing=org.apache.logging.log4j:log4j*"
 ```
 
 If the recipe is not available locally, then you can install it using:

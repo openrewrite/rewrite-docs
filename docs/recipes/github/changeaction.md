@@ -103,7 +103,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeActionExample
+mod run . --recipe ChangeAction --recipe-option "oldAction=gradle/wrapper-validation-action" --recipe-option "newAction=gradle/actions/wrapper-validation" --recipe-option "newVersion=v3"
 ```
 
 If the recipe is not available locally, then you can install it using:

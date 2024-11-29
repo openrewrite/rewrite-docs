@@ -91,7 +91,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe XsltTransformationExample
+mod run . --recipe XsltTransformation --recipe-option "xslt=<xsl:stylesheet ...>...</xsl:stylesheet>" --recipe-option "xsltResource=/changePlugin.xslt" --recipe-option "filePattern='**/*.xml'"
 ```
 
 If the recipe is not available locally, then you can install it using:

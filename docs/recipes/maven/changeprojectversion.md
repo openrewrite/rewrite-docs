@@ -74,7 +74,7 @@ Now that `com.yourorg.ChangeProjectVersionExample` has been defined, activate it
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ChangeProjectVersionExample
+mod run . --recipe ChangeProjectVersion --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId='*'" --recipe-option "newVersion=8.4.2"
 ```
 
 If the recipe is not available locally, then you can install it using:

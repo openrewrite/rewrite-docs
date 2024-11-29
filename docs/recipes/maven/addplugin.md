@@ -81,7 +81,7 @@ Now that `com.yourorg.AddPluginExample` has been defined, activate it in your bu
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddPluginExample
+mod run . --recipe AddPlugin --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "version=1.0.0" --recipe-option "configuration=<configuration><foo>foo</foo></configuration>" --recipe-option "dependencies=<dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>" --recipe-option "executions=<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>" --recipe-option "filePattern='**/*-parent/grpc-*/pom.xml'"
 ```
 
 If the recipe is not available locally, then you can install it using:

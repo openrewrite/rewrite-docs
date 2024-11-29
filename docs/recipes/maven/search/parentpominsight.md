@@ -74,7 +74,7 @@ Now that `com.yourorg.ParentPomInsightExample` has been defined, activate it in 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ParentPomInsightExample
+mod run . --recipe ParentPomInsight --recipe-option "groupIdPattern=org.springframework.boot" --recipe-option "artifactIdPattern=spring-boot-starter-*" --recipe-option "version=1.x"
 ```
 
 If the recipe is not available locally, then you can install it using:

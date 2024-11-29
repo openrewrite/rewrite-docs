@@ -105,7 +105,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindExceedsResourceValueExample
+mod run . --recipe FindExceedsResourceValue --recipe-option "resourceValueType=limits" --recipe-option "resourceType=memory" --recipe-option "resourceLimit=2Gi" --recipe-option "fileMatcher='**/pod-*.yml'"
 ```
 
 If the recipe is not available locally, then you can install it using:

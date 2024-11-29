@@ -89,7 +89,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceConstantWithAnotherConstantExample
+mod run . --recipe ReplaceConstantWithAnotherConstant --recipe-option "existingFullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE" --recipe-option "fullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE"
 ```
 
 If the recipe is not available locally, then you can install it using:

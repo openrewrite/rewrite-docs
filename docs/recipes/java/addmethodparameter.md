@@ -93,7 +93,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddMethodParameterExample
+mod run . --recipe AddMethodParameter --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "parameterType=java.lang.String" --recipe-option "parameterName=name" --recipe-option "parameterIndex=0"
 ```
 
 If the recipe is not available locally, then you can install it using:

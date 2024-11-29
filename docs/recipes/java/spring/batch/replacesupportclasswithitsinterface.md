@@ -101,7 +101,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceSupportClassWithItsInterfaceExample
+mod run . --recipe ReplaceSupportClassWithItsInterface --recipe-option "fullyQualifiedClassName=org.springframework.batch.core.listener.JobExecutionListenerSupport" --recipe-option "fullyQualifiedInterfaceName=org.springframework.batch.core.JobExecutionListener"
 ```
 
 If the recipe is not available locally, then you can install it using:

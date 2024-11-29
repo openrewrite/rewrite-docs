@@ -75,7 +75,7 @@ Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined, acti
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddCommentToMavenDependencyExample
+mod run . --recipe AddCommentToMavenDependency --recipe-option "xPath=/project/dependencies/dependency" --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "commentText=This is excluded due to CVE <X> and will be removed when we upgrade the next version is available."
 ```
 
 If the recipe is not available locally, then you can install it using:

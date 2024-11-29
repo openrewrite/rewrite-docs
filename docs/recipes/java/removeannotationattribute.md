@@ -89,7 +89,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe RemoveAnnotationAttributeExample
+mod run . --recipe RemoveAnnotationAttribute --recipe-option "annotationType=org.junit.Test" --recipe-option "attributeName=timeout"
 ```
 
 If the recipe is not available locally, then you can install it using:

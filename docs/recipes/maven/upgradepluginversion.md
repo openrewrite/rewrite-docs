@@ -77,7 +77,7 @@ Now that `com.yourorg.UpgradePluginVersionExample` has been defined, activate it
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradePluginVersionExample
+mod run . --recipe UpgradePluginVersion --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "newVersion=29.X" --recipe-option "versionPattern='-jre'"
 ```
 
 If the recipe is not available locally, then you can install it using:

@@ -103,7 +103,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindSecretsByPatternExample
+mod run . --recipe FindSecretsByPattern --recipe-option "secretName=AWS Access Key" --recipe-option "keyPattern='[a-zA-Z0-9+\/=]{88}'" --recipe-option "valuePattern='[a-zA-Z0-9+\/=]{88}'"
 ```
 
 If the recipe is not available locally, then you can install it using:

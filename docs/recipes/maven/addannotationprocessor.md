@@ -73,7 +73,7 @@ Now that `com.yourorg.AddAnnotationProcessorExample` has been defined, activate 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddAnnotationProcessorExample
+mod run . --recipe AddAnnotationProcessor --recipe-option "groupId=org.projectlombok" --recipe-option "artifactId=lombok-mapstruct-binding" --recipe-option "version=0.2.0"
 ```
 
 If the recipe is not available locally, then you can install it using:

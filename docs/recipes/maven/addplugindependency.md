@@ -77,7 +77,7 @@ Now that `com.yourorg.AddPluginDependencyExample` has been defined, activate it 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddPluginDependencyExample
+mod run . --recipe AddPluginDependency --recipe-option "pluginGroupId=org.openrewrite.maven" --recipe-option "pluginArtifactId=rewrite-maven-plugin" --recipe-option "groupId=org.openrewrite.recipe" --recipe-option "artifactId=org.openrewrite.recipe" --recipe-option "version=org.openrewrite.recipe"
 ```
 
 If the recipe is not available locally, then you can install it using:
