@@ -72,6 +72,11 @@ const sidebars: SidebarsConfig = {
         'authoring-recipes/multiple-visitors',
         'authoring-recipes/writing-recipes-over-multiple-source-file-types',
         'authoring-recipes/multiple-versions',
+        {
+          type: 'link',
+          label: 'Recipe authoring workshop',
+          href: 'https://docs.moderne.io/user-documentation/workshops/recipe-authoring/',
+        },
       ],
     },
     {
