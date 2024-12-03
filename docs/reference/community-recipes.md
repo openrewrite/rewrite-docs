@@ -61,3 +61,8 @@ If you want to see your project on this list - please feel free to click on the 
   * A collection of recipes for sorting JSON, `.properties` and Java class methods.
 * Philzen's [Rewrite TestNG to JUnit 5](https://github.com/Philzen/rewrite-TestNG-to-JUnit5)
   * OpenRewrite recipes for migrating a project from TestNG to JUnit 5 (Jupiter).
+* [Langchain4j](https://github.com/langchain4j/langchain4j-openrewrite-recipes)
+* [Morphia](https://github.com/MorphiaOrg/morphia/blob/5d750285266116bfded7ccb5acdaff3aea480811/rewrite/src/main/java/dev/morphia/rewrite/recipes/PipelineRewriteStage2.java)
+  * A MongoDB object-document mapper in Java.
+* [A migrate from Camunda recipe](https://github.com/operaton/migrate-from-camunda-recipe)
+  * Migrates a Camunda 7 instance to Operaton.
