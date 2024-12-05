@@ -4,9 +4,45 @@ import { themes as prismThemes } from "prism-react-renderer";
 import remarkTokenReplacer from "./src/plugins/replace-tokens";
 import latestVersions from "./src/plugins/latest-versions";
 
+const description = "Large-scale automated source code refactoring"
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'OpenRewrite',
+  operatingSystem: 'Windows, macOS, Linux',
+  applicationCategory: 'ProductivityApplication',
+  description,
+  author: {
+    '@type': 'Organization',
+    name: 'Moderne',
+  },
+  datePublished: new Date(),
+  softwareVersion: latestVersions["{{VERSION_REWRITE_CORE}}"],
+  downloadUrl: 'https://github.com/openrewrite/rewrite/releases',
+  video: {
+    '@type': 'VideoObject',
+      name: "Migrate to Java 21 using OpenRewrite",
+      description: "This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.",
+      thumbnailUrl: "https://i.ytimg.com/vi/uViRlX-RahA/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCBmYPSz3dMNEQR7pseLWsVszXd2A",
+      uploadDate: new Date("Feb 13, 2024 "),
+      contentUrl: "https://www.youtube.com/watch?v=uViRlX-RahA",
+      embedUrl: "https://www.youtube.com/embed/uViRlX-RahA?si=v1T7sLsQJ4YQdWPo",
+  },
+};
+
 const config: Config = {
   title: "OpenRewrite Docs",
-  tagline: "Large-scale automated source code refactoring",
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify(structuredData),
+    },
+  ],
+  tagline: description,
   favicon: "img/favicon.svg",
 
   url: "https://docs.openrewrite.org",
