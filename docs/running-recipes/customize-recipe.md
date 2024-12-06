@@ -16,7 +16,7 @@ To edit this recipe, we'll take advantage of the [Moderne recipe builder](https:
 
 ### Step 1: Navigate to the Moderne Recipe Builder
 
-Open up the [Moderne Platform](https://app.moderne.io/marketplace), sign in, and navigate to the [Modere Recipe Builder](https://app.moderne.io/builder).
+Open up the [Moderne Platform](https://app.moderne.io/marketplace), sign in, and navigate to the [Moderne Recipe Builder](https://app.moderne.io/builder).
 
 ### Step 2: Create a new recipe
 
