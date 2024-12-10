@@ -126,6 +126,7 @@ smallrye
 smushed
 snakeyaml
 Sonatype
+sourced
 sourcespec
 springboot
 springframework
