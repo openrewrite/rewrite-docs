@@ -12,7 +12,7 @@ The OpenRewrite ecosystem is a marketplace of both free and proprietary recipes.
 
 ### Apache License Version 2.0
 
-Core OpenRewrite technology and language libraries in general are fully open sourced under the Apache license. This includes the entirety of [openrewrite/rewrite](https://github.com/openrewrite/rewrite), including rewrite-core and many of the original language bindings (Java, Groovy, Kotlin, XML, Properties, YAML, Terraform, etc.). It also includes the building-block core recipes like `ChangeMethodName`, `ChangeType`, etc. and recipe repositories that are primarily committed to by third parties. This means that framework/library authors can supply OSS migrations to their consumers.
+Core OpenRewrite technology and language libraries in general are fully open sourced under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0). This includes the entirety of [openrewrite/rewrite](https://github.com/openrewrite/rewrite), including rewrite-core and many of the original language bindings (Java, Groovy, Kotlin, XML, Properties, YAML, Terraform, etc.). It also includes the building-block core recipes like `ChangeMethodName`, `ChangeType`, etc. and recipe repositories that are primarily committed to by third parties. This means that framework/library authors can supply OSS migrations to their consumers.
 
 ### Moderne Source Available License
 
