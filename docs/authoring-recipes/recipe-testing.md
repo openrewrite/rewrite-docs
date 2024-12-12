@@ -188,7 +188,7 @@ Now that we have a recipe to test with, let's go over what every test class shou
 
 * Implement the [RewriteTest interface](#rewritetest-interface)
 * Specify the recipe to test via a [RecipeSpec](#recipespec)
-* Define one or more source file assertions using the [Fluent API](https://java-design-patterns.com/patterns/fluentinterface/) provided by the interface
+* Define one or more source file assertions using the [Fluent API](https://java-design-patterns.com/patterns/fluent-interface/) provided by the interface
 
 First, we'll provide an example of what these tests might look like. After that, we'll provide more context around a few key pieces.
 
