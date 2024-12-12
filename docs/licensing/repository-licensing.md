@@ -5,8 +5,8 @@ This table designates the licensing type for files in each OpenRewrite repositor
 The three licenses in the table can be found here:
 
 * [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-* [Moderne Source Available License](https://docs.moderne.io/administrator-documentation/licensing/moderne-source-available-license)
-* [Moderne Proprietary License](https://docs.moderne.io/administrator-documentation/licensing/overview)
+* [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license)
+* [Moderne Proprietary License](https://docs.moderne.io/licensing/overview)
 
 | Repository                   | License Type               |
 |------------------------------|----------------------------|
