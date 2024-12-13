@@ -295,7 +295,7 @@ class LowercasePackageTest implements RewriteTest {
 
 ### RewriteTest interface
 
-As mentioned above, the first thing all tests need to do is implement the [RewriteTest interface](https://github.com/openrewrite/rewrite/blob/main/rewrite-test/src/main/java/org/openrewrite/test/RewriteTest.java). This interface not only acts as the entry point to testing your recipe, but it also provides a [Fluent API](https://java-design-patterns.com/patterns/fluentinterface/) for expressing recipe and source file configuration.
+As mentioned above, the first thing all tests need to do is implement the [RewriteTest interface](https://github.com/openrewrite/rewrite/blob/main/rewrite-test/src/main/java/org/openrewrite/test/RewriteTest.java). This interface not only acts as the entry point to testing your recipe, but it also provides a [Fluent API](https://java-design-patterns.com/patterns/fluent-interface/) for expressing recipe and source file configuration.
 
 In the above tests, we utilize two main pieces of this interface:
 
