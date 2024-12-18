@@ -72,6 +72,7 @@ function remarkTokenReplacer(options) {
   return (tree) => {
     visit(tree, "text", replaceTokens);
     visit(tree, "code", replaceTokens);
+    visit(tree, "inlineCode", replaceTokens);
     visit(tree, "link", replaceLink);
   };
 }

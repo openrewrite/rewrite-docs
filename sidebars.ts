@@ -110,6 +110,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'reference/faq',
         'reference/latest-versions-of-every-openrewrite-module',
+        'reference/moderne-recipes',
         'reference/recipes-with-data-tables',
         'reference/rewrite-maven-plugin',
         'reference/gradle-plugin-configuration',
