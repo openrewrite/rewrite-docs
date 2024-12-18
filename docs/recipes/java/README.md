@@ -5,6 +5,7 @@ _Basic building blocks for transforming Java code._
 ## Categories
 
 * [AI tools](/recipes/java/ai)
+* [Boot3](/recipes/java/boot3)
 * [Camel](/recipes/java/camel)
 * [Dependencies](/recipes/java/dependencies)
 * [Format](/recipes/java/format)

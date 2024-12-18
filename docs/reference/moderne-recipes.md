@@ -826,4 +826,3 @@ This doc includes every recipe that is exclusive to Moderne customers. For a ful
 * [Set Azure Storage Account default network access to deny](../recipes/terraform/azure/setazurestorageaccountdefaultnetworkaccesstodeny)
 * [Use HTTPS for Cloudfront distribution](../recipes/terraform/aws/usehttpsforcloudfrontdistribution)
 * [Use a long enough byte length for `random` resources](../recipes/terraform/securerandom)
-

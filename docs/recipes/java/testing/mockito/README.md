@@ -16,6 +16,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Call to Mockito method "verify", "when" or "given" should be simplified](./simplifymockitoverifywhengiven.md)
 * [Cleanup Mockito imports](./cleanupmockitoimports.md)
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](./mockitojunitrunnersilenttoextension.md)
+* [Remove `Mockito.times(0)` and `Mockito.times(1)`](./removetimeszeroandone.md)
+* [Remove initialization when using `@InjectMocks`](./noinitializationforinjectmock.md)
 * [Replace Mockito 1.x `anyString()` with `nullable(String.class)`](./anystringtonullable.md)
 * [Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`](./anytonullable.md)
 * [Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic](./mockitowhenonstatictomockstatic.md)

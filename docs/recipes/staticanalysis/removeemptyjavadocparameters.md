@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Oliver Kopp](mailto:kopp.dev@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)
+[traceyyoshima](mailto:tracey.yoshima@gmail.com), [Joan Viladrosa](mailto:joan@moderne.io), [Oliver Kopp](mailto:kopp.dev@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Josh Soref, [Niels de Bruin](mailto:nielsdebruin@gmail.com)

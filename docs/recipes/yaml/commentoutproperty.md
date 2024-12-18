@@ -21,6 +21,7 @@ _Comment out a YAML property and add a comment in front._
 | -- | -- | -- | -- |
 | `String` | propertyKey | The key to be commented out. | `applicability.singleSource` |
 | `String` | commentText | The comment text to be added before the specified key. | `The `foo` property is deprecated, please migrate` |
+| `Boolean` | commentOutProperty | *Optional*. If false, property wouldn't be commented out, only comment will be added. By default, set to true | `true` |
 
 
 ## Usage
@@ -36,6 +37,7 @@ recipeList:
   - org.openrewrite.yaml.CommentOutProperty:
       propertyKey: applicability.singleSource
       commentText: The `foo` property is deprecated, please migrate
+      commentOutProperty: true
 ```
 
 Now that `com.yourorg.CommentOutPropertyExample` has been defined, activate it in your build file:
@@ -89,7 +91,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CommentOutProperty --recipe-option "propertyKey=applicability.singleSource" --recipe-option "commentText=The `foo` property is deprecated, please migrate"
+mod run . --recipe CommentOutProperty --recipe-option "propertyKey=applicability.singleSource" --recipe-option "commentText=The `foo` property is deprecated, please migrate" --recipe-option "commentOutProperty=true"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -154,4 +156,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Kun Li](mailto:kun@moderne.io), Valentin Delaye, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io)
+[Kun Li](mailto:kun@moderne.io), ashakirin, Valentin Delaye, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io)

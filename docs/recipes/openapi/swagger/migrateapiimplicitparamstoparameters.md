@@ -47,6 +47,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Remove annotation attribute](../../java/removeannotationattribute)
   * annotationType: `io.swagger.v3.oas.annotations.Parameter`
   * attributeName: `allowMultiple`
+* [Migrate `@ApiImplicitParam(dataTypeClass=Foo.class)` to `@Parameter(schema=@Schema(implementation=Foo.class))`](../../openapi/swagger/migrateapiimplicitparamdatatypeclass)
 
 </TabItem>
 
@@ -81,6 +82,7 @@ recipeList:
   - org.openrewrite.java.RemoveAnnotationAttribute:
       annotationType: io.swagger.v3.oas.annotations.Parameter
       attributeName: allowMultiple
+  - org.openrewrite.openapi.swagger.MigrateApiImplicitParamDataTypeClass
 
 ```
 </TabItem>
@@ -262,3 +264,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+SiBorea

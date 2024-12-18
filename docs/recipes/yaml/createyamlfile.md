@@ -20,7 +20,7 @@ _Create a new YAML file._
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | relativeFileName | File path of new file. | `foo/bar/baz.yaml` |
-| `String` | fileContents | *Optional*. Multiline text content for the file. | <pre>a:<br />property: value<br />another:<br />property: value</pre> |
+| `String` | fileContents | *Optional*. Multiline text content for the file. | <pre>a:<br />  property: value<br />another:<br />  property: value</pre> |
 | `String` | fileContentsUrl | *Optional*. URL to file containing text content for the file. Use either `fileContents` or `fileContentsUrl` option. | `http://foo.bar/baz.yaml` |
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 
@@ -39,9 +39,9 @@ recipeList:
       relativeFileName: foo/bar/baz.yaml
       fileContents: >
         a:
-        property: value
+          property: value
         another:
-        property: value
+          property: value
       fileContentsUrl: http://foo.bar/baz.yaml
 ```
 
@@ -98,9 +98,9 @@ repositories {
     ```shell title="shell"
     mod run . --recipe CreateYamlFile --recipe-option "relativeFileName=foo/bar/baz.yaml" --recipe-option "fileContents=>
 a:
-property: value
+  property: value
 another:
-property: value" --recipe-option "fileContentsUrl=http://foo.bar/baz.yaml"
+  property: value" --recipe-option "fileContentsUrl=http://foo.bar/baz.yaml"
     ```
 
     If the recipe is not available locally, then you can install it using:

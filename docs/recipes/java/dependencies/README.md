@@ -16,6 +16,7 @@
 * [Find relocated dependencies](./relocateddependencycheck.md)
 * [Remove a Gradle or Maven dependency](./removedependency.md)
 * [Remove expired suppressions](./removeexpiredsuppressions.md)
+* [Remove unused dependencies](./removeunuseddependencies.md)
 * [Software bill of materials](./softwarebillofmaterials.md)
 * [Upgrade Gradle or Maven dependency versions](./upgradedependencyversion.md)
 * [Upgrade transitive Gradle or Maven dependencies](./upgradetransitivedependencyversion.md)

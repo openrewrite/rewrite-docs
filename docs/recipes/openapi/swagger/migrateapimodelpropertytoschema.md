@@ -38,6 +38,10 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Remove annotation attribute](../../java/removeannotationattribute)
   * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
   * attributeName: `position`
+* [Change annotation attribute name](../../java/changeannotationattributename)
+  * annotationType: `io.swagger.v3.oas.annotations.media.Schema`
+  * oldAttributeName: `dataType`
+  * newAttributeName: `type`
 
 </TabItem>
 
@@ -63,6 +67,10 @@ recipeList:
   - org.openrewrite.java.RemoveAnnotationAttribute:
       annotationType: io.swagger.v3.oas.annotations.media.Schema
       attributeName: position
+  - org.openrewrite.java.ChangeAnnotationAttributeName:
+      annotationType: io.swagger.v3.oas.annotations.media.Schema
+      oldAttributeName: dataType
+      newAttributeName: type
 
 ```
 </TabItem>

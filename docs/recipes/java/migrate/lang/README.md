@@ -14,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add explicit import for `Record` classes](./explicitrecordimport.md)
 * [Prefer `String.formatted(Object...)`](./stringformatted.md)
 * [Replace `0 < s.length()` with `!s.isEmpty()`](./usestringisemptyrecipe.md)
 * [Replace `String.indexOf(String, 0)` with `String.indexOf(String)`](./stringrulesrecipes$indexofstringrecipe.md)

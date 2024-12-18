@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Reactor Best Practices](./reactorbestpractices.md)
 * [Replace `DirectProcessor.create()` with `Sinks.many().multicast().directBestEffort()`](./reactorprocessorcreatetosinkrecipes$directprocessorcreatetosinkrecipe.md)
 * [Replace `EmitterProcessor.create()` with `Sinks.many().multicast().onBackpressureBuffer()`](./reactorprocessorcreatetosinkrecipes$emitterprocessorcreatetosinkrecipe.md)
 * [Replace `EmitterProcessor.create(Boolean)` with `Sinks.many().multicast().onBackpressureBuffer(Queues.SMALL_BUFFER_SIZE, Boolean)`](./reactorprocessorcreatetosinkrecipes$emitterprocessorcreatebooleantosinkrecipe.md)

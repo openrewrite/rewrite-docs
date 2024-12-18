@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Aaron Gershman](mailto:aegershman@gmail.com), Kun Li, [Knut Wannheden](mailto:knut@moderne.io)
+[Aaron Gershman](mailto:aegershman@gmail.com), Kun Li, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

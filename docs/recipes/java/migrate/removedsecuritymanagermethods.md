@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Anu Ramamoorthy
+Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com)

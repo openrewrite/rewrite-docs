@@ -36,12 +36,29 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.apache.log4j.Logger getRootLogger()`
   * fullyQualifiedTargetTypeName: `org.apache.logging.log4j.LogManager`
+* [Convert Log4j `Logger.setLevel` to Log4j2 `Configurator.setLevel`](../../../java/logging/log4j/loggersetleveltoconfiguratorrecipe)
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.log4j.Priority isGreaterOrEqual(org.apache.log4j.Priority)`
+  * newMethodName: `isMoreSpecificThan`
+  * matchOverrides: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.log4j.Priority`
+  * newFullyQualifiedTypeName: `org.apache.logging.log4j.Level`
+* [Change method target to static](../../../java/changemethodtargettostatic)
+  * methodPattern: `org.apache.log4j.Category getInstance(Class)`
+  * fullyQualifiedTargetTypeName: `org.apache.logging.log4j.LogManager`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.logging.log4j.LogManager getInstance(Class)`
+  * newMethodName: `getLogger`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.log4j.Category getEffectiveLevel()`
+  * newMethodName: `getLevel`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.log4j.Category`
+  * newFullyQualifiedTypeName: `org.apache.logging.log4j.Logger`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.log4j`
   * newPackageName: `org.apache.logging.log4j`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.apache.logging.log4j.Category getEffectiveLevel()`
-  * newMethodName: `getLevel`
 * [Parameterize Log4j 2.x logging statements](../../../java/logging/log4j/parameterizedlogging)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.apache.logging.log4j`
@@ -105,12 +122,29 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.apache.log4j.Logger getRootLogger()
       fullyQualifiedTargetTypeName: org.apache.logging.log4j.LogManager
+  - org.openrewrite.java.logging.log4j.LoggerSetLevelToConfiguratorRecipe
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.log4j.Priority isGreaterOrEqual(org.apache.log4j.Priority)
+      newMethodName: isMoreSpecificThan
+      matchOverrides: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.log4j.Priority
+      newFullyQualifiedTypeName: org.apache.logging.log4j.Level
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: org.apache.log4j.Category getInstance(Class)
+      fullyQualifiedTargetTypeName: org.apache.logging.log4j.LogManager
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.logging.log4j.LogManager getInstance(Class)
+      newMethodName: getLogger
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.log4j.Category getEffectiveLevel()
+      newMethodName: getLevel
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.log4j.Category
+      newFullyQualifiedTypeName: org.apache.logging.log4j.Logger
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.log4j
       newPackageName: org.apache.logging.log4j
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.apache.logging.log4j.Category getEffectiveLevel()
-      newMethodName: getLevel
   - org.openrewrite.java.logging.log4j.ParameterizedLogging
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.apache.logging.log4j
@@ -334,4 +368,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Aaron Gershman, [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Md Riyazul Islam, [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), Adriano Machado
+Aaron Gershman, [Patrick](mailto:patway99@gmail.com), [Sam Snyder](mailto:sam@moderne.io), Md Riyazul Islam, [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), Adriano Machado, [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com)

@@ -92,4 +92,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tobias Lidskog](mailto:tlidskog@paypal.com)
+[Tobias Lidskog](mailto:tlidskog@paypal.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

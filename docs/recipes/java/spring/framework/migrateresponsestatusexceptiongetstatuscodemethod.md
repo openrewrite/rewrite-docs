@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com)
+[Marcin Słowiak](mailto:m.slowiak@smartrecruiters.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Shivani Sharma](mailto:s.happyrose@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+[Shivani Sharma](mailto:s.happyrose@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

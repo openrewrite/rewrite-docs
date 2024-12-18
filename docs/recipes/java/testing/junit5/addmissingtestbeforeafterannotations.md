@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[magicwerk](mailto:magicwerk@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)
+[magicwerk](mailto:magicwerk@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Mike Solomon](mailto:mikesol@hey.com)

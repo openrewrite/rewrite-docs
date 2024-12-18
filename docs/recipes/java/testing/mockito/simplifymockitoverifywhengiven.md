@@ -198,4 +198,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Sander Knauff](mailto:sanderknauff@hotmail.com), [Adam Birem](mailto:adam.birem@praxedo.com)
+[Sander Knauff](mailto:sanderknauff@hotmail.com), [Adam Birem](mailto:adam.birem@praxedo.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

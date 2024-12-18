@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to AssertJ assertions"
+sidebar_label: "Migrate Hamcrest assertions to AssertJ"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to AssertJ assertions
+# Migrate Hamcrest assertions to AssertJ
 
 **org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ**
 
@@ -29,13 +29,13 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.hamcrest.core.* *(..)`
-  * fullyQualifiedTargetTypeName: `org.hamcrest.Matchers`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.hamcrest.collection.* *(..)`
-  * fullyQualifiedTargetTypeName: `org.hamcrest.Matchers`
-* [Remove Hamcrest `is(Matcher)`](../../../java/testing/hamcrest/removeismatcher)
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.assertj`
+  * artifactId: `assertj-core`
+  * version: `3.x`
+  * onlyIfUsing: `org.hamcrest.*`
+  * acceptTransitive: `true`
+* [Use consistent Hamcrest matcher imports](../../../java/testing/hamcrest/consistenthamcrestmatcherimports)
 * [Migrate Hamcrest `is(Object)` to AssertJ](../../../java/testing/hamcrest/hamcrestismatchertoassertj)
 * [Migrate `anyOf` Hamcrest Matcher to AssertJ](../../../java/testing/hamcrest/hamcrestofmatcherstoassertj)
 * [Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ](../../../java/testing/hamcrest/assertthatbooleantoassertj)
@@ -279,12 +279,6 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Migrate Hamcrest `not(Matcher)` to AssertJ](../../../java/testing/hamcrest/hamcrestnotmatchertoassertj)
   * notMatcher: `empty`
   * assertion: `isNotEmpty`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `org.assertj`
-  * artifactId: `assertj-core`
-  * version: `3.x`
-  * onlyIfUsing: `org.assertj.core.api.Assertions`
-  * acceptTransitive: `true`
 
 </TabItem>
 
@@ -294,20 +288,20 @@ This recipe is composed of more than one recipe. If you want to customize the se
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ
-displayName: Migrate to AssertJ assertions
+displayName: Migrate Hamcrest assertions to AssertJ
 description: Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`.
 tags:
   - testing
   - assertj
   - hamcrest
 recipeList:
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.hamcrest.core.* *(..)
-      fullyQualifiedTargetTypeName: org.hamcrest.Matchers
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.hamcrest.collection.* *(..)
-      fullyQualifiedTargetTypeName: org.hamcrest.Matchers
-  - org.openrewrite.java.testing.hamcrest.RemoveIsMatcher
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.assertj
+      artifactId: assertj-core
+      version: 3.x
+      onlyIfUsing: org.hamcrest.*
+      acceptTransitive: true
+  - org.openrewrite.java.testing.hamcrest.ConsistentHamcrestMatcherImports
   - org.openrewrite.java.testing.hamcrest.HamcrestIsMatcherToAssertJ
   - org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ
   - org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ
@@ -551,12 +545,6 @@ recipeList:
   - org.openrewrite.java.testing.hamcrest.HamcrestNotMatcherToAssertJ:
       notMatcher: empty
       assertion: isNotEmpty
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.assertj
-      artifactId: assertj-core
-      version: 3.x
-      onlyIfUsing: org.assertj.core.api.Assertions
-      acceptTransitive: true
 
 ```
 </TabItem>
@@ -740,4 +728,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Aleksandar A Simpson](mailto:alek@asu.me), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Aleksandar A Simpson](mailto:alek@asu.me)

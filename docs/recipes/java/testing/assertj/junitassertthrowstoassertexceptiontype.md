@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Patrick Way, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jeroen Meijer](mailto:jjgmeijer@gmail.com), [Shivani Sharma](mailto:s.happyrose@gmail.com)
+Patrick Way, [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jeroen Meijer](mailto:jjgmeijer@gmail.com), [Shivani Sharma](mailto:s.happyrose@gmail.com)

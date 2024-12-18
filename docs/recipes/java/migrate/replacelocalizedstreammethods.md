@@ -201,4 +201,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-BhavanaPidapa, Anu Ramamoorthy, [Knut Wannheden](mailto:knut@moderne.io)
+BhavanaPidapa, Anu Ramamoorthy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Greg Oledzki
+Greg Oledzki, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
