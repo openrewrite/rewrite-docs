@@ -1,5 +1,7 @@
 # Moderne Recipes
 
+This doc includes every recipe that is exclusive to Moderne customers. For a full list of all recipes, check out our [recipe catalog](https://docs.openrewrite.org/recipes). For more information about how to use Moderne for automating code refactoring and analysis at scale, [contact us](https://www.moderne.ai/contact-us).
+
 ## rewrite-ai-search
 
 * [Find comments' language distribution](../recipes/ai/findcommentslanguage)
