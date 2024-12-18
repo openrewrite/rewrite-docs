@@ -19,6 +19,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add Gradle dependency](./adddependency.md)
 * [Add Gradle property](./addproperty.md)
+* [Add JUnit Platform Launcher](./addjunitplatformlauncher.md)
 * [Change Extra Property](./changeextraproperty.md)
 * [Change Gradle dependency](./changedependency.md)
 * [Change Gradle dependency artifact](./changedependencyartifactid.md)
@@ -32,6 +33,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Gradle 5 from Gradle 4](./migratetogradle5.md)
 * [Remove a Gradle dependency](./removedependency.md)
 * [Remove an enabled Gradle preview feature](./removeenablefeaturepreview.md)
+* [Remove redundant explicit dependency versions](./removeredundantdependencyversions.md)
 * [Remove repository](./removerepository.md)
 * [Update Gradle project Java compatibility](./updatejavacompatibility.md)
 * [Update Gradle wrapper](./updategradlewrapper.md)

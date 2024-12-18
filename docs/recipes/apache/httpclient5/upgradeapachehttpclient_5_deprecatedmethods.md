@@ -15,6 +15,9 @@ _Migrates deprecated methods to their equivalent ones in 5.x_
 
 [GitHub](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/resources/META-INF/rewrite/apache-httpclient-5.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 ## Definition
 
@@ -23,6 +26,9 @@ _Migrates deprecated methods to their equivalent ones in 5.x_
 * [Change method name](../../java/changemethodname)
   * methodPattern: `org.apache.hc.client5.http.config.RequestConfig.Builder setSocketTimeout(int)`
   * newMethodName: `setResponseTimeout`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `org.apache.http.HttpMessage getAllHeaders()`
+  * newMethodName: `getHeaders`
 
 </TabItem>
 
@@ -38,6 +44,9 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.hc.client5.http.config.RequestConfig.Builder setSocketTimeout(int)
       newMethodName: setResponseTimeout
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.http.HttpMessage getAllHeaders()
+      newMethodName: getHeaders
 
 ```
 </TabItem>

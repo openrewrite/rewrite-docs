@@ -27,6 +27,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Update Gradle wrapper](../gradle/updategradlewrapper)
   * version: `8.x`
   * addIfMissing: `false`
+* [Add JUnit Platform Launcher](../gradle/addjunitplatformlauncher)
 * [Remove an enabled Gradle preview feature](../gradle/removeenablefeaturepreview)
   * previewFeatureName: `ONE_LOCKFILE_PER_PROJECT`
 * [Remove an enabled Gradle preview feature](../gradle/removeenablefeaturepreview)
@@ -49,6 +50,7 @@ recipeList:
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: 8.x
       addIfMissing: false
+  - org.openrewrite.gradle.AddJUnitPlatformLauncher
   - org.openrewrite.gradle.RemoveEnableFeaturePreview:
       previewFeatureName: ONE_LOCKFILE_PER_PROJECT
   - org.openrewrite.gradle.RemoveEnableFeaturePreview:
@@ -193,4 +195,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Shannon Pamperl](mailto:shanman190@gmail.com), [Ryan Walker](mailto:ryanwalker7@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com)
+[Shannon Pamperl](mailto:shanman190@gmail.com), [Ryan Walker](mailto:ryanwalker7@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), [Simon Hutchinson](mailto:simon.hutchinson@ixxus.com), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Leitschuh](mailto:jonathan.leitschuh@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

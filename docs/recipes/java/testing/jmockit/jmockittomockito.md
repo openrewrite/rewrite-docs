@@ -28,7 +28,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Rewrite JMockit Expectations, NonStrictExpectations, Verifications, FullVerifications](../../../java/testing/jmockit/jmockitblocktomockito)
+* [Rewrite JMockit Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications](../../../java/testing/jmockit/jmockitblocktomockito)
 * [Rewrite JMockit MockUp to Mockito statements](../../../java/testing/jmockit/jmockitmockuptomockito)
 * [Convert JMockit `@Mocked` and `@Injectable` annotated arguments](../../../java/testing/jmockit/jmockitannotatedargumenttomockito)
 * [Change type](../../../java/changetype)
@@ -58,6 +58,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Exclude Maven dependency](../../../maven/excludedependency)
   * groupId: `org.jmockit`
   * artifactId: `jmockit`
+* [Mockito best practices](../../../java/testing/mockito/mockitobestpractices)
 
 </TabItem>
 
@@ -103,6 +104,7 @@ recipeList:
   - org.openrewrite.maven.ExcludeDependency:
       groupId: org.jmockit
       artifactId: jmockit
+  - org.openrewrite.java.testing.mockito.MockitoBestPractices
 
 ```
 </TabItem>
@@ -286,4 +288,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-SiBorea, [Shivani Sharma](mailto:s.happyrose@gmail.com), [tinder-dthomson](mailto:devin.thomson@gotinder.com)
+SiBorea, [Tim te Beek](mailto:tim@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Greg Adams](mailto:gadams@gmail.com), [Matthias Klauer](mailto:matthias.klauer@sap.com), [Jente Sondervorst](mailto:jentesondervorst@gmail.com), Patrick Way, [Sander Knauff](mailto:sanderknauff@hotmail.com), [tinder-dthomson](mailto:devin.thomson@gotinder.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [Greg Adams](mailto:greg@moderne.io), John Burns, [Patrick](mailto:patway99@gmail.com), [Adam Birem](mailto:adam.birem@praxedo.com), [Nick McKinney](mailto:mckinneynicholas@gmail.com), [gideon-sunbit](mailto:gideon.pertzov@sunbit.com), [Sam Snyder](mailto:sam@moderne.io), [Laurens Westerlaken](mailto:laurens.w@live.nl), Josh Soref, [Tim te Beek](mailto:timtebeek@gmail.com), [Niels de Bruin](mailto:nielsdebruin@gmail.com), Aaron Gershman

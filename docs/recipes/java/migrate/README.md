@@ -80,6 +80,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Rename final method declarations `getSuppressed()` and `addSuppressed(Throwable exception)` in classes that extend `Throwable`](./jrethrowablefinalmethods.md)
 * [Replace AWT `getPeer()` method](./replaceawtgetpeermethod.md)
 * [Replace DTO method parameters with data elements](./dontoverfetchdto.md)
+* [Replace `IllegalArgumentException` with `AlreadyConnectedException` in `DatagramChannel.send()` method](./illegalargumentexceptiontoalreadyconnectedexception.md)
 * [Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant](./removedrmiconnectorservercredentialtypesconstant.md)
 * [Replace `SSLSession.getPeerCertificateChain()` method](./removedsslsessiongetpeercertificatechainmethodimpl.md)
 * [Replace `String` literal](./replacestringliteralvalue.md)

@@ -240,4 +240,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Jente Sondervorst](mailto:jentesondervorst@gmail.com)
+[Jente Sondervorst](mailto:jentesondervorst@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

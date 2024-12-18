@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[SMIT MALKAN](mailto:smitmalkan99@gmail.com)
+[SMIT MALKAN](mailto:smitmalkan99@gmail.com), timo-abele, [Jonathan Schnéider](mailto:jkschneider@gmail.com)

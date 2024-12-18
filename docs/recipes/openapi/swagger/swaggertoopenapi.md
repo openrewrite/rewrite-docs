@@ -46,6 +46,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `io.swagger.annotations.Tag`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.tags.Tag`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `springfox.documentation.annotations.ApiIgnore`
+  * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.Hidden`
 * [Migrate from `@ApiOperation` to `@Operation`](../../openapi/swagger/migrateapioperationtooperation)
 * [Migrate from `@ApiResponses` to `@ApiResponses`](../../openapi/swagger/migrateapiresponsestoapiresponses)
 * [Migrate from `@ApiImplicitParams`  to `@Parameters`](../../openapi/swagger/migrateapiimplicitparamstoparameters)
@@ -86,6 +89,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.swagger.annotations.Tag
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.tags.Tag
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: springfox.documentation.annotations.ApiIgnore
+      newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.Hidden
   - org.openrewrite.openapi.swagger.MigrateApiOperationToOperation
   - org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses
   - org.openrewrite.openapi.swagger.MigrateApiImplicitParamsToParameters

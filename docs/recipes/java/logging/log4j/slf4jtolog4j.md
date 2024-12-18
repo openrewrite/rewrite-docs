@@ -88,6 +88,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * newVersion: `latest.release`
 * [Replace any Lombok log annotations with target logging framework annotation](../../../java/logging/changelomboklogannotation)
   * loggingFramework: `Log4j2`
+* [Add imports for fully qualified references to types](../../../java/shortenfullyqualifiedtypereferences)
 
 </TabItem>
 
@@ -163,6 +164,7 @@ recipeList:
       newVersion: latest.release
   - org.openrewrite.java.logging.ChangeLombokLogAnnotation:
       loggingFramework: Log4j2
+  - org.openrewrite.java.ShortenFullyQualifiedTypeReferences
 
 ```
 </TabItem>

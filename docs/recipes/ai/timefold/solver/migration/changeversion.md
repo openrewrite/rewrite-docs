@@ -25,27 +25,27 @@ This recipe is composed of more than one recipe. If you want to customize the se
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.ai.timefold.solver`
-  * newValue: `1.16.0`
+  * newValue: `1.17.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.timefold`
-  * newValue: `1.16.0`
+  * newValue: `1.17.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `ai.timefold.solver.version`
-  * newValue: `1.16.0`
+  * newValue: `1.17.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefold.version`
-  * newValue: `1.16.0`
+  * newValue: `1.17.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefoldVersion`
-  * newValue: `1.16.0`
+  * newValue: `1.17.0`
   * addIfMissing: `false`
   * trustParent: `true`
 
@@ -62,27 +62,27 @@ description: Replaces the version of Timefold
 recipeList:
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.ai.timefold.solver
-      newValue: 1.16.0
+      newValue: 1.17.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.timefold
-      newValue: 1.16.0
+      newValue: 1.17.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: ai.timefold.solver.version
-      newValue: 1.16.0
+      newValue: 1.17.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefold.version
-      newValue: 1.16.0
+      newValue: 1.17.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefoldVersion
-      newValue: 1.16.0
+      newValue: 1.17.0
       addIfMissing: false
       trustParent: true
 

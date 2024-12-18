@@ -23,6 +23,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Hibernate 6.2.x](../hibernate/migratetohibernate62)
 * [Migrate Hibernate Types to Hypersistence Utils 6.2](../hibernate/migratetohypersistenceutilshibernate6/2)
 * [Migrate Hibernate Types to Hypersistence Utils 6.3](../hibernate/migratetohypersistenceutilshibernate6/3)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
@@ -41,6 +42,7 @@ name: org.openrewrite.hibernate.MigrateToHibernate63
 displayName: Migrate to Hibernate 6.3.x
 description: This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
 recipeList:
+  - org.openrewrite.hibernate.MigrateToHibernate62
   - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.2
   - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate6.3
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
@@ -228,3 +230,6 @@ _Statistics used in analyzing the performance of recipes._
 | 99th percentile edit time | 99 out of 100 edits completed in this amount of time. |
 | Max edit time | The max time editing any one source file. |
 
+
+## Contributors
+[Tim te Beek](mailto:tim@moderne.io), Simon Zilliken, [Laurens Westerlaken](mailto:laurens.w@live.nl), [Alex Boyko](mailto:aboyko@vmware.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

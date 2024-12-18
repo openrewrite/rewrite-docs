@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Rewrite JMockit Expectations, NonStrictExpectations, Verifications, FullVerifications"
+sidebar_label: "Rewrite JMockit Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Rewrite JMockit Expectations, NonStrictExpectations, Verifications, FullVerifications
+# Rewrite JMockit Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications
 
 **org.openrewrite.java.testing.jmockit.JMockitBlockToMockito**
 
-_Rewrites JMockit `Expectations, NonStrictExpectations, Verifications, FullVerifications` blocks to Mockito statements._
+_Rewrites JMockit `Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications` blocks to Mockito statements._
 
 ## Recipe source
 
@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[tinder-dthomson](mailto:devin.thomson@gotinder.com), [Shivani Sharma](mailto:s.happyrose@gmail.com)
+[tinder-dthomson](mailto:devin.thomson@gotinder.com), [Shivani Sharma](mailto:s.happyrose@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

@@ -29,14 +29,16 @@ This recipe is composed of more than one recipe. If you want to customize the se
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Java 11](../../java/migrate/java8tojava11)
 * [Upgrade build to Java 17](../../java/migrate/upgradebuildtojava17)
-* [Prefer `String.formatted(Object...)`](../../java/migrate/lang/stringformatted)
 * [Changes code to use Java 17's `instanceof` pattern matching](../../staticanalysis/instanceofpatternmatch)
 * [Add `@Serial` annotation to `serialVersionUID`](../../staticanalysis/addserialannotationtoserialversionuid)
 * [Remove `Runtime.traceInstructions(boolean)` and `Runtime.traceMethodCalls` methods](../../java/migrate/removedruntimetracemethods)
 * [Change `javax.tools.ToolProvider` methods calls to static](../../java/migrate/removedtoolproviderconstructor)
 * [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](../../java/migrate/removedmodifierandconstantbootstrapsconstructors)
+* [Add explicit import for `Record` classes](../../java/migrate/lang/explicitrecordimport)
 * [Use text blocks](../../java/migrate/lang/usetextblocks)
   * convertStringsWithoutNewlines: `false`
+* [Prefer `String.formatted(Object...)`](../../java/migrate/lang/stringformatted)
+  * addParentheses: `false`
 * [Use `java.security.cert` instead of `javax.security.cert`](../../java/migrate/deprecatedjavaxsecuritycert)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](../../java/migrate/deprecatedlogrecordthreadid)
 * [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](../../java/migrate/removedlegacysunjsseprovidername)
@@ -52,6 +54,10 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * groupId: `com.google.inject`
   * artifactId: `guice`
   * newVersion: `5.x`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
+  * groupId: `commons-codec`
+  * artifactId: `commons-codec`
+  * newVersion: `1.17.x`
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](../../java/migrate/addlombokmapstructbinding)
 
 </TabItem>
@@ -69,14 +75,16 @@ tags:
 recipeList:
   - org.openrewrite.java.migrate.Java8toJava11
   - org.openrewrite.java.migrate.UpgradeBuildToJava17
-  - org.openrewrite.java.migrate.lang.StringFormatted
   - org.openrewrite.staticanalysis.InstanceOfPatternMatch
   - org.openrewrite.staticanalysis.AddSerialAnnotationToSerialVersionUID
   - org.openrewrite.java.migrate.RemovedRuntimeTraceMethods
   - org.openrewrite.java.migrate.RemovedToolProviderConstructor
   - org.openrewrite.java.migrate.RemovedModifierAndConstantBootstrapsConstructors
+  - org.openrewrite.java.migrate.lang.ExplicitRecordImport
   - org.openrewrite.java.migrate.lang.UseTextBlocks:
       convertStringsWithoutNewlines: false
+  - org.openrewrite.java.migrate.lang.StringFormatted:
+      addParentheses: false
   - org.openrewrite.java.migrate.DeprecatedJavaxSecurityCert
   - org.openrewrite.java.migrate.DeprecatedLogRecordThreadID
   - org.openrewrite.java.migrate.RemovedLegacySunJSSEProviderName
@@ -92,6 +100,10 @@ recipeList:
       groupId: com.google.inject
       artifactId: guice
       newVersion: 5.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: commons-codec
+      artifactId: commons-codec
+      newVersion: 1.17.x
   - org.openrewrite.java.migrate.AddLombokMapstructBinding
 
 ```
@@ -276,4 +288,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), BhavanaPidapa, Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, Aaron Gershman, [Patrick](mailto:patway99@gmail.com), Daryl Robbins, [Tim te Beek](mailto:tim@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), BramliAK, [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, eocantu, [Shannon Pamperl](mailto:shanman190@gmail.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), Kun Li, Josh Soref
+Chuka Obinabo, Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), BhavanaPidapa, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Kun Li](mailto:kun@moderne.io), Aakarshit Uppal, BramliAK, eocantu, [Shannon Pamperl](mailto:shanman190@gmail.com), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), Kun Li, Josh Soref

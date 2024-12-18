@@ -195,4 +195,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Steven Tompkins](mailto:steven.tompkins.jr@gmail.com)
+[Steven Tompkins](mailto:steven.tompkins.jr@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
 * [Simplify ternary expressions](./simplifyternaryrecipes.md)
+* [URL Equals and Hash Code](./urlequalshashcoderecipes.md)
 
 ## Recipes
 
@@ -77,7 +78,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove JavaDoc `@param`, `@return`, and `@throws` with no description](./removeemptyjavadocparameters.md)
 * [Remove `Object.finalize()` invocations](./removecallstoobjectfinalize.md)
 * [Remove `System.out#println` statements](./removesystemoutprintln.md)
-* [Remove Unneeded Assertions](./removeunneededassertion.md)
 * [Remove author tags from JavaDocs](./removejavadocauthortag.md)
 * [Remove catch for a checked exception if the try block does not throw that exception](./unnecessarycatch.md)
 * [Remove empty blocks](./emptyblock.md)
@@ -87,6 +87,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove redundant casts](./removeredundanttypecast.md)
 * [Remove `toString()` calls on arrays](./removetostringcallsfromarrayinstances.md)
 * [Remove unnecessary parentheses](./unnecessaryparentheses.md)
+* [Remove unneeded assertions](./removeunneededassertion.md)
 * [Remove unneeded block](./removeunneededblock.md)
 * [Remove unused local variables](./removeunusedlocalvariables.md)
 * [Remove unused private fields](./removeunusedprivatefields.md)
@@ -125,6 +126,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Static methods need not be final](./staticmethodnotfinal.md)
 * [Ternary operators should not be nested](./ternaryoperatorsshouldnotbenested.md)
 * [Typecast parenthesis padding](./typecastparenpad.md)
+* [URL Equals](./urlequalshashcoderecipes$urlequalsrecipe.md)
+* [URL Hash Code](./urlequalshashcoderecipes$urlhashcoderecipe.md)
 * [Unnecessary `String#toString`](./notostringonstringtype.md)
 * [Unnecessary `String#valueOf(..)`](./novalueofonstringtype.md)
 * [Unnecessary close in try-with-resources](./unnecessarycloseintrywithresources.md)

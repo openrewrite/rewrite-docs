@@ -198,4 +198,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Kun Li](mailto:kun@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Peter Streef](mailto:peter@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [pstreef](mailto:p.streef@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Kun Li](mailto:kun@moderne.io), [Knut Wannheden](mailto:knut@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Sam Snyder](mailto:sam@moderne.io), [Joan Viladrosa](mailto:joan@moderne.io), [Peter Streef](mailto:peter@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com), [Jacob van Lingen](mailto:jacobvanlingen@hotmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [pstreef](mailto:p.streef@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com)

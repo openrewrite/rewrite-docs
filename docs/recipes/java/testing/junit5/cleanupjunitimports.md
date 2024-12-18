@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Greg Adams](mailto:gadams@gmail.com), [Amitoj Duggal](mailto:amitojduggal@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Aaron Gershman](mailto:aegershman@gmail.com)
+[Greg Adams](mailto:gadams@gmail.com), [Amitoj Duggal](mailto:amitojduggal@gmail.com), Patrick Way, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io)

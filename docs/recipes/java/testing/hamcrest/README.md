@@ -4,7 +4,9 @@
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Migrate to AssertJ assertions](./migratehamcresttoassertj.md)
+* [Migrate Hamcrest assertions to AssertJ](./migratehamcresttoassertj.md)
+* [Migrate Hamcrest assertions to JUnit Jupiter](./migratehamcresttojunit5.md)
+* [Use consistent Hamcrest matcher imports](./consistenthamcrestmatcherimports.md)
 
 ## Recipes
 
@@ -14,6 +16,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Hamcrest `not(Matcher)` to AssertJ](./hamcrestnotmatchertoassertj.md)
 * [Migrate `anyOf` Hamcrest Matcher to AssertJ](./hamcrestofmatcherstoassertj.md)
 * [Migrate from Hamcrest `Matcher` to AssertJ](./hamcrestmatchertoassertj.md)
+* [Migrate from Hamcrest `Matcher` to JUnit 5](./hamcrestmatchertojunit5.md)
+* [Migrate from Hamcrest `instanceOf` matcher to JUnit 5](./hamcrestinstanceoftojunit5.md)
 * [Remove Hamcrest `is(Matcher)`](./removeismatcher.md)
 
 

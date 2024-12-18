@@ -197,4 +197,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Steve Hill](mailto:sghill.dev@gmail.com), [Jonathan Schneider](mailto:jkschneider@gmail.com)
+[Steve Hill](mailto:sghill.dev@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

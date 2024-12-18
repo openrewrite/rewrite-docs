@@ -15,6 +15,12 @@ _Prefer `String.formatted(Object...)` over `String.format(String, Object...)` in
 
 [GitHub](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/StringFormatted.java), [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
+## Options
+
+| Type | Name | Description | Example |
+| -- | -- | -- | -- |
+| `Boolean` | addParentheses | *Optional*. Add parentheses around the first argument if it is not a simple expression. Default true; if false no change will be made.  |  |
+
 
 ## Usage
 
@@ -194,4 +200,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim.te.beek@jdriven.com), [Sam Snyder](mailto:sam@moderne.io), BramliAK, [Knut Wannheden](mailto:knut@moderne.io), [Tracey Yoshima](mailto:tracey.yoshima@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Patrick](mailto:patway99@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io), [Sam Snyder](mailto:sam@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Patrick](mailto:patway99@gmail.com)

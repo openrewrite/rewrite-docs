@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.xml.ChangeTagValue**
 
-_Alters the value of XML tags matching the provided expression._
+_Alters the value of XML tags matching the provided expression. When regex is enabled the replacement happens only for text nodes provided the pattern matches._
 
 ## Recipe source
 
@@ -20,8 +20,9 @@ _Alters the value of XML tags matching the provided expression._
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | elementName | The name of the element whose value is to be changed. Interpreted as an XPath Expression. | `/settings/servers/server/username` |
-| `String` | oldValue | *Optional*. The old value of the tag. | `user` |
-| `String` | newValue | The new value for the tag. | `user` |
+| `String` | oldValue | *Optional*. The old value of the tag. Interpreted as pattern if regex is enabled. | `user` |
+| `String` | newValue | The new value for the tag. Supports capture groups when regex is enabled. If literal $,\ characters are needed in newValue, with regex true, then it should be escaped. | `user` |
+| `Boolean` | regex | *Optional*. Default false. If true, `oldValue` will be interpreted as a [Regular Expression](https://en.wikipedia.org/wiki/Regular_expression), and capture group contents will be available in `newValue`. |  |
 
 
 ## Usage
@@ -156,4 +157,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Mark Brophy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)
+anthochristen, Mark Brophy, [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Tim te Beek](mailto:tim@moderne.io)

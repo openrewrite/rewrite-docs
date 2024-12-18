@@ -82,6 +82,7 @@ This recipe is composed of more than one recipe. If you want to customize the se
   * localizedInputStreamMethodMatcher: `java.lang.Runtime getLocalizedInputStream(java.io.InputStream)`
   * localizedOutputStreamMethodMatcher: `java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)`
 * [Catch `TypeNotPresentException` thrown by `Class.getAnnotation()`](../../java/migrate/arraystoreexceptiontotypenotpresentexception)
+* [Replace `IllegalArgumentException` with `AlreadyConnectedException` in `DatagramChannel.send()` method](../../java/migrate/illegalargumentexceptiontoalreadyconnectedexception)
 
 </TabItem>
 
@@ -151,6 +152,7 @@ recipeList:
       localizedInputStreamMethodMatcher: java.lang.Runtime getLocalizedInputStream(java.io.InputStream)
       localizedOutputStreamMethodMatcher: java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)
   - org.openrewrite.java.migrate.ArrayStoreExceptionToTypeNotPresentException
+  - org.openrewrite.java.migrate.IllegalArgumentExceptionToAlreadyConnectedException
 
 ```
 </TabItem>
@@ -334,4 +336,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Chuka Obinabo, Anu Ramamoorthy, [Sam Snyder](mailto:sam@moderne.io), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [traceyyoshima](mailto:tracey.yoshima@gmail.com), BhavanaPidapa, [Knut Wannheden](mailto:knut@moderne.io), Tyler Van Gorder, [Jonathan Schneider](mailto:jkschneider@gmail.com), [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), Adam Slaski, Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Michael Keppler](mailto:bananeweizen@gmx.de), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Shannon Pamperl](mailto:shanman190@gmail.com), Josh Soref, Kun Li
+Chuka Obinabo, Anu Ramamoorthy, BhavanaPidapa, [Sam Snyder](mailto:sam@moderne.io), [traceyyoshima](mailto:tracey.yoshima@gmail.com), [Tim te Beek](mailto:tim.te.beek@jdriven.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Tyler Van Gorder, [Yifeng Jin](mailto:yifeng.jyf@alibaba-inc.com), [Jonathan Schneider](mailto:jkschneider@gmail.com), Adam Slaski, Aaron Gershman, Daryl Robbins, [Patrick](mailto:patway99@gmail.com), [Aaron Gershman](mailto:aegershman@gmail.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Tim te Beek](mailto:tim@moderne.io), [Michael Keppler](mailto:bananeweizen@gmx.de), [Laurens Westerlaken](mailto:laurens.westerlaken@jdriven.com), [Shannon Pamperl](mailto:shanman190@gmail.com), Josh Soref, Kun Li

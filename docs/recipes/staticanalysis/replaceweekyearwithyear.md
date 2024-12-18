@@ -198,4 +198,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Aleksandar A Simpson](mailto:alek@asu.me), [Tim te Beek](mailto:timtebeek@gmail.com), Mike Sol, [Jonathan Schnéider](mailto:jkschneider@gmail.com)
+[Aleksandar A Simpson](mailto:alek@asu.me), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com), Mike Sol

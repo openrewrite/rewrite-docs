@@ -168,4 +168,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), [Kavitha Kesavalu](mailto:kavitha.kesavalu@gmail.com)
+[Tim te Beek](mailto:tim@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kavitha Kesavalu](mailto:kavitha.kesavalu@gmail.com)

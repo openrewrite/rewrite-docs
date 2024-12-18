@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tim te Beek](mailto:tim@moderne.io), Chuka Obinabo
+[Tim te Beek](mailto:tim@moderne.io), Chuka Obinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com)

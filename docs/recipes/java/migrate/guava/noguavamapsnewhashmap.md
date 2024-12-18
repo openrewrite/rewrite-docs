@@ -198,4 +198,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Phil
+Phil, [Jonathan Schnéider](mailto:jkschneider@gmail.com)

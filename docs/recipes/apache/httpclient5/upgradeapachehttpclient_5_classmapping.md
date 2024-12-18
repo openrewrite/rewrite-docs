@@ -371,6 +371,9 @@ This recipe is composed of more than one recipe. If you want to customize the se
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.HttpResponse`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpResponse`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.client.ResponseHandler`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpClientResponseHandler`
 * [Reorder method arguments](../../java/reordermethodarguments)
   * methodPattern: `org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)`
   * newParameterNames: `[scheme, hostname, port]`
@@ -743,6 +746,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.HttpResponse
       newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpResponse
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.client.ResponseHandler
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpClientResponseHandler
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)
       newParameterNames: [scheme, hostname, port]

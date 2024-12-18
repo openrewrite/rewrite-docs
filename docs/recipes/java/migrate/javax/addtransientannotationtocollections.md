@@ -197,4 +197,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Evie Lau
+Evie Lau, [Jonathan Schnéider](mailto:jkschneider@gmail.com)

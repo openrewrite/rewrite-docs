@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-Chuka Obinabo
+Chuka Obinabo, [Jonathan Schnéider](mailto:jkschneider@gmail.com)

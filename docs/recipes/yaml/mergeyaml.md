@@ -20,7 +20,7 @@ _Merge a YAML snippet with an existing YAML document._
 | Type | Name | Description | Example |
 | -- | -- | -- | -- |
 | `String` | key | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression used to find matching keys. | `$.metadata` |
-| `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. | <pre>labels: <br />	label-one: "value-one"</pre> |
+| `String` | yaml | The YAML snippet to insert. The snippet will be indented to match the style of its surroundings. | <pre>labels:<br />  label-one: "value-one"</pre> |
 | `Boolean` | acceptTheirs | *Optional*. When the YAML snippet to insert conflicts with an existing key value pair and an existing key has a different value, prefer the original value. |  |
 | `String` | objectIdentifyingProperty | *Optional*. Name of a property which will be used to identify objects (mapping). This serves as the key to match on when merging entries of a sequence. | `name` |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
@@ -38,9 +38,8 @@ displayName: Merge YAML snippet example
 recipeList:
   - org.openrewrite.yaml.MergeYaml:
       key: $.metadata
-      yaml: >
-        labels: 
-        	label-one: "value-one"
+      yaml: 'labels:
+  label-one: "value-one"'
       objectIdentifyingProperty: name
       filePattern: .github/workflows/*.yml
 ```
@@ -91,21 +90,20 @@ repositories {
 ```
 2. Run `mvn rewrite:run` to run the recipe.
 </TabItem>
-    <TabItem value="moderne-cli" label="Moderne CLI">
+          <TabItem value="moderne-cli" label="Moderne CLI">
 
-    You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
+          You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
-    ```shell title="shell"
-    mod run . --recipe MergeYaml --recipe-option "key=$.metadata" --recipe-option "yaml=>
-labels: 
-	label-one: "value-one"" --recipe-option "objectIdentifyingProperty=name" --recipe-option "filePattern=.github/workflows/*.yml"
-    ```
+          ```shell title="shell"
+          mod run . --recipe MergeYaml --recipe-option "key=$.metadata" --recipe-option "yaml='labels:
+label-one: "value-one"'" --recipe-option "objectIdentifyingProperty=name" --recipe-option "filePattern=.github/workflows/*.yml"
+          ```
 
-    If the recipe is not available locally, then you can install it using:
-    ```shell
-    mod config recipes jar install org.openrewrite:rewrite-yaml:{{VERSION_REWRITE_YAML}}
-    ```
-    </TabItem>
+          If the recipe is not available locally, then you can install it using:
+          ```shell
+          mod config recipes jar install org.openrewrite:rewrite-yaml:{{VERSION_REWRITE_YAML}}
+          ```
+          </TabItem>
 </Tabs>
 
 ## See how this recipe works across multiple open-source repositories

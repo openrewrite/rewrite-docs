@@ -194,4 +194,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Alex Boyko](mailto:aboyko@vmware.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Kun Li](mailto:kun@moderne.io)
+[Alex Boyko](mailto:aboyko@vmware.com), [Shannon Pamperl](mailto:shanman190@gmail.com), [Knut Wannheden](mailto:knut@moderne.io), [Jonathan Schnéider](mailto:jkschneider@gmail.com), [Kun Li](mailto:kun@moderne.io)

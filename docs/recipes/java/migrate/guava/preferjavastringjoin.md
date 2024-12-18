@@ -198,4 +198,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Tobias Lidskog](mailto:tlidskog@paypal.com), [Tim te Beek](mailto:timtebeek@gmail.com)
+[Tobias Lidskog](mailto:tlidskog@paypal.com), [Tim te Beek](mailto:timtebeek@gmail.com), [Jonathan Schnéider](mailto:jkschneider@gmail.com)

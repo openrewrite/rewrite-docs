@@ -223,4 +223,4 @@ _Statistics used in analyzing the performance of recipes._
 
 
 ## Contributors
-[Curtis](mailto:curtis@mail.ustc.edu.cn)
+[Curtis](mailto:curtis@mail.ustc.edu.cn), [Jonathan Schnéider](mailto:jkschneider@gmail.com)
