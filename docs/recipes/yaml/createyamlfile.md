@@ -39,9 +39,9 @@ recipeList:
       relativeFileName: foo/bar/baz.yaml
       fileContents: >
         a:
-          property: value
+        property: value
         another:
-          property: value
+        property: value
       fileContentsUrl: http://foo.bar/baz.yaml
 ```
 

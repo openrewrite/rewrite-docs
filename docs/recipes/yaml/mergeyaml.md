@@ -40,7 +40,7 @@ recipeList:
       key: $.metadata
       yaml: >
         labels: 
-          label-one: "value-one"
+        	label-one: "value-one"
       objectIdentifyingProperty: name
       filePattern: .github/workflows/*.yml
 ```

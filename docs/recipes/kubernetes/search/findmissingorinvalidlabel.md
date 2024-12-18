@@ -42,62 +42,8 @@ recipeList:
 
 Now that `com.yourorg.FindMissingOrInvalidLabelExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}}` in your build file:
 <Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
 
-1. Add the following to your `build.gradle` file:
 
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.FindMissingOrInvalidLabelExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-kubernetes:{{VERSION_REWRITE_KUBERNETES}}")
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.FindMissingOrInvalidLabelExample</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-kubernetes</artifactId>
-            <version>{{VERSION_REWRITE_KUBERNETES}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

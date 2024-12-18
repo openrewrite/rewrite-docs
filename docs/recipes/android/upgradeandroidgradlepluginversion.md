@@ -26,37 +26,6 @@ This recipe is composed of more than one recipe. If you want to customize the se
 | `String` | gradleWrapperVersion | The version of the Gradle Wrapper to use. | `(8.7, 9]` |
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Upgrade Gradle dependency versions](../gradle/upgradedependencyversion)
-  * groupId: `com.android.tools.build`
-  * artifactId: `gradle`
-* [Update Gradle wrapper](../gradle/updategradlewrapper)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.android.UpgradeAndroidGradlePluginVersion
-displayName: Upgrade Android Gradle Plugin (AGP) version
-description: Upgrade Android Gradle Plugin (AGP) version and update the Gradle Wrapper version. Compatible versions are published in the [AGP release notes](https://developer.android.com/build/releases/gradle-plugin).
-
-
-recipeList:
-  - org.openrewrite.gradle.UpgradeDependencyVersion:
-      groupId: com.android.tools.build
-      artifactId: gradle
-  - org.openrewrite.gradle.UpdateGradleWrapper
-
-```
-</TabItem>
-</Tabs>
-
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpgradeAndroidGradlePluginVersionExample`.
@@ -74,62 +43,8 @@ recipeList:
 
 Now that `com.yourorg.UpgradeAndroidGradlePluginVersionExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}}` in your build file:
 <Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
 
-1. Add the following to your `build.gradle` file:
 
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.UpgradeAndroidGradlePluginVersionExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-android:{{VERSION_REWRITE_ANDROID}}")
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.UpgradeAndroidGradlePluginVersionExample</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-android</artifactId>
-            <version>{{VERSION_REWRITE_ANDROID}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.

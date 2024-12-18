@@ -16,31 +16,6 @@ _Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/p
 [GitHub](https://github.com/openrewrite/rewrite-dotnet/blob/main/src/main/resources/META-INF/rewrite/dotnet.yml), [Issue Tracker](https://github.com/openrewrite/rewrite-dotnet/issues), [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dotnet/)
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Upgrade a .NET project using upgrade-assistant](../dotnet/upgradeassistant)
-  * targetFramework: `net7.0`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.dotnet.MigrateToNet7
-displayName: Upgrade to .NET 7.0 using upgrade-assistant
-description: Run [upgrade-assistant upgrade](https://learn.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview) across a repository to upgrade projects to .NET 7.0.
-recipeList:
-  - org.openrewrite.dotnet.UpgradeAssistant:
-      targetFramework: net7.0
-
-```
-</TabItem>
-</Tabs>
-
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-dotnet` in your build file or by running a shell command (in which case no build changes are needed): 

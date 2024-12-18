@@ -24,34 +24,6 @@ _Update git resource `source.uri` URI values to point to a new URI value._
 | `String` | fileMatcher | *Optional*. Matching files will be modified. This is a glob expression. | `**/pipeline*.yml` |
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Change Concourse value](../concourse/changevalue)
-  * keyPath: `$.resources[?(@.type == 'git')].source.uri`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.concourse.UpdateGitResourceUri
-displayName: Update git resource `source.uri` references
-description: Update git resource `source.uri` URI values to point to a new URI value.
-
-
-
-recipeList:
-  - org.openrewrite.concourse.ChangeValue:
-      keyPath: $.resources[?(@.type == 'git')].source.uri
-
-```
-</TabItem>
-</Tabs>
-
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly. To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.UpdateGitResourceUriExample`.
@@ -70,62 +42,8 @@ recipeList:
 
 Now that `com.yourorg.UpdateGitResourceUriExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}}` in your build file:
 <Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
 
-1. Add the following to your `build.gradle` file:
 
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.UpdateGitResourceUriExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-concourse:{{VERSION_REWRITE_CONCOURSE}}")
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.UpdateGitResourceUriExample</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-concourse</artifactId>
-            <version>{{VERSION_REWRITE_CONCOURSE}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
