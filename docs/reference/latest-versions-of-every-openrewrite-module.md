@@ -12,7 +12,7 @@ The use of the "bill of materials" means that a developer will only need to spec
 |-----------------------------------------------------------------------------------------------------------------------| ---------- |
 | [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                    | **[2.23.2](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v2.23.2)** |
 | [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                       | **[5.47.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v5.47.0)** |
-| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[6.28.3](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v6.28.3)** |
+| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[6.29.0](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v6.29.0)** |
 | [org.openrewrite:rewrite-core](https://github.com/openrewrite/rewrite)                                                | [8.42.0](https://github.com/openrewrite/rewrite/releases/tag/v8.42.0)                      |
 | [org.openrewrite:rewrite-gradle](https://github.com/openrewrite/rewrite)                                              | [8.42.0](https://github.com/openrewrite/rewrite/releases/tag/v8.42.0)                      |
 | [org.openrewrite:rewrite-groovy](https://github.com/openrewrite/rewrite)                                              | [8.42.0](https://github.com/openrewrite/rewrite/releases/tag/v8.42.0)                      |
