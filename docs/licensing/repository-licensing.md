@@ -40,7 +40,7 @@ The three licenses in the table can be found here:
 | rewrite-cucumber-jvm         | Moderne Source Available   |
 | rewrite-feature-flags        | Moderne Source Available   |
 | rewrite-gitlab               | Moderne Source Available   |
-| rewrite-\<LANGUAGE\>         | Moderne Proprietary        |
+| rewrite-\<LANGUAGE\>         | Moderne Source Available   |
 | rewrite-codemods-ng          | Moderne Proprietary        |
 | rewrite-sql                  | Moderne Proprietary        |
 | rewrite-circleci             | Moderne Proprietary        |
